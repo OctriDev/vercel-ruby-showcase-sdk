@@ -12,14 +12,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateEdgeConfigMetadata
         FIELDS = {
-          slug: "slug",
-          items: "items",
+          slug: 'slug',
+          items: 'items'
         }.freeze
         REQUIRED_FIELDS = %i[
           slug
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateEdgeConfig.
@@ -48,15 +47,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateEdgeConfigResponseMetadata
         FIELDS = {
-          created_at: "createdAt",
-          created_by: "createdBy",
-          digest: "digest",
-          id: "id",
-          item_count: "itemCount",
-          owner_id: "ownerId",
-          size_in_bytes: "sizeInBytes",
-          slug: "slug",
-          updated_at: "updatedAt",
+          created_at: 'createdAt',
+          created_by: 'createdBy',
+          digest: 'digest',
+          id: 'id',
+          item_count: 'itemCount',
+          owner_id: 'ownerId',
+          size_in_bytes: 'sizeInBytes',
+          slug: 'slug',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -68,8 +67,7 @@ module OctridevVercel
           slug
           updated_at
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateEdgeConfigResponse.
@@ -103,15 +101,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetEdgeConfigResponseMetadata
         FIELDS = {
-          created_at: "createdAt",
-          created_by: "createdBy",
-          digest: "digest",
-          id: "id",
-          item_count: "itemCount",
-          owner_id: "ownerId",
-          size_in_bytes: "sizeInBytes",
-          slug: "slug",
-          updated_at: "updatedAt",
+          created_at: 'createdAt',
+          created_by: 'createdBy',
+          digest: 'digest',
+          id: 'id',
+          item_count: 'itemCount',
+          owner_id: 'ownerId',
+          size_in_bytes: 'sizeInBytes',
+          slug: 'slug',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -123,8 +121,7 @@ module OctridevVercel
           slug
           updated_at
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetEdgeConfigResponse.
@@ -158,13 +155,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateEdgeConfigMetadata
         FIELDS = {
-          slug: "slug",
+          slug: 'slug'
         }.freeze
         REQUIRED_FIELDS = %i[
           slug
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateEdgeConfig.
@@ -193,15 +189,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateEdgeConfigResponseMetadata
         FIELDS = {
-          created_at: "createdAt",
-          created_by: "createdBy",
-          digest: "digest",
-          id: "id",
-          item_count: "itemCount",
-          owner_id: "ownerId",
-          size_in_bytes: "sizeInBytes",
-          slug: "slug",
-          updated_at: "updatedAt",
+          created_at: 'createdAt',
+          created_by: 'createdBy',
+          digest: 'digest',
+          id: 'id',
+          item_count: 'itemCount',
+          owner_id: 'ownerId',
+          size_in_bytes: 'sizeInBytes',
+          slug: 'slug',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -213,8 +209,7 @@ module OctridevVercel
           slug
           updated_at
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateEdgeConfigResponse.
@@ -248,7 +243,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalPatchEdgeConfigItemsMetadata
         FIELDS = {
-          items: "items",
+          items: 'items'
         }.freeze
         REQUIRED_FIELDS = %i[
           items
@@ -256,7 +251,7 @@ module OctridevVercel
         DECODERS = {
           items: lambda do |value|
             value&.map { |item| ::OctridevVercel::PatchEdgeConfigItemsRequestItemsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -286,13 +281,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalPatchEdgeConfigItemsResponseMetadata
         FIELDS = {
-          status: "status",
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           status
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for PatchEdgeConfigItemsResponse.
@@ -321,13 +315,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalPatchEdgeConfigSchemaMetadata
         FIELDS = {
-          definition: "definition",
+          definition: 'definition'
         }.freeze
         REQUIRED_FIELDS = %i[
           definition
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
         NULLABLE_FIELDS = %i[
           definition
         ].freeze
@@ -359,13 +352,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteEdgeConfigTokensMetadata
         FIELDS = {
-          tokens: "tokens",
-          ids: "ids",
+          tokens: 'tokens',
+          ids: 'ids'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for DeleteEdgeConfigTokens.
@@ -394,13 +385,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateEdgeConfigTokenMetadata
         FIELDS = {
-          label: "label",
+          label: 'label'
         }.freeze
         REQUIRED_FIELDS = %i[
           label
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateEdgeConfigToken.
@@ -429,15 +419,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateEdgeConfigTokenResponseMetadata
         FIELDS = {
-          id: "id",
-          token: "token",
+          id: 'id',
+          token: 'token'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
           token
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateEdgeConfigTokenResponse.
@@ -466,10 +455,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRestoreEdgeConfigBackupResponseMetadata
         FIELDS = {
-          digest: "digest",
-          previous_digest: "previousDigest",
-          restored_from: "restoredFrom",
-          status: "status",
+          digest: 'digest',
+          previous_digest: 'previousDigest',
+          restored_from: 'restoredFrom',
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           digest
@@ -480,7 +469,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::GlobalConfig::RestoreEdgeConfigBackupResponseStatus.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -510,15 +499,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetEdgeConfigBackupsResponseBackupsItemMetadataMetadata
         FIELDS = {
-          items_bytes: "itemsBytes",
-          items_count: "itemsCount",
-          updated_at: "updatedAt",
-          updated_by: "updatedBy",
+          items_bytes: 'itemsBytes',
+          items_count: 'itemsCount',
+          updated_at: 'updatedAt',
+          updated_by: 'updatedBy'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetEdgeConfigBackupsResponseBackupsItemMetadata.

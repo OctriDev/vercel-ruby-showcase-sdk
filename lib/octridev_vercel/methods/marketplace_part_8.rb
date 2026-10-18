@@ -12,10 +12,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetInstallationsByIntegrationConfigurationIdResourcesByResourX5dfbcfa520Metadata
         FIELDS = {
-          digest: "digest",
-          items: "items",
-          purpose: "purpose",
-          updated_at: "updatedAt",
+          digest: 'digest',
+          items: 'items',
+          purpose: 'purpose',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           digest
@@ -28,7 +28,7 @@ module OctridevVercel
           end,
           purpose: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetInstallationsByIntegrationConfigurationIdResourcesByResourX9f56d2063b.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -58,13 +58,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalReplaceInstallationsByIntegrationConfigurationIdResourcesByReX10d621e138Metadata
         FIELDS = {
-          data: "data",
+          data: 'data'
         }.freeze
         REQUIRED_FIELDS = %i[
           data
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ReplaceInstallationsByIntegrationConfigurationIdResourcesByReX10d621e138.
@@ -93,10 +92,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c03dbMetadata
         FIELDS = {
-          digest: "digest",
-          items: "items",
-          purpose: "purpose",
-          updated_at: "updatedAt",
+          digest: 'digest',
+          items: 'items',
+          purpose: 'purpose',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           digest
@@ -109,7 +108,7 @@ module OctridevVercel
           end,
           purpose: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::ReplaceInstallationsByIntegrationConfigurationIdResourcesByReX65a54077be.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -140,7 +139,7 @@ module OctridevVercel
       module HeadInstallationsByIntegrationConfigurationIdResourcesByResouX7f5507347f
         EXPERIMENTATION = 'experimentation'
         FLAGS = 'flags'
-        VALUES = ['experimentation', 'flags'].freeze
+        VALUES = %w[experimentation flags].freeze
         def self.from_value(value)
           value
         end
@@ -155,8 +154,8 @@ module OctridevVercel
         RESUMED = 'resumed'
         UNINSTALLED = 'uninstalled'
         ERROR = 'error'
-        VALUES = [
-          'ready', 'pending', 'onboarding', 'suspended', 'resumed', 'uninstalled', 'error'
+        VALUES = %w[
+          ready pending onboarding suspended resumed uninstalled error
         ].freeze
         def self.from_value(value)
           value
@@ -182,8 +181,8 @@ module OctridevVercel
         RESUMED = 'resumed'
         SUSPENDED = 'suspended'
         UNINSTALLED = 'uninstalled'
-        VALUES = [
-          'error', 'onboarding', 'pending', 'ready', 'resumed', 'suspended', 'uninstalled'
+        VALUES = %w[
+          error onboarding pending ready resumed suspended uninstalled
         ].freeze
         def self.from_value(value)
           value
@@ -195,7 +194,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -206,7 +205,7 @@ module OctridevVercel
         OWNED = 'owned'
         LINKED = 'linked'
         SANDBOX = 'sandbox'
-        VALUES = ['owned', 'linked', 'sandbox'].freeze
+        VALUES = %w[owned linked sandbox].freeze
         def self.from_value(value)
           value
         end
@@ -216,7 +215,7 @@ module OctridevVercel
       module UpdateResourceBillingPlanType
         PREPAYMENT = 'prepayment'
         SUBSCRIPTION = 'subscription'
-        VALUES = ['prepayment', 'subscription'].freeze
+        VALUES = %w[prepayment subscription].freeze
         def self.from_value(value)
           value
         end
@@ -226,7 +225,7 @@ module OctridevVercel
       module CreateInstallationsByIntegrationConfigurationIdResourcesByResXba61bb22d6
         EXPERIMENT = 'experiment'
         FLAG = 'flag'
-        VALUES = ['experiment', 'flag'].freeze
+        VALUES = %w[experiment flag].freeze
         def self.from_value(value)
           value
         end
@@ -237,7 +236,7 @@ module OctridevVercel
         INFO = 'info'
         WARN = 'warn'
         ERROR = 'error'
-        VALUES = ['info', 'warn', 'error'].freeze
+        VALUES = %w[info warn error].freeze
         def self.from_value(value)
           value
         end
@@ -262,8 +261,8 @@ module OctridevVercel
         RESUMED = 'resumed'
         UNINSTALLED = 'uninstalled'
         ERROR = 'error'
-        VALUES = [
-          'ready', 'pending', 'onboarding', 'suspended', 'resumed', 'uninstalled', 'error'
+        VALUES = %w[
+          ready pending onboarding suspended resumed uninstalled error
         ].freeze
         def self.from_value(value)
           value
@@ -275,7 +274,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -285,7 +284,7 @@ module OctridevVercel
       module ReplaceInstallationsByIntegrationConfigurationIdResourcesByReX65a54077be
         EXPERIMENTATION = 'experimentation'
         FLAGS = 'flags'
-        VALUES = ['experimentation', 'flags'].freeze
+        VALUES = %w[experimentation flags].freeze
         def self.from_value(value)
           value
         end
@@ -329,8 +328,8 @@ module OctridevVercel
         RESUMED = 'resumed'
         SUSPENDED = 'suspended'
         UNINSTALLED = 'uninstalled'
-        VALUES = [
-          'error', 'onboarding', 'pending', 'ready', 'resumed', 'suspended', 'uninstalled'
+        VALUES = %w[
+          error onboarding pending ready resumed suspended uninstalled
         ].freeze
         def self.from_value(value)
           value
@@ -341,7 +340,7 @@ module OctridevVercel
       module GetMemberResponseRole
         ADMIN = 'ADMIN'
         USER = 'USER'
-        VALUES = ['ADMIN', 'USER'].freeze
+        VALUES = %w[ADMIN USER].freeze
         def self.from_value(value)
           value
         end
@@ -361,7 +360,7 @@ module OctridevVercel
       module UpdateInstallationsByIntegrationConfigurationIdResourcesByResX11a2dc8bf4
         EXPERIMENT = 'experiment'
         FLAG = 'flag'
-        VALUES = ['experiment', 'flag'].freeze
+        VALUES = %w[experiment flag].freeze
         def self.from_value(value)
           value
         end
@@ -372,7 +371,7 @@ module OctridevVercel
         TOTAL = 'total'
         INTERVAL = 'interval'
         RATE = 'rate'
-        VALUES = ['total', 'interval', 'rate'].freeze
+        VALUES = %w[total interval rate].freeze
         def self.from_value(value)
           value
         end
@@ -387,8 +386,8 @@ module OctridevVercel
         RESUMED = 'resumed'
         UNINSTALLED = 'uninstalled'
         ERROR = 'error'
-        VALUES = [
-          'ready', 'pending', 'onboarding', 'suspended', 'resumed', 'uninstalled', 'error'
+        VALUES = %w[
+          ready pending onboarding suspended resumed uninstalled error
         ].freeze
         def self.from_value(value)
           value
@@ -400,7 +399,7 @@ module OctridevVercel
         ERROR = 'error'
         INFO = 'info'
         WARN = 'warn'
-        VALUES = ['error', 'info', 'warn'].freeze
+        VALUES = %w[error info warn].freeze
         def self.from_value(value)
           value
         end
@@ -441,7 +440,7 @@ module OctridevVercel
         OWNED = 'owned'
         LINKED = 'linked'
         SANDBOX = 'sandbox'
-        VALUES = ['owned', 'linked', 'sandbox'].freeze
+        VALUES = %w[owned linked sandbox].freeze
         def self.from_value(value)
           value
         end
@@ -451,7 +450,7 @@ module OctridevVercel
       module ImportResourceBillingPlanType
         PREPAYMENT = 'prepayment'
         SUBSCRIPTION = 'subscription'
-        VALUES = ['prepayment', 'subscription'].freeze
+        VALUES = %w[prepayment subscription].freeze
         def self.from_value(value)
           value
         end
@@ -461,7 +460,7 @@ module OctridevVercel
       module UpdateInstallationBillingPlanType
         PREPAYMENT = 'prepayment'
         SUBSCRIPTION = 'subscription'
-        VALUES = ['prepayment', 'subscription'].freeze
+        VALUES = %w[prepayment subscription].freeze
         def self.from_value(value)
           value
         end
@@ -478,9 +477,9 @@ module OctridevVercel
         REFUND_REQUESTED = 'refund_requested'
         REFUNDED = 'refunded'
         SCHEDULED = 'scheduled'
-        VALUES = [
-          'draft', 'invoiced', 'notpaid', 'overdue', 'paid', 'pending', 'refund_requested',
-          'refunded', 'scheduled'
+        VALUES = %w[
+          draft invoiced notpaid overdue paid pending refund_requested
+          refunded scheduled
         ].freeze
         def self.from_value(value)
           value
@@ -511,7 +510,7 @@ module OctridevVercel
         ERROR = 'error'
         INFO = 'info'
         WARN = 'warn'
-        VALUES = ['error', 'info', 'warn'].freeze
+        VALUES = %w[error info warn].freeze
         def self.from_value(value)
           value
         end
@@ -522,7 +521,7 @@ module OctridevVercel
         PAID = 'paid'
         NOTPAID = 'notpaid'
         OVERDUE = 'overdue'
-        VALUES = ['paid', 'notpaid', 'overdue'].freeze
+        VALUES = %w[paid notpaid overdue].freeze
         def self.from_value(value)
           value
         end
@@ -532,7 +531,7 @@ module OctridevVercel
       module GetInstallationsByIntegrationConfigurationIdResourcesByResourX9f56d2063b
         EXPERIMENTATION = 'experimentation'
         FLAGS = 'flags'
-        VALUES = ['experimentation', 'flags'].freeze
+        VALUES = %w[experimentation flags].freeze
         def self.from_value(value)
           value
         end
@@ -553,11 +552,10 @@ module OctridevVercel
         notification: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id)
           ].join,
           config: config,
@@ -565,11 +563,11 @@ module OctridevVercel
             'status' => status,
             'externalId' => external_id,
             'billingPlan' => billing_plan,
-            'notification' => notification,
+            'notification' => notification
           },
           decoder: :empty,
           operation_id: 'update_installation',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

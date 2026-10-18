@@ -12,13 +12,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateKmsIssuerPolicyMetadata
         FIELDS = {
-          environments: "environments",
-          token_claims: "tokenClaims",
+          environments: 'environments',
+          token_claims: 'tokenClaims'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateKmsIssuerPolicy.
@@ -51,7 +49,7 @@ module OctridevVercel
       module UpdateKmsIssuerResponseOrigin
         EXTERNAL = 'external'
         VERCEL = 'vercel'
-        VALUES = ['external', 'vercel'].freeze
+        VALUES = %w[external vercel].freeze
         def self.from_value(value)
           value
         end
@@ -68,8 +66,8 @@ module OctridevVercel
         RS256 = 'RS256'
         RS384 = 'RS384'
         RS512 = 'RS512'
-        VALUES = [
-          'ES256', 'ES384', 'ES512', 'PS256', 'PS384', 'PS512', 'RS256', 'RS384', 'RS512'
+        VALUES = %w[
+          ES256 ES384 ES512 PS256 PS384 PS512 RS256 RS384 RS512
         ].freeze
         def self.from_value(value)
           value
@@ -80,7 +78,7 @@ module OctridevVercel
       module CreateKmsSigningKeyActivation
         AUTOMATIC = 'automatic'
         MANUAL = 'manual'
-        VALUES = ['automatic', 'manual'].freeze
+        VALUES = %w[automatic manual].freeze
         def self.from_value(value)
           value
         end
@@ -97,8 +95,8 @@ module OctridevVercel
         RS256 = 'RS256'
         RS384 = 'RS384'
         RS512 = 'RS512'
-        VALUES = [
-          'ES256', 'ES384', 'ES512', 'PS256', 'PS384', 'PS512', 'RS256', 'RS384', 'RS512'
+        VALUES = %w[
+          ES256 ES384 ES512 PS256 PS384 PS512 RS256 RS384 RS512
         ].freeze
         def self.from_value(value)
           value
@@ -119,7 +117,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end
@@ -129,7 +127,7 @@ module OctridevVercel
       module RevokeKmsSigningKeyResponseOrigin
         EXTERNAL = 'external'
         VERCEL = 'vercel'
-        VALUES = ['external', 'vercel'].freeze
+        VALUES = %w[external vercel].freeze
         def self.from_value(value)
           value
         end
@@ -146,8 +144,8 @@ module OctridevVercel
         RS256 = 'RS256'
         RS384 = 'RS384'
         RS512 = 'RS512'
-        VALUES = [
-          'ES256', 'ES384', 'ES512', 'PS256', 'PS384', 'PS512', 'RS256', 'RS384', 'RS512'
+        VALUES = %w[
+          ES256 ES384 ES512 PS256 PS384 PS512 RS256 RS384 RS512
         ].freeze
         def self.from_value(value)
           value
@@ -159,7 +157,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end
@@ -170,7 +168,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end
@@ -180,7 +178,7 @@ module OctridevVercel
       module DeleteKmsIssuerPolicyParameter
         PROJECT_GRANT = 'project-grant'
         CONNEX_GRANT = 'connex-grant'
-        VALUES = ['project-grant', 'connex-grant'].freeze
+        VALUES = %w[project-grant connex-grant].freeze
         def self.from_value(value)
           value
         end
@@ -197,8 +195,8 @@ module OctridevVercel
         RS256 = 'RS256'
         RS384 = 'RS384'
         RS512 = 'RS512'
-        VALUES = [
-          'ES256', 'ES384', 'ES512', 'PS256', 'PS384', 'PS512', 'RS256', 'RS384', 'RS512'
+        VALUES = %w[
+          ES256 ES384 ES512 PS256 PS384 PS512 RS256 RS384 RS512
         ].freeze
         def self.from_value(value)
           value
@@ -210,7 +208,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end
@@ -220,7 +218,7 @@ module OctridevVercel
       module CreateKmsIssuerResponseOrigin
         EXTERNAL = 'external'
         VERCEL = 'vercel'
-        VALUES = ['external', 'vercel'].freeze
+        VALUES = %w[external vercel].freeze
         def self.from_value(value)
           value
         end
@@ -237,8 +235,8 @@ module OctridevVercel
         RS256 = 'RS256'
         RS384 = 'RS384'
         RS512 = 'RS512'
-        VALUES = [
-          'ES256', 'ES384', 'ES512', 'PS256', 'PS384', 'PS512', 'RS256', 'RS384', 'RS512'
+        VALUES = %w[
+          ES256 ES384 ES512 PS256 PS384 PS512 RS256 RS384 RS512
         ].freeze
         def self.from_value(value)
           value
@@ -249,7 +247,7 @@ module OctridevVercel
       module ListKmsIssuersResponseIssuersItemOrigin
         EXTERNAL = 'external'
         VERCEL = 'vercel'
-        VALUES = ['external', 'vercel'].freeze
+        VALUES = %w[external vercel].freeze
         def self.from_value(value)
           value
         end
@@ -260,7 +258,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end
@@ -279,7 +277,7 @@ module OctridevVercel
       module GetKmsIssuerResponseOrigin
         EXTERNAL = 'external'
         VERCEL = 'vercel'
-        VALUES = ['external', 'vercel'].freeze
+        VALUES = %w[external vercel].freeze
         def self.from_value(value)
           value
         end
@@ -290,7 +288,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end
@@ -307,8 +305,8 @@ module OctridevVercel
         ES256 = 'ES256'
         ES384 = 'ES384'
         ES512 = 'ES512'
-        VALUES = [
-          'RS256', 'RS384', 'RS512', 'PS256', 'PS384', 'PS512', 'ES256', 'ES384', 'ES512'
+        VALUES = %w[
+          RS256 RS384 RS512 PS256 PS384 PS512 ES256 ES384 ES512
         ].freeze
         def self.from_value(value)
           value
@@ -320,7 +318,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end
@@ -338,25 +336,24 @@ module OctridevVercel
         message:,
         request_options: nil
       )
-
-        Validation.validate_length('message', message, max: 44000)
+        Validation.validate_length('message', message, max: 44_000)
         Validation.validate_pattern('message', message, '^[A-Za-z0-9+/]*={0,2}$')
 
         SdkClient.request(
           'POST',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id),
-            "/sign/message"
+            '/sign/message'
           ].join,
           config: config,
           body: {
-            'message' => message,
+            'message' => message
           },
           return_type: ::OctridevVercel::Methods::Kms::SignKmsMessageResponse,
           decoder: :json,
           operation_id: 'sign_kms_message',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -376,24 +373,23 @@ module OctridevVercel
         ttl: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id),
-            "/sign/token"
+            '/sign/token'
           ].join,
           config: config,
           body: {
             'claims' => claims,
             'headers' => headers,
-            'ttl' => ttl,
+            'ttl' => ttl
           },
           return_type: ::OctridevVercel::Methods::Kms::SignKmsTokenResponse,
           decoder: :json,
           operation_id: 'sign_kms_token',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -415,7 +411,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         Validation.if_given(next_) do
@@ -425,18 +420,18 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          "/v1/kms/issuers",
+          '/v1/kms/issuers',
           config: config,
           query: {
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'next' => QueryValue.new(next_, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Kms::ListKmsIssuersResponse,
           decoder: :json,
           operation_id: 'list_kms_issuers',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -472,7 +467,6 @@ module OctridevVercel
         import_key_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(import_key_id) do
           Validation.validate_length('importKeyId', import_key_id, max: 128)
           Validation.validate_pattern('importKeyId', import_key_id, '^[A-Za-z0-9._-]+$')
@@ -480,11 +474,11 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          "/v1/kms/issuers",
+          '/v1/kms/issuers',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
@@ -492,12 +486,12 @@ module OctridevVercel
             'claimsSchema' => claims_schema,
             'policy' => policy,
             'importKey' => import_key,
-            'importKeyId' => import_key_id,
+            'importKeyId' => import_key_id
           },
           return_type: ::OctridevVercel::Methods::Kms::CreateKmsIssuerResponse,
           decoder: :json,
           operation_id: 'create_kms_issuer',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -537,7 +531,6 @@ module OctridevVercel
         import_key_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(revoke_previous_after_hours) do
           Validation.validate_range('revokePreviousAfterHours', revoke_previous_after_hours, min: 0)
         end
@@ -550,26 +543,26 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id),
-            "/keys"
+            '/keys'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'activation' => activation,
             'revokePreviousAfterHours' => revoke_previous_after_hours,
             'revokePreviousAt' => revoke_previous_at,
             'importKey' => import_key,
-            'importKeyId' => import_key_id,
+            'importKeyId' => import_key_id
           },
           return_type: ::OctridevVercel::Methods::Kms::CreateKmsSigningKeyResponse,
           decoder: :json,
           operation_id: 'create_kms_signing_key',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

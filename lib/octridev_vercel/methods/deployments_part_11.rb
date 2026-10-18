@@ -21,31 +21,23 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_deployment) do |
-        config:,
-        id_or_url:,
-        with_git_repo_info: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_deployment) do |config:, id_or_url:, with_git_repo_info: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v13/deployments/",
+            '/v13/deployments/',
             SdkClient.encode_path_segment(id_or_url)
           ].join,
           config: config,
           query: {
             'withGitRepoInfo' => QueryValue.new(with_git_repo_info, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::GetDeploymentResponse,
           decoder: :json,
           operation_id: 'get_deployment',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -135,20 +127,19 @@ module OctridevVercel
         with_latest_commit: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(git_access_token) do
           Validation.validate_length('gitAccessToken', git_access_token, max: 1024)
         end
 
         SdkClient.request(
           'POST',
-          "/v13/deployments",
+          '/v13/deployments',
           config: config,
           query: {
             'forceNew' => QueryValue.new(force_new, style: 'form', explode: true),
             'skipAutoDetectionConfirmation' => QueryValue.new(skip_auto_detection_confirmation, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
@@ -164,12 +155,12 @@ module OctridevVercel
             'project' => project,
             'projectSettings' => project_settings,
             'target' => target,
-            'withLatestCommit' => with_latest_commit,
+            'withLatestCommit' => with_latest_commit
           },
           return_type: ::OctridevVercel::CreateDeploymentResponse,
           decoder: :json,
           operation_id: 'create_deployment',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -188,23 +179,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v12/deployments/",
+            '/v12/deployments/',
             SdkClient.encode_path_segment(id),
-            "/cancel"
+            '/cancel'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Deployments::CancelDeploymentResponse,
           decoder: :json,
           operation_id: 'cancel_deployment',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -229,7 +219,6 @@ module OctridevVercel
         body: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(x_vercel_digest) do
           Validation.validate_length('x-vercel-digest', x_vercel_digest, max: 40)
         end
@@ -238,22 +227,22 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          "/v2/files",
+          '/v2/files',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: body,
           content_type: 'application/octet-stream',
           decoder: :json,
           operation_id: 'upload_file',
           extra_headers: SdkClient.serialize_headers({
-            'x-vercel-digest' => SdkClient.header_value(x_vercel_digest),
-            'x-now-digest' => SdkClient.header_value(x_now_digest),
-            'x-now-size' => SdkClient.header_value(x_now_size),
-          }),
-          request_options: request_options,
+                                                       'x-vercel-digest' => SdkClient.header_value(x_vercel_digest),
+                                                       'x-now-digest' => SdkClient.header_value(x_now_digest),
+                                                       'x-now-size' => SdkClient.header_value(x_now_size)
+                                                     }),
+          request_options: request_options
         ).data
       end
 
@@ -272,23 +261,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
           [
-            "/v6/deployments/",
+            '/v6/deployments/',
             SdkClient.encode_path_segment(id),
-            "/files"
+            '/files'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: [::OctridevVercel::FileTree],
           decoder: :json,
           operation_id: 'list_deployment_files',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -300,33 +288,24 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_deployment_file_contents) do |
-        config:,
-        id:,
-        file_id:,
-        path: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_deployment_file_contents) do |config:, id:, file_id:, path: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v8/deployments/",
+            '/v8/deployments/',
             SdkClient.encode_path_segment(id),
-            "/files/",
+            '/files/',
             SdkClient.encode_path_segment(file_id)
           ].join,
           config: config,
           query: {
             'path' => QueryValue.new(path, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'get_deployment_file_contents',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -359,32 +338,12 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_deployments) do |
-        config:,
-        app: NOT_GIVEN,
-        from: NOT_GIVEN,
-        limit: NOT_GIVEN,
-        project_id: NOT_GIVEN,
-        project_ids: NOT_GIVEN,
-        target: NOT_GIVEN,
-        to: NOT_GIVEN,
-        users: NOT_GIVEN,
-        since: NOT_GIVEN,
-        until_: NOT_GIVEN,
-        state: NOT_GIVEN,
-        rollback_candidate: NOT_GIVEN,
-        branch: NOT_GIVEN,
-        sha: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_deployments) do |config:, app: NOT_GIVEN, from: NOT_GIVEN, limit: NOT_GIVEN, project_id: NOT_GIVEN, project_ids: NOT_GIVEN, target: NOT_GIVEN, to: NOT_GIVEN, users: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, state: NOT_GIVEN, rollback_candidate: NOT_GIVEN, branch: NOT_GIVEN, sha: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         Validation.if_given(project_ids) { Validation.validate_items('projectIds', project_ids, min: 1, max: 20) }
 
         SdkClient.request(
           'GET',
-          "/v7/deployments",
+          '/v7/deployments',
           config: config,
           query: {
             'app' => QueryValue.new(app, style: 'form', explode: true),
@@ -402,12 +361,12 @@ module OctridevVercel
             'branch' => QueryValue.new(branch, style: 'form', explode: true),
             'sha' => QueryValue.new(sha, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Deployments::GetDeploymentsResponse,
           decoder: :json,
           operation_id: 'get_deployments',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -429,23 +388,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v13/deployments/",
+            '/v13/deployments/',
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'url' => QueryValue.new(url, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Deployments::DeleteDeploymentResponse,
           decoder: :json,
           operation_id: 'delete_deployment',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

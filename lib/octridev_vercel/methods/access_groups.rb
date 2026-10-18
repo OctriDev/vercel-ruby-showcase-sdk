@@ -12,17 +12,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalReadAccessGroupResponseMetadata
         FIELDS = {
-          access_group_id: "accessGroupId",
-          created_at: "createdAt",
-          entitlements: "entitlements",
-          is_dsync_managed: "isDsyncManaged",
-          members_count: "membersCount",
-          name: "name",
-          projects_count: "projectsCount",
-          team_id: "teamId",
-          team_permissions: "teamPermissions",
-          team_roles: "teamRoles",
-          updated_at: "updatedAt",
+          access_group_id: 'accessGroupId',
+          created_at: 'createdAt',
+          entitlements: 'entitlements',
+          is_dsync_managed: 'isDsyncManaged',
+          members_count: 'membersCount',
+          name: 'name',
+          projects_count: 'projectsCount',
+          team_id: 'teamId',
+          team_permissions: 'teamPermissions',
+          team_roles: 'teamRoles',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           access_group_id
@@ -43,7 +43,7 @@ module OctridevVercel
           end,
           team_permissions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::AccessGroups::ReadAccessGroupResponseTeamPermissionsItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -89,8 +89,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateAccessGroupProjectsItemMetadata
         FIELDS = {
-          project_id: "projectId",
-          role: "role",
+          project_id: 'projectId',
+          role: 'role'
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
@@ -99,7 +99,7 @@ module OctridevVercel
         DECODERS = {
           role: lambda do |value|
             ::OctridevVercel::Methods::AccessGroups::UpdateAccessGroupProjectsItemRole.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           role
@@ -135,17 +135,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateAccessGroupMetadata
         FIELDS = {
-          name: "name",
-          projects: "projects",
-          members_to_add: "membersToAdd",
-          members_to_remove: "membersToRemove",
+          name: 'name',
+          projects: 'projects',
+          members_to_add: 'membersToAdd',
+          members_to_remove: 'membersToRemove'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           projects: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::AccessGroups::UpdateAccessGroupProjectsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -181,16 +180,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateAccessGroupResponseMetadata
         FIELDS = {
-          access_group_id: "accessGroupId",
-          created_at: "createdAt",
-          entitlements: "entitlements",
-          members_count: "membersCount",
-          name: "name",
-          projects_count: "projectsCount",
-          team_id: "teamId",
-          team_permissions: "teamPermissions",
-          team_roles: "teamRoles",
-          updated_at: "updatedAt",
+          access_group_id: 'accessGroupId',
+          created_at: 'createdAt',
+          entitlements: 'entitlements',
+          members_count: 'membersCount',
+          name: 'name',
+          projects_count: 'projectsCount',
+          team_id: 'teamId',
+          team_permissions: 'teamPermissions',
+          team_roles: 'teamRoles',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           access_group_id
@@ -205,7 +204,7 @@ module OctridevVercel
         DECODERS = {
           entitlements: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::AccessGroups::UpdateAccessGroupResponseEntitlementsItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -253,13 +252,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAccessGroupMembersResponseMembersItemMetadata
         FIELDS = {
-          avatar: "avatar",
-          created_at: "createdAt",
-          email: "email",
-          name: "name",
-          team_role: "teamRole",
-          uid: "uid",
-          username: "username",
+          avatar: 'avatar',
+          created_at: 'createdAt',
+          email: 'email',
+          name: 'name',
+          team_role: 'teamRole',
+          uid: 'uid',
+          username: 'username'
         }.freeze
         REQUIRED_FIELDS = %i[
           email
@@ -270,7 +269,7 @@ module OctridevVercel
         DECODERS = {
           team_role: lambda do |value|
             ::OctridevVercel::Methods::AccessGroups::ListAccessGroupMembersResponseMembersItemTeamRole.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -300,15 +299,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAccessGroupMembersResponsePaginationMetadata
         FIELDS = {
-          count: "count",
-          next_: "next",
+          count: 'count',
+          next_: 'next'
         }.freeze
         REQUIRED_FIELDS = %i[
           count
           next_
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
         NULLABLE_FIELDS = %i[
           next_
         ].freeze
@@ -340,8 +338,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAccessGroupMembersResponseMetadata
         FIELDS = {
-          members: "members",
-          pagination: "pagination",
+          members: 'members',
+          pagination: 'pagination'
         }.freeze
         REQUIRED_FIELDS = %i[
           members
@@ -353,7 +351,7 @@ module OctridevVercel
           end,
           pagination: lambda do |value|
             ::OctridevVercel::Methods::AccessGroups::ListAccessGroupMembersResponsePagination.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -383,8 +381,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateAccessGroupProjectsItemMetadata
         FIELDS = {
-          project_id: "projectId",
-          role: "role",
+          project_id: 'projectId',
+          role: 'role'
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
@@ -393,7 +391,7 @@ module OctridevVercel
         DECODERS = {
           role: lambda do |value|
             ::OctridevVercel::Methods::AccessGroups::CreateAccessGroupProjectsItemRole.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           role
@@ -429,9 +427,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateAccessGroupMetadata
         FIELDS = {
-          name: "name",
-          projects: "projects",
-          members_to_add: "membersToAdd",
+          name: 'name',
+          projects: 'projects',
+          members_to_add: 'membersToAdd'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -439,7 +437,7 @@ module OctridevVercel
         DECODERS = {
           projects: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::AccessGroups::CreateAccessGroupProjectsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -473,16 +471,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateAccessGroupResponseMetadata
         FIELDS = {
-          access_group_id: "accessGroupId",
-          created_at: "createdAt",
-          entitlements: "entitlements",
-          members_count: "membersCount",
-          name: "name",
-          projects_count: "projectsCount",
-          team_id: "teamId",
-          team_permissions: "teamPermissions",
-          team_roles: "teamRoles",
-          updated_at: "updatedAt",
+          access_group_id: 'accessGroupId',
+          created_at: 'createdAt',
+          entitlements: 'entitlements',
+          members_count: 'membersCount',
+          name: 'name',
+          projects_count: 'projectsCount',
+          team_id: 'teamId',
+          team_permissions: 'teamPermissions',
+          team_roles: 'teamRoles',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           access_group_id
@@ -497,7 +495,7 @@ module OctridevVercel
         DECODERS = {
           entitlements: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::AccessGroups::CreateAccessGroupResponseEntitlementsItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -541,15 +539,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAccessGroupProjectsResponsePaginationMetadata
         FIELDS = {
-          count: "count",
-          next_: "next",
+          count: 'count',
+          next_: 'next'
         }.freeze
         REQUIRED_FIELDS = %i[
           count
           next_
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
         NULLABLE_FIELDS = %i[
           next_
         ].freeze

@@ -12,16 +12,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalStageRoutesRoutesItemRouteHasItemMetadata
         FIELDS = {
-          type: "type",
-          key: "key",
-          value: "value",
+          type: 'type',
+          key: 'key',
+          value: 'value'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRouteHasItemType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -51,16 +50,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalStageRoutesRoutesItemRouteMissingItemMetadata
         FIELDS = {
-          type: "type",
-          key: "key",
-          value: "value",
+          type: 'type',
+          key: 'key',
+          value: 'value'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRouteMissingItemType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -90,21 +88,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalStageRoutesRoutesItemRouteTransformsItemMetadata
         FIELDS = {
-          type: "type",
-          op: "op",
-          target: "target",
-          args: "args",
-          env: "env",
+          type: 'type',
+          op: 'op',
+          target: 'target',
+          args: 'args',
+          env: 'env'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRouteTransformsItemType.from_value(value)
           end,
           op: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRouteTransformsItemOp.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -134,15 +131,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalStageRoutesRoutesItemRouteMetadata
         FIELDS = {
-          src: "src",
-          dest: "dest",
-          headers: "headers",
-          case_sensitive: "caseSensitive",
-          status: "status",
-          has: "has",
-          missing: "missing",
-          transforms: "transforms",
-          respect_origin_cache_control: "respectOriginCacheControl",
+          src: 'src',
+          dest: 'dest',
+          headers: 'headers',
+          case_sensitive: 'caseSensitive',
+          status: 'status',
+          has: 'has',
+          missing: 'missing',
+          transforms: 'transforms',
+          respect_origin_cache_control: 'respectOriginCacheControl'
         }.freeze
         REQUIRED_FIELDS = %i[
           src
@@ -156,7 +153,7 @@ module OctridevVercel
           end,
           transforms: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRouteTransformsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -187,11 +184,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalStageRoutesRoutesItemMetadata
         FIELDS = {
-          id: "id",
-          name: "name",
-          description: "description",
-          enabled: "enabled",
-          route: "route",
+          id: 'id',
+          name: 'name',
+          description: 'description',
+          enabled: 'enabled',
+          route: 'route'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -201,7 +198,7 @@ module OctridevVercel
         DECODERS = {
           route: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRoute.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -231,15 +228,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalStageRoutesMetadata
         FIELDS = {
-          overwrite: "overwrite",
-          routes: "routes",
+          overwrite: 'overwrite',
+          routes: 'routes'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           routes: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -269,14 +265,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalStageRoutesResponseVersionMetadata
         FIELDS = {
-          alias_: "alias",
-          created_by: "createdBy",
-          id: "id",
-          is_live: "isLive",
-          is_staging: "isStaging",
-          last_modified: "lastModified",
-          rule_count: "ruleCount",
-          s3_key: "s3Key",
+          alias_: 'alias',
+          created_by: 'createdBy',
+          id: 'id',
+          is_live: 'isLive',
+          is_staging: 'isStaging',
+          last_modified: 'lastModified',
+          rule_count: 'ruleCount',
+          s3_key: 's3Key'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_by
@@ -290,7 +286,7 @@ module OctridevVercel
           end,
           is_staging: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::StageRoutesResponseVersionIsStaging.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -336,7 +332,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalStageRoutesResponseMetadata
         FIELDS = {
-          version: "version",
+          version: 'version'
         }.freeze
         REQUIRED_FIELDS = %i[
           version
@@ -344,7 +340,7 @@ module OctridevVercel
         DECODERS = {
           version: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::StageRoutesResponseVersion.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -375,16 +371,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRouteRouteRouteHasItemMetadata
         FIELDS = {
-          type: "type",
-          key: "key",
-          value: "value",
+          type: 'type',
+          key: 'key',
+          value: 'value'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRouteHasItemType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -414,16 +409,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRouteRouteRouteMissingItemMetadata
         FIELDS = {
-          type: "type",
-          key: "key",
-          value: "value",
+          type: 'type',
+          key: 'key',
+          value: 'value'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRouteMissingItemType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -453,21 +447,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRouteRouteRouteTransformsItemMetadata
         FIELDS = {
-          type: "type",
-          op: "op",
-          target: "target",
-          args: "args",
-          env: "env",
+          type: 'type',
+          op: 'op',
+          target: 'target',
+          args: 'args',
+          env: 'env'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRouteTransformsItemType.from_value(value)
           end,
           op: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRouteTransformsItemOp.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -497,15 +490,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRouteRouteRouteMetadata
         FIELDS = {
-          src: "src",
-          dest: "dest",
-          headers: "headers",
-          case_sensitive: "caseSensitive",
-          status: "status",
-          has: "has",
-          missing: "missing",
-          transforms: "transforms",
-          respect_origin_cache_control: "respectOriginCacheControl",
+          src: 'src',
+          dest: 'dest',
+          headers: 'headers',
+          case_sensitive: 'caseSensitive',
+          status: 'status',
+          has: 'has',
+          missing: 'missing',
+          transforms: 'transforms',
+          respect_origin_cache_control: 'respectOriginCacheControl'
         }.freeze
         REQUIRED_FIELDS = %i[
           src
@@ -519,7 +512,7 @@ module OctridevVercel
           end,
           transforms: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRouteTransformsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 

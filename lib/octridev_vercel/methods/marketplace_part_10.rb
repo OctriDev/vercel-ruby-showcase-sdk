@@ -25,26 +25,25 @@ module OctridevVercel
         partial: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PUT',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/products/",
+            '/products/',
             SdkClient.encode_path_segment(integration_product_id_or_slug),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id),
-            "/secrets"
+            '/secrets'
           ].join,
           config: config,
           body: {
             'secrets' => secrets,
-            'partial' => partial,
+            'partial' => partial
           },
           decoder: :empty,
           operation_id: 'update_resource_secrets',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -62,24 +61,23 @@ module OctridevVercel
         partial: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PUT',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id),
-            "/secrets"
+            '/secrets'
           ].join,
           config: config,
           body: {
             'secrets' => secrets,
-            'partial' => partial,
+            'partial' => partial
           },
           decoder: :empty,
           operation_id: 'update_resource_secrets_by_id',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -93,25 +91,24 @@ module OctridevVercel
         items:,
         request_options: nil
       )
-
         Validation.validate_items('items', items, max: 50)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id),
-            "/experimentation/items"
+            '/experimentation/items'
           ].join,
           config: config,
           body: {
-            'items' => items,
+            'items' => items
           },
           decoder: :empty,
           operation_id: 'create_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_items',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -133,7 +130,6 @@ module OctridevVercel
         updated_at: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('slug', slug, max: 1024)
 
         Validation.validate_length('origin', origin, max: 2048)
@@ -145,11 +141,11 @@ module OctridevVercel
         SdkClient.request(
           'PATCH',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id),
-            "/experimentation/items/",
+            '/experimentation/items/',
             SdkClient.encode_path_segment(item_id)
           ].join,
           config: config,
@@ -161,11 +157,11 @@ module OctridevVercel
             'description' => description,
             'isArchived' => is_archived,
             'createdAt' => created_at,
-            'updatedAt' => updated_at,
+            'updatedAt' => updated_at
           },
           decoder: :empty,
           operation_id: 'update_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_items_by_item_id',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -179,21 +175,20 @@ module OctridevVercel
         item_id:,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id),
-            "/experimentation/items/",
+            '/experimentation/items/',
             SdkClient.encode_path_segment(item_id)
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'delete_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_items_by_item_id',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -206,47 +201,40 @@ module OctridevVercel
         resource_id:,
         request_options: nil
       )
-
         SdkClient.request(
           'HEAD',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id),
-            "/experimentation/global-config"
+            '/experimentation/global-config'
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'head_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_global_config',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
       # Retrieves the contents of a user-provided Global Config for an integration resource. Use this endpoint when the user has enabled Global Config syncing; the response includes the configuration items, digest, and update time.
       #
       # When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
-      singleton_class.define_method(:get_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_global_config) do |
-        config:,
-        integration_configuration_id:,
-        resource_id:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_global_config) do |config:, integration_configuration_id:, resource_id:, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id),
-            "/experimentation/global-config"
+            '/experimentation/global-config'
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Marketplace::GetInstallationsByIntegrationConfigurationIdResourcesByResourX5dfbcfa520,
           decoder: :json,
           operation_id: 'get_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_global_config',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -260,24 +248,23 @@ module OctridevVercel
         data:,
         request_options: nil
       )
-
         SdkClient.request(
           'PUT',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id),
-            "/experimentation/global-config"
+            '/experimentation/global-config'
           ].join,
           config: config,
           body: {
-            'data' => data,
+            'data' => data
           },
           return_type: ::OctridevVercel::Methods::Marketplace::ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c03db,
           decoder: :json,
           operation_id: 'replace_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_global_config',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

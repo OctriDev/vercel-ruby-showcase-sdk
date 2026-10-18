@@ -79,7 +79,6 @@ module OctridevVercel
         tags: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(ports) { Validation.validate_items('ports', ports, max: 15) }
 
         Validation.if_given(image) { Validation.validate_length('image', image, max: 255) }
@@ -99,11 +98,11 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          "/v3/sandboxes",
+          '/v3/sandboxes',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'networkPolicy' => network_policy,
@@ -123,12 +122,12 @@ module OctridevVercel
             'persistent' => persistent,
             'snapshotExpiration' => snapshot_expiration,
             'keepLastSnapshots' => keep_last_snapshots,
-            'tags' => tags,
+            'tags' => tags
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::CreateSandboxesV3Response,
           decoder: :json,
           operation_id: 'create_sandboxes_v3',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -152,26 +151,25 @@ module OctridevVercel
         expiration: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v3/sandboxes/sessions/",
+            '/v3/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/snapshot"
+            '/snapshot'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'expiration' => expiration,
+            'expiration' => expiration
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::CreateSandboxesSessionsBySessionIdSnapshotV3Response,
           decoder: :json,
           operation_id: 'create_sandboxes_sessions_by_session_id_snapshot_v3',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -246,7 +244,6 @@ module OctridevVercel
         tags: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 128)
         Validation.validate_pattern('name', name, '^[a-zA-Z0-9_-]+$')
 
@@ -272,15 +269,15 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            "/v3/sandboxes/",
+            '/v3/sandboxes/',
             SdkClient.encode_path_segment(name),
-            "/fork"
+            '/fork'
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'networkPolicy' => network_policy,
@@ -297,12 +294,12 @@ module OctridevVercel
             'persistent' => persistent,
             'snapshotExpiration' => snapshot_expiration,
             'keepLastSnapshots' => keep_last_snapshots,
-            'tags' => tags,
+            'tags' => tags
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::CreateSandboxesByNameForkV3Response,
           decoder: :json,
           operation_id: 'create_sandboxes_by_name_fork_v3',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -379,7 +376,6 @@ module OctridevVercel
         tags: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(ports) { Validation.validate_items('ports', ports, max: 15) }
 
         Validation.if_given(image) { Validation.validate_length('image', image, max: 255) }
@@ -399,11 +395,11 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          "/v4/sandboxes",
+          '/v4/sandboxes',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'networkPolicy' => network_policy,
@@ -423,12 +419,12 @@ module OctridevVercel
             'persistent' => persistent,
             'snapshotExpiration' => snapshot_expiration,
             'keepLastSnapshots' => keep_last_snapshots,
-            'tags' => tags,
+            'tags' => tags
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::CreateSandboxesV4Response,
           decoder: :json,
           operation_id: 'create_sandboxes_v4',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

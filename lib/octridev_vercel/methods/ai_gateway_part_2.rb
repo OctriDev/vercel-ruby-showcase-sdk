@@ -27,11 +27,10 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/ai-gateway/virtual-model-configs/",
+            '/ai-gateway/virtual-model-configs/',
             SdkClient.encode_path_segment(vmc_slug)
           ].join,
           config: config,
@@ -41,11 +40,11 @@ module OctridevVercel
             'actingIp' => QueryValue.new(acting_ip, style: 'form', explode: true),
             'actingUserAgent' => QueryValue.new(acting_user_agent, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'delete_ai_gateway_virtual_model_config_by_slug',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -67,20 +66,19 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
-          "/v1/ai-gateway/routers",
+          '/v1/ai-gateway/routers',
           config: config,
           query: {
             'ownerId' => QueryValue.new(owner_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::AiGatewayRouterList,
           decoder: :json,
           operation_id: 'list_ai_gateway_routers',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -97,19 +95,18 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
-          "/ai-gateway/rules",
+          '/ai-gateway/rules',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::AiGatewayRule,
           decoder: :json,
           operation_id: 'create_ai_gateway_rule',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -132,28 +129,27 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1) }
 
         SdkClient.request(
           'GET',
-          "/ai-gateway/rules",
+          '/ai-gateway/rules',
           config: config,
           query: {
             'includeDisabled' => QueryValue.new(include_disabled, style: 'form', explode: true),
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::AiGatewayRuleList,
           decoder: :json,
           operation_id: 'list_ai_gateway_rules',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
-    ListAiGatewayRulesPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
+      ListAiGatewayRulesPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
 
       # Lists the authenticated team's AI Gateway routing rules, ordered from oldest to newest. Use `includeDisabled` to control whether disabled rules are included, and use `limit` and `cursor` to retrieve a page of results. Paged responses include `nextCursor` for the next request; it is null on the last page.
       #
@@ -187,9 +183,11 @@ module OctridevVercel
             )
             items = page.rules || []
             break if items.empty?
+
             items.each { |item| y << item }
             next_cursor = page.next_cursor
             break if next_cursor.nil?
+
             cursor = next_cursor
           end
         end
@@ -217,10 +215,12 @@ module OctridevVercel
             )
             items = page.rules || []
             break if items.empty?
+
             next_cursor = page.next_cursor
             has_more = !next_cursor.nil?
             y << ListAiGatewayRulesPage.new(data: page, items: items, has_more: has_more)
             break unless has_more
+
             cursor = next_cursor
           end
         end
@@ -239,19 +239,18 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
-          "/ai-gateway/rules",
+          '/ai-gateway/rules',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::AiGatewayRule,
           decoder: :json,
           operation_id: 'update_ai_gateway_rule',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -269,19 +268,18 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
-          "/ai-gateway/rules",
+          '/ai-gateway/rules',
           config: config,
           query: {
             'ruleId' => QueryValue.new(rule_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'delete_ai_gateway_rule',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -310,12 +308,11 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1) }
 
         SdkClient.request(
           'GET',
-          "/ai-gateway/budgets/list",
+          '/ai-gateway/budgets/list',
           config: config,
           query: {
             'scopeType' => QueryValue.new(scope_type, style: 'form', explode: true),
@@ -323,16 +320,16 @@ module OctridevVercel
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::AiGatewayBudgetList,
           decoder: :json,
           operation_id: 'list_ai_gateway_budgets',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
-    ListAiGatewayBudgetsPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
+      ListAiGatewayBudgetsPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
 
       # Lists the authenticated team's AI Gateway budgets as a flat list, with optional filtering by scope. Use `scopeType` to filter by team, project, user, or API key, and use `limit` and `cursor` to paginate results. Paged responses include `nextCursor` and `defaultCoveredCounts`.
       #
@@ -373,9 +370,11 @@ module OctridevVercel
             )
             items = page.budgets || []
             break if items.empty?
+
             items.each { |item| y << item }
             next_cursor = page.next_cursor
             break if next_cursor.nil?
+
             cursor = next_cursor
           end
         end
@@ -405,10 +404,12 @@ module OctridevVercel
             )
             items = page.budgets || []
             break if items.empty?
+
             next_cursor = page.next_cursor
             has_more = !next_cursor.nil?
             y << ListAiGatewayBudgetsPage.new(data: page, items: items, has_more: has_more)
             break unless has_more
+
             cursor = next_cursor
           end
         end
@@ -439,16 +440,15 @@ module OctridevVercel
         alert_thresholds: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_range('limitAmount', limit_amount, min: 1)
 
         SdkClient.request(
           'PUT',
-          "/ai-gateway/budgets",
+          '/ai-gateway/budgets',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'scopeType' => scope_type,
@@ -457,12 +457,12 @@ module OctridevVercel
             'userId' => user_id,
             'refreshPeriod' => refresh_period,
             'includeByokInQuota' => include_byok_in_quota,
-            'alertThresholds' => alert_thresholds,
+            'alertThresholds' => alert_thresholds
           },
           return_type: ::OctridevVercel::AiGatewayBudget,
           decoder: :json,
           operation_id: 'upsert_ai_gateway_budget',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -486,22 +486,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
-          "/ai-gateway/budgets",
+          '/ai-gateway/budgets',
           config: config,
           query: {
             'scopeType' => QueryValue.new(scope_type, style: 'form', explode: true),
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'userId' => QueryValue.new(user_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::AiGatewayBudget,
           decoder: :json,
           operation_id: 'archive_ai_gateway_budget',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -518,19 +517,18 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
-          "/ai-gateway/budgets/defaults/list",
+          '/ai-gateway/budgets/defaults/list',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::AiGatewayBudgetDefaultList,
           decoder: :json,
           operation_id: 'list_ai_gateway_budget_defaults',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -552,27 +550,26 @@ module OctridevVercel
         alert_thresholds: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_range('limitAmount', limit_amount, min: 1)
 
         SdkClient.request(
           'PUT',
-          "/ai-gateway/budgets/defaults",
+          '/ai-gateway/budgets/defaults',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'scopeType' => scope_type,
             'limitAmount' => limit_amount,
             'refreshPeriod' => refresh_period,
-            'alertThresholds' => alert_thresholds,
+            'alertThresholds' => alert_thresholds
           },
           return_type: ::OctridevVercel::AiGatewayBudgetDefault,
           decoder: :json,
           operation_id: 'upsert_ai_gateway_budget_default',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

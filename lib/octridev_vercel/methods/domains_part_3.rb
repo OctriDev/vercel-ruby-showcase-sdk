@@ -12,23 +12,23 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateOrTransferDomainResponseDomainMetadata
         FIELDS = {
-          bought_at: "boughtAt",
-          created_at: "createdAt",
-          creator: "creator",
-          custom_nameservers: "customNameservers",
-          ech_mode: "echMode",
-          expires_at: "expiresAt",
-          id: "id",
-          intended_nameservers: "intendedNameservers",
-          name: "name",
-          nameservers: "nameservers",
-          renew: "renew",
-          service_type: "serviceType",
-          team_id: "teamId",
-          transferred_at: "transferredAt",
-          transfer_started_at: "transferStartedAt",
-          user_id: "userId",
-          verified: "verified",
+          bought_at: 'boughtAt',
+          created_at: 'createdAt',
+          creator: 'creator',
+          custom_nameservers: 'customNameservers',
+          ech_mode: 'echMode',
+          expires_at: 'expiresAt',
+          id: 'id',
+          intended_nameservers: 'intendedNameservers',
+          name: 'name',
+          nameservers: 'nameservers',
+          renew: 'renew',
+          service_type: 'serviceType',
+          team_id: 'teamId',
+          transferred_at: 'transferredAt',
+          transfer_started_at: 'transferStartedAt',
+          user_id: 'userId',
+          verified: 'verified'
         }.freeze
         REQUIRED_FIELDS = %i[
           bought_at
@@ -60,7 +60,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Domains::CreateOrTransferDomainResponseDomainVerified.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           bought_at
@@ -125,7 +125,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateOrTransferDomainResponseMetadata
         FIELDS = {
-          domain: "domain",
+          domain: 'domain'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -133,7 +133,7 @@ module OctridevVercel
         DECODERS = {
           domain: lambda do |value|
             ::OctridevVercel::Methods::Domains::CreateOrTransferDomainResponseDomain.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -163,13 +163,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteDomainResponseMetadata
         FIELDS = {
-          uid: "uid",
+          uid: 'uid'
         }.freeze
         REQUIRED_FIELDS = %i[
           uid
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for DeleteDomainResponse.
@@ -229,7 +228,7 @@ module OctridevVercel
       module GetDomainConfigParameter
         TRUE = 'true'
         FALSE = 'false'
-        VALUES = ['true', 'false'].freeze
+        VALUES = %w[true false].freeze
         def self.from_value(value)
           value
         end
@@ -247,7 +246,7 @@ module OctridevVercel
         NS = 'NS'
         SRV = 'SRV'
         TXT = 'TXT'
-        VALUES = ['A', 'AAAA', 'ALIAS', 'CAA', 'CNAME', 'HTTPS', 'MX', 'NS', 'SRV', 'TXT'].freeze
+        VALUES = %w[A AAAA ALIAS CAA CNAME HTTPS MX NS SRV TXT].freeze
         def self.from_value(value)
           value
         end
@@ -258,7 +257,7 @@ module OctridevVercel
         AUTO = 'auto'
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = ['auto', 'disabled', 'enabled'].freeze
+        VALUES = %w[auto disabled enabled].freeze
         def self.from_value(value)
           value
         end
@@ -278,7 +277,7 @@ module OctridevVercel
       module GetDomainConfigResponseAcceptedChallengesItem
         DNS_01 = 'dns-01'
         HTTP_01 = 'http-01'
-        VALUES = ['dns-01', 'http-01'].freeze
+        VALUES = %w[dns-01 http-01].freeze
         def self.from_value(value)
           value
         end
@@ -289,7 +288,7 @@ module OctridevVercel
         AUTO = 'auto'
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = ['auto', 'disabled', 'enabled'].freeze
+        VALUES = %w[auto disabled enabled].freeze
         def self.from_value(value)
           value
         end
@@ -301,7 +300,7 @@ module OctridevVercel
         CNAME = 'CNAME'
         DNS_01 = 'dns-01'
         HTTP = 'http'
-        VALUES = ['A', 'CNAME', 'dns-01', 'http'].freeze
+        VALUES = %w[A CNAME dns-01 http].freeze
         def self.from_value(value)
           value
         end
@@ -322,7 +321,7 @@ module OctridevVercel
         AUTO = 'auto'
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = ['auto', 'disabled', 'enabled'].freeze
+        VALUES = %w[auto disabled enabled].freeze
         def self.from_value(value)
           value
         end
@@ -411,7 +410,7 @@ module OctridevVercel
         NS = 'NS'
         SRV = 'SRV'
         TXT = 'TXT'
-        VALUES = ['A', 'AAAA', 'ALIAS', 'CAA', 'CNAME', 'HTTPS', 'MX', 'NS', 'SRV', 'TXT'].freeze
+        VALUES = %w[A AAAA ALIAS CAA CNAME HTTPS MX NS SRV TXT].freeze
         def self.from_value(value)
           value
         end
@@ -432,7 +431,7 @@ module OctridevVercel
         AUTO = 'auto'
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = ['auto', 'disabled', 'enabled'].freeze
+        VALUES = %w[auto disabled enabled].freeze
         def self.from_value(value)
           value
         end
@@ -487,7 +486,7 @@ module OctridevVercel
       module UpdateDomainsVariant0EchMode
         AUTO = 'auto'
         DISABLED = 'disabled'
-        VALUES = ['auto', 'disabled'].freeze
+        VALUES = %w[auto disabled].freeze
         def self.from_value(value)
           value
         end
@@ -531,42 +530,36 @@ module OctridevVercel
         domain:,
         request_options: nil
       )
-
         SdkClient.request(
           'PUT',
           [
-            "/domains/",
+            '/domains/',
             SdkClient.encode_path_segment(domain),
-            "/records"
+            '/records'
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Domains::ReplaceDomainsByDomainRecordsResponse,
           decoder: :json,
           operation_id: 'replace_domains_by_domain_records',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
       # Retrieves a DNS record by its unique identifier. Use this operation to inspect the record's domain, name, type, value, and other available properties. The response contains the requested record.
       #
       # @param record_id [String] The unique ID of the DNS record
-      singleton_class.define_method(:get_domains_records_by_record_id) do |
-        config:,
-        record_id:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_domains_records_by_record_id) do |config:, record_id:, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/domains/records/",
+            '/domains/records/',
             SdkClient.encode_path_segment(record_id)
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Domains::GetDomainsRecordsByRecordIdResponse,
           decoder: :json,
           operation_id: 'get_domains_records_by_record_id',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

@@ -37,16 +37,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCountEventsResponseQueryMetadata
         FIELDS = {
-          filter: "filter",
-          since: "since",
-          until_: "until",
+          filter: 'filter',
+          since: 'since',
+          until_: 'until'
         }.freeze
         REQUIRED_FIELDS = %i[
           since
           until_
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CountEventsResponseQuery.
@@ -75,9 +74,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCountEventsResponseMetadata
         FIELDS = {
-          data: "data",
-          query: "query",
-          version: "version",
+          data: 'data',
+          query: 'query',
+          version: 'version'
         }.freeze
         REQUIRED_FIELDS = %i[
           data
@@ -90,7 +89,7 @@ module OctridevVercel
           end,
           query: lambda do |value|
             ::OctridevVercel::Methods::WebAnalytics::CountEventsResponseQuery.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -142,10 +141,10 @@ module OctridevVercel
         EVENT_NAME = 'eventName'
         FLAGS = 'flags'
         EVENT_DATA = 'eventData'
-        VALUES = [
-          'hour', 'day', 'week', 'month', 'year', 'country', 'deviceType', 'environment',
-          'requestPath', 'referrerHostname', 'osName', 'browserName', 'route', 'utmSource',
-          'utmMedium', 'utmCampaign', 'utmContent', 'utmTerm', 'eventName', 'flags', 'eventData'
+        VALUES = %w[
+          hour day week month year country deviceType environment
+          requestPath referrerHostname osName browserName route utmSource
+          utmMedium utmCampaign utmContent utmTerm eventName flags eventData
         ].freeze
         def self.from_value(value)
           value
@@ -173,10 +172,10 @@ module OctridevVercel
         UTM_CONTENT = 'utmContent'
         UTM_TERM = 'utmTerm'
         FLAGS = 'flags'
-        VALUES = [
-          'hour', 'day', 'week', 'month', 'year', 'country', 'deviceType', 'environment',
-          'requestPath', 'referrerHostname', 'osName', 'browserName', 'route', 'utmSource',
-          'utmMedium', 'utmCampaign', 'utmContent', 'utmTerm', 'flags'
+        VALUES = %w[
+          hour day week month year country deviceType environment
+          requestPath referrerHostname osName browserName route utmSource
+          utmMedium utmCampaign utmContent utmTerm flags
         ].freeze
         def self.from_value(value)
           value
@@ -226,7 +225,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('by', by, min: 1, max: 2)
 
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
@@ -235,7 +233,7 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          "/v1/query/web-analytics/visits/aggregate",
+          '/v1/query/web-analytics/visits/aggregate',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
@@ -245,12 +243,12 @@ module OctridevVercel
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'filter' => QueryValue.new(filter, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::WebAnalytics::AggregatePageviewsResponse,
           decoder: :json,
           operation_id: 'aggregate_pageviews',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -297,7 +295,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('by', by, min: 1, max: 2)
 
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
@@ -306,7 +303,7 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          "/v1/query/web-analytics/events/aggregate",
+          '/v1/query/web-analytics/events/aggregate',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
@@ -316,12 +313,12 @@ module OctridevVercel
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'filter' => QueryValue.new(filter, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::WebAnalytics::AggregateEventsResponse,
           decoder: :json,
           operation_id: 'aggregate_events',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -356,12 +353,11 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(filter) { Validation.validate_length('filter', filter, max: 2048) }
 
         SdkClient.request(
           'GET',
-          "/v1/query/web-analytics/visits/count",
+          '/v1/query/web-analytics/visits/count',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
@@ -369,12 +365,12 @@ module OctridevVercel
             'until' => QueryValue.new(until_, style: 'form', explode: true),
             'filter' => QueryValue.new(filter, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::WebAnalytics::CountPageviewsResponse,
           decoder: :json,
           operation_id: 'count_pageviews',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -409,12 +405,11 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(filter) { Validation.validate_length('filter', filter, max: 2048) }
 
         SdkClient.request(
           'GET',
-          "/v1/query/web-analytics/events/count",
+          '/v1/query/web-analytics/events/count',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
@@ -422,12 +417,12 @@ module OctridevVercel
             'until' => QueryValue.new(until_, style: 'form', explode: true),
             'filter' => QueryValue.new(filter, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::WebAnalytics::CountEventsResponse,
           decoder: :json,
           operation_id: 'count_events',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

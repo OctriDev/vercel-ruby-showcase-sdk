@@ -48,7 +48,6 @@ module OctridevVercel
     end
   end
 
-
   # Raised when an OAuth 2 token provider cannot supply a usable access token.
   # The provider's own exception, when there is one, is available as +cause+.
   class SdkAuthProviderError < SdkError
@@ -61,7 +60,6 @@ module OctridevVercel
       @scopes = scopes
     end
   end
-
 
   # Raised for any non-2xx HTTP response.
   class SdkHttpError < SdkError
@@ -182,7 +180,7 @@ module OctridevVercel
     404 => SdkNotFoundError,
     409 => SdkConflictError,
     422 => SdkUnprocessableEntityError,
-    429 => SdkRateLimitError,
+    429 => SdkRateLimitError
   }.freeze
 
   # Raised for connection / DNS / socket failures.

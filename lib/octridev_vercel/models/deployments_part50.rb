@@ -5,177 +5,175 @@
 
 # deployments domain models (part 50)
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant0Metadata
-  FIELDS = {
-    kind: "kind",
-    secrets: "secrets",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    kind
-    secrets
-  ].freeze
-  DECODERS = {
-    secrets: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0SecretsItem.from_hash(item) }
-    end,
-  }.freeze
-end
-
-# API model for UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0.
-class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant0Metadata::DECODERS
-
-  attr_reader :kind, :secrets
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant0Metadata
+    FIELDS = {
+      kind: 'kind',
+      secrets: 'secrets'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      kind
+      secrets
+    ].freeze
+    DECODERS = {
+      secrets: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0SecretsItem.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0.
+  class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant0Metadata::DECODERS
+
+    attr_reader :kind, :secrets
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70Metadata
-  FIELDS = {
-    role: "role",
-    environment: "environment",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70.
-class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70Metadata::DECODERS
-
-  # @return [Array_of_String] Applies only when the token is minted for one of these roles.
-  attr_reader :role
-  # @return [Array_of_String] Applies only when the token is minted for one of these environments: `production`, `preview`, `development`, or a custom environment slug. A custom environment also matches `preview`.
-  attr_reader :environment
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70Metadata
+    FIELDS = {
+      role: 'role',
+      environment: 'environment'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70.
+  class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70Metadata::DECODERS
+
+    # @return [Array_of_String] Applies only when the token is minted for one of these roles.
+    attr_reader :role
+    # @return [Array_of_String] Applies only when the token is minted for one of these environments: `production`, `preview`, `development`, or a custom environment slug. A custom environment also matches `preview`.
+    attr_reader :environment
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93Metadata
-  FIELDS = {
-    when_: "when",
-    claims: "claims",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    claims
-  ].freeze
-  DECODERS = {
-    when_: lambda do |value|
-      ::OctridevVercel::UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93.
-class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93Metadata::DECODERS
-
-  attr_reader :when_
-  # @return [Hash] Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
-  attr_reader :claims
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93Metadata
+    FIELDS = {
+      when_: 'when',
+      claims: 'claims'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      claims
+    ].freeze
+    DECODERS = {
+      when_: lambda do |value|
+        ::OctridevVercel::UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93.
+  class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93Metadata::DECODERS
+
+    attr_reader :when_
+    # @return [Hash] Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
+    attr_reader :claims
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1Metadata
-  FIELDS = {
-    kind: "kind",
-    claim_rules: "claimRules",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    kind
-    claim_rules
-  ].freeze
-  DECODERS = {
-    claim_rules: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93.from_hash(item) }
-    end,
-  }.freeze
-end
-
-# API model for UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1.
-class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1Metadata::DECODERS
-
-  attr_reader :kind
-  # @return [Array_of_UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93] Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
-  attr_reader :claim_rules
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1Metadata
+    FIELDS = {
+      kind: 'kind',
+      claim_rules: 'claimRules'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      kind
+      claim_rules
+    ].freeze
+    DECODERS = {
+      claim_rules: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1.
+  class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateIntegrationDeploymentActionRequestOutcomesItemVariant1Metadata::DECODERS
+
+    attr_reader :kind
+    # @return [Array_of_UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93] Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
+    attr_reader :claim_rules
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the UpdateIntegrationDeploymentActionRequestOutcomesItem SDK namespace.
+  module UpdateIntegrationDeploymentActionRequestOutcomesItem
+    def self.from_hash(hash)
+      shape_mapping = {
+        'secrets' => UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0,
+        'claimRules' => UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
   end
-end
-
-# Defines the UpdateIntegrationDeploymentActionRequestOutcomesItem SDK namespace.
-module UpdateIntegrationDeploymentActionRequestOutcomesItem
-  def self.from_hash(hash)
-    shape_mapping = {
-      "secrets" => UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0,
-      "claimRules" => UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-  end
-end
 end

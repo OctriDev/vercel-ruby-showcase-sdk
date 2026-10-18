@@ -44,8 +44,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiInvocationAttemptsResponseMetadata
         FIELDS = {
-          attempts: "attempts",
-          repositories: "repositories",
+          attempts: 'attempts',
+          repositories: 'repositories'
         }.freeze
         REQUIRED_FIELDS = %i[
           attempts
@@ -54,7 +54,7 @@ module OctridevVercel
         DECODERS = {
           attempts: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::VercelCi::ListVercelCiInvocationAttemptsResponseAttemptsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -84,13 +84,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationTreeResponseInvocationSkippedMetadata
         FIELDS = {
-          reason: "reason",
+          reason: 'reason'
         }.freeze
         REQUIRED_FIELDS = %i[
           reason
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetVercelCiInvocationTreeResponseInvocationSkipped.
@@ -119,13 +118,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationTreeResponseInvocationBootstrappingStartedMetadata
         FIELDS = {
-          started_at: "startedAt",
+          started_at: 'startedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           started_at
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetVercelCiInvocationTreeResponseInvocationBootstrappingStarted.
@@ -154,13 +152,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationTreeResponseInvocationBootstrappingFailedMetadata
         FIELDS = {
-          reason: "reason",
+          reason: 'reason'
         }.freeze
         REQUIRED_FIELDS = %i[
           reason
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetVercelCiInvocationTreeResponseInvocationBootstrappingFailed.
@@ -189,16 +186,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationTreeResponseInvocationSandboxSnapshottedMetadata
         FIELDS = {
-          sandbox_snapshot_id: "sandboxSnapshotId",
-          working_directory: "workingDirectory",
-          snapshotted_at: "snapshottedAt",
+          sandbox_snapshot_id: 'sandboxSnapshotId',
+          working_directory: 'workingDirectory',
+          snapshotted_at: 'snapshottedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           sandbox_snapshot_id
           working_directory
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetVercelCiInvocationTreeResponseInvocationSandboxSnapshotted.
@@ -227,16 +223,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationTreeResponseInvocationSandboxNamedMetadata
         FIELDS = {
-          sandbox_name: "sandboxName",
-          working_directory: "workingDirectory",
-          ready_at: "readyAt",
+          sandbox_name: 'sandboxName',
+          working_directory: 'workingDirectory',
+          ready_at: 'readyAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           sandbox_name
           working_directory
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetVercelCiInvocationTreeResponseInvocationSandboxNamed.
@@ -276,9 +271,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationTreeResponseInvocationJobDefinitionsCreatedMetadata
         FIELDS = {
-          names: "names",
-          source: "source",
-          scheduled_at: "scheduledAt",
+          names: 'names',
+          source: 'source',
+          scheduled_at: 'scheduledAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           names
@@ -286,7 +281,7 @@ module OctridevVercel
         DECODERS = {
           source: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::GetVercelCiInvocationTreeResponseInvocationJobDefinitionsCreaXf89587abde.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -327,8 +322,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationTreeResponseInvocationCompletedMetadata
         FIELDS = {
-          completed_at: "completedAt",
-          conclusion: "conclusion",
+          completed_at: 'completedAt',
+          conclusion: 'conclusion'
         }.freeze
         REQUIRED_FIELDS = %i[
           completed_at
@@ -336,7 +331,7 @@ module OctridevVercel
         DECODERS = {
           conclusion: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::GetVercelCiInvocationTreeResponseInvocationCompletedConclusionVariant0.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -377,7 +372,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationTreeResponseInvocationSetupConclusionMetadata
         FIELDS = {
-          result: "result",
+          result: 'result'
         }.freeze
         REQUIRED_FIELDS = %i[
           result
@@ -385,7 +380,7 @@ module OctridevVercel
         DECODERS = {
           result: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::GetVercelCiInvocationTreeResponseInvocationSetupConclusionResultVariant0.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -427,7 +422,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationTreeResponseInvocationRunConclusionMetadata
         FIELDS = {
-          result: "result",
+          result: 'result'
         }.freeze
         REQUIRED_FIELDS = %i[
           result
@@ -435,7 +430,7 @@ module OctridevVercel
         DECODERS = {
           result: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::GetVercelCiInvocationTreeResponseInvocationRunConclusionResultVariant0.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -477,24 +472,24 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationTreeResponseInvocationMetadata
         FIELDS = {
-          invocation_id: "invocationId",
-          attempt: "attempt",
-          team_id: "teamId",
-          source: "source",
-          created_at: "createdAt",
-          repository_key: "repositoryKey",
-          ref: "ref",
-          commit_sha: "commitSha",
-          skipped: "skipped",
-          bootstrapping_started: "bootstrappingStarted",
-          bootstrapping_failed: "bootstrappingFailed",
-          sandbox_snapshotted: "sandboxSnapshotted",
-          sandbox_named: "sandboxNamed",
-          job_definitions_created: "jobDefinitionsCreated",
-          completed: "completed",
-          setup_conclusion: "setupConclusion",
-          run_conclusion: "runConclusion",
-          status: "status",
+          invocation_id: 'invocationId',
+          attempt: 'attempt',
+          team_id: 'teamId',
+          source: 'source',
+          created_at: 'createdAt',
+          repository_key: 'repositoryKey',
+          ref: 'ref',
+          commit_sha: 'commitSha',
+          skipped: 'skipped',
+          bootstrapping_started: 'bootstrappingStarted',
+          bootstrapping_failed: 'bootstrappingFailed',
+          sandbox_snapshotted: 'sandboxSnapshotted',
+          sandbox_named: 'sandboxNamed',
+          job_definitions_created: 'jobDefinitionsCreated',
+          completed: 'completed',
+          setup_conclusion: 'setupConclusion',
+          run_conclusion: 'runConclusion',
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           invocation_id
@@ -540,7 +535,7 @@ module OctridevVercel
           end,
           status: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::GetVercelCiInvocationTreeResponseInvocationStatusVariant0.from_value(value)
-          end,
+          end
         }.freeze
       end
     end

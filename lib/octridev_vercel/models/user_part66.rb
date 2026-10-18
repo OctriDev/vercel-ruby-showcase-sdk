@@ -5,677 +5,674 @@
 
 # user domain models (part 66)
 module OctridevVercel
-# API model for UserEventPayloadVariant457.
-class UserEventPayloadVariant457
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant457Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant457Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant457Metadata::DECODERS
+  # API model for UserEventPayloadVariant457.
+  class UserEventPayloadVariant457
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant457Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant457Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant457Metadata::DECODERS
 
-  # @return [UserEventPayloadVariant457Context] Absent on events predating the field; those were all logins.
-  attr_reader :context
-  # @return [Float] Required `number` value serialized in the `remaining` wire field.
-  attr_reader :remaining
+    # @return [UserEventPayloadVariant457Context] Absent on events predating the field; those were all logins.
+    attr_reader :context
+    # @return [Float] Required `number` value serialized in the `remaining` wire field.
+    attr_reader :remaining
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant458Metadata
+    FIELDS = {
+      mfa_enabled: 'mfaEnabled'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      mfa_enabled
+    ].freeze
+    DECODERS = {
+      mfa_enabled: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant458MfaEnabled.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant458.
+  class UserEventPayloadVariant458
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant458Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant458Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant458Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant458Metadata
-  FIELDS = {
-    mfa_enabled: "mfaEnabled",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    mfa_enabled
-  ].freeze
-  DECODERS = {
-    mfa_enabled: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant458MfaEnabled.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant458MfaEnabled] Required enumerated value serialized in the `mfaEnabled` wire field.
+    attr_reader :mfa_enabled
 
-# API model for UserEventPayloadVariant458.
-class UserEventPayloadVariant458
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant458Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant458Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant458Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant458MfaEnabled] Required enumerated value serialized in the `mfaEnabled` wire field.
-  attr_reader :mfa_enabled
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant459MfaMetadata
+    FIELDS = {
+      enabled: 'enabled',
+      totp_verified: 'totpVerified'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      enabled
+      totp_verified
+    ].freeze
+    DECODERS = {
+      enabled: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant459MfaEnabled.from_value(value)
+      end,
+      totp_verified: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant459MfaTotpVerified.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant459Mfa.
+  # Required object value serialized in the `mfa` wire field.
+  class UserEventPayloadVariant459Mfa
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant459MfaMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant459MfaMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant459MfaMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant459MfaMetadata
-  FIELDS = {
-    enabled: "enabled",
-    totp_verified: "totpVerified",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    enabled
-    totp_verified
-  ].freeze
-  DECODERS = {
-    enabled: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant459MfaEnabled.from_value(value)
-    end,
-    totp_verified: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant459MfaTotpVerified.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant459MfaEnabled] Required enumerated value serialized in the `enabled` wire field.
+    attr_reader :enabled
+    # @return [UserEventPayloadVariant459MfaTotpVerified] Required enumerated value serialized in the `totpVerified` wire field.
+    attr_reader :totp_verified
 
-# API model for UserEventPayloadVariant459Mfa.
-# Required object value serialized in the `mfa` wire field.
-class UserEventPayloadVariant459Mfa
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant459MfaMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant459MfaMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant459MfaMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant459MfaEnabled] Required enumerated value serialized in the `enabled` wire field.
-  attr_reader :enabled
-  # @return [UserEventPayloadVariant459MfaTotpVerified] Required enumerated value serialized in the `totpVerified` wire field.
-  attr_reader :totp_verified
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant459Metadata
+    FIELDS = {
+      mfa: 'mfa'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      mfa
+    ].freeze
+    DECODERS = {
+      mfa: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant459Mfa.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant459.
+  class UserEventPayloadVariant459
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant459Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant459Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant459Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant459Metadata
-  FIELDS = {
-    mfa: "mfa",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    mfa
-  ].freeze
-  DECODERS = {
-    mfa: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant459Mfa.from_hash(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant459Mfa] Required object value serialized in the `mfa` wire field.
+    attr_reader :mfa
 
-# API model for UserEventPayloadVariant459.
-class UserEventPayloadVariant459
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant459Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant459Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant459Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant459Mfa] Required object value serialized in the `mfa` wire field.
-  attr_reader :mfa
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant460Metadata
+    FIELDS = {
+      enabled: 'enabled',
+      totp_verified: 'totpVerified'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      enabled
+      totp_verified
+    ].freeze
+    DECODERS = {
+      enabled: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant460Enabled.from_value(value)
+      end,
+      totp_verified: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant460TotpVerified.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant460.
+  class UserEventPayloadVariant460
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant460Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant460Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant460Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant460Metadata
-  FIELDS = {
-    enabled: "enabled",
-    totp_verified: "totpVerified",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    enabled
-    totp_verified
-  ].freeze
-  DECODERS = {
-    enabled: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant460Enabled.from_value(value)
-    end,
-    totp_verified: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant460TotpVerified.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant460Enabled] Required enumerated value serialized in the `enabled` wire field.
+    attr_reader :enabled
+    # @return [UserEventPayloadVariant460TotpVerified] Required enumerated value serialized in the `totpVerified` wire field.
+    attr_reader :totp_verified
 
-# API model for UserEventPayloadVariant460.
-class UserEventPayloadVariant460
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant460Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant460Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant460Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant460Enabled] Required enumerated value serialized in the `enabled` wire field.
-  attr_reader :enabled
-  # @return [UserEventPayloadVariant460TotpVerified] Required enumerated value serialized in the `totpVerified` wire field.
-  attr_reader :totp_verified
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant461NextMetadata
+    FIELDS = {
+      enabled: 'enabled',
+      totp_verified: 'totpVerified'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      enabled
+      totp_verified
+    ].freeze
+    DECODERS = {
+      enabled: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant461NextEnabled.from_value(value)
+      end,
+      totp_verified: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant461NextTotpVerified.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant461Next.
+  # Required object value serialized in the `next` wire field.
+  class UserEventPayloadVariant461Next
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant461NextMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant461NextMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant461NextMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant461NextMetadata
-  FIELDS = {
-    enabled: "enabled",
-    totp_verified: "totpVerified",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    enabled
-    totp_verified
-  ].freeze
-  DECODERS = {
-    enabled: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant461NextEnabled.from_value(value)
-    end,
-    totp_verified: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant461NextTotpVerified.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant461NextEnabled] Required enumerated value serialized in the `enabled` wire field.
+    attr_reader :enabled
+    # @return [UserEventPayloadVariant461NextTotpVerified] Required enumerated value serialized in the `totpVerified` wire field.
+    attr_reader :totp_verified
 
-# API model for UserEventPayloadVariant461Next.
-# Required object value serialized in the `next` wire field.
-class UserEventPayloadVariant461Next
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant461NextMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant461NextMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant461NextMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant461NextEnabled] Required enumerated value serialized in the `enabled` wire field.
-  attr_reader :enabled
-  # @return [UserEventPayloadVariant461NextTotpVerified] Required enumerated value serialized in the `totpVerified` wire field.
-  attr_reader :totp_verified
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant461PreviousMetadata
+    FIELDS = {
+      enabled: 'enabled',
+      totp_verified: 'totpVerified'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      enabled
+      totp_verified
+    ].freeze
+    DECODERS = {
+      enabled: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant461PreviousEnabled.from_value(value)
+      end,
+      totp_verified: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant461PreviousTotpVerified.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant461Previous.
+  # Required object value serialized in the `previous` wire field.
+  class UserEventPayloadVariant461Previous
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant461PreviousMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant461PreviousMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant461PreviousMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant461PreviousMetadata
-  FIELDS = {
-    enabled: "enabled",
-    totp_verified: "totpVerified",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    enabled
-    totp_verified
-  ].freeze
-  DECODERS = {
-    enabled: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant461PreviousEnabled.from_value(value)
-    end,
-    totp_verified: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant461PreviousTotpVerified.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant461PreviousEnabled] Required enumerated value serialized in the `enabled` wire field.
+    attr_reader :enabled
+    # @return [UserEventPayloadVariant461PreviousTotpVerified] Required enumerated value serialized in the `totpVerified` wire field.
+    attr_reader :totp_verified
 
-# API model for UserEventPayloadVariant461Previous.
-# Required object value serialized in the `previous` wire field.
-class UserEventPayloadVariant461Previous
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant461PreviousMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant461PreviousMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant461PreviousMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant461PreviousEnabled] Required enumerated value serialized in the `enabled` wire field.
-  attr_reader :enabled
-  # @return [UserEventPayloadVariant461PreviousTotpVerified] Required enumerated value serialized in the `totpVerified` wire field.
-  attr_reader :totp_verified
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant461Metadata
+    FIELDS = {
+      next_: 'next',
+      previous: 'previous'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      next_
+      previous
+    ].freeze
+    DECODERS = {
+      next_: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant461Next.from_hash(value)
+      end,
+      previous: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant461Previous.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant461.
+  class UserEventPayloadVariant461
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant461Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant461Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant461Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant461Metadata
-  FIELDS = {
-    next_: "next",
-    previous: "previous",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    next_
-    previous
-  ].freeze
-  DECODERS = {
-    next_: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant461Next.from_hash(value)
-    end,
-    previous: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant461Previous.from_hash(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant461Next] Required object value serialized in the `next` wire field.
+    attr_reader :next_
+    # @return [UserEventPayloadVariant461Previous] Required object value serialized in the `previous` wire field.
+    attr_reader :previous
 
-# API model for UserEventPayloadVariant461.
-class UserEventPayloadVariant461
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant461Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant461Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant461Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant461Next] Required object value serialized in the `next` wire field.
-  attr_reader :next_
-  # @return [UserEventPayloadVariant461Previous] Required object value serialized in the `previous` wire field.
-  attr_reader :previous
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant462DecisionMetadata
+    FIELDS = {
+      authoritative: 'authoritative',
+      basis: 'basis',
+      email_domain: 'emailDomain',
+      email_verified: 'emailVerified',
+      hosted_domain_match: 'hostedDomainMatch',
+      mx_outcome: 'mxOutcome'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      authoritative
+      basis
+      email_domain
+      email_verified
+      hosted_domain_match
+      mx_outcome
+    ].freeze
+    DECODERS = {
+      authoritative: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant462DecisionAuthoritative.from_value(value)
+      end,
+      basis: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant462DecisionBasis.from_value(value)
+      end,
+      email_verified: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant462DecisionEmailVerified.from_value(value)
+      end,
+      hosted_domain_match: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant462DecisionHostedDomainMatch.from_value(value)
+      end,
+      mx_outcome: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant462DecisionMxOutcome.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant462Decision.
+  # Required object value serialized in the `decision` wire field.
+  class UserEventPayloadVariant462Decision
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant462DecisionMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant462DecisionMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant462DecisionMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant462DecisionMetadata
-  FIELDS = {
-    authoritative: "authoritative",
-    basis: "basis",
-    email_domain: "emailDomain",
-    email_verified: "emailVerified",
-    hosted_domain_match: "hostedDomainMatch",
-    mx_outcome: "mxOutcome",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    authoritative
-    basis
-    email_domain
-    email_verified
-    hosted_domain_match
-    mx_outcome
-  ].freeze
-  DECODERS = {
-    authoritative: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant462DecisionAuthoritative.from_value(value)
-    end,
-    basis: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant462DecisionBasis.from_value(value)
-    end,
-    email_verified: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant462DecisionEmailVerified.from_value(value)
-    end,
-    hosted_domain_match: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant462DecisionHostedDomainMatch.from_value(value)
-    end,
-    mx_outcome: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant462DecisionMxOutcome.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant462DecisionAuthoritative] Required enumerated value serialized in the `authoritative` wire field.
+    attr_reader :authoritative
+    # @return [UserEventPayloadVariant462DecisionBasis] Required enumerated value serialized in the `basis` wire field.
+    attr_reader :basis
+    # @return [String] Required `string` value serialized in the `emailDomain` wire field.
+    attr_reader :email_domain
+    # @return [UserEventPayloadVariant462DecisionEmailVerified] Required enumerated value serialized in the `emailVerified` wire field.
+    attr_reader :email_verified
+    # @return [UserEventPayloadVariant462DecisionHostedDomainMatch] Required enumerated value serialized in the `hostedDomainMatch` wire field.
+    attr_reader :hosted_domain_match
+    # @return [UserEventPayloadVariant462DecisionMxOutcome] Required enumerated value serialized in the `mxOutcome` wire field.
+    attr_reader :mx_outcome
 
-# API model for UserEventPayloadVariant462Decision.
-# Required object value serialized in the `decision` wire field.
-class UserEventPayloadVariant462Decision
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant462DecisionMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant462DecisionMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant462DecisionMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant462DecisionAuthoritative] Required enumerated value serialized in the `authoritative` wire field.
-  attr_reader :authoritative
-  # @return [UserEventPayloadVariant462DecisionBasis] Required enumerated value serialized in the `basis` wire field.
-  attr_reader :basis
-  # @return [String] Required `string` value serialized in the `emailDomain` wire field.
-  attr_reader :email_domain
-  # @return [UserEventPayloadVariant462DecisionEmailVerified] Required enumerated value serialized in the `emailVerified` wire field.
-  attr_reader :email_verified
-  # @return [UserEventPayloadVariant462DecisionHostedDomainMatch] Required enumerated value serialized in the `hostedDomainMatch` wire field.
-  attr_reader :hosted_domain_match
-  # @return [UserEventPayloadVariant462DecisionMxOutcome] Required enumerated value serialized in the `mxOutcome` wire field.
-  attr_reader :mx_outcome
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant462Metadata
+    FIELDS = {
+      decision: 'decision',
+      outcome: 'outcome',
+      provider: 'provider',
+      provider_subject_id: 'providerSubjectId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      decision
+      outcome
+      provider
+      provider_subject_id
+    ].freeze
+    DECODERS = {
+      decision: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant462Decision.from_hash(value)
+      end,
+      outcome: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant462Outcome.from_value(value)
+      end,
+      provider: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant462Provider.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant462.
+  class UserEventPayloadVariant462
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant462Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant462Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant462Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant462Metadata
-  FIELDS = {
-    decision: "decision",
-    outcome: "outcome",
-    provider: "provider",
-    provider_subject_id: "providerSubjectId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    decision
-    outcome
-    provider
-    provider_subject_id
-  ].freeze
-  DECODERS = {
-    decision: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant462Decision.from_hash(value)
-    end,
-    outcome: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant462Outcome.from_value(value)
-    end,
-    provider: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant462Provider.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant462Decision] Required object value serialized in the `decision` wire field.
+    attr_reader :decision
+    # @return [UserEventPayloadVariant462Outcome] Required enumerated value serialized in the `outcome` wire field.
+    attr_reader :outcome
+    # @return [UserEventPayloadVariant462Provider] Required enumerated value serialized in the `provider` wire field.
+    attr_reader :provider
+    # @return [String] Required `string` value serialized in the `providerSubjectId` wire field.
+    attr_reader :provider_subject_id
 
-# API model for UserEventPayloadVariant462.
-class UserEventPayloadVariant462
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant462Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant462Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant462Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant462Decision] Required object value serialized in the `decision` wire field.
-  attr_reader :decision
-  # @return [UserEventPayloadVariant462Outcome] Required enumerated value serialized in the `outcome` wire field.
-  attr_reader :outcome
-  # @return [UserEventPayloadVariant462Provider] Required enumerated value serialized in the `provider` wire field.
-  attr_reader :provider
-  # @return [String] Required `string` value serialized in the `providerSubjectId` wire field.
-  attr_reader :provider_subject_id
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant463Metadata
+    FIELDS = {
+      email: 'email',
+      prev_email: 'prevEmail'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      email
+      prev_email
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant463.
+  class UserEventPayloadVariant463
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant463Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant463Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant463Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant463Metadata
-  FIELDS = {
-    email: "email",
-    prev_email: "prevEmail",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    email
-    prev_email
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] Required `string` value serialized in the `email` wire field.
+    attr_reader :email
+    # @return [String] Required `string` value serialized in the `prevEmail` wire field.
+    attr_reader :prev_email
 
-# API model for UserEventPayloadVariant463.
-class UserEventPayloadVariant463
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant463Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant463Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant463Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `email` wire field.
-  attr_reader :email
-  # @return [String] Required `string` value serialized in the `prevEmail` wire field.
-  attr_reader :prev_email
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant464Metadata
+    FIELDS = {
+      email: 'email',
+      prev_email: 'prevEmail',
+      actor_id: 'actorId',
+      actor_name: 'actorName',
+      actor_type: 'actorType'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      email
+      prev_email
+      actor_id
+      actor_type
+    ].freeze
+    DECODERS = {
+      actor_type: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant464ActorType.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant464.
+  class UserEventPayloadVariant464
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant464Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant464Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant464Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant464Metadata
-  FIELDS = {
-    email: "email",
-    prev_email: "prevEmail",
-    actor_id: "actorId",
-    actor_name: "actorName",
-    actor_type: "actorType",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    email
-    prev_email
-    actor_id
-    actor_type
-  ].freeze
-  DECODERS = {
-    actor_type: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant464ActorType.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [String] Required `string` value serialized in the `email` wire field.
+    attr_reader :email
+    # @return [String] Required `string` value serialized in the `prevEmail` wire field.
+    attr_reader :prev_email
+    # @return [String] Okta user id.
+    attr_reader :actor_id
+    # @return [String] Optional `string` value serialized in the `actorName` wire field.
+    attr_reader :actor_name
+    # @return [UserEventPayloadVariant464ActorType] Required enumerated value serialized in the `actorType` wire field.
+    attr_reader :actor_type
 
-# API model for UserEventPayloadVariant464.
-class UserEventPayloadVariant464
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant464Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant464Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant464Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `email` wire field.
-  attr_reader :email
-  # @return [String] Required `string` value serialized in the `prevEmail` wire field.
-  attr_reader :prev_email
-  # @return [String] Okta user id.
-  attr_reader :actor_id
-  # @return [String] Optional `string` value serialized in the `actorName` wire field.
-  attr_reader :actor_name
-  # @return [UserEventPayloadVariant464ActorType] Required enumerated value serialized in the `actorType` wire field.
-  attr_reader :actor_type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant465Metadata
+    FIELDS = {
+      username: 'username',
+      actor_id: 'actorId',
+      actor_name: 'actorName',
+      actor_type: 'actorType'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      username
+      actor_id
+      actor_type
+    ].freeze
+    DECODERS = {
+      actor_type: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant465ActorType.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant465.
+  class UserEventPayloadVariant465
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant465Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant465Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant465Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant465Metadata
-  FIELDS = {
-    username: "username",
-    actor_id: "actorId",
-    actor_name: "actorName",
-    actor_type: "actorType",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    username
-    actor_id
-    actor_type
-  ].freeze
-  DECODERS = {
-    actor_type: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant465ActorType.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [String] Required `string` value serialized in the `username` wire field.
+    attr_reader :username
+    # @return [String] Okta user id.
+    attr_reader :actor_id
+    # @return [String] Optional `string` value serialized in the `actorName` wire field.
+    attr_reader :actor_name
+    # @return [UserEventPayloadVariant465ActorType] Required enumerated value serialized in the `actorType` wire field.
+    attr_reader :actor_type
 
-# API model for UserEventPayloadVariant465.
-class UserEventPayloadVariant465
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant465Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant465Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant465Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `username` wire field.
-  attr_reader :username
-  # @return [String] Okta user id.
-  attr_reader :actor_id
-  # @return [String] Optional `string` value serialized in the `actorName` wire field.
-  attr_reader :actor_name
-  # @return [UserEventPayloadVariant465ActorType] Required enumerated value serialized in the `actorType` wire field.
-  attr_reader :actor_type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant466Metadata
+    FIELDS = {
+      project_id: 'projectId',
+      project_name: 'projectName',
+      repository_name: 'repositoryName'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      project_id
+      project_name
+      repository_name
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant466.
+  class UserEventPayloadVariant466
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant466Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant466Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant466Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant466Metadata
-  FIELDS = {
-    project_id: "projectId",
-    project_name: "projectName",
-    repository_name: "repositoryName",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    project_id
-    project_name
-    repository_name
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] Required `string` value serialized in the `projectId` wire field.
+    attr_reader :project_id
+    # @return [String] Required `string` value serialized in the `projectName` wire field.
+    attr_reader :project_name
+    # @return [String] Required `string` value serialized in the `repositoryName` wire field.
+    attr_reader :repository_name
 
-# API model for UserEventPayloadVariant466.
-class UserEventPayloadVariant466
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant466Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant466Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant466Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `projectId` wire field.
-  attr_reader :project_id
-  # @return [String] Required `string` value serialized in the `projectName` wire field.
-  attr_reader :project_name
-  # @return [String] Required `string` value serialized in the `repositoryName` wire field.
-  attr_reader :repository_name
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant467Metadata
+    FIELDS = {
+      digest: 'digest',
+      project_id: 'projectId',
+      project_name: 'projectName',
+      reference: 'reference',
+      repository_name: 'repositoryName'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      digest
+      project_id
+      project_name
+      reference
+      repository_name
+    ].freeze
+    DECODERS = {}.freeze
   end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant467Metadata
-  FIELDS = {
-    digest: "digest",
-    project_id: "projectId",
-    project_name: "projectName",
-    reference: "reference",
-    repository_name: "repositoryName",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    digest
-    project_id
-    project_name
-    reference
-    repository_name
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
 end

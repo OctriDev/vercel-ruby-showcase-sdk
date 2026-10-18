@@ -12,9 +12,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseDeploymentPolicyGitSourcesItemMetadata
         FIELDS = {
-          enabled: "enabled",
-          environments: "environments",
-          sources: "sources",
+          enabled: 'enabled',
+          environments: 'environments',
+          sources: 'sources'
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -30,7 +30,7 @@ module OctridevVercel
           end,
           sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::CreateProjectResponseDeploymentPolicyGitSourcesItemSourcesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -61,18 +61,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseDeploymentPolicyMetadata
         FIELDS = {
-          deployment_sources: "deploymentSources",
-          git_sources: "gitSources",
+          deployment_sources: 'deploymentSources',
+          git_sources: 'gitSources'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           deployment_sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::CreateProjectResponseDeploymentPolicyDeploymentSourcesItem.from_hash(item) }
           end,
           git_sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::CreateProjectResponseDeploymentPolicyGitSourcesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -103,10 +102,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseDismissedToastsItemMetadata
         FIELDS = {
-          action: "action",
-          dismissed_at: "dismissedAt",
-          key: "key",
-          value: "value",
+          action: 'action',
+          dismissed_at: 'dismissedAt',
+          key: 'key',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -120,7 +119,7 @@ module OctridevVercel
           end,
           value: lambda do |value|
             ::OctridevVercel::CreateProjectResponseDismissedToastsItemValue.from_hash(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           value
@@ -155,8 +154,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseEnvItemInternalContentHintMetadata
         FIELDS = {
-          encrypted_value: "encryptedValue",
-          type: "type",
+          encrypted_value: 'encryptedValue',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           encrypted_value
@@ -165,7 +164,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseEnvItemInternalContentHintType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -198,28 +197,28 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseEnvItemMetadata
         FIELDS = {
-          comment: "comment",
-          configuration_id: "configurationId",
-          content_hint: "contentHint",
-          created_at: "createdAt",
-          created_by: "createdBy",
-          custom_environment_ids: "customEnvironmentIds",
-          decrypted: "decrypted",
-          edge_config_id: "edgeConfigId",
-          edge_config_token_id: "edgeConfigTokenId",
-          git_branch: "gitBranch",
-          id: "id",
-          internal_content_hint: "internalContentHint",
-          key: "key",
-          legacy_value: "legacyValue",
-          sunset_secret_id: "sunsetSecretId",
-          target: "target",
-          type: "type",
-          updated_at: "updatedAt",
-          updated_by: "updatedBy",
-          value: "value",
-          visibility: "visibility",
-          vsm_value: "vsmValue",
+          comment: 'comment',
+          configuration_id: 'configurationId',
+          content_hint: 'contentHint',
+          created_at: 'createdAt',
+          created_by: 'createdBy',
+          custom_environment_ids: 'customEnvironmentIds',
+          decrypted: 'decrypted',
+          edge_config_id: 'edgeConfigId',
+          edge_config_token_id: 'edgeConfigTokenId',
+          git_branch: 'gitBranch',
+          id: 'id',
+          internal_content_hint: 'internalContentHint',
+          key: 'key',
+          legacy_value: 'legacyValue',
+          sunset_secret_id: 'sunsetSecretId',
+          target: 'target',
+          type: 'type',
+          updated_at: 'updatedAt',
+          updated_by: 'updatedBy',
+          value: 'value',
+          visibility: 'visibility',
+          vsm_value: 'vsmValue'
         }.freeze
         REQUIRED_FIELDS = %i[
           key
@@ -241,7 +240,7 @@ module OctridevVercel
           end,
           visibility: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseEnvItemVisibility.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -283,14 +282,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseFeaturesMetadata
         FIELDS = {
-          web_analytics: "webAnalytics",
+          web_analytics: 'webAnalytics'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           web_analytics: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseFeaturesWebAnalytics.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -320,8 +318,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseGitCommentsMetadata
         FIELDS = {
-          on_commit: "onCommit",
-          on_pull_request: "onPullRequest",
+          on_commit: 'onCommit',
+          on_pull_request: 'onPullRequest'
         }.freeze
         REQUIRED_FIELDS = %i[
           on_commit
@@ -333,7 +331,7 @@ module OctridevVercel
           end,
           on_pull_request: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseGitCommentsOnPullRequest.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -366,8 +364,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseGitProviderOptionsConsolidatedGitCommitStatusMetadata
         FIELDS = {
-          enabled: "enabled",
-          propagate_failures: "propagateFailures",
+          enabled: 'enabled',
+          propagate_failures: 'propagateFailures'
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -379,7 +377,7 @@ module OctridevVercel
           end,
           propagate_failures: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseGitProviderOptionsConsolidatedGitCommitSXd1543e1eff.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -413,11 +411,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseGitProviderOptionsMetadata
         FIELDS = {
-          consolidated_git_commit_status: "consolidatedGitCommitStatus",
-          create_deployments: "createDeployments",
-          disable_repository_dispatch_events: "disableRepositoryDispatchEvents",
-          git_commit_status: "gitCommitStatus",
-          require_verified_commits: "requireVerifiedCommits",
+          consolidated_git_commit_status: 'consolidatedGitCommitStatus',
+          create_deployments: 'createDeployments',
+          disable_repository_dispatch_events: 'disableRepositoryDispatchEvents',
+          git_commit_status: 'gitCommitStatus',
+          require_verified_commits: 'requireVerifiedCommits'
         }.freeze
         REQUIRED_FIELDS = %i[
           create_deployments
@@ -437,7 +435,7 @@ module OctridevVercel
           end,
           require_verified_commits: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseGitProviderOptionsRequireVerifiedCommits.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -476,9 +474,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseIpBucketsItemMetadata
         FIELDS = {
-          bucket: "bucket",
-          default: "default",
-          support_until: "supportUntil",
+          bucket: 'bucket',
+          default: 'default',
+          support_until: 'supportUntil'
         }.freeze
         REQUIRED_FIELDS = %i[
           bucket
@@ -486,7 +484,7 @@ module OctridevVercel
         DECODERS = {
           default: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseIpBucketsItemDefault.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -516,13 +514,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseJobsFlagDefinitionsPresentMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateProjectResponseJobsFlagDefinitionsPresent.
@@ -551,13 +548,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseJobsLintMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
     end
   end

@@ -35,12 +35,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSegmentDataRulesItemConditionsItemCmpOptionsMetadata
         FIELDS = {
-          ignore_case: "ignoreCase",
+          ignore_case: 'ignoreCase'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateFlagSegmentDataRulesItemConditionsItemCmpOptions.
@@ -69,10 +67,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSegmentDataRulesItemConditionsItemMetadata
         FIELDS = {
-          lhs: "lhs",
-          cmp: "cmp",
-          rhs: "rhs",
-          cmp_options: "cmpOptions",
+          lhs: 'lhs',
+          cmp: 'cmp',
+          rhs: 'rhs',
+          cmp_options: 'cmpOptions'
         }.freeze
         REQUIRED_FIELDS = %i[
           lhs
@@ -90,7 +88,7 @@ module OctridevVercel
           end,
           cmp_options: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSegmentDataRulesItemConditionsItemCmpOptions.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -124,9 +122,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSegmentDataRulesItemMetadata
         FIELDS = {
-          id: "id",
-          conditions: "conditions",
-          outcome: "outcome",
+          id: 'id',
+          conditions: 'conditions',
+          outcome: 'outcome'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -139,7 +137,7 @@ module OctridevVercel
           end,
           outcome: lambda do |value|
             ::OctridevVercel::UpdateFlagSegmentRequestDataRulesItemOutcome.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -171,16 +169,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSegmentDataMetadata
         FIELDS = {
-          rules: "rules",
-          include: "include",
-          exclude: "exclude",
+          rules: 'rules',
+          include: 'include',
+          exclude: 'exclude'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           rules: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSegmentDataRulesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -211,14 +208,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSegmentOperationsItemValueMetadata
         FIELDS = {
-          note: "note",
-          value: "value",
+          note: 'note',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateFlagSegmentOperationsItemValue.
@@ -247,11 +243,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSegmentOperationsItemMetadata
         FIELDS = {
-          action: "action",
-          field: "field",
-          entity: "entity",
-          attribute: "attribute",
-          value: "value",
+          action: 'action',
+          field: 'field',
+          entity: 'entity',
+          attribute: 'attribute',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -269,7 +265,7 @@ module OctridevVercel
           end,
           value: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSegmentOperationsItemValue.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -299,21 +295,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSegmentMetadata
         FIELDS = {
-          operations: "operations",
-          label: "label",
-          description: "description",
-          data: "data",
-          hint: "hint",
+          operations: 'operations',
+          label: 'label',
+          description: 'description',
+          data: 'data',
+          hint: 'hint'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           operations: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSegmentOperationsItem.from_hash(item) }
           end,
           data: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSegmentData.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -345,11 +340,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentFeatureFlagsResponseStatusMetadata
         FIELDS = {
-          created_at: "createdAt",
-          deployment_id: "deploymentId",
-          flag_count: "flagCount",
-          project_id: "projectId",
-          response_status: "responseStatus",
+          created_at: 'createdAt',
+          deployment_id: 'deploymentId',
+          flag_count: 'flagCount',
+          project_id: 'projectId',
+          response_status: 'responseStatus'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -358,8 +353,7 @@ module OctridevVercel
           project_id
           response_status
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDeploymentFeatureFlagsResponseStatus.
@@ -392,8 +386,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentFeatureFlagsResponseMetadata
         FIELDS = {
-          flags: "flags",
-          status: "status",
+          flags: 'flags',
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           flags
@@ -402,7 +396,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::GetDeploymentFeatureFlagsResponseStatus.from_hash(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           status
@@ -435,16 +429,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSdkKeysResponseDataItemMetadata
         FIELDS = {
-          created_at: "createdAt",
-          created_by: "createdBy",
-          deleted_at: "deletedAt",
-          environment: "environment",
-          hash_key: "hashKey",
-          label: "label",
-          partial_key_value: "partialKeyValue",
-          project_id: "projectId",
-          type: "type",
-          updated_at: "updatedAt",
+          created_at: 'createdAt',
+          created_by: 'createdBy',
+          deleted_at: 'deletedAt',
+          environment: 'environment',
+          hash_key: 'hashKey',
+          label: 'label',
+          partial_key_value: 'partialKeyValue',
+          project_id: 'projectId',
+          type: 'type',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -459,7 +453,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::GetSdkKeysResponseDataItemType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -493,7 +487,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSdkKeysResponseMetadata
         FIELDS = {
-          data: "data",
+          data: 'data'
         }.freeze
         REQUIRED_FIELDS = %i[
           data
@@ -501,7 +495,7 @@ module OctridevVercel
         DECODERS = {
           data: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::GetSdkKeysResponseDataItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -531,9 +525,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSdkKeyMetadata
         FIELDS = {
-          sdk_key_type: "sdkKeyType",
-          environment: "environment",
-          label: "label",
+          sdk_key_type: 'sdkKeyType',
+          environment: 'environment',
+          label: 'label'
         }.freeze
         REQUIRED_FIELDS = %i[
           sdk_key_type
@@ -542,7 +536,7 @@ module OctridevVercel
         DECODERS = {
           sdk_key_type: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::CreateSdkKeySdkKeyType.from_value(value)
-          end,
+          end
         }.freeze
       end
     end

@@ -12,16 +12,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRuntimeLogsResponseMetadata
         FIELDS = {
-          domain: "domain",
-          level: "level",
-          message: "message",
-          message_truncated: "messageTruncated",
-          request_method: "requestMethod",
-          request_path: "requestPath",
-          response_status_code: "responseStatusCode",
-          row_id: "rowId",
-          source: "source",
-          timestamp_in_ms: "timestampInMs",
+          domain: 'domain',
+          level: 'level',
+          message: 'message',
+          message_truncated: 'messageTruncated',
+          request_method: 'requestMethod',
+          request_path: 'requestPath',
+          response_status_code: 'responseStatusCode',
+          row_id: 'rowId',
+          source: 'source',
+          timestamp_in_ms: 'timestampInMs'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -44,7 +44,7 @@ module OctridevVercel
           end,
           source: lambda do |value|
             ::OctridevVercel::Methods::Logs::GetRuntimeLogsResponseSource.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -90,7 +90,7 @@ module OctridevVercel
         INFO = 'info'
         TRACE = 'trace'
         WARNING = 'warning'
-        VALUES = ['debug', 'error', 'fatal', 'info', 'trace', 'warning'].freeze
+        VALUES = %w[debug error fatal info trace warning].freeze
         def self.from_value(value)
           value
         end
@@ -103,7 +103,7 @@ module OctridevVercel
         EDGE_MIDDLEWARE = 'edge-middleware'
         REQUEST = 'request'
         SERVERLESS = 'serverless'
-        VALUES = ['delimiter', 'edge-function', 'edge-middleware', 'request', 'serverless'].freeze
+        VALUES = %w[delimiter edge-function edge-middleware request serverless].freeze
         def self.from_value(value)
           value
         end
@@ -116,33 +116,25 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_runtime_logs) do |
-        config:,
-        project_id:,
-        deployment_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_runtime_logs) do |config:, project_id:, deployment_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id),
-            "/deployments/",
+            '/deployments/',
             SdkClient.encode_path_segment(deployment_id),
-            "/runtime-logs"
+            '/runtime-logs'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Logs::GetRuntimeLogsResponse,
           decoder: :json,
           operation_id: 'get_runtime_logs',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

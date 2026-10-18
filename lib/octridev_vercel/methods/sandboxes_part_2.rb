@@ -36,13 +36,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalForkDriveMetadata
         FIELDS = {
-          name: "name",
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ForkDrive.
@@ -72,7 +71,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalForkDriveResponseMetadata
         FIELDS = {
-          drive: "drive",
+          drive: 'drive'
         }.freeze
         REQUIRED_FIELDS = %i[
           drive
@@ -80,7 +79,7 @@ module OctridevVercel
         DECODERS = {
           drive: lambda do |value|
             ::OctridevVercel::Drive.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -111,7 +110,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSessionSnapshotResponseMetadata
         FIELDS = {
-          snapshot: "snapshot",
+          snapshot: 'snapshot'
         }.freeze
         REQUIRED_FIELDS = %i[
           snapshot
@@ -119,7 +118,7 @@ module OctridevVercel
         DECODERS = {
           snapshot: lambda do |value|
             ::OctridevVercel::Snapshot.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -150,7 +149,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteSessionSnapshotResponseMetadata
         FIELDS = {
-          snapshot: "snapshot",
+          snapshot: 'snapshot'
         }.freeze
         REQUIRED_FIELDS = %i[
           snapshot
@@ -158,7 +157,7 @@ module OctridevVercel
         DECODERS = {
           snapshot: lambda do |value|
             ::OctridevVercel::Snapshot.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -189,8 +188,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSessionResponseMetadata
         FIELDS = {
-          routes: "routes",
-          session: "session",
+          routes: 'routes',
+          session: 'session'
         }.freeze
         REQUIRED_FIELDS = %i[
           routes
@@ -202,7 +201,7 @@ module OctridevVercel
           end,
           session: lambda do |value|
             ::OctridevVercel::Session.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -234,10 +233,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetNamedSandboxResponseMetadata
         FIELDS = {
-          resumed: "resumed",
-          routes: "routes",
-          sandbox: "sandbox",
-          session: "session",
+          resumed: 'resumed',
+          routes: 'routes',
+          sandbox: 'sandbox',
+          session: 'session'
         }.freeze
         REQUIRED_FIELDS = %i[
           resumed
@@ -257,7 +256,7 @@ module OctridevVercel
           end,
           session: lambda do |value|
             ::OctridevVercel::Session.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -291,13 +290,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateSandboxResourcesMetadata
         FIELDS = {
-          vcpus: "vcpus",
-          memory: "memory",
+          vcpus: 'vcpus',
+          memory: 'memory'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateSandboxResources.
@@ -330,24 +327,23 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateSandboxMetadata
         FIELDS = {
-          resources: "resources",
-          runtime: "runtime",
-          timeout: "timeout",
-          persistent: "persistent",
-          snapshot_expiration: "snapshotExpiration",
-          keep_last_snapshots: "keepLastSnapshots",
-          network_policy: "networkPolicy",
-          region: "region",
-          failover_regions: "failoverRegions",
-          mounts: "mounts",
-          network_id: "networkId",
-          env: "env",
-          ports: "ports",
-          current_snapshot_id: "currentSnapshotId",
-          tags: "tags",
+          resources: 'resources',
+          runtime: 'runtime',
+          timeout: 'timeout',
+          persistent: 'persistent',
+          snapshot_expiration: 'snapshotExpiration',
+          keep_last_snapshots: 'keepLastSnapshots',
+          network_policy: 'networkPolicy',
+          region: 'region',
+          failover_regions: 'failoverRegions',
+          mounts: 'mounts',
+          network_id: 'networkId',
+          env: 'env',
+          ports: 'ports',
+          current_snapshot_id: 'currentSnapshotId',
+          tags: 'tags'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           resources: lambda do |value|
             ::OctridevVercel::Methods::Sandboxes::UpdateSandboxResources.from_hash(value)
@@ -366,7 +362,7 @@ module OctridevVercel
           end,
           failover_regions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Sandboxes::UpdateSandboxFailoverRegionsItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -425,7 +421,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteSandboxResponseMetadata
         FIELDS = {
-          sandbox: "sandbox",
+          sandbox: 'sandbox'
         }.freeze
         REQUIRED_FIELDS = %i[
           sandbox
@@ -433,7 +429,7 @@ module OctridevVercel
         DECODERS = {
           sandbox: lambda do |value|
             ::OctridevVercel::NamedSandbox.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -464,7 +460,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListSessionCommandsResponseMetadata
         FIELDS = {
-          commands: "commands",
+          commands: 'commands'
         }.freeze
         REQUIRED_FIELDS = %i[
           commands
@@ -472,7 +468,7 @@ module OctridevVercel
         DECODERS = {
           commands: lambda do |value|
             value&.map { |item| ::OctridevVercel::SessionCommand.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -502,21 +498,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRunSessionCommandMetadata
         FIELDS = {
-          command: "command",
-          args: "args",
-          cwd: "cwd",
-          env: "env",
-          sudo: "sudo",
-          wait: "wait",
-          logs: "logs",
-          timeout: "timeout",
-          attach_stdin: "attachStdin",
+          command: 'command',
+          args: 'args',
+          cwd: 'cwd',
+          env: 'env',
+          sudo: 'sudo',
+          wait: 'wait',
+          logs: 'logs',
+          timeout: 'timeout',
+          attach_stdin: 'attachStdin'
         }.freeze
         REQUIRED_FIELDS = %i[
           command
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for RunSessionCommand.
