@@ -73,7 +73,7 @@ module OctridevVercel
         SKIPPED = 'skipped'
         STALE = 'stale'
         SUCCEEDED = 'succeeded'
-        VALUES = ['canceled', 'failed', 'neutral', 'skipped', 'stale', 'succeeded'].freeze
+        VALUES = %w[canceled failed neutral skipped stale succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -93,7 +93,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = ['completed', 'registered', 'running'].freeze
+        VALUES = %w[completed registered running].freeze
         def self.from_value(value)
           value
         end
@@ -168,7 +168,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = ['completed', 'registered', 'running'].freeze
+        VALUES = %w[completed registered running].freeze
         def self.from_value(value)
           value
         end
@@ -192,7 +192,7 @@ module OctridevVercel
         SKIPPED = 'skipped'
         STALE = 'stale'
         SUCCEEDED = 'succeeded'
-        VALUES = ['canceled', 'failed', 'neutral', 'skipped', 'stale', 'succeeded'].freeze
+        VALUES = %w[canceled failed neutral skipped stale succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -229,7 +229,7 @@ module OctridevVercel
       module UpdateCheckStatus
         RUNNING = 'running'
         COMPLETED = 'completed'
-        VALUES = ['running', 'completed'].freeze
+        VALUES = %w[running completed].freeze
         def self.from_value(value)
           value
         end
@@ -258,7 +258,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = ['completed', 'registered', 'running'].freeze
+        VALUES = %w[completed registered running].freeze
         def self.from_value(value)
           value
         end
@@ -299,7 +299,7 @@ module OctridevVercel
         SKIPPED = 'skipped'
         STALE = 'stale'
         SUCCEEDED = 'succeeded'
-        VALUES = ['canceled', 'failed', 'neutral', 'skipped', 'stale', 'succeeded'].freeze
+        VALUES = %w[canceled failed neutral skipped stale succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -337,7 +337,6 @@ module OctridevVercel
         rerequestable: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 100)
 
         Validation.if_given(path) { Validation.validate_length('path', path, max: 255) }
@@ -345,14 +344,14 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            "/v1/deployments/",
+            '/v1/deployments/',
             SdkClient.encode_path_segment(deployment_id),
-            "/checks"
+            '/checks'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
@@ -360,12 +359,12 @@ module OctridevVercel
             'path' => path,
             'detailsUrl' => details_url,
             'externalId' => external_id,
-            'rerequestable' => rerequestable,
+            'rerequestable' => rerequestable
           },
           return_type: ::OctridevVercel::Methods::Checks::CreateCheckResponse,
           decoder: :json,
           operation_id: 'create_check',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -386,23 +385,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
           [
-            "/v1/deployments/",
+            '/v1/deployments/',
             SdkClient.encode_path_segment(deployment_id),
-            "/checks"
+            '/checks'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Checks::ListChecksResponse,
           decoder: :json,
           operation_id: 'list_checks',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -417,32 +415,24 @@ module OctridevVercel
       # @param slug [String] The Team slug to perform the request on behalf of.
       #
       # @deprecated This operation is deprecated and may be removed in a future release.
-      singleton_class.define_method(:get_check) do |
-        config:,
-        deployment_id:,
-        check_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_check) do |config:, deployment_id:, check_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/deployments/",
+            '/v1/deployments/',
             SdkClient.encode_path_segment(deployment_id),
-            "/checks/",
+            '/checks/',
             SdkClient.encode_path_segment(check_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Checks::GetCheckResponse,
           decoder: :json,
           operation_id: 'get_check',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -481,7 +471,6 @@ module OctridevVercel
         external_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(name) { Validation.validate_length('name', name, max: 100) }
 
         Validation.if_given(path) { Validation.validate_length('path', path, max: 255) }
@@ -489,15 +478,15 @@ module OctridevVercel
         SdkClient.request(
           'PATCH',
           [
-            "/v1/deployments/",
+            '/v1/deployments/',
             SdkClient.encode_path_segment(deployment_id),
-            "/checks/",
+            '/checks/',
             SdkClient.encode_path_segment(check_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
@@ -506,12 +495,12 @@ module OctridevVercel
             'conclusion' => conclusion,
             'detailsUrl' => details_url,
             'output' => output,
-            'externalId' => external_id,
+            'externalId' => external_id
           },
           return_type: ::OctridevVercel::Methods::Checks::UpdateCheckResponse,
           decoder: :json,
           operation_id: 'update_check',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -536,25 +525,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/deployments/",
+            '/v1/deployments/',
             SdkClient.encode_path_segment(deployment_id),
-            "/checks/",
+            '/checks/',
             SdkClient.encode_path_segment(check_id),
-            "/rerequest"
+            '/rerequest'
           ].join,
           config: config,
           query: {
             'autoUpdate' => QueryValue.new(auto_update, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'rerequest_check',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

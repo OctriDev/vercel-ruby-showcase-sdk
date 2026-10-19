@@ -12,15 +12,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateAuthTokenMetadata
         FIELDS = {
-          name: "name",
-          expires_at: "expiresAt",
-          project_id: "projectId",
+          name: 'name',
+          expires_at: 'expiresAt',
+          project_id: 'projectId'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateAuthToken.
@@ -51,8 +50,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateAuthTokenResponseMetadata
         FIELDS = {
-          bearer_token: "bearerToken",
-          token: "token",
+          bearer_token: 'bearerToken',
+          token: 'token'
         }.freeze
         REQUIRED_FIELDS = %i[
           bearer_token
@@ -61,7 +60,7 @@ module OctridevVercel
         DECODERS = {
           token: lambda do |value|
             ::OctridevVercel::AuthToken.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -95,7 +94,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetAuthTokenResponseMetadata
         FIELDS = {
-          token: "token",
+          token: 'token'
         }.freeze
         REQUIRED_FIELDS = %i[
           token
@@ -103,7 +102,7 @@ module OctridevVercel
         DECODERS = {
           token: lambda do |value|
             ::OctridevVercel::AuthToken.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -135,13 +134,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteAuthTokenResponseMetadata
         FIELDS = {
-          token_id: "tokenId",
+          token_id: 'tokenId'
         }.freeze
         REQUIRED_FIELDS = %i[
           token_id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for DeleteAuthTokenResponse.
@@ -173,7 +171,7 @@ module OctridevVercel
       module DeleteAuthTokenParameter053ef8ae
         V0 = 'v0'
         VERCEL = 'vercel'
-        VALUES = ['v0', 'vercel'].freeze
+        VALUES = %w[v0 vercel].freeze
         def self.from_value(value)
           value
         end
@@ -218,16 +216,15 @@ module OctridevVercel
         body:,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
-          "/v1/integrations/sso/token",
+          '/v1/integrations/sso/token',
           config: config,
           body: body,
           return_type: ::OctridevVercel::ExchangeSsoTokenResponse,
           decoder: :json,
           operation_id: 'exchange_sso_token',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -238,15 +235,14 @@ module OctridevVercel
         config:,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
-          "/v6/user/tokens",
+          '/v6/user/tokens',
           config: config,
           return_type: ::OctridevVercel::ListAuthTokensResponse,
           decoder: :json,
           operation_id: 'list_auth_tokens',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -267,24 +263,23 @@ module OctridevVercel
         project_id: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
-          "/v3/user/tokens",
+          '/v3/user/tokens',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
             'expiresAt' => expires_at,
-            'projectId' => project_id,
+            'projectId' => project_id
           },
           return_type: ::OctridevVercel::Methods::Authentication::CreateAuthTokenResponse,
           decoder: :json,
           operation_id: 'create_auth_token',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -295,23 +290,18 @@ module OctridevVercel
       # @param token_id [String] The identifier of the token to retrieve. The
       #   special value "current" may be supplied, which returns the metadata for the
       #   token that the current HTTP request is authenticated with.
-      singleton_class.define_method(:get_auth_token) do |
-        config:,
-        token_id:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_auth_token) do |config:, token_id:, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v5/user/tokens/",
+            '/v5/user/tokens/',
             SdkClient.encode_path_segment(token_id)
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Authentication::GetAuthTokenResponse,
           decoder: :json,
           operation_id: 'get_auth_token',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -334,22 +324,21 @@ module OctridevVercel
         logout_source: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v3/user/tokens/",
+            '/v3/user/tokens/',
             SdkClient.encode_path_segment(token_id)
           ].join,
           config: config,
           query: {
             'reason' => QueryValue.new(reason, style: 'form', explode: true),
-            'logoutSource' => QueryValue.new(logout_source, style: 'form', explode: true),
+            'logoutSource' => QueryValue.new(logout_source, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Authentication::DeleteAuthTokenResponse,
           decoder: :json,
           operation_id: 'delete_auth_token',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

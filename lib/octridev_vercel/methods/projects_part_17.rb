@@ -38,8 +38,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseGitProviderOptionsConsolidatedGitCommitStatusMetadata
         FIELDS = {
-          enabled: "enabled",
-          propagate_failures: "propagateFailures",
+          enabled: 'enabled',
+          propagate_failures: 'propagateFailures'
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -51,7 +51,7 @@ module OctridevVercel
           end,
           propagate_failures: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseGitProviderOptionsConsolidatedGitCommitStaX5a73190c93.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -85,11 +85,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseGitProviderOptionsMetadata
         FIELDS = {
-          consolidated_git_commit_status: "consolidatedGitCommitStatus",
-          create_deployments: "createDeployments",
-          disable_repository_dispatch_events: "disableRepositoryDispatchEvents",
-          git_commit_status: "gitCommitStatus",
-          require_verified_commits: "requireVerifiedCommits",
+          consolidated_git_commit_status: 'consolidatedGitCommitStatus',
+          create_deployments: 'createDeployments',
+          disable_repository_dispatch_events: 'disableRepositoryDispatchEvents',
+          git_commit_status: 'gitCommitStatus',
+          require_verified_commits: 'requireVerifiedCommits'
         }.freeze
         REQUIRED_FIELDS = %i[
           create_deployments
@@ -109,7 +109,7 @@ module OctridevVercel
           end,
           require_verified_commits: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseGitProviderOptionsRequireVerifiedCommits.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -148,13 +148,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseIntegrationsItemResourcesItemMetadata
         FIELDS = {
-          external_resource_id: "externalResourceId",
+          external_resource_id: 'externalResourceId'
         }.freeze
         REQUIRED_FIELDS = %i[
           external_resource_id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseIntegrationsItemResourcesItem.
@@ -184,8 +183,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseIntegrationsItemMetadata
         FIELDS = {
-          installation_id: "installationId",
-          resources: "resources",
+          installation_id: 'installationId',
+          resources: 'resources'
         }.freeze
         REQUIRED_FIELDS = %i[
           installation_id
@@ -193,7 +192,7 @@ module OctridevVercel
         DECODERS = {
           resources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::GetProjectsResponseIntegrationsItemResourcesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -227,9 +226,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseIpBucketsItemMetadata
         FIELDS = {
-          bucket: "bucket",
-          default: "default",
-          support_until: "supportUntil",
+          bucket: 'bucket',
+          default: 'default',
+          support_until: 'supportUntil'
         }.freeze
         REQUIRED_FIELDS = %i[
           bucket
@@ -237,7 +236,7 @@ module OctridevVercel
         DECODERS = {
           default: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseIpBucketsItemDefault.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -267,13 +266,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseJobsFlagDefinitionsPresentMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseJobsFlagDefinitionsPresent.
@@ -302,13 +300,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseJobsLintMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseJobsLint.
@@ -337,13 +334,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseJobsMfeConfigPresentMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseJobsMfeConfigPresent.
@@ -372,13 +368,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseJobsTypecheckMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseJobsTypecheck.
@@ -407,13 +402,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseJobsMetadata
         FIELDS = {
-          flag_definitions_present: "flag-definitions-present",
-          lint: "lint",
-          mfe_config_present: "mfe-config-present",
-          typecheck: "typecheck",
+          flag_definitions_present: 'flag-definitions-present',
+          lint: 'lint',
+          mfe_config_present: 'mfe-config-present',
+          typecheck: 'typecheck'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           flag_definitions_present: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseJobsFlagDefinitionsPresent.from_hash(value)
@@ -426,7 +420,7 @@ module OctridevVercel
           end,
           typecheck: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseJobsTypecheck.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -456,12 +450,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseLastAliasRequestMetadata
         FIELDS = {
-          from_deployment_id: "fromDeploymentId",
-          from_rolling_release_id: "fromRollingReleaseId",
-          job_status: "jobStatus",
-          requested_at: "requestedAt",
-          to_deployment_id: "toDeploymentId",
-          type: "type",
+          from_deployment_id: 'fromDeploymentId',
+          from_rolling_release_id: 'fromRollingReleaseId',
+          job_status: 'jobStatus',
+          requested_at: 'requestedAt',
+          to_deployment_id: 'toDeploymentId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           from_deployment_id
@@ -476,7 +470,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseLastAliasRequestType.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           from_deployment_id
@@ -511,15 +505,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseLatestDeploymentsItemAliasErrorMetadata
         FIELDS = {
-          code: "code",
-          message: "message",
+          code: 'code',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           code
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseLatestDeploymentsItemAliasError.

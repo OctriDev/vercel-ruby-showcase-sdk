@@ -12,15 +12,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateRepositoryMetadata
         FIELDS = {
-          project_id: "projectId",
-          name: "name",
+          project_id: 'projectId',
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateRepository.
@@ -52,7 +51,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateRepositoryResponseMetadata
         FIELDS = {
-          repository: "repository",
+          repository: 'repository'
         }.freeze
         REQUIRED_FIELDS = %i[
           repository
@@ -60,7 +59,7 @@ module OctridevVercel
         DECODERS = {
           repository: lambda do |value|
             ::OctridevVercel::VcrRepository.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -91,7 +90,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRepositoryResponseMetadata
         FIELDS = {
-          repository: "repository",
+          repository: 'repository'
         }.freeze
         REQUIRED_FIELDS = %i[
           repository
@@ -99,7 +98,7 @@ module OctridevVercel
         DECODERS = {
           repository: lambda do |value|
             ::OctridevVercel::VcrRepository.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -130,13 +129,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRepositoryPermissionMetadata
         FIELDS = {
-          team_id: "teamId",
-          team_slug: "teamSlug",
+          team_id: 'teamId',
+          team_slug: 'teamSlug'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for AddRepositoryPermission.
@@ -168,7 +165,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRepositoryPermissionResponseMetadata
         FIELDS = {
-          permission: "permission",
+          permission: 'permission'
         }.freeze
         REQUIRED_FIELDS = %i[
           permission
@@ -176,7 +173,7 @@ module OctridevVercel
         DECODERS = {
           permission: lambda do |value|
             ::OctridevVercel::VcrRepositoryPermission.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -207,13 +204,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRemoveRepositoryPermissionMetadata
         FIELDS = {
-          team_id: "teamId",
-          team_slug: "teamSlug",
+          team_id: 'teamId',
+          team_slug: 'teamSlug'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for RemoveRepositoryPermission.
@@ -245,17 +240,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListRepositoryTagsResponseTagsItemMetadata
         FIELDS = {
-          arch: "arch",
-          created_at: "createdAt",
-          image_id: "imageId",
-          kind: "kind",
-          manifest_digest: "manifestDigest",
-          platform: "platform",
-          pushed_by: "pushedBy",
-          size_in_bytes: "sizeInBytes",
-          status: "status",
-          tag: "tag",
-          updated_at: "updatedAt",
+          arch: 'arch',
+          created_at: 'createdAt',
+          image_id: 'imageId',
+          kind: 'kind',
+          manifest_digest: 'manifestDigest',
+          platform: 'platform',
+          pushed_by: 'pushedBy',
+          size_in_bytes: 'sizeInBytes',
+          status: 'status',
+          tag: 'tag',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -273,7 +268,7 @@ module OctridevVercel
           end,
           status: lambda do |value|
             ::OctridevVercel::Methods::Vcr::ListRepositoryTagsResponseTagsItemStatus.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           status
@@ -307,8 +302,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListRepositoryTagsResponseMetadata
         FIELDS = {
-          next_cursor: "nextCursor",
-          tags: "tags",
+          next_cursor: 'nextCursor',
+          tags: 'tags'
         }.freeze
         REQUIRED_FIELDS = %i[
           tags
@@ -316,7 +311,7 @@ module OctridevVercel
         DECODERS = {
           tags: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Vcr::ListRepositoryTagsResponseTagsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -346,7 +341,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRepositoryTagResponseMetadata
         FIELDS = {
-          tag: "tag",
+          tag: 'tag'
         }.freeze
         REQUIRED_FIELDS = %i[
           tag
@@ -354,7 +349,7 @@ module OctridevVercel
         DECODERS = {
           tag: lambda do |value|
             ::OctridevVercel::VcrTag.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -385,7 +380,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRepositoryImageResponseMetadata
         FIELDS = {
-          image: "image",
+          image: 'image'
         }.freeze
         REQUIRED_FIELDS = %i[
           image
@@ -393,7 +388,7 @@ module OctridevVercel
         DECODERS = {
           image: lambda do |value|
             ::OctridevVercel::VcrImageDetail.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -424,15 +419,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetByTeamSlugByProjectSlugByRepositoryNameTagsListResponseMetadata
         FIELDS = {
-          name: "name",
-          tags: "tags",
+          name: 'name',
+          tags: 'tags'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
           tags
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse.
@@ -462,7 +456,7 @@ module OctridevVercel
       module ListRepositoryTagsParameter
         UPDATED_AT = 'updatedAt'
         TAG = 'tag'
-        VALUES = ['updatedAt', 'tag'].freeze
+        VALUES = %w[updatedAt tag].freeze
         def self.from_value(value)
           value
         end
@@ -474,7 +468,7 @@ module OctridevVercel
         PREPARING = 'preparing'
         READY = 'ready'
         UNOPTIMIZED = 'unoptimized'
-        VALUES = ['errored', 'preparing', 'ready', 'unoptimized'].freeze
+        VALUES = %w[errored preparing ready unoptimized].freeze
         def self.from_value(value)
           value
         end
@@ -484,7 +478,7 @@ module OctridevVercel
       module ListRepositoryTagsParameter85712c8c
         ASC = 'asc'
         DESC = 'desc'
-        VALUES = ['asc', 'desc'].freeze
+        VALUES = %w[asc desc].freeze
         def self.from_value(value)
           value
         end
@@ -495,7 +489,7 @@ module OctridevVercel
         ATTESTATION = 'attestation'
         INDEX = 'index'
         MANIFEST = 'manifest'
-        VALUES = ['attestation', 'index', 'manifest'].freeze
+        VALUES = %w[attestation index manifest].freeze
         def self.from_value(value)
           value
         end
@@ -520,26 +514,25 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 255)
         Validation.validate_pattern('name', name, '^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$')
 
         SdkClient.request(
           'POST',
-          "/v1/vcr/repository",
+          '/v1/vcr/repository',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'projectId' => project_id,
-            'name' => name,
+            'name' => name
           },
           return_type: ::OctridevVercel::Methods::Vcr::CreateRepositoryResponse,
           decoder: :json,
           operation_id: 'create_repository',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

@@ -12,10 +12,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddProjectMemberMetadata
         FIELDS = {
-          uid: "uid",
-          username: "username",
-          email: "email",
-          role: "role",
+          uid: 'uid',
+          username: 'username',
+          email: 'email',
+          role: 'role'
         }.freeze
         REQUIRED_FIELDS = %i[
           role
@@ -23,7 +23,7 @@ module OctridevVercel
         DECODERS = {
           role: lambda do |value|
             ::OctridevVercel::Methods::ProjectMembers::AddProjectMemberRole.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -60,13 +60,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddProjectMemberResponseMetadata
         FIELDS = {
-          id: "id",
+          id: 'id'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for AddProjectMemberResponse.
@@ -96,13 +95,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRemoveProjectMemberResponseMetadata
         FIELDS = {
-          id: "id",
+          id: 'id'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for RemoveProjectMemberResponse.
@@ -143,7 +141,7 @@ module OctridevVercel
         ADMIN = 'ADMIN'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
-        VALUES = ['ADMIN', 'PROJECT_VIEWER', 'PROJECT_DEVELOPER'].freeze
+        VALUES = %w[ADMIN PROJECT_VIEWER PROJECT_DEVELOPER].freeze
         def self.from_value(value)
           value
         end
@@ -155,7 +153,7 @@ module OctridevVercel
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
         PROJECT_GUEST = 'PROJECT_GUEST'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
-        VALUES = ['ADMIN', 'PROJECT_DEVELOPER', 'PROJECT_GUEST', 'PROJECT_VIEWER'].freeze
+        VALUES = %w[ADMIN PROJECT_DEVELOPER PROJECT_GUEST PROJECT_VIEWER].freeze
         def self.from_value(value)
           value
         end
@@ -171,9 +169,9 @@ module OctridevVercel
         SECURITY = 'SECURITY'
         VIEWER = 'VIEWER'
         VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
-        VALUES = [
-          'BILLING', 'CONTRIBUTOR', 'DEVELOPER', 'MEMBER', 'OWNER', 'SECURITY', 'VIEWER',
-          'VIEWER_FOR_PLUS'
+        VALUES = %w[
+          BILLING CONTRIBUTOR DEVELOPER MEMBER OWNER SECURITY VIEWER
+          VIEWER_FOR_PLUS
         ].freeze
         def self.from_value(value)
           value
@@ -186,7 +184,7 @@ module OctridevVercel
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
         PROJECT_GUEST = 'PROJECT_GUEST'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
-        VALUES = ['ADMIN', 'PROJECT_DEVELOPER', 'PROJECT_GUEST', 'PROJECT_VIEWER'].freeze
+        VALUES = %w[ADMIN PROJECT_DEVELOPER PROJECT_GUEST PROJECT_VIEWER].freeze
         def self.from_value(value)
           value
         end
@@ -207,26 +205,15 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_project_members) do |
-        config:,
-        id_or_name:,
-        limit: NOT_GIVEN,
-        since: NOT_GIVEN,
-        until_: NOT_GIVEN,
-        search: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_project_members) do |config:, id_or_name:, limit: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, search: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         SdkClient.request(
           'GET',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/members"
+            '/members'
           ].join,
           config: config,
           query: {
@@ -235,11 +222,11 @@ module OctridevVercel
             'until' => QueryValue.new(until_, style: 'form', explode: true),
             'search' => QueryValue.new(search, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'get_project_members',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -270,7 +257,6 @@ module OctridevVercel
         email: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(uid) { Validation.validate_length('uid', uid, max: 256) }
 
         Validation.if_given(username) { Validation.validate_length('username', username, max: 256) }
@@ -280,25 +266,25 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/members"
+            '/members'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'role' => role,
             'uid' => uid,
             'username' => username,
-            'email' => email,
+            'email' => email
           },
           return_type: ::OctridevVercel::Methods::ProjectMembers::AddProjectMemberResponse,
           decoder: :json,
           operation_id: 'add_project_member',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -319,24 +305,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/members/",
+            '/members/',
             SdkClient.encode_path_segment(uid)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::ProjectMembers::RemoveProjectMemberResponse,
           decoder: :json,
           operation_id: 'remove_project_member',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

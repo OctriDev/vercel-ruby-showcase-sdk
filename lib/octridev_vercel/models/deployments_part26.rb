@@ -5,696 +5,696 @@
 
 # deployments domain models (part 26)
 module OctridevVercel
-# Defines the CreateDeploymentResponseVariant1FunctionsValueArchitecture SDK namespace.
-module CreateDeploymentResponseVariant1FunctionsValueArchitecture
-  ARM64 = 'arm64'
-  X86_64 = 'x86_64'
-  VALUES = ['arm64', 'x86_64'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1FunctionsValueArchitecture SDK namespace.
+  module CreateDeploymentResponseVariant1FunctionsValueArchitecture
+    ARM64 = 'arm64'
+    X86_64 = 'x86_64'
+    VALUES = %w[arm64 x86_64].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX61e294b6a5 SDK namespace.
-module CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX61e294b6a5
-  QUEUE_V1_BETA = 'queue/v1beta'
-  VALUES = ['queue/v1beta'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX61e294b6a5 SDK namespace.
+  module CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX61e294b6a5
+    QUEUE_V1_BETA = 'queue/v1beta'
+    VALUES = ['queue/v1beta'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX61e294b6a5', 'enum', "Unknown CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX61e294b6a5: #{value}")
+      raise SdkValidationError.new('CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX61e294b6a5', 'enum', "Unknown CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX61e294b6a5: #{value}")
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXd34f628fa9 SDK namespace.
-module CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXd34f628fa9
-  QUEUE_V2_BETA = 'queue/v2beta'
-  VALUES = ['queue/v2beta'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXd34f628fa9 SDK namespace.
+  module CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXd34f628fa9
+    QUEUE_V2_BETA = 'queue/v2beta'
+    VALUES = ['queue/v2beta'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXd34f628fa9', 'enum', "Unknown CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXd34f628fa9: #{value}")
+      raise SdkValidationError.new('CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXd34f628fa9', 'enum', "Unknown CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXd34f628fa9: #{value}")
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXf2eeb01bfa SDK namespace.
-module CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXf2eeb01bfa
-  SCHEDULE_V1_BETA = 'schedule/v1beta'
-  VALUES = ['schedule/v1beta'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXf2eeb01bfa SDK namespace.
+  module CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXf2eeb01bfa
+    SCHEDULE_V1_BETA = 'schedule/v1beta'
+    VALUES = ['schedule/v1beta'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXf2eeb01bfa', 'enum', "Unknown CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXf2eeb01bfa: #{value}")
+      raise SdkValidationError.new('CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXf2eeb01bfa', 'enum', "Unknown CreateDeploymentResponseVariant1FunctionsValueExperimentalTriXf2eeb01bfa: #{value}")
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1FunctionsValueMaxDurationVariant1 SDK namespace.
-module CreateDeploymentResponseVariant1FunctionsValueMaxDurationVariant1
-  MAX = 'max'
-  VALUES = ['max'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1FunctionsValueMaxDurationVariant1 SDK namespace.
+  module CreateDeploymentResponseVariant1FunctionsValueMaxDurationVariant1
+    MAX = 'max'
+    VALUES = ['max'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1FunctionsValueSupportsCancellation SDK namespace.
-module CreateDeploymentResponseVariant1FunctionsValueSupportsCancellation
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1FunctionsValueSupportsCancellation SDK namespace.
+  module CreateDeploymentResponseVariant1FunctionsValueSupportsCancellation
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant0OwnerType SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant0OwnerType
-  TEAM = 'team'
-  USER = 'user'
-  VALUES = ['team', 'user'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant0OwnerType SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant0OwnerType
+    TEAM = 'team'
+    USER = 'user'
+    VALUES = %w[team user].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant0Private SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant0Private
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant0Private SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant0Private
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant0Type SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant0Type
-  GITLAB = 'gitlab'
-  VALUES = ['gitlab'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant0Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant0Type
+    GITLAB = 'gitlab'
+    VALUES = ['gitlab'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('CreateDeploymentResponseVariant1GitRepoVariant0Type', 'enum', "Unknown CreateDeploymentResponseVariant1GitRepoVariant0Type: #{value}")
+      raise SdkValidationError.new('CreateDeploymentResponseVariant1GitRepoVariant0Type', 'enum', "Unknown CreateDeploymentResponseVariant1GitRepoVariant0Type: #{value}")
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant1OwnerType SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant1OwnerType
-  TEAM = 'team'
-  USER = 'user'
-  VALUES = ['team', 'user'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant1OwnerType SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant1OwnerType
+    TEAM = 'team'
+    USER = 'user'
+    VALUES = %w[team user].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant1Private SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant1Private
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant1Private SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant1Private
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant1Type SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant1Type
-  GITHUB = 'github'
-  VALUES = ['github'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant1Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant1Type
+    GITHUB = 'github'
+    VALUES = ['github'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('CreateDeploymentResponseVariant1GitRepoVariant1Type', 'enum', "Unknown CreateDeploymentResponseVariant1GitRepoVariant1Type: #{value}")
+      raise SdkValidationError.new('CreateDeploymentResponseVariant1GitRepoVariant1Type', 'enum', "Unknown CreateDeploymentResponseVariant1GitRepoVariant1Type: #{value}")
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant2OwnerType SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant2OwnerType
-  TEAM = 'team'
-  USER = 'user'
-  VALUES = ['team', 'user'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant2OwnerType SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant2OwnerType
+    TEAM = 'team'
+    USER = 'user'
+    VALUES = %w[team user].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant2Private SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant2Private
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant2Private SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant2Private
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant2Type SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant2Type
-  BITBUCKET = 'bitbucket'
-  VALUES = ['bitbucket'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant2Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant2Type
+    BITBUCKET = 'bitbucket'
+    VALUES = ['bitbucket'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('CreateDeploymentResponseVariant1GitRepoVariant2Type', 'enum', "Unknown CreateDeploymentResponseVariant1GitRepoVariant2Type: #{value}")
+      raise SdkValidationError.new('CreateDeploymentResponseVariant1GitRepoVariant2Type', 'enum', "Unknown CreateDeploymentResponseVariant1GitRepoVariant2Type: #{value}")
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant3OwnerType SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant3OwnerType
-  TEAM = 'team'
-  USER = 'user'
-  VALUES = ['team', 'user'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant3OwnerType SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant3OwnerType
+    TEAM = 'team'
+    USER = 'user'
+    VALUES = %w[team user].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant3Private SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant3Private
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant3Private SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant3Private
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant3Type SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant3Type
-  VERCEL = 'vercel'
-  VALUES = ['vercel'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant3Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant3Type
+    VERCEL = 'vercel'
+    VALUES = ['vercel'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('CreateDeploymentResponseVariant1GitRepoVariant3Type', 'enum', "Unknown CreateDeploymentResponseVariant1GitRepoVariant3Type: #{value}")
+      raise SdkValidationError.new('CreateDeploymentResponseVariant1GitRepoVariant3Type', 'enum', "Unknown CreateDeploymentResponseVariant1GitRepoVariant3Type: #{value}")
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant4OwnerType SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant4OwnerType
-  TEAM = 'team'
-  USER = 'user'
-  VALUES = ['team', 'user'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant4OwnerType SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant4OwnerType
+    TEAM = 'team'
+    USER = 'user'
+    VALUES = %w[team user].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant4Private SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant4Private
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant4Private SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant4Private
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitRepoVariant4Type SDK namespace.
-module CreateDeploymentResponseVariant1GitRepoVariant4Type
-  CURSOR_ORIGIN = 'cursor-origin'
-  VALUES = ['cursor-origin'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the CreateDeploymentResponseVariant1GitRepoVariant4Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitRepoVariant4Type
+    CURSOR_ORIGIN = 'cursor-origin'
+    VALUES = ['cursor-origin'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('CreateDeploymentResponseVariant1GitRepoVariant4Type', 'enum', "Unknown CreateDeploymentResponseVariant1GitRepoVariant4Type: #{value}")
+      raise SdkValidationError.new('CreateDeploymentResponseVariant1GitRepoVariant4Type', 'enum', "Unknown CreateDeploymentResponseVariant1GitRepoVariant4Type: #{value}")
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant0Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant0Type
-  GITHUB = 'github'
-  VALUES = ['github'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant0Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant0Type
+    GITHUB = 'github'
+    VALUES = ['github'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant1Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant1Type
-  GITHUB = 'github'
-  VALUES = ['github'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant1Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant1Type
+    GITHUB = 'github'
+    VALUES = ['github'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant10Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant10Type
-  CURSOR_ORIGIN = 'cursor-origin'
-  VALUES = ['cursor-origin'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant10Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant10Type
+    CURSOR_ORIGIN = 'cursor-origin'
+    VALUES = ['cursor-origin'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant11Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant11Type
-  CUSTOM = 'custom'
-  VALUES = ['custom'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant11Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant11Type
+    CUSTOM = 'custom'
+    VALUES = ['custom'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant12Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant12Type
-  GITHUB = 'github'
-  VALUES = ['github'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant12Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant12Type
+    GITHUB = 'github'
+    VALUES = ['github'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant13Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant13Type
-  GITHUB_CUSTOM_HOST = 'github-custom-host'
-  VALUES = ['github-custom-host'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant13Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant13Type
+    GITHUB_CUSTOM_HOST = 'github-custom-host'
+    VALUES = ['github-custom-host'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant14Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant14Type
-  GITHUB_LIMITED = 'github-limited'
-  VALUES = ['github-limited'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant14Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant14Type
+    GITHUB_LIMITED = 'github-limited'
+    VALUES = ['github-limited'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant15Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant15Type
-  GITLAB = 'gitlab'
-  VALUES = ['gitlab'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant15Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant15Type
+    GITLAB = 'gitlab'
+    VALUES = ['gitlab'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant16Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant16Type
-  BITBUCKET = 'bitbucket'
-  VALUES = ['bitbucket'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant16Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant16Type
+    BITBUCKET = 'bitbucket'
+    VALUES = ['bitbucket'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant17Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant17Type
-  VERCEL = 'vercel'
-  VALUES = ['vercel'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant17Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant17Type
+    VERCEL = 'vercel'
+    VALUES = ['vercel'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant18Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant18Type
-  CURSOR_ORIGIN = 'cursor-origin'
-  VALUES = ['cursor-origin'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant18Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant18Type
+    CURSOR_ORIGIN = 'cursor-origin'
+    VALUES = ['cursor-origin'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant2Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant2Type
-  GITHUB_CUSTOM_HOST = 'github-custom-host'
-  VALUES = ['github-custom-host'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant2Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant2Type
+    GITHUB_CUSTOM_HOST = 'github-custom-host'
+    VALUES = ['github-custom-host'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant3Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant3Type
-  GITHUB_CUSTOM_HOST = 'github-custom-host'
-  VALUES = ['github-custom-host'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant3Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant3Type
+    GITHUB_CUSTOM_HOST = 'github-custom-host'
+    VALUES = ['github-custom-host'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant4Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant4Type
-  GITHUB_LIMITED = 'github-limited'
-  VALUES = ['github-limited'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant4Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant4Type
+    GITHUB_LIMITED = 'github-limited'
+    VALUES = ['github-limited'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant5Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant5Type
-  GITHUB_LIMITED = 'github-limited'
-  VALUES = ['github-limited'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant5Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant5Type
+    GITHUB_LIMITED = 'github-limited'
+    VALUES = ['github-limited'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant6Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant6Type
-  GITLAB = 'gitlab'
-  VALUES = ['gitlab'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant6Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant6Type
+    GITLAB = 'gitlab'
+    VALUES = ['gitlab'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant7Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant7Type
-  BITBUCKET = 'bitbucket'
-  VALUES = ['bitbucket'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant7Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant7Type
+    BITBUCKET = 'bitbucket'
+    VALUES = ['bitbucket'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant8Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant8Type
-  BITBUCKET = 'bitbucket'
-  VALUES = ['bitbucket'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant8Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant8Type
+    BITBUCKET = 'bitbucket'
+    VALUES = ['bitbucket'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1GitSourceVariant9Type SDK namespace.
-module CreateDeploymentResponseVariant1GitSourceVariant9Type
-  VERCEL = 'vercel'
-  VALUES = ['vercel'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1GitSourceVariant9Type SDK namespace.
+  module CreateDeploymentResponseVariant1GitSourceVariant9Type
+    VERCEL = 'vercel'
+    VALUES = ['vercel'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1ImagesContentDispositionType SDK namespace.
-module CreateDeploymentResponseVariant1ImagesContentDispositionType
-  ATTACHMENT = 'attachment'
-  INLINE = 'inline'
-  VALUES = ['attachment', 'inline'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1ImagesContentDispositionType SDK namespace.
+  module CreateDeploymentResponseVariant1ImagesContentDispositionType
+    ATTACHMENT = 'attachment'
+    INLINE = 'inline'
+    VALUES = %w[attachment inline].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1ImagesDangerouslyAllowSVG SDK namespace.
-module CreateDeploymentResponseVariant1ImagesDangerouslyAllowSVG
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1ImagesDangerouslyAllowSVG SDK namespace.
+  module CreateDeploymentResponseVariant1ImagesDangerouslyAllowSVG
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1ImagesFormatsItem SDK namespace.
-module CreateDeploymentResponseVariant1ImagesFormatsItem
-  IMAGE_AVIF = 'image/avif'
-  IMAGE_WEBP = 'image/webp'
-  VALUES = ['image/avif', 'image/webp'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1ImagesFormatsItem SDK namespace.
+  module CreateDeploymentResponseVariant1ImagesFormatsItem
+    IMAGE_AVIF = 'image/avif'
+    IMAGE_WEBP = 'image/webp'
+    VALUES = ['image/avif', 'image/webp'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1ImagesRemotePatternsItemProtocol SDK namespace.
-module CreateDeploymentResponseVariant1ImagesRemotePatternsItemProtocol
-  HTTP = 'http'
-  HTTPS = 'https'
-  VALUES = ['http', 'https'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1ImagesRemotePatternsItemProtocol SDK namespace.
+  module CreateDeploymentResponseVariant1ImagesRemotePatternsItemProtocol
+    HTTP = 'http'
+    HTTPS = 'https'
+    VALUES = %w[http https].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1IntegrationsStatus SDK namespace.
-module CreateDeploymentResponseVariant1IntegrationsStatus
-  ERROR = 'error'
-  PENDING = 'pending'
-  READY = 'ready'
-  SKIPPED = 'skipped'
-  TIMEOUT = 'timeout'
-  VALUES = ['error', 'pending', 'ready', 'skipped', 'timeout'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1IntegrationsStatus SDK namespace.
+  module CreateDeploymentResponseVariant1IntegrationsStatus
+    ERROR = 'error'
+    PENDING = 'pending'
+    READY = 'ready'
+    SKIPPED = 'skipped'
+    TIMEOUT = 'timeout'
+    VALUES = %w[error pending ready skipped timeout].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1IsFirstBranchDeployment SDK namespace.
-module CreateDeploymentResponseVariant1IsFirstBranchDeployment
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1IsFirstBranchDeployment SDK namespace.
+  module CreateDeploymentResponseVariant1IsFirstBranchDeployment
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1IsInConcurrentBuildsQueue SDK namespace.
-module CreateDeploymentResponseVariant1IsInConcurrentBuildsQueue
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1IsInConcurrentBuildsQueue SDK namespace.
+  module CreateDeploymentResponseVariant1IsInConcurrentBuildsQueue
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1IsInSystemBuildsQueue SDK namespace.
-module CreateDeploymentResponseVariant1IsInSystemBuildsQueue
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1IsInSystemBuildsQueue SDK namespace.
+  module CreateDeploymentResponseVariant1IsInSystemBuildsQueue
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1IsInstantStatic SDK namespace.
-module CreateDeploymentResponseVariant1IsInstantStatic
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1IsInstantStatic SDK namespace.
+  module CreateDeploymentResponseVariant1IsInstantStatic
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1LambdasItemReadyState SDK namespace.
-module CreateDeploymentResponseVariant1LambdasItemReadyState
-  BUILDING = 'BUILDING'
-  ERROR = 'ERROR'
-  INITIALIZING = 'INITIALIZING'
-  READY = 'READY'
-  VALUES = ['BUILDING', 'ERROR', 'INITIALIZING', 'READY'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1LambdasItemReadyState SDK namespace.
+  module CreateDeploymentResponseVariant1LambdasItemReadyState
+    BUILDING = 'BUILDING'
+    ERROR = 'ERROR'
+    INITIALIZING = 'INITIALIZING'
+    READY = 'READY'
+    VALUES = %w[BUILDING ERROR INITIALIZING READY].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1ManualProvisioningState SDK namespace.
-module CreateDeploymentResponseVariant1ManualProvisioningState
-  COMPLETE = 'COMPLETE'
-  PENDING = 'PENDING'
-  TIMEOUT = 'TIMEOUT'
-  VALUES = ['COMPLETE', 'PENDING', 'TIMEOUT'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1ManualProvisioningState SDK namespace.
+  module CreateDeploymentResponseVariant1ManualProvisioningState
+    COMPLETE = 'COMPLETE'
+    PENDING = 'PENDING'
+    TIMEOUT = 'TIMEOUT'
+    VALUES = %w[COMPLETE PENDING TIMEOUT].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1MicrofrontendsVariant0IsDefaultApp SDK namespace.
-module CreateDeploymentResponseVariant1MicrofrontendsVariant0IsDefaultApp
-  FALSE = false
-  VALUES = [false].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1MicrofrontendsVariant0IsDefaultApp SDK namespace.
+  module CreateDeploymentResponseVariant1MicrofrontendsVariant0IsDefaultApp
+    FALSE = false
+    VALUES = [false].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1MicrofrontendsVariant1IsDefaultApp SDK namespace.
-module CreateDeploymentResponseVariant1MicrofrontendsVariant1IsDefaultApp
-  TRUE = true
-  VALUES = [true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1MicrofrontendsVariant1IsDefaultApp SDK namespace.
+  module CreateDeploymentResponseVariant1MicrofrontendsVariant1IsDefaultApp
+    TRUE = true
+    VALUES = [true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1MicrofrontendsVariant1MfeConfX5012a61ad3 SDK namespace.
-module CreateDeploymentResponseVariant1MicrofrontendsVariant1MfeConfX5012a61ad3
-  NO_CONFIG = 'no_config'
-  SUCCESS = 'success'
-  WAITING_ON_BUILD = 'waiting_on_build'
-  VALUES = ['no_config', 'success', 'waiting_on_build'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1MicrofrontendsVariant1MfeConfX5012a61ad3 SDK namespace.
+  module CreateDeploymentResponseVariant1MicrofrontendsVariant1MfeConfX5012a61ad3
+    NO_CONFIG = 'no_config'
+    SUCCESS = 'success'
+    WAITING_ON_BUILD = 'waiting_on_build'
+    VALUES = %w[no_config success waiting_on_build].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1NodeVersion SDK namespace.
-module CreateDeploymentResponseVariant1NodeVersion
-  V_10_X = '10.x'
-  V_12_X = '12.x'
-  V_14_X = '14.x'
-  V_16_X = '16.x'
-  V_18_X = '18.x'
-  V_20_X = '20.x'
-  V_22_X = '22.x'
-  V_24_X = '24.x'
-  V_26_X = '26.x'
-  V_8_10_X = '8.10.x'
-  VALUES = ['10.x', '12.x', '14.x', '16.x', '18.x', '20.x', '22.x', '24.x', '26.x', '8.10.x'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1NodeVersion SDK namespace.
+  module CreateDeploymentResponseVariant1NodeVersion
+    V_10_X = '10.x'
+    V_12_X = '12.x'
+    V_14_X = '14.x'
+    V_16_X = '16.x'
+    V_18_X = '18.x'
+    V_20_X = '20.x'
+    V_22_X = '22.x'
+    V_24_X = '24.x'
+    V_26_X = '26.x'
+    V_8_10_X = '8.10.x'
+    VALUES = ['10.x', '12.x', '14.x', '16.x', '18.x', '20.x', '22.x', '24.x', '26.x', '8.10.x'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1OomReport SDK namespace.
-module CreateDeploymentResponseVariant1OomReport
-  OUT_OF_MEMORY = 'out-of-memory'
-  VALUES = ['out-of-memory'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1OomReport SDK namespace.
+  module CreateDeploymentResponseVariant1OomReport
+    OUT_OF_MEMORY = 'out-of-memory'
+    VALUES = ['out-of-memory'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1Plan SDK namespace.
-module CreateDeploymentResponseVariant1Plan
-  ENTERPRISE = 'enterprise'
-  HOBBY = 'hobby'
-  PRO = 'pro'
-  VALUES = ['enterprise', 'hobby', 'pro'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1Plan SDK namespace.
+  module CreateDeploymentResponseVariant1Plan
+    ENTERPRISE = 'enterprise'
+    HOBBY = 'hobby'
+    PRO = 'pro'
+    VALUES = %w[enterprise hobby pro].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1PlatformOriginType SDK namespace.
-module CreateDeploymentResponseVariant1PlatformOriginType
-  ID = 'id'
-  URL = 'url'
-  VALUES = ['id', 'url'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1PlatformOriginType SDK namespace.
+  module CreateDeploymentResponseVariant1PlatformOriginType
+    ID = 'id'
+    URL = 'url'
+    VALUES = %w[id url].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1Prebuilt SDK namespace.
-module CreateDeploymentResponseVariant1Prebuilt
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1Prebuilt SDK namespace.
+  module CreateDeploymentResponseVariant1Prebuilt
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1PreviewCommentsEnabled SDK namespace.
-module CreateDeploymentResponseVariant1PreviewCommentsEnabled
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1PreviewCommentsEnabled SDK namespace.
+  module CreateDeploymentResponseVariant1PreviewCommentsEnabled
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateDeploymentResponseVariant1ProjectSettingsFramework SDK namespace.
-module CreateDeploymentResponseVariant1ProjectSettingsFramework
-  ACTIX_WEB = 'actix-web'
-  ANGULAR = 'angular'
-  ASH = 'ash'
-  ASTRO = 'astro'
-  AXUM = 'axum'
-  BLITZJS = 'blitzjs'
-  BRUNCH = 'brunch'
-  BUN = 'bun'
-  CONTAINER = 'container'
-  CREATE_REACT_APP = 'create-react-app'
-  DJANGO = 'django'
-  DOCUSAURUS = 'docusaurus'
-  DOCUSAURUS_2 = 'docusaurus-2'
-  DOJO = 'dojo'
-  ELEVENTY = 'eleventy'
-  ELYSIA = 'elysia'
-  EMBER = 'ember'
-  EVE = 'eve'
-  EXPRESS = 'express'
-  FACTORY_EVE = 'factory-eve'
-  FASTAPI = 'fastapi'
-  FASTHTML = 'fasthtml'
-  FASTIFY = 'fastify'
-  FLASK = 'flask'
-  GATSBY = 'gatsby'
-  GO = 'go'
-  GRIDSOME = 'gridsome'
-  H3 = 'h3'
-  HEXO = 'hexo'
-  HONO = 'hono'
-  HUGO = 'hugo'
-  HYDROGEN = 'hydrogen'
-  IONIC_ANGULAR = 'ionic-angular'
-  IONIC_REACT = 'ionic-react'
-  JEKYLL = 'jekyll'
-  KOA = 'koa'
-  MASTRA = 'mastra'
-  MIDDLEMAN = 'middleman'
-  NESTJS = 'nestjs'
-  NEXTJS = 'nextjs'
-  NITRO = 'nitro'
-  NODE = 'node'
-  NUXTJS = 'nuxtjs'
-  PARCEL = 'parcel'
-  POLYMER = 'polymer'
-  PREACT = 'preact'
-  PYTHON = 'python'
-  REACT_ROUTER = 'react-router'
-  REDWOODJS = 'redwoodjs'
-  REMIX = 'remix'
-  RUBY = 'ruby'
-  RUST = 'rust'
-  SABER = 'saber'
-  SANITY = 'sanity'
-  SANITY_V2 = 'sanity-v2'
-  SAPPER = 'sapper'
-  SCULLY = 'scully'
-  SERVICES = 'services'
-  SOLIDSTART = 'solidstart'
-  SOLIDSTART_1 = 'solidstart-1'
-  STENCIL = 'stencil'
-  STORYBOOK = 'storybook'
-  SVELTE = 'svelte'
-  SVELTEKIT = 'sveltekit'
-  SVELTEKIT_1 = 'sveltekit-1'
-  TANSTACK_START = 'tanstack-start'
-  TANSTACK_START_LOVABLE = 'tanstack-start-lovable'
-  UMIJS = 'umijs'
-  VITE = 'vite'
-  VITEPRESS = 'vitepress'
-  VUE = 'vue'
-  VUEPRESS = 'vuepress'
-  XMCP = 'xmcp'
-  ZOLA = 'zola'
-  VALUES = [
-    'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
-    'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
-    'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask', 'gatsby',
-    'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular', 'ionic-react',
-    'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node', 'nuxtjs', 'parcel',
-    'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix', 'ruby', 'rust', 'saber',
-    'sanity', 'sanity-v2', 'sapper', 'scully', 'services', 'solidstart', 'solidstart-1', 'stencil',
-    'storybook', 'svelte', 'sveltekit', 'sveltekit-1', 'tanstack-start', 'tanstack-start-lovable',
-    'umijs', 'vite', 'vitepress', 'vue', 'vuepress', 'xmcp', 'zola'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateDeploymentResponseVariant1ProjectSettingsFramework SDK namespace.
+  module CreateDeploymentResponseVariant1ProjectSettingsFramework
+    ACTIX_WEB = 'actix-web'
+    ANGULAR = 'angular'
+    ASH = 'ash'
+    ASTRO = 'astro'
+    AXUM = 'axum'
+    BLITZJS = 'blitzjs'
+    BRUNCH = 'brunch'
+    BUN = 'bun'
+    CONTAINER = 'container'
+    CREATE_REACT_APP = 'create-react-app'
+    DJANGO = 'django'
+    DOCUSAURUS = 'docusaurus'
+    DOCUSAURUS_2 = 'docusaurus-2'
+    DOJO = 'dojo'
+    ELEVENTY = 'eleventy'
+    ELYSIA = 'elysia'
+    EMBER = 'ember'
+    EVE = 'eve'
+    EXPRESS = 'express'
+    FACTORY_EVE = 'factory-eve'
+    FASTAPI = 'fastapi'
+    FASTHTML = 'fasthtml'
+    FASTIFY = 'fastify'
+    FLASK = 'flask'
+    GATSBY = 'gatsby'
+    GO = 'go'
+    GRIDSOME = 'gridsome'
+    H3 = 'h3'
+    HEXO = 'hexo'
+    HONO = 'hono'
+    HUGO = 'hugo'
+    HYDROGEN = 'hydrogen'
+    IONIC_ANGULAR = 'ionic-angular'
+    IONIC_REACT = 'ionic-react'
+    JEKYLL = 'jekyll'
+    KOA = 'koa'
+    MASTRA = 'mastra'
+    MIDDLEMAN = 'middleman'
+    NESTJS = 'nestjs'
+    NEXTJS = 'nextjs'
+    NITRO = 'nitro'
+    NODE = 'node'
+    NUXTJS = 'nuxtjs'
+    PARCEL = 'parcel'
+    POLYMER = 'polymer'
+    PREACT = 'preact'
+    PYTHON = 'python'
+    REACT_ROUTER = 'react-router'
+    REDWOODJS = 'redwoodjs'
+    REMIX = 'remix'
+    RUBY = 'ruby'
+    RUST = 'rust'
+    SABER = 'saber'
+    SANITY = 'sanity'
+    SANITY_V2 = 'sanity-v2'
+    SAPPER = 'sapper'
+    SCULLY = 'scully'
+    SERVICES = 'services'
+    SOLIDSTART = 'solidstart'
+    SOLIDSTART_1 = 'solidstart-1'
+    STENCIL = 'stencil'
+    STORYBOOK = 'storybook'
+    SVELTE = 'svelte'
+    SVELTEKIT = 'sveltekit'
+    SVELTEKIT_1 = 'sveltekit-1'
+    TANSTACK_START = 'tanstack-start'
+    TANSTACK_START_LOVABLE = 'tanstack-start-lovable'
+    UMIJS = 'umijs'
+    VITE = 'vite'
+    VITEPRESS = 'vitepress'
+    VUE = 'vue'
+    VUEPRESS = 'vuepress'
+    XMCP = 'xmcp'
+    ZOLA = 'zola'
+    VALUES = %w[
+      actix-web angular ash astro axum blitzjs brunch bun container
+      create-react-app django docusaurus docusaurus-2 dojo eleventy elysia
+      ember eve express factory-eve fastapi fasthtml fastify flask gatsby
+      go gridsome h3 hexo hono hugo hydrogen ionic-angular ionic-react
+      jekyll koa mastra middleman nestjs nextjs nitro node nuxtjs parcel
+      polymer preact python react-router redwoodjs remix ruby rust saber
+      sanity sanity-v2 sapper scully services solidstart solidstart-1 stencil
+      storybook svelte sveltekit sveltekit-1 tanstack-start tanstack-start-lovable
+      umijs vite vitepress vue vuepress xmcp zola
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 end

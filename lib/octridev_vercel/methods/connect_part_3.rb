@@ -15,23 +15,11 @@ module OctridevVercel
       #
       # @param subject [GetConnectorTokenRequestSubject] Typed representation of the
       #   `GetConnectorTokenRequestSubject` API schema.
-      singleton_class.define_method(:get_connector_token) do |
-        config:,
-        connector:,
-        subject: NOT_GIVEN,
-        installation_id: NOT_GIVEN,
-        audience: NOT_GIVEN,
-        scopes: NOT_GIVEN,
-        resources: NOT_GIVEN,
-        authorization_details: NOT_GIVEN,
-        validity_buffer_ms: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_connector_token) do |config:, connector:, subject: NOT_GIVEN, installation_id: NOT_GIVEN, audience: NOT_GIVEN, scopes: NOT_GIVEN, resources: NOT_GIVEN, authorization_details: NOT_GIVEN, validity_buffer_ms: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'POST',
           [
-            "/v1/connect/token/",
+            '/v1/connect/token/',
             SdkClient.encode_path_segment(connector)
           ].join,
           config: config,
@@ -42,12 +30,12 @@ module OctridevVercel
             'scopes' => scopes,
             'resources' => resources,
             'authorizationDetails' => authorization_details,
-            'validityBufferMs' => validity_buffer_ms,
+            'validityBufferMs' => validity_buffer_ms
           },
           return_type: ::OctridevVercel::Methods::Connect::GetConnectorTokenResponse,
           decoder: :json,
           operation_id: 'get_connector_token',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -76,11 +64,10 @@ module OctridevVercel
         additional_params: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/connect/authorize/",
+            '/v1/connect/authorize/',
             SdkClient.encode_path_segment(connector)
           ].join,
           config: config,
@@ -97,12 +84,12 @@ module OctridevVercel
             'prompt' => prompt,
             'deviceCode' => device_code,
             'expiresInMs' => expires_in_ms,
-            'additionalParams' => additional_params,
+            'additionalParams' => additional_params
           },
           return_type: ::OctridevVercel::Methods::Connect::CreateConnectorAuthorizationRequestResponse,
           decoder: :json,
           operation_id: 'create_connector_authorization_request',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

@@ -25,19 +25,18 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
-          "/ai-gateway/budgets/defaults",
+          '/ai-gateway/budgets/defaults',
           config: config,
           query: {
             'scopeType' => QueryValue.new(scope_type, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'archive_ai_gateway_budget_default',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

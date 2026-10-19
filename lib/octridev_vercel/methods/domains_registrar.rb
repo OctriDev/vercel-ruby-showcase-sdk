@@ -12,7 +12,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSearchDomainsMetadata
         FIELDS = {
-          domains: "domains",
+          domains: 'domains'
         }.freeze
         REQUIRED_FIELDS = %i[
           domains
@@ -20,7 +20,7 @@ module OctridevVercel
         DECODERS = {
           domains: lambda do |value|
             value&.map { |item| ::OctridevVercel::DomainName.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -51,7 +51,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSearchDomainsResponseMetadata
         FIELDS = {
-          results: "results",
+          results: 'results'
         }.freeze
         REQUIRED_FIELDS = %i[
           results
@@ -59,7 +59,7 @@ module OctridevVercel
         DECODERS = {
           results: lambda do |value|
             value&.map { |item| ::OctridevVercel::SearchDomainsResponseResultsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -89,13 +89,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetTldResponseMetadata
         FIELDS = {
-          supported_language_codes: "supportedLanguageCodes",
+          supported_language_codes: 'supportedLanguageCodes'
         }.freeze
         REQUIRED_FIELDS = %i[
           supported_language_codes
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetTldResponse.
@@ -125,10 +124,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetTldPriceResponseMetadata
         FIELDS = {
-          years: "years",
-          purchase_price: "purchasePrice",
-          renewal_price: "renewalPrice",
-          transfer_price: "transferPrice",
+          years: 'years',
+          purchase_price: 'purchasePrice',
+          renewal_price: 'renewalPrice',
+          transfer_price: 'transferPrice'
         }.freeze
         REQUIRED_FIELDS = %i[
           years
@@ -136,8 +135,7 @@ module OctridevVercel
           renewal_price
           transfer_price
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetTldPriceResponse.
@@ -168,13 +166,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainAvailabilityResponseMetadata
         FIELDS = {
-          available: "available",
+          available: 'available'
         }.freeze
         REQUIRED_FIELDS = %i[
           available
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDomainAvailabilityResponse.
@@ -203,10 +200,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainPriceResponseMetadata
         FIELDS = {
-          years: "years",
-          purchase_price: "purchasePrice",
-          renewal_price: "renewalPrice",
-          transfer_price: "transferPrice",
+          years: 'years',
+          purchase_price: 'purchasePrice',
+          renewal_price: 'renewalPrice',
+          transfer_price: 'transferPrice'
         }.freeze
         REQUIRED_FIELDS = %i[
           years
@@ -214,8 +211,7 @@ module OctridevVercel
           renewal_price
           transfer_price
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDomainPriceResponse.
@@ -244,8 +240,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBulkPriceMetadata
         FIELDS = {
-          domains: "domains",
-          years: "years",
+          domains: 'domains',
+          years: 'years'
         }.freeze
         REQUIRED_FIELDS = %i[
           domains
@@ -253,7 +249,7 @@ module OctridevVercel
         DECODERS = {
           domains: lambda do |value|
             value&.map { |item| ::OctridevVercel::DomainName.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -286,11 +282,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBulkPriceResponseResultsItemMetadata
         FIELDS = {
-          domain: "domain",
-          years: "years",
-          purchase_price: "purchasePrice",
-          renewal_price: "renewalPrice",
-          transfer_price: "transferPrice",
+          domain: 'domain',
+          years: 'years',
+          purchase_price: 'purchasePrice',
+          renewal_price: 'renewalPrice',
+          transfer_price: 'transferPrice'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -302,7 +298,7 @@ module OctridevVercel
         DECODERS = {
           domain: lambda do |value|
             ::OctridevVercel::DomainName.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -334,7 +330,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBulkPriceResponseMetadata
         FIELDS = {
-          results: "results",
+          results: 'results'
         }.freeze
         REQUIRED_FIELDS = %i[
           results
@@ -342,7 +338,7 @@ module OctridevVercel
         DECODERS = {
           results: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::DomainsRegistrar::GetBulkPriceResponseResultsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -372,7 +368,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBulkAvailabilityMetadata
         FIELDS = {
-          domains: "domains",
+          domains: 'domains'
         }.freeze
         REQUIRED_FIELDS = %i[
           domains
@@ -380,7 +376,7 @@ module OctridevVercel
         DECODERS = {
           domains: lambda do |value|
             value&.map { |item| ::OctridevVercel::DomainName.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -411,8 +407,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBulkAvailabilityResponseResultsItemMetadata
         FIELDS = {
-          domain: "domain",
-          available: "available",
+          domain: 'domain',
+          available: 'available'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -421,7 +417,7 @@ module OctridevVercel
         DECODERS = {
           domain: lambda do |value|
             ::OctridevVercel::DomainName.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -453,7 +449,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBulkAvailabilityResponseMetadata
         FIELDS = {
-          results: "results",
+          results: 'results'
         }.freeze
         REQUIRED_FIELDS = %i[
           results
@@ -461,7 +457,7 @@ module OctridevVercel
         DECODERS = {
           results: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::DomainsRegistrar::GetBulkAvailabilityResponseResultsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -491,13 +487,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainAuthCodeResponseMetadata
         FIELDS = {
-          auth_code: "authCode",
+          auth_code: 'authCode'
         }.freeze
         REQUIRED_FIELDS = %i[
           auth_code
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDomainAuthCodeResponse.

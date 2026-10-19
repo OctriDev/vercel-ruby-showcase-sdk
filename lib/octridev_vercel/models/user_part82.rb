@@ -5,698 +5,698 @@
 
 # user domain models (part 82)
 module OctridevVercel
-# Defines the UserEventPayloadVariant431NextValueVariant1TeamRolesItem SDK namespace.
-module UserEventPayloadVariant431NextValueVariant1TeamRolesItem
-  BILLING = 'BILLING'
-  CONTRIBUTOR = 'CONTRIBUTOR'
-  DEVELOPER = 'DEVELOPER'
-  MEMBER = 'MEMBER'
-  OWNER = 'OWNER'
-  SECURITY = 'SECURITY'
-  VIEWER = 'VIEWER'
-  VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
-  VALUES = [
-    'BILLING', 'CONTRIBUTOR', 'DEVELOPER', 'MEMBER', 'OWNER', 'SECURITY', 'VIEWER',
-    'VIEWER_FOR_PLUS'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant431NextValueVariant1TeamRolesItem SDK namespace.
+  module UserEventPayloadVariant431NextValueVariant1TeamRolesItem
+    BILLING = 'BILLING'
+    CONTRIBUTOR = 'CONTRIBUTOR'
+    DEVELOPER = 'DEVELOPER'
+    MEMBER = 'MEMBER'
+    OWNER = 'OWNER'
+    SECURITY = 'SECURITY'
+    VIEWER = 'VIEWER'
+    VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
+    VALUES = %w[
+      BILLING CONTRIBUTOR DEVELOPER MEMBER OWNER SECURITY VIEWER
+      VIEWER_FOR_PLUS
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant431NextValueVariant2 SDK namespace.
-module UserEventPayloadVariant431NextValueVariant2
-  BILLING = 'BILLING'
-  CONTRIBUTOR = 'CONTRIBUTOR'
-  DEVELOPER = 'DEVELOPER'
-  MEMBER = 'MEMBER'
-  OWNER = 'OWNER'
-  SECURITY = 'SECURITY'
-  VIEWER = 'VIEWER'
-  VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
-  VALUES = [
-    'BILLING', 'CONTRIBUTOR', 'DEVELOPER', 'MEMBER', 'OWNER', 'SECURITY', 'VIEWER',
-    'VIEWER_FOR_PLUS'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant431NextValueVariant2 SDK namespace.
+  module UserEventPayloadVariant431NextValueVariant2
+    BILLING = 'BILLING'
+    CONTRIBUTOR = 'CONTRIBUTOR'
+    DEVELOPER = 'DEVELOPER'
+    MEMBER = 'MEMBER'
+    OWNER = 'OWNER'
+    SECURITY = 'SECURITY'
+    VIEWER = 'VIEWER'
+    VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
+    VALUES = %w[
+      BILLING CONTRIBUTOR DEVELOPER MEMBER OWNER SECURITY VIEWER
+      VIEWER_FOR_PLUS
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant431PreviousValueVariant1TeamPermissionsItem SDK namespace.
-module UserEventPayloadVariant431PreviousValueVariant1TeamPermissionsItem
-  AI_GATEWAY_BUDGET_MANAGER = 'AiGatewayBudgetManager'
-  AI_GATEWAY_CREDITS = 'AiGatewayCredits'
-  AI_GATEWAY_SETTINGS = 'AiGatewaySettings'
-  AI_GATEWAY_TRANSCRIPTS_MANAGER = 'AiGatewayTranscriptsManager'
-  AI_GATEWAY_TRANSCRIPTS_VIEWER = 'AiGatewayTranscriptsViewer'
-  AI_GATEWAY_USER = 'AiGatewayUser'
-  CONNECTOR_MANAGER = 'ConnectorManager'
-  CREATE_PROJECT = 'CreateProject'
-  ENV_VARIABLE_MANAGER = 'EnvVariableManager'
-  ENVIRONMENT_MANAGER = 'EnvironmentManager'
-  FULL_PRODUCTION_DEPLOYMENT = 'FullProductionDeployment'
-  INTEGRATION_MANAGER = 'IntegrationManager'
-  ORG_ADMIN = 'OrgAdmin'
-  ORG_VIEWER = 'OrgViewer'
-  USAGE_VIEWER = 'UsageViewer'
-  V0_BUILDER = 'V0Builder'
-  V0_CHATTER = 'V0Chatter'
-  V0_VIEWER = 'V0Viewer'
-  WORKFLOW_DECRYPTOR = 'WorkflowDecryptor'
-  VALUES = [
-    'AiGatewayBudgetManager', 'AiGatewayCredits', 'AiGatewaySettings', 'AiGatewayTranscriptsManager',
-    'AiGatewayTranscriptsViewer', 'AiGatewayUser', 'ConnectorManager', 'CreateProject',
-    'EnvVariableManager', 'EnvironmentManager', 'FullProductionDeployment', 'IntegrationManager',
-    'OrgAdmin', 'OrgViewer', 'UsageViewer', 'V0Builder', 'V0Chatter', 'V0Viewer',
-    'WorkflowDecryptor'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant431PreviousValueVariant1TeamPermissionsItem SDK namespace.
+  module UserEventPayloadVariant431PreviousValueVariant1TeamPermissionsItem
+    AI_GATEWAY_BUDGET_MANAGER = 'AiGatewayBudgetManager'
+    AI_GATEWAY_CREDITS = 'AiGatewayCredits'
+    AI_GATEWAY_SETTINGS = 'AiGatewaySettings'
+    AI_GATEWAY_TRANSCRIPTS_MANAGER = 'AiGatewayTranscriptsManager'
+    AI_GATEWAY_TRANSCRIPTS_VIEWER = 'AiGatewayTranscriptsViewer'
+    AI_GATEWAY_USER = 'AiGatewayUser'
+    CONNECTOR_MANAGER = 'ConnectorManager'
+    CREATE_PROJECT = 'CreateProject'
+    ENV_VARIABLE_MANAGER = 'EnvVariableManager'
+    ENVIRONMENT_MANAGER = 'EnvironmentManager'
+    FULL_PRODUCTION_DEPLOYMENT = 'FullProductionDeployment'
+    INTEGRATION_MANAGER = 'IntegrationManager'
+    ORG_ADMIN = 'OrgAdmin'
+    ORG_VIEWER = 'OrgViewer'
+    USAGE_VIEWER = 'UsageViewer'
+    V0_BUILDER = 'V0Builder'
+    V0_CHATTER = 'V0Chatter'
+    V0_VIEWER = 'V0Viewer'
+    WORKFLOW_DECRYPTOR = 'WorkflowDecryptor'
+    VALUES = %w[
+      AiGatewayBudgetManager AiGatewayCredits AiGatewaySettings AiGatewayTranscriptsManager
+      AiGatewayTranscriptsViewer AiGatewayUser ConnectorManager CreateProject
+      EnvVariableManager EnvironmentManager FullProductionDeployment IntegrationManager
+      OrgAdmin OrgViewer UsageViewer V0Builder V0Chatter V0Viewer
+      WorkflowDecryptor
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant431PreviousValueVariant1TeamRolesItem SDK namespace.
-module UserEventPayloadVariant431PreviousValueVariant1TeamRolesItem
-  BILLING = 'BILLING'
-  CONTRIBUTOR = 'CONTRIBUTOR'
-  DEVELOPER = 'DEVELOPER'
-  MEMBER = 'MEMBER'
-  OWNER = 'OWNER'
-  SECURITY = 'SECURITY'
-  VIEWER = 'VIEWER'
-  VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
-  VALUES = [
-    'BILLING', 'CONTRIBUTOR', 'DEVELOPER', 'MEMBER', 'OWNER', 'SECURITY', 'VIEWER',
-    'VIEWER_FOR_PLUS'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant431PreviousValueVariant1TeamRolesItem SDK namespace.
+  module UserEventPayloadVariant431PreviousValueVariant1TeamRolesItem
+    BILLING = 'BILLING'
+    CONTRIBUTOR = 'CONTRIBUTOR'
+    DEVELOPER = 'DEVELOPER'
+    MEMBER = 'MEMBER'
+    OWNER = 'OWNER'
+    SECURITY = 'SECURITY'
+    VIEWER = 'VIEWER'
+    VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
+    VALUES = %w[
+      BILLING CONTRIBUTOR DEVELOPER MEMBER OWNER SECURITY VIEWER
+      VIEWER_FOR_PLUS
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant431PreviousValueVariant2 SDK namespace.
-module UserEventPayloadVariant431PreviousValueVariant2
-  BILLING = 'BILLING'
-  CONTRIBUTOR = 'CONTRIBUTOR'
-  DEVELOPER = 'DEVELOPER'
-  MEMBER = 'MEMBER'
-  OWNER = 'OWNER'
-  SECURITY = 'SECURITY'
-  VIEWER = 'VIEWER'
-  VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
-  VALUES = [
-    'BILLING', 'CONTRIBUTOR', 'DEVELOPER', 'MEMBER', 'OWNER', 'SECURITY', 'VIEWER',
-    'VIEWER_FOR_PLUS'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant431PreviousValueVariant2 SDK namespace.
+  module UserEventPayloadVariant431PreviousValueVariant2
+    BILLING = 'BILLING'
+    CONTRIBUTOR = 'CONTRIBUTOR'
+    DEVELOPER = 'DEVELOPER'
+    MEMBER = 'MEMBER'
+    OWNER = 'OWNER'
+    SECURITY = 'SECURITY'
+    VIEWER = 'VIEWER'
+    VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
+    VALUES = %w[
+      BILLING CONTRIBUTOR DEVELOPER MEMBER OWNER SECURITY VIEWER
+      VIEWER_FOR_PLUS
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant437ActorType SDK namespace.
-module UserEventPayloadVariant437ActorType
-  ADMIN = 'admin'
-  VALUES = ['admin'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant437ActorType SDK namespace.
+  module UserEventPayloadVariant437ActorType
+    ADMIN = 'admin'
+    VALUES = ['admin'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant438SamplingItemEnv SDK namespace.
-module UserEventPayloadVariant438SamplingItemEnv
-  PREVIEW = 'preview'
-  PRODUCTION = 'production'
-  VALUES = ['preview', 'production'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant438SamplingItemEnv SDK namespace.
+  module UserEventPayloadVariant438SamplingItemEnv
+    PREVIEW = 'preview'
+    PRODUCTION = 'production'
+    VALUES = %w[preview production].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant438SamplingItemType SDK namespace.
-module UserEventPayloadVariant438SamplingItemType
-  HEAD_SAMPLING = 'head_sampling'
-  VALUES = ['head_sampling'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant438SamplingItemType SDK namespace.
+  module UserEventPayloadVariant438SamplingItemType
+    HEAD_SAMPLING = 'head_sampling'
+    VALUES = ['head_sampling'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant439Reason SDK namespace.
-module UserEventPayloadVariant439Reason
-  LIMITS_EXCEEDED = 'limits-exceeded'
-  VALUES = ['limits-exceeded'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant439Reason SDK namespace.
+  module UserEventPayloadVariant439Reason
+    LIMITS_EXCEEDED = 'limits-exceeded'
+    VALUES = ['limits-exceeded'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant443ActorType SDK namespace.
-module UserEventPayloadVariant443ActorType
-  ADMIN = 'admin'
-  USER = 'user'
-  VALUES = ['admin', 'user'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant443ActorType SDK namespace.
+  module UserEventPayloadVariant443ActorType
+    ADMIN = 'admin'
+    USER = 'user'
+    VALUES = %w[admin user].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant443Totp SDK namespace.
-module UserEventPayloadVariant443Totp
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant443Totp SDK namespace.
+  module UserEventPayloadVariant443Totp
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant445ActorType SDK namespace.
-module UserEventPayloadVariant445ActorType
-  ADMIN = 'admin'
-  VALUES = ['admin'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant445ActorType SDK namespace.
+  module UserEventPayloadVariant445ActorType
+    ADMIN = 'admin'
+    VALUES = ['admin'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant449ActorType SDK namespace.
-module UserEventPayloadVariant449ActorType
-  ADMIN = 'admin'
-  VALUES = ['admin'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant449ActorType SDK namespace.
+  module UserEventPayloadVariant449ActorType
+    ADMIN = 'admin'
+    VALUES = ['admin'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant450ActorType SDK namespace.
-module UserEventPayloadVariant450ActorType
-  ADMIN = 'admin'
-  VALUES = ['admin'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant450ActorType SDK namespace.
+  module UserEventPayloadVariant450ActorType
+    ADMIN = 'admin'
+    VALUES = ['admin'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant451ActorType SDK namespace.
-module UserEventPayloadVariant451ActorType
-  ADMIN = 'admin'
-  VALUES = ['admin'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant451ActorType SDK namespace.
+  module UserEventPayloadVariant451ActorType
+    ADMIN = 'admin'
+    VALUES = ['admin'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant451Enabled SDK namespace.
-module UserEventPayloadVariant451Enabled
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant451Enabled SDK namespace.
+  module UserEventPayloadVariant451Enabled
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant452ActorType SDK namespace.
-module UserEventPayloadVariant452ActorType
-  ADMIN = 'admin'
-  VALUES = ['admin'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant452ActorType SDK namespace.
+  module UserEventPayloadVariant452ActorType
+    ADMIN = 'admin'
+    VALUES = ['admin'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant452AutoBlockPrevented SDK namespace.
-module UserEventPayloadVariant452AutoBlockPrevented
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant452AutoBlockPrevented SDK namespace.
+  module UserEventPayloadVariant452AutoBlockPrevented
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant453Method SDK namespace.
-module UserEventPayloadVariant453Method
-  EMAIL_OTP = 'email-otp'
-  RECOVERY_CODE = 'recovery-code'
-  TOTP = 'totp'
-  WEBAUTHN = 'webauthn'
-  VALUES = ['email-otp', 'recovery-code', 'totp', 'webauthn'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant453Method SDK namespace.
+  module UserEventPayloadVariant453Method
+    EMAIL_OTP = 'email-otp'
+    RECOVERY_CODE = 'recovery-code'
+    TOTP = 'totp'
+    WEBAUTHN = 'webauthn'
+    VALUES = %w[email-otp recovery-code totp webauthn].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant454AllowedMethodsItem SDK namespace.
-module UserEventPayloadVariant454AllowedMethodsItem
-  RECOVERY_CODE = 'recovery-code'
-  TOTP = 'totp'
-  WEBAUTHN = 'webauthn'
-  VALUES = ['recovery-code', 'totp', 'webauthn'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant454AllowedMethodsItem SDK namespace.
+  module UserEventPayloadVariant454AllowedMethodsItem
+    RECOVERY_CODE = 'recovery-code'
+    TOTP = 'totp'
+    WEBAUTHN = 'webauthn'
+    VALUES = %w[recovery-code totp webauthn].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant455Action SDK namespace.
-module UserEventPayloadVariant455Action
-  ADD_PASSKEY = 'add-passkey'
-  ADD_TOTP = 'add-totp'
-  ADMIN_REMOVE = 'admin-remove'
-  DISABLE = 'disable'
-  ENABLE = 'enable'
-  REGENERATE_RECOVERY_CODES = 'regenerate-recovery-codes'
-  REMOVE_PASSKEY = 'remove-passkey'
-  VALUES = [
-    'add-passkey', 'add-totp', 'admin-remove', 'disable', 'enable', 'regenerate-recovery-codes',
-    'remove-passkey'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant455Action SDK namespace.
+  module UserEventPayloadVariant455Action
+    ADD_PASSKEY = 'add-passkey'
+    ADD_TOTP = 'add-totp'
+    ADMIN_REMOVE = 'admin-remove'
+    DISABLE = 'disable'
+    ENABLE = 'enable'
+    REGENERATE_RECOVERY_CODES = 'regenerate-recovery-codes'
+    REMOVE_PASSKEY = 'remove-passkey'
+    VALUES = %w[
+      add-passkey add-totp admin-remove disable enable regenerate-recovery-codes
+      remove-passkey
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant456Method SDK namespace.
-module UserEventPayloadVariant456Method
-  PASSKEY = 'passkey'
-  SELF_SERVE_RECOVERY = 'self_serve_recovery'
-  TOTP = 'totp'
-  USER_DISABLED = 'user_disabled'
-  VALUES = ['passkey', 'self_serve_recovery', 'totp', 'user_disabled'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant456Method SDK namespace.
+  module UserEventPayloadVariant456Method
+    PASSKEY = 'passkey'
+    SELF_SERVE_RECOVERY = 'self_serve_recovery'
+    TOTP = 'totp'
+    USER_DISABLED = 'user_disabled'
+    VALUES = %w[passkey self_serve_recovery totp user_disabled].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant456NextEnabled SDK namespace.
-module UserEventPayloadVariant456NextEnabled
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant456NextEnabled SDK namespace.
+  module UserEventPayloadVariant456NextEnabled
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant456NextTotpVerified SDK namespace.
-module UserEventPayloadVariant456NextTotpVerified
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant456NextTotpVerified SDK namespace.
+  module UserEventPayloadVariant456NextTotpVerified
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant456PreviousEnabled SDK namespace.
-module UserEventPayloadVariant456PreviousEnabled
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant456PreviousEnabled SDK namespace.
+  module UserEventPayloadVariant456PreviousEnabled
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant456PreviousTotpVerified SDK namespace.
-module UserEventPayloadVariant456PreviousTotpVerified
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant456PreviousTotpVerified SDK namespace.
+  module UserEventPayloadVariant456PreviousTotpVerified
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant457Context SDK namespace.
-module UserEventPayloadVariant457Context
-  LOGIN = 'login'
-  SUDO = 'sudo'
-  VALUES = ['login', 'sudo'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant457Context SDK namespace.
+  module UserEventPayloadVariant457Context
+    LOGIN = 'login'
+    SUDO = 'sudo'
+    VALUES = %w[login sudo].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant458MfaEnabled SDK namespace.
-module UserEventPayloadVariant458MfaEnabled
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant458MfaEnabled SDK namespace.
+  module UserEventPayloadVariant458MfaEnabled
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant459MfaEnabled SDK namespace.
-module UserEventPayloadVariant459MfaEnabled
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant459MfaEnabled SDK namespace.
+  module UserEventPayloadVariant459MfaEnabled
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant459MfaTotpVerified SDK namespace.
-module UserEventPayloadVariant459MfaTotpVerified
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant459MfaTotpVerified SDK namespace.
+  module UserEventPayloadVariant459MfaTotpVerified
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant46NextRole SDK namespace.
-module UserEventPayloadVariant46NextRole
-  ADMIN = 'ADMIN'
-  PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
-  PROJECT_GUEST = 'PROJECT_GUEST'
-  PROJECT_VIEWER = 'PROJECT_VIEWER'
-  VALUES = ['ADMIN', 'PROJECT_DEVELOPER', 'PROJECT_GUEST', 'PROJECT_VIEWER'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant46NextRole SDK namespace.
+  module UserEventPayloadVariant46NextRole
+    ADMIN = 'ADMIN'
+    PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
+    PROJECT_GUEST = 'PROJECT_GUEST'
+    PROJECT_VIEWER = 'PROJECT_VIEWER'
+    VALUES = %w[ADMIN PROJECT_DEVELOPER PROJECT_GUEST PROJECT_VIEWER].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant46PreviousRole SDK namespace.
-module UserEventPayloadVariant46PreviousRole
-  ADMIN = 'ADMIN'
-  PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
-  PROJECT_GUEST = 'PROJECT_GUEST'
-  PROJECT_VIEWER = 'PROJECT_VIEWER'
-  VALUES = ['ADMIN', 'PROJECT_DEVELOPER', 'PROJECT_GUEST', 'PROJECT_VIEWER'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant46PreviousRole SDK namespace.
+  module UserEventPayloadVariant46PreviousRole
+    ADMIN = 'ADMIN'
+    PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
+    PROJECT_GUEST = 'PROJECT_GUEST'
+    PROJECT_VIEWER = 'PROJECT_VIEWER'
+    VALUES = %w[ADMIN PROJECT_DEVELOPER PROJECT_GUEST PROJECT_VIEWER].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant460Enabled SDK namespace.
-module UserEventPayloadVariant460Enabled
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant460Enabled SDK namespace.
+  module UserEventPayloadVariant460Enabled
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant460TotpVerified SDK namespace.
-module UserEventPayloadVariant460TotpVerified
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant460TotpVerified SDK namespace.
+  module UserEventPayloadVariant460TotpVerified
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant461NextEnabled SDK namespace.
-module UserEventPayloadVariant461NextEnabled
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant461NextEnabled SDK namespace.
+  module UserEventPayloadVariant461NextEnabled
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant461NextTotpVerified SDK namespace.
-module UserEventPayloadVariant461NextTotpVerified
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant461NextTotpVerified SDK namespace.
+  module UserEventPayloadVariant461NextTotpVerified
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant461PreviousEnabled SDK namespace.
-module UserEventPayloadVariant461PreviousEnabled
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant461PreviousEnabled SDK namespace.
+  module UserEventPayloadVariant461PreviousEnabled
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant461PreviousTotpVerified SDK namespace.
-module UserEventPayloadVariant461PreviousTotpVerified
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant461PreviousTotpVerified SDK namespace.
+  module UserEventPayloadVariant461PreviousTotpVerified
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant462DecisionAuthoritative SDK namespace.
-module UserEventPayloadVariant462DecisionAuthoritative
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant462DecisionAuthoritative SDK namespace.
+  module UserEventPayloadVariant462DecisionAuthoritative
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant462DecisionBasis SDK namespace.
-module UserEventPayloadVariant462DecisionBasis
-  GMAIL = 'gmail'
-  NONE = 'none'
-  WORKSPACE_MX = 'workspace-mx'
-  VALUES = ['gmail', 'none', 'workspace-mx'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant462DecisionBasis SDK namespace.
+  module UserEventPayloadVariant462DecisionBasis
+    GMAIL = 'gmail'
+    NONE = 'none'
+    WORKSPACE_MX = 'workspace-mx'
+    VALUES = %w[gmail none workspace-mx].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant462DecisionEmailVerified SDK namespace.
-module UserEventPayloadVariant462DecisionEmailVerified
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant462DecisionEmailVerified SDK namespace.
+  module UserEventPayloadVariant462DecisionEmailVerified
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant462DecisionHostedDomainMatch SDK namespace.
-module UserEventPayloadVariant462DecisionHostedDomainMatch
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant462DecisionHostedDomainMatch SDK namespace.
+  module UserEventPayloadVariant462DecisionHostedDomainMatch
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant462DecisionMxOutcome SDK namespace.
-module UserEventPayloadVariant462DecisionMxOutcome
-  GOOGLE = 'google'
-  LOOKUP_ERROR = 'lookup-error'
-  NON_GOOGLE = 'non-google'
-  NOT_CHECKED = 'not-checked'
-  VALUES = ['google', 'lookup-error', 'non-google', 'not-checked'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant462DecisionMxOutcome SDK namespace.
+  module UserEventPayloadVariant462DecisionMxOutcome
+    GOOGLE = 'google'
+    LOOKUP_ERROR = 'lookup-error'
+    NON_GOOGLE = 'non-google'
+    NOT_CHECKED = 'not-checked'
+    VALUES = %w[google lookup-error non-google not-checked].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant462Outcome SDK namespace.
-module UserEventPayloadVariant462Outcome
-  ACCOUNT_MATCHED = 'account-matched'
-  LINKING_REQUIRED = 'linking-required'
-  VALUES = ['account-matched', 'linking-required'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant462Outcome SDK namespace.
+  module UserEventPayloadVariant462Outcome
+    ACCOUNT_MATCHED = 'account-matched'
+    LINKING_REQUIRED = 'linking-required'
+    VALUES = %w[account-matched linking-required].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant462Provider SDK namespace.
-module UserEventPayloadVariant462Provider
-  GOOGLE = 'google'
-  VALUES = ['google'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant462Provider SDK namespace.
+  module UserEventPayloadVariant462Provider
+    GOOGLE = 'google'
+    VALUES = ['google'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant464ActorType SDK namespace.
-module UserEventPayloadVariant464ActorType
-  ADMIN = 'admin'
-  VALUES = ['admin'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant464ActorType SDK namespace.
+  module UserEventPayloadVariant464ActorType
+    ADMIN = 'admin'
+    VALUES = ['admin'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant465ActorType SDK namespace.
-module UserEventPayloadVariant465ActorType
-  ADMIN = 'admin'
-  VALUES = ['admin'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant465ActorType SDK namespace.
+  module UserEventPayloadVariant465ActorType
+    ADMIN = 'admin'
+    VALUES = ['admin'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant471Public SDK namespace.
-module UserEventPayloadVariant471Public
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant471Public SDK namespace.
+  module UserEventPayloadVariant471Public
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant476CiEnabled SDK namespace.
-module UserEventPayloadVariant476CiEnabled
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant476CiEnabled SDK namespace.
+  module UserEventPayloadVariant476CiEnabled
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant477ProtectionEnabled SDK namespace.
-module UserEventPayloadVariant477ProtectionEnabled
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant477ProtectionEnabled SDK namespace.
+  module UserEventPayloadVariant477ProtectionEnabled
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant481Tier SDK namespace.
-module UserEventPayloadVariant481Tier
-  PLUS = 'plus'
-  PRO = 'pro'
-  VALUES = ['plus', 'pro'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant481Tier SDK namespace.
+  module UserEventPayloadVariant481Tier
+    PLUS = 'plus'
+    PRO = 'pro'
+    VALUES = %w[plus pro].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant487AppClientAuthenticationUsedMethod SDK namespace.
-module UserEventPayloadVariant487AppClientAuthenticationUsedMethod
-  CLIENT_SECRET_BASIC = 'client_secret_basic'
-  CLIENT_SECRET_JWT = 'client_secret_jwt'
-  CLIENT_SECRET_POST = 'client_secret_post'
-  NONE = 'none'
-  OIDC_TOKEN = 'oidc_token'
-  PRIVATE_KEY_JWT = 'private_key_jwt'
-  VALUES = [
-    'client_secret_basic', 'client_secret_jwt', 'client_secret_post', 'none', 'oidc_token',
-    'private_key_jwt'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant487AppClientAuthenticationUsedMethod SDK namespace.
+  module UserEventPayloadVariant487AppClientAuthenticationUsedMethod
+    CLIENT_SECRET_BASIC = 'client_secret_basic'
+    CLIENT_SECRET_JWT = 'client_secret_jwt'
+    CLIENT_SECRET_POST = 'client_secret_post'
+    NONE = 'none'
+    OIDC_TOKEN = 'oidc_token'
+    PRIVATE_KEY_JWT = 'private_key_jwt'
+    VALUES = %w[
+      client_secret_basic client_secret_jwt client_secret_post none oidc_token
+      private_key_jwt
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant487AuthMethod SDK namespace.
-module UserEventPayloadVariant487AuthMethod
-  APP = 'app'
-  APPLE = 'apple'
-  BITBUCKET = 'bitbucket'
-  CHATGPT = 'chatgpt'
-  EMAIL = 'email'
-  EMU = 'emu'
-  GITHUB = 'github'
-  GITHUB_WEBHOOK = 'github-webhook'
-  GITLAB = 'gitlab'
-  GOOGLE = 'google'
-  INVITE = 'invite'
-  MANUAL = 'manual'
-  OTP = 'otp'
-  PASSKEY = 'passkey'
-  SAML = 'saml'
-  SMS = 'sms'
-  TOKEN_EXCHANGE_OIDC = 'token-exchange-oidc'
-  VALUES = [
-    'app', 'apple', 'bitbucket', 'chatgpt', 'email', 'emu', 'github', 'github-webhook', 'gitlab',
-    'google', 'invite', 'manual', 'otp', 'passkey', 'saml', 'sms', 'token-exchange-oidc'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant487AuthMethod SDK namespace.
+  module UserEventPayloadVariant487AuthMethod
+    APP = 'app'
+    APPLE = 'apple'
+    BITBUCKET = 'bitbucket'
+    CHATGPT = 'chatgpt'
+    EMAIL = 'email'
+    EMU = 'emu'
+    GITHUB = 'github'
+    GITHUB_WEBHOOK = 'github-webhook'
+    GITLAB = 'gitlab'
+    GOOGLE = 'google'
+    INVITE = 'invite'
+    MANUAL = 'manual'
+    OTP = 'otp'
+    PASSKEY = 'passkey'
+    SAML = 'saml'
+    SMS = 'sms'
+    TOKEN_EXCHANGE_OIDC = 'token-exchange-oidc'
+    VALUES = %w[
+      app apple bitbucket chatgpt email emu github github-webhook gitlab
+      google invite manual otp passkey saml sms token-exchange-oidc
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant487GrantType SDK namespace.
-module UserEventPayloadVariant487GrantType
-  AUTHORIZATION_CODE = 'authorization_code'
-  URN_IETF_PARAMS_OAUTH_GRANT_TYPE_DEVICE_CODE = 'urn:ietf:params:oauth:grant-type:device_code'
-  URN_IETF_PARAMS_OAUTH_GRANT_TYPE_TOKEN_EXCHANGE = 'urn:ietf:params:oauth:grant-type:token-exchange'
-  VALUES = [
-    'authorization_code', 'urn:ietf:params:oauth:grant-type:device_code',
-    'urn:ietf:params:oauth:grant-type:token-exchange'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant487GrantType SDK namespace.
+  module UserEventPayloadVariant487GrantType
+    AUTHORIZATION_CODE = 'authorization_code'
+    URN_IETF_PARAMS_OAUTH_GRANT_TYPE_DEVICE_CODE = 'urn:ietf:params:oauth:grant-type:device_code'
+    URN_IETF_PARAMS_OAUTH_GRANT_TYPE_TOKEN_EXCHANGE = 'urn:ietf:params:oauth:grant-type:token-exchange'
+    VALUES = [
+      'authorization_code', 'urn:ietf:params:oauth:grant-type:device_code',
+      'urn:ietf:params:oauth:grant-type:token-exchange'
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant487IncludesRefreshToken SDK namespace.
-module UserEventPayloadVariant487IncludesRefreshToken
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant487IncludesRefreshToken SDK namespace.
+  module UserEventPayloadVariant487IncludesRefreshToken
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant487RefreshTokenPrefix SDK namespace.
-module UserEventPayloadVariant487RefreshTokenPrefix
-  VCR = 'vcr_'
-  VALUES = ['vcr_'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant487RefreshTokenPrefix SDK namespace.
+  module UserEventPayloadVariant487RefreshTokenPrefix
+    VCR = 'vcr_'
+    VALUES = ['vcr_'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant487TokenPrefix SDK namespace.
-module UserEventPayloadVariant487TokenPrefix
-  VCA = 'vca_'
-  VALUES = ['vca_'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant487TokenPrefix SDK namespace.
+  module UserEventPayloadVariant487TokenPrefix
+    VCA = 'vca_'
+    VALUES = ['vca_'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant489PolicyClaimsItemValuesItemWildcards SDK namespace.
-module UserEventPayloadVariant489PolicyClaimsItemValuesItemWildcards
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant489PolicyClaimsItemValuesItemWildcards SDK namespace.
+  module UserEventPayloadVariant489PolicyClaimsItemValuesItemWildcards
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant490AfterClaimsItemValuesItemWildcards SDK namespace.
-module UserEventPayloadVariant490AfterClaimsItemValuesItemWildcards
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant490AfterClaimsItemValuesItemWildcards SDK namespace.
+  module UserEventPayloadVariant490AfterClaimsItemValuesItemWildcards
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UserEventPayloadVariant490BeforeClaimsItemValuesItemWildcards SDK namespace.
-module UserEventPayloadVariant490BeforeClaimsItemValuesItemWildcards
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UserEventPayloadVariant490BeforeClaimsItemValuesItemWildcards SDK namespace.
+  module UserEventPayloadVariant490BeforeClaimsItemValuesItemWildcards
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 end

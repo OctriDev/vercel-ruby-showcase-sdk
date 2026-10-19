@@ -16,7 +16,7 @@ module OctridevVercel
         PUT = 'PUT'
         DELETE = 'DELETE'
         PATCH = 'PATCH'
-        VALUES = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'].freeze
+        VALUES = %w[GET POST PUT DELETE PATCH].freeze
         def self.from_value(value)
           value
         end
@@ -29,7 +29,7 @@ module OctridevVercel
         PUT = 'PUT'
         DELETE = 'DELETE'
         PATCH = 'PATCH'
-        VALUES = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'].freeze
+        VALUES = %w[GET POST PUT DELETE PATCH].freeze
         def self.from_value(value)
           value
         end
@@ -41,7 +41,7 @@ module OctridevVercel
         PURCHASING = 'purchasing'
         COMPLETED = 'completed'
         FAILED = 'failed'
-        VALUES = ['draft', 'purchasing', 'completed', 'failed'].freeze
+        VALUES = %w[draft purchasing completed failed].freeze
         def self.from_value(value)
           value
         end
@@ -58,76 +58,64 @@ module OctridevVercel
         team_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('domains', domains, min: 1, max: 200)
 
         SdkClient.request(
           'POST',
-          "/v1/registrar/domains/search",
+          '/v1/registrar/domains/search',
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           body: {
-            'domains' => domains,
+            'domains' => domains
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::SearchDomainsResponse,
           decoder: :json,
           operation_id: 'search_domains',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
       # Lists the top-level domains supported for domain registration. Use this operation to discover which TLDs are available before requesting TLD metadata or checking domain availability. The response is an array of TLD names.
       #
       # Get a list of TLDs supported by Vercel
-      singleton_class.define_method(:get_supported_tlds) do |
-        config:,
-        team_id: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_supported_tlds) do |config:, team_id: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
-          "/v1/registrar/tlds/supported",
+          '/v1/registrar/tlds/supported',
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           return_type: [::OctridevVercel::TldName],
           decoder: :json,
           operation_id: 'get_supported_tlds',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
       # Retrieves metadata for a specific top-level domain. Use this operation to find the language codes supported for the TLD and their corresponding language names. The response contains a map of supported language codes.
       #
       # Get the metadata for a specific TLD.
-      singleton_class.define_method(:get_tld) do |
-        config:,
-        tld:,
-        team_id: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_tld) do |config:, tld:, team_id: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/registrar/tlds/",
+            '/v1/registrar/tlds/',
             SdkClient.encode_path_segment(tld)
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetTldResponse,
           decoder: :json,
           operation_id: 'get_tld',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
@@ -137,60 +125,47 @@ module OctridevVercel
       #
       # @param years [String] The number of years to get the price for. If not
       #   provided, the minimum number of years for the TLD will be used.
-      singleton_class.define_method(:get_tld_price) do |
-        config:,
-        tld:,
-        years: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_tld_price) do |config:, tld:, years: NOT_GIVEN, team_id: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/registrar/tlds/",
+            '/v1/registrar/tlds/',
             SdkClient.encode_path_segment(tld),
-            "/price"
+            '/price'
           ].join,
           config: config,
           query: {
             'years' => QueryValue.new(years, style: 'form', explode: true),
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetTldPriceResponse,
           decoder: :json,
           operation_id: 'get_tld_price',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
       # Retrieves the availability status for a specific domain. Use `domain` to check whether the name is available before attempting to purchase it. If it is available, you can purchase it through the single-domain or multiple-domain purchase endpoint.
       #
       # Get availability for a specific domain. If the domain is available, it can be purchased using the Buy a domain endpoint or the Buy multiple domains endpoint.
-      singleton_class.define_method(:get_domain_availability) do |
-        config:,
-        domain:,
-        team_id: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_domain_availability) do |config:, domain:, team_id: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/availability"
+            '/availability'
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetDomainAvailabilityResponse,
           decoder: :json,
           operation_id: 'get_domain_availability',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '404' => ::OctridevVercel::NotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '404' => ::OctridevVercel::NotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
@@ -200,31 +175,24 @@ module OctridevVercel
       #
       # @param years [String] The number of years to get the price for. If not
       #   provided, the minimum number of years for the TLD will be used.
-      singleton_class.define_method(:get_domain_price) do |
-        config:,
-        domain:,
-        years: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_domain_price) do |config:, domain:, years: NOT_GIVEN, team_id: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/price"
+            '/price'
           ].join,
           config: config,
           query: {
             'years' => QueryValue.new(years, style: 'form', explode: true),
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetDomainPriceResponse,
           decoder: :json,
           operation_id: 'get_domain_price',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
@@ -235,32 +203,25 @@ module OctridevVercel
       # @param domains [Array_of_DomainName] an array of at most 50 item(s)
       # @param years [Float] The number of years to get the price for. If not
       #   provided, the minimum number of years for the TLD will be used.
-      singleton_class.define_method(:get_bulk_price) do |
-        config:,
-        domains:,
-        team_id: NOT_GIVEN,
-        years: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_bulk_price) do |config:, domains:, team_id: NOT_GIVEN, years: NOT_GIVEN, request_options: nil|
         Validation.validate_items('domains', domains, min: 1, max: 50)
 
         SdkClient.request(
           'POST',
-          "/v1/registrar/domains/price",
+          '/v1/registrar/domains/price',
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           body: {
             'domains' => domains,
-            'years' => years,
+            'years' => years
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetBulkPriceResponse,
           decoder: :json,
           operation_id: 'get_bulk_price',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
@@ -269,87 +230,69 @@ module OctridevVercel
       # Get availability for multiple domains. If the domains are available, they can be purchased using the Buy a domain endpoint or the Buy multiple domains endpoint.
       #
       # @param domains [Array_of_DomainName] an array of at most 50 item(s)
-      singleton_class.define_method(:get_bulk_availability) do |
-        config:,
-        domains:,
-        team_id: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_bulk_availability) do |config:, domains:, team_id: NOT_GIVEN, request_options: nil|
         Validation.validate_items('domains', domains, min: 1, max: 50)
 
         SdkClient.request(
           'POST',
-          "/v1/registrar/domains/availability",
+          '/v1/registrar/domains/availability',
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           body: {
-            'domains' => domains,
+            'domains' => domains
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetBulkAvailabilityResponse,
           decoder: :json,
           operation_id: 'get_bulk_availability',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
       # Retrieves the contact information schema for a domain's TLD. Use the schema to identify any TLD-specific contact fields you need to supply when registering a domain. The required fields can differ between TLDs.
       #
       # Some TLDs require additional contact information. Use this endpoint to get the schema for the tld-specific contact information for a domain.
-      singleton_class.define_method(:get_contact_info_schema) do |
-        config:,
-        domain:,
-        team_id: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_contact_info_schema) do |config:, domain:, team_id: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/contact-info/schema"
+            '/contact-info/schema'
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'get_contact_info_schema',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
       # Retrieves the authorization code for a domain registered with the domain registrar. Use this code when transferring the domain from the registrar to another registrar. The domain must be eligible for transfer out before its code can be retrieved.
       #
       # Get the auth code for a domain. This is required to transfer a domain from Vercel to another registrar.
-      singleton_class.define_method(:get_domain_auth_code) do |
-        config:,
-        domain:,
-        team_id: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_domain_auth_code) do |config:, domain:, team_id: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/auth-code"
+            '/auth-code'
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetDomainAuthCodeResponse,
           decoder: :json,
           operation_id: 'get_domain_auth_code',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '409' => ::OctridevVercel::DomainCannotBeTransferedOutUntil, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '409' => ::OctridevVercel::DomainCannotBeTransferedOutUntil, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
@@ -379,32 +322,31 @@ module OctridevVercel
         language_code: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_range('expectedPrice', expected_price, min: 0.01)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/buy"
+            '/buy'
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           body: {
             'autoRenew' => auto_renew,
             'years' => years,
             'expectedPrice' => expected_price,
             'contactInformation' => contact_information,
-            'languageCode' => language_code,
+            'languageCode' => language_code
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::BuySingleDomainResponse,
           decoder: :json,
           operation_id: 'buy_single_domain',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
@@ -423,25 +365,24 @@ module OctridevVercel
         team_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('domains', domains, min: 1)
 
         SdkClient.request(
           'POST',
-          "/v1/registrar/domains/buy",
+          '/v1/registrar/domains/buy',
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           body: {
             'domains' => domains,
-            'contactInformation' => contact_information,
+            'contactInformation' => contact_information
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::BuyDomainsResponse,
           decoder: :json,
           operation_id: 'buy_domains',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
@@ -467,61 +408,54 @@ module OctridevVercel
         team_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_range('expectedPrice', expected_price, min: 0.01)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/transfer"
+            '/transfer'
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           body: {
             'authCode' => auth_code,
             'autoRenew' => auto_renew,
             'years' => years,
             'expectedPrice' => expected_price,
-            'contactInformation' => contact_information,
+            'contactInformation' => contact_information
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::TransferInDomainResponse,
           decoder: :json,
           operation_id: 'transfer_in_domain',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
       # Retrieves the transfer status for a domain. Use the status to check the progress or outcome of an incoming domain transfer. The response reports the transfer's current state.
       #
       # Get the transfer status for a domain
-      singleton_class.define_method(:get_domain_transfer_in) do |
-        config:,
-        domain:,
-        team_id: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_domain_transfer_in) do |config:, domain:, team_id: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/transfer"
+            '/transfer'
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetDomainTransferInResponse,
           decoder: :json,
           operation_id: 'get_domain_transfer_in',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::NotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::NotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
@@ -539,30 +473,29 @@ module OctridevVercel
         contact_information: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_range('expectedPrice', expected_price, min: 0.01)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/renew"
+            '/renew'
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           body: {
             'years' => years,
             'expectedPrice' => expected_price,
-            'contactInformation' => contact_information,
+            'contactInformation' => contact_information
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::RenewDomainResponse,
           decoder: :json,
           operation_id: 'renew_domain',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
     end

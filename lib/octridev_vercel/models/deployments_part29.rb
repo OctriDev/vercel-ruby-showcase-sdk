@@ -5,670 +5,666 @@
 
 # deployments domain models (part 29)
 module OctridevVercel
-# Defines the FlagJSONValue SDK namespace.
-module FlagJSONValue
-  def self.from_hash(hash)
-    return hash if hash.is_a?(::String)
-    return hash if hash.is_a?(::Float)
-    return FlagJSONValueVariant4.from_value(hash) if [true, false].include?(hash)
-    return hash.map { |item| FlagJSONValue.from_hash(item) } if hash.is_a?(::Array)
-    return hash if hash.is_a?(::Hash)
-    raise "Could not deserialize FlagJSONValue from #{hash.inspect}"
-  end
-end
+  # Defines the FlagJSONValue SDK namespace.
+  module FlagJSONValue
+    def self.from_hash(hash)
+      return hash if hash.is_a?(::String)
+      return hash if hash.is_a?(::Float)
+      return FlagJSONValueVariant4.from_value(hash) if [true, false].include?(hash)
+      return hash.map { |item| FlagJSONValue.from_hash(item) } if hash.is_a?(::Array)
+      return hash if hash.is_a?(::Hash)
 
-# Defines the FlagJSONValueVariant4 SDK namespace.
-module FlagJSONValueVariant4
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentEventsResponseItemVariant0PayloadInfoMetadata
-  FIELDS = {
-    entrypoint: "entrypoint",
-    name: "name",
-    path: "path",
-    ready_state: "readyState",
-    service_name: "serviceName",
-    step: "step",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    name
-    type
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetDeploymentEventsResponseItemVariant0PayloadInfo.
-class GetDeploymentEventsResponseItemVariant0PayloadInfo
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadInfoMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadInfoMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadInfoMetadata::DECODERS
-
-  attr_reader :entrypoint, :name, :path, :ready_state, :service_name, :step, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise "Could not deserialize FlagJSONValue from #{hash.inspect}"
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the FlagJSONValueVariant4 SDK namespace.
+  module FlagJSONValueVariant4
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentEventsResponseItemVariant0PayloadProxyMetadata
-  FIELDS = {
-    cache_id: "cacheId",
-    client_ip: "clientIp",
-    host: "host",
-    lambda_region: "lambdaRegion",
-    method: "method",
-    path: "path",
-    path_type: "pathType",
-    path_type_variant: "pathTypeVariant",
-    referer: "referer",
-    region: "region",
-    response_byte_size: "responseByteSize",
-    scheme: "scheme",
-    status_code: "statusCode",
-    timestamp: "timestamp",
-    user_agent: "userAgent",
-    vercel_cache: "vercelCache",
-    vercel_id: "vercelId",
-    waf_action: "wafAction",
-    waf_rule_id: "wafRuleId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    host
-    method
-    timestamp
-  ].freeze
-  DECODERS = {
-    vercel_cache: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant0PayloadProxyVercelCache.from_value(value)
-    end,
-    waf_action: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant0PayloadProxyWafAction.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDeploymentEventsResponseItemVariant0PayloadProxy.
-class GetDeploymentEventsResponseItemVariant0PayloadProxy
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadProxyMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadProxyMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadProxyMetadata::DECODERS
-
-  attr_reader :cache_id, :client_ip, :host, :lambda_region, :method, :path, :path_type,
-              :path_type_variant, :referer, :region, :response_byte_size, :scheme, :status_code,
-              :timestamp, :user_agent, :vercel_cache, :vercel_id, :waf_action, :waf_rule_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentEventsResponseItemVariant0PayloadInfoMetadata
+    FIELDS = {
+      entrypoint: 'entrypoint',
+      name: 'name',
+      path: 'path',
+      ready_state: 'readyState',
+      service_name: 'serviceName',
+      step: 'step',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      name
+      type
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetDeploymentEventsResponseItemVariant0PayloadInfo.
+  class GetDeploymentEventsResponseItemVariant0PayloadInfo
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadInfoMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadInfoMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadInfoMetadata::DECODERS
+
+    attr_reader :entrypoint, :name, :path, :ready_state, :service_name, :step, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentEventsResponseItemVariant0PayloadMetadata
-  FIELDS = {
-    created: "created",
-    date: "date",
-    deployment_id: "deploymentId",
-    id: "id",
-    info: "info",
-    proxy: "proxy",
-    request_id: "requestId",
-    serial: "serial",
-    status_code: "statusCode",
-    text: "text",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    date
-    deployment_id
-    id
-    serial
-  ].freeze
-  DECODERS = {
-    info: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant0PayloadInfo.from_hash(value)
-    end,
-    proxy: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant0PayloadProxy.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDeploymentEventsResponseItemVariant0Payload.
-class GetDeploymentEventsResponseItemVariant0Payload
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadMetadata::DECODERS
-
-  attr_reader :created, :date, :deployment_id, :id, :info, :proxy, :request_id, :serial,
-              :status_code, :text
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentEventsResponseItemVariant0PayloadProxyMetadata
+    FIELDS = {
+      cache_id: 'cacheId',
+      client_ip: 'clientIp',
+      host: 'host',
+      lambda_region: 'lambdaRegion',
+      method: 'method',
+      path: 'path',
+      path_type: 'pathType',
+      path_type_variant: 'pathTypeVariant',
+      referer: 'referer',
+      region: 'region',
+      response_byte_size: 'responseByteSize',
+      scheme: 'scheme',
+      status_code: 'statusCode',
+      timestamp: 'timestamp',
+      user_agent: 'userAgent',
+      vercel_cache: 'vercelCache',
+      vercel_id: 'vercelId',
+      waf_action: 'wafAction',
+      waf_rule_id: 'wafRuleId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      host
+      method
+      timestamp
+    ].freeze
+    DECODERS = {
+      vercel_cache: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant0PayloadProxyVercelCache.from_value(value)
+      end,
+      waf_action: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant0PayloadProxyWafAction.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetDeploymentEventsResponseItemVariant0PayloadProxy.
+  class GetDeploymentEventsResponseItemVariant0PayloadProxy
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadProxyMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadProxyMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadProxyMetadata::DECODERS
+
+    attr_reader :cache_id, :client_ip, :host, :lambda_region, :method, :path, :path_type,
+                :path_type_variant, :referer, :region, :response_byte_size, :scheme, :status_code,
+                :timestamp, :user_agent, :vercel_cache, :vercel_id, :waf_action, :waf_rule_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentEventsResponseItemVariant0Metadata
-  FIELDS = {
-    created: "created",
-    payload: "payload",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created
-    payload
-    type
-  ].freeze
-  DECODERS = {
-    payload: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant0Payload.from_hash(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDeploymentEventsResponseItemVariant0.
-class GetDeploymentEventsResponseItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant0Metadata::DECODERS
-
-  attr_reader :created, :payload, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentEventsResponseItemVariant0PayloadMetadata
+    FIELDS = {
+      created: 'created',
+      date: 'date',
+      deployment_id: 'deploymentId',
+      id: 'id',
+      info: 'info',
+      proxy: 'proxy',
+      request_id: 'requestId',
+      serial: 'serial',
+      status_code: 'statusCode',
+      text: 'text'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      date
+      deployment_id
+      id
+      serial
+    ].freeze
+    DECODERS = {
+      info: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant0PayloadInfo.from_hash(value)
+      end,
+      proxy: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant0PayloadProxy.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetDeploymentEventsResponseItemVariant0Payload.
+  class GetDeploymentEventsResponseItemVariant0Payload
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant0PayloadMetadata::DECODERS
+
+    attr_reader :created, :date, :deployment_id, :id, :info, :proxy, :request_id, :serial,
+                :status_code, :text
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentEventsResponseItemVariant1InfoMetadata
-  FIELDS = {
-    entrypoint: "entrypoint",
-    name: "name",
-    path: "path",
-    ready_state: "readyState",
-    service_name: "serviceName",
-    step: "step",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    name
-    type
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetDeploymentEventsResponseItemVariant1Info.
-class GetDeploymentEventsResponseItemVariant1Info
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant1InfoMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant1InfoMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant1InfoMetadata::DECODERS
-
-  attr_reader :entrypoint, :name, :path, :ready_state, :service_name, :step, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentEventsResponseItemVariant0Metadata
+    FIELDS = {
+      created: 'created',
+      payload: 'payload',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created
+      payload
+      type
+    ].freeze
+    DECODERS = {
+      payload: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant0Payload.from_hash(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetDeploymentEventsResponseItemVariant0.
+  class GetDeploymentEventsResponseItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant0Metadata::DECODERS
+
+    attr_reader :created, :payload, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentEventsResponseItemVariant1Metadata
-  FIELDS = {
-    created: "created",
-    date: "date",
-    deployment_id: "deploymentId",
-    id: "id",
-    info: "info",
-    level: "level",
-    serial: "serial",
-    text: "text",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created
-    date
-    deployment_id
-    id
-    info
-    serial
-    type
-  ].freeze
-  DECODERS = {
-    info: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant1Info.from_hash(value)
-    end,
-    level: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant1Level.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDeploymentEventsResponseItemVariant1.
-class GetDeploymentEventsResponseItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant1Metadata::DECODERS
-
-  attr_reader :created, :date, :deployment_id, :id, :info, :level, :serial, :text, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentEventsResponseItemVariant1InfoMetadata
+    FIELDS = {
+      entrypoint: 'entrypoint',
+      name: 'name',
+      path: 'path',
+      ready_state: 'readyState',
+      service_name: 'serviceName',
+      step: 'step',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      name
+      type
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetDeploymentEventsResponseItemVariant1Info.
+  class GetDeploymentEventsResponseItemVariant1Info
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant1InfoMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant1InfoMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant1InfoMetadata::DECODERS
+
+    attr_reader :entrypoint, :name, :path, :ready_state, :service_name, :step, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentEventsResponseItemVariant2PayloadInfoMetadata
-  FIELDS = {
-    entrypoint: "entrypoint",
-    name: "name",
-    path: "path",
-    ready_state: "readyState",
-    service_name: "serviceName",
-    step: "step",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    name
-    type
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetDeploymentEventsResponseItemVariant2PayloadInfo.
-class GetDeploymentEventsResponseItemVariant2PayloadInfo
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadInfoMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadInfoMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadInfoMetadata::DECODERS
-
-  attr_reader :entrypoint, :name, :path, :ready_state, :service_name, :step, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentEventsResponseItemVariant1Metadata
+    FIELDS = {
+      created: 'created',
+      date: 'date',
+      deployment_id: 'deploymentId',
+      id: 'id',
+      info: 'info',
+      level: 'level',
+      serial: 'serial',
+      text: 'text',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created
+      date
+      deployment_id
+      id
+      info
+      serial
+      type
+    ].freeze
+    DECODERS = {
+      info: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant1Info.from_hash(value)
+      end,
+      level: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant1Level.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant1Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetDeploymentEventsResponseItemVariant1.
+  class GetDeploymentEventsResponseItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant1Metadata::DECODERS
+
+    attr_reader :created, :date, :deployment_id, :id, :info, :level, :serial, :text, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentEventsResponseItemVariant2PayloadProxyMetadata
-  FIELDS = {
-    cache_id: "cacheId",
-    client_ip: "clientIp",
-    host: "host",
-    lambda_region: "lambdaRegion",
-    method: "method",
-    path: "path",
-    path_type: "pathType",
-    path_type_variant: "pathTypeVariant",
-    referer: "referer",
-    region: "region",
-    response_byte_size: "responseByteSize",
-    scheme: "scheme",
-    status_code: "statusCode",
-    timestamp: "timestamp",
-    user_agent: "userAgent",
-    vercel_cache: "vercelCache",
-    vercel_id: "vercelId",
-    waf_action: "wafAction",
-    waf_rule_id: "wafRuleId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    host
-    method
-    timestamp
-  ].freeze
-  DECODERS = {
-    vercel_cache: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant2PayloadProxyVercelCache.from_value(value)
-    end,
-    waf_action: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant2PayloadProxyWafAction.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDeploymentEventsResponseItemVariant2PayloadProxy.
-class GetDeploymentEventsResponseItemVariant2PayloadProxy
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadProxyMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadProxyMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadProxyMetadata::DECODERS
-
-  attr_reader :cache_id, :client_ip, :host, :lambda_region, :method, :path, :path_type,
-              :path_type_variant, :referer, :region, :response_byte_size, :scheme, :status_code,
-              :timestamp, :user_agent, :vercel_cache, :vercel_id, :waf_action, :waf_rule_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentEventsResponseItemVariant2PayloadInfoMetadata
+    FIELDS = {
+      entrypoint: 'entrypoint',
+      name: 'name',
+      path: 'path',
+      ready_state: 'readyState',
+      service_name: 'serviceName',
+      step: 'step',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      name
+      type
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetDeploymentEventsResponseItemVariant2PayloadInfo.
+  class GetDeploymentEventsResponseItemVariant2PayloadInfo
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadInfoMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadInfoMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadInfoMetadata::DECODERS
+
+    attr_reader :entrypoint, :name, :path, :ready_state, :service_name, :step, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentEventsResponseItemVariant2PayloadMetadata
-  FIELDS = {
-    created: "created",
-    date: "date",
-    deployment_id: "deploymentId",
-    id: "id",
-    info: "info",
-    proxy: "proxy",
-    request_id: "requestId",
-    serial: "serial",
-    status_code: "statusCode",
-    text: "text",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    date
-    deployment_id
-    id
-    serial
-  ].freeze
-  DECODERS = {
-    info: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant2PayloadInfo.from_hash(value)
-    end,
-    proxy: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant2PayloadProxy.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDeploymentEventsResponseItemVariant2Payload.
-class GetDeploymentEventsResponseItemVariant2Payload
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadMetadata::DECODERS
-
-  attr_reader :created, :date, :deployment_id, :id, :info, :proxy, :request_id, :serial,
-              :status_code, :text
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentEventsResponseItemVariant2PayloadProxyMetadata
+    FIELDS = {
+      cache_id: 'cacheId',
+      client_ip: 'clientIp',
+      host: 'host',
+      lambda_region: 'lambdaRegion',
+      method: 'method',
+      path: 'path',
+      path_type: 'pathType',
+      path_type_variant: 'pathTypeVariant',
+      referer: 'referer',
+      region: 'region',
+      response_byte_size: 'responseByteSize',
+      scheme: 'scheme',
+      status_code: 'statusCode',
+      timestamp: 'timestamp',
+      user_agent: 'userAgent',
+      vercel_cache: 'vercelCache',
+      vercel_id: 'vercelId',
+      waf_action: 'wafAction',
+      waf_rule_id: 'wafRuleId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      host
+      method
+      timestamp
+    ].freeze
+    DECODERS = {
+      vercel_cache: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant2PayloadProxyVercelCache.from_value(value)
+      end,
+      waf_action: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant2PayloadProxyWafAction.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetDeploymentEventsResponseItemVariant2PayloadProxy.
+  class GetDeploymentEventsResponseItemVariant2PayloadProxy
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadProxyMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadProxyMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadProxyMetadata::DECODERS
+
+    attr_reader :cache_id, :client_ip, :host, :lambda_region, :method, :path, :path_type,
+                :path_type_variant, :referer, :region, :response_byte_size, :scheme, :status_code,
+                :timestamp, :user_agent, :vercel_cache, :vercel_id, :waf_action, :waf_rule_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentEventsResponseItemVariant2Metadata
-  FIELDS = {
-    created: "created",
-    payload: "payload",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created
-    payload
-    type
-  ].freeze
-  DECODERS = {
-    payload: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant2Payload.from_hash(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant2Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDeploymentEventsResponseItemVariant2.
-class GetDeploymentEventsResponseItemVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant2Metadata::DECODERS
-
-  attr_reader :created, :payload, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentEventsResponseItemVariant2PayloadMetadata
+    FIELDS = {
+      created: 'created',
+      date: 'date',
+      deployment_id: 'deploymentId',
+      id: 'id',
+      info: 'info',
+      proxy: 'proxy',
+      request_id: 'requestId',
+      serial: 'serial',
+      status_code: 'statusCode',
+      text: 'text'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      date
+      deployment_id
+      id
+      serial
+    ].freeze
+    DECODERS = {
+      info: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant2PayloadInfo.from_hash(value)
+      end,
+      proxy: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant2PayloadProxy.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetDeploymentEventsResponseItemVariant2Payload.
+  class GetDeploymentEventsResponseItemVariant2Payload
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant2PayloadMetadata::DECODERS
+
+    attr_reader :created, :date, :deployment_id, :id, :info, :proxy, :request_id, :serial,
+                :status_code, :text
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentEventsResponseItemVariant3InfoMetadata
-  FIELDS = {
-    entrypoint: "entrypoint",
-    name: "name",
-    path: "path",
-    ready_state: "readyState",
-    service_name: "serviceName",
-    step: "step",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    name
-    type
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetDeploymentEventsResponseItemVariant3Info.
-class GetDeploymentEventsResponseItemVariant3Info
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant3InfoMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant3InfoMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant3InfoMetadata::DECODERS
-
-  attr_reader :entrypoint, :name, :path, :ready_state, :service_name, :step, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentEventsResponseItemVariant2Metadata
+    FIELDS = {
+      created: 'created',
+      payload: 'payload',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created
+      payload
+      type
+    ].freeze
+    DECODERS = {
+      payload: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant2Payload.from_hash(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant2Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetDeploymentEventsResponseItemVariant2.
+  class GetDeploymentEventsResponseItemVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant2Metadata::DECODERS
+
+    attr_reader :created, :payload, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentEventsResponseItemVariant3Metadata
-  FIELDS = {
-    created: "created",
-    date: "date",
-    deployment_id: "deploymentId",
-    id: "id",
-    info: "info",
-    level: "level",
-    serial: "serial",
-    text: "text",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created
-    date
-    deployment_id
-    id
-    info
-    serial
-    type
-  ].freeze
-  DECODERS = {
-    info: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant3Info.from_hash(value)
-    end,
-    level: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant3Level.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetDeploymentEventsResponseItemVariant3Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDeploymentEventsResponseItemVariant3.
-class GetDeploymentEventsResponseItemVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant3Metadata::DECODERS
-
-  attr_reader :created, :date, :deployment_id, :id, :info, :level, :serial, :text, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentEventsResponseItemVariant3InfoMetadata
+    FIELDS = {
+      entrypoint: 'entrypoint',
+      name: 'name',
+      path: 'path',
+      ready_state: 'readyState',
+      service_name: 'serviceName',
+      step: 'step',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      name
+      type
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetDeploymentEventsResponseItemVariant3Info.
+  class GetDeploymentEventsResponseItemVariant3Info
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant3InfoMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant3InfoMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant3InfoMetadata::DECODERS
+
+    attr_reader :entrypoint, :name, :path, :ready_state, :service_name, :step, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentEventsResponseItemVariant4AliasErrorMetadata
-  FIELDS = {
-    code: "code",
-    message: "message",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-    message
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetDeploymentEventsResponseItemVariant4AliasError.
-class GetDeploymentEventsResponseItemVariant4AliasError
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant4AliasErrorMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant4AliasErrorMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant4AliasErrorMetadata::DECODERS
-
-  attr_reader :code, :message
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentEventsResponseItemVariant3Metadata
+    FIELDS = {
+      created: 'created',
+      date: 'date',
+      deployment_id: 'deploymentId',
+      id: 'id',
+      info: 'info',
+      level: 'level',
+      serial: 'serial',
+      text: 'text',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created
+      date
+      deployment_id
+      id
+      info
+      serial
+      type
+    ].freeze
+    DECODERS = {
+      info: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant3Info.from_hash(value)
+      end,
+      level: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant3Level.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetDeploymentEventsResponseItemVariant3Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetDeploymentEventsResponseItemVariant3.
+  class GetDeploymentEventsResponseItemVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant3Metadata::DECODERS
+
+    attr_reader :created, :date, :deployment_id, :id, :info, :level, :serial, :text, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
+
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentEventsResponseItemVariant4AliasErrorMetadata
+    FIELDS = {
+      code: 'code',
+      message: 'message'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+      message
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for GetDeploymentEventsResponseItemVariant4AliasError.
+  class GetDeploymentEventsResponseItemVariant4AliasError
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant4AliasErrorMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentEventsResponseItemVariant4AliasErrorMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentEventsResponseItemVariant4AliasErrorMetadata::DECODERS
+
+    attr_reader :code, :message
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
 end

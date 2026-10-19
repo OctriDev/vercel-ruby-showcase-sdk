@@ -35,7 +35,6 @@ module OctridevVercel
         copy_env_vars_from: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(slug2) { Validation.validate_length('slug', slug2, max: 32) }
 
         Validation.if_given(description) { Validation.validate_length('description', description, max: 256) }
@@ -43,25 +42,25 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            "/v9/projects/",
+            '/v9/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/custom-environments"
+            '/custom-environments'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'slug' => slug2,
             'description' => description,
             'branchMatcher' => branch_matcher,
-            'copyEnvVarsFrom' => copy_env_vars_from,
+            'copyEnvVarsFrom' => copy_env_vars_from
           },
           return_type: ::OctridevVercel::Methods::Environment::CreateCustomEnvironmentResponse,
           decoder: :json,
           operation_id: 'create_custom_environment',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -83,24 +82,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
           [
-            "/v9/projects/",
+            '/v9/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/custom-environments"
+            '/custom-environments'
           ].join,
           config: config,
           query: {
             'gitBranch' => QueryValue.new(git_branch, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Environment::ListEnvironmentCustomResponse,
           decoder: :json,
           operation_id: 'list_environment_custom',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -114,32 +112,24 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_custom_environment) do |
-        config:,
-        id_or_name:,
-        environment_slug_or_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_custom_environment) do |config:, id_or_name:, environment_slug_or_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v9/projects/",
+            '/v9/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/custom-environments/",
+            '/custom-environments/',
             SdkClient.encode_path_segment(environment_slug_or_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Environment::GetCustomEnvironmentResponse,
           decoder: :json,
           operation_id: 'get_custom_environment',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -169,7 +159,6 @@ module OctridevVercel
         branch_matcher: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(slug2) { Validation.validate_length('slug', slug2, max: 32) }
 
         Validation.if_given(description) { Validation.validate_length('description', description, max: 256) }
@@ -177,25 +166,25 @@ module OctridevVercel
         SdkClient.request(
           'PATCH',
           [
-            "/v9/projects/",
+            '/v9/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/custom-environments/",
+            '/custom-environments/',
             SdkClient.encode_path_segment(environment_slug_or_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'slug' => slug2,
             'description' => description,
-            'branchMatcher' => branch_matcher,
+            'branchMatcher' => branch_matcher
           },
           return_type: ::OctridevVercel::Methods::Environment::UpdateCustomEnvironmentResponse,
           decoder: :json,
           operation_id: 'update_custom_environment',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -220,27 +209,26 @@ module OctridevVercel
         delete_unassigned_environment_variables: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v9/projects/",
+            '/v9/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/custom-environments/",
+            '/custom-environments/',
             SdkClient.encode_path_segment(environment_slug_or_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'deleteUnassignedEnvironmentVariables' => delete_unassigned_environment_variables,
+            'deleteUnassignedEnvironmentVariables' => delete_unassigned_environment_variables
           },
           return_type: ::OctridevVercel::Methods::Environment::RemoveCustomEnvironmentResponse,
           decoder: :json,
           operation_id: 'remove_custom_environment',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

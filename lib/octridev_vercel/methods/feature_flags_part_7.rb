@@ -61,7 +61,7 @@ module OctridevVercel
         JSON = 'json'
         NUMBER = 'number'
         STRING = 'string'
-        VALUES = ['boolean', 'json', 'number', 'string'].freeze
+        VALUES = %w[boolean json number string].freeze
         def self.from_value(value)
           value
         end
@@ -470,7 +470,7 @@ module OctridevVercel
       module ListTeamFlagsV2Parameter
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = ['active', 'archived'].freeze
+        VALUES = %w[active archived].freeze
         def self.from_value(value)
           value
         end
@@ -482,7 +482,7 @@ module OctridevVercel
         JSON = 'json'
         NUMBER = 'number'
         STRING = 'string'
-        VALUES = ['boolean', 'json', 'number', 'string'].freeze
+        VALUES = %w[boolean json number string].freeze
         def self.from_value(value)
           value
         end
@@ -561,7 +561,7 @@ module OctridevVercel
       module ListTeamFlagsParameter
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = ['active', 'archived'].freeze
+        VALUES = %w[active archived].freeze
         def self.from_value(value)
           value
         end
@@ -573,7 +573,7 @@ module OctridevVercel
         STRING = 'string'
         NUMBER = 'number'
         JSON = 'json'
-        VALUES = ['boolean', 'string', 'number', 'json'].freeze
+        VALUES = %w[boolean string number json].freeze
         def self.from_value(value)
           value
         end

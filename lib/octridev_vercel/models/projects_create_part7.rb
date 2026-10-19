@@ -5,688 +5,689 @@
 
 # projects_create domain models (part 7)
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalCreateProjectResponseLinkVariant7Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    owner: "owner",
-    owner_id: "ownerId",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    owner
-    owner_id
-    production_branch
-    repo
-    repo_id
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::CreateProjectResponseLinkVariant7DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseLinkVariant7Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseLinkVariant7Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateProjectResponseLinkVariant7.
-class CreateProjectResponseLinkVariant7
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateProjectResponseLinkVariant7Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateProjectResponseLinkVariant7Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateProjectResponseLinkVariant7Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :production_branch, :repo, :sourceless,
-              :type, :updated_at
-  # @return [String] Owner (namespace) slug, e.g. `acme`.
-  attr_reader :owner
-  # @return [String] Origin namespace id (`ns_…`) of the owner.
-  attr_reader :owner_id
-  # @return [String] Origin repository id.
-  attr_reader :repo_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateProjectResponseLinkVariant7Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      owner: 'owner',
+      owner_id: 'ownerId',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      owner
+      owner_id
+      production_branch
+      repo
+      repo_id
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::CreateProjectResponseLinkVariant7DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseLinkVariant7Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseLinkVariant7Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
+  # API model for CreateProjectResponseLinkVariant7.
+  class CreateProjectResponseLinkVariant7
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateProjectResponseLinkVariant7Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateProjectResponseLinkVariant7Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateProjectResponseLinkVariant7Metadata::DECODERS
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :production_branch, :repo, :sourceless,
+                :type, :updated_at
+    # @return [String] Owner (namespace) slug, e.g. `acme`.
+    attr_reader :owner
+    # @return [String] Origin namespace id (`ns_…`) of the owner.
+    attr_reader :owner_id
+    # @return [String] Origin repository id.
+    attr_reader :repo_id
 
-# Defines the CreateProjectResponseLink SDK namespace.
-module CreateProjectResponseLink
-  DISCRIMINATOR_MAPPING = {
-    "github" => -> { CreateProjectResponseLinkVariant0 },
-    "github-limited" => -> { CreateProjectResponseLinkVariant1 },
-    "github-custom-host" => -> { CreateProjectResponseLinkVariant2 },
-    "gitlab" => -> { CreateProjectResponseLinkVariant3 },
-    "bitbucket" => -> { CreateProjectResponseLinkVariant4 },
-    "vercel" => -> { CreateProjectResponseLinkVariant5 },
-    "v0" => -> { CreateProjectResponseLinkVariant6 },
-    "cursor-origin" => -> { CreateProjectResponseLinkVariant7 },
-  }.freeze
-
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('CreateProjectResponseLink', 'variant', "Unknown CreateProjectResponseLink discriminator: #{hash["type"].inspect}")
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant0Sourceless SDK namespace.
-module CreateProjectResponseLinkVariant0Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant0Type SDK namespace.
-module CreateProjectResponseLinkVariant0Type
-  GITHUB = 'github'
-  VALUES = ['github'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateProjectResponseLinkVariant0Type', 'enum', "Unknown CreateProjectResponseLinkVariant0Type: #{value}")
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant1Sourceless SDK namespace.
-module CreateProjectResponseLinkVariant1Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant1Type SDK namespace.
-module CreateProjectResponseLinkVariant1Type
-  GITHUB_LIMITED = 'github-limited'
-  VALUES = ['github-limited'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateProjectResponseLinkVariant1Type', 'enum', "Unknown CreateProjectResponseLinkVariant1Type: #{value}")
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant2Sourceless SDK namespace.
-module CreateProjectResponseLinkVariant2Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant2Type SDK namespace.
-module CreateProjectResponseLinkVariant2Type
-  GITHUB_CUSTOM_HOST = 'github-custom-host'
-  VALUES = ['github-custom-host'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateProjectResponseLinkVariant2Type', 'enum', "Unknown CreateProjectResponseLinkVariant2Type: #{value}")
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant3Sourceless SDK namespace.
-module CreateProjectResponseLinkVariant3Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant3Type SDK namespace.
-module CreateProjectResponseLinkVariant3Type
-  GITLAB = 'gitlab'
-  VALUES = ['gitlab'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateProjectResponseLinkVariant3Type', 'enum', "Unknown CreateProjectResponseLinkVariant3Type: #{value}")
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant4Sourceless SDK namespace.
-module CreateProjectResponseLinkVariant4Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant4Type SDK namespace.
-module CreateProjectResponseLinkVariant4Type
-  BITBUCKET = 'bitbucket'
-  VALUES = ['bitbucket'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateProjectResponseLinkVariant4Type', 'enum', "Unknown CreateProjectResponseLinkVariant4Type: #{value}")
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant5Sourceless SDK namespace.
-module CreateProjectResponseLinkVariant5Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant5Type SDK namespace.
-module CreateProjectResponseLinkVariant5Type
-  VERCEL = 'vercel'
-  VALUES = ['vercel'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateProjectResponseLinkVariant5Type', 'enum', "Unknown CreateProjectResponseLinkVariant5Type: #{value}")
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant6Sourceless SDK namespace.
-module CreateProjectResponseLinkVariant6Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant6Type SDK namespace.
-module CreateProjectResponseLinkVariant6Type
-  V0 = 'v0'
-  VALUES = ['v0'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateProjectResponseLinkVariant6Type', 'enum', "Unknown CreateProjectResponseLinkVariant6Type: #{value}")
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant7Sourceless SDK namespace.
-module CreateProjectResponseLinkVariant7Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseLinkVariant7Type SDK namespace.
-module CreateProjectResponseLinkVariant7Type
-  CURSOR_ORIGIN = 'cursor-origin'
-  VALUES = ['cursor-origin'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateProjectResponseLinkVariant7Type', 'enum', "Unknown CreateProjectResponseLinkVariant7Type: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateProjectResponseMicrofrontendsVariant0Metadata
-  FIELDS = {
-    default_route: "defaultRoute",
-    enabled: "enabled",
-    free_project_for_legacy_limits: "freeProjectForLegacyLimits",
-    group_ids: "groupIds",
-    is_default_app: "isDefaultApp",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    enabled
-    group_ids
-    is_default_app
-    updated_at
-  ].freeze
-  DECODERS = {
-    enabled: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant0Enabled.from_value(value)
-    end,
-    free_project_for_legacy_limits: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant0FreeProjectForLegacyLimits.from_value(value)
-    end,
-    is_default_app: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant0IsDefaultApp.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateProjectResponseMicrofrontendsVariant0.
-class CreateProjectResponseMicrofrontendsVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateProjectResponseMicrofrontendsVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateProjectResponseMicrofrontendsVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateProjectResponseMicrofrontendsVariant0Metadata::DECODERS
-
-  attr_reader :is_default_app
-  # @return [String] A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
-  attr_reader :default_route
-  # @return [CreateProjectResponseMicrofrontendsVariant0Enabled] Whether microfrontends are enabled for this project.
-  attr_reader :enabled
-  # @return [CreateProjectResponseMicrofrontendsVariant0FreeProjectForLegacyLimits] Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-  attr_reader :free_project_for_legacy_limits
-  # @return [Array_of_String] The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
-  attr_reader :group_ids
-  # @return [Float] Timestamp when the microfrontends settings were last updated.
-  attr_reader :updated_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateProjectResponseMicrofrontendsVariant1Metadata
-  FIELDS = {
-    default_route: "defaultRoute",
-    do_not_route_with_microfrontends_routing: "doNotRouteWithMicrofrontendsRouting",
-    enabled: "enabled",
-    free_project_for_legacy_limits: "freeProjectForLegacyLimits",
-    group_ids: "groupIds",
-    is_default_app: "isDefaultApp",
-    route_observability_to_this_project: "routeObservabilityToThisProject",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    enabled
-    group_ids
-    updated_at
-  ].freeze
-  DECODERS = {
-    do_not_route_with_microfrontends_routing: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant1DoNotRouteWithMicrXad745fa67d.from_value(value)
-    end,
-    enabled: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant1Enabled.from_value(value)
-    end,
-    free_project_for_legacy_limits: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant1FreeProjectForLegacyLimits.from_value(value)
-    end,
-    is_default_app: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant1IsDefaultApp.from_value(value)
-    end,
-    route_observability_to_this_project: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant1RouteObservabilityX8644177f4d.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateProjectResponseMicrofrontendsVariant1.
-class CreateProjectResponseMicrofrontendsVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateProjectResponseMicrofrontendsVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateProjectResponseMicrofrontendsVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateProjectResponseMicrofrontendsVariant1Metadata::DECODERS
-
-  attr_reader :is_default_app
-  # @return [String] A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
-  attr_reader :default_route
-  # @return [CreateProjectResponseMicrofrontendsVariant1DoNotRouteWithMicrXad745fa67d] Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
-  attr_reader :do_not_route_with_microfrontends_routing
-  # @return [CreateProjectResponseMicrofrontendsVariant1Enabled] Whether microfrontends are enabled for this project.
-  attr_reader :enabled
-  # @return [CreateProjectResponseMicrofrontendsVariant1FreeProjectForLegacyLimits] Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-  attr_reader :free_project_for_legacy_limits
-  # @return [Array_of_String] The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
-  attr_reader :group_ids
-  # @return [CreateProjectResponseMicrofrontendsVariant1RouteObservabilityX8644177f4d] Whether observability data should be routed to this microfrontend project or a root project.
-  attr_reader :route_observability_to_this_project
-  # @return [Float] Timestamp when the microfrontends settings were last updated.
-  attr_reader :updated_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateProjectResponseMicrofrontendsVariant2Metadata
-  FIELDS = {
-    enabled: "enabled",
-    free_project_for_legacy_limits: "freeProjectForLegacyLimits",
-    group_ids: "groupIds",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    enabled
-    group_ids
-    updated_at
-  ].freeze
-  DECODERS = {
-    enabled: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant2Enabled.from_value(value)
-    end,
-    free_project_for_legacy_limits: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant2FreeProjectForLegacyLimits.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateProjectResponseMicrofrontendsVariant2.
-class CreateProjectResponseMicrofrontendsVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateProjectResponseMicrofrontendsVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateProjectResponseMicrofrontendsVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateProjectResponseMicrofrontendsVariant2Metadata::DECODERS
-
-  attr_reader :enabled, :free_project_for_legacy_limits, :group_ids, :updated_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the CreateProjectResponseMicrofrontends SDK namespace.
-module CreateProjectResponseMicrofrontends
-  def self.from_hash(hash)
-    lossy = nil
-    [CreateProjectResponseMicrofrontendsVariant0, CreateProjectResponseMicrofrontendsVariant1, CreateProjectResponseMicrofrontendsVariant2].each do |type|
-      decoded = type.from_hash(hash)
-      return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-      lossy ||= decoded
-    rescue ::StandardError
-      next
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
     end
-    return lossy unless lossy.nil?
-  end
-end
 
-# Defines the CreateProjectResponseMicrofrontendsVariant0Enabled SDK namespace.
-module CreateProjectResponseMicrofrontendsVariant0Enabled
-  TRUE = true
-  VALUES = [true].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-# Defines the CreateProjectResponseMicrofrontendsVariant0FreeProjectForLegacyLimits SDK namespace.
-module CreateProjectResponseMicrofrontendsVariant0FreeProjectForLegacyLimits
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseMicrofrontendsVariant0IsDefaultApp SDK namespace.
-module CreateProjectResponseMicrofrontendsVariant0IsDefaultApp
-  TRUE = true
-  VALUES = [true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseMicrofrontendsVariant1DoNotRouteWithMicrXad745fa67d SDK namespace.
-module CreateProjectResponseMicrofrontendsVariant1DoNotRouteWithMicrXad745fa67d
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseMicrofrontendsVariant1Enabled SDK namespace.
-module CreateProjectResponseMicrofrontendsVariant1Enabled
-  TRUE = true
-  VALUES = [true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseMicrofrontendsVariant1FreeProjectForLegacyLimits SDK namespace.
-module CreateProjectResponseMicrofrontendsVariant1FreeProjectForLegacyLimits
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseMicrofrontendsVariant1IsDefaultApp SDK namespace.
-module CreateProjectResponseMicrofrontendsVariant1IsDefaultApp
-  FALSE = false
-  VALUES = [false].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseMicrofrontendsVariant1RouteObservabilityX8644177f4d SDK namespace.
-module CreateProjectResponseMicrofrontendsVariant1RouteObservabilityX8644177f4d
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseMicrofrontendsVariant2Enabled SDK namespace.
-module CreateProjectResponseMicrofrontendsVariant2Enabled
-  FALSE = false
-  VALUES = [false].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateProjectResponseMicrofrontendsVariant2FreeProjectForLegacyLimits SDK namespace.
-module CreateProjectResponseMicrofrontendsVariant2FreeProjectForLegacyLimits
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateProjectResponseTrustedIpsVariant0AddressesItemMetadata
-  FIELDS = {
-    note: "note",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    value
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for CreateProjectResponseTrustedIpsVariant0AddressesItem.
-class CreateProjectResponseTrustedIpsVariant0AddressesItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateProjectResponseTrustedIpsVariant0AddressesItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateProjectResponseTrustedIpsVariant0AddressesItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateProjectResponseTrustedIpsVariant0AddressesItemMetadata::DECODERS
-
-  attr_reader :note, :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the CreateProjectResponseLink SDK namespace.
+  module CreateProjectResponseLink
+    DISCRIMINATOR_MAPPING = {
+      'github' => -> { CreateProjectResponseLinkVariant0 },
+      'github-limited' => -> { CreateProjectResponseLinkVariant1 },
+      'github-custom-host' => -> { CreateProjectResponseLinkVariant2 },
+      'gitlab' => -> { CreateProjectResponseLinkVariant3 },
+      'bitbucket' => -> { CreateProjectResponseLinkVariant4 },
+      'vercel' => -> { CreateProjectResponseLinkVariant5 },
+      'v0' => -> { CreateProjectResponseLinkVariant6 },
+      'cursor-origin' => -> { CreateProjectResponseLinkVariant7 }
+    }.freeze
+
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('CreateProjectResponseLink', 'variant', "Unknown CreateProjectResponseLink discriminator: #{hash['type'].inspect}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateProjectResponseTrustedIpsVariant0Metadata
-  FIELDS = {
-    addresses: "addresses",
-    deployment_type: "deploymentType",
-    protection_mode: "protectionMode",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    addresses
-    deployment_type
-    protection_mode
-  ].freeze
-  DECODERS = {
-    addresses: lambda do |value|
-      value&.map { |item| ::OctridevVercel::CreateProjectResponseTrustedIpsVariant0AddressesItem.from_hash(item) }
-    end,
-    deployment_type: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseTrustedIpsVariant0DeploymentType.from_value(value)
-    end,
-    protection_mode: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseTrustedIpsVariant0ProtectionMode.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateProjectResponseTrustedIpsVariant0.
-class CreateProjectResponseTrustedIpsVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateProjectResponseTrustedIpsVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateProjectResponseTrustedIpsVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateProjectResponseTrustedIpsVariant0Metadata::DECODERS
-
-  attr_reader :addresses, :deployment_type, :protection_mode
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the CreateProjectResponseLinkVariant0Sourceless SDK namespace.
+  module CreateProjectResponseLinkVariant0Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the CreateProjectResponseLinkVariant0Type SDK namespace.
+  module CreateProjectResponseLinkVariant0Type
+    GITHUB = 'github'
+    VALUES = ['github'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateProjectResponseLinkVariant0Type', 'enum', "Unknown CreateProjectResponseLinkVariant0Type: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateProjectResponseTrustedIpsVariant1Metadata
-  FIELDS = {
-    deployment_type: "deploymentType",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deployment_type
-  ].freeze
-  DECODERS = {
-    deployment_type: lambda do |value|
-      ::OctridevVercel::CreateProjectResponseTrustedIpsVariant1DeploymentType.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateProjectResponseTrustedIpsVariant1.
-class CreateProjectResponseTrustedIpsVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateProjectResponseTrustedIpsVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateProjectResponseTrustedIpsVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateProjectResponseTrustedIpsVariant1Metadata::DECODERS
-
-  attr_reader :deployment_type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the CreateProjectResponseLinkVariant1Sourceless SDK namespace.
+  module CreateProjectResponseLinkVariant1Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the CreateProjectResponseLinkVariant1Type SDK namespace.
+  module CreateProjectResponseLinkVariant1Type
+    GITHUB_LIMITED = 'github-limited'
+    VALUES = ['github-limited'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateProjectResponseLinkVariant1Type', 'enum', "Unknown CreateProjectResponseLinkVariant1Type: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the CreateProjectResponseLinkVariant2Sourceless SDK namespace.
+  module CreateProjectResponseLinkVariant2Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateProjectResponseTrustedIps SDK namespace.
-module CreateProjectResponseTrustedIps
-  def self.from_hash(hash)
-    shape_mapping = {
-      "addresses" => CreateProjectResponseTrustedIpsVariant0,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-    return CreateProjectResponseTrustedIpsVariant1.from_hash(hash)
+  # Defines the CreateProjectResponseLinkVariant2Type SDK namespace.
+  module CreateProjectResponseLinkVariant2Type
+    GITHUB_CUSTOM_HOST = 'github-custom-host'
+    VALUES = ['github-custom-host'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateProjectResponseLinkVariant2Type', 'enum', "Unknown CreateProjectResponseLinkVariant2Type: #{value}")
+    end
   end
-end
+
+  # Defines the CreateProjectResponseLinkVariant3Sourceless SDK namespace.
+  module CreateProjectResponseLinkVariant3Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseLinkVariant3Type SDK namespace.
+  module CreateProjectResponseLinkVariant3Type
+    GITLAB = 'gitlab'
+    VALUES = ['gitlab'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateProjectResponseLinkVariant3Type', 'enum', "Unknown CreateProjectResponseLinkVariant3Type: #{value}")
+    end
+  end
+
+  # Defines the CreateProjectResponseLinkVariant4Sourceless SDK namespace.
+  module CreateProjectResponseLinkVariant4Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseLinkVariant4Type SDK namespace.
+  module CreateProjectResponseLinkVariant4Type
+    BITBUCKET = 'bitbucket'
+    VALUES = ['bitbucket'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateProjectResponseLinkVariant4Type', 'enum', "Unknown CreateProjectResponseLinkVariant4Type: #{value}")
+    end
+  end
+
+  # Defines the CreateProjectResponseLinkVariant5Sourceless SDK namespace.
+  module CreateProjectResponseLinkVariant5Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseLinkVariant5Type SDK namespace.
+  module CreateProjectResponseLinkVariant5Type
+    VERCEL = 'vercel'
+    VALUES = ['vercel'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateProjectResponseLinkVariant5Type', 'enum', "Unknown CreateProjectResponseLinkVariant5Type: #{value}")
+    end
+  end
+
+  # Defines the CreateProjectResponseLinkVariant6Sourceless SDK namespace.
+  module CreateProjectResponseLinkVariant6Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseLinkVariant6Type SDK namespace.
+  module CreateProjectResponseLinkVariant6Type
+    V0 = 'v0'
+    VALUES = ['v0'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateProjectResponseLinkVariant6Type', 'enum', "Unknown CreateProjectResponseLinkVariant6Type: #{value}")
+    end
+  end
+
+  # Defines the CreateProjectResponseLinkVariant7Sourceless SDK namespace.
+  module CreateProjectResponseLinkVariant7Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseLinkVariant7Type SDK namespace.
+  module CreateProjectResponseLinkVariant7Type
+    CURSOR_ORIGIN = 'cursor-origin'
+    VALUES = ['cursor-origin'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateProjectResponseLinkVariant7Type', 'enum', "Unknown CreateProjectResponseLinkVariant7Type: #{value}")
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalCreateProjectResponseMicrofrontendsVariant0Metadata
+    FIELDS = {
+      default_route: 'defaultRoute',
+      enabled: 'enabled',
+      free_project_for_legacy_limits: 'freeProjectForLegacyLimits',
+      group_ids: 'groupIds',
+      is_default_app: 'isDefaultApp',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      enabled
+      group_ids
+      is_default_app
+      updated_at
+    ].freeze
+    DECODERS = {
+      enabled: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant0Enabled.from_value(value)
+      end,
+      free_project_for_legacy_limits: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant0FreeProjectForLegacyLimits.from_value(value)
+      end,
+      is_default_app: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant0IsDefaultApp.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for CreateProjectResponseMicrofrontendsVariant0.
+  class CreateProjectResponseMicrofrontendsVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateProjectResponseMicrofrontendsVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateProjectResponseMicrofrontendsVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateProjectResponseMicrofrontendsVariant0Metadata::DECODERS
+
+    attr_reader :is_default_app
+    # @return [String] A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+    attr_reader :default_route
+    # @return [CreateProjectResponseMicrofrontendsVariant0Enabled] Whether microfrontends are enabled for this project.
+    attr_reader :enabled
+    # @return [CreateProjectResponseMicrofrontendsVariant0FreeProjectForLegacyLimits] Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+    attr_reader :free_project_for_legacy_limits
+    # @return [Array_of_String] The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+    attr_reader :group_ids
+    # @return [Float] Timestamp when the microfrontends settings were last updated.
+    attr_reader :updated_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalCreateProjectResponseMicrofrontendsVariant1Metadata
+    FIELDS = {
+      default_route: 'defaultRoute',
+      do_not_route_with_microfrontends_routing: 'doNotRouteWithMicrofrontendsRouting',
+      enabled: 'enabled',
+      free_project_for_legacy_limits: 'freeProjectForLegacyLimits',
+      group_ids: 'groupIds',
+      is_default_app: 'isDefaultApp',
+      route_observability_to_this_project: 'routeObservabilityToThisProject',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      enabled
+      group_ids
+      updated_at
+    ].freeze
+    DECODERS = {
+      do_not_route_with_microfrontends_routing: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant1DoNotRouteWithMicrXad745fa67d.from_value(value)
+      end,
+      enabled: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant1Enabled.from_value(value)
+      end,
+      free_project_for_legacy_limits: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant1FreeProjectForLegacyLimits.from_value(value)
+      end,
+      is_default_app: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant1IsDefaultApp.from_value(value)
+      end,
+      route_observability_to_this_project: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant1RouteObservabilityX8644177f4d.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for CreateProjectResponseMicrofrontendsVariant1.
+  class CreateProjectResponseMicrofrontendsVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateProjectResponseMicrofrontendsVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateProjectResponseMicrofrontendsVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateProjectResponseMicrofrontendsVariant1Metadata::DECODERS
+
+    attr_reader :is_default_app
+    # @return [String] A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+    attr_reader :default_route
+    # @return [CreateProjectResponseMicrofrontendsVariant1DoNotRouteWithMicrXad745fa67d] Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
+    attr_reader :do_not_route_with_microfrontends_routing
+    # @return [CreateProjectResponseMicrofrontendsVariant1Enabled] Whether microfrontends are enabled for this project.
+    attr_reader :enabled
+    # @return [CreateProjectResponseMicrofrontendsVariant1FreeProjectForLegacyLimits] Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+    attr_reader :free_project_for_legacy_limits
+    # @return [Array_of_String] The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+    attr_reader :group_ids
+    # @return [CreateProjectResponseMicrofrontendsVariant1RouteObservabilityX8644177f4d] Whether observability data should be routed to this microfrontend project or a root project.
+    attr_reader :route_observability_to_this_project
+    # @return [Float] Timestamp when the microfrontends settings were last updated.
+    attr_reader :updated_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalCreateProjectResponseMicrofrontendsVariant2Metadata
+    FIELDS = {
+      enabled: 'enabled',
+      free_project_for_legacy_limits: 'freeProjectForLegacyLimits',
+      group_ids: 'groupIds',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      enabled
+      group_ids
+      updated_at
+    ].freeze
+    DECODERS = {
+      enabled: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant2Enabled.from_value(value)
+      end,
+      free_project_for_legacy_limits: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseMicrofrontendsVariant2FreeProjectForLegacyLimits.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for CreateProjectResponseMicrofrontendsVariant2.
+  class CreateProjectResponseMicrofrontendsVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateProjectResponseMicrofrontendsVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateProjectResponseMicrofrontendsVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateProjectResponseMicrofrontendsVariant2Metadata::DECODERS
+
+    attr_reader :enabled, :free_project_for_legacy_limits, :group_ids, :updated_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the CreateProjectResponseMicrofrontends SDK namespace.
+  module CreateProjectResponseMicrofrontends
+    def self.from_hash(hash)
+      lossy = nil
+      [CreateProjectResponseMicrofrontendsVariant0, CreateProjectResponseMicrofrontendsVariant1, CreateProjectResponseMicrofrontendsVariant2].each do |type|
+        decoded = type.from_hash(hash)
+        return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+        lossy ||= decoded
+      rescue ::StandardError
+        next
+      end
+      lossy unless lossy.nil?
+    end
+  end
+
+  # Defines the CreateProjectResponseMicrofrontendsVariant0Enabled SDK namespace.
+  module CreateProjectResponseMicrofrontendsVariant0Enabled
+    TRUE = true
+    VALUES = [true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseMicrofrontendsVariant0FreeProjectForLegacyLimits SDK namespace.
+  module CreateProjectResponseMicrofrontendsVariant0FreeProjectForLegacyLimits
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseMicrofrontendsVariant0IsDefaultApp SDK namespace.
+  module CreateProjectResponseMicrofrontendsVariant0IsDefaultApp
+    TRUE = true
+    VALUES = [true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseMicrofrontendsVariant1DoNotRouteWithMicrXad745fa67d SDK namespace.
+  module CreateProjectResponseMicrofrontendsVariant1DoNotRouteWithMicrXad745fa67d
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseMicrofrontendsVariant1Enabled SDK namespace.
+  module CreateProjectResponseMicrofrontendsVariant1Enabled
+    TRUE = true
+    VALUES = [true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseMicrofrontendsVariant1FreeProjectForLegacyLimits SDK namespace.
+  module CreateProjectResponseMicrofrontendsVariant1FreeProjectForLegacyLimits
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseMicrofrontendsVariant1IsDefaultApp SDK namespace.
+  module CreateProjectResponseMicrofrontendsVariant1IsDefaultApp
+    FALSE = false
+    VALUES = [false].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseMicrofrontendsVariant1RouteObservabilityX8644177f4d SDK namespace.
+  module CreateProjectResponseMicrofrontendsVariant1RouteObservabilityX8644177f4d
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseMicrofrontendsVariant2Enabled SDK namespace.
+  module CreateProjectResponseMicrofrontendsVariant2Enabled
+    FALSE = false
+    VALUES = [false].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateProjectResponseMicrofrontendsVariant2FreeProjectForLegacyLimits SDK namespace.
+  module CreateProjectResponseMicrofrontendsVariant2FreeProjectForLegacyLimits
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalCreateProjectResponseTrustedIpsVariant0AddressesItemMetadata
+    FIELDS = {
+      note: 'note',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      value
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for CreateProjectResponseTrustedIpsVariant0AddressesItem.
+  class CreateProjectResponseTrustedIpsVariant0AddressesItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateProjectResponseTrustedIpsVariant0AddressesItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateProjectResponseTrustedIpsVariant0AddressesItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateProjectResponseTrustedIpsVariant0AddressesItemMetadata::DECODERS
+
+    attr_reader :note, :value
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalCreateProjectResponseTrustedIpsVariant0Metadata
+    FIELDS = {
+      addresses: 'addresses',
+      deployment_type: 'deploymentType',
+      protection_mode: 'protectionMode'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      addresses
+      deployment_type
+      protection_mode
+    ].freeze
+    DECODERS = {
+      addresses: lambda do |value|
+        value&.map { |item| ::OctridevVercel::CreateProjectResponseTrustedIpsVariant0AddressesItem.from_hash(item) }
+      end,
+      deployment_type: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseTrustedIpsVariant0DeploymentType.from_value(value)
+      end,
+      protection_mode: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseTrustedIpsVariant0ProtectionMode.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for CreateProjectResponseTrustedIpsVariant0.
+  class CreateProjectResponseTrustedIpsVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateProjectResponseTrustedIpsVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateProjectResponseTrustedIpsVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateProjectResponseTrustedIpsVariant0Metadata::DECODERS
+
+    attr_reader :addresses, :deployment_type, :protection_mode
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalCreateProjectResponseTrustedIpsVariant1Metadata
+    FIELDS = {
+      deployment_type: 'deploymentType'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deployment_type
+    ].freeze
+    DECODERS = {
+      deployment_type: lambda do |value|
+        ::OctridevVercel::CreateProjectResponseTrustedIpsVariant1DeploymentType.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for CreateProjectResponseTrustedIpsVariant1.
+  class CreateProjectResponseTrustedIpsVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateProjectResponseTrustedIpsVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateProjectResponseTrustedIpsVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateProjectResponseTrustedIpsVariant1Metadata::DECODERS
+
+    attr_reader :deployment_type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the CreateProjectResponseTrustedIps SDK namespace.
+  module CreateProjectResponseTrustedIps
+    def self.from_hash(hash)
+      shape_mapping = {
+        'addresses' => CreateProjectResponseTrustedIpsVariant0
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      return decoded unless type.nil?
+
+      CreateProjectResponseTrustedIpsVariant1.from_hash(hash)
+    end
+  end
 end

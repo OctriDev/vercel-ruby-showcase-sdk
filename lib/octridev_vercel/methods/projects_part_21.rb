@@ -12,14 +12,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseProtectionConfigSandboxUrlsMetadata
         FIELDS = {
-          inherit_deployment_protection: "inheritDeploymentProtection",
+          inherit_deployment_protection: 'inheritDeploymentProtection'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           inherit_deployment_protection: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseProtectionConfigSandboxUrlsInheritDeploymeXef4a2dc1ef.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -49,14 +48,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseProtectionConfigMetadata
         FIELDS = {
-          sandbox_urls: "sandboxUrls",
+          sandbox_urls: 'sandboxUrls'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           sandbox_urls: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseProtectionConfigSandboxUrls.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -86,9 +84,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseResourceConfigBuildMachineElasticTransitionMetadata
         FIELDS = {
-          algorithm_version: "algorithmVersion",
-          at: "at",
-          direction: "direction",
+          algorithm_version: 'algorithmVersion',
+          at: 'at',
+          direction: 'direction'
         }.freeze
         REQUIRED_FIELDS = %i[
           algorithm_version
@@ -98,7 +96,7 @@ module OctridevVercel
         DECODERS = {
           direction: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseResourceConfigBuildMachineElasticTransitionDirection.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -128,14 +126,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseResourceConfigBuildQueueMetadata
         FIELDS = {
-          configuration: "configuration",
+          configuration: 'configuration'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           configuration: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseResourceConfigBuildQueueConfiguration.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -165,9 +162,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseResourceConfigElasticBuildMachineMetadata
         FIELDS = {
-          cores: "cores",
-          label: "label",
-          memory: "memory",
+          cores: 'cores',
+          label: 'label',
+          memory: 'memory'
         }.freeze
         REQUIRED_FIELDS = %i[
           cores
@@ -177,7 +174,7 @@ module OctridevVercel
         DECODERS = {
           label: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseResourceConfigElasticBuildMachineLabel.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -210,21 +207,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseResourceConfigMetadata
         FIELDS = {
-          build_machine_elastic_last_updated: "buildMachineElasticLastUpdated",
-          build_machine_elastic_reason: "buildMachineElasticReason",
-          build_machine_elastic_transition: "buildMachineElasticTransition",
-          build_machine_selection: "buildMachineSelection",
-          build_machine_type: "buildMachineType",
-          build_queue: "buildQueue",
-          elastic_concurrency_enabled: "elasticConcurrencyEnabled",
-          enable_functions_beta: "enableFunctionsBeta",
-          fluid: "fluid",
-          function_default_memory_type: "functionDefaultMemoryType",
-          function_default_regions: "functionDefaultRegions",
-          function_default_timeout: "functionDefaultTimeout",
-          function_zero_config_failover: "functionZeroConfigFailover",
-          is_nsnb_disabled: "isNSNBDisabled",
-          elastic_build_machine: "elasticBuildMachine",
+          build_machine_elastic_last_updated: 'buildMachineElasticLastUpdated',
+          build_machine_elastic_reason: 'buildMachineElasticReason',
+          build_machine_elastic_transition: 'buildMachineElasticTransition',
+          build_machine_selection: 'buildMachineSelection',
+          build_machine_type: 'buildMachineType',
+          build_queue: 'buildQueue',
+          elastic_concurrency_enabled: 'elasticConcurrencyEnabled',
+          enable_functions_beta: 'enableFunctionsBeta',
+          fluid: 'fluid',
+          function_default_memory_type: 'functionDefaultMemoryType',
+          function_default_regions: 'functionDefaultRegions',
+          function_default_timeout: 'functionDefaultTimeout',
+          function_zero_config_failover: 'functionZeroConfigFailover',
+          is_nsnb_disabled: 'isNSNBDisabled',
+          elastic_build_machine: 'elasticBuildMachine'
         }.freeze
         REQUIRED_FIELDS = %i[
           function_default_regions
@@ -265,7 +262,7 @@ module OctridevVercel
           end,
           elastic_build_machine: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseResourceConfigElasticBuildMachine.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -301,10 +298,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseRollbackDescriptionMetadata
         FIELDS = {
-          created_at: "createdAt",
-          description: "description",
-          user_id: "userId",
-          username: "username",
+          created_at: 'createdAt',
+          description: 'description',
+          user_id: 'userId',
+          username: 'username'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -312,8 +309,7 @@ module OctridevVercel
           user_id
           username
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseRollbackDescription.
@@ -350,11 +346,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseRollingReleaseGateChecksItemMetadata
         FIELDS = {
-          exclude_paths: "excludePaths",
-          exclude_status_codes: "excludeStatusCodes",
-          ingest_watermark_seconds: "ingestWatermarkSeconds",
-          significance_level: "significanceLevel",
-          type: "type",
+          exclude_paths: 'excludePaths',
+          exclude_status_codes: 'excludeStatusCodes',
+          ingest_watermark_seconds: 'ingestWatermarkSeconds',
+          significance_level: 'significanceLevel',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           type
@@ -362,7 +358,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseRollingReleaseGateChecksItemType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -402,12 +398,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseRollingReleaseGateMetadata
         FIELDS = {
-          action: "action",
-          checks: "checks",
-          dry_run: "dryRun",
-          enabled: "enabled",
-          failure_threshold: "failureThreshold",
-          window_size: "windowSize",
+          action: 'action',
+          checks: 'checks',
+          dry_run: 'dryRun',
+          enabled: 'enabled',
+          failure_threshold: 'failureThreshold',
+          window_size: 'windowSize'
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -427,7 +423,7 @@ module OctridevVercel
           end,
           enabled: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseRollingReleaseGateEnabled.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -469,10 +465,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseRollingReleaseStagesItemMetadata
         FIELDS = {
-          duration: "duration",
-          linear_shift: "linearShift",
-          require_approval: "requireApproval",
-          target_percentage: "targetPercentage",
+          duration: 'duration',
+          linear_shift: 'linearShift',
+          require_approval: 'requireApproval',
+          target_percentage: 'targetPercentage'
         }.freeze
         REQUIRED_FIELDS = %i[
           target_percentage
@@ -483,7 +479,7 @@ module OctridevVercel
           end,
           require_approval: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseRollingReleaseStagesItemRequireApproval.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -521,10 +517,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseRollingReleaseMetadata
         FIELDS = {
-          canary_response_header: "canaryResponseHeader",
-          gate: "gate",
-          stages: "stages",
-          target: "target",
+          canary_response_header: 'canaryResponseHeader',
+          gate: 'gate',
+          stages: 'stages',
+          target: 'target'
         }.freeze
         REQUIRED_FIELDS = %i[
           target
@@ -538,7 +534,7 @@ module OctridevVercel
           end,
           stages: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::GetProjectsResponseRollingReleaseStagesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
     end

@@ -5,249 +5,252 @@
 
 # marketplace domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalCreateEventRequestEventVariant0Metadata
-  FIELDS = {
-    type: "type",
-    billing_plan_id: "billingPlanId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateEventRequestEventVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateEventRequestEventVariant0.
-class CreateEventRequestEventVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateEventRequestEventVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateEventRequestEventVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateEventRequestEventVariant0Metadata::DECODERS
-
-  attr_reader :type
-  # @return [String] The installation-level billing plan ID
-  attr_reader :billing_plan_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateEventRequestEventVariant0Metadata
+    FIELDS = {
+      type: 'type',
+      billing_plan_id: 'billingPlanId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateEventRequestEventVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateEventRequestEventVariant0.
+  class CreateEventRequestEventVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateEventRequestEventVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateEventRequestEventVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateEventRequestEventVariant0Metadata::DECODERS
+
+    attr_reader :type
+    # @return [String] The installation-level billing plan ID
+    attr_reader :billing_plan_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateEventRequestEventVariant1Metadata
-  FIELDS = {
-    type: "type",
-    product_id: "productId",
-    resource_id: "resourceId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    resource_id
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateEventRequestEventVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateEventRequestEventVariant1.
-class CreateEventRequestEventVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateEventRequestEventVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateEventRequestEventVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateEventRequestEventVariant1Metadata::DECODERS
-
-  attr_reader :type
-  # @return [String] Partner-provided product slug or id
-  attr_reader :product_id
-  # @return [String] Partner provided resource ID
-  attr_reader :resource_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateEventRequestEventVariant1Metadata
+    FIELDS = {
+      type: 'type',
+      product_id: 'productId',
+      resource_id: 'resourceId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      resource_id
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateEventRequestEventVariant1Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateEventRequestEventVariant1.
+  class CreateEventRequestEventVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateEventRequestEventVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateEventRequestEventVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateEventRequestEventVariant1Metadata::DECODERS
+
+    attr_reader :type
+    # @return [String] Partner-provided product slug or id
+    attr_reader :product_id
+    # @return [String] Partner provided resource ID
+    attr_reader :resource_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the CreateEventRequestEvent SDK namespace.
+  module CreateEventRequestEvent
+    DISCRIMINATOR_MAPPING = {
+      'installation.updated' => -> { CreateEventRequestEventVariant0 },
+      'resource.updated' => -> { CreateEventRequestEventVariant1 }
+    }.freeze
 
-# Defines the CreateEventRequestEvent SDK namespace.
-module CreateEventRequestEvent
-  DISCRIMINATOR_MAPPING = {
-    "installation.updated" => -> { CreateEventRequestEventVariant0 },
-    "resource.updated" => -> { CreateEventRequestEventVariant1 },
-  }.freeze
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
 
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
-    return type.from_hash(hash) if type
+      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
+      return type.from_hash(hash) if type
 
-    raise SdkValidationError.new('CreateEventRequestEvent', 'variant', "Unknown CreateEventRequestEvent discriminator: #{hash["type"].inspect}")
-  end
-end
-
-# Defines the CreateEventRequestEventVariant0Type SDK namespace.
-module CreateEventRequestEventVariant0Type
-  INSTALLATION_UPDATED = 'installation.updated'
-  VALUES = ['installation.updated'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateEventRequestEventVariant0Type', 'enum', "Unknown CreateEventRequestEventVariant0Type: #{value}")
-  end
-end
-
-# Defines the CreateEventRequestEventVariant1Type SDK namespace.
-module CreateEventRequestEventVariant1Type
-  RESOURCE_UPDATED = 'resource.updated'
-  VALUES = ['resource.updated'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateEventRequestEventVariant1Type', 'enum', "Unknown CreateEventRequestEventVariant1Type: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateInstallationRequestNotificationVariant0Metadata
-  FIELDS = {
-    level: "level",
-    title: "title",
-    message: "message",
-    href: "href",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    level
-    title
-  ].freeze
-  DECODERS = {
-    level: lambda do |value|
-      ::OctridevVercel::UpdateInstallationRequestNotificationVariant0Level.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateInstallationRequestNotificationVariant0.
-class UpdateInstallationRequestNotificationVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateInstallationRequestNotificationVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateInstallationRequestNotificationVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateInstallationRequestNotificationVariant0Metadata::DECODERS
-
-  attr_reader :level, :title, :message, :href
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('CreateEventRequestEvent', 'variant', "Unknown CreateEventRequestEvent discriminator: #{hash['type'].inspect}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the CreateEventRequestEventVariant0Type SDK namespace.
+  module CreateEventRequestEventVariant0Type
+    INSTALLATION_UPDATED = 'installation.updated'
+    VALUES = ['installation.updated'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateEventRequestEventVariant0Type', 'enum', "Unknown CreateEventRequestEventVariant0Type: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the CreateEventRequestEventVariant1Type SDK namespace.
+  module CreateEventRequestEventVariant1Type
+    RESOURCE_UPDATED = 'resource.updated'
+    VALUES = ['resource.updated'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Defines the UpdateInstallationRequestNotification SDK namespace.
-module UpdateInstallationRequestNotification
-  def self.from_hash(hash)
-    return hash if hash.is_a?(::String)
-    return UpdateInstallationRequestNotificationVariant0.from_hash(hash)
-  end
-end
-
-# Defines the UpdateInstallationRequestNotificationVariant0Level SDK namespace.
-module UpdateInstallationRequestNotificationVariant0Level
-  INFO = 'info'
-  WARN = 'warn'
-  ERROR = 'error'
-  VALUES = ['info', 'warn', 'error'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateResourceRequestNotificationVariant0Metadata
-  FIELDS = {
-    level: "level",
-    title: "title",
-    message: "message",
-    href: "href",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    level
-    title
-  ].freeze
-  DECODERS = {
-    level: lambda do |value|
-      ::OctridevVercel::UpdateResourceRequestNotificationVariant0Level.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateResourceRequestNotificationVariant0.
-class UpdateResourceRequestNotificationVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateResourceRequestNotificationVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateResourceRequestNotificationVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateResourceRequestNotificationVariant0Metadata::DECODERS
-
-  attr_reader :level, :title, :message, :href
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('CreateEventRequestEventVariant1Type', 'enum', "Unknown CreateEventRequestEventVariant1Type: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateInstallationRequestNotificationVariant0Metadata
+    FIELDS = {
+      level: 'level',
+      title: 'title',
+      message: 'message',
+      href: 'href'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      level
+      title
+    ].freeze
+    DECODERS = {
+      level: lambda do |value|
+        ::OctridevVercel::UpdateInstallationRequestNotificationVariant0Level.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateInstallationRequestNotificationVariant0.
+  class UpdateInstallationRequestNotificationVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateInstallationRequestNotificationVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateInstallationRequestNotificationVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateInstallationRequestNotificationVariant0Metadata::DECODERS
 
-# Defines the UpdateResourceRequestNotification SDK namespace.
-module UpdateResourceRequestNotification
-  def self.from_hash(hash)
-    return hash if hash.is_a?(::String)
-    return UpdateResourceRequestNotificationVariant0.from_hash(hash)
-  end
-end
+    attr_reader :level, :title, :message, :href
 
-# Defines the UpdateResourceRequestNotificationVariant0Level SDK namespace.
-module UpdateResourceRequestNotificationVariant0Level
-  INFO = 'info'
-  WARN = 'warn'
-  ERROR = 'error'
-  VALUES = ['info', 'warn', 'error'].freeze
-  def self.from_value(value)
-    value
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
+
+  # Defines the UpdateInstallationRequestNotification SDK namespace.
+  module UpdateInstallationRequestNotification
+    def self.from_hash(hash)
+      return hash if hash.is_a?(::String)
+
+      UpdateInstallationRequestNotificationVariant0.from_hash(hash)
+    end
+  end
+
+  # Defines the UpdateInstallationRequestNotificationVariant0Level SDK namespace.
+  module UpdateInstallationRequestNotificationVariant0Level
+    INFO = 'info'
+    WARN = 'warn'
+    ERROR = 'error'
+    VALUES = %w[info warn error].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUpdateResourceRequestNotificationVariant0Metadata
+    FIELDS = {
+      level: 'level',
+      title: 'title',
+      message: 'message',
+      href: 'href'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      level
+      title
+    ].freeze
+    DECODERS = {
+      level: lambda do |value|
+        ::OctridevVercel::UpdateResourceRequestNotificationVariant0Level.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for UpdateResourceRequestNotificationVariant0.
+  class UpdateResourceRequestNotificationVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateResourceRequestNotificationVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateResourceRequestNotificationVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateResourceRequestNotificationVariant0Metadata::DECODERS
+
+    attr_reader :level, :title, :message, :href
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the UpdateResourceRequestNotification SDK namespace.
+  module UpdateResourceRequestNotification
+    def self.from_hash(hash)
+      return hash if hash.is_a?(::String)
+
+      UpdateResourceRequestNotificationVariant0.from_hash(hash)
+    end
+  end
+
+  # Defines the UpdateResourceRequestNotificationVariant0Level SDK namespace.
+  module UpdateResourceRequestNotificationVariant0Level
+    INFO = 'info'
+    WARN = 'warn'
+    ERROR = 'error'
+    VALUES = %w[info warn error].freeze
+    def self.from_value(value)
+      value
+    end
+  end
 end

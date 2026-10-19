@@ -12,50 +12,39 @@ module OctridevVercel
       # Retrieves account contact information and the team name associated with an integration installation. Use the installation identifier to look up the best available contact, which can change as team members and their roles change.
       #
       # Fetches the best account or user’s contact info
-      singleton_class.define_method(:get_account_info) do |
-        config:,
-        integration_configuration_id:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_account_info) do |config:, integration_configuration_id:, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/account"
+            '/account'
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Marketplace::GetAccountInfoResponse,
           decoder: :json,
           operation_id: 'get_account_info',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
       # Retrieves the role and other available information for a member of an integration installation. Use the member's user ID from the SSO OIDC token's `user_id` claim to identify the member.
       #
       # Returns the member role and other information for a given member ID ("user_id" claim in the SSO OIDC token).
-      singleton_class.define_method(:get_member) do |
-        config:,
-        integration_configuration_id:,
-        member_id:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_member) do |config:, integration_configuration_id:, member_id:, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/member/",
+            '/member/',
             SdkClient.encode_path_segment(member_id)
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Marketplace::GetMemberResponse,
           decoder: :json,
           operation_id: 'get_member',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -69,25 +58,24 @@ module OctridevVercel
         client_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('client_secret', client_secret, max: 512)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/credentials/rotate"
+            '/credentials/rotate'
           ].join,
           config: config,
           body: {
             'client_secret' => client_secret,
-            'client_id' => client_id,
+            'client_id' => client_id
           },
           return_type: ::OctridevVercel::Methods::Marketplace::RotateInstallationCredentialResponse,
           decoder: :json,
           operation_id: 'rotate_installation_credential',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -102,7 +90,6 @@ module OctridevVercel
         client_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('token', token, max: 512)
 
         Validation.validate_length('client_secret', client_secret, max: 512)
@@ -110,20 +97,20 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/credentials/revoke"
+            '/credentials/revoke'
           ].join,
           config: config,
           body: {
             'token' => token,
             'client_secret' => client_secret,
-            'client_id' => client_id,
+            'client_id' => client_id
           },
           return_type: ::OctridevVercel::Methods::Marketplace::RevokeInstallationCredentialResponse,
           decoder: :json,
           operation_id: 'revoke_installation_credential',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -139,45 +126,39 @@ module OctridevVercel
         event:,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/events"
+            '/events'
           ].join,
           config: config,
           body: {
-            'event' => event,
+            'event' => event
           },
           decoder: :empty,
           operation_id: 'create_event',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
       # Lists the resources associated with an integration installation. Use the installation identifier to retrieve its resources, including each resource's partner and product identifiers and its name.
       #
       # Get all resources for a given installation ID.
-      singleton_class.define_method(:get_integration_resources) do |
-        config:,
-        integration_configuration_id:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_integration_resources) do |config:, integration_configuration_id:, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources"
+            '/resources'
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Marketplace::GetIntegrationResourcesResponse,
           decoder: :json,
           operation_id: 'get_integration_resources',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -189,26 +170,20 @@ module OctridevVercel
       #   configuration (installation) the resource belongs to
       # @param resource_id [String] The ID provided by the 3rd party provider for
       #   the given resource
-      singleton_class.define_method(:get_integration_resource) do |
-        config:,
-        integration_configuration_id:,
-        resource_id:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_integration_resource) do |config:, integration_configuration_id:, resource_id:, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id)
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Marketplace::GetIntegrationResourceResponse,
           decoder: :json,
           operation_id: 'get_integration_resource',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -221,19 +196,18 @@ module OctridevVercel
         resource_id:,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id)
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'delete_integration_resource',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -259,13 +233,12 @@ module OctridevVercel
         custom_claims: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PUT',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id)
           ].join,
           config: config,
@@ -279,12 +252,12 @@ module OctridevVercel
             'notification' => notification,
             'extras' => extras,
             'secrets' => secrets,
-            'customClaims' => custom_claims,
+            'customClaims' => custom_claims
           },
           return_type: ::OctridevVercel::Methods::Marketplace::ImportResourceResponse,
           decoder: :json,
           operation_id: 'import_resource',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -311,13 +284,12 @@ module OctridevVercel
         custom_claims: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id)
           ].join,
           config: config,
@@ -330,12 +302,12 @@ module OctridevVercel
             'notification' => notification,
             'extras' => extras,
             'secrets' => secrets,
-            'customClaims' => custom_claims,
+            'customClaims' => custom_claims
           },
           return_type: ::OctridevVercel::Methods::Marketplace::UpdateResourceResponse,
           decoder: :json,
           operation_id: 'update_resource',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -365,7 +337,6 @@ module OctridevVercel
         usage:,
         request_options: nil
       )
-
         Validation.validate_date_time('timestamp', timestamp)
 
         Validation.validate_date_time('eod', eod)
@@ -373,9 +344,9 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/billing"
+            '/billing'
           ].join,
           config: config,
           body: {
@@ -383,11 +354,11 @@ module OctridevVercel
             'eod' => eod,
             'period' => period,
             'billing' => billing,
-            'usage' => usage,
+            'usage' => usage
           },
           decoder: :empty,
           operation_id: 'submit_billing_data',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -418,15 +389,14 @@ module OctridevVercel
         test: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_date_time('invoiceDate', invoice_date)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/billing/invoices"
+            '/billing/invoices'
           ].join,
           config: config,
           body: {
@@ -437,12 +407,12 @@ module OctridevVercel
             'memo' => memo,
             'discounts' => discounts,
             'final' => final,
-            'test' => test,
+            'test' => test
           },
           return_type: ::OctridevVercel::Methods::Marketplace::SubmitInvoiceResponse,
           decoder: :json,
           operation_id: 'submit_invoice',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -454,44 +424,37 @@ module OctridevVercel
         integration_configuration_id:,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/billing/finalize"
+            '/billing/finalize'
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'finalize_installation',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
       # Retrieves invoice details and status for an installation. Use the installation and invoice identifiers to select the invoice, and use the returned state and timestamps to track its billing lifecycle. Consult billing events through webhooks when you need invoice event notifications.
       #
       # Get Invoice details and status for a given invoice ID. See Billing Events with Webhooks documentation on how to receive invoice events. This endpoint is used to retrieve the invoice details.
-      singleton_class.define_method(:get_invoice) do |
-        config:,
-        integration_configuration_id:,
-        invoice_id:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_invoice) do |config:, integration_configuration_id:, invoice_id:, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/billing/invoices/",
+            '/billing/invoices/',
             SdkClient.encode_path_segment(invoice_id)
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Marketplace::GetInvoiceResponse,
           decoder: :json,
           operation_id: 'get_invoice',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -511,27 +474,26 @@ module OctridevVercel
         total:,
         request_options: nil
       )
-
         Validation.validate_pattern('total', total, '^[0-9]+(\\.[0-9]+)?$')
 
         SdkClient.request(
           'POST',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/billing/invoices/",
+            '/billing/invoices/',
             SdkClient.encode_path_segment(invoice_id),
-            "/actions"
+            '/actions'
           ].join,
           config: config,
           body: {
             'action' => action,
             'reason' => reason,
-            'total' => total,
+            'total' => total
           },
           decoder: :empty,
           operation_id: 'update_invoice',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -549,24 +511,23 @@ module OctridevVercel
         balances:,
         request_options: nil
       )
-
         Validation.validate_date_time('timestamp', timestamp)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/billing/balance"
+            '/billing/balance'
           ].join,
           config: config,
           body: {
             'timestamp' => timestamp,
-            'balances' => balances,
+            'balances' => balances
           },
           decoder: :empty,
           operation_id: 'submit_prepayment_balances',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

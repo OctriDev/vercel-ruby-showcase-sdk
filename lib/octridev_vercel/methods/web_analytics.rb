@@ -12,31 +12,30 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAggregatePageviewsResponseDataVariant0ItemMetadata
         FIELDS = {
-          browser_name: "browserName",
-          country: "country",
-          device_type: "deviceType",
-          environment: "environment",
-          flags: "flags",
-          os_name: "osName",
-          project_id: "projectId",
-          project_name: "projectName",
-          referrer_hostname: "referrerHostname",
-          request_hostname: "requestHostname",
-          request_path: "requestPath",
-          route: "route",
-          utm_campaign: "utmCampaign",
-          utm_content: "utmContent",
-          utm_medium: "utmMedium",
-          utm_source: "utmSource",
-          utm_term: "utmTerm",
-          visitor_id: "visitorId",
-          timestamp: "timestamp",
+          browser_name: 'browserName',
+          country: 'country',
+          device_type: 'deviceType',
+          environment: 'environment',
+          flags: 'flags',
+          os_name: 'osName',
+          project_id: 'projectId',
+          project_name: 'projectName',
+          referrer_hostname: 'referrerHostname',
+          request_hostname: 'requestHostname',
+          request_path: 'requestPath',
+          route: 'route',
+          utm_campaign: 'utmCampaign',
+          utm_content: 'utmContent',
+          utm_medium: 'utmMedium',
+          utm_source: 'utmSource',
+          utm_term: 'utmTerm',
+          visitor_id: 'visitorId',
+          timestamp: 'timestamp'
         }.freeze
         REQUIRED_FIELDS = %i[
           timestamp
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for AggregatePageviewsResponseDataVariant0Item.
@@ -68,24 +67,24 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAggregatePageviewsResponseDataVariant1ItemMetadata
         FIELDS = {
-          browser_name: "browserName",
-          country: "country",
-          device_type: "deviceType",
-          environment: "environment",
-          flags: "flags",
-          os_name: "osName",
-          project_id: "projectId",
-          project_name: "projectName",
-          referrer_hostname: "referrerHostname",
-          request_hostname: "requestHostname",
-          request_path: "requestPath",
-          route: "route",
-          utm_campaign: "utmCampaign",
-          utm_content: "utmContent",
-          utm_medium: "utmMedium",
-          utm_source: "utmSource",
-          utm_term: "utmTerm",
-          visitor_id: "visitorId",
+          browser_name: 'browserName',
+          country: 'country',
+          device_type: 'deviceType',
+          environment: 'environment',
+          flags: 'flags',
+          os_name: 'osName',
+          project_id: 'projectId',
+          project_name: 'projectName',
+          referrer_hostname: 'referrerHostname',
+          request_hostname: 'requestHostname',
+          request_path: 'requestPath',
+          route: 'route',
+          utm_campaign: 'utmCampaign',
+          utm_content: 'utmContent',
+          utm_medium: 'utmMedium',
+          utm_source: 'utmSource',
+          utm_term: 'utmTerm',
+          visitor_id: 'visitorId'
         }.freeze
         REQUIRED_FIELDS = %i[
           browser_name
@@ -107,8 +106,7 @@ module OctridevVercel
           utm_term
           visitor_id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for AggregatePageviewsResponseDataVariant1Item.
@@ -155,10 +153,10 @@ module OctridevVercel
         UTM_MEDIUM = 'utmMedium'
         UTM_SOURCE = 'utmSource'
         UTM_TERM = 'utmTerm'
-        VALUES = [
-          'browserName', 'country', 'deviceType', 'environment', 'flags', 'osName',
-          'referrerHostname', 'requestPath', 'route', 'utmCampaign', 'utmContent', 'utmMedium',
-          'utmSource', 'utmTerm'
+        VALUES = %w[
+          browserName country deviceType environment flags osName
+          referrerHostname requestPath route utmCampaign utmContent utmMedium
+          utmSource utmTerm
         ].freeze
         def self.from_value(value)
           value
@@ -168,11 +166,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAggregatePageviewsResponseQueryMetadata
         FIELDS = {
-          filter: "filter",
-          group_by: "groupBy",
-          limit: "limit",
-          since: "since",
-          until_: "until",
+          filter: 'filter',
+          group_by: 'groupBy',
+          limit: 'limit',
+          since: 'since',
+          until_: 'until'
         }.freeze
         REQUIRED_FIELDS = %i[
           limit
@@ -182,7 +180,7 @@ module OctridevVercel
         DECODERS = {
           group_by: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::WebAnalytics::AggregatePageviewsResponseQueryGroupByItemVariant1.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -212,9 +210,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAggregatePageviewsResponseMetadata
         FIELDS = {
-          data: "data",
-          query: "query",
-          version: "version",
+          data: 'data',
+          query: 'query',
+          version: 'version'
         }.freeze
         REQUIRED_FIELDS = %i[
           data
@@ -224,7 +222,7 @@ module OctridevVercel
         DECODERS = {
           query: lambda do |value|
             ::OctridevVercel::Methods::WebAnalytics::AggregatePageviewsResponseQuery.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -254,33 +252,32 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAggregateEventsResponseDataVariant0ItemMetadata
         FIELDS = {
-          browser_name: "browserName",
-          country: "country",
-          device_type: "deviceType",
-          environment: "environment",
-          event_data: "eventData",
-          event_name: "eventName",
-          flags: "flags",
-          os_name: "osName",
-          project_id: "projectId",
-          project_name: "projectName",
-          referrer_hostname: "referrerHostname",
-          request_hostname: "requestHostname",
-          request_path: "requestPath",
-          route: "route",
-          utm_campaign: "utmCampaign",
-          utm_content: "utmContent",
-          utm_medium: "utmMedium",
-          utm_source: "utmSource",
-          utm_term: "utmTerm",
-          visitor_id: "visitorId",
-          timestamp: "timestamp",
+          browser_name: 'browserName',
+          country: 'country',
+          device_type: 'deviceType',
+          environment: 'environment',
+          event_data: 'eventData',
+          event_name: 'eventName',
+          flags: 'flags',
+          os_name: 'osName',
+          project_id: 'projectId',
+          project_name: 'projectName',
+          referrer_hostname: 'referrerHostname',
+          request_hostname: 'requestHostname',
+          request_path: 'requestPath',
+          route: 'route',
+          utm_campaign: 'utmCampaign',
+          utm_content: 'utmContent',
+          utm_medium: 'utmMedium',
+          utm_source: 'utmSource',
+          utm_term: 'utmTerm',
+          visitor_id: 'visitorId',
+          timestamp: 'timestamp'
         }.freeze
         REQUIRED_FIELDS = %i[
           timestamp
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for AggregateEventsResponseDataVariant0Item.
@@ -312,26 +309,26 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAggregateEventsResponseDataVariant1ItemMetadata
         FIELDS = {
-          browser_name: "browserName",
-          country: "country",
-          device_type: "deviceType",
-          environment: "environment",
-          event_data: "eventData",
-          event_name: "eventName",
-          flags: "flags",
-          os_name: "osName",
-          project_id: "projectId",
-          project_name: "projectName",
-          referrer_hostname: "referrerHostname",
-          request_hostname: "requestHostname",
-          request_path: "requestPath",
-          route: "route",
-          utm_campaign: "utmCampaign",
-          utm_content: "utmContent",
-          utm_medium: "utmMedium",
-          utm_source: "utmSource",
-          utm_term: "utmTerm",
-          visitor_id: "visitorId",
+          browser_name: 'browserName',
+          country: 'country',
+          device_type: 'deviceType',
+          environment: 'environment',
+          event_data: 'eventData',
+          event_name: 'eventName',
+          flags: 'flags',
+          os_name: 'osName',
+          project_id: 'projectId',
+          project_name: 'projectName',
+          referrer_hostname: 'referrerHostname',
+          request_hostname: 'requestHostname',
+          request_path: 'requestPath',
+          route: 'route',
+          utm_campaign: 'utmCampaign',
+          utm_content: 'utmContent',
+          utm_medium: 'utmMedium',
+          utm_source: 'utmSource',
+          utm_term: 'utmTerm',
+          visitor_id: 'visitorId'
         }.freeze
         REQUIRED_FIELDS = %i[
           browser_name
@@ -355,8 +352,7 @@ module OctridevVercel
           utm_term
           visitor_id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for AggregateEventsResponseDataVariant1Item.
@@ -405,10 +401,10 @@ module OctridevVercel
         UTM_MEDIUM = 'utmMedium'
         UTM_SOURCE = 'utmSource'
         UTM_TERM = 'utmTerm'
-        VALUES = [
-          'browserName', 'country', 'deviceType', 'environment', 'eventData', 'eventName', 'flags',
-          'osName', 'referrerHostname', 'requestPath', 'route', 'utmCampaign', 'utmContent',
-          'utmMedium', 'utmSource', 'utmTerm'
+        VALUES = %w[
+          browserName country deviceType environment eventData eventName flags
+          osName referrerHostname requestPath route utmCampaign utmContent
+          utmMedium utmSource utmTerm
         ].freeze
         def self.from_value(value)
           value
@@ -418,11 +414,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAggregateEventsResponseQueryMetadata
         FIELDS = {
-          filter: "filter",
-          group_by: "groupBy",
-          limit: "limit",
-          since: "since",
-          until_: "until",
+          filter: 'filter',
+          group_by: 'groupBy',
+          limit: 'limit',
+          since: 'since',
+          until_: 'until'
         }.freeze
         REQUIRED_FIELDS = %i[
           limit
@@ -432,7 +428,7 @@ module OctridevVercel
         DECODERS = {
           group_by: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::WebAnalytics::AggregateEventsResponseQueryGroupByItemVariant1.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -462,9 +458,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAggregateEventsResponseMetadata
         FIELDS = {
-          data: "data",
-          query: "query",
-          version: "version",
+          data: 'data',
+          query: 'query',
+          version: 'version'
         }.freeze
         REQUIRED_FIELDS = %i[
           data
@@ -474,7 +470,7 @@ module OctridevVercel
         DECODERS = {
           query: lambda do |value|
             ::OctridevVercel::Methods::WebAnalytics::AggregateEventsResponseQuery.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -504,16 +500,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCountPageviewsResponseQueryMetadata
         FIELDS = {
-          filter: "filter",
-          since: "since",
-          until_: "until",
+          filter: 'filter',
+          since: 'since',
+          until_: 'until'
         }.freeze
         REQUIRED_FIELDS = %i[
           since
           until_
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CountPageviewsResponseQuery.
@@ -542,9 +537,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCountPageviewsResponseMetadata
         FIELDS = {
-          data: "data",
-          query: "query",
-          version: "version",
+          data: 'data',
+          query: 'query',
+          version: 'version'
         }.freeze
         REQUIRED_FIELDS = %i[
           data
@@ -557,7 +552,7 @@ module OctridevVercel
           end,
           query: lambda do |value|
             ::OctridevVercel::Methods::WebAnalytics::CountPageviewsResponseQuery.from_hash(value)
-          end,
+          end
         }.freeze
       end
     end

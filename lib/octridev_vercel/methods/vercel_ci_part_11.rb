@@ -129,8 +129,8 @@ module OctridevVercel
         ERROR = 'error'
         SYSTEM_ERROR = 'systemError'
         FATAL = 'fatal'
-        VALUES = [
-          'trace', 'debug', 'command', 'info', 'warn', 'error', 'systemError', 'fatal'
+        VALUES = %w[
+          trace debug command info warn error systemError fatal
         ].freeze
         def self.from_value(value)
           value
@@ -250,10 +250,10 @@ module OctridevVercel
         JOBS_ON_HIVE_FAILED = 'jobs_on_hive_failed'
         AWAITING_JOBS = 'awaiting_jobs'
         COMPLETED = 'completed'
-        VALUES = [
-          'new', 'skipped', 'bootstrapping', 'bootstrapping_failed', 'snapshotted', 'sandbox_named',
-          'jobs_on_hive_clone_dispatched', 'jobs_on_hive_dispatched', 'jobs_on_hive_completed',
-          'jobs_on_hive_failed', 'awaiting_jobs', 'completed'
+        VALUES = %w[
+          new skipped bootstrapping bootstrapping_failed snapshotted sandbox_named
+          jobs_on_hive_clone_dispatched jobs_on_hive_dispatched jobs_on_hive_completed
+          jobs_on_hive_failed awaiting_jobs completed
         ].freeze
         def self.from_value(value)
           value
@@ -344,7 +344,7 @@ module OctridevVercel
         GITHUB = 'github'
         GITLAB = 'gitlab'
         VERCEL = 'vercel'
-        VALUES = ['bitbucket', 'cursor-origin', 'github', 'gitlab', 'vercel'].freeze
+        VALUES = %w[bitbucket cursor-origin github gitlab vercel].freeze
         def self.from_value(value)
           value
         end
@@ -354,7 +354,7 @@ module OctridevVercel
       module ListVercelCiInvocationsParameterItem3854c11d
         VERCEL_CI = 'vercel-ci'
         VERCEL_NATIVE_CHECKS = 'vercel-native-checks'
-        VALUES = ['vercel-ci', 'vercel-native-checks'].freeze
+        VALUES = %w[vercel-ci vercel-native-checks].freeze
         def self.from_value(value)
           value
         end
@@ -436,8 +436,8 @@ module OctridevVercel
         ERROR = 'error'
         SYSTEM_ERROR = 'systemError'
         FATAL = 'fatal'
-        VALUES = [
-          'trace', 'debug', 'command', 'info', 'warn', 'error', 'systemError', 'fatal'
+        VALUES = %w[
+          trace debug command info warn error systemError fatal
         ].freeze
         def self.from_value(value)
           value
@@ -484,31 +484,22 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_vercel_ci_repository_settings) do |
-        config:,
-        provider:,
-        organization_id:,
-        repository:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_vercel_ci_repository_settings) do |config:, provider:, organization_id:, repository:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
-          "/v1/vercel-ci/repository-settings",
+          '/v1/vercel-ci/repository-settings',
           config: config,
           query: {
             'provider' => QueryValue.new(provider, style: 'form', explode: true),
             'organizationId' => QueryValue.new(organization_id, style: 'form', explode: true),
             'repository' => QueryValue.new(repository, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::VercelCi::GetVercelCiRepositorySettingsResponse,
           decoder: :json,
           operation_id: 'get_vercel_ci_repository_settings',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -529,25 +520,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
-          "/v1/vercel-ci/repository-settings",
+          '/v1/vercel-ci/repository-settings',
           config: config,
           query: {
             'provider' => QueryValue.new(provider, style: 'form', explode: true),
             'organizationId' => QueryValue.new(organization_id, style: 'form', explode: true),
             'repository' => QueryValue.new(repository, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'ciEnabled' => ci_enabled,
+            'ciEnabled' => ci_enabled
           },
           return_type: ::OctridevVercel::Methods::VercelCi::UpdateVercelCiRepositorySettingsResponse,
           decoder: :json,
           operation_id: 'update_vercel_ci_repository_settings',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

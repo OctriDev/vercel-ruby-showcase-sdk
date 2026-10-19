@@ -5,666 +5,661 @@
 
 # domains_registrar_get domain models
 module OctridevVercel
-# Defines the GetDomainContactVerificationResponse SDK namespace.
-module GetDomainContactVerificationResponse
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    mapping = { "true" => ContactVerified, "false" => ContactPendingVerification }
-    type = mapping[hash["verified"]&.to_s]
-    return type.from_hash(hash) if type
+  # Defines the GetDomainContactVerificationResponse SDK namespace.
+  module GetDomainContactVerificationResponse
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
 
-    return SdkUnknownMember.new(hash) if hash["verified"].is_a?(::String)
+      mapping = { 'true' => ContactVerified, 'false' => ContactPendingVerification }
+      type = mapping[hash['verified']&.to_s]
+      return type.from_hash(hash) if type
 
-    raise SdkValidationError.new('GetDomainContactVerificationResponse', 'variant', "Unknown GetDomainContactVerificationResponse discriminator: #{hash["verified"].inspect}")
-  end
-end
+      return SdkUnknownMember.new(hash) if hash['verified'].is_a?(::String)
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0DetailsMetadata
-  FIELDS = {
-    detected_language_code: "detectedLanguageCode",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    detected_language_code
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant0Details.
-class GetOrderResponseDomainsItemVariant0ErrorVariant0Details
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0DetailsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0DetailsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0DetailsMetadata::DECODERS
-
-  attr_reader :detected_language_code
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('GetDomainContactVerificationResponse', 'variant', "Unknown GetDomainContactVerificationResponse discriminator: #{hash['verified'].inspect}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0DetailsMetadata
+    FIELDS = {
+      detected_language_code: 'detectedLanguageCode'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      detected_language_code
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant0Details.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant0Details
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0DetailsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0DetailsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0DetailsMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0Metadata
-  FIELDS = {
-    code: "code",
-    details: "details",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-    details
-  ].freeze
-  DECODERS = {
-    code: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant0Code.from_value(value)
-    end,
-    details: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant0Details.from_hash(value)
-    end,
-  }.freeze
-end
+    attr_reader :detected_language_code
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant0.
-class GetOrderResponseDomainsItemVariant0ErrorVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :code, :details
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0Metadata
+    FIELDS = {
+      code: 'code',
+      details: 'details'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+      details
+    ].freeze
+    DECODERS = {
+      code: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant0Code.from_value(value)
+      end,
+      details: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant0Details.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant0.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1DetailsMetadata
-  FIELDS = {
-    detected_language_code: "detectedLanguageCode",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    detected_language_code
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :code, :details
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant1Details.
-class GetOrderResponseDomainsItemVariant0ErrorVariant1Details
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1DetailsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1DetailsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1DetailsMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :detected_language_code
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1DetailsMetadata
+    FIELDS = {
+      detected_language_code: 'detectedLanguageCode'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      detected_language_code
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant1Details.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant1Details
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1DetailsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1DetailsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1DetailsMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1Metadata
-  FIELDS = {
-    code: "code",
-    details: "details",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-    details
-  ].freeze
-  DECODERS = {
-    code: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant1Code.from_value(value)
-    end,
-    details: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant1Details.from_hash(value)
-    end,
-  }.freeze
-end
+    attr_reader :detected_language_code
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant1.
-class GetOrderResponseDomainsItemVariant0ErrorVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :code, :details
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1Metadata
+    FIELDS = {
+      code: 'code',
+      details: 'details'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+      details
+    ].freeze
+    DECODERS = {
+      code: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant1Code.from_value(value)
+      end,
+      details: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant1Details.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant1.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant2Metadata
-  FIELDS = {
-    code: "code",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-  ].freeze
-  DECODERS = {
-    code: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant2Code.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :code, :details
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant2.
-class GetOrderResponseDomainsItemVariant0ErrorVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant2Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :code
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant2Metadata
+    FIELDS = {
+      code: 'code'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+    ].freeze
+    DECODERS = {
+      code: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant2Code.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant2.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant2Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant3Metadata
-  FIELDS = {
-    code: "code",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-  ].freeze
-  DECODERS = {
-    code: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant3Code.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :code
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant3.
-class GetOrderResponseDomainsItemVariant0ErrorVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant3Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :code
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant3Metadata
+    FIELDS = {
+      code: 'code'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+    ].freeze
+    DECODERS = {
+      code: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant3Code.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant3.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant3Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant4Metadata
-  FIELDS = {
-    code: "code",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-  ].freeze
-  DECODERS = {
-    code: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant4Code.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :code
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant4.
-class GetOrderResponseDomainsItemVariant0ErrorVariant4
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant4Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant4Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant4Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :code
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant4Metadata
+    FIELDS = {
+      code: 'code'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+    ].freeze
+    DECODERS = {
+      code: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant4Code.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant4.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant4
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant4Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant4Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant4Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5DetailsMetadata
-  FIELDS = {
-    num_days_until_transferrable: "numDaysUntilTransferrable",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    num_days_until_transferrable
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :code
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant5Details.
-class GetOrderResponseDomainsItemVariant0ErrorVariant5Details
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5DetailsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5DetailsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5DetailsMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :num_days_until_transferrable
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5DetailsMetadata
+    FIELDS = {
+      num_days_until_transferrable: 'numDaysUntilTransferrable'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      num_days_until_transferrable
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant5Details.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant5Details
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5DetailsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5DetailsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5DetailsMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5Metadata
-  FIELDS = {
-    code: "code",
-    details: "details",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-    details
-  ].freeze
-  DECODERS = {
-    code: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant5Code.from_value(value)
-    end,
-    details: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant5Details.from_hash(value)
-    end,
-  }.freeze
-end
+    attr_reader :num_days_until_transferrable
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant5.
-class GetOrderResponseDomainsItemVariant0ErrorVariant5
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :code, :details
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5Metadata
+    FIELDS = {
+      code: 'code',
+      details: 'details'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+      details
+    ].freeze
+    DECODERS = {
+      code: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant5Code.from_value(value)
+      end,
+      details: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant5Details.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant5.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant5
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant5Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant6Metadata
-  FIELDS = {
-    code: "code",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-  ].freeze
-  DECODERS = {
-    code: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant6Code.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :code, :details
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant6.
-class GetOrderResponseDomainsItemVariant0ErrorVariant6
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant6Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant6Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant6Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :code
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant6Metadata
+    FIELDS = {
+      code: 'code'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+    ].freeze
+    DECODERS = {
+      code: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant6Code.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant6.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant6
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant6Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant6Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant6Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant7Metadata
-  FIELDS = {
-    code: "code",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-  ].freeze
-  DECODERS = {
-    code: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant7Code.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :code
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant7.
-class GetOrderResponseDomainsItemVariant0ErrorVariant7
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant7Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant7Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant7Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :code
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant7Metadata
+    FIELDS = {
+      code: 'code'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+    ].freeze
+    DECODERS = {
+      code: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant7Code.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant7.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant7
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant7Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant7Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant7Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant8Metadata
-  FIELDS = {
-    code: "code",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-  ].freeze
-  DECODERS = {
-    code: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant8Code.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :code
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant8.
-class GetOrderResponseDomainsItemVariant0ErrorVariant8
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant8Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant8Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant8Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :code
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant8Metadata
+    FIELDS = {
+      code: 'code'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+    ].freeze
+    DECODERS = {
+      code: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant8Code.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant8.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant8
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant8Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant8Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant8Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9DetailsMetadata
-  FIELDS = {
-    invalid_field: "invalidField",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    invalid_field: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant9DetailsInvalidField.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :code
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant9Details.
-class GetOrderResponseDomainsItemVariant0ErrorVariant9Details
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9DetailsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9DetailsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9DetailsMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :invalid_field
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9DetailsMetadata
+    FIELDS = {
+      invalid_field: 'invalidField'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      invalid_field: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant9DetailsInvalidField.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant9Details.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant9Details
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9DetailsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9DetailsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9DetailsMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9Metadata
-  FIELDS = {
-    code: "code",
-    details: "details",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-    details
-  ].freeze
-  DECODERS = {
-    code: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant9Code.from_value(value)
-    end,
-    details: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant9Details.from_hash(value)
-    end,
-  }.freeze
-end
+    attr_reader :invalid_field
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant9.
-class GetOrderResponseDomainsItemVariant0ErrorVariant9
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :code, :details
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9Metadata
+    FIELDS = {
+      code: 'code',
+      details: 'details'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+      details
+    ].freeze
+    DECODERS = {
+      code: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant9Code.from_value(value)
+      end,
+      details: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0ErrorVariant9Details.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant9.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant9
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant9Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant10Metadata
-  FIELDS = {
-    code: "code",
-    details: "details",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :code, :details
 
-# API model for GetOrderResponseDomainsItemVariant0ErrorVariant10.
-class GetOrderResponseDomainsItemVariant0ErrorVariant10
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant10Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant10Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant10Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :code, :details
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant10Metadata
+    FIELDS = {
+      code: 'code',
+      details: 'details'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0ErrorVariant10.
+  class GetOrderResponseDomainsItemVariant0ErrorVariant10
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant10Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant10Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0ErrorVariant10Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant0Metadata
-  FIELDS = {
-    purchase_type: "purchaseType",
-    auto_renew: "autoRenew",
-    years: "years",
-    domain_name: "domainName",
-    status: "status",
-    price: "price",
-    error: "error",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    purchase_type
-    auto_renew
-    years
-    domain_name
-    status
-    price
-  ].freeze
-  DECODERS = {
-    purchase_type: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0PurchaseType.from_value(value)
-    end,
-    domain_name: lambda do |value|
-      ::OctridevVercel::DomainName.from_value(value)
-    end,
-    status: lambda do |value|
-      ::OctridevVercel::GetOrderResponseDomainsItemVariant0Status.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :code, :details
 
-# API model for GetOrderResponseDomainsItemVariant0.
-class GetOrderResponseDomainsItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :purchase_type, :auto_renew, :status, :price, :error
-  # @return [Float] The number of years the domain is being purchased for.
-  attr_reader :years
-  # @return [DomainName] A valid domain name
-  attr_reader :domain_name
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant0Metadata
+    FIELDS = {
+      purchase_type: 'purchaseType',
+      auto_renew: 'autoRenew',
+      years: 'years',
+      domain_name: 'domainName',
+      status: 'status',
+      price: 'price',
+      error: 'error'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      purchase_type
+      auto_renew
+      years
+      domain_name
+      status
+      price
+    ].freeze
+    DECODERS = {
+      purchase_type: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0PurchaseType.from_value(value)
+      end,
+      domain_name: lambda do |value|
+        ::OctridevVercel::DomainName.from_value(value)
+      end,
+      status: lambda do |value|
+        ::OctridevVercel::GetOrderResponseDomainsItemVariant0Status.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetOrderResponseDomainsItemVariant0.
+  class GetOrderResponseDomainsItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetOrderResponseDomainsItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetOrderResponseDomainsItemVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetOrderResponseDomainsItemVariant1ErrorVariant0DetailsMetadata
-  FIELDS = {
-    detected_language_code: "detectedLanguageCode",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    detected_language_code
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :purchase_type, :auto_renew, :status, :price, :error
+    # @return [Float] The number of years the domain is being purchased for.
+    attr_reader :years
+    # @return [DomainName] A valid domain name
+    attr_reader :domain_name
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalGetOrderResponseDomainsItemVariant1ErrorVariant0DetailsMetadata
+    FIELDS = {
+      detected_language_code: 'detectedLanguageCode'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      detected_language_code
+    ].freeze
+    DECODERS = {}.freeze
+  end
 end

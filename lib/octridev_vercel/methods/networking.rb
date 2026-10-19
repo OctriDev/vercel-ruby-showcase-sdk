@@ -12,18 +12,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateNetworkMetadata
         FIELDS = {
-          aws_availability_zone_ids: "awsAvailabilityZoneIds",
-          cidr: "cidr",
-          name: "name",
-          region: "region",
+          aws_availability_zone_ids: 'awsAvailabilityZoneIds',
+          cidr: 'cidr',
+          name: 'name',
+          region: 'region'
         }.freeze
         REQUIRED_FIELDS = %i[
           cidr
           name
           region
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateNetwork.
@@ -58,13 +57,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateNetworkMetadata
         FIELDS = {
-          name: "name",
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateNetwork.
@@ -94,11 +92,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreatePrivateLinkEndpointMetadata
         FIELDS = {
-          project_id: "projectId",
-          name: "name",
-          vercel_region: "vercelRegion",
-          aws_service_name: "awsServiceName",
-          enable_private_dns: "enablePrivateDns",
+          project_id: 'projectId',
+          name: 'name',
+          vercel_region: 'vercelRegion',
+          aws_service_name: 'awsServiceName',
+          enable_private_dns: 'enablePrivateDns'
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
@@ -106,8 +104,7 @@ module OctridevVercel
           vercel_region
           aws_service_name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreatePrivateLinkEndpoint.
@@ -145,13 +142,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdatePrivateLinkEndpointMetadata
         FIELDS = {
-          name: "name",
-          enable_private_dns: "enablePrivateDns",
+          name: 'name',
+          enable_private_dns: 'enablePrivateDns'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdatePrivateLinkEndpoint.
@@ -183,13 +178,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateStaticIpsMetadata
         FIELDS = {
-          builds: "builds",
-          regions: "regions",
+          builds: 'builds',
+          regions: 'regions'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateStaticIps.
@@ -241,7 +234,7 @@ module OctridevVercel
       module UpdateStaticIpsResponseItemEnvIdVariant1
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end
@@ -271,12 +264,11 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(search) { Validation.validate_length('search', search, max: 255) }
 
         SdkClient.request(
           'GET',
-          "/v1/connect/networks",
+          '/v1/connect/networks',
           config: config,
           query: {
             'includeHostedZones' => QueryValue.new(include_hosted_zones, style: 'form', explode: true),
@@ -284,12 +276,12 @@ module OctridevVercel
             'includeProjects' => QueryValue.new(include_projects, style: 'form', explode: true),
             'search' => QueryValue.new(search, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: [::OctridevVercel::Network],
           decoder: :json,
           operation_id: 'list_networks',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -313,7 +305,6 @@ module OctridevVercel
         aws_availability_zone_ids: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 255)
 
         Validation.if_given(aws_availability_zone_ids) do
@@ -322,22 +313,22 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          "/v1/connect/networks",
+          '/v1/connect/networks',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'cidr' => cidr,
             'name' => name,
             'region' => region,
-            'awsAvailabilityZoneIds' => aws_availability_zone_ids,
+            'awsAvailabilityZoneIds' => aws_availability_zone_ids
           },
           return_type: ::OctridevVercel::Network,
           decoder: :json,
           operation_id: 'create_network',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -356,21 +347,20 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/connect/networks/",
+            '/v1/connect/networks/',
             SdkClient.encode_path_segment(network_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'delete_network',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -392,27 +382,26 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 255)
 
         SdkClient.request(
           'PATCH',
           [
-            "/v1/connect/networks/",
+            '/v1/connect/networks/',
             SdkClient.encode_path_segment(network_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'name' => name,
+            'name' => name
           },
           return_type: ::OctridevVercel::Network,
           decoder: :json,
           operation_id: 'update_network',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -432,22 +421,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
           [
-            "/v1/connect/networks/",
+            '/v1/connect/networks/',
             SdkClient.encode_path_segment(network_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Network,
           decoder: :json,
           operation_id: 'read_network',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -484,28 +472,27 @@ module OctridevVercel
         enable_private_dns: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 255)
 
         SdkClient.request(
           'POST',
-          "/v1/networking/privatelink/endpoints",
+          '/v1/networking/privatelink/endpoints',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'projectId' => project_id,
             'name' => name,
             'vercelRegion' => vercel_region,
             'awsServiceName' => aws_service_name,
-            'enablePrivateDns' => enable_private_dns,
+            'enablePrivateDns' => enable_private_dns
           },
           return_type: ::OctridevVercel::PrivateLinkEndpoint,
           decoder: :json,
           operation_id: 'create_private_link_endpoint',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -524,20 +511,19 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
-          "/v1/networking/privatelink/endpoints",
+          '/v1/networking/privatelink/endpoints',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: [::OctridevVercel::PrivateLinkEndpoint],
           decoder: :json,
           operation_id: 'list_private_link_endpoints',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end
