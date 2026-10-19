@@ -14,7 +14,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = %w[PROMOTED ROLLING STAGED].freeze
+        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
         def self.from_value(value)
           value
         end
@@ -26,8 +26,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = %w[
-          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+        VALUES = [
+          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
         ].freeze
         def self.from_value(value)
           value
@@ -119,7 +119,7 @@ module OctridevVercel
       module ListProjectsResponseVariant0ItemGitProviderOptionsCreateDeployments
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = %w[disabled enabled].freeze
+        VALUES = ['disabled', 'enabled'].freeze
         def self.from_value(value)
           value
         end
@@ -287,7 +287,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = %w[enhanced standard turbo].freeze
+        VALUES = ['enhanced', 'standard', 'turbo'].freeze
         def self.from_value(value)
           value
         end
@@ -308,7 +308,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = %w[completed registered running].freeze
+        VALUES = ['completed', 'registered', 'running'].freeze
         def self.from_value(value)
           value
         end
@@ -401,7 +401,7 @@ module OctridevVercel
       module ListProjectsResponseVariant2ProjectsItemConnectConfigurationsXfd1a40393c
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[preview production].freeze
+        VALUES = ['preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -453,8 +453,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = %w[
-          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+        VALUES = [
+          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
         ].freeze
         def self.from_value(value)
           value
@@ -516,7 +516,7 @@ module OctridevVercel
         PERFORMANCE_XL = 'performance_xl'
         STANDARD = 'standard'
         STANDARD_LEGACY = 'standard_legacy'
-        VALUES = %w[performance performance_xl standard standard_legacy].freeze
+        VALUES = ['performance', 'performance_xl', 'standard', 'standard_legacy'].freeze
         def self.from_value(value)
           value
         end
@@ -537,7 +537,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = %w[endsWith equals startsWith].freeze
+        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
         def self.from_value(value)
           value
         end
@@ -558,7 +558,7 @@ module OctridevVercel
       module CreateProjectResponseResourceConfigBuildMachineSelection
         ELASTIC = 'elastic'
         FIXED = 'fixed'
-        VALUES = %w[elastic fixed].freeze
+        VALUES = ['elastic', 'fixed'].freeze
         def self.from_value(value)
           value
         end
@@ -573,8 +573,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value

@@ -45,9 +45,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseDeploymentPolicyDeploymentSourcesItemMetadata
         FIELDS = {
-          enabled: 'enabled',
-          environments: 'environments',
-          sources: 'sources'
+          enabled: "enabled",
+          environments: "environments",
+          sources: "sources",
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -63,7 +63,7 @@ module OctridevVercel
           end,
           sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX574d83cfba.from_value(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -94,9 +94,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseDeploymentPolicyGitSourcesItemMetadata
         FIELDS = {
-          enabled: 'enabled',
-          environments: 'environments',
-          sources: 'sources'
+          enabled: "enabled",
+          environments: "environments",
+          sources: "sources",
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -112,7 +112,7 @@ module OctridevVercel
           end,
           sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::DeleteProjectAvatarResponseDeploymentPolicyGitSourcesItemSourcesItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -143,17 +143,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseDeploymentPolicyMetadata
         FIELDS = {
-          deployment_sources: 'deploymentSources',
-          git_sources: 'gitSources'
+          deployment_sources: "deploymentSources",
+          git_sources: "gitSources",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           deployment_sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseDeploymentPolicyDeploymentSourcesItem.from_hash(item) }
           end,
           git_sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseDeploymentPolicyGitSourcesItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -184,10 +185,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseDismissedToastsItemMetadata
         FIELDS = {
-          action: 'action',
-          dismissed_at: 'dismissedAt',
-          key: 'key',
-          value: 'value'
+          action: "action",
+          dismissed_at: "dismissedAt",
+          key: "key",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -201,7 +202,7 @@ module OctridevVercel
           end,
           value: lambda do |value|
             ::OctridevVercel::DeleteProjectAvatarResponseDismissedToastsItemValue.from_hash(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           value
@@ -236,8 +237,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseEnvItemInternalContentHintMetadata
         FIELDS = {
-          encrypted_value: 'encryptedValue',
-          type: 'type'
+          encrypted_value: "encryptedValue",
+          type: "type",
         }.freeze
         REQUIRED_FIELDS = %i[
           encrypted_value
@@ -246,7 +247,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseEnvItemInternalContentHintType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -279,28 +280,28 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseEnvItemMetadata
         FIELDS = {
-          comment: 'comment',
-          configuration_id: 'configurationId',
-          content_hint: 'contentHint',
-          created_at: 'createdAt',
-          created_by: 'createdBy',
-          custom_environment_ids: 'customEnvironmentIds',
-          decrypted: 'decrypted',
-          edge_config_id: 'edgeConfigId',
-          edge_config_token_id: 'edgeConfigTokenId',
-          git_branch: 'gitBranch',
-          id: 'id',
-          internal_content_hint: 'internalContentHint',
-          key: 'key',
-          legacy_value: 'legacyValue',
-          sunset_secret_id: 'sunsetSecretId',
-          target: 'target',
-          type: 'type',
-          updated_at: 'updatedAt',
-          updated_by: 'updatedBy',
-          value: 'value',
-          visibility: 'visibility',
-          vsm_value: 'vsmValue'
+          comment: "comment",
+          configuration_id: "configurationId",
+          content_hint: "contentHint",
+          created_at: "createdAt",
+          created_by: "createdBy",
+          custom_environment_ids: "customEnvironmentIds",
+          decrypted: "decrypted",
+          edge_config_id: "edgeConfigId",
+          edge_config_token_id: "edgeConfigTokenId",
+          git_branch: "gitBranch",
+          id: "id",
+          internal_content_hint: "internalContentHint",
+          key: "key",
+          legacy_value: "legacyValue",
+          sunset_secret_id: "sunsetSecretId",
+          target: "target",
+          type: "type",
+          updated_at: "updatedAt",
+          updated_by: "updatedBy",
+          value: "value",
+          visibility: "visibility",
+          vsm_value: "vsmValue",
         }.freeze
         REQUIRED_FIELDS = %i[
           key
@@ -322,7 +323,7 @@ module OctridevVercel
           end,
           visibility: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseEnvItemVisibility.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -364,13 +365,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseFeaturesMetadata
         FIELDS = {
-          web_analytics: 'webAnalytics'
+          web_analytics: "webAnalytics",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           web_analytics: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseFeaturesWebAnalytics.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -400,8 +402,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseGitCommentsMetadata
         FIELDS = {
-          on_commit: 'onCommit',
-          on_pull_request: 'onPullRequest'
+          on_commit: "onCommit",
+          on_pull_request: "onPullRequest",
         }.freeze
         REQUIRED_FIELDS = %i[
           on_commit
@@ -413,7 +415,7 @@ module OctridevVercel
           end,
           on_pull_request: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseGitCommentsOnPullRequest.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -446,8 +448,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseGitProviderOptionsConsolidatedGitCommitStatusMetadata
         FIELDS = {
-          enabled: 'enabled',
-          propagate_failures: 'propagateFailures'
+          enabled: "enabled",
+          propagate_failures: "propagateFailures",
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -459,7 +461,7 @@ module OctridevVercel
           end,
           propagate_failures: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseGitProviderOptionsConsolidatedGitCX593efd13c0.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -493,11 +495,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseGitProviderOptionsMetadata
         FIELDS = {
-          consolidated_git_commit_status: 'consolidatedGitCommitStatus',
-          create_deployments: 'createDeployments',
-          disable_repository_dispatch_events: 'disableRepositoryDispatchEvents',
-          git_commit_status: 'gitCommitStatus',
-          require_verified_commits: 'requireVerifiedCommits'
+          consolidated_git_commit_status: "consolidatedGitCommitStatus",
+          create_deployments: "createDeployments",
+          disable_repository_dispatch_events: "disableRepositoryDispatchEvents",
+          git_commit_status: "gitCommitStatus",
+          require_verified_commits: "requireVerifiedCommits",
         }.freeze
         REQUIRED_FIELDS = %i[
           create_deployments
@@ -517,7 +519,7 @@ module OctridevVercel
           end,
           require_verified_commits: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseGitProviderOptionsRequireVerifiedCommits.from_value(value)
-          end
+          end,
         }.freeze
       end
 

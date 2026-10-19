@@ -5,671 +5,673 @@
 
 # checks_v2 domain models (part 9)
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant3Metadata
-    FIELDS = {
-      origin: 'origin',
-      sub_kind: 'subKind'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      origin: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant3Origin.from_value(value)
-      end,
-      sub_kind: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant3SubKind.from_value(value)
-      end
-    }.freeze
+# Internal model hydration metadata.
+class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant3Metadata
+  FIELDS = {
+    origin: "origin",
+    sub_kind: "subKind",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    origin: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant3Origin.from_value(value)
+    end,
+    sub_kind: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant3SubKind.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant3.
+# Native Vercel checks — check definition and check run `source`.
+class UpdateDeploymentCheckRunResponseVariant0SourceVariant3
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant3Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant3Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant3Metadata::DECODERS
+
+  attr_reader :origin, :sub_kind
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant3.
-  # Native Vercel checks — check definition and check run `source`.
-  class UpdateDeploymentCheckRunResponseVariant0SourceVariant3
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant3Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant3Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant3Metadata::DECODERS
-
-    attr_reader :origin, :sub_kind
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0Metadata
-    FIELDS = {
-      kind: 'kind'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      kind
-    ].freeze
-    DECODERS = {
-      kind: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4d02cbbf3a.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0Metadata
+  FIELDS = {
+    kind: "kind",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    kind
+  ].freeze
+  DECODERS = {
+    kind: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4d02cbbf3a.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0.
+class UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0Metadata::DECODERS
+
+  attr_reader :kind
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0.
-  class UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0Metadata::DECODERS
-
-    attr_reader :kind
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1Metadata
-    FIELDS = {
-      kind: 'kind'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      kind
-    ].freeze
-    DECODERS = {
-      kind: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX08d5ede85d.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1Metadata
+  FIELDS = {
+    kind: "kind",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    kind
+  ].freeze
+  DECODERS = {
+    kind: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX08d5ede85d.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1.
+class UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1Metadata::DECODERS
+
+  attr_reader :kind
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1.
-  class UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1Metadata::DECODERS
-
-    attr_reader :kind
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2Metadata
-    FIELDS = {
-      job: 'job',
-      kind: 'kind'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      job
-      kind
-    ].freeze
-    DECODERS = {
-      kind: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX9dfb165f47.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2Metadata
+  FIELDS = {
+    job: "job",
+    kind: "kind",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    job
+    kind
+  ].freeze
+  DECODERS = {
+    kind: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX9dfb165f47.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2.
+class UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2Metadata::DECODERS
+
+  attr_reader :job, :kind
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2.
-  class UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2Metadata::DECODERS
-
-    attr_reader :job, :kind
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3Metadata
-    FIELDS = {
-      fail_if_no_match: 'failIfNoMatch',
-      filters: 'filters',
-      job: 'job',
-      kind: 'kind',
-      task: 'task'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      filters
-      job
-      kind
-      task
-    ].freeze
-    DECODERS = {
-      fail_if_no_match: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX28203ea00c.from_value(value)
-      end,
-      job: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXb141483ef2.from_value(value)
-      end,
-      kind: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX903f1d4de3.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3Metadata
+  FIELDS = {
+    fail_if_no_match: "failIfNoMatch",
+    filters: "filters",
+    job: "job",
+    kind: "kind",
+    task: "task",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    filters
+    job
+    kind
+    task
+  ].freeze
+  DECODERS = {
+    fail_if_no_match: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX28203ea00c.from_value(value)
+    end,
+    job: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXb141483ef2.from_value(value)
+    end,
+    kind: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX903f1d4de3.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3.
+class UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3Metadata::DECODERS
+
+  attr_reader :fail_if_no_match, :filters, :job, :kind, :task
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3.
-  class UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3Metadata::DECODERS
-
-    attr_reader :fail_if_no_match, :filters, :job, :kind, :task
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4Metadata
-    FIELDS = {
-      origin: 'origin',
-      selection: 'selection',
-      sub_kind: 'subKind'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      origin
-      selection
-      sub_kind
-    ].freeze
-    DECODERS = {
-      origin: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4Origin.from_value(value)
-      end,
-      sub_kind: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SubKind.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4Metadata
+  FIELDS = {
+    origin: "origin",
+    selection: "selection",
+    sub_kind: "subKind",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    origin
+    selection
+    sub_kind
+  ].freeze
+  DECODERS = {
+    origin: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4Origin.from_value(value)
+    end,
+    sub_kind: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant4SubKind.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant4.
+# Project-defined CI requirement; its selection is frozen on each check run.
+class UpdateDeploymentCheckRunResponseVariant0SourceVariant4
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4Metadata::DECODERS
+
+  attr_reader :origin, :selection, :sub_kind
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant4.
-  # Project-defined CI requirement; its selection is frozen on each check run.
-  class UpdateDeploymentCheckRunResponseVariant0SourceVariant4
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant4Metadata::DECODERS
-
-    attr_reader :origin, :selection, :sub_kind
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateDeploymentCheckRunResponseVariant0Metadata
-    FIELDS = {
-      blocks: 'blocks',
-      completed_at: 'completedAt',
-      conclusion: 'conclusion',
-      conclusion_text: 'conclusionText',
-      created_at: 'createdAt',
-      deployment_id: 'deploymentId',
-      expectation_ref: 'expectationRef',
-      expectation_revision: 'expectationRevision',
-      external_id: 'externalId',
-      external_url: 'externalUrl',
-      id: 'id',
-      name: 'name',
-      output: 'output',
-      owner_id: 'ownerId',
-      project_id: 'projectId',
-      requires: 'requires',
-      started_at: 'startedAt',
-      status: 'status',
-      targets: 'targets',
-      task_summary: 'taskSummary',
-      timeout: 'timeout',
-      updated_at: 'updatedAt',
-      check_id: 'checkId',
-      source: 'source'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      created_at
-      deployment_id
-      id
-      name
-      owner_id
-      status
-      timeout
-      updated_at
-      check_id
-      source
-    ].freeze
-    DECODERS = {
-      blocks: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0Blocks.from_value(value)
-      end,
-      conclusion: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0Conclusion.from_value(value)
-      end,
-      expectation_ref: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0ExpectationRef.from_hash(value)
-      end,
-      requires: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0Requires.from_value(value)
-      end,
-      status: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0Status.from_value(value)
-      end,
-      task_summary: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0TaskSummary.from_hash(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateDeploymentCheckRunResponseVariant0Metadata
+  FIELDS = {
+    blocks: "blocks",
+    completed_at: "completedAt",
+    conclusion: "conclusion",
+    conclusion_text: "conclusionText",
+    created_at: "createdAt",
+    deployment_id: "deploymentId",
+    expectation_ref: "expectationRef",
+    expectation_revision: "expectationRevision",
+    external_id: "externalId",
+    external_url: "externalUrl",
+    id: "id",
+    name: "name",
+    output: "output",
+    owner_id: "ownerId",
+    project_id: "projectId",
+    requires: "requires",
+    started_at: "startedAt",
+    status: "status",
+    targets: "targets",
+    task_summary: "taskSummary",
+    timeout: "timeout",
+    updated_at: "updatedAt",
+    check_id: "checkId",
+    source: "source",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    created_at
+    deployment_id
+    id
+    name
+    owner_id
+    status
+    timeout
+    updated_at
+    check_id
+    source
+  ].freeze
+  DECODERS = {
+    blocks: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0Blocks.from_value(value)
+    end,
+    conclusion: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0Conclusion.from_value(value)
+    end,
+    expectation_ref: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0ExpectationRef.from_hash(value)
+    end,
+    requires: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0Requires.from_value(value)
+    end,
+    status: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0Status.from_value(value)
+    end,
+    task_summary: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0TaskSummary.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateDeploymentCheckRunResponseVariant0.
+class UpdateDeploymentCheckRunResponseVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0Metadata::DECODERS
+
+  attr_reader :blocks, :completed_at, :conclusion, :conclusion_text, :created_at, :deployment_id,
+              :expectation_ref, :external_id, :external_url, :id, :name, :output, :owner_id,
+              :project_id, :requires, :started_at, :status, :targets, :task_summary, :timeout,
+              :updated_at, :check_id, :source
+  # @return [Float] Latest aggregate revision applied to this check run.
+  attr_reader :expectation_revision
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateDeploymentCheckRunResponseVariant0.
-  class UpdateDeploymentCheckRunResponseVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0Metadata::DECODERS
-
-    attr_reader :blocks, :completed_at, :conclusion, :conclusion_text, :created_at, :deployment_id,
-                :expectation_ref, :external_id, :external_url, :id, :name, :output, :owner_id,
-                :project_id, :requires, :started_at, :status, :targets, :task_summary, :timeout,
-                :updated_at, :check_id, :source
-    # @return [Float] Latest aggregate revision applied to this check run.
-    attr_reader :expectation_revision
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateDeploymentCheckRunResponseVariant1ExpectationRefMetadata
-    FIELDS = {
-      invocation_attempt: 'invocationAttempt',
-      invocation_id: 'invocationId',
-      job_definition_id: 'jobDefinitionId',
-      job_run_attempt: 'jobRunAttempt'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      invocation_attempt
-      invocation_id
-      job_definition_id
-      job_run_attempt
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateDeploymentCheckRunResponseVariant1ExpectationRefMetadata
+  FIELDS = {
+    invocation_attempt: "invocationAttempt",
+    invocation_id: "invocationId",
+    job_definition_id: "jobDefinitionId",
+    job_run_attempt: "jobRunAttempt",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    invocation_attempt
+    invocation_id
+    job_definition_id
+    job_run_attempt
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UpdateDeploymentCheckRunResponseVariant1ExpectationRef.
+class UpdateDeploymentCheckRunResponseVariant1ExpectationRef
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1ExpectationRefMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1ExpectationRefMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant1ExpectationRefMetadata::DECODERS
+
+  attr_reader :invocation_attempt, :invocation_id, :job_definition_id, :job_run_attempt
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateDeploymentCheckRunResponseVariant1ExpectationRef.
-  class UpdateDeploymentCheckRunResponseVariant1ExpectationRef
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1ExpectationRefMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1ExpectationRefMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant1ExpectationRefMetadata::DECODERS
-
-    attr_reader :invocation_attempt, :invocation_id, :job_definition_id, :job_run_attempt
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateDeploymentCheckRunResponseVariant1TaskSummaryMetadata
-    FIELDS = {
-      failed: 'failed',
-      pending: 'pending',
-      succeeded: 'succeeded',
-      total: 'total'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      failed
-      pending
-      succeeded
-      total
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateDeploymentCheckRunResponseVariant1TaskSummaryMetadata
+  FIELDS = {
+    failed: "failed",
+    pending: "pending",
+    succeeded: "succeeded",
+    total: "total",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    failed
+    pending
+    succeeded
+    total
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UpdateDeploymentCheckRunResponseVariant1TaskSummary.
+class UpdateDeploymentCheckRunResponseVariant1TaskSummary
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1TaskSummaryMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1TaskSummaryMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant1TaskSummaryMetadata::DECODERS
+
+  attr_reader :failed, :pending, :succeeded, :total
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateDeploymentCheckRunResponseVariant1TaskSummary.
-  class UpdateDeploymentCheckRunResponseVariant1TaskSummary
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1TaskSummaryMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1TaskSummaryMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant1TaskSummaryMetadata::DECODERS
-
-    attr_reader :failed, :pending, :succeeded, :total
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant0Metadata
-    FIELDS = {
-      invocation_attempt: 'invocationAttempt',
-      invocation_id: 'invocationId',
-      job_definition_id: 'jobDefinitionId',
-      origin: 'origin',
-      sub_kind: 'subKind'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      invocation_id
-      job_definition_id
-      origin
-      sub_kind
-    ].freeze
-    DECODERS = {
-      origin: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1SourceVariant0Origin.from_value(value)
-      end,
-      sub_kind: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1SourceVariant0SubKind.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant0Metadata
+  FIELDS = {
+    invocation_attempt: "invocationAttempt",
+    invocation_id: "invocationId",
+    job_definition_id: "jobDefinitionId",
+    origin: "origin",
+    sub_kind: "subKind",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    invocation_id
+    job_definition_id
+    origin
+    sub_kind
+  ].freeze
+  DECODERS = {
+    origin: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1SourceVariant0Origin.from_value(value)
+    end,
+    sub_kind: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1SourceVariant0SubKind.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateDeploymentCheckRunResponseVariant1SourceVariant0.
+# Config-driven CI task — check run `source` only (no parent check).
+class UpdateDeploymentCheckRunResponseVariant1SourceVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant0Metadata::DECODERS
+
+  attr_reader :invocation_attempt, :invocation_id, :job_definition_id, :origin, :sub_kind
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateDeploymentCheckRunResponseVariant1SourceVariant0.
-  # Config-driven CI task — check run `source` only (no parent check).
-  class UpdateDeploymentCheckRunResponseVariant1SourceVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant0Metadata::DECODERS
-
-    attr_reader :invocation_attempt, :invocation_id, :job_definition_id, :origin, :sub_kind
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant1Metadata
-    FIELDS = {
-      origin: 'origin',
-      sub_kind: 'subKind'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      origin
-      sub_kind
-    ].freeze
-    DECODERS = {
-      origin: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1SourceVariant1Origin.from_value(value)
-      end,
-      sub_kind: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1SourceVariant1SubKind.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant1Metadata
+  FIELDS = {
+    origin: "origin",
+    sub_kind: "subKind",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    origin
+    sub_kind
+  ].freeze
+  DECODERS = {
+    origin: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1SourceVariant1Origin.from_value(value)
+    end,
+    sub_kind: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1SourceVariant1SubKind.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateDeploymentCheckRunResponseVariant1SourceVariant1.
+# CI sentinel — check run `source` only (no parent check).
+class UpdateDeploymentCheckRunResponseVariant1SourceVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant1Metadata::DECODERS
+
+  attr_reader :origin, :sub_kind
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateDeploymentCheckRunResponseVariant1SourceVariant1.
-  # CI sentinel — check run `source` only (no parent check).
-  class UpdateDeploymentCheckRunResponseVariant1SourceVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant1SourceVariant1Metadata::DECODERS
-
-    attr_reader :origin, :sub_kind
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateDeploymentCheckRunResponseVariant1Metadata
-    FIELDS = {
-      blocks: 'blocks',
-      completed_at: 'completedAt',
-      conclusion: 'conclusion',
-      conclusion_text: 'conclusionText',
-      created_at: 'createdAt',
-      deployment_id: 'deploymentId',
-      expectation_ref: 'expectationRef',
-      expectation_revision: 'expectationRevision',
-      external_id: 'externalId',
-      external_url: 'externalUrl',
-      id: 'id',
-      name: 'name',
-      output: 'output',
-      owner_id: 'ownerId',
-      project_id: 'projectId',
-      requires: 'requires',
-      started_at: 'startedAt',
-      status: 'status',
-      targets: 'targets',
-      task_summary: 'taskSummary',
-      timeout: 'timeout',
-      updated_at: 'updatedAt',
-      source: 'source'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      created_at
-      deployment_id
-      id
-      name
-      owner_id
-      status
-      timeout
-      updated_at
-      source
-    ].freeze
-    DECODERS = {
-      blocks: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1Blocks.from_value(value)
-      end,
-      conclusion: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1Conclusion.from_value(value)
-      end,
-      expectation_ref: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1ExpectationRef.from_hash(value)
-      end,
-      requires: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1Requires.from_value(value)
-      end,
-      status: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1Status.from_value(value)
-      end,
-      task_summary: lambda do |value|
-        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1TaskSummary.from_hash(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateDeploymentCheckRunResponseVariant1Metadata
+  FIELDS = {
+    blocks: "blocks",
+    completed_at: "completedAt",
+    conclusion: "conclusion",
+    conclusion_text: "conclusionText",
+    created_at: "createdAt",
+    deployment_id: "deploymentId",
+    expectation_ref: "expectationRef",
+    expectation_revision: "expectationRevision",
+    external_id: "externalId",
+    external_url: "externalUrl",
+    id: "id",
+    name: "name",
+    output: "output",
+    owner_id: "ownerId",
+    project_id: "projectId",
+    requires: "requires",
+    started_at: "startedAt",
+    status: "status",
+    targets: "targets",
+    task_summary: "taskSummary",
+    timeout: "timeout",
+    updated_at: "updatedAt",
+    source: "source",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    created_at
+    deployment_id
+    id
+    name
+    owner_id
+    status
+    timeout
+    updated_at
+    source
+  ].freeze
+  DECODERS = {
+    blocks: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1Blocks.from_value(value)
+    end,
+    conclusion: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1Conclusion.from_value(value)
+    end,
+    expectation_ref: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1ExpectationRef.from_hash(value)
+    end,
+    requires: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1Requires.from_value(value)
+    end,
+    status: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1Status.from_value(value)
+    end,
+    task_summary: lambda do |value|
+      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant1TaskSummary.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateDeploymentCheckRunResponseVariant1.
+class UpdateDeploymentCheckRunResponseVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant1Metadata::DECODERS
+
+  attr_reader :blocks, :completed_at, :conclusion, :conclusion_text, :created_at, :deployment_id,
+              :expectation_ref, :external_id, :external_url, :id, :name, :output, :owner_id,
+              :project_id, :requires, :started_at, :status, :targets, :task_summary, :timeout,
+              :updated_at, :source
+  # @return [Float] Latest aggregate revision applied to this check run.
+  attr_reader :expectation_revision
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateDeploymentCheckRunResponseVariant1.
-  class UpdateDeploymentCheckRunResponseVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant1Metadata::DECODERS
-
-    attr_reader :blocks, :completed_at, :conclusion, :conclusion_text, :created_at, :deployment_id,
-                :expectation_ref, :external_id, :external_url, :id, :name, :output, :owner_id,
-                :project_id, :requires, :started_at, :status, :targets, :task_summary, :timeout,
-                :updated_at, :source
-    # @return [Float] Latest aggregate revision applied to this check run.
-    attr_reader :expectation_revision
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UpdateDeploymentCheckRunResponse SDK namespace.
-  module UpdateDeploymentCheckRunResponse
-    def self.from_hash(hash)
-      shape_mapping = {
-        'checkId' => UpdateDeploymentCheckRunResponseVariant0
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
-
-      UpdateDeploymentCheckRunResponseVariant1.from_hash(hash)
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0Blocks SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0Blocks
-    BUILD_START = 'build-start'
-    DEPLOYMENT_ALIAS = 'deployment-alias'
-    DEPLOYMENT_PROMOTION = 'deployment-promotion'
-    DEPLOYMENT_START = 'deployment-start'
-    NONE = 'none'
-    VALUES = %w[
-      build-start deployment-alias deployment-promotion deployment-start none
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDeploymentCheckRunResponse SDK namespace.
+module UpdateDeploymentCheckRunResponse
+  def self.from_hash(hash)
+    shape_mapping = {
+      "checkId" => UpdateDeploymentCheckRunResponseVariant0,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    return UpdateDeploymentCheckRunResponseVariant1.from_hash(hash)
   end
+end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0Conclusion SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0Conclusion
-    CANCELED = 'canceled'
-    FAILED = 'failed'
-    NEUTRAL = 'neutral'
-    SKIPPED = 'skipped'
-    SUCCEEDED = 'succeeded'
-    TIMEOUT = 'timeout'
-    VALUES = %w[canceled failed neutral skipped succeeded timeout].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDeploymentCheckRunResponseVariant0Blocks SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0Blocks
+  BUILD_START = 'build-start'
+  DEPLOYMENT_ALIAS = 'deployment-alias'
+  DEPLOYMENT_PROMOTION = 'deployment-promotion'
+  DEPLOYMENT_START = 'deployment-start'
+  NONE = 'none'
+  VALUES = [
+    'build-start', 'deployment-alias', 'deployment-promotion', 'deployment-start', 'none'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0Requires SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0Requires
-    BUILD_READY = 'build-ready'
-    DEPLOYMENT_URL = 'deployment-url'
-    NONE = 'none'
-    VALUES = %w[build-ready deployment-url none].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDeploymentCheckRunResponseVariant0Conclusion SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0Conclusion
+  CANCELED = 'canceled'
+  FAILED = 'failed'
+  NEUTRAL = 'neutral'
+  SKIPPED = 'skipped'
+  SUCCEEDED = 'succeeded'
+  TIMEOUT = 'timeout'
+  VALUES = ['canceled', 'failed', 'neutral', 'skipped', 'succeeded', 'timeout'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant0Kind SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant0Kind
-    INTEGRATION = 'integration'
-    VALUES = ['integration'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDeploymentCheckRunResponseVariant0Requires SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0Requires
+  BUILD_READY = 'build-ready'
+  DEPLOYMENT_URL = 'deployment-url'
+  NONE = 'none'
+  VALUES = ['build-ready', 'deployment-url', 'none'].freeze
+  def self.from_value(value)
+    value
   end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant0Kind SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant0Kind
+  INTEGRATION = 'integration'
+  VALUES = ['integration'].freeze
+  def self.from_value(value)
+    value
+  end
+end
 end

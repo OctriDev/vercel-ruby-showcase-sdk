@@ -35,7 +35,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoX296e359f1fMetadata
         FIELDS = {
-          conditions: 'conditions'
+          conditions: "conditions",
         }.freeze
         REQUIRED_FIELDS = %i[
           conditions
@@ -43,7 +43,7 @@ module OctridevVercel
         DECODERS = {
           conditions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Security::GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoXd4f7041494.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -73,11 +73,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX5bd117cadcMetadata
         FIELDS = {
-          action: 'action',
-          algo: 'algo',
-          keys: 'keys',
-          limit: 'limit',
-          window: 'window'
+          action: "action",
+          algo: "algo",
+          keys: "keys",
+          limit: "limit",
+          window: "window",
         }.freeze
         REQUIRED_FIELDS = %i[
           algo
@@ -91,7 +91,7 @@ module OctridevVercel
           end,
           algo: lambda do |value|
             ::OctridevVercel::Methods::Security::GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX41540111c8.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -121,8 +121,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX5a9115a7b9Metadata
         FIELDS = {
-          location: 'location',
-          permanent: 'permanent'
+          location: "location",
+          permanent: "permanent",
         }.freeze
         REQUIRED_FIELDS = %i[
           location
@@ -131,7 +131,7 @@ module OctridevVercel
         DECODERS = {
           permanent: lambda do |value|
             ::OctridevVercel::Methods::Security::GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX73f254425c.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -161,12 +161,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX6f6b27fe4eMetadata
         FIELDS = {
-          action: 'action',
-          action_duration: 'actionDuration',
-          bypass_system: 'bypassSystem',
-          log_headers: 'logHeaders',
-          rate_limit: 'rateLimit',
-          redirect: 'redirect'
+          action: "action",
+          action_duration: "actionDuration",
+          bypass_system: "bypassSystem",
+          log_headers: "logHeaders",
+          rate_limit: "rateLimit",
+          redirect: "redirect",
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -183,7 +183,7 @@ module OctridevVercel
           end,
           redirect: lambda do |value|
             ::OctridevVercel::Methods::Security::GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX5a9115a7b9.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -213,13 +213,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemActionMetadata
         FIELDS = {
-          mitigate: 'mitigate'
+          mitigate: "mitigate",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           mitigate: lambda do |value|
             ::OctridevVercel::Methods::Security::GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX6f6b27fe4e.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -249,12 +250,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemMetadata
         FIELDS = {
-          active: 'active',
-          condition_group: 'conditionGroup',
-          description: 'description',
-          id: 'id',
-          name: 'name',
-          action: 'action'
+          active: "active",
+          condition_group: "conditionGroup",
+          description: "description",
+          id: "id",
+          name: "name",
+          action: "action",
         }.freeze
         REQUIRED_FIELDS = %i[
           active
@@ -271,7 +272,7 @@ module OctridevVercel
           end,
           action: lambda do |value|
             ::OctridevVercel::Methods::Security::GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAction.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -301,21 +302,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSecurityFirewallConfigResponseActiveMetadata
         FIELDS = {
-          bot_id_enabled: 'botIdEnabled',
-          changes: 'changes',
-          conditions: 'conditions',
-          crs: 'crs',
-          firewall_enabled: 'firewallEnabled',
-          id: 'id',
-          ips: 'ips',
-          log_headers: 'logHeaders',
-          managed_rules: 'managedRules',
-          owner_id: 'ownerId',
-          project_key: 'projectKey',
-          rules: 'rules',
-          rulesets: 'rulesets',
-          updated_at: 'updatedAt',
-          version: 'version'
+          bot_id_enabled: "botIdEnabled",
+          changes: "changes",
+          conditions: "conditions",
+          crs: "crs",
+          firewall_enabled: "firewallEnabled",
+          id: "id",
+          ips: "ips",
+          log_headers: "logHeaders",
+          managed_rules: "managedRules",
+          owner_id: "ownerId",
+          project_key: "projectKey",
+          rules: "rules",
+          rulesets: "rulesets",
+          updated_at: "updatedAt",
+          version: "version",
         }.freeze
         REQUIRED_FIELDS = %i[
           changes
@@ -349,7 +350,7 @@ module OctridevVercel
           end,
           rules: lambda do |value|
             value&.map { |item| ::OctridevVercel::GetSecurityFirewallConfigResponseActiveRulesItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -381,11 +382,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSecurityFirewallConfigResponseDraftConditionsItemConditionX877f73f757Metadata
         FIELDS = {
-          key: 'key',
-          neg: 'neg',
-          op: 'op',
-          type: 'type',
-          value: 'value'
+          key: "key",
+          neg: "neg",
+          op: "op",
+          type: "type",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           op
@@ -400,7 +401,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Security::GetSecurityFirewallConfigResponseDraftConditionsItemConditionXb4d956c0e5.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -430,7 +431,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSecurityFirewallConfigResponseDraftConditionsItemConditionGroupItemMetadata
         FIELDS = {
-          conditions: 'conditions'
+          conditions: "conditions",
         }.freeze
         REQUIRED_FIELDS = %i[
           conditions
@@ -438,7 +439,7 @@ module OctridevVercel
         DECODERS = {
           conditions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Security::GetSecurityFirewallConfigResponseDraftConditionsItemConditionX877f73f757.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -468,11 +469,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSecurityFirewallConfigResponseDraftConditionsItemMetadata
         FIELDS = {
-          active: 'active',
-          condition_group: 'conditionGroup',
-          description: 'description',
-          id: 'id',
-          name: 'name'
+          active: "active",
+          condition_group: "conditionGroup",
+          description: "description",
+          id: "id",
+          name: "name",
         }.freeze
         REQUIRED_FIELDS = %i[
           active
@@ -486,7 +487,7 @@ module OctridevVercel
           end,
           condition_group: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Security::GetSecurityFirewallConfigResponseDraftConditionsItemConditionGroupItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -516,8 +517,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSecurityFirewallConfigResponseDraftCrsGenMetadata
         FIELDS = {
-          action: 'action',
-          active: 'active'
+          action: "action",
+          active: "active",
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -529,7 +530,7 @@ module OctridevVercel
           end,
           active: lambda do |value|
             ::OctridevVercel::Methods::Security::GetSecurityFirewallConfigResponseDraftCrsGenActive.from_value(value)
-          end
+          end,
         }.freeze
       end
 

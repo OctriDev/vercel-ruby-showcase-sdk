@@ -12,14 +12,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetMicrofrontendsConfigForProjectResponseConfigOptionsMetadata
         FIELDS = {
-          disable_overrides: 'disableOverrides',
-          local_proxy_port: 'localProxyPort'
+          disable_overrides: "disableOverrides",
+          local_proxy_port: "localProxyPort",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           disable_overrides: lambda do |value|
             ::OctridevVercel::Methods::Microfrontends::GetMicrofrontendsConfigForProjectResponseConfigOptionsDisableOverrides.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -53,10 +54,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetMicrofrontendsConfigForProjectResponseConfigMetadata
         FIELDS = {
-          schema: '$schema',
-          applications: 'applications',
-          options: 'options',
-          version: 'version'
+          schema: "$schema",
+          applications: "applications",
+          options: "options",
+          version: "version",
         }.freeze
         REQUIRED_FIELDS = %i[
           applications
@@ -67,7 +68,7 @@ module OctridevVercel
           end,
           version: lambda do |value|
             ::OctridevVercel::Methods::Microfrontends::GetMicrofrontendsConfigForProjectResponseConfigVersion.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -104,7 +105,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetMicrofrontendsConfigForProjectResponseMetadata
         FIELDS = {
-          config: 'config'
+          config: "config",
         }.freeze
         REQUIRED_FIELDS = %i[
           config
@@ -112,7 +113,7 @@ module OctridevVercel
         DECODERS = {
           config: lambda do |value|
             ::OctridevVercel::Methods::Microfrontends::GetMicrofrontendsConfigForProjectResponseConfig.from_hash(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           config
@@ -146,13 +147,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateMicrofrontendsGroupWithApplicationsDefaultAppMetadata
         FIELDS = {
-          project_id: 'projectId',
-          default_route: 'defaultRoute'
+          project_id: "projectId",
+          default_route: "defaultRoute",
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for CreateMicrofrontendsGroupWithApplicationsDefaultApp.
@@ -185,13 +187,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateMicrofrontendsGroupWithApplicationsOtherApplicationsItemMetadata
         FIELDS = {
-          project_id: 'projectId',
-          default_route: 'defaultRoute'
+          project_id: "projectId",
+          default_route: "defaultRoute",
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for CreateMicrofrontendsGroupWithApplicationsOtherApplicationsItem.
@@ -223,9 +226,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateMicrofrontendsGroupWithApplicationsMetadata
         FIELDS = {
-          group_name: 'groupName',
-          default_app: 'defaultApp',
-          other_applications: 'otherApplications'
+          group_name: "groupName",
+          default_app: "defaultApp",
+          other_applications: "otherApplications",
         }.freeze
         REQUIRED_FIELDS = %i[
           group_name
@@ -238,7 +241,7 @@ module OctridevVercel
           end,
           other_applications: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Microfrontends::CreateMicrofrontendsGroupWithApplicationsOtherApplicationsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -273,13 +276,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateMicrofrontendsGroupWithApplicationsResponseNewMicrofrontendsGroupMetadata
         FIELDS = {
-          created_at: 'createdAt',
-          enable_polyrepo_branch_routing: 'enablePolyrepoBranchRouting',
-          fallback_environment: 'fallbackEnvironment',
-          id: 'id',
-          name: 'name',
-          slug: 'slug',
-          updated_at: 'updatedAt'
+          created_at: "createdAt",
+          enable_polyrepo_branch_routing: "enablePolyrepoBranchRouting",
+          fallback_environment: "fallbackEnvironment",
+          id: "id",
+          name: "name",
+          slug: "slug",
+          updated_at: "updatedAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -293,7 +296,7 @@ module OctridevVercel
         DECODERS = {
           enable_polyrepo_branch_routing: lambda do |value|
             ::OctridevVercel::Methods::Microfrontends::CreateMicrofrontendsGroupWithApplicationsResponseNewMicrofronX2d4465cefa.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -324,7 +327,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateMicrofrontendsGroupWithApplicationsResponseMetadata
         FIELDS = {
-          new_microfrontends_group: 'newMicrofrontendsGroup'
+          new_microfrontends_group: "newMicrofrontendsGroup",
         }.freeze
         REQUIRED_FIELDS = %i[
           new_microfrontends_group
@@ -332,7 +335,7 @@ module OctridevVercel
         DECODERS = {
           new_microfrontends_group: lambda do |value|
             ::OctridevVercel::Methods::Microfrontends::CreateMicrofrontendsGroupWithApplicationsResponseNewMicrofrontendsGroup.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -471,7 +474,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -501,7 +504,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = %w[PROMOTED ROLLING STAGED].freeze
+        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
         def self.from_value(value)
           value
         end
@@ -519,10 +522,10 @@ module OctridevVercel
         OOM_FAILURE = 'oom-failure'
         SHORT_BUILD_DURATION = 'short-build-duration'
         SUSTAINED_HIGH_CPU = 'sustained-high-cpu'
-        VALUES = %w[
-          basic-floor build-timeout-failure enospc-failure enterprise-floor
-          high-peak-disk high-peak-memory long-build-duration oom-failure
-          short-build-duration sustained-high-cpu
+        VALUES = [
+          'basic-floor', 'build-timeout-failure', 'enospc-failure', 'enterprise-floor',
+          'high-peak-disk', 'high-peak-memory', 'long-build-duration', 'oom-failure',
+          'short-build-duration', 'sustained-high-cpu'
         ].freeze
         def self.from_value(value)
           value
@@ -548,8 +551,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value

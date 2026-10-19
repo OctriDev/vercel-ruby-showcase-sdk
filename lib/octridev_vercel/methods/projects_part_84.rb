@@ -85,17 +85,17 @@ module OctridevVercel
         VUEPRESS = 'vuepress'
         XMCP = 'xmcp'
         ZOLA = 'zola'
-        VALUES = %w[
-          actix-web angular ash astro axum blitzjs brunch bun container
-          create-react-app django docusaurus docusaurus-2 dojo eleventy elysia
-          ember eve express factory-eve fastapi fasthtml fastify flask
-          gatsby go gridsome h3 hexo hono hugo hydrogen ionic-angular
-          ionic-react jekyll koa mastra middleman nestjs nextjs nitro node
-          nuxtjs parcel polymer preact python react-router redwoodjs remix
-          ruby rust saber sanity sanity-v2 sapper scully services
-          solidstart solidstart-1 stencil storybook svelte sveltekit sveltekit-1
-          tanstack-start tanstack-start-lovable umijs vite vitepress vue
-          vuepress xmcp zola
+        VALUES = [
+          'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
+          'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
+          'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask',
+          'gatsby', 'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular',
+          'ionic-react', 'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node',
+          'nuxtjs', 'parcel', 'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix',
+          'ruby', 'rust', 'saber', 'sanity', 'sanity-v2', 'sapper', 'scully', 'services',
+          'solidstart', 'solidstart-1', 'stencil', 'storybook', 'svelte', 'sveltekit', 'sveltekit-1',
+          'tanstack-start', 'tanstack-start-lovable', 'umijs', 'vite', 'vitepress', 'vue',
+          'vuepress', 'xmcp', 'zola'
         ].freeze
         def self.from_value(value)
           value
@@ -137,7 +137,7 @@ module OctridevVercel
         SECRET = 'secret'
         SENSITIVE = 'sensitive'
         SYSTEM = 'system'
-        VALUES = %w[encrypted plain secret sensitive system].freeze
+        VALUES = ['encrypted', 'plain', 'secret', 'sensitive', 'system'].freeze
         def self.from_value(value)
           value
         end
@@ -149,7 +149,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = %w[canceled failed skipped succeeded].freeze
+        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
         def self.from_value(value)
           value
         end
@@ -180,7 +180,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -371,7 +371,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[development preview production].freeze
+        VALUES = ['development', 'preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -383,7 +383,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = %w[basic enhanced standard turbo].freeze
+        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
         def self.from_value(value)
           value
         end
@@ -395,8 +395,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = %w[
-          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+        VALUES = [
+          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
         ].freeze
         def self.from_value(value)
           value
@@ -519,7 +519,7 @@ module OctridevVercel
         SECRET = 'secret'
         SENSITIVE = 'sensitive'
         SYSTEM = 'system'
-        VALUES = %w[encrypted plain secret sensitive system].freeze
+        VALUES = ['encrypted', 'plain', 'secret', 'sensitive', 'system'].freeze
         def self.from_value(value)
           value
         end
@@ -562,8 +562,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = %w[
-          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+        VALUES = [
+          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
         ].freeze
         def self.from_value(value)
           value
@@ -575,7 +575,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[development preview production].freeze
+        VALUES = ['development', 'preview', 'production'].freeze
         def self.from_value(value)
           value
         end

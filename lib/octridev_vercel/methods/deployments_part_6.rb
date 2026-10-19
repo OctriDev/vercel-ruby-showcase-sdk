@@ -41,11 +41,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemAttributionMetadata
         FIELDS = {
-          commit_meta: 'commitMeta',
-          git_user: 'gitUser',
-          vercel_user: 'vercelUser'
+          commit_meta: "commitMeta",
+          git_user: "gitUser",
+          vercel_user: "vercelUser",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           commit_meta: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemAttributionCommitMeta.from_hash(value)
@@ -55,7 +56,7 @@ module OctridevVercel
           end,
           vercel_user: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemAttributionVercelUser.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -91,9 +92,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemChecksDeploymentAliasMetadata
         FIELDS = {
-          completed_at: 'completedAt',
-          started_at: 'startedAt',
-          state: 'state'
+          completed_at: "completedAt",
+          started_at: "startedAt",
+          state: "state",
         }.freeze
         REQUIRED_FIELDS = %i[
           started_at
@@ -102,7 +103,7 @@ module OctridevVercel
         DECODERS = {
           state: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemChecksDeploymentAliasState.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -133,7 +134,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemChecksMetadata
         FIELDS = {
-          deployment_alias: 'deployment-alias'
+          deployment_alias: "deployment-alias",
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment_alias
@@ -141,7 +142,7 @@ module OctridevVercel
         DECODERS = {
           deployment_alias: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemChecksDeploymentAlias.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -173,12 +174,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemCreatorMetadata
         FIELDS = {
-          email: 'email',
-          github_login: 'githubLogin',
-          gitlab_login: 'gitlabLogin',
-          type: 'type',
-          uid: 'uid',
-          username: 'username'
+          email: "email",
+          github_login: "githubLogin",
+          gitlab_login: "gitlabLogin",
+          type: "type",
+          uid: "uid",
+          username: "username",
         }.freeze
         REQUIRED_FIELDS = %i[
           uid
@@ -186,7 +187,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemCreatorType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -228,13 +229,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemCustomEnvironmentMetadata
         FIELDS = {
-          id: 'id',
-          slug: 'slug'
+          id: "id",
+          slug: "slug",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetDeploymentsResponseDeploymentsItemCustomEnvironment.
@@ -264,8 +266,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemManualProvisioningMetadata
         FIELDS = {
-          completed_at: 'completedAt',
-          state: 'state'
+          completed_at: "completedAt",
+          state: "state",
         }.freeze
         REQUIRED_FIELDS = %i[
           state
@@ -273,7 +275,7 @@ module OctridevVercel
         DECODERS = {
           state: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemManualProvisioningState.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -306,13 +308,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemPlatformCreatorMetadata
         FIELDS = {
-          avatar: 'avatar',
-          name: 'name'
+          avatar: "avatar",
+          name: "name",
         }.freeze
         REQUIRED_FIELDS = %i[
           name
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetDeploymentsResponseDeploymentsItemPlatformCreator.
@@ -345,8 +348,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemPlatformOriginMetadata
         FIELDS = {
-          type: 'type',
-          value: 'value'
+          type: "type",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           type
@@ -355,7 +358,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemPlatformOriginType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -389,12 +392,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemPlatformSourceMetadata
         FIELDS = {
-          name: 'name'
+          name: "name",
         }.freeze
         REQUIRED_FIELDS = %i[
           name
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetDeploymentsResponseDeploymentsItemPlatformSource.
@@ -425,10 +429,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemPlatformMetadata
         FIELDS = {
-          creator: 'creator',
-          meta: 'meta',
-          origin: 'origin',
-          source: 'source'
+          creator: "creator",
+          meta: "meta",
+          origin: "origin",
+          source: "source",
         }.freeze
         REQUIRED_FIELDS = %i[
           creator
@@ -444,7 +448,7 @@ module OctridevVercel
           end,
           source: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemPlatformSource.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -482,8 +486,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemProjectSettingsGitCommentsMetadata
         FIELDS = {
-          on_commit: 'onCommit',
-          on_pull_request: 'onPullRequest'
+          on_commit: "onCommit",
+          on_pull_request: "onPullRequest",
         }.freeze
         REQUIRED_FIELDS = %i[
           on_commit
@@ -495,7 +499,7 @@ module OctridevVercel
           end,
           on_pull_request: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenX06b78b52e7.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -529,13 +533,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemProjectSettingsSpeedInsightsMetadata
         FIELDS = {
-          canceled_at: 'canceledAt',
-          data_received_at: 'dataReceivedAt',
-          disabled_at: 'disabledAt',
-          enabled_at: 'enabledAt',
-          has_data: 'hasData',
-          id: 'id',
-          paid_at: 'paidAt'
+          canceled_at: "canceledAt",
+          data_received_at: "dataReceivedAt",
+          disabled_at: "disabledAt",
+          enabled_at: "enabledAt",
+          has_data: "hasData",
+          id: "id",
+          paid_at: "paidAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -543,7 +547,7 @@ module OctridevVercel
         DECODERS = {
           has_data: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemProjectSettingsSpeedInsightsHasData.from_value(value)
-          end
+          end,
         }.freeze
       end
     end

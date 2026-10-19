@@ -14,7 +14,7 @@ module OctridevVercel
         CANCEL = 'cancel'
         ACCEPT = 'accept'
         DELETE = 'delete'
-        VALUES = %w[cancel accept delete].freeze
+        VALUES = ['cancel', 'accept', 'delete'].freeze
         def self.from_value(value)
           value
         end
@@ -24,7 +24,7 @@ module OctridevVercel
       module ListProjectsResponseVariant2ProjectsItemTrustedIpsVariant0ProtectionMode
         ADDITIONAL = 'additional'
         EXCLUSIVE = 'exclusive'
-        VALUES = %w[additional exclusive].freeze
+        VALUES = ['additional', 'exclusive'].freeze
         def self.from_value(value)
           value
         end
@@ -36,7 +36,7 @@ module OctridevVercel
         CNAME = 'CNAME'
         DNS_01 = 'dns-01'
         HTTP = 'http'
-        VALUES = %w[A CNAME dns-01 http].freeze
+        VALUES = ['A', 'CNAME', 'dns-01', 'http'].freeze
         def self.from_value(value)
           value
         end
@@ -46,7 +46,7 @@ module OctridevVercel
       module UpdateMicrofrontendsResponseResourceConfigBuildMachineElasticXd709fc60a7
         DOWNGRADE = 'downgrade'
         UPGRADE = 'upgrade'
-        VALUES = %w[downgrade upgrade].freeze
+        VALUES = ['downgrade', 'upgrade'].freeze
         def self.from_value(value)
           value
         end
@@ -75,7 +75,7 @@ module OctridevVercel
       module UpdateProjectResponseDefaultResourceConfigBuildMachineElasticXf23dbb6bb6
         DOWNGRADE = 'downgrade'
         UPGRADE = 'upgrade'
-        VALUES = %w[downgrade upgrade].freeze
+        VALUES = ['downgrade', 'upgrade'].freeze
         def self.from_value(value)
           value
         end
@@ -93,10 +93,10 @@ module OctridevVercel
         OOM_FAILURE = 'oom-failure'
         SHORT_BUILD_DURATION = 'short-build-duration'
         SUSTAINED_HIGH_CPU = 'sustained-high-cpu'
-        VALUES = %w[
-          basic-floor build-timeout-failure enospc-failure enterprise-floor
-          high-peak-disk high-peak-memory long-build-duration oom-failure
-          short-build-duration sustained-high-cpu
+        VALUES = [
+          'basic-floor', 'build-timeout-failure', 'enospc-failure', 'enterprise-floor',
+          'high-peak-disk', 'high-peak-memory', 'long-build-duration', 'oom-failure',
+          'short-build-duration', 'sustained-high-cpu'
         ].freeze
         def self.from_value(value)
           value
@@ -109,8 +109,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = %w[
-          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+        VALUES = [
+          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
         ].freeze
         def self.from_value(value)
           value
@@ -121,7 +121,7 @@ module OctridevVercel
       module DeleteProjectAvatarResponseAliasItemEnvironment
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[preview production].freeze
+        VALUES = ['preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -236,17 +236,17 @@ module OctridevVercel
         VUEPRESS = 'vuepress'
         XMCP = 'xmcp'
         ZOLA = 'zola'
-        VALUES = %w[
-          actix-web angular ash astro axum blitzjs brunch bun container
-          create-react-app django docusaurus docusaurus-2 dojo eleventy elysia
-          ember eve express factory-eve fastapi fasthtml fastify flask
-          gatsby go gridsome h3 hexo hono hugo hydrogen ionic-angular
-          ionic-react jekyll koa mastra middleman nestjs nextjs nitro node
-          nuxtjs parcel polymer preact python react-router redwoodjs remix
-          ruby rust saber sanity sanity-v2 sapper scully services
-          solidstart solidstart-1 stencil storybook svelte sveltekit sveltekit-1
-          tanstack-start tanstack-start-lovable umijs vite vitepress vue
-          vuepress xmcp zola
+        VALUES = [
+          'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
+          'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
+          'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask',
+          'gatsby', 'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular',
+          'ionic-react', 'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node',
+          'nuxtjs', 'parcel', 'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix',
+          'ruby', 'rust', 'saber', 'sanity', 'sanity-v2', 'sapper', 'scully', 'services',
+          'solidstart', 'solidstart-1', 'stencil', 'storybook', 'svelte', 'sveltekit', 'sveltekit-1',
+          'tanstack-start', 'tanstack-start-lovable', 'umijs', 'vite', 'vitepress', 'vue',
+          'vuepress', 'xmcp', 'zola'
         ].freeze
         def self.from_value(value)
           value
@@ -267,7 +267,7 @@ module OctridevVercel
       module ListProjectsDomainsParameter25b3d8bc
         TRUE = 'true'
         FALSE = 'false'
-        VALUES = %w[true false].freeze
+        VALUES = ['true', 'false'].freeze
         def self.from_value(value)
           value
         end
@@ -282,8 +282,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value
@@ -313,7 +313,7 @@ module OctridevVercel
       module UpdateProjectResourceConfigBuildMachineSelection
         ELASTIC = 'elastic'
         FIXED = 'fixed'
-        VALUES = %w[elastic fixed].freeze
+        VALUES = ['elastic', 'fixed'].freeze
         def self.from_value(value)
           value
         end
@@ -436,17 +436,17 @@ module OctridevVercel
         VUEPRESS = 'vuepress'
         XMCP = 'xmcp'
         ZOLA = 'zola'
-        VALUES = %w[
-          actix-web angular ash astro axum blitzjs brunch bun container
-          create-react-app django docusaurus docusaurus-2 dojo eleventy elysia
-          ember eve express factory-eve fastapi fasthtml fastify flask
-          gatsby go gridsome h3 hexo hono hugo hydrogen ionic-angular
-          ionic-react jekyll koa mastra middleman nestjs nextjs nitro node
-          nuxtjs parcel polymer preact python react-router redwoodjs remix
-          ruby rust saber sanity sanity-v2 sapper scully services
-          solidstart solidstart-1 stencil storybook svelte sveltekit sveltekit-1
-          tanstack-start tanstack-start-lovable umijs vite vitepress vue
-          vuepress xmcp zola
+        VALUES = [
+          'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
+          'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
+          'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask',
+          'gatsby', 'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular',
+          'ionic-react', 'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node',
+          'nuxtjs', 'parcel', 'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix',
+          'ruby', 'rust', 'saber', 'sanity', 'sanity-v2', 'sapper', 'scully', 'services',
+          'solidstart', 'solidstart-1', 'stencil', 'storybook', 'svelte', 'sveltekit', 'sveltekit-1',
+          'tanstack-start', 'tanstack-start-lovable', 'umijs', 'vite', 'vitepress', 'vue',
+          'vuepress', 'xmcp', 'zola'
         ].freeze
         def self.from_value(value)
           value
@@ -469,7 +469,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = %w[basic enhanced standard turbo].freeze
+        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
         def self.from_value(value)
           value
         end
@@ -529,7 +529,7 @@ module OctridevVercel
         PERFORMANCE_XL = 'performance_xl'
         STANDARD = 'standard'
         STANDARD_LEGACY = 'standard_legacy'
-        VALUES = %w[performance performance_xl standard standard_legacy].freeze
+        VALUES = ['performance', 'performance_xl', 'standard', 'standard_legacy'].freeze
         def self.from_value(value)
           value
         end
@@ -541,8 +541,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = %w[
-          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+        VALUES = [
+          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
         ].freeze
         def self.from_value(value)
           value
@@ -570,10 +570,10 @@ module OctridevVercel
         OOM_FAILURE = 'oom-failure'
         SHORT_BUILD_DURATION = 'short-build-duration'
         SUSTAINED_HIGH_CPU = 'sustained-high-cpu'
-        VALUES = %w[
-          basic-floor build-timeout-failure enospc-failure enterprise-floor
-          high-peak-disk high-peak-memory long-build-duration oom-failure
-          short-build-duration sustained-high-cpu
+        VALUES = [
+          'basic-floor', 'build-timeout-failure', 'enospc-failure', 'enterprise-floor',
+          'high-peak-disk', 'high-peak-memory', 'long-build-duration', 'oom-failure',
+          'short-build-duration', 'sustained-high-cpu'
         ].freeze
         def self.from_value(value)
           value

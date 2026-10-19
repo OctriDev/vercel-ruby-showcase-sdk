@@ -5,490 +5,491 @@
 
 # feature_flags domain models (part 6)
 module OctridevVercel
-  # API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant3.
-  class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant3
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant3Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant3Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant3Metadata::DECODERS
+# API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant3.
+class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant3
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant3Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant3Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant3Metadata::DECODERS
 
-    attr_reader :flags, :pattern, :type
+  attr_reader :flags, :pattern, :type
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemMetadata
-    FIELDS = {
-      cmp: 'cmp',
-      cmp_options: 'cmpOptions',
-      lhs: 'lhs',
-      rhs: 'rhs'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      cmp
-      lhs
-    ].freeze
-    DECODERS = {
-      cmp: lambda do |value|
-        ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmp.from_value(value)
-      end,
-      cmp_options: lambda do |value|
-        ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptions.from_hash(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItem.
-  class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :cmp, :cmp_options, :lhs, :rhs
+# Internal model hydration metadata.
+class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemMetadata
+  FIELDS = {
+    cmp: "cmp",
+    cmp_options: "cmpOptions",
+    lhs: "lhs",
+    rhs: "rhs",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    cmp
+    lhs
+  ].freeze
+  DECODERS = {
+    cmp: lambda do |value|
+      ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmp.from_value(value)
+    end,
+    cmp_options: lambda do |value|
+      ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptions.from_hash(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItem.
+class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :cmp, :cmp_options, :lhs, :rhs
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Metadata
-    FIELDS = {
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0.
-  class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :type
+# Internal model hydration metadata.
+class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Metadata
+  FIELDS = {
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0.
+class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseMetadata
-    FIELDS = {
-      attribute: 'attribute',
-      kind: 'kind',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      attribute
-      kind
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseType.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Base.
-  class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Base
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :attribute, :kind, :type
+# Internal model hydration metadata.
+class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseMetadata
+  FIELDS = {
+    attribute: "attribute",
+    kind: "kind",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    attribute
+    kind
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseType.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Base.
+class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Base
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :attribute, :kind, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Metadata
-    FIELDS = {
-      base: 'base',
-      pass_promille: 'passPromille',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      base
-      pass_promille
-      type
-    ].freeze
-    DECODERS = {
-      base: lambda do |value|
-        ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Base.from_hash(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1.
-  class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :base, :pass_promille, :type
+# Internal model hydration metadata.
+class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Metadata
+  FIELDS = {
+    base: "base",
+    pass_promille: "passPromille",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    base
+    pass_promille
+    type
+  ].freeze
+  DECODERS = {
+    base: lambda do |value|
+      ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Base.from_hash(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1.
+class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :base, :pass_promille, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemMetadata
-    FIELDS = {
-      conditions: 'conditions',
-      id: 'id',
-      outcome: 'outcome'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      conditions
-      id
-      outcome
-    ].freeze
-    DECODERS = {
-      conditions: lambda do |value|
-        value&.map { |item| ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItem.from_hash(item) }
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UpdateFlagSegmentResponseVariant0DataRulesItem.
-  class UpdateFlagSegmentResponseVariant0DataRulesItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :conditions, :id, :outcome
+# Internal model hydration metadata.
+class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemMetadata
+  FIELDS = {
+    conditions: "conditions",
+    id: "id",
+    outcome: "outcome",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    conditions
+    id
+    outcome
+  ].freeze
+  DECODERS = {
+    conditions: lambda do |value|
+      value&.map { |item| ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItem.from_hash(item) }
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UpdateFlagSegmentResponseVariant0DataRulesItem.
+class UpdateFlagSegmentResponseVariant0DataRulesItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :conditions, :id, :outcome
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateFlagSegmentResponseVariant0DataMetadata
-    FIELDS = {
-      exclude: 'exclude',
-      include: 'include',
-      rules: 'rules'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      rules: lambda do |value|
-        value&.map { |item| ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItem.from_hash(item) }
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UpdateFlagSegmentResponseVariant0Data.
-  class UpdateFlagSegmentResponseVariant0Data
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :exclude, :include, :rules
+# Internal model hydration metadata.
+class SdkInternalUpdateFlagSegmentResponseVariant0DataMetadata
+  FIELDS = {
+    exclude: "exclude",
+    include: "include",
+    rules: "rules",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    rules: lambda do |value|
+      value&.map { |item| ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItem.from_hash(item) }
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UpdateFlagSegmentResponseVariant0Data.
+class UpdateFlagSegmentResponseVariant0Data
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :exclude, :include, :rules
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateFlagSegmentResponseVariant0Metadata
-    FIELDS = {
-      created_at: 'createdAt',
-      created_by: 'createdBy',
-      data: 'data',
-      description: 'description',
-      hint: 'hint',
-      id: 'id',
-      label: 'label',
-      project_id: 'projectId',
-      slug: 'slug',
-      type_name: 'typeName',
-      updated_at: 'updatedAt',
-      used_by_flags: 'usedByFlags',
-      used_by_segments: 'usedBySegments'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      created_at
-      data
-      hint
-      id
-      label
-      project_id
-      slug
-      type_name
-      updated_at
-    ].freeze
-    DECODERS = {
-      data: lambda do |value|
-        ::OctridevVercel::UpdateFlagSegmentResponseVariant0Data.from_hash(value)
-      end,
-      type_name: lambda do |value|
-        ::OctridevVercel::UpdateFlagSegmentResponseVariant0TypeName.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UpdateFlagSegmentResponseVariant0.
-  class UpdateFlagSegmentResponseVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :created_at, :created_by, :data, :description, :hint, :id, :label, :project_id, :slug,
-                :type_name, :updated_at, :used_by_flags, :used_by_segments
+# Internal model hydration metadata.
+class SdkInternalUpdateFlagSegmentResponseVariant0Metadata
+  FIELDS = {
+    created_at: "createdAt",
+    created_by: "createdBy",
+    data: "data",
+    description: "description",
+    hint: "hint",
+    id: "id",
+    label: "label",
+    project_id: "projectId",
+    slug: "slug",
+    type_name: "typeName",
+    updated_at: "updatedAt",
+    used_by_flags: "usedByFlags",
+    used_by_segments: "usedBySegments",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    created_at
+    data
+    hint
+    id
+    label
+    project_id
+    slug
+    type_name
+    updated_at
+  ].freeze
+  DECODERS = {
+    data: lambda do |value|
+      ::OctridevVercel::UpdateFlagSegmentResponseVariant0Data.from_hash(value)
+    end,
+    type_name: lambda do |value|
+      ::OctridevVercel::UpdateFlagSegmentResponseVariant0TypeName.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UpdateFlagSegmentResponseVariant0.
+class UpdateFlagSegmentResponseVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :created_at, :created_by, :data, :description, :hint, :id, :label, :project_id, :slug,
+              :type_name, :updated_at, :used_by_flags, :used_by_segments
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the UpdateFlagSegmentResponse SDK namespace.
-  module UpdateFlagSegmentResponse
-    def self.from_hash(hash)
-      lossy = nil
-      [UpdateFlagSegmentResponseVariant0, Segment].each do |type|
-        decoded = type.from_hash(hash)
-        return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-        lossy ||= decoded
-      rescue ::StandardError
-        next
-      end
-      lossy unless lossy.nil?
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmp SDK namespace.
-  module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmp
-    CONTAINS = '!contains'
-    ENDS_WITH = '!endsWith'
-    EQ = '!eq'
-    EX = '!ex'
-    ONE_OF = '!oneOf'
-    REGEX = '!regex'
-    STARTS_WITH = '!startsWith'
-    AFTER = 'after'
-    BEFORE = 'before'
-    CONTAINS_2 = 'contains'
-    CONTAINS_ALL_OF = 'containsAllOf'
-    CONTAINS_ANY_OF = 'containsAnyOf'
-    CONTAINS_NONE_OF = 'containsNoneOf'
-    ENDS_WITH_2 = 'endsWith'
-    EQ_2 = 'eq'
-    EX_2 = 'ex'
-    GT = 'gt'
-    GTE = 'gte'
-    LT = 'lt'
-    LTE = 'lte'
-    ONE_OF_2 = 'oneOf'
-    REGEX_2 = 'regex'
-    STARTS_WITH_2 = 'startsWith'
-    VALUES = [
-      '!contains', '!endsWith', '!eq', '!ex', '!oneOf', '!regex', '!startsWith', 'after', 'before',
-      'contains', 'containsAllOf', 'containsAnyOf', 'containsNoneOf', 'endsWith', 'eq', 'ex', 'gt',
-      'gte', 'lt', 'lte', 'oneOf', 'regex', 'startsWith'
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCX63a82067d2 SDK namespace.
-  module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCX63a82067d2
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
+# Defines the UpdateFlagSegmentResponse SDK namespace.
+module UpdateFlagSegmentResponse
+  def self.from_hash(hash)
+    lossy = nil
+    [UpdateFlagSegmentResponseVariant0, Segment].each do |type|
+      decoded = type.from_hash(hash)
+      return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+      lossy ||= decoded
+    rescue ::StandardError
+      next
     end
+    return lossy unless lossy.nil?
   end
+end
 
-  # Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX50ce6c60de SDK namespace.
-  module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX50ce6c60de
-    SEGMENT = 'segment'
-    VALUES = ['segment'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX50ce6c60de', 'enum', "Unknown UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX50ce6c60de: #{value}")
-    end
+# Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmp SDK namespace.
+module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmp
+  CONTAINS = '!contains'
+  ENDS_WITH = '!endsWith'
+  EQ = '!eq'
+  EX = '!ex'
+  ONE_OF = '!oneOf'
+  REGEX = '!regex'
+  STARTS_WITH = '!startsWith'
+  AFTER = 'after'
+  BEFORE = 'before'
+  CONTAINS_2 = 'contains'
+  CONTAINS_ALL_OF = 'containsAllOf'
+  CONTAINS_ANY_OF = 'containsAnyOf'
+  CONTAINS_NONE_OF = 'containsNoneOf'
+  ENDS_WITH_2 = 'endsWith'
+  EQ_2 = 'eq'
+  EX_2 = 'ex'
+  GT = 'gt'
+  GTE = 'gte'
+  LT = 'lt'
+  LTE = 'lte'
+  ONE_OF_2 = 'oneOf'
+  REGEX_2 = 'regex'
+  STARTS_WITH_2 = 'startsWith'
+  VALUES = [
+    '!contains', '!endsWith', '!eq', '!ex', '!oneOf', '!regex', '!startsWith', 'after', 'before',
+    'contains', 'containsAllOf', 'containsAnyOf', 'containsNoneOf', 'endsWith', 'eq', 'ex', 'gt',
+    'gte', 'lt', 'lte', 'oneOf', 'regex', 'startsWith'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX4b04fa94f1 SDK namespace.
-  module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX4b04fa94f1
-    ENTITY = 'entity'
-    VALUES = ['entity'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX4b04fa94f1', 'enum', "Unknown UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX4b04fa94f1: #{value}")
-    end
+# Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCX63a82067d2 SDK namespace.
+module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCX63a82067d2
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX8b48b3ea27 SDK namespace.
-  module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX8b48b3ea27
-    LIST = 'list'
-    LIST_INLINE = 'list/inline'
-    VALUES = ['list', 'list/inline'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX50ce6c60de SDK namespace.
+module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX50ce6c60de
+  SEGMENT = 'segment'
+  VALUES = ['segment'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX50ce6c60de', 'enum', "Unknown UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX50ce6c60de: #{value}")
   end
+end
 
-  # Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRXe2a6119c3d SDK namespace.
-  module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRXe2a6119c3d
-    REGEX = 'regex'
-    VALUES = ['regex'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX4b04fa94f1 SDK namespace.
+module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX4b04fa94f1
+  ENTITY = 'entity'
+  VALUES = ['entity'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX4b04fa94f1', 'enum', "Unknown UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX4b04fa94f1: #{value}")
   end
+end
 
-  # Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant4 SDK namespace.
-  module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant4
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX8b48b3ea27 SDK namespace.
+module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX8b48b3ea27
+  LIST = 'list'
+  LIST_INLINE = 'list/inline'
+  VALUES = ['list', 'list/inline'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type SDK namespace.
-  module UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type
-    ALL = 'all'
-    VALUES = ['all'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type', 'enum', "Unknown UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type: #{value}")
-    end
+# Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRXe2a6119c3d SDK namespace.
+module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRXe2a6119c3d
+  REGEX = 'regex'
+  VALUES = ['regex'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseType SDK namespace.
-  module UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseType
-    ENTITY = 'entity'
-    VALUES = ['entity'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant4 SDK namespace.
+module UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant4
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type SDK namespace.
-  module UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type
-    SPLIT = 'split'
-    VALUES = ['split'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type SDK namespace.
+module UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type
+  ALL = 'all'
+  VALUES = ['all'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type', 'enum', "Unknown UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type: #{value}")
-    end
+    raise SdkValidationError.new('UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type', 'enum', "Unknown UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type: #{value}")
   end
+end
 
-  # Defines the UpdateFlagSegmentResponseVariant0TypeName SDK namespace.
-  module UpdateFlagSegmentResponseVariant0TypeName
-    SEGMENT = 'segment'
-    VALUES = ['segment'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseType SDK namespace.
+module UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseType
+  ENTITY = 'entity'
+  VALUES = ['entity'].freeze
+  def self.from_value(value)
+    value
   end
+end
+
+# Defines the UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type SDK namespace.
+module UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type
+  SPLIT = 'split'
+  VALUES = ['split'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type', 'enum', "Unknown UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type: #{value}")
+  end
+end
+
+# Defines the UpdateFlagSegmentResponseVariant0TypeName SDK namespace.
+module UpdateFlagSegmentResponseVariant0TypeName
+  SEGMENT = 'segment'
+  VALUES = ['segment'].freeze
+  def self.from_value(value)
+    value
+  end
+end
 end

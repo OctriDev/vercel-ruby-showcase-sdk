@@ -77,23 +77,30 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_rolling_release_billing_status) do |config:, id_or_name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_rolling_release_billing_status) do |
+        config:,
+        id_or_name:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/rolling-release/billing'
+            "/rolling-release/billing"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::GetRollingReleaseBillingStatusResponse,
           decoder: :json,
           operation_id: 'get_rolling_release_billing_status',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -105,23 +112,30 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_rolling_release_config) do |config:, id_or_name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_rolling_release_config) do |
+        config:,
+        id_or_name:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/rolling-release/config'
+            "/rolling-release/config"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::RollingRelease::GetRollingReleaseConfigResponse,
           decoder: :json,
           operation_id: 'get_rolling_release_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -140,22 +154,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/rolling-release/config'
+            "/rolling-release/config"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::RollingRelease::DeleteRollingReleaseConfigResponse,
           decoder: :json,
           operation_id: 'delete_rolling_release_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -174,22 +189,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PATCH',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/rolling-release/config'
+            "/rolling-release/config"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::UpdateRollingReleaseConfigResponse,
           decoder: :json,
           operation_id: 'update_rolling_release_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -202,24 +218,32 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_rolling_release) do |config:, id_or_name:, state: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_rolling_release) do |
+        config:,
+        id_or_name:,
+        state: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/rolling-release'
+            "/rolling-release"
           ].join,
           config: config,
           query: {
             'state' => QueryValue.new(state, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::RollingRelease::GetRollingReleaseResponse,
           decoder: :json,
           operation_id: 'get_rolling_release',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -243,26 +267,27 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/rolling-release/approve-stage'
+            "/rolling-release/approve-stage"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'nextStageIndex' => next_stage_index,
-            'canaryDeploymentId' => canary_deployment_id
+            'canaryDeploymentId' => canary_deployment_id,
           },
           return_type: ::OctridevVercel::Methods::RollingRelease::ApproveRollingReleaseStageResponse,
           decoder: :json,
           operation_id: 'approve_rolling_release_stage',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -284,25 +309,26 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/rolling-release/start'
+            "/rolling-release/start"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'canaryDeploymentId' => canary_deployment_id
+            'canaryDeploymentId' => canary_deployment_id,
           },
           return_type: ::OctridevVercel::Methods::RollingRelease::StartRollingReleaseResponse,
           decoder: :json,
           operation_id: 'start_rolling_release',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -324,25 +350,26 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/rolling-release/complete'
+            "/rolling-release/complete"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'canaryDeploymentId' => canary_deployment_id
+            'canaryDeploymentId' => canary_deployment_id,
           },
           return_type: ::OctridevVercel::Methods::RollingRelease::CompleteRollingReleaseResponse,
           decoder: :json,
           operation_id: 'complete_rolling_release',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

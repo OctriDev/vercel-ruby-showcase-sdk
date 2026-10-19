@@ -5,648 +5,662 @@
 
 # deployments domain models (part 8)
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXb8bda5993aMetadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXb8bda5993aMetadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1HeadersItemMissinXb8bda5993a.
+class CancelDeploymentResponseServicesItemVariant1HeadersItemMissinXb8bda5993a
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXb8bda5993aMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXb8bda5993aMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXb8bda5993aMetadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1HeadersItemMissinXb8bda5993a.
-  class CancelDeploymentResponseServicesItemVariant1HeadersItemMissinXb8bda5993a
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXb8bda5993aMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXb8bda5993aMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXb8bda5993aMetadata::DECODERS
-
-    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXebe6e0a41eMetadata
-    FIELDS = {
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      value
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1HeadersItemMissinXa215fa9644.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXebe6e0a41eMetadata
+  FIELDS = {
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    value
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1HeadersItemMissinXa215fa9644.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1HeadersItemMissinXebe6e0a41e.
+class CancelDeploymentResponseServicesItemVariant1HeadersItemMissinXebe6e0a41e
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXebe6e0a41eMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXebe6e0a41eMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXebe6e0a41eMetadata::DECODERS
+
+  attr_reader :type, :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1HeadersItemMissinXebe6e0a41e.
-  class CancelDeploymentResponseServicesItemVariant1HeadersItemMissinXebe6e0a41e
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXebe6e0a41eMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXebe6e0a41eMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinXebe6e0a41eMetadata::DECODERS
-
-    attr_reader :type, :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX326f3cbda4Metadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX326f3cbda4Metadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1HeadersItemMissinX326f3cbda4.
+class CancelDeploymentResponseServicesItemVariant1HeadersItemMissinX326f3cbda4
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX326f3cbda4Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX326f3cbda4Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX326f3cbda4Metadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1HeadersItemMissinX326f3cbda4.
-  class CancelDeploymentResponseServicesItemVariant1HeadersItemMissinX326f3cbda4
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX326f3cbda4Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX326f3cbda4Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX326f3cbda4Metadata::DECODERS
-
-    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX78d740981eMetadata
-    FIELDS = {
-      key: 'key',
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      key
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1HeadersItemMissinX097812f564.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX78d740981eMetadata
+  FIELDS = {
+    key: "key",
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    key
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1HeadersItemMissinX097812f564.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1HeadersItemMissinX78d740981e.
+class CancelDeploymentResponseServicesItemVariant1HeadersItemMissinX78d740981e
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX78d740981eMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX78d740981eMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX78d740981eMetadata::DECODERS
+
+  attr_reader :key, :type, :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1HeadersItemMissinX78d740981e.
-  class CancelDeploymentResponseServicesItemVariant1HeadersItemMissinX78d740981e
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX78d740981eMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX78d740981eMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMissinX78d740981eMetadata::DECODERS
-
-    attr_reader :key, :type, :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMetadata
-    FIELDS = {
-      has: 'has',
-      headers: 'headers',
-      missing: 'missing',
-      source: 'source'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      headers
-      source
-    ].freeze
-    DECODERS = {
-      headers: lambda do |value|
-        value&.map { |item| ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1HeadersItemHeadersItem.from_hash(item) }
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMetadata
+  FIELDS = {
+    has: "has",
+    headers: "headers",
+    missing: "missing",
+    source: "source",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    headers
+    source
+  ].freeze
+  DECODERS = {
+    headers: lambda do |value|
+      value&.map { |item| ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1HeadersItemHeadersItem.from_hash(item) }
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1HeadersItem.
+class CancelDeploymentResponseServicesItemVariant1HeadersItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMetadata::DECODERS
+
+  attr_reader :has, :headers, :missing, :source
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1HeadersItem.
-  class CancelDeploymentResponseServicesItemVariant1HeadersItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1HeadersItemMetadata::DECODERS
-
-    attr_reader :has, :headers, :missing, :source
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX7a2e38b48cMetadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX7a2e38b48cMetadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX7a2e38b48c.
+class CancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX7a2e38b48c
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX7a2e38b48cMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX7a2e38b48cMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX7a2e38b48cMetadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX7a2e38b48c.
-  class CancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX7a2e38b48c
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX7a2e38b48cMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX7a2e38b48cMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX7a2e38b48cMetadata::DECODERS
-
-    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant0Metadata
-    FIELDS = {
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      value
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1RedirectsItemHasIXbb031cdd26.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant0Metadata
+  FIELDS = {
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    value
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1RedirectsItemHasIXbb031cdd26.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant0.
+class CancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant0Metadata::DECODERS
+
+  attr_reader :type, :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant0.
-  class CancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant0Metadata::DECODERS
-
-    attr_reader :type, :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX6ff579fc93Metadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX6ff579fc93Metadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX6ff579fc93.
+class CancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX6ff579fc93
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX6ff579fc93Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX6ff579fc93Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX6ff579fc93Metadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX6ff579fc93.
-  class CancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX6ff579fc93
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX6ff579fc93Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX6ff579fc93Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasIX6ff579fc93Metadata::DECODERS
-
-    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant1Metadata
-    FIELDS = {
-      key: 'key',
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      key
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1RedirectsItemHasIXa3d99db85c.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant1Metadata
+  FIELDS = {
+    key: "key",
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    key
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1RedirectsItemHasIXa3d99db85c.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant1.
+class CancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant1Metadata::DECODERS
+
+  attr_reader :key, :type, :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant1.
-  class CancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemHasItemVariant1Metadata::DECODERS
-
-    attr_reader :key, :type, :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX5cb98caeebMetadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX5cb98caeebMetadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX5cb98caeeb.
+class CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX5cb98caeeb
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX5cb98caeebMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX5cb98caeebMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX5cb98caeebMetadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX5cb98caeeb.
-  class CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX5cb98caeeb
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX5cb98caeebMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX5cb98caeebMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX5cb98caeebMetadata::DECODERS
-
-    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7877368895Metadata
-    FIELDS = {
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      value
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1RedirectsItemMissXdd5ebd0f9a.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7877368895Metadata
+  FIELDS = {
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    value
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1RedirectsItemMissXdd5ebd0f9a.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7877368895.
+class CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7877368895
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7877368895Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7877368895Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7877368895Metadata::DECODERS
+
+  attr_reader :type, :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7877368895.
-  class CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7877368895
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7877368895Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7877368895Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7877368895Metadata::DECODERS
-
-    attr_reader :type, :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX402f60fc40Metadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX402f60fc40Metadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX402f60fc40.
+class CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX402f60fc40
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX402f60fc40Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX402f60fc40Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX402f60fc40Metadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX402f60fc40.
-  class CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX402f60fc40
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX402f60fc40Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX402f60fc40Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX402f60fc40Metadata::DECODERS
-
-    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7354353f50Metadata
-    FIELDS = {
-      key: 'key',
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      key
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX178f72c976.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7354353f50Metadata
+  FIELDS = {
+    key: "key",
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    key
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX178f72c976.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7354353f50.
+class CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7354353f50
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7354353f50Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7354353f50Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7354353f50Metadata::DECODERS
+
+  attr_reader :key, :type, :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7354353f50.
-  class CancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7354353f50
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7354353f50Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7354353f50Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMissX7354353f50Metadata::DECODERS
-
-    attr_reader :key, :type, :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMetadata
-    FIELDS = {
-      destination: 'destination',
-      env: 'env',
-      has: 'has',
-      missing: 'missing',
-      permanent: 'permanent',
-      source: 'source',
-      status_code: 'statusCode'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      destination
-      source
-    ].freeze
-    DECODERS = {
-      permanent: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1RedirectsItemPermanent.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMetadata
+  FIELDS = {
+    destination: "destination",
+    env: "env",
+    has: "has",
+    missing: "missing",
+    permanent: "permanent",
+    source: "source",
+    status_code: "statusCode",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    destination
+    source
+  ].freeze
+  DECODERS = {
+    permanent: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1RedirectsItemPermanent.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1RedirectsItem.
+class CancelDeploymentResponseServicesItemVariant1RedirectsItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMetadata::DECODERS
+
+  attr_reader :destination, :env, :has, :missing, :permanent, :source, :status_code
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1RedirectsItem.
-  class CancelDeploymentResponseServicesItemVariant1RedirectsItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RedirectsItemMetadata::DECODERS
-
-    attr_reader :destination, :env, :has, :missing, :permanent, :source, :status_code
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1RewritesItemDestiX407456cb67Metadata
-    FIELDS = {
-      path: 'path',
-      service: 'service',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      service
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1RewritesItemDestiXa3ed02ba95.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1RewritesItemDestiX407456cb67Metadata
+  FIELDS = {
+    path: "path",
+    service: "service",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    service
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseServicesItemVariant1RewritesItemDestiXa3ed02ba95.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseServicesItemVariant1RewritesItemDestiX407456cb67.
+class CancelDeploymentResponseServicesItemVariant1RewritesItemDestiX407456cb67
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RewritesItemDestiX407456cb67Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RewritesItemDestiX407456cb67Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RewritesItemDestiX407456cb67Metadata::DECODERS
+
+  attr_reader :service
+  # @return [String] Routing-only path used to select a route inside the target service.
+  attr_reader :path
+  # @return [CancelDeploymentResponseServicesItemVariant1RewritesItemDestiXa3ed02ba95] Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+  attr_reader :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseServicesItemVariant1RewritesItemDestiX407456cb67.
-  class CancelDeploymentResponseServicesItemVariant1RewritesItemDestiX407456cb67
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RewritesItemDestiX407456cb67Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseServicesItemVariant1RewritesItemDestiX407456cb67Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseServicesItemVariant1RewritesItemDestiX407456cb67Metadata::DECODERS
-
-    attr_reader :service
-    # @return [String] Routing-only path used to select a route inside the target service.
-    attr_reader :path
-    # @return [CancelDeploymentResponseServicesItemVariant1RewritesItemDestiXa3ed02ba95] Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
-    attr_reader :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseServicesItemVariant1RewritesItemHasItXb28943f11dMetadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseServicesItemVariant1RewritesItemHasItXb28943f11dMetadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 end

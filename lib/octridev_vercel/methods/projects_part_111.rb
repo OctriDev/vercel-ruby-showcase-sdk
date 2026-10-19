@@ -15,7 +15,7 @@ module OctridevVercel
         PERFORMANCE_XL = 'performance_xl'
         STANDARD = 'standard'
         STANDARD_LEGACY = 'standard_legacy'
-        VALUES = %w[performance performance_xl standard standard_legacy].freeze
+        VALUES = ['performance', 'performance_xl', 'standard', 'standard_legacy'].freeze
         def self.from_value(value)
           value
         end
@@ -87,7 +87,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = %w[enterprise hobby pro].freeze
+        VALUES = ['enterprise', 'hobby', 'pro'].freeze
         def self.from_value(value)
           value
         end
@@ -118,7 +118,7 @@ module OctridevVercel
         PREVIEW = 'PREVIEW'
         PRODUCTION = 'PRODUCTION'
         STAGING = 'STAGING'
-        VALUES = %w[PREVIEW PRODUCTION STAGING].freeze
+        VALUES = ['PREVIEW', 'PRODUCTION', 'STAGING'].freeze
         def self.from_value(value)
           value
         end
@@ -179,7 +179,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = %w[enterprise hobby pro].freeze
+        VALUES = ['enterprise', 'hobby', 'pro'].freeze
         def self.from_value(value)
           value
         end
@@ -190,7 +190,7 @@ module OctridevVercel
         ACCEPT = 'accept'
         CANCEL = 'cancel'
         DELETE = 'delete'
-        VALUES = %w[accept cancel delete].freeze
+        VALUES = ['accept', 'cancel', 'delete'].freeze
         def self.from_value(value)
           value
         end
@@ -202,7 +202,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = %w[canceled failed skipped succeeded].freeze
+        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
         def self.from_value(value)
           value
         end
@@ -284,17 +284,17 @@ module OctridevVercel
         VUEPRESS = 'vuepress'
         XMCP = 'xmcp'
         ZOLA = 'zola'
-        VALUES = %w[
-          actix-web angular ash astro axum blitzjs brunch bun container
-          create-react-app django docusaurus docusaurus-2 dojo eleventy elysia
-          ember eve express factory-eve fastapi fasthtml fastify flask
-          gatsby go gridsome h3 hexo hono hugo hydrogen ionic-angular
-          ionic-react jekyll koa mastra middleman nestjs nextjs nitro node
-          nuxtjs parcel polymer preact python react-router redwoodjs remix
-          ruby rust saber sanity sanity-v2 sapper scully services
-          solidstart solidstart-1 stencil storybook svelte sveltekit sveltekit-1
-          tanstack-start tanstack-start-lovable umijs vite vitepress vue
-          vuepress xmcp zola
+        VALUES = [
+          'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
+          'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
+          'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask',
+          'gatsby', 'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular',
+          'ionic-react', 'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node',
+          'nuxtjs', 'parcel', 'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix',
+          'ruby', 'rust', 'saber', 'sanity', 'sanity-v2', 'sapper', 'scully', 'services',
+          'solidstart', 'solidstart-1', 'stencil', 'storybook', 'svelte', 'sveltekit', 'sveltekit-1',
+          'tanstack-start', 'tanstack-start-lovable', 'umijs', 'vite', 'vitepress', 'vue',
+          'vuepress', 'xmcp', 'zola'
         ].freeze
         def self.from_value(value)
           value
@@ -335,7 +335,7 @@ module OctridevVercel
         PRODUCTION = 'production'
         PREVIEW = 'preview'
         DEVELOPMENT = 'development'
-        VALUES = %w[production preview development].freeze
+        VALUES = ['production', 'preview', 'development'].freeze
         def self.from_value(value)
           value
         end
@@ -348,7 +348,7 @@ module OctridevVercel
         SECRET = 'secret'
         SENSITIVE = 'sensitive'
         SYSTEM = 'system'
-        VALUES = %w[encrypted plain secret sensitive system].freeze
+        VALUES = ['encrypted', 'plain', 'secret', 'sensitive', 'system'].freeze
         def self.from_value(value)
           value
         end
@@ -360,7 +360,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = %w[basic enhanced standard turbo].freeze
+        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
         def self.from_value(value)
           value
         end
@@ -381,7 +381,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = %w[enhanced standard turbo].freeze
+        VALUES = ['enhanced', 'standard', 'turbo'].freeze
         def self.from_value(value)
           value
         end
@@ -391,7 +391,7 @@ module OctridevVercel
       module UploadProjectAvatarResponseResourceConfigBuildMachineSelection
         ELASTIC = 'elastic'
         FIXED = 'fixed'
-        VALUES = %w[elastic fixed].freeze
+        VALUES = ['elastic', 'fixed'].freeze
         def self.from_value(value)
           value
         end
@@ -432,7 +432,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -442,7 +442,7 @@ module OctridevVercel
       module UploadProjectAvatarResponseRollingReleaseGateAction
         PAUSE = 'pause'
         ROLLBACK = 'rollback'
-        VALUES = %w[pause rollback].freeze
+        VALUES = ['pause', 'rollback'].freeze
         def self.from_value(value)
           value
         end
@@ -464,7 +464,7 @@ module OctridevVercel
         CNAME = 'CNAME'
         DNS_01 = 'dns-01'
         HTTP = 'http'
-        VALUES = %w[A CNAME dns-01 http].freeze
+        VALUES = ['A', 'CNAME', 'dns-01', 'http'].freeze
         def self.from_value(value)
           value
         end
@@ -504,7 +504,7 @@ module OctridevVercel
       module ListProjectsResponseVariant2ProjectsItemGitProviderOptionsCreX2e70c1ebeb
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = %w[disabled enabled].freeze
+        VALUES = ['disabled', 'enabled'].freeze
         def self.from_value(value)
           value
         end
@@ -515,7 +515,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = %w[endsWith equals startsWith].freeze
+        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
         def self.from_value(value)
           value
         end
@@ -530,8 +530,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value
@@ -552,7 +552,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[development preview production].freeze
+        VALUES = ['development', 'preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -574,7 +574,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = %w[canceled failed skipped succeeded].freeze
+        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
         def self.from_value(value)
           value
         end

@@ -5,645 +5,649 @@
 
 # deployments domain models (part 44)
 module OctridevVercel
-  # API model for GetDeploymentResponseVariant2GitSourceVariant8.
-  class GetDeploymentResponseVariant2GitSourceVariant8
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant8Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant8Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant8Metadata::DECODERS
+# API model for GetDeploymentResponseVariant2GitSourceVariant8.
+class GetDeploymentResponseVariant2GitSourceVariant8
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant8Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant8Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant8Metadata::DECODERS
 
-    attr_reader :owner, :pr_id, :ref, :sha, :slug, :type
+  attr_reader :owner, :pr_id, :ref, :sha, :slug, :type
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthorMetadata
-    FIELDS = {
-      date: 'date',
-      email: 'email',
-      name: 'name'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      date
-      email
-      name
-    ].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthor.
-  class GetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthor
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthorMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthorMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthorMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :date, :email, :name
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthorMetadata
+  FIELDS = {
+    date: "date",
+    email: "email",
+    name: "name",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    date
+    email
+    name
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthor.
+class GetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthor
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthorMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthorMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthorMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :date, :email, :name
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitterMetadata
-    FIELDS = {
-      date: 'date',
-      email: 'email',
-      name: 'name'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      date
-      email
-      name
-    ].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitter.
-  class GetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitter
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitterMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitterMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitterMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :date, :email, :name
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitterMetadata
+  FIELDS = {
+    date: "date",
+    email: "email",
+    name: "name",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    date
+    email
+    name
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitter.
+class GetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitter
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitterMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitterMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitterMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :date, :email, :name
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataMetadata
-    FIELDS = {
-      author: 'author',
-      committer: 'committer',
-      message: 'message'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      author
-      committer
-      message
-    ].freeze
-    DECODERS = {
-      author: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthor.from_hash(value)
-      end,
-      committer: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitter.from_hash(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant9CommitMetadata.
-  class GetDeploymentResponseVariant2GitSourceVariant9CommitMetadata
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :author, :committer, :message
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataMetadata
+  FIELDS = {
+    author: "author",
+    committer: "committer",
+    message: "message",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    author
+    committer
+    message
+  ].freeze
+  DECODERS = {
+    author: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant9CommitMetadataAuthor.from_hash(value)
+    end,
+    committer: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant9CommitMetadataCommitter.from_hash(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetDeploymentResponseVariant2GitSourceVariant9CommitMetadata.
+class GetDeploymentResponseVariant2GitSourceVariant9CommitMetadata
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9CommitMetadataMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :author, :committer, :message
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant9Metadata
-    FIELDS = {
-      commit_metadata: 'commitMetadata',
-      org: 'org',
-      pr_id: 'prId',
-      ref: 'ref',
-      repo: 'repo',
-      repo_id: 'repoId',
-      repo_pushed_at: 'repoPushedAt',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      repo_id
-      sha
-      type
-    ].freeze
-    DECODERS = {
-      commit_metadata: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant9CommitMetadata.from_hash(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant9Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant9.
-  class GetDeploymentResponseVariant2GitSourceVariant9
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :commit_metadata, :org, :pr_id, :ref, :repo, :repo_id, :repo_pushed_at, :sha, :type
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant9Metadata
+  FIELDS = {
+    commit_metadata: "commitMetadata",
+    org: "org",
+    pr_id: "prId",
+    ref: "ref",
+    repo: "repo",
+    repo_id: "repoId",
+    repo_pushed_at: "repoPushedAt",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    repo_id
+    sha
+    type
+  ].freeze
+  DECODERS = {
+    commit_metadata: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant9CommitMetadata.from_hash(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant9Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetDeploymentResponseVariant2GitSourceVariant9.
+class GetDeploymentResponseVariant2GitSourceVariant9
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant9Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :commit_metadata, :org, :pr_id, :ref, :repo, :repo_id, :repo_pushed_at, :sha, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant10Metadata
-    FIELDS = {
-      owner: 'owner',
-      pr_id: 'prId',
-      ref: 'ref',
-      repo: 'repo',
-      repo_id: 'repoId',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      repo_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant10Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant10.
-  class GetDeploymentResponseVariant2GitSourceVariant10
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant10Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant10Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant10Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :pr_id, :ref, :repo, :sha, :type
-    # @return [String] Owner (namespace) slug.
-    attr_reader :owner
-    # @return [String] Origin repository id.
-    attr_reader :repo_id
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant10Metadata
+  FIELDS = {
+    owner: "owner",
+    pr_id: "prId",
+    ref: "ref",
+    repo: "repo",
+    repo_id: "repoId",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    repo_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant10Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetDeploymentResponseVariant2GitSourceVariant10.
+class GetDeploymentResponseVariant2GitSourceVariant10
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant10Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant10Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant10Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :pr_id, :ref, :repo, :sha, :type
+  # @return [String] Owner (namespace) slug.
+  attr_reader :owner
+  # @return [String] Origin repository id.
+  attr_reader :repo_id
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant11Metadata
-    FIELDS = {
-      git_url: 'gitUrl',
-      ref: 'ref',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      git_url
-      ref
-      sha
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant11Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant11.
-  # Allows custom git sources (local folder mounted to the container) in test mode
-  class GetDeploymentResponseVariant2GitSourceVariant11
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant11Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant11Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant11Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :git_url, :ref, :sha, :type
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant11Metadata
+  FIELDS = {
+    git_url: "gitUrl",
+    ref: "ref",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    git_url
+    ref
+    sha
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant11Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetDeploymentResponseVariant2GitSourceVariant11.
+# Allows custom git sources (local folder mounted to the container) in test mode
+class GetDeploymentResponseVariant2GitSourceVariant11
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant11Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant11Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant11Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :git_url, :ref, :sha, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant12Metadata
-    FIELDS = {
-      org: 'org',
-      ref: 'ref',
-      repo: 'repo',
-      repo_id: 'repoId',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      ref
-      repo_id
-      sha
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant12Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant12.
-  class GetDeploymentResponseVariant2GitSourceVariant12
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant12Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant12Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant12Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :org, :ref, :repo, :repo_id, :sha, :type
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant12Metadata
+  FIELDS = {
+    org: "org",
+    ref: "ref",
+    repo: "repo",
+    repo_id: "repoId",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    ref
+    repo_id
+    sha
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant12Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetDeploymentResponseVariant2GitSourceVariant12.
+class GetDeploymentResponseVariant2GitSourceVariant12
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant12Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant12Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant12Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :org, :ref, :repo, :repo_id, :sha, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant13Metadata
-    FIELDS = {
-      host: 'host',
-      org: 'org',
-      ref: 'ref',
-      repo: 'repo',
-      repo_id: 'repoId',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      host
-      ref
-      repo_id
-      sha
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant13Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant13.
-  class GetDeploymentResponseVariant2GitSourceVariant13
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant13Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant13Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant13Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :host, :org, :ref, :repo, :repo_id, :sha, :type
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant13Metadata
+  FIELDS = {
+    host: "host",
+    org: "org",
+    ref: "ref",
+    repo: "repo",
+    repo_id: "repoId",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    host
+    ref
+    repo_id
+    sha
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant13Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetDeploymentResponseVariant2GitSourceVariant13.
+class GetDeploymentResponseVariant2GitSourceVariant13
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant13Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant13Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant13Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :host, :org, :ref, :repo, :repo_id, :sha, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant14Metadata
-    FIELDS = {
-      org: 'org',
-      ref: 'ref',
-      repo: 'repo',
-      repo_id: 'repoId',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      ref
-      repo_id
-      sha
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant14Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant14.
-  class GetDeploymentResponseVariant2GitSourceVariant14
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant14Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant14Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant14Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :org, :ref, :repo, :repo_id, :sha, :type
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant14Metadata
+  FIELDS = {
+    org: "org",
+    ref: "ref",
+    repo: "repo",
+    repo_id: "repoId",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    ref
+    repo_id
+    sha
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant14Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetDeploymentResponseVariant2GitSourceVariant14.
+class GetDeploymentResponseVariant2GitSourceVariant14
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant14Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant14Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant14Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :org, :ref, :repo, :repo_id, :sha, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant15Metadata
-    FIELDS = {
-      project_id: 'projectId',
-      ref: 'ref',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      project_id
-      ref
-      sha
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant15Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant15.
-  class GetDeploymentResponseVariant2GitSourceVariant15
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant15Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant15Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant15Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :project_id, :ref, :sha, :type
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant15Metadata
+  FIELDS = {
+    project_id: "projectId",
+    ref: "ref",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    project_id
+    ref
+    sha
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant15Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetDeploymentResponseVariant2GitSourceVariant15.
+class GetDeploymentResponseVariant2GitSourceVariant15
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant15Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant15Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant15Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :project_id, :ref, :sha, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant16Metadata
-    FIELDS = {
-      owner: 'owner',
-      ref: 'ref',
-      repo_uuid: 'repoUuid',
-      sha: 'sha',
-      slug: 'slug',
-      type: 'type',
-      workspace_uuid: 'workspaceUuid'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      ref
-      repo_uuid
-      sha
-      type
-      workspace_uuid
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant16Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant16.
-  class GetDeploymentResponseVariant2GitSourceVariant16
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant16Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant16Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant16Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :owner, :ref, :repo_uuid, :sha, :slug, :type, :workspace_uuid
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant16Metadata
+  FIELDS = {
+    owner: "owner",
+    ref: "ref",
+    repo_uuid: "repoUuid",
+    sha: "sha",
+    slug: "slug",
+    type: "type",
+    workspace_uuid: "workspaceUuid",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    ref
+    repo_uuid
+    sha
+    type
+    workspace_uuid
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant16Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetDeploymentResponseVariant2GitSourceVariant16.
+class GetDeploymentResponseVariant2GitSourceVariant16
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant16Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant16Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant16Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :owner, :ref, :repo_uuid, :sha, :slug, :type, :workspace_uuid
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthorMetadata
-    FIELDS = {
-      date: 'date',
-      email: 'email',
-      name: 'name'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      date
-      email
-      name
-    ].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthor.
-  class GetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthor
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthorMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthorMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthorMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :date, :email, :name
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthorMetadata
+  FIELDS = {
+    date: "date",
+    email: "email",
+    name: "name",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    date
+    email
+    name
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthor.
+class GetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthor
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthorMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthorMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthorMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :date, :email, :name
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitterMetadata
-    FIELDS = {
-      date: 'date',
-      email: 'email',
-      name: 'name'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      date
-      email
-      name
-    ].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitter.
-  class GetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitter
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitterMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitterMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitterMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :date, :email, :name
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitterMetadata
+  FIELDS = {
+    date: "date",
+    email: "email",
+    name: "name",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    date
+    email
+    name
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitter.
+class GetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitter
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitterMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitterMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitterMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :date, :email, :name
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataMetadata
-    FIELDS = {
-      author: 'author',
-      committer: 'committer',
-      message: 'message'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      author
-      committer
-      message
-    ].freeze
-    DECODERS = {
-      author: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthor.from_hash(value)
-      end,
-      committer: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitter.from_hash(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant17CommitMetadata.
-  class GetDeploymentResponseVariant2GitSourceVariant17CommitMetadata
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataMetadata::DECODERS
-
-    attr_reader :author, :committer, :message
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataMetadata
+  FIELDS = {
+    author: "author",
+    committer: "committer",
+    message: "message",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    author
+    committer
+    message
+  ].freeze
+  DECODERS = {
+    author: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant17CommitMetadataAuthor.from_hash(value)
+    end,
+    committer: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant17CommitMetadataCommitter.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant2GitSourceVariant17CommitMetadata.
+class GetDeploymentResponseVariant2GitSourceVariant17CommitMetadata
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17CommitMetadataMetadata::DECODERS
+
+  attr_reader :author, :committer, :message
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
+  end
+
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  end
+
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 end

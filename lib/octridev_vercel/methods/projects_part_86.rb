@@ -46,7 +46,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = %w[endsWith equals startsWith].freeze
+        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
         def self.from_value(value)
           value
         end
@@ -58,7 +58,7 @@ module OctridevVercel
         CNAME = 'CNAME'
         DNS_01 = 'dns-01'
         HTTP = 'http'
-        VALUES = %w[A CNAME dns-01 http].freeze
+        VALUES = ['A', 'CNAME', 'dns-01', 'http'].freeze
         def self.from_value(value)
           value
         end
@@ -89,7 +89,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = %w[endsWith equals startsWith].freeze
+        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
         def self.from_value(value)
           value
         end
@@ -109,7 +109,7 @@ module OctridevVercel
       module DeleteProjectAvatarResponseResourceConfigBuildMachineSelection
         ELASTIC = 'elastic'
         FIXED = 'fixed'
-        VALUES = %w[elastic fixed].freeze
+        VALUES = ['elastic', 'fixed'].freeze
         def self.from_value(value)
           value
         end
@@ -131,7 +131,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = %w[canceled failed skipped succeeded].freeze
+        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
         def self.from_value(value)
           value
         end
@@ -152,7 +152,7 @@ module OctridevVercel
         ENCRYPTED = 'encrypted'
         PLAIN = 'plain'
         SENSITIVE = 'sensitive'
-        VALUES = %w[system encrypted plain sensitive].freeze
+        VALUES = ['system', 'encrypted', 'plain', 'sensitive'].freeze
         def self.from_value(value)
           value
         end
@@ -162,7 +162,7 @@ module OctridevVercel
       module RemoveProjectEnvResponseVariant2Visibility
         CONFIG = 'config'
         SECRET = 'secret'
-        VALUES = %w[config secret].freeze
+        VALUES = ['config', 'secret'].freeze
         def self.from_value(value)
           value
         end
@@ -207,8 +207,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value
@@ -242,7 +242,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = %w[canceled failed skipped succeeded].freeze
+        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
         def self.from_value(value)
           value
         end
@@ -293,7 +293,7 @@ module OctridevVercel
         PERFORMANCE_XL = 'performance_xl'
         STANDARD = 'standard'
         STANDARD_LEGACY = 'standard_legacy'
-        VALUES = %w[performance performance_xl standard standard_legacy].freeze
+        VALUES = ['performance', 'performance_xl', 'standard', 'standard_legacy'].freeze
         def self.from_value(value)
           value
         end
@@ -328,8 +328,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value
@@ -404,10 +404,10 @@ module OctridevVercel
         REGION = 'region'
         SCHEME = 'scheme'
         TRUSTED_SOURCE = 'trusted_source'
-        VALUES = %w[
-          cookie domain_environment environment header headers host
-          initial_request_path ip_address method path protocol query region
-          scheme trusted_source
+        VALUES = [
+          'cookie', 'domain_environment', 'environment', 'header', 'headers', 'host',
+          'initial_request_path', 'ip_address', 'method', 'path', 'protocol', 'query', 'region',
+          'scheme', 'trusted_source'
         ].freeze
         def self.from_value(value)
           value
@@ -429,7 +429,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = %w[PROMOTED ROLLING STAGED].freeze
+        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
         def self.from_value(value)
           value
         end
@@ -439,7 +439,7 @@ module OctridevVercel
       module UploadProjectAvatarResponseDefaultResourceConfigBuildMachineSelection
         ELASTIC = 'elastic'
         FIXED = 'fixed'
-        VALUES = %w[elastic fixed].freeze
+        VALUES = ['elastic', 'fixed'].freeze
         def self.from_value(value)
           value
         end
@@ -460,7 +460,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[development preview production].freeze
+        VALUES = ['development', 'preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -470,7 +470,7 @@ module OctridevVercel
       module UpdateMicrofrontendsResponseTracingSamplingRulesItemEnv
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[preview production].freeze
+        VALUES = ['preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -482,7 +482,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = %w[basic enhanced standard turbo].freeze
+        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
         def self.from_value(value)
           value
         end
@@ -492,7 +492,7 @@ module OctridevVercel
       module GetProjectsResponseLastAliasRequestType
         PROMOTE = 'promote'
         ROLLBACK = 'rollback'
-        VALUES = %w[promote rollback].freeze
+        VALUES = ['promote', 'rollback'].freeze
         def self.from_value(value)
           value
         end

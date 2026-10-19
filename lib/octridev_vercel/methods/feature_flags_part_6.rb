@@ -66,7 +66,7 @@ module OctridevVercel
       module ListFlagsV2Parameter
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = %w[active archived].freeze
+        VALUES = ['active', 'archived'].freeze
         def self.from_value(value)
           value
         end
@@ -76,7 +76,7 @@ module OctridevVercel
       module UpdateFlagState
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = %w[active archived].freeze
+        VALUES = ['active', 'archived'].freeze
         def self.from_value(value)
           value
         end
@@ -86,7 +86,7 @@ module OctridevVercel
       module CreateFlagState
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = %w[active archived].freeze
+        VALUES = ['active', 'archived'].freeze
         def self.from_value(value)
           value
         end
@@ -201,7 +201,7 @@ module OctridevVercel
       module UpdateFlagResponseState
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = %w[active archived].freeze
+        VALUES = ['active', 'archived'].freeze
         def self.from_value(value)
           value
         end
@@ -254,7 +254,7 @@ module OctridevVercel
         CLIENT = 'client'
         MOBILE = 'mobile'
         SERVER = 'server'
-        VALUES = %w[client mobile server].freeze
+        VALUES = ['client', 'mobile', 'server'].freeze
         def self.from_value(value)
           value
         end
@@ -264,7 +264,7 @@ module OctridevVercel
       module UpdateFlagSegmentOperationsItemField
         INCLUDE = 'include'
         EXCLUDE = 'exclude'
-        VALUES = %w[include exclude].freeze
+        VALUES = ['include', 'exclude'].freeze
         def self.from_value(value)
           value
         end
@@ -274,7 +274,7 @@ module OctridevVercel
       module UpdateFlagSegmentOperationsItemAction
         ADD = 'add'
         REMOVE = 'remove'
-        VALUES = %w[add remove].freeze
+        VALUES = ['add', 'remove'].freeze
         def self.from_value(value)
           value
         end
@@ -312,7 +312,7 @@ module OctridevVercel
       module CreateFlagResponseState
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = %w[active archived].freeze
+        VALUES = ['active', 'archived'].freeze
         def self.from_value(value)
           value
         end
@@ -439,7 +439,7 @@ module OctridevVercel
         STRING = 'string'
         NUMBER = 'number'
         JSON = 'json'
-        VALUES = %w[boolean string number json].freeze
+        VALUES = ['boolean', 'string', 'number', 'json'].freeze
         def self.from_value(value)
           value
         end
@@ -537,7 +537,7 @@ module OctridevVercel
       module ListFlagsParameter
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = %w[active archived].freeze
+        VALUES = ['active', 'archived'].freeze
         def self.from_value(value)
           value
         end

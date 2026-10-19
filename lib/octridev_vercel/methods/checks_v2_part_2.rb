@@ -35,12 +35,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateDeploymentCheckRunMetadata
         FIELDS = {
-          check_id: 'checkId'
+          check_id: "checkId",
         }.freeze
         REQUIRED_FIELDS = %i[
           check_id
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for CreateDeploymentCheckRun.
@@ -69,22 +70,23 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateDeploymentCheckRunMetadata
         FIELDS = {
-          external_id: 'externalId',
-          external_url: 'externalUrl',
-          status: 'status',
-          output: 'output',
-          completed_at: 'completedAt',
-          conclusion: 'conclusion',
-          conclusion_text: 'conclusionText'
+          external_id: "externalId",
+          external_url: "externalUrl",
+          status: "status",
+          output: "output",
+          completed_at: "completedAt",
+          conclusion: "conclusion",
+          conclusion_text: "conclusionText",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::ChecksV2::UpdateDeploymentCheckRunStatus.from_value(value)
           end,
           conclusion: lambda do |value|
             ::OctridevVercel::Methods::ChecksV2::UpdateDeploymentCheckRunConclusion.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -128,8 +130,8 @@ module OctridevVercel
         DEPLOYMENT_ALIAS = 'deployment-alias'
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         NONE = 'none'
-        VALUES = %w[
-          build-start deployment-start deployment-alias deployment-promotion none
+        VALUES = [
+          'build-start', 'deployment-start', 'deployment-alias', 'deployment-promotion', 'none'
         ].freeze
         def self.from_value(value)
           value
@@ -141,7 +143,7 @@ module OctridevVercel
         BUILD_READY = 'build-ready'
         DEPLOYMENT_URL = 'deployment-url'
         NONE = 'none'
-        VALUES = %w[build-ready deployment-url none].freeze
+        VALUES = ['build-ready', 'deployment-url', 'none'].freeze
         def self.from_value(value)
           value
         end
@@ -154,8 +156,8 @@ module OctridevVercel
         DEPLOYMENT_ALIAS = 'deployment-alias'
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         NONE = 'none'
-        VALUES = %w[
-          build-start deployment-start deployment-alias deployment-promotion none
+        VALUES = [
+          'build-start', 'deployment-start', 'deployment-alias', 'deployment-promotion', 'none'
         ].freeze
         def self.from_value(value)
           value
@@ -170,7 +172,7 @@ module OctridevVercel
         FAILED = 'failed'
         NEUTRAL = 'neutral'
         SUCCEEDED = 'succeeded'
-        VALUES = %w[canceled skipped timeout failed neutral succeeded].freeze
+        VALUES = ['canceled', 'skipped', 'timeout', 'failed', 'neutral', 'succeeded'].freeze
         def self.from_value(value)
           value
         end
@@ -181,7 +183,7 @@ module OctridevVercel
         BUILD_READY = 'build-ready'
         DEPLOYMENT_URL = 'deployment-url'
         NONE = 'none'
-        VALUES = %w[build-ready deployment-url none].freeze
+        VALUES = ['build-ready', 'deployment-url', 'none'].freeze
         def self.from_value(value)
           value
         end
@@ -193,7 +195,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         VERCEL = 'vercel'
         WEBHOOK = 'webhook'
-        VALUES = %w[git-provider integration vercel webhook].freeze
+        VALUES = ['git-provider', 'integration', 'vercel', 'webhook'].freeze
         def self.from_value(value)
           value
         end
@@ -204,7 +206,7 @@ module OctridevVercel
         QUEUED = 'queued'
         RUNNING = 'running'
         COMPLETED = 'completed'
-        VALUES = %w[queued running completed].freeze
+        VALUES = ['queued', 'running', 'completed'].freeze
         def self.from_value(value)
           value
         end
@@ -236,7 +238,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         VERCEL = 'vercel'
         WEBHOOK = 'webhook'
-        VALUES = %w[git-provider integration vercel webhook].freeze
+        VALUES = ['git-provider', 'integration', 'vercel', 'webhook'].freeze
         def self.from_value(value)
           value
         end
@@ -249,8 +251,8 @@ module OctridevVercel
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         DEPLOYMENT_START = 'deployment-start'
         NONE = 'none'
-        VALUES = %w[
-          build-start deployment-alias deployment-promotion deployment-start none
+        VALUES = [
+          'build-start', 'deployment-alias', 'deployment-promotion', 'deployment-start', 'none'
         ].freeze
         def self.from_value(value)
           value
@@ -264,8 +266,8 @@ module OctridevVercel
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         DEPLOYMENT_START = 'deployment-start'
         NONE = 'none'
-        VALUES = %w[
-          build-start deployment-alias deployment-promotion deployment-start none
+        VALUES = [
+          'build-start', 'deployment-alias', 'deployment-promotion', 'deployment-start', 'none'
         ].freeze
         def self.from_value(value)
           value
@@ -277,7 +279,7 @@ module OctridevVercel
         BUILD_READY = 'build-ready'
         DEPLOYMENT_URL = 'deployment-url'
         NONE = 'none'
-        VALUES = %w[build-ready deployment-url none].freeze
+        VALUES = ['build-ready', 'deployment-url', 'none'].freeze
         def self.from_value(value)
           value
         end
@@ -289,7 +291,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         VERCEL = 'vercel'
         WEBHOOK = 'webhook'
-        VALUES = %w[git-provider integration vercel webhook].freeze
+        VALUES = ['git-provider', 'integration', 'vercel', 'webhook'].freeze
         def self.from_value(value)
           value
         end
@@ -301,7 +303,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         VERCEL = 'vercel'
         WEBHOOK = 'webhook'
-        VALUES = %w[git-provider integration vercel webhook].freeze
+        VALUES = ['git-provider', 'integration', 'vercel', 'webhook'].freeze
         def self.from_value(value)
           value
         end
@@ -314,8 +316,8 @@ module OctridevVercel
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         DEPLOYMENT_START = 'deployment-start'
         NONE = 'none'
-        VALUES = %w[
-          build-start deployment-alias deployment-promotion deployment-start none
+        VALUES = [
+          'build-start', 'deployment-alias', 'deployment-promotion', 'deployment-start', 'none'
         ].freeze
         def self.from_value(value)
           value
@@ -327,7 +329,7 @@ module OctridevVercel
         BUILD_READY = 'build-ready'
         DEPLOYMENT_URL = 'deployment-url'
         NONE = 'none'
-        VALUES = %w[build-ready deployment-url none].freeze
+        VALUES = ['build-ready', 'deployment-url', 'none'].freeze
         def self.from_value(value)
           value
         end
@@ -348,7 +350,7 @@ module OctridevVercel
         BUILD_READY = 'build-ready'
         DEPLOYMENT_URL = 'deployment-url'
         NONE = 'none'
-        VALUES = %w[build-ready deployment-url none].freeze
+        VALUES = ['build-ready', 'deployment-url', 'none'].freeze
         def self.from_value(value)
           value
         end
@@ -359,7 +361,7 @@ module OctridevVercel
         BUILD_READY = 'build-ready'
         DEPLOYMENT_URL = 'deployment-url'
         NONE = 'none'
-        VALUES = %w[build-ready deployment-url none].freeze
+        VALUES = ['build-ready', 'deployment-url', 'none'].freeze
         def self.from_value(value)
           value
         end
@@ -382,8 +384,8 @@ module OctridevVercel
         DEPLOYMENT_ALIAS = 'deployment-alias'
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         NONE = 'none'
-        VALUES = %w[
-          build-start deployment-start deployment-alias deployment-promotion none
+        VALUES = [
+          'build-start', 'deployment-start', 'deployment-alias', 'deployment-promotion', 'none'
         ].freeze
         def self.from_value(value)
           value
@@ -397,8 +399,8 @@ module OctridevVercel
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         DEPLOYMENT_START = 'deployment-start'
         NONE = 'none'
-        VALUES = %w[
-          build-start deployment-alias deployment-promotion deployment-start none
+        VALUES = [
+          'build-start', 'deployment-alias', 'deployment-promotion', 'deployment-start', 'none'
         ].freeze
         def self.from_value(value)
           value
@@ -420,23 +422,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
           [
-            '/v2/projects/',
+            "/v2/projects/",
             SdkClient.encode_path_segment(project_id_or_name),
-            '/checks'
+            "/checks"
           ].join,
           config: config,
           query: {
             'blocks' => QueryValue.new(blocks, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::ChecksV2::ListProjectChecksResponse,
           decoder: :json,
           operation_id: 'list_project_checks',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -463,17 +466,18 @@ module OctridevVercel
         timeout: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v2/projects/',
+            "/v2/projects/",
             SdkClient.encode_path_segment(project_id_or_name),
-            '/checks'
+            "/checks"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'name' => name,
@@ -482,12 +486,12 @@ module OctridevVercel
             'targets' => targets,
             'blocks' => blocks,
             'source' => source,
-            'timeout' => timeout
+            'timeout' => timeout,
           },
           return_type: ::OctridevVercel::Methods::ChecksV2::CreateProjectCheckResponse,
           decoder: :json,
           operation_id: 'create_project_check',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -499,24 +503,32 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_project_check) do |config:, project_id_or_name:, check_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_project_check) do |
+        config:,
+        project_id_or_name:,
+        check_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v2/projects/',
+            "/v2/projects/",
             SdkClient.encode_path_segment(project_id_or_name),
-            '/checks/',
+            "/checks/",
             SdkClient.encode_path_segment(check_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::ChecksV2::GetProjectCheckResponse,
           decoder: :json,
           operation_id: 'get_project_check',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

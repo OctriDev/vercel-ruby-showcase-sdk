@@ -5,474 +5,475 @@
 
 # rolling_release domain models
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalGetRollingReleaseBillingStatusResponseVariant0Metadata
-    FIELDS = {
-      available_slots: 'availableSlots',
-      message: 'message',
-      reason: 'reason'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      available_slots
-      message
-      reason
-    ].freeze
-    DECODERS = {
-      available_slots: lambda do |value|
-        ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant0AvailableSlots.from_value(value)
-      end,
-      reason: lambda do |value|
-        ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant0Reason.from_value(value)
-      end
-    }.freeze
+# Internal model hydration metadata.
+class SdkInternalGetRollingReleaseBillingStatusResponseVariant0Metadata
+  FIELDS = {
+    available_slots: "availableSlots",
+    message: "message",
+    reason: "reason",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    available_slots
+    message
+    reason
+  ].freeze
+  DECODERS = {
+    available_slots: lambda do |value|
+      ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant0AvailableSlots.from_value(value)
+    end,
+    reason: lambda do |value|
+      ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant0Reason.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for GetRollingReleaseBillingStatusResponseVariant0.
+class GetRollingReleaseBillingStatusResponseVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetRollingReleaseBillingStatusResponseVariant0Metadata::DECODERS
+
+  attr_reader :available_slots, :message, :reason
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetRollingReleaseBillingStatusResponseVariant0.
-  class GetRollingReleaseBillingStatusResponseVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetRollingReleaseBillingStatusResponseVariant0Metadata::DECODERS
-
-    attr_reader :available_slots, :message, :reason
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetRollingReleaseBillingStatusResponseVariant1Metadata
-    FIELDS = {
-      available_slots: 'availableSlots',
-      message: 'message',
-      reason: 'reason'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      available_slots
-      message
-      reason
-    ].freeze
-    DECODERS = {
-      available_slots: lambda do |value|
-        ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant1AvailableSlots.from_value(value)
-      end,
-      reason: lambda do |value|
-        ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant1Reason.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetRollingReleaseBillingStatusResponseVariant1Metadata
+  FIELDS = {
+    available_slots: "availableSlots",
+    message: "message",
+    reason: "reason",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    available_slots
+    message
+    reason
+  ].freeze
+  DECODERS = {
+    available_slots: lambda do |value|
+      ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant1AvailableSlots.from_value(value)
+    end,
+    reason: lambda do |value|
+      ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant1Reason.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for GetRollingReleaseBillingStatusResponseVariant1.
+class GetRollingReleaseBillingStatusResponseVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetRollingReleaseBillingStatusResponseVariant1Metadata::DECODERS
+
+  attr_reader :available_slots, :message, :reason
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetRollingReleaseBillingStatusResponseVariant1.
-  class GetRollingReleaseBillingStatusResponseVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetRollingReleaseBillingStatusResponseVariant1Metadata::DECODERS
-
-    attr_reader :available_slots, :message, :reason
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetRollingReleaseBillingStatusResponseVariant2Metadata
-    FIELDS = {
-      available_slots: 'availableSlots',
-      enabled_projects: 'enabledProjects',
-      message: 'message',
-      reason: 'reason'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      available_slots
-      enabled_projects
-      message
-      reason
-    ].freeze
-    DECODERS = {
-      available_slots: lambda do |value|
-        ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant2AvailableSlots.from_value(value)
-      end,
-      reason: lambda do |value|
-        ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant2Reason.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetRollingReleaseBillingStatusResponseVariant2Metadata
+  FIELDS = {
+    available_slots: "availableSlots",
+    enabled_projects: "enabledProjects",
+    message: "message",
+    reason: "reason",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    available_slots
+    enabled_projects
+    message
+    reason
+  ].freeze
+  DECODERS = {
+    available_slots: lambda do |value|
+      ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant2AvailableSlots.from_value(value)
+    end,
+    reason: lambda do |value|
+      ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant2Reason.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for GetRollingReleaseBillingStatusResponseVariant2.
+class GetRollingReleaseBillingStatusResponseVariant2
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant2Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant2Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetRollingReleaseBillingStatusResponseVariant2Metadata::DECODERS
+
+  attr_reader :available_slots, :enabled_projects, :message, :reason
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetRollingReleaseBillingStatusResponseVariant2.
-  class GetRollingReleaseBillingStatusResponseVariant2
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant2Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant2Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetRollingReleaseBillingStatusResponseVariant2Metadata::DECODERS
-
-    attr_reader :available_slots, :enabled_projects, :message, :reason
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetRollingReleaseBillingStatusResponseVariant3Metadata
-    FIELDS = {
-      available_slots: 'availableSlots',
-      message: 'message',
-      reason: 'reason'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      available_slots
-      message
-      reason
-    ].freeze
-    DECODERS = {
-      reason: lambda do |value|
-        ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant3Reason.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetRollingReleaseBillingStatusResponseVariant3Metadata
+  FIELDS = {
+    available_slots: "availableSlots",
+    message: "message",
+    reason: "reason",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    available_slots
+    message
+    reason
+  ].freeze
+  DECODERS = {
+    reason: lambda do |value|
+      ::OctridevVercel::GetRollingReleaseBillingStatusResponseVariant3Reason.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for GetRollingReleaseBillingStatusResponseVariant3.
+class GetRollingReleaseBillingStatusResponseVariant3
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant3Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant3Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetRollingReleaseBillingStatusResponseVariant3Metadata::DECODERS
+
+  attr_reader :available_slots, :message, :reason
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetRollingReleaseBillingStatusResponseVariant3.
-  class GetRollingReleaseBillingStatusResponseVariant3
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant3Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetRollingReleaseBillingStatusResponseVariant3Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetRollingReleaseBillingStatusResponseVariant3Metadata::DECODERS
-
-    attr_reader :available_slots, :message, :reason
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the GetRollingReleaseBillingStatusResponse SDK namespace.
-  module GetRollingReleaseBillingStatusResponse
-    DISCRIMINATOR_MAPPING = {
-      'plan_not_supported' => -> { GetRollingReleaseBillingStatusResponseVariant0 },
-      'unlimited_slots' => -> { GetRollingReleaseBillingStatusResponseVariant1 },
-      'no_available_slots' => -> { GetRollingReleaseBillingStatusResponseVariant2 },
-      'available_slots' => -> { GetRollingReleaseBillingStatusResponseVariant3 }
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    def self.from_hash(hash)
-      return hash unless hash.is_a?(::Hash)
+# Defines the GetRollingReleaseBillingStatusResponse SDK namespace.
+module GetRollingReleaseBillingStatusResponse
+  DISCRIMINATOR_MAPPING = {
+    "plan_not_supported" => -> { GetRollingReleaseBillingStatusResponseVariant0 },
+    "unlimited_slots" => -> { GetRollingReleaseBillingStatusResponseVariant1 },
+    "no_available_slots" => -> { GetRollingReleaseBillingStatusResponseVariant2 },
+    "available_slots" => -> { GetRollingReleaseBillingStatusResponseVariant3 },
+  }.freeze
 
-      type = DISCRIMINATOR_MAPPING[hash['reason']]&.call
-      return type.from_hash(hash) if type
+  def self.from_hash(hash)
+    return hash unless hash.is_a?(::Hash)
+    type = DISCRIMINATOR_MAPPING[hash["reason"]]&.call
+    return type.from_hash(hash) if type
 
-      raise SdkValidationError.new('GetRollingReleaseBillingStatusResponse', 'variant', "Unknown GetRollingReleaseBillingStatusResponse discriminator: #{hash['reason'].inspect}")
-    end
+    raise SdkValidationError.new('GetRollingReleaseBillingStatusResponse', 'variant', "Unknown GetRollingReleaseBillingStatusResponse discriminator: #{hash["reason"].inspect}")
+  end
+end
+
+# Defines the GetRollingReleaseBillingStatusResponseVariant0AvailableSlots SDK namespace.
+module GetRollingReleaseBillingStatusResponseVariant0AvailableSlots
+  V_0 = 0
+  VALUES = [0].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GetRollingReleaseBillingStatusResponseVariant0Reason SDK namespace.
+module GetRollingReleaseBillingStatusResponseVariant0Reason
+  PLAN_NOT_SUPPORTED = 'plan_not_supported'
+  VALUES = ['plan_not_supported'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetRollingReleaseBillingStatusResponseVariant0Reason', 'enum', "Unknown GetRollingReleaseBillingStatusResponseVariant0Reason: #{value}")
+  end
+end
+
+# Defines the GetRollingReleaseBillingStatusResponseVariant1AvailableSlots SDK namespace.
+module GetRollingReleaseBillingStatusResponseVariant1AvailableSlots
+  UNLIMITED = 'unlimited'
+  VALUES = ['unlimited'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GetRollingReleaseBillingStatusResponseVariant1Reason SDK namespace.
+module GetRollingReleaseBillingStatusResponseVariant1Reason
+  UNLIMITED_SLOTS = 'unlimited_slots'
+  VALUES = ['unlimited_slots'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetRollingReleaseBillingStatusResponseVariant1Reason', 'enum', "Unknown GetRollingReleaseBillingStatusResponseVariant1Reason: #{value}")
+  end
+end
+
+# Defines the GetRollingReleaseBillingStatusResponseVariant2AvailableSlots SDK namespace.
+module GetRollingReleaseBillingStatusResponseVariant2AvailableSlots
+  V_0 = 0
+  VALUES = [0].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GetRollingReleaseBillingStatusResponseVariant2Reason SDK namespace.
+module GetRollingReleaseBillingStatusResponseVariant2Reason
+  NO_AVAILABLE_SLOTS = 'no_available_slots'
+  VALUES = ['no_available_slots'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetRollingReleaseBillingStatusResponseVariant2Reason', 'enum', "Unknown GetRollingReleaseBillingStatusResponseVariant2Reason: #{value}")
+  end
+end
+
+# Defines the GetRollingReleaseBillingStatusResponseVariant3Reason SDK namespace.
+module GetRollingReleaseBillingStatusResponseVariant3Reason
+  AVAILABLE_SLOTS = 'available_slots'
+  VALUES = ['available_slots'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetRollingReleaseBillingStatusResponseVariant3Reason', 'enum', "Unknown GetRollingReleaseBillingStatusResponseVariant3Reason: #{value}")
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateRollingReleaseConfigResponseVariant0Metadata
+  FIELDS = {
+    rolling_release: "rollingRelease",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    rolling_release
+  ].freeze
+  DECODERS = {
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    rolling_release
+  ].freeze
+end
+
+# API model for UpdateRollingReleaseConfigResponseVariant0.
+class UpdateRollingReleaseConfigResponseVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateRollingReleaseConfigResponseVariant0Metadata::DECODERS
+
+  attr_reader :rolling_release
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetRollingReleaseBillingStatusResponseVariant0AvailableSlots SDK namespace.
-  module GetRollingReleaseBillingStatusResponseVariant0AvailableSlots
-    V_0 = 0
-    VALUES = [0].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateRollingReleaseConfigResponseVariant0Metadata::NULLABLE_FIELDS)
   end
 
-  # Defines the GetRollingReleaseBillingStatusResponseVariant0Reason SDK namespace.
-  module GetRollingReleaseBillingStatusResponseVariant0Reason
-    PLAN_NOT_SUPPORTED = 'plan_not_supported'
-    VALUES = ['plan_not_supported'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('GetRollingReleaseBillingStatusResponseVariant0Reason', 'enum', "Unknown GetRollingReleaseBillingStatusResponseVariant0Reason: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItemMetadata
+  FIELDS = {
+    duration: "duration",
+    linear_shift: "linearShift",
+    require_approval: "requireApproval",
+    target_percentage: "targetPercentage",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    target_percentage
+  ].freeze
+  DECODERS = {
+    linear_shift: lambda do |value|
+      ::OctridevVercel::UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageXd444004356.from_value(value)
+    end,
+    require_approval: lambda do |value|
+      ::OctridevVercel::UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageX97e260e130.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItem.
+# A stage object configured for a rolling release once a new deployment is triggered the first stage will be read in the proxy for first time visitors, and if a RNG < targetPercentage then it will serve the new deployment. Upon approval the next stage will be read, etc.
+class UpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItemMetadata::DECODERS
+
+  # @return [Float] Duration in minutes for automatic advancement to the next stage
+  attr_reader :duration
+  # @return [UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageXd444004356] Whether to linearly shift traffic over the duration of this stage
+  attr_reader :linear_shift
+  # @return [UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageX97e260e130] Whether or not this stage requires manual approval to proceed
+  attr_reader :require_approval
+  # @return [Float] The percentage of traffic to serve to the canary deployment (0-100)
+  attr_reader :target_percentage
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetRollingReleaseBillingStatusResponseVariant1AvailableSlots SDK namespace.
-  module GetRollingReleaseBillingStatusResponseVariant1AvailableSlots
-    UNLIMITED = 'unlimited'
-    VALUES = ['unlimited'].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the GetRollingReleaseBillingStatusResponseVariant1Reason SDK namespace.
-  module GetRollingReleaseBillingStatusResponseVariant1Reason
-    UNLIMITED_SLOTS = 'unlimited_slots'
-    VALUES = ['unlimited_slots'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('GetRollingReleaseBillingStatusResponseVariant1Reason', 'enum', "Unknown GetRollingReleaseBillingStatusResponseVariant1Reason: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseMetadata
+  FIELDS = {
+    stages: "stages",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    stages: lambda do |value|
+      value&.map { |item| ::OctridevVercel::UpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItem.from_hash(item) }
+    end,
+  }.freeze
+end
+
+# API model for UpdateRollingReleaseConfigResponseVariant1RollingRelease.
+class UpdateRollingReleaseConfigResponseVariant1RollingRelease
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseMetadata::DECODERS
+
+  attr_reader :stages
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetRollingReleaseBillingStatusResponseVariant2AvailableSlots SDK namespace.
-  module GetRollingReleaseBillingStatusResponseVariant2AvailableSlots
-    V_0 = 0
-    VALUES = [0].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the GetRollingReleaseBillingStatusResponseVariant2Reason SDK namespace.
-  module GetRollingReleaseBillingStatusResponseVariant2Reason
-    NO_AVAILABLE_SLOTS = 'no_available_slots'
-    VALUES = ['no_available_slots'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('GetRollingReleaseBillingStatusResponseVariant2Reason', 'enum', "Unknown GetRollingReleaseBillingStatusResponseVariant2Reason: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalUpdateRollingReleaseConfigResponseVariant1Metadata
+  FIELDS = {
+    rolling_release: "rollingRelease",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    rolling_release
+  ].freeze
+  DECODERS = {
+    rolling_release: lambda do |value|
+      ::OctridevVercel::UpdateRollingReleaseConfigResponseVariant1RollingRelease.from_hash(value)
+    end,
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    rolling_release
+  ].freeze
+end
+
+# API model for UpdateRollingReleaseConfigResponseVariant1.
+class UpdateRollingReleaseConfigResponseVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateRollingReleaseConfigResponseVariant1Metadata::DECODERS
+
+  attr_reader :rolling_release
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetRollingReleaseBillingStatusResponseVariant3Reason SDK namespace.
-  module GetRollingReleaseBillingStatusResponseVariant3Reason
-    AVAILABLE_SLOTS = 'available_slots'
-    VALUES = ['available_slots'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetRollingReleaseBillingStatusResponseVariant3Reason', 'enum', "Unknown GetRollingReleaseBillingStatusResponseVariant3Reason: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateRollingReleaseConfigResponseVariant1Metadata::NULLABLE_FIELDS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateRollingReleaseConfigResponseVariant0Metadata
-    FIELDS = {
-      rolling_release: 'rollingRelease'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      rolling_release
-    ].freeze
-    DECODERS = {}.freeze
-    NULLABLE_FIELDS = %i[
-      rolling_release
-    ].freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # API model for UpdateRollingReleaseConfigResponseVariant0.
-  class UpdateRollingReleaseConfigResponseVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateRollingReleaseConfigResponseVariant0Metadata::DECODERS
+# Defines the UpdateRollingReleaseConfigResponse SDK namespace.
+module UpdateRollingReleaseConfigResponse
+  def self.from_hash(hash)
+    lossy = nil
+    [UpdateRollingReleaseConfigResponseVariant0, UpdateRollingReleaseConfigResponseVariant1].each do |type|
+      decoded = type.from_hash(hash)
+      return decoded if SdkModel.keeps_every_key?(hash, decoded)
 
-    attr_reader :rolling_release
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
+      lossy ||= decoded
+    rescue ::StandardError
+      next
     end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateRollingReleaseConfigResponseVariant0Metadata::NULLABLE_FIELDS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+    return lossy unless lossy.nil?
   end
+end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItemMetadata
-    FIELDS = {
-      duration: 'duration',
-      linear_shift: 'linearShift',
-      require_approval: 'requireApproval',
-      target_percentage: 'targetPercentage'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      target_percentage
-    ].freeze
-    DECODERS = {
-      linear_shift: lambda do |value|
-        ::OctridevVercel::UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageXd444004356.from_value(value)
-      end,
-      require_approval: lambda do |value|
-        ::OctridevVercel::UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageX97e260e130.from_value(value)
-      end
-    }.freeze
+# Defines the UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageXd444004356 SDK namespace.
+module UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageXd444004356
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # API model for UpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItem.
-  # A stage object configured for a rolling release once a new deployment is triggered the first stage will be read in the proxy for first time visitors, and if a RNG < targetPercentage then it will serve the new deployment. Upon approval the next stage will be read, etc.
-  class UpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItemMetadata::DECODERS
-
-    # @return [Float] Duration in minutes for automatic advancement to the next stage
-    attr_reader :duration
-    # @return [UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageXd444004356] Whether to linearly shift traffic over the duration of this stage
-    attr_reader :linear_shift
-    # @return [UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageX97e260e130] Whether or not this stage requires manual approval to proceed
-    attr_reader :require_approval
-    # @return [Float] The percentage of traffic to serve to the canary deployment (0-100)
-    attr_reader :target_percentage
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+# Defines the UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageX97e260e130 SDK namespace.
+module UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageX97e260e130
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
-
-  # Internal model hydration metadata.
-  class SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseMetadata
-    FIELDS = {
-      stages: 'stages'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      stages: lambda do |value|
-        value&.map { |item| ::OctridevVercel::UpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItem.from_hash(item) }
-      end
-    }.freeze
-  end
-
-  # API model for UpdateRollingReleaseConfigResponseVariant1RollingRelease.
-  class UpdateRollingReleaseConfigResponseVariant1RollingRelease
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateRollingReleaseConfigResponseVariant1RollingReleaseMetadata::DECODERS
-
-    attr_reader :stages
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUpdateRollingReleaseConfigResponseVariant1Metadata
-    FIELDS = {
-      rolling_release: 'rollingRelease'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      rolling_release
-    ].freeze
-    DECODERS = {
-      rolling_release: lambda do |value|
-        ::OctridevVercel::UpdateRollingReleaseConfigResponseVariant1RollingRelease.from_hash(value)
-      end
-    }.freeze
-    NULLABLE_FIELDS = %i[
-      rolling_release
-    ].freeze
-  end
-
-  # API model for UpdateRollingReleaseConfigResponseVariant1.
-  class UpdateRollingReleaseConfigResponseVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateRollingReleaseConfigResponseVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateRollingReleaseConfigResponseVariant1Metadata::DECODERS
-
-    attr_reader :rolling_release
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateRollingReleaseConfigResponseVariant1Metadata::NULLABLE_FIELDS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Defines the UpdateRollingReleaseConfigResponse SDK namespace.
-  module UpdateRollingReleaseConfigResponse
-    def self.from_hash(hash)
-      lossy = nil
-      [UpdateRollingReleaseConfigResponseVariant0, UpdateRollingReleaseConfigResponseVariant1].each do |type|
-        decoded = type.from_hash(hash)
-        return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-        lossy ||= decoded
-      rescue ::StandardError
-        next
-      end
-      lossy unless lossy.nil?
-    end
-  end
-
-  # Defines the UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageXd444004356 SDK namespace.
-  module UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageXd444004356
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageX97e260e130 SDK namespace.
-  module UpdateRollingReleaseConfigResponseVariant1RollingReleaseStageX97e260e130
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
+end
 end

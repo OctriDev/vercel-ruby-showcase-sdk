@@ -5,662 +5,665 @@
 
 # projects_upload domain models
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0AppMetadata
-    FIELDS = {
-      client_id: 'clientId',
-      id: 'id'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-    ].freeze
-    DECODERS = {}.freeze
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0AppMetadata
+  FIELDS = {
+    client_id: "clientId",
+    id: "id",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseCreatorVariant0ViaVariant0App.
+class UploadProjectAvatarResponseCreatorVariant0ViaVariant0App
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0AppMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0AppMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0AppMetadata::DECODERS
+
+  # @return [String] The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+  attr_reader :client_id
+  # @return [String] The internal ID of the Vercel App backing this principal.
+  attr_reader :id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseCreatorVariant0ViaVariant0App.
-  class UploadProjectAvatarResponseCreatorVariant0ViaVariant0App
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0AppMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0AppMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0AppMetadata::DECODERS
-
-    # @return [String] The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-    attr_reader :client_id
-    # @return [String] The internal ID of the Vercel App backing this principal.
-    attr_reader :id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0Metadata
-    FIELDS = {
-      app: 'app',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      app
-      type
-    ].freeze
-    DECODERS = {
-      app: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant0ViaVariant0App.from_hash(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant0ViaVariant0Type.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0Metadata
+  FIELDS = {
+    app: "app",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    app
+    type
+  ].freeze
+  DECODERS = {
+    app: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant0ViaVariant0App.from_hash(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant0ViaVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseCreatorVariant0ViaVariant0.
+# Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
+class UploadProjectAvatarResponseCreatorVariant0ViaVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0Metadata::DECODERS
+
+  attr_reader :app, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseCreatorVariant0ViaVariant0.
-  # Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
-  class UploadProjectAvatarResponseCreatorVariant0ViaVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant0Metadata::DECODERS
-
-    attr_reader :app, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1IntegrationMetadata
-    FIELDS = {
-      configuration_id: 'configurationId',
-      integration_id: 'integrationId'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      configuration_id
-      integration_id
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1IntegrationMetadata
+  FIELDS = {
+    configuration_id: "configurationId",
+    integration_id: "integrationId",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    configuration_id
+    integration_id
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseCreatorVariant0ViaVariant1Integration.
+class UploadProjectAvatarResponseCreatorVariant0ViaVariant1Integration
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1IntegrationMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1IntegrationMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1IntegrationMetadata::DECODERS
+
+  attr_reader :configuration_id, :integration_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseCreatorVariant0ViaVariant1Integration.
-  class UploadProjectAvatarResponseCreatorVariant0ViaVariant1Integration
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1IntegrationMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1IntegrationMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1IntegrationMetadata::DECODERS
-
-    attr_reader :configuration_id, :integration_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1Metadata
-    FIELDS = {
-      integration: 'integration',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      integration
-      type
-    ].freeze
-    DECODERS = {
-      integration: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant0ViaVariant1Integration.from_hash(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant0ViaVariant1Type.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1Metadata
+  FIELDS = {
+    integration: "integration",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    integration
+    type
+  ].freeze
+  DECODERS = {
+    integration: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant0ViaVariant1Integration.from_hash(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant0ViaVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseCreatorVariant0ViaVariant1.
+# Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
+class UploadProjectAvatarResponseCreatorVariant0ViaVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1Metadata::DECODERS
+
+  attr_reader :integration, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseCreatorVariant0ViaVariant1.
-  # Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
-  class UploadProjectAvatarResponseCreatorVariant0ViaVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant0ViaVariant1Metadata::DECODERS
-
-    attr_reader :integration, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseCreatorVariant0UserMetadata
-    FIELDS = {
-      id: 'id'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseCreatorVariant0UserMetadata
+  FIELDS = {
+    id: "id",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseCreatorVariant0User.
+class UploadProjectAvatarResponseCreatorVariant0User
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0UserMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0UserMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant0UserMetadata::DECODERS
+
+  attr_reader :id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseCreatorVariant0User.
-  class UploadProjectAvatarResponseCreatorVariant0User
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0UserMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0UserMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant0UserMetadata::DECODERS
-
-    attr_reader :id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseCreatorVariant0Metadata
-    FIELDS = {
-      type: 'type',
-      via: 'via',
-      user: 'user'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      via
-      user
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant0Type.from_value(value)
-      end,
-      user: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant0User.from_hash(value)
-      end
-    }.freeze
-    NULLABLE_FIELDS = %i[
-      via
-    ].freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseCreatorVariant0Metadata
+  FIELDS = {
+    type: "type",
+    via: "via",
+    user: "user",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    via
+    user
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant0Type.from_value(value)
+    end,
+    user: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant0User.from_hash(value)
+    end,
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    via
+  ].freeze
+end
+
+# API model for UploadProjectAvatarResponseCreatorVariant0.
+class UploadProjectAvatarResponseCreatorVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant0Metadata::DECODERS
+
+  attr_reader :type, :via, :user
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseCreatorVariant0.
-  class UploadProjectAvatarResponseCreatorVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant0Metadata::DECODERS
-
-    attr_reader :type, :via, :user
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUploadProjectAvatarResponseCreatorVariant0Metadata::NULLABLE_FIELDS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUploadProjectAvatarResponseCreatorVariant0Metadata::NULLABLE_FIELDS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseCreatorVariant1AppMetadata
-    FIELDS = {
-      client_id: 'clientId',
-      id: 'id'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseCreatorVariant1AppMetadata
+  FIELDS = {
+    client_id: "clientId",
+    id: "id",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseCreatorVariant1App.
+class UploadProjectAvatarResponseCreatorVariant1App
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant1AppMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant1AppMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant1AppMetadata::DECODERS
+
+  # @return [String] The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+  attr_reader :client_id
+  # @return [String] The internal ID of the Vercel App backing this principal.
+  attr_reader :id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseCreatorVariant1App.
-  class UploadProjectAvatarResponseCreatorVariant1App
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant1AppMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant1AppMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant1AppMetadata::DECODERS
-
-    # @return [String] The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-    attr_reader :client_id
-    # @return [String] The internal ID of the Vercel App backing this principal.
-    attr_reader :id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseCreatorVariant1Metadata
-    FIELDS = {
-      app: 'app',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      app
-      type
-    ].freeze
-    DECODERS = {
-      app: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant1App.from_hash(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant1Type.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseCreatorVariant1Metadata
+  FIELDS = {
+    app: "app",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    app
+    type
+  ].freeze
+  DECODERS = {
+    app: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant1App.from_hash(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseCreatorVariant1.
+class UploadProjectAvatarResponseCreatorVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant1Metadata::DECODERS
+
+  attr_reader :app, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseCreatorVariant1.
-  class UploadProjectAvatarResponseCreatorVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant1Metadata::DECODERS
-
-    attr_reader :app, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseCreatorVariant2IntegrationMetadata
-    FIELDS = {
-      configuration_id: 'configurationId',
-      integration_id: 'integrationId'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      configuration_id
-      integration_id
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseCreatorVariant2IntegrationMetadata
+  FIELDS = {
+    configuration_id: "configurationId",
+    integration_id: "integrationId",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    configuration_id
+    integration_id
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseCreatorVariant2Integration.
+class UploadProjectAvatarResponseCreatorVariant2Integration
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant2IntegrationMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant2IntegrationMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant2IntegrationMetadata::DECODERS
+
+  attr_reader :configuration_id, :integration_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseCreatorVariant2Integration.
-  class UploadProjectAvatarResponseCreatorVariant2Integration
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant2IntegrationMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant2IntegrationMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant2IntegrationMetadata::DECODERS
-
-    attr_reader :configuration_id, :integration_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseCreatorVariant2Metadata
-    FIELDS = {
-      integration: 'integration',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      integration
-      type
-    ].freeze
-    DECODERS = {
-      integration: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant2Integration.from_hash(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant2Type.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseCreatorVariant2Metadata
+  FIELDS = {
+    integration: "integration",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    integration
+    type
+  ].freeze
+  DECODERS = {
+    integration: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant2Integration.from_hash(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant2Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseCreatorVariant2.
+class UploadProjectAvatarResponseCreatorVariant2
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant2Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant2Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant2Metadata::DECODERS
+
+  attr_reader :integration, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseCreatorVariant2.
-  class UploadProjectAvatarResponseCreatorVariant2
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant2Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant2Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant2Metadata::DECODERS
-
-    attr_reader :integration, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseCreatorVariant3Metadata
-    FIELDS = {
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant3Type.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseCreatorVariant3Metadata
+  FIELDS = {
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseCreatorVariant3Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseCreatorVariant3.
+class UploadProjectAvatarResponseCreatorVariant3
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant3Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant3Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant3Metadata::DECODERS
+
+  attr_reader :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseCreatorVariant3.
-  class UploadProjectAvatarResponseCreatorVariant3
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant3Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseCreatorVariant3Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseCreatorVariant3Metadata::DECODERS
-
-    attr_reader :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UploadProjectAvatarResponseCreator SDK namespace.
-  module UploadProjectAvatarResponseCreator
-    DISCRIMINATOR_MAPPING = {
-      'user' => -> { UploadProjectAvatarResponseCreatorVariant0 },
-      'app' => -> { UploadProjectAvatarResponseCreatorVariant1 },
-      'integration' => -> { UploadProjectAvatarResponseCreatorVariant2 },
-      'system' => -> { UploadProjectAvatarResponseCreatorVariant3 }
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    def self.from_hash(hash)
-      return hash unless hash.is_a?(::Hash)
+# Defines the UploadProjectAvatarResponseCreator SDK namespace.
+module UploadProjectAvatarResponseCreator
+  DISCRIMINATOR_MAPPING = {
+    "user" => -> { UploadProjectAvatarResponseCreatorVariant0 },
+    "app" => -> { UploadProjectAvatarResponseCreatorVariant1 },
+    "integration" => -> { UploadProjectAvatarResponseCreatorVariant2 },
+    "system" => -> { UploadProjectAvatarResponseCreatorVariant3 },
+  }.freeze
 
-      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
-      return type.from_hash(hash) if type
+  def self.from_hash(hash)
+    return hash unless hash.is_a?(::Hash)
+    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
+    return type.from_hash(hash) if type
 
-      raise SdkValidationError.new('UploadProjectAvatarResponseCreator', 'variant', "Unknown UploadProjectAvatarResponseCreator discriminator: #{hash['type'].inspect}")
-    end
+    raise SdkValidationError.new('UploadProjectAvatarResponseCreator', 'variant', "Unknown UploadProjectAvatarResponseCreator discriminator: #{hash["type"].inspect}")
+  end
+end
+
+# Defines the UploadProjectAvatarResponseCreatorVariant0Type SDK namespace.
+module UploadProjectAvatarResponseCreatorVariant0Type
+  USER = 'user'
+  VALUES = ['user'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UploadProjectAvatarResponseCreatorVariant0Type', 'enum', "Unknown UploadProjectAvatarResponseCreatorVariant0Type: #{value}")
+  end
+end
+
+# Defines the UploadProjectAvatarResponseCreatorVariant0ViaVariant0Type SDK namespace.
+module UploadProjectAvatarResponseCreatorVariant0ViaVariant0Type
+  APP = 'app'
+  VALUES = ['app'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UploadProjectAvatarResponseCreatorVariant0ViaVariant0Type', 'enum', "Unknown UploadProjectAvatarResponseCreatorVariant0ViaVariant0Type: #{value}")
+  end
+end
+
+# Defines the UploadProjectAvatarResponseCreatorVariant0ViaVariant1Type SDK namespace.
+module UploadProjectAvatarResponseCreatorVariant0ViaVariant1Type
+  INTEGRATION = 'integration'
+  VALUES = ['integration'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UploadProjectAvatarResponseCreatorVariant0ViaVariant1Type', 'enum', "Unknown UploadProjectAvatarResponseCreatorVariant0ViaVariant1Type: #{value}")
+  end
+end
+
+# Defines the UploadProjectAvatarResponseCreatorVariant1Type SDK namespace.
+module UploadProjectAvatarResponseCreatorVariant1Type
+  APP = 'app'
+  VALUES = ['app'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UploadProjectAvatarResponseCreatorVariant1Type', 'enum', "Unknown UploadProjectAvatarResponseCreatorVariant1Type: #{value}")
+  end
+end
+
+# Defines the UploadProjectAvatarResponseCreatorVariant2Type SDK namespace.
+module UploadProjectAvatarResponseCreatorVariant2Type
+  INTEGRATION = 'integration'
+  VALUES = ['integration'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UploadProjectAvatarResponseCreatorVariant2Type', 'enum', "Unknown UploadProjectAvatarResponseCreatorVariant2Type: #{value}")
+  end
+end
+
+# Defines the UploadProjectAvatarResponseCreatorVariant3Type SDK namespace.
+module UploadProjectAvatarResponseCreatorVariant3Type
+  SYSTEM = 'system'
+  VALUES = ['system'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UploadProjectAvatarResponseCreatorVariant3Type', 'enum', "Unknown UploadProjectAvatarResponseCreatorVariant3Type: #{value}")
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3bMetadata
+  FIELDS = {
+    target: "target",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    target
+    type
+  ].freeze
+  DECODERS = {
+    target: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX9c77ce1874.from_value(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb14ac70993.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3b.
+class UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3b
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3bMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3bMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3bMetadata::DECODERS
+
+  attr_reader :target, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the UploadProjectAvatarResponseCreatorVariant0Type SDK namespace.
-  module UploadProjectAvatarResponseCreatorVariant0Type
-    USER = 'user'
-    VALUES = ['user'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UploadProjectAvatarResponseCreatorVariant0Type', 'enum', "Unknown UploadProjectAvatarResponseCreatorVariant0Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UploadProjectAvatarResponseCreatorVariant0ViaVariant0Type SDK namespace.
-  module UploadProjectAvatarResponseCreatorVariant0ViaVariant0Type
-    APP = 'app'
-    VALUES = ['app'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('UploadProjectAvatarResponseCreatorVariant0ViaVariant0Type', 'enum', "Unknown UploadProjectAvatarResponseCreatorVariant0ViaVariant0Type: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563Metadata
+  FIELDS = {
+    environment_id: "environmentId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    environment_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX229c7f6667.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563.
+class UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563Metadata::DECODERS
+
+  attr_reader :environment_id, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the UploadProjectAvatarResponseCreatorVariant0ViaVariant1Type SDK namespace.
-  module UploadProjectAvatarResponseCreatorVariant0ViaVariant1Type
-    INTEGRATION = 'integration'
-    VALUES = ['integration'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UploadProjectAvatarResponseCreatorVariant0ViaVariant1Type', 'enum', "Unknown UploadProjectAvatarResponseCreatorVariant0ViaVariant1Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UploadProjectAvatarResponseCreatorVariant1Type SDK namespace.
-  module UploadProjectAvatarResponseCreatorVariant1Type
-    APP = 'app'
-    VALUES = ['app'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UploadProjectAvatarResponseCreatorVariant1Type', 'enum', "Unknown UploadProjectAvatarResponseCreatorVariant1Type: #{value}")
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the UploadProjectAvatarResponseCreatorVariant2Type SDK namespace.
-  module UploadProjectAvatarResponseCreatorVariant2Type
-    INTEGRATION = 'integration'
-    VALUES = ['integration'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXa42748d8c8 SDK namespace.
+module UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXa42748d8c8
+  DISCRIMINATOR_MAPPING = {
+    "system" => -> { UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3b },
+    "custom" => -> { UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563 },
+  }.freeze
 
-      raise SdkValidationError.new('UploadProjectAvatarResponseCreatorVariant2Type', 'enum', "Unknown UploadProjectAvatarResponseCreatorVariant2Type: #{value}")
-    end
+  def self.from_hash(hash)
+    return hash unless hash.is_a?(::Hash)
+    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
+    return type.from_hash(hash) if type
+
+    raise SdkValidationError.new('UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXa42748d8c8', 'variant', "Unknown UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXa42748d8c8 discriminator: #{hash["type"].inspect}")
   end
+end
 
-  # Defines the UploadProjectAvatarResponseCreatorVariant3Type SDK namespace.
-  module UploadProjectAvatarResponseCreatorVariant3Type
-    SYSTEM = 'system'
-    VALUES = ['system'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UploadProjectAvatarResponseCreatorVariant3Type', 'enum', "Unknown UploadProjectAvatarResponseCreatorVariant3Type: #{value}")
-    end
+# Defines the UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX9c77ce1874 SDK namespace.
+module UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX9c77ce1874
+  PREVIEW = 'preview'
+  PRODUCTION = 'production'
+  VALUES = ['preview', 'production'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3bMetadata
-    FIELDS = {
-      target: 'target',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      target
-      type
-    ].freeze
-    DECODERS = {
-      target: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX9c77ce1874.from_value(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb14ac70993.from_value(value)
-      end
-    }.freeze
+# Defines the UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb14ac70993 SDK namespace.
+module UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb14ac70993
+  SYSTEM = 'system'
+  VALUES = ['system'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb14ac70993', 'enum', "Unknown UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb14ac70993: #{value}")
   end
+end
 
-  # API model for UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3b.
-  class UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3b
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3bMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3bMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3bMetadata::DECODERS
+# Defines the UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX229c7f6667 SDK namespace.
+module UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX229c7f6667
+  CUSTOM = 'custom'
+  VALUES = ['custom'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-    attr_reader :target, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+    raise SdkValidationError.new('UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX229c7f6667', 'enum', "Unknown UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX229c7f6667: #{value}")
   end
-
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563Metadata
-    FIELDS = {
-      environment_id: 'environmentId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      environment_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX229c7f6667.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563.
-  class UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563Metadata::DECODERS
-
-    attr_reader :environment_id, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Defines the UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXa42748d8c8 SDK namespace.
-  module UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXa42748d8c8
-    DISCRIMINATOR_MAPPING = {
-      'system' => -> { UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3b },
-      'custom' => -> { UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563 }
-    }.freeze
-
-    def self.from_hash(hash)
-      return hash unless hash.is_a?(::Hash)
-
-      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
-      return type.from_hash(hash) if type
-
-      raise SdkValidationError.new('UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXa42748d8c8', 'variant', "Unknown UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXa42748d8c8 discriminator: #{hash['type'].inspect}")
-    end
-  end
-
-  # Defines the UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX9c77ce1874 SDK namespace.
-  module UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX9c77ce1874
-    PREVIEW = 'preview'
-    PRODUCTION = 'production'
-    VALUES = %w[preview production].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb14ac70993 SDK namespace.
-  module UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb14ac70993
-    SYSTEM = 'system'
-    VALUES = ['system'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb14ac70993', 'enum', "Unknown UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb14ac70993: #{value}")
-    end
-  end
-
-  # Defines the UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX229c7f6667 SDK namespace.
-  module UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX229c7f6667
-    CUSTOM = 'custom'
-    VALUES = ['custom'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX229c7f6667', 'enum', "Unknown UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX229c7f6667: #{value}")
-    end
-  end
+end
 end

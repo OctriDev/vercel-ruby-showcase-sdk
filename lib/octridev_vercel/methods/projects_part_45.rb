@@ -12,13 +12,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseProtectionConfigSandboxUrlsMetadata
         FIELDS = {
-          inherit_deployment_protection: 'inheritDeploymentProtection'
+          inherit_deployment_protection: "inheritDeploymentProtection",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           inherit_deployment_protection: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseProtectionConfigSandboxUrlsInheritXd9c688427a.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -48,13 +49,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseProtectionConfigMetadata
         FIELDS = {
-          sandbox_urls: 'sandboxUrls'
+          sandbox_urls: "sandboxUrls",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           sandbox_urls: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseProtectionConfigSandboxUrls.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -84,9 +86,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseResourceConfigBuildMachineElasticTransitionMetadata
         FIELDS = {
-          algorithm_version: 'algorithmVersion',
-          at: 'at',
-          direction: 'direction'
+          algorithm_version: "algorithmVersion",
+          at: "at",
+          direction: "direction",
         }.freeze
         REQUIRED_FIELDS = %i[
           algorithm_version
@@ -96,7 +98,7 @@ module OctridevVercel
         DECODERS = {
           direction: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseResourceConfigBuildMachineElasticTXb1976325b9.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -126,13 +128,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseResourceConfigBuildQueueMetadata
         FIELDS = {
-          configuration: 'configuration'
+          configuration: "configuration",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           configuration: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseResourceConfigBuildQueueConfiguration.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -162,9 +165,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseResourceConfigElasticBuildMachineMetadata
         FIELDS = {
-          cores: 'cores',
-          label: 'label',
-          memory: 'memory'
+          cores: "cores",
+          label: "label",
+          memory: "memory",
         }.freeze
         REQUIRED_FIELDS = %i[
           cores
@@ -174,7 +177,7 @@ module OctridevVercel
         DECODERS = {
           label: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseResourceConfigElasticBuildMachineLabel.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -207,21 +210,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseResourceConfigMetadata
         FIELDS = {
-          build_machine_elastic_last_updated: 'buildMachineElasticLastUpdated',
-          build_machine_elastic_reason: 'buildMachineElasticReason',
-          build_machine_elastic_transition: 'buildMachineElasticTransition',
-          build_machine_selection: 'buildMachineSelection',
-          build_machine_type: 'buildMachineType',
-          build_queue: 'buildQueue',
-          elastic_concurrency_enabled: 'elasticConcurrencyEnabled',
-          enable_functions_beta: 'enableFunctionsBeta',
-          fluid: 'fluid',
-          function_default_memory_type: 'functionDefaultMemoryType',
-          function_default_regions: 'functionDefaultRegions',
-          function_default_timeout: 'functionDefaultTimeout',
-          function_zero_config_failover: 'functionZeroConfigFailover',
-          is_nsnb_disabled: 'isNSNBDisabled',
-          elastic_build_machine: 'elasticBuildMachine'
+          build_machine_elastic_last_updated: "buildMachineElasticLastUpdated",
+          build_machine_elastic_reason: "buildMachineElasticReason",
+          build_machine_elastic_transition: "buildMachineElasticTransition",
+          build_machine_selection: "buildMachineSelection",
+          build_machine_type: "buildMachineType",
+          build_queue: "buildQueue",
+          elastic_concurrency_enabled: "elasticConcurrencyEnabled",
+          enable_functions_beta: "enableFunctionsBeta",
+          fluid: "fluid",
+          function_default_memory_type: "functionDefaultMemoryType",
+          function_default_regions: "functionDefaultRegions",
+          function_default_timeout: "functionDefaultTimeout",
+          function_zero_config_failover: "functionZeroConfigFailover",
+          is_nsnb_disabled: "isNSNBDisabled",
+          elastic_build_machine: "elasticBuildMachine",
         }.freeze
         REQUIRED_FIELDS = %i[
           function_default_regions
@@ -262,7 +265,7 @@ module OctridevVercel
           end,
           elastic_build_machine: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseResourceConfigElasticBuildMachine.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -298,10 +301,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseRollbackDescriptionMetadata
         FIELDS = {
-          created_at: 'createdAt',
-          description: 'description',
-          user_id: 'userId',
-          username: 'username'
+          created_at: "createdAt",
+          description: "description",
+          user_id: "userId",
+          username: "username",
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -309,7 +312,8 @@ module OctridevVercel
           user_id
           username
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UploadProjectAvatarResponseRollbackDescription.
@@ -346,11 +350,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseRollingReleaseGateChecksItemMetadata
         FIELDS = {
-          exclude_paths: 'excludePaths',
-          exclude_status_codes: 'excludeStatusCodes',
-          ingest_watermark_seconds: 'ingestWatermarkSeconds',
-          significance_level: 'significanceLevel',
-          type: 'type'
+          exclude_paths: "excludePaths",
+          exclude_status_codes: "excludeStatusCodes",
+          ingest_watermark_seconds: "ingestWatermarkSeconds",
+          significance_level: "significanceLevel",
+          type: "type",
         }.freeze
         REQUIRED_FIELDS = %i[
           type
@@ -358,7 +362,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseRollingReleaseGateChecksItemType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -398,12 +402,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseRollingReleaseGateMetadata
         FIELDS = {
-          action: 'action',
-          checks: 'checks',
-          dry_run: 'dryRun',
-          enabled: 'enabled',
-          failure_threshold: 'failureThreshold',
-          window_size: 'windowSize'
+          action: "action",
+          checks: "checks",
+          dry_run: "dryRun",
+          enabled: "enabled",
+          failure_threshold: "failureThreshold",
+          window_size: "windowSize",
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -423,7 +427,7 @@ module OctridevVercel
           end,
           enabled: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseRollingReleaseGateEnabled.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -465,10 +469,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseRollingReleaseStagesItemMetadata
         FIELDS = {
-          duration: 'duration',
-          linear_shift: 'linearShift',
-          require_approval: 'requireApproval',
-          target_percentage: 'targetPercentage'
+          duration: "duration",
+          linear_shift: "linearShift",
+          require_approval: "requireApproval",
+          target_percentage: "targetPercentage",
         }.freeze
         REQUIRED_FIELDS = %i[
           target_percentage
@@ -479,7 +483,7 @@ module OctridevVercel
           end,
           require_approval: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseRollingReleaseStagesItemRequireApproval.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -517,10 +521,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseRollingReleaseMetadata
         FIELDS = {
-          canary_response_header: 'canaryResponseHeader',
-          gate: 'gate',
-          stages: 'stages',
-          target: 'target'
+          canary_response_header: "canaryResponseHeader",
+          gate: "gate",
+          stages: "stages",
+          target: "target",
         }.freeze
         REQUIRED_FIELDS = %i[
           target
@@ -534,7 +538,7 @@ module OctridevVercel
           end,
           stages: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseRollingReleaseStagesItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
     end

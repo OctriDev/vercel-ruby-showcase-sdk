@@ -5,673 +5,676 @@
 
 # user domain models (part 32)
 module OctridevVercel
-  # API model for UserEventPayloadVariant171LastEditedByPrincipalVariant0.
-  # The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
-  class UserEventPayloadVariant171LastEditedByPrincipalVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant0Metadata::DECODERS
+# API model for UserEventPayloadVariant171LastEditedByPrincipalVariant0.
+# The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
+class UserEventPayloadVariant171LastEditedByPrincipalVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant0Metadata::DECODERS
 
-    # @return [String] Optional `string` value serialized in the `avatar` wire field.
-    attr_reader :avatar
-    # @return [String] Required `string` value serialized in the `id` wire field.
-    attr_reader :id
-    # @return [String] Optional `string` value serialized in the `name` wire field.
-    attr_reader :name
-    # @return [UserEventPayloadVariant171LastEditedByPrincipalVariant0Type] Required enumerated value serialized in the `type` wire field.
-    attr_reader :type
-    # @return [String] Required `string` value serialized in the `username` wire field.
-    attr_reader :username
+  # @return [String] Optional `string` value serialized in the `avatar` wire field.
+  attr_reader :avatar
+  # @return [String] Required `string` value serialized in the `id` wire field.
+  attr_reader :id
+  # @return [String] Optional `string` value serialized in the `name` wire field.
+  attr_reader :name
+  # @return [UserEventPayloadVariant171LastEditedByPrincipalVariant0Type] Required enumerated value serialized in the `type` wire field.
+  attr_reader :type
+  # @return [String] Required `string` value serialized in the `username` wire field.
+  attr_reader :username
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant1Metadata
-    FIELDS = {
-      avatar: 'avatar',
-      id: 'id',
-      name: 'name',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-      name
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant171LastEditedByPrincipalVariant1Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant171LastEditedByPrincipalVariant1.
-  # The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
-  class UserEventPayloadVariant171LastEditedByPrincipalVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant1Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] Optional `string` value serialized in the `avatar` wire field.
-    attr_reader :avatar
-    # @return [String] Required `string` value serialized in the `id` wire field.
-    attr_reader :id
-    # @return [String] Required `string` value serialized in the `name` wire field.
-    attr_reader :name
-    # @return [UserEventPayloadVariant171LastEditedByPrincipalVariant1Type] Required enumerated value serialized in the `type` wire field.
-    attr_reader :type
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant1Metadata
+  FIELDS = {
+    avatar: "avatar",
+    id: "id",
+    name: "name",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+    name
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant171LastEditedByPrincipalVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant171LastEditedByPrincipalVariant1.
+# The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
+class UserEventPayloadVariant171LastEditedByPrincipalVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant171LastEditedByPrincipalVariant1Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] Optional `string` value serialized in the `avatar` wire field.
+  attr_reader :avatar
+  # @return [String] Required `string` value serialized in the `id` wire field.
+  attr_reader :id
+  # @return [String] Required `string` value serialized in the `name` wire field.
+  attr_reader :name
+  # @return [UserEventPayloadVariant171LastEditedByPrincipalVariant1Type] Required enumerated value serialized in the `type` wire field.
+  attr_reader :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant171Metadata
-    FIELDS = {
-      apply_to_all_custom_environments: 'applyToAllCustomEnvironments',
-      comment: 'comment',
-      created: 'created',
-      created_at: 'createdAt',
-      created_by: 'createdBy',
-      custom_environment_ids: 'customEnvironmentIds',
-      decrypted: 'decrypted',
-      deleted_at: 'deletedAt',
-      deleted_by: 'deletedBy',
-      id: 'id',
-      key: 'key',
-      last_edited_by_display_name: 'lastEditedByDisplayName',
-      last_edited_by_principal: 'lastEditedByPrincipal',
-      owner_id: 'ownerId',
-      project_id: 'projectId',
-      target: 'target',
-      type: 'type',
-      updated_at: 'updatedAt',
-      updated_by: 'updatedBy',
-      value: 'value',
-      ip_address: 'ipAddress',
-      project_names: 'projectNames'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      apply_to_all_custom_environments: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant171ApplyToAllCustomEnvironments.from_value(value)
-      end,
-      decrypted: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant171Decrypted.from_value(value)
-      end,
-      target: lambda do |value|
-        value&.map { |item| ::OctridevVercel::UserEventPayloadVariant171TargetItem.from_value(item) }
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant171Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant171.
-  class UserEventPayloadVariant171
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant171Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant171Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant171Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [UserEventPayloadVariant171ApplyToAllCustomEnvironments] whether or not this env varible applies to custom environments
-    attr_reader :apply_to_all_custom_environments
-    # @return [String] A user provided comment that describes what this Shared Env Var is for.
-    attr_reader :comment
-    # @return [String] The date when the Shared Env Var was created.
-    attr_reader :created
-    # @return [Float] Timestamp for when the Shared Env Var was created.
-    attr_reader :created_at
-    # @return [String] The unique identifier of the user who created the Shared Env Var.
-    attr_reader :created_by
-    # @return [Array_of_String] The custom environment IDs that this Shared Env Var is scoped to.
-    attr_reader :custom_environment_ids
-    # @return [UserEventPayloadVariant171Decrypted] whether or not this env variable is decrypted
-    attr_reader :decrypted
-    # @return [Float] Timestamp for when the Shared Env Var was (soft) deleted.
-    attr_reader :deleted_at
-    # @return [String] The unique identifier of the user who deleted the Shared Env Var.
-    attr_reader :deleted_by
-    # @return [String] The unique identifier of the Shared Env Var.
-    attr_reader :id
-    # @return [String] The name of the Shared Env Var.
-    attr_reader :key
-    # @return [String] The last editor full name or username.
-    attr_reader :last_edited_by_display_name
-    # @return [Object] Optional API value serialized in the `lastEditedByPrincipal` wire field.
-    attr_reader :last_edited_by_principal
-    # @return [String] The unique identifier of the owner (team) the Shared Env Var was created for.
-    attr_reader :owner_id
-    # @return [Array_of_String] The unique identifiers of the projects which the Shared Env Var is linked to.
-    attr_reader :project_id
-    # @return [Array_of_UserEventPayloadVariant171TargetItem] environments this env variable targets
-    attr_reader :target
-    # @return [UserEventPayloadVariant171Type] The type of this cosmos doc instance, if blank, assume secret.
-    attr_reader :type
-    # @return [Float] Timestamp for when the Shared Env Var was last updated.
-    attr_reader :updated_at
-    # @return [String] The unique identifier of the user who last updated the Shared Env Var.
-    attr_reader :updated_by
-    # @return [String] The value of the Shared Env Var.
-    attr_reader :value
-    # @return [String] Optional `string` value serialized in the `ipAddress` wire field.
-    attr_reader :ip_address
-    # @return [Array_of_String] Optional array value serialized in the `projectNames` wire field.
-    attr_reader :project_names
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant171Metadata
+  FIELDS = {
+    apply_to_all_custom_environments: "applyToAllCustomEnvironments",
+    comment: "comment",
+    created: "created",
+    created_at: "createdAt",
+    created_by: "createdBy",
+    custom_environment_ids: "customEnvironmentIds",
+    decrypted: "decrypted",
+    deleted_at: "deletedAt",
+    deleted_by: "deletedBy",
+    id: "id",
+    key: "key",
+    last_edited_by_display_name: "lastEditedByDisplayName",
+    last_edited_by_principal: "lastEditedByPrincipal",
+    owner_id: "ownerId",
+    project_id: "projectId",
+    target: "target",
+    type: "type",
+    updated_at: "updatedAt",
+    updated_by: "updatedBy",
+    value: "value",
+    ip_address: "ipAddress",
+    project_names: "projectNames",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    apply_to_all_custom_environments: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant171ApplyToAllCustomEnvironments.from_value(value)
+    end,
+    decrypted: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant171Decrypted.from_value(value)
+    end,
+    target: lambda do |value|
+      value&.map { |item| ::OctridevVercel::UserEventPayloadVariant171TargetItem.from_value(item) }
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant171Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant171.
+class UserEventPayloadVariant171
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant171Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant171Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant171Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [UserEventPayloadVariant171ApplyToAllCustomEnvironments] whether or not this env varible applies to custom environments
+  attr_reader :apply_to_all_custom_environments
+  # @return [String] A user provided comment that describes what this Shared Env Var is for.
+  attr_reader :comment
+  # @return [String] The date when the Shared Env Var was created.
+  attr_reader :created
+  # @return [Float] Timestamp for when the Shared Env Var was created.
+  attr_reader :created_at
+  # @return [String] The unique identifier of the user who created the Shared Env Var.
+  attr_reader :created_by
+  # @return [Array_of_String] The custom environment IDs that this Shared Env Var is scoped to.
+  attr_reader :custom_environment_ids
+  # @return [UserEventPayloadVariant171Decrypted] whether or not this env variable is decrypted
+  attr_reader :decrypted
+  # @return [Float] Timestamp for when the Shared Env Var was (soft) deleted.
+  attr_reader :deleted_at
+  # @return [String] The unique identifier of the user who deleted the Shared Env Var.
+  attr_reader :deleted_by
+  # @return [String] The unique identifier of the Shared Env Var.
+  attr_reader :id
+  # @return [String] The name of the Shared Env Var.
+  attr_reader :key
+  # @return [String] The last editor full name or username.
+  attr_reader :last_edited_by_display_name
+  # @return [Object] Optional API value serialized in the `lastEditedByPrincipal` wire field.
+  attr_reader :last_edited_by_principal
+  # @return [String] The unique identifier of the owner (team) the Shared Env Var was created for.
+  attr_reader :owner_id
+  # @return [Array_of_String] The unique identifiers of the projects which the Shared Env Var is linked to.
+  attr_reader :project_id
+  # @return [Array_of_UserEventPayloadVariant171TargetItem] environments this env variable targets
+  attr_reader :target
+  # @return [UserEventPayloadVariant171Type] The type of this cosmos doc instance, if blank, assume secret.
+  attr_reader :type
+  # @return [Float] Timestamp for when the Shared Env Var was last updated.
+  attr_reader :updated_at
+  # @return [String] The unique identifier of the user who last updated the Shared Env Var.
+  attr_reader :updated_by
+  # @return [String] The value of the Shared Env Var.
+  attr_reader :value
+  # @return [String] Optional `string` value serialized in the `ipAddress` wire field.
+  attr_reader :ip_address
+  # @return [Array_of_String] Optional array value serialized in the `projectNames` wire field.
+  attr_reader :project_names
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant172Metadata
-    FIELDS = {
-      env_id: 'envId',
-      env_key: 'envKey',
-      organization_id: 'organizationId',
-      provider: 'provider',
-      repository: 'repository',
-      target: 'target'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      env_id
-      env_key
-      organization_id
-      provider
-      repository
-      target
-    ].freeze
-    DECODERS = {
-      target: lambda do |value|
-        value&.map { |item| ::OctridevVercel::UserEventPayloadVariant172TargetItem.from_value(item) }
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant172.
-  class UserEventPayloadVariant172
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant172Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant172Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant172Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] Required `string` value serialized in the `envId` wire field.
-    attr_reader :env_id
-    # @return [String] Required `string` value serialized in the `envKey` wire field.
-    attr_reader :env_key
-    # @return [String] Required `string` value serialized in the `organizationId` wire field.
-    attr_reader :organization_id
-    # @return [String] Required `string` value serialized in the `provider` wire field.
-    attr_reader :provider
-    # @return [String] Required `string` value serialized in the `repository` wire field.
-    attr_reader :repository
-    # @return [Array_of_UserEventPayloadVariant172TargetItem] Required array value serialized in the `target` wire field.
-    attr_reader :target
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant172Metadata
+  FIELDS = {
+    env_id: "envId",
+    env_key: "envKey",
+    organization_id: "organizationId",
+    provider: "provider",
+    repository: "repository",
+    target: "target",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    env_id
+    env_key
+    organization_id
+    provider
+    repository
+    target
+  ].freeze
+  DECODERS = {
+    target: lambda do |value|
+      value&.map { |item| ::OctridevVercel::UserEventPayloadVariant172TargetItem.from_value(item) }
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant172.
+class UserEventPayloadVariant172
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant172Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant172Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant172Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] Required `string` value serialized in the `envId` wire field.
+  attr_reader :env_id
+  # @return [String] Required `string` value serialized in the `envKey` wire field.
+  attr_reader :env_key
+  # @return [String] Required `string` value serialized in the `organizationId` wire field.
+  attr_reader :organization_id
+  # @return [String] Required `string` value serialized in the `provider` wire field.
+  attr_reader :provider
+  # @return [String] Required `string` value serialized in the `repository` wire field.
+  attr_reader :repository
+  # @return [Array_of_UserEventPayloadVariant172TargetItem] Required array value serialized in the `target` wire field.
+  attr_reader :target
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0Metadata
-    FIELDS = {
-      avatar: 'avatar',
-      id: 'id',
-      name: 'name',
-      type: 'type',
-      username: 'username'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-      type
-      username
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0.
-  # The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
-  class UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] Optional `string` value serialized in the `avatar` wire field.
-    attr_reader :avatar
-    # @return [String] Required `string` value serialized in the `id` wire field.
-    attr_reader :id
-    # @return [String] Optional `string` value serialized in the `name` wire field.
-    attr_reader :name
-    # @return [UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0Type] Required enumerated value serialized in the `type` wire field.
-    attr_reader :type
-    # @return [String] Required `string` value serialized in the `username` wire field.
-    attr_reader :username
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0Metadata
+  FIELDS = {
+    avatar: "avatar",
+    id: "id",
+    name: "name",
+    type: "type",
+    username: "username",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+    type
+    username
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0.
+# The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
+class UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] Optional `string` value serialized in the `avatar` wire field.
+  attr_reader :avatar
+  # @return [String] Required `string` value serialized in the `id` wire field.
+  attr_reader :id
+  # @return [String] Optional `string` value serialized in the `name` wire field.
+  attr_reader :name
+  # @return [UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant0Type] Required enumerated value serialized in the `type` wire field.
+  attr_reader :type
+  # @return [String] Required `string` value serialized in the `username` wire field.
+  attr_reader :username
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1Metadata
-    FIELDS = {
-      avatar: 'avatar',
-      id: 'id',
-      name: 'name',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-      name
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1.
-  # The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
-  class UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] Optional `string` value serialized in the `avatar` wire field.
-    attr_reader :avatar
-    # @return [String] Required `string` value serialized in the `id` wire field.
-    attr_reader :id
-    # @return [String] Required `string` value serialized in the `name` wire field.
-    attr_reader :name
-    # @return [UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1Type] Required enumerated value serialized in the `type` wire field.
-    attr_reader :type
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1Metadata
+  FIELDS = {
+    avatar: "avatar",
+    id: "id",
+    name: "name",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+    name
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1.
+# The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
+class UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] Optional `string` value serialized in the `avatar` wire field.
+  attr_reader :avatar
+  # @return [String] Required `string` value serialized in the `id` wire field.
+  attr_reader :id
+  # @return [String] Required `string` value serialized in the `name` wire field.
+  attr_reader :name
+  # @return [UserEventPayloadVariant173NewEnvVarLastEditedByPrincipalVariant1Type] Required enumerated value serialized in the `type` wire field.
+  attr_reader :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant173NewEnvVarMetadata
-    FIELDS = {
-      apply_to_all_custom_environments: 'applyToAllCustomEnvironments',
-      comment: 'comment',
-      created: 'created',
-      created_at: 'createdAt',
-      created_by: 'createdBy',
-      custom_environment_ids: 'customEnvironmentIds',
-      decrypted: 'decrypted',
-      deleted_at: 'deletedAt',
-      deleted_by: 'deletedBy',
-      id: 'id',
-      key: 'key',
-      last_edited_by_display_name: 'lastEditedByDisplayName',
-      last_edited_by_principal: 'lastEditedByPrincipal',
-      owner_id: 'ownerId',
-      project_id: 'projectId',
-      target: 'target',
-      type: 'type',
-      updated_at: 'updatedAt',
-      updated_by: 'updatedBy',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      apply_to_all_custom_environments: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant173NewEnvVarApplyToAllCustomEnvironments.from_value(value)
-      end,
-      decrypted: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant173NewEnvVarDecrypted.from_value(value)
-      end,
-      target: lambda do |value|
-        value&.map { |item| ::OctridevVercel::UserEventPayloadVariant173NewEnvVarTargetItem.from_value(item) }
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant173NewEnvVarType.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant173NewEnvVar.
-  # Optional object value serialized in the `newEnvVar` wire field.
-  class UserEventPayloadVariant173NewEnvVar
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant173NewEnvVarMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant173NewEnvVarMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant173NewEnvVarMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [UserEventPayloadVariant173NewEnvVarApplyToAllCustomEnvironments] whether or not this env varible applies to custom environments
-    attr_reader :apply_to_all_custom_environments
-    # @return [String] A user provided comment that describes what this Shared Env Var is for.
-    attr_reader :comment
-    # @return [String] The date when the Shared Env Var was created.
-    attr_reader :created
-    # @return [Float] Timestamp for when the Shared Env Var was created.
-    attr_reader :created_at
-    # @return [String] The unique identifier of the user who created the Shared Env Var.
-    attr_reader :created_by
-    # @return [Array_of_String] The custom environment IDs that this Shared Env Var is scoped to.
-    attr_reader :custom_environment_ids
-    # @return [UserEventPayloadVariant173NewEnvVarDecrypted] whether or not this env variable is decrypted
-    attr_reader :decrypted
-    # @return [Float] Timestamp for when the Shared Env Var was (soft) deleted.
-    attr_reader :deleted_at
-    # @return [String] The unique identifier of the user who deleted the Shared Env Var.
-    attr_reader :deleted_by
-    # @return [String] The unique identifier of the Shared Env Var.
-    attr_reader :id
-    # @return [String] The name of the Shared Env Var.
-    attr_reader :key
-    # @return [String] The last editor full name or username.
-    attr_reader :last_edited_by_display_name
-    # @return [Object] Optional API value serialized in the `lastEditedByPrincipal` wire field.
-    attr_reader :last_edited_by_principal
-    # @return [String] The unique identifier of the owner (team) the Shared Env Var was created for.
-    attr_reader :owner_id
-    # @return [Array_of_String] The unique identifiers of the projects which the Shared Env Var is linked to.
-    attr_reader :project_id
-    # @return [Array_of_UserEventPayloadVariant173NewEnvVarTargetItem] environments this env variable targets
-    attr_reader :target
-    # @return [UserEventPayloadVariant173NewEnvVarType] The type of this cosmos doc instance, if blank, assume secret.
-    attr_reader :type
-    # @return [Float] Timestamp for when the Shared Env Var was last updated.
-    attr_reader :updated_at
-    # @return [String] The unique identifier of the user who last updated the Shared Env Var.
-    attr_reader :updated_by
-    # @return [String] The value of the Shared Env Var.
-    attr_reader :value
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant173NewEnvVarMetadata
+  FIELDS = {
+    apply_to_all_custom_environments: "applyToAllCustomEnvironments",
+    comment: "comment",
+    created: "created",
+    created_at: "createdAt",
+    created_by: "createdBy",
+    custom_environment_ids: "customEnvironmentIds",
+    decrypted: "decrypted",
+    deleted_at: "deletedAt",
+    deleted_by: "deletedBy",
+    id: "id",
+    key: "key",
+    last_edited_by_display_name: "lastEditedByDisplayName",
+    last_edited_by_principal: "lastEditedByPrincipal",
+    owner_id: "ownerId",
+    project_id: "projectId",
+    target: "target",
+    type: "type",
+    updated_at: "updatedAt",
+    updated_by: "updatedBy",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    apply_to_all_custom_environments: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant173NewEnvVarApplyToAllCustomEnvironments.from_value(value)
+    end,
+    decrypted: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant173NewEnvVarDecrypted.from_value(value)
+    end,
+    target: lambda do |value|
+      value&.map { |item| ::OctridevVercel::UserEventPayloadVariant173NewEnvVarTargetItem.from_value(item) }
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant173NewEnvVarType.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant173NewEnvVar.
+# Optional object value serialized in the `newEnvVar` wire field.
+class UserEventPayloadVariant173NewEnvVar
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant173NewEnvVarMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant173NewEnvVarMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant173NewEnvVarMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [UserEventPayloadVariant173NewEnvVarApplyToAllCustomEnvironments] whether or not this env varible applies to custom environments
+  attr_reader :apply_to_all_custom_environments
+  # @return [String] A user provided comment that describes what this Shared Env Var is for.
+  attr_reader :comment
+  # @return [String] The date when the Shared Env Var was created.
+  attr_reader :created
+  # @return [Float] Timestamp for when the Shared Env Var was created.
+  attr_reader :created_at
+  # @return [String] The unique identifier of the user who created the Shared Env Var.
+  attr_reader :created_by
+  # @return [Array_of_String] The custom environment IDs that this Shared Env Var is scoped to.
+  attr_reader :custom_environment_ids
+  # @return [UserEventPayloadVariant173NewEnvVarDecrypted] whether or not this env variable is decrypted
+  attr_reader :decrypted
+  # @return [Float] Timestamp for when the Shared Env Var was (soft) deleted.
+  attr_reader :deleted_at
+  # @return [String] The unique identifier of the user who deleted the Shared Env Var.
+  attr_reader :deleted_by
+  # @return [String] The unique identifier of the Shared Env Var.
+  attr_reader :id
+  # @return [String] The name of the Shared Env Var.
+  attr_reader :key
+  # @return [String] The last editor full name or username.
+  attr_reader :last_edited_by_display_name
+  # @return [Object] Optional API value serialized in the `lastEditedByPrincipal` wire field.
+  attr_reader :last_edited_by_principal
+  # @return [String] The unique identifier of the owner (team) the Shared Env Var was created for.
+  attr_reader :owner_id
+  # @return [Array_of_String] The unique identifiers of the projects which the Shared Env Var is linked to.
+  attr_reader :project_id
+  # @return [Array_of_UserEventPayloadVariant173NewEnvVarTargetItem] environments this env variable targets
+  attr_reader :target
+  # @return [UserEventPayloadVariant173NewEnvVarType] The type of this cosmos doc instance, if blank, assume secret.
+  attr_reader :type
+  # @return [Float] Timestamp for when the Shared Env Var was last updated.
+  attr_reader :updated_at
+  # @return [String] The unique identifier of the user who last updated the Shared Env Var.
+  attr_reader :updated_by
+  # @return [String] The value of the Shared Env Var.
+  attr_reader :value
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0Metadata
-    FIELDS = {
-      avatar: 'avatar',
-      id: 'id',
-      name: 'name',
-      type: 'type',
-      username: 'username'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-      type
-      username
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0.
-  # The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
-  class UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] Optional `string` value serialized in the `avatar` wire field.
-    attr_reader :avatar
-    # @return [String] Required `string` value serialized in the `id` wire field.
-    attr_reader :id
-    # @return [String] Optional `string` value serialized in the `name` wire field.
-    attr_reader :name
-    # @return [UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0Type] Required enumerated value serialized in the `type` wire field.
-    attr_reader :type
-    # @return [String] Required `string` value serialized in the `username` wire field.
-    attr_reader :username
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0Metadata
+  FIELDS = {
+    avatar: "avatar",
+    id: "id",
+    name: "name",
+    type: "type",
+    username: "username",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+    type
+    username
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0.
+# The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
+class UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] Optional `string` value serialized in the `avatar` wire field.
+  attr_reader :avatar
+  # @return [String] Required `string` value serialized in the `id` wire field.
+  attr_reader :id
+  # @return [String] Optional `string` value serialized in the `name` wire field.
+  attr_reader :name
+  # @return [UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0Type] Required enumerated value serialized in the `type` wire field.
+  attr_reader :type
+  # @return [String] Required `string` value serialized in the `username` wire field.
+  attr_reader :username
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1Metadata
-    FIELDS = {
-      avatar: 'avatar',
-      id: 'id',
-      name: 'name',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-      name
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1.
-  # The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
-  class UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] Optional `string` value serialized in the `avatar` wire field.
-    attr_reader :avatar
-    # @return [String] Required `string` value serialized in the `id` wire field.
-    attr_reader :id
-    # @return [String] Required `string` value serialized in the `name` wire field.
-    attr_reader :name
-    # @return [UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1Type] Required enumerated value serialized in the `type` wire field.
-    attr_reader :type
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1Metadata
+  FIELDS = {
+    avatar: "avatar",
+    id: "id",
+    name: "name",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+    name
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1.
+# The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
+class UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] Optional `string` value serialized in the `avatar` wire field.
+  attr_reader :avatar
+  # @return [String] Required `string` value serialized in the `id` wire field.
+  attr_reader :id
+  # @return [String] Required `string` value serialized in the `name` wire field.
+  attr_reader :name
+  # @return [UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant1Type] Required enumerated value serialized in the `type` wire field.
+  attr_reader :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant173OldEnvVarMetadata
-    FIELDS = {
-      apply_to_all_custom_environments: 'applyToAllCustomEnvironments',
-      comment: 'comment',
-      created: 'created',
-      created_at: 'createdAt',
-      created_by: 'createdBy',
-      custom_environment_ids: 'customEnvironmentIds',
-      decrypted: 'decrypted',
-      deleted_at: 'deletedAt',
-      deleted_by: 'deletedBy',
-      id: 'id',
-      key: 'key',
-      last_edited_by_display_name: 'lastEditedByDisplayName',
-      last_edited_by_principal: 'lastEditedByPrincipal',
-      owner_id: 'ownerId',
-      project_id: 'projectId',
-      target: 'target',
-      type: 'type',
-      updated_at: 'updatedAt',
-      updated_by: 'updatedBy',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      apply_to_all_custom_environments: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant173OldEnvVarApplyToAllCustomEnvironments.from_value(value)
-      end,
-      decrypted: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant173OldEnvVarDecrypted.from_value(value)
-      end,
-      target: lambda do |value|
-        value&.map { |item| ::OctridevVercel::UserEventPayloadVariant173OldEnvVarTargetItem.from_value(item) }
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant173OldEnvVarType.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant173OldEnvVar.
-  # Optional object value serialized in the `oldEnvVar` wire field.
-  class UserEventPayloadVariant173OldEnvVar
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant173OldEnvVarMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant173OldEnvVarMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant173OldEnvVarMetadata::DECODERS
-
-    # @return [UserEventPayloadVariant173OldEnvVarApplyToAllCustomEnvironments] whether or not this env varible applies to custom environments
-    attr_reader :apply_to_all_custom_environments
-    # @return [String] A user provided comment that describes what this Shared Env Var is for.
-    attr_reader :comment
-    # @return [String] The date when the Shared Env Var was created.
-    attr_reader :created
-    # @return [Float] Timestamp for when the Shared Env Var was created.
-    attr_reader :created_at
-    # @return [String] The unique identifier of the user who created the Shared Env Var.
-    attr_reader :created_by
-    # @return [Array_of_String] The custom environment IDs that this Shared Env Var is scoped to.
-    attr_reader :custom_environment_ids
-    # @return [UserEventPayloadVariant173OldEnvVarDecrypted] whether or not this env variable is decrypted
-    attr_reader :decrypted
-    # @return [Float] Timestamp for when the Shared Env Var was (soft) deleted.
-    attr_reader :deleted_at
-    # @return [String] The unique identifier of the user who deleted the Shared Env Var.
-    attr_reader :deleted_by
-    # @return [String] The unique identifier of the Shared Env Var.
-    attr_reader :id
-    # @return [String] The name of the Shared Env Var.
-    attr_reader :key
-    # @return [String] The last editor full name or username.
-    attr_reader :last_edited_by_display_name
-    # @return [Object] Optional API value serialized in the `lastEditedByPrincipal` wire field.
-    attr_reader :last_edited_by_principal
-    # @return [String] The unique identifier of the owner (team) the Shared Env Var was created for.
-    attr_reader :owner_id
-    # @return [Array_of_String] The unique identifiers of the projects which the Shared Env Var is linked to.
-    attr_reader :project_id
-    # @return [Array_of_UserEventPayloadVariant173OldEnvVarTargetItem] environments this env variable targets
-    attr_reader :target
-    # @return [UserEventPayloadVariant173OldEnvVarType] The type of this cosmos doc instance, if blank, assume secret.
-    attr_reader :type
-    # @return [Float] Timestamp for when the Shared Env Var was last updated.
-    attr_reader :updated_at
-    # @return [String] The unique identifier of the user who last updated the Shared Env Var.
-    attr_reader :updated_by
-    # @return [String] The value of the Shared Env Var.
-    attr_reader :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant173OldEnvVarMetadata
+  FIELDS = {
+    apply_to_all_custom_environments: "applyToAllCustomEnvironments",
+    comment: "comment",
+    created: "created",
+    created_at: "createdAt",
+    created_by: "createdBy",
+    custom_environment_ids: "customEnvironmentIds",
+    decrypted: "decrypted",
+    deleted_at: "deletedAt",
+    deleted_by: "deletedBy",
+    id: "id",
+    key: "key",
+    last_edited_by_display_name: "lastEditedByDisplayName",
+    last_edited_by_principal: "lastEditedByPrincipal",
+    owner_id: "ownerId",
+    project_id: "projectId",
+    target: "target",
+    type: "type",
+    updated_at: "updatedAt",
+    updated_by: "updatedBy",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    apply_to_all_custom_environments: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant173OldEnvVarApplyToAllCustomEnvironments.from_value(value)
+    end,
+    decrypted: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant173OldEnvVarDecrypted.from_value(value)
+    end,
+    target: lambda do |value|
+      value&.map { |item| ::OctridevVercel::UserEventPayloadVariant173OldEnvVarTargetItem.from_value(item) }
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant173OldEnvVarType.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UserEventPayloadVariant173OldEnvVar.
+# Optional object value serialized in the `oldEnvVar` wire field.
+class UserEventPayloadVariant173OldEnvVar
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant173OldEnvVarMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant173OldEnvVarMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant173OldEnvVarMetadata::DECODERS
+
+  # @return [UserEventPayloadVariant173OldEnvVarApplyToAllCustomEnvironments] whether or not this env varible applies to custom environments
+  attr_reader :apply_to_all_custom_environments
+  # @return [String] A user provided comment that describes what this Shared Env Var is for.
+  attr_reader :comment
+  # @return [String] The date when the Shared Env Var was created.
+  attr_reader :created
+  # @return [Float] Timestamp for when the Shared Env Var was created.
+  attr_reader :created_at
+  # @return [String] The unique identifier of the user who created the Shared Env Var.
+  attr_reader :created_by
+  # @return [Array_of_String] The custom environment IDs that this Shared Env Var is scoped to.
+  attr_reader :custom_environment_ids
+  # @return [UserEventPayloadVariant173OldEnvVarDecrypted] whether or not this env variable is decrypted
+  attr_reader :decrypted
+  # @return [Float] Timestamp for when the Shared Env Var was (soft) deleted.
+  attr_reader :deleted_at
+  # @return [String] The unique identifier of the user who deleted the Shared Env Var.
+  attr_reader :deleted_by
+  # @return [String] The unique identifier of the Shared Env Var.
+  attr_reader :id
+  # @return [String] The name of the Shared Env Var.
+  attr_reader :key
+  # @return [String] The last editor full name or username.
+  attr_reader :last_edited_by_display_name
+  # @return [Object] Optional API value serialized in the `lastEditedByPrincipal` wire field.
+  attr_reader :last_edited_by_principal
+  # @return [String] The unique identifier of the owner (team) the Shared Env Var was created for.
+  attr_reader :owner_id
+  # @return [Array_of_String] The unique identifiers of the projects which the Shared Env Var is linked to.
+  attr_reader :project_id
+  # @return [Array_of_UserEventPayloadVariant173OldEnvVarTargetItem] environments this env variable targets
+  attr_reader :target
+  # @return [UserEventPayloadVariant173OldEnvVarType] The type of this cosmos doc instance, if blank, assume secret.
+  attr_reader :type
+  # @return [Float] Timestamp for when the Shared Env Var was last updated.
+  attr_reader :updated_at
+  # @return [String] The unique identifier of the user who last updated the Shared Env Var.
+  attr_reader :updated_by
+  # @return [String] The value of the Shared Env Var.
+  attr_reader :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
+  end
+
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  end
+
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 end

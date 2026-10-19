@@ -5,670 +5,670 @@
 
 # deployments domain models
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseAtprotoVariant0Metadata
-    FIELDS = {
-      enabled: 'enabled'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      enabled
-    ].freeze
-    DECODERS = {
-      enabled: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseAtprotoVariant0Enabled.from_value(value)
-      end
-    }.freeze
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseAtprotoVariant0Metadata
+  FIELDS = {
+    enabled: "enabled",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    enabled
+  ].freeze
+  DECODERS = {
+    enabled: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseAtprotoVariant0Enabled.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseAtprotoVariant0.
+class CancelDeploymentResponseAtprotoVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseAtprotoVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseAtprotoVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseAtprotoVariant0Metadata::DECODERS
+
+  attr_reader :enabled
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseAtprotoVariant0.
-  class CancelDeploymentResponseAtprotoVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseAtprotoVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseAtprotoVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseAtprotoVariant0Metadata::DECODERS
-
-    attr_reader :enabled
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseAtprotoVariant1SubscriptionMetadata
-    FIELDS = {
-      collections: 'collections',
-      dids: 'dids',
-      kinds: 'kinds',
-      path: 'path'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      collections
-      path
-    ].freeze
-    DECODERS = {
-      kinds: lambda do |value|
-        value&.map { |item| ::OctridevVercel::CancelDeploymentResponseAtprotoVariant1SubscriptionKindsItem.from_value(item) }
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseAtprotoVariant1SubscriptionMetadata
+  FIELDS = {
+    collections: "collections",
+    dids: "dids",
+    kinds: "kinds",
+    path: "path",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    collections
+    path
+  ].freeze
+  DECODERS = {
+    kinds: lambda do |value|
+      value&.map { |item| ::OctridevVercel::CancelDeploymentResponseAtprotoVariant1SubscriptionKindsItem.from_value(item) }
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseAtprotoVariant1Subscription.
+class CancelDeploymentResponseAtprotoVariant1Subscription
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseAtprotoVariant1SubscriptionMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseAtprotoVariant1SubscriptionMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseAtprotoVariant1SubscriptionMetadata::DECODERS
+
+  attr_reader :collections, :dids, :kinds, :path
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseAtprotoVariant1Subscription.
-  class CancelDeploymentResponseAtprotoVariant1Subscription
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseAtprotoVariant1SubscriptionMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseAtprotoVariant1SubscriptionMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseAtprotoVariant1SubscriptionMetadata::DECODERS
-
-    attr_reader :collections, :dids, :kinds, :path
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseAtprotoVariant1Metadata
-    FIELDS = {
-      enabled: 'enabled',
-      subscription: 'subscription'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      enabled
-      subscription
-    ].freeze
-    DECODERS = {
-      enabled: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseAtprotoVariant1Enabled.from_value(value)
-      end,
-      subscription: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseAtprotoVariant1Subscription.from_hash(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseAtprotoVariant1Metadata
+  FIELDS = {
+    enabled: "enabled",
+    subscription: "subscription",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    enabled
+    subscription
+  ].freeze
+  DECODERS = {
+    enabled: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseAtprotoVariant1Enabled.from_value(value)
+    end,
+    subscription: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseAtprotoVariant1Subscription.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseAtprotoVariant1.
+class CancelDeploymentResponseAtprotoVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseAtprotoVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseAtprotoVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseAtprotoVariant1Metadata::DECODERS
+
+  attr_reader :enabled, :subscription
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseAtprotoVariant1.
-  class CancelDeploymentResponseAtprotoVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseAtprotoVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseAtprotoVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseAtprotoVariant1Metadata::DECODERS
-
-    attr_reader :enabled, :subscription
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseAtproto SDK namespace.
-  module CancelDeploymentResponseAtproto
-    def self.from_hash(hash)
-      shape_mapping = {
-        'subscription' => CancelDeploymentResponseAtprotoVariant1
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      CancelDeploymentResponseAtprotoVariant0.from_hash(hash)
-    end
+# Defines the CancelDeploymentResponseAtproto SDK namespace.
+module CancelDeploymentResponseAtproto
+  def self.from_hash(hash)
+    shape_mapping = {
+      "subscription" => CancelDeploymentResponseAtprotoVariant1,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    return CancelDeploymentResponseAtprotoVariant0.from_hash(hash)
+  end
+end
+
+# Defines the CancelDeploymentResponseAtprotoVariant0Enabled SDK namespace.
+module CancelDeploymentResponseAtprotoVariant0Enabled
+  FALSE = false
+  VALUES = [false].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseAtprotoVariant1Enabled SDK namespace.
+module CancelDeploymentResponseAtprotoVariant1Enabled
+  TRUE = true
+  VALUES = [true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseAtprotoVariant1SubscriptionKindsItem SDK namespace.
+module CancelDeploymentResponseAtprotoVariant1SubscriptionKindsItem
+  ACCOUNT = 'account'
+  COMMIT = 'commit'
+  IDENTITY = 'identity'
+  SYNC = 'sync'
+  VALUES = ['account', 'commit', 'identity', 'sync'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherMetadata
+  FIELDS = {
+    pattern: "pattern",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    pattern
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherType.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcher.
+# Configuration for matching git branches to this environment
+class CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcher
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherMetadata::DECODERS
+
+  # @return [String] The pattern to match against branch names
+  attr_reader :pattern
+  # @return [CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherType] The type of matching to perform
+  attr_reader :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseAtprotoVariant0Enabled SDK namespace.
-  module CancelDeploymentResponseAtprotoVariant0Enabled
-    FALSE = false
-    VALUES = [false].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseAtprotoVariant1Enabled SDK namespace.
-  module CancelDeploymentResponseAtprotoVariant1Enabled
-    TRUE = true
-    VALUES = [true].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941fMetadata
+  FIELDS = {
+    domain: "domain",
+    reason: "reason",
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    domain
+    reason
+    type
+    value
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941f.
+# A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+class CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941f
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941fMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941fMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941fMetadata::DECODERS
+
+  attr_reader :domain, :reason, :type, :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseAtprotoVariant1SubscriptionKindsItem SDK namespace.
-  module CancelDeploymentResponseAtprotoVariant1SubscriptionKindsItem
-    ACCOUNT = 'account'
-    COMMIT = 'commit'
-    IDENTITY = 'identity'
-    SYNC = 'sync'
-    VALUES = %w[account commit identity sync].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherMetadata
-    FIELDS = {
-      pattern: 'pattern',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      pattern
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherType.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemMetadata
+  FIELDS = {
+    apex_name: "apexName",
+    created_at: "createdAt",
+    custom_environment_id: "customEnvironmentId",
+    git_branch: "gitBranch",
+    name: "name",
+    project_id: "projectId",
+    redirect: "redirect",
+    redirect_status_code: "redirectStatusCode",
+    updated_at: "updatedAt",
+    verification: "verification",
+    verified: "verified",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    apex_name
+    name
+    project_id
+    verified
+  ].freeze
+  DECODERS = {
+    redirect_status_code: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemRX7340f82d83.from_value(value)
+    end,
+    verification: lambda do |value|
+      value&.map { |item| ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941f.from_hash(item) }
+    end,
+    verified: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVerified.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseCustomEnvironmentVariant0DomainsItem.
+# List of domains associated with this environment
+class CancelDeploymentResponseCustomEnvironmentVariant0DomainsItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemMetadata::DECODERS
+
+  attr_reader :apex_name, :created_at, :custom_environment_id, :git_branch, :name, :project_id,
+              :redirect, :redirect_status_code, :updated_at
+  # @return [Array_of_CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941f] A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+  attr_reader :verification
+  # @return [CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVerified] `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+  attr_reader :verified
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcher.
-  # Configuration for matching git branches to this environment
-  class CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcher
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherMetadata::DECODERS
-
-    # @return [String] The pattern to match against branch names
-    attr_reader :pattern
-    # @return [CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherType] The type of matching to perform
-    attr_reader :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941fMetadata
-    FIELDS = {
-      domain: 'domain',
-      reason: 'reason',
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      domain
-      reason
-      type
-      value
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0Metadata
+  FIELDS = {
+    branch_matcher: "branchMatcher",
+    created_at: "createdAt",
+    current_deployment_aliases: "currentDeploymentAliases",
+    description: "description",
+    domains: "domains",
+    id: "id",
+    slug: "slug",
+    type: "type",
+    updated_at: "updatedAt",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    created_at
+    id
+    slug
+    type
+    updated_at
+  ].freeze
+  DECODERS = {
+    branch_matcher: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcher.from_hash(value)
+    end,
+    domains: lambda do |value|
+      value&.map { |item| ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0DomainsItem.from_hash(item) }
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseCustomEnvironmentVariant0.
+class CancelDeploymentResponseCustomEnvironmentVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0Metadata::DECODERS
+
+  # @return [CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcher] Configuration for matching git branches to this environment
+  attr_reader :branch_matcher
+  # @return [Float] Timestamp when the environment was created
+  attr_reader :created_at
+  # @return [Array_of_String] List of aliases for the current deployment
+  attr_reader :current_deployment_aliases
+  # @return [String] Optional description of the environment's purpose
+  attr_reader :description
+  # @return [Array_of_CancelDeploymentResponseCustomEnvironmentVariant0DomainsItem] List of domains associated with this environment
+  attr_reader :domains
+  # @return [String] Unique identifier for the custom environment (format: env_*)
+  attr_reader :id
+  # @return [String] URL-friendly name of the environment
+  attr_reader :slug
+  # @return [CancelDeploymentResponseCustomEnvironmentVariant0Type] The type of environment (production, preview, or development)
+  attr_reader :type
+  # @return [Float] Timestamp when the environment was last updated
+  attr_reader :updated_at
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941f.
-  # A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-  class CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941f
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941fMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941fMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941fMetadata::DECODERS
-
-    attr_reader :domain, :reason, :type, :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemMetadata
-    FIELDS = {
-      apex_name: 'apexName',
-      created_at: 'createdAt',
-      custom_environment_id: 'customEnvironmentId',
-      git_branch: 'gitBranch',
-      name: 'name',
-      project_id: 'projectId',
-      redirect: 'redirect',
-      redirect_status_code: 'redirectStatusCode',
-      updated_at: 'updatedAt',
-      verification: 'verification',
-      verified: 'verified'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      apex_name
-      name
-      project_id
-      verified
-    ].freeze
-    DECODERS = {
-      redirect_status_code: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemRX7340f82d83.from_value(value)
-      end,
-      verification: lambda do |value|
-        value&.map { |item| ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941f.from_hash(item) }
-      end,
-      verified: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVerified.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseCustomEnvironmentVariant1Metadata
+  FIELDS = {
+    id: "id",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseCustomEnvironmentVariant1.
+class CancelDeploymentResponseCustomEnvironmentVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant1Metadata::DECODERS
+
+  attr_reader :id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseCustomEnvironmentVariant0DomainsItem.
-  # List of domains associated with this environment
-  class CancelDeploymentResponseCustomEnvironmentVariant0DomainsItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0DomainsItemMetadata::DECODERS
-
-    attr_reader :apex_name, :created_at, :custom_environment_id, :git_branch, :name, :project_id,
-                :redirect, :redirect_status_code, :updated_at
-    # @return [Array_of_CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVXf3c7c9941f] A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-    attr_reader :verification
-    # @return [CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVerified] `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-    attr_reader :verified
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0Metadata
-    FIELDS = {
-      branch_matcher: 'branchMatcher',
-      created_at: 'createdAt',
-      current_deployment_aliases: 'currentDeploymentAliases',
-      description: 'description',
-      domains: 'domains',
-      id: 'id',
-      slug: 'slug',
-      type: 'type',
-      updated_at: 'updatedAt'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      created_at
-      id
-      slug
-      type
-      updated_at
-    ].freeze
-    DECODERS = {
-      branch_matcher: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcher.from_hash(value)
-      end,
-      domains: lambda do |value|
-        value&.map { |item| ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0DomainsItem.from_hash(item) }
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseCustomEnvironmentVariant0Type.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Defines the CancelDeploymentResponseCustomEnvironment SDK namespace.
+module CancelDeploymentResponseCustomEnvironment
+  def self.from_hash(hash)
+    shape_mapping = {
+      "createdAt" => CancelDeploymentResponseCustomEnvironmentVariant0,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    return CancelDeploymentResponseCustomEnvironmentVariant1.from_hash(hash)
+  end
+end
+
+# Defines the CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherType SDK namespace.
+module CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherType
+  ENDS_WITH = 'endsWith'
+  EQUALS = 'equals'
+  STARTS_WITH = 'startsWith'
+  VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemRX7340f82d83 SDK namespace.
+module CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemRX7340f82d83
+  V_301 = 301
+  V_302 = 302
+  V_307 = 307
+  V_308 = 308
+  VALUES = [301, 302, 307, 308].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVerified SDK namespace.
+module CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVerified
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseCustomEnvironmentVariant0Type SDK namespace.
+module CancelDeploymentResponseCustomEnvironmentVariant0Type
+  DEVELOPMENT = 'development'
+  PREVIEW = 'preview'
+  PRODUCTION = 'production'
+  VALUES = ['development', 'preview', 'production'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseGitRepoVariant0Metadata
+  FIELDS = {
+    default_branch: "defaultBranch",
+    name: "name",
+    namespace: "namespace",
+    owner_type: "ownerType",
+    path: "path",
+    private: "private",
+    project_id: "projectId",
+    type: "type",
+    url: "url",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    default_branch
+    name
+    namespace
+    owner_type
+    path
+    private
+    project_id
+    type
+    url
+  ].freeze
+  DECODERS = {
+    owner_type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseGitRepoVariant0OwnerType.from_value(value)
+    end,
+    private: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseGitRepoVariant0Private.from_value(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseGitRepoVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseGitRepoVariant0.
+class CancelDeploymentResponseGitRepoVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseGitRepoVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseGitRepoVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseGitRepoVariant0Metadata::DECODERS
+
+  attr_reader :default_branch, :name, :namespace, :owner_type, :path, :private, :project_id, :type,
+              :url
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseCustomEnvironmentVariant0.
-  class CancelDeploymentResponseCustomEnvironmentVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant0Metadata::DECODERS
-
-    # @return [CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcher] Configuration for matching git branches to this environment
-    attr_reader :branch_matcher
-    # @return [Float] Timestamp when the environment was created
-    attr_reader :created_at
-    # @return [Array_of_String] List of aliases for the current deployment
-    attr_reader :current_deployment_aliases
-    # @return [String] Optional description of the environment's purpose
-    attr_reader :description
-    # @return [Array_of_CancelDeploymentResponseCustomEnvironmentVariant0DomainsItem] List of domains associated with this environment
-    attr_reader :domains
-    # @return [String] Unique identifier for the custom environment (format: env_*)
-    attr_reader :id
-    # @return [String] URL-friendly name of the environment
-    attr_reader :slug
-    # @return [CancelDeploymentResponseCustomEnvironmentVariant0Type] The type of environment (production, preview, or development)
-    attr_reader :type
-    # @return [Float] Timestamp when the environment was last updated
-    attr_reader :updated_at
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseCustomEnvironmentVariant1Metadata
-    FIELDS = {
-      id: 'id'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseGitRepoVariant1Metadata
+  FIELDS = {
+    default_branch: "defaultBranch",
+    name: "name",
+    org: "org",
+    owner_type: "ownerType",
+    path: "path",
+    private: "private",
+    repo: "repo",
+    repo_id: "repoId",
+    repo_owner_id: "repoOwnerId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    default_branch
+    name
+    org
+    owner_type
+    path
+    private
+    repo
+    repo_id
+    repo_owner_id
+    type
+  ].freeze
+  DECODERS = {
+    owner_type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseGitRepoVariant1OwnerType.from_value(value)
+    end,
+    private: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseGitRepoVariant1Private.from_value(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseGitRepoVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseGitRepoVariant1.
+class CancelDeploymentResponseGitRepoVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseGitRepoVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseGitRepoVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseGitRepoVariant1Metadata::DECODERS
+
+  attr_reader :default_branch, :name, :org, :owner_type, :path, :private, :repo, :repo_id,
+              :repo_owner_id, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseCustomEnvironmentVariant1.
-  class CancelDeploymentResponseCustomEnvironmentVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseCustomEnvironmentVariant1Metadata::DECODERS
-
-    attr_reader :id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseCustomEnvironment SDK namespace.
-  module CancelDeploymentResponseCustomEnvironment
-    def self.from_hash(hash)
-      shape_mapping = {
-        'createdAt' => CancelDeploymentResponseCustomEnvironmentVariant0
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      CancelDeploymentResponseCustomEnvironmentVariant1.from_hash(hash)
-    end
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseGitRepoVariant2Metadata
+  FIELDS = {
+    default_branch: "defaultBranch",
+    name: "name",
+    owner: "owner",
+    owner_type: "ownerType",
+    path: "path",
+    private: "private",
+    repo_uuid: "repoUuid",
+    slug: "slug",
+    type: "type",
+    workspace_uuid: "workspaceUuid",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    default_branch
+    name
+    owner
+    owner_type
+    path
+    private
+    repo_uuid
+    slug
+    type
+    workspace_uuid
+  ].freeze
+  DECODERS = {
+    owner_type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseGitRepoVariant2OwnerType.from_value(value)
+    end,
+    private: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseGitRepoVariant2Private.from_value(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseGitRepoVariant2Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseGitRepoVariant2.
+class CancelDeploymentResponseGitRepoVariant2
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseGitRepoVariant2Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseGitRepoVariant2Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseGitRepoVariant2Metadata::DECODERS
+
+  attr_reader :default_branch, :name, :owner, :owner_type, :path, :private, :repo_uuid, :slug, :type,
+              :workspace_uuid
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherType SDK namespace.
-  module CancelDeploymentResponseCustomEnvironmentVariant0BranchMatcherType
-    ENDS_WITH = 'endsWith'
-    EQUALS = 'equals'
-    STARTS_WITH = 'startsWith'
-    VALUES = %w[endsWith equals startsWith].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemRX7340f82d83 SDK namespace.
-  module CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemRX7340f82d83
-    V_301 = 301
-    V_302 = 302
-    V_307 = 307
-    V_308 = 308
-    VALUES = [301, 302, 307, 308].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
-
-  # Defines the CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVerified SDK namespace.
-  module CancelDeploymentResponseCustomEnvironmentVariant0DomainsItemVerified
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the CancelDeploymentResponseCustomEnvironmentVariant0Type SDK namespace.
-  module CancelDeploymentResponseCustomEnvironmentVariant0Type
-    DEVELOPMENT = 'development'
-    PREVIEW = 'preview'
-    PRODUCTION = 'production'
-    VALUES = %w[development preview production].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseGitRepoVariant0Metadata
-    FIELDS = {
-      default_branch: 'defaultBranch',
-      name: 'name',
-      namespace: 'namespace',
-      owner_type: 'ownerType',
-      path: 'path',
-      private: 'private',
-      project_id: 'projectId',
-      type: 'type',
-      url: 'url'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      default_branch
-      name
-      namespace
-      owner_type
-      path
-      private
-      project_id
-      type
-      url
-    ].freeze
-    DECODERS = {
-      owner_type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseGitRepoVariant0OwnerType.from_value(value)
-      end,
-      private: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseGitRepoVariant0Private.from_value(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseGitRepoVariant0Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CancelDeploymentResponseGitRepoVariant0.
-  class CancelDeploymentResponseGitRepoVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseGitRepoVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseGitRepoVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseGitRepoVariant0Metadata::DECODERS
-
-    attr_reader :default_branch, :name, :namespace, :owner_type, :path, :private, :project_id, :type,
-                :url
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseGitRepoVariant1Metadata
-    FIELDS = {
-      default_branch: 'defaultBranch',
-      name: 'name',
-      org: 'org',
-      owner_type: 'ownerType',
-      path: 'path',
-      private: 'private',
-      repo: 'repo',
-      repo_id: 'repoId',
-      repo_owner_id: 'repoOwnerId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      default_branch
-      name
-      org
-      owner_type
-      path
-      private
-      repo
-      repo_id
-      repo_owner_id
-      type
-    ].freeze
-    DECODERS = {
-      owner_type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseGitRepoVariant1OwnerType.from_value(value)
-      end,
-      private: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseGitRepoVariant1Private.from_value(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseGitRepoVariant1Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CancelDeploymentResponseGitRepoVariant1.
-  class CancelDeploymentResponseGitRepoVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseGitRepoVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseGitRepoVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseGitRepoVariant1Metadata::DECODERS
-
-    attr_reader :default_branch, :name, :org, :owner_type, :path, :private, :repo, :repo_id,
-                :repo_owner_id, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseGitRepoVariant2Metadata
-    FIELDS = {
-      default_branch: 'defaultBranch',
-      name: 'name',
-      owner: 'owner',
-      owner_type: 'ownerType',
-      path: 'path',
-      private: 'private',
-      repo_uuid: 'repoUuid',
-      slug: 'slug',
-      type: 'type',
-      workspace_uuid: 'workspaceUuid'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      default_branch
-      name
-      owner
-      owner_type
-      path
-      private
-      repo_uuid
-      slug
-      type
-      workspace_uuid
-    ].freeze
-    DECODERS = {
-      owner_type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseGitRepoVariant2OwnerType.from_value(value)
-      end,
-      private: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseGitRepoVariant2Private.from_value(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseGitRepoVariant2Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CancelDeploymentResponseGitRepoVariant2.
-  class CancelDeploymentResponseGitRepoVariant2
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseGitRepoVariant2Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseGitRepoVariant2Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseGitRepoVariant2Metadata::DECODERS
-
-    attr_reader :default_branch, :name, :owner, :owner_type, :path, :private, :repo_uuid, :slug, :type,
-                :workspace_uuid
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
+end
 end

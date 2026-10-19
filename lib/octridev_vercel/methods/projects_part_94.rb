@@ -74,7 +74,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[development preview production].freeze
+        VALUES = ['development', 'preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -98,7 +98,7 @@ module OctridevVercel
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
         REDIRECT = 'redirect'
-        VALUES = %w[allow bypass challenge deny log rate_limit redirect].freeze
+        VALUES = ['allow', 'bypass', 'challenge', 'deny', 'log', 'rate_limit', 'redirect'].freeze
         def self.from_value(value)
           value
         end
@@ -128,7 +128,7 @@ module OctridevVercel
       module ListProjectsResponseVariant2ProjectsItemResourceConfigBuildQuX22a41f21a0
         SKIP_NAMESPACE_QUEUE = 'SKIP_NAMESPACE_QUEUE'
         WAIT_FOR_NAMESPACE_QUEUE = 'WAIT_FOR_NAMESPACE_QUEUE'
-        VALUES = %w[SKIP_NAMESPACE_QUEUE WAIT_FOR_NAMESPACE_QUEUE].freeze
+        VALUES = ['SKIP_NAMESPACE_QUEUE', 'WAIT_FOR_NAMESPACE_QUEUE'].freeze
         def self.from_value(value)
           value
         end
@@ -148,7 +148,7 @@ module OctridevVercel
       module UpdateProjectTracingSamplingRulesItemDestination
         INTERNAL = 'internal'
         EXTERNAL = 'external'
-        VALUES = %w[internal external].freeze
+        VALUES = ['internal', 'external'].freeze
         def self.from_value(value)
           value
         end
@@ -220,8 +220,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = %w[
-          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+        VALUES = [
+          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
         ].freeze
         def self.from_value(value)
           value
@@ -232,7 +232,7 @@ module OctridevVercel
       module GetProjectsResponseGitProviderOptionsCreateDeployments
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = %w[disabled enabled].freeze
+        VALUES = ['disabled', 'enabled'].freeze
         def self.from_value(value)
           value
         end
@@ -336,7 +336,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -346,7 +346,7 @@ module OctridevVercel
       module RemoveProjectEnvResponseVariant0ItemVisibility
         CONFIG = 'config'
         SECRET = 'secret'
-        VALUES = %w[config secret].freeze
+        VALUES = ['config', 'secret'].freeze
         def self.from_value(value)
           value
         end
@@ -442,10 +442,10 @@ module OctridevVercel
         OOM_FAILURE = 'oom-failure'
         SHORT_BUILD_DURATION = 'short-build-duration'
         SUSTAINED_HIGH_CPU = 'sustained-high-cpu'
-        VALUES = %w[
-          basic-floor build-timeout-failure enospc-failure enterprise-floor
-          high-peak-disk high-peak-memory long-build-duration oom-failure
-          short-build-duration sustained-high-cpu
+        VALUES = [
+          'basic-floor', 'build-timeout-failure', 'enospc-failure', 'enterprise-floor',
+          'high-peak-disk', 'high-peak-memory', 'long-build-duration', 'oom-failure',
+          'short-build-duration', 'sustained-high-cpu'
         ].freeze
         def self.from_value(value)
           value
@@ -466,7 +466,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = %w[PROMOTED ROLLING STAGED].freeze
+        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
         def self.from_value(value)
           value
         end
@@ -476,7 +476,7 @@ module OctridevVercel
       module ListProjectsParameter00d3a677
         SKIP_NAMESPACE_QUEUE = 'SKIP_NAMESPACE_QUEUE'
         WAIT_FOR_NAMESPACE_QUEUE = 'WAIT_FOR_NAMESPACE_QUEUE'
-        VALUES = %w[SKIP_NAMESPACE_QUEUE WAIT_FOR_NAMESPACE_QUEUE].freeze
+        VALUES = ['SKIP_NAMESPACE_QUEUE', 'WAIT_FOR_NAMESPACE_QUEUE'].freeze
         def self.from_value(value)
           value
         end
@@ -488,7 +488,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = %w[basic enhanced standard turbo].freeze
+        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
         def self.from_value(value)
           value
         end
@@ -500,7 +500,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = %w[basic enhanced standard turbo].freeze
+        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
         def self.from_value(value)
           value
         end
@@ -535,8 +535,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value
@@ -547,7 +547,7 @@ module OctridevVercel
       module UpdateProjectResponseResourceConfigBuildMachineElasticTransitXd15f55b576
         DOWNGRADE = 'downgrade'
         UPGRADE = 'upgrade'
-        VALUES = %w[downgrade upgrade].freeze
+        VALUES = ['downgrade', 'upgrade'].freeze
         def self.from_value(value)
           value
         end
@@ -568,7 +568,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = %w[PROMOTED ROLLING STAGED].freeze
+        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
         def self.from_value(value)
           value
         end

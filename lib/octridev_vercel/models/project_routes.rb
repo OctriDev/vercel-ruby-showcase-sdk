@@ -5,670 +5,677 @@
 
 # project_routes domain models
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalAddRouteResponseRouteRouteDestinationVariant1Metadata
-    FIELDS = {
-      path: 'path',
-      service: 'service',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      service
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::AddRouteResponseRouteRouteDestinationVariant1Type.from_value(value)
-      end
-    }.freeze
+# Internal model hydration metadata.
+class SdkInternalAddRouteResponseRouteRouteDestinationVariant1Metadata
+  FIELDS = {
+    path: "path",
+    service: "service",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    service
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::AddRouteResponseRouteRouteDestinationVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for AddRouteResponseRouteRouteDestinationVariant1.
+class AddRouteResponseRouteRouteDestinationVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAddRouteResponseRouteRouteDestinationVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteDestinationVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAddRouteResponseRouteRouteDestinationVariant1Metadata::DECODERS
+
+  attr_reader :service
+  # @return [String] Routing-only path used to select a route inside the target service.
+  attr_reader :path
+  # @return [AddRouteResponseRouteRouteDestinationVariant1Type] Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+  attr_reader :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AddRouteResponseRouteRouteDestinationVariant1.
-  class AddRouteResponseRouteRouteDestinationVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAddRouteResponseRouteRouteDestinationVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteDestinationVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAddRouteResponseRouteRouteDestinationVariant1Metadata::DECODERS
-
-    attr_reader :service
-    # @return [String] Routing-only path used to select a route inside the target service.
-    attr_reader :path
-    # @return [AddRouteResponseRouteRouteDestinationVariant1Type] Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
-    attr_reader :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the AddRouteResponseRouteRouteDestination SDK namespace.
-  module AddRouteResponseRouteRouteDestination
-    def self.from_hash(hash)
-      return hash if hash.is_a?(::String)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      AddRouteResponseRouteRouteDestinationVariant1.from_hash(hash)
-    end
+# Defines the AddRouteResponseRouteRouteDestination SDK namespace.
+module AddRouteResponseRouteRouteDestination
+  def self.from_hash(hash)
+    return hash if hash.is_a?(::String)
+    return AddRouteResponseRouteRouteDestinationVariant1.from_hash(hash)
+  end
+end
+
+# Defines the AddRouteResponseRouteRouteDestinationVariant1Type SDK namespace.
+module AddRouteResponseRouteRouteDestinationVariant1Type
+  SERVICE = 'service'
+  VALUES = ['service'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAddRouteResponseRouteRouteHasItemVariant0ValueVariant1Metadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for AddRouteResponseRouteRouteHasItemVariant0ValueVariant1.
+class AddRouteResponseRouteRouteHasItemVariant0ValueVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant0ValueVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant0ValueVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAddRouteResponseRouteRouteHasItemVariant0ValueVariant1Metadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the AddRouteResponseRouteRouteDestinationVariant1Type SDK namespace.
-  module AddRouteResponseRouteRouteDestinationVariant1Type
-    SERVICE = 'service'
-    VALUES = ['service'].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAddRouteResponseRouteRouteHasItemVariant0ValueVariant1Metadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAddRouteResponseRouteRouteHasItemVariant0Metadata
+  FIELDS = {
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    value
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::AddRouteResponseRouteRouteHasItemVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for AddRouteResponseRouteRouteHasItemVariant0.
+class AddRouteResponseRouteRouteHasItemVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAddRouteResponseRouteRouteHasItemVariant0Metadata::DECODERS
+
+  attr_reader :type, :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AddRouteResponseRouteRouteHasItemVariant0ValueVariant1.
-  class AddRouteResponseRouteRouteHasItemVariant0ValueVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant0ValueVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant0ValueVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAddRouteResponseRouteRouteHasItemVariant0ValueVariant1Metadata::DECODERS
-
-    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAddRouteResponseRouteRouteHasItemVariant0Metadata
-    FIELDS = {
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      value
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::AddRouteResponseRouteRouteHasItemVariant0Type.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAddRouteResponseRouteRouteHasItemVariant1ValueVariant1Metadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for AddRouteResponseRouteRouteHasItemVariant1ValueVariant1.
+class AddRouteResponseRouteRouteHasItemVariant1ValueVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant1ValueVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant1ValueVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAddRouteResponseRouteRouteHasItemVariant1ValueVariant1Metadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AddRouteResponseRouteRouteHasItemVariant0.
-  class AddRouteResponseRouteRouteHasItemVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAddRouteResponseRouteRouteHasItemVariant0Metadata::DECODERS
-
-    attr_reader :type, :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAddRouteResponseRouteRouteHasItemVariant1ValueVariant1Metadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAddRouteResponseRouteRouteHasItemVariant1Metadata
+  FIELDS = {
+    key: "key",
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    key
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::AddRouteResponseRouteRouteHasItemVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for AddRouteResponseRouteRouteHasItemVariant1.
+class AddRouteResponseRouteRouteHasItemVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAddRouteResponseRouteRouteHasItemVariant1Metadata::DECODERS
+
+  attr_reader :key, :type, :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AddRouteResponseRouteRouteHasItemVariant1ValueVariant1.
-  class AddRouteResponseRouteRouteHasItemVariant1ValueVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant1ValueVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant1ValueVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAddRouteResponseRouteRouteHasItemVariant1ValueVariant1Metadata::DECODERS
-
-    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAddRouteResponseRouteRouteHasItemVariant1Metadata
-    FIELDS = {
-      key: 'key',
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      key
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::AddRouteResponseRouteRouteHasItemVariant1Type.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Defines the AddRouteResponseRouteRouteHasItem SDK namespace.
+module AddRouteResponseRouteRouteHasItem
+  def self.from_hash(hash)
+    shape_mapping = {
+      "key" => AddRouteResponseRouteRouteHasItemVariant1,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    return AddRouteResponseRouteRouteHasItemVariant0.from_hash(hash)
+  end
+end
+
+# Defines the AddRouteResponseRouteRouteHasItemVariant0Type SDK namespace.
+module AddRouteResponseRouteRouteHasItemVariant0Type
+  HOST = 'host'
+  VALUES = ['host'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the AddRouteResponseRouteRouteHasItemVariant1Type SDK namespace.
+module AddRouteResponseRouteRouteHasItemVariant1Type
+  COOKIE = 'cookie'
+  HEADER = 'header'
+  QUERY = 'query'
+  VALUES = ['cookie', 'header', 'query'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAddRouteResponseRouteRouteMissingItemVariant0ValueVariant1Metadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for AddRouteResponseRouteRouteMissingItemVariant0ValueVariant1.
+class AddRouteResponseRouteRouteMissingItemVariant0ValueVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant0ValueVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant0ValueVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant0ValueVariant1Metadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AddRouteResponseRouteRouteHasItemVariant1.
-  class AddRouteResponseRouteRouteHasItemVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteHasItemVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAddRouteResponseRouteRouteHasItemVariant1Metadata::DECODERS
-
-    attr_reader :key, :type, :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the AddRouteResponseRouteRouteHasItem SDK namespace.
-  module AddRouteResponseRouteRouteHasItem
-    def self.from_hash(hash)
-      shape_mapping = {
-        'key' => AddRouteResponseRouteRouteHasItemVariant1
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      AddRouteResponseRouteRouteHasItemVariant0.from_hash(hash)
-    end
+# Internal model hydration metadata.
+class SdkInternalAddRouteResponseRouteRouteMissingItemVariant0Metadata
+  FIELDS = {
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    value
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::AddRouteResponseRouteRouteMissingItemVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for AddRouteResponseRouteRouteMissingItemVariant0.
+class AddRouteResponseRouteRouteMissingItemVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant0Metadata::DECODERS
+
+  attr_reader :type, :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the AddRouteResponseRouteRouteHasItemVariant0Type SDK namespace.
-  module AddRouteResponseRouteRouteHasItemVariant0Type
-    HOST = 'host'
-    VALUES = ['host'].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the AddRouteResponseRouteRouteHasItemVariant1Type SDK namespace.
-  module AddRouteResponseRouteRouteHasItemVariant1Type
-    COOKIE = 'cookie'
-    HEADER = 'header'
-    QUERY = 'query'
-    VALUES = %w[cookie header query].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAddRouteResponseRouteRouteMissingItemVariant1ValueVariant1Metadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for AddRouteResponseRouteRouteMissingItemVariant1ValueVariant1.
+class AddRouteResponseRouteRouteMissingItemVariant1ValueVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant1ValueVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant1ValueVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant1ValueVariant1Metadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAddRouteResponseRouteRouteMissingItemVariant0ValueVariant1Metadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for AddRouteResponseRouteRouteMissingItemVariant0ValueVariant1.
-  class AddRouteResponseRouteRouteMissingItemVariant0ValueVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant0ValueVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant0ValueVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant0ValueVariant1Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+# Internal model hydration metadata.
+class SdkInternalAddRouteResponseRouteRouteMissingItemVariant1Metadata
+  FIELDS = {
+    key: "key",
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    key
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::AddRouteResponseRouteRouteMissingItemVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for AddRouteResponseRouteRouteMissingItemVariant1.
+class AddRouteResponseRouteRouteMissingItemVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant1Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :key, :type, :value
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAddRouteResponseRouteRouteMissingItemVariant0Metadata
-    FIELDS = {
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      value
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::AddRouteResponseRouteRouteMissingItemVariant0Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for AddRouteResponseRouteRouteMissingItemVariant0.
-  class AddRouteResponseRouteRouteMissingItemVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant0Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :type, :value
+# Defines the AddRouteResponseRouteRouteMissingItem SDK namespace.
+module AddRouteResponseRouteRouteMissingItem
+  def self.from_hash(hash)
+    shape_mapping = {
+      "key" => AddRouteResponseRouteRouteMissingItemVariant1,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    return AddRouteResponseRouteRouteMissingItemVariant0.from_hash(hash)
+  end
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# Defines the AddRouteResponseRouteRouteMissingItemVariant0Type SDK namespace.
+module AddRouteResponseRouteRouteMissingItemVariant0Type
+  HOST = 'host'
+  VALUES = ['host'].freeze
+  def self.from_value(value)
+    value
+  end
+end
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+# Defines the AddRouteResponseRouteRouteMissingItemVariant1Type SDK namespace.
+module AddRouteResponseRouteRouteMissingItemVariant1Type
+  COOKIE = 'cookie'
+  HEADER = 'header'
+  QUERY = 'query'
+  VALUES = ['cookie', 'header', 'query'].freeze
+  def self.from_value(value)
+    value
+  end
+end
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+# Internal model hydration metadata.
+class SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1Metadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for AddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1.
+class AddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1Metadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAddRouteResponseRouteRouteMissingItemVariant1ValueVariant1Metadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for AddRouteResponseRouteRouteMissingItemVariant1ValueVariant1.
-  class AddRouteResponseRouteRouteMissingItemVariant1ValueVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant1ValueVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant1ValueVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant1ValueVariant1Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+# Internal model hydration metadata.
+class SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetMetadata
+  FIELDS = {
+    key: "key",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    key
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for AddRouteResponseRouteRouteTransformsItemVariant0Target.
+class AddRouteResponseRouteRouteTransformsItemVariant0Target
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :key
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAddRouteResponseRouteRouteMissingItemVariant1Metadata
-    FIELDS = {
-      key: 'key',
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      key
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::AddRouteResponseRouteRouteMissingItemVariant1Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for AddRouteResponseRouteRouteMissingItemVariant1.
-  class AddRouteResponseRouteRouteMissingItemVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAddRouteResponseRouteRouteMissingItemVariant1Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :key, :type, :value
+# Internal model hydration metadata.
+class SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0Metadata
+  FIELDS = {
+    args: "args",
+    env: "env",
+    op: "op",
+    target: "target",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    op
+    target
+    type
+  ].freeze
+  DECODERS = {
+    op: lambda do |value|
+      ::OctridevVercel::AddRouteResponseRouteRouteTransformsItemVariant0Op.from_value(value)
+    end,
+    target: lambda do |value|
+      ::OctridevVercel::AddRouteResponseRouteRouteTransformsItemVariant0Target.from_hash(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::AddRouteResponseRouteRouteTransformsItemVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for AddRouteResponseRouteRouteTransformsItemVariant0.
+class AddRouteResponseRouteRouteTransformsItemVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :args, :env, :op, :target, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the AddRouteResponseRouteRouteMissingItem SDK namespace.
-  module AddRouteResponseRouteRouteMissingItem
-    def self.from_hash(hash)
-      shape_mapping = {
-        'key' => AddRouteResponseRouteRouteMissingItemVariant1
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
-
-      AddRouteResponseRouteRouteMissingItemVariant0.from_hash(hash)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the AddRouteResponseRouteRouteMissingItemVariant0Type SDK namespace.
-  module AddRouteResponseRouteRouteMissingItemVariant0Type
-    HOST = 'host'
-    VALUES = ['host'].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAddRouteResponseRouteRouteTransformsItemVariant1Metadata
+  FIELDS = {
+    args: "args",
+    env: "env",
+    op: "op",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    args
+    op
+    type
+  ].freeze
+  DECODERS = {
+    op: lambda do |value|
+      ::OctridevVercel::AddRouteResponseRouteRouteTransformsItemVariant1Op.from_value(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::AddRouteResponseRouteRouteTransformsItemVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for AddRouteResponseRouteRouteTransformsItemVariant1.
+class AddRouteResponseRouteRouteTransformsItemVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant1Metadata::DECODERS
+
+  attr_reader :args, :env, :op, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the AddRouteResponseRouteRouteMissingItemVariant1Type SDK namespace.
-  module AddRouteResponseRouteRouteMissingItemVariant1Type
-    COOKIE = 'cookie'
-    HEADER = 'header'
-    QUERY = 'query'
-    VALUES = %w[cookie header query].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1Metadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # API model for AddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1.
-  class AddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1Metadata::DECODERS
-
-    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :suf
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+# Defines the AddRouteResponseRouteRouteTransformsItem SDK namespace.
+module AddRouteResponseRouteRouteTransformsItem
+  def self.from_hash(hash)
+    shape_mapping = {
+      "target" => AddRouteResponseRouteRouteTransformsItemVariant0,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    return AddRouteResponseRouteRouteTransformsItemVariant1.from_hash(hash)
   end
+end
 
-  # Internal model hydration metadata.
-  class SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetMetadata
-    FIELDS = {
-      key: 'key'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      key
-    ].freeze
-    DECODERS = {}.freeze
+# Defines the AddRouteResponseRouteRouteTransformsItemVariant0Op SDK namespace.
+module AddRouteResponseRouteRouteTransformsItemVariant0Op
+  APPEND = 'append'
+  DELETE = 'delete'
+  SET = 'set'
+  VALUES = ['append', 'delete', 'set'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # API model for AddRouteResponseRouteRouteTransformsItemVariant0Target.
-  class AddRouteResponseRouteRouteTransformsItemVariant0Target
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0TargetMetadata::DECODERS
-
-    attr_reader :key
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+# Defines the AddRouteResponseRouteRouteTransformsItemVariant0Type SDK namespace.
+module AddRouteResponseRouteRouteTransformsItemVariant0Type
+  REQUEST_HEADERS = 'request.headers'
+  REQUEST_QUERY = 'request.query'
+  RESPONSE_HEADERS = 'response.headers'
+  VALUES = ['request.headers', 'request.query', 'response.headers'].freeze
+  def self.from_value(value)
+    value
   end
-
-  # Internal model hydration metadata.
-  class SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0Metadata
-    FIELDS = {
-      args: 'args',
-      env: 'env',
-      op: 'op',
-      target: 'target',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      op
-      target
-      type
-    ].freeze
-    DECODERS = {
-      op: lambda do |value|
-        ::OctridevVercel::AddRouteResponseRouteRouteTransformsItemVariant0Op.from_value(value)
-      end,
-      target: lambda do |value|
-        ::OctridevVercel::AddRouteResponseRouteRouteTransformsItemVariant0Target.from_hash(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::AddRouteResponseRouteRouteTransformsItemVariant0Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for AddRouteResponseRouteRouteTransformsItemVariant0.
-  class AddRouteResponseRouteRouteTransformsItemVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant0Metadata::DECODERS
-
-    attr_reader :args, :env, :op, :target, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalAddRouteResponseRouteRouteTransformsItemVariant1Metadata
-    FIELDS = {
-      args: 'args',
-      env: 'env',
-      op: 'op',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      args
-      op
-      type
-    ].freeze
-    DECODERS = {
-      op: lambda do |value|
-        ::OctridevVercel::AddRouteResponseRouteRouteTransformsItemVariant1Op.from_value(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::AddRouteResponseRouteRouteTransformsItemVariant1Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for AddRouteResponseRouteRouteTransformsItemVariant1.
-  class AddRouteResponseRouteRouteTransformsItemVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAddRouteResponseRouteRouteTransformsItemVariant1Metadata::DECODERS
-
-    attr_reader :args, :env, :op, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Defines the AddRouteResponseRouteRouteTransformsItem SDK namespace.
-  module AddRouteResponseRouteRouteTransformsItem
-    def self.from_hash(hash)
-      shape_mapping = {
-        'target' => AddRouteResponseRouteRouteTransformsItemVariant0
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
-
-      AddRouteResponseRouteRouteTransformsItemVariant1.from_hash(hash)
-    end
-  end
-
-  # Defines the AddRouteResponseRouteRouteTransformsItemVariant0Op SDK namespace.
-  module AddRouteResponseRouteRouteTransformsItemVariant0Op
-    APPEND = 'append'
-    DELETE = 'delete'
-    SET = 'set'
-    VALUES = %w[append delete set].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the AddRouteResponseRouteRouteTransformsItemVariant0Type SDK namespace.
-  module AddRouteResponseRouteRouteTransformsItemVariant0Type
-    REQUEST_HEADERS = 'request.headers'
-    REQUEST_QUERY = 'request.query'
-    RESPONSE_HEADERS = 'response.headers'
-    VALUES = ['request.headers', 'request.query', 'response.headers'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
+end
 end

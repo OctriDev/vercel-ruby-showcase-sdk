@@ -5,107 +5,109 @@
 
 # projects_list domain models (part 6)
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62abMetadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      list: 'list',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+# Internal model hydration metadata.
+class SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62abMetadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    list: "list",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62ab.
+class ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62ab
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62abMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62abMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62abMetadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :list, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62ab.
-  class ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62ab
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62abMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62abMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62abMetadata::DECODERS
-
-    attr_reader :eq, :gt, :gte, :inc, :list, :lt, :lte, :neq, :ninc, :pre, :re, :suf
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue SDK namespace.
-  module ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue
-    def self.from_hash(hash)
-      return hash if hash.is_a?(::String)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62ab.from_hash(hash)
-    end
+# Defines the ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue SDK namespace.
+module ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue
+  def self.from_hash(hash)
+    return hash if hash.is_a?(::String)
+    return ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62ab.from_hash(hash)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1Metadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    list: "list",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for ListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1.
+class ListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1Metadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :list, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1Metadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      list: 'list',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for ListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1.
-  class ListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1Metadata::DECODERS
-
-    attr_reader :eq, :gt, :gte, :inc, :list, :lt, :lte, :neq, :ninc, :pre, :re, :suf
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the ListProjectsResponseItemSecurityFirewallRoutesItemSrc SDK namespace.
-  module ListProjectsResponseItemSecurityFirewallRoutesItemSrc
-    def self.from_hash(hash)
-      return hash if hash.is_a?(::String)
-
-      ListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1.from_hash(hash)
-    end
+# Defines the ListProjectsResponseItemSecurityFirewallRoutesItemSrc SDK namespace.
+module ListProjectsResponseItemSecurityFirewallRoutesItemSrc
+  def self.from_hash(hash)
+    return hash if hash.is_a?(::String)
+    return ListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1.from_hash(hash)
   end
+end
 end

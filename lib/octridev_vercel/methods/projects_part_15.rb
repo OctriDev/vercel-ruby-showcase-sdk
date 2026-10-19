@@ -12,14 +12,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseConnectConfigurationsItemMetadata
         FIELDS = {
-          aws: 'aws',
-          builds_enabled: 'buildsEnabled',
-          connect_configuration_id: 'connectConfigurationId',
-          created_at: 'createdAt',
-          dc: 'dc',
-          env_id: 'envId',
-          passive: 'passive',
-          updated_at: 'updatedAt'
+          aws: "aws",
+          builds_enabled: "buildsEnabled",
+          connect_configuration_id: "connectConfigurationId",
+          created_at: "createdAt",
+          dc: "dc",
+          env_id: "envId",
+          passive: "passive",
+          updated_at: "updatedAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           builds_enabled
@@ -41,7 +41,7 @@ module OctridevVercel
           end,
           passive: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseConnectConfigurationsItemPassive.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -72,12 +72,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseCronsDefinitionsItemMetadata
         FIELDS = {
-          description: 'description',
-          host: 'host',
-          host_inferred: 'hostInferred',
-          path: 'path',
-          schedule: 'schedule',
-          source: 'source'
+          description: "description",
+          host: "host",
+          host_inferred: "hostInferred",
+          path: "path",
+          schedule: "schedule",
+          source: "source",
         }.freeze
         REQUIRED_FIELDS = %i[
           host
@@ -90,7 +90,7 @@ module OctridevVercel
           end,
           source: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseCronsDefinitionsItemSource.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -131,11 +131,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseCronsMetadata
         FIELDS = {
-          definitions: 'definitions',
-          deployment_id: 'deploymentId',
-          disabled_at: 'disabledAt',
-          enabled_at: 'enabledAt',
-          updated_at: 'updatedAt'
+          definitions: "definitions",
+          deployment_id: "deploymentId",
+          disabled_at: "disabledAt",
+          enabled_at: "enabledAt",
+          updated_at: "updatedAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           definitions
@@ -147,7 +147,7 @@ module OctridevVercel
         DECODERS = {
           definitions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::GetProjectsResponseCronsDefinitionsItem.from_hash(item) }
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           deployment_id
@@ -187,8 +187,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseCustomEnvironmentsItemBranchMatcherMetadata
         FIELDS = {
-          pattern: 'pattern',
-          type: 'type'
+          pattern: "pattern",
+          type: "type",
         }.freeze
         REQUIRED_FIELDS = %i[
           pattern
@@ -197,7 +197,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseCustomEnvironmentsItemBranchMatcherType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -231,10 +231,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseCustomEnvironmentsItemDomainsItemVerificationItemMetadata
         FIELDS = {
-          domain: 'domain',
-          reason: 'reason',
-          type: 'type',
-          value: 'value'
+          domain: "domain",
+          reason: "reason",
+          type: "type",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -242,7 +242,8 @@ module OctridevVercel
           type
           value
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetProjectsResponseCustomEnvironmentsItemDomainsItemVerificationItem.
@@ -272,17 +273,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseCustomEnvironmentsItemDomainsItemMetadata
         FIELDS = {
-          apex_name: 'apexName',
-          created_at: 'createdAt',
-          custom_environment_id: 'customEnvironmentId',
-          git_branch: 'gitBranch',
-          name: 'name',
-          project_id: 'projectId',
-          redirect: 'redirect',
-          redirect_status_code: 'redirectStatusCode',
-          updated_at: 'updatedAt',
-          verification: 'verification',
-          verified: 'verified'
+          apex_name: "apexName",
+          created_at: "createdAt",
+          custom_environment_id: "customEnvironmentId",
+          git_branch: "gitBranch",
+          name: "name",
+          project_id: "projectId",
+          redirect: "redirect",
+          redirect_status_code: "redirectStatusCode",
+          updated_at: "updatedAt",
+          verification: "verification",
+          verified: "verified",
         }.freeze
         REQUIRED_FIELDS = %i[
           apex_name
@@ -299,7 +300,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseCustomEnvironmentsItemDomainsItemVerified.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -335,15 +336,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseCustomEnvironmentsItemMetadata
         FIELDS = {
-          branch_matcher: 'branchMatcher',
-          created_at: 'createdAt',
-          current_deployment_aliases: 'currentDeploymentAliases',
-          description: 'description',
-          domains: 'domains',
-          id: 'id',
-          slug: 'slug',
-          type: 'type',
-          updated_at: 'updatedAt'
+          branch_matcher: "branchMatcher",
+          created_at: "createdAt",
+          current_deployment_aliases: "currentDeploymentAliases",
+          description: "description",
+          domains: "domains",
+          id: "id",
+          slug: "slug",
+          type: "type",
+          updated_at: "updatedAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -361,7 +362,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseCustomEnvironmentsItemType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -409,9 +410,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseDataCacheMetadata
         FIELDS = {
-          storage_size_bytes: 'storageSizeBytes',
-          unlimited: 'unlimited',
-          user_disabled: 'userDisabled'
+          storage_size_bytes: "storageSizeBytes",
+          unlimited: "unlimited",
+          user_disabled: "userDisabled",
         }.freeze
         REQUIRED_FIELDS = %i[
           user_disabled
@@ -422,7 +423,7 @@ module OctridevVercel
           end,
           user_disabled: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseDataCacheUserDisabled.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -452,9 +453,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseDefaultResourceConfigBuildMachineElasticTransitionMetadata
         FIELDS = {
-          algorithm_version: 'algorithmVersion',
-          at: 'at',
-          direction: 'direction'
+          algorithm_version: "algorithmVersion",
+          at: "at",
+          direction: "direction",
         }.freeze
         REQUIRED_FIELDS = %i[
           algorithm_version
@@ -464,7 +465,7 @@ module OctridevVercel
         DECODERS = {
           direction: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseDefaultResourceConfigBuildMachineElasticTrXe9e114191e.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -494,13 +495,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseDefaultResourceConfigBuildQueueMetadata
         FIELDS = {
-          configuration: 'configuration'
+          configuration: "configuration",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           configuration: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseDefaultResourceConfigBuildQueueConfiguration.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -530,9 +532,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseDefaultResourceConfigElasticBuildMachineMetadata
         FIELDS = {
-          cores: 'cores',
-          label: 'label',
-          memory: 'memory'
+          cores: "cores",
+          label: "label",
+          memory: "memory",
         }.freeze
         REQUIRED_FIELDS = %i[
           cores
@@ -542,7 +544,7 @@ module OctridevVercel
         DECODERS = {
           label: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseDefaultResourceConfigElasticBuildMachineLabel.from_value(value)
-          end
+          end,
         }.freeze
       end
     end

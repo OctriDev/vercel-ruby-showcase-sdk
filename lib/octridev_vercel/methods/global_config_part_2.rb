@@ -12,9 +12,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetEdgeConfigBackupsResponseBackupsItemMetadata
         FIELDS = {
-          metadata: 'metadata',
-          id: 'id',
-          last_modified: 'lastModified'
+          metadata: "metadata",
+          id: "id",
+          last_modified: "lastModified",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -23,7 +23,7 @@ module OctridevVercel
         DECODERS = {
           metadata: lambda do |value|
             ::OctridevVercel::Methods::GlobalConfig::GetEdgeConfigBackupsResponseBackupsItemMetadata.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -53,8 +53,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetEdgeConfigBackupsResponsePaginationMetadata
         FIELDS = {
-          has_next: 'hasNext',
-          next_: 'next'
+          has_next: "hasNext",
+          next_: "next",
         }.freeze
         REQUIRED_FIELDS = %i[
           has_next
@@ -62,7 +62,7 @@ module OctridevVercel
         DECODERS = {
           has_next: lambda do |value|
             ::OctridevVercel::Methods::GlobalConfig::GetEdgeConfigBackupsResponsePaginationHasNext.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -92,8 +92,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetEdgeConfigBackupsResponseMetadata
         FIELDS = {
-          backups: 'backups',
-          pagination: 'pagination'
+          backups: "backups",
+          pagination: "pagination",
         }.freeze
         REQUIRED_FIELDS = %i[
           backups
@@ -105,7 +105,7 @@ module OctridevVercel
           end,
           pagination: lambda do |value|
             ::OctridevVercel::Methods::GlobalConfig::GetEdgeConfigBackupsResponsePagination.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -158,18 +158,24 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_edge_configs) do |config:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_edge_configs) do |
+        config:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
-          '/v1/global-config',
+          "/v1/global-config",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :json,
           operation_id: 'get_edge_configs',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -188,25 +194,26 @@ module OctridevVercel
         items: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('slug', slug2, max: 64)
         Validation.validate_pattern('slug', slug2, '^[\\w-]+$')
 
         SdkClient.request(
           'POST',
-          '/v1/global-config',
+          "/v1/global-config",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'slug' => slug2,
-            'items' => items
+            'items' => items,
           },
           return_type: ::OctridevVercel::Methods::GlobalConfig::CreateEdgeConfigResponse,
           decoder: :json,
           operation_id: 'create_edge_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -217,22 +224,29 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_edge_config) do |config:, edge_config_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_edge_config) do |
+        config:,
+        edge_config_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/global-config/',
+            "/v1/global-config/",
             SdkClient.encode_path_segment(edge_config_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::GlobalConfig::GetEdgeConfigResponse,
           decoder: :json,
           operation_id: 'get_edge_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -251,27 +265,28 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('slug', slug2, max: 64)
         Validation.validate_pattern('slug', slug2, '^[\\w-]+$')
 
         SdkClient.request(
           'PUT',
           [
-            '/v1/global-config/',
+            "/v1/global-config/",
             SdkClient.encode_path_segment(edge_config_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'slug' => slug2
+            'slug' => slug2,
           },
           return_type: ::OctridevVercel::Methods::GlobalConfig::UpdateEdgeConfigResponse,
           decoder: :json,
           operation_id: 'update_edge_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -289,20 +304,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/global-config/',
+            "/v1/global-config/",
             SdkClient.encode_path_segment(edge_config_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :empty,
           operation_id: 'delete_edge_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -313,25 +329,32 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_edge_config_items) do |config:, edge_config_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_edge_config_items) do |
+        config:,
+        edge_config_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.validate_pattern('edgeConfigId', edge_config_id, '^ecfg_')
 
         SdkClient.request(
           'GET',
           [
-            '/v1/global-config/',
+            "/v1/global-config/",
             SdkClient.encode_path_segment(edge_config_id),
-            '/items'
+            "/items"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: [::OctridevVercel::GlobalConfigItem],
           decoder: :json,
           operation_id: 'get_edge_config_items',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -350,27 +373,28 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_pattern('edgeConfigId', edge_config_id, '^ecfg_')
 
         SdkClient.request(
           'PATCH',
           [
-            '/v1/global-config/',
+            "/v1/global-config/",
             SdkClient.encode_path_segment(edge_config_id),
-            '/items'
+            "/items"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'items' => items
+            'items' => items,
           },
           return_type: ::OctridevVercel::Methods::GlobalConfig::PatchEdgeConfigItemsResponse,
           decoder: :json,
           operation_id: 'patch_edge_config_items',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -381,22 +405,29 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_edge_config_schema) do |config:, edge_config_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_edge_config_schema) do |
+        config:,
+        edge_config_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/global-config/',
+            "/v1/global-config/",
             SdkClient.encode_path_segment(edge_config_id),
-            '/schema'
+            "/schema"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :json,
           operation_id: 'get_edge_config_schema',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -416,25 +447,26 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/global-config/',
+            "/v1/global-config/",
             SdkClient.encode_path_segment(edge_config_id),
-            '/schema'
+            "/schema"
           ].join,
           config: config,
           query: {
             'dryRun' => QueryValue.new(dry_run, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'definition' => definition
+            'definition' => definition,
           },
           decoder: :json,
           operation_id: 'patch_edge_config_schema',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -452,21 +484,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/global-config/',
+            "/v1/global-config/",
             SdkClient.encode_path_segment(edge_config_id),
-            '/schema'
+            "/schema"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :empty,
           operation_id: 'delete_edge_config_schema',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -477,26 +510,34 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_edge_config_item) do |config:, edge_config_id:, edge_config_item_key:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_edge_config_item) do |
+        config:,
+        edge_config_id:,
+        edge_config_item_key:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.validate_pattern('edgeConfigId', edge_config_id, '^ecfg_')
 
         SdkClient.request(
           'GET',
           [
-            '/v1/global-config/',
+            "/v1/global-config/",
             SdkClient.encode_path_segment(edge_config_id),
-            '/item/',
+            "/item/",
             SdkClient.encode_path_segment(edge_config_item_key)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::GlobalConfigItem,
           decoder: :json,
           operation_id: 'get_edge_config_item',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

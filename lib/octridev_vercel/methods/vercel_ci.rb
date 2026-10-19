@@ -23,12 +23,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiRepositorySettingsResponseMetadata
         FIELDS = {
-          provider: 'provider',
-          organization_id: 'organizationId',
-          repository: 'repository',
-          ci_enabled: 'ciEnabled',
-          ci_enabled_at: 'ciEnabledAt',
-          updated_at: 'updatedAt'
+          provider: "provider",
+          organization_id: "organizationId",
+          repository: "repository",
+          ci_enabled: "ciEnabled",
+          ci_enabled_at: "ciEnabledAt",
+          updated_at: "updatedAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           provider
@@ -39,7 +39,7 @@ module OctridevVercel
         DECODERS = {
           provider: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::GetVercelCiRepositorySettingsResponseProviderVariant0.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -70,12 +70,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateVercelCiRepositorySettingsMetadata
         FIELDS = {
-          ci_enabled: 'ciEnabled'
+          ci_enabled: "ciEnabled",
         }.freeze
         REQUIRED_FIELDS = %i[
           ci_enabled
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateVercelCiRepositorySettings.
@@ -115,12 +116,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateVercelCiRepositorySettingsResponseMetadata
         FIELDS = {
-          provider: 'provider',
-          organization_id: 'organizationId',
-          repository: 'repository',
-          ci_enabled: 'ciEnabled',
-          ci_enabled_at: 'ciEnabledAt',
-          updated_at: 'updatedAt'
+          provider: "provider",
+          organization_id: "organizationId",
+          repository: "repository",
+          ci_enabled: "ciEnabled",
+          ci_enabled_at: "ciEnabledAt",
+          updated_at: "updatedAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           provider
@@ -131,7 +132,7 @@ module OctridevVercel
         DECODERS = {
           provider: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::UpdateVercelCiRepositorySettingsResponseProviderVariant0.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -162,12 +163,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiInvocationsResponseInvocationsItemSkippedMetadata
         FIELDS = {
-          reason: 'reason'
+          reason: "reason",
         }.freeze
         REQUIRED_FIELDS = %i[
           reason
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for ListVercelCiInvocationsResponseInvocationsItemSkipped.
@@ -196,12 +198,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiInvocationsResponseInvocationsItemBootstrappingStartedMetadata
         FIELDS = {
-          started_at: 'startedAt'
+          started_at: "startedAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           started_at
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for ListVercelCiInvocationsResponseInvocationsItemBootstrappingStarted.
@@ -230,12 +233,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiInvocationsResponseInvocationsItemBootstrappingFailedMetadata
         FIELDS = {
-          reason: 'reason'
+          reason: "reason",
         }.freeze
         REQUIRED_FIELDS = %i[
           reason
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for ListVercelCiInvocationsResponseInvocationsItemBootstrappingFailed.
@@ -264,15 +268,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiInvocationsResponseInvocationsItemSandboxSnapshottedMetadata
         FIELDS = {
-          sandbox_snapshot_id: 'sandboxSnapshotId',
-          working_directory: 'workingDirectory',
-          snapshotted_at: 'snapshottedAt'
+          sandbox_snapshot_id: "sandboxSnapshotId",
+          working_directory: "workingDirectory",
+          snapshotted_at: "snapshottedAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           sandbox_snapshot_id
           working_directory
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for ListVercelCiInvocationsResponseInvocationsItemSandboxSnapshotted.
@@ -301,15 +306,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiInvocationsResponseInvocationsItemSandboxNamedMetadata
         FIELDS = {
-          sandbox_name: 'sandboxName',
-          working_directory: 'workingDirectory',
-          ready_at: 'readyAt'
+          sandbox_name: "sandboxName",
+          working_directory: "workingDirectory",
+          ready_at: "readyAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           sandbox_name
           working_directory
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for ListVercelCiInvocationsResponseInvocationsItemSandboxNamed.
@@ -349,9 +355,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCreatedMetadata
         FIELDS = {
-          names: 'names',
-          source: 'source',
-          scheduled_at: 'scheduledAt'
+          names: "names",
+          source: "source",
+          scheduled_at: "scheduledAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           names
@@ -359,7 +365,7 @@ module OctridevVercel
         DECODERS = {
           source: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCX06e9e316f1.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -400,8 +406,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiInvocationsResponseInvocationsItemCompletedMetadata
         FIELDS = {
-          completed_at: 'completedAt',
-          conclusion: 'conclusion'
+          completed_at: "completedAt",
+          conclusion: "conclusion",
         }.freeze
         REQUIRED_FIELDS = %i[
           completed_at
@@ -409,7 +415,7 @@ module OctridevVercel
         DECODERS = {
           conclusion: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::ListVercelCiInvocationsResponseInvocationsItemCompletedConcluX4ab7cab523.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -450,7 +456,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiInvocationsResponseInvocationsItemSetupConclusionMetadata
         FIELDS = {
-          result: 'result'
+          result: "result",
         }.freeze
         REQUIRED_FIELDS = %i[
           result
@@ -458,7 +464,7 @@ module OctridevVercel
         DECODERS = {
           result: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::ListVercelCiInvocationsResponseInvocationsItemSetupConclusionX2901a8d840.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -500,7 +506,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiInvocationsResponseInvocationsItemRunConclusionMetadata
         FIELDS = {
-          result: 'result'
+          result: "result",
         }.freeze
         REQUIRED_FIELDS = %i[
           result
@@ -508,7 +514,7 @@ module OctridevVercel
         DECODERS = {
           result: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::ListVercelCiInvocationsResponseInvocationsItemRunConclusionReXf3aa2368d4.from_value(value)
-          end
+          end,
         }.freeze
       end
 

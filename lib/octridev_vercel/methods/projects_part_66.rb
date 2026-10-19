@@ -12,15 +12,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseCustomEnvironmentsItemMetadata
         FIELDS = {
-          branch_matcher: 'branchMatcher',
-          created_at: 'createdAt',
-          current_deployment_aliases: 'currentDeploymentAliases',
-          description: 'description',
-          domains: 'domains',
-          id: 'id',
-          slug: 'slug',
-          type: 'type',
-          updated_at: 'updatedAt'
+          branch_matcher: "branchMatcher",
+          created_at: "createdAt",
+          current_deployment_aliases: "currentDeploymentAliases",
+          description: "description",
+          domains: "domains",
+          id: "id",
+          slug: "slug",
+          type: "type",
+          updated_at: "updatedAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -38,7 +38,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseCustomEnvironmentsItemType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -86,9 +86,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseDataCacheMetadata
         FIELDS = {
-          storage_size_bytes: 'storageSizeBytes',
-          unlimited: 'unlimited',
-          user_disabled: 'userDisabled'
+          storage_size_bytes: "storageSizeBytes",
+          unlimited: "unlimited",
+          user_disabled: "userDisabled",
         }.freeze
         REQUIRED_FIELDS = %i[
           user_disabled
@@ -99,7 +99,7 @@ module OctridevVercel
           end,
           user_disabled: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseDataCacheUserDisabled.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -129,9 +129,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseDefaultResourceConfigBuildMachineX3e80c156e2Metadata
         FIELDS = {
-          algorithm_version: 'algorithmVersion',
-          at: 'at',
-          direction: 'direction'
+          algorithm_version: "algorithmVersion",
+          at: "at",
+          direction: "direction",
         }.freeze
         REQUIRED_FIELDS = %i[
           algorithm_version
@@ -141,7 +141,7 @@ module OctridevVercel
         DECODERS = {
           direction: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseDefaultResourceConfigBuildMachineX3b05f4f3d8.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -171,13 +171,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseDefaultResourceConfigBuildQueueMetadata
         FIELDS = {
-          configuration: 'configuration'
+          configuration: "configuration",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           configuration: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseDefaultResourceConfigBuildQueueConfiguration.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -207,9 +208,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseDefaultResourceConfigElasticBuildMachineMetadata
         FIELDS = {
-          cores: 'cores',
-          label: 'label',
-          memory: 'memory'
+          cores: "cores",
+          label: "label",
+          memory: "memory",
         }.freeze
         REQUIRED_FIELDS = %i[
           cores
@@ -219,7 +220,7 @@ module OctridevVercel
         DECODERS = {
           label: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseDefaultResourceConfigElasticBuildX630c877243.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -252,21 +253,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseDefaultResourceConfigMetadata
         FIELDS = {
-          build_machine_elastic_last_updated: 'buildMachineElasticLastUpdated',
-          build_machine_elastic_reason: 'buildMachineElasticReason',
-          build_machine_elastic_transition: 'buildMachineElasticTransition',
-          build_machine_selection: 'buildMachineSelection',
-          build_machine_type: 'buildMachineType',
-          build_queue: 'buildQueue',
-          elastic_concurrency_enabled: 'elasticConcurrencyEnabled',
-          enable_functions_beta: 'enableFunctionsBeta',
-          fluid: 'fluid',
-          function_default_memory_type: 'functionDefaultMemoryType',
-          function_default_regions: 'functionDefaultRegions',
-          function_default_timeout: 'functionDefaultTimeout',
-          function_zero_config_failover: 'functionZeroConfigFailover',
-          is_nsnb_disabled: 'isNSNBDisabled',
-          elastic_build_machine: 'elasticBuildMachine'
+          build_machine_elastic_last_updated: "buildMachineElasticLastUpdated",
+          build_machine_elastic_reason: "buildMachineElasticReason",
+          build_machine_elastic_transition: "buildMachineElasticTransition",
+          build_machine_selection: "buildMachineSelection",
+          build_machine_type: "buildMachineType",
+          build_queue: "buildQueue",
+          elastic_concurrency_enabled: "elasticConcurrencyEnabled",
+          enable_functions_beta: "enableFunctionsBeta",
+          fluid: "fluid",
+          function_default_memory_type: "functionDefaultMemoryType",
+          function_default_regions: "functionDefaultRegions",
+          function_default_timeout: "functionDefaultTimeout",
+          function_zero_config_failover: "functionZeroConfigFailover",
+          is_nsnb_disabled: "isNSNBDisabled",
+          elastic_build_machine: "elasticBuildMachine",
         }.freeze
         REQUIRED_FIELDS = %i[
           function_default_regions
@@ -307,7 +308,7 @@ module OctridevVercel
           end,
           elastic_build_machine: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseDefaultResourceConfigElasticBuildMachine.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -343,14 +344,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseDeploymentExpirationMetadata
         FIELDS = {
-          deployments_to_keep: 'deploymentsToKeep',
-          expiration_days: 'expirationDays',
-          expiration_days_canceled: 'expirationDaysCanceled',
-          expiration_days_errored: 'expirationDaysErrored',
-          expiration_days_production: 'expirationDaysProduction'
+          deployments_to_keep: "deploymentsToKeep",
+          expiration_days: "expirationDays",
+          expiration_days_canceled: "expirationDaysCanceled",
+          expiration_days_errored: "expirationDaysErrored",
+          expiration_days_production: "expirationDaysProduction",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateMicrofrontendsResponseDeploymentExpiration.
@@ -389,9 +392,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesItemMetadata
         FIELDS = {
-          enabled: 'enabled',
-          environments: 'environments',
-          sources: 'sources'
+          enabled: "enabled",
+          environments: "environments",
+          sources: "sources",
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -407,7 +410,7 @@ module OctridevVercel
           end,
           sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX01533aaff8.from_value(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -438,9 +441,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemMetadata
         FIELDS = {
-          enabled: 'enabled',
-          environments: 'environments',
-          sources: 'sources'
+          enabled: "enabled",
+          environments: "environments",
+          sources: "sources",
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -456,7 +459,7 @@ module OctridevVercel
           end,
           sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSourcesItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -487,17 +490,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseDeploymentPolicyMetadata
         FIELDS = {
-          deployment_sources: 'deploymentSources',
-          git_sources: 'gitSources'
+          deployment_sources: "deploymentSources",
+          git_sources: "gitSources",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           deployment_sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesItem.from_hash(item) }
           end,
           git_sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -528,10 +532,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseDismissedToastsItemMetadata
         FIELDS = {
-          action: 'action',
-          dismissed_at: 'dismissedAt',
-          key: 'key',
-          value: 'value'
+          action: "action",
+          dismissed_at: "dismissedAt",
+          key: "key",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -545,7 +549,7 @@ module OctridevVercel
           end,
           value: lambda do |value|
             ::OctridevVercel::UpdateMicrofrontendsResponseDismissedToastsItemValue.from_hash(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           value

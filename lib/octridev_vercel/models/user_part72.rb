@@ -5,464 +5,467 @@
 
 # user domain models (part 72)
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant492Metadata
-    FIELDS = {
-      actor_token_id: 'actorTokenId',
-      created_by_parent_team_id: 'createdByParentTeamId',
-      expired: 'expired',
-      geolocation: 'geolocation',
-      ip: 'ip',
-      leaked: 'leaked',
-      logout_source: 'logoutSource',
-      origin: 'origin',
-      reason: 'reason',
-      req_id: 'reqId',
-      req_url: 'reqUrl',
-      revoked: 'revoked',
-      scope: 'scope',
-      source: 'source',
-      team_id: 'teamId',
-      token_id: 'tokenId',
-      token_name: 'tokenName',
-      token_type: 'tokenType',
-      user_agent: 'userAgent'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      actor_token_id
-      token_id
-      token_name
-      token_type
-    ].freeze
-    DECODERS = {
-      expired: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant492Expired.from_value(value)
-      end,
-      geolocation: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant492Geolocation.from_hash(value)
-      end,
-      leaked: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant492Leaked.from_value(value)
-      end,
-      logout_source: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant492LogoutSource.from_value(value)
-      end,
-      origin: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant492Origin.from_value(value)
-      end,
-      reason: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant492Reason.from_value(value)
-      end,
-      revoked: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant492Revoked.from_value(value)
-      end,
-      scope: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant492Scope.from_value(value)
-      end,
-      source: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant492Source.from_value(value)
-      end
-    }.freeze
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant492Metadata
+  FIELDS = {
+    actor_token_id: "actorTokenId",
+    created_by_parent_team_id: "createdByParentTeamId",
+    expired: "expired",
+    geolocation: "geolocation",
+    ip: "ip",
+    leaked: "leaked",
+    logout_source: "logoutSource",
+    origin: "origin",
+    reason: "reason",
+    req_id: "reqId",
+    req_url: "reqUrl",
+    revoked: "revoked",
+    scope: "scope",
+    source: "source",
+    team_id: "teamId",
+    token_id: "tokenId",
+    token_name: "tokenName",
+    token_type: "tokenType",
+    user_agent: "userAgent",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    actor_token_id
+    token_id
+    token_name
+    token_type
+  ].freeze
+  DECODERS = {
+    expired: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant492Expired.from_value(value)
+    end,
+    geolocation: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant492Geolocation.from_hash(value)
+    end,
+    leaked: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant492Leaked.from_value(value)
+    end,
+    logout_source: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant492LogoutSource.from_value(value)
+    end,
+    origin: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant492Origin.from_value(value)
+    end,
+    reason: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant492Reason.from_value(value)
+    end,
+    revoked: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant492Revoked.from_value(value)
+    end,
+    scope: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant492Scope.from_value(value)
+    end,
+    source: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant492Source.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UserEventPayloadVariant492.
+class UserEventPayloadVariant492
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant492Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant492Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant492Metadata::DECODERS
+
+  # @return [String] The token's public ID.
+  attr_reader :actor_token_id
+  # @return [String] Optional `string` value serialized in the `createdByParentTeamId` wire field.
+  attr_reader :created_by_parent_team_id
+  # @return [UserEventPayloadVariant492Expired] Optional enumerated value serialized in the `expired` wire field.
+  attr_reader :expired
+  # @return [UserEventPayloadVariant492Geolocation] Optional object value serialized in the `geolocation` wire field.
+  attr_reader :geolocation
+  # @return [String] Optional `string` value serialized in the `ip` wire field.
+  attr_reader :ip
+  # @return [UserEventPayloadVariant492Leaked] Optional enumerated value serialized in the `leaked` wire field.
+  attr_reader :leaked
+  # @return [UserEventPayloadVariant492LogoutSource] Optional enumerated value serialized in the `logoutSource` wire field.
+  attr_reader :logout_source
+  # @return [UserEventPayloadVariant492Origin] Optional enumerated value serialized in the `origin` wire field.
+  attr_reader :origin
+  # @return [UserEventPayloadVariant492Reason] Optional enumerated value serialized in the `reason` wire field.
+  attr_reader :reason
+  # @return [String] Optional `string` value serialized in the `reqId` wire field.
+  attr_reader :req_id
+  # @return [String] Optional `string` value serialized in the `reqUrl` wire field.
+  attr_reader :req_url
+  # @return [UserEventPayloadVariant492Revoked] Optional enumerated value serialized in the `revoked` wire field.
+  attr_reader :revoked
+  # @return [UserEventPayloadVariant492Scope] Optional enumerated value serialized in the `scope` wire field.
+  attr_reader :scope
+  # @return [UserEventPayloadVariant492Source] Optional enumerated value serialized in the `source` wire field.
+  attr_reader :source
+  # @return [String] Optional `string` value serialized in the `teamId` wire field.
+  attr_reader :team_id
+  # @return [String] Required `string` value serialized in the `tokenId` wire field.
+  attr_reader :token_id
+  # @return [String] Required `string` value serialized in the `tokenName` wire field.
+  attr_reader :token_name
+  # @return [String] Required `string` value serialized in the `tokenType` wire field.
+  attr_reader :token_type
+  # @return [String] Optional `string` value serialized in the `userAgent` wire field.
+  attr_reader :user_agent
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UserEventPayloadVariant492.
-  class UserEventPayloadVariant492
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant492Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant492Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant492Metadata::DECODERS
-
-    # @return [String] The token's public ID.
-    attr_reader :actor_token_id
-    # @return [String] Optional `string` value serialized in the `createdByParentTeamId` wire field.
-    attr_reader :created_by_parent_team_id
-    # @return [UserEventPayloadVariant492Expired] Optional enumerated value serialized in the `expired` wire field.
-    attr_reader :expired
-    # @return [UserEventPayloadVariant492Geolocation] Optional object value serialized in the `geolocation` wire field.
-    attr_reader :geolocation
-    # @return [String] Optional `string` value serialized in the `ip` wire field.
-    attr_reader :ip
-    # @return [UserEventPayloadVariant492Leaked] Optional enumerated value serialized in the `leaked` wire field.
-    attr_reader :leaked
-    # @return [UserEventPayloadVariant492LogoutSource] Optional enumerated value serialized in the `logoutSource` wire field.
-    attr_reader :logout_source
-    # @return [UserEventPayloadVariant492Origin] Optional enumerated value serialized in the `origin` wire field.
-    attr_reader :origin
-    # @return [UserEventPayloadVariant492Reason] Optional enumerated value serialized in the `reason` wire field.
-    attr_reader :reason
-    # @return [String] Optional `string` value serialized in the `reqId` wire field.
-    attr_reader :req_id
-    # @return [String] Optional `string` value serialized in the `reqUrl` wire field.
-    attr_reader :req_url
-    # @return [UserEventPayloadVariant492Revoked] Optional enumerated value serialized in the `revoked` wire field.
-    attr_reader :revoked
-    # @return [UserEventPayloadVariant492Scope] Optional enumerated value serialized in the `scope` wire field.
-    attr_reader :scope
-    # @return [UserEventPayloadVariant492Source] Optional enumerated value serialized in the `source` wire field.
-    attr_reader :source
-    # @return [String] Optional `string` value serialized in the `teamId` wire field.
-    attr_reader :team_id
-    # @return [String] Required `string` value serialized in the `tokenId` wire field.
-    attr_reader :token_id
-    # @return [String] Required `string` value serialized in the `tokenName` wire field.
-    attr_reader :token_name
-    # @return [String] Required `string` value serialized in the `tokenType` wire field.
-    attr_reader :token_type
-    # @return [String] Optional `string` value serialized in the `userAgent` wire field.
-    attr_reader :user_agent
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant493GeolocationCityNamesMetadata
-    FIELDS = {
-      en: 'en'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      en
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant493GeolocationCityNamesMetadata
+  FIELDS = {
+    en: "en",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    en
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UserEventPayloadVariant493GeolocationCityNames.
+# Required object value serialized in the `names` wire field.
+class UserEventPayloadVariant493GeolocationCityNames
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCityNamesMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCityNamesMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant493GeolocationCityNamesMetadata::DECODERS
+
+  # @return [String] Required `string` value serialized in the `en` wire field.
+  attr_reader :en
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UserEventPayloadVariant493GeolocationCityNames.
-  # Required object value serialized in the `names` wire field.
-  class UserEventPayloadVariant493GeolocationCityNames
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCityNamesMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCityNamesMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant493GeolocationCityNamesMetadata::DECODERS
-
-    # @return [String] Required `string` value serialized in the `en` wire field.
-    attr_reader :en
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant493GeolocationCityMetadata
-    FIELDS = {
-      names: 'names'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      names
-    ].freeze
-    DECODERS = {
-      names: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant493GeolocationCityNames.from_hash(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant493GeolocationCityMetadata
+  FIELDS = {
+    names: "names",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    names
+  ].freeze
+  DECODERS = {
+    names: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant493GeolocationCityNames.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for UserEventPayloadVariant493GeolocationCity.
+# Optional object value serialized in the `city` wire field.
+class UserEventPayloadVariant493GeolocationCity
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCityMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCityMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant493GeolocationCityMetadata::DECODERS
+
+  # @return [UserEventPayloadVariant493GeolocationCityNames] Required object value serialized in the `names` wire field.
+  attr_reader :names
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UserEventPayloadVariant493GeolocationCity.
-  # Optional object value serialized in the `city` wire field.
-  class UserEventPayloadVariant493GeolocationCity
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCityMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCityMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant493GeolocationCityMetadata::DECODERS
-
-    # @return [UserEventPayloadVariant493GeolocationCityNames] Required object value serialized in the `names` wire field.
-    attr_reader :names
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant493GeolocationCountryNamesMetadata
-    FIELDS = {
-      en: 'en'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      en
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant493GeolocationCountryNamesMetadata
+  FIELDS = {
+    en: "en",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    en
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UserEventPayloadVariant493GeolocationCountryNames.
+# Required object value serialized in the `names` wire field.
+class UserEventPayloadVariant493GeolocationCountryNames
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCountryNamesMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCountryNamesMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant493GeolocationCountryNamesMetadata::DECODERS
+
+  # @return [String] Required `string` value serialized in the `en` wire field.
+  attr_reader :en
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UserEventPayloadVariant493GeolocationCountryNames.
-  # Required object value serialized in the `names` wire field.
-  class UserEventPayloadVariant493GeolocationCountryNames
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCountryNamesMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCountryNamesMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant493GeolocationCountryNamesMetadata::DECODERS
-
-    # @return [String] Required `string` value serialized in the `en` wire field.
-    attr_reader :en
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant493GeolocationCountryMetadata
-    FIELDS = {
-      names: 'names'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      names
-    ].freeze
-    DECODERS = {
-      names: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant493GeolocationCountryNames.from_hash(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant493GeolocationCountryMetadata
+  FIELDS = {
+    names: "names",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    names
+  ].freeze
+  DECODERS = {
+    names: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant493GeolocationCountryNames.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for UserEventPayloadVariant493GeolocationCountry.
+# Required object value serialized in the `country` wire field.
+class UserEventPayloadVariant493GeolocationCountry
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCountryMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCountryMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant493GeolocationCountryMetadata::DECODERS
+
+  # @return [UserEventPayloadVariant493GeolocationCountryNames] Required object value serialized in the `names` wire field.
+  attr_reader :names
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UserEventPayloadVariant493GeolocationCountry.
-  # Required object value serialized in the `country` wire field.
-  class UserEventPayloadVariant493GeolocationCountry
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCountryMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationCountryMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant493GeolocationCountryMetadata::DECODERS
-
-    # @return [UserEventPayloadVariant493GeolocationCountryNames] Required object value serialized in the `names` wire field.
-    attr_reader :names
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionNamesMetadata
-    FIELDS = {
-      en: 'en'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      en
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionNamesMetadata
+  FIELDS = {
+    en: "en",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    en
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UserEventPayloadVariant493GeolocationMostSpecificSubdivisionNames.
+# Required object value serialized in the `names` wire field.
+class UserEventPayloadVariant493GeolocationMostSpecificSubdivisionNames
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionNamesMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionNamesMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionNamesMetadata::DECODERS
+
+  # @return [String] Required `string` value serialized in the `en` wire field.
+  attr_reader :en
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UserEventPayloadVariant493GeolocationMostSpecificSubdivisionNames.
-  # Required object value serialized in the `names` wire field.
-  class UserEventPayloadVariant493GeolocationMostSpecificSubdivisionNames
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionNamesMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionNamesMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionNamesMetadata::DECODERS
-
-    # @return [String] Required `string` value serialized in the `en` wire field.
-    attr_reader :en
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionMetadata
-    FIELDS = {
-      names: 'names'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      names
-    ].freeze
-    DECODERS = {
-      names: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant493GeolocationMostSpecificSubdivisionNames.from_hash(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionMetadata
+  FIELDS = {
+    names: "names",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    names
+  ].freeze
+  DECODERS = {
+    names: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant493GeolocationMostSpecificSubdivisionNames.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for UserEventPayloadVariant493GeolocationMostSpecificSubdivision.
+# Optional object value serialized in the `most_specific_subdivision` wire field.
+class UserEventPayloadVariant493GeolocationMostSpecificSubdivision
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionMetadata::DECODERS
+
+  # @return [UserEventPayloadVariant493GeolocationMostSpecificSubdivisionNames] Required object value serialized in the `names` wire field.
+  attr_reader :names
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UserEventPayloadVariant493GeolocationMostSpecificSubdivision.
-  # Optional object value serialized in the `most_specific_subdivision` wire field.
-  class UserEventPayloadVariant493GeolocationMostSpecificSubdivision
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant493GeolocationMostSpecificSubdivisionMetadata::DECODERS
-
-    # @return [UserEventPayloadVariant493GeolocationMostSpecificSubdivisionNames] Required object value serialized in the `names` wire field.
-    attr_reader :names
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant493GeolocationMetadata
-    FIELDS = {
-      city: 'city',
-      country: 'country',
-      most_specific_subdivision: 'most_specific_subdivision',
-      region_name: 'regionName'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      country
-    ].freeze
-    DECODERS = {
-      city: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant493GeolocationCity.from_hash(value)
-      end,
-      country: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant493GeolocationCountry.from_hash(value)
-      end,
-      most_specific_subdivision: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant493GeolocationMostSpecificSubdivision.from_hash(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant493GeolocationMetadata
+  FIELDS = {
+    city: "city",
+    country: "country",
+    most_specific_subdivision: "most_specific_subdivision",
+    region_name: "regionName",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    country
+  ].freeze
+  DECODERS = {
+    city: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant493GeolocationCity.from_hash(value)
+    end,
+    country: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant493GeolocationCountry.from_hash(value)
+    end,
+    most_specific_subdivision: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant493GeolocationMostSpecificSubdivision.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for UserEventPayloadVariant493Geolocation.
+# Optional object value serialized in the `geolocation` wire field.
+class UserEventPayloadVariant493Geolocation
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant493GeolocationMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant493GeolocationMetadata::DECODERS
+
+  # @return [UserEventPayloadVariant493GeolocationCity] Optional object value serialized in the `city` wire field.
+  attr_reader :city
+  # @return [UserEventPayloadVariant493GeolocationCountry] Required object value serialized in the `country` wire field.
+  attr_reader :country
+  # @return [UserEventPayloadVariant493GeolocationMostSpecificSubdivision] Optional object value serialized in the `most_specific_subdivision` wire field.
+  attr_reader :most_specific_subdivision
+  # @return [String] Optional `string` value serialized in the `regionName` wire field.
+  attr_reader :region_name
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UserEventPayloadVariant493Geolocation.
-  # Optional object value serialized in the `geolocation` wire field.
-  class UserEventPayloadVariant493Geolocation
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant493GeolocationMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493GeolocationMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant493GeolocationMetadata::DECODERS
-
-    # @return [UserEventPayloadVariant493GeolocationCity] Optional object value serialized in the `city` wire field.
-    attr_reader :city
-    # @return [UserEventPayloadVariant493GeolocationCountry] Required object value serialized in the `country` wire field.
-    attr_reader :country
-    # @return [UserEventPayloadVariant493GeolocationMostSpecificSubdivision] Optional object value serialized in the `most_specific_subdivision` wire field.
-    attr_reader :most_specific_subdivision
-    # @return [String] Optional `string` value serialized in the `regionName` wire field.
-    attr_reader :region_name
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant493Metadata
-    FIELDS = {
-      actor_token_id: 'actorTokenId',
-      deleted_count: 'deletedCount',
-      geolocation: 'geolocation',
-      ip: 'ip',
-      req_id: 'reqId',
-      req_url: 'reqUrl',
-      user_agent: 'userAgent'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      actor_token_id
-      deleted_count
-    ].freeze
-    DECODERS = {
-      geolocation: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant493Geolocation.from_hash(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant493Metadata
+  FIELDS = {
+    actor_token_id: "actorTokenId",
+    deleted_count: "deletedCount",
+    geolocation: "geolocation",
+    ip: "ip",
+    req_id: "reqId",
+    req_url: "reqUrl",
+    user_agent: "userAgent",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    actor_token_id
+    deleted_count
+  ].freeze
+  DECODERS = {
+    geolocation: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant493Geolocation.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for UserEventPayloadVariant493.
+class UserEventPayloadVariant493
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant493Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant493Metadata::DECODERS
+
+  # @return [String] The token's public ID.
+  attr_reader :actor_token_id
+  # @return [Float] Required `number` value serialized in the `deletedCount` wire field.
+  attr_reader :deleted_count
+  # @return [UserEventPayloadVariant493Geolocation] Optional object value serialized in the `geolocation` wire field.
+  attr_reader :geolocation
+  # @return [String] Optional `string` value serialized in the `ip` wire field.
+  attr_reader :ip
+  # @return [String] Optional `string` value serialized in the `reqId` wire field.
+  attr_reader :req_id
+  # @return [String] Optional `string` value serialized in the `reqUrl` wire field.
+  attr_reader :req_url
+  # @return [String] Optional `string` value serialized in the `userAgent` wire field.
+  attr_reader :user_agent
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UserEventPayloadVariant493.
-  class UserEventPayloadVariant493
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant493Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant493Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant493Metadata::DECODERS
-
-    # @return [String] The token's public ID.
-    attr_reader :actor_token_id
-    # @return [Float] Required `number` value serialized in the `deletedCount` wire field.
-    attr_reader :deleted_count
-    # @return [UserEventPayloadVariant493Geolocation] Optional object value serialized in the `geolocation` wire field.
-    attr_reader :geolocation
-    # @return [String] Optional `string` value serialized in the `ip` wire field.
-    attr_reader :ip
-    # @return [String] Optional `string` value serialized in the `reqId` wire field.
-    attr_reader :req_id
-    # @return [String] Optional `string` value serialized in the `reqUrl` wire field.
-    attr_reader :req_url
-    # @return [String] Optional `string` value serialized in the `userAgent` wire field.
-    attr_reader :user_agent
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
+
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 end

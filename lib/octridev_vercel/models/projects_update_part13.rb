@@ -5,120 +5,119 @@
 
 # projects_update domain models (part 13)
 module OctridevVercel
-  # API model for UpdateProjectResponseTrustedIpsVariant0.
-  class UpdateProjectResponseTrustedIpsVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateProjectResponseTrustedIpsVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseTrustedIpsVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateProjectResponseTrustedIpsVariant0Metadata::DECODERS
+# API model for UpdateProjectResponseTrustedIpsVariant0.
+class UpdateProjectResponseTrustedIpsVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateProjectResponseTrustedIpsVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseTrustedIpsVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateProjectResponseTrustedIpsVariant0Metadata::DECODERS
 
-    attr_reader :addresses, :deployment_type, :protection_mode
+  attr_reader :addresses, :deployment_type, :protection_mode
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateProjectResponseTrustedIpsVariant1Metadata
-    FIELDS = {
-      deployment_type: 'deploymentType'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      deployment_type
-    ].freeze
-    DECODERS = {
-      deployment_type: lambda do |value|
-        ::OctridevVercel::UpdateProjectResponseTrustedIpsVariant1DeploymentType.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UpdateProjectResponseTrustedIpsVariant1.
-  class UpdateProjectResponseTrustedIpsVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateProjectResponseTrustedIpsVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseTrustedIpsVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateProjectResponseTrustedIpsVariant1Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :deployment_type
+# Internal model hydration metadata.
+class SdkInternalUpdateProjectResponseTrustedIpsVariant1Metadata
+  FIELDS = {
+    deployment_type: "deploymentType",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    deployment_type
+  ].freeze
+  DECODERS = {
+    deployment_type: lambda do |value|
+      ::OctridevVercel::UpdateProjectResponseTrustedIpsVariant1DeploymentType.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UpdateProjectResponseTrustedIpsVariant1.
+class UpdateProjectResponseTrustedIpsVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateProjectResponseTrustedIpsVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseTrustedIpsVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateProjectResponseTrustedIpsVariant1Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :deployment_type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the UpdateProjectResponseTrustedIps SDK namespace.
-  module UpdateProjectResponseTrustedIps
-    def self.from_hash(hash)
-      shape_mapping = {
-        'addresses' => UpdateProjectResponseTrustedIpsVariant0
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
-
-      UpdateProjectResponseTrustedIpsVariant1.from_hash(hash)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UpdateProjectResponseTrustedIpsVariant0DeploymentType SDK namespace.
-  module UpdateProjectResponseTrustedIpsVariant0DeploymentType
-    ALL = 'all'
-    ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-    PREVIEW = 'preview'
-    PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-    PRODUCTION = 'production'
-    VALUES = %w[
-      all all_except_custom_domains preview prod_deployment_urls_and_all_previews
-      production
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the UpdateProjectResponseTrustedIpsVariant0ProtectionMode SDK namespace.
-  module UpdateProjectResponseTrustedIpsVariant0ProtectionMode
-    ADDITIONAL = 'additional'
-    EXCLUSIVE = 'exclusive'
-    VALUES = %w[additional exclusive].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateProjectResponseTrustedIps SDK namespace.
+module UpdateProjectResponseTrustedIps
+  def self.from_hash(hash)
+    shape_mapping = {
+      "addresses" => UpdateProjectResponseTrustedIpsVariant0,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    return UpdateProjectResponseTrustedIpsVariant1.from_hash(hash)
   end
+end
 
-  # Defines the UpdateProjectResponseTrustedIpsVariant1DeploymentType SDK namespace.
-  module UpdateProjectResponseTrustedIpsVariant1DeploymentType
-    ALL = 'all'
-    ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-    PREVIEW = 'preview'
-    PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-    PRODUCTION = 'production'
-    VALUES = %w[
-      all all_except_custom_domains preview prod_deployment_urls_and_all_previews
-      production
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateProjectResponseTrustedIpsVariant0DeploymentType SDK namespace.
+module UpdateProjectResponseTrustedIpsVariant0DeploymentType
+  ALL = 'all'
+  ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
+  PREVIEW = 'preview'
+  PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
+  PRODUCTION = 'production'
+  VALUES = [
+    'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews',
+    'production'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
+
+# Defines the UpdateProjectResponseTrustedIpsVariant0ProtectionMode SDK namespace.
+module UpdateProjectResponseTrustedIpsVariant0ProtectionMode
+  ADDITIONAL = 'additional'
+  EXCLUSIVE = 'exclusive'
+  VALUES = ['additional', 'exclusive'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateProjectResponseTrustedIpsVariant1DeploymentType SDK namespace.
+module UpdateProjectResponseTrustedIpsVariant1DeploymentType
+  ALL = 'all'
+  ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
+  PREVIEW = 'preview'
+  PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
+  PRODUCTION = 'production'
+  VALUES = [
+    'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews',
+    'production'
+  ].freeze
+  def self.from_value(value)
+    value
+  end
+end
 end

@@ -16,28 +16,38 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_vercel_ci_job_run) do |config:, invocation_id:, attempt:, job_definition_id:, run_attempt:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_vercel_ci_job_run) do |
+        config:,
+        invocation_id:,
+        attempt:,
+        job_definition_id:,
+        run_attempt:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/vercel-ci/invocations/',
+            "/v1/vercel-ci/invocations/",
             SdkClient.encode_path_segment(invocation_id),
-            '/attempts/',
+            "/attempts/",
             SdkClient.encode_path_segment(attempt),
-            '/job-definitions/',
+            "/job-definitions/",
             SdkClient.encode_path_segment(job_definition_id),
-            '/runs/',
+            "/runs/",
             SdkClient.encode_path_segment(run_attempt)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::VercelCi::GetVercelCiJobRunResponse,
           decoder: :json,
           operation_id: 'get_vercel_ci_job_run',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -58,28 +68,29 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
           [
-            '/v1/vercel-ci/invocations/',
+            "/v1/vercel-ci/invocations/",
             SdkClient.encode_path_segment(invocation_id),
-            '/attempts/',
+            "/attempts/",
             SdkClient.encode_path_segment(attempt),
-            '/job-definitions/',
+            "/job-definitions/",
             SdkClient.encode_path_segment(job_definition_id),
-            '/runs/',
+            "/runs/",
             SdkClient.encode_path_segment(run_attempt),
-            '/task-definitions'
+            "/task-definitions"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::VercelCi::ListVercelCiTaskDefinitionsResponse,
           decoder: :json,
           operation_id: 'list_vercel_ci_task_definitions',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -101,29 +112,30 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
           [
-            '/v1/vercel-ci/invocations/',
+            "/v1/vercel-ci/invocations/",
             SdkClient.encode_path_segment(invocation_id),
-            '/attempts/',
+            "/attempts/",
             SdkClient.encode_path_segment(attempt),
-            '/job-definitions/',
+            "/job-definitions/",
             SdkClient.encode_path_segment(job_definition_id),
-            '/runs/',
+            "/runs/",
             SdkClient.encode_path_segment(run_attempt),
-            '/task-runs'
+            "/task-runs"
           ].join,
           config: config,
           query: {
             'taskRunAttempt' => QueryValue.new(task_run_attempt, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::VercelCi::ListVercelCiTaskRunsResponse,
           decoder: :json,
           operation_id: 'list_vercel_ci_task_runs',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -136,28 +148,37 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_vercel_ci_invocation_logs) do |config:, invocation_id:, attempt:, level: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_vercel_ci_invocation_logs) do |
+        config:,
+        invocation_id:,
+        attempt:,
+        level: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.if_given(level) { Validation.validate_items('level', level, min: 1) }
 
         SdkClient.request(
           'GET',
           [
-            '/v1/vercel-ci/invocations/',
+            "/v1/vercel-ci/invocations/",
             SdkClient.encode_path_segment(invocation_id),
-            '/attempts/',
+            "/attempts/",
             SdkClient.encode_path_segment(attempt),
-            '/logs'
+            "/logs"
           ].join,
           config: config,
           query: {
             'level' => QueryValue.new(level, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::VercelCi::GetVercelCiInvocationLogsResponse,
           decoder: :json,
           operation_id: 'get_vercel_ci_invocation_logs',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -179,7 +200,20 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_vercel_ci_task_logs) do |config:, invocation_id:, attempt:, task: NOT_GIVEN, conclusion: NOT_GIVEN, level: NOT_GIVEN, search: NOT_GIVEN, limit: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_vercel_ci_task_logs) do |
+        config:,
+        invocation_id:,
+        attempt:,
+        task: NOT_GIVEN,
+        conclusion: NOT_GIVEN,
+        level: NOT_GIVEN,
+        search: NOT_GIVEN,
+        limit: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.if_given(task) { Validation.validate_items('task', task, min: 1) }
 
         Validation.if_given(conclusion) { Validation.validate_items('conclusion', conclusion, min: 1) }
@@ -191,11 +225,11 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            '/v1/vercel-ci/invocations/',
+            "/v1/vercel-ci/invocations/",
             SdkClient.encode_path_segment(invocation_id),
-            '/attempts/',
+            "/attempts/",
             SdkClient.encode_path_segment(attempt),
-            '/task-logs'
+            "/task-logs"
           ].join,
           config: config,
           query: {
@@ -205,12 +239,12 @@ module OctridevVercel
             'search' => QueryValue.new(search, style: 'form', explode: true),
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::VercelCi::GetVercelCiTaskLogsResponse,
           decoder: :json,
           operation_id: 'get_vercel_ci_task_logs',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -236,6 +270,7 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_items('invocation', invocation, min: 1, max: 50)
 
         Validation.validate_length('search', search, max: 256)
@@ -244,19 +279,19 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          '/v1/vercel-ci/log-search',
+          "/v1/vercel-ci/log-search",
           config: config,
           query: {
             'invocation' => QueryValue.new(invocation, style: 'form', explode: true),
             'search' => QueryValue.new(search, style: 'form', explode: true),
             'level' => QueryValue.new(level, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::VercelCi::SearchVercelCiLogsResponse,
           decoder: :json,
           operation_id: 'search_vercel_ci_logs',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -269,21 +304,34 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_vercel_ci_job_run_logs) do |config:, invocation_id:, attempt:, job_definition_id:, run_attempt:, follow: NOT_GIVEN, since: NOT_GIVEN, level: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_vercel_ci_job_run_logs) do |
+        config:,
+        invocation_id:,
+        attempt:,
+        job_definition_id:,
+        run_attempt:,
+        follow: NOT_GIVEN,
+        since: NOT_GIVEN,
+        level: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.if_given(level) { Validation.validate_items('level', level, min: 1) }
 
         SdkClient.request(
           'GET',
           [
-            '/v1/vercel-ci/invocations/',
+            "/v1/vercel-ci/invocations/",
             SdkClient.encode_path_segment(invocation_id),
-            '/attempts/',
+            "/attempts/",
             SdkClient.encode_path_segment(attempt),
-            '/job-definitions/',
+            "/job-definitions/",
             SdkClient.encode_path_segment(job_definition_id),
-            '/runs/',
+            "/runs/",
             SdkClient.encode_path_segment(run_attempt),
-            '/logs'
+            "/logs"
           ].join,
           config: config,
           query: {
@@ -291,12 +339,12 @@ module OctridevVercel
             'since' => QueryValue.new(since, style: 'form', explode: true),
             'level' => QueryValue.new(level, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::VercelCi::GetVercelCiJobRunLogsResponse,
           decoder: :json,
           operation_id: 'get_vercel_ci_job_run_logs',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -311,25 +359,40 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_vercel_ci_task_run_logs) do |config:, invocation_id:, attempt:, job_definition_id:, run_attempt:, task_definition_id:, task_run_attempt:, follow: NOT_GIVEN, since: NOT_GIVEN, level: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_vercel_ci_task_run_logs) do |
+        config:,
+        invocation_id:,
+        attempt:,
+        job_definition_id:,
+        run_attempt:,
+        task_definition_id:,
+        task_run_attempt:,
+        follow: NOT_GIVEN,
+        since: NOT_GIVEN,
+        level: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.if_given(level) { Validation.validate_items('level', level, min: 1) }
 
         SdkClient.request(
           'GET',
           [
-            '/v1/vercel-ci/invocations/',
+            "/v1/vercel-ci/invocations/",
             SdkClient.encode_path_segment(invocation_id),
-            '/attempts/',
+            "/attempts/",
             SdkClient.encode_path_segment(attempt),
-            '/job-definitions/',
+            "/job-definitions/",
             SdkClient.encode_path_segment(job_definition_id),
-            '/runs/',
+            "/runs/",
             SdkClient.encode_path_segment(run_attempt),
-            '/task-definitions/',
+            "/task-definitions/",
             SdkClient.encode_path_segment(task_definition_id),
-            '/runs/',
+            "/runs/",
             SdkClient.encode_path_segment(task_run_attempt),
-            '/logs'
+            "/logs"
           ].join,
           config: config,
           query: {
@@ -337,12 +400,12 @@ module OctridevVercel
             'since' => QueryValue.new(since, style: 'form', explode: true),
             'level' => QueryValue.new(level, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::VercelCi::GetVercelCiTaskRunLogsResponse,
           decoder: :json,
           operation_id: 'get_vercel_ci_task_run_logs',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

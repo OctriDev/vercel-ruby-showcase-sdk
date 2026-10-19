@@ -16,7 +16,7 @@ module OctridevVercel
         READY = 'ready'
         SKIPPED = 'skipped'
         TIMEOUT = 'timeout'
-        VALUES = %w[error pending ready skipped timeout].freeze
+        VALUES = ['error', 'pending', 'ready', 'skipped', 'timeout'].freeze
         def self.from_value(value)
           value
         end
@@ -88,7 +88,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = %w[canceled failed skipped succeeded].freeze
+        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
         def self.from_value(value)
           value
         end
@@ -120,7 +120,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         SYSTEM = 'system'
         USER = 'user'
-        VALUES = %w[app integration system user].freeze
+        VALUES = ['app', 'integration', 'system', 'user'].freeze
         def self.from_value(value)
           value
         end
@@ -131,7 +131,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = %w[completed registered running].freeze
+        VALUES = ['completed', 'registered', 'running'].freeze
         def self.from_value(value)
           value
         end
@@ -152,7 +152,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = %w[PROMOTED ROLLING STAGED].freeze
+        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
         def self.from_value(value)
           value
         end
@@ -163,7 +163,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = %w[completed registered running].freeze
+        VALUES = ['completed', 'registered', 'running'].freeze
         def self.from_value(value)
           value
         end
@@ -237,7 +237,7 @@ module OctridevVercel
         DENY = 'deny'
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
-        VALUES = %w[bypass challenge deny log rate_limit].freeze
+        VALUES = ['bypass', 'challenge', 'deny', 'log', 'rate_limit'].freeze
         def self.from_value(value)
           value
         end
@@ -296,7 +296,7 @@ module OctridevVercel
       module GetDeploymentsResponseDeploymentsItemSeatBlockBlockCode
         COMMIT_AUTHOR_REQUIRED = 'COMMIT_AUTHOR_REQUIRED'
         TEAM_ACCESS_REQUIRED = 'TEAM_ACCESS_REQUIRED'
-        VALUES = %w[COMMIT_AUTHOR_REQUIRED TEAM_ACCESS_REQUIRED].freeze
+        VALUES = ['COMMIT_AUTHOR_REQUIRED', 'TEAM_ACCESS_REQUIRED'].freeze
         def self.from_value(value)
           value
         end
@@ -316,7 +316,7 @@ module OctridevVercel
         RUNNING = 'running'
         SUCCEEDED = 'succeeded'
         FAILED = 'failed'
-        VALUES = %w[running succeeded failed].freeze
+        VALUES = ['running', 'succeeded', 'failed'].freeze
         def self.from_value(value)
           value
         end
@@ -326,7 +326,7 @@ module OctridevVercel
       module CancelDeploymentResponseConfigResourceConfigBuildQueueConfiguration
         SKIP_NAMESPACE_QUEUE = 'SKIP_NAMESPACE_QUEUE'
         WAIT_FOR_NAMESPACE_QUEUE = 'WAIT_FOR_NAMESPACE_QUEUE'
-        VALUES = %w[SKIP_NAMESPACE_QUEUE WAIT_FOR_NAMESPACE_QUEUE].freeze
+        VALUES = ['SKIP_NAMESPACE_QUEUE', 'WAIT_FOR_NAMESPACE_QUEUE'].freeze
         def self.from_value(value)
           value
         end
@@ -341,8 +341,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value
@@ -353,7 +353,7 @@ module OctridevVercel
       module CancelDeploymentResponseSeatBlockBlockCode
         COMMIT_AUTHOR_REQUIRED = 'COMMIT_AUTHOR_REQUIRED'
         TEAM_ACCESS_REQUIRED = 'TEAM_ACCESS_REQUIRED'
-        VALUES = %w[COMMIT_AUTHOR_REQUIRED TEAM_ACCESS_REQUIRED].freeze
+        VALUES = ['COMMIT_AUTHOR_REQUIRED', 'TEAM_ACCESS_REQUIRED'].freeze
         def self.from_value(value)
           value
         end
@@ -403,7 +403,7 @@ module OctridevVercel
       module CreateDeploymentParameterFbb0d198
         V_0 = '0'
         V_1 = '1'
-        VALUES = %w[0 1].freeze
+        VALUES = ['0', '1'].freeze
         def self.from_value(value)
           value
         end
@@ -413,7 +413,7 @@ module OctridevVercel
       module CancelDeploymentResponsePlatformOriginType
         ID = 'id'
         URL = 'url'
-        VALUES = %w[id url].freeze
+        VALUES = ['id', 'url'].freeze
         def self.from_value(value)
           value
         end
@@ -468,13 +468,29 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_deployment_events) do |config:, id_or_url:, direction: NOT_GIVEN, follow: NOT_GIVEN, limit: NOT_GIVEN, name: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, status_code: NOT_GIVEN, delimiter: NOT_GIVEN, builds: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_deployment_events) do |
+        config:,
+        id_or_url:,
+        direction: NOT_GIVEN,
+        follow: NOT_GIVEN,
+        limit: NOT_GIVEN,
+        name: NOT_GIVEN,
+        since: NOT_GIVEN,
+        until_: NOT_GIVEN,
+        status_code: NOT_GIVEN,
+        delimiter: NOT_GIVEN,
+        builds: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v3/deployments/',
+            "/v3/deployments/",
             SdkClient.encode_path_segment(id_or_url),
-            '/events'
+            "/events"
           ].join,
           config: config,
           query: {
@@ -488,12 +504,12 @@ module OctridevVercel
             'delimiter' => QueryValue.new(delimiter, style: 'form', explode: true),
             'builds' => QueryValue.new(builds, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: [::OctridevVercel::GetDeploymentEventsResponseItem],
           decoder: :json,
           operation_id: 'get_deployment_events',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -512,6 +528,7 @@ module OctridevVercel
         outcomes: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(status_url) do
           Validation.validate_pattern('statusUrl', status_url, '^https?://|^sso:')
           Validation.validate_uri('statusUrl', status_url)
@@ -520,13 +537,13 @@ module OctridevVercel
         SdkClient.request(
           'PATCH',
           [
-            '/v1/deployments/',
+            "/v1/deployments/",
             SdkClient.encode_path_segment(deployment_id),
-            '/integrations/',
+            "/integrations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/resources/',
+            "/resources/",
             SdkClient.encode_path_segment(resource_id),
-            '/actions/',
+            "/actions/",
             SdkClient.encode_path_segment(action)
           ].join,
           config: config,
@@ -534,11 +551,11 @@ module OctridevVercel
             'status' => status,
             'statusText' => status_text,
             'statusUrl' => status_url,
-            'outcomes' => outcomes
+            'outcomes' => outcomes,
           },
           decoder: :empty,
           operation_id: 'update_integration_deployment_action',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

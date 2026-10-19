@@ -5,673 +5,675 @@
 
 # microfrontends domain models (part 3)
 module OctridevVercel
-  # API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant8.
-  class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant8
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant8Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant8Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant8Metadata::DECODERS
+# API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant8.
+class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant8
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant8Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant8Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant8Metadata::DECODERS
 
-    attr_reader :store_id, :type
+  attr_reader :store_id, :type
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9.
-  class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9.
+class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0b42b3aa02.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10.
-  class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0b42b3aa02.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10.
+class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX8d5eeafc55.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11.
-  class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX8d5eeafc55.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11.
+class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa21a652066.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12.
-  class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa21a652066.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12.
+class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb971ba0faa.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13.
-  class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb971ba0faa.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13.
+class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX61b10797ad.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14.
-  class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX61b10797ad.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14.
+class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15Metadata
-    FIELDS = {
-      integration_configuration_id: 'integrationConfigurationId',
-      integration_id: 'integrationId',
-      integration_product_id: 'integrationProductId',
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      integration_configuration_id
-      integration_id
-      integration_product_id
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX05928855d1.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15.
-  class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :integration_configuration_id, :integration_id, :integration_product_id, :store_id,
-                :type
+# Internal model hydration metadata.
+class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15Metadata
+  FIELDS = {
+    integration_configuration_id: "integrationConfigurationId",
+    integration_id: "integrationId",
+    integration_product_id: "integrationProductId",
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    integration_configuration_id
+    integration_id
+    integration_product_id
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX05928855d1.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15.
+class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :integration_configuration_id, :integration_id, :integration_product_id, :store_id,
+              :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16Metadata
-    FIELDS = {
-      project_id: 'projectId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      project_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX648d359a0d.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16.
-  class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :project_id, :type
+# Internal model hydration metadata.
+class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16Metadata
+  FIELDS = {
+    project_id: "projectId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    project_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX648d359a0d.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16.
+class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :project_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHint SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHint
-    DISCRIMINATOR_MAPPING = {
-      'redis-url' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant0 },
-      'redis-rest-api-url' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant1 },
-      'redis-rest-api-token' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant2 },
-      'redis-rest-api-read-only-token' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant3 },
-      'blob-read-write-token' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant4 },
-      'blob-store-id' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant5 },
-      'blob-webhook-public-key' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant6 },
-      'postgres-url' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant7 },
-      'postgres-url-non-pooling' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant8 },
-      'postgres-prisma-url' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9 },
-      'postgres-user' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10 },
-      'postgres-host' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11 },
-      'postgres-password' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12 },
-      'postgres-database' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13 },
-      'postgres-url-no-ssl' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14 },
-      'integration-store-secret' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15 },
-      'flags-connection-string' => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16 }
-    }.freeze
-
-    def self.from_hash(hash)
-      return hash unless hash.is_a?(::Hash)
-
-      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
-      return type.from_hash(hash) if type
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHint', 'variant', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHint discriminator: #{hash['type'].inspect}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX60f07c323e SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX60f07c323e
-    REDIS_URL = 'redis-url'
-    VALUES = ['redis-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX60f07c323e', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX60f07c323e: #{value}")
-    end
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHint SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHint
+  DISCRIMINATOR_MAPPING = {
+    "redis-url" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant0 },
+    "redis-rest-api-url" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant1 },
+    "redis-rest-api-token" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant2 },
+    "redis-rest-api-read-only-token" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant3 },
+    "blob-read-write-token" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant4 },
+    "blob-store-id" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant5 },
+    "blob-webhook-public-key" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant6 },
+    "postgres-url" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant7 },
+    "postgres-url-non-pooling" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant8 },
+    "postgres-prisma-url" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant9 },
+    "postgres-user" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant10 },
+    "postgres-host" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant11 },
+    "postgres-password" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant12 },
+    "postgres-database" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant13 },
+    "postgres-url-no-ssl" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant14 },
+    "integration-store-secret" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant15 },
+    "flags-connection-string" => -> { GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHintVariant16 },
+  }.freeze
+
+  def self.from_hash(hash)
+    return hash unless hash.is_a?(::Hash)
+    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
+    return type.from_hash(hash) if type
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHint', 'variant', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHint discriminator: #{hash["type"].inspect}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX60f07c323e SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX60f07c323e
+  REDIS_URL = 'redis-url'
+  VALUES = ['redis-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX60f07c323e', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX60f07c323e: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2bdc211917 SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2bdc211917
+  REDIS_REST_API_URL = 'redis-rest-api-url'
+  VALUES = ['redis-rest-api-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2bdc211917', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2bdc211917: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0b42b3aa02 SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0b42b3aa02
+  POSTGRES_USER = 'postgres-user'
+  VALUES = ['postgres-user'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0b42b3aa02', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0b42b3aa02: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX8d5eeafc55 SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX8d5eeafc55
+  POSTGRES_HOST = 'postgres-host'
+  VALUES = ['postgres-host'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX8d5eeafc55', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX8d5eeafc55: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa21a652066 SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa21a652066
+  POSTGRES_PASSWORD = 'postgres-password'
+  VALUES = ['postgres-password'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa21a652066', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa21a652066: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb971ba0faa SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb971ba0faa
+  POSTGRES_DATABASE = 'postgres-database'
+  VALUES = ['postgres-database'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb971ba0faa', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb971ba0faa: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX61b10797ad SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX61b10797ad
+  POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
+  VALUES = ['postgres-url-no-ssl'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX61b10797ad', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX61b10797ad: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX05928855d1 SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX05928855d1
+  INTEGRATION_STORE_SECRET = 'integration-store-secret'
+  VALUES = ['integration-store-secret'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX05928855d1', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX05928855d1: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX648d359a0d SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX648d359a0d
+  FLAGS_CONNECTION_STRING = 'flags-connection-string'
+  VALUES = ['flags-connection-string'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX648d359a0d', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX648d359a0d: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0227c4ea6b SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0227c4ea6b
+  REDIS_REST_API_TOKEN = 'redis-rest-api-token'
+  VALUES = ['redis-rest-api-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0227c4ea6b', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0227c4ea6b: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX4cfd55033b SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX4cfd55033b
+  REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
+  VALUES = ['redis-rest-api-read-only-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX4cfd55033b', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX4cfd55033b: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX59d917cf08 SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX59d917cf08
+  BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
+  VALUES = ['blob-read-write-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX59d917cf08', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX59d917cf08: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXabe4fb22a2 SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXabe4fb22a2
+  BLOB_STORE_ID = 'blob-store-id'
+  VALUES = ['blob-store-id'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXabe4fb22a2', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXabe4fb22a2: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb809b43cbf SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb809b43cbf
+  BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
+  VALUES = ['blob-webhook-public-key'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb809b43cbf', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb809b43cbf: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa74d2ddaab SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa74d2ddaab
+  POSTGRES_URL = 'postgres-url'
+  VALUES = ['postgres-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa74d2ddaab', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa74d2ddaab: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2550481cc5 SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2550481cc5
+  POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
+  VALUES = ['postgres-url-non-pooling'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2550481cc5', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2550481cc5: #{value}")
+  end
+end
+
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de
+  POSTGRES_PRISMA_URL = 'postgres-prisma-url'
+  VALUES = ['postgres-prisma-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de: #{value}")
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata
+  FIELDS = {
+    expires_at: "expiresAt",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    expires_at
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0.
+class GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata::DECODERS
+
+  # @return [Float] Unix ms timestamp when the project is scheduled to expire.
+  attr_reader :expires_at
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2bdc211917 SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2bdc211917
-    REDIS_REST_API_URL = 'redis-rest-api-url'
-    VALUES = ['redis-rest-api-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2bdc211917', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2bdc211917: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0b42b3aa02 SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0b42b3aa02
-    POSTGRES_USER = 'postgres-user'
-    VALUES = ['postgres-user'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0b42b3aa02', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0b42b3aa02: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata
+  FIELDS = {
+    locked_at: "lockedAt",
+    locked_by: "lockedBy",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    locked_at
+    locked_by
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1.
+class GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata::DECODERS
+
+  # @return [Float] Unix ms timestamp when the project was locked.
+  attr_reader :locked_at
+  # @return [String] userId of the actor that triggered the lock (system or admin).
+  attr_reader :locked_by
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX8d5eeafc55 SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX8d5eeafc55
-    POSTGRES_HOST = 'postgres-host'
-    VALUES = ['postgres-host'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX8d5eeafc55', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX8d5eeafc55: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa21a652066 SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa21a652066
-    POSTGRES_PASSWORD = 'postgres-password'
-    VALUES = ['postgres-password'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa21a652066', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa21a652066: #{value}")
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb971ba0faa SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb971ba0faa
-    POSTGRES_DATABASE = 'postgres-database'
-    VALUES = ['postgres-database'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb971ba0faa', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb971ba0faa: #{value}")
-    end
+# Defines the GetMicrofrontendsInGroupResponseProjectsItemExpiration SDK namespace.
+module GetMicrofrontendsInGroupResponseProjectsItemExpiration
+  def self.from_hash(hash)
+    shape_mapping = {
+      "expiresAt" => GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0,
+      "lockedAt" => GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
   end
+end
 
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX61b10797ad SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX61b10797ad
-    POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
-    VALUES = ['postgres-url-no-ssl'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX61b10797ad', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX61b10797ad: #{value}")
-    end
-  end
-
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX05928855d1 SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX05928855d1
-    INTEGRATION_STORE_SECRET = 'integration-store-secret'
-    VALUES = ['integration-store-secret'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX05928855d1', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX05928855d1: #{value}")
-    end
-  end
-
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX648d359a0d SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX648d359a0d
-    FLAGS_CONNECTION_STRING = 'flags-connection-string'
-    VALUES = ['flags-connection-string'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX648d359a0d', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX648d359a0d: #{value}")
-    end
-  end
-
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0227c4ea6b SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0227c4ea6b
-    REDIS_REST_API_TOKEN = 'redis-rest-api-token'
-    VALUES = ['redis-rest-api-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0227c4ea6b', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0227c4ea6b: #{value}")
-    end
-  end
-
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX4cfd55033b SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX4cfd55033b
-    REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
-    VALUES = ['redis-rest-api-read-only-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX4cfd55033b', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX4cfd55033b: #{value}")
-    end
-  end
-
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX59d917cf08 SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX59d917cf08
-    BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
-    VALUES = ['blob-read-write-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX59d917cf08', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX59d917cf08: #{value}")
-    end
-  end
-
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXabe4fb22a2 SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXabe4fb22a2
-    BLOB_STORE_ID = 'blob-store-id'
-    VALUES = ['blob-store-id'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXabe4fb22a2', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXabe4fb22a2: #{value}")
-    end
-  end
-
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb809b43cbf SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb809b43cbf
-    BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
-    VALUES = ['blob-webhook-public-key'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb809b43cbf', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb809b43cbf: #{value}")
-    end
-  end
-
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa74d2ddaab SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa74d2ddaab
-    POSTGRES_URL = 'postgres-url'
-    VALUES = ['postgres-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa74d2ddaab', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXa74d2ddaab: #{value}")
-    end
-  end
-
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2550481cc5 SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2550481cc5
-    POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
-    VALUES = ['postgres-url-non-pooling'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2550481cc5', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2550481cc5: #{value}")
-    end
-  end
-
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de
-    POSTGRES_PRISMA_URL = 'postgres-prisma-url'
-    VALUES = ['postgres-prisma-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de: #{value}")
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata
-    FIELDS = {
-      expires_at: 'expiresAt'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      expires_at
-    ].freeze
-    DECODERS = {}.freeze
-  end
-
-  # API model for GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0.
-  class GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata::DECODERS
-
-    # @return [Float] Unix ms timestamp when the project is scheduled to expire.
-    attr_reader :expires_at
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata
-    FIELDS = {
-      locked_at: 'lockedAt',
-      locked_by: 'lockedBy'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      locked_at
-      locked_by
-    ].freeze
-    DECODERS = {}.freeze
-  end
-
-  # API model for GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1.
-  class GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata::DECODERS
-
-    # @return [Float] Unix ms timestamp when the project was locked.
-    attr_reader :locked_at
-    # @return [String] userId of the actor that triggered the lock (system or admin).
-    attr_reader :locked_by
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Defines the GetMicrofrontendsInGroupResponseProjectsItemExpiration SDK namespace.
-  module GetMicrofrontendsInGroupResponseProjectsItemExpiration
-    def self.from_hash(hash)
-      shape_mapping = {
-        'expiresAt' => GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0,
-        'lockedAt' => GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      decoded unless type.nil?
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0Metadata
-    FIELDS = {
-      expiry: 'expiry',
-      src: 'src',
-      status: 'status'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      src
-      status
-    ].freeze
-    DECODERS = {}.freeze
-  end
+# Internal model hydration metadata.
+class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0Metadata
+  FIELDS = {
+    expiry: "expiry",
+    src: "src",
+    status: "status",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    src
+    status
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 end

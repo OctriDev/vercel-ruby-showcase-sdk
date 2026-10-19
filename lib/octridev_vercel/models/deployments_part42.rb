@@ -5,664 +5,667 @@
 
 # deployments domain models (part 42)
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant1ServicesItemVariant1Metadata
-    FIELDS = {
-      bindings: 'bindings',
-      build_command: 'buildCommand',
-      builder: 'builder',
-      clean_urls: 'cleanUrls',
-      command: 'command',
-      dev_command: 'devCommand',
-      entrypoint: 'entrypoint',
-      framework: 'framework',
-      functions: 'functions',
-      headers: 'headers',
-      ignore_command: 'ignoreCommand',
-      install_command: 'installCommand',
-      name: 'name',
-      output_directory: 'outputDirectory',
-      redirects: 'redirects',
-      rewrites: 'rewrites',
-      root: 'root',
-      routes: 'routes',
-      runtime: 'runtime',
-      schema: 'schema',
-      trailing_slash: 'trailingSlash'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      builder
-      name
-      root
-      schema
-    ].freeze
-    DECODERS = {
-      bindings: lambda do |value|
-        value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1BindingsItem.from_hash(item) }
-      end,
-      builder: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1Builder.from_hash(value)
-      end,
-      clean_urls: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1CleanUrls.from_value(value)
-      end,
-      headers: lambda do |value|
-        value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1HeadersItem.from_hash(item) }
-      end,
-      redirects: lambda do |value|
-        value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1RedirectsItem.from_hash(item) }
-      end,
-      rewrites: lambda do |value|
-        value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1RewritesItem.from_hash(item) }
-      end,
-      schema: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1Schema.from_value(value)
-      end,
-      trailing_slash: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1TrailingSlash.from_value(value)
-      end
-    }.freeze
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant1ServicesItemVariant1Metadata
+  FIELDS = {
+    bindings: "bindings",
+    build_command: "buildCommand",
+    builder: "builder",
+    clean_urls: "cleanUrls",
+    command: "command",
+    dev_command: "devCommand",
+    entrypoint: "entrypoint",
+    framework: "framework",
+    functions: "functions",
+    headers: "headers",
+    ignore_command: "ignoreCommand",
+    install_command: "installCommand",
+    name: "name",
+    output_directory: "outputDirectory",
+    redirects: "redirects",
+    rewrites: "rewrites",
+    root: "root",
+    routes: "routes",
+    runtime: "runtime",
+    schema: "schema",
+    trailing_slash: "trailingSlash",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    builder
+    name
+    root
+    schema
+  ].freeze
+  DECODERS = {
+    bindings: lambda do |value|
+      value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1BindingsItem.from_hash(item) }
+    end,
+    builder: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1Builder.from_hash(value)
+    end,
+    clean_urls: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1CleanUrls.from_value(value)
+    end,
+    headers: lambda do |value|
+      value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1HeadersItem.from_hash(item) }
+    end,
+    redirects: lambda do |value|
+      value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1RedirectsItem.from_hash(item) }
+    end,
+    rewrites: lambda do |value|
+      value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1RewritesItem.from_hash(item) }
+    end,
+    schema: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1Schema.from_value(value)
+    end,
+    trailing_slash: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1ServicesItemVariant1TrailingSlash.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant1ServicesItemVariant1.
+# Services detected during build from vercel.json experimentalServices or auto-detected from project structure. Used to inject service URLs as environment variables at runtime.
+class GetDeploymentResponseVariant1ServicesItemVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant1ServicesItemVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1ServicesItemVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant1ServicesItemVariant1Metadata::DECODERS
+
+  attr_reader :build_command, :clean_urls, :dev_command, :framework, :headers, :ignore_command,
+              :install_command, :name, :output_directory, :redirects, :rewrites, :routes, :runtime,
+              :schema, :trailing_slash
+  # @return [Array_of_GetDeploymentResponseVariant1ServicesItemVariant1BindingsItem] Caller-side bindings to other services.
+  attr_reader :bindings
+  # @return [GetDeploymentResponseVariant1ServicesItemVariant1Builder] Builder selected by the resolver.
+  attr_reader :builder
+  # @return [Array_of_String] Command override for `runtime: "container"` services.
+  attr_reader :command
+  # @return [String] Resolved entrypoint, relative to the service root.
+  attr_reader :entrypoint
+  # @return [Hash] Function configuration scoped to this service.
+  attr_reader :functions
+  # @return [String] Path to the service root, relative to the project root.
+  attr_reader :root
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant1ServicesItemVariant1.
-  # Services detected during build from vercel.json experimentalServices or auto-detected from project structure. Used to inject service URLs as environment variables at runtime.
-  class GetDeploymentResponseVariant1ServicesItemVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant1ServicesItemVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1ServicesItemVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant1ServicesItemVariant1Metadata::DECODERS
-
-    attr_reader :build_command, :clean_urls, :dev_command, :framework, :headers, :ignore_command,
-                :install_command, :name, :output_directory, :redirects, :rewrites, :routes, :runtime,
-                :schema, :trailing_slash
-    # @return [Array_of_GetDeploymentResponseVariant1ServicesItemVariant1BindingsItem] Caller-side bindings to other services.
-    attr_reader :bindings
-    # @return [GetDeploymentResponseVariant1ServicesItemVariant1Builder] Builder selected by the resolver.
-    attr_reader :builder
-    # @return [Array_of_String] Command override for `runtime: "container"` services.
-    attr_reader :command
-    # @return [String] Resolved entrypoint, relative to the service root.
-    attr_reader :entrypoint
-    # @return [Hash] Function configuration scoped to this service.
-    attr_reader :functions
-    # @return [String] Path to the service root, relative to the project root.
-    attr_reader :root
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant1TeamMetadata
-    FIELDS = {
-      avatar: 'avatar',
-      id: 'id',
-      name: 'name',
-      slug: 'slug'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-      name
-      slug
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant1TeamMetadata
+  FIELDS = {
+    avatar: "avatar",
+    id: "id",
+    name: "name",
+    slug: "slug",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+    name
+    slug
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant1Team.
+# The team that owns the deployment if any
+class GetDeploymentResponseVariant1Team
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant1TeamMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1TeamMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant1TeamMetadata::DECODERS
+
+  attr_reader :avatar, :id, :name, :slug
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant1Team.
-  # The team that owns the deployment if any
-  class GetDeploymentResponseVariant1Team
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant1TeamMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1TeamMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant1TeamMetadata::DECODERS
-
-    attr_reader :avatar, :id, :name, :slug
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant1Metadata
-    FIELDS = {
-      alias_: 'alias',
-      alias_assigned: 'aliasAssigned',
-      alias_assigned_at: 'aliasAssignedAt',
-      alias_error: 'aliasError',
-      alias_final: 'aliasFinal',
-      alias_warning: 'aliasWarning',
-      always_refuse_to_build: 'alwaysRefuseToBuild',
-      atproto: 'atproto',
-      attribution: 'attribution',
-      auto_assign_custom_domains: 'autoAssignCustomDomains',
-      automatic_aliases: 'automaticAliases',
-      booted_at: 'bootedAt',
-      build: 'build',
-      build_artifact_urls: 'buildArtifactUrls',
-      build_container_finished_at: 'buildContainerFinishedAt',
-      build_error_at: 'buildErrorAt',
-      building_at: 'buildingAt',
-      builds: 'builds',
-      build_skipped: 'buildSkipped',
-      canceled_at: 'canceledAt',
-      checks: 'checks',
-      checks_conclusion: 'checksConclusion',
-      checks_state: 'checksState',
-      config: 'config',
-      connect_builds_enabled: 'connectBuildsEnabled',
-      connect_configuration_id: 'connectConfigurationId',
-      created_at: 'createdAt',
-      created_in: 'createdIn',
-      creator: 'creator',
-      crons: 'crons',
-      custom_environment: 'customEnvironment',
-      default_route: 'defaultRoute',
-      deleted_at: 'deletedAt',
-      duration: 'duration',
-      env: 'env',
-      error_code: 'errorCode',
-      error_link: 'errorLink',
-      error_message: 'errorMessage',
-      error_step: 'errorStep',
-      flags: 'flags',
-      functions: 'functions',
-      git_repo: 'gitRepo',
-      git_source: 'gitSource',
-      id: 'id',
-      images: 'images',
-      init_ready_at: 'initReadyAt',
-      inspector_url: 'inspectorUrl',
-      integrations: 'integrations',
-      is_first_branch_deployment: 'isFirstBranchDeployment',
-      is_in_concurrent_builds_queue: 'isInConcurrentBuildsQueue',
-      is_instant_static: 'isInstantStatic',
-      is_in_system_builds_queue: 'isInSystemBuildsQueue',
-      lambdas: 'lambdas',
-      manual_provisioning: 'manualProvisioning',
-      meta: 'meta',
-      microfrontends: 'microfrontends',
-      monorepo_manager: 'monorepoManager',
-      name: 'name',
-      node_version: 'nodeVersion',
-      oidc_token_claims: 'oidcTokenClaims',
-      oom_report: 'oomReport',
-      origin_cache_region: 'originCacheRegion',
-      owner_id: 'ownerId',
-      passive_connect_configuration_id: 'passiveConnectConfigurationId',
-      passive_regions: 'passiveRegions',
-      plan: 'plan',
-      platform: 'platform',
-      prebuilt: 'prebuilt',
-      preview_comments_enabled: 'previewCommentsEnabled',
-      project: 'project',
-      project_id: 'projectId',
-      project_settings: 'projectSettings',
-      public: 'public',
-      ready: 'ready',
-      ready_state: 'readyState',
-      ready_state_reason: 'readyStateReason',
-      ready_substate: 'readySubstate',
-      regions: 'regions',
-      resource_config: 'resourceConfig',
-      routes: 'routes',
-      seat_block: 'seatBlock',
-      services: 'services',
-      soft_deleted_by_retention: 'softDeletedByRetention',
-      source: 'source',
-      status: 'status',
-      target: 'target',
-      team: 'team',
-      tty_build_logs: 'ttyBuildLogs',
-      type: 'type',
-      undeleted_at: 'undeletedAt',
-      url: 'url',
-      user_aliases: 'userAliases',
-      user_configured_deployment_id: 'userConfiguredDeploymentId',
-      version: 'version'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      alias_assigned
-      booted_at
-      build
-      building_at
-      build_skipped
-      created_at
-      created_in
-      creator
-      duration
-      env
-      id
-      inspector_url
-      is_in_concurrent_builds_queue
-      is_in_system_builds_queue
-      meta
-      name
-      owner_id
-      plan
-      project_id
-      project_settings
-      public
-      ready_state
-      regions
-      routes
-      status
-      type
-      url
-      version
-    ].freeze
-    DECODERS = {
-      alias_assigned: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1AliasAssigned.from_value(value)
-      end,
-      alias_error: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1AliasError.from_hash(value)
-      end,
-      alias_warning: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1AliasWarning.from_hash(value)
-      end,
-      always_refuse_to_build: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1AlwaysRefuseToBuild.from_value(value)
-      end,
-      attribution: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Attribution.from_hash(value)
-      end,
-      auto_assign_custom_domains: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1AutoAssignCustomDomains.from_value(value)
-      end,
-      build: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Build.from_hash(value)
-      end,
-      builds: lambda do |value|
-        value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1BuildsItem.from_hash(item) }
-      end,
-      build_skipped: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1BuildSkipped.from_value(value)
-      end,
-      checks: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Checks.from_hash(value)
-      end,
-      checks_conclusion: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1ChecksConclusion.from_value(value)
-      end,
-      checks_state: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1ChecksState.from_value(value)
-      end,
-      config: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Config.from_hash(value)
-      end,
-      connect_builds_enabled: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1ConnectBuildsEnabled.from_value(value)
-      end,
-      creator: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Creator.from_hash(value)
-      end,
-      crons: lambda do |value|
-        value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1CronsItem.from_hash(item) }
-      end,
-      duration: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Duration.from_hash(value)
-      end,
-      images: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Images.from_hash(value)
-      end,
-      integrations: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Integrations.from_hash(value)
-      end,
-      is_first_branch_deployment: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1IsFirstBranchDeployment.from_value(value)
-      end,
-      is_in_concurrent_builds_queue: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1IsInConcurrentBuildsQueue.from_value(value)
-      end,
-      is_instant_static: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1IsInstantStatic.from_value(value)
-      end,
-      is_in_system_builds_queue: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1IsInSystemBuildsQueue.from_value(value)
-      end,
-      lambdas: lambda do |value|
-        value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1LambdasItem.from_hash(item) }
-      end,
-      manual_provisioning: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1ManualProvisioning.from_hash(value)
-      end,
-      node_version: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1NodeVersion.from_value(value)
-      end,
-      oidc_token_claims: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1OidcTokenClaims.from_hash(value)
-      end,
-      oom_report: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1OomReport.from_value(value)
-      end,
-      plan: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Plan.from_value(value)
-      end,
-      platform: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Platform.from_hash(value)
-      end,
-      prebuilt: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Prebuilt.from_value(value)
-      end,
-      preview_comments_enabled: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1PreviewCommentsEnabled.from_value(value)
-      end,
-      project: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Project.from_hash(value)
-      end,
-      project_settings: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1ProjectSettings.from_hash(value)
-      end,
-      public: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Public.from_value(value)
-      end,
-      ready_state: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1ReadyState.from_value(value)
-      end,
-      ready_substate: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1ReadySubstate.from_value(value)
-      end,
-      resource_config: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1ResourceConfig.from_hash(value)
-      end,
-      seat_block: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1SeatBlock.from_hash(value)
-      end,
-      soft_deleted_by_retention: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1SoftDeletedByRetention.from_value(value)
-      end,
-      source: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Source.from_value(value)
-      end,
-      status: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Status.from_value(value)
-      end,
-      target: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Target.from_value(value)
-      end,
-      team: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Team.from_hash(value)
-      end,
-      tty_build_logs: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1TtyBuildLogs.from_value(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Type.from_value(value)
-      end,
-      version: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant1Version.from_value(value)
-      end
-    }.freeze
-    NULLABLE_FIELDS = %i[
-      inspector_url
-      routes
-    ].freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant1Metadata
+  FIELDS = {
+    alias_: "alias",
+    alias_assigned: "aliasAssigned",
+    alias_assigned_at: "aliasAssignedAt",
+    alias_error: "aliasError",
+    alias_final: "aliasFinal",
+    alias_warning: "aliasWarning",
+    always_refuse_to_build: "alwaysRefuseToBuild",
+    atproto: "atproto",
+    attribution: "attribution",
+    auto_assign_custom_domains: "autoAssignCustomDomains",
+    automatic_aliases: "automaticAliases",
+    booted_at: "bootedAt",
+    build: "build",
+    build_artifact_urls: "buildArtifactUrls",
+    build_container_finished_at: "buildContainerFinishedAt",
+    build_error_at: "buildErrorAt",
+    building_at: "buildingAt",
+    builds: "builds",
+    build_skipped: "buildSkipped",
+    canceled_at: "canceledAt",
+    checks: "checks",
+    checks_conclusion: "checksConclusion",
+    checks_state: "checksState",
+    config: "config",
+    connect_builds_enabled: "connectBuildsEnabled",
+    connect_configuration_id: "connectConfigurationId",
+    created_at: "createdAt",
+    created_in: "createdIn",
+    creator: "creator",
+    crons: "crons",
+    custom_environment: "customEnvironment",
+    default_route: "defaultRoute",
+    deleted_at: "deletedAt",
+    duration: "duration",
+    env: "env",
+    error_code: "errorCode",
+    error_link: "errorLink",
+    error_message: "errorMessage",
+    error_step: "errorStep",
+    flags: "flags",
+    functions: "functions",
+    git_repo: "gitRepo",
+    git_source: "gitSource",
+    id: "id",
+    images: "images",
+    init_ready_at: "initReadyAt",
+    inspector_url: "inspectorUrl",
+    integrations: "integrations",
+    is_first_branch_deployment: "isFirstBranchDeployment",
+    is_in_concurrent_builds_queue: "isInConcurrentBuildsQueue",
+    is_instant_static: "isInstantStatic",
+    is_in_system_builds_queue: "isInSystemBuildsQueue",
+    lambdas: "lambdas",
+    manual_provisioning: "manualProvisioning",
+    meta: "meta",
+    microfrontends: "microfrontends",
+    monorepo_manager: "monorepoManager",
+    name: "name",
+    node_version: "nodeVersion",
+    oidc_token_claims: "oidcTokenClaims",
+    oom_report: "oomReport",
+    origin_cache_region: "originCacheRegion",
+    owner_id: "ownerId",
+    passive_connect_configuration_id: "passiveConnectConfigurationId",
+    passive_regions: "passiveRegions",
+    plan: "plan",
+    platform: "platform",
+    prebuilt: "prebuilt",
+    preview_comments_enabled: "previewCommentsEnabled",
+    project: "project",
+    project_id: "projectId",
+    project_settings: "projectSettings",
+    public: "public",
+    ready: "ready",
+    ready_state: "readyState",
+    ready_state_reason: "readyStateReason",
+    ready_substate: "readySubstate",
+    regions: "regions",
+    resource_config: "resourceConfig",
+    routes: "routes",
+    seat_block: "seatBlock",
+    services: "services",
+    soft_deleted_by_retention: "softDeletedByRetention",
+    source: "source",
+    status: "status",
+    target: "target",
+    team: "team",
+    tty_build_logs: "ttyBuildLogs",
+    type: "type",
+    undeleted_at: "undeletedAt",
+    url: "url",
+    user_aliases: "userAliases",
+    user_configured_deployment_id: "userConfiguredDeploymentId",
+    version: "version",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    alias_assigned
+    booted_at
+    build
+    building_at
+    build_skipped
+    created_at
+    created_in
+    creator
+    duration
+    env
+    id
+    inspector_url
+    is_in_concurrent_builds_queue
+    is_in_system_builds_queue
+    meta
+    name
+    owner_id
+    plan
+    project_id
+    project_settings
+    public
+    ready_state
+    regions
+    routes
+    status
+    type
+    url
+    version
+  ].freeze
+  DECODERS = {
+    alias_assigned: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1AliasAssigned.from_value(value)
+    end,
+    alias_error: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1AliasError.from_hash(value)
+    end,
+    alias_warning: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1AliasWarning.from_hash(value)
+    end,
+    always_refuse_to_build: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1AlwaysRefuseToBuild.from_value(value)
+    end,
+    attribution: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Attribution.from_hash(value)
+    end,
+    auto_assign_custom_domains: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1AutoAssignCustomDomains.from_value(value)
+    end,
+    build: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Build.from_hash(value)
+    end,
+    builds: lambda do |value|
+      value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1BuildsItem.from_hash(item) }
+    end,
+    build_skipped: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1BuildSkipped.from_value(value)
+    end,
+    checks: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Checks.from_hash(value)
+    end,
+    checks_conclusion: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1ChecksConclusion.from_value(value)
+    end,
+    checks_state: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1ChecksState.from_value(value)
+    end,
+    config: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Config.from_hash(value)
+    end,
+    connect_builds_enabled: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1ConnectBuildsEnabled.from_value(value)
+    end,
+    creator: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Creator.from_hash(value)
+    end,
+    crons: lambda do |value|
+      value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1CronsItem.from_hash(item) }
+    end,
+    duration: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Duration.from_hash(value)
+    end,
+    images: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Images.from_hash(value)
+    end,
+    integrations: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Integrations.from_hash(value)
+    end,
+    is_first_branch_deployment: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1IsFirstBranchDeployment.from_value(value)
+    end,
+    is_in_concurrent_builds_queue: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1IsInConcurrentBuildsQueue.from_value(value)
+    end,
+    is_instant_static: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1IsInstantStatic.from_value(value)
+    end,
+    is_in_system_builds_queue: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1IsInSystemBuildsQueue.from_value(value)
+    end,
+    lambdas: lambda do |value|
+      value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1LambdasItem.from_hash(item) }
+    end,
+    manual_provisioning: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1ManualProvisioning.from_hash(value)
+    end,
+    node_version: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1NodeVersion.from_value(value)
+    end,
+    oidc_token_claims: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1OidcTokenClaims.from_hash(value)
+    end,
+    oom_report: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1OomReport.from_value(value)
+    end,
+    plan: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Plan.from_value(value)
+    end,
+    platform: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Platform.from_hash(value)
+    end,
+    prebuilt: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Prebuilt.from_value(value)
+    end,
+    preview_comments_enabled: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1PreviewCommentsEnabled.from_value(value)
+    end,
+    project: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Project.from_hash(value)
+    end,
+    project_settings: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1ProjectSettings.from_hash(value)
+    end,
+    public: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Public.from_value(value)
+    end,
+    ready_state: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1ReadyState.from_value(value)
+    end,
+    ready_substate: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1ReadySubstate.from_value(value)
+    end,
+    resource_config: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1ResourceConfig.from_hash(value)
+    end,
+    seat_block: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1SeatBlock.from_hash(value)
+    end,
+    soft_deleted_by_retention: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1SoftDeletedByRetention.from_value(value)
+    end,
+    source: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Source.from_value(value)
+    end,
+    status: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Status.from_value(value)
+    end,
+    target: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Target.from_value(value)
+    end,
+    team: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Team.from_hash(value)
+    end,
+    tty_build_logs: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1TtyBuildLogs.from_value(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Type.from_value(value)
+    end,
+    version: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant1Version.from_value(value)
+    end,
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    inspector_url
+    routes
+  ].freeze
+end
+
+# API model for GetDeploymentResponseVariant1.
+class GetDeploymentResponseVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant1Metadata::DECODERS
+
+  attr_reader :alias_assigned_at, :alias_final, :alias_warning, :always_refuse_to_build, :atproto,
+              :automatic_aliases, :booted_at, :build, :build_artifact_urls, :build_error_at,
+              :building_at, :builds, :build_skipped, :canceled_at, :checks, :checks_conclusion,
+              :checks_state, :connect_builds_enabled, :connect_configuration_id, :created_in, :crons,
+              :custom_environment, :duration, :env, :error_code, :error_link, :error_message,
+              :error_step, :flags, :functions, :git_repo, :git_source, :images, :init_ready_at,
+              :inspector_url, :integrations, :is_first_branch_deployment,
+              :is_in_concurrent_builds_queue, :is_in_system_builds_queue, :lambdas, :meta,
+              :microfrontends, :monorepo_manager, :oidc_token_claims, :oom_report,
+              :origin_cache_region, :owner_id, :plan, :prebuilt, :project_id, :project_settings,
+              :ready, :ready_state_reason, :resource_config, :routes, :status, :tty_build_logs,
+              :type
+  # @return [Array_of_String] A list of all the aliases (default aliases, staging aliases and production aliases) that were assigned upon deployment creation
+  attr_reader :alias_
+  # @return [GetDeploymentResponseVariant1AliasAssigned] A boolean that will be true when the aliases from the alias property were assigned successfully
+  attr_reader :alias_assigned
+  # @return [GetDeploymentResponseVariant1AliasError] An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
+  attr_reader :alias_error
+  # @return [GetDeploymentResponseVariant1Attribution] Attribution metadata for the deployment, linking commit author to git and Vercel users. Only populated when the `enable-deployment-attribution` flag is enabled.
+  attr_reader :attribution
+  # @return [GetDeploymentResponseVariant1AutoAssignCustomDomains] applies to custom domains only, defaults to `true`
+  attr_reader :auto_assign_custom_domains
+  # @return [Float] Since April 2025 it necessary for On-Demand Concurrency Minutes calculation
+  attr_reader :build_container_finished_at
+  # @return [GetDeploymentResponseVariant1Config] Since February 2025 the configuration must include snapshot data at the time of deployment creation to capture properties for the /deployments/:id/config endpoint utilized for displaying Deployment Configuration on the frontend This is optional because older deployments may not have this data captured
+  attr_reader :config
+  # @return [Float] A number containing the date when the deployment was created in milliseconds
+  attr_reader :created_at
+  # @return [GetDeploymentResponseVariant1Creator] Information about the deployment creator
+  attr_reader :creator
+  # @return [String] Computed field that is only available for deployments with a microfrontend configuration.
+  attr_reader :default_route
+  # @return [Float] A number containing the date when the deployment was deleted at milliseconds
+  attr_reader :deleted_at
+  # @return [String] A string holding the unique ID of the deployment
+  attr_reader :id
+  # @return [GetDeploymentResponseVariant1IsInstantStatic] Whether this deployment completed through the instant static fast path.
+  attr_reader :is_instant_static
+  # @return [GetDeploymentResponseVariant1ManualProvisioning] Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
+  attr_reader :manual_provisioning
+  # @return [String] The name of the project associated with the deployment at the time that the deployment was created
+  attr_reader :name
+  # @return [GetDeploymentResponseVariant1NodeVersion] If set it overrides the `projectSettings.nodeVersion` for this deployment.
+  attr_reader :node_version
+  # @return [String] Since November 2023 this field defines a Secure Compute network that will only be used to deploy passive lambdas to (as in passiveRegions)
+  attr_reader :passive_connect_configuration_id
+  # @return [Array_of_String] Since November 2023 this field defines a set of regions that we will deploy the lambda to passively Lambdas will be deployed to these regions but only invoked if all of the primary `regions` are marked as out of service
+  attr_reader :passive_regions
+  # @return [GetDeploymentResponseVariant1Platform] Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)
+  attr_reader :platform
+  # @return [GetDeploymentResponseVariant1PreviewCommentsEnabled] Whether or not preview comments are enabled for the deployment
+  attr_reader :preview_comments_enabled
+  # @return [GetDeploymentResponseVariant1Project] The public project information associated with the deployment.
+  attr_reader :project
+  # @return [GetDeploymentResponseVariant1Public] A boolean representing if the deployment is public or not. By default this is `false`
+  attr_reader :public
+  # @return [GetDeploymentResponseVariant1ReadyState] The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+  attr_reader :ready_state
+  # @return [GetDeploymentResponseVariant1ReadySubstate] Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic
+  attr_reader :ready_substate
+  # @return [Array_of_String] The regions the deployment exists in
+  attr_reader :regions
+  # @return [GetDeploymentResponseVariant1SeatBlock] NSNB Blocked metadata
+  attr_reader :seat_block
+  # @return [Array_of_Object] Services detected during build from vercel.json experimentalServices or auto-detected from project structure. Used to inject service URLs as environment variables at runtime.
+  attr_reader :services
+  # @return [GetDeploymentResponseVariant1SoftDeletedByRetention] flag to indicate if the deployment was deleted by retention policy
+  attr_reader :soft_deleted_by_retention
+  # @return [GetDeploymentResponseVariant1Source] Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+  attr_reader :source
+  # @return [GetDeploymentResponseVariant1Target] If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+  attr_reader :target
+  # @return [GetDeploymentResponseVariant1Team] The team that owns the deployment if any
+  attr_reader :team
+  # @return [Float] A number containing the date when the deployment was undeleted at milliseconds
+  attr_reader :undeleted_at
+  # @return [String] A string with the unique URL of the deployment
+  attr_reader :url
+  # @return [Array_of_String] An array of domains that were provided by the user when creating the Deployment.
+  attr_reader :user_aliases
+  # @return [String] Since January 2025 User-configured deployment ID for skew protection with pre-built deployments. This is set when users configure a custom deploymentId in their next.config.js file. This allows Next.js to use skew protection even when deployments are pre-built outside of Vercel's build system.
+  attr_reader :user_configured_deployment_id
+  # @return [GetDeploymentResponseVariant1Version] The platform version that was used to create the deployment.
+  attr_reader :version
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant1.
-  class GetDeploymentResponseVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant1Metadata::DECODERS
-
-    attr_reader :alias_assigned_at, :alias_final, :alias_warning, :always_refuse_to_build, :atproto,
-                :automatic_aliases, :booted_at, :build, :build_artifact_urls, :build_error_at,
-                :building_at, :builds, :build_skipped, :canceled_at, :checks, :checks_conclusion,
-                :checks_state, :connect_builds_enabled, :connect_configuration_id, :created_in, :crons,
-                :custom_environment, :duration, :env, :error_code, :error_link, :error_message,
-                :error_step, :flags, :functions, :git_repo, :git_source, :images, :init_ready_at,
-                :inspector_url, :integrations, :is_first_branch_deployment,
-                :is_in_concurrent_builds_queue, :is_in_system_builds_queue, :lambdas, :meta,
-                :microfrontends, :monorepo_manager, :oidc_token_claims, :oom_report,
-                :origin_cache_region, :owner_id, :plan, :prebuilt, :project_id, :project_settings,
-                :ready, :ready_state_reason, :resource_config, :routes, :status, :tty_build_logs,
-                :type
-    # @return [Array_of_String] A list of all the aliases (default aliases, staging aliases and production aliases) that were assigned upon deployment creation
-    attr_reader :alias_
-    # @return [GetDeploymentResponseVariant1AliasAssigned] A boolean that will be true when the aliases from the alias property were assigned successfully
-    attr_reader :alias_assigned
-    # @return [GetDeploymentResponseVariant1AliasError] An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
-    attr_reader :alias_error
-    # @return [GetDeploymentResponseVariant1Attribution] Attribution metadata for the deployment, linking commit author to git and Vercel users. Only populated when the `enable-deployment-attribution` flag is enabled.
-    attr_reader :attribution
-    # @return [GetDeploymentResponseVariant1AutoAssignCustomDomains] applies to custom domains only, defaults to `true`
-    attr_reader :auto_assign_custom_domains
-    # @return [Float] Since April 2025 it necessary for On-Demand Concurrency Minutes calculation
-    attr_reader :build_container_finished_at
-    # @return [GetDeploymentResponseVariant1Config] Since February 2025 the configuration must include snapshot data at the time of deployment creation to capture properties for the /deployments/:id/config endpoint utilized for displaying Deployment Configuration on the frontend This is optional because older deployments may not have this data captured
-    attr_reader :config
-    # @return [Float] A number containing the date when the deployment was created in milliseconds
-    attr_reader :created_at
-    # @return [GetDeploymentResponseVariant1Creator] Information about the deployment creator
-    attr_reader :creator
-    # @return [String] Computed field that is only available for deployments with a microfrontend configuration.
-    attr_reader :default_route
-    # @return [Float] A number containing the date when the deployment was deleted at milliseconds
-    attr_reader :deleted_at
-    # @return [String] A string holding the unique ID of the deployment
-    attr_reader :id
-    # @return [GetDeploymentResponseVariant1IsInstantStatic] Whether this deployment completed through the instant static fast path.
-    attr_reader :is_instant_static
-    # @return [GetDeploymentResponseVariant1ManualProvisioning] Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
-    attr_reader :manual_provisioning
-    # @return [String] The name of the project associated with the deployment at the time that the deployment was created
-    attr_reader :name
-    # @return [GetDeploymentResponseVariant1NodeVersion] If set it overrides the `projectSettings.nodeVersion` for this deployment.
-    attr_reader :node_version
-    # @return [String] Since November 2023 this field defines a Secure Compute network that will only be used to deploy passive lambdas to (as in passiveRegions)
-    attr_reader :passive_connect_configuration_id
-    # @return [Array_of_String] Since November 2023 this field defines a set of regions that we will deploy the lambda to passively Lambdas will be deployed to these regions but only invoked if all of the primary `regions` are marked as out of service
-    attr_reader :passive_regions
-    # @return [GetDeploymentResponseVariant1Platform] Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)
-    attr_reader :platform
-    # @return [GetDeploymentResponseVariant1PreviewCommentsEnabled] Whether or not preview comments are enabled for the deployment
-    attr_reader :preview_comments_enabled
-    # @return [GetDeploymentResponseVariant1Project] The public project information associated with the deployment.
-    attr_reader :project
-    # @return [GetDeploymentResponseVariant1Public] A boolean representing if the deployment is public or not. By default this is `false`
-    attr_reader :public
-    # @return [GetDeploymentResponseVariant1ReadyState] The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-    attr_reader :ready_state
-    # @return [GetDeploymentResponseVariant1ReadySubstate] Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic
-    attr_reader :ready_substate
-    # @return [Array_of_String] The regions the deployment exists in
-    attr_reader :regions
-    # @return [GetDeploymentResponseVariant1SeatBlock] NSNB Blocked metadata
-    attr_reader :seat_block
-    # @return [Array_of_Object] Services detected during build from vercel.json experimentalServices or auto-detected from project structure. Used to inject service URLs as environment variables at runtime.
-    attr_reader :services
-    # @return [GetDeploymentResponseVariant1SoftDeletedByRetention] flag to indicate if the deployment was deleted by retention policy
-    attr_reader :soft_deleted_by_retention
-    # @return [GetDeploymentResponseVariant1Source] Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-    attr_reader :source
-    # @return [GetDeploymentResponseVariant1Target] If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-    attr_reader :target
-    # @return [GetDeploymentResponseVariant1Team] The team that owns the deployment if any
-    attr_reader :team
-    # @return [Float] A number containing the date when the deployment was undeleted at milliseconds
-    attr_reader :undeleted_at
-    # @return [String] A string with the unique URL of the deployment
-    attr_reader :url
-    # @return [Array_of_String] An array of domains that were provided by the user when creating the Deployment.
-    attr_reader :user_aliases
-    # @return [String] Since January 2025 User-configured deployment ID for skew protection with pre-built deployments. This is set when users configure a custom deploymentId in their next.config.js file. This allows Next.js to use skew protection even when deployments are pre-built outside of Vercel's build system.
-    attr_reader :user_configured_deployment_id
-    # @return [GetDeploymentResponseVariant1Version] The platform version that was used to create the deployment.
-    attr_reader :version
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalGetDeploymentResponseVariant1Metadata::NULLABLE_FIELDS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalGetDeploymentResponseVariant1Metadata::NULLABLE_FIELDS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2AliasErrorMetadata
-    FIELDS = {
-      code: 'code',
-      message: 'message'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      code
-      message
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2AliasErrorMetadata
+  FIELDS = {
+    code: "code",
+    message: "message",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    code
+    message
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant2AliasError.
+# An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
+class GetDeploymentResponseVariant2AliasError
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2AliasErrorMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2AliasErrorMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2AliasErrorMetadata::DECODERS
+
+  attr_reader :code, :message
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant2AliasError.
-  # An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
-  class GetDeploymentResponseVariant2AliasError
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2AliasErrorMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2AliasErrorMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2AliasErrorMetadata::DECODERS
-
-    attr_reader :code, :message
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2AliasWarningMetadata
-    FIELDS = {
-      action: 'action',
-      code: 'code',
-      link: 'link',
-      message: 'message'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      code
-      message
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2AliasWarningMetadata
+  FIELDS = {
+    action: "action",
+    code: "code",
+    link: "link",
+    message: "message",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    code
+    message
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant2AliasWarning.
+class GetDeploymentResponseVariant2AliasWarning
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2AliasWarningMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2AliasWarningMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2AliasWarningMetadata::DECODERS
+
+  attr_reader :action, :code, :link, :message
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant2AliasWarning.
-  class GetDeploymentResponseVariant2AliasWarning
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2AliasWarningMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2AliasWarningMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2AliasWarningMetadata::DECODERS
-
-    attr_reader :action, :code, :link, :message
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2CreatorMetadata
-    FIELDS = {
-      avatar: 'avatar',
-      type: 'type',
-      uid: 'uid',
-      username: 'username'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      uid
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2CreatorType.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2CreatorMetadata
+  FIELDS = {
+    avatar: "avatar",
+    type: "type",
+    uid: "uid",
+    username: "username",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    uid
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2CreatorType.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant2Creator.
+# Information about the deployment creator
+class GetDeploymentResponseVariant2Creator
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2CreatorMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2CreatorMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2CreatorMetadata::DECODERS
+
+  # @return [String] The avatar of the user that created the deployment
+  attr_reader :avatar
+  # @return [GetDeploymentResponseVariant2CreatorType] Principal type of the deployment creator.
+  attr_reader :type
+  # @return [String] Stable creator id across principal types (user id, app id, integration configuration id, or `system`).
+  attr_reader :uid
+  # @return [String] The username of the user that created the deployment
+  attr_reader :username
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant2Creator.
-  # Information about the deployment creator
-  class GetDeploymentResponseVariant2Creator
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2CreatorMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2CreatorMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2CreatorMetadata::DECODERS
-
-    # @return [String] The avatar of the user that created the deployment
-    attr_reader :avatar
-    # @return [GetDeploymentResponseVariant2CreatorType] Principal type of the deployment creator.
-    attr_reader :type
-    # @return [String] Stable creator id across principal types (user id, app id, integration configuration id, or `system`).
-    attr_reader :uid
-    # @return [String] The username of the user that created the deployment
-    attr_reader :username
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2CustomEnvironmentVariant0BranchMatcherMetadata
-    FIELDS = {
-      pattern: 'pattern',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      pattern
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2CustomEnvironmentVariant0BranchMatcherType.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2CustomEnvironmentVariant0BranchMatcherMetadata
+  FIELDS = {
+    pattern: "pattern",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    pattern
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2CustomEnvironmentVariant0BranchMatcherType.from_value(value)
+    end,
+  }.freeze
+end
 end

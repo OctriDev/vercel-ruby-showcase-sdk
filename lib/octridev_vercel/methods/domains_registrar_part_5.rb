@@ -19,24 +19,25 @@ module OctridevVercel
         team_id: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PATCH',
           [
-            '/v1/registrar/domains/',
+            "/v1/registrar/domains/",
             SdkClient.encode_path_segment(domain),
-            '/auto-renew'
+            "/auto-renew"
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           body: {
-            'autoRenew' => auto_renew
+            'autoRenew' => auto_renew,
           },
           decoder: :empty,
           operation_id: 'update_domain_auto_renew',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
 
@@ -50,69 +51,82 @@ module OctridevVercel
         team_id: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PATCH',
           [
-            '/v1/registrar/domains/',
+            "/v1/registrar/domains/",
             SdkClient.encode_path_segment(domain),
-            '/nameservers'
+            "/nameservers"
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           body: {
-            'nameservers' => nameservers
+            'nameservers' => nameservers,
           },
           decoder: :empty,
           operation_id: 'update_domain_nameservers',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
 
       # Retrieves the registrant contact verification status for a domain. Use this after purchasing a domain to check whether its registrant contact has been verified. A 400 is returned if the domain was bought less than 30 minutes before the request.
       #
       # Get the registrant contact verification status for a domain. Use this after purchasing a domain to determine whether the contact has been verified. Note that a bought_too_recently error will be returned if the domain was bought less than 30 minutes before the request.
-      singleton_class.define_method(:get_domain_contact_verification) do |config:, domain:, team_id: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_domain_contact_verification) do |
+        config:,
+        domain:,
+        team_id: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/registrar/domains/',
+            "/v1/registrar/domains/",
             SdkClient.encode_path_segment(domain),
-            '/contact-verification'
+            "/contact-verification"
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::GetDomainContactVerificationResponse,
           decoder: :json,
           operation_id: 'get_domain_contact_verification',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
 
       # Retrieves information about a domain order using its order ID. Use the response to inspect the domains included in the order and its current status. The status is one of `draft`, `purchasing`, `completed`, or `failed`.
       #
       # Get information about a domain order by its ID
-      singleton_class.define_method(:get_order) do |config:, order_id:, team_id: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_order) do |
+        config:,
+        order_id:,
+        team_id: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/registrar/orders/',
+            "/v1/registrar/orders/",
             SdkClient.encode_path_segment(order_id)
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetOrderResponse,
           decoder: :json,
           operation_id: 'get_order',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::NotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::NotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
     end

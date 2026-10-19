@@ -12,13 +12,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBillingPlansResponsePlansItemDetailsItemMetadata
         FIELDS = {
-          label: 'label',
-          value: 'value'
+          label: "label",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           label
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetBillingPlansResponsePlansItemDetailsItem.
@@ -47,13 +48,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBillingPlansResponsePlansItemHighlightedDetailsItemMetadata
         FIELDS = {
-          label: 'label',
-          value: 'value'
+          label: "label",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           label
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetBillingPlansResponsePlansItemHighlightedDetailsItem.
@@ -82,14 +84,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBillingPlansResponsePlansItemQuoteItemMetadata
         FIELDS = {
-          amount: 'amount',
-          line: 'line'
+          amount: "amount",
+          line: "line",
         }.freeze
         REQUIRED_FIELDS = %i[
           amount
           line
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetBillingPlansResponsePlansItemQuoteItem.
@@ -118,23 +121,23 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBillingPlansResponsePlansItemMetadata
         FIELDS = {
-          cost: 'cost',
-          description: 'description',
-          details: 'details',
-          disabled: 'disabled',
-          effective_date: 'effectiveDate',
-          highlighted_details: 'highlightedDetails',
-          id: 'id',
-          initial_charge: 'initialCharge',
-          maximum_amount: 'maximumAmount',
-          maximum_amount_auto_purchase_per_period: 'maximumAmountAutoPurchasePerPeriod',
-          minimum_amount: 'minimumAmount',
-          name: 'name',
-          payment_method_required: 'paymentMethodRequired',
-          preauthorization_amount: 'preauthorizationAmount',
-          quote: 'quote',
-          scope: 'scope',
-          type: 'type'
+          cost: "cost",
+          description: "description",
+          details: "details",
+          disabled: "disabled",
+          effective_date: "effectiveDate",
+          highlighted_details: "highlightedDetails",
+          id: "id",
+          initial_charge: "initialCharge",
+          maximum_amount: "maximumAmount",
+          maximum_amount_auto_purchase_per_period: "maximumAmountAutoPurchasePerPeriod",
+          minimum_amount: "minimumAmount",
+          name: "name",
+          payment_method_required: "paymentMethodRequired",
+          preauthorization_amount: "preauthorizationAmount",
+          quote: "quote",
+          scope: "scope",
+          type: "type",
         }.freeze
         REQUIRED_FIELDS = %i[
           description
@@ -165,7 +168,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetBillingPlansResponsePlansItemType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -198,7 +201,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBillingPlansResponseMetadata
         FIELDS = {
-          plans: 'plans'
+          plans: "plans",
         }.freeze
         REQUIRED_FIELDS = %i[
           plans
@@ -206,7 +209,7 @@ module OctridevVercel
         DECODERS = {
           plans: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Integrations::GetBillingPlansResponsePlansItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -238,7 +241,7 @@ module OctridevVercel
         PRODUCTION = 'production'
         PREVIEW = 'preview'
         DEVELOPMENT = 'development'
-        VALUES = %w[production preview development].freeze
+        VALUES = ['production', 'preview', 'development'].freeze
         def self.from_value(value)
           value
         end
@@ -247,9 +250,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalConnectIntegrationResourceToProjectMetadata
         FIELDS = {
-          project_id: 'projectId',
-          env_var_environments: 'envVarEnvironments',
-          make_env_vars_sensitive: 'makeEnvVarsSensitive'
+          project_id: "projectId",
+          env_var_environments: "envVarEnvironments",
+          make_env_vars_sensitive: "makeEnvVarsSensitive",
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
@@ -257,7 +260,7 @@ module OctridevVercel
         DECODERS = {
           env_var_environments: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Integrations::ConnectIntegrationResourceToProjectEnvVarEnvironmentsItemVariant0.from_value(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -287,12 +290,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseConfigurationMetadata
         FIELDS = {
-          id: 'id'
+          id: "id",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetConfigurationProductsResponseConfiguration.
@@ -321,16 +325,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseIntegrationMetadata
         FIELDS = {
-          id: 'id',
-          name: 'name',
-          slug: 'slug'
+          id: "id",
+          name: "name",
+          slug: "slug",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
           name
           slug
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetConfigurationProductsResponseIntegration.
@@ -359,10 +364,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemMetadataSchemaMetadata
         FIELDS = {
-          properties: 'properties',
-          required: 'required',
-          type: 'type',
-          ui_order: 'ui:order'
+          properties: "properties",
+          required: "required",
+          type: "type",
+          ui_order: "ui:order",
         }.freeze
         REQUIRED_FIELDS = %i[
           properties
@@ -371,7 +376,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemMetadataSchemaType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -401,7 +406,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsAiMetadata
         FIELDS = {
-          status: 'status'
+          status: "status",
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -409,7 +414,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsAiStatus.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -439,8 +444,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsAuthenticationMetadata
         FIELDS = {
-          status: 'status',
-          app_url_registration_support: 'appUrlRegistrationSupport'
+          status: "status",
+          app_url_registration_support: "appUrlRegistrationSupport",
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -451,7 +456,7 @@ module OctridevVercel
           end,
           app_url_registration_support: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsAuthentiXb31f7f4a67.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -483,7 +488,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsChecksMetadata
         FIELDS = {
-          status: 'status'
+          status: "status",
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -491,7 +496,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsChecksStatus.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -521,8 +526,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsExperimentationMetadata
         FIELDS = {
-          status: 'status',
-          edge_config_syncing_support: 'edgeConfigSyncingSupport'
+          status: "status",
+          edge_config_syncing_support: "edgeConfigSyncingSupport",
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -533,7 +538,7 @@ module OctridevVercel
           end,
           edge_config_syncing_support: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsExperimeXcafe85eb49.from_value(value)
-          end
+          end,
         }.freeze
       end
     end

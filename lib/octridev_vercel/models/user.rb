@@ -5,651 +5,661 @@
 
 # user domain models
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserAccountUpdateContextManagedTeamsItemMetadata
-    FIELDS = {
-      avatar: 'avatar',
-      name: 'name',
-      slug: 'slug',
-      team_id: 'teamId',
-      work_email: 'workEmail'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      avatar
-      name
-      slug
-      team_id
-      work_email
-    ].freeze
-    DECODERS = {}.freeze
-    NULLABLE_FIELDS = %i[
-      avatar
-    ].freeze
+# Internal model hydration metadata.
+class SdkInternalAuthUserAccountUpdateContextManagedTeamsItemMetadata
+  FIELDS = {
+    avatar: "avatar",
+    name: "name",
+    slug: "slug",
+    team_id: "teamId",
+    work_email: "workEmail",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    avatar
+    name
+    slug
+    team_id
+    work_email
+  ].freeze
+  DECODERS = {
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    avatar
+  ].freeze
+end
+
+# API model for AuthUserAccountUpdateContextManagedTeamsItem.
+# Required object value serialized in the `managedTeams[]` wire field.
+class AuthUserAccountUpdateContextManagedTeamsItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserAccountUpdateContextManagedTeamsItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserAccountUpdateContextManagedTeamsItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserAccountUpdateContextManagedTeamsItemMetadata::DECODERS
+
+  # @return [String] Required `string` value serialized in the `avatar` wire field.
+  attr_reader :avatar
+  # @return [String] Required `string` value serialized in the `name` wire field.
+  attr_reader :name
+  # @return [String] Required `string` value serialized in the `slug` wire field.
+  attr_reader :slug
+  # @return [String] Required `string` value serialized in the `teamId` wire field.
+  attr_reader :team_id
+  # @return [String] Required `string` value serialized in the `workEmail` wire field.
+  attr_reader :work_email
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserAccountUpdateContextManagedTeamsItem.
-  # Required object value serialized in the `managedTeams[]` wire field.
-  class AuthUserAccountUpdateContextManagedTeamsItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserAccountUpdateContextManagedTeamsItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserAccountUpdateContextManagedTeamsItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserAccountUpdateContextManagedTeamsItemMetadata::DECODERS
-
-    # @return [String] Required `string` value serialized in the `avatar` wire field.
-    attr_reader :avatar
-    # @return [String] Required `string` value serialized in the `name` wire field.
-    attr_reader :name
-    # @return [String] Required `string` value serialized in the `slug` wire field.
-    attr_reader :slug
-    # @return [String] Required `string` value serialized in the `teamId` wire field.
-    attr_reader :team_id
-    # @return [String] Required `string` value serialized in the `workEmail` wire field.
-    attr_reader :work_email
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalAuthUserAccountUpdateContextManagedTeamsItemMetadata::NULLABLE_FIELDS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalAuthUserAccountUpdateContextManagedTeamsItemMetadata::NULLABLE_FIELDS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserAccountUpdateContextOrganizationMetadata
-    FIELDS = {
-      id: 'id',
-      name: 'name',
-      slug: 'slug'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-      name
-      slug
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserAccountUpdateContextOrganizationMetadata
+  FIELDS = {
+    id: "id",
+    name: "name",
+    slug: "slug",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+    name
+    slug
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for AuthUserAccountUpdateContextOrganization.
+# Optional object value serialized in the `organization` wire field.
+class AuthUserAccountUpdateContextOrganization
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserAccountUpdateContextOrganizationMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserAccountUpdateContextOrganizationMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserAccountUpdateContextOrganizationMetadata::DECODERS
+
+  # @return [String] Required `string` value serialized in the `id` wire field.
+  attr_reader :id
+  # @return [String] Required `string` value serialized in the `name` wire field.
+  attr_reader :name
+  # @return [String] Required `string` value serialized in the `slug` wire field.
+  attr_reader :slug
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserAccountUpdateContextOrganization.
-  # Optional object value serialized in the `organization` wire field.
-  class AuthUserAccountUpdateContextOrganization
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserAccountUpdateContextOrganizationMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserAccountUpdateContextOrganizationMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserAccountUpdateContextOrganizationMetadata::DECODERS
-
-    # @return [String] Required `string` value serialized in the `id` wire field.
-    attr_reader :id
-    # @return [String] Required `string` value serialized in the `name` wire field.
-    attr_reader :name
-    # @return [String] Required `string` value serialized in the `slug` wire field.
-    attr_reader :slug
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserAccountUpdateContextMetadata
-    FIELDS = {
-      can_opt_out: 'canOptOut',
-      managed_teams: 'managedTeams',
-      organization: 'organization',
-      verified_emu_domains: 'verifiedEmuDomains'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      can_opt_out
-      managed_teams
-      verified_emu_domains
-    ].freeze
-    DECODERS = {
-      can_opt_out: lambda do |value|
-        ::OctridevVercel::AuthUserAccountUpdateContextCanOptOut.from_value(value)
-      end,
-      managed_teams: lambda do |value|
-        value&.map { |item| ::OctridevVercel::AuthUserAccountUpdateContextManagedTeamsItem.from_hash(item) }
-      end,
-      organization: lambda do |value|
-        ::OctridevVercel::AuthUserAccountUpdateContextOrganization.from_hash(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserAccountUpdateContextMetadata
+  FIELDS = {
+    can_opt_out: "canOptOut",
+    managed_teams: "managedTeams",
+    organization: "organization",
+    verified_emu_domains: "verifiedEmuDomains",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    can_opt_out
+    managed_teams
+    verified_emu_domains
+  ].freeze
+  DECODERS = {
+    can_opt_out: lambda do |value|
+      ::OctridevVercel::AuthUserAccountUpdateContextCanOptOut.from_value(value)
+    end,
+    managed_teams: lambda do |value|
+      value&.map { |item| ::OctridevVercel::AuthUserAccountUpdateContextManagedTeamsItem.from_hash(item) }
+    end,
+    organization: lambda do |value|
+      ::OctridevVercel::AuthUserAccountUpdateContextOrganization.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for AuthUserAccountUpdateContext.
+# Context for the Update Account screen. Present only when `isAccountUpdateRequired` is true. `managedTeams` is empty for orphan mode (user matches an EMU domain but is not on the team).
+class AuthUserAccountUpdateContext
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserAccountUpdateContextMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserAccountUpdateContextMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserAccountUpdateContextMetadata::DECODERS
+
+  # @return [AuthUserAccountUpdateContextCanOptOut] Whether this user can cancel their optional Account Update flow.
+  attr_reader :can_opt_out
+  # @return [Array_of_AuthUserAccountUpdateContextManagedTeamsItem] Required array value serialized in the `managedTeams` wire field.
+  attr_reader :managed_teams
+  # @return [AuthUserAccountUpdateContextOrganization] Optional object value serialized in the `organization` wire field.
+  attr_reader :organization
+  # @return [Array_of_String] Required array value serialized in the `verifiedEmuDomains` wire field.
+  attr_reader :verified_emu_domains
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserAccountUpdateContext.
-  # Context for the Update Account screen. Present only when `isAccountUpdateRequired` is true. `managedTeams` is empty for orphan mode (user matches an EMU domain but is not on the team).
-  class AuthUserAccountUpdateContext
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserAccountUpdateContextMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserAccountUpdateContextMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserAccountUpdateContextMetadata::DECODERS
-
-    # @return [AuthUserAccountUpdateContextCanOptOut] Whether this user can cancel their optional Account Update flow.
-    attr_reader :can_opt_out
-    # @return [Array_of_AuthUserAccountUpdateContextManagedTeamsItem] Required array value serialized in the `managedTeams` wire field.
-    attr_reader :managed_teams
-    # @return [AuthUserAccountUpdateContextOrganization] Optional object value serialized in the `organization` wire field.
-    attr_reader :organization
-    # @return [Array_of_String] Required array value serialized in the `verifiedEmuDomains` wire field.
-    attr_reader :verified_emu_domains
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserActiveDashboardViewsItemMetadata
-    FIELDS = {
-      favorites_view_preference: 'favoritesViewPreference',
-      recents_view_preference: 'recentsViewPreference',
-      scope_id: 'scopeId',
-      view_preference: 'viewPreference'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      scope_id
-    ].freeze
-    DECODERS = {
-      favorites_view_preference: lambda do |value|
-        ::OctridevVercel::AuthUserActiveDashboardViewsItemFavoritesViewPreference.from_value(value)
-      end,
-      recents_view_preference: lambda do |value|
-        ::OctridevVercel::AuthUserActiveDashboardViewsItemRecentsViewPreference.from_value(value)
-      end,
-      view_preference: lambda do |value|
-        ::OctridevVercel::AuthUserActiveDashboardViewsItemViewPreference.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserActiveDashboardViewsItemMetadata
+  FIELDS = {
+    favorites_view_preference: "favoritesViewPreference",
+    recents_view_preference: "recentsViewPreference",
+    scope_id: "scopeId",
+    view_preference: "viewPreference",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    scope_id
+  ].freeze
+  DECODERS = {
+    favorites_view_preference: lambda do |value|
+      ::OctridevVercel::AuthUserActiveDashboardViewsItemFavoritesViewPreference.from_value(value)
+    end,
+    recents_view_preference: lambda do |value|
+      ::OctridevVercel::AuthUserActiveDashboardViewsItemRecentsViewPreference.from_value(value)
+    end,
+    view_preference: lambda do |value|
+      ::OctridevVercel::AuthUserActiveDashboardViewsItemViewPreference.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for AuthUserActiveDashboardViewsItem.
+# set of dashboard view preferences (cards or list) per scopeId
+class AuthUserActiveDashboardViewsItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserActiveDashboardViewsItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserActiveDashboardViewsItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserActiveDashboardViewsItemMetadata::DECODERS
+
+  # @return [AuthUserActiveDashboardViewsItemFavoritesViewPreference] Optional enumerated value serialized in the `favoritesViewPreference` wire field.
+  attr_reader :favorites_view_preference
+  # @return [AuthUserActiveDashboardViewsItemRecentsViewPreference] Optional enumerated value serialized in the `recentsViewPreference` wire field.
+  attr_reader :recents_view_preference
+  # @return [String] Required `string` value serialized in the `scopeId` wire field.
+  attr_reader :scope_id
+  # @return [AuthUserActiveDashboardViewsItemViewPreference] Optional enumerated value serialized in the `viewPreference` wire field.
+  attr_reader :view_preference
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserActiveDashboardViewsItem.
-  # set of dashboard view preferences (cards or list) per scopeId
-  class AuthUserActiveDashboardViewsItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserActiveDashboardViewsItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserActiveDashboardViewsItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserActiveDashboardViewsItemMetadata::DECODERS
-
-    # @return [AuthUserActiveDashboardViewsItemFavoritesViewPreference] Optional enumerated value serialized in the `favoritesViewPreference` wire field.
-    attr_reader :favorites_view_preference
-    # @return [AuthUserActiveDashboardViewsItemRecentsViewPreference] Optional enumerated value serialized in the `recentsViewPreference` wire field.
-    attr_reader :recents_view_preference
-    # @return [String] Required `string` value serialized in the `scopeId` wire field.
-    attr_reader :scope_id
-    # @return [AuthUserActiveDashboardViewsItemViewPreference] Optional enumerated value serialized in the `viewPreference` wire field.
-    attr_reader :view_preference
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserDataCacheMetadata
-    FIELDS = {
-      excess_billing_enabled: 'excessBillingEnabled'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      excess_billing_enabled: lambda do |value|
-        ::OctridevVercel::AuthUserDataCacheExcessBillingEnabled.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserDataCacheMetadata
+  FIELDS = {
+    excess_billing_enabled: "excessBillingEnabled",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    excess_billing_enabled: lambda do |value|
+      ::OctridevVercel::AuthUserDataCacheExcessBillingEnabled.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for AuthUserDataCache.
+# data cache settings
+class AuthUserDataCache
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserDataCacheMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserDataCacheMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserDataCacheMetadata::DECODERS
+
+  # @return [AuthUserDataCacheExcessBillingEnabled] Optional enumerated value serialized in the `excessBillingEnabled` wire field.
+  attr_reader :excess_billing_enabled
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserDataCache.
-  # data cache settings
-  class AuthUserDataCache
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserDataCacheMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserDataCacheMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserDataCacheMetadata::DECODERS
-
-    # @return [AuthUserDataCacheExcessBillingEnabled] Optional enumerated value serialized in the `excessBillingEnabled` wire field.
-    attr_reader :excess_billing_enabled
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserDismissedToastsItemDismissalsItemMetadata
-    FIELDS = {
-      created_at: 'createdAt',
-      scope_id: 'scopeId'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      created_at
-      scope_id
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserDismissedToastsItemDismissalsItemMetadata
+  FIELDS = {
+    created_at: "createdAt",
+    scope_id: "scopeId",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    created_at
+    scope_id
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for AuthUserDismissedToastsItemDismissalsItem.
+# Required object value serialized in the `dismissals[]` wire field.
+class AuthUserDismissedToastsItemDismissalsItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserDismissedToastsItemDismissalsItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserDismissedToastsItemDismissalsItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserDismissedToastsItemDismissalsItemMetadata::DECODERS
+
+  # @return [Float] Required `number` value serialized in the `createdAt` wire field.
+  attr_reader :created_at
+  # @return [String] Required `string` value serialized in the `scopeId` wire field.
+  attr_reader :scope_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserDismissedToastsItemDismissalsItem.
-  # Required object value serialized in the `dismissals[]` wire field.
-  class AuthUserDismissedToastsItemDismissalsItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserDismissedToastsItemDismissalsItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserDismissedToastsItemDismissalsItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserDismissedToastsItemDismissalsItemMetadata::DECODERS
-
-    # @return [Float] Required `number` value serialized in the `createdAt` wire field.
-    attr_reader :created_at
-    # @return [String] Required `string` value serialized in the `scopeId` wire field.
-    attr_reader :scope_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserDismissedToastsItemMetadata
-    FIELDS = {
-      dismissals: 'dismissals',
-      name: 'name'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      dismissals
-      name
-    ].freeze
-    DECODERS = {
-      dismissals: lambda do |value|
-        value&.map { |item| ::OctridevVercel::AuthUserDismissedToastsItemDismissalsItem.from_hash(item) }
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserDismissedToastsItemMetadata
+  FIELDS = {
+    dismissals: "dismissals",
+    name: "name",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    dismissals
+    name
+  ].freeze
+  DECODERS = {
+    dismissals: lambda do |value|
+      value&.map { |item| ::OctridevVercel::AuthUserDismissedToastsItemDismissalsItem.from_hash(item) }
+    end,
+  }.freeze
+end
+
+# API model for AuthUserDismissedToastsItem.
+# A record of when, under a certain scopeId, a toast was dismissed
+class AuthUserDismissedToastsItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserDismissedToastsItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserDismissedToastsItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserDismissedToastsItemMetadata::DECODERS
+
+  # @return [Array_of_AuthUserDismissedToastsItemDismissalsItem] Required array value serialized in the `dismissals` wire field.
+  attr_reader :dismissals
+  # @return [String] Required `string` value serialized in the `name` wire field.
+  attr_reader :name
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserDismissedToastsItem.
-  # A record of when, under a certain scopeId, a toast was dismissed
-  class AuthUserDismissedToastsItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserDismissedToastsItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserDismissedToastsItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserDismissedToastsItemMetadata::DECODERS
-
-    # @return [Array_of_AuthUserDismissedToastsItemDismissalsItem] Required array value serialized in the `dismissals` wire field.
-    attr_reader :dismissals
-    # @return [String] Required `string` value serialized in the `name` wire field.
-    attr_reader :name
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserFavoriteProjectsAndSpacesItemMetadata
-    FIELDS = {
-      project_id: 'projectId',
-      team_id: 'teamId'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      project_id
-      team_id
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserFavoriteProjectsAndSpacesItemMetadata
+  FIELDS = {
+    project_id: "projectId",
+    team_id: "teamId",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    project_id
+    team_id
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for AuthUserFavoriteProjectsAndSpacesItem.
+# A list of projects and spaces across teams that a user has marked as a favorite.
+class AuthUserFavoriteProjectsAndSpacesItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserFavoriteProjectsAndSpacesItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserFavoriteProjectsAndSpacesItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserFavoriteProjectsAndSpacesItemMetadata::DECODERS
+
+  # @return [String] Required `string` value serialized in the `projectId` wire field.
+  attr_reader :project_id
+  # @return [String] Required `string` value serialized in the `teamId` wire field.
+  attr_reader :team_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserFavoriteProjectsAndSpacesItem.
-  # A list of projects and spaces across teams that a user has marked as a favorite.
-  class AuthUserFavoriteProjectsAndSpacesItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserFavoriteProjectsAndSpacesItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserFavoriteProjectsAndSpacesItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserFavoriteProjectsAndSpacesItemMetadata::DECODERS
-
-    # @return [String] Required `string` value serialized in the `projectId` wire field.
-    attr_reader :project_id
-    # @return [String] Required `string` value serialized in the `teamId` wire field.
-    attr_reader :team_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserFeatureBlocksSpeedInsightsFreeMetadata
-    FIELDS = {
-      blocked_from: 'blockedFrom',
-      blocked_until: 'blockedUntil',
-      block_reason: 'blockReason',
-      is_currently_blocked: 'isCurrentlyBlocked'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      block_reason
-      is_currently_blocked
-    ].freeze
-    DECODERS = {
-      block_reason: lambda do |value|
-        ::OctridevVercel::AuthUserFeatureBlocksSpeedInsightsFreeBlockReason.from_value(value)
-      end,
-      is_currently_blocked: lambda do |value|
-        ::OctridevVercel::AuthUserFeatureBlocksSpeedInsightsFreeIsCurrentlyBlocked.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserFeatureBlocksSpeedInsightsFreeMetadata
+  FIELDS = {
+    blocked_from: "blockedFrom",
+    blocked_until: "blockedUntil",
+    block_reason: "blockReason",
+    is_currently_blocked: "isCurrentlyBlocked",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    block_reason
+    is_currently_blocked
+  ].freeze
+  DECODERS = {
+    block_reason: lambda do |value|
+      ::OctridevVercel::AuthUserFeatureBlocksSpeedInsightsFreeBlockReason.from_value(value)
+    end,
+    is_currently_blocked: lambda do |value|
+      ::OctridevVercel::AuthUserFeatureBlocksSpeedInsightsFreeIsCurrentlyBlocked.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for AuthUserFeatureBlocksSpeedInsightsFree.
+# Client-facing view of the `speedInsightsFree` ingestion block. The dashboard needs `blockReason` to tell usage pauses apart from admin blocks.
+class AuthUserFeatureBlocksSpeedInsightsFree
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserFeatureBlocksSpeedInsightsFreeMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserFeatureBlocksSpeedInsightsFreeMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserFeatureBlocksSpeedInsightsFreeMetadata::DECODERS
+
+  # @return [Float] Optional `number` value serialized in the `blockedFrom` wire field.
+  attr_reader :blocked_from
+  # @return [Float] Optional `number` value serialized in the `blockedUntil` wire field.
+  attr_reader :blocked_until
+  # @return [AuthUserFeatureBlocksSpeedInsightsFreeBlockReason] Required enumerated value serialized in the `blockReason` wire field.
+  attr_reader :block_reason
+  # @return [AuthUserFeatureBlocksSpeedInsightsFreeIsCurrentlyBlocked] Required enumerated value serialized in the `isCurrentlyBlocked` wire field.
+  attr_reader :is_currently_blocked
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserFeatureBlocksSpeedInsightsFree.
-  # Client-facing view of the `speedInsightsFree` ingestion block. The dashboard needs `blockReason` to tell usage pauses apart from admin blocks.
-  class AuthUserFeatureBlocksSpeedInsightsFree
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserFeatureBlocksSpeedInsightsFreeMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserFeatureBlocksSpeedInsightsFreeMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserFeatureBlocksSpeedInsightsFreeMetadata::DECODERS
-
-    # @return [Float] Optional `number` value serialized in the `blockedFrom` wire field.
-    attr_reader :blocked_from
-    # @return [Float] Optional `number` value serialized in the `blockedUntil` wire field.
-    attr_reader :blocked_until
-    # @return [AuthUserFeatureBlocksSpeedInsightsFreeBlockReason] Required enumerated value serialized in the `blockReason` wire field.
-    attr_reader :block_reason
-    # @return [AuthUserFeatureBlocksSpeedInsightsFreeIsCurrentlyBlocked] Required enumerated value serialized in the `isCurrentlyBlocked` wire field.
-    attr_reader :is_currently_blocked
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserFeatureBlocksWebAnalyticsMetadata
-    FIELDS = {
-      blocked_from: 'blockedFrom',
-      blocked_until: 'blockedUntil',
-      is_currently_blocked: 'isCurrentlyBlocked'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      is_currently_blocked
-    ].freeze
-    DECODERS = {
-      is_currently_blocked: lambda do |value|
-        ::OctridevVercel::AuthUserFeatureBlocksWebAnalyticsIsCurrentlyBlocked.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserFeatureBlocksWebAnalyticsMetadata
+  FIELDS = {
+    blocked_from: "blockedFrom",
+    blocked_until: "blockedUntil",
+    is_currently_blocked: "isCurrentlyBlocked",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    is_currently_blocked
+  ].freeze
+  DECODERS = {
+    is_currently_blocked: lambda do |value|
+      ::OctridevVercel::AuthUserFeatureBlocksWebAnalyticsIsCurrentlyBlocked.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for AuthUserFeatureBlocksWebAnalytics.
+# Optional object value serialized in the `webAnalytics` wire field.
+class AuthUserFeatureBlocksWebAnalytics
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserFeatureBlocksWebAnalyticsMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserFeatureBlocksWebAnalyticsMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserFeatureBlocksWebAnalyticsMetadata::DECODERS
+
+  # @return [Float] Optional `number` value serialized in the `blockedFrom` wire field.
+  attr_reader :blocked_from
+  # @return [Float] Optional `number` value serialized in the `blockedUntil` wire field.
+  attr_reader :blocked_until
+  # @return [AuthUserFeatureBlocksWebAnalyticsIsCurrentlyBlocked] Required enumerated value serialized in the `isCurrentlyBlocked` wire field.
+  attr_reader :is_currently_blocked
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserFeatureBlocksWebAnalytics.
-  # Optional object value serialized in the `webAnalytics` wire field.
-  class AuthUserFeatureBlocksWebAnalytics
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserFeatureBlocksWebAnalyticsMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserFeatureBlocksWebAnalyticsMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserFeatureBlocksWebAnalyticsMetadata::DECODERS
-
-    # @return [Float] Optional `number` value serialized in the `blockedFrom` wire field.
-    attr_reader :blocked_from
-    # @return [Float] Optional `number` value serialized in the `blockedUntil` wire field.
-    attr_reader :blocked_until
-    # @return [AuthUserFeatureBlocksWebAnalyticsIsCurrentlyBlocked] Required enumerated value serialized in the `isCurrentlyBlocked` wire field.
-    attr_reader :is_currently_blocked
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserFeatureBlocksMetadata
-    FIELDS = {
-      speed_insights_free: 'speedInsightsFree',
-      web_analytics: 'webAnalytics'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      speed_insights_free: lambda do |value|
-        ::OctridevVercel::AuthUserFeatureBlocksSpeedInsightsFree.from_hash(value)
-      end,
-      web_analytics: lambda do |value|
-        ::OctridevVercel::AuthUserFeatureBlocksWebAnalytics.from_hash(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserFeatureBlocksMetadata
+  FIELDS = {
+    speed_insights_free: "speedInsightsFree",
+    web_analytics: "webAnalytics",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    speed_insights_free: lambda do |value|
+      ::OctridevVercel::AuthUserFeatureBlocksSpeedInsightsFree.from_hash(value)
+    end,
+    web_analytics: lambda do |value|
+      ::OctridevVercel::AuthUserFeatureBlocksWebAnalytics.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for AuthUserFeatureBlocks.
+# Feature blocks for the user
+class AuthUserFeatureBlocks
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserFeatureBlocksMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserFeatureBlocksMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserFeatureBlocksMetadata::DECODERS
+
+  # @return [AuthUserFeatureBlocksSpeedInsightsFree] Client-facing view of the `speedInsightsFree` ingestion block. The dashboard needs `blockReason` to tell usage pauses apart from admin blocks.
+  attr_reader :speed_insights_free
+  # @return [AuthUserFeatureBlocksWebAnalytics] Optional object value serialized in the `webAnalytics` wire field.
+  attr_reader :web_analytics
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserFeatureBlocks.
-  # Feature blocks for the user
-  class AuthUserFeatureBlocks
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserFeatureBlocksMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserFeatureBlocksMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserFeatureBlocksMetadata::DECODERS
-
-    # @return [AuthUserFeatureBlocksSpeedInsightsFree] Client-facing view of the `speedInsightsFree` ingestion block. The dashboard needs `blockReason` to tell usage pauses apart from admin blocks.
-    attr_reader :speed_insights_free
-    # @return [AuthUserFeatureBlocksWebAnalytics] Optional object value serialized in the `webAnalytics` wire field.
-    attr_reader :web_analytics
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserPreferredScopesAndGitNamespacesItemMetadata
-    FIELDS = {
-      git_namespace_id: 'gitNamespaceId',
-      scope_id: 'scopeId'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      git_namespace_id
-      scope_id
-    ].freeze
-    DECODERS = {}.freeze
-    NULLABLE_FIELDS = %i[
-      git_namespace_id
-    ].freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserPreferredScopesAndGitNamespacesItemMetadata
+  FIELDS = {
+    git_namespace_id: "gitNamespaceId",
+    scope_id: "scopeId",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    git_namespace_id
+    scope_id
+  ].freeze
+  DECODERS = {
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    git_namespace_id
+  ].freeze
+end
+
+# API model for AuthUserPreferredScopesAndGitNamespacesItem.
+# Required object value serialized in the `preferredScopesAndGitNamespaces[]` wire field.
+class AuthUserPreferredScopesAndGitNamespacesItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserPreferredScopesAndGitNamespacesItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserPreferredScopesAndGitNamespacesItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserPreferredScopesAndGitNamespacesItemMetadata::DECODERS
+
+  # @return [Object] Required API value serialized in the `gitNamespaceId` wire field.
+  attr_reader :git_namespace_id
+  # @return [String] Required `string` value serialized in the `scopeId` wire field.
+  attr_reader :scope_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserPreferredScopesAndGitNamespacesItem.
-  # Required object value serialized in the `preferredScopesAndGitNamespaces[]` wire field.
-  class AuthUserPreferredScopesAndGitNamespacesItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserPreferredScopesAndGitNamespacesItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserPreferredScopesAndGitNamespacesItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserPreferredScopesAndGitNamespacesItemMetadata::DECODERS
-
-    # @return [Object] Required API value serialized in the `gitNamespaceId` wire field.
-    attr_reader :git_namespace_id
-    # @return [String] Required `string` value serialized in the `scopeId` wire field.
-    attr_reader :scope_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalAuthUserPreferredScopesAndGitNamespacesItemMetadata::NULLABLE_FIELDS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalAuthUserPreferredScopesAndGitNamespacesItemMetadata::NULLABLE_FIELDS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserRemoteCachingMetadata
-    FIELDS = {
-      enabled: 'enabled'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      enabled: lambda do |value|
-        ::OctridevVercel::AuthUserRemoteCachingEnabled.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserRemoteCachingMetadata
+  FIELDS = {
+    enabled: "enabled",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    enabled: lambda do |value|
+      ::OctridevVercel::AuthUserRemoteCachingEnabled.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for AuthUserRemoteCaching.
+# remote caching settings
+class AuthUserRemoteCaching
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserRemoteCachingMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserRemoteCachingMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserRemoteCachingMetadata::DECODERS
+
+  # @return [AuthUserRemoteCachingEnabled] Optional enumerated value serialized in the `enabled` wire field.
+  attr_reader :enabled
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserRemoteCaching.
-  # remote caching settings
-  class AuthUserRemoteCaching
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserRemoteCachingMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserRemoteCachingMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserRemoteCachingMetadata::DECODERS
-
-    # @return [AuthUserRemoteCachingEnabled] Optional enumerated value serialized in the `enabled` wire field.
-    attr_reader :enabled
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserResourceConfigBuildEntitlementsMetadata
-    FIELDS = {
-      enhanced_builds: 'enhancedBuilds'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      enhanced_builds: lambda do |value|
-        ::OctridevVercel::AuthUserResourceConfigBuildEntitlementsEnhancedBuilds.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserResourceConfigBuildEntitlementsMetadata
+  FIELDS = {
+    enhanced_builds: "enhancedBuilds",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    enhanced_builds: lambda do |value|
+      ::OctridevVercel::AuthUserResourceConfigBuildEntitlementsEnhancedBuilds.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for AuthUserResourceConfigBuildEntitlements.
+# An object containing infomation related to the amount of platform resources may be allocated to the User account.
+class AuthUserResourceConfigBuildEntitlements
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalAuthUserResourceConfigBuildEntitlementsMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalAuthUserResourceConfigBuildEntitlementsMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalAuthUserResourceConfigBuildEntitlementsMetadata::DECODERS
+
+  # @return [AuthUserResourceConfigBuildEntitlementsEnhancedBuilds] An object containing infomation related to the amount of platform resources may be allocated to the User account.
+  attr_reader :enhanced_builds
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for AuthUserResourceConfigBuildEntitlements.
-  # An object containing infomation related to the amount of platform resources may be allocated to the User account.
-  class AuthUserResourceConfigBuildEntitlements
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalAuthUserResourceConfigBuildEntitlementsMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalAuthUserResourceConfigBuildEntitlementsMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalAuthUserResourceConfigBuildEntitlementsMetadata::DECODERS
-
-    # @return [AuthUserResourceConfigBuildEntitlementsEnhancedBuilds] An object containing infomation related to the amount of platform resources may be allocated to the User account.
-    attr_reader :enhanced_builds
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalAuthUserResourceConfigBuildQueueMetadata
-    FIELDS = {
-      configuration: 'configuration'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      configuration: lambda do |value|
-        ::OctridevVercel::AuthUserResourceConfigBuildQueueConfiguration.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
+
+# Internal model hydration metadata.
+class SdkInternalAuthUserResourceConfigBuildQueueMetadata
+  FIELDS = {
+    configuration: "configuration",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    configuration: lambda do |value|
+      ::OctridevVercel::AuthUserResourceConfigBuildQueueConfiguration.from_value(value)
+    end,
+  }.freeze
+end
 end

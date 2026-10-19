@@ -93,7 +93,7 @@ module OctridevVercel
       module CreateProjectEnvResponseCreatedVariant0Visibility
         CONFIG = 'config'
         SECRET = 'secret'
-        VALUES = %w[config secret].freeze
+        VALUES = ['config', 'secret'].freeze
         def self.from_value(value)
           value
         end
@@ -112,7 +112,7 @@ module OctridevVercel
       module ListProjectsResponseVariant1ProjectsItemSecurityFirewallRouteX1331d3a479
         FIXED_WINDOW = 'fixed_window'
         TOKEN_BUCKET = 'token_bucket'
-        VALUES = %w[fixed_window token_bucket].freeze
+        VALUES = ['fixed_window', 'token_bucket'].freeze
         def self.from_value(value)
           value
         end
@@ -132,7 +132,7 @@ module OctridevVercel
       module UpdateMicrofrontendsResponseDefaultResourceConfigBuildQueueConfiguration
         SKIP_NAMESPACE_QUEUE = 'SKIP_NAMESPACE_QUEUE'
         WAIT_FOR_NAMESPACE_QUEUE = 'WAIT_FOR_NAMESPACE_QUEUE'
-        VALUES = %w[SKIP_NAMESPACE_QUEUE WAIT_FOR_NAMESPACE_QUEUE].freeze
+        VALUES = ['SKIP_NAMESPACE_QUEUE', 'WAIT_FOR_NAMESPACE_QUEUE'].freeze
         def self.from_value(value)
           value
         end
@@ -153,7 +153,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[development preview production].freeze
+        VALUES = ['development', 'preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -229,7 +229,7 @@ module OctridevVercel
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
         REDIRECT = 'redirect'
-        VALUES = %w[allow bypass challenge deny log rate_limit redirect].freeze
+        VALUES = ['allow', 'bypass', 'challenge', 'deny', 'log', 'rate_limit', 'redirect'].freeze
         def self.from_value(value)
           value
         end
@@ -255,8 +255,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value
@@ -277,7 +277,7 @@ module OctridevVercel
       module UpdateMicrofrontendsResponseAliasItemEnvironment
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[preview production].freeze
+        VALUES = ['preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -359,7 +359,7 @@ module OctridevVercel
         STANDARD = 'standard'
         PERFORMANCE = 'performance'
         PERFORMANCE_XL = 'performance_xl'
-        VALUES = %w[standard_legacy standard performance performance_xl].freeze
+        VALUES = ['standard_legacy', 'standard', 'performance', 'performance_xl'].freeze
         def self.from_value(value)
           value
         end
@@ -374,8 +374,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value
@@ -388,7 +388,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = %w[canceled failed skipped succeeded].freeze
+        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
         def self.from_value(value)
           value
         end
@@ -429,7 +429,7 @@ module OctridevVercel
         PREVIEW = 'PREVIEW'
         PRODUCTION = 'PRODUCTION'
         STAGING = 'STAGING'
-        VALUES = %w[PREVIEW PRODUCTION STAGING].freeze
+        VALUES = ['PREVIEW', 'PRODUCTION', 'STAGING'].freeze
         def self.from_value(value)
           value
         end
@@ -439,7 +439,7 @@ module OctridevVercel
       module GetProjectsResponseTracingSamplingRulesItemDestination
         EXTERNAL = 'external'
         INTERNAL = 'internal'
-        VALUES = %w[external internal].freeze
+        VALUES = ['external', 'internal'].freeze
         def self.from_value(value)
           value
         end
@@ -498,7 +498,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = %w[PROMOTED ROLLING STAGED].freeze
+        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
         def self.from_value(value)
           value
         end
@@ -511,7 +511,7 @@ module OctridevVercel
         SECRET = 'secret'
         SENSITIVE = 'sensitive'
         SYSTEM = 'system'
-        VALUES = %w[encrypted plain secret sensitive system].freeze
+        VALUES = ['encrypted', 'plain', 'secret', 'sensitive', 'system'].freeze
         def self.from_value(value)
           value
         end

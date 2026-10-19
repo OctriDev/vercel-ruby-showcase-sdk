@@ -45,13 +45,13 @@ module OctridevVercel
         TRAFFIC_SOURCE = 'traffic_source'
         TRUSTED_SOURCE = 'trusted_source'
         USER_AGENT = 'user_agent'
-        VALUES = %w[
-          bot_category bot_name bot_protection bot_status cookie domain_environment
-          environment geo_as_number geo_city geo_continent geo_country
-          geo_country_region header host ip_address ja3_digest ja4_digest method
-          path protocol query rate_limit_api_id raw_path region response_code
-          route ruleset scheme server_action shared_condition target_path
-          traffic_source trusted_source user_agent
+        VALUES = [
+          'bot_category', 'bot_name', 'bot_protection', 'bot_status', 'cookie', 'domain_environment',
+          'environment', 'geo_as_number', 'geo_city', 'geo_continent', 'geo_country',
+          'geo_country_region', 'header', 'host', 'ip_address', 'ja3_digest', 'ja4_digest', 'method',
+          'path', 'protocol', 'query', 'rate_limit_api_id', 'raw_path', 'region', 'response_code',
+          'route', 'ruleset', 'scheme', 'server_action', 'shared_condition', 'target_path',
+          'traffic_source', 'trusted_source', 'user_agent'
         ].freeze
         def self.from_value(value)
           value
@@ -67,7 +67,7 @@ module OctridevVercel
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
         REDIRECT = 'redirect'
-        VALUES = %w[allow bypass challenge deny log rate_limit redirect].freeze
+        VALUES = ['allow', 'bypass', 'challenge', 'deny', 'log', 'rate_limit', 'redirect'].freeze
         def self.from_value(value)
           value
         end
@@ -118,13 +118,13 @@ module OctridevVercel
         TRAFFIC_SOURCE = 'traffic_source'
         RULESET = 'ruleset'
         RESPONSE_CODE = 'response_code'
-        VALUES = %w[
-          host path method header query cookie target_path route raw_path
-          ip_address region protocol scheme environment domain_environment
-          user_agent geo_continent geo_country geo_country_region geo_city
-          geo_as_number ja4_digest ja3_digest rate_limit_api_id server_action
-          bot_name bot_category bot_status bot_protection shared_condition
-          traffic_source ruleset response_code
+        VALUES = [
+          'host', 'path', 'method', 'header', 'query', 'cookie', 'target_path', 'route', 'raw_path',
+          'ip_address', 'region', 'protocol', 'scheme', 'environment', 'domain_environment',
+          'user_agent', 'geo_continent', 'geo_country', 'geo_country_region', 'geo_city',
+          'geo_as_number', 'ja4_digest', 'ja3_digest', 'rate_limit_api_id', 'server_action',
+          'bot_name', 'bot_category', 'bot_status', 'bot_protection', 'shared_condition',
+          'traffic_source', 'ruleset', 'response_code'
         ].freeze
         def self.from_value(value)
           value
@@ -147,7 +147,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[bypass challenge deny log].freeze
+        VALUES = ['bypass', 'challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -199,13 +199,13 @@ module OctridevVercel
         TRAFFIC_SOURCE = 'traffic_source'
         TRUSTED_SOURCE = 'trusted_source'
         USER_AGENT = 'user_agent'
-        VALUES = %w[
-          bot_category bot_name bot_protection bot_status cookie domain_environment
-          environment geo_as_number geo_city geo_continent geo_country
-          geo_country_region header host ip_address ja3_digest ja4_digest method
-          path protocol query rate_limit_api_id raw_path region response_code
-          route ruleset scheme server_action shared_condition target_path
-          traffic_source trusted_source user_agent
+        VALUES = [
+          'bot_category', 'bot_name', 'bot_protection', 'bot_status', 'cookie', 'domain_environment',
+          'environment', 'geo_as_number', 'geo_city', 'geo_continent', 'geo_country',
+          'geo_country_region', 'header', 'host', 'ip_address', 'ja3_digest', 'ja4_digest', 'method',
+          'path', 'protocol', 'query', 'rate_limit_api_id', 'raw_path', 'region', 'response_code',
+          'route', 'ruleset', 'scheme', 'server_action', 'shared_condition', 'target_path',
+          'traffic_source', 'trusted_source', 'user_agent'
         ].freeze
         def self.from_value(value)
           value
@@ -216,7 +216,7 @@ module OctridevVercel
       module PutFirewallConfigCrsXssAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[deny log].freeze
+        VALUES = ['deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -226,7 +226,7 @@ module OctridevVercel
       module CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSqliAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[deny log].freeze
+        VALUES = ['deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -265,7 +265,7 @@ module OctridevVercel
       module GetSecurityFirewallConfigResponseDraftCrsRceAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[deny log].freeze
+        VALUES = ['deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -285,7 +285,7 @@ module OctridevVercel
       module GetSecurityFirewallConfigResponseActiveCrsJavaAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[deny log].freeze
+        VALUES = ['deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -337,13 +337,13 @@ module OctridevVercel
         TRAFFIC_SOURCE = 'traffic_source'
         TRUSTED_SOURCE = 'trusted_source'
         USER_AGENT = 'user_agent'
-        VALUES = %w[
-          bot_category bot_name bot_protection bot_status cookie domain_environment
-          environment geo_as_number geo_city geo_continent geo_country
-          geo_country_region header host ip_address ja3_digest ja4_digest method
-          path protocol query rate_limit_api_id raw_path region response_code
-          route ruleset scheme server_action shared_condition target_path
-          traffic_source trusted_source user_agent
+        VALUES = [
+          'bot_category', 'bot_name', 'bot_protection', 'bot_status', 'cookie', 'domain_environment',
+          'environment', 'geo_as_number', 'geo_city', 'geo_continent', 'geo_country',
+          'geo_country_region', 'header', 'host', 'ip_address', 'ja3_digest', 'ja4_digest', 'method',
+          'path', 'protocol', 'query', 'rate_limit_api_id', 'raw_path', 'region', 'response_code',
+          'route', 'ruleset', 'scheme', 'server_action', 'shared_condition', 'target_path',
+          'traffic_source', 'trusted_source', 'user_agent'
         ].freeze
         def self.from_value(value)
           value
@@ -354,7 +354,7 @@ module OctridevVercel
       module GetSecurityFirewallConfigResponseVersionsItemCrsJavaAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[deny log].freeze
+        VALUES = ['deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -364,7 +364,7 @@ module OctridevVercel
       module GetSecurityFirewallConfigResponseVersionsItemCrsPhpAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[deny log].freeze
+        VALUES = ['deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -405,13 +405,13 @@ module OctridevVercel
         TRAFFIC_SOURCE = 'traffic_source'
         RULESET = 'ruleset'
         RESPONSE_CODE = 'response_code'
-        VALUES = %w[
-          host path method header query cookie target_path route raw_path
-          ip_address region protocol scheme environment domain_environment
-          user_agent geo_continent geo_country geo_country_region geo_city
-          geo_as_number ja4_digest ja3_digest rate_limit_api_id server_action
-          bot_name bot_category bot_status bot_protection shared_condition
-          traffic_source ruleset response_code
+        VALUES = [
+          'host', 'path', 'method', 'header', 'query', 'cookie', 'target_path', 'route', 'raw_path',
+          'ip_address', 'region', 'protocol', 'scheme', 'environment', 'domain_environment',
+          'user_agent', 'geo_continent', 'geo_country', 'geo_country_region', 'geo_city',
+          'geo_as_number', 'ja4_digest', 'ja3_digest', 'rate_limit_api_id', 'server_action',
+          'bot_name', 'bot_category', 'bot_status', 'bot_protection', 'shared_condition',
+          'traffic_source', 'ruleset', 'response_code'
         ].freeze
         def self.from_value(value)
           value
@@ -424,7 +424,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         LOG = 'log'
         BYPASS = 'bypass'
-        VALUES = %w[deny challenge log bypass].freeze
+        VALUES = ['deny', 'challenge', 'log', 'bypass'].freeze
         def self.from_value(value)
           value
         end
@@ -434,7 +434,7 @@ module OctridevVercel
       module UpdateFirewallConfigVariant11ValueActionMitigateRateLimitVariant0Algo
         FIXED_WINDOW = 'fixed_window'
         TOKEN_BUCKET = 'token_bucket'
-        VALUES = %w[fixed_window token_bucket].freeze
+        VALUES = ['fixed_window', 'token_bucket'].freeze
         def self.from_value(value)
           value
         end
@@ -454,34 +454,39 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
-          '/v1/security/attack-mode',
+          "/v1/security/attack-mode",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: body,
           return_type: ::OctridevVercel::Methods::Security::UpdateAttackChallengeModeResponse,
           decoder: :json,
           operation_id: 'update_attack_challenge_mode',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
       # Retrieves the active and draft firewall configurations for a project, along with its configuration versions. Use this operation to inspect the current WAF settings and review available versions before changing or activating a configuration.
       #
       # Lists WAF configs for a project
-      singleton_class.define_method(:get_security_firewall_config) do |config:, request_options: nil|
+      singleton_class.define_method(:get_security_firewall_config) do |
+        config:,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
-          '/v1/security/firewall/config',
+          "/v1/security/firewall/config",
           config: config,
           return_type: ::OctridevVercel::Methods::Security::GetSecurityFirewallConfigResponse,
           decoder: :json,
           operation_id: 'get_security_firewall_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -508,14 +513,15 @@ module OctridevVercel
         log_headers: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PUT',
-          '/v1/security/firewall/config',
+          "/v1/security/firewall/config",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'firewallEnabled' => firewall_enabled,
@@ -525,12 +531,12 @@ module OctridevVercel
             'rulesets' => rulesets,
             'ips' => ips,
             'botIdEnabled' => bot_id_enabled,
-            'logHeaders' => log_headers
+            'logHeaders' => log_headers,
           },
           return_type: ::OctridevVercel::Methods::Security::PutFirewallConfigResponse,
           decoder: :json,
           operation_id: 'put_firewall_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -549,19 +555,20 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PATCH',
-          '/v1/security/firewall/config',
+          "/v1/security/firewall/config",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: body,
           decoder: :json,
           operation_id: 'update_firewall_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

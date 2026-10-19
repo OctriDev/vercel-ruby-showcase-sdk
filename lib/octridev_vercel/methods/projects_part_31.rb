@@ -12,17 +12,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectResponseOidcTokenConfigMetadata
         FIELDS = {
-          enabled: 'enabled',
-          issuer_mode: 'issuerMode'
+          enabled: "enabled",
+          issuer_mode: "issuerMode",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           enabled: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectResponseOidcTokenConfigEnabled.from_value(value)
           end,
           issuer_mode: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectResponseOidcTokenConfigIssuerMode.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -55,12 +56,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectResponseOptionsAllowlistPathsItemMetadata
         FIELDS = {
-          value: 'value'
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           value
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateProjectResponseOptionsAllowlistPathsItem.
@@ -89,7 +91,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectResponseOptionsAllowlistMetadata
         FIELDS = {
-          paths: 'paths'
+          paths: "paths",
         }.freeze
         REQUIRED_FIELDS = %i[
           paths
@@ -97,7 +99,7 @@ module OctridevVercel
         DECODERS = {
           paths: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UpdateProjectResponseOptionsAllowlistPathsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -127,8 +129,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectResponsePassportMetadata
         FIELDS = {
-          connector_id: 'connectorId',
-          deployment_type: 'deploymentType'
+          connector_id: "connectorId",
+          deployment_type: "deploymentType",
         }.freeze
         REQUIRED_FIELDS = %i[
           connector_id
@@ -137,7 +139,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectResponsePassportDeploymentType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -167,7 +169,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectResponsePasswordProtectionMetadata
         FIELDS = {
-          deployment_type: 'deploymentType'
+          deployment_type: "deploymentType",
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment_type
@@ -175,7 +177,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectResponsePasswordProtectionDeploymentType.from_value(value)
-          end
+          end,
         }.freeze
       end
 

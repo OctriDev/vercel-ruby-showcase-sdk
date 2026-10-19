@@ -37,9 +37,9 @@ module OctridevVercel
         GITHUB_LIMITED = 'github-limited'
         GITLAB = 'gitlab'
         VERCEL = 'vercel'
-        VALUES = %w[
-          bitbucket cursor-origin github github-custom-host github-limited gitlab
-          vercel
+        VALUES = [
+          'bitbucket', 'cursor-origin', 'github', 'github-custom-host', 'github-limited', 'gitlab',
+          'vercel'
         ].freeze
         def self.from_value(value)
           value
@@ -50,7 +50,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4a84c12245
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -69,7 +69,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbb4330f9a4
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -151,17 +151,17 @@ module OctridevVercel
         VUEPRESS = 'vuepress'
         XMCP = 'xmcp'
         ZOLA = 'zola'
-        VALUES = %w[
-          actix-web angular ash astro axum blitzjs brunch bun container
-          create-react-app django docusaurus docusaurus-2 dojo eleventy elysia
-          ember eve express factory-eve fastapi fasthtml fastify flask
-          gatsby go gridsome h3 hexo hono hugo hydrogen ionic-angular
-          ionic-react jekyll koa mastra middleman nestjs nextjs nitro node
-          nuxtjs parcel polymer preact python react-router redwoodjs remix
-          ruby rust saber sanity sanity-v2 sapper scully services
-          solidstart solidstart-1 stencil storybook svelte sveltekit sveltekit-1
-          tanstack-start tanstack-start-lovable umijs vite vitepress vue
-          vuepress xmcp zola
+        VALUES = [
+          'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
+          'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
+          'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask',
+          'gatsby', 'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular',
+          'ionic-react', 'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node',
+          'nuxtjs', 'parcel', 'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix',
+          'ruby', 'rust', 'saber', 'sanity', 'sanity-v2', 'sapper', 'scully', 'services',
+          'solidstart', 'solidstart-1', 'stencil', 'storybook', 'svelte', 'sveltekit', 'sveltekit-1',
+          'tanstack-start', 'tanstack-start-lovable', 'umijs', 'vite', 'vitepress', 'vue',
+          'vuepress', 'xmcp', 'zola'
         ].freeze
         def self.from_value(value)
           value
@@ -282,7 +282,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX3c813e6e8c
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -302,7 +302,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXd5e4c88a14
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -312,7 +312,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemProtocolsAiStatus
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = %w[disabled enabled].freeze
+        VALUES = ['disabled', 'enabled'].freeze
         def self.from_value(value)
           value
         end
@@ -322,7 +322,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX9363be32bc
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -351,7 +351,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProXa18994c42d
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -383,7 +383,7 @@ module OctridevVercel
         GITHUB_CUSTOM_HOST = 'github-custom-host'
         GITLAB = 'gitlab'
         BITBUCKET = 'bitbucket'
-        VALUES = %w[github github-limited github-custom-host gitlab bitbucket].freeze
+        VALUES = ['github', 'github-limited', 'github-custom-host', 'gitlab', 'bitbucket'].freeze
         def self.from_value(value)
           value
         end
@@ -403,7 +403,7 @@ module OctridevVercel
         ADD_DRAIN = 'add_drain'
         CONFIGURE_PROJECT_CONNECTIONS = 'configure_project_connections'
         CONNECT_TO_PROJECT = 'connect_to_project'
-        VALUES = %w[add_drain configure_project_connections connect_to_project].freeze
+        VALUES = ['add_drain', 'configure_project_connections', 'connect_to_project'].freeze
         def self.from_value(value)
           value
         end
@@ -413,7 +413,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProXc95ea725d5
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -433,7 +433,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4d2608c19c
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -447,8 +447,8 @@ module OctridevVercel
         GITLAB = 'gitlab'
         BITBUCKET = 'bitbucket'
         CURSOR_ORIGIN = 'cursor-origin'
-        VALUES = %w[
-          github github-limited github-custom-host gitlab bitbucket cursor-origin
+        VALUES = [
+          'github', 'github-limited', 'github-custom-host', 'gitlab', 'bitbucket', 'cursor-origin'
         ].freeze
         def self.from_value(value)
           value
@@ -499,7 +499,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX4be0c95f4c
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -529,7 +529,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX9d1864670b
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -539,7 +539,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX6ca68dc021
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -560,18 +560,19 @@ module OctridevVercel
         viewer_metadata: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
-          '/v1/integrations/git-namespaces',
+          "/v1/integrations/git-namespaces",
           config: config,
           query: {
             'host' => QueryValue.new(host, style: 'form', explode: true),
             'provider' => QueryValue.new(provider, style: 'form', explode: true),
-            'viewerMetadata' => QueryValue.new(viewer_metadata, style: 'form', explode: true)
+            'viewerMetadata' => QueryValue.new(viewer_metadata, style: 'form', explode: true),
           },
           decoder: :json,
           operation_id: 'git_namespaces',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

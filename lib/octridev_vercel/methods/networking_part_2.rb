@@ -28,22 +28,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
           [
-            '/v1/networking/privatelink/endpoints/',
+            "/v1/networking/privatelink/endpoints/",
             SdkClient.encode_path_segment(endpoint_id)
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::PrivateLinkEndpoint,
           decoder: :json,
           operation_id: 'read_private_link_endpoint',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -66,21 +67,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/networking/privatelink/endpoints/',
+            "/v1/networking/privatelink/endpoints/",
             SdkClient.encode_path_segment(endpoint_id)
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :empty,
           operation_id: 'delete_private_link_endpoint',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -112,28 +114,29 @@ module OctridevVercel
         enable_private_dns: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(name) { Validation.validate_length('name', name, max: 255) }
 
         SdkClient.request(
           'PATCH',
           [
-            '/v1/networking/privatelink/endpoints/',
+            "/v1/networking/privatelink/endpoints/",
             SdkClient.encode_path_segment(endpoint_id)
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'name' => name,
-            'enablePrivateDns' => enable_private_dns
+            'enablePrivateDns' => enable_private_dns,
           },
           return_type: ::OctridevVercel::PrivateLinkEndpoint,
           decoder: :json,
           operation_id: 'update_private_link_endpoint',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -155,27 +158,28 @@ module OctridevVercel
         regions: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(regions) { Validation.validate_items('regions', regions, min: 0, max: 3) }
 
         SdkClient.request(
           'PATCH',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/shared-connect-links'
+            "/shared-connect-links"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'builds' => builds,
-            'regions' => regions
+            'regions' => regions,
           },
           decoder: :json,
           operation_id: 'update_static_ips',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

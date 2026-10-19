@@ -12,19 +12,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalStageRedirectsRedirectsItemMetadata
         FIELDS = {
-          source: 'source',
-          destination: 'destination',
-          status_code: 'statusCode',
-          permanent: 'permanent',
-          case_sensitive: 'caseSensitive',
-          query: 'query',
-          preserve_query_params: 'preserveQueryParams'
+          source: "source",
+          destination: "destination",
+          status_code: "statusCode",
+          permanent: "permanent",
+          case_sensitive: "caseSensitive",
+          query: "query",
+          preserve_query_params: "preserveQueryParams",
         }.freeze
         REQUIRED_FIELDS = %i[
           source
           destination
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for StageRedirectsRedirectsItem.
@@ -54,11 +55,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalStageRedirectsMetadata
         FIELDS = {
-          project_id: 'projectId',
-          team_id: 'teamId',
-          overwrite: 'overwrite',
-          name: 'name',
-          redirects: 'redirects'
+          project_id: "projectId",
+          team_id: "teamId",
+          overwrite: "overwrite",
+          name: "name",
+          redirects: "redirects",
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
@@ -67,7 +68,7 @@ module OctridevVercel
         DECODERS = {
           redirects: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::BulkRedirects::StageRedirectsRedirectsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -97,15 +98,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalStageRedirectsResponseVersionMetadata
         FIELDS = {
-          alias_: 'alias',
-          created_by: 'createdBy',
-          id: 'id',
-          is_live: 'isLive',
-          is_staging: 'isStaging',
-          key: 'key',
-          last_modified: 'lastModified',
-          name: 'name',
-          redirect_count: 'redirectCount'
+          alias_: "alias",
+          created_by: "createdBy",
+          id: "id",
+          is_live: "isLive",
+          is_staging: "isStaging",
+          key: "key",
+          last_modified: "lastModified",
+          name: "name",
+          redirect_count: "redirectCount",
         }.freeze
         REQUIRED_FIELDS = %i[
           created_by
@@ -119,7 +120,7 @@ module OctridevVercel
           end,
           is_staging: lambda do |value|
             ::OctridevVercel::Methods::BulkRedirects::StageRedirectsResponseVersionIsStaging.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -163,8 +164,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalStageRedirectsResponseMetadata
         FIELDS = {
-          alias_: 'alias',
-          version: 'version'
+          alias_: "alias",
+          version: "version",
         }.freeze
         REQUIRED_FIELDS = %i[
           alias_
@@ -173,7 +174,7 @@ module OctridevVercel
         DECODERS = {
           version: lambda do |value|
             ::OctridevVercel::Methods::BulkRedirects::StageRedirectsResponseVersion.from_hash(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           alias_
@@ -206,13 +207,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteRedirectsMetadata
         FIELDS = {
-          name: 'name',
-          redirects: 'redirects'
+          name: "name",
+          redirects: "redirects",
         }.freeze
         REQUIRED_FIELDS = %i[
           redirects
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for DeleteRedirects.
@@ -243,18 +245,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalEditRedirectRedirectMetadata
         FIELDS = {
-          source: 'source',
-          destination: 'destination',
-          status_code: 'statusCode',
-          permanent: 'permanent',
-          case_sensitive: 'caseSensitive',
-          query: 'query',
-          preserve_query_params: 'preserveQueryParams'
+          source: "source",
+          destination: "destination",
+          status_code: "statusCode",
+          permanent: "permanent",
+          case_sensitive: "caseSensitive",
+          query: "query",
+          preserve_query_params: "preserveQueryParams",
         }.freeze
         REQUIRED_FIELDS = %i[
           source
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for EditRedirectRedirect.
@@ -285,9 +288,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalEditRedirectMetadata
         FIELDS = {
-          name: 'name',
-          redirect: 'redirect',
-          restore: 'restore'
+          name: "name",
+          redirect: "redirect",
+          restore: "restore",
         }.freeze
         REQUIRED_FIELDS = %i[
           redirect
@@ -295,7 +298,7 @@ module OctridevVercel
         DECODERS = {
           redirect: lambda do |value|
             ::OctridevVercel::Methods::BulkRedirects::EditRedirectRedirect.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -329,15 +332,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalEditRedirectResponseVersionMetadata
         FIELDS = {
-          alias_: 'alias',
-          created_by: 'createdBy',
-          id: 'id',
-          is_live: 'isLive',
-          is_staging: 'isStaging',
-          key: 'key',
-          last_modified: 'lastModified',
-          name: 'name',
-          redirect_count: 'redirectCount'
+          alias_: "alias",
+          created_by: "createdBy",
+          id: "id",
+          is_live: "isLive",
+          is_staging: "isStaging",
+          key: "key",
+          last_modified: "lastModified",
+          name: "name",
+          redirect_count: "redirectCount",
         }.freeze
         REQUIRED_FIELDS = %i[
           created_by
@@ -351,7 +354,7 @@ module OctridevVercel
           end,
           is_staging: lambda do |value|
             ::OctridevVercel::Methods::BulkRedirects::EditRedirectResponseVersionIsStaging.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -395,8 +398,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalEditRedirectResponseMetadata
         FIELDS = {
-          alias_: 'alias',
-          version: 'version'
+          alias_: "alias",
+          version: "version",
         }.freeze
         REQUIRED_FIELDS = %i[
           alias_
@@ -405,7 +408,7 @@ module OctridevVercel
         DECODERS = {
           version: lambda do |value|
             ::OctridevVercel::Methods::BulkRedirects::EditRedirectResponseVersion.from_hash(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           alias_
@@ -438,13 +441,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRestoreRedirectsMetadata
         FIELDS = {
-          name: 'name',
-          redirects: 'redirects'
+          name: "name",
+          redirects: "redirects",
         }.freeze
         REQUIRED_FIELDS = %i[
           redirects
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for RestoreRedirects.
@@ -475,15 +479,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRestoreRedirectsResponseVersionMetadata
         FIELDS = {
-          alias_: 'alias',
-          created_by: 'createdBy',
-          id: 'id',
-          is_live: 'isLive',
-          is_staging: 'isStaging',
-          key: 'key',
-          last_modified: 'lastModified',
-          name: 'name',
-          redirect_count: 'redirectCount'
+          alias_: "alias",
+          created_by: "createdBy",
+          id: "id",
+          is_live: "isLive",
+          is_staging: "isStaging",
+          key: "key",
+          last_modified: "lastModified",
+          name: "name",
+          redirect_count: "redirectCount",
         }.freeze
         REQUIRED_FIELDS = %i[
           created_by
@@ -497,7 +501,7 @@ module OctridevVercel
           end,
           is_staging: lambda do |value|
             ::OctridevVercel::Methods::BulkRedirects::RestoreRedirectsResponseVersionIsStaging.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -541,9 +545,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRestoreRedirectsResponseMetadata
         FIELDS = {
-          failed_to_restore: 'failedToRestore',
-          restored: 'restored',
-          version: 'version'
+          failed_to_restore: "failedToRestore",
+          restored: "restored",
+          version: "version",
         }.freeze
         REQUIRED_FIELDS = %i[
           failed_to_restore
@@ -553,7 +557,7 @@ module OctridevVercel
         DECODERS = {
           version: lambda do |value|
             ::OctridevVercel::Methods::BulkRedirects::RestoreRedirectsResponseVersion.from_hash(value)
-          end
+          end,
         }.freeze
       end
     end

@@ -63,7 +63,7 @@ module OctridevVercel
       module GetProjectsResponseAliasItemEnvironment
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[preview production].freeze
+        VALUES = ['preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -84,7 +84,7 @@ module OctridevVercel
       module CreateProjectResponseTracingSamplingRulesItemEnv
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[preview production].freeze
+        VALUES = ['preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -95,7 +95,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -106,7 +106,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -131,7 +131,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         REST_API = 'rest-api'
         V0 = 'v0'
-        VALUES = %w[cli deploy-hook git integration rest-api v0].freeze
+        VALUES = ['cli', 'deploy-hook', 'git', 'integration', 'rest-api', 'v0'].freeze
         def self.from_value(value)
           value
         end
@@ -142,7 +142,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -152,7 +152,7 @@ module OctridevVercel
       module ListProjectsResponseVariant2ProjectsItemTracingSamplingRulesIXdd995e7035
         EXTERNAL = 'external'
         INTERNAL = 'internal'
-        VALUES = %w[external internal].freeze
+        VALUES = ['external', 'internal'].freeze
         def self.from_value(value)
           value
         end
@@ -172,7 +172,7 @@ module OctridevVercel
       module ListProjectsResponseVariant1ProjectsItemEnvItemVisibility
         CONFIG = 'config'
         SECRET = 'secret'
-        VALUES = %w[config secret].freeze
+        VALUES = ['config', 'secret'].freeze
         def self.from_value(value)
           value
         end
@@ -194,7 +194,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = %w[enterprise hobby pro].freeze
+        VALUES = ['enterprise', 'hobby', 'pro'].freeze
         def self.from_value(value)
           value
         end
@@ -237,7 +237,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         REST_API = 'rest-api'
         V0 = 'v0'
-        VALUES = %w[cli deploy-hook git integration rest-api v0].freeze
+        VALUES = ['cli', 'deploy-hook', 'git', 'integration', 'rest-api', 'v0'].freeze
         def self.from_value(value)
           value
         end
@@ -314,9 +314,9 @@ module OctridevVercel
         SIN1 = 'sin1'
         SYD1 = 'syd1'
         YUL1 = 'yul1'
-        VALUES = %w[
-          arn1 bom1 cdg1 cle1 cpt1 dub1 fra1 gru1 hkg1 hnd1 iad1
-          icn1 kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
+        VALUES = [
+          'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'iad1',
+          'icn1', 'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
         ].freeze
         def self.from_value(value)
           value
@@ -355,7 +355,7 @@ module OctridevVercel
       module GetProjectsResponseResourceConfigBuildQueueConfiguration
         SKIP_NAMESPACE_QUEUE = 'SKIP_NAMESPACE_QUEUE'
         WAIT_FOR_NAMESPACE_QUEUE = 'WAIT_FOR_NAMESPACE_QUEUE'
-        VALUES = %w[SKIP_NAMESPACE_QUEUE WAIT_FOR_NAMESPACE_QUEUE].freeze
+        VALUES = ['SKIP_NAMESPACE_QUEUE', 'WAIT_FOR_NAMESPACE_QUEUE'].freeze
         def self.from_value(value)
           value
         end
@@ -386,7 +386,7 @@ module OctridevVercel
       module ListProjectsResponseVariant1ProjectsItemSecurityRulesetsValueX635a5fea42
         FIXED_WINDOW = 'fixed_window'
         TOKEN_BUCKET = 'token_bucket'
-        VALUES = %w[fixed_window token_bucket].freeze
+        VALUES = ['fixed_window', 'token_bucket'].freeze
         def self.from_value(value)
           value
         end
@@ -420,7 +420,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         REST_API = 'rest-api'
         V0 = 'v0'
-        VALUES = %w[cli deploy-hook git integration rest-api v0].freeze
+        VALUES = ['cli', 'deploy-hook', 'git', 'integration', 'rest-api', 'v0'].freeze
         def self.from_value(value)
           value
         end
@@ -484,7 +484,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = %w[endsWith equals startsWith].freeze
+        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
         def self.from_value(value)
           value
         end
@@ -497,7 +497,7 @@ module OctridevVercel
         SECRET = 'secret'
         SENSITIVE = 'sensitive'
         SYSTEM = 'system'
-        VALUES = %w[encrypted plain secret sensitive system].freeze
+        VALUES = ['encrypted', 'plain', 'secret', 'sensitive', 'system'].freeze
         def self.from_value(value)
           value
         end

@@ -29,9 +29,10 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
-          '/v1/integrations/search-repo',
+          "/v1/integrations/search-repo",
           config: config,
           query: {
             'query' => QueryValue.new(query, style: 'form', explode: true),
@@ -40,11 +41,11 @@ module OctridevVercel
             'installationId' => QueryValue.new(installation_id, style: 'form', explode: true),
             'host' => QueryValue.new(host, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :json,
           operation_id: 'search_repo',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -55,15 +56,26 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_billing_plans) do |config:, integration_id_or_slug:, product_id_or_slug:, integration_configuration_id: NOT_GIVEN, metadata: NOT_GIVEN, source: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_billing_plans) do |
+        config:,
+        integration_id_or_slug:,
+        product_id_or_slug:,
+        integration_configuration_id: NOT_GIVEN,
+        metadata: NOT_GIVEN,
+        source: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/integrations/integration/',
+            "/v1/integrations/integration/",
             SdkClient.encode_path_segment(integration_id_or_slug),
-            '/products/',
+            "/products/",
             SdkClient.encode_path_segment(product_id_or_slug),
-            '/plans'
+            "/plans"
           ].join,
           config: config,
           query: {
@@ -71,12 +83,12 @@ module OctridevVercel
             'metadata' => QueryValue.new(metadata, style: 'form', explode: true),
             'source' => QueryValue.new(source, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Integrations::GetBillingPlansResponse,
           decoder: :json,
           operation_id: 'get_billing_plans',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -98,28 +110,29 @@ module OctridevVercel
         make_env_vars_sensitive: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/integrations/installations/',
+            "/v1/integrations/installations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/resources/',
+            "/resources/",
             SdkClient.encode_path_segment(resource_id),
-            '/connections'
+            "/connections"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'projectId' => project_id,
             'envVarEnvironments' => env_var_environments,
-            'makeEnvVarsSensitive' => make_env_vars_sensitive
+            'makeEnvVarsSensitive' => make_env_vars_sensitive,
           },
           decoder: :empty,
           operation_id: 'connect_integration_resource_to_project',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -131,21 +144,30 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_configurations) do |config:, view:, installation_type: NOT_GIVEN, integration_id_or_slug: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_configurations) do |
+        config:,
+        view:,
+        installation_type: NOT_GIVEN,
+        integration_id_or_slug: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
-          '/v1/integrations/configurations',
+          "/v1/integrations/configurations",
           config: config,
           query: {
             'view' => QueryValue.new(view, style: 'form', explode: true),
             'installationType' => QueryValue.new(installation_type, style: 'form', explode: true),
             'integrationIdOrSlug' => QueryValue.new(integration_id_or_slug, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :json,
           operation_id: 'get_configurations',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -157,22 +179,29 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_configuration) do |config:, id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_configuration) do |
+        config:,
+        id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/integrations/configuration/',
+            "/v1/integrations/configuration/",
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::GetConfigurationResponse,
           decoder: :json,
           operation_id: 'get_configuration',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -190,20 +219,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/integrations/configuration/',
+            "/v1/integrations/configuration/",
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :empty,
           operation_id: 'delete_configuration',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -215,23 +245,30 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_configuration_products) do |config:, id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_configuration_products) do |
+        config:,
+        id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/integrations/configuration/',
+            "/v1/integrations/configuration/",
             SdkClient.encode_path_segment(id),
-            '/products'
+            "/products"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponse,
           decoder: :json,
           operation_id: 'get_configuration_products',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -278,6 +315,7 @@ module OctridevVercel
         prepayment_amount_cents: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('name', name, max: 128)
 
         Validation.validate_pattern('integrationConfigurationId', integration_configuration_id, '^icfg_[a-zA-Z0-9]+$')
@@ -288,11 +326,11 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          '/v1/storage/stores/integration/direct',
+          "/v1/storage/stores/integration/direct",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'name' => name,
@@ -304,12 +342,12 @@ module OctridevVercel
             'source' => source,
             'billingPlanId' => billing_plan_id,
             'paymentMethodId' => payment_method_id,
-            'prepaymentAmountCents' => prepayment_amount_cents
+            'prepaymentAmountCents' => prepayment_amount_cents,
           },
           return_type: ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponse,
           decoder: :json,
           operation_id: 'create_integration_store_direct',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

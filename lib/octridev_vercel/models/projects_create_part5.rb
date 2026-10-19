@@ -5,659 +5,666 @@
 
 # projects_create domain models (part 5)
 module OctridevVercel
-  # Defines the CreateProjectResponseEnvItemContentHintVariant14Type SDK namespace.
-  module CreateProjectResponseEnvItemContentHintVariant14Type
-    POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
-    VALUES = ['postgres-url-no-ssl'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the CreateProjectResponseEnvItemContentHintVariant14Type SDK namespace.
+module CreateProjectResponseEnvItemContentHintVariant14Type
+  POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
+  VALUES = ['postgres-url-no-ssl'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant14Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant14Type: #{value}")
-    end
+    raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant14Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant14Type: #{value}")
+  end
+end
+
+# Defines the CreateProjectResponseEnvItemContentHintVariant15Type SDK namespace.
+module CreateProjectResponseEnvItemContentHintVariant15Type
+  INTEGRATION_STORE_SECRET = 'integration-store-secret'
+  VALUES = ['integration-store-secret'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant15Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant15Type: #{value}")
+  end
+end
+
+# Defines the CreateProjectResponseEnvItemContentHintVariant16Type SDK namespace.
+module CreateProjectResponseEnvItemContentHintVariant16Type
+  FLAGS_CONNECTION_STRING = 'flags-connection-string'
+  VALUES = ['flags-connection-string'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant16Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant16Type: #{value}")
+  end
+end
+
+# Defines the CreateProjectResponseEnvItemContentHintVariant2Type SDK namespace.
+module CreateProjectResponseEnvItemContentHintVariant2Type
+  REDIS_REST_API_TOKEN = 'redis-rest-api-token'
+  VALUES = ['redis-rest-api-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant2Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant2Type: #{value}")
+  end
+end
+
+# Defines the CreateProjectResponseEnvItemContentHintVariant3Type SDK namespace.
+module CreateProjectResponseEnvItemContentHintVariant3Type
+  REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
+  VALUES = ['redis-rest-api-read-only-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant3Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant3Type: #{value}")
+  end
+end
+
+# Defines the CreateProjectResponseEnvItemContentHintVariant4Type SDK namespace.
+module CreateProjectResponseEnvItemContentHintVariant4Type
+  BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
+  VALUES = ['blob-read-write-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant4Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant4Type: #{value}")
+  end
+end
+
+# Defines the CreateProjectResponseEnvItemContentHintVariant5Type SDK namespace.
+module CreateProjectResponseEnvItemContentHintVariant5Type
+  BLOB_STORE_ID = 'blob-store-id'
+  VALUES = ['blob-store-id'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant5Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant5Type: #{value}")
+  end
+end
+
+# Defines the CreateProjectResponseEnvItemContentHintVariant6Type SDK namespace.
+module CreateProjectResponseEnvItemContentHintVariant6Type
+  BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
+  VALUES = ['blob-webhook-public-key'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant6Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant6Type: #{value}")
+  end
+end
+
+# Defines the CreateProjectResponseEnvItemContentHintVariant7Type SDK namespace.
+module CreateProjectResponseEnvItemContentHintVariant7Type
+  POSTGRES_URL = 'postgres-url'
+  VALUES = ['postgres-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant7Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant7Type: #{value}")
+  end
+end
+
+# Defines the CreateProjectResponseEnvItemContentHintVariant8Type SDK namespace.
+module CreateProjectResponseEnvItemContentHintVariant8Type
+  POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
+  VALUES = ['postgres-url-non-pooling'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant8Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant8Type: #{value}")
+  end
+end
+
+# Defines the CreateProjectResponseEnvItemContentHintVariant9Type SDK namespace.
+module CreateProjectResponseEnvItemContentHintVariant9Type
+  POSTGRES_PRISMA_URL = 'postgres-prisma-url'
+  VALUES = ['postgres-prisma-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant9Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant9Type: #{value}")
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateProjectResponseExpirationVariant0Metadata
+  FIELDS = {
+    expires_at: "expiresAt",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    expires_at
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CreateProjectResponseExpirationVariant0.
+class CreateProjectResponseExpirationVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateProjectResponseExpirationVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateProjectResponseExpirationVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateProjectResponseExpirationVariant0Metadata::DECODERS
+
+  # @return [Float] Unix ms timestamp when the project is scheduled to expire.
+  attr_reader :expires_at
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CreateProjectResponseEnvItemContentHintVariant15Type SDK namespace.
-  module CreateProjectResponseEnvItemContentHintVariant15Type
-    INTEGRATION_STORE_SECRET = 'integration-store-secret'
-    VALUES = ['integration-store-secret'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant15Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant15Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CreateProjectResponseEnvItemContentHintVariant16Type SDK namespace.
-  module CreateProjectResponseEnvItemContentHintVariant16Type
-    FLAGS_CONNECTION_STRING = 'flags-connection-string'
-    VALUES = ['flags-connection-string'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant16Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant16Type: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalCreateProjectResponseExpirationVariant1Metadata
+  FIELDS = {
+    locked_at: "lockedAt",
+    locked_by: "lockedBy",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    locked_at
+    locked_by
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CreateProjectResponseExpirationVariant1.
+class CreateProjectResponseExpirationVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateProjectResponseExpirationVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateProjectResponseExpirationVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateProjectResponseExpirationVariant1Metadata::DECODERS
+
+  # @return [Float] Unix ms timestamp when the project was locked.
+  attr_reader :locked_at
+  # @return [String] userId of the actor that triggered the lock (system or admin).
+  attr_reader :locked_by
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CreateProjectResponseEnvItemContentHintVariant2Type SDK namespace.
-  module CreateProjectResponseEnvItemContentHintVariant2Type
-    REDIS_REST_API_TOKEN = 'redis-rest-api-token'
-    VALUES = ['redis-rest-api-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant2Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant2Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CreateProjectResponseEnvItemContentHintVariant3Type SDK namespace.
-  module CreateProjectResponseEnvItemContentHintVariant3Type
-    REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
-    VALUES = ['redis-rest-api-read-only-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant3Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant3Type: #{value}")
-    end
+# Defines the CreateProjectResponseExpiration SDK namespace.
+module CreateProjectResponseExpiration
+  def self.from_hash(hash)
+    shape_mapping = {
+      "expiresAt" => CreateProjectResponseExpirationVariant0,
+      "lockedAt" => CreateProjectResponseExpirationVariant1,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateProjectResponseInternalRoutesItemVariant0Metadata
+  FIELDS = {
+    expiry: "expiry",
+    src: "src",
+    status: "status",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    src
+    status
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CreateProjectResponseInternalRoutesItemVariant0.
+class CreateProjectResponseInternalRoutesItemVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant0Metadata::DECODERS
+
+  attr_reader :expiry, :src, :status
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CreateProjectResponseEnvItemContentHintVariant4Type SDK namespace.
-  module CreateProjectResponseEnvItemContentHintVariant4Type
-    BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
-    VALUES = ['blob-read-write-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant4Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant4Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CreateProjectResponseEnvItemContentHintVariant5Type SDK namespace.
-  module CreateProjectResponseEnvItemContentHintVariant5Type
-    BLOB_STORE_ID = 'blob-store-id'
-    VALUES = ['blob-store-id'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant5Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant5Type: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0ValueMetadata
+  FIELDS = {
+    eq: "eq",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    eq
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Value.
+class CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Value
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0ValueMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0ValueMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0ValueMetadata::DECODERS
+
+  attr_reader :eq
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CreateProjectResponseEnvItemContentHintVariant6Type SDK namespace.
-  module CreateProjectResponseEnvItemContentHintVariant6Type
-    BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
-    VALUES = ['blob-webhook-public-key'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant6Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant6Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CreateProjectResponseEnvItemContentHintVariant7Type SDK namespace.
-  module CreateProjectResponseEnvItemContentHintVariant7Type
-    POSTGRES_URL = 'postgres-url'
-    VALUES = ['postgres-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant7Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant7Type: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Metadata
+  FIELDS = {
+    key: "key",
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    key
+    type
+    value
+  ].freeze
+  DECODERS = {
+    key: lambda do |value|
+      ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Key.from_value(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Type.from_value(value)
+    end,
+    value: lambda do |value|
+      ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Value.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0.
+class CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Metadata::DECODERS
+
+  attr_reader :key, :type, :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CreateProjectResponseEnvItemContentHintVariant8Type SDK namespace.
-  module CreateProjectResponseEnvItemContentHintVariant8Type
-    POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
-    VALUES = ['postgres-url-non-pooling'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant8Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant8Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CreateProjectResponseEnvItemContentHintVariant9Type SDK namespace.
-  module CreateProjectResponseEnvItemContentHintVariant9Type
-    POSTGRES_PRISMA_URL = 'postgres-prisma-url'
-    VALUES = ['postgres-prisma-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('CreateProjectResponseEnvItemContentHintVariant9Type', 'enum', "Unknown CreateProjectResponseEnvItemContentHintVariant9Type: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1ValueMetadata
+  FIELDS = {
+    eq: "eq",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    eq
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Value.
+class CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Value
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1ValueMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1ValueMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1ValueMetadata::DECODERS
+
+  attr_reader :eq
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateProjectResponseExpirationVariant0Metadata
-    FIELDS = {
-      expires_at: 'expiresAt'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      expires_at
-    ].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateProjectResponseExpirationVariant0.
-  class CreateProjectResponseExpirationVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateProjectResponseExpirationVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateProjectResponseExpirationVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateProjectResponseExpirationVariant0Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [Float] Unix ms timestamp when the project is scheduled to expire.
-    attr_reader :expires_at
+# Internal model hydration metadata.
+class SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Metadata
+  FIELDS = {
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    value
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Type.from_value(value)
+    end,
+    value: lambda do |value|
+      ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Value.from_hash(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1.
+class CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :type, :value
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateProjectResponseExpirationVariant1Metadata
-    FIELDS = {
-      locked_at: 'lockedAt',
-      locked_by: 'lockedBy'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      locked_at
-      locked_by
-    ].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateProjectResponseExpirationVariant1.
-  class CreateProjectResponseExpirationVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateProjectResponseExpirationVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateProjectResponseExpirationVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateProjectResponseExpirationVariant1Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [Float] Unix ms timestamp when the project was locked.
-    attr_reader :locked_at
-    # @return [String] userId of the actor that triggered the lock (system or admin).
-    attr_reader :locked_by
+# Internal model hydration metadata.
+class SdkInternalCreateProjectResponseInternalRoutesItemVariant1MitigateMetadata
+  FIELDS = {
+    action: "action",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    action
+  ].freeze
+  DECODERS = {
+    action: lambda do |value|
+      ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1MitigateAction.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateProjectResponseInternalRoutesItemVariant1Mitigate.
+class CreateProjectResponseInternalRoutesItemVariant1Mitigate
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1MitigateMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1MitigateMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1MitigateMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :action
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CreateProjectResponseExpiration SDK namespace.
-  module CreateProjectResponseExpiration
-    def self.from_hash(hash)
-      shape_mapping = {
-        'expiresAt' => CreateProjectResponseExpirationVariant0,
-        'lockedAt' => CreateProjectResponseExpirationVariant1
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      decoded unless type.nil?
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateProjectResponseInternalRoutesItemVariant0Metadata
-    FIELDS = {
-      expiry: 'expiry',
-      src: 'src',
-      status: 'status'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      src
-      status
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateProjectResponseInternalRoutesItemVariant1Metadata
+  FIELDS = {
+    has: "has",
+    mitigate: "mitigate",
+    src: "src",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    has
+    mitigate
+  ].freeze
+  DECODERS = {
+    mitigate: lambda do |value|
+      ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1Mitigate.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for CreateProjectResponseInternalRoutesItemVariant1.
+class CreateProjectResponseInternalRoutesItemVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1Metadata::DECODERS
+
+  attr_reader :has, :mitigate, :src
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CreateProjectResponseInternalRoutesItemVariant0.
-  class CreateProjectResponseInternalRoutesItemVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant0Metadata::DECODERS
-
-    attr_reader :expiry, :src, :status
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0ValueMetadata
-    FIELDS = {
-      eq: 'eq'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      eq
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Defines the CreateProjectResponseInternalRoutesItem SDK namespace.
+module CreateProjectResponseInternalRoutesItem
+  def self.from_hash(hash)
+    shape_mapping = {
+      "status" => CreateProjectResponseInternalRoutesItemVariant0,
+      "has" => CreateProjectResponseInternalRoutesItemVariant1,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+  end
+end
+
+# Defines the CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Key SDK namespace.
+module CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Key
+  X_VERCEL_IP_COUNTRY = 'x-vercel-ip-country'
+  VALUES = ['x-vercel-ip-country'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Type SDK namespace.
+module CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Type
+  HEADER = 'header'
+  VALUES = ['header'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Type', 'enum', "Unknown CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Type: #{value}")
+  end
+end
+
+# Defines the CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Type SDK namespace.
+module CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Type
+  HOST = 'host'
+  VALUES = ['host'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Type', 'enum', "Unknown CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Type: #{value}")
+  end
+end
+
+# Defines the CreateProjectResponseInternalRoutesItemVariant1MitigateAction SDK namespace.
+module CreateProjectResponseInternalRoutesItemVariant1MitigateAction
+  BLOCK_LEGAL_CWC = 'block_legal_cwc'
+  VALUES = ['block_legal_cwc'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateProjectResponseLinkVariant0DeployHooksItemMetadata
+  FIELDS = {
+    created_at: "createdAt",
+    id: "id",
+    name: "name",
+    ref: "ref",
+    url: "url",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+    name
+    ref
+    url
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CreateProjectResponseLinkVariant0DeployHooksItem.
+class CreateProjectResponseLinkVariant0DeployHooksItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateProjectResponseLinkVariant0DeployHooksItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateProjectResponseLinkVariant0DeployHooksItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateProjectResponseLinkVariant0DeployHooksItemMetadata::DECODERS
+
+  attr_reader :created_at, :id, :name, :ref, :url
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Value.
-  class CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Value
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0ValueMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0ValueMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0ValueMetadata::DECODERS
-
-    attr_reader :eq
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Metadata
-    FIELDS = {
-      key: 'key',
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      key
-      type
-      value
-    ].freeze
-    DECODERS = {
-      key: lambda do |value|
-        ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Key.from_value(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Type.from_value(value)
-      end,
-      value: lambda do |value|
-        ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Value.from_hash(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateProjectResponseLinkVariant0Metadata
+  FIELDS = {
+    created_at: "createdAt",
+    deploy_hooks: "deployHooks",
+    git_credential_id: "gitCredentialId",
+    org: "org",
+    production_branch: "productionBranch",
+    repo: "repo",
+    repo_id: "repoId",
+    repo_owner_id: "repoOwnerId",
+    sourceless: "sourceless",
+    type: "type",
+    updated_at: "updatedAt",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    deploy_hooks
+    git_credential_id
+    org
+    production_branch
+    type
+  ].freeze
+  DECODERS = {
+    deploy_hooks: lambda do |value|
+      value&.map { |item| ::OctridevVercel::CreateProjectResponseLinkVariant0DeployHooksItem.from_hash(item) }
+    end,
+    sourceless: lambda do |value|
+      ::OctridevVercel::CreateProjectResponseLinkVariant0Sourceless.from_value(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::CreateProjectResponseLinkVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CreateProjectResponseLinkVariant0.
+class CreateProjectResponseLinkVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateProjectResponseLinkVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateProjectResponseLinkVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateProjectResponseLinkVariant0Metadata::DECODERS
+
+  attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
+              :repo_id, :sourceless, :type, :updated_at
+  # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+  attr_reader :repo_owner_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0.
-  class CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Metadata::DECODERS
-
-    attr_reader :key, :type, :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1ValueMetadata
-    FIELDS = {
-      eq: 'eq'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      eq
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # API model for CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Value.
-  class CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Value
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1ValueMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1ValueMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1ValueMetadata::DECODERS
-
-    attr_reader :eq
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Metadata
-    FIELDS = {
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      value
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Type.from_value(value)
-      end,
-      value: lambda do |value|
-        ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Value.from_hash(value)
-      end
-    }.freeze
-  end
-
-  # API model for CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1.
-  class CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Metadata::DECODERS
-
-    attr_reader :type, :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCreateProjectResponseInternalRoutesItemVariant1MitigateMetadata
-    FIELDS = {
-      action: 'action'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      action
-    ].freeze
-    DECODERS = {
-      action: lambda do |value|
-        ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1MitigateAction.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CreateProjectResponseInternalRoutesItemVariant1Mitigate.
-  class CreateProjectResponseInternalRoutesItemVariant1Mitigate
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1MitigateMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1MitigateMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1MitigateMetadata::DECODERS
-
-    attr_reader :action
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCreateProjectResponseInternalRoutesItemVariant1Metadata
-    FIELDS = {
-      has: 'has',
-      mitigate: 'mitigate',
-      src: 'src'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      has
-      mitigate
-    ].freeze
-    DECODERS = {
-      mitigate: lambda do |value|
-        ::OctridevVercel::CreateProjectResponseInternalRoutesItemVariant1Mitigate.from_hash(value)
-      end
-    }.freeze
-  end
-
-  # API model for CreateProjectResponseInternalRoutesItemVariant1.
-  class CreateProjectResponseInternalRoutesItemVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateProjectResponseInternalRoutesItemVariant1Metadata::DECODERS
-
-    attr_reader :has, :mitigate, :src
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Defines the CreateProjectResponseInternalRoutesItem SDK namespace.
-  module CreateProjectResponseInternalRoutesItem
-    def self.from_hash(hash)
-      shape_mapping = {
-        'status' => CreateProjectResponseInternalRoutesItemVariant0,
-        'has' => CreateProjectResponseInternalRoutesItemVariant1
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      decoded unless type.nil?
-    end
-  end
-
-  # Defines the CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Key SDK namespace.
-  module CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Key
-    X_VERCEL_IP_COUNTRY = 'x-vercel-ip-country'
-    VALUES = ['x-vercel-ip-country'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Type SDK namespace.
-  module CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Type
-    HEADER = 'header'
-    VALUES = ['header'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Type', 'enum', "Unknown CreateProjectResponseInternalRoutesItemVariant1HasItemVariant0Type: #{value}")
-    end
-  end
-
-  # Defines the CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Type SDK namespace.
-  module CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Type
-    HOST = 'host'
-    VALUES = ['host'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Type', 'enum', "Unknown CreateProjectResponseInternalRoutesItemVariant1HasItemVariant1Type: #{value}")
-    end
-  end
-
-  # Defines the CreateProjectResponseInternalRoutesItemVariant1MitigateAction SDK namespace.
-  module CreateProjectResponseInternalRoutesItemVariant1MitigateAction
-    BLOCK_LEGAL_CWC = 'block_legal_cwc'
-    VALUES = ['block_legal_cwc'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCreateProjectResponseLinkVariant0DeployHooksItemMetadata
-    FIELDS = {
-      created_at: 'createdAt',
-      id: 'id',
-      name: 'name',
-      ref: 'ref',
-      url: 'url'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-      name
-      ref
-      url
-    ].freeze
-    DECODERS = {}.freeze
-  end
-
-  # API model for CreateProjectResponseLinkVariant0DeployHooksItem.
-  class CreateProjectResponseLinkVariant0DeployHooksItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateProjectResponseLinkVariant0DeployHooksItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateProjectResponseLinkVariant0DeployHooksItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateProjectResponseLinkVariant0DeployHooksItemMetadata::DECODERS
-
-    attr_reader :created_at, :id, :name, :ref, :url
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCreateProjectResponseLinkVariant0Metadata
-    FIELDS = {
-      created_at: 'createdAt',
-      deploy_hooks: 'deployHooks',
-      git_credential_id: 'gitCredentialId',
-      org: 'org',
-      production_branch: 'productionBranch',
-      repo: 'repo',
-      repo_id: 'repoId',
-      repo_owner_id: 'repoOwnerId',
-      sourceless: 'sourceless',
-      type: 'type',
-      updated_at: 'updatedAt'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      deploy_hooks
-      git_credential_id
-      org
-      production_branch
-      type
-    ].freeze
-    DECODERS = {
-      deploy_hooks: lambda do |value|
-        value&.map { |item| ::OctridevVercel::CreateProjectResponseLinkVariant0DeployHooksItem.from_hash(item) }
-      end,
-      sourceless: lambda do |value|
-        ::OctridevVercel::CreateProjectResponseLinkVariant0Sourceless.from_value(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::CreateProjectResponseLinkVariant0Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CreateProjectResponseLinkVariant0.
-  class CreateProjectResponseLinkVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateProjectResponseLinkVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateProjectResponseLinkVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateProjectResponseLinkVariant0Metadata::DECODERS
-
-    attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
-                :repo_id, :sourceless, :type, :updated_at
-    # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-    attr_reader :repo_owner_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCreateProjectResponseLinkVariant1DeployHooksItemMetadata
-    FIELDS = {
-      created_at: 'createdAt',
-      id: 'id',
-      name: 'name',
-      ref: 'ref',
-      url: 'url'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-      name
-      ref
-      url
-    ].freeze
-    DECODERS = {}.freeze
-  end
+# Internal model hydration metadata.
+class SdkInternalCreateProjectResponseLinkVariant1DeployHooksItemMetadata
+  FIELDS = {
+    created_at: "createdAt",
+    id: "id",
+    name: "name",
+    ref: "ref",
+    url: "url",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+    name
+    ref
+    url
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 end

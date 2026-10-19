@@ -80,7 +80,7 @@ module OctridevVercel
         STRING = 'string'
         NUMBER = 'number'
         JSON = 'json'
-        VALUES = %w[boolean string number json].freeze
+        VALUES = ['boolean', 'string', 'number', 'json'].freeze
         def self.from_value(value)
           value
         end
@@ -162,7 +162,7 @@ module OctridevVercel
       module ListFlagVersionsResponseVersionsItemDataState
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = %w[active archived].freeze
+        VALUES = ['active', 'archived'].freeze
         def self.from_value(value)
           value
         end
@@ -183,7 +183,7 @@ module OctridevVercel
         SERVER = 'server'
         MOBILE = 'mobile'
         CLIENT = 'client'
-        VALUES = %w[server mobile client].freeze
+        VALUES = ['server', 'mobile', 'client'].freeze
         def self.from_value(value)
           value
         end
@@ -261,6 +261,7 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         Validation.if_given(search) { Validation.validate_length('search', search, max: 256) }
@@ -274,9 +275,9 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            '/v2/projects/',
+            "/v2/projects/",
             SdkClient.encode_path_segment(project_id_or_name),
-            '/feature-flags/flags'
+            "/feature-flags/flags"
           ].join,
           config: config,
           query: {
@@ -289,12 +290,12 @@ module OctridevVercel
             'maintainerIds' => QueryValue.new(maintainer_ids, style: 'form', explode: true),
             'includeMarketplaceFlags' => QueryValue.new(include_marketplace_flags, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::FeatureFlags::ListFlagsV2Response,
           decoder: :json,
           operation_id: 'list_flags_v2',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -334,6 +335,7 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         Validation.if_given(search) { Validation.validate_length('search', search, max: 256) }
@@ -341,9 +343,9 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(project_id_or_name),
-            '/feature-flags/flags'
+            "/feature-flags/flags"
           ].join,
           config: config,
           query: {
@@ -354,12 +356,12 @@ module OctridevVercel
             'search' => QueryValue.new(search, style: 'form', explode: true),
             'tags' => QueryValue.new(tags, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::FeatureFlags::ListFlagsResponse,
           decoder: :json,
           operation_id: 'list_flags',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -402,9 +404,10 @@ module OctridevVercel
         tags: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_pattern('slug', slug2, '^[a-zA-Z0-9_-]{1,512}$')
 
-        Validation.if_given(seed) { Validation.validate_range('seed', seed, min: 0, max: 100_000) }
+        Validation.if_given(seed) { Validation.validate_range('seed', seed, min: 0, max: 100000) }
 
         Validation.if_given(maintainer_ids) { Validation.validate_items('maintainerIds', maintainer_ids, max: 5) }
 
@@ -413,14 +416,14 @@ module OctridevVercel
         SdkClient.request(
           'PUT',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(project_id_or_name),
-            '/feature-flags/flags'
+            "/feature-flags/flags"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'slug' => slug2,
@@ -432,12 +435,12 @@ module OctridevVercel
             'state' => state,
             'maintainerIds' => maintainer_ids,
             'permanent' => permanent,
-            'tags' => tags
+            'tags' => tags,
           },
           return_type: ::OctridevVercel::Methods::FeatureFlags::CreateFlagResponse,
           decoder: :json,
           operation_id: 'create_flag',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -453,13 +456,23 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_flag) do |config:, project_id_or_name:, flag_id_or_slug:, if_match: NOT_GIVEN, with_metadata: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_flag) do |
+        config:,
+        project_id_or_name:,
+        flag_id_or_slug:,
+        if_match: NOT_GIVEN,
+        with_metadata: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(project_id_or_name),
-            '/feature-flags/flags/',
+            "/feature-flags/flags/",
             SdkClient.encode_path_segment(flag_id_or_slug)
           ].join,
           config: config,
@@ -467,12 +480,12 @@ module OctridevVercel
             'ifMatch' => QueryValue.new(if_match, style: 'form', explode: true),
             'withMetadata' => QueryValue.new(with_metadata, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Flag,
           decoder: :json,
           operation_id: 'get_flag',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -521,7 +534,8 @@ module OctridevVercel
         tags: NOT_GIVEN,
         request_options: nil
       )
-        Validation.if_given(seed) { Validation.validate_range('seed', seed, min: 0, max: 100_000) }
+
+        Validation.if_given(seed) { Validation.validate_range('seed', seed, min: 0, max: 100000) }
 
         Validation.if_given(maintainer_ids) { Validation.validate_items('maintainerIds', maintainer_ids, max: 5) }
 
@@ -530,9 +544,9 @@ module OctridevVercel
         SdkClient.request(
           'PATCH',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(project_id_or_name),
-            '/feature-flags/flags/',
+            "/feature-flags/flags/",
             SdkClient.encode_path_segment(flag_id_or_slug)
           ].join,
           config: config,
@@ -540,7 +554,7 @@ module OctridevVercel
             'ifMatch' => QueryValue.new(if_match, style: 'form', explode: true),
             'withMetadata' => QueryValue.new(with_metadata, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'createdBy' => created_by,
@@ -552,12 +566,12 @@ module OctridevVercel
             'state' => state,
             'maintainerIds' => maintainer_ids,
             'permanent' => permanent,
-            'tags' => tags
+            'tags' => tags,
           },
           return_type: ::OctridevVercel::Methods::FeatureFlags::UpdateFlagResponse,
           decoder: :json,
           operation_id: 'update_flag',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

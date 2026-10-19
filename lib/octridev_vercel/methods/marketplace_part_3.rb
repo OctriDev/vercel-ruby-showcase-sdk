@@ -12,17 +12,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourceResponseProtocolSettingsMetadata
         FIELDS = {
-          authentication: 'authentication',
-          experimentation: 'experimentation'
+          authentication: "authentication",
+          experimentation: "experimentation",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           authentication: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetIntegrationResourceResponseProtocolSettingsAuthentication.from_hash(value)
           end,
           experimentation: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetIntegrationResourceResponseProtocolSettingsExperimentation.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -53,16 +54,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourceResponseMetadata
         FIELDS = {
-          billing_plan_id: 'billingPlanId',
-          custom_claims: 'customClaims',
-          id: 'id',
-          internal_id: 'internalId',
-          metadata: 'metadata',
-          name: 'name',
-          notification: 'notification',
-          product_id: 'productId',
-          protocol_settings: 'protocolSettings',
-          status: 'status'
+          billing_plan_id: "billingPlanId",
+          custom_claims: "customClaims",
+          id: "id",
+          internal_id: "internalId",
+          metadata: "metadata",
+          name: "name",
+          notification: "notification",
+          product_id: "productId",
+          protocol_settings: "protocolSettings",
+          status: "status",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -82,7 +83,7 @@ module OctridevVercel
           end,
           status: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetIntegrationResourceResponseStatus.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -131,13 +132,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalImportResourceBillingPlanDetailsItemMetadata
         FIELDS = {
-          label: 'label',
-          value: 'value'
+          label: "label",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           label
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for ImportResourceBillingPlanDetailsItem.
@@ -166,13 +168,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalImportResourceBillingPlanHighlightedDetailsItemMetadata
         FIELDS = {
-          label: 'label',
-          value: 'value'
+          label: "label",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           label
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for ImportResourceBillingPlanHighlightedDetailsItem.
@@ -201,15 +204,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalImportResourceBillingPlanMetadata
         FIELDS = {
-          id: 'id',
-          type: 'type',
-          name: 'name',
-          description: 'description',
-          payment_method_required: 'paymentMethodRequired',
-          cost: 'cost',
-          details: 'details',
-          highlighted_details: 'highlightedDetails',
-          effective_date: 'effectiveDate'
+          id: "id",
+          type: "type",
+          name: "name",
+          description: "description",
+          payment_method_required: "paymentMethodRequired",
+          cost: "cost",
+          details: "details",
+          highlighted_details: "highlightedDetails",
+          effective_date: "effectiveDate",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -225,7 +228,7 @@ module OctridevVercel
           end,
           highlighted_details: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::ImportResourceBillingPlanHighlightedDetailsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -258,10 +261,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalImportResourceNotificationMetadata
         FIELDS = {
-          level: 'level',
-          title: 'title',
-          message: 'message',
-          href: 'href'
+          level: "level",
+          title: "title",
+          message: "message",
+          href: "href",
         }.freeze
         REQUIRED_FIELDS = %i[
           level
@@ -270,7 +273,7 @@ module OctridevVercel
         DECODERS = {
           level: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::ImportResourceNotificationLevel.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -300,11 +303,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalImportResourceCustomClaimsClaimRulesItemWhenMetadata
         FIELDS = {
-          role: 'role',
-          environment: 'environment'
+          role: "role",
+          environment: "environment",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for ImportResourceCustomClaimsClaimRulesItemWhen.
@@ -336,8 +341,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalImportResourceCustomClaimsClaimRulesItemMetadata
         FIELDS = {
-          when_: 'when',
-          claims: 'claims'
+          when_: "when",
+          claims: "claims",
         }.freeze
         REQUIRED_FIELDS = %i[
           claims
@@ -345,7 +350,7 @@ module OctridevVercel
         DECODERS = {
           when_: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::ImportResourceCustomClaimsClaimRulesItemWhen.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -377,15 +382,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalImportResourceCustomClaimsMetadata
         FIELDS = {
-          roles: 'roles',
-          default_role: 'defaultRole',
-          claim_rules: 'claimRules'
+          roles: "roles",
+          default_role: "defaultRole",
+          claim_rules: "claimRules",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           claim_rules: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::ImportResourceCustomClaimsClaimRulesItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -421,12 +427,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalImportResourceSecretsItemEnvironmentOverridesMetadata
         FIELDS = {
-          development: 'development',
-          preview: 'preview',
-          production: 'production'
+          development: "development",
+          preview: "preview",
+          production: "production",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for ImportResourceSecretsItemEnvironmentOverrides.
@@ -461,10 +469,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalImportResourceSecretsItemMetadata
         FIELDS = {
-          name: 'name',
-          value: 'value',
-          prefix: 'prefix',
-          environment_overrides: 'environmentOverrides'
+          name: "name",
+          value: "value",
+          prefix: "prefix",
+          environment_overrides: "environmentOverrides",
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -473,7 +481,7 @@ module OctridevVercel
         DECODERS = {
           environment_overrides: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::ImportResourceSecretsItemEnvironmentOverrides.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -505,16 +513,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalImportResourceMetadata
         FIELDS = {
-          ownership: 'ownership',
-          product_id: 'productId',
-          name: 'name',
-          status: 'status',
-          metadata: 'metadata',
-          billing_plan: 'billingPlan',
-          notification: 'notification',
-          extras: 'extras',
-          secrets: 'secrets',
-          custom_claims: 'customClaims'
+          ownership: "ownership",
+          product_id: "productId",
+          name: "name",
+          status: "status",
+          metadata: "metadata",
+          billing_plan: "billingPlan",
+          notification: "notification",
+          extras: "extras",
+          secrets: "secrets",
+          custom_claims: "customClaims",
         }.freeze
         REQUIRED_FIELDS = %i[
           product_id
@@ -539,7 +547,7 @@ module OctridevVercel
           end,
           custom_claims: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::ImportResourceCustomClaims.from_hash(value)
-          end
+          end,
         }.freeze
       end
     end

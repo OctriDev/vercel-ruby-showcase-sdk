@@ -5,702 +5,702 @@
 
 # user domain models (part 75)
 module OctridevVercel
-  # Defines the UserEventPayloadVariant120JobVariant5GitCommentsOnCommit SDK namespace.
-  module UserEventPayloadVariant120JobVariant5GitCommentsOnCommit
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant5GitCommentsOnCommit SDK namespace.
+module UserEventPayloadVariant120JobVariant5GitCommentsOnCommit
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant5GitCommentsOnPullRequest SDK namespace.
-  module UserEventPayloadVariant120JobVariant5GitCommentsOnPullRequest
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant5GitCommentsOnPullRequest SDK namespace.
+module UserEventPayloadVariant120JobVariant5GitCommentsOnPullRequest
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant5GitHashtagVercelItem SDK namespace.
-  module UserEventPayloadVariant120JobVariant5GitHashtagVercelItem
-    VERCEL_BUILD_MACHINE_TURBO = '#VERCEL_BUILD_MACHINE=TURBO'
-    VERCEL_BUILD_PRIO_1 = '#VERCEL_BUILD_PRIO_1'
-    VERCEL_BUILD_PRIO_10 = '#VERCEL_BUILD_PRIO_10'
-    VERCEL_BUILD_PRIO_2 = '#VERCEL_BUILD_PRIO_2'
-    VERCEL_BUILD_PRIO_3 = '#VERCEL_BUILD_PRIO_3'
-    VERCEL_BUILD_PRIO_4 = '#VERCEL_BUILD_PRIO_4'
-    VERCEL_BUILD_PRIO_5 = '#VERCEL_BUILD_PRIO_5'
-    VERCEL_BUILD_PRIO_6 = '#VERCEL_BUILD_PRIO_6'
-    VERCEL_BUILD_PRIO_7 = '#VERCEL_BUILD_PRIO_7'
-    VERCEL_BUILD_PRIO_8 = '#VERCEL_BUILD_PRIO_8'
-    VERCEL_BUILD_PRIO_9 = '#VERCEL_BUILD_PRIO_9'
-    VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL = '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL'
-    VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR = '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR'
-    VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL = '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL'
-    VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR = '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR'
-    VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR = '#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR'
-    VERCEL_SDDJ_FORCE_GIT_FORK_ERROR = '#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR'
-    VERCEL_SKIP = '#VERCEL_SKIP'
-    VERCEL_V0_MESSAGE = '#VERCEL_V0_MESSAGE'
-    VALUES = [
-      '#VERCEL_BUILD_MACHINE=TURBO', '#VERCEL_BUILD_PRIO_1', '#VERCEL_BUILD_PRIO_10',
-      '#VERCEL_BUILD_PRIO_2', '#VERCEL_BUILD_PRIO_3', '#VERCEL_BUILD_PRIO_4', '#VERCEL_BUILD_PRIO_5',
-      '#VERCEL_BUILD_PRIO_6', '#VERCEL_BUILD_PRIO_7', '#VERCEL_BUILD_PRIO_8', '#VERCEL_BUILD_PRIO_9',
-      '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL', '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR',
-      '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL', '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR',
-      '#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR', '#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR',
-      '#VERCEL_SKIP', '#VERCEL_V0_MESSAGE'
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant5GitHashtagVercelItem SDK namespace.
+module UserEventPayloadVariant120JobVariant5GitHashtagVercelItem
+  VERCEL_BUILD_MACHINE_TURBO = '#VERCEL_BUILD_MACHINE=TURBO'
+  VERCEL_BUILD_PRIO_1 = '#VERCEL_BUILD_PRIO_1'
+  VERCEL_BUILD_PRIO_10 = '#VERCEL_BUILD_PRIO_10'
+  VERCEL_BUILD_PRIO_2 = '#VERCEL_BUILD_PRIO_2'
+  VERCEL_BUILD_PRIO_3 = '#VERCEL_BUILD_PRIO_3'
+  VERCEL_BUILD_PRIO_4 = '#VERCEL_BUILD_PRIO_4'
+  VERCEL_BUILD_PRIO_5 = '#VERCEL_BUILD_PRIO_5'
+  VERCEL_BUILD_PRIO_6 = '#VERCEL_BUILD_PRIO_6'
+  VERCEL_BUILD_PRIO_7 = '#VERCEL_BUILD_PRIO_7'
+  VERCEL_BUILD_PRIO_8 = '#VERCEL_BUILD_PRIO_8'
+  VERCEL_BUILD_PRIO_9 = '#VERCEL_BUILD_PRIO_9'
+  VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL = '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL'
+  VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR = '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR'
+  VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL = '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL'
+  VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR = '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR'
+  VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR = '#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR'
+  VERCEL_SDDJ_FORCE_GIT_FORK_ERROR = '#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR'
+  VERCEL_SKIP = '#VERCEL_SKIP'
+  VERCEL_V0_MESSAGE = '#VERCEL_V0_MESSAGE'
+  VALUES = [
+    '#VERCEL_BUILD_MACHINE=TURBO', '#VERCEL_BUILD_PRIO_1', '#VERCEL_BUILD_PRIO_10',
+    '#VERCEL_BUILD_PRIO_2', '#VERCEL_BUILD_PRIO_3', '#VERCEL_BUILD_PRIO_4', '#VERCEL_BUILD_PRIO_5',
+    '#VERCEL_BUILD_PRIO_6', '#VERCEL_BUILD_PRIO_7', '#VERCEL_BUILD_PRIO_8', '#VERCEL_BUILD_PRIO_9',
+    '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL', '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR',
+    '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL', '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR',
+    '#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR', '#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR',
+    '#VERCEL_SKIP', '#VERCEL_V0_MESSAGE'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant5IsManualGitDeploy SDK namespace.
-  module UserEventPayloadVariant120JobVariant5IsManualGitDeploy
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant5IsManualGitDeploy SDK namespace.
+module UserEventPayloadVariant120JobVariant5IsManualGitDeploy
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant5NsnbSideEffectAction SDK namespace.
-  module UserEventPayloadVariant120JobVariant5NsnbSideEffectAction
-    AUTO_APPROVED_MEMBER = 'auto-approved-member'
-    AUTO_APPROVED_PENDING_INVITE = 'auto-approved-pending-invite'
-    VALUES = %w[auto-approved-member auto-approved-pending-invite].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant5NsnbSideEffectAction SDK namespace.
+module UserEventPayloadVariant120JobVariant5NsnbSideEffectAction
+  AUTO_APPROVED_MEMBER = 'auto-approved-member'
+  AUTO_APPROVED_PENDING_INVITE = 'auto-approved-pending-invite'
+  VALUES = ['auto-approved-member', 'auto-approved-pending-invite'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant5Provider SDK namespace.
-  module UserEventPayloadVariant120JobVariant5Provider
-    GITLAB = 'gitlab'
-    VALUES = ['gitlab'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant5Provider SDK namespace.
+module UserEventPayloadVariant120JobVariant5Provider
+  GITLAB = 'gitlab'
+  VALUES = ['gitlab'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant5Silent SDK namespace.
-  module UserEventPayloadVariant120JobVariant5Silent
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant5Silent SDK namespace.
+module UserEventPayloadVariant120JobVariant5Silent
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant5Type SDK namespace.
-  module UserEventPayloadVariant120JobVariant5Type
-    GITLAB_PUSH = 'gitlab-push'
-    VALUES = ['gitlab-push'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UserEventPayloadVariant120JobVariant5Type SDK namespace.
+module UserEventPayloadVariant120JobVariant5Type
+  GITLAB_PUSH = 'gitlab-push'
+  VALUES = ['gitlab-push'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UserEventPayloadVariant120JobVariant5Type', 'enum', "Unknown UserEventPayloadVariant120JobVariant5Type: #{value}")
-    end
+    raise SdkValidationError.new('UserEventPayloadVariant120JobVariant5Type', 'enum', "Unknown UserEventPayloadVariant120JobVariant5Type: #{value}")
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant5WithCache SDK namespace.
-  module UserEventPayloadVariant120JobVariant5WithCache
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant5WithCache SDK namespace.
+module UserEventPayloadVariant120JobVariant5WithCache
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant6Eventful SDK namespace.
-  module UserEventPayloadVariant120JobVariant6Eventful
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant6Eventful SDK namespace.
+module UserEventPayloadVariant120JobVariant6Eventful
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant6GitCommentsOnCommit SDK namespace.
-  module UserEventPayloadVariant120JobVariant6GitCommentsOnCommit
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant6GitCommentsOnCommit SDK namespace.
+module UserEventPayloadVariant120JobVariant6GitCommentsOnCommit
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequest SDK namespace.
-  module UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequest
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequest SDK namespace.
+module UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequest
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant6Provider SDK namespace.
-  module UserEventPayloadVariant120JobVariant6Provider
-    GITLAB = 'gitlab'
-    VALUES = ['gitlab'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant6Provider SDK namespace.
+module UserEventPayloadVariant120JobVariant6Provider
+  GITLAB = 'gitlab'
+  VALUES = ['gitlab'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant6Type SDK namespace.
-  module UserEventPayloadVariant120JobVariant6Type
-    GITLAB_NOW_COMMENT = 'gitlab-now-comment'
-    VALUES = ['gitlab-now-comment'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UserEventPayloadVariant120JobVariant6Type SDK namespace.
+module UserEventPayloadVariant120JobVariant6Type
+  GITLAB_NOW_COMMENT = 'gitlab-now-comment'
+  VALUES = ['gitlab-now-comment'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UserEventPayloadVariant120JobVariant6Type', 'enum', "Unknown UserEventPayloadVariant120JobVariant6Type: #{value}")
-    end
+    raise SdkValidationError.new('UserEventPayloadVariant120JobVariant6Type', 'enum', "Unknown UserEventPayloadVariant120JobVariant6Type: #{value}")
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant7Authorized SDK namespace.
-  module UserEventPayloadVariant120JobVariant7Authorized
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant7Authorized SDK namespace.
+module UserEventPayloadVariant120JobVariant7Authorized
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant7CommitVerification SDK namespace.
-  module UserEventPayloadVariant120JobVariant7CommitVerification
-    UNKNOWN = 'unknown'
-    UNVERIFIED = 'unverified'
-    VERIFIED = 'verified'
-    VALUES = %w[unknown unverified verified].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant7CommitVerification SDK namespace.
+module UserEventPayloadVariant120JobVariant7CommitVerification
+  UNKNOWN = 'unknown'
+  UNVERIFIED = 'unverified'
+  VERIFIED = 'verified'
+  VALUES = ['unknown', 'unverified', 'verified'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant7GitCommentsOnCommit SDK namespace.
-  module UserEventPayloadVariant120JobVariant7GitCommentsOnCommit
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant7GitCommentsOnCommit SDK namespace.
+module UserEventPayloadVariant120JobVariant7GitCommentsOnCommit
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequest SDK namespace.
-  module UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequest
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequest SDK namespace.
+module UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequest
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant7GitHashtagVercelItem SDK namespace.
-  module UserEventPayloadVariant120JobVariant7GitHashtagVercelItem
-    VERCEL_BUILD_MACHINE_TURBO = '#VERCEL_BUILD_MACHINE=TURBO'
-    VERCEL_BUILD_PRIO_1 = '#VERCEL_BUILD_PRIO_1'
-    VERCEL_BUILD_PRIO_10 = '#VERCEL_BUILD_PRIO_10'
-    VERCEL_BUILD_PRIO_2 = '#VERCEL_BUILD_PRIO_2'
-    VERCEL_BUILD_PRIO_3 = '#VERCEL_BUILD_PRIO_3'
-    VERCEL_BUILD_PRIO_4 = '#VERCEL_BUILD_PRIO_4'
-    VERCEL_BUILD_PRIO_5 = '#VERCEL_BUILD_PRIO_5'
-    VERCEL_BUILD_PRIO_6 = '#VERCEL_BUILD_PRIO_6'
-    VERCEL_BUILD_PRIO_7 = '#VERCEL_BUILD_PRIO_7'
-    VERCEL_BUILD_PRIO_8 = '#VERCEL_BUILD_PRIO_8'
-    VERCEL_BUILD_PRIO_9 = '#VERCEL_BUILD_PRIO_9'
-    VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL = '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL'
-    VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR = '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR'
-    VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL = '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL'
-    VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR = '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR'
-    VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR = '#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR'
-    VERCEL_SDDJ_FORCE_GIT_FORK_ERROR = '#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR'
-    VERCEL_SKIP = '#VERCEL_SKIP'
-    VERCEL_V0_MESSAGE = '#VERCEL_V0_MESSAGE'
-    VALUES = [
-      '#VERCEL_BUILD_MACHINE=TURBO', '#VERCEL_BUILD_PRIO_1', '#VERCEL_BUILD_PRIO_10',
-      '#VERCEL_BUILD_PRIO_2', '#VERCEL_BUILD_PRIO_3', '#VERCEL_BUILD_PRIO_4', '#VERCEL_BUILD_PRIO_5',
-      '#VERCEL_BUILD_PRIO_6', '#VERCEL_BUILD_PRIO_7', '#VERCEL_BUILD_PRIO_8', '#VERCEL_BUILD_PRIO_9',
-      '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL', '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR',
-      '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL', '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR',
-      '#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR', '#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR',
-      '#VERCEL_SKIP', '#VERCEL_V0_MESSAGE'
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant7GitHashtagVercelItem SDK namespace.
+module UserEventPayloadVariant120JobVariant7GitHashtagVercelItem
+  VERCEL_BUILD_MACHINE_TURBO = '#VERCEL_BUILD_MACHINE=TURBO'
+  VERCEL_BUILD_PRIO_1 = '#VERCEL_BUILD_PRIO_1'
+  VERCEL_BUILD_PRIO_10 = '#VERCEL_BUILD_PRIO_10'
+  VERCEL_BUILD_PRIO_2 = '#VERCEL_BUILD_PRIO_2'
+  VERCEL_BUILD_PRIO_3 = '#VERCEL_BUILD_PRIO_3'
+  VERCEL_BUILD_PRIO_4 = '#VERCEL_BUILD_PRIO_4'
+  VERCEL_BUILD_PRIO_5 = '#VERCEL_BUILD_PRIO_5'
+  VERCEL_BUILD_PRIO_6 = '#VERCEL_BUILD_PRIO_6'
+  VERCEL_BUILD_PRIO_7 = '#VERCEL_BUILD_PRIO_7'
+  VERCEL_BUILD_PRIO_8 = '#VERCEL_BUILD_PRIO_8'
+  VERCEL_BUILD_PRIO_9 = '#VERCEL_BUILD_PRIO_9'
+  VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL = '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL'
+  VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR = '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR'
+  VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL = '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL'
+  VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR = '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR'
+  VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR = '#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR'
+  VERCEL_SDDJ_FORCE_GIT_FORK_ERROR = '#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR'
+  VERCEL_SKIP = '#VERCEL_SKIP'
+  VERCEL_V0_MESSAGE = '#VERCEL_V0_MESSAGE'
+  VALUES = [
+    '#VERCEL_BUILD_MACHINE=TURBO', '#VERCEL_BUILD_PRIO_1', '#VERCEL_BUILD_PRIO_10',
+    '#VERCEL_BUILD_PRIO_2', '#VERCEL_BUILD_PRIO_3', '#VERCEL_BUILD_PRIO_4', '#VERCEL_BUILD_PRIO_5',
+    '#VERCEL_BUILD_PRIO_6', '#VERCEL_BUILD_PRIO_7', '#VERCEL_BUILD_PRIO_8', '#VERCEL_BUILD_PRIO_9',
+    '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL', '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR',
+    '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL', '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR',
+    '#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR', '#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR',
+    '#VERCEL_SKIP', '#VERCEL_V0_MESSAGE'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant7IsManualGitDeploy SDK namespace.
-  module UserEventPayloadVariant120JobVariant7IsManualGitDeploy
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant7IsManualGitDeploy SDK namespace.
+module UserEventPayloadVariant120JobVariant7IsManualGitDeploy
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant7NsnbSideEffectAction SDK namespace.
-  module UserEventPayloadVariant120JobVariant7NsnbSideEffectAction
-    AUTO_APPROVED_MEMBER = 'auto-approved-member'
-    AUTO_APPROVED_PENDING_INVITE = 'auto-approved-pending-invite'
-    VALUES = %w[auto-approved-member auto-approved-pending-invite].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant7NsnbSideEffectAction SDK namespace.
+module UserEventPayloadVariant120JobVariant7NsnbSideEffectAction
+  AUTO_APPROVED_MEMBER = 'auto-approved-member'
+  AUTO_APPROVED_PENDING_INVITE = 'auto-approved-pending-invite'
+  VALUES = ['auto-approved-member', 'auto-approved-pending-invite'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant7Provider SDK namespace.
-  module UserEventPayloadVariant120JobVariant7Provider
-    VERCEL = 'vercel'
-    VALUES = ['vercel'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant7Provider SDK namespace.
+module UserEventPayloadVariant120JobVariant7Provider
+  VERCEL = 'vercel'
+  VALUES = ['vercel'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant7Type SDK namespace.
-  module UserEventPayloadVariant120JobVariant7Type
-    VERCEL_PUSH = 'vercel-push'
-    VALUES = ['vercel-push'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UserEventPayloadVariant120JobVariant7Type SDK namespace.
+module UserEventPayloadVariant120JobVariant7Type
+  VERCEL_PUSH = 'vercel-push'
+  VALUES = ['vercel-push'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UserEventPayloadVariant120JobVariant7Type', 'enum', "Unknown UserEventPayloadVariant120JobVariant7Type: #{value}")
-    end
+    raise SdkValidationError.new('UserEventPayloadVariant120JobVariant7Type', 'enum', "Unknown UserEventPayloadVariant120JobVariant7Type: #{value}")
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant8Authorized SDK namespace.
-  module UserEventPayloadVariant120JobVariant8Authorized
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant8Authorized SDK namespace.
+module UserEventPayloadVariant120JobVariant8Authorized
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant8CommitVerification SDK namespace.
-  module UserEventPayloadVariant120JobVariant8CommitVerification
-    UNKNOWN = 'unknown'
-    UNVERIFIED = 'unverified'
-    VERIFIED = 'verified'
-    VALUES = %w[unknown unverified verified].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant8CommitVerification SDK namespace.
+module UserEventPayloadVariant120JobVariant8CommitVerification
+  UNKNOWN = 'unknown'
+  UNVERIFIED = 'unverified'
+  VERIFIED = 'verified'
+  VALUES = ['unknown', 'unverified', 'verified'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant8Eventful SDK namespace.
-  module UserEventPayloadVariant120JobVariant8Eventful
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant8Eventful SDK namespace.
+module UserEventPayloadVariant120JobVariant8Eventful
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant8ForceNew SDK namespace.
-  module UserEventPayloadVariant120JobVariant8ForceNew
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant8ForceNew SDK namespace.
+module UserEventPayloadVariant120JobVariant8ForceNew
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant8Forced SDK namespace.
-  module UserEventPayloadVariant120JobVariant8Forced
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant8Forced SDK namespace.
+module UserEventPayloadVariant120JobVariant8Forced
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant8GitCommentsOnCommit SDK namespace.
-  module UserEventPayloadVariant120JobVariant8GitCommentsOnCommit
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant8GitCommentsOnCommit SDK namespace.
+module UserEventPayloadVariant120JobVariant8GitCommentsOnCommit
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant8GitCommentsOnPullRequest SDK namespace.
-  module UserEventPayloadVariant120JobVariant8GitCommentsOnPullRequest
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant8GitCommentsOnPullRequest SDK namespace.
+module UserEventPayloadVariant120JobVariant8GitCommentsOnPullRequest
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant8GitHashtagVercelItem SDK namespace.
-  module UserEventPayloadVariant120JobVariant8GitHashtagVercelItem
-    VERCEL_BUILD_MACHINE_TURBO = '#VERCEL_BUILD_MACHINE=TURBO'
-    VERCEL_BUILD_PRIO_1 = '#VERCEL_BUILD_PRIO_1'
-    VERCEL_BUILD_PRIO_10 = '#VERCEL_BUILD_PRIO_10'
-    VERCEL_BUILD_PRIO_2 = '#VERCEL_BUILD_PRIO_2'
-    VERCEL_BUILD_PRIO_3 = '#VERCEL_BUILD_PRIO_3'
-    VERCEL_BUILD_PRIO_4 = '#VERCEL_BUILD_PRIO_4'
-    VERCEL_BUILD_PRIO_5 = '#VERCEL_BUILD_PRIO_5'
-    VERCEL_BUILD_PRIO_6 = '#VERCEL_BUILD_PRIO_6'
-    VERCEL_BUILD_PRIO_7 = '#VERCEL_BUILD_PRIO_7'
-    VERCEL_BUILD_PRIO_8 = '#VERCEL_BUILD_PRIO_8'
-    VERCEL_BUILD_PRIO_9 = '#VERCEL_BUILD_PRIO_9'
-    VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL = '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL'
-    VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR = '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR'
-    VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL = '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL'
-    VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR = '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR'
-    VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR = '#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR'
-    VERCEL_SDDJ_FORCE_GIT_FORK_ERROR = '#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR'
-    VERCEL_SKIP = '#VERCEL_SKIP'
-    VERCEL_V0_MESSAGE = '#VERCEL_V0_MESSAGE'
-    VALUES = [
-      '#VERCEL_BUILD_MACHINE=TURBO', '#VERCEL_BUILD_PRIO_1', '#VERCEL_BUILD_PRIO_10',
-      '#VERCEL_BUILD_PRIO_2', '#VERCEL_BUILD_PRIO_3', '#VERCEL_BUILD_PRIO_4', '#VERCEL_BUILD_PRIO_5',
-      '#VERCEL_BUILD_PRIO_6', '#VERCEL_BUILD_PRIO_7', '#VERCEL_BUILD_PRIO_8', '#VERCEL_BUILD_PRIO_9',
-      '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL', '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR',
-      '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL', '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR',
-      '#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR', '#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR',
-      '#VERCEL_SKIP', '#VERCEL_V0_MESSAGE'
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant8GitHashtagVercelItem SDK namespace.
+module UserEventPayloadVariant120JobVariant8GitHashtagVercelItem
+  VERCEL_BUILD_MACHINE_TURBO = '#VERCEL_BUILD_MACHINE=TURBO'
+  VERCEL_BUILD_PRIO_1 = '#VERCEL_BUILD_PRIO_1'
+  VERCEL_BUILD_PRIO_10 = '#VERCEL_BUILD_PRIO_10'
+  VERCEL_BUILD_PRIO_2 = '#VERCEL_BUILD_PRIO_2'
+  VERCEL_BUILD_PRIO_3 = '#VERCEL_BUILD_PRIO_3'
+  VERCEL_BUILD_PRIO_4 = '#VERCEL_BUILD_PRIO_4'
+  VERCEL_BUILD_PRIO_5 = '#VERCEL_BUILD_PRIO_5'
+  VERCEL_BUILD_PRIO_6 = '#VERCEL_BUILD_PRIO_6'
+  VERCEL_BUILD_PRIO_7 = '#VERCEL_BUILD_PRIO_7'
+  VERCEL_BUILD_PRIO_8 = '#VERCEL_BUILD_PRIO_8'
+  VERCEL_BUILD_PRIO_9 = '#VERCEL_BUILD_PRIO_9'
+  VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL = '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL'
+  VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR = '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR'
+  VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL = '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL'
+  VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR = '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR'
+  VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR = '#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR'
+  VERCEL_SDDJ_FORCE_GIT_FORK_ERROR = '#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR'
+  VERCEL_SKIP = '#VERCEL_SKIP'
+  VERCEL_V0_MESSAGE = '#VERCEL_V0_MESSAGE'
+  VALUES = [
+    '#VERCEL_BUILD_MACHINE=TURBO', '#VERCEL_BUILD_PRIO_1', '#VERCEL_BUILD_PRIO_10',
+    '#VERCEL_BUILD_PRIO_2', '#VERCEL_BUILD_PRIO_3', '#VERCEL_BUILD_PRIO_4', '#VERCEL_BUILD_PRIO_5',
+    '#VERCEL_BUILD_PRIO_6', '#VERCEL_BUILD_PRIO_7', '#VERCEL_BUILD_PRIO_8', '#VERCEL_BUILD_PRIO_9',
+    '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL', '#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR',
+    '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL', '#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR',
+    '#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR', '#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR',
+    '#VERCEL_SKIP', '#VERCEL_V0_MESSAGE'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant8IsManualGitDeploy SDK namespace.
-  module UserEventPayloadVariant120JobVariant8IsManualGitDeploy
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant8IsManualGitDeploy SDK namespace.
+module UserEventPayloadVariant120JobVariant8IsManualGitDeploy
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant8NsnbSideEffectAction SDK namespace.
-  module UserEventPayloadVariant120JobVariant8NsnbSideEffectAction
-    AUTO_APPROVED_MEMBER = 'auto-approved-member'
-    AUTO_APPROVED_PENDING_INVITE = 'auto-approved-pending-invite'
-    VALUES = %w[auto-approved-member auto-approved-pending-invite].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant8NsnbSideEffectAction SDK namespace.
+module UserEventPayloadVariant120JobVariant8NsnbSideEffectAction
+  AUTO_APPROVED_MEMBER = 'auto-approved-member'
+  AUTO_APPROVED_PENDING_INVITE = 'auto-approved-pending-invite'
+  VALUES = ['auto-approved-member', 'auto-approved-pending-invite'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant8Provider SDK namespace.
-  module UserEventPayloadVariant120JobVariant8Provider
-    CURSOR_ORIGIN = 'cursor-origin'
-    VALUES = ['cursor-origin'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant8Provider SDK namespace.
+module UserEventPayloadVariant120JobVariant8Provider
+  CURSOR_ORIGIN = 'cursor-origin'
+  VALUES = ['cursor-origin'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant8Type SDK namespace.
-  module UserEventPayloadVariant120JobVariant8Type
-    CURSOR_ORIGIN_PUSH = 'cursor-origin-push'
-    VALUES = ['cursor-origin-push'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UserEventPayloadVariant120JobVariant8Type SDK namespace.
+module UserEventPayloadVariant120JobVariant8Type
+  CURSOR_ORIGIN_PUSH = 'cursor-origin-push'
+  VALUES = ['cursor-origin-push'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UserEventPayloadVariant120JobVariant8Type', 'enum', "Unknown UserEventPayloadVariant120JobVariant8Type: #{value}")
-    end
+    raise SdkValidationError.new('UserEventPayloadVariant120JobVariant8Type', 'enum', "Unknown UserEventPayloadVariant120JobVariant8Type: #{value}")
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant9Eventful SDK namespace.
-  module UserEventPayloadVariant120JobVariant9Eventful
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant9Eventful SDK namespace.
+module UserEventPayloadVariant120JobVariant9Eventful
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant9GitCommentsOnCommit SDK namespace.
-  module UserEventPayloadVariant120JobVariant9GitCommentsOnCommit
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant9GitCommentsOnCommit SDK namespace.
+module UserEventPayloadVariant120JobVariant9GitCommentsOnCommit
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant9GitCommentsOnPullRequest SDK namespace.
-  module UserEventPayloadVariant120JobVariant9GitCommentsOnPullRequest
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant9GitCommentsOnPullRequest SDK namespace.
+module UserEventPayloadVariant120JobVariant9GitCommentsOnPullRequest
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant9Provider SDK namespace.
-  module UserEventPayloadVariant120JobVariant9Provider
-    CURSOR_ORIGIN = 'cursor-origin'
-    VALUES = ['cursor-origin'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant120JobVariant9Provider SDK namespace.
+module UserEventPayloadVariant120JobVariant9Provider
+  CURSOR_ORIGIN = 'cursor-origin'
+  VALUES = ['cursor-origin'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant120JobVariant9Type SDK namespace.
-  module UserEventPayloadVariant120JobVariant9Type
-    CURSOR_ORIGIN_NOW_COMMENT = 'cursor-origin-now-comment'
-    VALUES = ['cursor-origin-now-comment'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UserEventPayloadVariant120JobVariant9Type SDK namespace.
+module UserEventPayloadVariant120JobVariant9Type
+  CURSOR_ORIGIN_NOW_COMMENT = 'cursor-origin-now-comment'
+  VALUES = ['cursor-origin-now-comment'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UserEventPayloadVariant120JobVariant9Type', 'enum', "Unknown UserEventPayloadVariant120JobVariant9Type: #{value}")
-    end
+    raise SdkValidationError.new('UserEventPayloadVariant120JobVariant9Type', 'enum', "Unknown UserEventPayloadVariant120JobVariant9Type: #{value}")
   end
+end
 
-  # Defines the UserEventPayloadVariant122Reason SDK namespace.
-  module UserEventPayloadVariant122Reason
-    IP_ALLOW_LIST = 'ip_allow_list'
-    VALUES = ['ip_allow_list'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant122Reason SDK namespace.
+module UserEventPayloadVariant122Reason
+  IP_ALLOW_LIST = 'ip_allow_list'
+  VALUES = ['ip_allow_list'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant124RuleName SDK namespace.
-  module UserEventPayloadVariant124RuleName
-    DEPLOYMENT_SOURCES = 'deploymentSources'
-    GIT_SOURCES = 'gitSources'
-    VALUES = %w[deploymentSources gitSources].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant124RuleName SDK namespace.
+module UserEventPayloadVariant124RuleName
+  DEPLOYMENT_SOURCES = 'deploymentSources'
+  GIT_SOURCES = 'gitSources'
+  VALUES = ['deploymentSources', 'gitSources'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant124RuleProvenance SDK namespace.
-  module UserEventPayloadVariant124RuleProvenance
-    DEFAULT = 'default'
-    PROJECT = 'project'
-    TEAM = 'team'
-    VALUES = %w[default project team].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant124RuleProvenance SDK namespace.
+module UserEventPayloadVariant124RuleProvenance
+  DEFAULT = 'default'
+  PROJECT = 'project'
+  TEAM = 'team'
+  VALUES = ['default', 'project', 'team'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant125Mode SDK namespace.
-  module UserEventPayloadVariant125Mode
-    NONE = 'none'
-    VALUES = ['none'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant125Mode SDK namespace.
+module UserEventPayloadVariant125Mode
+  NONE = 'none'
+  VALUES = ['none'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant125PreviousMode SDK namespace.
-  module UserEventPayloadVariant125PreviousMode
-    NONE = 'none'
-    VALUES = ['none'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant125PreviousMode SDK namespace.
+module UserEventPayloadVariant125PreviousMode
+  NONE = 'none'
+  VALUES = ['none'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant125Scope SDK namespace.
-  module UserEventPayloadVariant125Scope
-    ORGANIZATION = 'organization'
-    VALUES = ['organization'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant125Scope SDK namespace.
+module UserEventPayloadVariant125Scope
+  ORGANIZATION = 'organization'
+  VALUES = ['organization'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant126Mode SDK namespace.
-  module UserEventPayloadVariant126Mode
-    ALL = 'all'
-    EMAIL_DOMAIN = 'email-domain'
-    NONE = 'none'
-    VALUES = %w[all email-domain none].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant126Mode SDK namespace.
+module UserEventPayloadVariant126Mode
+  ALL = 'all'
+  EMAIL_DOMAIN = 'email-domain'
+  NONE = 'none'
+  VALUES = ['all', 'email-domain', 'none'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant126PreviousMode SDK namespace.
-  module UserEventPayloadVariant126PreviousMode
-    ALL = 'all'
-    EMAIL_DOMAIN = 'email-domain'
-    NONE = 'none'
-    VALUES = %w[all email-domain none].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant126PreviousMode SDK namespace.
+module UserEventPayloadVariant126PreviousMode
+  ALL = 'all'
+  EMAIL_DOMAIN = 'email-domain'
+  NONE = 'none'
+  VALUES = ['all', 'email-domain', 'none'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant13Provider SDK namespace.
-  module UserEventPayloadVariant13Provider
-    CHATGPT = 'chatgpt'
-    STRIPE = 'stripe'
-    VALUES = %w[chatgpt stripe].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant13Provider SDK namespace.
+module UserEventPayloadVariant13Provider
+  CHATGPT = 'chatgpt'
+  STRIPE = 'stripe'
+  VALUES = ['chatgpt', 'stripe'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant130Action SDK namespace.
-  module UserEventPayloadVariant130Action
-    ADD = 'add'
-    DELETE = 'delete'
-    UPDATE = 'update'
-    VALUES = %w[add delete update].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant130Action SDK namespace.
+module UserEventPayloadVariant130Action
+  ADD = 'add'
+  DELETE = 'delete'
+  UPDATE = 'update'
+  VALUES = ['add', 'delete', 'update'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant130Initiator SDK namespace.
-  module UserEventPayloadVariant130Initiator
-    SYSTEM = 'system'
-    USER = 'user'
-    VALUES = %w[system user].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant130Initiator SDK namespace.
+module UserEventPayloadVariant130Initiator
+  SYSTEM = 'system'
+  USER = 'user'
+  VALUES = ['system', 'user'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant132Zone SDK namespace.
-  module UserEventPayloadVariant132Zone
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant132Zone SDK namespace.
+module UserEventPayloadVariant132Zone
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant134CdnEnabled SDK namespace.
-  module UserEventPayloadVariant134CdnEnabled
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant134CdnEnabled SDK namespace.
+module UserEventPayloadVariant134CdnEnabled
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant14Provider SDK namespace.
-  module UserEventPayloadVariant14Provider
-    CHATGPT = 'chatgpt'
-    STRIPE = 'stripe'
-    VALUES = %w[chatgpt stripe].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant14Provider SDK namespace.
+module UserEventPayloadVariant14Provider
+  CHATGPT = 'chatgpt'
+  STRIPE = 'stripe'
+  VALUES = ['chatgpt', 'stripe'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant141EchMode SDK namespace.
-  module UserEventPayloadVariant141EchMode
-    AUTO = 'auto'
-    DISABLED = 'disabled'
-    ENABLED = 'enabled'
-    VALUES = %w[auto disabled enabled].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant141EchMode SDK namespace.
+module UserEventPayloadVariant141EchMode
+  AUTO = 'auto'
+  DISABLED = 'disabled'
+  ENABLED = 'enabled'
+  VALUES = ['auto', 'disabled', 'enabled'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant141PreviousEchMode SDK namespace.
-  module UserEventPayloadVariant141PreviousEchMode
-    AUTO = 'auto'
-    DISABLED = 'disabled'
-    ENABLED = 'enabled'
-    VALUES = %w[auto disabled enabled].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant141PreviousEchMode SDK namespace.
+module UserEventPayloadVariant141PreviousEchMode
+  AUTO = 'auto'
+  DISABLED = 'disabled'
+  ENABLED = 'enabled'
+  VALUES = ['auto', 'disabled', 'enabled'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant142Zone SDK namespace.
-  module UserEventPayloadVariant142Zone
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant142Zone SDK namespace.
+module UserEventPayloadVariant142Zone
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant143Initiator SDK namespace.
-  module UserEventPayloadVariant143Initiator
-    SYSTEM = 'system'
-    USER = 'user'
-    VALUES = %w[system user].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant143Initiator SDK namespace.
+module UserEventPayloadVariant143Initiator
+  SYSTEM = 'system'
+  USER = 'user'
+  VALUES = ['system', 'user'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant143PreviousZone SDK namespace.
-  module UserEventPayloadVariant143PreviousZone
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant143PreviousZone SDK namespace.
+module UserEventPayloadVariant143PreviousZone
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant143Zone SDK namespace.
-  module UserEventPayloadVariant143Zone
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant143Zone SDK namespace.
+module UserEventPayloadVariant143Zone
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant147Renew SDK namespace.
-  module UserEventPayloadVariant147Renew
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant147Renew SDK namespace.
+module UserEventPayloadVariant147Renew
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant15Provider SDK namespace.
-  module UserEventPayloadVariant15Provider
-    CHATGPT = 'chatgpt'
-    STRIPE = 'stripe'
-    VALUES = %w[chatgpt stripe].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant15Provider SDK namespace.
+module UserEventPayloadVariant15Provider
+  CHATGPT = 'chatgpt'
+  STRIPE = 'stripe'
+  VALUES = ['chatgpt', 'stripe'].freeze
+  def self.from_value(value)
+    value
   end
+end
 end
