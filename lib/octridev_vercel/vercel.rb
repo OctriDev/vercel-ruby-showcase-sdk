@@ -476,17 +476,17 @@ module OctridevVercel
   UpdateTeamMember = Methods::Teams::UpdateTeamMember
   UpdateTeamMemberResponse = Methods::Teams::UpdateTeamMemberResponse
   RemoveTeamMemberResponse = Methods::Teams::RemoveTeamMemberResponse
-  UpdateTeamsSaml = Methods::Teams::UpdateTeamsSaml
-  UpdateTeamsRemoteCaching = Methods::Teams::UpdateTeamsRemoteCaching
-  UpdateTeamsDefaultDeploymentProtection = Methods::Teams::UpdateTeamsDefaultDeploymentProtection
-  UpdateTeamsDefaultPassport = Methods::Teams::UpdateTeamsDefaultPassport
-  UpdateTeamsDefaultExpirationSettings = Methods::Teams::UpdateTeamsDefaultExpirationSettings
-  UpdateTeamsStrictDeploymentProtectionSettings = Methods::Teams::UpdateTeamsStrictDeploymentProtectionSettings
-  UpdateTeamsStrictShareableLinks = Methods::Teams::UpdateTeamsStrictShareableLinks
-  UpdateTeamsStrictPasswordProtectionSettings = Methods::Teams::UpdateTeamsStrictPasswordProtectionSettings
-  UpdateTeamsStrictConnectors = Methods::Teams::UpdateTeamsStrictConnectors
-  UpdateTeamsResourceConfig = Methods::Teams::UpdateTeamsResourceConfig
-  UpdateTeams = Methods::Teams::UpdateTeams
+  UpdateTeamSaml = Methods::Teams::UpdateTeamSaml
+  UpdateTeamRemoteCaching = Methods::Teams::UpdateTeamRemoteCaching
+  UpdateTeamDefaultDeploymentProtection = Methods::Teams::UpdateTeamDefaultDeploymentProtection
+  UpdateTeamDefaultPassport = Methods::Teams::UpdateTeamDefaultPassport
+  UpdateTeamDefaultExpirationSettings = Methods::Teams::UpdateTeamDefaultExpirationSettings
+  UpdateTeamStrictDeploymentProtectionSettings = Methods::Teams::UpdateTeamStrictDeploymentProtectionSettings
+  UpdateTeamStrictShareableLinks = Methods::Teams::UpdateTeamStrictShareableLinks
+  UpdateTeamStrictPasswordProtectionSettings = Methods::Teams::UpdateTeamStrictPasswordProtectionSettings
+  UpdateTeamStrictConnectors = Methods::Teams::UpdateTeamStrictConnectors
+  UpdateTeamResourceConfig = Methods::Teams::UpdateTeamResourceConfig
+  UpdateTeam = Methods::Teams::UpdateTeam
   ListTeamsResponse = Methods::Teams::ListTeamsResponse
   CreateTeamAttribution = Methods::Teams::CreateTeamAttribution
   CreateTeam = Methods::Teams::CreateTeam
@@ -9609,7 +9609,7 @@ module OctridevVercel
       resource_config: NOT_GIVEN,
       request_options: nil
     )
-      ::OctridevVercel::Methods::Teams.update_teams(
+      ::OctridevVercel::Methods::Teams.update_team(
         config: @config,
         team_id: team_id,
         slug: slug,

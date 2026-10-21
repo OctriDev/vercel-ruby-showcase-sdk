@@ -9,549 +9,365 @@ module OctridevVercel
   module Methods
     # Defines the Teams SDK namespace.
     module Teams
-      # Internal model hydration metadata.
-      class SdkInternalGetTeamMembersResponseEmailInviteCodesItemMetadata
-        FIELDS = {
-          access_groups: "accessGroups",
-          created_at: "createdAt",
-          email: "email",
-          entitlements: "entitlements",
-          expired: "expired",
-          id: "id",
-          is_dsync_user: "isDSyncUser",
-          projects: "projects",
-          role: "role",
-          team_permissions: "teamPermissions",
-          team_roles: "teamRoles",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          id
-          is_dsync_user
-        ].freeze
-        DECODERS = {
-          expired: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponseEmailInviteCodesItemExpired.from_value(value)
-          end,
-          is_dsync_user: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponseEmailInviteCodesItemIsDSyncUser.from_value(value)
-          end,
-          role: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponseEmailInviteCodesItemRole.from_value(value)
-          end,
-          team_permissions: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::Teams::GetTeamMembersResponseEmailInviteCodesItemTeamPermissionsItem.from_value(item) }
-          end,
-          team_roles: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::Teams::GetTeamMembersResponseEmailInviteCodesItemTeamRolesItem.from_value(item) }
-          end,
-        }.freeze
+      # Retrieves information about the specified team, including its billing plan, creation details, and team configuration. Use the team identifier to select the team; you can also supply its slug as request context.
+      #
+      # Get information for the Team specified by the `teamId` parameter.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      singleton_class.define_method(:get_teams) do |
+        config:,
+        team_id:,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
+        SdkClient.request(
+          'GET',
+          [
+            "/v2/teams/",
+            SdkClient.encode_path_segment(team_id)
+          ].join,
+          config: config,
+          query: {
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          return_type: ::OctridevVercel::Team,
+          decoder: :json,
+          operation_id: 'get_teams',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for GetTeamMembersResponseEmailInviteCodesItem.
-      class GetTeamMembersResponseEmailInviteCodesItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetTeamMembersResponseEmailInviteCodesItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetTeamMembersResponseEmailInviteCodesItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetTeamMembersResponseEmailInviteCodesItemMetadata::DECODERS
+      # Updates the specified team's information using the fields supplied in the request body. Include only the team properties you want to change, such as its name, slug, avatar, or feedback settings. The authenticated user must be a team owner to update the team.
+      #
+      # Update the information of a Team specified by the `teamId` parameter. The request body should contain the information that will be updated on the Team.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param avatar [String] The hash value of an uploaded image, or `null` to
+      #   clear the avatar.
+      # @param description [String] A short text that describes the team.
+      # @param name [String] The name of the team.
+      # @param preview_deployment_suffix [String] Suffix that will be used for all
+      #   preview deployments.
+      # @param regenerate_invite_code [Boolean] Create a new invite code and replace
+      #   the current one.
+      # @param slug2 [String] A new slug for the team.
+      # @param enable_preview_feedback [String] Enable preview toolbar: one of on,
+      #   off or default.
+      # @param enable_production_feedback [String] Enable production toolbar: one of
+      #   on, off or default.
+      # @param sensitive_environment_variable_policy [String] Sensitive environment
+      #   variable policy: one of on, off or default.
+      # @param disjunctive_production_secret_policy [String] Require production
+      #   secrets to be in their own environment group: one of on, off or default.
+      # @param remote_caching [UpdateTeamRemoteCaching] Whether or not remote
+      #   caching is enabled for the team
+      # @param hide_ip_addresses [Boolean] Display or hide IP addresses in
+      #   Monitoring queries.
+      # @param hide_ip_addresses_in_log_drains [Boolean] Display or hide IP
+      #   addresses in Log Drains.
+      # @param dp_access_requests_mode [UpdateTeamDpAccessRequestsMode] Controls who
+      #   can request access to protected deployments.
+      # @param require_verified_commits [Boolean] When enabled, all projects in the
+      #   team require commits to be signed and verified by the git provider before
+      #   deployments will be created.
+      # @param disable_repository_dispatch_events [Boolean] Default for projects in
+      #   the team. When `true`, projects in this team will not emit GitHub
+      #   repository-dispatch events on deployment events unless the project
+      #   explicitly overrides this setting.
+      # @param default_deployment_protection [UpdateTeamDefaultDeploymentProtection]
+      #   Default deployment protection settings for new projects.
+      # @param default_passport [UpdateTeamDefaultPassport] Default Passport
+      #   configuration for new projects.
+      # @param deployment_policy [UpdateTeamRequestDeploymentPolicy] Typed
+      #   representation of the `UpdateTeamRequestDeploymentPolicy` API schema.
+      # @param strict_deployment_protection_settings
+      #   [UpdateTeamStrictDeploymentProtectionSettings] When enabled, deployment
+      #   protection settings require stricter permissions (owner-only).
+      # @param strict_shareable_links [UpdateTeamStrictShareableLinks] When enabled,
+      #   creating shareable links requires Owner role.
+      # @param strict_password_protection_settings
+      #   [UpdateTeamStrictPasswordProtectionSettings] When enabled, adding, changing,
+      #   or removing project password protection requires Owner role.
+      # @param strict_connectors [UpdateTeamStrictConnectors] When enabled, creating
+      #   and managing connectors requires Owner role.
+      # @param nsnb_config [UpdateTeamRequestNsnbConfig] Typed representation of the
+      #   `UpdateTeamRequestNsnbConfig` API schema.
+      # @param default_project_jobs [UpdateTeamRequestDefaultProjectJobs] Typed
+      #   representation of the `UpdateTeamRequestDefaultProjectJobs` API schema.
+      # @param resource_config [UpdateTeamResourceConfig] Resource configuration for
+      #   the team.
+      def self.update_team(
+        config:,
+        team_id:,
+        slug: NOT_GIVEN,
+        avatar: NOT_GIVEN,
+        description: NOT_GIVEN,
+        email_domain: NOT_GIVEN,
+        name: NOT_GIVEN,
+        preview_deployment_suffix: NOT_GIVEN,
+        regenerate_invite_code: NOT_GIVEN,
+        saml: NOT_GIVEN,
+        slug2: NOT_GIVEN,
+        enable_preview_feedback: NOT_GIVEN,
+        enable_production_feedback: NOT_GIVEN,
+        sensitive_environment_variable_policy: NOT_GIVEN,
+        disjunctive_production_secret_policy: NOT_GIVEN,
+        remote_caching: NOT_GIVEN,
+        hide_ip_addresses: NOT_GIVEN,
+        hide_ip_addresses_in_log_drains: NOT_GIVEN,
+        dp_access_requests_mode: NOT_GIVEN,
+        require_verified_commits: NOT_GIVEN,
+        disable_repository_dispatch_events: NOT_GIVEN,
+        default_deployment_protection: NOT_GIVEN,
+        default_passport: NOT_GIVEN,
+        default_expiration_settings: NOT_GIVEN,
+        deployment_policy: NOT_GIVEN,
+        strict_deployment_protection_settings: NOT_GIVEN,
+        strict_shareable_links: NOT_GIVEN,
+        strict_password_protection_settings: NOT_GIVEN,
+        strict_connectors: NOT_GIVEN,
+        nsnb_config: NOT_GIVEN,
+        default_project_jobs: NOT_GIVEN,
+        resource_config: NOT_GIVEN,
+        request_options: nil
+      )
 
-        attr_reader :access_groups, :created_at, :email, :entitlements, :expired, :id,
-                    :is_dsync_user, :projects, :role, :team_permissions, :team_roles
+        __sdk_validate_update_team(avatar: avatar, description: description, name: name)
 
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'PATCH',
+          [
+            "/v2/teams/",
+            SdkClient.encode_path_segment(team_id)
+          ].join,
+          config: config,
+          query: {
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: __sdk_body_update_team_part1(avatar: avatar, description: description, email_domain: email_domain, name: name, preview_deployment_suffix: preview_deployment_suffix, regenerate_invite_code: regenerate_invite_code, saml: saml, slug2: slug2, enable_preview_feedback: enable_preview_feedback, enable_production_feedback: enable_production_feedback, sensitive_environment_variable_policy: sensitive_environment_variable_policy, disjunctive_production_secret_policy: disjunctive_production_secret_policy, remote_caching: remote_caching, hide_ip_addresses: hide_ip_addresses, hide_ip_addresses_in_log_drains: hide_ip_addresses_in_log_drains, dp_access_requests_mode: dp_access_requests_mode, require_verified_commits: require_verified_commits, disable_repository_dispatch_events: disable_repository_dispatch_events).merge(
+            __sdk_body_update_team_part2(default_deployment_protection: default_deployment_protection, default_passport: default_passport, default_expiration_settings: default_expiration_settings, deployment_policy: deployment_policy, strict_deployment_protection_settings: strict_deployment_protection_settings, strict_shareable_links: strict_shareable_links, strict_password_protection_settings: strict_password_protection_settings, strict_connectors: strict_connectors, nsnb_config: nsnb_config, default_project_jobs: default_project_jobs, resource_config: resource_config)),
+          return_type: ::OctridevVercel::Team,
+          decoder: :json,
+          operation_id: 'update_team',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalGetTeamMembersResponseMembersItemBitbucketMetadata
-        FIELDS = {
-          login: "login",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+      def self.__sdk_validate_update_team(
+        avatar:,
+        description:,
+        name:
+      )
+        Validation.if_given(avatar) do
+          Validation.validate_length('avatar', avatar, max: 40)
+          Validation.validate_pattern('avatar', avatar, '^[0-9a-f]+$')
+        end
+
+        Validation.if_given(description) { Validation.validate_length('description', description, max: 140) }
+
+        Validation.if_given(name) { Validation.validate_length('name', name, max: 256) }
+      end
+      private_class_method :__sdk_validate_update_team
+
+      def self.__sdk_body_update_team_part1(
+        avatar:,
+        description:,
+        email_domain:,
+        name:,
+        preview_deployment_suffix:,
+        regenerate_invite_code:,
+        saml:,
+        slug2:,
+        enable_preview_feedback:,
+        enable_production_feedback:,
+        sensitive_environment_variable_policy:,
+        disjunctive_production_secret_policy:,
+        remote_caching:,
+        hide_ip_addresses:,
+        hide_ip_addresses_in_log_drains:,
+        dp_access_requests_mode:,
+        require_verified_commits:,
+        disable_repository_dispatch_events:
+      )
+        {
+          'avatar' => avatar,
+          'description' => description,
+          'emailDomain' => email_domain,
+          'name' => name,
+          'previewDeploymentSuffix' => preview_deployment_suffix,
+          'regenerateInviteCode' => regenerate_invite_code,
+          'saml' => saml,
+          'slug' => slug2,
+          'enablePreviewFeedback' => enable_preview_feedback,
+          'enableProductionFeedback' => enable_production_feedback,
+          'sensitiveEnvironmentVariablePolicy' => sensitive_environment_variable_policy,
+          'disjunctiveProductionSecretPolicy' => disjunctive_production_secret_policy,
+          'remoteCaching' => remote_caching,
+          'hideIpAddresses' => hide_ip_addresses,
+          'hideIpAddressesInLogDrains' => hide_ip_addresses_in_log_drains,
+          'dpAccessRequestsMode' => dp_access_requests_mode,
+          'requireVerifiedCommits' => require_verified_commits,
+          'disableRepositoryDispatchEvents' => disable_repository_dispatch_events,
+        }
+      end
+      private_class_method :__sdk_body_update_team_part1
+
+      def self.__sdk_body_update_team_part2(
+        default_deployment_protection:,
+        default_passport:,
+        default_expiration_settings:,
+        deployment_policy:,
+        strict_deployment_protection_settings:,
+        strict_shareable_links:,
+        strict_password_protection_settings:,
+        strict_connectors:,
+        nsnb_config:,
+        default_project_jobs:,
+        resource_config:
+      )
+        {
+          'defaultDeploymentProtection' => default_deployment_protection,
+          'defaultPassport' => default_passport,
+          'defaultExpirationSettings' => default_expiration_settings,
+          'deploymentPolicy' => deployment_policy,
+          'strictDeploymentProtectionSettings' => strict_deployment_protection_settings,
+          'strictShareableLinks' => strict_shareable_links,
+          'strictPasswordProtectionSettings' => strict_password_protection_settings,
+          'strictConnectors' => strict_connectors,
+          'nsnbConfig' => nsnb_config,
+          'defaultProjectJobs' => default_project_jobs,
+          'resourceConfig' => resource_config,
+        }
+      end
+      private_class_method :__sdk_body_update_team_part2
+
+      # Lists teams that the authenticated user belongs to, with pagination metadata. Use `limit` to cap the number of teams and `since` or `until` to filter by creation time in milliseconds.
+      #
+      # Get a paginated list of all the Teams the authenticated User is a member of.
+      #
+      # @param limit [Float] Maximum number of Teams which may be returned.
+      # @param since [Float] Timestamp (in milliseconds) to only include Teams
+      #   created since then.
+      # @param until_ [Float] Timestamp (in milliseconds) to only include Teams
+      #   created until then.
+      def self.list_teams(
+        config:,
+        limit: NOT_GIVEN,
+        since: NOT_GIVEN,
+        until_: NOT_GIVEN,
+        request_options: nil
+      )
+
+        SdkClient.request(
+          'GET',
+          "/v2/teams",
+          config: config,
+          query: {
+            'limit' => QueryValue.new(limit, style: 'form', explode: true),
+            'since' => QueryValue.new(since, style: 'form', explode: true),
+            'until' => QueryValue.new(until_, style: 'form', explode: true),
+          },
+          return_type: ::OctridevVercel::Methods::Teams::ListTeamsResponse,
+          decoder: :json,
+          operation_id: 'list_teams',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for GetTeamMembersResponseMembersItemBitbucket.
-      # Information about the Bitbucket account of this user.
-      class GetTeamMembersResponseMembersItemBitbucket
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetTeamMembersResponseMembersItemBitbucketMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetTeamMembersResponseMembersItemBitbucketMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetTeamMembersResponseMembersItemBitbucketMetadata::DECODERS
+      # Creates a new team under the authenticated user's account. Supply `slug` and optionally `name`; the team name is generated from the slug when you omit `name`. A successful response includes the created team's identifier and slug.
+      #
+      # Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.
+      #
+      # @param slug [String] The desired slug for the Team
+      # @param name [String] The desired name for the Team. It will be generated
+      #   from the provided slug if nothing is provided
+      # @param attribution [CreateTeamAttribution] Attribution information for the
+      #   session or current page
+      def self.create_team(
+        config:,
+        slug:,
+        name: NOT_GIVEN,
+        attribution: NOT_GIVEN,
+        request_options: nil
+      )
 
-        attr_reader :login
+        Validation.validate_length('slug', slug, max: 48)
 
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
+        Validation.if_given(name) { Validation.validate_length('name', name, max: 256) }
 
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'POST',
+          "/v1/teams",
+          config: config,
+          body: {
+            'slug' => slug,
+            'name' => name,
+            'attribution' => attribution,
+          },
+          return_type: ::OctridevVercel::Methods::Teams::CreateTeamResponse,
+          decoder: :json,
+          operation_id: 'create_team',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalGetTeamMembersResponseMembersItemGithubMetadata
-        FIELDS = {
-          login: "login",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
-      end
+      # Deletes a team under the authenticated user's account. Identify the team with `teamId` and optionally provide `newDefaultTeamId` to select a replacement default team. Enterprise teams can be deleted only in test billing mode and when they are not linked to an organization.
+      #
+      # Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param new_default_team_id [String] Id of the team to be set as the new
+      #   default team
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param reasons [Array_of_Hash] Optional array of objects that describe the
+      #   reason why the team is being deleted.
+      def self.delete_team(
+        config:,
+        team_id:,
+        new_default_team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        reasons: NOT_GIVEN,
+        request_options: nil
+      )
 
-      # API model for GetTeamMembersResponseMembersItemGithub.
-      # Information about the GitHub account for this user.
-      class GetTeamMembersResponseMembersItemGithub
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetTeamMembersResponseMembersItemGithubMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetTeamMembersResponseMembersItemGithubMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetTeamMembersResponseMembersItemGithubMetadata::DECODERS
-
-        attr_reader :login
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetTeamMembersResponseMembersItemGitlabMetadata
-        FIELDS = {
-          login: "login",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
-      end
-
-      # API model for GetTeamMembersResponseMembersItemGitlab.
-      # Information about the GitLab account of this user.
-      class GetTeamMembersResponseMembersItemGitlab
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetTeamMembersResponseMembersItemGitlabMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetTeamMembersResponseMembersItemGitlabMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetTeamMembersResponseMembersItemGitlabMetadata::DECODERS
-
-        attr_reader :login
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetTeamMembersResponseMembersItemJoinedFromMetadata
-        FIELDS = {
-          commit_id: "commitId",
-          dsync_connected_at: "dsyncConnectedAt",
-          dsync_user_id: "dsyncUserId",
-          git_user_id: "gitUserId",
-          git_user_login: "gitUserLogin",
-          idp_user_id: "idpUserId",
-          origin: "origin",
-          repo_id: "repoId",
-          repo_path: "repoPath",
-          sso_connected_at: "ssoConnectedAt",
-          sso_user_id: "ssoUserId",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          origin
-        ].freeze
-        DECODERS = {
-          origin: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponseMembersItemJoinedFromOrigin.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for GetTeamMembersResponseMembersItemJoinedFrom.
-      # Map with information about the members origin if they joined by requesting access.
-      class GetTeamMembersResponseMembersItemJoinedFrom
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetTeamMembersResponseMembersItemJoinedFromMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetTeamMembersResponseMembersItemJoinedFromMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetTeamMembersResponseMembersItemJoinedFromMetadata::DECODERS
-
-        attr_reader :commit_id, :dsync_connected_at, :dsync_user_id, :git_user_id, :git_user_login,
-                    :idp_user_id, :origin, :repo_id, :repo_path, :sso_connected_at, :sso_user_id
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetTeamMembersResponseMembersItemProjectsItemMetadata
-        FIELDS = {
-          id: "id",
-          name: "name",
-          role: "role",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          id
-          name
-        ].freeze
-        DECODERS = {
-          role: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponseMembersItemProjectsItemRole.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for GetTeamMembersResponseMembersItemProjectsItem.
-      # Array of project memberships
-      class GetTeamMembersResponseMembersItemProjectsItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetTeamMembersResponseMembersItemProjectsItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetTeamMembersResponseMembersItemProjectsItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetTeamMembersResponseMembersItemProjectsItemMetadata::DECODERS
-
-        attr_reader :id, :name, :role
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetTeamMembersResponseMembersItemMetadata
-        FIELDS = {
-          access_requested_at: "accessRequestedAt",
-          avatar: "avatar",
-          bitbucket: "bitbucket",
-          confirmed: "confirmed",
-          created_at: "createdAt",
-          email: "email",
-          github: "github",
-          gitlab: "gitlab",
-          is_enterprise_managed: "isEnterpriseManaged",
-          joined_from: "joinedFrom",
-          name: "name",
-          projects: "projects",
-          role: "role",
-          uid: "uid",
-          username: "username",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          confirmed
-          created_at
-          email
-          role
-          uid
-          username
-        ].freeze
-        DECODERS = {
-          bitbucket: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponseMembersItemBitbucket.from_hash(value)
-          end,
-          confirmed: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponseMembersItemConfirmed.from_value(value)
-          end,
-          github: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponseMembersItemGithub.from_hash(value)
-          end,
-          gitlab: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponseMembersItemGitlab.from_hash(value)
-          end,
-          is_enterprise_managed: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponseMembersItemIsEnterpriseManaged.from_value(value)
-          end,
-          joined_from: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponseMembersItemJoinedFrom.from_hash(value)
-          end,
-          projects: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::Teams::GetTeamMembersResponseMembersItemProjectsItem.from_hash(item) }
-          end,
-          role: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponseMembersItemRole.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for GetTeamMembersResponseMembersItem.
-      class GetTeamMembersResponseMembersItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetTeamMembersResponseMembersItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetTeamMembersResponseMembersItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetTeamMembersResponseMembersItemMetadata::DECODERS
-
-        # @return [Float] Timestamp in milliseconds for when this team member was accepted by an owner.
-        attr_reader :access_requested_at
-        # @return [String] ID of the file for the Avatar of this member.
-        attr_reader :avatar
-        # @return [GetTeamMembersResponseMembersItemBitbucket] Information about the Bitbucket account of this user.
-        attr_reader :bitbucket
-        # @return [GetTeamMembersResponseMembersItemConfirmed] Boolean that indicates if this member was confirmed by an owner.
-        attr_reader :confirmed
-        # @return [Float] Timestamp in milliseconds when this member was added.
-        attr_reader :created_at
-        # @return [String] The email of this member.
-        attr_reader :email
-        # @return [GetTeamMembersResponseMembersItemGithub] Information about the GitHub account for this user.
-        attr_reader :github
-        # @return [GetTeamMembersResponseMembersItemGitlab] Information about the GitLab account of this user.
-        attr_reader :gitlab
-        # @return [GetTeamMembersResponseMembersItemIsEnterpriseManaged] Indicates whether the user is managed by an enterprise.
-        attr_reader :is_enterprise_managed
-        # @return [GetTeamMembersResponseMembersItemJoinedFrom] Map with information about the members origin if they joined by requesting access.
-        attr_reader :joined_from
-        # @return [String] The name of this user.
-        attr_reader :name
-        # @return [Array_of_GetTeamMembersResponseMembersItemProjectsItem] Array of project memberships
-        attr_reader :projects
-        # @return [GetTeamMembersResponseMembersItemRole] Role of this user in the team.
-        attr_reader :role
-        # @return [String] The ID of this user.
-        attr_reader :uid
-        # @return [String] The unique username of this user.
-        attr_reader :username
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetTeamMembersResponsePaginationMetadata
-        FIELDS = {
-          count: "count",
-          has_next: "hasNext",
-          next_: "next",
-          prev: "prev",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          count
-          has_next
-          next_
-          prev
-        ].freeze
-        DECODERS = {
-          has_next: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponsePaginationHasNext.from_value(value)
-          end,
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          next_
-          prev
-        ].freeze
-      end
-
-      # API model for GetTeamMembersResponsePagination.
-      class GetTeamMembersResponsePagination
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetTeamMembersResponsePaginationMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetTeamMembersResponsePaginationMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetTeamMembersResponsePaginationMetadata::DECODERS
-
-        attr_reader :has_next
-        # @return [Float] Amount of items in the current page.
-        attr_reader :count
-        # @return [Float] Timestamp that must be used to request the next page.
-        attr_reader :next_
-        # @return [Float] Timestamp that must be used to request the previous page.
-        attr_reader :prev
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalGetTeamMembersResponsePaginationMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetTeamMembersResponseMetadata
-        FIELDS = {
-          email_invite_codes: "emailInviteCodes",
-          members: "members",
-          pagination: "pagination",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          members
-          pagination
-        ].freeze
-        DECODERS = {
-          email_invite_codes: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::Teams::GetTeamMembersResponseEmailInviteCodesItem.from_hash(item) }
-          end,
-          members: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::Teams::GetTeamMembersResponseMembersItem.from_hash(item) }
-          end,
-          pagination: lambda do |value|
-            ::OctridevVercel::Methods::Teams::GetTeamMembersResponsePagination.from_hash(value)
-          end,
-        }.freeze
-      end
-
-      # API model for GetTeamMembersResponse.
-      class GetTeamMembersResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetTeamMembersResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetTeamMembersResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetTeamMembersResponseMetadata::DECODERS
-
-        attr_reader :email_invite_codes, :members, :pagination
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalRequestAccessToTeamJoinedFromMetadata
-        FIELDS = {
-          origin: "origin",
-          commit_id: "commitId",
-          repo_id: "repoId",
-          repo_path: "repoPath",
-          git_user_id: "gitUserId",
-          git_user_login: "gitUserLogin",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          origin
-        ].freeze
-        DECODERS = {
-          origin: lambda do |value|
-            ::OctridevVercel::Methods::Teams::RequestAccessToTeamJoinedFromOrigin.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for RequestAccessToTeamJoinedFrom.
-      class RequestAccessToTeamJoinedFrom
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalRequestAccessToTeamJoinedFromMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalRequestAccessToTeamJoinedFromMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalRequestAccessToTeamJoinedFromMetadata::DECODERS
-
-        # @return [RequestAccessToTeamJoinedFromOrigin] The origin of the request.
-        attr_reader :origin
-        # @return [String] The commit sha if the origin is a git provider.
-        attr_reader :commit_id
-        # @return [String] The ID of the repository for the given Git provider.
-        attr_reader :repo_id
-        # @return [String] The path to the repository for the given Git provider.
-        attr_reader :repo_path
-        # @return [Object] The ID of the Git account of the user who requests access.
-        attr_reader :git_user_id
-        # @return [String] The login name for the Git account of the user who requests access.
-        attr_reader :git_user_login
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalRequestAccessToTeamMetadata
-        FIELDS = {
-          joined_from: "joinedFrom",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          joined_from
-        ].freeze
-        DECODERS = {
-          joined_from: lambda do |value|
-            ::OctridevVercel::Methods::Teams::RequestAccessToTeamJoinedFrom.from_hash(value)
-          end,
-        }.freeze
+        SdkClient.request(
+          'DELETE',
+          [
+            "/v1/teams/",
+            SdkClient.encode_path_segment(team_id)
+          ].join,
+          config: config,
+          query: {
+            'newDefaultTeamId' => QueryValue.new(new_default_team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'reasons' => reasons,
+          },
+          return_type: ::OctridevVercel::Methods::Teams::DeleteTeamResponse,
+          decoder: :json,
+          operation_id: 'delete_team',
+          request_options: request_options,
+        ).data
       end
     end
   end
 end
 
-require_relative 'teams_part_2'
-require_relative 'teams_part_3'
-require_relative 'teams_part_4'
-require_relative 'teams_part_5'
-require_relative 'teams_part_6'
-require_relative 'teams_part_7'
-require_relative 'teams_part_8'
+require_relative 'teams_types'
+require_relative 'teams_request_access_to_team'
+require_relative 'teams_join_team_response'
+require_relative 'teams_sdk_internal_update_team_strict_deployment_protection_settings_metadata'
+require_relative 'teams_create_team'
+require_relative 'teams_get_team_access_request_response_joined_from_origin'
+require_relative 'teams_members'
+require_relative 'teams_request'
+require_relative 'teams_join'
+require_relative 'teams_dsync_roles'
+require_relative 'teams_invites'
+require_relative 'teams_microfrontends'

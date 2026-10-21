@@ -9,556 +9,586 @@ module OctridevVercel
   module Methods
     # Defines the FeatureFlags SDK namespace.
     module FeatureFlags
-      # Internal model hydration metadata.
-      class SdkInternalListFlagsV2ResponsePaginationMetadata
-        FIELDS = {
-          next_: "next",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          next_
-        ].freeze
-        DECODERS = {
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          next_
-        ].freeze
+      # Lists a project's feature flags with cursor-based pagination. Use `state`, `search`, `tags`, or maintainer and creator filters to narrow the results, and pass the returned pagination cursor to continue through the list. The `state` filter defaults to `active`.
+      #
+      # Retrieve feature flags for a project. Returns an opaque cursor for pagination.
+      #
+      # @param project_id_or_name [String] The project id or name
+      # @param state [ListFlagsV2Parameter] The state of the flags to retrieve.
+      #   Defaults to `active`.
+      # @param limit [Integer] Maximum number of flags to return.
+      # @param cursor [String] Pagination cursor to continue from.
+      # @param search [String] Search flags by their slug or description.
+      #   Case-insensitive.
+      # @param tags [Array_of_String] Filter flags by tag. Repeat the parameter for
+      #   multiple tags (all must match).
+      # @param created_by [String] Filter flags by the id of the entity that created
+      #   them (a user or team id).
+      # @param maintainer_ids [Array_of_String] Filter flags by maintainer user id.
+      #   Repeat the parameter for multiple maintainers (any may match).
+      # @param include_marketplace_flags [Boolean] Whether to include Marketplace
+      #   experimentation items in the paginated response. Defaults to false.
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.list_flags_v2(
+        config:,
+        project_id_or_name:,
+        state: NOT_GIVEN,
+        limit: NOT_GIVEN,
+        cursor: NOT_GIVEN,
+        search: NOT_GIVEN,
+        tags: NOT_GIVEN,
+        created_by: NOT_GIVEN,
+        maintainer_ids: NOT_GIVEN,
+        include_marketplace_flags: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+
+        Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
+
+        Validation.if_given(search) { Validation.validate_length('search', search, max: 256) }
+
+        Validation.if_given(created_by) { Validation.validate_length('createdBy', created_by, max: 256) }
+
+        Validation.if_given(maintainer_ids) do
+          Validation.validate_items('maintainerIds', maintainer_ids, max: 25)
+        end
+
+        SdkClient.request(
+          'GET',
+          [
+            "/v2/projects/",
+            SdkClient.encode_path_segment(project_id_or_name),
+            "/feature-flags/flags"
+          ].join,
+          config: config,
+          query: {
+            'state' => QueryValue.new(state, style: 'form', explode: true),
+            'limit' => QueryValue.new(limit, style: 'form', explode: true),
+            'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
+            'search' => QueryValue.new(search, style: 'form', explode: true),
+            'tags' => QueryValue.new(tags, style: 'form', explode: true),
+            'createdBy' => QueryValue.new(created_by, style: 'form', explode: true),
+            'maintainerIds' => QueryValue.new(maintainer_ids, style: 'form', explode: true),
+            'includeMarketplaceFlags' => QueryValue.new(include_marketplace_flags, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          return_type: ::OctridevVercel::Methods::FeatureFlags::ListFlagsV2Response,
+          decoder: :json,
+          operation_id: 'list_flags_v2',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for ListFlagsV2ResponsePagination.
-      class ListFlagsV2ResponsePagination
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListFlagsV2ResponsePaginationMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListFlagsV2ResponsePaginationMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListFlagsV2ResponsePaginationMetadata::DECODERS
+      # Lists feature flags for a project, with optional filtering by state, slug or description, and tags. Use the `cursor` to continue through paginated results, or omit `limit` to retrieve all flags. The `withMetadata` parameter is deprecated; resolve creator identity separately or use the single-flag endpoint when you need that metadata.
+      #
+      # Retrieve feature flags for a project. The list can be filtered by state and supports pagination.
+      #
+      # @param project_id_or_name [String] The project id or name
+      # @param state [ListFlagsParameter] The state of the flags to retrieve.
+      #   Defaults to `active`.
+      # @param with_metadata [Boolean] Deprecated. Whether to include creator
+      #   metadata in each flag in the response. Resolve creator identity client-side
+      #   (e.g. via the team members endpoint) instead; this parameter will be removed
+      #   in a future release. Use `GET
+      #   /v1/projects/:id/feature-flags/flags/:flagIdOrSlug?withMetadata=true` for
+      #   single-flag lookups that need creator metadata.
+      # @param limit [Integer] Maximum number of flags to return. When not set, all
+      #   flags are returned.
+      # @param cursor [String] Pagination cursor to continue from.
+      # @param search [String] Search flags by their slug or description.
+      #   Case-insensitive.
+      # @param tags [Array_of_String] Filter flags by tag. Repeat the parameter for
+      #   multiple tags (all must match).
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.list_flags(
+        config:,
+        project_id_or_name:,
+        state: NOT_GIVEN,
+        with_metadata: NOT_GIVEN,
+        limit: NOT_GIVEN,
+        cursor: NOT_GIVEN,
+        search: NOT_GIVEN,
+        tags: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
 
-        attr_reader :next_
+        Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
+        Validation.if_given(search) { Validation.validate_length('search', search, max: 256) }
 
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalListFlagsV2ResponsePaginationMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'GET',
+          [
+            "/v1/projects/",
+            SdkClient.encode_path_segment(project_id_or_name),
+            "/feature-flags/flags"
+          ].join,
+          config: config,
+          query: {
+            'state' => QueryValue.new(state, style: 'form', explode: true),
+            'withMetadata' => QueryValue.new(with_metadata, style: 'form', explode: true),
+            'limit' => QueryValue.new(limit, style: 'form', explode: true),
+            'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
+            'search' => QueryValue.new(search, style: 'form', explode: true),
+            'tags' => QueryValue.new(tags, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          return_type: ::OctridevVercel::Methods::FeatureFlags::ListFlagsResponse,
+          decoder: :json,
+          operation_id: 'list_flags',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalListFlagsV2ResponseMetadata
-        FIELDS = {
-          pagination: "pagination",
-          data: "data",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          pagination
-          data
-        ].freeze
-        DECODERS = {
-          pagination: lambda do |value|
-            ::OctridevVercel::Methods::FeatureFlags::ListFlagsV2ResponsePagination.from_hash(value)
-          end,
-          data: lambda do |value|
-            value&.map { |item| ::OctridevVercel::ListFlagsV2ResponseDataItem.from_hash(item) }
-          end,
-        }.freeze
+      # Creates a feature flag for a project with a unique project-level slug, a flag kind, and environment configuration. Supply `slug`, `kind`, and `environments`; the flag kind must be boolean, string, number, or JSON. Configure optional variants, state, maintainers, and tags as needed.
+      #
+      # Create a new feature flag for a project. The flag must have a unique slug within the project and specify its kind (boolean, string, number, or json).
+      #
+      # @param project_id_or_name [String] The project id or name
+      # @param slug2 [String] A unique (per project) key for the flag, composed of
+      #   letters, numbers, dashes, and underscores
+      # @param kind [CreateFlagKind] The kind of flag
+      # @param environments [Hash] The configuration for the flag in different
+      #   environments
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param variants [Array_of_Hash] The variants of the flag
+      # @param seed [Float] A random seed to prevent split points in different flags
+      #   from having the same targets
+      # @param description [String] A description of the flag
+      # @param maintainer_ids [Array_of_String] The user ids of the maintainers of
+      #   the flag
+      # @param permanent [Boolean] Whether this flag is marked as permanent,
+      #   indicating it should not be removed
+      # @param tags [Array_of_String] Tags for categorizing the flag
+      def self.create_flag(
+        config:,
+        project_id_or_name:,
+        slug2:,
+        kind:,
+        environments:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        variants: NOT_GIVEN,
+        seed: NOT_GIVEN,
+        description: NOT_GIVEN,
+        state: NOT_GIVEN,
+        maintainer_ids: NOT_GIVEN,
+        permanent: NOT_GIVEN,
+        tags: NOT_GIVEN,
+        request_options: nil
+      )
+
+        Validation.validate_pattern('slug', slug2, '^[a-zA-Z0-9_-]{1,512}$')
+
+        Validation.if_given(seed) { Validation.validate_range('seed', seed, min: 0, max: 100000) }
+
+        Validation.if_given(maintainer_ids) { Validation.validate_items('maintainerIds', maintainer_ids, max: 5) }
+
+        Validation.if_given(tags) { Validation.validate_items('tags', tags, max: 20) }
+
+        SdkClient.request(
+          'PUT',
+          [
+            "/v1/projects/",
+            SdkClient.encode_path_segment(project_id_or_name),
+            "/feature-flags/flags"
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'slug' => slug2,
+            'kind' => kind,
+            'environments' => environments,
+            'variants' => variants,
+            'seed' => seed,
+            'description' => description,
+            'state' => state,
+            'maintainerIds' => maintainer_ids,
+            'permanent' => permanent,
+            'tags' => tags,
+          },
+          return_type: ::OctridevVercel::Methods::FeatureFlags::CreateFlagResponse,
+          decoder: :json,
+          operation_id: 'create_flag',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for ListFlagsV2Response.
-      class ListFlagsV2Response
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListFlagsV2ResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListFlagsV2ResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListFlagsV2ResponseMetadata::DECODERS
+      # Retrieves a feature flag by its ID or slug within a project. Use `ifMatch` to send an ETag condition and `withMetadata` to include metadata in the response. The result contains the flag configuration, including its environments, variants, and current state.
+      #
+      # Retrieve a specific feature flag by its ID or slug.
+      #
+      # @param project_id_or_name [String] The project id or name
+      # @param flag_id_or_slug [String] The flag id or name
+      # @param if_match [String] Etag to match, can be used interchangeably with the
+      #   `if-match` header
+      # @param with_metadata [Boolean] Whether to include metadata in the response
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_flag) do |
+        config:,
+        project_id_or_name:,
+        flag_id_or_slug:,
+        if_match: NOT_GIVEN,
+        with_metadata: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
 
-        attr_reader :pagination, :data
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'GET',
+          [
+            "/v1/projects/",
+            SdkClient.encode_path_segment(project_id_or_name),
+            "/feature-flags/flags/",
+            SdkClient.encode_path_segment(flag_id_or_slug)
+          ].join,
+          config: config,
+          query: {
+            'ifMatch' => QueryValue.new(if_match, style: 'form', explode: true),
+            'withMetadata' => QueryValue.new(with_metadata, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          return_type: ::OctridevVercel::Flag,
+          decoder: :json,
+          operation_id: 'get_flag',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalListFlagsResponsePaginationMetadata
-        FIELDS = {
-          next_: "next",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          next_
-        ].freeze
-        DECODERS = {
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          next_
-        ].freeze
+      # Updates selected properties of an existing feature flag without requiring the full configuration. Supply only the fields to change, such as `variants`, `environments`, or `state`; any environment configuration you provide must include its required settings. Use `ifMatch` when you need to condition the update on an ETag.
+      #
+      # Update an existing feature flag. This endpoint supports partial updates, allowing you to modify specific properties like variants, environments, or state without providing the full flag configuration.
+      #
+      # @param project_id_or_name [String] The project id or name
+      # @param flag_id_or_slug [String] The flag id or name
+      # @param if_match [String] Etag to match, can be used interchangeably with the
+      #   `if-match` header
+      # @param with_metadata [Boolean] Whether to include metadata in the response
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param created_by [String] The user who created this patch
+      # @param message [String] Additional message for this version
+      # @param variants [Array_of_Hash] The variants of the flag
+      # @param environments [Hash] The configuration for the flag in different
+      #   environments
+      # @param seed [Float] A random seed to prevent split points in different flags
+      #   from having the same targets
+      # @param description [String] A description of the flag
+      # @param maintainer_ids [Array_of_String] The user ids of the maintainers of
+      #   the flag
+      # @param permanent [Boolean] Whether this flag is marked as permanent,
+      #   indicating it should not be removed
+      # @param tags [Array_of_String] Tags for categorizing the flag
+      def self.update_flag(
+        config:,
+        project_id_or_name:,
+        flag_id_or_slug:,
+        if_match: NOT_GIVEN,
+        with_metadata: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        created_by: NOT_GIVEN,
+        message: NOT_GIVEN,
+        variants: NOT_GIVEN,
+        environments: NOT_GIVEN,
+        seed: NOT_GIVEN,
+        description: NOT_GIVEN,
+        state: NOT_GIVEN,
+        maintainer_ids: NOT_GIVEN,
+        permanent: NOT_GIVEN,
+        tags: NOT_GIVEN,
+        request_options: nil
+      )
+
+        Validation.if_given(seed) { Validation.validate_range('seed', seed, min: 0, max: 100000) }
+
+        Validation.if_given(maintainer_ids) { Validation.validate_items('maintainerIds', maintainer_ids, max: 5) }
+
+        Validation.if_given(tags) { Validation.validate_items('tags', tags, max: 20) }
+
+        SdkClient.request(
+          'PATCH',
+          [
+            "/v1/projects/",
+            SdkClient.encode_path_segment(project_id_or_name),
+            "/feature-flags/flags/",
+            SdkClient.encode_path_segment(flag_id_or_slug)
+          ].join,
+          config: config,
+          query: {
+            'ifMatch' => QueryValue.new(if_match, style: 'form', explode: true),
+            'withMetadata' => QueryValue.new(with_metadata, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'createdBy' => created_by,
+            'message' => message,
+            'variants' => variants,
+            'environments' => environments,
+            'seed' => seed,
+            'description' => description,
+            'state' => state,
+            'maintainerIds' => maintainer_ids,
+            'permanent' => permanent,
+            'tags' => tags,
+          },
+          return_type: ::OctridevVercel::Methods::FeatureFlags::UpdateFlagResponse,
+          decoder: :json,
+          operation_id: 'update_flag',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for ListFlagsResponsePagination.
-      class ListFlagsResponsePagination
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListFlagsResponsePaginationMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListFlagsResponsePaginationMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListFlagsResponsePaginationMetadata::DECODERS
+      # Deletes a feature flag from a project permanently. Use this operation only when you no longer need the flag, because deletion cannot be undone; archive the flag instead if you may need it later. A 204 response has no response body.
+      #
+      # Permanently delete a feature flag from the project. This action cannot be undone. Consider archiving the flag instead if you may need it in the future.
+      #
+      # @param project_id_or_name [String] The project id or name
+      # @param flag_id_or_slug [String] The flag id or name
+      # @param if_match [String] Etag to match, can be used interchangeably with the
+      #   `if-match` header
+      # @param with_metadata [Boolean] Whether to include metadata in the response
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.delete_flag(
+        config:,
+        project_id_or_name:,
+        flag_id_or_slug:,
+        if_match: NOT_GIVEN,
+        with_metadata: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
 
-        attr_reader :next_
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalListFlagsResponsePaginationMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'DELETE',
+          [
+            "/v1/projects/",
+            SdkClient.encode_path_segment(project_id_or_name),
+            "/feature-flags/flags/",
+            SdkClient.encode_path_segment(flag_id_or_slug)
+          ].join,
+          config: config,
+          query: {
+            'ifMatch' => QueryValue.new(if_match, style: 'form', explode: true),
+            'withMetadata' => QueryValue.new(with_metadata, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          decoder: :empty,
+          operation_id: 'delete_flag',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalListFlagsResponseMetadata
-        FIELDS = {
-          data: "data",
-          pagination: "pagination",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          data
-          pagination
-        ].freeze
-        DECODERS = {
-          data: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Flag.from_hash(item) }
-          end,
-          pagination: lambda do |value|
-            ::OctridevVercel::Methods::FeatureFlags::ListFlagsResponsePagination.from_hash(value)
-          end,
-        }.freeze
+      # Lists feature flags across all projects in a team. Filter the results by state, kind, tags, creator, maintainers, or search text, and use `cursor` to continue through the results. The response includes an opaque next cursor for pagination.
+      #
+      # Retrieve all feature flags for a team across all projects. Returns an opaque cursor for pagination.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param state [ListTeamFlagsV2Parameter] The state of the flags to retrieve.
+      #   Defaults to `active`.
+      # @param limit [Integer] Maximum number of flags to return.
+      # @param cursor [String] Pagination cursor to continue from.
+      # @param search [String] Search flags by their slug or description.
+      #   Case-insensitive.
+      # @param kind [ListTeamFlagsV2ParameterCc4b87d2] The kind of flags to
+      #   retrieve.
+      # @param tags [Array_of_String] Filter flags by tag. Repeat the parameter for
+      #   multiple tags (all must match).
+      # @param created_by [String] Filter flags by the id of the entity that created
+      #   them (a user or team id).
+      # @param maintainer_ids [Array_of_String] Filter flags by maintainer user id.
+      #   Repeat the parameter for multiple maintainers (any may match).
+      # @param include_marketplace_flags [Boolean] Whether to include Marketplace
+      #   experimentation items in the paginated response. Defaults to false.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.list_team_flags_v2(
+        config:,
+        team_id:,
+        state: NOT_GIVEN,
+        limit: NOT_GIVEN,
+        cursor: NOT_GIVEN,
+        search: NOT_GIVEN,
+        kind: NOT_GIVEN,
+        tags: NOT_GIVEN,
+        created_by: NOT_GIVEN,
+        maintainer_ids: NOT_GIVEN,
+        include_marketplace_flags: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+
+        Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
+
+        Validation.if_given(search) { Validation.validate_length('search', search, max: 256) }
+
+        Validation.if_given(created_by) { Validation.validate_length('createdBy', created_by, max: 256) }
+
+        Validation.if_given(maintainer_ids) do
+          Validation.validate_items('maintainerIds', maintainer_ids, max: 25)
+        end
+
+        SdkClient.request(
+          'GET',
+          [
+            "/v2/teams/",
+            SdkClient.encode_path_segment(team_id),
+            "/feature-flags/flags"
+          ].join,
+          config: config,
+          query: {
+            'state' => QueryValue.new(state, style: 'form', explode: true),
+            'limit' => QueryValue.new(limit, style: 'form', explode: true),
+            'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
+            'search' => QueryValue.new(search, style: 'form', explode: true),
+            'kind' => QueryValue.new(kind, style: 'form', explode: true),
+            'tags' => QueryValue.new(tags, style: 'form', explode: true),
+            'createdBy' => QueryValue.new(created_by, style: 'form', explode: true),
+            'maintainerIds' => QueryValue.new(maintainer_ids, style: 'form', explode: true),
+            'includeMarketplaceFlags' => QueryValue.new(include_marketplace_flags, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          return_type: ::OctridevVercel::Methods::FeatureFlags::ListTeamFlagsV2Response,
+          decoder: :json,
+          operation_id: 'list_team_flags_v2',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for ListFlagsResponse.
-      class ListFlagsResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListFlagsResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListFlagsResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListFlagsResponseMetadata::DECODERS
+      # Lists feature flags across all projects in a team. Filter the results by state, kind, tags, or search text, and use `cursor` to continue through the results. The `withMetadata` parameter is deprecated; resolve creator identity separately instead.
+      #
+      # Retrieve all feature flags for a team across all projects. The list can be filtered by state and supports pagination.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param state [ListTeamFlagsParameter] The state of the flags to retrieve.
+      #   Defaults to `active`.
+      # @param with_metadata [Boolean] Deprecated. Whether to include creator
+      #   metadata in each flag in the response. Resolve creator identity client-side
+      #   (e.g. via the team members endpoint) instead; this parameter will be removed
+      #   in a future release.
+      # @param limit [Integer] Maximum number of flags to return.
+      # @param cursor [String] Pagination cursor to continue from.
+      # @param search [String] Search flags by their slug or description.
+      #   Case-insensitive.
+      # @param kind [ListTeamFlagsParameter69b069ba] The kind of flags to retrieve.
+      # @param tags [Array_of_String] Filter flags by tag. Repeat the parameter for
+      #   multiple tags (all must match).
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.list_team_flags(
+        config:,
+        team_id:,
+        state: NOT_GIVEN,
+        with_metadata: NOT_GIVEN,
+        limit: NOT_GIVEN,
+        cursor: NOT_GIVEN,
+        search: NOT_GIVEN,
+        kind: NOT_GIVEN,
+        tags: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
 
-        attr_reader :data, :pagination
+        Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
+        Validation.if_given(search) { Validation.validate_length('search', search, max: 256) }
 
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'GET',
+          [
+            "/v1/teams/",
+            SdkClient.encode_path_segment(team_id),
+            "/feature-flags/flags"
+          ].join,
+          config: config,
+          query: {
+            'state' => QueryValue.new(state, style: 'form', explode: true),
+            'withMetadata' => QueryValue.new(with_metadata, style: 'form', explode: true),
+            'limit' => QueryValue.new(limit, style: 'form', explode: true),
+            'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
+            'search' => QueryValue.new(search, style: 'form', explode: true),
+            'kind' => QueryValue.new(kind, style: 'form', explode: true),
+            'tags' => QueryValue.new(tags, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          return_type: ::OctridevVercel::Methods::FeatureFlags::ListTeamFlagsResponse,
+          decoder: :json,
+          operation_id: 'list_team_flags',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalCreateFlagVariantsItemMetadata
-        FIELDS = {
-          id: "id",
-          label: "label",
-          description: "description",
-          value: "value",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          id
-          value
-        ].freeze
-        DECODERS = {
-        }.freeze
-      end
+      # Retrieves the feature flags associated with a deployment. Use `deploymentId` to identify the deployment whose flags you need. The response includes the flags and status information for the deployment.
+      #
+      # Retrieve the feature flags of a deployment.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_deployment_feature_flags) do |
+        config:,
+        deployment_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
 
-      # API model for CreateFlagVariantsItem.
-      class CreateFlagVariantsItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateFlagVariantsItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateFlagVariantsItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateFlagVariantsItemMetadata::DECODERS
-
-        attr_reader :value
-        # @return [String] The id of the variant
-        attr_reader :id
-        # @return [String] A label for the variant
-        attr_reader :label
-        # @return [String] A description of the variant
-        attr_reader :description
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateFlagMetadata
-        FIELDS = {
-          slug: "slug",
-          kind: "kind",
-          variants: "variants",
-          environments: "environments",
-          seed: "seed",
-          description: "description",
-          state: "state",
-          maintainer_ids: "maintainerIds",
-          permanent: "permanent",
-          tags: "tags",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          slug
-          kind
-          environments
-        ].freeze
-        DECODERS = {
-          kind: lambda do |value|
-            ::OctridevVercel::Methods::FeatureFlags::CreateFlagKind.from_value(value)
-          end,
-          variants: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::CreateFlagVariantsItem.from_hash(item) }
-          end,
-          state: lambda do |value|
-            ::OctridevVercel::Methods::FeatureFlags::CreateFlagState.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for CreateFlag.
-      class CreateFlag
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateFlagMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateFlagMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateFlagMetadata::DECODERS
-
-        attr_reader :state
-        # @return [String] A unique (per project) key for the flag, composed of letters, numbers, dashes, and underscores
-        attr_reader :slug
-        # @return [CreateFlagKind] The kind of flag
-        attr_reader :kind
-        # @return [Array_of_CreateFlagVariantsItem] The variants of the flag
-        attr_reader :variants
-        # @return [Hash] The configuration for the flag in different environments
-        attr_reader :environments
-        # @return [Float] A random seed to prevent split points in different flags from having the same targets
-        attr_reader :seed
-        # @return [String] A description of the flag
-        attr_reader :description
-        # @return [Array_of_String] The user ids of the maintainers of the flag
-        attr_reader :maintainer_ids
-        # @return [Boolean] Whether this flag is marked as permanent, indicating it should not be removed
-        attr_reader :permanent
-        # @return [Array_of_String] Tags for categorizing the flag
-        attr_reader :tags
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateFlagResponseVariantsItemMetadata
-        FIELDS = {
-          description: "description",
-          id: "id",
-          label: "label",
-          value: "value",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          id
-          value
-        ].freeze
-        DECODERS = {
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          value
-        ].freeze
-      end
-
-      # API model for CreateFlagResponseVariantsItem.
-      class CreateFlagResponseVariantsItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateFlagResponseVariantsItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateFlagResponseVariantsItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateFlagResponseVariantsItemMetadata::DECODERS
-
-        attr_reader :description, :id, :label, :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateFlagResponseVariantsItemMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateFlagResponseMetadata
-        FIELDS = {
-          created_at: "createdAt",
-          created_by: "createdBy",
-          description: "description",
-          environments: "environments",
-          id: "id",
-          kind: "kind",
-          maintainer_ids: "maintainerIds",
-          owner_id: "ownerId",
-          permanent: "permanent",
-          project_id: "projectId",
-          revision: "revision",
-          seed: "seed",
-          seen_in_production: "seenInProduction",
-          slug: "slug",
-          state: "state",
-          tags: "tags",
-          type_name: "typeName",
-          updated_at: "updatedAt",
-          updated_by: "updatedBy",
-          variants: "variants",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          created_at
-          created_by
-          environments
-          id
-          kind
-          owner_id
-          project_id
-          revision
-          seed
-          slug
-          state
-          type_name
-          updated_at
-          variants
-        ].freeze
-        DECODERS = {
-          kind: lambda do |value|
-            ::OctridevVercel::Methods::FeatureFlags::CreateFlagResponseKind.from_value(value)
-          end,
-          permanent: lambda do |value|
-            ::OctridevVercel::Methods::FeatureFlags::CreateFlagResponsePermanent.from_value(value)
-          end,
-          seen_in_production: lambda do |value|
-            ::OctridevVercel::Methods::FeatureFlags::CreateFlagResponseSeenInProduction.from_value(value)
-          end,
-          state: lambda do |value|
-            ::OctridevVercel::Methods::FeatureFlags::CreateFlagResponseState.from_value(value)
-          end,
-          type_name: lambda do |value|
-            ::OctridevVercel::Methods::FeatureFlags::CreateFlagResponseTypeName.from_value(value)
-          end,
-          variants: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::CreateFlagResponseVariantsItem.from_hash(item) }
-          end,
-        }.freeze
-      end
-
-      # API model for CreateFlagResponse.
-      class CreateFlagResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateFlagResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateFlagResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateFlagResponseMetadata::DECODERS
-
-        attr_reader :created_at, :created_by, :description, :environments, :id, :kind,
-                    :maintainer_ids, :owner_id, :permanent, :project_id, :revision, :seed,
-                    :seen_in_production, :slug, :state, :tags, :type_name, :updated_at, :updated_by,
-                    :variants
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalUpdateFlagVariantsItemMetadata
-        FIELDS = {
-          id: "id",
-          label: "label",
-          description: "description",
-          value: "value",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          id
-          value
-        ].freeze
-        DECODERS = {
-        }.freeze
-      end
-
-      # API model for UpdateFlagVariantsItem.
-      class UpdateFlagVariantsItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalUpdateFlagVariantsItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalUpdateFlagVariantsItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalUpdateFlagVariantsItemMetadata::DECODERS
-
-        attr_reader :value
-        # @return [String] The id of the variant
-        attr_reader :id
-        # @return [String] A label for the variant
-        attr_reader :label
-        # @return [String] A description of the variant
-        attr_reader :description
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalUpdateFlagMetadata
-        FIELDS = {
-          created_by: "createdBy",
-          message: "message",
-          variants: "variants",
-          environments: "environments",
-          seed: "seed",
-          description: "description",
-          state: "state",
-          maintainer_ids: "maintainerIds",
-          permanent: "permanent",
-          tags: "tags",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-          variants: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::UpdateFlagVariantsItem.from_hash(item) }
-          end,
-          state: lambda do |value|
-            ::OctridevVercel::Methods::FeatureFlags::UpdateFlagState.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for UpdateFlag.
-      class UpdateFlag
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalUpdateFlagMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalUpdateFlagMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalUpdateFlagMetadata::DECODERS
-
-        attr_reader :state
-        # @return [String] The user who created this patch
-        attr_reader :created_by
-        # @return [String] Additional message for this version
-        attr_reader :message
-        # @return [Array_of_UpdateFlagVariantsItem] The variants of the flag
-        attr_reader :variants
-        # @return [Hash] The configuration for the flag in different environments
-        attr_reader :environments
-        # @return [Float] A random seed to prevent split points in different flags from having the same targets
-        attr_reader :seed
-        # @return [String] A description of the flag
-        attr_reader :description
-        # @return [Array_of_String] The user ids of the maintainers of the flag
-        attr_reader :maintainer_ids
-        # @return [Boolean] Whether this flag is marked as permanent, indicating it should not be removed
-        attr_reader :permanent
-        # @return [Array_of_String] Tags for categorizing the flag
-        attr_reader :tags
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalUpdateFlagResponseVariantsItemMetadata
-        FIELDS = {
-          description: "description",
-          id: "id",
-          label: "label",
-          value: "value",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          id
-          value
-        ].freeze
-        DECODERS = {
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          value
-        ].freeze
+        SdkClient.request(
+          'GET',
+          [
+            "/v1/deployments/",
+            SdkClient.encode_path_segment(deployment_id),
+            "/feature-flags"
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          return_type: ::OctridevVercel::Methods::FeatureFlags::GetDeploymentFeatureFlagsResponse,
+          decoder: :json,
+          operation_id: 'get_deployment_feature_flags',
+          request_options: request_options,
+        ).data
       end
     end
   end
 end
 
-require_relative 'feature_flags_part_2'
-require_relative 'feature_flags_part_3'
-require_relative 'feature_flags_part_4'
-require_relative 'feature_flags_part_5'
-require_relative 'feature_flags_part_6'
-require_relative 'feature_flags_part_7'
-require_relative 'feature_flags_part_8'
-require_relative 'feature_flags_part_9'
-require_relative 'feature_flags_part_10'
+require_relative 'feature_flags_types'
+require_relative 'feature_flags_update_flag_response_variants_item'
+require_relative 'feature_flags_sdk_internal_get_flag_settings_response_metadata'
+require_relative 'feature_flags_list_team_flags_response_pagination'
+require_relative 'feature_flags_list_flag_segments_response'
+require_relative 'feature_flags_create_sdk_key'
+require_relative 'feature_flags_update_flag_response_environments_value_rules_item_conditions_item_cmp'
+require_relative 'feature_flags_update_flag_segment_data_rules_item_conditions_item_cmp'
+require_relative 'feature_flags_versions'
+require_relative 'feature_flags_settings'
+require_relative 'feature_flags_segments'
+require_relative 'feature_flags_sdk_keys'

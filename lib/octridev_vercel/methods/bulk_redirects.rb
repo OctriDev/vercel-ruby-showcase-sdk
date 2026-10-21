@@ -9,560 +9,189 @@ module OctridevVercel
   module Methods
     # Defines the BulkRedirects SDK namespace.
     module BulkRedirects
-      # Internal model hydration metadata.
-      class SdkInternalStageRedirectsRedirectsItemMetadata
-        FIELDS = {
-          source: "source",
-          destination: "destination",
-          status_code: "statusCode",
-          permanent: "permanent",
-          case_sensitive: "caseSensitive",
-          query: "query",
-          preserve_query_params: "preserveQueryParams",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          source
-          destination
-        ].freeze
-        DECODERS = {
-        }.freeze
+      # Stages a new version of bulk redirects for a project. Supply `projectId` and `teamId` in the request body; `redirects` defaults to an empty array when omitted. A successful response includes the staged version and its alias.
+      #
+      # Stages new redirects for a project and returns the new version.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.stage_redirects(
+        config:,
+        project_id:,
+        team_id2:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        overwrite: NOT_GIVEN,
+        name: NOT_GIVEN,
+        redirects: NOT_GIVEN,
+        request_options: nil
+      )
+
+        Validation.if_given(name) { Validation.validate_length('name', name, max: 256) }
+
+        SdkClient.request(
+          'PUT',
+          "/v1/bulk-redirects",
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'projectId' => project_id,
+            'teamId' => team_id2,
+            'overwrite' => overwrite,
+            'name' => name,
+            'redirects' => redirects,
+          },
+          return_type: ::OctridevVercel::Methods::BulkRedirects::StageRedirectsResponse,
+          decoder: :json,
+          operation_id: 'stage_redirects',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for StageRedirectsRedirectsItem.
-      class StageRedirectsRedirectsItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalStageRedirectsRedirectsItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalStageRedirectsRedirectsItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalStageRedirectsRedirectsItemMetadata::DECODERS
+      # Lists project-level bulk redirects, with optional filtering and sorting. Use `projectId` to identify the project, and `page` and `per_page` to paginate the results.
+      #
+      # Get the version history for a project's bulk redirects
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_redirects) do |
+        config:,
+        project_id:,
+        version_id: NOT_GIVEN,
+        q_value: NOT_GIVEN,
+        diff: NOT_GIVEN,
+        page: NOT_GIVEN,
+        per_page: NOT_GIVEN,
+        sort_by: NOT_GIVEN,
+        sort_order: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
 
-        attr_reader :source, :destination, :status_code, :permanent, :case_sensitive, :query,
-                    :preserve_query_params
+        Validation.if_given(page) { Validation.validate_range('page', page, min: 1) }
 
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
+        Validation.if_given(per_page) { Validation.validate_range('per_page', per_page, min: 10, max: 250) }
 
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'GET',
+          "/v1/bulk-redirects",
+          config: config,
+          query: {
+            'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
+            'versionId' => QueryValue.new(version_id, style: 'form', explode: true),
+            'q' => QueryValue.new(q_value, style: 'form', explode: true),
+            'diff' => QueryValue.new(diff, style: 'form', explode: true),
+            'page' => QueryValue.new(page, style: 'form', explode: true),
+            'per_page' => QueryValue.new(per_page, style: 'form', explode: true),
+            'sort_by' => QueryValue.new(sort_by, style: 'form', explode: true),
+            'sort_order' => QueryValue.new(sort_order, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          decoder: :json,
+          operation_id: 'get_redirects',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalStageRedirectsMetadata
-        FIELDS = {
-          project_id: "projectId",
-          team_id: "teamId",
-          overwrite: "overwrite",
-          name: "name",
-          redirects: "redirects",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          project_id
-          team_id
-        ].freeze
-        DECODERS = {
-          redirects: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::BulkRedirects::StageRedirectsRedirectsItem.from_hash(item) }
-          end,
-        }.freeze
+      # Deletes specified redirects from the latest staged version for a project and stages the resulting changes. Provide the redirect source paths in `redirects`; the response includes the alias for the new version.
+      #
+      # Deletes the provided redirects from the latest version of the projects' bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
+      #
+      # @param redirects [Array_of_String] The redirects to delete. The source of
+      #   the redirect is used to match the redirect to delete.
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.delete_redirects(
+        config:,
+        project_id:,
+        redirects:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        name: NOT_GIVEN,
+        request_options: nil
+      )
+
+        Validation.validate_items('redirects', redirects, min: 1)
+
+        Validation.if_given(name) { Validation.validate_length('name', name, max: 256) }
+
+        SdkClient.request(
+          'DELETE',
+          "/v1/bulk-redirects",
+          config: config,
+          query: {
+            'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'redirects' => redirects,
+            'name' => name,
+          },
+          return_type: ::OctridevVercel::DeleteRedirectsResponse,
+          decoder: :json,
+          operation_id: 'delete_redirects',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for StageRedirects.
-      class StageRedirects
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalStageRedirectsMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalStageRedirectsMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalStageRedirectsMetadata::DECODERS
+      # Updates a single staged project redirect by matching its source path, then stages a new version. Supply the redirect's `source` in the body; use `restore` to restore that redirect from the latest production version to staging.
+      #
+      # Edits a single redirect identified by its source path. Stages a new change with the modified redirect and returns the alias for the new version in the response.
+      #
+      # @param redirect [EditRedirectRedirect] The redirect object to edit. The
+      #   source field is used to match the redirect to modify.
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param restore [Boolean] If true, restores the redirect from the latest
+      #   production version to staging.
+      def self.edit_redirect(
+        config:,
+        project_id:,
+        redirect:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        name: NOT_GIVEN,
+        restore: NOT_GIVEN,
+        request_options: nil
+      )
 
-        attr_reader :project_id, :team_id, :overwrite, :name, :redirects
+        Validation.if_given(name) { Validation.validate_length('name', name, max: 256) }
 
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalStageRedirectsResponseVersionMetadata
-        FIELDS = {
-          alias_: "alias",
-          created_by: "createdBy",
-          id: "id",
-          is_live: "isLive",
-          is_staging: "isStaging",
-          key: "key",
-          last_modified: "lastModified",
-          name: "name",
-          redirect_count: "redirectCount",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          created_by
-          id
-          key
-          last_modified
-        ].freeze
-        DECODERS = {
-          is_live: lambda do |value|
-            ::OctridevVercel::Methods::BulkRedirects::StageRedirectsResponseVersionIsLive.from_value(value)
-          end,
-          is_staging: lambda do |value|
-            ::OctridevVercel::Methods::BulkRedirects::StageRedirectsResponseVersionIsStaging.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for StageRedirectsResponseVersion.
-      class StageRedirectsResponseVersion
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalStageRedirectsResponseVersionMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalStageRedirectsResponseVersionMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalStageRedirectsResponseVersionMetadata::DECODERS
-
-        attr_reader :created_by, :last_modified
-        # @return [String] The staging link for previewing redirects in this version.
-        attr_reader :alias_
-        # @return [String] The unique identifier for the version.
-        attr_reader :id
-        # @return [StageRedirectsResponseVersionIsLive] Whether this version is currently live in production.
-        attr_reader :is_live
-        # @return [StageRedirectsResponseVersionIsStaging] Whether this version has not been promoted to production yet and is not serving end users.
-        attr_reader :is_staging
-        # @return [String] The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
-        attr_reader :key
-        # @return [String] Optional name for the version. If not provided, defaults to an ISO timestamp string.
-        attr_reader :name
-        # @return [Float] The number of redirects in this version.
-        attr_reader :redirect_count
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalStageRedirectsResponseMetadata
-        FIELDS = {
-          alias_: "alias",
-          version: "version",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          alias_
-          version
-        ].freeze
-        DECODERS = {
-          version: lambda do |value|
-            ::OctridevVercel::Methods::BulkRedirects::StageRedirectsResponseVersion.from_hash(value)
-          end,
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          alias_
-        ].freeze
-      end
-
-      # API model for StageRedirectsResponse.
-      class StageRedirectsResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalStageRedirectsResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalStageRedirectsResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalStageRedirectsResponseMetadata::DECODERS
-
-        attr_reader :alias_, :version
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalStageRedirectsResponseMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalDeleteRedirectsMetadata
-        FIELDS = {
-          name: "name",
-          redirects: "redirects",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          redirects
-        ].freeze
-        DECODERS = {
-        }.freeze
-      end
-
-      # API model for DeleteRedirects.
-      class DeleteRedirects
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalDeleteRedirectsMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalDeleteRedirectsMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalDeleteRedirectsMetadata::DECODERS
-
-        attr_reader :name
-        # @return [Array_of_String] The redirects to delete. The source of the redirect is used to match the redirect to delete.
-        attr_reader :redirects
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalEditRedirectRedirectMetadata
-        FIELDS = {
-          source: "source",
-          destination: "destination",
-          status_code: "statusCode",
-          permanent: "permanent",
-          case_sensitive: "caseSensitive",
-          query: "query",
-          preserve_query_params: "preserveQueryParams",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          source
-        ].freeze
-        DECODERS = {
-        }.freeze
-      end
-
-      # API model for EditRedirectRedirect.
-      # The redirect object to edit. The source field is used to match the redirect to modify.
-      class EditRedirectRedirect
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalEditRedirectRedirectMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalEditRedirectRedirectMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalEditRedirectRedirectMetadata::DECODERS
-
-        attr_reader :source, :destination, :status_code, :permanent, :case_sensitive, :query,
-                    :preserve_query_params
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalEditRedirectMetadata
-        FIELDS = {
-          name: "name",
-          redirect: "redirect",
-          restore: "restore",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          redirect
-        ].freeze
-        DECODERS = {
-          redirect: lambda do |value|
-            ::OctridevVercel::Methods::BulkRedirects::EditRedirectRedirect.from_hash(value)
-          end,
-        }.freeze
-      end
-
-      # API model for EditRedirect.
-      class EditRedirect
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalEditRedirectMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalEditRedirectMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalEditRedirectMetadata::DECODERS
-
-        attr_reader :name
-        # @return [EditRedirectRedirect] The redirect object to edit. The source field is used to match the redirect to modify.
-        attr_reader :redirect
-        # @return [Boolean] If true, restores the redirect from the latest production version to staging.
-        attr_reader :restore
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalEditRedirectResponseVersionMetadata
-        FIELDS = {
-          alias_: "alias",
-          created_by: "createdBy",
-          id: "id",
-          is_live: "isLive",
-          is_staging: "isStaging",
-          key: "key",
-          last_modified: "lastModified",
-          name: "name",
-          redirect_count: "redirectCount",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          created_by
-          id
-          key
-          last_modified
-        ].freeze
-        DECODERS = {
-          is_live: lambda do |value|
-            ::OctridevVercel::Methods::BulkRedirects::EditRedirectResponseVersionIsLive.from_value(value)
-          end,
-          is_staging: lambda do |value|
-            ::OctridevVercel::Methods::BulkRedirects::EditRedirectResponseVersionIsStaging.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for EditRedirectResponseVersion.
-      class EditRedirectResponseVersion
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalEditRedirectResponseVersionMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalEditRedirectResponseVersionMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalEditRedirectResponseVersionMetadata::DECODERS
-
-        attr_reader :created_by, :last_modified
-        # @return [String] The staging link for previewing redirects in this version.
-        attr_reader :alias_
-        # @return [String] The unique identifier for the version.
-        attr_reader :id
-        # @return [EditRedirectResponseVersionIsLive] Whether this version is currently live in production.
-        attr_reader :is_live
-        # @return [EditRedirectResponseVersionIsStaging] Whether this version has not been promoted to production yet and is not serving end users.
-        attr_reader :is_staging
-        # @return [String] The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
-        attr_reader :key
-        # @return [String] Optional name for the version. If not provided, defaults to an ISO timestamp string.
-        attr_reader :name
-        # @return [Float] The number of redirects in this version.
-        attr_reader :redirect_count
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalEditRedirectResponseMetadata
-        FIELDS = {
-          alias_: "alias",
-          version: "version",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          alias_
-          version
-        ].freeze
-        DECODERS = {
-          version: lambda do |value|
-            ::OctridevVercel::Methods::BulkRedirects::EditRedirectResponseVersion.from_hash(value)
-          end,
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          alias_
-        ].freeze
-      end
-
-      # API model for EditRedirectResponse.
-      class EditRedirectResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalEditRedirectResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalEditRedirectResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalEditRedirectResponseMetadata::DECODERS
-
-        attr_reader :alias_, :version
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalEditRedirectResponseMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalRestoreRedirectsMetadata
-        FIELDS = {
-          name: "name",
-          redirects: "redirects",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          redirects
-        ].freeze
-        DECODERS = {
-        }.freeze
-      end
-
-      # API model for RestoreRedirects.
-      class RestoreRedirects
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalRestoreRedirectsMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalRestoreRedirectsMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalRestoreRedirectsMetadata::DECODERS
-
-        attr_reader :name
-        # @return [Array_of_String] The redirects to restore. The source of the redirect is used to match the redirect to restore.
-        attr_reader :redirects
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalRestoreRedirectsResponseVersionMetadata
-        FIELDS = {
-          alias_: "alias",
-          created_by: "createdBy",
-          id: "id",
-          is_live: "isLive",
-          is_staging: "isStaging",
-          key: "key",
-          last_modified: "lastModified",
-          name: "name",
-          redirect_count: "redirectCount",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          created_by
-          id
-          key
-          last_modified
-        ].freeze
-        DECODERS = {
-          is_live: lambda do |value|
-            ::OctridevVercel::Methods::BulkRedirects::RestoreRedirectsResponseVersionIsLive.from_value(value)
-          end,
-          is_staging: lambda do |value|
-            ::OctridevVercel::Methods::BulkRedirects::RestoreRedirectsResponseVersionIsStaging.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for RestoreRedirectsResponseVersion.
-      class RestoreRedirectsResponseVersion
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalRestoreRedirectsResponseVersionMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalRestoreRedirectsResponseVersionMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalRestoreRedirectsResponseVersionMetadata::DECODERS
-
-        attr_reader :created_by, :last_modified
-        # @return [String] The staging link for previewing redirects in this version.
-        attr_reader :alias_
-        # @return [String] The unique identifier for the version.
-        attr_reader :id
-        # @return [RestoreRedirectsResponseVersionIsLive] Whether this version is currently live in production.
-        attr_reader :is_live
-        # @return [RestoreRedirectsResponseVersionIsStaging] Whether this version has not been promoted to production yet and is not serving end users.
-        attr_reader :is_staging
-        # @return [String] The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
-        attr_reader :key
-        # @return [String] Optional name for the version. If not provided, defaults to an ISO timestamp string.
-        attr_reader :name
-        # @return [Float] The number of redirects in this version.
-        attr_reader :redirect_count
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalRestoreRedirectsResponseMetadata
-        FIELDS = {
-          failed_to_restore: "failedToRestore",
-          restored: "restored",
-          version: "version",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          failed_to_restore
-          restored
-          version
-        ].freeze
-        DECODERS = {
-          version: lambda do |value|
-            ::OctridevVercel::Methods::BulkRedirects::RestoreRedirectsResponseVersion.from_hash(value)
-          end,
-        }.freeze
+        SdkClient.request(
+          'PATCH',
+          "/v1/bulk-redirects",
+          config: config,
+          query: {
+            'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'redirect' => redirect,
+            'name' => name,
+            'restore' => restore,
+          },
+          return_type: ::OctridevVercel::Methods::BulkRedirects::EditRedirectResponse,
+          decoder: :json,
+          operation_id: 'edit_redirect',
+          request_options: request_options,
+        ).data
       end
     end
   end
 end
 
-require_relative 'bulk_redirects_part_2'
-require_relative 'bulk_redirects_part_3'
+require_relative 'bulk_redirects_types'
+require_relative 'bulk_redirects_restore_redirects_response'
+require_relative 'bulk_redirects_restore'
+require_relative 'bulk_redirects_versions'

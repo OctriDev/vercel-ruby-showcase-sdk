@@ -9,551 +9,225 @@ module OctridevVercel
   module Methods
     # Defines the ProjectRoutes SDK namespace.
     module ProjectRoutes
-      # Internal model hydration metadata.
-      class SdkInternalStageRoutesRoutesItemRouteHasItemMetadata
-        FIELDS = {
-          type: "type",
-          key: "key",
-          value: "value",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-          type: lambda do |value|
-            ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRouteHasItemType.from_value(value)
-          end,
-        }.freeze
+      # Lists routing rules for a project, with options to search, filter by route type, or compare staged changes with production. Use `q` to search by name, ID, or pattern, and `filter` to select a route type. Set `diff` to compare changes; the response can include a diff count and version information.
+      #
+      # Get the routing rules for a project. Supports searching by name/ID/pattern, filtering by route type, and diffing staged changes against production.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_routes) do |
+        config:,
+        project_id:,
+        version_id: NOT_GIVEN,
+        q_value: NOT_GIVEN,
+        filter: NOT_GIVEN,
+        diff: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
+        SdkClient.request(
+          'GET',
+          [
+            "/v1/projects/",
+            SdkClient.encode_path_segment(project_id),
+            "/routes"
+          ].join,
+          config: config,
+          query: {
+            'versionId' => QueryValue.new(version_id, style: 'form', explode: true),
+            'q' => QueryValue.new(q_value, style: 'form', explode: true),
+            'filter' => QueryValue.new(filter, style: 'form', explode: true),
+            'diff' => QueryValue.new(diff, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          decoder: :json,
+          operation_id: 'get_routes',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for StageRoutesRoutesItemRouteHasItem.
-      class StageRoutesRoutesItemRouteHasItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalStageRoutesRoutesItemRouteHasItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalStageRoutesRoutesItemRouteHasItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalStageRoutesRoutesItemRouteHasItemMetadata::DECODERS
+      # Stages routing rules for a project and returns the new staged version. Set `overwrite` to replace all existing rules; otherwise, submitted rules are merged with existing rules by ID. Each item in `routes` must include an `id`, `name`, and route configuration with `src`.
+      #
+      # Stage routing rules for a project. Set `overwrite` to true to replace all existing rules, or omit it to merge with existing rules by ID. Returns the new staged version.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.stage_routes(
+        config:,
+        project_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        overwrite: NOT_GIVEN,
+        routes: NOT_GIVEN,
+        request_options: nil
+      )
 
-        attr_reader :type, :key, :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'PUT',
+          [
+            "/v1/projects/",
+            SdkClient.encode_path_segment(project_id),
+            "/routes"
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'overwrite' => overwrite,
+            'routes' => routes,
+          },
+          return_type: ::OctridevVercel::Methods::ProjectRoutes::StageRoutesResponse,
+          decoder: :json,
+          operation_id: 'stage_routes',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalStageRoutesRoutesItemRouteMissingItemMetadata
-        FIELDS = {
-          type: "type",
-          key: "key",
-          value: "value",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-          type: lambda do |value|
-            ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRouteMissingItemType.from_value(value)
-          end,
-        }.freeze
+      # Adds a routing rule to a project and stages a new routing-rule version. Supply a `route` with its `name` and route configuration; the route configuration must include `src`. Use `position` to choose where to insert the rule, or omit it to add the rule at the end.
+      #
+      # Add a single routing rule to a project at a specified position. Defaults to the end of the list if no position is provided. The route is enabled by default. Stages a new version with the added route.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param position [AddRoutePosition] Controls where the route is inserted.
+      #   Defaults to "end" if omitted.
+      def self.add_route(
+        config:,
+        project_id:,
+        route:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        position: NOT_GIVEN,
+        request_options: nil
+      )
+
+        SdkClient.request(
+          'POST',
+          [
+            "/v1/projects/",
+            SdkClient.encode_path_segment(project_id),
+            "/routes"
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'route' => route,
+            'position' => position,
+          },
+          return_type: ::OctridevVercel::Methods::ProjectRoutes::AddRouteResponse,
+          decoder: :json,
+          operation_id: 'add_route',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for StageRoutesRoutesItemRouteMissingItem.
-      class StageRoutesRoutesItemRouteMissingItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalStageRoutesRoutesItemRouteMissingItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalStageRoutesRoutesItemRouteMissingItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalStageRoutesRoutesItemRouteMissingItemMetadata::DECODERS
+      # Deletes one or more routing rules from a project by ID and stages a new version with those rules removed. Supply the IDs in `routeIds`; the array must contain at least one route ID. The response includes the number of deleted rules and the staged version.
+      #
+      # Delete one or more routing rules from a project by ID. Stages a new version with the routes removed.
+      #
+      # @param route_ids [Array_of_String] The IDs of the routes to delete
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.delete_routes(
+        config:,
+        project_id:,
+        route_ids:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
 
-        attr_reader :type, :key, :value
+        Validation.validate_items('routeIds', route_ids, min: 1)
 
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'DELETE',
+          [
+            "/v1/projects/",
+            SdkClient.encode_path_segment(project_id),
+            "/routes"
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'routeIds' => route_ids,
+          },
+          return_type: ::OctridevVercel::Methods::ProjectRoutes::DeleteRoutesResponse,
+          decoder: :json,
+          operation_id: 'delete_routes',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalStageRoutesRoutesItemRouteTransformsItemMetadata
-        FIELDS = {
-          type: "type",
-          op: "op",
-          target: "target",
-          args: "args",
-          env: "env",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-          type: lambda do |value|
-            ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRouteTransformsItemType.from_value(value)
-          end,
-          op: lambda do |value|
-            ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRouteTransformsItemOp.from_value(value)
-          end,
-        }.freeze
-      end
+      # Updates a routing rule in a project by replacing it or restoring its value from the current production version. Supply `route` with the complete replacement rule, or set `restore` to restore the production value. The update stages a new routing-rule version.
+      #
+      # Replace a routing rule identified by its ID, or restore it from the current production version. Stages a new version with the modified route.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param route [EditRouteRoute] The full route object to replace the existing
+      #   route with
+      # @param restore [Boolean] If true, restores the staged route to the value in
+      #   the production version.
+      def self.edit_route(
+        config:,
+        project_id:,
+        route_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        route: NOT_GIVEN,
+        restore: NOT_GIVEN,
+        request_options: nil
+      )
 
-      # API model for StageRoutesRoutesItemRouteTransformsItem.
-      class StageRoutesRoutesItemRouteTransformsItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalStageRoutesRoutesItemRouteTransformsItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalStageRoutesRoutesItemRouteTransformsItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalStageRoutesRoutesItemRouteTransformsItemMetadata::DECODERS
-
-        attr_reader :type, :op, :target, :args, :env
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalStageRoutesRoutesItemRouteMetadata
-        FIELDS = {
-          src: "src",
-          dest: "dest",
-          headers: "headers",
-          case_sensitive: "caseSensitive",
-          status: "status",
-          has: "has",
-          missing: "missing",
-          transforms: "transforms",
-          respect_origin_cache_control: "respectOriginCacheControl",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          src
-        ].freeze
-        DECODERS = {
-          has: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRouteHasItem.from_hash(item) }
-          end,
-          missing: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRouteMissingItem.from_hash(item) }
-          end,
-          transforms: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRouteTransformsItem.from_hash(item) }
-          end,
-        }.freeze
-      end
-
-      # API model for StageRoutesRoutesItemRoute.
-      class StageRoutesRoutesItemRoute
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalStageRoutesRoutesItemRouteMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalStageRoutesRoutesItemRouteMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalStageRoutesRoutesItemRouteMetadata::DECODERS
-
-        attr_reader :src, :dest, :headers, :case_sensitive, :status, :has, :missing, :transforms,
-                    :respect_origin_cache_control
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalStageRoutesRoutesItemMetadata
-        FIELDS = {
-          id: "id",
-          name: "name",
-          description: "description",
-          enabled: "enabled",
-          route: "route",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          id
-          name
-          route
-        ].freeze
-        DECODERS = {
-          route: lambda do |value|
-            ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItemRoute.from_hash(value)
-          end,
-        }.freeze
-      end
-
-      # API model for StageRoutesRoutesItem.
-      class StageRoutesRoutesItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalStageRoutesRoutesItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalStageRoutesRoutesItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalStageRoutesRoutesItemMetadata::DECODERS
-
-        attr_reader :id, :name, :description, :enabled, :route
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalStageRoutesMetadata
-        FIELDS = {
-          overwrite: "overwrite",
-          routes: "routes",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-          routes: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::ProjectRoutes::StageRoutesRoutesItem.from_hash(item) }
-          end,
-        }.freeze
-      end
-
-      # API model for StageRoutes.
-      class StageRoutes
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalStageRoutesMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalStageRoutesMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalStageRoutesMetadata::DECODERS
-
-        attr_reader :overwrite, :routes
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalStageRoutesResponseVersionMetadata
-        FIELDS = {
-          alias_: "alias",
-          created_by: "createdBy",
-          id: "id",
-          is_live: "isLive",
-          is_staging: "isStaging",
-          last_modified: "lastModified",
-          rule_count: "ruleCount",
-          s3_key: "s3Key",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          created_by
-          id
-          last_modified
-          s3_key
-        ].freeze
-        DECODERS = {
-          is_live: lambda do |value|
-            ::OctridevVercel::Methods::ProjectRoutes::StageRoutesResponseVersionIsLive.from_value(value)
-          end,
-          is_staging: lambda do |value|
-            ::OctridevVercel::Methods::ProjectRoutes::StageRoutesResponseVersionIsStaging.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for StageRoutesResponseVersion.
-      # A version of routing rules stored in S3.
-      class StageRoutesResponseVersion
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalStageRoutesResponseVersionMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalStageRoutesResponseVersionMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalStageRoutesResponseVersionMetadata::DECODERS
-
-        # @return [String] The staging alias for previewing this version.
-        attr_reader :alias_
-        # @return [String] The user who created this version.
-        attr_reader :created_by
-        # @return [String] Unique identifier for the version.
-        attr_reader :id
-        # @return [StageRoutesResponseVersionIsLive] Whether this version is currently live in production.
-        attr_reader :is_live
-        # @return [StageRoutesResponseVersionIsStaging] Whether this version is staged and not yet promoted to production.
-        attr_reader :is_staging
-        # @return [Float] Timestamp of when this version was last modified.
-        attr_reader :last_modified
-        # @return [Float] The number of routing rules in this version.
-        attr_reader :rule_count
-        # @return [String] The S3 key where the routing rules are stored.
-        attr_reader :s3_key
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalStageRoutesResponseMetadata
-        FIELDS = {
-          version: "version",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          version
-        ].freeze
-        DECODERS = {
-          version: lambda do |value|
-            ::OctridevVercel::Methods::ProjectRoutes::StageRoutesResponseVersion.from_hash(value)
-          end,
-        }.freeze
-      end
-
-      # API model for StageRoutesResponse.
-      class StageRoutesResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalStageRoutesResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalStageRoutesResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalStageRoutesResponseMetadata::DECODERS
-
-        # @return [StageRoutesResponseVersion] A version of routing rules stored in S3.
-        attr_reader :version
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalAddRouteRouteRouteHasItemMetadata
-        FIELDS = {
-          type: "type",
-          key: "key",
-          value: "value",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-          type: lambda do |value|
-            ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRouteHasItemType.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for AddRouteRouteRouteHasItem.
-      class AddRouteRouteRouteHasItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalAddRouteRouteRouteHasItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalAddRouteRouteRouteHasItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalAddRouteRouteRouteHasItemMetadata::DECODERS
-
-        attr_reader :type, :key, :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalAddRouteRouteRouteMissingItemMetadata
-        FIELDS = {
-          type: "type",
-          key: "key",
-          value: "value",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-          type: lambda do |value|
-            ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRouteMissingItemType.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for AddRouteRouteRouteMissingItem.
-      class AddRouteRouteRouteMissingItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalAddRouteRouteRouteMissingItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalAddRouteRouteRouteMissingItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalAddRouteRouteRouteMissingItemMetadata::DECODERS
-
-        attr_reader :type, :key, :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalAddRouteRouteRouteTransformsItemMetadata
-        FIELDS = {
-          type: "type",
-          op: "op",
-          target: "target",
-          args: "args",
-          env: "env",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-          type: lambda do |value|
-            ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRouteTransformsItemType.from_value(value)
-          end,
-          op: lambda do |value|
-            ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRouteTransformsItemOp.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for AddRouteRouteRouteTransformsItem.
-      class AddRouteRouteRouteTransformsItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalAddRouteRouteRouteTransformsItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalAddRouteRouteRouteTransformsItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalAddRouteRouteRouteTransformsItemMetadata::DECODERS
-
-        attr_reader :type, :op, :target, :args, :env
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalAddRouteRouteRouteMetadata
-        FIELDS = {
-          src: "src",
-          dest: "dest",
-          headers: "headers",
-          case_sensitive: "caseSensitive",
-          status: "status",
-          has: "has",
-          missing: "missing",
-          transforms: "transforms",
-          respect_origin_cache_control: "respectOriginCacheControl",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          src
-        ].freeze
-        DECODERS = {
-          has: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRouteHasItem.from_hash(item) }
-          end,
-          missing: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRouteMissingItem.from_hash(item) }
-          end,
-          transforms: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRouteTransformsItem.from_hash(item) }
-          end,
-        }.freeze
-      end
-
-      # API model for AddRouteRouteRoute.
-      class AddRouteRouteRoute
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalAddRouteRouteRouteMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalAddRouteRouteRouteMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalAddRouteRouteRouteMetadata::DECODERS
-
-        attr_reader :src, :dest, :headers, :case_sensitive, :status, :has, :missing, :transforms,
-                    :respect_origin_cache_control
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'PATCH',
+          [
+            "/v1/projects/",
+            SdkClient.encode_path_segment(project_id),
+            "/routes/",
+            SdkClient.encode_path_segment(route_id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'route' => route,
+            'restore' => restore,
+          },
+          return_type: ::OctridevVercel::Methods::ProjectRoutes::EditRouteResponse,
+          decoder: :json,
+          operation_id: 'edit_route',
+          request_options: request_options,
+        ).data
       end
     end
   end
 end
 
-require_relative 'project_routes_part_2'
-require_relative 'project_routes_part_3'
-require_relative 'project_routes_part_4'
-require_relative 'project_routes_part_5'
-require_relative 'project_routes_part_6'
-require_relative 'project_routes_part_7'
-require_relative 'project_routes_part_8'
+require_relative 'project_routes_types'
+require_relative 'project_routes_sdk_internal_add_route_route_metadata'
+require_relative 'project_routes_sdk_internal_delete_routes_response_version_metadata'
+require_relative 'project_routes_sdk_internal_edit_route_response_route_metadata'
+require_relative 'project_routes_generate_route_response_route_conditions_item'
+require_relative 'project_routes_get_routes_response_variant1_routes_item_route_transforms_item_variant1_op'
+require_relative 'project_routes_generate_route_response_route_actions_item_sub_type'
+require_relative 'project_routes_generate'
+require_relative 'project_routes_versions'

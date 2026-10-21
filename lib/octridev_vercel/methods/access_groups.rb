@@ -9,554 +9,230 @@ module OctridevVercel
   module Methods
     # Defines the AccessGroups SDK namespace.
     module AccessGroups
-      # Internal model hydration metadata.
-      class SdkInternalReadAccessGroupResponseMetadata
-        FIELDS = {
-          access_group_id: "accessGroupId",
-          created_at: "createdAt",
-          entitlements: "entitlements",
-          is_dsync_managed: "isDsyncManaged",
-          members_count: "membersCount",
-          name: "name",
-          projects_count: "projectsCount",
-          team_id: "teamId",
-          team_permissions: "teamPermissions",
-          team_roles: "teamRoles",
-          updated_at: "updatedAt",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          access_group_id
-          created_at
-          is_dsync_managed
-          members_count
-          name
-          projects_count
-          team_id
-          updated_at
-        ].freeze
-        DECODERS = {
-          entitlements: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::AccessGroups::ReadAccessGroupResponseEntitlementsItem.from_value(item) }
-          end,
-          is_dsync_managed: lambda do |value|
-            ::OctridevVercel::Methods::AccessGroups::ReadAccessGroupResponseIsDsyncManaged.from_value(value)
-          end,
-          team_permissions: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::AccessGroups::ReadAccessGroupResponseTeamPermissionsItem.from_value(item) }
-          end,
-        }.freeze
+      # Retrieves an access group by its ID or name. Use `idOrName` to identify the group and `teamId` or `slug` to select the team for the request.
+      #
+      # Allows to read an access group
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.read_access_group(
+        config:,
+        id_or_name:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+
+        SdkClient.request(
+          'GET',
+          [
+            "/v1/access-groups/",
+            SdkClient.encode_path_segment(id_or_name)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          return_type: ::OctridevVercel::Methods::AccessGroups::ReadAccessGroupResponse,
+          decoder: :json,
+          operation_id: 'read_access_group',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for ReadAccessGroupResponse.
-      class ReadAccessGroupResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalReadAccessGroupResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalReadAccessGroupResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalReadAccessGroupResponseMetadata::DECODERS
+      # Updates an access group's metadata, members, or project roles. Supply only the fields you want to change; `name` is limited to 50 characters and `projects` associates projects with roles.
+      #
+      # Allows to update an access group metadata
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param name [String] The name of the access group
+      # @param members_to_add [Array_of_String] List of members to add to the access
+      #   group.
+      # @param members_to_remove [Array_of_String] List of members to remove from
+      #   the access group.
+      def self.update_access_group(
+        config:,
+        id_or_name:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        name: NOT_GIVEN,
+        projects: NOT_GIVEN,
+        members_to_add: NOT_GIVEN,
+        members_to_remove: NOT_GIVEN,
+        request_options: nil
+      )
 
-        attr_reader :entitlements, :is_dsync_managed, :team_permissions
-        # @return [String] ID of the access group.
-        attr_reader :access_group_id
-        # @return [String] Timestamp in milliseconds when the access group was created.
-        attr_reader :created_at
-        # @return [Float] Number of members in the access group.
-        attr_reader :members_count
-        # @return [String] The name of this access group.
-        attr_reader :name
-        # @return [Float] Number of projects in the access group.
-        attr_reader :projects_count
-        # @return [String] ID of the team that this access group belongs to.
-        attr_reader :team_id
-        # @return [Array_of_String] Roles that the team has in the access group.
-        attr_reader :team_roles
-        # @return [String] Timestamp in milliseconds when the access group was last updated.
-        attr_reader :updated_at
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
+        Validation.if_given(name) do
+          Validation.validate_length('name', name, max: 50)
+          Validation.validate_pattern('name', name, '^[A-z0-9_ -]+$')
         end
 
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'POST',
+          [
+            "/v1/access-groups/",
+            SdkClient.encode_path_segment(id_or_name)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'name' => name,
+            'projects' => projects,
+            'membersToAdd' => members_to_add,
+            'membersToRemove' => members_to_remove,
+          },
+          return_type: ::OctridevVercel::Methods::AccessGroups::UpdateAccessGroupResponse,
+          decoder: :json,
+          operation_id: 'update_access_group',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalUpdateAccessGroupProjectsItemMetadata
-        FIELDS = {
-          project_id: "projectId",
-          role: "role",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          project_id
-          role
-        ].freeze
-        DECODERS = {
-          role: lambda do |value|
-            ::OctridevVercel::Methods::AccessGroups::UpdateAccessGroupProjectsItemRole.from_value(value)
-          end,
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          role
-        ].freeze
+      # Deletes an access group. Use `idOrName` to identify the group and `teamId` or `slug` to select the team for the request.
+      #
+      # Allows to delete an access group
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.delete_access_group(
+        config:,
+        id_or_name:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+
+        SdkClient.request(
+          'DELETE',
+          [
+            "/v1/access-groups/",
+            SdkClient.encode_path_segment(id_or_name)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          decoder: :empty,
+          operation_id: 'delete_access_group',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for UpdateAccessGroupProjectsItem.
-      class UpdateAccessGroupProjectsItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalUpdateAccessGroupProjectsItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalUpdateAccessGroupProjectsItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalUpdateAccessGroupProjectsItemMetadata::DECODERS
+      # Lists access groups, with optional filters for project and group name. Use `membersLimit` and `projectsLimit` to control how many associated members and projects are included, and `next` to continue through paginated results.
+      #
+      # List access groups
+      #
+      # @param project_id [String] Filter access groups by project.
+      # @param search [String] Search for access groups by name.
+      # @param members_limit [Integer] Number of members to include in the response.
+      # @param projects_limit [Integer] Number of projects to include in the
+      #   response.
+      # @param limit [Integer] Limit how many access group should be returned.
+      # @param next_ [String] Continuation cursor to retrieve the next page of
+      #   results.
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.list_access_groups(
+        config:,
+        project_id: NOT_GIVEN,
+        search: NOT_GIVEN,
+        members_limit: NOT_GIVEN,
+        projects_limit: NOT_GIVEN,
+        limit: NOT_GIVEN,
+        next_: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
 
-        # @return [String] The ID of the project.
-        attr_reader :project_id
-        # @return [UpdateAccessGroupProjectsItemRole] The project role that will be added to this Access Group. "null" will remove this project level role.
-        attr_reader :role
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
+        Validation.if_given(members_limit) do
+          Validation.validate_range('membersLimit', members_limit, min: 1, max: 100)
         end
 
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateAccessGroupProjectsItemMetadata::NULLABLE_FIELDS)
+        Validation.if_given(projects_limit) do
+          Validation.validate_range('projectsLimit', projects_limit, min: 1, max: 100)
         end
 
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
+
+        SdkClient.request(
+          'GET',
+          "/v1/access-groups",
+          config: config,
+          query: {
+            'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
+            'search' => QueryValue.new(search, style: 'form', explode: true),
+            'membersLimit' => QueryValue.new(members_limit, style: 'form', explode: true),
+            'projectsLimit' => QueryValue.new(projects_limit, style: 'form', explode: true),
+            'limit' => QueryValue.new(limit, style: 'form', explode: true),
+            'next' => QueryValue.new(next_, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          decoder: :json,
+          operation_id: 'list_access_groups',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalUpdateAccessGroupMetadata
-        FIELDS = {
-          name: "name",
-          projects: "projects",
-          members_to_add: "membersToAdd",
-          members_to_remove: "membersToRemove",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-          projects: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::AccessGroups::UpdateAccessGroupProjectsItem.from_hash(item) }
-          end,
-        }.freeze
-      end
+      # Creates an access group for a team, optionally assigning projects and adding members. Provide a `name` that matches the allowed character pattern and is no longer than 50 characters.
+      #
+      # Allows to create an access group
+      #
+      # @param name [String] The name of the access group
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param members_to_add [Array_of_String] List of members to add to the access
+      #   group.
+      def self.create_access_group(
+        config:,
+        name:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        projects: NOT_GIVEN,
+        members_to_add: NOT_GIVEN,
+        request_options: nil
+      )
 
-      # API model for UpdateAccessGroup.
-      class UpdateAccessGroup
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalUpdateAccessGroupMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalUpdateAccessGroupMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalUpdateAccessGroupMetadata::DECODERS
+        Validation.validate_length('name', name, max: 50)
+        Validation.validate_pattern('name', name, '^[A-z0-9_ -]+$')
 
-        attr_reader :projects
-        # @return [String] The name of the access group
-        attr_reader :name
-        # @return [Array_of_String] List of members to add to the access group.
-        attr_reader :members_to_add
-        # @return [Array_of_String] List of members to remove from the access group.
-        attr_reader :members_to_remove
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalUpdateAccessGroupResponseMetadata
-        FIELDS = {
-          access_group_id: "accessGroupId",
-          created_at: "createdAt",
-          entitlements: "entitlements",
-          members_count: "membersCount",
-          name: "name",
-          projects_count: "projectsCount",
-          team_id: "teamId",
-          team_permissions: "teamPermissions",
-          team_roles: "teamRoles",
-          updated_at: "updatedAt",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          access_group_id
-          created_at
-          entitlements
-          members_count
-          name
-          projects_count
-          team_id
-          updated_at
-        ].freeze
-        DECODERS = {
-          entitlements: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::AccessGroups::UpdateAccessGroupResponseEntitlementsItem.from_value(item) }
-          end,
-        }.freeze
-      end
-
-      # API model for UpdateAccessGroupResponse.
-      class UpdateAccessGroupResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalUpdateAccessGroupResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalUpdateAccessGroupResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalUpdateAccessGroupResponseMetadata::DECODERS
-
-        attr_reader :entitlements
-        # @return [String] ID of the access group.
-        attr_reader :access_group_id
-        # @return [String] Timestamp in milliseconds when the access group was created.
-        attr_reader :created_at
-        # @return [Float] Number of members in the access group.
-        attr_reader :members_count
-        # @return [String] The name of this access group.
-        attr_reader :name
-        # @return [Float] Number of projects in the access group.
-        attr_reader :projects_count
-        # @return [String] ID of the team that this access group belongs to.
-        attr_reader :team_id
-        # @return [Array_of_String] Permissions that the team has in the access group.
-        attr_reader :team_permissions
-        # @return [Array_of_String] Roles that the team has in the access group.
-        attr_reader :team_roles
-        # @return [String] Timestamp in milliseconds when the access group was last updated.
-        attr_reader :updated_at
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListAccessGroupMembersResponseMembersItemMetadata
-        FIELDS = {
-          avatar: "avatar",
-          created_at: "createdAt",
-          email: "email",
-          name: "name",
-          team_role: "teamRole",
-          uid: "uid",
-          username: "username",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          email
-          team_role
-          uid
-          username
-        ].freeze
-        DECODERS = {
-          team_role: lambda do |value|
-            ::OctridevVercel::Methods::AccessGroups::ListAccessGroupMembersResponseMembersItemTeamRole.from_value(value)
-          end,
-        }.freeze
-      end
-
-      # API model for ListAccessGroupMembersResponseMembersItem.
-      class ListAccessGroupMembersResponseMembersItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListAccessGroupMembersResponseMembersItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListAccessGroupMembersResponseMembersItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListAccessGroupMembersResponseMembersItemMetadata::DECODERS
-
-        attr_reader :avatar, :created_at, :email, :name, :team_role, :uid, :username
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListAccessGroupMembersResponsePaginationMetadata
-        FIELDS = {
-          count: "count",
-          next_: "next",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          count
-          next_
-        ].freeze
-        DECODERS = {
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          next_
-        ].freeze
-      end
-
-      # API model for ListAccessGroupMembersResponsePagination.
-      class ListAccessGroupMembersResponsePagination
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListAccessGroupMembersResponsePaginationMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListAccessGroupMembersResponsePaginationMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListAccessGroupMembersResponsePaginationMetadata::DECODERS
-
-        attr_reader :count, :next_
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalListAccessGroupMembersResponsePaginationMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListAccessGroupMembersResponseMetadata
-        FIELDS = {
-          members: "members",
-          pagination: "pagination",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          members
-          pagination
-        ].freeze
-        DECODERS = {
-          members: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::AccessGroups::ListAccessGroupMembersResponseMembersItem.from_hash(item) }
-          end,
-          pagination: lambda do |value|
-            ::OctridevVercel::Methods::AccessGroups::ListAccessGroupMembersResponsePagination.from_hash(value)
-          end,
-        }.freeze
-      end
-
-      # API model for ListAccessGroupMembersResponse.
-      class ListAccessGroupMembersResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListAccessGroupMembersResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListAccessGroupMembersResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListAccessGroupMembersResponseMetadata::DECODERS
-
-        attr_reader :members, :pagination
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateAccessGroupProjectsItemMetadata
-        FIELDS = {
-          project_id: "projectId",
-          role: "role",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          project_id
-          role
-        ].freeze
-        DECODERS = {
-          role: lambda do |value|
-            ::OctridevVercel::Methods::AccessGroups::CreateAccessGroupProjectsItemRole.from_value(value)
-          end,
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          role
-        ].freeze
-      end
-
-      # API model for CreateAccessGroupProjectsItem.
-      class CreateAccessGroupProjectsItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateAccessGroupProjectsItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateAccessGroupProjectsItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateAccessGroupProjectsItemMetadata::DECODERS
-
-        # @return [String] The ID of the project.
-        attr_reader :project_id
-        # @return [CreateAccessGroupProjectsItemRole] The project role that will be added to this Access Group. "null" will remove this project level role.
-        attr_reader :role
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateAccessGroupProjectsItemMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateAccessGroupMetadata
-        FIELDS = {
-          name: "name",
-          projects: "projects",
-          members_to_add: "membersToAdd",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          name
-        ].freeze
-        DECODERS = {
-          projects: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::AccessGroups::CreateAccessGroupProjectsItem.from_hash(item) }
-          end,
-        }.freeze
-      end
-
-      # API model for CreateAccessGroup.
-      class CreateAccessGroup
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateAccessGroupMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateAccessGroupMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateAccessGroupMetadata::DECODERS
-
-        attr_reader :projects
-        # @return [String] The name of the access group
-        attr_reader :name
-        # @return [Array_of_String] List of members to add to the access group.
-        attr_reader :members_to_add
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateAccessGroupResponseMetadata
-        FIELDS = {
-          access_group_id: "accessGroupId",
-          created_at: "createdAt",
-          entitlements: "entitlements",
-          members_count: "membersCount",
-          name: "name",
-          projects_count: "projectsCount",
-          team_id: "teamId",
-          team_permissions: "teamPermissions",
-          team_roles: "teamRoles",
-          updated_at: "updatedAt",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          access_group_id
-          created_at
-          entitlements
-          members_count
-          name
-          projects_count
-          team_id
-          updated_at
-        ].freeze
-        DECODERS = {
-          entitlements: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::AccessGroups::CreateAccessGroupResponseEntitlementsItem.from_value(item) }
-          end,
-        }.freeze
-      end
-
-      # API model for CreateAccessGroupResponse.
-      class CreateAccessGroupResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateAccessGroupResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateAccessGroupResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateAccessGroupResponseMetadata::DECODERS
-
-        attr_reader :entitlements, :members_count, :projects_count
-        # @return [String] ID of the access group.
-        attr_reader :access_group_id
-        # @return [String] Timestamp in milliseconds when the access group was created.
-        attr_reader :created_at
-        # @return [String] The name of this access group.
-        attr_reader :name
-        # @return [String] ID of the team that this access group belongs to.
-        attr_reader :team_id
-        # @return [Array_of_String] Permissions that the team has in the access group.
-        attr_reader :team_permissions
-        # @return [Array_of_String] Roles that the team has in the access group.
-        attr_reader :team_roles
-        # @return [String] Timestamp in milliseconds when the access group was last updated.
-        attr_reader :updated_at
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListAccessGroupProjectsResponsePaginationMetadata
-        FIELDS = {
-          count: "count",
-          next_: "next",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          count
-          next_
-        ].freeze
-        DECODERS = {
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          next_
-        ].freeze
+        SdkClient.request(
+          'POST',
+          "/v1/access-groups",
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'name' => name,
+            'projects' => projects,
+            'membersToAdd' => members_to_add,
+          },
+          return_type: ::OctridevVercel::Methods::AccessGroups::CreateAccessGroupResponse,
+          decoder: :json,
+          operation_id: 'create_access_group',
+          request_options: request_options,
+        ).data
       end
     end
   end
 end
 
-require_relative 'access_groups_part_2'
-require_relative 'access_groups_part_3'
+require_relative 'access_groups_types'
+require_relative 'access_groups_list_access_group_projects_response_pagination'
+require_relative 'access_groups_update_access_group_projects_item_role'
+require_relative 'access_groups_members'
+require_relative 'access_groups_projects'

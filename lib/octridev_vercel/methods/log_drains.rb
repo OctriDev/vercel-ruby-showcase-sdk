@@ -9,575 +9,314 @@ module OctridevVercel
   module Methods
     # Defines the LogDrains SDK namespace.
     module LogDrains
-      # Internal model hydration metadata.
-      class SdkInternalGetConfigurableLogDrainResponseProjectsMetadataItemMetadata
-        FIELDS = {
-          framework: "framework",
-          id: "id",
-          latest_deployment: "latestDeployment",
-          name: "name",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          id
-          name
-        ].freeze
-        DECODERS = {
-          framework: lambda do |value|
-            ::OctridevVercel::Methods::LogDrains::GetConfigurableLogDrainResponseProjectsMetadataItemFramework.from_value(value)
-          end,
-        }.freeze
+      # Retrieves a configurable log drain owned by the authenticated team. Call this deprecated operation with a team AccessToken; integration OAuth2 clients are not allowed.
+      #
+      # Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_configurable_log_drain) do |
+        config:,
+        id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
+        SdkClient.request(
+          'GET',
+          [
+            "/v1/log-drains/",
+            SdkClient.encode_path_segment(id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          return_type: ::OctridevVercel::Methods::LogDrains::GetConfigurableLogDrainResponse,
+          decoder: :json,
+          operation_id: 'get_configurable_log_drain',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for GetConfigurableLogDrainResponseProjectsMetadataItem.
-      class GetConfigurableLogDrainResponseProjectsMetadataItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetConfigurableLogDrainResponseProjectsMetadataItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetConfigurableLogDrainResponseProjectsMetadataItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetConfigurableLogDrainResponseProjectsMetadataItemMetadata::DECODERS
+      # Deletes a configurable log drain owned by the authenticated team. Call this deprecated operation with a team AccessToken; integration OAuth2 clients are not allowed.
+      #
+      # Deletes a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be deleted.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.delete_configurable_log_drain(
+        config:,
+        id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
 
-        attr_reader :framework, :id, :latest_deployment, :name
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'DELETE',
+          [
+            "/v1/log-drains/",
+            SdkClient.encode_path_segment(id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          decoder: :empty,
+          operation_id: 'delete_configurable_log_drain',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalGetConfigurableLogDrainResponseMetadata
-        FIELDS = {
-          client_id: "clientId",
-          configuration_id: "configurationId",
-          created_from: "createdFrom",
-          integration_configuration_uri: "integrationConfigurationUri",
-          integration_icon: "integrationIcon",
-          integration_website: "integrationWebsite",
-          projects_metadata: "projectsMetadata",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          created_from
-        ].freeze
-        DECODERS = {
-          projects_metadata: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::LogDrains::GetConfigurableLogDrainResponseProjectsMetadataItem.from_hash(item) }
-          end,
-        }.freeze
+      # Lists log drains owned by the authenticated account. Use `projectId` or `projectIdOrName` to scope the list to a project, and `includeMetadata` to control whether project metadata is included; this deprecated operation requires an account AccessToken.
+      #
+      # Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an account AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated account can be accessed.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.list_log_drains(
+        config:,
+        project_id: NOT_GIVEN,
+        project_id_or_name: NOT_GIVEN,
+        include_metadata: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+
+        Validation.if_given(project_id) do
+          Validation.validate_pattern('projectId', project_id, '^[a-zA-z0-9_]+$')
+        end
+
+        SdkClient.request(
+          'GET',
+          "/v1/log-drains",
+          config: config,
+          query: {
+            'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
+            'projectIdOrName' => QueryValue.new(project_id_or_name, style: 'form', explode: true),
+            'includeMetadata' => QueryValue.new(include_metadata, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          decoder: :json,
+          operation_id: 'list_log_drains',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for GetConfigurableLogDrainResponse.
-      class GetConfigurableLogDrainResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetConfigurableLogDrainResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetConfigurableLogDrainResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetConfigurableLogDrainResponseMetadata::DECODERS
+      # Creates a configurable log drain for the authenticated team. Supply `deliveryFormat`, `url`, and `sources`; use the remaining fields to select projects, environments, headers, and sampling behavior. Call this deprecated operation with a team AccessToken, not an integration OAuth2 client.
+      #
+      # Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)
+      #
+      # @param delivery_format [CreateConfigurableLogDrainDeliveryFormat] The
+      #   delivery log format
+      # @param url [String] The log drain url
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param headers [Hash] Headers to be sent together with the request
+      # @param secret [String] Custom secret of log drain
+      # @param sampling_rate [Float] The sampling rate for this log drain. It should
+      #   be a percentage rate between 0 and 100. With max 2 decimal points
+      # @param name [String] The custom name of this log drain.
+      def self.create_configurable_log_drain(
+        config:,
+        delivery_format:,
+        url:,
+        sources:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        headers: NOT_GIVEN,
+        project_ids: NOT_GIVEN,
+        environments: NOT_GIVEN,
+        secret: NOT_GIVEN,
+        sampling_rate: NOT_GIVEN,
+        name: NOT_GIVEN,
+        request_options: nil
+      )
 
-        attr_reader :client_id, :configuration_id, :created_from, :integration_configuration_uri,
-                    :integration_icon, :integration_website, :projects_metadata
+        Validation.validate_pattern('url', url, '^(http|https)?://')
+        Validation.validate_uri('url', url)
 
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
+        Validation.validate_items('sources', sources, min: 1)
+
+        Validation.if_given(project_ids) { Validation.validate_items('projectIds', project_ids, min: 1, max: 50) }
+
+        Validation.if_given(environments) { Validation.validate_items('environments', environments, min: 1) }
+
+        Validation.if_given(sampling_rate) do
+          Validation.validate_range('samplingRate', sampling_rate, min: 0.01, max: 1, multiple_of: 0.01)
         end
 
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'POST',
+          "/v1/log-drains",
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'deliveryFormat' => delivery_format,
+            'url' => url,
+            'sources' => sources,
+            'headers' => headers,
+            'projectIds' => project_ids,
+            'environments' => environments,
+            'secret' => secret,
+            'samplingRate' => sampling_rate,
+            'name' => name,
+          },
+          decoder: :json,
+          operation_id: 'create_configurable_log_drain',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalCreateConfigurableLogDrainMetadata
-        FIELDS = {
-          delivery_format: "deliveryFormat",
-          url: "url",
-          headers: "headers",
-          project_ids: "projectIds",
-          sources: "sources",
-          environments: "environments",
-          secret: "secret",
-          sampling_rate: "samplingRate",
-          name: "name",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          delivery_format
-          url
-          sources
-        ].freeze
-        DECODERS = {
-          delivery_format: lambda do |value|
-            ::OctridevVercel::Methods::LogDrains::CreateConfigurableLogDrainDeliveryFormat.from_value(value)
-          end,
-          sources: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::LogDrains::CreateConfigurableLogDrainSourcesItem.from_value(item) }
-          end,
-          environments: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::LogDrains::CreateConfigurableLogDrainEnvironmentsItem.from_value(item) }
-          end,
-        }.freeze
+      # Lists integration log drains defined for the authenticated user or team. When you use an OAuth2 token, the results are limited to log drains created by the authenticated integration. Use `teamId` or `slug` to scope the request to a team.
+      #
+      # Retrieves a list of all Integration log drains that are defined for the authenticated user or team. When using an OAuth2 token, the list is limited to log drains created by the authenticated integration.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_integration_log_drains) do |
+        config:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
+        SdkClient.request(
+          'GET',
+          "/v2/integrations/log-drains",
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          decoder: :json,
+          operation_id: 'get_integration_log_drains',
+          request_options: request_options,
+        ).data
       end
 
-      # API model for CreateConfigurableLogDrain.
-      class CreateConfigurableLogDrain
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateConfigurableLogDrainMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateConfigurableLogDrainMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateConfigurableLogDrainMetadata::DECODERS
+      # Creates an integration log drain for delivering logs to a destination URL. Use an OAuth2 client token because log drains created through this operation are tied to integrations. Provide `name` and `url`; you can also configure projects, sources, environments, headers, and delivery format.
+      #
+      # Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.
+      #
+      # @param name [String] The name of the log drain
+      # @param url [String] The url where you will receive logs. The protocol must
+      #   be `` or `` when type is `json` and `ndjson`.
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param secret [String] A secret to sign log drain notification headers so a
+      #   consumer can verify their authenticity
+      # @param delivery_format [CreateLogDrainDeliveryFormat] The delivery log
+      #   format
+      # @param headers [Hash] Headers to be sent together with the request
+      def self.create_log_drain(
+        config:,
+        name:,
+        url:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        project_ids: NOT_GIVEN,
+        secret: NOT_GIVEN,
+        delivery_format: NOT_GIVEN,
+        sources: NOT_GIVEN,
+        headers: NOT_GIVEN,
+        environments: NOT_GIVEN,
+        request_options: nil
+      )
 
-        attr_reader :project_ids, :sources, :environments
-        # @return [CreateConfigurableLogDrainDeliveryFormat] The delivery log format
-        attr_reader :delivery_format
-        # @return [String] The log drain url
-        attr_reader :url
-        # @return [Hash] Headers to be sent together with the request
-        attr_reader :headers
-        # @return [String] Custom secret of log drain
-        attr_reader :secret
-        # @return [Float] The sampling rate for this log drain. It should be a percentage rate between 0 and 100. With max 2 decimal points
-        attr_reader :sampling_rate
-        # @return [String] The custom name of this log drain.
-        attr_reader :name
+        Validation.validate_length('name', name, max: 100)
+        Validation.validate_pattern('name', name, '^[A-z0-9_ -]+$')
 
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
+        Validation.validate_pattern('url', url, '^https?://')
+        Validation.validate_uri('url', url)
+
+        Validation.if_given(project_ids) { Validation.validate_items('projectIds', project_ids, min: 1, max: 50) }
+
+        Validation.if_given(secret) do
+          Validation.validate_length('secret', secret, max: 100)
+          Validation.validate_pattern('secret', secret, '^[A-z0-9_ -]+$')
         end
 
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
+        Validation.if_given(sources) { Validation.validate_items('sources', sources, min: 1) }
 
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        Validation.if_given(environments) { Validation.validate_items('environments', environments, min: 1) }
+
+        SdkClient.request(
+          'POST',
+          "/v2/integrations/log-drains",
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          body: {
+            'name' => name,
+            'url' => url,
+            'projectIds' => project_ids,
+            'secret' => secret,
+            'deliveryFormat' => delivery_format,
+            'sources' => sources,
+            'headers' => headers,
+            'environments' => environments,
+          },
+          return_type: ::OctridevVercel::Methods::LogDrains::CreateLogDrainResponse,
+          decoder: :json,
+          operation_id: 'create_log_drain',
+          request_options: request_options,
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalCreateLogDrainMetadata
-        FIELDS = {
-          name: "name",
-          project_ids: "projectIds",
-          secret: "secret",
-          delivery_format: "deliveryFormat",
-          url: "url",
-          sources: "sources",
-          headers: "headers",
-          environments: "environments",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          name
-          url
-        ].freeze
-        DECODERS = {
-          delivery_format: lambda do |value|
-            ::OctridevVercel::Methods::LogDrains::CreateLogDrainDeliveryFormat.from_value(value)
-          end,
-          sources: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::LogDrains::CreateLogDrainSourcesItem.from_value(item) }
-          end,
-          environments: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::LogDrains::CreateLogDrainEnvironmentsItem.from_value(item) }
-          end,
-        }.freeze
-      end
+      # Deletes an integration log drain by its identifier. When using an OAuth2 token, you can delete only a log drain owned by the authenticated integration. Use `teamId` or `slug` to make the request on behalf of a team.
+      #
+      # Deletes the Integration log drain with the provided `id`. When using an OAuth2 Token, the log drain can be deleted only if the integration owns it.
+      #
+      # @param id [String] ID of the log drain to be deleted
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.delete_integration_log_drain(
+        config:,
+        id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
 
-      # API model for CreateLogDrain.
-      class CreateLogDrain
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateLogDrainMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateLogDrainMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateLogDrainMetadata::DECODERS
-
-        attr_reader :project_ids, :sources, :environments
-        # @return [String] The name of the log drain
-        attr_reader :name
-        # @return [String] A secret to sign log drain notification headers so a consumer can verify their authenticity
-        attr_reader :secret
-        # @return [CreateLogDrainDeliveryFormat] The delivery log format
-        attr_reader :delivery_format
-        # @return [String] The url where you will receive logs. The protocol must be `` or `` when type is `json` and `ndjson`.
-        attr_reader :url
-        # @return [Hash] Headers to be sent together with the request
-        attr_reader :headers
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateLogDrainResponseMetadata
-        FIELDS = {
-          branch: "branch",
-          client_id: "clientId",
-          configuration_id: "configurationId",
-          created_at: "createdAt",
-          created_from: "createdFrom",
-          delivery_format: "deliveryFormat",
-          environments: "environments",
-          headers: "headers",
-          id: "id",
-          name: "name",
-          owner_id: "ownerId",
-          project_id: "projectId",
-          project_ids: "projectIds",
-          sampling_rate: "samplingRate",
-          source: "source",
-          sources: "sources",
-          url: "url",
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          created_at
-          id
-          name
-          owner_id
-          source
-          url
-        ].freeze
-        DECODERS = {
-          created_from: lambda do |value|
-            ::OctridevVercel::Methods::LogDrains::CreateLogDrainResponseCreatedFrom.from_value(value)
-          end,
-          delivery_format: lambda do |value|
-            ::OctridevVercel::Methods::LogDrains::CreateLogDrainResponseDeliveryFormat.from_value(value)
-          end,
-          environments: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::LogDrains::CreateLogDrainResponseEnvironmentsItem.from_value(item) }
-          end,
-          source: lambda do |value|
-            ::OctridevVercel::CreateLogDrainResponseSource.from_hash(value)
-          end,
-          sources: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::LogDrains::CreateLogDrainResponseSourcesItem.from_value(item) }
-          end,
-        }.freeze
-      end
-
-      # API model for CreateLogDrainResponse.
-      class CreateLogDrainResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateLogDrainResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateLogDrainResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateLogDrainResponseMetadata::DECODERS
-
-        attr_reader :project_id
-        # @return [String] The branch regexp of log drain
-        attr_reader :branch
-        # @return [String] The oauth2 client application id that created this log drain
-        attr_reader :client_id
-        # @return [String] The client configuration this log drain was created with
-        attr_reader :configuration_id
-        # @return [Float] A timestamp that tells you when the log drain was created
-        attr_reader :created_at
-        # @return [CreateLogDrainResponseCreatedFrom] Whether the log drain was created by an integration or by a user
-        attr_reader :created_from
-        # @return [CreateLogDrainResponseDeliveryFormat] The delivery log format
-        attr_reader :delivery_format
-        # @return [Array_of_CreateLogDrainResponseEnvironmentsItem] The environment of log drain
-        attr_reader :environments
-        # @return [Hash] The headers to send with the request
-        attr_reader :headers
-        # @return [String] The unique identifier of the log drain. Always prefixed with `ld_`
-        attr_reader :id
-        # @return [String] The name of the log drain
-        attr_reader :name
-        # @return [String] The identifier of the team or user whose events will trigger the log drain
-        attr_reader :owner_id
-        # @return [Array_of_String] The identifier of the projects this log drain is associated with
-        attr_reader :project_ids
-        # @return [Float] The sampling rate of log drain
-        attr_reader :sampling_rate
-        # @return [CreateLogDrainResponseSource] Typed representation of the `CreateLogDrainResponseSource` API schema.
-        attr_reader :source
-        # @return [Array_of_CreateLogDrainResponseSourcesItem] The sources from which logs are currently being delivered to this log drain.
-        attr_reader :sources
-        # @return [String] The URL to call when logs are generated
-        attr_reader :url
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Defines the ListLogDrainsResponseVariant1DrainsVariant1ItemProjectAccessVXe352a446f3 SDK namespace.
-      module ListLogDrainsResponseVariant1DrainsVariant1ItemProjectAccessVXe352a446f3
-        ALL = 'all'
-        VALUES = ['all'].freeze
-        def self.from_value(value)
-          return value if VALUES.include?(value)
-
-          raise SdkValidationError.new('ListLogDrainsResponseVariant1DrainsVariant1ItemProjectAccessVXe352a446f3', 'enum', "Unknown ListLogDrainsResponseVariant1DrainsVariant1ItemProjectAccessVXe352a446f3: #{value}")
-        end
-      end
-
-      # Defines the ListLogDrainsResponseVariant1DrainsVariant0ItemDeliveryVariant1Encoding SDK namespace.
-      module ListLogDrainsResponseVariant1DrainsVariant0ItemDeliveryVariant1Encoding
-        JSON = 'json'
-        PROTO = 'proto'
-        VALUES = ['json', 'proto'].freeze
-        def self.from_value(value)
-          value
-        end
-      end
-
-      # Defines the ListLogDrainsResponseVariant1DrainsVariant0ItemFilterV2FilterX5a83e62e79 SDK namespace.
-      module ListLogDrainsResponseVariant1DrainsVariant0ItemFilterV2FilterX5a83e62e79
-        FALSE = false
-        TRUE = true
-        VALUES = [false, true].freeze
-        def self.from_value(value)
-          value
-        end
-      end
-
-      # Defines the ListLogDrainsResponseVariant1DrainsVariant0ItemFilterV2Version SDK namespace.
-      module ListLogDrainsResponseVariant1DrainsVariant0ItemFilterV2Version
-        V2 = 'v2'
-        VALUES = ['v2'].freeze
-        def self.from_value(value)
-          value
-        end
-      end
-
-      # Defines the ListLogDrainsResponseVariant1DrainsVariant1ItemFilterV2FilterX7941335feb SDK namespace.
-      module ListLogDrainsResponseVariant1DrainsVariant1ItemFilterV2FilterX7941335feb
-        BASIC = 'basic'
-        VALUES = ['basic'].freeze
-        def self.from_value(value)
-          return value if VALUES.include?(value)
-
-          raise SdkValidationError.new('ListLogDrainsResponseVariant1DrainsVariant1ItemFilterV2FilterX7941335feb', 'enum', "Unknown ListLogDrainsResponseVariant1DrainsVariant1ItemFilterV2FilterX7941335feb: #{value}")
-        end
-      end
-
-      # Defines the ListLogDrainsResponseVariant1DrainsVariant1ItemSamplingItemEnv SDK namespace.
-      module ListLogDrainsResponseVariant1DrainsVariant1ItemSamplingItemEnv
-        PREVIEW = 'preview'
-        PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
-        def self.from_value(value)
-          value
-        end
-      end
-
-      # Defines the ListLogDrainsResponseVariant1DrainsVariant1ItemDeliveryVarianX41893a2465 SDK namespace.
-      module ListLogDrainsResponseVariant1DrainsVariant1ItemDeliveryVarianX41893a2465
-        GZIP = 'gzip'
-        NONE = 'none'
-        VALUES = ['gzip', 'none'].freeze
-        def self.from_value(value)
-          value
-        end
-      end
-
-      # Defines the CreateLogDrainSourcesItem SDK namespace.
-      module CreateLogDrainSourcesItem
-        STATIC = 'static'
-        LAMBDA = 'lambda'
-        BUILD = 'build'
-        EDGE = 'edge'
-        EXTERNAL = 'external'
-        FIREWALL = 'firewall'
-        VALUES = ['static', 'lambda', 'build', 'edge', 'external', 'firewall'].freeze
-        def self.from_value(value)
-          value
-        end
-      end
-
-      # Defines the ListLogDrainsResponseVariant1DrainsVariant0ItemFilterV2FilterXeb6c2e719e SDK namespace.
-      module ListLogDrainsResponseVariant1DrainsVariant0ItemFilterV2FilterXeb6c2e719e
-        BASIC = 'basic'
-        VALUES = ['basic'].freeze
-        def self.from_value(value)
-          return value if VALUES.include?(value)
-
-          raise SdkValidationError.new('ListLogDrainsResponseVariant1DrainsVariant0ItemFilterV2FilterXeb6c2e719e', 'enum', "Unknown ListLogDrainsResponseVariant1DrainsVariant0ItemFilterV2FilterXeb6c2e719e: #{value}")
-        end
-      end
-
-      # Defines the ListLogDrainsResponseVariant0ItemProjectsMetadataItemFramework SDK namespace.
-      module ListLogDrainsResponseVariant0ItemProjectsMetadataItemFramework
-        ACTIX_WEB = 'actix-web'
-        ANGULAR = 'angular'
-        ASH = 'ash'
-        ASTRO = 'astro'
-        AXUM = 'axum'
-        BLITZJS = 'blitzjs'
-        BRUNCH = 'brunch'
-        BUN = 'bun'
-        CONTAINER = 'container'
-        CREATE_REACT_APP = 'create-react-app'
-        DJANGO = 'django'
-        DOCUSAURUS = 'docusaurus'
-        DOCUSAURUS_2 = 'docusaurus-2'
-        DOJO = 'dojo'
-        ELEVENTY = 'eleventy'
-        ELYSIA = 'elysia'
-        EMBER = 'ember'
-        EVE = 'eve'
-        EXPRESS = 'express'
-        FACTORY_EVE = 'factory-eve'
-        FASTAPI = 'fastapi'
-        FASTHTML = 'fasthtml'
-        FASTIFY = 'fastify'
-        FLASK = 'flask'
-        GATSBY = 'gatsby'
-        GO = 'go'
-        GRIDSOME = 'gridsome'
-        H3 = 'h3'
-        HEXO = 'hexo'
-        HONO = 'hono'
-        HUGO = 'hugo'
-        HYDROGEN = 'hydrogen'
-        IONIC_ANGULAR = 'ionic-angular'
-        IONIC_REACT = 'ionic-react'
-        JEKYLL = 'jekyll'
-        KOA = 'koa'
-        MASTRA = 'mastra'
-        MIDDLEMAN = 'middleman'
-        NESTJS = 'nestjs'
-        NEXTJS = 'nextjs'
-        NITRO = 'nitro'
-        NODE = 'node'
-        NUXTJS = 'nuxtjs'
-        PARCEL = 'parcel'
-        POLYMER = 'polymer'
-        PREACT = 'preact'
-        PYTHON = 'python'
-        REACT_ROUTER = 'react-router'
-        REDWOODJS = 'redwoodjs'
-        REMIX = 'remix'
-        RUBY = 'ruby'
-        RUST = 'rust'
-        SABER = 'saber'
-        SANITY = 'sanity'
-        SANITY_V2 = 'sanity-v2'
-        SAPPER = 'sapper'
-        SCULLY = 'scully'
-        SERVICES = 'services'
-        SOLIDSTART = 'solidstart'
-        SOLIDSTART_1 = 'solidstart-1'
-        STENCIL = 'stencil'
-        STORYBOOK = 'storybook'
-        SVELTE = 'svelte'
-        SVELTEKIT = 'sveltekit'
-        SVELTEKIT_1 = 'sveltekit-1'
-        TANSTACK_START = 'tanstack-start'
-        TANSTACK_START_LOVABLE = 'tanstack-start-lovable'
-        UMIJS = 'umijs'
-        VITE = 'vite'
-        VITEPRESS = 'vitepress'
-        VUE = 'vue'
-        VUEPRESS = 'vuepress'
-        XMCP = 'xmcp'
-        ZOLA = 'zola'
-        VALUES = [
-          'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
-          'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
-          'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask',
-          'gatsby', 'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular',
-          'ionic-react', 'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node',
-          'nuxtjs', 'parcel', 'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix',
-          'ruby', 'rust', 'saber', 'sanity', 'sanity-v2', 'sapper', 'scully', 'services',
-          'solidstart', 'solidstart-1', 'stencil', 'storybook', 'svelte', 'sveltekit', 'sveltekit-1',
-          'tanstack-start', 'tanstack-start-lovable', 'umijs', 'vite', 'vitepress', 'vue',
-          'vuepress', 'xmcp', 'zola'
-        ].freeze
-        def self.from_value(value)
-          value
-        end
-      end
-
-      # Defines the ListLogDrainsResponseVariant1DrainsVariant1ItemFilterV2FilterX360518bb07 SDK namespace.
-      module ListLogDrainsResponseVariant1DrainsVariant1ItemFilterV2FilterX360518bb07
-        FALSE = false
-        TRUE = true
-        VALUES = [false, true].freeze
-        def self.from_value(value)
-          value
-        end
-      end
-
-      # Defines the CreateLogDrainResponseEnvironmentsItem SDK namespace.
-      module CreateLogDrainResponseEnvironmentsItem
-        PREVIEW = 'preview'
-        PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
-        def self.from_value(value)
-          value
-        end
-      end
-
-      # Defines the ListLogDrainsResponseVariant1DrainsVariant0ItemDeliveryVariant4Target SDK namespace.
-      module ListLogDrainsResponseVariant1DrainsVariant0ItemDeliveryVariant4Target
-        VERCEL_OTEL_TRACES_DB = 'vercel-otel-traces-db'
-        VALUES = ['vercel-otel-traces-db'].freeze
-        def self.from_value(value)
-          value
-        end
-      end
-
-      # Defines the ListLogDrainsResponseVariant1DrainsVariant1ItemDeliveryVariant1Type SDK namespace.
-      module ListLogDrainsResponseVariant1DrainsVariant1ItemDeliveryVariant1Type
-        OTLPHTTP = 'otlphttp'
-        VALUES = ['otlphttp'].freeze
-        def self.from_value(value)
-          return value if VALUES.include?(value)
-
-          raise SdkValidationError.new('ListLogDrainsResponseVariant1DrainsVariant1ItemDeliveryVariant1Type', 'enum', "Unknown ListLogDrainsResponseVariant1DrainsVariant1ItemDeliveryVariant1Type: #{value}")
-        end
-      end
-
-      # Defines the ListLogDrainsResponseVariant1DrainsVariant1ItemDeliveryVariant3Encoding SDK namespace.
-      module ListLogDrainsResponseVariant1DrainsVariant1ItemDeliveryVariant3Encoding
-        JSON = 'json'
-        NDJSON = 'ndjson'
-        VALUES = ['json', 'ndjson'].freeze
-        def self.from_value(value)
-          value
-        end
-      end
-
-      # Defines the CreateConfigurableLogDrainDeliveryFormat SDK namespace.
-      module CreateConfigurableLogDrainDeliveryFormat
-        JSON = 'json'
-        NDJSON = 'ndjson'
-        VALUES = ['json', 'ndjson'].freeze
-        def self.from_value(value)
-          value
-        end
+        SdkClient.request(
+          'DELETE',
+          [
+            "/v1/integrations/log-drains/",
+            SdkClient.encode_path_segment(id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+          },
+          decoder: :empty,
+          operation_id: 'delete_integration_log_drain',
+          request_options: request_options,
+        ).data
       end
     end
   end
 end
 
-require_relative 'log_drains_part_2'
-require_relative 'log_drains_part_3'
+require_relative 'log_drains_types'
+require_relative 'log_drains_list_log_drains_response_variant1_drains_variant1_item_delivery_variant2_type'
+require_relative 'log_drains_list_log_drains_response_variant1_drains_variant0_item_delivery_varian_xb102cf2534'
