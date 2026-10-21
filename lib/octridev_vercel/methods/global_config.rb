@@ -9,530 +9,169 @@ module OctridevVercel
   module Methods
     # Defines the GlobalConfig SDK namespace.
     module GlobalConfig
-      # Internal model hydration metadata.
-      class SdkInternalCreateEdgeConfigMetadata
-        FIELDS = {
-          slug: 'slug',
-          items: 'items'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          slug
-        ].freeze
-        DECODERS = {}.freeze
+      # Lists all Global Configs available to the authenticated user. Use `teamId` or `slug` to perform the request on behalf of a team. Each result includes its identifier, name, digest, item count, size, and timestamps.
+      #
+      # Returns all Global Configs.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_edge_configs) do |config:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+        SdkClient.request(
+          'GET',
+          '/v1/global-config',
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          decoder: :json,
+          operation_id: 'get_edge_configs',
+          request_options: request_options
+        ).data
       end
 
-      # API model for CreateEdgeConfig.
-      class CreateEdgeConfig
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateEdgeConfigMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateEdgeConfigMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateEdgeConfigMetadata::DECODERS
+      # Creates a Global Config for the authenticated user or specified team. Supply a `slug` that is at most 64 characters and contains only letters, numbers, underscores, or hyphens; you can also provide initial `items`.
+      #
+      # Creates a Global Config.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.create_edge_config(
+        config:,
+        slug2:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        items: NOT_GIVEN,
+        request_options: nil
+      )
+        Validation.validate_length('slug', slug2, max: 64)
+        Validation.validate_pattern('slug', slug2, '^[\\w-]+$')
 
-        attr_reader :slug, :items
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'POST',
+          '/v1/global-config',
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          body: {
+            'slug' => slug2,
+            'items' => items
+          },
+          return_type: ::OctridevVercel::Methods::GlobalConfig::CreateEdgeConfigResponse,
+          decoder: :json,
+          operation_id: 'create_edge_config',
+          request_options: request_options
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalCreateEdgeConfigResponseMetadata
-        FIELDS = {
-          created_at: 'createdAt',
-          created_by: 'createdBy',
-          digest: 'digest',
-          id: 'id',
-          item_count: 'itemCount',
-          owner_id: 'ownerId',
-          size_in_bytes: 'sizeInBytes',
-          slug: 'slug',
-          updated_at: 'updatedAt'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          created_at
-          digest
-          id
-          item_count
-          owner_id
-          size_in_bytes
-          slug
-          updated_at
-        ].freeze
-        DECODERS = {}.freeze
+      # Retrieves a Global Config by its identifier. Use `teamId` or `slug` to make the request on behalf of a team when needed.
+      #
+      # Returns a Global Config.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_edge_config) do |config:, edge_config_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+        SdkClient.request(
+          'GET',
+          [
+            '/v1/global-config/',
+            SdkClient.encode_path_segment(edge_config_id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::GlobalConfig::GetEdgeConfigResponse,
+          decoder: :json,
+          operation_id: 'get_edge_config',
+          request_options: request_options
+        ).data
       end
 
-      # API model for CreateEdgeConfigResponse.
-      # A Global Config
-      class CreateEdgeConfigResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateEdgeConfigResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateEdgeConfigResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateEdgeConfigResponseMetadata::DECODERS
+      # Replaces a Global Config's name. Supply the required `slug` in the request body; use `teamId` or `slug` to make the request on behalf of a team when needed.
+      #
+      # Updates a Global Config.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.update_edge_config(
+        config:,
+        edge_config_id:,
+        slug2:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+        Validation.validate_length('slug', slug2, max: 64)
+        Validation.validate_pattern('slug', slug2, '^[\\w-]+$')
 
-        attr_reader :created_at, :digest, :id, :item_count, :owner_id, :size_in_bytes, :updated_at
-        # @return [String] The ID of the user who created the Global Config, optional because it is not always set.
-        attr_reader :created_by
-        # @return [String] Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-        attr_reader :slug
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'PUT',
+          [
+            '/v1/global-config/',
+            SdkClient.encode_path_segment(edge_config_id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          body: {
+            'slug' => slug2
+          },
+          return_type: ::OctridevVercel::Methods::GlobalConfig::UpdateEdgeConfigResponse,
+          decoder: :json,
+          operation_id: 'update_edge_config',
+          request_options: request_options
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalGetEdgeConfigResponseMetadata
-        FIELDS = {
-          created_at: 'createdAt',
-          created_by: 'createdBy',
-          digest: 'digest',
-          id: 'id',
-          item_count: 'itemCount',
-          owner_id: 'ownerId',
-          size_in_bytes: 'sizeInBytes',
-          slug: 'slug',
-          updated_at: 'updatedAt'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          created_at
-          digest
-          id
-          item_count
-          owner_id
-          size_in_bytes
-          slug
-          updated_at
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for GetEdgeConfigResponse.
-      # The Global Config.
-      class GetEdgeConfigResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetEdgeConfigResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetEdgeConfigResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetEdgeConfigResponseMetadata::DECODERS
-
-        attr_reader :created_at, :digest, :id, :item_count, :owner_id, :size_in_bytes, :updated_at
-        # @return [String] The ID of the user who created the Global Config, optional because it is not always set.
-        attr_reader :created_by
-        # @return [String] Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-        attr_reader :slug
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalUpdateEdgeConfigMetadata
-        FIELDS = {
-          slug: 'slug'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          slug
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for UpdateEdgeConfig.
-      class UpdateEdgeConfig
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalUpdateEdgeConfigMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalUpdateEdgeConfigMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalUpdateEdgeConfigMetadata::DECODERS
-
-        attr_reader :slug
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalUpdateEdgeConfigResponseMetadata
-        FIELDS = {
-          created_at: 'createdAt',
-          created_by: 'createdBy',
-          digest: 'digest',
-          id: 'id',
-          item_count: 'itemCount',
-          owner_id: 'ownerId',
-          size_in_bytes: 'sizeInBytes',
-          slug: 'slug',
-          updated_at: 'updatedAt'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          created_at
-          digest
-          id
-          item_count
-          owner_id
-          size_in_bytes
-          slug
-          updated_at
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for UpdateEdgeConfigResponse.
-      # A Global Config
-      class UpdateEdgeConfigResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalUpdateEdgeConfigResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalUpdateEdgeConfigResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalUpdateEdgeConfigResponseMetadata::DECODERS
-
-        attr_reader :created_at, :digest, :id, :item_count, :owner_id, :size_in_bytes, :updated_at
-        # @return [String] The ID of the user who created the Global Config, optional because it is not always set.
-        attr_reader :created_by
-        # @return [String] Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-        attr_reader :slug
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalPatchEdgeConfigItemsMetadata
-        FIELDS = {
-          items: 'items'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          items
-        ].freeze
-        DECODERS = {
-          items: lambda do |value|
-            value&.map { |item| ::OctridevVercel::PatchEdgeConfigItemsRequestItemsItem.from_hash(item) }
-          end
-        }.freeze
-      end
-
-      # API model for PatchEdgeConfigItems.
-      class PatchEdgeConfigItems
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalPatchEdgeConfigItemsMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalPatchEdgeConfigItemsMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalPatchEdgeConfigItemsMetadata::DECODERS
-
-        attr_reader :items
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalPatchEdgeConfigItemsResponseMetadata
-        FIELDS = {
-          status: 'status'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          status
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for PatchEdgeConfigItemsResponse.
-      class PatchEdgeConfigItemsResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalPatchEdgeConfigItemsResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalPatchEdgeConfigItemsResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalPatchEdgeConfigItemsResponseMetadata::DECODERS
-
-        attr_reader :status
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalPatchEdgeConfigSchemaMetadata
-        FIELDS = {
-          definition: 'definition'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          definition
-        ].freeze
-        DECODERS = {}.freeze
-        NULLABLE_FIELDS = %i[
-          definition
-        ].freeze
-      end
-
-      # API model for PatchEdgeConfigSchema.
-      class PatchEdgeConfigSchema
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalPatchEdgeConfigSchemaMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalPatchEdgeConfigSchemaMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalPatchEdgeConfigSchemaMetadata::DECODERS
-
-        attr_reader :definition
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalPatchEdgeConfigSchemaMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalDeleteEdgeConfigTokensMetadata
-        FIELDS = {
-          tokens: 'tokens',
-          ids: 'ids'
-        }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for DeleteEdgeConfigTokens.
-      class DeleteEdgeConfigTokens
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalDeleteEdgeConfigTokensMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalDeleteEdgeConfigTokensMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalDeleteEdgeConfigTokensMetadata::DECODERS
-
-        attr_reader :tokens, :ids
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateEdgeConfigTokenMetadata
-        FIELDS = {
-          label: 'label'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          label
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for CreateEdgeConfigToken.
-      class CreateEdgeConfigToken
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateEdgeConfigTokenMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateEdgeConfigTokenMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateEdgeConfigTokenMetadata::DECODERS
-
-        attr_reader :label
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateEdgeConfigTokenResponseMetadata
-        FIELDS = {
-          id: 'id',
-          token: 'token'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          id
-          token
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for CreateEdgeConfigTokenResponse.
-      class CreateEdgeConfigTokenResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateEdgeConfigTokenResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateEdgeConfigTokenResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateEdgeConfigTokenResponseMetadata::DECODERS
-
-        attr_reader :id, :token
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalRestoreEdgeConfigBackupResponseMetadata
-        FIELDS = {
-          digest: 'digest',
-          previous_digest: 'previousDigest',
-          restored_from: 'restoredFrom',
-          status: 'status'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          digest
-          previous_digest
-          restored_from
-          status
-        ].freeze
-        DECODERS = {
-          status: lambda do |value|
-            ::OctridevVercel::Methods::GlobalConfig::RestoreEdgeConfigBackupResponseStatus.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for RestoreEdgeConfigBackupResponse.
-      class RestoreEdgeConfigBackupResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalRestoreEdgeConfigBackupResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalRestoreEdgeConfigBackupResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalRestoreEdgeConfigBackupResponseMetadata::DECODERS
-
-        attr_reader :digest, :previous_digest, :restored_from, :status
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetEdgeConfigBackupsResponseBackupsItemMetadataMetadata
-        FIELDS = {
-          items_bytes: 'itemsBytes',
-          items_count: 'itemsCount',
-          updated_at: 'updatedAt',
-          updated_by: 'updatedBy'
-        }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for GetEdgeConfigBackupsResponseBackupsItemMetadata.
-      class GetEdgeConfigBackupsResponseBackupsItemMetadata
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetEdgeConfigBackupsResponseBackupsItemMetadataMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupsResponseBackupsItemMetadataMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetEdgeConfigBackupsResponseBackupsItemMetadataMetadata::DECODERS
-
-        attr_reader :items_bytes, :items_count, :updated_at, :updated_by
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+      # Deletes a Global Config by its identifier. Use `teamId` or `slug` to make the request on behalf of a team when needed; deletion removes the specified Global Config.
+      #
+      # Delete a Global Config by id.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.delete_edge_config(
+        config:,
+        edge_config_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'DELETE',
+          [
+            '/v1/global-config/',
+            SdkClient.encode_path_segment(edge_config_id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          decoder: :empty,
+          operation_id: 'delete_edge_config',
+          request_options: request_options
+        ).data
       end
     end
   end
 end
 
-require_relative 'global_config_part_2'
-require_relative 'global_config_part_3'
+require_relative 'global_config_types'
+require_relative 'global_config_sdk_internal_get_edge_config_backups_response_backups_item_metadata'
+require_relative 'global_config_items'
+require_relative 'global_config_schema'
+require_relative 'global_config_item'
+require_relative 'global_config_tokens'
+require_relative 'global_config_token'
+require_relative 'global_config_backups'

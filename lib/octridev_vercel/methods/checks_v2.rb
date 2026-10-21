@@ -9,556 +9,209 @@ module OctridevVercel
   module Methods
     # Defines the ChecksV2 SDK namespace.
     module ChecksV2
-      # Internal model hydration metadata.
-      class SdkInternalListProjectChecksResponseChecksItemMetadata
-        FIELDS = {
-          blocks: 'blocks',
-          created_at: 'createdAt',
-          deleted_at: 'deletedAt',
-          id: 'id',
-          is_rerequestable: 'isRerequestable',
-          name: 'name',
-          owner_id: 'ownerId',
-          project_id: 'projectId',
-          requires: 'requires',
-          source: 'source',
-          source_integration_configuration_id: 'sourceIntegrationConfigurationId',
-          source_kind: 'sourceKind',
-          targets: 'targets',
-          timeout: 'timeout',
-          updated_at: 'updatedAt'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          blocks
-          created_at
-          id
-          is_rerequestable
-          name
-          owner_id
-          project_id
-          requires
-          source
-          source_kind
-          targets
-          timeout
-          updated_at
-        ].freeze
-        DECODERS = {
-          blocks: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::ListProjectChecksResponseChecksItemBlocks.from_value(value)
-          end,
-          is_rerequestable: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::ListProjectChecksResponseChecksItemIsRerequestable.from_value(value)
-          end,
-          requires: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::ListProjectChecksResponseChecksItemRequires.from_value(value)
-          end,
-          source: lambda do |value|
-            ::OctridevVercel::ListProjectChecksResponseChecksItemSource.from_hash(value)
-          end,
-          source_kind: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::ListProjectChecksResponseChecksItemSourceKind.from_value(value)
-          end
-        }.freeze
+      # Lists the checks configured for a project, with an optional filter for the deployment target that a check blocks. Use `blocks` to select a target, or omit it to retrieve checks without that filter.
+      #
+      # List all checks for a project, optionally filtered by target.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.list_project_checks(
+        config:,
+        project_id_or_name:,
+        blocks: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'GET',
+          [
+            '/v2/projects/',
+            SdkClient.encode_path_segment(project_id_or_name),
+            '/checks'
+          ].join,
+          config: config,
+          query: {
+            'blocks' => QueryValue.new(blocks, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::ChecksV2::ListProjectChecksResponse,
+          decoder: :json,
+          operation_id: 'list_project_checks',
+          request_options: request_options
+        ).data
       end
 
-      # API model for ListProjectChecksResponseChecksItem.
-      class ListProjectChecksResponseChecksItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListProjectChecksResponseChecksItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListProjectChecksResponseChecksItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListProjectChecksResponseChecksItemMetadata::DECODERS
-
-        attr_reader :blocks, :created_at, :deleted_at, :id, :is_rerequestable, :name, :owner_id,
-                    :project_id, :requires, :source_integration_configuration_id, :source_kind,
-                    :targets, :timeout, :updated_at
-        # @return [ListProjectChecksResponseChecksItemSource] Typed representation of the `ListProjectChecksResponseChecksItemSource` API schema.
-        attr_reader :source
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+      # Creates a check for a project. Provide `name` and `requires`, and configure its targets, source, blocking behavior, and timeout as needed. The check uses `deployment-url` for `requires`, `deployment-alias` for `blocks`, and 300 seconds for `timeout` when those fields are omitted.
+      #
+      # Creates a new check for a project.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param source [CreateProjectCheckRequestSource] Typed representation of the
+      #   `CreateProjectCheckRequestSource` API schema.
+      def self.create_project_check(
+        config:,
+        project_id_or_name:,
+        name:,
+        requires:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        is_rerequestable: NOT_GIVEN,
+        targets: NOT_GIVEN,
+        blocks: NOT_GIVEN,
+        source: NOT_GIVEN,
+        timeout: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'POST',
+          [
+            '/v2/projects/',
+            SdkClient.encode_path_segment(project_id_or_name),
+            '/checks'
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          body: {
+            'name' => name,
+            'requires' => requires,
+            'isRerequestable' => is_rerequestable,
+            'targets' => targets,
+            'blocks' => blocks,
+            'source' => source,
+            'timeout' => timeout
+          },
+          return_type: ::OctridevVercel::Methods::ChecksV2::CreateProjectCheckResponse,
+          decoder: :json,
+          operation_id: 'create_project_check',
+          request_options: request_options
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalListProjectChecksResponseMetadata
-        FIELDS = {
-          available_native_checks: 'availableNativeChecks',
-          checks: 'checks'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          available_native_checks
-          checks
-        ].freeze
-        DECODERS = {
-          checks: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::ChecksV2::ListProjectChecksResponseChecksItem.from_hash(item) }
-          end
-        }.freeze
+      # Retrieves the details of a single check configured for a project. Provide the project identifier or name and the check identifier to select the check you want to inspect.
+      #
+      # Return a detailed response for a single check.
+      #
+      # @param check_id [String] The ID of the resource that will be updated.
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_project_check) do |config:, project_id_or_name:, check_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+        SdkClient.request(
+          'GET',
+          [
+            '/v2/projects/',
+            SdkClient.encode_path_segment(project_id_or_name),
+            '/checks/',
+            SdkClient.encode_path_segment(check_id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::ChecksV2::GetProjectCheckResponse,
+          decoder: :json,
+          operation_id: 'get_project_check',
+          request_options: request_options
+        ).data
       end
 
-      # API model for ListProjectChecksResponse.
-      class ListProjectChecksResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListProjectChecksResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListProjectChecksResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListProjectChecksResponseMetadata::DECODERS
-
-        attr_reader :available_native_checks, :checks
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+      # Updates a project check's configuration, including its name, targets, and deployment behavior. Supply only the properties you want to change; `requires`, `blocks`, and `timeout` have defaults when omitted. Use the project and check identifiers to select the check to update.
+      #
+      # Update an existing check.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.update_project_check(
+        config:,
+        project_id_or_name:,
+        check_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        name: NOT_GIVEN,
+        is_rerequestable: NOT_GIVEN,
+        requires: NOT_GIVEN,
+        targets: NOT_GIVEN,
+        blocks: NOT_GIVEN,
+        timeout: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'PATCH',
+          [
+            '/v2/projects/',
+            SdkClient.encode_path_segment(project_id_or_name),
+            '/checks/',
+            SdkClient.encode_path_segment(check_id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          body: {
+            'name' => name,
+            'isRerequestable' => is_rerequestable,
+            'requires' => requires,
+            'targets' => targets,
+            'blocks' => blocks,
+            'timeout' => timeout
+          },
+          return_type: ::OctridevVercel::Methods::ChecksV2::UpdateProjectCheckResponse,
+          decoder: :json,
+          operation_id: 'update_project_check',
+          request_options: request_options
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalCreateProjectCheckMetadata
-        FIELDS = {
-          name: 'name',
-          is_rerequestable: 'isRerequestable',
-          requires: 'requires',
-          targets: 'targets',
-          blocks: 'blocks',
-          source: 'source',
-          timeout: 'timeout'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          name
-          requires
-        ].freeze
-        DECODERS = {
-          requires: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::CreateProjectCheckRequires.from_value(value)
-          end,
-          blocks: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::CreateProjectCheckBlocks.from_value(value)
-          end,
-          source: lambda do |value|
-            ::OctridevVercel::CreateProjectCheckRequestSource.from_hash(value)
-          end
-        }.freeze
-      end
-
-      # API model for CreateProjectCheck.
-      class CreateProjectCheck
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateProjectCheckMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateProjectCheckMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateProjectCheckMetadata::DECODERS
-
-        attr_reader :name, :is_rerequestable, :requires, :targets, :blocks, :timeout
-        # @return [CreateProjectCheckRequestSource] Typed representation of the `CreateProjectCheckRequestSource` API schema.
-        attr_reader :source
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateProjectCheckResponseMetadata
-        FIELDS = {
-          blocks: 'blocks',
-          created_at: 'createdAt',
-          deleted_at: 'deletedAt',
-          id: 'id',
-          is_rerequestable: 'isRerequestable',
-          name: 'name',
-          owner_id: 'ownerId',
-          project_id: 'projectId',
-          requires: 'requires',
-          source: 'source',
-          source_integration_configuration_id: 'sourceIntegrationConfigurationId',
-          source_kind: 'sourceKind',
-          targets: 'targets',
-          timeout: 'timeout',
-          updated_at: 'updatedAt'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          blocks
-          created_at
-          id
-          is_rerequestable
-          name
-          owner_id
-          project_id
-          requires
-          source
-          source_kind
-          targets
-          timeout
-          updated_at
-        ].freeze
-        DECODERS = {
-          blocks: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::CreateProjectCheckResponseBlocks.from_value(value)
-          end,
-          is_rerequestable: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::CreateProjectCheckResponseIsRerequestable.from_value(value)
-          end,
-          requires: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::CreateProjectCheckResponseRequires.from_value(value)
-          end,
-          source: lambda do |value|
-            ::OctridevVercel::CreateProjectCheckResponseSource.from_hash(value)
-          end,
-          source_kind: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::CreateProjectCheckResponseSourceKind.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for CreateProjectCheckResponse.
-      class CreateProjectCheckResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateProjectCheckResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateProjectCheckResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateProjectCheckResponseMetadata::DECODERS
-
-        attr_reader :blocks, :created_at, :deleted_at, :id, :is_rerequestable, :name, :owner_id,
-                    :project_id, :requires, :source_integration_configuration_id, :source_kind,
-                    :targets, :timeout, :updated_at
-        # @return [CreateProjectCheckResponseSource] Typed representation of the `CreateProjectCheckResponseSource` API schema.
-        attr_reader :source
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetProjectCheckResponseMetadata
-        FIELDS = {
-          blocks: 'blocks',
-          created_at: 'createdAt',
-          deleted_at: 'deletedAt',
-          id: 'id',
-          is_rerequestable: 'isRerequestable',
-          name: 'name',
-          owner_id: 'ownerId',
-          project_id: 'projectId',
-          requires: 'requires',
-          source: 'source',
-          source_integration_configuration_id: 'sourceIntegrationConfigurationId',
-          source_kind: 'sourceKind',
-          targets: 'targets',
-          timeout: 'timeout',
-          updated_at: 'updatedAt'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          blocks
-          created_at
-          id
-          is_rerequestable
-          name
-          owner_id
-          project_id
-          requires
-          source
-          source_kind
-          targets
-          timeout
-          updated_at
-        ].freeze
-        DECODERS = {
-          blocks: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::GetProjectCheckResponseBlocks.from_value(value)
-          end,
-          is_rerequestable: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::GetProjectCheckResponseIsRerequestable.from_value(value)
-          end,
-          requires: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::GetProjectCheckResponseRequires.from_value(value)
-          end,
-          source: lambda do |value|
-            ::OctridevVercel::GetProjectCheckResponseSource.from_hash(value)
-          end,
-          source_kind: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::GetProjectCheckResponseSourceKind.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for GetProjectCheckResponse.
-      class GetProjectCheckResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetProjectCheckResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetProjectCheckResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetProjectCheckResponseMetadata::DECODERS
-
-        attr_reader :blocks, :created_at, :deleted_at, :id, :is_rerequestable, :name, :owner_id,
-                    :project_id, :requires, :source_integration_configuration_id, :source_kind,
-                    :targets, :timeout, :updated_at
-        # @return [GetProjectCheckResponseSource] Typed representation of the `GetProjectCheckResponseSource` API schema.
-        attr_reader :source
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalUpdateProjectCheckMetadata
-        FIELDS = {
-          name: 'name',
-          is_rerequestable: 'isRerequestable',
-          requires: 'requires',
-          targets: 'targets',
-          blocks: 'blocks',
-          timeout: 'timeout'
-        }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {
-          requires: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::UpdateProjectCheckRequires.from_value(value)
-          end,
-          blocks: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::UpdateProjectCheckBlocks.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for UpdateProjectCheck.
-      class UpdateProjectCheck
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalUpdateProjectCheckMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalUpdateProjectCheckMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalUpdateProjectCheckMetadata::DECODERS
-
-        attr_reader :name, :is_rerequestable, :requires, :targets, :blocks, :timeout
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalUpdateProjectCheckResponseMetadata
-        FIELDS = {
-          blocks: 'blocks',
-          created_at: 'createdAt',
-          deleted_at: 'deletedAt',
-          id: 'id',
-          is_rerequestable: 'isRerequestable',
-          name: 'name',
-          owner_id: 'ownerId',
-          project_id: 'projectId',
-          requires: 'requires',
-          source: 'source',
-          source_integration_configuration_id: 'sourceIntegrationConfigurationId',
-          source_kind: 'sourceKind',
-          targets: 'targets',
-          timeout: 'timeout',
-          updated_at: 'updatedAt'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          blocks
-          created_at
-          id
-          is_rerequestable
-          name
-          owner_id
-          project_id
-          requires
-          source
-          source_kind
-          targets
-          timeout
-          updated_at
-        ].freeze
-        DECODERS = {
-          blocks: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::UpdateProjectCheckResponseBlocks.from_value(value)
-          end,
-          is_rerequestable: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::UpdateProjectCheckResponseIsRerequestable.from_value(value)
-          end,
-          requires: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::UpdateProjectCheckResponseRequires.from_value(value)
-          end,
-          source: lambda do |value|
-            ::OctridevVercel::UpdateProjectCheckResponseSource.from_hash(value)
-          end,
-          source_kind: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::UpdateProjectCheckResponseSourceKind.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for UpdateProjectCheckResponse.
-      class UpdateProjectCheckResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalUpdateProjectCheckResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalUpdateProjectCheckResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalUpdateProjectCheckResponseMetadata::DECODERS
-
-        attr_reader :blocks, :created_at, :deleted_at, :id, :is_rerequestable, :name, :owner_id,
-                    :project_id, :requires, :source_integration_configuration_id, :source_kind,
-                    :targets, :timeout, :updated_at
-        # @return [UpdateProjectCheckResponseSource] Typed representation of the `UpdateProjectCheckResponseSource` API schema.
-        attr_reader :source
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalDeleteProjectCheckResponseMetadata
-        FIELDS = {
-          success: 'success'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          success
-        ].freeze
-        DECODERS = {
-          success: lambda do |value|
-            ::OctridevVercel::Methods::ChecksV2::DeleteProjectCheckResponseSuccess.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for DeleteProjectCheckResponse.
-      class DeleteProjectCheckResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalDeleteProjectCheckResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalDeleteProjectCheckResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalDeleteProjectCheckResponseMetadata::DECODERS
-
-        attr_reader :success
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListCheckRunsResponseMetadata
-        FIELDS = {
-          runs: 'runs'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          runs
-        ].freeze
-        DECODERS = {
-          runs: lambda do |value|
-            value&.map { |item| ::OctridevVercel::ListCheckRunsResponseRunsItem.from_hash(item) }
-          end
-        }.freeze
-      end
-
-      # API model for ListCheckRunsResponse.
-      class ListCheckRunsResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListCheckRunsResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListCheckRunsResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListCheckRunsResponseMetadata::DECODERS
-
-        attr_reader :runs
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListDeploymentCheckRunsResponseMetadata
-        FIELDS = {
-          runs: 'runs'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          runs
-        ].freeze
-        DECODERS = {
-          runs: lambda do |value|
-            value&.map { |item| ::OctridevVercel::ListDeploymentCheckRunsResponseRunsItem.from_hash(item) }
-          end
-        }.freeze
+      # Deletes a project check and all of its runs. Use the project and check identifiers to select the check to remove. The response confirms whether the deletion succeeded.
+      #
+      # Delete an existing check and all of its runs.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.delete_project_check(
+        config:,
+        project_id_or_name:,
+        check_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'DELETE',
+          [
+            '/v2/projects/',
+            SdkClient.encode_path_segment(project_id_or_name),
+            '/checks/',
+            SdkClient.encode_path_segment(check_id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::ChecksV2::DeleteProjectCheckResponse,
+          decoder: :json,
+          operation_id: 'delete_project_check',
+          request_options: request_options
+        ).data
       end
     end
   end
 end
 
-require_relative 'checks_v2_part_2'
-require_relative 'checks_v2_part_3'
+require_relative 'checks_v2_types'
+require_relative 'checks_v2_list_deployment_check_runs_response'
+require_relative 'checks_v2_runs'
+require_relative 'checks_v2_deployments'

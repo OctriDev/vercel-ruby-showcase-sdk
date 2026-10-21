@@ -9,551 +9,179 @@ module OctridevVercel
   module Methods
     # Defines the Domains SDK namespace.
     module Domains
-      # Internal model hydration metadata.
-      class SdkInternalReplaceDomainsByDomainRecordsResponseMetadata
-        FIELDS = {
-          record_ids: 'recordIds'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          record_ids
-        ].freeze
-        DECODERS = {}.freeze
+      # Retrieves information about a domain registered to an account or team. Use `teamId` or `slug` to make the request on behalf of a team.
+      #
+      # Get information for a single domain in an account or team.
+      #
+      # @param domain [String] The name of the domain.
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_domains) do |config:, domain:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+        SdkClient.request(
+          'GET',
+          [
+            '/v5/domains/',
+            SdkClient.encode_path_segment(domain)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::Domains::GetDomainsResponse,
+          decoder: :json,
+          operation_id: 'get_domains',
+          request_options: request_options
+        ).data
       end
 
-      # API model for ReplaceDomainsByDomainRecordsResponse.
-      class ReplaceDomainsByDomainRecordsResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalReplaceDomainsByDomainRecordsResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalReplaceDomainsByDomainRecordsResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalReplaceDomainsByDomainRecordsResponseMetadata::DECODERS
-
-        attr_reader :record_ids
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+      # Lists domains registered to the authenticated user or team. Use `since` and `until` to filter by creation time, and `limit` to control the number of domains returned; the response includes pagination metadata.
+      #
+      # Retrieves a list of domains registered for the authenticated user or team. By default it returns the last 20 domains if no limit is provided.
+      #
+      # @param limit [Float] Maximum number of domains to list from a request.
+      # @param since [Float] Get domains created after this JavaScript timestamp.
+      # @param until_ [Float] Get domains created before this JavaScript timestamp.
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.list_domains(
+        config:,
+        limit: NOT_GIVEN,
+        since: NOT_GIVEN,
+        until_: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'GET',
+          '/v5/domains',
+          config: config,
+          query: {
+            'limit' => QueryValue.new(limit, style: 'form', explode: true),
+            'since' => QueryValue.new(since, style: 'form', explode: true),
+            'until' => QueryValue.new(until_, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::Domains::ListDomainsResponse,
+          decoder: :json,
+          operation_id: 'list_domains',
+          request_options: request_options
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalGetDomainsRecordsByRecordIdResponseMetadata
-        FIELDS = {
-          comment: 'comment',
-          created_at: 'createdAt',
-          creator: 'creator',
-          domain: 'domain',
-          id: 'id',
-          name: 'name',
-          record_type: 'recordType',
-          ttl: 'ttl',
-          type: 'type',
-          value: 'value'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          creator
-          domain
-          id
-          name
-          record_type
-          type
-          value
-        ].freeze
-        DECODERS = {
-          record_type: lambda do |value|
-            ::OctridevVercel::Methods::Domains::GetDomainsRecordsByRecordIdResponseRecordType.from_value(value)
-          end,
-          type: lambda do |value|
-            ::OctridevVercel::Methods::Domains::GetDomainsRecordsByRecordIdResponseType.from_value(value)
-          end
-        }.freeze
+      # Adds an apex domain to the authenticated user's account or team. Supply `name` and use the `method` field to select the add or move-in operation; a move-in request can also include its transfer token. Use the transfer-in endpoint for transfers from external registrars.
+      #
+      # This endpoint is used for adding a new apex domain name with Vercel for the authenticating user. Note: This endpoint is no longer used for initiating domain transfers from external registrars to Vercel. For this, please use the endpoint Transfer-in a domain.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param method [String] The domain operation to perform. It can be either
+      #   `add` or `move-in`.
+      def self.create_or_transfer_domain(
+        config:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        method: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'POST',
+          '/v7/domains',
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          body: {
+            'method' => method
+          },
+          return_type: ::OctridevVercel::Methods::Domains::CreateOrTransferDomainResponse,
+          decoder: :json,
+          operation_id: 'create_or_transfer_domain',
+          request_options: request_options
+        ).data
       end
 
-      # API model for GetDomainsRecordsByRecordIdResponse.
-      class GetDomainsRecordsByRecordIdResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetDomainsRecordsByRecordIdResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetDomainsRecordsByRecordIdResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetDomainsRecordsByRecordIdResponseMetadata::DECODERS
-
-        attr_reader :comment, :created_at, :creator, :domain, :id, :name, :record_type, :ttl, :type,
-                    :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+      # Updates settings for an apex domain or moves the domain to another user or team. Use the update operation for domain settings, or the move-out operation to specify a `destination`; use the dedicated registrar endpoints to change auto-renew or nameservers.
+      #
+      # Update or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints Update auto-renew for a domain and Update nameservers for a domain.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.update_domains(
+        config:,
+        domain:,
+        body:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'PATCH',
+          [
+            '/v3/domains/',
+            SdkClient.encode_path_segment(domain)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          body: body,
+          return_type: ::OctridevVercel::UpdateDomainsResponse,
+          decoder: :json,
+          operation_id: 'update_domains',
+          request_options: request_options
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalGetDomainConfigResponseRecommendedCNAMEItemMetadata
-        FIELDS = {
-          rank: 'rank',
-          value: 'value'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          rank
-          value
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for GetDomainConfigResponseRecommendedCNAMEItem.
-      # Recommended CNAMEs for the domain. rank=1 is the preferred value to use.
-      class GetDomainConfigResponseRecommendedCNAMEItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetDomainConfigResponseRecommendedCNAMEItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetDomainConfigResponseRecommendedCNAMEItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetDomainConfigResponseRecommendedCNAMEItemMetadata::DECODERS
-
-        attr_reader :rank, :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetDomainConfigResponseRecommendedIPv4ItemMetadata
-        FIELDS = {
-          rank: 'rank',
-          value: 'value'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          rank
-          value
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for GetDomainConfigResponseRecommendedIPv4Item.
-      # Recommended IPv4s for the domain. rank=1 is the preferred value(s) to use. Only using 1 ip value is acceptable.
-      class GetDomainConfigResponseRecommendedIPv4Item
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetDomainConfigResponseRecommendedIPv4ItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetDomainConfigResponseRecommendedIPv4ItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetDomainConfigResponseRecommendedIPv4ItemMetadata::DECODERS
-
-        attr_reader :rank, :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetDomainConfigResponseMetadata
-        FIELDS = {
-          accepted_challenges: 'acceptedChallenges',
-          configured_by: 'configuredBy',
-          recommended_cname: 'recommendedCNAME',
-          recommended_ipv4: 'recommendedIPv4',
-          misconfigured: 'misconfigured'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          accepted_challenges
-          configured_by
-          recommended_cname
-          recommended_ipv4
-          misconfigured
-        ].freeze
-        DECODERS = {
-          accepted_challenges: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::Domains::GetDomainConfigResponseAcceptedChallengesItem.from_value(item) }
-          end,
-          configured_by: lambda do |value|
-            ::OctridevVercel::Methods::Domains::GetDomainConfigResponseConfiguredBy.from_value(value)
-          end,
-          recommended_cname: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::Domains::GetDomainConfigResponseRecommendedCNAMEItem.from_hash(item) }
-          end,
-          recommended_ipv4: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::Domains::GetDomainConfigResponseRecommendedIPv4Item.from_hash(item) }
-          end,
-          misconfigured: lambda do |value|
-            ::OctridevVercel::Methods::Domains::GetDomainConfigResponseMisconfigured.from_value(value)
-          end
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          configured_by
-        ].freeze
-      end
-
-      # API model for GetDomainConfigResponse.
-      class GetDomainConfigResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetDomainConfigResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetDomainConfigResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetDomainConfigResponseMetadata::DECODERS
-
-        # @return [Array_of_GetDomainConfigResponseAcceptedChallengesItem] Which challenge types the domain can use for issuing certs.
-        attr_reader :accepted_challenges
-        # @return [GetDomainConfigResponseConfiguredBy] How we see the domain's configuration. - `CNAME`: Domain has a CNAME pointing to Vercel. - `A`: Domain's A record is resolving to Vercel. - `http`: Domain is resolving to Vercel but may be behind a Proxy. - `dns-01`: Domain is not resolving to Vercel but dns-01 challenge is enabled. - `null`: Domain is not resolving to Vercel.
-        attr_reader :configured_by
-        # @return [Array_of_GetDomainConfigResponseRecommendedCNAMEItem] Recommended CNAMEs for the domain. rank=1 is the preferred value to use.
-        attr_reader :recommended_cname
-        # @return [Array_of_GetDomainConfigResponseRecommendedIPv4Item] Recommended IPv4s for the domain. rank=1 is the preferred value(s) to use. Only using 1 ip value is acceptable.
-        attr_reader :recommended_ipv4
-        # @return [GetDomainConfigResponseMisconfigured] Whether or not the domain is configured AND we can automatically generate a TLS certificate.
-        attr_reader :misconfigured
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalGetDomainConfigResponseMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetDomainVerificationRecordResponseMetadata
-        FIELDS = {
-          txt_record: 'txtRecord',
-          verification_domain: 'verificationDomain'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          txt_record
-          verification_domain
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for GetDomainVerificationRecordResponse.
-      class GetDomainVerificationRecordResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetDomainVerificationRecordResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetDomainVerificationRecordResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetDomainVerificationRecordResponseMetadata::DECODERS
-
-        attr_reader :txt_record, :verification_domain
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalClaimDomainOwnershipResponseDomainCreatorMetadata
-        FIELDS = {
-          customer_id: 'customerId',
-          email: 'email',
-          id: 'id',
-          is_domain_reseller: 'isDomainReseller',
-          username: 'username'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          email
-          id
-          username
-        ].freeze
-        DECODERS = {
-          is_domain_reseller: lambda do |value|
-            ::OctridevVercel::Methods::Domains::ClaimDomainOwnershipResponseDomainCreatorIsDomainReseller.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for ClaimDomainOwnershipResponseDomainCreator.
-      # An object containing information of the domain creator, including the user's id, username, and email.
-      class ClaimDomainOwnershipResponseDomainCreator
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalClaimDomainOwnershipResponseDomainCreatorMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalClaimDomainOwnershipResponseDomainCreatorMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalClaimDomainOwnershipResponseDomainCreatorMetadata::DECODERS
-
-        attr_reader :customer_id, :email, :id, :is_domain_reseller, :username
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalClaimDomainOwnershipResponseDomainMetadata
-        FIELDS = {
-          bought_at: 'boughtAt',
-          created_at: 'createdAt',
-          creator: 'creator',
-          custom_nameservers: 'customNameservers',
-          ech_mode: 'echMode',
-          expires_at: 'expiresAt',
-          id: 'id',
-          intended_nameservers: 'intendedNameservers',
-          name: 'name',
-          nameservers: 'nameservers',
-          renew: 'renew',
-          service_type: 'serviceType',
-          team_id: 'teamId',
-          transferred_at: 'transferredAt',
-          transfer_started_at: 'transferStartedAt',
-          user_id: 'userId',
-          verified: 'verified'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          bought_at
-          created_at
-          creator
-          ech_mode
-          expires_at
-          id
-          intended_nameservers
-          name
-          nameservers
-          service_type
-          team_id
-          user_id
-          verified
-        ].freeze
-        DECODERS = {
-          creator: lambda do |value|
-            ::OctridevVercel::Methods::Domains::ClaimDomainOwnershipResponseDomainCreator.from_hash(value)
-          end,
-          ech_mode: lambda do |value|
-            ::OctridevVercel::Methods::Domains::ClaimDomainOwnershipResponseDomainEchMode.from_value(value)
-          end,
-          renew: lambda do |value|
-            ::OctridevVercel::Methods::Domains::ClaimDomainOwnershipResponseDomainRenew.from_value(value)
-          end,
-          service_type: lambda do |value|
-            ::OctridevVercel::Methods::Domains::ClaimDomainOwnershipResponseDomainServiceType.from_value(value)
-          end,
-          verified: lambda do |value|
-            ::OctridevVercel::Methods::Domains::ClaimDomainOwnershipResponseDomainVerified.from_value(value)
-          end
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          bought_at
-          expires_at
-          team_id
-        ].freeze
-      end
-
-      # API model for ClaimDomainOwnershipResponseDomain.
-      class ClaimDomainOwnershipResponseDomain
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalClaimDomainOwnershipResponseDomainMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalClaimDomainOwnershipResponseDomainMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalClaimDomainOwnershipResponseDomainMetadata::DECODERS
-
-        attr_reader :team_id, :user_id
-        # @return [Float] If it was purchased through Vercel, the timestamp in milliseconds when it was purchased.
-        attr_reader :bought_at
-        # @return [Float] Timestamp in milliseconds when the domain was created in the registry.
-        attr_reader :created_at
-        # @return [ClaimDomainOwnershipResponseDomainCreator] An object containing information of the domain creator, including the user's id, username, and email.
-        attr_reader :creator
-        # @return [Array_of_String] A list of custom nameservers for the domain to point to. Only applies to domains purchased with Vercel.
-        attr_reader :custom_nameservers
-        # @return [ClaimDomainOwnershipResponseDomainEchMode] Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.
-        attr_reader :ech_mode
-        # @return [Float] Timestamp in milliseconds at which the domain is set to expire. null if not bought with Vercel.
-        attr_reader :expires_at
-        # @return [String] The unique identifier of the domain.
-        attr_reader :id
-        # @return [Array_of_String] A list of the intended nameservers for the domain to point to Vercel DNS.
-        attr_reader :intended_nameservers
-        # @return [String] The domain name.
-        attr_reader :name
-        # @return [Array_of_String] A list of the current nameservers of the domain.
-        attr_reader :nameservers
-        # @return [ClaimDomainOwnershipResponseDomainRenew] Indicates whether the domain is set to automatically renew.
-        attr_reader :renew
-        # @return [ClaimDomainOwnershipResponseDomainServiceType] The type of service the domain is handled by. `external` if the DNS is externally handled, `zeit.world` if handled with Vercel, or `na` if the service is not available.
-        attr_reader :service_type
-        # @return [Float] Timestamp in milliseconds at which the domain was successfully transferred into Vercel. `null` if the transfer is still processing or was never transferred in.
-        attr_reader :transferred_at
-        # @return [Float] If transferred into Vercel, timestamp in milliseconds when the domain transfer was initiated.
-        attr_reader :transfer_started_at
-        # @return [ClaimDomainOwnershipResponseDomainVerified] If the domain has the ownership verified.
-        attr_reader :verified
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalClaimDomainOwnershipResponseDomainMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalClaimDomainOwnershipResponseMetadata
-        FIELDS = {
-          domain: 'domain'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          domain
-        ].freeze
-        DECODERS = {
-          domain: lambda do |value|
-            ::OctridevVercel::Methods::Domains::ClaimDomainOwnershipResponseDomain.from_hash(value)
-          end
-        }.freeze
-      end
-
-      # API model for ClaimDomainOwnershipResponse.
-      class ClaimDomainOwnershipResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalClaimDomainOwnershipResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalClaimDomainOwnershipResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalClaimDomainOwnershipResponseMetadata::DECODERS
-
-        attr_reader :domain
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetDomainProjectDomainsResponseProjectDomainsItemVerificationItemMetadata
-        FIELDS = {
-          domain: 'domain',
-          reason: 'reason',
-          type: 'type',
-          value: 'value'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          domain
-          reason
-          type
-          value
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for GetDomainProjectDomainsResponseProjectDomainsItemVerificationItem.
-      # A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-      class GetDomainProjectDomainsResponseProjectDomainsItemVerificationItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetDomainProjectDomainsResponseProjectDomainsItemVerificationItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetDomainProjectDomainsResponseProjectDomainsItemVerificationItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetDomainProjectDomainsResponseProjectDomainsItemVerificationItemMetadata::DECODERS
-
-        attr_reader :domain, :reason, :type, :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetDomainProjectDomainsResponseProjectDomainsItemMetadata
-        FIELDS = {
-          apex_name: 'apexName',
-          created_at: 'createdAt',
-          custom_environment_id: 'customEnvironmentId',
-          git_branch: 'gitBranch',
-          name: 'name',
-          project_id: 'projectId',
-          redirect: 'redirect',
-          redirect_status_code: 'redirectStatusCode',
-          updated_at: 'updatedAt',
-          verification: 'verification',
-          verified: 'verified'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          apex_name
-          name
-          project_id
-          verified
-        ].freeze
-        DECODERS = {
-          redirect_status_code: lambda do |value|
-            ::OctridevVercel::Methods::Domains::GetDomainProjectDomainsResponseProjectDomainsItemRedirectStatusCode.from_value(value)
-          end,
-          verification: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::Domains::GetDomainProjectDomainsResponseProjectDomainsItemVerificationItem.from_hash(item) }
-          end,
-          verified: lambda do |value|
-            ::OctridevVercel::Methods::Domains::GetDomainProjectDomainsResponseProjectDomainsItemVerified.from_value(value)
-          end
-        }.freeze
+      # Deletes a registered domain from Vercel. Use `domain` to identify the domain to remove; deleting it also removes any aliases associated with it.
+      #
+      # Delete a previously registered domain name from Vercel. Deleting a domain will automatically remove any associated aliases.
+      #
+      # @param domain [String] The name of the domain.
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.delete_domain(
+        config:,
+        domain:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'DELETE',
+          [
+            '/v6/domains/',
+            SdkClient.encode_path_segment(domain)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::Domains::DeleteDomainResponse,
+          decoder: :json,
+          operation_id: 'delete_domain',
+          request_options: request_options
+        ).data
       end
     end
   end
 end
 
-require_relative 'domains_part_2'
-require_relative 'domains_part_3'
-require_relative 'domains_part_4'
+require_relative 'domains_types'
+require_relative 'domains_get_domain_project_domains_response_project_domains_item'
+require_relative 'domains_sdk_internal_create_or_transfer_domain_response_domain_metadata'
+require_relative 'domains_records'
+require_relative 'domains_config'
+require_relative 'domains_verification'
+require_relative 'domains_claim'
+require_relative 'domains_project_domains'

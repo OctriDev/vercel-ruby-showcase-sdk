@@ -9,540 +9,207 @@ module OctridevVercel
   module Methods
     # Defines the Drains SDK namespace.
     module Drains
-      # Internal model hydration metadata.
-      class SdkInternalCreateDrainFilterMetadata
-        FIELDS = {
-          version: 'version',
-          filter: 'filter'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          version
-          filter
-        ].freeze
-        DECODERS = {
-          filter: lambda do |value|
-            ::OctridevVercel::CreateDrainRequestFilterFilter.from_hash(value)
-          end
-        }.freeze
+      # Creates a new Drain with the supplied configuration. Provide `name`, `projects`, and `schemas`; configure `delivery` and optionally scope the Drain to project IDs with `projectIds`. You can also set filters, sampling rules, transforms, and a source.
+      #
+      # Create a new Drain with the provided configuration.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param delivery [CreateDrainRequestDelivery] Typed representation of the
+      #   `CreateDrainRequestDelivery` API schema.
+      # @param source [CreateDrainRequestSource] Typed representation of the
+      #   `CreateDrainRequestSource` API schema.
+      def self.create_drain(
+        config:,
+        name:,
+        projects:,
+        schemas:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        project_ids: NOT_GIVEN,
+        filter: NOT_GIVEN,
+        delivery: NOT_GIVEN,
+        sampling: NOT_GIVEN,
+        transforms: NOT_GIVEN,
+        source: NOT_GIVEN,
+        request_options: nil
+      )
+        Validation.if_given(sampling) { Validation.validate_items('sampling', sampling, max: 10) }
+
+        SdkClient.request(
+          'POST',
+          '/v1/drains',
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          body: {
+            'name' => name,
+            'projects' => projects,
+            'schemas' => schemas,
+            'projectIds' => project_ids,
+            'filter' => filter,
+            'delivery' => delivery,
+            'sampling' => sampling,
+            'transforms' => transforms,
+            'source' => source
+          },
+          return_type: ::OctridevVercel::CreateDrainResponse,
+          decoder: :json,
+          operation_id: 'create_drain',
+          request_options: request_options
+        ).data
       end
 
-      # API model for CreateDrainFilter.
-      class CreateDrainFilter
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateDrainFilterMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateDrainFilterMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateDrainFilterMetadata::DECODERS
-
-        attr_reader :version
-        # @return [CreateDrainRequestFilterFilter] Typed representation of the `CreateDrainRequestFilterFilter` API schema.
-        attr_reader :filter
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+      # Lists drains owned by the authenticated team. Use `projectId` to filter the results and `includeMetadata` to control whether metadata is included; metadata is excluded by default.
+      #
+      # Allows to retrieve the list of Drains of the authenticated team.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_drains) do |config:, project_id: NOT_GIVEN, include_metadata: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+        SdkClient.request(
+          'GET',
+          '/v1/drains',
+          config: config,
+          query: {
+            'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
+            'includeMetadata' => QueryValue.new(include_metadata, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::Drains::GetDrainsResponse,
+          decoder: :json,
+          operation_id: 'get_drains',
+          request_options: request_options
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalCreateDrainSamplingItemMetadata
-        FIELDS = {
-          type: 'type',
-          rate: 'rate',
-          env: 'env',
-          request_path: 'requestPath'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          type
-          rate
-        ].freeze
-        DECODERS = {
-          env: lambda do |value|
-            ::OctridevVercel::Methods::Drains::CreateDrainSamplingItemEnv.from_value(value)
-          end
-        }.freeze
+      # Deletes a specific Drain identified by its path parameter. Use `teamId` or `slug` to perform the request on behalf of a team. The successful response has no content.
+      #
+      # Delete a specific Drain by passing the drain id in the URL.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.delete_drain(
+        config:,
+        id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'DELETE',
+          [
+            '/v1/drains/',
+            SdkClient.encode_path_segment(id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          decoder: :empty,
+          operation_id: 'delete_drain',
+          request_options: request_options
+        ).data
       end
 
-      # API model for CreateDrainSamplingItem.
-      class CreateDrainSamplingItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateDrainSamplingItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateDrainSamplingItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateDrainSamplingItemMetadata::DECODERS
-
-        attr_reader :type
-        # @return [Float] Sampling rate from 0 to 1 (e.g., 0.1 for 10%)
-        attr_reader :rate
-        # @return [CreateDrainSamplingItemEnv] Environment to apply sampling to
-        attr_reader :env
-        # @return [String] Request path prefix to apply the sampling rule to
-        attr_reader :request_path
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+      # Retrieves a Drain by its identifier. Use `id` in the path to select the Drain, and use `teamId` or `slug` to make the request on behalf of a team.
+      #
+      # Get the information for a specific Drain by passing the drain id in the URL.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_drain) do |config:, id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+        SdkClient.request(
+          'GET',
+          [
+            '/v1/drains/',
+            SdkClient.encode_path_segment(id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::GetDrainResponse,
+          decoder: :json,
+          operation_id: 'get_drain',
+          request_options: request_options
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalCreateDrainTransformsItemMetadata
-        FIELDS = {
-          id: 'id'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          id
-        ].freeze
-        DECODERS = {}.freeze
-      end
+      # Updates the configuration of an existing Drain. Send only the fields you want to change, such as `name`, `delivery`, or `status`; `status` can be `enabled` or `disabled`. You can also update its project scope, schemas, sampling rules, transforms, filter, or source.
+      #
+      # Update the configuration of an existing drain.
+      #
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param filter [UpdateDrainRequestFilter] Typed representation of the
+      #   `UpdateDrainRequestFilter` API schema.
+      # @param delivery [UpdateDrainRequestDelivery] Typed representation of the
+      #   `UpdateDrainRequestDelivery` API schema.
+      # @param source [UpdateDrainRequestSource] Typed representation of the
+      #   `UpdateDrainRequestSource` API schema.
+      def self.update_drain(
+        config:,
+        id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        name: NOT_GIVEN,
+        projects: NOT_GIVEN,
+        project_ids: NOT_GIVEN,
+        filter: NOT_GIVEN,
+        schemas: NOT_GIVEN,
+        delivery: NOT_GIVEN,
+        sampling: NOT_GIVEN,
+        transforms: NOT_GIVEN,
+        status: NOT_GIVEN,
+        source: NOT_GIVEN,
+        request_options: nil
+      )
+        Validation.if_given(sampling) { Validation.validate_items('sampling', sampling, max: 10) }
 
-      # API model for CreateDrainTransformsItem.
-      class CreateDrainTransformsItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateDrainTransformsItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateDrainTransformsItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateDrainTransformsItemMetadata::DECODERS
-
-        attr_reader :id
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateDrainMetadata
-        FIELDS = {
-          name: 'name',
-          projects: 'projects',
-          project_ids: 'projectIds',
-          filter: 'filter',
-          schemas: 'schemas',
-          delivery: 'delivery',
-          sampling: 'sampling',
-          transforms: 'transforms',
-          source: 'source'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          name
-          projects
-          schemas
-        ].freeze
-        DECODERS = {
-          projects: lambda do |value|
-            ::OctridevVercel::Methods::Drains::CreateDrainProjects.from_value(value)
-          end,
-          filter: lambda do |value|
-            ::OctridevVercel::Methods::Drains::CreateDrainFilter.from_hash(value)
-          end,
-          delivery: lambda do |value|
-            ::OctridevVercel::CreateDrainRequestDelivery.from_hash(value)
-          end,
-          sampling: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::Drains::CreateDrainSamplingItem.from_hash(item) }
-          end,
-          transforms: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::Drains::CreateDrainTransformsItem.from_hash(item) }
-          end,
-          source: lambda do |value|
-            ::OctridevVercel::CreateDrainRequestSource.from_hash(value)
-          end
-        }.freeze
-      end
-
-      # API model for CreateDrain.
-      class CreateDrain
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateDrainMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateDrainMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateDrainMetadata::DECODERS
-
-        attr_reader :name, :projects, :project_ids, :filter, :schemas, :sampling, :transforms
-        # @return [CreateDrainRequestDelivery] Typed representation of the `CreateDrainRequestDelivery` API schema.
-        attr_reader :delivery
-        # @return [CreateDrainRequestSource] Typed representation of the `CreateDrainRequestSource` API schema.
-        attr_reader :source
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetDrainsResponseDrainsVariant0ItemSamplingItemMetadata
-        FIELDS = {
-          env: 'env',
-          rate: 'rate',
-          request_path: 'requestPath',
-          type: 'type'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          rate
-          type
-        ].freeze
-        DECODERS = {
-          env: lambda do |value|
-            ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant0ItemSamplingItemEnv.from_value(value)
-          end,
-          type: lambda do |value|
-            ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant0ItemSamplingItemType.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for GetDrainsResponseDrainsVariant0ItemSamplingItem.
-      class GetDrainsResponseDrainsVariant0ItemSamplingItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetDrainsResponseDrainsVariant0ItemSamplingItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetDrainsResponseDrainsVariant0ItemSamplingItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetDrainsResponseDrainsVariant0ItemSamplingItemMetadata::DECODERS
-
-        attr_reader :env, :rate, :request_path, :type
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetDrainsResponseDrainsVariant0ItemSchemasMetadata
-        FIELDS = {
-          ai_gateway: 'ai_gateway',
-          analytics: 'analytics',
-          audit_log: 'audit_log',
-          connect: 'connect',
-          log: 'log',
-          speed_insights: 'speed_insights',
-          trace: 'trace'
-        }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for GetDrainsResponseDrainsVariant0ItemSchemas.
-      class GetDrainsResponseDrainsVariant0ItemSchemas
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetDrainsResponseDrainsVariant0ItemSchemasMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetDrainsResponseDrainsVariant0ItemSchemasMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetDrainsResponseDrainsVariant0ItemSchemasMetadata::DECODERS
-
-        attr_reader :ai_gateway, :analytics, :audit_log, :connect, :log, :speed_insights, :trace
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetDrainsResponseDrainsVariant0ItemFilterV2Metadata
-        FIELDS = {
-          filter: 'filter',
-          version: 'version'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          filter
-          version
-        ].freeze
-        DECODERS = {
-          filter: lambda do |value|
-            ::OctridevVercel::GetDrainsResponseDrainsItemFilterV2Filter.from_hash(value)
-          end,
-          version: lambda do |value|
-            ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant0ItemFilterV2Version.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for GetDrainsResponseDrainsVariant0ItemFilterV2.
-      class GetDrainsResponseDrainsVariant0ItemFilterV2
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetDrainsResponseDrainsVariant0ItemFilterV2Metadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetDrainsResponseDrainsVariant0ItemFilterV2Metadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetDrainsResponseDrainsVariant0ItemFilterV2Metadata::DECODERS
-
-        attr_reader :version
-        # @return [GetDrainsResponseDrainsItemFilterV2Filter] Typed representation of the `GetDrainsResponseDrainsItemFilterV2Filter` API schema.
-        attr_reader :filter
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetDrainsResponseDrainsVariant0ItemMetadata
-        FIELDS = {
-          created_at: 'createdAt',
-          delivery: 'delivery',
-          disabled_at: 'disabledAt',
-          disabled_by: 'disabledBy',
-          disabled_reason: 'disabledReason',
-          first_error_timestamp: 'firstErrorTimestamp',
-          id: 'id',
-          name: 'name',
-          owner_id: 'ownerId',
-          project_ids: 'projectIds',
-          sampling: 'sampling',
-          schemas: 'schemas',
-          source: 'source',
-          status: 'status',
-          team_id: 'teamId',
-          updated_at: 'updatedAt',
-          filter_v2: 'filterV2'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          created_at
-          delivery
-          id
-          name
-          owner_id
-          schemas
-          source
-          updated_at
-        ].freeze
-        DECODERS = {
-          delivery: lambda do |value|
-            ::OctridevVercel::GetDrainsResponseDrainsItemDelivery.from_hash(value)
-          end,
-          disabled_reason: lambda do |value|
-            ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant0ItemDisabledReason.from_value(value)
-          end,
-          sampling: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant0ItemSamplingItem.from_hash(item) }
-          end,
-          schemas: lambda do |value|
-            ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant0ItemSchemas.from_hash(value)
-          end,
-          source: lambda do |value|
-            ::OctridevVercel::GetDrainsResponseDrainsItemSource.from_hash(value)
-          end,
-          status: lambda do |value|
-            ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant0ItemStatus.from_value(value)
-          end,
-          filter_v2: lambda do |value|
-            ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant0ItemFilterV2.from_hash(value)
-          end
-        }.freeze
-      end
-
-      # API model for GetDrainsResponseDrainsVariant0Item.
-      class GetDrainsResponseDrainsVariant0Item
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetDrainsResponseDrainsVariant0ItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetDrainsResponseDrainsVariant0ItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetDrainsResponseDrainsVariant0ItemMetadata::DECODERS
-
-        attr_reader :created_at, :disabled_at, :disabled_by, :disabled_reason,
-                    :first_error_timestamp, :id, :name, :owner_id, :project_ids, :sampling, :schemas,
-                    :status, :team_id, :updated_at, :filter_v2
-        # @return [GetDrainsResponseDrainsItemDelivery] Typed representation of the `GetDrainsResponseDrainsItemDelivery` API schema.
-        attr_reader :delivery
-        # @return [GetDrainsResponseDrainsItemSource] Typed representation of the `GetDrainsResponseDrainsItemSource` API schema.
-        attr_reader :source
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetDrainsResponseDrainsVariant1ItemSamplingItemMetadata
-        FIELDS = {
-          env: 'env',
-          rate: 'rate',
-          request_path: 'requestPath',
-          type: 'type'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          rate
-          type
-        ].freeze
-        DECODERS = {
-          env: lambda do |value|
-            ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant1ItemSamplingItemEnv.from_value(value)
-          end,
-          type: lambda do |value|
-            ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant1ItemSamplingItemType.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for GetDrainsResponseDrainsVariant1ItemSamplingItem.
-      class GetDrainsResponseDrainsVariant1ItemSamplingItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetDrainsResponseDrainsVariant1ItemSamplingItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetDrainsResponseDrainsVariant1ItemSamplingItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetDrainsResponseDrainsVariant1ItemSamplingItemMetadata::DECODERS
-
-        attr_reader :env, :rate, :request_path, :type
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetDrainsResponseDrainsVariant1ItemSchemasMetadata
-        FIELDS = {
-          ai_gateway: 'ai_gateway',
-          analytics: 'analytics',
-          audit_log: 'audit_log',
-          connect: 'connect',
-          log: 'log',
-          speed_insights: 'speed_insights',
-          trace: 'trace'
-        }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for GetDrainsResponseDrainsVariant1ItemSchemas.
-      class GetDrainsResponseDrainsVariant1ItemSchemas
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetDrainsResponseDrainsVariant1ItemSchemasMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetDrainsResponseDrainsVariant1ItemSchemasMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetDrainsResponseDrainsVariant1ItemSchemasMetadata::DECODERS
-
-        attr_reader :ai_gateway, :analytics, :audit_log, :connect, :log, :speed_insights, :trace
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalGetDrainsResponseDrainsVariant1ItemFilterV2Metadata
-        FIELDS = {
-          filter: 'filter',
-          version: 'version'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          filter
-          version
-        ].freeze
-        DECODERS = {
-          filter: lambda do |value|
-            ::OctridevVercel::GetDrainsResponseDrainsItemFilterV2Filter2.from_hash(value)
-          end,
-          version: lambda do |value|
-            ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant1ItemFilterV2Version.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for GetDrainsResponseDrainsVariant1ItemFilterV2.
-      class GetDrainsResponseDrainsVariant1ItemFilterV2
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalGetDrainsResponseDrainsVariant1ItemFilterV2Metadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalGetDrainsResponseDrainsVariant1ItemFilterV2Metadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalGetDrainsResponseDrainsVariant1ItemFilterV2Metadata::DECODERS
-
-        attr_reader :version
-        # @return [GetDrainsResponseDrainsItemFilterV2Filter2] Typed representation of the `GetDrainsResponseDrainsItemFilterV2Filter2` API schema.
-        attr_reader :filter
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'PATCH',
+          [
+            '/v1/drains/',
+            SdkClient.encode_path_segment(id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          body: {
+            'name' => name,
+            'projects' => projects,
+            'projectIds' => project_ids,
+            'filter' => filter,
+            'schemas' => schemas,
+            'delivery' => delivery,
+            'sampling' => sampling,
+            'transforms' => transforms,
+            'status' => status,
+            'source' => source
+          },
+          return_type: ::OctridevVercel::UpdateDrainResponse,
+          decoder: :json,
+          operation_id: 'update_drain',
+          request_options: request_options
+        ).data
       end
     end
   end
 end
 
-require_relative 'drains_part_2'
-require_relative 'drains_part_3'
+require_relative 'drains_types'
+require_relative 'drains_sdk_internal_get_drains_response_drains_variant1_item_metadata'
+require_relative 'drains_test'

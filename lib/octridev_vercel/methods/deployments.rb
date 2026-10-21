@@ -9,553 +9,273 @@ module OctridevVercel
   module Methods
     # Defines the Deployments SDK namespace.
     module Deployments
-      # Internal model hydration metadata.
-      class SdkInternalUpdateIntegrationDeploymentActionMetadata
-        FIELDS = {
-          status: 'status',
-          status_text: 'statusText',
-          status_url: 'statusUrl',
-          outcomes: 'outcomes'
-        }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {
-          status: lambda do |value|
-            ::OctridevVercel::Methods::Deployments::UpdateIntegrationDeploymentActionStatus.from_value(value)
-          end,
-          outcomes: lambda do |value|
-            value&.map { |item| ::OctridevVercel::UpdateIntegrationDeploymentActionRequestOutcomesItem.from_hash(item) }
-          end
-        }.freeze
+      # Retrieves a deployment by its unique identifier or hostname. Use `withGitRepoInfo` to include the `gitSource` object with commit, branch, and repository metadata. The response includes additional private deployment details when the authenticated user or team owns the deployment.
+      #
+      # Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.
+      #
+      # @param id_or_url [String] The unique identifier or hostname of the
+      #   deployment.
+      # @param with_git_repo_info [String] When `true`, the response includes the
+      #   `gitSource` object with the commit SHA, branch name, and connected
+      #   repository metadata. Defaults to `false`.
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_deployment) do |config:, id_or_url:, with_git_repo_info: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+        SdkClient.request(
+          'GET',
+          [
+            '/v13/deployments/',
+            SdkClient.encode_path_segment(id_or_url)
+          ].join,
+          config: config,
+          query: {
+            'withGitRepoInfo' => QueryValue.new(with_git_repo_info, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::GetDeploymentResponse,
+          decoder: :json,
+          operation_id: 'get_deployment',
+          request_options: request_options
+        ).data
       end
 
-      # API model for UpdateIntegrationDeploymentAction.
-      class UpdateIntegrationDeploymentAction
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalUpdateIntegrationDeploymentActionMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalUpdateIntegrationDeploymentActionMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalUpdateIntegrationDeploymentActionMetadata::DECODERS
-
-        attr_reader :status, :status_text, :status_url, :outcomes
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
+      # Creates a deployment for the authenticated team or user and starts its build. Supply `name` and either a Git source or deployment files for a non-Git deployment; you can also provide a `deploymentId` to redeploy an existing deployment. Poll the returned `readyState` to track progress through the build states.
+      #
+      # Creates a new deployment for the authenticated team or user. For non-git deployments, upload files first via the file upload API, then reference them here by SHA — or inline small files directly in the request body. To redeploy an existing deployment, provide its `deploymentId`; all settings are inherited unless explicitly overridden. The deployment begins building immediately and transitions through `QUEUED` → `INITIALIZING` → `BUILDING` before reaching `READY` or `ERROR`.
+      #
+      # @param name [String] A string with the project name used in the deployment
+      #   URL
+      # @param force_new [CreateDeploymentParameter] Forces a new deployment even if
+      #   there is a previous similar deployment. Set to `1` to bypass deployment
+      #   deduplication and always trigger a fresh build.
+      # @param skip_auto_detection_confirmation [CreateDeploymentParameterFbb0d198]
+      #   Set to `1` to skip framework auto-detection and proceed without
+      #   confirmation. By default, if Vercel detects a framework that differs from
+      #   the project setting, the API returns a `400` asking you to confirm. Use this
+      #   to suppress that check in automated pipelines.
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param build_machine [CreateDeploymentBuildMachine] Selects a custom build
+      #   machine for this deployment without changing project settings.
+      # @param custom_environment_slug_or_id [String] The slug or ID of a custom
+      #   environment to deploy to, overriding the default target environment. When
+      #   omitted, the deployment targets the environment inferred from the branch
+      #   (production or preview).
+      # @param deployment_id [String] The ID of an existing deployment to redeploy.
+      #   All project settings and environment variables are inherited from the
+      #   original unless explicitly overridden in this request. The redeployment gets
+      #   a new ID, URL, and build.
+      # @param files [Array_of_CreateDeploymentRequestFilesItem] The files to
+      #   include in the deployment. Each entry is either an inlined file (with `data`
+      #   and `encoding`) or a reference to a previously uploaded file (with `sha` and
+      #   `size`). Required for non-git deployments. Cannot be used together with
+      #   `gitSource`.
+      # @param git_access_token [String] Available only to Vercel platform accounts.
+      #   A read-only GitHub access token scoped to the requested repository. Use a
+      #   token with a lifetime of 24 hours or less that remains valid until source
+      #   retrieval completes.
+      # @param git_metadata [CreateDeploymentGitMetadata] Populates initial git
+      #   metadata for different git providers.
+      # @param git_source [CreateDeploymentRequestGitSource] Defines the Git
+      #   Repository source to be deployed. This property can not be used in
+      #   combination with `files`.
+      # @param meta [Hash] An object containing the deployment's metadata. Multiple
+      #   key-value pairs can be attached to a deployment. For deployments created
+      #   with a Cursor Origin `gitSource`, Vercel automatically adds
+      #   `cursorOriginDeployment`, `cursorOriginCommitSha`, `cursorOriginCommitRef`,
+      #   `cursorOriginCommitMessage`, `cursorOriginCommitAuthorName`,
+      #   `cursorOriginCommitAuthorEmail` when available, `cursorOriginOwner`,
+      #   `cursorOriginRepo`, `cursorOriginRepoId`, and `cursorOriginPrId` for pull
+      #   request…
+      # @param monorepo_manager [String] The monorepo manager that is being used for
+      #   this deployment. When `null` is used no monorepo manager is selected
+      # @param project [String] The target project identifier in which the
+      #   deployment will be created. When defined, this parameter overrides name
+      # @param project_settings [CreateDeploymentProjectSettings] Project settings
+      #   that will be applied to the deployment. It is required for the first
+      #   deployment of a project and will be saved for any following deployments
+      # @param target [String] Either not defined, `staging`, `production`, or a
+      #   custom environment identifier. If `staging`, a staging alias in the format
+      #   `<project>-<team>.vercel.app` will be assigned. If `production`, any aliases
+      #   defined in `alias` will be assigned. If omitted, the target will be
+      #   `preview`.
+      # @param with_latest_commit [Boolean] When `true` and `deploymentId` is passed
+      #   in, the sha from the previous deployment's `gitSource` is removed forcing
+      #   the latest commit to be used.
+      def self.create_deployment(
+        config:,
+        name:,
+        force_new: NOT_GIVEN,
+        skip_auto_detection_confirmation: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        build_machine: NOT_GIVEN,
+        custom_environment_slug_or_id: NOT_GIVEN,
+        deployment_id: NOT_GIVEN,
+        files: NOT_GIVEN,
+        git_access_token: NOT_GIVEN,
+        git_metadata: NOT_GIVEN,
+        git_source: NOT_GIVEN,
+        meta: NOT_GIVEN,
+        monorepo_manager: NOT_GIVEN,
+        project: NOT_GIVEN,
+        project_settings: NOT_GIVEN,
+        target: NOT_GIVEN,
+        with_latest_commit: NOT_GIVEN,
+        request_options: nil
+      )
+        Validation.if_given(git_access_token) do
+          Validation.validate_length('gitAccessToken', git_access_token, max: 1024)
         end
 
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+        SdkClient.request(
+          'POST',
+          '/v13/deployments',
+          config: config,
+          query: {
+            'forceNew' => QueryValue.new(force_new, style: 'form', explode: true),
+            'skipAutoDetectionConfirmation' => QueryValue.new(skip_auto_detection_confirmation, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          body: {
+            'name' => name,
+            'buildMachine' => build_machine,
+            'customEnvironmentSlugOrId' => custom_environment_slug_or_id,
+            'deploymentId' => deployment_id,
+            'files' => files,
+            'gitAccessToken' => git_access_token,
+            'gitMetadata' => git_metadata,
+            'gitSource' => git_source,
+            'meta' => meta,
+            'monorepoManager' => monorepo_manager,
+            'project' => project,
+            'projectSettings' => project_settings,
+            'target' => target,
+            'withLatestCommit' => with_latest_commit
+          },
+          return_type: ::OctridevVercel::CreateDeploymentResponse,
+          decoder: :json,
+          operation_id: 'create_deployment',
+          request_options: request_options
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalCreateDeploymentGitMetadataMetadata
-        FIELDS = {
-          remote_url: 'remoteUrl',
-          commit_author_name: 'commitAuthorName',
-          commit_author_email: 'commitAuthorEmail',
-          commit_message: 'commitMessage',
-          commit_ref: 'commitRef',
-          commit_sha: 'commitSha',
-          dirty: 'dirty',
-          ci: 'ci',
-          ci_type: 'ciType',
-          ci_git_provider_username: 'ciGitProviderUsername',
-          ci_git_repo_visibility: 'ciGitRepoVisibility',
-          root_directory: 'rootDirectory'
-        }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+      # Lists deployments for the authenticated user or team. Use filters such as `projectId`, `state`, `branch`, or `target` to narrow the results, and use `limit` to set the maximum number returned. Incomplete deployments have a `url` value of `null`.
+      #
+      # List deployments under the authenticated user or team. If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`.
+      #
+      # @param app [String] Name of the deployment.
+      # @param from [Float] Gets the deployment created after this Date timestamp.
+      #   (default: current time)
+      # @param limit [Float] Maximum number of deployments to list from a request.
+      # @param project_id [String] Filter deployments from the given ID or name.
+      # @param project_ids [Array_of_String] Filter deployments from the given
+      #   project IDs. Cannot be used when projectId is specified.
+      # @param target [String] Filter deployments based on the environment.
+      # @param to [Float] Gets the deployment created before this Date timestamp.
+      #   (default: current time)
+      # @param users [String] Filter out deployments based on users who have created
+      #   the deployment.
+      # @param since [Float] Get Deployments created after this JavaScript
+      #   timestamp.
+      # @param until_ [Float] Get Deployments created before this JavaScript
+      #   timestamp.
+      # @param state [String] Filter deployments based on their state (`BUILDING`,
+      #   `ERROR`, `INITIALIZING`, `QUEUED`, `READY`, `CANCELED`, `BLOCKED`)
+      # @param rollback_candidate [Boolean] Filter deployments based on their
+      #   rollback candidacy
+      # @param branch [String] Filter deployments based on the branch name
+      # @param sha [String] Filter deployments based on the SHA
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_deployments) do |config:, app: NOT_GIVEN, from: NOT_GIVEN, limit: NOT_GIVEN, project_id: NOT_GIVEN, project_ids: NOT_GIVEN, target: NOT_GIVEN, to: NOT_GIVEN, users: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, state: NOT_GIVEN, rollback_candidate: NOT_GIVEN, branch: NOT_GIVEN, sha: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+        Validation.if_given(project_ids) { Validation.validate_items('projectIds', project_ids, min: 1, max: 20) }
+
+        SdkClient.request(
+          'GET',
+          '/v7/deployments',
+          config: config,
+          query: {
+            'app' => QueryValue.new(app, style: 'form', explode: true),
+            'from' => QueryValue.new(from, style: 'form', explode: true),
+            'limit' => QueryValue.new(limit, style: 'form', explode: true),
+            'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
+            'projectIds' => QueryValue.new(project_ids, style: 'form', explode: true),
+            'target' => QueryValue.new(target, style: 'form', explode: true),
+            'to' => QueryValue.new(to, style: 'form', explode: true),
+            'users' => QueryValue.new(users, style: 'form', explode: true),
+            'since' => QueryValue.new(since, style: 'form', explode: true),
+            'until' => QueryValue.new(until_, style: 'form', explode: true),
+            'state' => QueryValue.new(state, style: 'form', explode: true),
+            'rollbackCandidate' => QueryValue.new(rollback_candidate, style: 'form', explode: true),
+            'branch' => QueryValue.new(branch, style: 'form', explode: true),
+            'sha' => QueryValue.new(sha, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::Deployments::GetDeploymentsResponse,
+          decoder: :json,
+          operation_id: 'get_deployments',
+          request_options: request_options
+        ).data
       end
 
-      # API model for CreateDeploymentGitMetadata.
-      # Populates initial git metadata for different git providers.
-      class CreateDeploymentGitMetadata
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateDeploymentGitMetadataMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateDeploymentGitMetadataMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateDeploymentGitMetadataMetadata::DECODERS
-
-        # @return [String] The git repository's remote origin url
-        attr_reader :remote_url
-        # @return [String] The name of the author of the commit
-        attr_reader :commit_author_name
-        # @return [String] The email of the author of the commit
-        attr_reader :commit_author_email
-        # @return [String] The commit message
-        attr_reader :commit_message
-        # @return [String] The branch on which the commit was made
-        attr_reader :commit_ref
-        # @return [String] The hash of the commit
-        attr_reader :commit_sha
-        # @return [Boolean] Whether or not there have been modifications to the working tree since the latest commit
-        attr_reader :dirty
-        # @return [Boolean] True if process.env.CI was set when deploying
-        attr_reader :ci
-        # @return [String] The type of CI system used
-        attr_reader :ci_type
-        # @return [String] The username used for the Git Provider (e.g. GitHub) if their CI (e.g. GitHub Actions) was used, if available
-        attr_reader :ci_git_provider_username
-        # @return [String] The visibility of the Git repository if their CI (e.g. GitHub Actions) was used, if available
-        attr_reader :ci_git_repo_visibility
-        # @return [String] Path of the deployed directory relative to the detected git repository root. Empty string when deploying from the repository root.
-        attr_reader :root_directory
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateDeploymentProjectSettingsMetadata
-        FIELDS = {
-          build_command: 'buildCommand',
-          command_for_ignoring_build_step: 'commandForIgnoringBuildStep',
-          dev_command: 'devCommand',
-          framework: 'framework',
-          install_command: 'installCommand',
-          node_version: 'nodeVersion',
-          output_directory: 'outputDirectory',
-          root_directory: 'rootDirectory',
-          serverless_function_region: 'serverlessFunctionRegion',
-          skip_git_connect_during_link: 'skipGitConnectDuringLink',
-          source_files_outside_root_directory: 'sourceFilesOutsideRootDirectory'
-        }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {
-          framework: lambda do |value|
-            ::OctridevVercel::Methods::Deployments::CreateDeploymentProjectSettingsFramework.from_value(value)
-          end,
-          node_version: lambda do |value|
-            ::OctridevVercel::Methods::Deployments::CreateDeploymentProjectSettingsNodeVersion.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for CreateDeploymentProjectSettings.
-      # Project settings that will be applied to the deployment. It is required for the first deployment of a project and will be saved for any following deployments
-      class CreateDeploymentProjectSettings
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateDeploymentProjectSettingsMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateDeploymentProjectSettingsMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateDeploymentProjectSettingsMetadata::DECODERS
-
-        attr_reader :command_for_ignoring_build_step
-        # @return [String] The build command for this project. When `null` is used this value will be automatically detected
-        attr_reader :build_command
-        # @return [String] The dev command for this project. When `null` is used this value will be automatically detected
-        attr_reader :dev_command
-        # @return [CreateDeploymentProjectSettingsFramework] The framework that is being used for this project. When `null` is used no framework is selected
-        attr_reader :framework
-        # @return [String] The install command for this project. When `null` is used this value will be automatically detected
-        attr_reader :install_command
-        # @return [CreateDeploymentProjectSettingsNodeVersion] Override the Node.js version that should be used for this deployment
-        attr_reader :node_version
-        # @return [String] The output directory of the project. When `null` is used this value will be automatically detected
-        attr_reader :output_directory
-        # @return [String] The name of a directory or relative path to the source code of your project. When `null` is used it will default to the project root
-        attr_reader :root_directory
-        # @return [String] The region to deploy Serverless Functions in this project
-        attr_reader :serverless_function_region
-        # @return [Boolean] Opts-out of the message prompting a CLI user to connect a Git repository in `vercel link`.
-        attr_reader :skip_git_connect_during_link
-        # @return [Boolean] Indicates if there are source files outside of the root directory, typically used for monorepos
-        attr_reader :source_files_outside_root_directory
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateDeploymentMetadata
-        FIELDS = {
-          build_machine: 'buildMachine',
-          custom_environment_slug_or_id: 'customEnvironmentSlugOrId',
-          deployment_id: 'deploymentId',
-          files: 'files',
-          git_access_token: 'gitAccessToken',
-          git_metadata: 'gitMetadata',
-          git_source: 'gitSource',
-          meta: 'meta',
-          monorepo_manager: 'monorepoManager',
-          name: 'name',
-          project: 'project',
-          project_settings: 'projectSettings',
-          target: 'target',
-          with_latest_commit: 'withLatestCommit'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          name
-        ].freeze
-        DECODERS = {
-          build_machine: lambda do |value|
-            ::OctridevVercel::Methods::Deployments::CreateDeploymentBuildMachine.from_value(value)
-          end,
-          files: lambda do |value|
-            value&.map { |item| ::OctridevVercel::CreateDeploymentRequestFilesItem.from_hash(item) }
-          end,
-          git_metadata: lambda do |value|
-            ::OctridevVercel::Methods::Deployments::CreateDeploymentGitMetadata.from_hash(value)
-          end,
-          git_source: lambda do |value|
-            ::OctridevVercel::CreateDeploymentRequestGitSource.from_hash(value)
-          end,
-          project_settings: lambda do |value|
-            ::OctridevVercel::Methods::Deployments::CreateDeploymentProjectSettings.from_hash(value)
-          end
-        }.freeze
-      end
-
-      # API model for CreateDeployment.
-      class CreateDeployment
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateDeploymentMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateDeploymentMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateDeploymentMetadata::DECODERS
-
-        # @return [CreateDeploymentBuildMachine] Selects a custom build machine for this deployment without changing project settings.
-        attr_reader :build_machine
-        # @return [String] The slug or ID of a custom environment to deploy to, overriding the default target environment. When omitted, the deployment targets the environment inferred from the branch (production or preview).
-        attr_reader :custom_environment_slug_or_id
-        # @return [String] The ID of an existing deployment to redeploy. All project settings and environment variables are inherited from the original unless explicitly overridden in this request. The redeployment gets a new ID, URL, and build.
-        attr_reader :deployment_id
-        # @return [Array_of_CreateDeploymentRequestFilesItem] The files to include in the deployment. Each entry is either an inlined file (with `data` and `encoding`) or a reference to a previously uploaded file (with `sha` and `size`). Required for non-git deployments. Cannot be used together with `gitSource`.
-        attr_reader :files
-        # @return [String] Available only to Vercel platform accounts. A read-only GitHub access token scoped to the requested repository. Use a token with a lifetime of 24 hours or less that remains valid until source retrieval completes.
-        attr_reader :git_access_token
-        # @return [CreateDeploymentGitMetadata] Populates initial git metadata for different git providers.
-        attr_reader :git_metadata
-        # @return [CreateDeploymentRequestGitSource] Defines the Git Repository source to be deployed. This property can not be used in combination with `files`.
-        attr_reader :git_source
-        # @return [Hash] An object containing the deployment's metadata. Multiple key-value pairs can be attached to a deployment. For deployments created with a Cursor Origin `gitSource`, Vercel automatically adds `cursorOriginDeployment`, `cursorOriginCommitSha`, `cursorOriginCommitRef`, `cursorOriginCommitMessage`, `cursorOriginCommitAuthorName`, `cursorOriginCommitAuthorEmail` when available, `cursorOriginOwner`, `cursorOriginRepo`, `cursorOriginRepoId`, and `cursorOriginPrId` for pull request…
-        attr_reader :meta
-        # @return [String] The monorepo manager that is being used for this deployment. When `null` is used no monorepo manager is selected
-        attr_reader :monorepo_manager
-        # @return [String] A string with the project name used in the deployment URL
-        attr_reader :name
-        # @return [String] The target project identifier in which the deployment will be created. When defined, this parameter overrides name
-        attr_reader :project
-        # @return [CreateDeploymentProjectSettings] Project settings that will be applied to the deployment. It is required for the first deployment of a project and will be saved for any following deployments
-        attr_reader :project_settings
-        # @return [String] Either not defined, `staging`, `production`, or a custom environment identifier. If `staging`, a staging alias in the format `<project>-<team>.vercel.app` will be assigned. If `production`, any aliases defined in `alias` will be assigned. If omitted, the target will be `preview`.
-        attr_reader :target
-        # @return [Boolean] When `true` and `deploymentId` is passed in, the sha from the previous deployment's `gitSource` is removed forcing the latest commit to be used.
-        attr_reader :with_latest_commit
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCancelDeploymentResponseAliasErrorMetadata
-        FIELDS = {
-          code: 'code',
-          message: 'message'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          code
-          message
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for CancelDeploymentResponseAliasError.
-      # An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
-      class CancelDeploymentResponseAliasError
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCancelDeploymentResponseAliasErrorMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseAliasErrorMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCancelDeploymentResponseAliasErrorMetadata::DECODERS
-
-        attr_reader :code, :message
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCancelDeploymentResponseAliasWarningMetadata
-        FIELDS = {
-          action: 'action',
-          code: 'code',
-          link: 'link',
-          message: 'message'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          code
-          message
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for CancelDeploymentResponseAliasWarning.
-      class CancelDeploymentResponseAliasWarning
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCancelDeploymentResponseAliasWarningMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseAliasWarningMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCancelDeploymentResponseAliasWarningMetadata::DECODERS
-
-        attr_reader :action, :code, :link, :message
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCancelDeploymentResponseAttributionCommitMetaMetadata
-        FIELDS = {
-          email: 'email',
-          is_verified: 'isVerified',
-          name: 'name'
-        }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {
-          is_verified: lambda do |value|
-            ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseAttributionCommitMetaIsVerified.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for CancelDeploymentResponseAttributionCommitMeta.
-      # Commit metadata from the git commit author
-      class CancelDeploymentResponseAttributionCommitMeta
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCancelDeploymentResponseAttributionCommitMetaMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseAttributionCommitMetaMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCancelDeploymentResponseAttributionCommitMetaMetadata::DECODERS
-
-        # @return [String] Email from git commit author
-        attr_reader :email
-        # @return [CancelDeploymentResponseAttributionCommitMetaIsVerified] Whether the commit was signed/verified (GitHub only, others return undefined)
-        attr_reader :is_verified
-        # @return [String] Name from git commit author
-        attr_reader :name
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCancelDeploymentResponseAttributionGitUserMetadata
-        FIELDS = {
-          id: 'id',
-          login: 'login',
-          provider: 'provider',
-          type: 'type'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          id
-          login
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for CancelDeploymentResponseAttributionGitUser.
-      # Git provider user associated with the commit author email (only set if resolved)
-      class CancelDeploymentResponseAttributionGitUser
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCancelDeploymentResponseAttributionGitUserMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseAttributionGitUserMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCancelDeploymentResponseAttributionGitUserMetadata::DECODERS
-
-        attr_reader :id
-        # @return [String] Git provider username/login
-        attr_reader :login
-        # @return [String] The git provider (github, gitlab, bitbucket)
-        attr_reader :provider
-        # @return [String] User type
-        attr_reader :type
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCancelDeploymentResponseAttributionVercelUserMetadata
-        FIELDS = {
-          id: 'id',
-          team_roles: 'teamRoles',
-          username: 'username'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          id
-          username
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for CancelDeploymentResponseAttributionVercelUser.
-      # Vercel user linked to the git provider account (only set if resolved)
-      class CancelDeploymentResponseAttributionVercelUser
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCancelDeploymentResponseAttributionVercelUserMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseAttributionVercelUserMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCancelDeploymentResponseAttributionVercelUserMetadata::DECODERS
-
-        # @return [String] Vercel user ID
-        attr_reader :id
-        # @return [Array_of_String] Team roles at time of deployment
-        attr_reader :team_roles
-        # @return [String] Vercel username
-        attr_reader :username
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCancelDeploymentResponseAttributionMetadata
-        FIELDS = {
-          commit_meta: 'commitMeta',
-          git_user: 'gitUser',
-          vercel_user: 'vercelUser'
-        }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {
-          commit_meta: lambda do |value|
-            ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseAttributionCommitMeta.from_hash(value)
-          end,
-          git_user: lambda do |value|
-            ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseAttributionGitUser.from_hash(value)
-          end,
-          vercel_user: lambda do |value|
-            ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseAttributionVercelUser.from_hash(value)
-          end
-        }.freeze
-      end
-
-      # API model for CancelDeploymentResponseAttribution.
-      # Attribution metadata for the deployment, linking commit author to git and Vercel users. Only populated when the `enable-deployment-attribution` flag is enabled.
-      class CancelDeploymentResponseAttribution
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCancelDeploymentResponseAttributionMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseAttributionMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCancelDeploymentResponseAttributionMetadata::DECODERS
-
-        # @return [CancelDeploymentResponseAttributionCommitMeta] Commit metadata from the git commit author
-        attr_reader :commit_meta
-        # @return [CancelDeploymentResponseAttributionGitUser] Git provider user associated with the commit author email (only set if resolved)
-        attr_reader :git_user
-        # @return [CancelDeploymentResponseAttributionVercelUser] Vercel user linked to the git provider account (only set if resolved)
-        attr_reader :vercel_user
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCancelDeploymentResponseBuildMetadata
-        FIELDS = {
-          env: 'env'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          env
-        ].freeze
-        DECODERS = {}.freeze
+      # Deletes a deployment identified by its ID or URL. Pass `url` to identify a deployment or alias URL; when provided, `url` takes precedence over `id`. You can obtain a deployment ID by listing deployments.
+      #
+      # This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments.
+      #
+      # @param id [String] The ID of the deployment to be deleted
+      # @param url [String] A Deployment or Alias URL. In case it is passed, the ID
+      #   will be ignored
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.delete_deployment(
+        config:,
+        id:,
+        url: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'DELETE',
+          [
+            '/v13/deployments/',
+            SdkClient.encode_path_segment(id)
+          ].join,
+          config: config,
+          query: {
+            'url' => QueryValue.new(url, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::Deployments::DeleteDeploymentResponse,
+          decoder: :json,
+          operation_id: 'delete_deployment',
+          request_options: request_options
+        ).data
       end
     end
   end
 end
 
-require_relative 'deployments_part_2'
-require_relative 'deployments_part_3'
-require_relative 'deployments_part_4'
-require_relative 'deployments_part_5'
-require_relative 'deployments_part_6'
-require_relative 'deployments_part_7'
-require_relative 'deployments_part_8'
-require_relative 'deployments_part_9'
-require_relative 'deployments_part_10'
-require_relative 'deployments_part_11'
+require_relative 'deployments_types'
+require_relative 'deployments_cancel_deployment_response_build'
+require_relative 'deployments_sdk_internal_cancel_deployment_response_images_remote_patterns_item_metadata'
+require_relative 'deployments_cancel_deployment_response_project'
+require_relative 'deployments_sdk_internal_cancel_deployment_response_metadata'
+require_relative 'deployments_get_deployments_response_deployments_item_attribution_vercel_user'
+require_relative 'deployments_get_deployments_response_deployments_item_project_settings_speed_insights'
+require_relative 'deployments_cancel_deployment_response_status'
+require_relative 'deployments_create_deployment_project_settings_framework'
+require_relative 'deployments_cancel_deployment_response_integrations_status'
+require_relative 'deployments_events'
+require_relative 'deployments_integrations'
+require_relative 'deployments_cancel'
+require_relative 'deployments_files'

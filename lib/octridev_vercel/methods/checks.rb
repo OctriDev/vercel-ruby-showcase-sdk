@@ -9,557 +9,211 @@ module OctridevVercel
   module Methods
     # Defines the Checks SDK namespace.
     module Checks
-      # Internal model hydration metadata.
-      class SdkInternalCreateCheckMetadata
-        FIELDS = {
-          name: 'name',
-          path: 'path',
-          blocking: 'blocking',
-          details_url: 'detailsUrl',
-          external_id: 'externalId',
-          rerequestable: 'rerequestable'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          name
-          blocking
-        ].freeze
-        DECODERS = {}.freeze
+      # Creates a check for a deployment. Provide `name` and `blocking` in the request body, and use OAuth2 authentication as required by this operation. This operation is closing down and will be removed on a date not specified in the API definition.
+      #
+      # Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
+      #
+      # @param deployment_id [String] The deployment to create the check for.
+      # @param name [String] The name of the check being created
+      # @param blocking [Boolean] Whether the check should block a deployment from
+      #   succeeding
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param path [String] Path of the page that is being checked
+      # @param details_url [String] URL to display for further details
+      # @param external_id [String] An identifier that can be used as an external
+      #   reference
+      # @param rerequestable [Boolean] Whether a user should be able to request for
+      #   the check to be rerun if it fails
+      #
+      # @deprecated This operation is deprecated and may be removed in a future release.
+      def self.create_check(
+        config:,
+        deployment_id:,
+        name:,
+        blocking:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        path: NOT_GIVEN,
+        details_url: NOT_GIVEN,
+        external_id: NOT_GIVEN,
+        rerequestable: NOT_GIVEN,
+        request_options: nil
+      )
+        Validation.validate_length('name', name, max: 100)
+
+        Validation.if_given(path) { Validation.validate_length('path', path, max: 255) }
+
+        SdkClient.request(
+          'POST',
+          [
+            '/v1/deployments/',
+            SdkClient.encode_path_segment(deployment_id),
+            '/checks'
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          body: {
+            'name' => name,
+            'blocking' => blocking,
+            'path' => path,
+            'detailsUrl' => details_url,
+            'externalId' => external_id,
+            'rerequestable' => rerequestable
+          },
+          return_type: ::OctridevVercel::Methods::Checks::CreateCheckResponse,
+          decoder: :json,
+          operation_id: 'create_check',
+          request_options: request_options
+        ).data
       end
 
-      # API model for CreateCheck.
-      class CreateCheck
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateCheckMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateCheckMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateCheckMetadata::DECODERS
-
-        # @return [String] The name of the check being created
-        attr_reader :name
-        # @return [String] Path of the page that is being checked
-        attr_reader :path
-        # @return [Boolean] Whether the check should block a deployment from succeeding
-        attr_reader :blocking
-        # @return [String] URL to display for further details
-        attr_reader :details_url
-        # @return [String] An identifier that can be used as an external reference
-        attr_reader :external_id
-        # @return [Boolean] Whether a user should be able to request for the check to be rerun if it fails
-        attr_reader :rerequestable
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+      # Lists the checks created for a deployment. Use `deploymentId` to select the deployment whose checks you want to inspect. This operation is closing down and will be removed on a date not specified in the API definition.
+      #
+      # List all of the checks created for a deployment.
+      #
+      # @param deployment_id [String] The deployment to get all checks for
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      #
+      # @deprecated This operation is deprecated and may be removed in a future release.
+      def self.list_checks(
+        config:,
+        deployment_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'GET',
+          [
+            '/v1/deployments/',
+            SdkClient.encode_path_segment(deployment_id),
+            '/checks'
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::Checks::ListChecksResponse,
+          decoder: :json,
+          operation_id: 'list_checks',
+          request_options: request_options
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalCreateCheckResponseOutputMetricsCLSMetadata
-        FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          source
-          value
-        ].freeze
-        DECODERS = {
-          source: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsCLSSource.from_value(value)
-          end
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          value
-        ].freeze
+      # Retrieves the details of a single check for a deployment. Use `deploymentId` and `checkId` to identify the deployment and check. This operation is closing down and will be removed on a date not specified in the API definition.
+      #
+      # Return a detailed response for a single check.
+      #
+      # @param deployment_id [String] The deployment to get the check for.
+      # @param check_id [String] The check to fetch
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      #
+      # @deprecated This operation is deprecated and may be removed in a future release.
+      singleton_class.define_method(:get_check) do |config:, deployment_id:, check_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+        SdkClient.request(
+          'GET',
+          [
+            '/v1/deployments/',
+            SdkClient.encode_path_segment(deployment_id),
+            '/checks/',
+            SdkClient.encode_path_segment(check_id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::Checks::GetCheckResponse,
+          decoder: :json,
+          operation_id: 'get_check',
+          request_options: request_options
+        ).data
       end
 
-      # API model for CreateCheckResponseOutputMetricsCLS.
-      class CreateCheckResponseOutputMetricsCLS
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateCheckResponseOutputMetricsCLSMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateCheckResponseOutputMetricsCLSMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateCheckResponseOutputMetricsCLSMetadata::DECODERS
+      # Updates an existing check for a deployment. Supply the check fields you want to change, such as `status`, `conclusion`, or `output`; call the operation with OAuth2 authentication. A 200 response returns the updated check object.
+      #
+      # Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
+      #
+      # @param deployment_id [String] The deployment to update the check for.
+      # @param check_id [String] The check being updated
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param name [String] The name of the check being created
+      # @param path [String] Path of the page that is being checked
+      # @param status [UpdateCheckStatus] The current status of the check
+      # @param conclusion [UpdateCheckConclusion] The result of the check being run
+      # @param details_url [String] A URL a user may visit to see more information
+      #   about the check
+      # @param output [UpdateCheckOutput] The results of the check Run
+      # @param external_id [String] An identifier that can be used as an external
+      #   reference
+      #
+      # @deprecated This operation is deprecated and may be removed in a future release.
+      def self.update_check(
+        config:,
+        deployment_id:,
+        check_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        name: NOT_GIVEN,
+        path: NOT_GIVEN,
+        status: NOT_GIVEN,
+        conclusion: NOT_GIVEN,
+        details_url: NOT_GIVEN,
+        output: NOT_GIVEN,
+        external_id: NOT_GIVEN,
+        request_options: nil
+      )
+        Validation.if_given(name) { Validation.validate_length('name', name, max: 100) }
 
-        attr_reader :previous_value, :source, :value
+        Validation.if_given(path) { Validation.validate_length('path', path, max: 255) }
 
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateCheckResponseOutputMetricsCLSMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateCheckResponseOutputMetricsFCPMetadata
-        FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          source
-          value
-        ].freeze
-        DECODERS = {
-          source: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsFCPSource.from_value(value)
-          end
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          value
-        ].freeze
-      end
-
-      # API model for CreateCheckResponseOutputMetricsFCP.
-      class CreateCheckResponseOutputMetricsFCP
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateCheckResponseOutputMetricsFCPMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateCheckResponseOutputMetricsFCPMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateCheckResponseOutputMetricsFCPMetadata::DECODERS
-
-        attr_reader :previous_value, :source, :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateCheckResponseOutputMetricsFCPMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateCheckResponseOutputMetricsLCPMetadata
-        FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          source
-          value
-        ].freeze
-        DECODERS = {
-          source: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsLCPSource.from_value(value)
-          end
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          value
-        ].freeze
-      end
-
-      # API model for CreateCheckResponseOutputMetricsLCP.
-      class CreateCheckResponseOutputMetricsLCP
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateCheckResponseOutputMetricsLCPMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateCheckResponseOutputMetricsLCPMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateCheckResponseOutputMetricsLCPMetadata::DECODERS
-
-        attr_reader :previous_value, :source, :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateCheckResponseOutputMetricsLCPMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateCheckResponseOutputMetricsTBTMetadata
-        FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          source
-          value
-        ].freeze
-        DECODERS = {
-          source: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsTBTSource.from_value(value)
-          end
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          value
-        ].freeze
-      end
-
-      # API model for CreateCheckResponseOutputMetricsTBT.
-      class CreateCheckResponseOutputMetricsTBT
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateCheckResponseOutputMetricsTBTMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateCheckResponseOutputMetricsTBTMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateCheckResponseOutputMetricsTBTMetadata::DECODERS
-
-        attr_reader :previous_value, :source, :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateCheckResponseOutputMetricsTBTMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateCheckResponseOutputMetricsVirtualExperienceScoreMetadata
-        FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          source
-          value
-        ].freeze
-        DECODERS = {
-          source: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsVirtualExperienceScoreSource.from_value(value)
-          end
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          value
-        ].freeze
-      end
-
-      # API model for CreateCheckResponseOutputMetricsVirtualExperienceScore.
-      class CreateCheckResponseOutputMetricsVirtualExperienceScore
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateCheckResponseOutputMetricsVirtualExperienceScoreMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateCheckResponseOutputMetricsVirtualExperienceScoreMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateCheckResponseOutputMetricsVirtualExperienceScoreMetadata::DECODERS
-
-        attr_reader :previous_value, :source, :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateCheckResponseOutputMetricsVirtualExperienceScoreMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateCheckResponseOutputMetricsMetadata
-        FIELDS = {
-          cls: 'CLS',
-          fcp: 'FCP',
-          lcp: 'LCP',
-          tbt: 'TBT',
-          virtual_experience_score: 'virtualExperienceScore'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          cls
-          fcp
-          lcp
-          tbt
-        ].freeze
-        DECODERS = {
-          cls: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsCLS.from_hash(value)
-          end,
-          fcp: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsFCP.from_hash(value)
-          end,
-          lcp: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsLCP.from_hash(value)
-          end,
-          tbt: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsTBT.from_hash(value)
-          end,
-          virtual_experience_score: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsVirtualExperienceScore.from_hash(value)
-          end
-        }.freeze
-      end
-
-      # API model for CreateCheckResponseOutputMetrics.
-      class CreateCheckResponseOutputMetrics
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateCheckResponseOutputMetricsMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateCheckResponseOutputMetricsMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateCheckResponseOutputMetricsMetadata::DECODERS
-
-        attr_reader :cls, :fcp, :lcp, :tbt, :virtual_experience_score
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateCheckResponseOutputMetadata
-        FIELDS = {
-          metrics: 'metrics'
-        }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {
-          metrics: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetrics.from_hash(value)
-          end
-        }.freeze
-      end
-
-      # API model for CreateCheckResponseOutput.
-      class CreateCheckResponseOutput
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateCheckResponseOutputMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateCheckResponseOutputMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateCheckResponseOutputMetadata::DECODERS
-
-        attr_reader :metrics
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalCreateCheckResponseMetadata
-        FIELDS = {
-          blocking: 'blocking',
-          completed_at: 'completedAt',
-          conclusion: 'conclusion',
-          created_at: 'createdAt',
-          deployment_id: 'deploymentId',
-          details_url: 'detailsUrl',
-          external_id: 'externalId',
-          id: 'id',
-          integration_id: 'integrationId',
-          name: 'name',
-          output: 'output',
-          path: 'path',
-          rerequestable: 'rerequestable',
-          started_at: 'startedAt',
-          status: 'status',
-          updated_at: 'updatedAt'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          blocking
-          created_at
-          deployment_id
-          id
-          integration_id
-          name
-          status
-          updated_at
-        ].freeze
-        DECODERS = {
-          blocking: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseBlocking.from_value(value)
-          end,
-          conclusion: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseConclusion.from_value(value)
-          end,
-          output: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseOutput.from_hash(value)
-          end,
-          rerequestable: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseRerequestable.from_value(value)
-          end,
-          status: lambda do |value|
-            ::OctridevVercel::Methods::Checks::CreateCheckResponseStatus.from_value(value)
-          end
-        }.freeze
-      end
-
-      # API model for CreateCheckResponse.
-      class CreateCheckResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalCreateCheckResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalCreateCheckResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalCreateCheckResponseMetadata::DECODERS
-
-        attr_reader :blocking, :completed_at, :conclusion, :created_at, :deployment_id, :details_url,
-                    :external_id, :id, :integration_id, :name, :output, :path, :rerequestable,
-                    :started_at, :status, :updated_at
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListChecksResponseChecksItemOutputMetricsCLSMetadata
-        FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          source
-          value
-        ].freeze
-        DECODERS = {
-          source: lambda do |value|
-            ::OctridevVercel::Methods::Checks::ListChecksResponseChecksItemOutputMetricsCLSSource.from_value(value)
-          end
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          value
-        ].freeze
-      end
-
-      # API model for ListChecksResponseChecksItemOutputMetricsCLS.
-      class ListChecksResponseChecksItemOutputMetricsCLS
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListChecksResponseChecksItemOutputMetricsCLSMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListChecksResponseChecksItemOutputMetricsCLSMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListChecksResponseChecksItemOutputMetricsCLSMetadata::DECODERS
-
-        attr_reader :previous_value, :source, :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalListChecksResponseChecksItemOutputMetricsCLSMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListChecksResponseChecksItemOutputMetricsFCPMetadata
-        FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          source
-          value
-        ].freeze
-        DECODERS = {
-          source: lambda do |value|
-            ::OctridevVercel::Methods::Checks::ListChecksResponseChecksItemOutputMetricsFCPSource.from_value(value)
-          end
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          value
-        ].freeze
-      end
-
-      # API model for ListChecksResponseChecksItemOutputMetricsFCP.
-      class ListChecksResponseChecksItemOutputMetricsFCP
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListChecksResponseChecksItemOutputMetricsFCPMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListChecksResponseChecksItemOutputMetricsFCPMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListChecksResponseChecksItemOutputMetricsFCPMetadata::DECODERS
-
-        attr_reader :previous_value, :source, :value
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalListChecksResponseChecksItemOutputMetricsFCPMetadata::NULLABLE_FIELDS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListChecksResponseChecksItemOutputMetricsLCPMetadata
-        FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          source
-          value
-        ].freeze
-        DECODERS = {
-          source: lambda do |value|
-            ::OctridevVercel::Methods::Checks::ListChecksResponseChecksItemOutputMetricsLCPSource.from_value(value)
-          end
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          value
-        ].freeze
+        SdkClient.request(
+          'PATCH',
+          [
+            '/v1/deployments/',
+            SdkClient.encode_path_segment(deployment_id),
+            '/checks/',
+            SdkClient.encode_path_segment(check_id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          body: {
+            'name' => name,
+            'path' => path,
+            'status' => status,
+            'conclusion' => conclusion,
+            'detailsUrl' => details_url,
+            'output' => output,
+            'externalId' => external_id
+          },
+          return_type: ::OctridevVercel::Methods::Checks::UpdateCheckResponse,
+          decoder: :json,
+          operation_id: 'update_check',
+          request_options: request_options
+        ).data
       end
     end
   end
 end
 
-require_relative 'checks_part_2'
-require_relative 'checks_part_3'
-require_relative 'checks_part_4'
-require_relative 'checks_part_5'
+require_relative 'checks_types'
+require_relative 'checks_list_checks_response_checks_item_output_metrics_lcp'
+require_relative 'checks_sdk_internal_get_check_response_output_metrics_metadata'
+require_relative 'checks_update_check'
+require_relative 'checks_create_check_response_output_metrics_tbt_source'
+require_relative 'checks_rerequest'

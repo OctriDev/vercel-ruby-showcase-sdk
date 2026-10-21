@@ -9,517 +9,211 @@ module OctridevVercel
   module Methods
     # Defines the Aliases SDK namespace.
     module Aliases
-      # Internal model hydration metadata.
-      class SdkInternalListAliasesForDeploymentResponseAliasesItemMetadata
-        FIELDS = {
-          alias_: 'alias',
-          created: 'created',
-          protection_bypass: 'protectionBypass',
-          redirect: 'redirect',
-          uid: 'uid'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          alias_
-          created
-          uid
-        ].freeze
-        DECODERS = {}.freeze
+      # Lists aliases assigned to a deployment. Use `teamId` or `slug` to specify the team context, and provide the deployment ID in `id`. The authenticated user or team must own the deployment.
+      #
+      # Retrieves all Aliases for the Deployment with the given ID. The authenticated user or team must own the deployment.
+      #
+      # @param id [String] The ID of the deployment the aliases should be listed for
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.list_aliases_for_deployment(
+        config:,
+        id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'GET',
+          [
+            '/v2/deployments/',
+            SdkClient.encode_path_segment(id),
+            '/aliases'
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::Aliases::ListAliasesForDeploymentResponse,
+          decoder: :json,
+          operation_id: 'list_aliases_for_deployment',
+          request_options: request_options
+        ).data
       end
 
-      # API model for ListAliasesForDeploymentResponseAliasesItem.
-      # A list of the aliases assigned to the deployment
-      class ListAliasesForDeploymentResponseAliasesItem
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListAliasesForDeploymentResponseAliasesItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListAliasesForDeploymentResponseAliasesItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListAliasesForDeploymentResponseAliasesItemMetadata::DECODERS
-
-        # @return [String] The alias name, it could be a `.vercel.app` subdomain or a custom domain
-        attr_reader :alias_
-        # @return [String] The date when the alias was created
-        attr_reader :created
-        # @return [Hash] The protection bypass for the alias
-        attr_reader :protection_bypass
-        # @return [String] Target destination domain for redirect when the alias is a redirect
-        attr_reader :redirect
-        # @return [String] The unique identifier of the alias
-        attr_reader :uid
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+      # Creates an alias for the deployment identified by a deployment or alias ID or URL. Provide the alias name in `alias`, and optionally set `redirect` to route the alias to another hostname with a 307 status code. If the alias is already assigned to another deployment, it is removed from that deployment and assigned to this one.
+      #
+      # Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
+      #
+      # @param id [String] The deployment or alias ID or URL to assign from
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      # @param alias_ [String] The alias we want to assign to the deployment defined
+      #   in the URL
+      # @param redirect [String] The redirect property will take precedence over the
+      #   deployment id from the URL and consists of a hostname (like test.com) to
+      #   which the alias should redirect using status code 307
+      def self.assign_alias(
+        config:,
+        id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        alias_: NOT_GIVEN,
+        redirect: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'POST',
+          [
+            '/v2/deployments/',
+            SdkClient.encode_path_segment(id),
+            '/aliases'
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          body: {
+            'alias' => alias_,
+            'redirect' => redirect
+          },
+          return_type: ::OctridevVercel::Methods::Aliases::AssignAliasResponse,
+          decoder: :json,
+          operation_id: 'assign_alias',
+          request_options: request_options
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalListAliasesForDeploymentResponseMetadata
-        FIELDS = {
-          aliases: 'aliases'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          aliases
-        ].freeze
-        DECODERS = {
-          aliases: lambda do |value|
-            value&.map { |item| ::OctridevVercel::Methods::Aliases::ListAliasesForDeploymentResponseAliasesItem.from_hash(item) }
-          end
-        }.freeze
+      # Lists aliases for the authenticated user or team, with optional filters for domain, project, creation time, or rollback deployment. Use `limit` to control the number of aliases returned, and inspect `pagination` for the previous and next page values.
+      #
+      # Retrieves a list of aliases for the authenticated User or Team. When `domain` is provided, only aliases for that domain will be returned. When `projectId` is provided, it will only return the given project aliases.
+      #
+      # @param domain [Object] Get only aliases of the given domain name
+      # @param from [Float] Get only aliases created after the provided timestamp
+      # @param limit [Float] Maximum number of aliases to list from a request
+      # @param project_id [String] Filter aliases from the given `projectId`
+      # @param since [Float] Get aliases created after this JavaScript timestamp
+      # @param until_ [Float] Get aliases created before this JavaScript timestamp
+      # @param rollback_deployment_id [String] Get aliases that would be rolled back
+      #   for the given deployment
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.list_aliases(
+        config:,
+        domain: NOT_GIVEN,
+        from: NOT_GIVEN,
+        limit: NOT_GIVEN,
+        project_id: NOT_GIVEN,
+        since: NOT_GIVEN,
+        until_: NOT_GIVEN,
+        rollback_deployment_id: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'GET',
+          '/v4/aliases',
+          config: config,
+          query: {
+            'domain' => QueryValue.new(domain, style: 'form', explode: true),
+            'from' => QueryValue.new(from, style: 'form', explode: true),
+            'limit' => QueryValue.new(limit, style: 'form', explode: true),
+            'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
+            'since' => QueryValue.new(since, style: 'form', explode: true),
+            'until' => QueryValue.new(until_, style: 'form', explode: true),
+            'rollbackDeploymentId' => QueryValue.new(rollback_deployment_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::Aliases::ListAliasesResponse,
+          decoder: :json,
+          operation_id: 'list_aliases',
+          request_options: request_options
+        ).data
       end
 
-      # API model for ListAliasesForDeploymentResponse.
-      class ListAliasesForDeploymentResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListAliasesForDeploymentResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListAliasesForDeploymentResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListAliasesForDeploymentResponseMetadata::DECODERS
-
-        # @return [Array_of_ListAliasesForDeploymentResponseAliasesItem] A list of the aliases assigned to the deployment
-        attr_reader :aliases
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
+      # Retrieves an alias by its hostname or alias ID. Use `projectId` to restrict the result to an alias assigned to a specific project, or use `since` and `until` to filter by creation time.
+      #
+      # Retrieves an Alias for the given host name or alias ID.
+      #
+      # @param id_or_alias [String] The alias or alias ID to be retrieved
+      # @param from [Float] Get the alias only if it was created after the provided
+      #   timestamp
+      # @param project_id [String] Get the alias only if it is assigned to the
+      #   provided project ID
+      # @param since [Float] Get the alias only if it was created after this
+      #   JavaScript timestamp
+      # @param until_ [Float] Get the alias only if it was created before this
+      #   JavaScript timestamp
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      singleton_class.define_method(:get_alias) do |config:, id_or_alias:, from: NOT_GIVEN, project_id: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+        SdkClient.request(
+          'GET',
+          [
+            '/v4/aliases/',
+            SdkClient.encode_path_segment(id_or_alias)
+          ].join,
+          config: config,
+          query: {
+            'from' => QueryValue.new(from, style: 'form', explode: true),
+            'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
+            'since' => QueryValue.new(since, style: 'form', explode: true),
+            'until' => QueryValue.new(until_, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::Aliases::GetAliasResponse,
+          decoder: :json,
+          operation_id: 'get_alias',
+          request_options: request_options
+        ).data
       end
 
-      # Internal model hydration metadata.
-      class SdkInternalAssignAliasMetadata
-        FIELDS = {
-          alias_: 'alias',
-          redirect: 'redirect'
-        }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for AssignAlias.
-      class AssignAlias
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalAssignAliasMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalAssignAliasMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalAssignAliasMetadata::DECODERS
-
-        # @return [String] The alias we want to assign to the deployment defined in the URL
-        attr_reader :alias_
-        # @return [String] The redirect property will take precedence over the deployment id from the URL and consists of a hostname (like test.com) to which the alias should redirect using status code 307
-        attr_reader :redirect
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalAssignAliasResponseMetadata
-        FIELDS = {
-          alias_: 'alias',
-          created: 'created',
-          old_deployment_id: 'oldDeploymentId',
-          uid: 'uid'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          alias_
-          created
-          uid
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for AssignAliasResponse.
-      class AssignAliasResponse
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalAssignAliasResponseMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalAssignAliasResponseMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalAssignAliasResponseMetadata::DECODERS
-
-        # @return [String] The assigned alias name
-        attr_reader :alias_
-        # @return [String] The date when the alias was created
-        attr_reader :created
-        # @return [String] The unique identifier of the previously aliased deployment, only received when the alias was used before
-        attr_reader :old_deployment_id
-        # @return [String] The unique identifier of the alias
-        attr_reader :uid
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListAliasesResponseAliasesItemCreatorMetadata
-        FIELDS = {
-          email: 'email',
-          uid: 'uid',
-          username: 'username'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          uid
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for ListAliasesResponseAliasesItemCreator.
-      # Information of the user who created the alias
-      class ListAliasesResponseAliasesItemCreator
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListAliasesResponseAliasesItemCreatorMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListAliasesResponseAliasesItemCreatorMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListAliasesResponseAliasesItemCreatorMetadata::DECODERS
-
-        # @return [String] Email of the user who created the alias
-        attr_reader :email
-        # @return [String] ID of the user who created the alias
-        attr_reader :uid
-        # @return [String] Username of the user who created the alias
-        attr_reader :username
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListAliasesResponseAliasesItemDeploymentMetadata
-        FIELDS = {
-          id: 'id',
-          meta: 'meta',
-          url: 'url'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          id
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for ListAliasesResponseAliasesItemDeployment.
-      # A map with the deployment ID, URL and metadata
-      class ListAliasesResponseAliasesItemDeployment
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListAliasesResponseAliasesItemDeploymentMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListAliasesResponseAliasesItemDeploymentMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListAliasesResponseAliasesItemDeploymentMetadata::DECODERS
-
-        # @return [String] The deployment unique identifier
-        attr_reader :id
-        # @return [String] The deployment metadata
-        attr_reader :meta
-        # @return [String] The deployment unique URL
-        attr_reader :url
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant0ItemMetadata
-        FIELDS = {
-          fallback_host: 'fallbackHost',
-          project_id: 'projectId'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          fallback_host
-          project_id
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant0Item.
-      # A list of the deployment routing information for each project.
-      class ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant0Item
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant0ItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant0ItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant0ItemMetadata::DECODERS
-
-        # @return [String] This is always set. In production it is used as a pointer to each apps production deployment. For pre-production, it's used as the fallback if there is no deployment for the branch.
-        attr_reader :fallback_host
-        # @return [String] The project ID of the microfrontends application.
-        attr_reader :project_id
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant1ItemMetadata
-        FIELDS = {
-          branch_alias: 'branchAlias',
-          fallback_host: 'fallbackHost',
-          project_id: 'projectId'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          branch_alias
-          fallback_host
-          project_id
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant1Item.
-      # A list of the deployment routing information for each project.
-      class ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant1Item
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant1ItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant1ItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant1ItemMetadata::DECODERS
-
-        # @return [String] Could point to a branch without a deployment if the project was never deployed. The proxy will fallback to the fallbackHost if there is no deployment.
-        attr_reader :branch_alias
-        # @return [String] This is always set. For branch aliases, it's used as the fallback if there is no deployment for the branch.
-        attr_reader :fallback_host
-        # @return [String] The project ID of the microfrontends application.
-        attr_reader :project_id
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant2ItemMetadata
-        FIELDS = {
-          branch_alias: 'branchAlias',
-          branch_deployment_id: 'branchDeploymentId',
-          deployment_id: 'deploymentId',
-          fallback_deployment_id: 'fallbackDeploymentId',
-          fallback_host: 'fallbackHost',
-          project_id: 'projectId'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          project_id
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant2Item.
-      # A list of the deployment routing information for each project.
-      class ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant2Item
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant2ItemMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant2ItemMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant2ItemMetadata::DECODERS
-
-        attr_reader :branch_alias
-        # @return [String] This is the latest non-cancelled deployment of the branch alias at the time the commit alias was created. It is possible there is no deployment for the branch, or this was set before the deployment was canceled, in which case this will point to a cancelled deployment, in either case the proxy will fallback to the fallbackDeploymentId.
-        attr_reader :branch_deployment_id
-        # @return [String] This is the deployment for the same commit, it could be a cancelled deployment. The proxy will fallback to the branchDeploymentId and then the fallbackDeploymentId.
-        attr_reader :deployment_id
-        # @return [String] This is the deployment of the fallback host at the time the commit alias was created. It is possible for this to be a deleted deployment, in which case the proxy will show that the deployment is deleted. It will not use the fallbackHost, as a future deployment on the fallback host could be invalid for this deployment, and it could lead to confusion / incorrect behavior for the commit alias.
-        attr_reader :fallback_deployment_id
-        # @return [String] Temporary for backwards compatibility. Can remove when metadata change is released
-        attr_reader :fallback_host
-        # @return [String] The project ID of the microfrontends application.
-        attr_reader :project_id
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListAliasesResponseAliasesItemMicrofrontendsDefaultAppMetadata
-        FIELDS = {
-          project_id: 'projectId'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          project_id
-        ].freeze
-        DECODERS = {}.freeze
-      end
-
-      # API model for ListAliasesResponseAliasesItemMicrofrontendsDefaultApp.
-      class ListAliasesResponseAliasesItemMicrofrontendsDefaultApp
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsDefaultAppMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsDefaultAppMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsDefaultAppMetadata::DECODERS
-
-        attr_reader :project_id
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListAliasesResponseAliasesItemMicrofrontendsMetadata
-        FIELDS = {
-          applications: 'applications',
-          default_app: 'defaultApp'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          applications
-          default_app
-        ].freeze
-        DECODERS = {
-          default_app: lambda do |value|
-            ::OctridevVercel::Methods::Aliases::ListAliasesResponseAliasesItemMicrofrontendsDefaultApp.from_hash(value)
-          end
-        }.freeze
-      end
-
-      # API model for ListAliasesResponseAliasesItemMicrofrontends.
-      # The microfrontends for the alias including the routing configuration
-      class ListAliasesResponseAliasesItemMicrofrontends
-        CONSTRUCTION_SURFACE = :named
-        FIELDS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsMetadata::FIELDS
-        REQUIRED_FIELDS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsMetadata::REQUIRED_FIELDS
-        DECODERS = SdkInternalListAliasesResponseAliasesItemMicrofrontendsMetadata::DECODERS
-
-        attr_reader :applications, :default_app
-
-        def initialize(**attributes)
-          SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-          freeze
-        end
-
-        def self.from_hash(data)
-          SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-        end
-
-        def to_h
-          SdkModel.to_h(self, FIELDS)
-        end
-      end
-
-      # Internal model hydration metadata.
-      class SdkInternalListAliasesResponseAliasesItemMetadata
-        FIELDS = {
-          alias_: 'alias',
-          created: 'created',
-          created_at: 'createdAt',
-          creator: 'creator',
-          deleted_at: 'deletedAt',
-          deployment: 'deployment',
-          deployment_id: 'deploymentId',
-          microfrontends: 'microfrontends',
-          project_id: 'projectId',
-          protection_bypass: 'protectionBypass',
-          redirect: 'redirect',
-          redirect_status_code: 'redirectStatusCode',
-          uid: 'uid',
-          updated_at: 'updatedAt'
-        }.freeze
-        REQUIRED_FIELDS = %i[
-          alias_
-          created
-          deployment_id
-          project_id
-          uid
-        ].freeze
-        DECODERS = {
-          creator: lambda do |value|
-            ::OctridevVercel::Methods::Aliases::ListAliasesResponseAliasesItemCreator.from_hash(value)
-          end,
-          deployment: lambda do |value|
-            ::OctridevVercel::Methods::Aliases::ListAliasesResponseAliasesItemDeployment.from_hash(value)
-          end,
-          microfrontends: lambda do |value|
-            ::OctridevVercel::Methods::Aliases::ListAliasesResponseAliasesItemMicrofrontends.from_hash(value)
-          end,
-          redirect_status_code: lambda do |value|
-            ::OctridevVercel::Methods::Aliases::ListAliasesResponseAliasesItemRedirectStatusCode.from_value(value)
-          end
-        }.freeze
-        NULLABLE_FIELDS = %i[
-          deployment_id
-          project_id
-        ].freeze
+      # Deletes an alias by its ID or alias name. Use `teamId` or `slug` to specify the team context for the request. A successful response confirms that the alias was removed.
+      #
+      # Delete an Alias with the specified ID.
+      #
+      # @param alias_id [String] The ID or alias that will be removed
+      # @param team_id [String] The Team identifier to perform the request on behalf
+      #   of.
+      # @param slug [String] The Team slug to perform the request on behalf of.
+      def self.delete_alias(
+        config:,
+        alias_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      )
+        SdkClient.request(
+          'DELETE',
+          [
+            '/v2/aliases/',
+            SdkClient.encode_path_segment(alias_id)
+          ].join,
+          config: config,
+          query: {
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
+          return_type: ::OctridevVercel::Methods::Aliases::DeleteAliasResponse,
+          decoder: :json,
+          operation_id: 'delete_alias',
+          request_options: request_options
+        ).data
       end
     end
   end
 end
 
-require_relative 'aliases_part_2'
-require_relative 'aliases_part_3'
+require_relative 'aliases_types'
+require_relative 'aliases_list_aliases_response_aliases_item'
+require_relative 'aliases_list_aliases_for_deployment_response_aliases_item_protection_bypass_va_x674897c569'
+require_relative 'aliases_protection_bypass'
