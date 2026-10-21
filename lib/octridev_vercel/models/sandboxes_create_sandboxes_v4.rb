@@ -5,633 +5,644 @@
 
 # sandboxes domain models
 module OctridevVercel
-  # API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499.
-  # Matcher for the entry value.
-  class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499Metadata::DECODERS
+# API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499.
+# Matcher for the entry value.
+class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499Metadata::DECODERS
 
-    # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-    attr_reader :exact
-    # @return [String] Match values that start with the given prefix.
-    attr_reader :starts_with
+  # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+  attr_reader :exact
+  # @return [String] Match values that start with the given prefix.
+  attr_reader :starts_with
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2Metadata
-    FIELDS = {
-      key: 'key',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      key: lambda do |value|
-        ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9e21ec0660.from_hash(value)
-      end,
-      value: lambda do |value|
-        ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499.from_hash(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2.
-  class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9e21ec0660] Matcher for the entry key (header name or query key).
-    attr_reader :key
-    # @return [CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499] Matcher for the entry value.
-    attr_reader :value
+# Internal model hydration metadata.
+class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2Metadata
+  FIELDS = {
+    key: "key",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    key: lambda do |value|
+      ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9e21ec0660.from_hash(value)
+    end,
+    value: lambda do |value|
+      ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499.from_hash(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2.
+class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9e21ec0660] Matcher for the entry key (header name or query key).
+  attr_reader :key
+  # @return [CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItXe6fb61d499] Matcher for the entry value.
+  attr_reader :value
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8Metadata
-    FIELDS = {
-      exact: 'exact',
-      starts_with: 'startsWith'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8.
-  # Matcher for the entry key (header name or query key).
-  class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-    attr_reader :exact
-    # @return [String] Match values that start with the given prefix.
-    attr_reader :starts_with
+# Internal model hydration metadata.
+class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8Metadata
+  FIELDS = {
+    exact: "exact",
+    starts_with: "startsWith",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8.
+# Matcher for the entry key (header name or query key).
+class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+  attr_reader :exact
+  # @return [String] Match values that start with the given prefix.
+  attr_reader :starts_with
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365Metadata
-    FIELDS = {
-      exact: 'exact',
-      starts_with: 'startsWith'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365.
-  # Matcher for the entry value.
-  class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-    attr_reader :exact
-    # @return [String] Match values that start with the given prefix.
-    attr_reader :starts_with
+# Internal model hydration metadata.
+class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365Metadata
+  FIELDS = {
+    exact: "exact",
+    starts_with: "startsWith",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365.
+# Matcher for the entry value.
+class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+  attr_reader :exact
+  # @return [String] Match values that start with the given prefix.
+  attr_reader :starts_with
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1Metadata
-    FIELDS = {
-      key: 'key',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      key: lambda do |value|
-        ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8.from_hash(value)
-      end,
-      value: lambda do |value|
-        ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365.from_hash(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1.
-  class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8] Matcher for the entry key (header name or query key).
-    attr_reader :key
-    # @return [CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365] Matcher for the entry value.
-    attr_reader :value
+# Internal model hydration metadata.
+class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1Metadata
+  FIELDS = {
+    key: "key",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    key: lambda do |value|
+      ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8.from_hash(value)
+    end,
+    value: lambda do |value|
+      ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365.from_hash(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1.
+class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0c7d8569f8] Matcher for the entry key (header name or query key).
+  attr_reader :key
+  # @return [CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX2dc0e1e365] Matcher for the entry value.
+  attr_reader :value
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata
-    FIELDS = {
-      path: 'path',
-      method: 'method',
-      query_string: 'queryString',
-      headers: 'headers'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      path: lambda do |value|
-        ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatchPath.from_hash(value)
-      end,
-      query_string: lambda do |value|
-        value&.map { |item| ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2.from_hash(item) }
-      end,
-      headers: lambda do |value|
-        value&.map { |item| ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1.from_hash(item) }
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatch.
-  # Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
-  class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatch
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatchPath] Match on the request path. Comparison is case-sensitive.
-    attr_reader :path
-    # @return [Array_of_String] HTTP methods to match. Any single match succeeds (OR semantics).
-    attr_reader :method
-    # @return [Array_of_CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2] Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
-    attr_reader :query_string
-    # @return [Array_of_CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1] Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
-    attr_reader :headers
+# Internal model hydration metadata.
+class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata
+  FIELDS = {
+    path: "path",
+    method: "method",
+    query_string: "queryString",
+    headers: "headers",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    path: lambda do |value|
+      ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatchPath.from_hash(value)
+    end,
+    query_string: lambda do |value|
+      value&.map { |item| ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2.from_hash(item) }
+    end,
+    headers: lambda do |value|
+      value&.map { |item| ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1.from_hash(item) }
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatch.
+# Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
+class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatch
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatchPath] Match on the request path. Comparison is case-sensitive.
+  attr_reader :path
+  # @return [Array_of_String] HTTP methods to match. Any single match succeeds (OR semantics).
+  attr_reader :method
+  # @return [Array_of_CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX9b47b069e2] Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
+  attr_reader :query_string
+  # @return [Array_of_CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItX0db63e7bf1] Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
+  attr_reader :headers
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMetadata
-    FIELDS = {
-      domain: 'domain',
-      headers: 'headers',
-      match: 'match'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      domain
-      headers
-    ].freeze
-    DECODERS = {
-      match: lambda do |value|
-        ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatch.from_hash(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItem.
-  class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.
-    attr_reader :domain
-    # @return [Hash] HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.
-    attr_reader :headers
-    # @return [CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatch] Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
-    attr_reader :match
+# Internal model hydration metadata.
+class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMetadata
+  FIELDS = {
+    domain: "domain",
+    headers: "headers",
+    match: "match",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    domain
+    headers
+  ].freeze
+  DECODERS = {
+    match: lambda do |value|
+      ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatch.from_hash(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItem.
+class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.
+  attr_reader :domain
+  # @return [Hash] HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.
+  attr_reader :headers
+  # @return [CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItemMatch] Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
+  attr_reader :match
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0Metadata
-    FIELDS = {
-      mode: 'mode',
-      allowed_domains: 'allowedDomains',
-      allowed_cid_rs: 'allowedCIDRs',
-      denied_cid_rs: 'deniedCIDRs',
-      injection_rules: 'injectionRules'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      mode
-    ].freeze
-    DECODERS = {
-      mode: lambda do |value|
-        ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0Mode.from_value(value)
-      end,
-      injection_rules: lambda do |value|
-        value&.map { |item| ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItem.from_hash(item) }
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSandboxesV4RequestNetworkPolicyVariant0.
-  class CreateSandboxesV4RequestNetworkPolicyVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [CreateSandboxesV4RequestNetworkPolicyVariant0Mode] The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny rules.
-    attr_reader :mode
-    # @return [Array_of_String] List of domain names the sandbox is allowed to connect to. Only applies when mode is \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
-    attr_reader :allowed_domains
-    # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.
-    attr_reader :allowed_cid_rs
-    # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
-    attr_reader :denied_cid_rs
-    # @return [Array_of_CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItem] HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.
-    attr_reader :injection_rules
+# Internal model hydration metadata.
+class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0Metadata
+  FIELDS = {
+    mode: "mode",
+    allowed_domains: "allowedDomains",
+    allowed_cid_rs: "allowedCIDRs",
+    denied_cid_rs: "deniedCIDRs",
+    injection_rules: "injectionRules",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    mode
+  ].freeze
+  DECODERS = {
+    mode: lambda do |value|
+      ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0Mode.from_value(value)
+    end,
+    injection_rules: lambda do |value|
+      value&.map { |item| ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItem.from_hash(item) }
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSandboxesV4RequestNetworkPolicyVariant0.
+class CreateSandboxesV4RequestNetworkPolicyVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant0Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [CreateSandboxesV4RequestNetworkPolicyVariant0Mode] The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny rules.
+  attr_reader :mode
+  # @return [Array_of_String] List of domain names the sandbox is allowed to connect to. Only applies when mode is \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
+  attr_reader :allowed_domains
+  # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.
+  attr_reader :allowed_cid_rs
+  # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
+  attr_reader :denied_cid_rs
+  # @return [Array_of_CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItem] HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.
+  attr_reader :injection_rules
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1SubnetsMetadata
-    FIELDS = {
-      allow: 'allow',
-      deny: 'deny'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSandboxesV4RequestNetworkPolicyVariant1Subnets.
-  class CreateSandboxesV4RequestNetworkPolicyVariant1Subnets
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1SubnetsMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1SubnetsMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1SubnetsMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :allow, :deny
+# Internal model hydration metadata.
+class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1SubnetsMetadata
+  FIELDS = {
+    allow: "allow",
+    deny: "deny",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSandboxesV4RequestNetworkPolicyVariant1Subnets.
+class CreateSandboxesV4RequestNetworkPolicyVariant1Subnets
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1SubnetsMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1SubnetsMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1SubnetsMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :allow, :deny
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1Metadata
-    FIELDS = {
-      allow: 'allow',
-      subnets: 'subnets'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      subnets: lambda do |value|
-        ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant1Subnets.from_hash(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSandboxesV4RequestNetworkPolicyVariant1.
-  class CreateSandboxesV4RequestNetworkPolicyVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :allow, :subnets
+# Internal model hydration metadata.
+class SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1Metadata
+  FIELDS = {
+    allow: "allow",
+    subnets: "subnets",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    subnets: lambda do |value|
+      ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicyVariant1Subnets.from_hash(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSandboxesV4RequestNetworkPolicyVariant1.
+class CreateSandboxesV4RequestNetworkPolicyVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSandboxesV4RequestNetworkPolicyVariant1Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :allow, :subnets
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CreateSandboxesV4RequestNetworkPolicy SDK namespace.
-  module CreateSandboxesV4RequestNetworkPolicy
-    def self.from_hash(hash)
-      shape_mapping = {
-        'mode' => CreateSandboxesV4RequestNetworkPolicyVariant0
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
-
-      CreateSandboxesV4RequestNetworkPolicyVariant1.from_hash(hash)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CreateSandboxesV4RequestNetworkPolicyVariant0Mode SDK namespace.
-  module CreateSandboxesV4RequestNetworkPolicyVariant0Mode
-    ALLOW_ALL = 'allow-all'
-    DENY_ALL = 'deny-all'
-    CUSTOM = 'custom'
-    DEFAULT_ALLOW = 'default-allow'
-    DEFAULT_DENY = 'default-deny'
-    VALUES = %w[allow-all deny-all custom default-allow default-deny].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Defines the CreateSandboxesV4RequestNetworkPolicy SDK namespace.
+module CreateSandboxesV4RequestNetworkPolicy
+  def self.from_hash(hash)
+    shape_mapping = {
+      "mode" => CreateSandboxesV4RequestNetworkPolicyVariant0,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    return CreateSandboxesV4RequestNetworkPolicyVariant1.from_hash(hash)
+  end
+end
+
+# Defines the CreateSandboxesV4RequestNetworkPolicyVariant0Mode SDK namespace.
+module CreateSandboxesV4RequestNetworkPolicyVariant0Mode
+  ALLOW_ALL = 'allow-all'
+  DENY_ALL = 'deny-all'
+  CUSTOM = 'custom'
+  DEFAULT_ALLOW = 'default-allow'
+  DEFAULT_DENY = 'default-deny'
+  VALUES = ['allow-all', 'deny-all', 'custom', 'default-allow', 'default-deny'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateSandboxesV4RequestSourceVariant0Metadata
+  FIELDS = {
+    type: "type",
+    url: "url",
+    username: "username",
+    password: "password",
+    depth: "depth",
+    revision: "revision",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    url
+  ].freeze
+  DECODERS = {
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    type
+  ].freeze
+end
+
+# API model for CreateSandboxesV4RequestSourceVariant0.
+class CreateSandboxesV4RequestSourceVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSandboxesV4RequestSourceVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestSourceVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSandboxesV4RequestSourceVariant0Metadata::DECODERS
+
+  # @return [Object] Indicates the source is a Git repository.
+  attr_reader :type
+  # @return [String] The URL of the Git repository to clone.
+  attr_reader :url
+  # @return [String] Username for Git authentication. Required together with password for private repositories.
+  attr_reader :username
+  # @return [String] Password or personal access token for Git authentication. Required together with username for private repositories.
+  attr_reader :password
+  # @return [Integer] Create a shallow clone with history truncated to the specified number of commits. Useful for faster cloning of large repositories.
+  attr_reader :depth
+  # @return [String] The specific commit SHA, branch name, or tag to checkout after cloning.
+  attr_reader :revision
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSandboxesV4RequestSourceVariant0Metadata
-    FIELDS = {
-      type: 'type',
-      url: 'url',
-      username: 'username',
-      password: 'password',
-      depth: 'depth',
-      revision: 'revision'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      url
-    ].freeze
-    DECODERS = {}.freeze
-    NULLABLE_FIELDS = %i[
-      type
-    ].freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateSandboxesV4RequestSourceVariant0Metadata::NULLABLE_FIELDS)
   end
 
-  # API model for CreateSandboxesV4RequestSourceVariant0.
-  class CreateSandboxesV4RequestSourceVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSandboxesV4RequestSourceVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestSourceVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSandboxesV4RequestSourceVariant0Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [Object] Indicates the source is a Git repository.
-    attr_reader :type
-    # @return [String] The URL of the Git repository to clone.
-    attr_reader :url
-    # @return [String] Username for Git authentication. Required together with password for private repositories.
-    attr_reader :username
-    # @return [String] Password or personal access token for Git authentication. Required together with username for private repositories.
-    attr_reader :password
-    # @return [Integer] Create a shallow clone with history truncated to the specified number of commits. Useful for faster cloning of large repositories.
-    attr_reader :depth
-    # @return [String] The specific commit SHA, branch name, or tag to checkout after cloning.
-    attr_reader :revision
+# Internal model hydration metadata.
+class SdkInternalCreateSandboxesV4RequestSourceVariant1Metadata
+  FIELDS = {
+    type: "type",
+    url: "url",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    url
+  ].freeze
+  DECODERS = {
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    type
+  ].freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSandboxesV4RequestSourceVariant1.
+class CreateSandboxesV4RequestSourceVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSandboxesV4RequestSourceVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestSourceVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSandboxesV4RequestSourceVariant1Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateSandboxesV4RequestSourceVariant0Metadata::NULLABLE_FIELDS)
-    end
+  # @return [Object] Indicates the source is a tarball.
+  attr_reader :type
+  # @return [String] URL of a gzipped tarball (.tar.gz) to download and extract.
+  attr_reader :url
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSandboxesV4RequestSourceVariant1Metadata
-    FIELDS = {
-      type: 'type',
-      url: 'url'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      url
-    ].freeze
-    DECODERS = {}.freeze
-    NULLABLE_FIELDS = %i[
-      type
-    ].freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateSandboxesV4RequestSourceVariant1Metadata::NULLABLE_FIELDS)
   end
 
-  # API model for CreateSandboxesV4RequestSourceVariant1.
-  class CreateSandboxesV4RequestSourceVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSandboxesV4RequestSourceVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestSourceVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSandboxesV4RequestSourceVariant1Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [Object] Indicates the source is a tarball.
-    attr_reader :type
-    # @return [String] URL of a gzipped tarball (.tar.gz) to download and extract.
-    attr_reader :url
+# Internal model hydration metadata.
+class SdkInternalCreateSandboxesV4RequestSourceVariant2Metadata
+  FIELDS = {
+    type: "type",
+    snapshot_id: "snapshotId",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    snapshot_id
+  ].freeze
+  DECODERS = {
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    type
+  ].freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSandboxesV4RequestSourceVariant2.
+class CreateSandboxesV4RequestSourceVariant2
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSandboxesV4RequestSourceVariant2Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestSourceVariant2Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSandboxesV4RequestSourceVariant2Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateSandboxesV4RequestSourceVariant1Metadata::NULLABLE_FIELDS)
-    end
+  # @return [Object] Indicates the source is a snapshot.
+  attr_reader :type
+  # @return [String] The unique identifier of the snapshot to restore.
+  attr_reader :snapshot_id
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSandboxesV4RequestSourceVariant2Metadata
-    FIELDS = {
-      type: 'type',
-      snapshot_id: 'snapshotId'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      snapshot_id
-    ].freeze
-    DECODERS = {}.freeze
-    NULLABLE_FIELDS = %i[
-      type
-    ].freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateSandboxesV4RequestSourceVariant2Metadata::NULLABLE_FIELDS)
   end
 
-  # API model for CreateSandboxesV4RequestSourceVariant2.
-  class CreateSandboxesV4RequestSourceVariant2
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSandboxesV4RequestSourceVariant2Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSandboxesV4RequestSourceVariant2Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSandboxesV4RequestSourceVariant2Metadata::DECODERS
-
-    # @return [Object] Indicates the source is a snapshot.
-    attr_reader :type
-    # @return [String] The unique identifier of the snapshot to restore.
-    attr_reader :snapshot_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateSandboxesV4RequestSourceVariant2Metadata::NULLABLE_FIELDS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the CreateSandboxesV4RequestSource SDK namespace.
-  module CreateSandboxesV4RequestSource
-    def self.from_hash(hash)
-      shape_mapping = {
-        'snapshotId' => CreateSandboxesV4RequestSourceVariant2
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
+# Defines the CreateSandboxesV4RequestSource SDK namespace.
+module CreateSandboxesV4RequestSource
+  def self.from_hash(hash)
+    shape_mapping = {
+      "snapshotId" => CreateSandboxesV4RequestSourceVariant2,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    lossy = nil
+    [CreateSandboxesV4RequestSourceVariant0, CreateSandboxesV4RequestSourceVariant1].each do |type|
+      decoded = type.from_hash(hash)
+      return decoded if SdkModel.keeps_every_key?(hash, decoded)
 
-      lossy = nil
-      [CreateSandboxesV4RequestSourceVariant0, CreateSandboxesV4RequestSourceVariant1].each do |type|
-        decoded = type.from_hash(hash)
-        return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-        lossy ||= decoded
-      rescue ::StandardError
-        next
-      end
-      lossy unless lossy.nil?
+      lossy ||= decoded
+    rescue ::StandardError
+      next
     end
+    return lossy unless lossy.nil?
   end
+end
 
-  # Internal model hydration metadata.
-  class SdkInternalDriveMetadata
-    FIELDS = {
-      created_at: 'createdAt',
-      current_sandbox_name: 'currentSandboxName',
-      current_session_id: 'currentSessionId',
-      id: 'id',
-      max_size_bytes: 'maxSizeBytes',
-      name: 'name',
-      parent_drive_id: 'parentDriveId',
-      project_id: 'projectId',
-      region: 'region',
-      root_drive_id: 'rootDriveId',
-      updated_at: 'updatedAt',
-      v0: 'v0'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      created_at
-      id
-      max_size_bytes
-      name
-      project_id
-      region
-      updated_at
-    ].freeze
-    DECODERS = {
-      v0: lambda do |value|
-        ::OctridevVercel::DriveV0.from_value(value)
-      end
-    }.freeze
-  end
+# Internal model hydration metadata.
+class SdkInternalDriveMetadata
+  FIELDS = {
+    created_at: "createdAt",
+    current_sandbox_name: "currentSandboxName",
+    current_session_id: "currentSessionId",
+    id: "id",
+    max_size_bytes: "maxSizeBytes",
+    name: "name",
+    parent_drive_id: "parentDriveId",
+    project_id: "projectId",
+    region: "region",
+    root_drive_id: "rootDriveId",
+    updated_at: "updatedAt",
+    v0: "v0",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    created_at
+    id
+    max_size_bytes
+    name
+    project_id
+    region
+    updated_at
+  ].freeze
+  DECODERS = {
+    v0: lambda do |value|
+      ::OctridevVercel::DriveV0.from_value(value)
+    end,
+  }.freeze
+end
 end

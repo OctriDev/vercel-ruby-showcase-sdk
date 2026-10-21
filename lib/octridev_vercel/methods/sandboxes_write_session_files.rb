@@ -29,24 +29,25 @@ module OctridevVercel
         x_cwd: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v2/sandboxes/sessions/',
+            "/v2/sandboxes/sessions/",
             SdkClient.encode_path_segment(session_id),
-            '/fs/write'
+            "/fs/write"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :json,
           operation_id: 'write_session_files',
           extra_headers: SdkClient.serialize_headers({
-                                                       'x-cwd' => SdkClient.header_value(x_cwd)
-                                                     }),
-          request_options: request_options
+            'x-cwd' => SdkClient.header_value(x_cwd),
+          }),
+          request_options: request_options,
         ).data
       end
     end

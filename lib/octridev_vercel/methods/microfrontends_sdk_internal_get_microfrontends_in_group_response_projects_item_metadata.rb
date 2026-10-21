@@ -12,103 +12,103 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemMetadata
         FIELDS = {
-          account_id: 'accountId',
-          alias_: 'alias',
-          analytics: 'analytics',
-          applied_cve55182_migration: 'appliedCve55182Migration',
-          auto_assign_custom_domains: 'autoAssignCustomDomains',
-          auto_assign_custom_domains_updated_by: 'autoAssignCustomDomainsUpdatedBy',
-          auto_expose_system_envs: 'autoExposeSystemEnvs',
-          avatar: 'avatar',
-          avatar_dark_mode: 'avatarDarkMode',
-          blobs: 'blobs',
-          build_command: 'buildCommand',
-          command_for_ignoring_build_step: 'commandForIgnoringBuildStep',
-          concurrency_bucket_name: 'concurrencyBucketName',
-          connect_builds_enabled: 'connectBuildsEnabled',
-          connect_configuration_id: 'connectConfigurationId',
-          connect_configurations: 'connectConfigurations',
-          created_at: 'createdAt',
-          creator: 'creator',
-          crons: 'crons',
-          custom_environments: 'customEnvironments',
-          customer_support_code_visibility: 'customerSupportCodeVisibility',
-          data_cache: 'dataCache',
-          default_resource_config: 'defaultResourceConfig',
-          deployment_expiration: 'deploymentExpiration',
-          deployment_policy: 'deploymentPolicy',
-          dev_command: 'devCommand',
-          directory_listing: 'directoryListing',
-          dismissed_toasts: 'dismissedToasts',
-          enable_affected_projects_deployments: 'enableAffectedProjectsDeployments',
-          enable_external_rewrite_caching: 'enableExternalRewriteCaching',
-          enable_preview_feedback: 'enablePreviewFeedback',
-          enable_production_feedback: 'enableProductionFeedback',
-          env: 'env',
-          expiration: 'expiration',
-          features: 'features',
-          framework: 'framework',
-          git_comments: 'gitComments',
-          git_fork_protection: 'gitForkProtection',
-          git_lfs: 'gitLFS',
-          git_provider_options: 'gitProviderOptions',
-          has_active_branches: 'hasActiveBranches',
-          has_deployments: 'hasDeployments',
-          id: 'id',
-          install_command: 'installCommand',
-          internal_routes: 'internalRoutes',
-          ip_buckets: 'ipBuckets',
-          jobs: 'jobs',
-          last_alias_request: 'lastAliasRequest',
-          last_rollback_target: 'lastRollbackTarget',
-          latest_deployments: 'latestDeployments',
-          link: 'link',
-          live: 'live',
-          microfrontends: 'microfrontends',
-          name: 'name',
-          node_version: 'nodeVersion',
-          oidc_token_config: 'oidcTokenConfig',
-          options_allowlist: 'optionsAllowlist',
-          output_directory: 'outputDirectory',
-          passive_connect_configuration_id: 'passiveConnectConfigurationId',
-          passport: 'passport',
-          password_protection: 'passwordProtection',
-          paused: 'paused',
-          permissions: 'permissions',
-          production_deployments_fast_lane: 'productionDeploymentsFastLane',
-          protected_sourcemaps: 'protectedSourcemaps',
-          protection_bypass: 'protectionBypass',
-          protection_config: 'protectionConfig',
-          resource_config: 'resourceConfig',
-          rollback_description: 'rollbackDescription',
-          rolling_release: 'rollingRelease',
-          root_directory: 'rootDirectory',
-          sandbox: 'sandbox',
-          security: 'security',
-          serverless_function_zero_config_failover: 'serverlessFunctionZeroConfigFailover',
-          services: 'services',
-          skew_protection_allowed_domains: 'skewProtectionAllowedDomains',
-          skew_protection_boundary_at: 'skewProtectionBoundaryAt',
-          skew_protection_max_age: 'skewProtectionMaxAge',
-          skip_git_connect_during_link: 'skipGitConnectDuringLink',
-          source_files_outside_root_directory: 'sourceFilesOutsideRootDirectory',
-          speed_insights: 'speedInsights',
-          sso_protection: 'ssoProtection',
-          static_ips: 'staticIps',
-          targets: 'targets',
-          tier: 'tier',
-          tracing: 'tracing',
-          transfer_completed_at: 'transferCompletedAt',
-          transferred_from_account_id: 'transferredFromAccountId',
-          transfer_started_at: 'transferStartedAt',
-          transfer_to_account_id: 'transferToAccountId',
-          trusted_ips: 'trustedIps',
-          trusted_sources: 'trustedSources',
-          updated_at: 'updatedAt',
-          usage_status: 'usageStatus',
-          v0: 'v0',
-          v0_created: 'v0Created',
-          web_analytics: 'webAnalytics'
+          account_id: "accountId",
+          alias_: "alias",
+          analytics: "analytics",
+          applied_cve55182_migration: "appliedCve55182Migration",
+          auto_assign_custom_domains: "autoAssignCustomDomains",
+          auto_assign_custom_domains_updated_by: "autoAssignCustomDomainsUpdatedBy",
+          auto_expose_system_envs: "autoExposeSystemEnvs",
+          avatar: "avatar",
+          avatar_dark_mode: "avatarDarkMode",
+          blobs: "blobs",
+          build_command: "buildCommand",
+          command_for_ignoring_build_step: "commandForIgnoringBuildStep",
+          concurrency_bucket_name: "concurrencyBucketName",
+          connect_builds_enabled: "connectBuildsEnabled",
+          connect_configuration_id: "connectConfigurationId",
+          connect_configurations: "connectConfigurations",
+          created_at: "createdAt",
+          creator: "creator",
+          crons: "crons",
+          custom_environments: "customEnvironments",
+          customer_support_code_visibility: "customerSupportCodeVisibility",
+          data_cache: "dataCache",
+          default_resource_config: "defaultResourceConfig",
+          deployment_expiration: "deploymentExpiration",
+          deployment_policy: "deploymentPolicy",
+          dev_command: "devCommand",
+          directory_listing: "directoryListing",
+          dismissed_toasts: "dismissedToasts",
+          enable_affected_projects_deployments: "enableAffectedProjectsDeployments",
+          enable_external_rewrite_caching: "enableExternalRewriteCaching",
+          enable_preview_feedback: "enablePreviewFeedback",
+          enable_production_feedback: "enableProductionFeedback",
+          env: "env",
+          expiration: "expiration",
+          features: "features",
+          framework: "framework",
+          git_comments: "gitComments",
+          git_fork_protection: "gitForkProtection",
+          git_lfs: "gitLFS",
+          git_provider_options: "gitProviderOptions",
+          has_active_branches: "hasActiveBranches",
+          has_deployments: "hasDeployments",
+          id: "id",
+          install_command: "installCommand",
+          internal_routes: "internalRoutes",
+          ip_buckets: "ipBuckets",
+          jobs: "jobs",
+          last_alias_request: "lastAliasRequest",
+          last_rollback_target: "lastRollbackTarget",
+          latest_deployments: "latestDeployments",
+          link: "link",
+          live: "live",
+          microfrontends: "microfrontends",
+          name: "name",
+          node_version: "nodeVersion",
+          oidc_token_config: "oidcTokenConfig",
+          options_allowlist: "optionsAllowlist",
+          output_directory: "outputDirectory",
+          passive_connect_configuration_id: "passiveConnectConfigurationId",
+          passport: "passport",
+          password_protection: "passwordProtection",
+          paused: "paused",
+          permissions: "permissions",
+          production_deployments_fast_lane: "productionDeploymentsFastLane",
+          protected_sourcemaps: "protectedSourcemaps",
+          protection_bypass: "protectionBypass",
+          protection_config: "protectionConfig",
+          resource_config: "resourceConfig",
+          rollback_description: "rollbackDescription",
+          rolling_release: "rollingRelease",
+          root_directory: "rootDirectory",
+          sandbox: "sandbox",
+          security: "security",
+          serverless_function_zero_config_failover: "serverlessFunctionZeroConfigFailover",
+          services: "services",
+          skew_protection_allowed_domains: "skewProtectionAllowedDomains",
+          skew_protection_boundary_at: "skewProtectionBoundaryAt",
+          skew_protection_max_age: "skewProtectionMaxAge",
+          skip_git_connect_during_link: "skipGitConnectDuringLink",
+          source_files_outside_root_directory: "sourceFilesOutsideRootDirectory",
+          speed_insights: "speedInsights",
+          sso_protection: "ssoProtection",
+          static_ips: "staticIps",
+          targets: "targets",
+          tier: "tier",
+          tracing: "tracing",
+          transfer_completed_at: "transferCompletedAt",
+          transferred_from_account_id: "transferredFromAccountId",
+          transfer_started_at: "transferStartedAt",
+          transfer_to_account_id: "transferToAccountId",
+          trusted_ips: "trustedIps",
+          trusted_sources: "trustedSources",
+          updated_at: "updatedAt",
+          usage_status: "usageStatus",
+          v0: "v0",
+          v0_created: "v0Created",
+          web_analytics: "webAnalytics",
         }.freeze
         REQUIRED_FIELDS = %i[
           account_id
@@ -331,7 +331,7 @@ module OctridevVercel
           end,
           web_analytics: lambda do |value|
             ::OctridevVercel::Methods::Microfrontends::GetMicrofrontendsInGroupResponseProjectsItemWebAnalytics.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -406,7 +406,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetMicrofrontendsInGroupResponseMetadata
         FIELDS = {
-          projects: 'projects'
+          projects: "projects",
         }.freeze
         REQUIRED_FIELDS = %i[
           projects
@@ -414,7 +414,7 @@ module OctridevVercel
         DECODERS = {
           projects: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Microfrontends::GetMicrofrontendsInGroupResponseProjectsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -444,14 +444,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetMicrofrontendsConfigResponseConfigOptionsMetadata
         FIELDS = {
-          disable_overrides: 'disableOverrides',
-          local_proxy_port: 'localProxyPort'
+          disable_overrides: "disableOverrides",
+          local_proxy_port: "localProxyPort",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           disable_overrides: lambda do |value|
             ::OctridevVercel::Methods::Microfrontends::GetMicrofrontendsConfigResponseConfigOptionsDisableOverrides.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -485,10 +486,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetMicrofrontendsConfigResponseConfigMetadata
         FIELDS = {
-          schema: '$schema',
-          applications: 'applications',
-          options: 'options',
-          version: 'version'
+          schema: "$schema",
+          applications: "applications",
+          options: "options",
+          version: "version",
         }.freeze
         REQUIRED_FIELDS = %i[
           applications
@@ -499,7 +500,7 @@ module OctridevVercel
           end,
           version: lambda do |value|
             ::OctridevVercel::Methods::Microfrontends::GetMicrofrontendsConfigResponseConfigVersion.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -536,7 +537,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetMicrofrontendsConfigResponseMetadata
         FIELDS = {
-          config: 'config'
+          config: "config",
         }.freeze
         REQUIRED_FIELDS = %i[
           config
@@ -544,7 +545,7 @@ module OctridevVercel
         DECODERS = {
           config: lambda do |value|
             ::OctridevVercel::Methods::Microfrontends::GetMicrofrontendsConfigResponseConfig.from_hash(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           config

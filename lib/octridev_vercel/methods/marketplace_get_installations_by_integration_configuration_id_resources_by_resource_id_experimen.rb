@@ -12,21 +12,27 @@ module OctridevVercel
       # Retrieves the contents of a user-provided Global Config for an integration resource. Use this endpoint when the user has enabled Global Config syncing; the response includes the configuration items, digest, and update time.
       #
       # When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
-      singleton_class.define_method(:get_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_global_config) do |config:, integration_configuration_id:, resource_id:, request_options: nil|
+      singleton_class.define_method(:get_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_global_config) do |
+        config:,
+        integration_configuration_id:,
+        resource_id:,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/installations/',
+            "/v1/installations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/resources/',
+            "/resources/",
             SdkClient.encode_path_segment(resource_id),
-            '/experimentation/global-config'
+            "/experimentation/global-config"
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Marketplace::GetInstallationsByIntegrationConfigurationIdResourcesByResourX5dfbcfa520,
           decoder: :json,
           operation_id: 'get_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_global_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

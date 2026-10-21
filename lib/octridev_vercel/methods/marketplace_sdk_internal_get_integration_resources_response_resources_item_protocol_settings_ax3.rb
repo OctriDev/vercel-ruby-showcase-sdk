@@ -12,8 +12,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourcesResponseResourcesItemProtocolSettingsAX38e96669cbMetadata
         FIELDS = {
-          target: 'target',
-          url: 'url'
+          target: "target",
+          url: "url",
         }.freeze
         REQUIRED_FIELDS = %i[
           target
@@ -22,7 +22,7 @@ module OctridevVercel
         DECODERS = {
           target: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetIntegrationResourcesResponseResourcesItemProtocolSettingsAXaec1937f18.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -52,13 +52,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourcesResponseResourcesItemProtocolSettingsAXed0f6c9c6cMetadata
         FIELDS = {
-          app_urls: 'appUrls'
+          app_urls: "appUrls",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           app_urls: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::GetIntegrationResourcesResponseResourcesItemProtocolSettingsAX38e96669cb.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -88,20 +89,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourcesResponseResourcesItemProtocolSettingsEX7eadae2495Metadata
         FIELDS = {
-          edge_config_id: 'edgeConfigId',
-          edge_config_syncing_enabled: 'edgeConfigSyncingEnabled',
-          edge_config_token_id: 'edgeConfigTokenId',
-          global_config_id: 'globalConfigId',
-          global_config_syncing_enabled: 'globalConfigSyncingEnabled'
+          edge_config_id: "edgeConfigId",
+          edge_config_syncing_enabled: "edgeConfigSyncingEnabled",
+          edge_config_token_id: "edgeConfigTokenId",
+          global_config_id: "globalConfigId",
+          global_config_syncing_enabled: "globalConfigSyncingEnabled",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           edge_config_syncing_enabled: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetIntegrationResourcesResponseResourcesItemProtocolSettingsEX12a5eccad3.from_value(value)
           end,
           global_config_syncing_enabled: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetIntegrationResourcesResponseResourcesItemProtocolSettingsEX248e7a7240.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -132,17 +134,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourcesResponseResourcesItemProtocolSettingsMetadata
         FIELDS = {
-          authentication: 'authentication',
-          experimentation: 'experimentation'
+          authentication: "authentication",
+          experimentation: "experimentation",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           authentication: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetIntegrationResourcesResponseResourcesItemProtocolSettingsAXed0f6c9c6c.from_hash(value)
           end,
           experimentation: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetIntegrationResourcesResponseResourcesItemProtocolSettingsEX7eadae2495.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -173,15 +176,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourcesResponseResourcesItemMetadata
         FIELDS = {
-          billing_plan_id: 'billingPlanId',
-          internal_id: 'internalId',
-          metadata: 'metadata',
-          name: 'name',
-          notification: 'notification',
-          partner_id: 'partnerId',
-          product_id: 'productId',
-          protocol_settings: 'protocolSettings',
-          status: 'status'
+          billing_plan_id: "billingPlanId",
+          internal_id: "internalId",
+          metadata: "metadata",
+          name: "name",
+          notification: "notification",
+          partner_id: "partnerId",
+          product_id: "productId",
+          protocol_settings: "protocolSettings",
+          status: "status",
         }.freeze
         REQUIRED_FIELDS = %i[
           internal_id
@@ -198,7 +201,7 @@ module OctridevVercel
           end,
           status: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetIntegrationResourcesResponseResourcesItemStatus.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -245,7 +248,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourcesResponseMetadata
         FIELDS = {
-          resources: 'resources'
+          resources: "resources",
         }.freeze
         REQUIRED_FIELDS = %i[
           resources
@@ -253,7 +256,7 @@ module OctridevVercel
         DECODERS = {
           resources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::GetIntegrationResourcesResponseResourcesItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -283,11 +286,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourceResponseCustomClaimsClaimRulesItemWhenMetadata
         FIELDS = {
-          environment: 'environment',
-          role: 'role'
+          environment: "environment",
+          role: "role",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetIntegrationResourceResponseCustomClaimsClaimRulesItemWhen.
@@ -316,8 +321,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourceResponseCustomClaimsClaimRulesItemMetadata
         FIELDS = {
-          claims: 'claims',
-          when_: 'when'
+          claims: "claims",
+          when_: "when",
         }.freeze
         REQUIRED_FIELDS = %i[
           claims
@@ -325,7 +330,7 @@ module OctridevVercel
         DECODERS = {
           when_: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetIntegrationResourceResponseCustomClaimsClaimRulesItemWhen.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -355,15 +360,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourceResponseCustomClaimsMetadata
         FIELDS = {
-          claim_rules: 'claimRules',
-          default_role: 'defaultRole',
-          roles: 'roles'
+          claim_rules: "claimRules",
+          default_role: "defaultRole",
+          roles: "roles",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           claim_rules: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::GetIntegrationResourceResponseCustomClaimsClaimRulesItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -394,10 +400,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourceResponseNotificationMetadata
         FIELDS = {
-          href: 'href',
-          level: 'level',
-          message: 'message',
-          title: 'title'
+          href: "href",
+          level: "level",
+          message: "message",
+          title: "title",
         }.freeze
         REQUIRED_FIELDS = %i[
           level
@@ -406,7 +412,7 @@ module OctridevVercel
         DECODERS = {
           level: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetIntegrationResourceResponseNotificationLevel.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -437,8 +443,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourceResponseProtocolSettingsAuthenticationAppUrlsItemMetadata
         FIELDS = {
-          target: 'target',
-          url: 'url'
+          target: "target",
+          url: "url",
         }.freeze
         REQUIRED_FIELDS = %i[
           target
@@ -447,7 +453,7 @@ module OctridevVercel
         DECODERS = {
           target: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetIntegrationResourceResponseProtocolSettingsAuthenticationAX552d058822.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -477,13 +483,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourceResponseProtocolSettingsAuthenticationMetadata
         FIELDS = {
-          app_urls: 'appUrls'
+          app_urls: "appUrls",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           app_urls: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::GetIntegrationResourceResponseProtocolSettingsAuthenticationAppUrlsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -513,11 +520,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourceResponseProtocolSettingsExperimentationMetadata
         FIELDS = {
-          edge_config_id: 'edgeConfigId',
-          global_config_id: 'globalConfigId'
+          edge_config_id: "edgeConfigId",
+          global_config_id: "globalConfigId",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetIntegrationResourceResponseProtocolSettingsExperimentation.

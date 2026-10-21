@@ -35,10 +35,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRequestAccessToTeamResponseBitbucketMetadata
         FIELDS = {
-          login: 'login'
+          login: "login",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for RequestAccessToTeamResponseBitbucket.
@@ -67,10 +69,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRequestAccessToTeamResponseGithubMetadata
         FIELDS = {
-          login: 'login'
+          login: "login",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for RequestAccessToTeamResponseGithub.
@@ -99,10 +103,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRequestAccessToTeamResponseGitlabMetadata
         FIELDS = {
-          login: 'login'
+          login: "login",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for RequestAccessToTeamResponseGitlab.
@@ -131,17 +137,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRequestAccessToTeamResponseJoinedFromMetadata
         FIELDS = {
-          commit_id: 'commitId',
-          dsync_connected_at: 'dsyncConnectedAt',
-          dsync_user_id: 'dsyncUserId',
-          git_user_id: 'gitUserId',
-          git_user_login: 'gitUserLogin',
-          idp_user_id: 'idpUserId',
-          origin: 'origin',
-          repo_id: 'repoId',
-          repo_path: 'repoPath',
-          sso_connected_at: 'ssoConnectedAt',
-          sso_user_id: 'ssoUserId'
+          commit_id: "commitId",
+          dsync_connected_at: "dsyncConnectedAt",
+          dsync_user_id: "dsyncUserId",
+          git_user_id: "gitUserId",
+          git_user_login: "gitUserLogin",
+          idp_user_id: "idpUserId",
+          origin: "origin",
+          repo_id: "repoId",
+          repo_path: "repoPath",
+          sso_connected_at: "ssoConnectedAt",
+          sso_user_id: "ssoUserId",
         }.freeze
         REQUIRED_FIELDS = %i[
           origin
@@ -149,7 +155,7 @@ module OctridevVercel
         DECODERS = {
           origin: lambda do |value|
             ::OctridevVercel::Methods::Teams::RequestAccessToTeamResponseJoinedFromOrigin.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -180,14 +186,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRequestAccessToTeamResponseMetadata
         FIELDS = {
-          access_requested_at: 'accessRequestedAt',
-          bitbucket: 'bitbucket',
-          confirmed: 'confirmed',
-          github: 'github',
-          gitlab: 'gitlab',
-          joined_from: 'joinedFrom',
-          team_name: 'teamName',
-          team_slug: 'teamSlug'
+          access_requested_at: "accessRequestedAt",
+          bitbucket: "bitbucket",
+          confirmed: "confirmed",
+          github: "github",
+          gitlab: "gitlab",
+          joined_from: "joinedFrom",
+          team_name: "teamName",
+          team_slug: "teamSlug",
         }.freeze
         REQUIRED_FIELDS = %i[
           bitbucket
@@ -212,7 +218,7 @@ module OctridevVercel
           end,
           joined_from: lambda do |value|
             ::OctridevVercel::Methods::Teams::RequestAccessToTeamResponseJoinedFrom.from_hash(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           bitbucket
@@ -248,10 +254,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetTeamAccessRequestResponseBitbucketMetadata
         FIELDS = {
-          login: 'login'
+          login: "login",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetTeamAccessRequestResponseBitbucket.
@@ -281,10 +289,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetTeamAccessRequestResponseGithubMetadata
         FIELDS = {
-          login: 'login'
+          login: "login",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetTeamAccessRequestResponseGithub.
@@ -314,10 +324,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetTeamAccessRequestResponseGitlabMetadata
         FIELDS = {
-          login: 'login'
+          login: "login",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetTeamAccessRequestResponseGitlab.
@@ -347,17 +359,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetTeamAccessRequestResponseJoinedFromMetadata
         FIELDS = {
-          commit_id: 'commitId',
-          dsync_connected_at: 'dsyncConnectedAt',
-          dsync_user_id: 'dsyncUserId',
-          git_user_id: 'gitUserId',
-          git_user_login: 'gitUserLogin',
-          idp_user_id: 'idpUserId',
-          origin: 'origin',
-          repo_id: 'repoId',
-          repo_path: 'repoPath',
-          sso_connected_at: 'ssoConnectedAt',
-          sso_user_id: 'ssoUserId'
+          commit_id: "commitId",
+          dsync_connected_at: "dsyncConnectedAt",
+          dsync_user_id: "dsyncUserId",
+          git_user_id: "gitUserId",
+          git_user_login: "gitUserLogin",
+          idp_user_id: "idpUserId",
+          origin: "origin",
+          repo_id: "repoId",
+          repo_path: "repoPath",
+          sso_connected_at: "ssoConnectedAt",
+          sso_user_id: "ssoUserId",
         }.freeze
         REQUIRED_FIELDS = %i[
           origin
@@ -365,7 +377,7 @@ module OctridevVercel
         DECODERS = {
           origin: lambda do |value|
             ::OctridevVercel::Methods::Teams::GetTeamAccessRequestResponseJoinedFromOrigin.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -397,14 +409,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetTeamAccessRequestResponseMetadata
         FIELDS = {
-          access_requested_at: 'accessRequestedAt',
-          bitbucket: 'bitbucket',
-          confirmed: 'confirmed',
-          github: 'github',
-          gitlab: 'gitlab',
-          joined_from: 'joinedFrom',
-          team_name: 'teamName',
-          team_slug: 'teamSlug'
+          access_requested_at: "accessRequestedAt",
+          bitbucket: "bitbucket",
+          confirmed: "confirmed",
+          github: "github",
+          gitlab: "gitlab",
+          joined_from: "joinedFrom",
+          team_name: "teamName",
+          team_slug: "teamSlug",
         }.freeze
         REQUIRED_FIELDS = %i[
           access_requested_at
@@ -431,7 +443,7 @@ module OctridevVercel
           end,
           joined_from: lambda do |value|
             ::OctridevVercel::Methods::Teams::GetTeamAccessRequestResponseJoinedFrom.from_hash(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           bitbucket
@@ -481,10 +493,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalJoinTeamMetadata
         FIELDS = {
-          invite_code: 'inviteCode'
+          invite_code: "inviteCode",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for JoinTeam.
@@ -514,10 +528,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalJoinTeamResponseMetadata
         FIELDS = {
-          from: 'from',
-          name: 'name',
-          slug: 'slug',
-          team_id: 'teamId'
+          from: "from",
+          name: "name",
+          slug: "slug",
+          team_id: "teamId",
         }.freeze
         REQUIRED_FIELDS = %i[
           from
@@ -525,7 +539,8 @@ module OctridevVercel
           slug
           team_id
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
     end
   end

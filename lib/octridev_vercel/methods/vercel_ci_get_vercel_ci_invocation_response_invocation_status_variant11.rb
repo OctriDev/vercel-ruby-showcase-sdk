@@ -129,8 +129,8 @@ module OctridevVercel
         ERROR = 'error'
         SYSTEM_ERROR = 'systemError'
         FATAL = 'fatal'
-        VALUES = %w[
-          trace debug command info warn error systemError fatal
+        VALUES = [
+          'trace', 'debug', 'command', 'info', 'warn', 'error', 'systemError', 'fatal'
         ].freeze
         def self.from_value(value)
           value
@@ -250,10 +250,10 @@ module OctridevVercel
         JOBS_ON_HIVE_FAILED = 'jobs_on_hive_failed'
         AWAITING_JOBS = 'awaiting_jobs'
         COMPLETED = 'completed'
-        VALUES = %w[
-          new skipped bootstrapping bootstrapping_failed snapshotted sandbox_named
-          jobs_on_hive_clone_dispatched jobs_on_hive_dispatched jobs_on_hive_completed
-          jobs_on_hive_failed awaiting_jobs completed
+        VALUES = [
+          'new', 'skipped', 'bootstrapping', 'bootstrapping_failed', 'snapshotted', 'sandbox_named',
+          'jobs_on_hive_clone_dispatched', 'jobs_on_hive_dispatched', 'jobs_on_hive_completed',
+          'jobs_on_hive_failed', 'awaiting_jobs', 'completed'
         ].freeze
         def self.from_value(value)
           value
@@ -344,7 +344,7 @@ module OctridevVercel
         GITHUB = 'github'
         GITLAB = 'gitlab'
         VERCEL = 'vercel'
-        VALUES = %w[bitbucket cursor-origin github gitlab vercel].freeze
+        VALUES = ['bitbucket', 'cursor-origin', 'github', 'gitlab', 'vercel'].freeze
         def self.from_value(value)
           value
         end
@@ -354,7 +354,7 @@ module OctridevVercel
       module ListVercelCiInvocationsParameterItem3854c11d
         VERCEL_CI = 'vercel-ci'
         VERCEL_NATIVE_CHECKS = 'vercel-native-checks'
-        VALUES = %w[vercel-ci vercel-native-checks].freeze
+        VALUES = ['vercel-ci', 'vercel-native-checks'].freeze
         def self.from_value(value)
           value
         end
@@ -436,8 +436,8 @@ module OctridevVercel
         ERROR = 'error'
         SYSTEM_ERROR = 'systemError'
         FATAL = 'fatal'
-        VALUES = %w[
-          trace debug command info warn error systemError fatal
+        VALUES = [
+          'trace', 'debug', 'command', 'info', 'warn', 'error', 'systemError', 'fatal'
         ].freeze
         def self.from_value(value)
           value

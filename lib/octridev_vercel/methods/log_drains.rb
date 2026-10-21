@@ -16,22 +16,29 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_configurable_log_drain) do |config:, id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_configurable_log_drain) do |
+        config:,
+        id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/log-drains/',
+            "/v1/log-drains/",
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::LogDrains::GetConfigurableLogDrainResponse,
           decoder: :json,
           operation_id: 'get_configurable_log_drain',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -49,20 +56,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/log-drains/',
+            "/v1/log-drains/",
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :empty,
           operation_id: 'delete_configurable_log_drain',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -82,24 +90,25 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(project_id) do
           Validation.validate_pattern('projectId', project_id, '^[a-zA-z0-9_]+$')
         end
 
         SdkClient.request(
           'GET',
-          '/v1/log-drains',
+          "/v1/log-drains",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'projectIdOrName' => QueryValue.new(project_id_or_name, style: 'form', explode: true),
             'includeMetadata' => QueryValue.new(include_metadata, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :json,
           operation_id: 'list_log_drains',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -133,6 +142,7 @@ module OctridevVercel
         name: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_pattern('url', url, '^(http|https)?://')
         Validation.validate_uri('url', url)
 
@@ -148,11 +158,11 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          '/v1/log-drains',
+          "/v1/log-drains",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'deliveryFormat' => delivery_format,
@@ -163,11 +173,11 @@ module OctridevVercel
             'environments' => environments,
             'secret' => secret,
             'samplingRate' => sampling_rate,
-            'name' => name
+            'name' => name,
           },
           decoder: :json,
           operation_id: 'create_configurable_log_drain',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -178,18 +188,24 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_integration_log_drains) do |config:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_integration_log_drains) do |
+        config:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
-          '/v2/integrations/log-drains',
+          "/v2/integrations/log-drains",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :json,
           operation_id: 'get_integration_log_drains',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -222,6 +238,7 @@ module OctridevVercel
         environments: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('name', name, max: 100)
         Validation.validate_pattern('name', name, '^[A-z0-9_ -]+$')
 
@@ -241,11 +258,11 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          '/v2/integrations/log-drains',
+          "/v2/integrations/log-drains",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'name' => name,
@@ -255,12 +272,12 @@ module OctridevVercel
             'deliveryFormat' => delivery_format,
             'sources' => sources,
             'headers' => headers,
-            'environments' => environments
+            'environments' => environments,
           },
           return_type: ::OctridevVercel::Methods::LogDrains::CreateLogDrainResponse,
           decoder: :json,
           operation_id: 'create_log_drain',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -279,20 +296,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/integrations/log-drains/',
+            "/v1/integrations/log-drains/",
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :empty,
           operation_id: 'delete_integration_log_drain',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

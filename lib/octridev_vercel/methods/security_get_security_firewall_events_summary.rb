@@ -16,8 +16,24 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_security_firewall_events_summary) do |config:, project_id:, start_timestamp: NOT_GIVEN, end_timestamp: NOT_GIVEN, hosts: NOT_GIVEN, ip: NOT_GIVEN, is_active: NOT_GIVEN, action: NOT_GIVEN, action_type: NOT_GIVEN, rule_kind: NOT_GIVEN, rule_id: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
-        Validation.if_given(hosts) { Validation.validate_length('hosts', hosts, max: 10_000) }
+      singleton_class.define_method(:get_security_firewall_events_summary) do |
+        config:,
+        project_id:,
+        start_timestamp: NOT_GIVEN,
+        end_timestamp: NOT_GIVEN,
+        hosts: NOT_GIVEN,
+        ip: NOT_GIVEN,
+        is_active: NOT_GIVEN,
+        action: NOT_GIVEN,
+        action_type: NOT_GIVEN,
+        rule_kind: NOT_GIVEN,
+        rule_id: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
+        Validation.if_given(hosts) { Validation.validate_length('hosts', hosts, max: 10000) }
 
         Validation.if_given(ip) { Validation.validate_items('ip', ip, max: 100) }
 
@@ -29,7 +45,7 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          '/v1/security/firewall/events/summary',
+          "/v1/security/firewall/events/summary",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
@@ -43,12 +59,12 @@ module OctridevVercel
             'ruleKind' => QueryValue.new(rule_kind, style: 'form', explode: true),
             'ruleId' => QueryValue.new(rule_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Security::GetSecurityFirewallEventsSummaryResponse,
           decoder: :json,
           operation_id: 'get_security_firewall_events_summary',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

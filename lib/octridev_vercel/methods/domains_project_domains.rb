@@ -23,13 +23,23 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_domain_project_domains) do |config:, domain:, limit: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_domain_project_domains) do |
+        config:,
+        domain:,
+        limit: NOT_GIVEN,
+        since: NOT_GIVEN,
+        until_: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/domains/',
+            "/v1/domains/",
             SdkClient.encode_path_segment(domain),
-            '/project-domains'
+            "/project-domains"
           ].join,
           config: config,
           query: {
@@ -37,12 +47,12 @@ module OctridevVercel
             'since' => QueryValue.new(since, style: 'form', explode: true),
             'until' => QueryValue.new(until_, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Domains::GetDomainProjectDomainsResponse,
           decoder: :json,
           operation_id: 'get_domain_project_domains',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

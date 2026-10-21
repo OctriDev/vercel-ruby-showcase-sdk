@@ -43,17 +43,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseSandboxMetadata
         FIELDS = {
-          failover_regions: 'failoverRegions',
-          region: 'region'
+          failover_regions: "failoverRegions",
+          region: "region",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           failover_regions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::CreateProjectResponseSandboxFailoverRegionsItem.from_value(item) }
           end,
           region: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseSandboxRegion.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -83,8 +84,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseSecurityManagedRulesAiBotsMetadata
         FIELDS = {
-          action: 'action',
-          active: 'active'
+          action: "action",
+          active: "active",
         }.freeze
         REQUIRED_FIELDS = %i[
           active
@@ -95,7 +96,7 @@ module OctridevVercel
           end,
           active: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseSecurityManagedRulesAiBotsActive.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -125,8 +126,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseSecurityManagedRulesBotFilterMetadata
         FIELDS = {
-          action: 'action',
-          active: 'active'
+          action: "action",
+          active: "active",
         }.freeze
         REQUIRED_FIELDS = %i[
           active
@@ -137,7 +138,7 @@ module OctridevVercel
           end,
           active: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseSecurityManagedRulesBotFilterActive.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -167,8 +168,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseSecurityManagedRulesOwaspMetadata
         FIELDS = {
-          action: 'action',
-          active: 'active'
+          action: "action",
+          active: "active",
         }.freeze
         REQUIRED_FIELDS = %i[
           active
@@ -179,7 +180,7 @@ module OctridevVercel
           end,
           active: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseSecurityManagedRulesOwaspActive.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -209,8 +210,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseSecurityManagedRulesTrafficSourcesMetadata
         FIELDS = {
-          action: 'action',
-          active: 'active'
+          action: "action",
+          active: "active",
         }.freeze
         REQUIRED_FIELDS = %i[
           active
@@ -221,7 +222,7 @@ module OctridevVercel
           end,
           active: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseSecurityManagedRulesTrafficSourcesActive.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -251,8 +252,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseSecurityManagedRulesVercelRulesetMetadata
         FIELDS = {
-          action: 'action',
-          active: 'active'
+          action: "action",
+          active: "active",
         }.freeze
         REQUIRED_FIELDS = %i[
           active
@@ -263,7 +264,7 @@ module OctridevVercel
           end,
           active: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseSecurityManagedRulesVercelRulesetActive.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -293,11 +294,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseSecurityManagedRulesMetadata
         FIELDS = {
-          ai_bots: 'ai_bots',
-          bot_filter: 'bot_filter',
-          owasp: 'owasp',
-          traffic_sources: 'traffic_sources',
-          vercel_ruleset: 'vercel_ruleset'
+          ai_bots: "ai_bots",
+          bot_filter: "bot_filter",
+          owasp: "owasp",
+          traffic_sources: "traffic_sources",
+          vercel_ruleset: "vercel_ruleset",
         }.freeze
         REQUIRED_FIELDS = %i[
           ai_bots
@@ -321,7 +322,7 @@ module OctridevVercel
           end,
           vercel_ruleset: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseSecurityManagedRulesVercelRuleset.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -351,23 +352,24 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseSecurityMetadata
         FIELDS = {
-          attack_mode_active_until: 'attackModeActiveUntil',
-          attack_mode_enabled: 'attackModeEnabled',
-          attack_mode_updated_at: 'attackModeUpdatedAt',
-          bot_id_enabled: 'botIdEnabled',
-          firewall_bypass_ips: 'firewallBypassIps',
-          firewall_config_version: 'firewallConfigVersion',
-          firewall_enabled: 'firewallEnabled',
-          firewall_seawall_enabled: 'firewallSeawallEnabled',
-          firewall_updated_at: 'firewallUpdatedAt',
-          ja3_enabled: 'ja3Enabled',
-          ja4_enabled: 'ja4Enabled',
-          log_headers: 'log_headers',
-          managed_rules: 'managedRules',
-          page_integrity_enabled: 'pageIntegrityEnabled',
-          rulesets: 'rulesets'
+          attack_mode_active_until: "attackModeActiveUntil",
+          attack_mode_enabled: "attackModeEnabled",
+          attack_mode_updated_at: "attackModeUpdatedAt",
+          bot_id_enabled: "botIdEnabled",
+          firewall_bypass_ips: "firewallBypassIps",
+          firewall_config_version: "firewallConfigVersion",
+          firewall_enabled: "firewallEnabled",
+          firewall_seawall_enabled: "firewallSeawallEnabled",
+          firewall_updated_at: "firewallUpdatedAt",
+          ja3_enabled: "ja3Enabled",
+          ja4_enabled: "ja4Enabled",
+          log_headers: "log_headers",
+          managed_rules: "managedRules",
+          page_integrity_enabled: "pageIntegrityEnabled",
+          rulesets: "rulesets",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           attack_mode_enabled: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseSecurityAttackModeEnabled.from_value(value)
@@ -392,7 +394,7 @@ module OctridevVercel
           end,
           page_integrity_enabled: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseSecurityPageIntegrityEnabled.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -427,10 +429,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseServicesItemMetadata
         FIELDS = {
-          framework: 'framework',
-          runtime: 'runtime',
-          service_name: 'serviceName',
-          service_type: 'serviceType'
+          framework: "framework",
+          runtime: "runtime",
+          service_name: "serviceName",
+          service_type: "serviceType",
         }.freeze
         REQUIRED_FIELDS = %i[
           service_name
@@ -441,7 +443,7 @@ module OctridevVercel
           end,
           service_type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseServicesItemServiceType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -478,13 +480,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseSpeedInsightsMetadata
         FIELDS = {
-          canceled_at: 'canceledAt',
-          data_received_at: 'dataReceivedAt',
-          disabled_at: 'disabledAt',
-          enabled_at: 'enabledAt',
-          has_data: 'hasData',
-          id: 'id',
-          paid_at: 'paidAt'
+          canceled_at: "canceledAt",
+          data_received_at: "dataReceivedAt",
+          disabled_at: "disabledAt",
+          enabled_at: "enabledAt",
+          has_data: "hasData",
+          id: "id",
+          paid_at: "paidAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -492,7 +494,7 @@ module OctridevVercel
         DECODERS = {
           has_data: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseSpeedInsightsHasData.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -524,9 +526,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseSsoProtectionMetadata
         FIELDS = {
-          april2026_security_incident_migration_applied_from: 'april2026SecurityIncidentMigrationAppliedFrom',
-          cve55182_migration_applied_from: 'cve55182MigrationAppliedFrom',
-          deployment_type: 'deploymentType'
+          april2026_security_incident_migration_applied_from: "april2026SecurityIncidentMigrationAppliedFrom",
+          cve55182_migration_applied_from: "cve55182MigrationAppliedFrom",
+          deployment_type: "deploymentType",
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment_type
@@ -540,7 +542,7 @@ module OctridevVercel
           end,
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseSsoProtectionDeploymentType.from_value(value)
-          end
+          end,
         }.freeze
       end
     end

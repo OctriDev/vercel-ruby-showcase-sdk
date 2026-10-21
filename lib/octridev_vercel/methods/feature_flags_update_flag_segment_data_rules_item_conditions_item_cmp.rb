@@ -80,7 +80,7 @@ module OctridevVercel
         STRING = 'string'
         NUMBER = 'number'
         JSON = 'json'
-        VALUES = %w[boolean string number json].freeze
+        VALUES = ['boolean', 'string', 'number', 'json'].freeze
         def self.from_value(value)
           value
         end
@@ -162,7 +162,7 @@ module OctridevVercel
       module ListFlagVersionsResponseVersionsItemDataState
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = %w[active archived].freeze
+        VALUES = ['active', 'archived'].freeze
         def self.from_value(value)
           value
         end
@@ -183,7 +183,7 @@ module OctridevVercel
         SERVER = 'server'
         MOBILE = 'mobile'
         CLIENT = 'client'
-        VALUES = %w[server mobile client].freeze
+        VALUES = ['server', 'mobile', 'client'].freeze
         def self.from_value(value)
           value
         end

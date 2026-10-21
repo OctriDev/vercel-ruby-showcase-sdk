@@ -25,23 +25,24 @@ module OctridevVercel
         ttl: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/kms/issuers/',
+            "/v1/kms/issuers/",
             SdkClient.encode_path_segment(issuer_id),
-            '/sign/token'
+            "/sign/token"
           ].join,
           config: config,
           body: {
             'claims' => claims,
             'headers' => headers,
-            'ttl' => ttl
+            'ttl' => ttl,
           },
           return_type: ::OctridevVercel::Methods::Kms::SignKmsTokenResponse,
           decoder: :json,
           operation_id: 'sign_kms_token',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -34,26 +34,27 @@ module OctridevVercel
         recursive: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v2/sandboxes/sessions/',
+            "/v2/sandboxes/sessions/",
             SdkClient.encode_path_segment(session_id),
-            '/fs/mkdir'
+            "/fs/mkdir"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'path' => path,
             'cwd' => cwd,
-            'recursive' => recursive
+            'recursive' => recursive,
           },
           decoder: :json,
           operation_id: 'create_session_directory',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

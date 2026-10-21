@@ -30,26 +30,27 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         SdkClient.request(
           'GET',
           [
-            '/v1/access-groups/',
+            "/v1/access-groups/",
             SdkClient.encode_path_segment(id_or_name),
-            '/projects'
+            "/projects"
           ].join,
           config: config,
           query: {
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'next' => QueryValue.new(next_, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::AccessGroups::ListAccessGroupProjectsResponse,
           decoder: :json,
           operation_id: 'list_access_group_projects',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -72,28 +73,29 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('projectId', project_id, max: 256)
 
         SdkClient.request(
           'POST',
           [
-            '/v1/access-groups/',
+            "/v1/access-groups/",
             SdkClient.encode_path_segment(access_group_id_or_name),
-            '/projects'
+            "/projects"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'projectId' => project_id,
-            'role' => role
+            'role' => role,
           },
           return_type: ::OctridevVercel::Methods::AccessGroups::CreateAccessGroupProjectResponse,
           decoder: :json,
           operation_id: 'create_access_group_project',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -112,23 +114,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
           [
-            '/v1/access-groups/',
+            "/v1/access-groups/",
             SdkClient.encode_path_segment(access_group_id_or_name),
-            '/projects/',
+            "/projects/",
             SdkClient.encode_path_segment(project_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::AccessGroups::ReadAccessGroupProjectResponse,
           decoder: :json,
           operation_id: 'read_access_group_project',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -150,26 +153,27 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PATCH',
           [
-            '/v1/access-groups/',
+            "/v1/access-groups/",
             SdkClient.encode_path_segment(access_group_id_or_name),
-            '/projects/',
+            "/projects/",
             SdkClient.encode_path_segment(project_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'role' => role
+            'role' => role,
           },
           return_type: ::OctridevVercel::Methods::AccessGroups::UpdateAccessGroupProjectResponse,
           decoder: :json,
           operation_id: 'update_access_group_project',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -188,22 +192,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/access-groups/',
+            "/v1/access-groups/",
             SdkClient.encode_path_segment(access_group_id_or_name),
-            '/projects/',
+            "/projects/",
             SdkClient.encode_path_segment(project_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :empty,
           operation_id: 'delete_access_group_project',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

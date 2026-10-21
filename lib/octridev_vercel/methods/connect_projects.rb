@@ -33,27 +33,28 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         SdkClient.request(
           'GET',
           [
-            '/v2/connect/projects/',
+            "/v2/connect/projects/",
             SdkClient.encode_path_segment(project_id),
-            '/connectors'
+            "/connectors"
           ].join,
           config: config,
           query: {
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::ConnectProjectConnectorConnectionList,
           decoder: :json,
           operation_id: 'list_project_connector_connections',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError }
+          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError },
         ).data
       end
     end

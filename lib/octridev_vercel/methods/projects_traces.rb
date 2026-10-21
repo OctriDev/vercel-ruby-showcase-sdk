@@ -19,25 +19,33 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_project_trace) do |config:, project_id:, request_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_project_trace) do |
+        config:,
+        project_id:,
+        request_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.validate_length('projectId', project_id, max: 150)
 
         Validation.validate_length('requestId', request_id, max: 256)
 
         SdkClient.request(
           'GET',
-          '/v1/projects/traces',
+          "/v1/projects/traces",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'requestId' => QueryValue.new(request_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Projects::GetProjectTraceResponse,
           decoder: :json,
           operation_id: 'get_project_trace',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -59,22 +67,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
-          '/v1/projects/traces/session',
+          "/v1/projects/traces/session",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'projectId' => project_id,
-            'hostname' => hostname
+            'hostname' => hostname,
           },
           return_type: ::OctridevVercel::Methods::Projects::CreateTraceSessionResponse,
           decoder: :json,
           operation_id: 'create_trace_session',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

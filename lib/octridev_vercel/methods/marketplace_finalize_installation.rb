@@ -17,17 +17,18 @@ module OctridevVercel
         integration_configuration_id:,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/installations/',
+            "/v1/installations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/billing/finalize'
+            "/billing/finalize"
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'finalize_installation',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

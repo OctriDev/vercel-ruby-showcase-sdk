@@ -24,24 +24,25 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
           [
-            '/v1/vercel-ci/invocations/',
+            "/v1/vercel-ci/invocations/",
             SdkClient.encode_path_segment(invocation_id),
-            '/attempts/',
+            "/attempts/",
             SdkClient.encode_path_segment(attempt),
-            '/job-definitions'
+            "/job-definitions"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::VercelCi::ListVercelCiJobDefinitionsResponse,
           decoder: :json,
           operation_id: 'list_vercel_ci_job_definitions',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -35,8 +35,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGenerateRouteResponseRoutePathConditionMetadata
         FIELDS = {
-          syntax: 'syntax',
-          value: 'value'
+          syntax: "syntax",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           syntax
@@ -45,7 +45,7 @@ module OctridevVercel
         DECODERS = {
           syntax: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::GenerateRouteResponseRoutePathConditionSyntax.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -75,11 +75,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGenerateRouteResponseRouteMetadata
         FIELDS = {
-          actions: 'actions',
-          conditions: 'conditions',
-          description: 'description',
-          name: 'name',
-          path_condition: 'pathCondition'
+          actions: "actions",
+          conditions: "conditions",
+          description: "description",
+          name: "name",
+          path_condition: "pathCondition",
         }.freeze
         REQUIRED_FIELDS = %i[
           actions
@@ -96,7 +96,7 @@ module OctridevVercel
           end,
           path_condition: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::GenerateRouteResponseRoutePathCondition.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -126,14 +126,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGenerateRouteResponseMetadata
         FIELDS = {
-          error: 'error',
-          route: 'route'
+          error: "error",
+          route: "route",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           route: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::GenerateRouteResponseRoute.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -163,14 +164,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRouteVersionsResponseVersionsItemMetadata
         FIELDS = {
-          alias_: 'alias',
-          created_by: 'createdBy',
-          id: 'id',
-          is_live: 'isLive',
-          is_staging: 'isStaging',
-          last_modified: 'lastModified',
-          rule_count: 'ruleCount',
-          s3_key: 's3Key'
+          alias_: "alias",
+          created_by: "createdBy",
+          id: "id",
+          is_live: "isLive",
+          is_staging: "isStaging",
+          last_modified: "lastModified",
+          rule_count: "ruleCount",
+          s3_key: "s3Key",
         }.freeze
         REQUIRED_FIELDS = %i[
           created_by
@@ -184,7 +185,7 @@ module OctridevVercel
           end,
           is_staging: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::GetRouteVersionsResponseVersionsItemIsStaging.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -230,7 +231,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRouteVersionsResponseMetadata
         FIELDS = {
-          versions: 'versions'
+          versions: "versions",
         }.freeze
         REQUIRED_FIELDS = %i[
           versions
@@ -238,7 +239,7 @@ module OctridevVercel
         DECODERS = {
           versions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::ProjectRoutes::GetRouteVersionsResponseVersionsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -268,8 +269,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateRouteVersionsMetadata
         FIELDS = {
-          id: 'id',
-          action: 'action'
+          id: "id",
+          action: "action",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -278,7 +279,7 @@ module OctridevVercel
         DECODERS = {
           action: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::UpdateRouteVersionsAction.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -308,14 +309,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateRouteVersionsResponseVersionMetadata
         FIELDS = {
-          alias_: 'alias',
-          created_by: 'createdBy',
-          id: 'id',
-          is_live: 'isLive',
-          is_staging: 'isStaging',
-          last_modified: 'lastModified',
-          rule_count: 'ruleCount',
-          s3_key: 's3Key'
+          alias_: "alias",
+          created_by: "createdBy",
+          id: "id",
+          is_live: "isLive",
+          is_staging: "isStaging",
+          last_modified: "lastModified",
+          rule_count: "ruleCount",
+          s3_key: "s3Key",
         }.freeze
         REQUIRED_FIELDS = %i[
           created_by
@@ -329,7 +330,7 @@ module OctridevVercel
           end,
           is_staging: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::UpdateRouteVersionsResponseVersionIsStaging.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -375,7 +376,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateRouteVersionsResponseMetadata
         FIELDS = {
-          version: 'version'
+          version: "version",
         }.freeze
         REQUIRED_FIELDS = %i[
           version
@@ -383,7 +384,7 @@ module OctridevVercel
         DECODERS = {
           version: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::UpdateRouteVersionsResponseVersion.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -453,7 +454,7 @@ module OctridevVercel
       module GetRoutesResponseVariant3RoutesItemRouteMitigateAction
         CHALLENGE = 'challenge'
         DENY = 'deny'
-        VALUES = %w[challenge deny].freeze
+        VALUES = ['challenge', 'deny'].freeze
         def self.from_value(value)
           value
         end
@@ -484,7 +485,7 @@ module OctridevVercel
         EQUALS = 'equals'
         PATH_TO_REGEXP = 'path-to-regexp'
         REGEX = 'regex'
-        VALUES = %w[equals path-to-regexp regex].freeze
+        VALUES = ['equals', 'path-to-regexp', 'regex'].freeze
         def self.from_value(value)
           value
         end
@@ -495,7 +496,7 @@ module OctridevVercel
         COOKIE = 'cookie'
         HEADER = 'header'
         QUERY = 'query'
-        VALUES = %w[cookie header query].freeze
+        VALUES = ['cookie', 'header', 'query'].freeze
         def self.from_value(value)
           value
         end
@@ -507,7 +508,7 @@ module OctridevVercel
         EQ = 'eq'
         EXISTS = 'exists'
         RE = 're'
-        VALUES = %w[contains eq exists re].freeze
+        VALUES = ['contains', 'eq', 'exists', 're'].freeze
         def self.from_value(value)
           value
         end
@@ -539,7 +540,7 @@ module OctridevVercel
         REDIRECT = 'redirect'
         REWRITE = 'rewrite'
         SET_STATUS = 'set-status'
-        VALUES = %w[modify redirect rewrite set-status].freeze
+        VALUES = ['modify', 'redirect', 'rewrite', 'set-status'].freeze
         def self.from_value(value)
           value
         end
@@ -561,7 +562,7 @@ module OctridevVercel
         HEADER = 'header'
         COOKIE = 'cookie'
         QUERY = 'query'
-        VALUES = %w[host header cookie query].freeze
+        VALUES = ['host', 'header', 'cookie', 'query'].freeze
         def self.from_value(value)
           value
         end

@@ -79,6 +79,7 @@ module OctridevVercel
         tags: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(ports) { Validation.validate_items('ports', ports, max: 15) }
 
         Validation.if_given(image) { Validation.validate_length('image', image, max: 255) }
@@ -98,11 +99,11 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          '/v3/sandboxes',
+          "/v3/sandboxes",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'networkPolicy' => network_policy,
@@ -122,12 +123,12 @@ module OctridevVercel
             'persistent' => persistent,
             'snapshotExpiration' => snapshot_expiration,
             'keepLastSnapshots' => keep_last_snapshots,
-            'tags' => tags
+            'tags' => tags,
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::CreateSandboxesV3Response,
           decoder: :json,
           operation_id: 'create_sandboxes_v3',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

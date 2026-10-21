@@ -5,667 +5,670 @@
 
 # user domain models
 module OctridevVercel
-  # API model for UserEventPayloadVariant489PolicyResources.
-  # Resource boundary, or `null` when the policy has none.
-  class UserEventPayloadVariant489PolicyResources
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant489PolicyResourcesMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant489PolicyResourcesMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant489PolicyResourcesMetadata::DECODERS
+# API model for UserEventPayloadVariant489PolicyResources.
+# Resource boundary, or `null` when the policy has none.
+class UserEventPayloadVariant489PolicyResources
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant489PolicyResourcesMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant489PolicyResourcesMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant489PolicyResourcesMetadata::DECODERS
 
-    # @return [Array_of_String] Required array value serialized in the `projectIds` wire field.
-    attr_reader :project_ids
+  # @return [Array_of_String] Required array value serialized in the `projectIds` wire field.
+  attr_reader :project_ids
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant489PolicyMetadata
-    FIELDS = {
-      claims: 'claims',
-      client_id: 'clientId',
-      created_at: 'createdAt',
-      issuer_url: 'issuerUrl',
-      name: 'name',
-      permissions: 'permissions',
-      policy_id: 'policyId',
-      resources: 'resources',
-      team_id: 'teamId',
-      updated_at: 'updatedAt'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      claims
-      client_id
-      created_at
-      issuer_url
-      name
-      permissions
-      policy_id
-      resources
-      team_id
-      updated_at
-    ].freeze
-    DECODERS = {
-      claims: lambda do |value|
-        value&.map { |item| ::OctridevVercel::UserEventPayloadVariant489PolicyClaimsItem.from_hash(item) }
-      end,
-      resources: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant489PolicyResources.from_hash(value)
-      end
-    }.freeze
-    NULLABLE_FIELDS = %i[
-      name
-      resources
-    ].freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant489Policy.
-  # A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
-  class UserEventPayloadVariant489Policy
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant489PolicyMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant489PolicyMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant489PolicyMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [Array_of_UserEventPayloadVariant489PolicyClaimsItem] Claim matchers an OIDC token must satisfy to use the policy.
-    attr_reader :claims
-    # @return [String] Required `string` value serialized in the `clientId` wire field.
-    attr_reader :client_id
-    # @return [Float] Creation time (epoch ms).
-    attr_reader :created_at
-    # @return [String] Required `string` value serialized in the `issuerUrl` wire field.
-    attr_reader :issuer_url
-    # @return [String] Human-readable policy name, or `null` when unnamed.
-    attr_reader :name
-    # @return [Array_of_String] Permission boundary (`['*']` = the app's full declared permissions).
-    attr_reader :permissions
-    # @return [String] Required `string` value serialized in the `policyId` wire field.
-    attr_reader :policy_id
-    # @return [UserEventPayloadVariant489PolicyResources] Resource boundary, or `null` when the policy has none.
-    attr_reader :resources
-    # @return [String] Required `string` value serialized in the `teamId` wire field.
-    attr_reader :team_id
-    # @return [Float] Last-update time (epoch ms).
-    attr_reader :updated_at
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant489PolicyMetadata
+  FIELDS = {
+    claims: "claims",
+    client_id: "clientId",
+    created_at: "createdAt",
+    issuer_url: "issuerUrl",
+    name: "name",
+    permissions: "permissions",
+    policy_id: "policyId",
+    resources: "resources",
+    team_id: "teamId",
+    updated_at: "updatedAt",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    claims
+    client_id
+    created_at
+    issuer_url
+    name
+    permissions
+    policy_id
+    resources
+    team_id
+    updated_at
+  ].freeze
+  DECODERS = {
+    claims: lambda do |value|
+      value&.map { |item| ::OctridevVercel::UserEventPayloadVariant489PolicyClaimsItem.from_hash(item) }
+    end,
+    resources: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant489PolicyResources.from_hash(value)
+    end,
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    name
+    resources
+  ].freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant489Policy.
+# A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
+class UserEventPayloadVariant489Policy
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant489PolicyMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant489PolicyMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant489PolicyMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant489PolicyMetadata::NULLABLE_FIELDS)
-    end
+  # @return [Array_of_UserEventPayloadVariant489PolicyClaimsItem] Claim matchers an OIDC token must satisfy to use the policy.
+  attr_reader :claims
+  # @return [String] Required `string` value serialized in the `clientId` wire field.
+  attr_reader :client_id
+  # @return [Float] Creation time (epoch ms).
+  attr_reader :created_at
+  # @return [String] Required `string` value serialized in the `issuerUrl` wire field.
+  attr_reader :issuer_url
+  # @return [String] Human-readable policy name, or `null` when unnamed.
+  attr_reader :name
+  # @return [Array_of_String] Permission boundary (`['*']` = the app's full declared permissions).
+  attr_reader :permissions
+  # @return [String] Required `string` value serialized in the `policyId` wire field.
+  attr_reader :policy_id
+  # @return [UserEventPayloadVariant489PolicyResources] Resource boundary, or `null` when the policy has none.
+  attr_reader :resources
+  # @return [String] Required `string` value serialized in the `teamId` wire field.
+  attr_reader :team_id
+  # @return [Float] Last-update time (epoch ms).
+  attr_reader :updated_at
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant489Metadata
-    FIELDS = {
-      policy: 'policy',
-      app_name: 'appName'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      policy
-    ].freeze
-    DECODERS = {
-      policy: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant489Policy.from_hash(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant489PolicyMetadata::NULLABLE_FIELDS)
   end
 
-  # API model for UserEventPayloadVariant489.
-  class UserEventPayloadVariant489
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant489Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant489Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant489Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [UserEventPayloadVariant489Policy] A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
-    attr_reader :policy
-    # @return [String] Optional `string` value serialized in the `appName` wire field.
-    attr_reader :app_name
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant489Metadata
+  FIELDS = {
+    policy: "policy",
+    app_name: "appName",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    policy
+  ].freeze
+  DECODERS = {
+    policy: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant489Policy.from_hash(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant489.
+class UserEventPayloadVariant489
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant489Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant489Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant489Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [UserEventPayloadVariant489Policy] A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
+  attr_reader :policy
+  # @return [String] Optional `string` value serialized in the `appName` wire field.
+  attr_reader :app_name
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant490AfterClaimsItemValuesItemMetadata
-    FIELDS = {
-      value: 'value',
-      wildcards: 'wildcards'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      value
-      wildcards
-    ].freeze
-    DECODERS = {
-      wildcards: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant490AfterClaimsItemValuesItemWildcards.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant490AfterClaimsItemValuesItem.
-  # Required object value serialized in the `values[]` wire field.
-  class UserEventPayloadVariant490AfterClaimsItemValuesItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant490AfterClaimsItemValuesItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490AfterClaimsItemValuesItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant490AfterClaimsItemValuesItemMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] Required `string` value serialized in the `value` wire field.
-    attr_reader :value
-    # @return [UserEventPayloadVariant490AfterClaimsItemValuesItemWildcards] Required enumerated value serialized in the `wildcards` wire field.
-    attr_reader :wildcards
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant490AfterClaimsItemValuesItemMetadata
+  FIELDS = {
+    value: "value",
+    wildcards: "wildcards",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    value
+    wildcards
+  ].freeze
+  DECODERS = {
+    wildcards: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant490AfterClaimsItemValuesItemWildcards.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant490AfterClaimsItemValuesItem.
+# Required object value serialized in the `values[]` wire field.
+class UserEventPayloadVariant490AfterClaimsItemValuesItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant490AfterClaimsItemValuesItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490AfterClaimsItemValuesItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant490AfterClaimsItemValuesItemMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] Required `string` value serialized in the `value` wire field.
+  attr_reader :value
+  # @return [UserEventPayloadVariant490AfterClaimsItemValuesItemWildcards] Required enumerated value serialized in the `wildcards` wire field.
+  attr_reader :wildcards
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant490AfterClaimsItemMetadata
-    FIELDS = {
-      name: 'name',
-      values: 'values'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      name
-      values
-    ].freeze
-    DECODERS = {
-      values: lambda do |value|
-        value&.map { |item| ::OctridevVercel::UserEventPayloadVariant490AfterClaimsItemValuesItem.from_hash(item) }
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant490AfterClaimsItem.
-  # Claim matchers an OIDC token must satisfy to use the policy.
-  class UserEventPayloadVariant490AfterClaimsItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant490AfterClaimsItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490AfterClaimsItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant490AfterClaimsItemMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] Required `string` value serialized in the `name` wire field.
-    attr_reader :name
-    # @return [Array_of_UserEventPayloadVariant490AfterClaimsItemValuesItem] Required array value serialized in the `values` wire field.
-    attr_reader :values
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant490AfterClaimsItemMetadata
+  FIELDS = {
+    name: "name",
+    values: "values",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    name
+    values
+  ].freeze
+  DECODERS = {
+    values: lambda do |value|
+      value&.map { |item| ::OctridevVercel::UserEventPayloadVariant490AfterClaimsItemValuesItem.from_hash(item) }
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant490AfterClaimsItem.
+# Claim matchers an OIDC token must satisfy to use the policy.
+class UserEventPayloadVariant490AfterClaimsItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant490AfterClaimsItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490AfterClaimsItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant490AfterClaimsItemMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] Required `string` value serialized in the `name` wire field.
+  attr_reader :name
+  # @return [Array_of_UserEventPayloadVariant490AfterClaimsItemValuesItem] Required array value serialized in the `values` wire field.
+  attr_reader :values
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant490AfterResourcesMetadata
-    FIELDS = {
-      project_ids: 'projectIds'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      project_ids
-    ].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant490AfterResources.
-  # Resource boundary, or `null` when the policy has none.
-  class UserEventPayloadVariant490AfterResources
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant490AfterResourcesMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490AfterResourcesMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant490AfterResourcesMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [Array_of_String] Required array value serialized in the `projectIds` wire field.
-    attr_reader :project_ids
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant490AfterResourcesMetadata
+  FIELDS = {
+    project_ids: "projectIds",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    project_ids
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant490AfterResources.
+# Resource boundary, or `null` when the policy has none.
+class UserEventPayloadVariant490AfterResources
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant490AfterResourcesMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490AfterResourcesMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant490AfterResourcesMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [Array_of_String] Required array value serialized in the `projectIds` wire field.
+  attr_reader :project_ids
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant490AfterMetadata
-    FIELDS = {
-      claims: 'claims',
-      client_id: 'clientId',
-      created_at: 'createdAt',
-      issuer_url: 'issuerUrl',
-      name: 'name',
-      permissions: 'permissions',
-      policy_id: 'policyId',
-      resources: 'resources',
-      team_id: 'teamId',
-      updated_at: 'updatedAt'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      claims
-      client_id
-      created_at
-      issuer_url
-      name
-      permissions
-      policy_id
-      resources
-      team_id
-      updated_at
-    ].freeze
-    DECODERS = {
-      claims: lambda do |value|
-        value&.map { |item| ::OctridevVercel::UserEventPayloadVariant490AfterClaimsItem.from_hash(item) }
-      end,
-      resources: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant490AfterResources.from_hash(value)
-      end
-    }.freeze
-    NULLABLE_FIELDS = %i[
-      name
-      resources
-    ].freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant490After.
-  # A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
-  class UserEventPayloadVariant490After
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant490AfterMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490AfterMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant490AfterMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [Array_of_UserEventPayloadVariant490AfterClaimsItem] Claim matchers an OIDC token must satisfy to use the policy.
-    attr_reader :claims
-    # @return [String] Required `string` value serialized in the `clientId` wire field.
-    attr_reader :client_id
-    # @return [Float] Creation time (epoch ms).
-    attr_reader :created_at
-    # @return [String] Required `string` value serialized in the `issuerUrl` wire field.
-    attr_reader :issuer_url
-    # @return [String] Human-readable policy name, or `null` when unnamed.
-    attr_reader :name
-    # @return [Array_of_String] Permission boundary (`['*']` = the app's full declared permissions).
-    attr_reader :permissions
-    # @return [String] Required `string` value serialized in the `policyId` wire field.
-    attr_reader :policy_id
-    # @return [UserEventPayloadVariant490AfterResources] Resource boundary, or `null` when the policy has none.
-    attr_reader :resources
-    # @return [String] Required `string` value serialized in the `teamId` wire field.
-    attr_reader :team_id
-    # @return [Float] Last-update time (epoch ms).
-    attr_reader :updated_at
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant490AfterMetadata
+  FIELDS = {
+    claims: "claims",
+    client_id: "clientId",
+    created_at: "createdAt",
+    issuer_url: "issuerUrl",
+    name: "name",
+    permissions: "permissions",
+    policy_id: "policyId",
+    resources: "resources",
+    team_id: "teamId",
+    updated_at: "updatedAt",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    claims
+    client_id
+    created_at
+    issuer_url
+    name
+    permissions
+    policy_id
+    resources
+    team_id
+    updated_at
+  ].freeze
+  DECODERS = {
+    claims: lambda do |value|
+      value&.map { |item| ::OctridevVercel::UserEventPayloadVariant490AfterClaimsItem.from_hash(item) }
+    end,
+    resources: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant490AfterResources.from_hash(value)
+    end,
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    name
+    resources
+  ].freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant490After.
+# A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
+class UserEventPayloadVariant490After
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant490AfterMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490AfterMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant490AfterMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant490AfterMetadata::NULLABLE_FIELDS)
-    end
+  # @return [Array_of_UserEventPayloadVariant490AfterClaimsItem] Claim matchers an OIDC token must satisfy to use the policy.
+  attr_reader :claims
+  # @return [String] Required `string` value serialized in the `clientId` wire field.
+  attr_reader :client_id
+  # @return [Float] Creation time (epoch ms).
+  attr_reader :created_at
+  # @return [String] Required `string` value serialized in the `issuerUrl` wire field.
+  attr_reader :issuer_url
+  # @return [String] Human-readable policy name, or `null` when unnamed.
+  attr_reader :name
+  # @return [Array_of_String] Permission boundary (`['*']` = the app's full declared permissions).
+  attr_reader :permissions
+  # @return [String] Required `string` value serialized in the `policyId` wire field.
+  attr_reader :policy_id
+  # @return [UserEventPayloadVariant490AfterResources] Resource boundary, or `null` when the policy has none.
+  attr_reader :resources
+  # @return [String] Required `string` value serialized in the `teamId` wire field.
+  attr_reader :team_id
+  # @return [Float] Last-update time (epoch ms).
+  attr_reader :updated_at
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant490BeforeClaimsItemValuesItemMetadata
-    FIELDS = {
-      value: 'value',
-      wildcards: 'wildcards'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      value
-      wildcards
-    ].freeze
-    DECODERS = {
-      wildcards: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant490BeforeClaimsItemValuesItemWildcards.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant490AfterMetadata::NULLABLE_FIELDS)
   end
 
-  # API model for UserEventPayloadVariant490BeforeClaimsItemValuesItem.
-  # Required object value serialized in the `values[]` wire field.
-  class UserEventPayloadVariant490BeforeClaimsItemValuesItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant490BeforeClaimsItemValuesItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490BeforeClaimsItemValuesItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant490BeforeClaimsItemValuesItemMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] Required `string` value serialized in the `value` wire field.
-    attr_reader :value
-    # @return [UserEventPayloadVariant490BeforeClaimsItemValuesItemWildcards] Required enumerated value serialized in the `wildcards` wire field.
-    attr_reader :wildcards
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant490BeforeClaimsItemValuesItemMetadata
+  FIELDS = {
+    value: "value",
+    wildcards: "wildcards",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    value
+    wildcards
+  ].freeze
+  DECODERS = {
+    wildcards: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant490BeforeClaimsItemValuesItemWildcards.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant490BeforeClaimsItemValuesItem.
+# Required object value serialized in the `values[]` wire field.
+class UserEventPayloadVariant490BeforeClaimsItemValuesItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant490BeforeClaimsItemValuesItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490BeforeClaimsItemValuesItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant490BeforeClaimsItemValuesItemMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] Required `string` value serialized in the `value` wire field.
+  attr_reader :value
+  # @return [UserEventPayloadVariant490BeforeClaimsItemValuesItemWildcards] Required enumerated value serialized in the `wildcards` wire field.
+  attr_reader :wildcards
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant490BeforeClaimsItemMetadata
-    FIELDS = {
-      name: 'name',
-      values: 'values'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      name
-      values
-    ].freeze
-    DECODERS = {
-      values: lambda do |value|
-        value&.map { |item| ::OctridevVercel::UserEventPayloadVariant490BeforeClaimsItemValuesItem.from_hash(item) }
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant490BeforeClaimsItem.
-  # Claim matchers an OIDC token must satisfy to use the policy.
-  class UserEventPayloadVariant490BeforeClaimsItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant490BeforeClaimsItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490BeforeClaimsItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant490BeforeClaimsItemMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] Required `string` value serialized in the `name` wire field.
-    attr_reader :name
-    # @return [Array_of_UserEventPayloadVariant490BeforeClaimsItemValuesItem] Required array value serialized in the `values` wire field.
-    attr_reader :values
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant490BeforeClaimsItemMetadata
+  FIELDS = {
+    name: "name",
+    values: "values",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    name
+    values
+  ].freeze
+  DECODERS = {
+    values: lambda do |value|
+      value&.map { |item| ::OctridevVercel::UserEventPayloadVariant490BeforeClaimsItemValuesItem.from_hash(item) }
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant490BeforeClaimsItem.
+# Claim matchers an OIDC token must satisfy to use the policy.
+class UserEventPayloadVariant490BeforeClaimsItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant490BeforeClaimsItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490BeforeClaimsItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant490BeforeClaimsItemMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] Required `string` value serialized in the `name` wire field.
+  attr_reader :name
+  # @return [Array_of_UserEventPayloadVariant490BeforeClaimsItemValuesItem] Required array value serialized in the `values` wire field.
+  attr_reader :values
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant490BeforeResourcesMetadata
-    FIELDS = {
-      project_ids: 'projectIds'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      project_ids
-    ].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant490BeforeResources.
-  # Resource boundary, or `null` when the policy has none.
-  class UserEventPayloadVariant490BeforeResources
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant490BeforeResourcesMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490BeforeResourcesMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant490BeforeResourcesMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [Array_of_String] Required array value serialized in the `projectIds` wire field.
-    attr_reader :project_ids
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant490BeforeResourcesMetadata
+  FIELDS = {
+    project_ids: "projectIds",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    project_ids
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant490BeforeResources.
+# Resource boundary, or `null` when the policy has none.
+class UserEventPayloadVariant490BeforeResources
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant490BeforeResourcesMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490BeforeResourcesMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant490BeforeResourcesMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [Array_of_String] Required array value serialized in the `projectIds` wire field.
+  attr_reader :project_ids
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant490BeforeMetadata
-    FIELDS = {
-      claims: 'claims',
-      client_id: 'clientId',
-      created_at: 'createdAt',
-      issuer_url: 'issuerUrl',
-      name: 'name',
-      permissions: 'permissions',
-      policy_id: 'policyId',
-      resources: 'resources',
-      team_id: 'teamId',
-      updated_at: 'updatedAt'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      claims
-      client_id
-      created_at
-      issuer_url
-      name
-      permissions
-      policy_id
-      resources
-      team_id
-      updated_at
-    ].freeze
-    DECODERS = {
-      claims: lambda do |value|
-        value&.map { |item| ::OctridevVercel::UserEventPayloadVariant490BeforeClaimsItem.from_hash(item) }
-      end,
-      resources: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant490BeforeResources.from_hash(value)
-      end
-    }.freeze
-    NULLABLE_FIELDS = %i[
-      name
-      resources
-    ].freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant490Before.
-  # A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
-  class UserEventPayloadVariant490Before
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant490BeforeMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490BeforeMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant490BeforeMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [Array_of_UserEventPayloadVariant490BeforeClaimsItem] Claim matchers an OIDC token must satisfy to use the policy.
-    attr_reader :claims
-    # @return [String] Required `string` value serialized in the `clientId` wire field.
-    attr_reader :client_id
-    # @return [Float] Creation time (epoch ms).
-    attr_reader :created_at
-    # @return [String] Required `string` value serialized in the `issuerUrl` wire field.
-    attr_reader :issuer_url
-    # @return [String] Human-readable policy name, or `null` when unnamed.
-    attr_reader :name
-    # @return [Array_of_String] Permission boundary (`['*']` = the app's full declared permissions).
-    attr_reader :permissions
-    # @return [String] Required `string` value serialized in the `policyId` wire field.
-    attr_reader :policy_id
-    # @return [UserEventPayloadVariant490BeforeResources] Resource boundary, or `null` when the policy has none.
-    attr_reader :resources
-    # @return [String] Required `string` value serialized in the `teamId` wire field.
-    attr_reader :team_id
-    # @return [Float] Last-update time (epoch ms).
-    attr_reader :updated_at
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant490BeforeMetadata
+  FIELDS = {
+    claims: "claims",
+    client_id: "clientId",
+    created_at: "createdAt",
+    issuer_url: "issuerUrl",
+    name: "name",
+    permissions: "permissions",
+    policy_id: "policyId",
+    resources: "resources",
+    team_id: "teamId",
+    updated_at: "updatedAt",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    claims
+    client_id
+    created_at
+    issuer_url
+    name
+    permissions
+    policy_id
+    resources
+    team_id
+    updated_at
+  ].freeze
+  DECODERS = {
+    claims: lambda do |value|
+      value&.map { |item| ::OctridevVercel::UserEventPayloadVariant490BeforeClaimsItem.from_hash(item) }
+    end,
+    resources: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant490BeforeResources.from_hash(value)
+    end,
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    name
+    resources
+  ].freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant490Before.
+# A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
+class UserEventPayloadVariant490Before
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant490BeforeMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490BeforeMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant490BeforeMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant490BeforeMetadata::NULLABLE_FIELDS)
-    end
+  # @return [Array_of_UserEventPayloadVariant490BeforeClaimsItem] Claim matchers an OIDC token must satisfy to use the policy.
+  attr_reader :claims
+  # @return [String] Required `string` value serialized in the `clientId` wire field.
+  attr_reader :client_id
+  # @return [Float] Creation time (epoch ms).
+  attr_reader :created_at
+  # @return [String] Required `string` value serialized in the `issuerUrl` wire field.
+  attr_reader :issuer_url
+  # @return [String] Human-readable policy name, or `null` when unnamed.
+  attr_reader :name
+  # @return [Array_of_String] Permission boundary (`['*']` = the app's full declared permissions).
+  attr_reader :permissions
+  # @return [String] Required `string` value serialized in the `policyId` wire field.
+  attr_reader :policy_id
+  # @return [UserEventPayloadVariant490BeforeResources] Resource boundary, or `null` when the policy has none.
+  attr_reader :resources
+  # @return [String] Required `string` value serialized in the `teamId` wire field.
+  attr_reader :team_id
+  # @return [Float] Last-update time (epoch ms).
+  attr_reader :updated_at
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant490Metadata
-    FIELDS = {
-      after: 'after',
-      before: 'before',
-      app_name: 'appName'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      after
-      before
-    ].freeze
-    DECODERS = {
-      after: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant490After.from_hash(value)
-      end,
-      before: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant490Before.from_hash(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant490BeforeMetadata::NULLABLE_FIELDS)
   end
 
-  # API model for UserEventPayloadVariant490.
-  class UserEventPayloadVariant490
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant490Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant490Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [UserEventPayloadVariant490After] A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
-    attr_reader :after
-    # @return [UserEventPayloadVariant490Before] A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
-    attr_reader :before
-    # @return [String] Optional `string` value serialized in the `appName` wire field.
-    attr_reader :app_name
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant490Metadata
+  FIELDS = {
+    after: "after",
+    before: "before",
+    app_name: "appName",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    after
+    before
+  ].freeze
+  DECODERS = {
+    after: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant490After.from_hash(value)
+    end,
+    before: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant490Before.from_hash(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant490.
+class UserEventPayloadVariant490
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant490Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant490Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant490Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [UserEventPayloadVariant490After] A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
+  attr_reader :after
+  # @return [UserEventPayloadVariant490Before] A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
+  attr_reader :before
+  # @return [String] Optional `string` value serialized in the `appName` wire field.
+  attr_reader :app_name
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant491GeolocationCityNamesMetadata
-    FIELDS = {
-      en: 'en'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      en
-    ].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UserEventPayloadVariant491GeolocationCityNames.
-  # Required object value serialized in the `names` wire field.
-  class UserEventPayloadVariant491GeolocationCityNames
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUserEventPayloadVariant491GeolocationCityNamesMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant491GeolocationCityNamesMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUserEventPayloadVariant491GeolocationCityNamesMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    # @return [String] Required `string` value serialized in the `en` wire field.
-    attr_reader :en
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant491GeolocationCityNamesMetadata
+  FIELDS = {
+    en: "en",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    en
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UserEventPayloadVariant491GeolocationCityNames.
+# Required object value serialized in the `names` wire field.
+class UserEventPayloadVariant491GeolocationCityNames
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUserEventPayloadVariant491GeolocationCityNamesMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant491GeolocationCityNamesMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUserEventPayloadVariant491GeolocationCityNamesMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  # @return [String] Required `string` value serialized in the `en` wire field.
+  attr_reader :en
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUserEventPayloadVariant491GeolocationCityMetadata
-    FIELDS = {
-      names: 'names'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      names
-    ].freeze
-    DECODERS = {
-      names: lambda do |value|
-        ::OctridevVercel::UserEventPayloadVariant491GeolocationCityNames.from_hash(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
+
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUserEventPayloadVariant491GeolocationCityMetadata
+  FIELDS = {
+    names: "names",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    names
+  ].freeze
+  DECODERS = {
+    names: lambda do |value|
+      ::OctridevVercel::UserEventPayloadVariant491GeolocationCityNames.from_hash(value)
+    end,
+  }.freeze
+end
 end

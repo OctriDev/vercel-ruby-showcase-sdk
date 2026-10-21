@@ -16,13 +16,24 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_routes) do |config:, project_id:, version_id: NOT_GIVEN, q_value: NOT_GIVEN, filter: NOT_GIVEN, diff: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_routes) do |
+        config:,
+        project_id:,
+        version_id: NOT_GIVEN,
+        q_value: NOT_GIVEN,
+        filter: NOT_GIVEN,
+        diff: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(project_id),
-            '/routes'
+            "/routes"
           ].join,
           config: config,
           query: {
@@ -31,11 +42,11 @@ module OctridevVercel
             'filter' => QueryValue.new(filter, style: 'form', explode: true),
             'diff' => QueryValue.new(diff, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :json,
           operation_id: 'get_routes',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -55,26 +66,27 @@ module OctridevVercel
         routes: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PUT',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(project_id),
-            '/routes'
+            "/routes"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'overwrite' => overwrite,
-            'routes' => routes
+            'routes' => routes,
           },
           return_type: ::OctridevVercel::Methods::ProjectRoutes::StageRoutesResponse,
           decoder: :json,
           operation_id: 'stage_routes',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -96,26 +108,27 @@ module OctridevVercel
         position: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(project_id),
-            '/routes'
+            "/routes"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'route' => route,
-            'position' => position
+            'position' => position,
           },
           return_type: ::OctridevVercel::Methods::ProjectRoutes::AddRouteResponse,
           decoder: :json,
           operation_id: 'add_route',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -135,27 +148,28 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_items('routeIds', route_ids, min: 1)
 
         SdkClient.request(
           'DELETE',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(project_id),
-            '/routes'
+            "/routes"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'routeIds' => route_ids
+            'routeIds' => route_ids,
           },
           return_type: ::OctridevVercel::Methods::ProjectRoutes::DeleteRoutesResponse,
           decoder: :json,
           operation_id: 'delete_routes',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -180,27 +194,28 @@ module OctridevVercel
         restore: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PATCH',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(project_id),
-            '/routes/',
+            "/routes/",
             SdkClient.encode_path_segment(route_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'route' => route,
-            'restore' => restore
+            'restore' => restore,
           },
           return_type: ::OctridevVercel::Methods::ProjectRoutes::EditRouteResponse,
           decoder: :json,
           operation_id: 'edit_route',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

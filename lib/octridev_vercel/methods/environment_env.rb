@@ -31,24 +31,25 @@ module OctridevVercel
         project_id: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
-          '/v1/env',
+          "/v1/env",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'evs' => evs,
             'type' => type,
             'target' => target,
-            'projectId' => project_id
+            'projectId' => project_id,
           },
           return_type: ::OctridevVercel::Methods::Environment::CreateSharedEnvVariableResponse,
           decoder: :json,
           operation_id: 'create_shared_env_variable',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -83,9 +84,10 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
-          '/v1/env',
+          "/v1/env",
           config: config,
           query: {
             'search' => QueryValue.new(search, style: 'form', explode: true),
@@ -96,12 +98,12 @@ module OctridevVercel
             'exclude_projectId' => QueryValue.new(exclude_project_id2, style: 'form', explode: true),
             'exclude-projectId' => QueryValue.new(exclude_project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Environment::ListSharedEnvVariableResponse,
           decoder: :json,
           operation_id: 'list_shared_env_variable',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -121,21 +123,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PATCH',
-          '/v1/env',
+          "/v1/env",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'updates' => updates
+            'updates' => updates,
           },
           return_type: ::OctridevVercel::Methods::Environment::UpdateSharedEnvVariableResponse,
           decoder: :json,
           operation_id: 'update_shared_env_variable',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -155,21 +158,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
-          '/v1/env',
+          "/v1/env",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'ids' => ids
+            'ids' => ids,
           },
           return_type: ::OctridevVercel::Methods::Environment::DeleteSharedEnvVariableResponse,
           decoder: :json,
           operation_id: 'delete_shared_env_variable',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -182,22 +186,29 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_shared_env_var) do |config:, id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_shared_env_var) do |
+        config:,
+        id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/env/',
+            "/v1/env/",
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Environment::GetSharedEnvVarResponse,
           decoder: :json,
           operation_id: 'get_shared_env_var',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -218,23 +229,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PATCH',
           [
-            '/v1/env/',
+            "/v1/env/",
             SdkClient.encode_path_segment(id),
-            '/unlink/',
+            "/unlink/",
             SdkClient.encode_path_segment(project_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Environment::UnlinkSharedEnvVariableResponse,
           decoder: :json,
           operation_id: 'unlink_shared_env_variable',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

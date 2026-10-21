@@ -12,20 +12,26 @@ module OctridevVercel
       # Retrieves invoice details and status for an installation. Use the installation and invoice identifiers to select the invoice, and use the returned state and timestamps to track its billing lifecycle. Consult billing events through webhooks when you need invoice event notifications.
       #
       # Get Invoice details and status for a given invoice ID. See Billing Events with Webhooks documentation on how to receive invoice events. This endpoint is used to retrieve the invoice details.
-      singleton_class.define_method(:get_invoice) do |config:, integration_configuration_id:, invoice_id:, request_options: nil|
+      singleton_class.define_method(:get_invoice) do |
+        config:,
+        integration_configuration_id:,
+        invoice_id:,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/installations/',
+            "/v1/installations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/billing/invoices/',
+            "/billing/invoices/",
             SdkClient.encode_path_segment(invoice_id)
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Marketplace::GetInvoiceResponse,
           decoder: :json,
           operation_id: 'get_invoice',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

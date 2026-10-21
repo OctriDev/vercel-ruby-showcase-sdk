@@ -12,8 +12,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponsePassportMetadata
         FIELDS = {
-          connector_id: 'connectorId',
-          deployment_type: 'deploymentType'
+          connector_id: "connectorId",
+          deployment_type: "deploymentType",
         }.freeze
         REQUIRED_FIELDS = %i[
           connector_id
@@ -22,7 +22,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponsePassportDeploymentType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -52,7 +52,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponsePasswordProtectionMetadata
         FIELDS = {
-          deployment_type: 'deploymentType'
+          deployment_type: "deploymentType",
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment_type
@@ -60,7 +60,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponsePasswordProtectionDeploymentType.from_value(value)
-          end
+          end,
         }.freeze
       end
 

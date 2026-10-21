@@ -31,23 +31,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
-          '/v1/microfrontends/group',
+          "/v1/microfrontends/group",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'groupName' => group_name,
             'defaultApp' => default_app,
-            'otherApplications' => other_applications
+            'otherApplications' => other_applications,
           },
           return_type: ::OctridevVercel::Methods::Microfrontends::CreateMicrofrontendsGroupWithApplicationsResponse,
           decoder: :json,
           operation_id: 'create_microfrontends_group_with_applications',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -30,26 +30,27 @@ module OctridevVercel
         callback_secret: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/projects/',
+            "/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/transfer-request'
+            "/transfer-request"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'callbackUrl' => callback_url,
-            'callbackSecret' => callback_secret
+            'callbackSecret' => callback_secret,
           },
           return_type: ::OctridevVercel::Methods::Projects::CreateProjectTransferRequestResponse,
           decoder: :json,
           operation_id: 'create_project_transfer_request',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -72,6 +73,7 @@ module OctridevVercel
         accepted_policies: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(new_project_name) do
           Validation.validate_length('newProjectName', new_project_name, max: 100)
         end
@@ -79,23 +81,23 @@ module OctridevVercel
         SdkClient.request(
           'PUT',
           [
-            '/projects/transfer-request/',
+            "/projects/transfer-request/",
             SdkClient.encode_path_segment(code)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'newProjectName' => new_project_name,
             'paidFeatures' => paid_features,
-            'acceptedPolicies' => accepted_policies
+            'acceptedPolicies' => accepted_policies,
           },
           return_type: ::OctridevVercel::Methods::Projects::AcceptProjectTransferRequestResponse,
           decoder: :json,
           operation_id: 'accept_project_transfer_request',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

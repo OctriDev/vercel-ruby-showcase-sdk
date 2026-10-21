@@ -12,11 +12,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGenerateFirewallRuleResponseRuleMetadata
         FIELDS = {
-          action: 'action',
-          active: 'active',
-          condition_group: 'conditionGroup',
-          description: 'description',
-          name: 'name'
+          action: "action",
+          active: "active",
+          condition_group: "conditionGroup",
+          description: "description",
+          name: "name",
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -33,7 +33,7 @@ module OctridevVercel
           end,
           condition_group: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Security::GenerateFirewallRuleResponseRuleConditionGroupItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -63,14 +63,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGenerateFirewallRuleResponseMetadata
         FIELDS = {
-          error: 'error',
-          rule: 'rule'
+          error: "error",
+          rule: "rule",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           rule: lambda do |value|
             ::OctridevVercel::Methods::Security::GenerateFirewallRuleResponseRule.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -143,13 +144,13 @@ module OctridevVercel
         TRAFFIC_SOURCE = 'traffic_source'
         TRUSTED_SOURCE = 'trusted_source'
         USER_AGENT = 'user_agent'
-        VALUES = %w[
-          bot_category bot_name bot_protection bot_status cookie domain_environment
-          environment geo_as_number geo_city geo_continent geo_country
-          geo_country_region header host ip_address ja3_digest ja4_digest method
-          path protocol query rate_limit_api_id raw_path region response_code
-          route ruleset scheme server_action shared_condition target_path
-          traffic_source trusted_source user_agent
+        VALUES = [
+          'bot_category', 'bot_name', 'bot_protection', 'bot_status', 'cookie', 'domain_environment',
+          'environment', 'geo_as_number', 'geo_city', 'geo_continent', 'geo_country',
+          'geo_country_region', 'header', 'host', 'ip_address', 'ja3_digest', 'ja4_digest', 'method',
+          'path', 'protocol', 'query', 'rate_limit_api_id', 'raw_path', 'region', 'response_code',
+          'route', 'ruleset', 'scheme', 'server_action', 'shared_condition', 'target_path',
+          'traffic_source', 'trusted_source', 'user_agent'
         ].freeze
         def self.from_value(value)
           value
@@ -171,7 +172,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -182,7 +183,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -202,7 +203,7 @@ module OctridevVercel
       module PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiX425dd74130
         FIXED_WINDOW = 'fixed_window'
         TOKEN_BUCKET = 'token_bucket'
-        VALUES = %w[fixed_window token_bucket].freeze
+        VALUES = ['fixed_window', 'token_bucket'].freeze
         def self.from_value(value)
           value
         end
@@ -223,7 +224,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -243,7 +244,7 @@ module OctridevVercel
       module PutFirewallConfigCrsMaAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[deny log].freeze
+        VALUES = ['deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -268,7 +269,7 @@ module OctridevVercel
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
         REDIRECT = 'redirect'
-        VALUES = %w[allow bypass challenge deny log rate_limit redirect].freeze
+        VALUES = ['allow', 'bypass', 'challenge', 'deny', 'log', 'rate_limit', 'redirect'].freeze
         def self.from_value(value)
           value
         end
@@ -298,7 +299,7 @@ module OctridevVercel
       module GetSecurityFirewallEventsParameterC35a8c6a
         SYSTEM = 'system'
         CUSTOM = 'custom'
-        VALUES = %w[system custom].freeze
+        VALUES = ['system', 'custom'].freeze
         def self.from_value(value)
           value
         end
@@ -312,7 +313,7 @@ module OctridevVercel
         BYPASS = 'bypass'
         RATE_LIMIT = 'rate_limit'
         REDIRECT = 'redirect'
-        VALUES = %w[log challenge deny bypass rate_limit redirect].freeze
+        VALUES = ['log', 'challenge', 'deny', 'bypass', 'rate_limit', 'redirect'].freeze
         def self.from_value(value)
           value
         end
@@ -337,7 +338,7 @@ module OctridevVercel
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
         REDIRECT = 'redirect'
-        VALUES = %w[allow bypass challenge deny log rate_limit redirect].freeze
+        VALUES = ['allow', 'bypass', 'challenge', 'deny', 'log', 'rate_limit', 'redirect'].freeze
         def self.from_value(value)
           value
         end
@@ -351,7 +352,7 @@ module OctridevVercel
         BYPASS = 'bypass'
         RATE_LIMIT = 'rate_limit'
         REDIRECT = 'redirect'
-        VALUES = %w[log challenge deny bypass rate_limit redirect].freeze
+        VALUES = ['log', 'challenge', 'deny', 'bypass', 'rate_limit', 'redirect'].freeze
         def self.from_value(value)
           value
         end
@@ -362,7 +363,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -382,7 +383,7 @@ module OctridevVercel
       module GetSecurityFirewallConfigResponseDraftCrsXssAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[deny log].freeze
+        VALUES = ['deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -394,7 +395,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         LOG = 'log'
         ALLOW = 'allow'
-        VALUES = %w[deny challenge log allow].freeze
+        VALUES = ['deny', 'challenge', 'log', 'allow'].freeze
         def self.from_value(value)
           value
         end
@@ -409,7 +410,7 @@ module OctridevVercel
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
         REDIRECT = 'redirect'
-        VALUES = %w[allow bypass challenge deny log rate_limit redirect].freeze
+        VALUES = ['allow', 'bypass', 'challenge', 'deny', 'log', 'rate_limit', 'redirect'].freeze
         def self.from_value(value)
           value
         end
@@ -430,7 +431,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -483,9 +484,9 @@ module OctridevVercel
         RE = 're'
         SUB = 'sub'
         SUF = 'suf'
-        VALUES = %w[
-          eq ex gt gte inc list lt lte neq nex ninc pre re
-          sub suf
+        VALUES = [
+          'eq', 'ex', 'gt', 'gte', 'inc', 'list', 'lt', 'lte', 'neq', 'nex', 'ninc', 'pre', 're',
+          'sub', 'suf'
         ].freeze
         def self.from_value(value)
           value
@@ -539,9 +540,9 @@ module OctridevVercel
         LT = 'lt'
         LTE = 'lte'
         LIST = 'list'
-        VALUES = %w[
-          re eq neq ex nex inc ninc pre suf sub gt gte lt
-          lte list
+        VALUES = [
+          're', 'eq', 'neq', 'ex', 'nex', 'inc', 'ninc', 'pre', 'suf', 'sub', 'gt', 'gte', 'lt',
+          'lte', 'list'
         ].freeze
         def self.from_value(value)
           value
@@ -552,7 +553,7 @@ module OctridevVercel
       module PutFirewallConfigResponseActiveCrsRfiAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[deny log].freeze
+        VALUES = ['deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -572,7 +573,7 @@ module OctridevVercel
       module GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRateLimitAlgo
         FIXED_WINDOW = 'fixed_window'
         TOKEN_BUCKET = 'token_bucket'
-        VALUES = %w[fixed_window token_bucket].freeze
+        VALUES = ['fixed_window', 'token_bucket'].freeze
         def self.from_value(value)
           value
         end

@@ -35,31 +35,32 @@ module OctridevVercel
         token_claims: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(environments) { Validation.validate_items('environments', environments, min: 1) }
 
         SdkClient.request(
           'PATCH',
           [
-            '/v1/kms/issuers/',
+            "/v1/kms/issuers/",
             SdkClient.encode_path_segment(issuer_id),
-            '/policies/',
+            "/policies/",
             SdkClient.encode_path_segment(kind),
-            '/',
+            "/",
             SdkClient.encode_path_segment(policy_key)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'environments' => environments,
-            'tokenClaims' => token_claims
+            'tokenClaims' => token_claims,
           },
           return_type: ::OctridevVercel::UpdateKmsIssuerPolicyResponse,
           decoder: :json,
           operation_id: 'update_kms_issuer_policy',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -24,10 +24,11 @@ module OctridevVercel
         notification: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PATCH',
           [
-            '/v1/installations/',
+            "/v1/installations/",
             SdkClient.encode_path_segment(integration_configuration_id)
           ].join,
           config: config,
@@ -35,11 +36,11 @@ module OctridevVercel
             'status' => status,
             'externalId' => external_id,
             'billingPlan' => billing_plan,
-            'notification' => notification
+            'notification' => notification,
           },
           decoder: :empty,
           operation_id: 'update_installation',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -12,12 +12,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSpeedInsightsToggleMetadata
         FIELDS = {
-          value: 'value'
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           value
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for CreateSpeedInsightsToggle.
@@ -46,7 +47,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSpeedInsightsToggleResponseMetadata
         FIELDS = {
-          value: 'value'
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           value
@@ -54,7 +55,7 @@ module OctridevVercel
         DECODERS = {
           value: lambda do |value|
             ::OctridevVercel::Methods::SpeedInsights::CreateSpeedInsightsToggleResponseValue.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -98,20 +99,21 @@ module OctridevVercel
         value:,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
-          '/speed-insights/toggle',
+          "/speed-insights/toggle",
           config: config,
           query: {
-            'projectId' => QueryValue.new(project_id, style: 'form', explode: true)
+            'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
           },
           body: {
-            'value' => value
+            'value' => value,
           },
           return_type: ::OctridevVercel::Methods::SpeedInsights::CreateSpeedInsightsToggleResponse,
           decoder: :json,
           operation_id: 'create_speed_insights_toggle',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

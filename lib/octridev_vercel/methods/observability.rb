@@ -12,15 +12,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetObservabilityConfigurationProjectsResponseDisabledProjectsItemMetadata
         FIELDS = {
-          disabled_at: 'disabledAt',
-          id: 'id',
-          name: 'name'
+          disabled_at: "disabledAt",
+          id: "id",
+          name: "name",
         }.freeze
         REQUIRED_FIELDS = %i[
           disabled_at
           id
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetObservabilityConfigurationProjectsResponseDisabledProjectsItem.
@@ -49,7 +50,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetObservabilityConfigurationProjectsResponseMetadata
         FIELDS = {
-          disabled_projects: 'disabledProjects'
+          disabled_projects: "disabledProjects",
         }.freeze
         REQUIRED_FIELDS = %i[
           disabled_projects
@@ -57,7 +58,7 @@ module OctridevVercel
         DECODERS = {
           disabled_projects: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Observability::GetObservabilityConfigurationProjectsResponseDisabledProjectsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -87,12 +88,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateObservabilityConfigurationProjectMetadata
         FIELDS = {
-          disabled: 'disabled'
+          disabled: "disabled",
         }.freeze
         REQUIRED_FIELDS = %i[
           disabled
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateObservabilityConfigurationProject.
@@ -122,13 +124,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateObservabilityConfigurationProjectResponseMetadata
         FIELDS = {
-          disabled_at: 'disabledAt',
-          id: 'id'
+          disabled_at: "disabledAt",
+          id: "id",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateObservabilityConfigurationProjectResponse.
@@ -157,18 +160,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateObservabilityQueryMetadata
         FIELDS = {
-          metric: 'metric',
-          scope: 'scope',
-          aggregation: 'aggregation',
-          group_by: 'groupBy',
-          filter: 'filter',
-          limit: 'limit',
-          order_by: 'orderBy',
-          order_direction: 'orderDirection',
-          granularity: 'granularity',
-          start_time: 'startTime',
-          end_time: 'endTime',
-          bucket_timezone: 'bucketTimezone'
+          metric: "metric",
+          scope: "scope",
+          aggregation: "aggregation",
+          group_by: "groupBy",
+          filter: "filter",
+          limit: "limit",
+          order_by: "orderBy",
+          order_direction: "orderDirection",
+          granularity: "granularity",
+          start_time: "startTime",
+          end_time: "endTime",
+          bucket_timezone: "bucketTimezone",
         }.freeze
         REQUIRED_FIELDS = %i[
           metric
@@ -177,7 +180,7 @@ module OctridevVercel
         DECODERS = {
           order_direction: lambda do |value|
             ::OctridevVercel::Methods::Observability::CreateObservabilityQueryOrderDirection.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -232,14 +235,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetObservabilitySchemaResponseMetricsItemMetadata
         FIELDS = {
-          description: 'description',
-          id: 'id'
+          description: "description",
+          id: "id",
         }.freeze
         REQUIRED_FIELDS = %i[
           description
           id
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetObservabilitySchemaResponseMetricsItem.
@@ -268,7 +272,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetObservabilitySchemaResponseMetadata
         FIELDS = {
-          metrics: 'metrics'
+          metrics: "metrics",
         }.freeze
         REQUIRED_FIELDS = %i[
           metrics
@@ -276,7 +280,7 @@ module OctridevVercel
         DECODERS = {
           metrics: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Observability::GetObservabilitySchemaResponseMetricsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -307,7 +311,7 @@ module OctridevVercel
       module CreateObservabilityQueryOrderDirection
         ASC = 'asc'
         DESC = 'desc'
-        VALUES = %w[asc desc].freeze
+        VALUES = ['asc', 'desc'].freeze
         def self.from_value(value)
           value
         end
@@ -320,19 +324,25 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_observability_configuration_projects) do |config:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_observability_configuration_projects) do |
+        config:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
-          '/v1/observability/manage/configuration/projects',
+          "/v1/observability/manage/configuration/projects",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Observability::GetObservabilityConfigurationProjectsResponse,
           decoder: :json,
           operation_id: 'get_observability_configuration_projects',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -354,24 +364,25 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PUT',
           [
-            '/v1/observability/manage/configuration/projects/',
+            "/v1/observability/manage/configuration/projects/",
             SdkClient.encode_path_segment(project_id_or_name)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'disabled' => disabled
+            'disabled' => disabled,
           },
           return_type: ::OctridevVercel::Methods::Observability::UpdateObservabilityConfigurationProjectResponse,
           decoder: :json,
           operation_id: 'update_observability_configuration_project',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -422,9 +433,10 @@ module OctridevVercel
         bucket_timezone: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
-          '/v2/observability/query',
+          "/v2/observability/query",
           config: config,
           body: {
             'metric' => metric,
@@ -438,39 +450,48 @@ module OctridevVercel
             'granularity' => granularity,
             'startTime' => start_time,
             'endTime' => end_time,
-            'bucketTimezone' => bucket_timezone
+            'bucketTimezone' => bucket_timezone,
           },
           decoder: :json,
           operation_id: 'create_observability_query',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
       # Retrieves the available Observability metrics schema. Use the metric IDs and descriptions in the returned list to identify metrics for querying.
-      singleton_class.define_method(:get_observability_schema) do |config:, request_options: nil|
+      singleton_class.define_method(:get_observability_schema) do |
+        config:,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
-          '/v2/observability/schema',
+          "/v2/observability/schema",
           config: config,
           return_type: ::OctridevVercel::Methods::Observability::GetObservabilitySchemaResponse,
           decoder: :json,
           operation_id: 'get_observability_schema',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
       # Retrieves the Observability schema for a specific metric. Supply `metricId` to get the metric's supported aggregations, dimensions, unit, and default aggregation.
-      singleton_class.define_method(:get_observability_schema_by_metric_id) do |config:, metric_id:, request_options: nil|
+      singleton_class.define_method(:get_observability_schema_by_metric_id) do |
+        config:,
+        metric_id:,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v2/observability/schema/',
+            "/v2/observability/schema/",
             SdkClient.encode_path_segment(metric_id)
           ].join,
           config: config,
           decoder: :json,
           operation_id: 'get_observability_schema_by_metric_id',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

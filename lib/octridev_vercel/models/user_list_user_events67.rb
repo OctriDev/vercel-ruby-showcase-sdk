@@ -5,693 +5,692 @@
 
 # user domain models
 module OctridevVercel
-  # Defines the UserEventPayload SDK namespace.
-  module UserEventPayload
-    SHAPE_MAPPING = {
-      'slackConfigured' => -> { UserEventPayloadVariant1 },
-      'state' => -> { UserEventPayloadVariant3 },
-      'schemaId' => -> { UserEventPayloadVariant11 },
-      'accountRequestId' => -> { UserEventPayloadVariant12 },
-      'blockCode' => -> { UserEventPayloadVariant15 },
-      'fromPlan' => -> { UserEventPayloadVariant18 },
-      'member' => -> { UserEventPayloadVariant21 },
-      'changed' => -> { UserEventPayloadVariant29 },
-      'purchaseIntentId' => -> { UserEventPayloadVariant31 },
-      'privateProvider' => -> { UserEventPayloadVariant35 },
-      'moderationPolicyCount' => -> { UserEventPayloadVariant36 },
-      'retention' => -> { UserEventPayloadVariant38 },
-      'author' => -> { UserEventPayloadVariant45 },
-      'aliasCount' => -> { UserEventPayloadVariant51 },
-      'scopes' => -> { UserEventPayloadVariant62 },
-      'nextScopes' => -> { UserEventPayloadVariant64 },
-      'attackModeEnabled' => -> { UserEventPayloadVariant69 },
-      'autoExposeSystemEnvs' => -> { UserEventPayloadVariant70 },
-      'lineItemCount' => -> { UserEventPayloadVariant72 },
-      'newInvoiceId' => -> { UserEventPayloadVariant73 },
-      'planSlug' => -> { UserEventPayloadVariant78 },
-      'productAliases' => -> { UserEventPayloadVariant82 },
-      'bulkRedirectsLimit' => -> { UserEventPayloadVariant83 },
-      'versionId' => -> { UserEventPayloadVariant84 },
-      'dst' => -> { UserEventPayloadVariant89 },
-      'gitOwnerName' => -> { UserEventPayloadVariant92 },
-      'documentId' => -> { UserEventPayloadVariant93 },
-      'count' => -> { UserEventPayloadVariant94 },
-      'gitlabUserId' => -> { UserEventPayloadVariant104 },
-      'bitbucketAccountId' => -> { UserEventPayloadVariant106 },
-      'prevPurchasedAmount' => -> { UserEventPayloadVariant108 },
-      'metricName' => -> { UserEventPayloadVariant109 },
-      'status' => -> { UserEventPayloadVariant111 },
-      'hookName' => -> { UserEventPayloadVariant115 },
-      'gitCommitterName' => -> { UserEventPayloadVariant122 },
-      'ruleProvenance' => -> { UserEventPayloadVariant124 },
-      'deploymentName' => -> { UserEventPayloadVariant127 },
-      'cdnEnabled' => -> { UserEventPayloadVariant134 },
-      'ownerName' => -> { UserEventPayloadVariant136 },
-      'domainId' => -> { UserEventPayloadVariant137 },
-      'nameservers' => -> { UserEventPayloadVariant138 },
-      'customNameservers' => -> { UserEventPayloadVariant139 },
-      'echMode' => -> { UserEventPayloadVariant141 },
-      'fromId' => -> { UserEventPayloadVariant144 },
-      'drainName' => -> { UserEventPayloadVariant150 },
-      'srcImages' => -> { UserEventPayloadVariant152 },
-      'tags' => -> { UserEventPayloadVariant153 },
-      'path' => -> { UserEventPayloadVariant154 },
-      'edgeConfigBackupVersionId' => -> { UserEventPayloadVariant157 },
-      'edgeConfig' => -> { UserEventPayloadVariant160 },
-      'edgeConfigTokenIds' => -> { UserEventPayloadVariant162 },
-      'envId' => -> { UserEventPayloadVariant172 },
-      'restore' => -> { UserEventPayloadVariant179 },
-      'ruleGroups' => -> { UserEventPayloadVariant180 },
-      'active' => -> { UserEventPayloadVariant181 },
-      'consumerProjectId' => -> { UserEventPayloadVariant182 },
-      'newOwnerId' => -> { UserEventPayloadVariant183 },
-      'actorAccountId' => -> { UserEventPayloadVariant186 },
-      'fromDeploymentId' => -> { UserEventPayloadVariant187 },
-      'newOwner' => -> { UserEventPayloadVariant189 },
-      'confirmedScopes' => -> { UserEventPayloadVariant190 },
-      'configurations' => -> { UserEventPayloadVariant193 },
-      'billingPlanId' => -> { UserEventPayloadVariant194 },
-      'databaseName' => -> { UserEventPayloadVariant196 },
-      'commands' => -> { UserEventPayloadVariant197 },
-      'keys' => -> { UserEventPayloadVariant199 },
-      'algorithm' => -> { UserEventPayloadVariant202 },
-      'policyKey' => -> { UserEventPayloadVariant206 },
-      'login' => -> { UserEventPayloadVariant209 },
-      'invoiceCollection' => -> { UserEventPayloadVariant213 },
-      'periods' => -> { UserEventPayloadVariant214 },
-      'alertId' => -> { UserEventPayloadVariant220 },
-      'rootTeamId' => -> { UserEventPayloadVariant223 },
-      'groupName' => -> { UserEventPayloadVariant225 },
-      'copiedDomains' => -> { UserEventPayloadVariant227 },
-      'enforcedTeamIds' => -> { UserEventPayloadVariant228 },
-      'billingPlan' => -> { UserEventPayloadVariant231 },
-      'organizationSlug' => -> { UserEventPayloadVariant232 },
-      'connectSrcCount' => -> { UserEventPayloadVariant241 },
-      'connectorId' => -> { UserEventPayloadVariant249 },
-      'previousTeamSuffix' => -> { UserEventPayloadVariant256 },
-      'previousEndpoint' => -> { UserEventPayloadVariant262 },
-      'branch' => -> { UserEventPayloadVariant263 },
-      'directoryListing' => -> { UserEventPayloadVariant264 },
-      'enableAffectedProjectsDeployments' => -> { UserEventPayloadVariant270 },
-      'enableExternalRewriteCaching' => -> { UserEventPayloadVariant271 },
-      'productionDeploymentsFastLane' => -> { UserEventPayloadVariant273 },
-      'sourceFilesOutsideRootDirectory' => -> { UserEventPayloadVariant274 },
-      'nextBuildMachineSelection' => -> { UserEventPayloadVariant275 },
-      'widget' => -> { UserEventPayloadVariant276 },
-      'elasticConcurrencyEnabled' => -> { UserEventPayloadVariant283 },
-      'autoAssignCustomDomains' => -> { UserEventPayloadVariant284 },
-      'previewDeploymentsEnabled' => -> { UserEventPayloadVariant285 },
-      'enableFunctionsBeta' => -> { UserEventPayloadVariant290 },
-      'gitRepoId' => -> { UserEventPayloadVariant298 },
-      'onPullRequest' => -> { UserEventPayloadVariant299 },
-      'onCommit' => -> { UserEventPayloadVariant300 },
-      'createDeployments' => -> { UserEventPayloadVariant302 },
-      'gitCommitStatus' => -> { UserEventPayloadVariant306 },
-      'gitLFS' => -> { UserEventPayloadVariant307 },
-      'consolidatedGitCommitStatus' => -> { UserEventPayloadVariant308 },
-      'oldProjectId' => -> { UserEventPayloadVariant312 },
-      'projects' => -> { UserEventPayloadVariant314 },
-      'removedMembership' => -> { UserEventPayloadVariant318 },
-      'destinationAccountId' => -> { UserEventPayloadVariant322 },
-      'projectAccountId' => -> { UserEventPayloadVariant331 },
-      'customerSupportCodeVisibility' => -> { UserEventPayloadVariant338 },
-      'gitForkProtection' => -> { UserEventPayloadVariant339 },
-      'protectedSourcemaps' => -> { UserEventPayloadVariant340 },
-      'inheritDeploymentProtection' => -> { UserEventPayloadVariant341 },
-      'publicSource' => -> { UserEventPayloadVariant342 },
-      'addedProjects' => -> { UserEventPayloadVariant350 },
-      'gitProviderGroupDescriptor' => -> { UserEventPayloadVariant353 },
-      'connectionType' => -> { UserEventPayloadVariant354 },
-      'signingEnabled' => -> { UserEventPayloadVariant358 },
-      'sandboxName' => -> { UserEventPayloadVariant359 },
-      'snapshotName' => -> { UserEventPayloadVariant361 },
-      'targetRegions' => -> { UserEventPayloadVariant362 },
-      'instances' => -> { UserEventPayloadVariant364 },
-      'bio' => -> { UserEventPayloadVariant371 },
-      'max' => -> { UserEventPayloadVariant372 },
-      'sampleRatePercent' => -> { UserEventPayloadVariant377 },
-      'storeType' => -> { UserEventPayloadVariant383 },
-      'locked' => -> { UserEventPayloadVariant389 },
-      'trialCreditsIssuedAt' => -> { UserEventPayloadVariant393 },
-      'elevatedScopeCount' => -> { UserEventPayloadVariant395 },
-      'by' => -> { UserEventPayloadVariant398 },
-      'inviteIds' => -> { UserEventPayloadVariant405 },
-      'requestedTeamName' => -> { UserEventPayloadVariant413 },
-      'previousRole' => -> { UserEventPayloadVariant414 },
-      'authorized' => -> { UserEventPayloadVariant415 },
-      'maxUses' => -> { UserEventPayloadVariant417 },
-      'nextConcurrentBuilds' => -> { UserEventPayloadVariant419 },
-      'convertedFromTrial' => -> { UserEventPayloadVariant421 },
-      'version' => -> { UserEventPayloadVariant425 },
-      'ips' => -> { UserEventPayloadVariant432 },
-      'tokenTypes' => -> { UserEventPayloadVariant433 },
-      'exportId' => -> { UserEventPayloadVariant434 },
-      'fileId' => -> { UserEventPayloadVariant435 },
-      'teamIds' => -> { UserEventPayloadVariant441 },
-      'recoveryCodes' => -> { UserEventPayloadVariant443 },
-      'autoBlockPrevented' => -> { UserEventPayloadVariant452 },
-      'allowedMethods' => -> { UserEventPayloadVariant454 },
-      'remaining' => -> { UserEventPayloadVariant457 },
-      'mfaEnabled' => -> { UserEventPayloadVariant458 },
-      'mfa' => -> { UserEventPayloadVariant459 },
-      'totpVerified' => -> { UserEventPayloadVariant460 },
-      'providerSubjectId' => -> { UserEventPayloadVariant462 },
-      'digest' => -> { UserEventPayloadVariant467 },
-      'sharedWithTeamSlug' => -> { UserEventPayloadVariant469 },
-      'public' => -> { UserEventPayloadVariant471 },
-      'removedTeamIds' => -> { UserEventPayloadVariant472 },
-      'nextProjectCount' => -> { UserEventPayloadVariant474 },
-      'customAlertTitle' => -> { UserEventPayloadVariant475 },
-      'ciEnabled' => -> { UserEventPayloadVariant476 },
-      'protectedProjectCount' => -> { UserEventPayloadVariant477 },
-      'tier' => -> { UserEventPayloadVariant481 },
-      'events' => -> { UserEventPayloadVariant484 },
-      'runId' => -> { UserEventPayloadVariant486 },
-      'atTTL' => -> { UserEventPayloadVariant487 },
-      'policy' => -> { UserEventPayloadVariant489 },
-      'tokenType' => -> { UserEventPayloadVariant492 }
-    }.freeze
-    UNDECIDED_VARIANTS = (
-      [
-        -> { UserEventPayloadVariant2 },
-        -> { UserEventPayloadVariant4 },
-        -> { UserEventPayloadVariant5 },
-        -> { UserEventPayloadVariant6 },
-        -> { UserEventPayloadVariant7 },
-        -> { UserEventPayloadVariant8 },
-        -> { UserEventPayloadVariant9 },
-        -> { UserEventPayloadVariant10 },
-        -> { UserEventPayloadVariant13 },
-        -> { UserEventPayloadVariant14 },
-        -> { UserEventPayloadVariant16 },
-        -> { UserEventPayloadVariant17 },
-        -> { UserEventPayloadVariant19 },
-        -> { UserEventPayloadVariant20 },
-        -> { UserEventPayloadVariant22 },
-        -> { UserEventPayloadVariant23 },
-        -> { UserEventPayloadVariant24 },
-        -> { UserEventPayloadVariant25 },
-        -> { UserEventPayloadVariant26 },
-        -> { UserEventPayloadVariant27 },
-        -> { UserEventPayloadVariant28 },
-        -> { UserEventPayloadVariant30 },
-        -> { UserEventPayloadVariant32 },
-        -> { UserEventPayloadVariant33 },
-        -> { UserEventPayloadVariant34 },
-        -> { UserEventPayloadVariant37 },
-        -> { UserEventPayloadVariant39 },
-        -> { UserEventPayloadVariant40 },
-        -> { UserEventPayloadVariant41 },
-        -> { UserEventPayloadVariant42 },
-        -> { UserEventPayloadVariant43 },
-        -> { UserEventPayloadVariant44 },
-        -> { UserEventPayloadVariant46 },
-        -> { UserEventPayloadVariant47 },
-        -> { UserEventPayloadVariant48 },
-        -> { UserEventPayloadVariant49 },
-        -> { UserEventPayloadVariant50 },
-        -> { UserEventPayloadVariant52 },
-        -> { UserEventPayloadVariant53 },
-        -> { UserEventPayloadVariant54 },
-        -> { UserEventPayloadVariant55 },
-        -> { UserEventPayloadVariant56 },
-        -> { UserEventPayloadVariant57 },
-        -> { UserEventPayloadVariant58 },
-        -> { UserEventPayloadVariant59 },
-        -> { UserEventPayloadVariant60 },
-        -> { UserEventPayloadVariant61 },
-        -> { UserEventPayloadVariant63 },
-        -> { UserEventPayloadVariant65 },
-        -> { UserEventPayloadVariant66 },
-        -> { UserEventPayloadVariant67 },
-        -> { UserEventPayloadVariant68 },
-        -> { UserEventPayloadVariant71 },
-        -> { UserEventPayloadVariant74 },
-        -> { UserEventPayloadVariant75 },
-        -> { UserEventPayloadVariant76 },
-        -> { UserEventPayloadVariant77 },
-        -> { UserEventPayloadVariant79 },
-        -> { UserEventPayloadVariant80 },
-        -> { UserEventPayloadVariant81 },
-        -> { UserEventPayloadVariant85 },
-        -> { UserEventPayloadVariant86 },
-        -> { UserEventPayloadVariant87 },
-        -> { UserEventPayloadVariant88 },
-        -> { UserEventPayloadVariant90 },
-        -> { UserEventPayloadVariant91 },
-        -> { UserEventPayloadVariant95 },
-        -> { UserEventPayloadVariant96 },
-        -> { UserEventPayloadVariant97 },
-        -> { UserEventPayloadVariant98 },
-        -> { UserEventPayloadVariant99 },
-        -> { UserEventPayloadVariant100 },
-        -> { UserEventPayloadVariant101 },
-        -> { UserEventPayloadVariant102 },
-        -> { UserEventPayloadVariant103 },
-        -> { UserEventPayloadVariant105 },
-        -> { UserEventPayloadVariant107 },
-        -> { UserEventPayloadVariant110 },
-        -> { UserEventPayloadVariant112 },
-        -> { UserEventPayloadVariant113 },
-        -> { UserEventPayloadVariant114 },
-        -> { UserEventPayloadVariant116 },
-        -> { UserEventPayloadVariant117 },
-        -> { DeploymentCheckUpdatedPayload },
-        -> { UserEventPayloadVariant119 },
-        -> { UserEventPayloadVariant120 },
-        -> { UserEventPayloadVariant121 },
-        -> { UserEventPayloadVariant123 },
-        -> { UserEventPayloadVariant125 },
-        -> { UserEventPayloadVariant126 },
-        -> { UserEventPayloadVariant128 },
-        -> { UserEventPayloadVariant129 },
-        -> { UserEventPayloadVariant130 },
-        -> { UserEventPayloadVariant131 },
-        -> { UserEventPayloadVariant132 },
-        -> { UserEventPayloadVariant133 },
-        -> { UserEventPayloadVariant135 },
-        -> { UserEventPayloadVariant140 },
-        -> { UserEventPayloadVariant142 },
-        -> { UserEventPayloadVariant143 },
-        -> { UserEventPayloadVariant145 },
-        -> { UserEventPayloadVariant146 },
-        -> { UserEventPayloadVariant147 },
-        -> { UserEventPayloadVariant148 },
-        -> { UserEventPayloadVariant149 },
-        -> { UserEventPayloadVariant151 },
-        -> { UserEventPayloadVariant155 },
-        -> { UserEventPayloadVariant156 },
-        -> { UserEventPayloadVariant158 },
-        -> { UserEventPayloadVariant159 },
-        -> { UserEventPayloadVariant161 },
-        -> { UserEventPayloadVariant163 },
-        -> { UserEventPayloadVariant164 },
-        -> { UserEventPayloadVariant165 },
-        -> { UserEventPayloadVariant166 },
-        -> { UserEventPayloadVariant167 },
-        -> { UserEventPayloadVariant168 },
-        -> { UserEventPayloadVariant169 },
-        -> { UserEventPayloadVariant170 },
-        -> { UserEventPayloadVariant171 },
-        -> { UserEventPayloadVariant173 },
-        -> { UserEventPayloadVariant174 },
-        -> { UserEventPayloadVariant175 },
-        -> { UserEventPayloadVariant176 },
-        -> { UserEventPayloadVariant177 },
-        -> { UserEventPayloadVariant178 },
-        -> { UserEventPayloadVariant184 },
-        -> { UserEventPayloadVariant185 },
-        -> { UserEventPayloadVariant188 },
-        -> { UserEventPayloadVariant191 },
-        -> { UserEventPayloadVariant192 },
-        -> { UserEventPayloadVariant195 },
-        -> { UserEventPayloadVariant198 },
-        -> { UserEventPayloadVariant200 },
-        -> { UserEventPayloadVariant201 },
-        -> { UserEventPayloadVariant203 },
-        -> { UserEventPayloadVariant204 },
-        -> { UserEventPayloadVariant205 },
-        -> { UserEventPayloadVariant207 },
-        -> { UserEventPayloadVariant208 },
-        -> { UserEventPayloadVariant210 },
-        -> { UserEventPayloadVariant211 },
-        -> { UserEventPayloadVariant212 },
-        -> { UserEventPayloadVariant215 },
-        -> { UserEventPayloadVariant216 },
-        -> { UserEventPayloadVariant217 },
-        -> { UserEventPayloadVariant218 },
-        -> { UserEventPayloadVariant219 },
-        -> { UserEventPayloadVariant221 },
-        -> { UserEventPayloadVariant222 },
-        -> { UserEventPayloadVariant224 },
-        -> { UserEventPayloadVariant226 },
-        -> { UserEventPayloadVariant229 },
-        -> { UserEventPayloadVariant230 },
-        -> { UserEventPayloadVariant233 },
-        -> { UserEventPayloadVariant234 },
-        -> { UserEventPayloadVariant235 },
-        -> { UserEventPayloadVariant236 },
-        -> { UserEventPayloadVariant237 },
-        -> { UserEventPayloadVariant238 },
-        -> { UserEventPayloadVariant239 },
-        -> { UserEventPayloadVariant240 },
-        -> { UserEventPayloadVariant242 },
-        -> { UserEventPayloadVariant243 },
-        -> { UserEventPayloadVariant244 },
-        -> { UserEventPayloadVariant245 },
-        -> { UserEventPayloadVariant246 },
-        -> { UserEventPayloadVariant247 },
-        -> { UserEventPayloadVariant248 },
-        -> { UserEventPayloadVariant250 },
-        -> { UserEventPayloadVariant251 },
-        -> { UserEventPayloadVariant252 },
-        -> { UserEventPayloadVariant253 },
-        -> { UserEventPayloadVariant254 },
-        -> { UserEventPayloadVariant255 },
-        -> { UserEventPayloadVariant257 },
-        -> { UserEventPayloadVariant258 },
-        -> { UserEventPayloadVariant259 },
-        -> { UserEventPayloadVariant260 },
-        -> { UserEventPayloadVariant261 },
-        -> { UserEventPayloadVariant265 },
-        -> { UserEventPayloadVariant266 },
-        -> { UserEventPayloadVariant267 },
-        -> { UserEventPayloadVariant268 },
-        -> { UserEventPayloadVariant269 },
-        -> { UserEventPayloadVariant272 },
-        -> { UserEventPayloadVariant277 },
-        -> { UserEventPayloadVariant278 },
-        -> { UserEventPayloadVariant279 },
-        -> { UserEventPayloadVariant280 },
-        -> { UserEventPayloadVariant281 },
-        -> { UserEventPayloadVariant282 },
-        -> { UserEventPayloadVariant286 },
-        -> { UserEventPayloadVariant287 },
-        -> { UserEventPayloadVariant288 },
-        -> { UserEventPayloadVariant289 },
-        -> { UserEventPayloadVariant291 },
-        -> { UserEventPayloadVariant292 },
-        -> { UserEventPayloadVariant293 },
-        -> { UserEventPayloadVariant294 }
-      ] +
-      [
-        -> { UserEventPayloadVariant295 },
-        -> { UserEventPayloadVariant296 },
-        -> { UserEventPayloadVariant297 },
-        -> { UserEventPayloadVariant301 },
-        -> { UserEventPayloadVariant303 },
-        -> { UserEventPayloadVariant304 },
-        -> { UserEventPayloadVariant305 },
-        -> { UserEventPayloadVariant309 },
-        -> { UserEventPayloadVariant310 },
-        -> { UserEventPayloadVariant311 },
-        -> { UserEventPayloadVariant313 },
-        -> { UserEventPayloadVariant315 },
-        -> { UserEventPayloadVariant316 },
-        -> { UserEventPayloadVariant317 },
-        -> { UserEventPayloadVariant319 },
-        -> { UserEventPayloadVariant320 },
-        -> { UserEventPayloadVariant321 },
-        -> { UserEventPayloadVariant323 },
-        -> { UserEventPayloadVariant324 },
-        -> { UserEventPayloadVariant325 },
-        -> { UserEventPayloadVariant326 },
-        -> { UserEventPayloadVariant327 },
-        -> { UserEventPayloadVariant328 },
-        -> { UserEventPayloadVariant329 },
-        -> { UserEventPayloadVariant330 },
-        -> { UserEventPayloadVariant332 },
-        -> { UserEventPayloadVariant333 },
-        -> { UserEventPayloadVariant334 },
-        -> { UserEventPayloadVariant335 },
-        -> { UserEventPayloadVariant336 },
-        -> { UserEventPayloadVariant337 },
-        -> { UserEventPayloadVariant343 },
-        -> { UserEventPayloadVariant344 },
-        -> { UserEventPayloadVariant345 },
-        -> { UserEventPayloadVariant346 },
-        -> { UserEventPayloadVariant347 },
-        -> { UserEventPayloadVariant348 },
-        -> { UserEventPayloadVariant349 },
-        -> { UserEventPayloadVariant351 },
-        -> { UserEventPayloadVariant352 },
-        -> { UserEventPayloadVariant355 },
-        -> { UserEventPayloadVariant356 },
-        -> { UserEventPayloadVariant357 },
-        -> { UserEventPayloadVariant360 },
-        -> { UserEventPayloadVariant363 },
-        -> { UserEventPayloadVariant365 },
-        -> { UserEventPayloadVariant366 },
-        -> { UserEventPayloadVariant367 },
-        -> { UserEventPayloadVariant368 },
-        -> { UserEventPayloadVariant369 },
-        -> { UserEventPayloadVariant370 },
-        -> { UserEventPayloadVariant373 },
-        -> { UserEventPayloadVariant374 },
-        -> { UserEventPayloadVariant375 },
-        -> { UserEventPayloadVariant376 },
-        -> { UserEventPayloadVariant378 },
-        -> { UserEventPayloadVariant379 },
-        -> { UserEventPayloadVariant380 },
-        -> { UserEventPayloadVariant381 },
-        -> { UserEventPayloadVariant382 },
-        -> { UserEventPayloadVariant384 },
-        -> { UserEventPayloadVariant385 },
-        -> { UserEventPayloadVariant386 },
-        -> { UserEventPayloadVariant387 },
-        -> { UserEventPayloadVariant388 },
-        -> { UserEventPayloadVariant390 },
-        -> { UserEventPayloadVariant391 },
-        -> { UserEventPayloadVariant392 },
-        -> { UserEventPayloadVariant394 },
-        -> { UserEventPayloadVariant396 },
-        -> { UserEventPayloadVariant397 },
-        -> { UserEventPayloadVariant399 },
-        -> { UserEventPayloadVariant400 },
-        -> { UserEventPayloadVariant401 },
-        -> { UserEventPayloadVariant402 },
-        -> { UserEventPayloadVariant403 },
-        -> { UserEventPayloadVariant404 },
-        -> { UserEventPayloadVariant406 },
-        -> { UserEventPayloadVariant407 },
-        -> { UserEventPayloadVariant408 },
-        -> { UserEventPayloadVariant409 },
-        -> { UserEventPayloadVariant410 },
-        -> { UserEventPayloadVariant411 },
-        -> { UserEventPayloadVariant412 },
-        -> { UserEventPayloadVariant416 },
-        -> { UserEventPayloadVariant418 },
-        -> { UserEventPayloadVariant420 },
-        -> { UserEventPayloadVariant422 },
-        -> { UserEventPayloadVariant423 },
-        -> { UserEventPayloadVariant424 },
-        -> { UserEventPayloadVariant426 },
-        -> { UserEventPayloadVariant427 },
-        -> { UserEventPayloadVariant428 },
-        -> { UserEventPayloadVariant429 },
-        -> { UserEventPayloadVariant430 },
-        -> { UserEventPayloadVariant431 },
-        -> { UserEventPayloadVariant436 },
-        -> { UserEventPayloadVariant437 },
-        -> { UserEventPayloadVariant438 },
-        -> { UserEventPayloadVariant439 },
-        -> { UserEventPayloadVariant440 },
-        -> { UserEventPayloadVariant442 },
-        -> { UserEventPayloadVariant444 },
-        -> { UserEventPayloadVariant445 },
-        -> { UserEventPayloadVariant446 },
-        -> { UserEventPayloadVariant447 },
-        -> { UserEventPayloadVariant448 },
-        -> { UserEventPayloadVariant449 },
-        -> { UserEventPayloadVariant450 },
-        -> { UserEventPayloadVariant451 },
-        -> { UserEventPayloadVariant453 },
-        -> { UserEventPayloadVariant455 },
-        -> { UserEventPayloadVariant456 },
-        -> { UserEventPayloadVariant461 },
-        -> { UserEventPayloadVariant463 },
-        -> { UserEventPayloadVariant464 },
-        -> { UserEventPayloadVariant465 },
-        -> { UserEventPayloadVariant466 },
-        -> { UserEventPayloadVariant468 },
-        -> { UserEventPayloadVariant470 },
-        -> { UserEventPayloadVariant473 },
-        -> { UserEventPayloadVariant478 },
-        -> { UserEventPayloadVariant479 },
-        -> { UserEventPayloadVariant480 },
-        -> { UserEventPayloadVariant482 },
-        -> { UserEventPayloadVariant483 },
-        -> { UserEventPayloadVariant485 },
-        -> { UserEventPayloadVariant488 },
-        -> { UserEventPayloadVariant490 },
-        -> { UserEventPayloadVariant491 },
-        -> { UserEventPayloadVariant493 }
-      ]
-    ).freeze
+# Defines the UserEventPayload SDK namespace.
+module UserEventPayload
+  SHAPE_MAPPING = {
+    "slackConfigured" => -> { UserEventPayloadVariant1 },
+    "state" => -> { UserEventPayloadVariant3 },
+    "schemaId" => -> { UserEventPayloadVariant11 },
+    "accountRequestId" => -> { UserEventPayloadVariant12 },
+    "blockCode" => -> { UserEventPayloadVariant15 },
+    "fromPlan" => -> { UserEventPayloadVariant18 },
+    "member" => -> { UserEventPayloadVariant21 },
+    "changed" => -> { UserEventPayloadVariant29 },
+    "purchaseIntentId" => -> { UserEventPayloadVariant31 },
+    "privateProvider" => -> { UserEventPayloadVariant35 },
+    "moderationPolicyCount" => -> { UserEventPayloadVariant36 },
+    "retention" => -> { UserEventPayloadVariant38 },
+    "author" => -> { UserEventPayloadVariant45 },
+    "aliasCount" => -> { UserEventPayloadVariant51 },
+    "scopes" => -> { UserEventPayloadVariant62 },
+    "nextScopes" => -> { UserEventPayloadVariant64 },
+    "attackModeEnabled" => -> { UserEventPayloadVariant69 },
+    "autoExposeSystemEnvs" => -> { UserEventPayloadVariant70 },
+    "lineItemCount" => -> { UserEventPayloadVariant72 },
+    "newInvoiceId" => -> { UserEventPayloadVariant73 },
+    "planSlug" => -> { UserEventPayloadVariant78 },
+    "productAliases" => -> { UserEventPayloadVariant82 },
+    "bulkRedirectsLimit" => -> { UserEventPayloadVariant83 },
+    "versionId" => -> { UserEventPayloadVariant84 },
+    "dst" => -> { UserEventPayloadVariant89 },
+    "gitOwnerName" => -> { UserEventPayloadVariant92 },
+    "documentId" => -> { UserEventPayloadVariant93 },
+    "count" => -> { UserEventPayloadVariant94 },
+    "gitlabUserId" => -> { UserEventPayloadVariant104 },
+    "bitbucketAccountId" => -> { UserEventPayloadVariant106 },
+    "prevPurchasedAmount" => -> { UserEventPayloadVariant108 },
+    "metricName" => -> { UserEventPayloadVariant109 },
+    "status" => -> { UserEventPayloadVariant111 },
+    "hookName" => -> { UserEventPayloadVariant115 },
+    "gitCommitterName" => -> { UserEventPayloadVariant122 },
+    "ruleProvenance" => -> { UserEventPayloadVariant124 },
+    "deploymentName" => -> { UserEventPayloadVariant127 },
+    "cdnEnabled" => -> { UserEventPayloadVariant134 },
+    "ownerName" => -> { UserEventPayloadVariant136 },
+    "domainId" => -> { UserEventPayloadVariant137 },
+    "nameservers" => -> { UserEventPayloadVariant138 },
+    "customNameservers" => -> { UserEventPayloadVariant139 },
+    "echMode" => -> { UserEventPayloadVariant141 },
+    "fromId" => -> { UserEventPayloadVariant144 },
+    "drainName" => -> { UserEventPayloadVariant150 },
+    "srcImages" => -> { UserEventPayloadVariant152 },
+    "tags" => -> { UserEventPayloadVariant153 },
+    "path" => -> { UserEventPayloadVariant154 },
+    "edgeConfigBackupVersionId" => -> { UserEventPayloadVariant157 },
+    "edgeConfig" => -> { UserEventPayloadVariant160 },
+    "edgeConfigTokenIds" => -> { UserEventPayloadVariant162 },
+    "envId" => -> { UserEventPayloadVariant172 },
+    "restore" => -> { UserEventPayloadVariant179 },
+    "ruleGroups" => -> { UserEventPayloadVariant180 },
+    "active" => -> { UserEventPayloadVariant181 },
+    "consumerProjectId" => -> { UserEventPayloadVariant182 },
+    "newOwnerId" => -> { UserEventPayloadVariant183 },
+    "actorAccountId" => -> { UserEventPayloadVariant186 },
+    "fromDeploymentId" => -> { UserEventPayloadVariant187 },
+    "newOwner" => -> { UserEventPayloadVariant189 },
+    "confirmedScopes" => -> { UserEventPayloadVariant190 },
+    "configurations" => -> { UserEventPayloadVariant193 },
+    "billingPlanId" => -> { UserEventPayloadVariant194 },
+    "databaseName" => -> { UserEventPayloadVariant196 },
+    "commands" => -> { UserEventPayloadVariant197 },
+    "keys" => -> { UserEventPayloadVariant199 },
+    "algorithm" => -> { UserEventPayloadVariant202 },
+    "policyKey" => -> { UserEventPayloadVariant206 },
+    "login" => -> { UserEventPayloadVariant209 },
+    "invoiceCollection" => -> { UserEventPayloadVariant213 },
+    "periods" => -> { UserEventPayloadVariant214 },
+    "alertId" => -> { UserEventPayloadVariant220 },
+    "rootTeamId" => -> { UserEventPayloadVariant223 },
+    "groupName" => -> { UserEventPayloadVariant225 },
+    "copiedDomains" => -> { UserEventPayloadVariant227 },
+    "enforcedTeamIds" => -> { UserEventPayloadVariant228 },
+    "billingPlan" => -> { UserEventPayloadVariant231 },
+    "organizationSlug" => -> { UserEventPayloadVariant232 },
+    "connectSrcCount" => -> { UserEventPayloadVariant241 },
+    "connectorId" => -> { UserEventPayloadVariant249 },
+    "previousTeamSuffix" => -> { UserEventPayloadVariant256 },
+    "previousEndpoint" => -> { UserEventPayloadVariant262 },
+    "branch" => -> { UserEventPayloadVariant263 },
+    "directoryListing" => -> { UserEventPayloadVariant264 },
+    "enableAffectedProjectsDeployments" => -> { UserEventPayloadVariant270 },
+    "enableExternalRewriteCaching" => -> { UserEventPayloadVariant271 },
+    "productionDeploymentsFastLane" => -> { UserEventPayloadVariant273 },
+    "sourceFilesOutsideRootDirectory" => -> { UserEventPayloadVariant274 },
+    "nextBuildMachineSelection" => -> { UserEventPayloadVariant275 },
+    "widget" => -> { UserEventPayloadVariant276 },
+    "elasticConcurrencyEnabled" => -> { UserEventPayloadVariant283 },
+    "autoAssignCustomDomains" => -> { UserEventPayloadVariant284 },
+    "previewDeploymentsEnabled" => -> { UserEventPayloadVariant285 },
+    "enableFunctionsBeta" => -> { UserEventPayloadVariant290 },
+    "gitRepoId" => -> { UserEventPayloadVariant298 },
+    "onPullRequest" => -> { UserEventPayloadVariant299 },
+    "onCommit" => -> { UserEventPayloadVariant300 },
+    "createDeployments" => -> { UserEventPayloadVariant302 },
+    "gitCommitStatus" => -> { UserEventPayloadVariant306 },
+    "gitLFS" => -> { UserEventPayloadVariant307 },
+    "consolidatedGitCommitStatus" => -> { UserEventPayloadVariant308 },
+    "oldProjectId" => -> { UserEventPayloadVariant312 },
+    "projects" => -> { UserEventPayloadVariant314 },
+    "removedMembership" => -> { UserEventPayloadVariant318 },
+    "destinationAccountId" => -> { UserEventPayloadVariant322 },
+    "projectAccountId" => -> { UserEventPayloadVariant331 },
+    "customerSupportCodeVisibility" => -> { UserEventPayloadVariant338 },
+    "gitForkProtection" => -> { UserEventPayloadVariant339 },
+    "protectedSourcemaps" => -> { UserEventPayloadVariant340 },
+    "inheritDeploymentProtection" => -> { UserEventPayloadVariant341 },
+    "publicSource" => -> { UserEventPayloadVariant342 },
+    "addedProjects" => -> { UserEventPayloadVariant350 },
+    "gitProviderGroupDescriptor" => -> { UserEventPayloadVariant353 },
+    "connectionType" => -> { UserEventPayloadVariant354 },
+    "signingEnabled" => -> { UserEventPayloadVariant358 },
+    "sandboxName" => -> { UserEventPayloadVariant359 },
+    "snapshotName" => -> { UserEventPayloadVariant361 },
+    "targetRegions" => -> { UserEventPayloadVariant362 },
+    "instances" => -> { UserEventPayloadVariant364 },
+    "bio" => -> { UserEventPayloadVariant371 },
+    "max" => -> { UserEventPayloadVariant372 },
+    "sampleRatePercent" => -> { UserEventPayloadVariant377 },
+    "storeType" => -> { UserEventPayloadVariant383 },
+    "locked" => -> { UserEventPayloadVariant389 },
+    "trialCreditsIssuedAt" => -> { UserEventPayloadVariant393 },
+    "elevatedScopeCount" => -> { UserEventPayloadVariant395 },
+    "by" => -> { UserEventPayloadVariant398 },
+    "inviteIds" => -> { UserEventPayloadVariant405 },
+    "requestedTeamName" => -> { UserEventPayloadVariant413 },
+    "previousRole" => -> { UserEventPayloadVariant414 },
+    "authorized" => -> { UserEventPayloadVariant415 },
+    "maxUses" => -> { UserEventPayloadVariant417 },
+    "nextConcurrentBuilds" => -> { UserEventPayloadVariant419 },
+    "convertedFromTrial" => -> { UserEventPayloadVariant421 },
+    "version" => -> { UserEventPayloadVariant425 },
+    "ips" => -> { UserEventPayloadVariant432 },
+    "tokenTypes" => -> { UserEventPayloadVariant433 },
+    "exportId" => -> { UserEventPayloadVariant434 },
+    "fileId" => -> { UserEventPayloadVariant435 },
+    "teamIds" => -> { UserEventPayloadVariant441 },
+    "recoveryCodes" => -> { UserEventPayloadVariant443 },
+    "autoBlockPrevented" => -> { UserEventPayloadVariant452 },
+    "allowedMethods" => -> { UserEventPayloadVariant454 },
+    "remaining" => -> { UserEventPayloadVariant457 },
+    "mfaEnabled" => -> { UserEventPayloadVariant458 },
+    "mfa" => -> { UserEventPayloadVariant459 },
+    "totpVerified" => -> { UserEventPayloadVariant460 },
+    "providerSubjectId" => -> { UserEventPayloadVariant462 },
+    "digest" => -> { UserEventPayloadVariant467 },
+    "sharedWithTeamSlug" => -> { UserEventPayloadVariant469 },
+    "public" => -> { UserEventPayloadVariant471 },
+    "removedTeamIds" => -> { UserEventPayloadVariant472 },
+    "nextProjectCount" => -> { UserEventPayloadVariant474 },
+    "customAlertTitle" => -> { UserEventPayloadVariant475 },
+    "ciEnabled" => -> { UserEventPayloadVariant476 },
+    "protectedProjectCount" => -> { UserEventPayloadVariant477 },
+    "tier" => -> { UserEventPayloadVariant481 },
+    "events" => -> { UserEventPayloadVariant484 },
+    "runId" => -> { UserEventPayloadVariant486 },
+    "atTTL" => -> { UserEventPayloadVariant487 },
+    "policy" => -> { UserEventPayloadVariant489 },
+    "tokenType" => -> { UserEventPayloadVariant492 },
+  }.freeze
+  UNDECIDED_VARIANTS = (
+    [
+      -> { UserEventPayloadVariant2 },
+      -> { UserEventPayloadVariant4 },
+      -> { UserEventPayloadVariant5 },
+      -> { UserEventPayloadVariant6 },
+      -> { UserEventPayloadVariant7 },
+      -> { UserEventPayloadVariant8 },
+      -> { UserEventPayloadVariant9 },
+      -> { UserEventPayloadVariant10 },
+      -> { UserEventPayloadVariant13 },
+      -> { UserEventPayloadVariant14 },
+      -> { UserEventPayloadVariant16 },
+      -> { UserEventPayloadVariant17 },
+      -> { UserEventPayloadVariant19 },
+      -> { UserEventPayloadVariant20 },
+      -> { UserEventPayloadVariant22 },
+      -> { UserEventPayloadVariant23 },
+      -> { UserEventPayloadVariant24 },
+      -> { UserEventPayloadVariant25 },
+      -> { UserEventPayloadVariant26 },
+      -> { UserEventPayloadVariant27 },
+      -> { UserEventPayloadVariant28 },
+      -> { UserEventPayloadVariant30 },
+      -> { UserEventPayloadVariant32 },
+      -> { UserEventPayloadVariant33 },
+      -> { UserEventPayloadVariant34 },
+      -> { UserEventPayloadVariant37 },
+      -> { UserEventPayloadVariant39 },
+      -> { UserEventPayloadVariant40 },
+      -> { UserEventPayloadVariant41 },
+      -> { UserEventPayloadVariant42 },
+      -> { UserEventPayloadVariant43 },
+      -> { UserEventPayloadVariant44 },
+      -> { UserEventPayloadVariant46 },
+      -> { UserEventPayloadVariant47 },
+      -> { UserEventPayloadVariant48 },
+      -> { UserEventPayloadVariant49 },
+      -> { UserEventPayloadVariant50 },
+      -> { UserEventPayloadVariant52 },
+      -> { UserEventPayloadVariant53 },
+      -> { UserEventPayloadVariant54 },
+      -> { UserEventPayloadVariant55 },
+      -> { UserEventPayloadVariant56 },
+      -> { UserEventPayloadVariant57 },
+      -> { UserEventPayloadVariant58 },
+      -> { UserEventPayloadVariant59 },
+      -> { UserEventPayloadVariant60 },
+      -> { UserEventPayloadVariant61 },
+      -> { UserEventPayloadVariant63 },
+      -> { UserEventPayloadVariant65 },
+      -> { UserEventPayloadVariant66 },
+      -> { UserEventPayloadVariant67 },
+      -> { UserEventPayloadVariant68 },
+      -> { UserEventPayloadVariant71 },
+      -> { UserEventPayloadVariant74 },
+      -> { UserEventPayloadVariant75 },
+      -> { UserEventPayloadVariant76 },
+      -> { UserEventPayloadVariant77 },
+      -> { UserEventPayloadVariant79 },
+      -> { UserEventPayloadVariant80 },
+      -> { UserEventPayloadVariant81 },
+      -> { UserEventPayloadVariant85 },
+      -> { UserEventPayloadVariant86 },
+      -> { UserEventPayloadVariant87 },
+      -> { UserEventPayloadVariant88 },
+      -> { UserEventPayloadVariant90 },
+      -> { UserEventPayloadVariant91 },
+      -> { UserEventPayloadVariant95 },
+      -> { UserEventPayloadVariant96 },
+      -> { UserEventPayloadVariant97 },
+      -> { UserEventPayloadVariant98 },
+      -> { UserEventPayloadVariant99 },
+      -> { UserEventPayloadVariant100 },
+      -> { UserEventPayloadVariant101 },
+      -> { UserEventPayloadVariant102 },
+      -> { UserEventPayloadVariant103 },
+      -> { UserEventPayloadVariant105 },
+      -> { UserEventPayloadVariant107 },
+      -> { UserEventPayloadVariant110 },
+      -> { UserEventPayloadVariant112 },
+      -> { UserEventPayloadVariant113 },
+      -> { UserEventPayloadVariant114 },
+      -> { UserEventPayloadVariant116 },
+      -> { UserEventPayloadVariant117 },
+      -> { DeploymentCheckUpdatedPayload },
+      -> { UserEventPayloadVariant119 },
+      -> { UserEventPayloadVariant120 },
+      -> { UserEventPayloadVariant121 },
+      -> { UserEventPayloadVariant123 },
+      -> { UserEventPayloadVariant125 },
+      -> { UserEventPayloadVariant126 },
+      -> { UserEventPayloadVariant128 },
+      -> { UserEventPayloadVariant129 },
+      -> { UserEventPayloadVariant130 },
+      -> { UserEventPayloadVariant131 },
+      -> { UserEventPayloadVariant132 },
+      -> { UserEventPayloadVariant133 },
+      -> { UserEventPayloadVariant135 },
+      -> { UserEventPayloadVariant140 },
+      -> { UserEventPayloadVariant142 },
+      -> { UserEventPayloadVariant143 },
+      -> { UserEventPayloadVariant145 },
+      -> { UserEventPayloadVariant146 },
+      -> { UserEventPayloadVariant147 },
+      -> { UserEventPayloadVariant148 },
+      -> { UserEventPayloadVariant149 },
+      -> { UserEventPayloadVariant151 },
+      -> { UserEventPayloadVariant155 },
+      -> { UserEventPayloadVariant156 },
+      -> { UserEventPayloadVariant158 },
+      -> { UserEventPayloadVariant159 },
+      -> { UserEventPayloadVariant161 },
+      -> { UserEventPayloadVariant163 },
+      -> { UserEventPayloadVariant164 },
+      -> { UserEventPayloadVariant165 },
+      -> { UserEventPayloadVariant166 },
+      -> { UserEventPayloadVariant167 },
+      -> { UserEventPayloadVariant168 },
+      -> { UserEventPayloadVariant169 },
+      -> { UserEventPayloadVariant170 },
+      -> { UserEventPayloadVariant171 },
+      -> { UserEventPayloadVariant173 },
+      -> { UserEventPayloadVariant174 },
+      -> { UserEventPayloadVariant175 },
+      -> { UserEventPayloadVariant176 },
+      -> { UserEventPayloadVariant177 },
+      -> { UserEventPayloadVariant178 },
+      -> { UserEventPayloadVariant184 },
+      -> { UserEventPayloadVariant185 },
+      -> { UserEventPayloadVariant188 },
+      -> { UserEventPayloadVariant191 },
+      -> { UserEventPayloadVariant192 },
+      -> { UserEventPayloadVariant195 },
+      -> { UserEventPayloadVariant198 },
+      -> { UserEventPayloadVariant200 },
+      -> { UserEventPayloadVariant201 },
+      -> { UserEventPayloadVariant203 },
+      -> { UserEventPayloadVariant204 },
+      -> { UserEventPayloadVariant205 },
+      -> { UserEventPayloadVariant207 },
+      -> { UserEventPayloadVariant208 },
+      -> { UserEventPayloadVariant210 },
+      -> { UserEventPayloadVariant211 },
+      -> { UserEventPayloadVariant212 },
+      -> { UserEventPayloadVariant215 },
+      -> { UserEventPayloadVariant216 },
+      -> { UserEventPayloadVariant217 },
+      -> { UserEventPayloadVariant218 },
+      -> { UserEventPayloadVariant219 },
+      -> { UserEventPayloadVariant221 },
+      -> { UserEventPayloadVariant222 },
+      -> { UserEventPayloadVariant224 },
+      -> { UserEventPayloadVariant226 },
+      -> { UserEventPayloadVariant229 },
+      -> { UserEventPayloadVariant230 },
+      -> { UserEventPayloadVariant233 },
+      -> { UserEventPayloadVariant234 },
+      -> { UserEventPayloadVariant235 },
+      -> { UserEventPayloadVariant236 },
+      -> { UserEventPayloadVariant237 },
+      -> { UserEventPayloadVariant238 },
+      -> { UserEventPayloadVariant239 },
+      -> { UserEventPayloadVariant240 },
+      -> { UserEventPayloadVariant242 },
+      -> { UserEventPayloadVariant243 },
+      -> { UserEventPayloadVariant244 },
+      -> { UserEventPayloadVariant245 },
+      -> { UserEventPayloadVariant246 },
+      -> { UserEventPayloadVariant247 },
+      -> { UserEventPayloadVariant248 },
+      -> { UserEventPayloadVariant250 },
+      -> { UserEventPayloadVariant251 },
+      -> { UserEventPayloadVariant252 },
+      -> { UserEventPayloadVariant253 },
+      -> { UserEventPayloadVariant254 },
+      -> { UserEventPayloadVariant255 },
+      -> { UserEventPayloadVariant257 },
+      -> { UserEventPayloadVariant258 },
+      -> { UserEventPayloadVariant259 },
+      -> { UserEventPayloadVariant260 },
+      -> { UserEventPayloadVariant261 },
+      -> { UserEventPayloadVariant265 },
+      -> { UserEventPayloadVariant266 },
+      -> { UserEventPayloadVariant267 },
+      -> { UserEventPayloadVariant268 },
+      -> { UserEventPayloadVariant269 },
+      -> { UserEventPayloadVariant272 },
+      -> { UserEventPayloadVariant277 },
+      -> { UserEventPayloadVariant278 },
+      -> { UserEventPayloadVariant279 },
+      -> { UserEventPayloadVariant280 },
+      -> { UserEventPayloadVariant281 },
+      -> { UserEventPayloadVariant282 },
+      -> { UserEventPayloadVariant286 },
+      -> { UserEventPayloadVariant287 },
+      -> { UserEventPayloadVariant288 },
+      -> { UserEventPayloadVariant289 },
+      -> { UserEventPayloadVariant291 },
+      -> { UserEventPayloadVariant292 },
+      -> { UserEventPayloadVariant293 },
+      -> { UserEventPayloadVariant294 },
+    ] +
+    [
+      -> { UserEventPayloadVariant295 },
+      -> { UserEventPayloadVariant296 },
+      -> { UserEventPayloadVariant297 },
+      -> { UserEventPayloadVariant301 },
+      -> { UserEventPayloadVariant303 },
+      -> { UserEventPayloadVariant304 },
+      -> { UserEventPayloadVariant305 },
+      -> { UserEventPayloadVariant309 },
+      -> { UserEventPayloadVariant310 },
+      -> { UserEventPayloadVariant311 },
+      -> { UserEventPayloadVariant313 },
+      -> { UserEventPayloadVariant315 },
+      -> { UserEventPayloadVariant316 },
+      -> { UserEventPayloadVariant317 },
+      -> { UserEventPayloadVariant319 },
+      -> { UserEventPayloadVariant320 },
+      -> { UserEventPayloadVariant321 },
+      -> { UserEventPayloadVariant323 },
+      -> { UserEventPayloadVariant324 },
+      -> { UserEventPayloadVariant325 },
+      -> { UserEventPayloadVariant326 },
+      -> { UserEventPayloadVariant327 },
+      -> { UserEventPayloadVariant328 },
+      -> { UserEventPayloadVariant329 },
+      -> { UserEventPayloadVariant330 },
+      -> { UserEventPayloadVariant332 },
+      -> { UserEventPayloadVariant333 },
+      -> { UserEventPayloadVariant334 },
+      -> { UserEventPayloadVariant335 },
+      -> { UserEventPayloadVariant336 },
+      -> { UserEventPayloadVariant337 },
+      -> { UserEventPayloadVariant343 },
+      -> { UserEventPayloadVariant344 },
+      -> { UserEventPayloadVariant345 },
+      -> { UserEventPayloadVariant346 },
+      -> { UserEventPayloadVariant347 },
+      -> { UserEventPayloadVariant348 },
+      -> { UserEventPayloadVariant349 },
+      -> { UserEventPayloadVariant351 },
+      -> { UserEventPayloadVariant352 },
+      -> { UserEventPayloadVariant355 },
+      -> { UserEventPayloadVariant356 },
+      -> { UserEventPayloadVariant357 },
+      -> { UserEventPayloadVariant360 },
+      -> { UserEventPayloadVariant363 },
+      -> { UserEventPayloadVariant365 },
+      -> { UserEventPayloadVariant366 },
+      -> { UserEventPayloadVariant367 },
+      -> { UserEventPayloadVariant368 },
+      -> { UserEventPayloadVariant369 },
+      -> { UserEventPayloadVariant370 },
+      -> { UserEventPayloadVariant373 },
+      -> { UserEventPayloadVariant374 },
+      -> { UserEventPayloadVariant375 },
+      -> { UserEventPayloadVariant376 },
+      -> { UserEventPayloadVariant378 },
+      -> { UserEventPayloadVariant379 },
+      -> { UserEventPayloadVariant380 },
+      -> { UserEventPayloadVariant381 },
+      -> { UserEventPayloadVariant382 },
+      -> { UserEventPayloadVariant384 },
+      -> { UserEventPayloadVariant385 },
+      -> { UserEventPayloadVariant386 },
+      -> { UserEventPayloadVariant387 },
+      -> { UserEventPayloadVariant388 },
+      -> { UserEventPayloadVariant390 },
+      -> { UserEventPayloadVariant391 },
+      -> { UserEventPayloadVariant392 },
+      -> { UserEventPayloadVariant394 },
+      -> { UserEventPayloadVariant396 },
+      -> { UserEventPayloadVariant397 },
+      -> { UserEventPayloadVariant399 },
+      -> { UserEventPayloadVariant400 },
+      -> { UserEventPayloadVariant401 },
+      -> { UserEventPayloadVariant402 },
+      -> { UserEventPayloadVariant403 },
+      -> { UserEventPayloadVariant404 },
+      -> { UserEventPayloadVariant406 },
+      -> { UserEventPayloadVariant407 },
+      -> { UserEventPayloadVariant408 },
+      -> { UserEventPayloadVariant409 },
+      -> { UserEventPayloadVariant410 },
+      -> { UserEventPayloadVariant411 },
+      -> { UserEventPayloadVariant412 },
+      -> { UserEventPayloadVariant416 },
+      -> { UserEventPayloadVariant418 },
+      -> { UserEventPayloadVariant420 },
+      -> { UserEventPayloadVariant422 },
+      -> { UserEventPayloadVariant423 },
+      -> { UserEventPayloadVariant424 },
+      -> { UserEventPayloadVariant426 },
+      -> { UserEventPayloadVariant427 },
+      -> { UserEventPayloadVariant428 },
+      -> { UserEventPayloadVariant429 },
+      -> { UserEventPayloadVariant430 },
+      -> { UserEventPayloadVariant431 },
+      -> { UserEventPayloadVariant436 },
+      -> { UserEventPayloadVariant437 },
+      -> { UserEventPayloadVariant438 },
+      -> { UserEventPayloadVariant439 },
+      -> { UserEventPayloadVariant440 },
+      -> { UserEventPayloadVariant442 },
+      -> { UserEventPayloadVariant444 },
+      -> { UserEventPayloadVariant445 },
+      -> { UserEventPayloadVariant446 },
+      -> { UserEventPayloadVariant447 },
+      -> { UserEventPayloadVariant448 },
+      -> { UserEventPayloadVariant449 },
+      -> { UserEventPayloadVariant450 },
+      -> { UserEventPayloadVariant451 },
+      -> { UserEventPayloadVariant453 },
+      -> { UserEventPayloadVariant455 },
+      -> { UserEventPayloadVariant456 },
+      -> { UserEventPayloadVariant461 },
+      -> { UserEventPayloadVariant463 },
+      -> { UserEventPayloadVariant464 },
+      -> { UserEventPayloadVariant465 },
+      -> { UserEventPayloadVariant466 },
+      -> { UserEventPayloadVariant468 },
+      -> { UserEventPayloadVariant470 },
+      -> { UserEventPayloadVariant473 },
+      -> { UserEventPayloadVariant478 },
+      -> { UserEventPayloadVariant479 },
+      -> { UserEventPayloadVariant480 },
+      -> { UserEventPayloadVariant482 },
+      -> { UserEventPayloadVariant483 },
+      -> { UserEventPayloadVariant485 },
+      -> { UserEventPayloadVariant488 },
+      -> { UserEventPayloadVariant490 },
+      -> { UserEventPayloadVariant491 },
+      -> { UserEventPayloadVariant493 },
+    ]
+  ).freeze
 
-    def self.from_hash(hash)
-      type = SHAPE_MAPPING.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last&.call
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
+  def self.from_hash(hash)
+    type = SHAPE_MAPPING.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last&.call
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    lossy = nil
+    UNDECIDED_VARIANTS.each do |variant|
+      type = variant.call
+      decoded = type.from_hash(hash)
+      return decoded if SdkModel.keeps_every_key?(hash, decoded)
 
-      lossy = nil
-      UNDECIDED_VARIANTS.each do |variant|
-        type = variant.call
-        decoded = type.from_hash(hash)
-        return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-        lossy ||= decoded
-      rescue ::StandardError
-        next
-      end
-      lossy unless lossy.nil?
+      lossy ||= decoded
+    rescue ::StandardError
+      next
     end
+    return lossy unless lossy.nil?
   end
+end
 
-  # Defines the UserEventPayloadVariant1Enabled SDK namespace.
-  module UserEventPayloadVariant1Enabled
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant1Enabled SDK namespace.
+module UserEventPayloadVariant1Enabled
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant1SlackConfigured SDK namespace.
-  module UserEventPayloadVariant1SlackConfigured
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant1SlackConfigured SDK namespace.
+module UserEventPayloadVariant1SlackConfigured
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant10Visibility SDK namespace.
-  module UserEventPayloadVariant10Visibility
-    PRIVATE = 'private'
-    TEAM = 'team'
-    VALUES = %w[private team].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant10Visibility SDK namespace.
+module UserEventPayloadVariant10Visibility
+  PRIVATE = 'private'
+  TEAM = 'team'
+  VALUES = ['private', 'team'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant107SubjectType SDK namespace.
-  module UserEventPayloadVariant107SubjectType
-    APP = 'app'
-    USER = 'user'
-    VALUES = %w[app user].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant107SubjectType SDK namespace.
+module UserEventPayloadVariant107SubjectType
+  APP = 'app'
+  USER = 'user'
+  VALUES = ['app', 'user'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant113OldPasswordProtectionDeploymentType SDK namespace.
-  module UserEventPayloadVariant113OldPasswordProtectionDeploymentType
-    ALL = 'all'
-    ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-    PREVIEW = 'preview'
-    PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-    VALUES = %w[
-      all all_except_custom_domains preview prod_deployment_urls_and_all_previews
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant113OldPasswordProtectionDeploymentType SDK namespace.
+module UserEventPayloadVariant113OldPasswordProtectionDeploymentType
+  ALL = 'all'
+  ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
+  PREVIEW = 'preview'
+  PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
+  VALUES = [
+    'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant113PasswordChanged SDK namespace.
-  module UserEventPayloadVariant113PasswordChanged
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant113PasswordChanged SDK namespace.
+module UserEventPayloadVariant113PasswordChanged
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant113PasswordProtectionDeploymentType SDK namespace.
-  module UserEventPayloadVariant113PasswordProtectionDeploymentType
-    ALL = 'all'
-    ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-    PREVIEW = 'preview'
-    PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-    VALUES = %w[
-      all all_except_custom_domains preview prod_deployment_urls_and_all_previews
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant113PasswordProtectionDeploymentType SDK namespace.
+module UserEventPayloadVariant113PasswordProtectionDeploymentType
+  ALL = 'all'
+  ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
+  PREVIEW = 'preview'
+  PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
+  VALUES = [
+    'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant113Scope SDK namespace.
-  module UserEventPayloadVariant113Scope
-    TEAM = 'team'
-    VALUES = ['team'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant113Scope SDK namespace.
+module UserEventPayloadVariant113Scope
+  TEAM = 'team'
+  VALUES = ['team'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant114OldSsoProtectionApril2026SecurityInXa17fd576e8 SDK namespace.
-  module UserEventPayloadVariant114OldSsoProtectionApril2026SecurityInXa17fd576e8
-    ALL = 'all'
-    ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-    PREVIEW = 'preview'
-    PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-    VALUES = %w[
-      all all_except_custom_domains preview prod_deployment_urls_and_all_previews
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant114OldSsoProtectionApril2026SecurityInXa17fd576e8 SDK namespace.
+module UserEventPayloadVariant114OldSsoProtectionApril2026SecurityInXa17fd576e8
+  ALL = 'all'
+  ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
+  PREVIEW = 'preview'
+  PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
+  VALUES = [
+    'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant114OldSsoProtectionCve55182MigrationAppliedFrom SDK namespace.
-  module UserEventPayloadVariant114OldSsoProtectionCve55182MigrationAppliedFrom
-    ALL = 'all'
-    ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-    PREVIEW = 'preview'
-    PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-    VALUES = %w[
-      all all_except_custom_domains preview prod_deployment_urls_and_all_previews
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant114OldSsoProtectionCve55182MigrationAppliedFrom SDK namespace.
+module UserEventPayloadVariant114OldSsoProtectionCve55182MigrationAppliedFrom
+  ALL = 'all'
+  ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
+  PREVIEW = 'preview'
+  PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
+  VALUES = [
+    'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant114OldSsoProtectionDeploymentType SDK namespace.
-  module UserEventPayloadVariant114OldSsoProtectionDeploymentType
-    ALL = 'all'
-    ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-    PREVIEW = 'preview'
-    PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-    VALUES = %w[
-      all all_except_custom_domains preview prod_deployment_urls_and_all_previews
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant114OldSsoProtectionDeploymentType SDK namespace.
+module UserEventPayloadVariant114OldSsoProtectionDeploymentType
+  ALL = 'all'
+  ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
+  PREVIEW = 'preview'
+  PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
+  VALUES = [
+    'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant114Scope SDK namespace.
-  module UserEventPayloadVariant114Scope
-    ORGANIZATION = 'organization'
-    TEAM = 'team'
-    VALUES = %w[organization team].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant114Scope SDK namespace.
+module UserEventPayloadVariant114Scope
+  ORGANIZATION = 'organization'
+  TEAM = 'team'
+  VALUES = ['organization', 'team'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant114SsoProtectionApril2026SecurityIncidXf64a8ef608 SDK namespace.
-  module UserEventPayloadVariant114SsoProtectionApril2026SecurityIncidXf64a8ef608
-    ALL = 'all'
-    ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-    PREVIEW = 'preview'
-    PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-    VALUES = %w[
-      all all_except_custom_domains preview prod_deployment_urls_and_all_previews
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant114SsoProtectionApril2026SecurityIncidXf64a8ef608 SDK namespace.
+module UserEventPayloadVariant114SsoProtectionApril2026SecurityIncidXf64a8ef608
+  ALL = 'all'
+  ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
+  PREVIEW = 'preview'
+  PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
+  VALUES = [
+    'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UserEventPayloadVariant114SsoProtectionCve55182MigrationAppliedFrom SDK namespace.
-  module UserEventPayloadVariant114SsoProtectionCve55182MigrationAppliedFrom
-    ALL = 'all'
-    ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-    PREVIEW = 'preview'
-    PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-    VALUES = %w[
-      all all_except_custom_domains preview prod_deployment_urls_and_all_previews
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UserEventPayloadVariant114SsoProtectionCve55182MigrationAppliedFrom SDK namespace.
+module UserEventPayloadVariant114SsoProtectionCve55182MigrationAppliedFrom
+  ALL = 'all'
+  ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
+  PREVIEW = 'preview'
+  PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
+  VALUES = [
+    'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 end

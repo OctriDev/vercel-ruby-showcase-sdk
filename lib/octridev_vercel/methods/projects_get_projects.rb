@@ -17,22 +17,29 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_projects) do |config:, id_or_name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_projects) do |
+        config:,
+        id_or_name:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v9/projects/',
+            "/v9/projects/",
             SdkClient.encode_path_segment(id_or_name)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Projects::GetProjectsResponse,
           decoder: :json,
           operation_id: 'get_projects',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

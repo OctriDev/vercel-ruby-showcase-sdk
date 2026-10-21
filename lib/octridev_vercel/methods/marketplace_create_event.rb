@@ -21,20 +21,21 @@ module OctridevVercel
         event:,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/installations/',
+            "/v1/installations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/events'
+            "/events"
           ].join,
           config: config,
           body: {
-            'event' => event
+            'event' => event,
           },
           decoder: :empty,
           operation_id: 'create_event',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -23,19 +23,20 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
-          '/v1/security/firewall/config/generate-rule',
+          "/v1/security/firewall/config/generate-rule",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Security::GenerateFirewallRuleResponse,
           decoder: :json,
           operation_id: 'generate_firewall_rule',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

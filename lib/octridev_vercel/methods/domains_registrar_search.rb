@@ -20,23 +20,24 @@ module OctridevVercel
         team_id: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_items('domains', domains, min: 1, max: 200)
 
         SdkClient.request(
           'POST',
-          '/v1/registrar/domains/search',
+          "/v1/registrar/domains/search",
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           body: {
-            'domains' => domains
+            'domains' => domains,
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::SearchDomainsResponse,
           decoder: :json,
           operation_id: 'search_domains',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
     end

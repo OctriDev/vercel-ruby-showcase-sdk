@@ -40,8 +40,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainProjectDomainsResponseMetadata
         FIELDS = {
-          pagination: 'pagination',
-          project_domains: 'projectDomains'
+          pagination: "pagination",
+          project_domains: "projectDomains",
         }.freeze
         REQUIRED_FIELDS = %i[
           pagination
@@ -53,7 +53,7 @@ module OctridevVercel
           end,
           project_domains: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Domains::GetDomainProjectDomainsResponseProjectDomainsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -85,11 +85,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainsResponseDomainCreatorMetadata
         FIELDS = {
-          customer_id: 'customerId',
-          email: 'email',
-          id: 'id',
-          is_domain_reseller: 'isDomainReseller',
-          username: 'username'
+          customer_id: "customerId",
+          email: "email",
+          id: "id",
+          is_domain_reseller: "isDomainReseller",
+          username: "username",
         }.freeze
         REQUIRED_FIELDS = %i[
           email
@@ -99,7 +99,7 @@ module OctridevVercel
         DECODERS = {
           is_domain_reseller: lambda do |value|
             ::OctridevVercel::Methods::Domains::GetDomainsResponseDomainCreatorIsDomainReseller.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -130,24 +130,24 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainsResponseDomainMetadata
         FIELDS = {
-          bought_at: 'boughtAt',
-          created_at: 'createdAt',
-          creator: 'creator',
-          custom_nameservers: 'customNameservers',
-          ech_mode: 'echMode',
-          expires_at: 'expiresAt',
-          id: 'id',
-          intended_nameservers: 'intendedNameservers',
-          name: 'name',
-          nameservers: 'nameservers',
-          renew: 'renew',
-          service_type: 'serviceType',
-          suffix: 'suffix',
-          team_id: 'teamId',
-          transferred_at: 'transferredAt',
-          transfer_started_at: 'transferStartedAt',
-          user_id: 'userId',
-          verified: 'verified'
+          bought_at: "boughtAt",
+          created_at: "createdAt",
+          creator: "creator",
+          custom_nameservers: "customNameservers",
+          ech_mode: "echMode",
+          expires_at: "expiresAt",
+          id: "id",
+          intended_nameservers: "intendedNameservers",
+          name: "name",
+          nameservers: "nameservers",
+          renew: "renew",
+          service_type: "serviceType",
+          suffix: "suffix",
+          team_id: "teamId",
+          transferred_at: "transferredAt",
+          transfer_started_at: "transferStartedAt",
+          user_id: "userId",
+          verified: "verified",
         }.freeze
         REQUIRED_FIELDS = %i[
           bought_at
@@ -183,7 +183,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Domains::GetDomainsResponseDomainVerified.from_value(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           bought_at
@@ -248,7 +248,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainsResponseMetadata
         FIELDS = {
-          domain: 'domain'
+          domain: "domain",
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -256,7 +256,7 @@ module OctridevVercel
         DECODERS = {
           domain: lambda do |value|
             ::OctridevVercel::Methods::Domains::GetDomainsResponseDomain.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -286,11 +286,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListDomainsResponseDomainsItemCreatorMetadata
         FIELDS = {
-          customer_id: 'customerId',
-          email: 'email',
-          id: 'id',
-          is_domain_reseller: 'isDomainReseller',
-          username: 'username'
+          customer_id: "customerId",
+          email: "email",
+          id: "id",
+          is_domain_reseller: "isDomainReseller",
+          username: "username",
         }.freeze
         REQUIRED_FIELDS = %i[
           email
@@ -300,7 +300,7 @@ module OctridevVercel
         DECODERS = {
           is_domain_reseller: lambda do |value|
             ::OctridevVercel::Methods::Domains::ListDomainsResponseDomainsItemCreatorIsDomainReseller.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -331,23 +331,23 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListDomainsResponseDomainsItemMetadata
         FIELDS = {
-          bought_at: 'boughtAt',
-          created_at: 'createdAt',
-          creator: 'creator',
-          custom_nameservers: 'customNameservers',
-          ech_mode: 'echMode',
-          expires_at: 'expiresAt',
-          id: 'id',
-          intended_nameservers: 'intendedNameservers',
-          name: 'name',
-          nameservers: 'nameservers',
-          renew: 'renew',
-          service_type: 'serviceType',
-          team_id: 'teamId',
-          transferred_at: 'transferredAt',
-          transfer_started_at: 'transferStartedAt',
-          user_id: 'userId',
-          verified: 'verified'
+          bought_at: "boughtAt",
+          created_at: "createdAt",
+          creator: "creator",
+          custom_nameservers: "customNameservers",
+          ech_mode: "echMode",
+          expires_at: "expiresAt",
+          id: "id",
+          intended_nameservers: "intendedNameservers",
+          name: "name",
+          nameservers: "nameservers",
+          renew: "renew",
+          service_type: "serviceType",
+          team_id: "teamId",
+          transferred_at: "transferredAt",
+          transfer_started_at: "transferStartedAt",
+          user_id: "userId",
+          verified: "verified",
         }.freeze
         REQUIRED_FIELDS = %i[
           bought_at
@@ -379,7 +379,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Domains::ListDomainsResponseDomainsItemVerified.from_value(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           bought_at
@@ -444,8 +444,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListDomainsResponseMetadata
         FIELDS = {
-          domains: 'domains',
-          pagination: 'pagination'
+          domains: "domains",
+          pagination: "pagination",
         }.freeze
         REQUIRED_FIELDS = %i[
           domains
@@ -457,7 +457,7 @@ module OctridevVercel
           end,
           pagination: lambda do |value|
             ::OctridevVercel::Pagination.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -489,11 +489,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateOrTransferDomainResponseDomainCreatorMetadata
         FIELDS = {
-          customer_id: 'customerId',
-          email: 'email',
-          id: 'id',
-          is_domain_reseller: 'isDomainReseller',
-          username: 'username'
+          customer_id: "customerId",
+          email: "email",
+          id: "id",
+          is_domain_reseller: "isDomainReseller",
+          username: "username",
         }.freeze
         REQUIRED_FIELDS = %i[
           email
@@ -503,7 +503,7 @@ module OctridevVercel
         DECODERS = {
           is_domain_reseller: lambda do |value|
             ::OctridevVercel::Methods::Domains::CreateOrTransferDomainResponseDomainCreatorIsDomainReseller.from_value(value)
-          end
+          end,
         }.freeze
       end
 

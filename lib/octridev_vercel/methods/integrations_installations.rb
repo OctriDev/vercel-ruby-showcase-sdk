@@ -27,28 +27,29 @@ module OctridevVercel
         make_env_vars_sensitive: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/integrations/installations/',
+            "/v1/integrations/installations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/resources/',
+            "/resources/",
             SdkClient.encode_path_segment(resource_id),
-            '/connections'
+            "/connections"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'projectId' => project_id,
             'envVarEnvironments' => env_var_environments,
-            'makeEnvVarsSensitive' => make_env_vars_sensitive
+            'makeEnvVarsSensitive' => make_env_vars_sensitive,
           },
           decoder: :empty,
           operation_id: 'connect_integration_resource_to_project',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -5,681 +5,682 @@
 
 # connect domain models
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalConnectConnectorAppTokensMetadata
-    FIELDS = {
-      cross_installation: 'crossInstallation',
-      is_static_credential: 'isStaticCredential',
-      permissions_url: 'permissionsUrl',
-      requires_reinstallation: 'requiresReinstallation',
-      scopes: 'scopes',
-      supported_authorization_details: 'supportedAuthorizationDetails',
-      supports_refinement: 'supportsRefinement',
-      supports_resources: 'supportsResources'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      cross_installation
-      is_static_credential
-      supports_refinement
-    ].freeze
-    DECODERS = {
-      cross_installation: lambda do |value|
-        ::OctridevVercel::ConnectConnectorAppTokensCrossInstallation.from_value(value)
-      end,
-      is_static_credential: lambda do |value|
-        ::OctridevVercel::ConnectConnectorAppTokensIsStaticCredential.from_value(value)
-      end,
-      requires_reinstallation: lambda do |value|
-        ::OctridevVercel::ConnectConnectorAppTokensRequiresReinstallation.from_value(value)
-      end,
-      supports_refinement: lambda do |value|
-        ::OctridevVercel::ConnectConnectorAppTokensSupportsRefinement.from_value(value)
-      end,
-      supports_resources: lambda do |value|
-        ::OctridevVercel::ConnectConnectorAppTokensSupportsResources.from_value(value)
-      end
-    }.freeze
+# Internal model hydration metadata.
+class SdkInternalConnectConnectorAppTokensMetadata
+  FIELDS = {
+    cross_installation: "crossInstallation",
+    is_static_credential: "isStaticCredential",
+    permissions_url: "permissionsUrl",
+    requires_reinstallation: "requiresReinstallation",
+    scopes: "scopes",
+    supported_authorization_details: "supportedAuthorizationDetails",
+    supports_refinement: "supportsRefinement",
+    supports_resources: "supportsResources",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    cross_installation
+    is_static_credential
+    supports_refinement
+  ].freeze
+  DECODERS = {
+    cross_installation: lambda do |value|
+      ::OctridevVercel::ConnectConnectorAppTokensCrossInstallation.from_value(value)
+    end,
+    is_static_credential: lambda do |value|
+      ::OctridevVercel::ConnectConnectorAppTokensIsStaticCredential.from_value(value)
+    end,
+    requires_reinstallation: lambda do |value|
+      ::OctridevVercel::ConnectConnectorAppTokensRequiresReinstallation.from_value(value)
+    end,
+    supports_refinement: lambda do |value|
+      ::OctridevVercel::ConnectConnectorAppTokensSupportsRefinement.from_value(value)
+    end,
+    supports_resources: lambda do |value|
+      ::OctridevVercel::ConnectConnectorAppTokensSupportsResources.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for ConnectConnectorAppTokens.
+# App-token capabilities and known grants for the connector.
+class ConnectConnectorAppTokens
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalConnectConnectorAppTokensMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalConnectConnectorAppTokensMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalConnectConnectorAppTokensMetadata::DECODERS
+
+  # @return [ConnectConnectorAppTokensCrossInstallation] Whether one app token can be used across installations.
+  attr_reader :cross_installation
+  # @return [ConnectConnectorAppTokensIsStaticCredential] Required enumerated value serialized in the `isStaticCredential` wire field.
+  attr_reader :is_static_credential
+  # @return [String] Link to the page on the service where this connector's app-level permissions are declared and granted, when the service has one and it differs from `clientUrl`.
+  attr_reader :permissions_url
+  # @return [ConnectConnectorAppTokensRequiresReinstallation] True when changing app token grants requires reinstalling the app, so tokens cannot be partitioned independently by requester environment.
+  attr_reader :requires_reinstallation
+  # @return [Array_of_String] Known allowed app-level scopes. For Slack this is the bot scope set configured on the app; for OAuth it is the connector's enabled `clientCredentials.scopes` configuration.
+  attr_reader :scopes
+  # @return [Array_of_String] Supported OAuth authorization-detail type names.
+  attr_reader :supported_authorization_details
+  # @return [ConnectConnectorAppTokensSupportsRefinement] Whether callers can narrow app-token grants per request.
+  attr_reader :supports_refinement
+  # @return [ConnectConnectorAppTokensSupportsResources] Whether callers can request resource-specific app tokens.
+  attr_reader :supports_resources
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for ConnectConnectorAppTokens.
-  # App-token capabilities and known grants for the connector.
-  class ConnectConnectorAppTokens
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalConnectConnectorAppTokensMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalConnectConnectorAppTokensMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalConnectConnectorAppTokensMetadata::DECODERS
-
-    # @return [ConnectConnectorAppTokensCrossInstallation] Whether one app token can be used across installations.
-    attr_reader :cross_installation
-    # @return [ConnectConnectorAppTokensIsStaticCredential] Required enumerated value serialized in the `isStaticCredential` wire field.
-    attr_reader :is_static_credential
-    # @return [String] Link to the page on the service where this connector's app-level permissions are declared and granted, when the service has one and it differs from `clientUrl`.
-    attr_reader :permissions_url
-    # @return [ConnectConnectorAppTokensRequiresReinstallation] True when changing app token grants requires reinstalling the app, so tokens cannot be partitioned independently by requester environment.
-    attr_reader :requires_reinstallation
-    # @return [Array_of_String] Known allowed app-level scopes. For Slack this is the bot scope set configured on the app; for OAuth it is the connector's enabled `clientCredentials.scopes` configuration.
-    attr_reader :scopes
-    # @return [Array_of_String] Supported OAuth authorization-detail type names.
-    attr_reader :supported_authorization_details
-    # @return [ConnectConnectorAppTokensSupportsRefinement] Whether callers can narrow app-token grants per request.
-    attr_reader :supports_refinement
-    # @return [ConnectConnectorAppTokensSupportsResources] Whether callers can request resource-specific app tokens.
-    attr_reader :supports_resources
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalConnectConnectorManagedMetadata
-    FIELDS = {
-      sync: 'sync'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      sync: lambda do |value|
-        ::OctridevVercel::ConnectConnectorManagedSync.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalConnectConnectorManagedMetadata
+  FIELDS = {
+    sync: "sync",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    sync: lambda do |value|
+      ::OctridevVercel::ConnectConnectorManagedSync.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for ConnectConnectorManaged.
+# Managed connector metadata exposed without leaking the manager connector or installation identifiers.
+class ConnectConnectorManaged
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalConnectConnectorManagedMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalConnectConnectorManagedMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalConnectConnectorManagedMetadata::DECODERS
+
+  # @return [ConnectConnectorManagedSync] Whether Vercel synchronizes provider-side configuration.
+  attr_reader :sync
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for ConnectConnectorManaged.
-  # Managed connector metadata exposed without leaking the manager connector or installation identifiers.
-  class ConnectConnectorManaged
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalConnectConnectorManagedMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalConnectConnectorManagedMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalConnectConnectorManagedMetadata::DECODERS
-
-    # @return [ConnectConnectorManagedSync] Whether Vercel synchronizes provider-side configuration.
-    attr_reader :sync
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalConnectConnectorUserTokensMetadata
-    FIELDS = {
-      cross_installation: 'crossInstallation',
-      is_static_credential: 'isStaticCredential',
-      manual_credential_input: 'manualCredentialInput',
-      scopes: 'scopes',
-      supported_authorization_details: 'supportedAuthorizationDetails',
-      supports_refinement: 'supportsRefinement',
-      supports_resources: 'supportsResources'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      cross_installation
-      is_static_credential
-      supports_refinement
-    ].freeze
-    DECODERS = {
-      cross_installation: lambda do |value|
-        ::OctridevVercel::ConnectConnectorUserTokensCrossInstallation.from_value(value)
-      end,
-      is_static_credential: lambda do |value|
-        ::OctridevVercel::ConnectConnectorUserTokensIsStaticCredential.from_value(value)
-      end,
-      manual_credential_input: lambda do |value|
-        ::OctridevVercel::ConnectConnectorUserTokensManualCredentialInput.from_value(value)
-      end,
-      supports_refinement: lambda do |value|
-        ::OctridevVercel::ConnectConnectorUserTokensSupportsRefinement.from_value(value)
-      end,
-      supports_resources: lambda do |value|
-        ::OctridevVercel::ConnectConnectorUserTokensSupportsResources.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalConnectConnectorUserTokensMetadata
+  FIELDS = {
+    cross_installation: "crossInstallation",
+    is_static_credential: "isStaticCredential",
+    manual_credential_input: "manualCredentialInput",
+    scopes: "scopes",
+    supported_authorization_details: "supportedAuthorizationDetails",
+    supports_refinement: "supportsRefinement",
+    supports_resources: "supportsResources",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    cross_installation
+    is_static_credential
+    supports_refinement
+  ].freeze
+  DECODERS = {
+    cross_installation: lambda do |value|
+      ::OctridevVercel::ConnectConnectorUserTokensCrossInstallation.from_value(value)
+    end,
+    is_static_credential: lambda do |value|
+      ::OctridevVercel::ConnectConnectorUserTokensIsStaticCredential.from_value(value)
+    end,
+    manual_credential_input: lambda do |value|
+      ::OctridevVercel::ConnectConnectorUserTokensManualCredentialInput.from_value(value)
+    end,
+    supports_refinement: lambda do |value|
+      ::OctridevVercel::ConnectConnectorUserTokensSupportsRefinement.from_value(value)
+    end,
+    supports_resources: lambda do |value|
+      ::OctridevVercel::ConnectConnectorUserTokensSupportsResources.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for ConnectConnectorUserTokens.
+# User-token capabilities and known grants for the connector.
+class ConnectConnectorUserTokens
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalConnectConnectorUserTokensMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalConnectConnectorUserTokensMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalConnectConnectorUserTokensMetadata::DECODERS
+
+  # @return [ConnectConnectorUserTokensCrossInstallation] Whether one user token can be used across installations.
+  attr_reader :cross_installation
+  # @return [ConnectConnectorUserTokensIsStaticCredential] Required enumerated value serialized in the `isStaticCredential` wire field.
+  attr_reader :is_static_credential
+  # @return [ConnectConnectorUserTokensManualCredentialInput] User authorization is completed by the Connect consent screen submitting a credential instead of an OAuth redirect.
+  attr_reader :manual_credential_input
+  # @return [Array_of_String] Known allowed user-level scopes. For Slack this is the user scope set configured on the app; for OAuth it is the connector's enabled `userAuthorization.scopes` configuration.
+  attr_reader :scopes
+  # @return [Array_of_String] Supported OAuth authorization-detail type names.
+  attr_reader :supported_authorization_details
+  # @return [ConnectConnectorUserTokensSupportsRefinement] Whether callers can narrow user-token grants per request.
+  attr_reader :supports_refinement
+  # @return [ConnectConnectorUserTokensSupportsResources] Whether callers can request resource-specific user tokens.
+  attr_reader :supports_resources
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for ConnectConnectorUserTokens.
-  # User-token capabilities and known grants for the connector.
-  class ConnectConnectorUserTokens
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalConnectConnectorUserTokensMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalConnectConnectorUserTokensMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalConnectConnectorUserTokensMetadata::DECODERS
-
-    # @return [ConnectConnectorUserTokensCrossInstallation] Whether one user token can be used across installations.
-    attr_reader :cross_installation
-    # @return [ConnectConnectorUserTokensIsStaticCredential] Required enumerated value serialized in the `isStaticCredential` wire field.
-    attr_reader :is_static_credential
-    # @return [ConnectConnectorUserTokensManualCredentialInput] User authorization is completed by the Connect consent screen submitting a credential instead of an OAuth redirect.
-    attr_reader :manual_credential_input
-    # @return [Array_of_String] Known allowed user-level scopes. For Slack this is the user scope set configured on the app; for OAuth it is the connector's enabled `userAuthorization.scopes` configuration.
-    attr_reader :scopes
-    # @return [Array_of_String] Supported OAuth authorization-detail type names.
-    attr_reader :supported_authorization_details
-    # @return [ConnectConnectorUserTokensSupportsRefinement] Whether callers can narrow user-token grants per request.
-    attr_reader :supports_refinement
-    # @return [ConnectConnectorUserTokensSupportsResources] Whether callers can request resource-specific user tokens.
-    attr_reader :supports_resources
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalConnectConnectorMetadata
-    FIELDS = {
-      accent_color: 'accentColor',
-      app_tokens: 'appTokens',
-      background_color: 'backgroundColor',
-      client_url: 'clientUrl',
-      connection_method: 'connectionMethod',
-      created_at: 'createdAt',
-      created_by: 'createdBy',
-      creation_mode: 'creationMode',
-      default_installation_id: 'defaultInstallationId',
-      devsite: 'devsite',
-      display_name: 'displayName',
-      docsite: 'docsite',
-      events: 'events',
-      icon: 'icon',
-      id: 'id',
-      known_stale: 'knownStale',
-      managed: 'managed',
-      name: 'name',
-      redirect_uri: 'redirectUri',
-      reinstall_at: 'reinstallAt',
-      service: 'service',
-      service_icon: 'serviceIcon',
-      supported_subject_types: 'supportedSubjectTypes',
-      supports_icon: 'supportsIcon',
-      supports_installation: 'supportsInstallation',
-      supports_managed_ejection: 'supportsManagedEjection',
-      supports_revocation: 'supportsRevocation',
-      supports_triggers: 'supportsTriggers',
-      target: 'target',
-      trigger_destinations: 'triggerDestinations',
-      triggers: 'triggers',
-      type: 'type',
-      type_icon: 'typeIcon',
-      type_name: 'typeName',
-      uid: 'uid',
-      updated_at: 'updatedAt',
-      updated_by: 'updatedBy',
-      user_tokens: 'userTokens',
-      website: 'website'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      created_at
-      display_name
-      id
-      name
-      service
-      supported_subject_types
-      supports_icon
-      supports_installation
-      supports_revocation
-      supports_triggers
-      type
-      type_name
-      uid
-      updated_at
-    ].freeze
-    DECODERS = {
-      app_tokens: lambda do |value|
-        ::OctridevVercel::ConnectConnectorAppTokens.from_hash(value)
-      end,
-      created_by: lambda do |value|
-        ::OctridevVercel::ConnectConnectorCreatedBy.from_hash(value)
-      end,
-      creation_mode: lambda do |value|
-        ::OctridevVercel::ConnectConnectorCreationMode.from_value(value)
-      end,
-      known_stale: lambda do |value|
-        ::OctridevVercel::ConnectConnectorKnownStale.from_value(value)
-      end,
-      managed: lambda do |value|
-        ::OctridevVercel::ConnectConnectorManaged.from_hash(value)
-      end,
-      supports_installation: lambda do |value|
-        ::OctridevVercel::ConnectConnectorSupportsInstallation.from_value(value)
-      end,
-      supports_managed_ejection: lambda do |value|
-        ::OctridevVercel::ConnectConnectorSupportsManagedEjection.from_value(value)
-      end,
-      supports_revocation: lambda do |value|
-        ::OctridevVercel::ConnectConnectorSupportsRevocation.from_value(value)
-      end,
-      supports_triggers: lambda do |value|
-        ::OctridevVercel::ConnectConnectorSupportsTriggers.from_value(value)
-      end,
-      trigger_destinations: lambda do |value|
-        value&.map { |item| ::OctridevVercel::ConnectTriggerDestination.from_hash(item) }
-      end,
-      triggers: lambda do |value|
-        ::OctridevVercel::ConnectTriggerConfiguration.from_hash(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::ConnectConnectorType.from_value(value)
-      end,
-      updated_by: lambda do |value|
-        ::OctridevVercel::ConnectConnectorUpdatedBy.from_hash(value)
-      end,
-      user_tokens: lambda do |value|
-        ::OctridevVercel::ConnectConnectorUserTokens.from_hash(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalConnectConnectorMetadata
+  FIELDS = {
+    accent_color: "accentColor",
+    app_tokens: "appTokens",
+    background_color: "backgroundColor",
+    client_url: "clientUrl",
+    connection_method: "connectionMethod",
+    created_at: "createdAt",
+    created_by: "createdBy",
+    creation_mode: "creationMode",
+    default_installation_id: "defaultInstallationId",
+    devsite: "devsite",
+    display_name: "displayName",
+    docsite: "docsite",
+    events: "events",
+    icon: "icon",
+    id: "id",
+    known_stale: "knownStale",
+    managed: "managed",
+    name: "name",
+    redirect_uri: "redirectUri",
+    reinstall_at: "reinstallAt",
+    service: "service",
+    service_icon: "serviceIcon",
+    supported_subject_types: "supportedSubjectTypes",
+    supports_icon: "supportsIcon",
+    supports_installation: "supportsInstallation",
+    supports_managed_ejection: "supportsManagedEjection",
+    supports_revocation: "supportsRevocation",
+    supports_triggers: "supportsTriggers",
+    target: "target",
+    trigger_destinations: "triggerDestinations",
+    triggers: "triggers",
+    type: "type",
+    type_icon: "typeIcon",
+    type_name: "typeName",
+    uid: "uid",
+    updated_at: "updatedAt",
+    updated_by: "updatedBy",
+    user_tokens: "userTokens",
+    website: "website",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    created_at
+    display_name
+    id
+    name
+    service
+    supported_subject_types
+    supports_icon
+    supports_installation
+    supports_revocation
+    supports_triggers
+    type
+    type_name
+    uid
+    updated_at
+  ].freeze
+  DECODERS = {
+    app_tokens: lambda do |value|
+      ::OctridevVercel::ConnectConnectorAppTokens.from_hash(value)
+    end,
+    created_by: lambda do |value|
+      ::OctridevVercel::ConnectConnectorCreatedBy.from_hash(value)
+    end,
+    creation_mode: lambda do |value|
+      ::OctridevVercel::ConnectConnectorCreationMode.from_value(value)
+    end,
+    known_stale: lambda do |value|
+      ::OctridevVercel::ConnectConnectorKnownStale.from_value(value)
+    end,
+    managed: lambda do |value|
+      ::OctridevVercel::ConnectConnectorManaged.from_hash(value)
+    end,
+    supports_installation: lambda do |value|
+      ::OctridevVercel::ConnectConnectorSupportsInstallation.from_value(value)
+    end,
+    supports_managed_ejection: lambda do |value|
+      ::OctridevVercel::ConnectConnectorSupportsManagedEjection.from_value(value)
+    end,
+    supports_revocation: lambda do |value|
+      ::OctridevVercel::ConnectConnectorSupportsRevocation.from_value(value)
+    end,
+    supports_triggers: lambda do |value|
+      ::OctridevVercel::ConnectConnectorSupportsTriggers.from_value(value)
+    end,
+    trigger_destinations: lambda do |value|
+      value&.map { |item| ::OctridevVercel::ConnectTriggerDestination.from_hash(item) }
+    end,
+    triggers: lambda do |value|
+      ::OctridevVercel::ConnectTriggerConfiguration.from_hash(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::ConnectConnectorType.from_value(value)
+    end,
+    updated_by: lambda do |value|
+      ::OctridevVercel::ConnectConnectorUpdatedBy.from_hash(value)
+    end,
+    user_tokens: lambda do |value|
+      ::OctridevVercel::ConnectConnectorUserTokens.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for ConnectConnector.
+# A connector that defines how Vercel accesses an external service.
+class ConnectConnector
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalConnectConnectorMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalConnectConnectorMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalConnectConnectorMetadata::DECODERS
+
+  # @return [String] Hex accent color (e.g., `#000000`) for branding.
+  attr_reader :accent_color
+  # @return [ConnectConnectorAppTokens] App-token capabilities and known grants for the connector.
+  attr_reader :app_tokens
+  # @return [String] Hex background color (e.g., `#000000`) for branding.
+  attr_reader :background_color
+  # @return [String] Provider-side URL for viewing or managing the resource represented by the connector. The destination can be an app, account, phone line, or service instance, depending on the connector type.
+  attr_reader :client_url
+  # @return [String] The connection method this connector was created from, when the create request named one.
+  attr_reader :connection_method
+  # @return [Float] Creation time in epoch milliseconds.
+  attr_reader :created_at
+  # @return [ConnectConnectorCreatedBy] Principal that created the connector.
+  attr_reader :created_by
+  # @return [ConnectConnectorCreationMode] How the connector row was originally created. New create paths stamp this explicitly; older rows may omit it.
+  attr_reader :creation_mode
+  # @return [String] Installation used when a token request does not specify an installation.
+  attr_reader :default_installation_id
+  # @return [String] Developer website for the connected service.
+  attr_reader :devsite
+  # @return [String] Human-readable connector name.
+  attr_reader :display_name
+  # @return [String] Developer documentation for the connected service.
+  attr_reader :docsite
+  # @return [Array_of_String] Known events this connector subscribes to (e.g. Slack bot events, GitHub webhook events). Names are type-specific and validated by the managed-create flow when forwarded to the third-party service.
+  attr_reader :events
+  # @return [String] Connector branding icon. SHA-1 hash that resolves to the uploaded icon through the Vercel avatar service. Consumers render this with `vercel.com
+  attr_reader :icon
+  # @return [String] Stable `scl_` connector ID. Use this value directly in `{connector}`.
+  attr_reader :id
+  # @return [ConnectConnectorKnownStale] Whether the connector is known to have been edited since the app package it publishes to the provider was last built, so that package no longer matches it. Absent when it was not computed, or when the connector type publishes no such package. Derived on every read rather than marked at edit time, so reverting an edit clears it. Only reported by connector types that publish a package a user has to re-publish by hand — Microsoft Teams today.
+  attr_reader :known_stale
+  # @return [ConnectConnectorManaged] Managed connector metadata exposed without leaking the manager connector or installation identifiers.
+  attr_reader :managed
+  # @return [String] Connector name within the owning team.
+  attr_reader :name
+  # @return [String] Redirect URI registered with the third-party service for this connector, if any. Used by `startAuthorization`/`startInstallation` to replay the exact URI back to the provider's token endpoint. Absent on connectors created before this field was introduced; those callers fall back to the `connect.vercel.com default.
+  attr_reader :redirect_uri
+  # @return [Float] Time when this connector started requiring reinstallation because an installation-affecting app-token grant changed.
+  attr_reader :reinstall_at
+  # @return [String] Best-effort identifier of the third-party service this connector represents, independent of `type`. Examples: `'slack'`, `'mcp.linear.app'`, and `'auth.example.com'`. Always present in API responses.
+  attr_reader :service
+  # @return [String] Provider logo from the known-service registry, matched by `service`. Often an SVG data URL. Absent when the service is not in the registry.
+  attr_reader :service_icon
+  # @return [Array_of_String] Token subject types supported by the connector.
+  attr_reader :supported_subject_types
+  # @return [Object] Whether the connector icon can propagate to the provider.
+  attr_reader :supports_icon
+  # @return [ConnectConnectorSupportsInstallation] Whether the connector supports an installation flow.
+  attr_reader :supports_installation
+  # @return [ConnectConnectorSupportsManagedEjection] Whether this managed connector can disconnect from its manager.
+  attr_reader :supports_managed_ejection
+  # @return [ConnectConnectorSupportsRevocation] Whether Connect can revoke tokens for this connector.
+  attr_reader :supports_revocation
+  # @return [ConnectConnectorSupportsTriggers] Whether this connector type supports trigger webhooks. Derived from the type definition; indicates that `triggers` and `triggerDestinations` may be meaningful for this connector.
+  attr_reader :supports_triggers
+  # @return [String] Which of the service's products/surfaces this connector points at.
+  attr_reader :target
+  # @return [Array_of_ConnectTriggerDestination] Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`.
+  attr_reader :trigger_destinations
+  # @return [ConnectTriggerConfiguration] Incoming trigger configuration for the connector.
+  attr_reader :triggers
+  # @return [ConnectConnectorType] Connector implementation type.
+  attr_reader :type
+  # @return [String] Icon identifier supplied by the connector type.
+  attr_reader :type_icon
+  # @return [String] Human-readable name of the connector type.
+  attr_reader :type_name
+  # @return [String] Team-scoped UID. URL-encode this value before using it in `{connector}`.
+  attr_reader :uid
+  # @return [Float] Last update time in epoch milliseconds.
+  attr_reader :updated_at
+  # @return [ConnectConnectorUpdatedBy] Principal that most recently updated the connector.
+  attr_reader :updated_by
+  # @return [ConnectConnectorUserTokens] User-token capabilities and known grants for the connector.
+  attr_reader :user_tokens
+  # @return [String] Public website for the connected service.
+  attr_reader :website
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for ConnectConnector.
-  # A connector that defines how Vercel accesses an external service.
-  class ConnectConnector
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalConnectConnectorMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalConnectConnectorMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalConnectConnectorMetadata::DECODERS
-
-    # @return [String] Hex accent color (e.g., `#000000`) for branding.
-    attr_reader :accent_color
-    # @return [ConnectConnectorAppTokens] App-token capabilities and known grants for the connector.
-    attr_reader :app_tokens
-    # @return [String] Hex background color (e.g., `#000000`) for branding.
-    attr_reader :background_color
-    # @return [String] Provider-side URL for viewing or managing the resource represented by the connector. The destination can be an app, account, phone line, or service instance, depending on the connector type.
-    attr_reader :client_url
-    # @return [String] The connection method this connector was created from, when the create request named one.
-    attr_reader :connection_method
-    # @return [Float] Creation time in epoch milliseconds.
-    attr_reader :created_at
-    # @return [ConnectConnectorCreatedBy] Principal that created the connector.
-    attr_reader :created_by
-    # @return [ConnectConnectorCreationMode] How the connector row was originally created. New create paths stamp this explicitly; older rows may omit it.
-    attr_reader :creation_mode
-    # @return [String] Installation used when a token request does not specify an installation.
-    attr_reader :default_installation_id
-    # @return [String] Developer website for the connected service.
-    attr_reader :devsite
-    # @return [String] Human-readable connector name.
-    attr_reader :display_name
-    # @return [String] Developer documentation for the connected service.
-    attr_reader :docsite
-    # @return [Array_of_String] Known events this connector subscribes to (e.g. Slack bot events, GitHub webhook events). Names are type-specific and validated by the managed-create flow when forwarded to the third-party service.
-    attr_reader :events
-    # @return [String] Connector branding icon. SHA-1 hash that resolves to the uploaded icon through the Vercel avatar service. Consumers render this with `vercel.com
-    attr_reader :icon
-    # @return [String] Stable `scl_` connector ID. Use this value directly in `{connector}`.
-    attr_reader :id
-    # @return [ConnectConnectorKnownStale] Whether the connector is known to have been edited since the app package it publishes to the provider was last built, so that package no longer matches it. Absent when it was not computed, or when the connector type publishes no such package. Derived on every read rather than marked at edit time, so reverting an edit clears it. Only reported by connector types that publish a package a user has to re-publish by hand — Microsoft Teams today.
-    attr_reader :known_stale
-    # @return [ConnectConnectorManaged] Managed connector metadata exposed without leaking the manager connector or installation identifiers.
-    attr_reader :managed
-    # @return [String] Connector name within the owning team.
-    attr_reader :name
-    # @return [String] Redirect URI registered with the third-party service for this connector, if any. Used by `startAuthorization`/`startInstallation` to replay the exact URI back to the provider's token endpoint. Absent on connectors created before this field was introduced; those callers fall back to the `connect.vercel.com default.
-    attr_reader :redirect_uri
-    # @return [Float] Time when this connector started requiring reinstallation because an installation-affecting app-token grant changed.
-    attr_reader :reinstall_at
-    # @return [String] Best-effort identifier of the third-party service this connector represents, independent of `type`. Examples: `'slack'`, `'mcp.linear.app'`, and `'auth.example.com'`. Always present in API responses.
-    attr_reader :service
-    # @return [String] Provider logo from the known-service registry, matched by `service`. Often an SVG data URL. Absent when the service is not in the registry.
-    attr_reader :service_icon
-    # @return [Array_of_String] Token subject types supported by the connector.
-    attr_reader :supported_subject_types
-    # @return [Object] Whether the connector icon can propagate to the provider.
-    attr_reader :supports_icon
-    # @return [ConnectConnectorSupportsInstallation] Whether the connector supports an installation flow.
-    attr_reader :supports_installation
-    # @return [ConnectConnectorSupportsManagedEjection] Whether this managed connector can disconnect from its manager.
-    attr_reader :supports_managed_ejection
-    # @return [ConnectConnectorSupportsRevocation] Whether Connect can revoke tokens for this connector.
-    attr_reader :supports_revocation
-    # @return [ConnectConnectorSupportsTriggers] Whether this connector type supports trigger webhooks. Derived from the type definition; indicates that `triggers` and `triggerDestinations` may be meaningful for this connector.
-    attr_reader :supports_triggers
-    # @return [String] Which of the service's products/surfaces this connector points at.
-    attr_reader :target
-    # @return [Array_of_ConnectTriggerDestination] Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`.
-    attr_reader :trigger_destinations
-    # @return [ConnectTriggerConfiguration] Incoming trigger configuration for the connector.
-    attr_reader :triggers
-    # @return [ConnectConnectorType] Connector implementation type.
-    attr_reader :type
-    # @return [String] Icon identifier supplied by the connector type.
-    attr_reader :type_icon
-    # @return [String] Human-readable name of the connector type.
-    attr_reader :type_name
-    # @return [String] Team-scoped UID. URL-encode this value before using it in `{connector}`.
-    attr_reader :uid
-    # @return [Float] Last update time in epoch milliseconds.
-    attr_reader :updated_at
-    # @return [ConnectConnectorUpdatedBy] Principal that most recently updated the connector.
-    attr_reader :updated_by
-    # @return [ConnectConnectorUserTokens] User-token capabilities and known grants for the connector.
-    attr_reader :user_tokens
-    # @return [String] Public website for the connected service.
-    attr_reader :website
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the ConnectConnectorAppTokensCrossInstallation SDK namespace.
-  module ConnectConnectorAppTokensCrossInstallation
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Defines the ConnectConnectorAppTokensCrossInstallation SDK namespace.
+module ConnectConnectorAppTokensCrossInstallation
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorAppTokensIsStaticCredential SDK namespace.
+module ConnectConnectorAppTokensIsStaticCredential
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorAppTokensRequiresReinstallation SDK namespace.
+module ConnectConnectorAppTokensRequiresReinstallation
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorAppTokensSupportsRefinement SDK namespace.
+module ConnectConnectorAppTokensSupportsRefinement
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorAppTokensSupportsResources SDK namespace.
+module ConnectConnectorAppTokensSupportsResources
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorCreationMode SDK namespace.
+module ConnectConnectorCreationMode
+  MANAGED = 'managed'
+  MANUAL = 'manual'
+  VALUES = ['managed', 'manual'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorKnownStale SDK namespace.
+module ConnectConnectorKnownStale
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorManagedSync SDK namespace.
+module ConnectConnectorManagedSync
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorSupportsIconVariant0 SDK namespace.
+module ConnectConnectorSupportsIconVariant0
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorSupportsIconVariant1 SDK namespace.
+module ConnectConnectorSupportsIconVariant1
+  MAYBE = 'maybe'
+  VALUES = ['maybe'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorSupportsInstallation SDK namespace.
+module ConnectConnectorSupportsInstallation
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorSupportsManagedEjection SDK namespace.
+module ConnectConnectorSupportsManagedEjection
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorSupportsRevocation SDK namespace.
+module ConnectConnectorSupportsRevocation
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorSupportsTriggers SDK namespace.
+module ConnectConnectorSupportsTriggers
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorType SDK namespace.
+module ConnectConnectorType
+  API_KEY = 'api-key'
+  AWS_ALPHA = 'aws-alpha'
+  CUSTOM = 'custom'
+  DISCORD = 'discord'
+  GITHUB = 'github'
+  LINEAR = 'linear'
+  LINQ = 'linq'
+  MICROSOFT_ENTRA = 'microsoft-entra'
+  MICROSOFT_TEAMS = 'microsoft-teams'
+  OAUTH = 'oauth'
+  PHOTON = 'photon'
+  SALESFORCE = 'salesforce'
+  SENDBLUE = 'sendblue'
+  SLACK = 'slack'
+  SNOWFLAKE = 'snowflake'
+  SNOWFLAKE_WIF = 'snowflake-wif'
+  STRIPE_API_KEY = 'stripe-api-key'
+  VALUES = [
+    'api-key', 'aws-alpha', 'custom', 'discord', 'github', 'linear', 'linq', 'microsoft-entra',
+    'microsoft-teams', 'oauth', 'photon', 'salesforce', 'sendblue', 'slack', 'snowflake',
+    'snowflake-wif', 'stripe-api-key'
+  ].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorUserTokensCrossInstallation SDK namespace.
+module ConnectConnectorUserTokensCrossInstallation
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorUserTokensIsStaticCredential SDK namespace.
+module ConnectConnectorUserTokensIsStaticCredential
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorUserTokensManualCredentialInput SDK namespace.
+module ConnectConnectorUserTokensManualCredentialInput
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorUserTokensSupportsRefinement SDK namespace.
+module ConnectConnectorUserTokensSupportsRefinement
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the ConnectConnectorUserTokensSupportsResources SDK namespace.
+module ConnectConnectorUserTokensSupportsResources
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalConnectConnectorCreateDataVariant0ServerConfigJwksKeysItemMetadata
+  FIELDS = {
+    kty: "kty",
+    kid: "kid",
+    use: "use",
+    key_ops: "key_ops",
+    alg: "alg",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    kty
+  ].freeze
+  DECODERS = {
+    use: lambda do |value|
+      ::OctridevVercel::ConnectConnectorCreateDataVariant0ServerConfigJwksKeysItemUse.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for ConnectConnectorCreateDataVariant0ServerConfigJwksKeysItem.
+# Required object value serialized in the `keys[]` wire field.
+class ConnectConnectorCreateDataVariant0ServerConfigJwksKeysItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalConnectConnectorCreateDataVariant0ServerConfigJwksKeysItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalConnectConnectorCreateDataVariant0ServerConfigJwksKeysItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalConnectConnectorCreateDataVariant0ServerConfigJwksKeysItemMetadata::DECODERS
+
+  # @return [String] JSON Web Key type.
+  attr_reader :kty
+  # @return [String] JSON Web Key identifier.
+  attr_reader :kid
+  # @return [ConnectConnectorCreateDataVariant0ServerConfigJwksKeysItemUse] Intended key use: signing or encryption.
+  attr_reader :use
+  # @return [Array_of_String] Operations permitted for this key.
+  attr_reader :key_ops
+  # @return [String] Algorithm intended for this key.
+  attr_reader :alg
+  # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
+  attr_reader :additional_properties
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
+    freeze
   end
 
-  # Defines the ConnectConnectorAppTokensIsStaticCredential SDK namespace.
-  module ConnectConnectorAppTokensIsStaticCredential
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
   end
 
-  # Defines the ConnectConnectorAppTokensRequiresReinstallation SDK namespace.
-  module ConnectConnectorAppTokensRequiresReinstallation
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS, extras: true)
   end
+end
 
-  # Defines the ConnectConnectorAppTokensSupportsRefinement SDK namespace.
-  module ConnectConnectorAppTokensSupportsRefinement
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorAppTokensSupportsResources SDK namespace.
-  module ConnectConnectorAppTokensSupportsResources
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorCreationMode SDK namespace.
-  module ConnectConnectorCreationMode
-    MANAGED = 'managed'
-    MANUAL = 'manual'
-    VALUES = %w[managed manual].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorKnownStale SDK namespace.
-  module ConnectConnectorKnownStale
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorManagedSync SDK namespace.
-  module ConnectConnectorManagedSync
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorSupportsIconVariant0 SDK namespace.
-  module ConnectConnectorSupportsIconVariant0
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorSupportsIconVariant1 SDK namespace.
-  module ConnectConnectorSupportsIconVariant1
-    MAYBE = 'maybe'
-    VALUES = ['maybe'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorSupportsInstallation SDK namespace.
-  module ConnectConnectorSupportsInstallation
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorSupportsManagedEjection SDK namespace.
-  module ConnectConnectorSupportsManagedEjection
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorSupportsRevocation SDK namespace.
-  module ConnectConnectorSupportsRevocation
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorSupportsTriggers SDK namespace.
-  module ConnectConnectorSupportsTriggers
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorType SDK namespace.
-  module ConnectConnectorType
-    API_KEY = 'api-key'
-    AWS_ALPHA = 'aws-alpha'
-    CUSTOM = 'custom'
-    DISCORD = 'discord'
-    GITHUB = 'github'
-    LINEAR = 'linear'
-    LINQ = 'linq'
-    MICROSOFT_ENTRA = 'microsoft-entra'
-    MICROSOFT_TEAMS = 'microsoft-teams'
-    OAUTH = 'oauth'
-    PHOTON = 'photon'
-    SALESFORCE = 'salesforce'
-    SENDBLUE = 'sendblue'
-    SLACK = 'slack'
-    SNOWFLAKE = 'snowflake'
-    SNOWFLAKE_WIF = 'snowflake-wif'
-    STRIPE_API_KEY = 'stripe-api-key'
-    VALUES = %w[
-      api-key aws-alpha custom discord github linear linq microsoft-entra
-      microsoft-teams oauth photon salesforce sendblue slack snowflake
-      snowflake-wif stripe-api-key
-    ].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorUserTokensCrossInstallation SDK namespace.
-  module ConnectConnectorUserTokensCrossInstallation
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorUserTokensIsStaticCredential SDK namespace.
-  module ConnectConnectorUserTokensIsStaticCredential
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorUserTokensManualCredentialInput SDK namespace.
-  module ConnectConnectorUserTokensManualCredentialInput
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorUserTokensSupportsRefinement SDK namespace.
-  module ConnectConnectorUserTokensSupportsRefinement
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the ConnectConnectorUserTokensSupportsResources SDK namespace.
-  module ConnectConnectorUserTokensSupportsResources
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalConnectConnectorCreateDataVariant0ServerConfigJwksKeysItemMetadata
-    FIELDS = {
-      kty: 'kty',
-      kid: 'kid',
-      use: 'use',
-      key_ops: 'key_ops',
-      alg: 'alg'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      kty
-    ].freeze
-    DECODERS = {
-      use: lambda do |value|
-        ::OctridevVercel::ConnectConnectorCreateDataVariant0ServerConfigJwksKeysItemUse.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for ConnectConnectorCreateDataVariant0ServerConfigJwksKeysItem.
-  # Required object value serialized in the `keys[]` wire field.
-  class ConnectConnectorCreateDataVariant0ServerConfigJwksKeysItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalConnectConnectorCreateDataVariant0ServerConfigJwksKeysItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalConnectConnectorCreateDataVariant0ServerConfigJwksKeysItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalConnectConnectorCreateDataVariant0ServerConfigJwksKeysItemMetadata::DECODERS
-
-    # @return [String] JSON Web Key type.
-    attr_reader :kty
-    # @return [String] JSON Web Key identifier.
-    attr_reader :kid
-    # @return [ConnectConnectorCreateDataVariant0ServerConfigJwksKeysItemUse] Intended key use: signing or encryption.
-    attr_reader :use
-    # @return [Array_of_String] Operations permitted for this key.
-    attr_reader :key_ops
-    # @return [String] Algorithm intended for this key.
-    attr_reader :alg
-    # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
-    attr_reader :additional_properties
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS, extras: true)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalConnectConnectorCreateDataVariant0ServerConfigJwksMetadata
-    FIELDS = {
-      keys: 'keys'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      keys
-    ].freeze
-    DECODERS = {
-      keys: lambda do |value|
-        value&.map { |item| ::OctridevVercel::ConnectConnectorCreateDataVariant0ServerConfigJwksKeysItem.from_hash(item) }
-      end
-    }.freeze
-  end
+# Internal model hydration metadata.
+class SdkInternalConnectConnectorCreateDataVariant0ServerConfigJwksMetadata
+  FIELDS = {
+    keys: "keys",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    keys
+  ].freeze
+  DECODERS = {
+    keys: lambda do |value|
+      value&.map { |item| ::OctridevVercel::ConnectConnectorCreateDataVariant0ServerConfigJwksKeysItem.from_hash(item) }
+    end,
+  }.freeze
+end
 end

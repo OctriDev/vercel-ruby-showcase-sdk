@@ -13,7 +13,7 @@ module OctridevVercel
       module CreateSandboxesByNameForkV2MountsValueMode
         SNAPSHOT = 'snapshot'
         READ_WRITE = 'read-write'
-        VALUES = %w[snapshot read-write].freeze
+        VALUES = ['snapshot', 'read-write'].freeze
         def self.from_value(value)
           value
         end
@@ -23,7 +23,7 @@ module OctridevVercel
       module UpdateSandboxMountsValueMode
         SNAPSHOT = 'snapshot'
         READ_WRITE = 'read-write'
-        VALUES = %w[snapshot read-write].freeze
+        VALUES = ['snapshot', 'read-write'].freeze
         def self.from_value(value)
           value
         end
@@ -60,9 +60,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = %w[
-          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
-          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
+        VALUES = [
+          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
+          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
         ].freeze
         def self.from_value(value)
           value
@@ -90,9 +90,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = %w[
-          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
-          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
+        VALUES = [
+          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
+          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
         ].freeze
         def self.from_value(value)
           value
@@ -112,7 +112,7 @@ module OctridevVercel
       module CreateSandboxesByNameForkV3MountsValueMode
         SNAPSHOT = 'snapshot'
         READ_WRITE = 'read-write'
-        VALUES = %w[snapshot read-write].freeze
+        VALUES = ['snapshot', 'read-write'].freeze
         def self.from_value(value)
           value
         end
@@ -139,9 +139,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = %w[
-          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
-          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
+        VALUES = [
+          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
+          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
         ].freeze
         def self.from_value(value)
           value
@@ -155,7 +155,7 @@ module OctridevVercel
         CUSTOM = 'custom'
         DEFAULT_ALLOW = 'default-allow'
         DEFAULT_DENY = 'default-deny'
-        VALUES = %w[allow-all deny-all custom default-allow default-deny].freeze
+        VALUES = ['allow-all', 'deny-all', 'custom', 'default-allow', 'default-deny'].freeze
         def self.from_value(value)
           value
         end
@@ -182,9 +182,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = %w[
-          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
-          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
+        VALUES = [
+          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
+          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
         ].freeze
         def self.from_value(value)
           value
@@ -195,7 +195,7 @@ module OctridevVercel
       module ListSessionsParameter
         ASC = 'asc'
         DESC = 'desc'
-        VALUES = %w[asc desc].freeze
+        VALUES = ['asc', 'desc'].freeze
         def self.from_value(value)
           value
         end
@@ -205,7 +205,7 @@ module OctridevVercel
       module ListSessionSnapshotsParameter
         ASC = 'asc'
         DESC = 'desc'
-        VALUES = %w[asc desc].freeze
+        VALUES = ['asc', 'desc'].freeze
         def self.from_value(value)
           value
         end
@@ -216,7 +216,7 @@ module OctridevVercel
         RUNNING = 'running'
         STOPPING = 'stopping'
         STOPPED = 'stopped'
-        VALUES = %w[running stopping stopped].freeze
+        VALUES = ['running', 'stopping', 'stopped'].freeze
         def self.from_value(value)
           value
         end
@@ -236,7 +236,7 @@ module OctridevVercel
         CREATED_AT = 'createdAt'
         UPDATED_AT = 'updatedAt'
         NAME = 'name'
-        VALUES = %w[createdAt updatedAt name].freeze
+        VALUES = ['createdAt', 'updatedAt', 'name'].freeze
         def self.from_value(value)
           value
         end
@@ -263,9 +263,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = %w[
-          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
-          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
+        VALUES = [
+          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
+          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
         ].freeze
         def self.from_value(value)
           value
@@ -276,7 +276,7 @@ module OctridevVercel
       module ListNamedSandboxesParameterD9a95b4a
         ASC = 'asc'
         DESC = 'desc'
-        VALUES = %w[asc desc].freeze
+        VALUES = ['asc', 'desc'].freeze
         def self.from_value(value)
           value
         end
@@ -303,9 +303,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = %w[
-          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
-          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
+        VALUES = [
+          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
+          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
         ].freeze
         def self.from_value(value)
           value
@@ -343,9 +343,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = %w[
-          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
-          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
+        VALUES = [
+          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
+          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
         ].freeze
         def self.from_value(value)
           value
@@ -356,7 +356,7 @@ module OctridevVercel
       module CreateSandboxesV4MountsValueMode
         SNAPSHOT = 'snapshot'
         READ_WRITE = 'read-write'
-        VALUES = %w[snapshot read-write].freeze
+        VALUES = ['snapshot', 'read-write'].freeze
         def self.from_value(value)
           value
         end
@@ -383,9 +383,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = %w[
-          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
-          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
+        VALUES = [
+          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
+          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
         ].freeze
         def self.from_value(value)
           value
@@ -406,7 +406,7 @@ module OctridevVercel
       module CreateSandboxesV4Architecture
         AMD64 = 'amd64'
         ARM64 = 'arm64'
-        VALUES = %w[amd64 arm64].freeze
+        VALUES = ['amd64', 'arm64'].freeze
         def self.from_value(value)
           value
         end
@@ -418,7 +418,7 @@ module OctridevVercel
         NAME = 'name'
         STATUS_UPDATED_AT = 'statusUpdatedAt'
         CURRENT_SNAPSHOT_ID = 'currentSnapshotId'
-        VALUES = %w[createdAt name statusUpdatedAt currentSnapshotId].freeze
+        VALUES = ['createdAt', 'name', 'statusUpdatedAt', 'currentSnapshotId'].freeze
         def self.from_value(value)
           value
         end
@@ -428,7 +428,7 @@ module OctridevVercel
       module CreateSandboxesV2Architecture
         AMD64 = 'amd64'
         ARM64 = 'arm64'
-        VALUES = %w[amd64 arm64].freeze
+        VALUES = ['amd64', 'arm64'].freeze
         def self.from_value(value)
           value
         end

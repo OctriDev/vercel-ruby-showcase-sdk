@@ -12,12 +12,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamStrictDeploymentProtectionSettingsMetadata
         FIELDS = {
-          enabled: 'enabled'
+          enabled: "enabled",
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateTeamStrictDeploymentProtectionSettings.
@@ -48,12 +49,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamStrictShareableLinksMetadata
         FIELDS = {
-          enabled: 'enabled'
+          enabled: "enabled",
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateTeamStrictShareableLinks.
@@ -84,12 +86,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamStrictPasswordProtectionSettingsMetadata
         FIELDS = {
-          enabled: 'enabled'
+          enabled: "enabled",
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateTeamStrictPasswordProtectionSettings.
@@ -120,12 +123,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamStrictConnectorsMetadata
         FIELDS = {
-          enabled: 'enabled'
+          enabled: "enabled",
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateTeamStrictConnectors.
@@ -156,13 +160,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamResourceConfigBuildMachineMetadata
         FIELDS = {
-          default: 'default'
+          default: "default",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           default: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamResourceConfigBuildMachineDefault.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -194,13 +199,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamResourceConfigMetadata
         FIELDS = {
-          build_machine: 'buildMachine'
+          build_machine: "buildMachine",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           build_machine: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamResourceConfigBuildMachine.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -232,37 +238,38 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamMetadata
         FIELDS = {
-          avatar: 'avatar',
-          description: 'description',
-          email_domain: 'emailDomain',
-          name: 'name',
-          preview_deployment_suffix: 'previewDeploymentSuffix',
-          regenerate_invite_code: 'regenerateInviteCode',
-          saml: 'saml',
-          slug: 'slug',
-          enable_preview_feedback: 'enablePreviewFeedback',
-          enable_production_feedback: 'enableProductionFeedback',
-          sensitive_environment_variable_policy: 'sensitiveEnvironmentVariablePolicy',
-          disjunctive_production_secret_policy: 'disjunctiveProductionSecretPolicy',
-          remote_caching: 'remoteCaching',
-          hide_ip_addresses: 'hideIpAddresses',
-          hide_ip_addresses_in_log_drains: 'hideIpAddressesInLogDrains',
-          dp_access_requests_mode: 'dpAccessRequestsMode',
-          require_verified_commits: 'requireVerifiedCommits',
-          disable_repository_dispatch_events: 'disableRepositoryDispatchEvents',
-          default_deployment_protection: 'defaultDeploymentProtection',
-          default_passport: 'defaultPassport',
-          default_expiration_settings: 'defaultExpirationSettings',
-          deployment_policy: 'deploymentPolicy',
-          strict_deployment_protection_settings: 'strictDeploymentProtectionSettings',
-          strict_shareable_links: 'strictShareableLinks',
-          strict_password_protection_settings: 'strictPasswordProtectionSettings',
-          strict_connectors: 'strictConnectors',
-          nsnb_config: 'nsnbConfig',
-          default_project_jobs: 'defaultProjectJobs',
-          resource_config: 'resourceConfig'
+          avatar: "avatar",
+          description: "description",
+          email_domain: "emailDomain",
+          name: "name",
+          preview_deployment_suffix: "previewDeploymentSuffix",
+          regenerate_invite_code: "regenerateInviteCode",
+          saml: "saml",
+          slug: "slug",
+          enable_preview_feedback: "enablePreviewFeedback",
+          enable_production_feedback: "enableProductionFeedback",
+          sensitive_environment_variable_policy: "sensitiveEnvironmentVariablePolicy",
+          disjunctive_production_secret_policy: "disjunctiveProductionSecretPolicy",
+          remote_caching: "remoteCaching",
+          hide_ip_addresses: "hideIpAddresses",
+          hide_ip_addresses_in_log_drains: "hideIpAddressesInLogDrains",
+          dp_access_requests_mode: "dpAccessRequestsMode",
+          require_verified_commits: "requireVerifiedCommits",
+          disable_repository_dispatch_events: "disableRepositoryDispatchEvents",
+          default_deployment_protection: "defaultDeploymentProtection",
+          default_passport: "defaultPassport",
+          default_expiration_settings: "defaultExpirationSettings",
+          deployment_policy: "deploymentPolicy",
+          strict_deployment_protection_settings: "strictDeploymentProtectionSettings",
+          strict_shareable_links: "strictShareableLinks",
+          strict_password_protection_settings: "strictPasswordProtectionSettings",
+          strict_connectors: "strictConnectors",
+          nsnb_config: "nsnbConfig",
+          default_project_jobs: "defaultProjectJobs",
+          resource_config: "resourceConfig",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           saml: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamSaml.from_hash(value)
@@ -305,7 +312,7 @@ module OctridevVercel
           end,
           resource_config: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamResourceConfig.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -387,8 +394,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListTeamsResponseMetadata
         FIELDS = {
-          pagination: 'pagination',
-          teams: 'teams'
+          pagination: "pagination",
+          teams: "teams",
         }.freeze
         REQUIRED_FIELDS = %i[
           pagination
@@ -400,7 +407,7 @@ module OctridevVercel
           end,
           teams: lambda do |value|
             value&.map { |item| ::OctridevVercel::ListTeamsResponseTeamsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -433,13 +440,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateTeamAttributionUtmMetadata
         FIELDS = {
-          utm_source: 'utmSource',
-          utm_medium: 'utmMedium',
-          utm_campaign: 'utmCampaign',
-          utm_term: 'utmTerm'
+          utm_source: "utmSource",
+          utm_medium: "utmMedium",
+          utm_campaign: "utmCampaign",
+          utm_term: "utmTerm",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for CreateTeamAttributionUtm.
@@ -475,16 +484,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateTeamAttributionMetadata
         FIELDS = {
-          session_referrer: 'sessionReferrer',
-          landing_page: 'landingPage',
-          page_before_conversion_page: 'pageBeforeConversionPage',
-          utm: 'utm'
+          session_referrer: "sessionReferrer",
+          landing_page: "landingPage",
+          page_before_conversion_page: "pageBeforeConversionPage",
+          utm: "utm",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           utm: lambda do |value|
             ::OctridevVercel::Methods::Teams::CreateTeamAttributionUtm.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -521,9 +531,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateTeamMetadata
         FIELDS = {
-          slug: 'slug',
-          name: 'name',
-          attribution: 'attribution'
+          slug: "slug",
+          name: "name",
+          attribution: "attribution",
         }.freeze
         REQUIRED_FIELDS = %i[
           slug
@@ -531,7 +541,7 @@ module OctridevVercel
         DECODERS = {
           attribution: lambda do |value|
             ::OctridevVercel::Methods::Teams::CreateTeamAttribution.from_hash(value)
-          end
+          end,
         }.freeze
       end
     end

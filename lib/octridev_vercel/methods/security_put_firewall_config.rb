@@ -32,14 +32,15 @@ module OctridevVercel
         log_headers: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PUT',
-          '/v1/security/firewall/config',
+          "/v1/security/firewall/config",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'firewallEnabled' => firewall_enabled,
@@ -49,12 +50,12 @@ module OctridevVercel
             'rulesets' => rulesets,
             'ips' => ips,
             'botIdEnabled' => bot_id_enabled,
-            'logHeaders' => log_headers
+            'logHeaders' => log_headers,
           },
           return_type: ::OctridevVercel::Methods::Security::PutFirewallConfigResponse,
           decoder: :json,
           operation_id: 'put_firewall_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

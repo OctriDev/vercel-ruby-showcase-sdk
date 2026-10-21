@@ -5,680 +5,679 @@
 
 # deployments domain models
 module OctridevVercel
-  # Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX453f562c00 SDK namespace.
-  module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX453f562c00
-    HOST = 'host'
-    VALUES = ['host'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX453f562c00 SDK namespace.
+module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX453f562c00
+  HOST = 'host'
+  VALUES = ['host'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantXd7ec8961db SDK namespace.
+module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantXd7ec8961db
+  COOKIE = 'cookie'
+  HEADER = 'header'
+  QUERY = 'query'
+  VALUES = ['cookie', 'header', 'query'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX7f4baf2b12 SDK namespace.
+module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX7f4baf2b12
+  CHALLENGE = 'challenge'
+  DENY = 'deny'
+  VALUES = ['challenge', 'deny'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariant0Override SDK namespace.
+module CancelDeploymentResponseServicesItemVariant1RoutesItemVariant0Override
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX91136503d8 SDK namespace.
+module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX91136503d8
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX7e767f88c5 SDK namespace.
+module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX7e767f88c5
+  APPEND = 'append'
+  DELETE = 'delete'
+  SET = 'set'
+  VALUES = ['append', 'delete', 'set'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantXb3391c500a SDK namespace.
+module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantXb3391c500a
+  REQUEST_HEADERS = 'request.headers'
+  REQUEST_QUERY = 'request.query'
+  RESPONSE_HEADERS = 'response.headers'
+  VALUES = ['request.headers', 'request.query', 'response.headers'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantXf87f7ff52d SDK namespace.
+module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantXf87f7ff52d
+  SET = 'set'
+  VALUES = ['set'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX5aa328e64d SDK namespace.
+module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX5aa328e64d
+  REQUEST_PATH = 'request.path'
+  VALUES = ['request.path'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariant1Handle SDK namespace.
+module CancelDeploymentResponseServicesItemVariant1RoutesItemVariant1Handle
+  ERROR = 'error'
+  FILESYSTEM = 'filesystem'
+  HIT = 'hit'
+  MISS = 'miss'
+  RESOURCE = 'resource'
+  REWRITE = 'rewrite'
+  VALUES = ['error', 'filesystem', 'hit', 'miss', 'resource', 'rewrite'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseServicesItemVariant1Schema SDK namespace.
+module CancelDeploymentResponseServicesItemVariant1Schema
+  EXPERIMENTAL_SERVICES_V2 = 'experimentalServicesV2'
+  VALUES = ['experimentalServicesV2'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('CancelDeploymentResponseServicesItemVariant1Schema', 'enum', "Unknown CancelDeploymentResponseServicesItemVariant1Schema: #{value}")
+  end
+end
+
+# Defines the CancelDeploymentResponseServicesItemVariant1TrailingSlash SDK namespace.
+module CancelDeploymentResponseServicesItemVariant1TrailingSlash
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateDeploymentRequestFilesItemVariant0Metadata
+  FIELDS = {
+    data: "data",
+    encoding: "encoding",
+    file: "file",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    data
+    file
+  ].freeze
+  DECODERS = {
+    encoding: lambda do |value|
+      ::OctridevVercel::CreateDeploymentRequestFilesItemVariant0Encoding.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CreateDeploymentRequestFilesItemVariant0.
+class CreateDeploymentRequestFilesItemVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateDeploymentRequestFilesItemVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestFilesItemVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateDeploymentRequestFilesItemVariant0Metadata::DECODERS
+
+  # @return [String] The file content, it could be either a `base64` (useful for images, etc.) of the files or the plain content for source code
+  attr_reader :data
+  # @return [CreateDeploymentRequestFilesItemVariant0Encoding] The file content encoding, it could be either a base64 (useful for images, etc.) of the files or the plain text for source code.
+  attr_reader :encoding
+  # @return [String] The file name including the whole path
+  attr_reader :file
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantXd7ec8961db SDK namespace.
-  module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantXd7ec8961db
-    COOKIE = 'cookie'
-    HEADER = 'header'
-    QUERY = 'query'
-    VALUES = %w[cookie header query].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX7f4baf2b12 SDK namespace.
-  module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX7f4baf2b12
-    CHALLENGE = 'challenge'
-    DENY = 'deny'
-    VALUES = %w[challenge deny].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateDeploymentRequestFilesItemVariant1Metadata
+  FIELDS = {
+    file: "file",
+    sha: "sha",
+    size: "size",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    file
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CreateDeploymentRequestFilesItemVariant1.
+class CreateDeploymentRequestFilesItemVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateDeploymentRequestFilesItemVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestFilesItemVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateDeploymentRequestFilesItemVariant1Metadata::DECODERS
+
+  # @return [String] The file path relative to the project root
+  attr_reader :file
+  # @return [String] The file contents hashed with SHA1, used to check the integrity
+  attr_reader :sha
+  # @return [Integer] The file size in bytes
+  attr_reader :size
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariant0Override SDK namespace.
-  module CancelDeploymentResponseServicesItemVariant1RoutesItemVariant0Override
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX91136503d8 SDK namespace.
-  module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX91136503d8
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Defines the CreateDeploymentRequestFilesItem SDK namespace.
+module CreateDeploymentRequestFilesItem
+  def self.from_hash(hash)
+    shape_mapping = {
+      "data" => CreateDeploymentRequestFilesItemVariant0,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    return CreateDeploymentRequestFilesItemVariant1.from_hash(hash)
+  end
+end
+
+# Defines the CreateDeploymentRequestFilesItemVariant0Encoding SDK namespace.
+module CreateDeploymentRequestFilesItemVariant0Encoding
+  BASE64 = 'base64'
+  UTF_8 = 'utf-8'
+  VALUES = ['base64', 'utf-8'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateDeploymentRequestGitSourceVariant0Metadata
+  FIELDS = {
+    type: "type",
+    repo_id: "repoId",
+    sha: "sha",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    repo_id
+    sha
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CreateDeploymentRequestGitSourceVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CreateDeploymentRequestGitSourceVariant0.
+class CreateDeploymentRequestGitSourceVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant0Metadata::DECODERS
+
+  attr_reader :type, :sha
+  # @return [String] The stable Vercel Git repository ID.
+  attr_reader :repo_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX7e767f88c5 SDK namespace.
-  module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX7e767f88c5
-    APPEND = 'append'
-    DELETE = 'delete'
-    SET = 'set'
-    VALUES = %w[append delete set].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantXb3391c500a SDK namespace.
-  module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantXb3391c500a
-    REQUEST_HEADERS = 'request.headers'
-    REQUEST_QUERY = 'request.query'
-    RESPONSE_HEADERS = 'response.headers'
-    VALUES = ['request.headers', 'request.query', 'response.headers'].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateDeploymentRequestGitSourceVariant1Metadata
+  FIELDS = {
+    ref: "ref",
+    repo_id: "repoId",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    ref
+    repo_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CreateDeploymentRequestGitSourceVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CreateDeploymentRequestGitSourceVariant1.
+class CreateDeploymentRequestGitSourceVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant1Metadata::DECODERS
+
+  attr_reader :ref, :repo_id, :sha, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantXf87f7ff52d SDK namespace.
-  module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantXf87f7ff52d
-    SET = 'set'
-    VALUES = ['set'].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX5aa328e64d SDK namespace.
-  module CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX5aa328e64d
-    REQUEST_PATH = 'request.path'
-    VALUES = ['request.path'].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateDeploymentRequestGitSourceVariant2Metadata
+  FIELDS = {
+    org: "org",
+    ref: "ref",
+    repo: "repo",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    org
+    ref
+    repo
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CreateDeploymentRequestGitSourceVariant2Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CreateDeploymentRequestGitSourceVariant2.
+class CreateDeploymentRequestGitSourceVariant2
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant2Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant2Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant2Metadata::DECODERS
+
+  attr_reader :org, :ref, :repo, :sha, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseServicesItemVariant1RoutesItemVariant1Handle SDK namespace.
-  module CancelDeploymentResponseServicesItemVariant1RoutesItemVariant1Handle
-    ERROR = 'error'
-    FILESYSTEM = 'filesystem'
-    HIT = 'hit'
-    MISS = 'miss'
-    RESOURCE = 'resource'
-    REWRITE = 'rewrite'
-    VALUES = %w[error filesystem hit miss resource rewrite].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseServicesItemVariant1Schema SDK namespace.
-  module CancelDeploymentResponseServicesItemVariant1Schema
-    EXPERIMENTAL_SERVICES_V2 = 'experimentalServicesV2'
-    VALUES = ['experimentalServicesV2'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('CancelDeploymentResponseServicesItemVariant1Schema', 'enum', "Unknown CancelDeploymentResponseServicesItemVariant1Schema: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalCreateDeploymentRequestGitSourceVariant3Metadata
+  FIELDS = {
+    ref: "ref",
+    repo_id: "repoId",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    ref
+    repo_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CreateDeploymentRequestGitSourceVariant3Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CreateDeploymentRequestGitSourceVariant3.
+class CreateDeploymentRequestGitSourceVariant3
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant3Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant3Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant3Metadata::DECODERS
+
+  attr_reader :ref, :repo_id, :sha, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseServicesItemVariant1TrailingSlash SDK namespace.
-  module CancelDeploymentResponseServicesItemVariant1TrailingSlash
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateDeploymentRequestFilesItemVariant0Metadata
-    FIELDS = {
-      data: 'data',
-      encoding: 'encoding',
-      file: 'file'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      data
-      file
-    ].freeze
-    DECODERS = {
-      encoding: lambda do |value|
-        ::OctridevVercel::CreateDeploymentRequestFilesItemVariant0Encoding.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateDeploymentRequestGitSourceVariant4Metadata
+  FIELDS = {
+    org: "org",
+    ref: "ref",
+    repo: "repo",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    org
+    ref
+    repo
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CreateDeploymentRequestGitSourceVariant4Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CreateDeploymentRequestGitSourceVariant4.
+class CreateDeploymentRequestGitSourceVariant4
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant4Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant4Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant4Metadata::DECODERS
+
+  attr_reader :org, :ref, :repo, :sha, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CreateDeploymentRequestFilesItemVariant0.
-  class CreateDeploymentRequestFilesItemVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateDeploymentRequestFilesItemVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestFilesItemVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateDeploymentRequestFilesItemVariant0Metadata::DECODERS
-
-    # @return [String] The file content, it could be either a `base64` (useful for images, etc.) of the files or the plain content for source code
-    attr_reader :data
-    # @return [CreateDeploymentRequestFilesItemVariant0Encoding] The file content encoding, it could be either a base64 (useful for images, etc.) of the files or the plain text for source code.
-    attr_reader :encoding
-    # @return [String] The file name including the whole path
-    attr_reader :file
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateDeploymentRequestFilesItemVariant1Metadata
-    FIELDS = {
-      file: 'file',
-      sha: 'sha',
-      size: 'size'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      file
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateDeploymentRequestGitSourceVariant5Metadata
+  FIELDS = {
+    project_id: "projectId",
+    ref: "ref",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    project_id
+    ref
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CreateDeploymentRequestGitSourceVariant5Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CreateDeploymentRequestGitSourceVariant5.
+class CreateDeploymentRequestGitSourceVariant5
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant5Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant5Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant5Metadata::DECODERS
+
+  attr_reader :project_id, :ref, :sha, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CreateDeploymentRequestFilesItemVariant1.
-  class CreateDeploymentRequestFilesItemVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateDeploymentRequestFilesItemVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestFilesItemVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateDeploymentRequestFilesItemVariant1Metadata::DECODERS
-
-    # @return [String] The file path relative to the project root
-    attr_reader :file
-    # @return [String] The file contents hashed with SHA1, used to check the integrity
-    attr_reader :sha
-    # @return [Integer] The file size in bytes
-    attr_reader :size
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CreateDeploymentRequestFilesItem SDK namespace.
-  module CreateDeploymentRequestFilesItem
-    def self.from_hash(hash)
-      shape_mapping = {
-        'data' => CreateDeploymentRequestFilesItemVariant0
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      CreateDeploymentRequestFilesItemVariant1.from_hash(hash)
-    end
+# Internal model hydration metadata.
+class SdkInternalCreateDeploymentRequestGitSourceVariant6Metadata
+  FIELDS = {
+    ref: "ref",
+    repo_uuid: "repoUuid",
+    sha: "sha",
+    type: "type",
+    workspace_uuid: "workspaceUuid",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    ref
+    repo_uuid
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CreateDeploymentRequestGitSourceVariant6Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CreateDeploymentRequestGitSourceVariant6.
+class CreateDeploymentRequestGitSourceVariant6
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant6Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant6Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant6Metadata::DECODERS
+
+  attr_reader :ref, :repo_uuid, :sha, :type, :workspace_uuid
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CreateDeploymentRequestFilesItemVariant0Encoding SDK namespace.
-  module CreateDeploymentRequestFilesItemVariant0Encoding
-    BASE64 = 'base64'
-    UTF_8 = 'utf-8'
-    VALUES = %w[base64 utf-8].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateDeploymentRequestGitSourceVariant0Metadata
-    FIELDS = {
-      type: 'type',
-      repo_id: 'repoId',
-      sha: 'sha'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      repo_id
-      sha
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CreateDeploymentRequestGitSourceVariant0Type.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateDeploymentRequestGitSourceVariant7Metadata
+  FIELDS = {
+    owner: "owner",
+    ref: "ref",
+    sha: "sha",
+    slug: "slug",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    owner
+    ref
+    slug
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CreateDeploymentRequestGitSourceVariant7Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CreateDeploymentRequestGitSourceVariant7.
+class CreateDeploymentRequestGitSourceVariant7
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant7Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant7Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant7Metadata::DECODERS
+
+  attr_reader :owner, :ref, :sha, :slug, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CreateDeploymentRequestGitSourceVariant0.
-  class CreateDeploymentRequestGitSourceVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant0Metadata::DECODERS
-
-    attr_reader :type, :sha
-    # @return [String] The stable Vercel Git repository ID.
-    attr_reader :repo_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateDeploymentRequestGitSourceVariant1Metadata
-    FIELDS = {
-      ref: 'ref',
-      repo_id: 'repoId',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      ref
-      repo_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CreateDeploymentRequestGitSourceVariant1Type.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCreateDeploymentRequestGitSourceVariant8Metadata
+  FIELDS = {
+    owner: "owner",
+    ref: "ref",
+    repo: "repo",
+    repo_id: "repoId",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    ref
+    repo_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CreateDeploymentRequestGitSourceVariant8Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CreateDeploymentRequestGitSourceVariant8.
+class CreateDeploymentRequestGitSourceVariant8
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant8Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant8Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant8Metadata::DECODERS
+
+  attr_reader :type
+  # @return [String] The Origin workspace slug. Optional because Vercel resolves it from the linked project.
+  attr_reader :owner
+  # @return [String] The branch or Git reference to deploy.
+  attr_reader :ref
+  # @return [String] The Origin repository name. Optional because Vercel resolves it from the linked project.
+  attr_reader :repo
+  # @return [String] The stable Origin repository ID. Read it from the `link.repoId` field returned by the project API.
+  attr_reader :repo_id
+  # @return [String] The commit SHA to deploy. When omitted, Vercel resolves the latest commit on `ref`.
+  attr_reader :sha
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CreateDeploymentRequestGitSourceVariant1.
-  class CreateDeploymentRequestGitSourceVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant1Metadata::DECODERS
-
-    attr_reader :ref, :repo_id, :sha, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateDeploymentRequestGitSourceVariant2Metadata
-    FIELDS = {
-      org: 'org',
-      ref: 'ref',
-      repo: 'repo',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      org
-      ref
-      repo
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CreateDeploymentRequestGitSourceVariant2Type.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # API model for CreateDeploymentRequestGitSourceVariant2.
-  class CreateDeploymentRequestGitSourceVariant2
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant2Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant2Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant2Metadata::DECODERS
+# Defines the CreateDeploymentRequestGitSource SDK namespace.
+module CreateDeploymentRequestGitSource
+  def self.from_hash(hash)
+    shape_mapping = {
+      "projectId" => CreateDeploymentRequestGitSourceVariant5,
+      "repoUuid" => CreateDeploymentRequestGitSourceVariant6,
+      "slug" => CreateDeploymentRequestGitSourceVariant7,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    lossy = nil
+    [CreateDeploymentRequestGitSourceVariant0, CreateDeploymentRequestGitSourceVariant1, CreateDeploymentRequestGitSourceVariant2, CreateDeploymentRequestGitSourceVariant3, CreateDeploymentRequestGitSourceVariant4, CreateDeploymentRequestGitSourceVariant8].each do |type|
+      decoded = type.from_hash(hash)
+      return decoded if SdkModel.keeps_every_key?(hash, decoded)
 
-    attr_reader :org, :ref, :repo, :sha, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
+      lossy ||= decoded
+    rescue ::StandardError
+      next
     end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+    return lossy unless lossy.nil?
   end
+end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateDeploymentRequestGitSourceVariant3Metadata
-    FIELDS = {
-      ref: 'ref',
-      repo_id: 'repoId',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      ref
-      repo_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CreateDeploymentRequestGitSourceVariant3Type.from_value(value)
-      end
-    }.freeze
+# Defines the CreateDeploymentRequestGitSourceVariant0Type SDK namespace.
+module CreateDeploymentRequestGitSourceVariant0Type
+  VERCEL = 'vercel'
+  VALUES = ['vercel'].freeze
+  def self.from_value(value)
+    value
   end
-
-  # API model for CreateDeploymentRequestGitSourceVariant3.
-  class CreateDeploymentRequestGitSourceVariant3
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant3Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant3Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant3Metadata::DECODERS
-
-    attr_reader :ref, :repo_id, :sha, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCreateDeploymentRequestGitSourceVariant4Metadata
-    FIELDS = {
-      org: 'org',
-      ref: 'ref',
-      repo: 'repo',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      org
-      ref
-      repo
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CreateDeploymentRequestGitSourceVariant4Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CreateDeploymentRequestGitSourceVariant4.
-  class CreateDeploymentRequestGitSourceVariant4
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant4Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant4Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant4Metadata::DECODERS
-
-    attr_reader :org, :ref, :repo, :sha, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCreateDeploymentRequestGitSourceVariant5Metadata
-    FIELDS = {
-      project_id: 'projectId',
-      ref: 'ref',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      project_id
-      ref
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CreateDeploymentRequestGitSourceVariant5Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CreateDeploymentRequestGitSourceVariant5.
-  class CreateDeploymentRequestGitSourceVariant5
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant5Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant5Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant5Metadata::DECODERS
-
-    attr_reader :project_id, :ref, :sha, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCreateDeploymentRequestGitSourceVariant6Metadata
-    FIELDS = {
-      ref: 'ref',
-      repo_uuid: 'repoUuid',
-      sha: 'sha',
-      type: 'type',
-      workspace_uuid: 'workspaceUuid'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      ref
-      repo_uuid
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CreateDeploymentRequestGitSourceVariant6Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CreateDeploymentRequestGitSourceVariant6.
-  class CreateDeploymentRequestGitSourceVariant6
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant6Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant6Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant6Metadata::DECODERS
-
-    attr_reader :ref, :repo_uuid, :sha, :type, :workspace_uuid
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCreateDeploymentRequestGitSourceVariant7Metadata
-    FIELDS = {
-      owner: 'owner',
-      ref: 'ref',
-      sha: 'sha',
-      slug: 'slug',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      owner
-      ref
-      slug
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CreateDeploymentRequestGitSourceVariant7Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CreateDeploymentRequestGitSourceVariant7.
-  class CreateDeploymentRequestGitSourceVariant7
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant7Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant7Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant7Metadata::DECODERS
-
-    attr_reader :owner, :ref, :sha, :slug, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCreateDeploymentRequestGitSourceVariant8Metadata
-    FIELDS = {
-      owner: 'owner',
-      ref: 'ref',
-      repo: 'repo',
-      repo_id: 'repoId',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      ref
-      repo_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CreateDeploymentRequestGitSourceVariant8Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CreateDeploymentRequestGitSourceVariant8.
-  class CreateDeploymentRequestGitSourceVariant8
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant8Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateDeploymentRequestGitSourceVariant8Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateDeploymentRequestGitSourceVariant8Metadata::DECODERS
-
-    attr_reader :type
-    # @return [String] The Origin workspace slug. Optional because Vercel resolves it from the linked project.
-    attr_reader :owner
-    # @return [String] The branch or Git reference to deploy.
-    attr_reader :ref
-    # @return [String] The Origin repository name. Optional because Vercel resolves it from the linked project.
-    attr_reader :repo
-    # @return [String] The stable Origin repository ID. Read it from the `link.repoId` field returned by the project API.
-    attr_reader :repo_id
-    # @return [String] The commit SHA to deploy. When omitted, Vercel resolves the latest commit on `ref`.
-    attr_reader :sha
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Defines the CreateDeploymentRequestGitSource SDK namespace.
-  module CreateDeploymentRequestGitSource
-    def self.from_hash(hash)
-      shape_mapping = {
-        'projectId' => CreateDeploymentRequestGitSourceVariant5,
-        'repoUuid' => CreateDeploymentRequestGitSourceVariant6,
-        'slug' => CreateDeploymentRequestGitSourceVariant7
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
-
-      lossy = nil
-      [CreateDeploymentRequestGitSourceVariant0, CreateDeploymentRequestGitSourceVariant1, CreateDeploymentRequestGitSourceVariant2, CreateDeploymentRequestGitSourceVariant3, CreateDeploymentRequestGitSourceVariant4, CreateDeploymentRequestGitSourceVariant8].each do |type|
-        decoded = type.from_hash(hash)
-        return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-        lossy ||= decoded
-      rescue ::StandardError
-        next
-      end
-      lossy unless lossy.nil?
-    end
-  end
-
-  # Defines the CreateDeploymentRequestGitSourceVariant0Type SDK namespace.
-  module CreateDeploymentRequestGitSourceVariant0Type
-    VERCEL = 'vercel'
-    VALUES = ['vercel'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
+end
 end

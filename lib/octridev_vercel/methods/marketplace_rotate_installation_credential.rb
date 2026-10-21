@@ -19,24 +19,25 @@ module OctridevVercel
         client_id: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('client_secret', client_secret, max: 512)
 
         SdkClient.request(
           'POST',
           [
-            '/v1/installations/',
+            "/v1/installations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/credentials/rotate'
+            "/credentials/rotate"
           ].join,
           config: config,
           body: {
             'client_secret' => client_secret,
-            'client_id' => client_id
+            'client_id' => client_id,
           },
           return_type: ::OctridevVercel::Methods::Marketplace::RotateInstallationCredentialResponse,
           decoder: :json,
           operation_id: 'rotate_installation_credential',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

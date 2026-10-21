@@ -35,15 +35,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVersionsResponseVersionsItemMetadata
         FIELDS = {
-          alias_: 'alias',
-          created_by: 'createdBy',
-          id: 'id',
-          is_live: 'isLive',
-          is_staging: 'isStaging',
-          key: 'key',
-          last_modified: 'lastModified',
-          name: 'name',
-          redirect_count: 'redirectCount'
+          alias_: "alias",
+          created_by: "createdBy",
+          id: "id",
+          is_live: "isLive",
+          is_staging: "isStaging",
+          key: "key",
+          last_modified: "lastModified",
+          name: "name",
+          redirect_count: "redirectCount",
         }.freeze
         REQUIRED_FIELDS = %i[
           created_by
@@ -57,7 +57,7 @@ module OctridevVercel
           end,
           is_staging: lambda do |value|
             ::OctridevVercel::Methods::BulkRedirects::GetVersionsResponseVersionsItemIsStaging.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -101,7 +101,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVersionsResponseMetadata
         FIELDS = {
-          versions: 'versions'
+          versions: "versions",
         }.freeze
         REQUIRED_FIELDS = %i[
           versions
@@ -109,7 +109,7 @@ module OctridevVercel
         DECODERS = {
           versions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::BulkRedirects::GetVersionsResponseVersionsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -139,9 +139,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateVersionMetadata
         FIELDS = {
-          id: 'id',
-          action: 'action',
-          name: 'name'
+          id: "id",
+          action: "action",
+          name: "name",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -150,7 +150,7 @@ module OctridevVercel
         DECODERS = {
           action: lambda do |value|
             ::OctridevVercel::Methods::BulkRedirects::UpdateVersionAction.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -180,15 +180,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateVersionResponseVersionMetadata
         FIELDS = {
-          alias_: 'alias',
-          created_by: 'createdBy',
-          id: 'id',
-          is_live: 'isLive',
-          is_staging: 'isStaging',
-          key: 'key',
-          last_modified: 'lastModified',
-          name: 'name',
-          redirect_count: 'redirectCount'
+          alias_: "alias",
+          created_by: "createdBy",
+          id: "id",
+          is_live: "isLive",
+          is_staging: "isStaging",
+          key: "key",
+          last_modified: "lastModified",
+          name: "name",
+          redirect_count: "redirectCount",
         }.freeze
         REQUIRED_FIELDS = %i[
           created_by
@@ -202,7 +202,7 @@ module OctridevVercel
           end,
           is_staging: lambda do |value|
             ::OctridevVercel::Methods::BulkRedirects::UpdateVersionResponseVersionIsStaging.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -246,7 +246,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateVersionResponseMetadata
         FIELDS = {
-          version: 'version'
+          version: "version",
         }.freeze
         REQUIRED_FIELDS = %i[
           version
@@ -254,7 +254,7 @@ module OctridevVercel
         DECODERS = {
           version: lambda do |value|
             ::OctridevVercel::Methods::BulkRedirects::UpdateVersionResponseVersion.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -494,7 +494,7 @@ module OctridevVercel
       module GetRedirectsParameter1c8b1e3f
         ASC = 'asc'
         DESC = 'desc'
-        VALUES = %w[asc desc].freeze
+        VALUES = ['asc', 'desc'].freeze
         def self.from_value(value)
           value
         end
@@ -505,7 +505,7 @@ module OctridevVercel
         SOURCE = 'source'
         DESTINATION = 'destination'
         STATUS_CODE = 'statusCode'
-        VALUES = %w[source destination statusCode].freeze
+        VALUES = ['source', 'destination', 'statusCode'].freeze
         def self.from_value(value)
           value
         end
@@ -516,7 +516,7 @@ module OctridevVercel
         PROMOTE = 'promote'
         RESTORE = 'restore'
         DISCARD = 'discard'
-        VALUES = %w[promote restore discard].freeze
+        VALUES = ['promote', 'restore', 'discard'].freeze
         def self.from_value(value)
           value
         end

@@ -35,28 +35,29 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_items('destinations', destinations, max: 3)
 
         SdkClient.request(
           'PATCH',
           [
-            '/v1/connect/connectors/',
+            "/v1/connect/connectors/",
             SdkClient.encode_path_segment(connector),
-            '/trigger-destinations'
+            "/trigger-destinations"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'destinations' => destinations
+            'destinations' => destinations,
           },
           return_type: ::OctridevVercel::ConnectConnector,
           decoder: :json,
           operation_id: 'replace_connector_trigger_destinations',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError }
+          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError },
         ).data
       end
     end

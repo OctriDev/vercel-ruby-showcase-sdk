@@ -32,27 +32,28 @@ module OctridevVercel
         enable_polyrepo_branch_routing: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PATCH',
           [
-            '/v1/teams/',
+            "/v1/teams/",
             SdkClient.encode_path_segment(team_id),
-            '/microfrontends/',
+            "/microfrontends/",
             SdkClient.encode_path_segment(group_id)
           ].join,
           config: config,
           query: {
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'name' => name,
             'fallbackEnvironment' => fallback_environment,
-            'enablePolyrepoBranchRouting' => enable_polyrepo_branch_routing
+            'enablePolyrepoBranchRouting' => enable_polyrepo_branch_routing,
           },
           return_type: ::OctridevVercel::Methods::Teams::UpdateMicrofrontendsGroupResponse,
           decoder: :json,
           operation_id: 'update_microfrontends_group',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -71,21 +72,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/teams/',
+            "/v1/teams/",
             SdkClient.encode_path_segment(team_id),
-            '/microfrontends/',
+            "/microfrontends/",
             SdkClient.encode_path_segment(group_id)
           ].join,
           config: config,
           query: {
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :json,
           operation_id: 'delete_microfrontends_group',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

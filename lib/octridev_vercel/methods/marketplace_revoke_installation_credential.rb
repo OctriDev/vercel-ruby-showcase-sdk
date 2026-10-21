@@ -20,6 +20,7 @@ module OctridevVercel
         client_id: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('token', token, max: 512)
 
         Validation.validate_length('client_secret', client_secret, max: 512)
@@ -27,20 +28,20 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            '/v1/installations/',
+            "/v1/installations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/credentials/revoke'
+            "/credentials/revoke"
           ].join,
           config: config,
           body: {
             'token' => token,
             'client_secret' => client_secret,
-            'client_id' => client_id
+            'client_id' => client_id,
           },
           return_type: ::OctridevVercel::Methods::Marketplace::RevokeInstallationCredentialResponse,
           decoder: :json,
           operation_id: 'revoke_installation_credential',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

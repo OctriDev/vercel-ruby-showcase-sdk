@@ -31,6 +31,7 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('idOrName', id_or_name, max: 255)
 
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
@@ -40,9 +41,9 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            '/v1/vcr/repository/',
+            "/v1/vcr/repository/",
             SdkClient.encode_path_segment(id_or_name),
-            '/permissions'
+            "/permissions"
           ].join,
           config: config,
           query: {
@@ -50,16 +51,16 @@ module OctridevVercel
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::VcrRepositoryPermissionList,
           decoder: :json,
           operation_id: 'list_repository_permissions',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
-      ListRepositoryPermissionsPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
+    ListRepositoryPermissionsPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
 
       # Lists the teams that a container registry repository is shared with. Supply `projectId` and `idOrName` to identify the repository, and use `cursor` to continue through paginated results.
       #
@@ -97,11 +98,9 @@ module OctridevVercel
             )
             items = page.permissions || []
             break if items.empty?
-
             items.each { |item| y << item }
             next_cursor = page.next_cursor
             break if next_cursor.nil?
-
             cursor = next_cursor
           end
         end
@@ -131,12 +130,10 @@ module OctridevVercel
             )
             items = page.permissions || []
             break if items.empty?
-
             next_cursor = page.next_cursor
             has_more = !next_cursor.nil?
             y << ListRepositoryPermissionsPage.new(data: page, items: items, has_more: has_more)
             break unless has_more
-
             cursor = next_cursor
           end
         end

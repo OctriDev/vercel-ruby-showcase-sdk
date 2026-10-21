@@ -27,6 +27,7 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         Validation.if_given(next_) do
@@ -36,18 +37,18 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          '/v1/kms/issuers',
+          "/v1/kms/issuers",
           config: config,
           query: {
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'next' => QueryValue.new(next_, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Kms::ListKmsIssuersResponse,
           decoder: :json,
           operation_id: 'list_kms_issuers',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

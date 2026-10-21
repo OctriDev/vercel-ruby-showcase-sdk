@@ -70,7 +70,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProXb32d2698cb
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -80,7 +80,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb91172843c
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -129,7 +129,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX24608e2c59
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -174,13 +174,13 @@ module OctridevVercel
         TAG_VIDEO = 'tag_video'
         TAG_WEB_AUTOMATION = 'tag_web_automation'
         TAG_WORKFLOW = 'tag_workflow'
-        VALUES = %w[
-          tag_agents tag_ai tag_analytics tag_authentication tag_cms
-          tag_code_repository tag_code_review tag_code_security tag_code_testing
-          tag_commerce tag_databases tag_dev_tools tag_experimentation tag_flags
-          tag_logging tag_messaging tag_monitoring tag_observability tag_payments
-          tag_performance tag_productivity tag_searching tag_security
-          tag_support_agent tag_testing tag_video tag_web_automation tag_workflow
+        VALUES = [
+          'tag_agents', 'tag_ai', 'tag_analytics', 'tag_authentication', 'tag_cms',
+          'tag_code_repository', 'tag_code_review', 'tag_code_security', 'tag_code_testing',
+          'tag_commerce', 'tag_databases', 'tag_dev_tools', 'tag_experimentation', 'tag_flags',
+          'tag_logging', 'tag_messaging', 'tag_monitoring', 'tag_observability', 'tag_payments',
+          'tag_performance', 'tag_productivity', 'tag_searching', 'tag_security',
+          'tag_support_agent', 'tag_testing', 'tag_video', 'tag_web_automation', 'tag_workflow'
         ].freeze
         def self.from_value(value)
           value
@@ -191,7 +191,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX30b1213da4
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -201,7 +201,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXfdcfb8590e
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -231,7 +231,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX94090e6461
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -241,7 +241,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX86b5e98c48
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -270,7 +270,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProXd3721bd7e2
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -309,7 +309,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1a17c28be7
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -329,7 +329,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemProtocolsVideoStatus
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = %w[disabled enabled].freeze
+        VALUES = ['disabled', 'enabled'].freeze
         def self.from_value(value)
           value
         end
@@ -359,7 +359,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX8c041c2240
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -369,7 +369,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX942d6ef692
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -379,7 +379,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemProtocolsAuthentiXd1c872c1df
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = %w[disabled enabled].freeze
+        VALUES = ['disabled', 'enabled'].freeze
         def self.from_value(value)
           value
         end
@@ -467,7 +467,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX80f63b1372
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -477,7 +477,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXf38b933e60
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -507,7 +507,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX62a1bc7602
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = %w[create update].freeze
+        VALUES = ['create', 'update'].freeze
         def self.from_value(value)
           value
         end
@@ -557,7 +557,7 @@ module OctridevVercel
       module SearchRepoResponseVariant2ReposItemOwnerType
         TEAM = 'team'
         USER = 'user'
-        VALUES = %w[team user].freeze
+        VALUES = ['team', 'user'].freeze
         def self.from_value(value)
           value
         end

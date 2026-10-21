@@ -24,21 +24,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(project_id),
-            '/pause'
+            "/pause"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :empty,
           operation_id: 'pause_project',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -5,87 +5,87 @@
 
 # shared domain models
 module OctridevVercel
-  # Defines the ACLAction SDK namespace.
-  module ACLAction
-    CREATE = 'create'
-    DELETE = 'delete'
-    LIST = 'list'
-    READ = 'read'
-    UPDATE = 'update'
-    VALUES = %w[create delete list read update].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the ACLAction SDK namespace.
+module ACLAction
+  CREATE = 'create'
+  DELETE = 'delete'
+  LIST = 'list'
+  READ = 'read'
+  UPDATE = 'update'
+  VALUES = ['create', 'delete', 'list', 'read', 'update'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GlobalConfigItemValue SDK namespace.
+module GlobalConfigItemValue
+  def self.from_hash(hash)
+    return hash if hash.is_a?(::String)
+    return hash if hash.is_a?(::Float)
+    return GlobalConfigItemValueVariant4.from_value(hash) if [true, false].include?(hash)
+    return hash.map { |item| GlobalConfigItemValue.from_hash(item) } if hash.is_a?(::Array)
+    return hash if hash.is_a?(::Hash)
+    raise "Could not deserialize GlobalConfigItemValue from #{hash.inspect}"
+  end
+end
+
+# Defines the GlobalConfigItemValueVariant4 SDK namespace.
+module GlobalConfigItemValueVariant4
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalPaginationMetadata
+  FIELDS = {
+    count: "count",
+    next_: "next",
+    prev: "prev",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    count
+    next_
+    prev
+  ].freeze
+  DECODERS = {
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    next_
+    prev
+  ].freeze
+end
+
+# API model for Pagination.
+# This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+class Pagination
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalPaginationMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalPaginationMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalPaginationMetadata::DECODERS
+
+  # @return [Float] Amount of items in the current page.
+  attr_reader :count
+  # @return [Float] Timestamp that must be used to request the next page.
+  attr_reader :next_
+  # @return [Float] Timestamp that must be used to request the previous page.
+  attr_reader :prev
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GlobalConfigItemValue SDK namespace.
-  module GlobalConfigItemValue
-    def self.from_hash(hash)
-      return hash if hash.is_a?(::String)
-      return hash if hash.is_a?(::Float)
-      return GlobalConfigItemValueVariant4.from_value(hash) if [true, false].include?(hash)
-      return hash.map { |item| GlobalConfigItemValue.from_hash(item) } if hash.is_a?(::Array)
-      return hash if hash.is_a?(::Hash)
-
-      raise "Could not deserialize GlobalConfigItemValue from #{hash.inspect}"
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalPaginationMetadata::NULLABLE_FIELDS)
   end
 
-  # Defines the GlobalConfigItemValueVariant4 SDK namespace.
-  module GlobalConfigItemValueVariant4
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
-
-  # Internal model hydration metadata.
-  class SdkInternalPaginationMetadata
-    FIELDS = {
-      count: 'count',
-      next_: 'next',
-      prev: 'prev'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      count
-      next_
-      prev
-    ].freeze
-    DECODERS = {}.freeze
-    NULLABLE_FIELDS = %i[
-      next_
-      prev
-    ].freeze
-  end
-
-  # API model for Pagination.
-  # This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
-  class Pagination
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalPaginationMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalPaginationMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalPaginationMetadata::DECODERS
-
-    # @return [Float] Amount of items in the current page.
-    attr_reader :count
-    # @return [Float] Timestamp that must be used to request the next page.
-    attr_reader :next_
-    # @return [Float] Timestamp that must be used to request the previous page.
-    attr_reader :prev
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalPaginationMetadata::NULLABLE_FIELDS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
+end
 end

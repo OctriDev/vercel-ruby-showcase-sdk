@@ -5,425 +5,424 @@
 
 # checks_v2 domain models
 module OctridevVercel
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant1Kind SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant1Kind
-    WEBHOOK = 'webhook'
-    VALUES = ['webhook'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant1Kind SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant1Kind
+  WEBHOOK = 'webhook'
+  VALUES = ['webhook'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant2Kind SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant2Kind
+  GIT_PROVIDER = 'git-provider'
+  VALUES = ['git-provider'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant2Provider SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant2Provider
+  BITBUCKET = 'bitbucket'
+  GITHUB = 'github'
+  GITLAB = 'gitlab'
+  VALUES = ['bitbucket', 'github', 'gitlab'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant3Origin SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant3Origin
+  API = 'api'
+  PLATFORM = 'platform'
+  VALUES = ['api', 'platform'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant3SubKind SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant3SubKind
+  VERCEL_NATIVE_CHECK = 'vercel-native-check'
+  VALUES = ['vercel-native-check'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4Origin SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant4Origin
+  API = 'api'
+  VALUES = ['api'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4d02cbbf3a SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4d02cbbf3a
+  INVOCATION = 'invocation'
+  VALUES = ['invocation'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4d02cbbf3a', 'enum', "Unknown UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4d02cbbf3a: #{value}")
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX08d5ede85d SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX08d5ede85d
+  DEPLOYMENT = 'deployment'
+  VALUES = ['deployment'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX08d5ede85d', 'enum', "Unknown UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX08d5ede85d: #{value}")
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX9dfb165f47 SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX9dfb165f47
+  JOB = 'job'
+  VALUES = ['job'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX9dfb165f47', 'enum', "Unknown UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX9dfb165f47: #{value}")
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX28203ea00c SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX28203ea00c
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXb141483ef2 SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXb141483ef2
+  TURBOREPO = 'Turborepo'
+  VALUES = ['Turborepo'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX903f1d4de3 SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX903f1d4de3
+  TURBOREPO = 'turborepo'
+  VALUES = ['turborepo'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX903f1d4de3', 'enum', "Unknown UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX903f1d4de3: #{value}")
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SubKind SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SubKind
+  VERCEL_CI_CHECK = 'vercel-ci-check'
+  VALUES = ['vercel-ci-check'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant0Status SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant0Status
+  COMPLETED = 'completed'
+  QUEUED = 'queued'
+  RUNNING = 'running'
+  VALUES = ['completed', 'queued', 'running'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant1Blocks SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant1Blocks
+  BUILD_START = 'build-start'
+  DEPLOYMENT_ALIAS = 'deployment-alias'
+  DEPLOYMENT_PROMOTION = 'deployment-promotion'
+  DEPLOYMENT_START = 'deployment-start'
+  NONE = 'none'
+  VALUES = [
+    'build-start', 'deployment-alias', 'deployment-promotion', 'deployment-start', 'none'
+  ].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant1Conclusion SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant1Conclusion
+  CANCELED = 'canceled'
+  FAILED = 'failed'
+  NEUTRAL = 'neutral'
+  SKIPPED = 'skipped'
+  SUCCEEDED = 'succeeded'
+  TIMEOUT = 'timeout'
+  VALUES = ['canceled', 'failed', 'neutral', 'skipped', 'succeeded', 'timeout'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant1Requires SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant1Requires
+  BUILD_READY = 'build-ready'
+  DEPLOYMENT_URL = 'deployment-url'
+  NONE = 'none'
+  VALUES = ['build-ready', 'deployment-url', 'none'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant1SourceVariant0Origin SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant1SourceVariant0Origin
+  CONFIG = 'config'
+  VALUES = ['config'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateDeploymentCheckRunResponseVariant1SourceVariant0Origin', 'enum', "Unknown UpdateDeploymentCheckRunResponseVariant1SourceVariant0Origin: #{value}")
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant1SourceVariant0SubKind SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant1SourceVariant0SubKind
+  VERCEL_CI = 'vercel-ci'
+  VALUES = ['vercel-ci'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant1SourceVariant1Origin SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant1SourceVariant1Origin
+  PLATFORM = 'platform'
+  VALUES = ['platform'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateDeploymentCheckRunResponseVariant1SourceVariant1Origin', 'enum', "Unknown UpdateDeploymentCheckRunResponseVariant1SourceVariant1Origin: #{value}")
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant1SourceVariant1SubKind SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant1SourceVariant1SubKind
+  VERCEL_CI_SENTINEL = 'vercel-ci-sentinel'
+  VALUES = ['vercel-ci-sentinel'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateDeploymentCheckRunResponseVariant1Status SDK namespace.
+module UpdateDeploymentCheckRunResponseVariant1Status
+  COMPLETED = 'completed'
+  QUEUED = 'queued'
+  RUNNING = 'running'
+  VALUES = ['completed', 'queued', 'running'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateProjectCheckResponseSourceVariant0Metadata
+  FIELDS = {
+    external_resource_id: "externalResourceId",
+    integration_configuration_id: "integrationConfigurationId",
+    integration_id: "integrationId",
+    kind: "kind",
+    resource_id: "resourceId",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    integration_configuration_id
+    integration_id
+    kind
+  ].freeze
+  DECODERS = {
+    kind: lambda do |value|
+      ::OctridevVercel::UpdateProjectCheckResponseSourceVariant0Kind.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateProjectCheckResponseSourceVariant0.
+class UpdateProjectCheckResponseSourceVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateProjectCheckResponseSourceVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateProjectCheckResponseSourceVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateProjectCheckResponseSourceVariant0Metadata::DECODERS
+
+  attr_reader :external_resource_id, :integration_configuration_id, :integration_id, :kind,
+              :resource_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant2Kind SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant2Kind
-    GIT_PROVIDER = 'git-provider'
-    VALUES = ['git-provider'].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant2Provider SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant2Provider
-    BITBUCKET = 'bitbucket'
-    GITHUB = 'github'
-    GITLAB = 'gitlab'
-    VALUES = %w[bitbucket github gitlab].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateProjectCheckResponseSourceVariant1Metadata
+  FIELDS = {
+    kind: "kind",
+    webhook_id: "webhookId",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    kind
+  ].freeze
+  DECODERS = {
+    kind: lambda do |value|
+      ::OctridevVercel::UpdateProjectCheckResponseSourceVariant1Kind.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateProjectCheckResponseSourceVariant1.
+class UpdateProjectCheckResponseSourceVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateProjectCheckResponseSourceVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateProjectCheckResponseSourceVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateProjectCheckResponseSourceVariant1Metadata::DECODERS
+
+  attr_reader :kind, :webhook_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant3Origin SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant3Origin
-    API = 'api'
-    PLATFORM = 'platform'
-    VALUES = %w[api platform].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant3SubKind SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant3SubKind
-    VERCEL_NATIVE_CHECK = 'vercel-native-check'
-    VALUES = ['vercel-native-check'].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateProjectCheckResponseSourceVariant2Metadata
+  FIELDS = {
+    external_check_name: "externalCheckName",
+    kind: "kind",
+    provider: "provider",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    external_check_name
+    kind
+    provider
+  ].freeze
+  DECODERS = {
+    kind: lambda do |value|
+      ::OctridevVercel::UpdateProjectCheckResponseSourceVariant2Kind.from_value(value)
+    end,
+    provider: lambda do |value|
+      ::OctridevVercel::UpdateProjectCheckResponseSourceVariant2Provider.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateProjectCheckResponseSourceVariant2.
+class UpdateProjectCheckResponseSourceVariant2
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateProjectCheckResponseSourceVariant2Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateProjectCheckResponseSourceVariant2Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateProjectCheckResponseSourceVariant2Metadata::DECODERS
+
+  attr_reader :external_check_name, :kind, :provider
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4Origin SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant4Origin
-    API = 'api'
-    VALUES = ['api'].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4d02cbbf3a SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4d02cbbf3a
-    INVOCATION = 'invocation'
-    VALUES = ['invocation'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4d02cbbf3a', 'enum', "Unknown UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4d02cbbf3a: #{value}")
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX08d5ede85d SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX08d5ede85d
-    DEPLOYMENT = 'deployment'
-    VALUES = ['deployment'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateProjectCheckResponseSource SDK namespace.
+module UpdateProjectCheckResponseSource
+  DISCRIMINATOR_MAPPING = {
+    "integration" => -> { UpdateProjectCheckResponseSourceVariant0 },
+    "webhook" => -> { UpdateProjectCheckResponseSourceVariant1 },
+    "git-provider" => -> { UpdateProjectCheckResponseSourceVariant2 },
+  }.freeze
 
-      raise SdkValidationError.new('UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX08d5ede85d', 'enum', "Unknown UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX08d5ede85d: #{value}")
-    end
+  def self.from_hash(hash)
+    return hash unless hash.is_a?(::Hash)
+    type = DISCRIMINATOR_MAPPING[hash["kind"]]&.call
+    return type.from_hash(hash) if type
+
+    raise SdkValidationError.new('UpdateProjectCheckResponseSource', 'variant', "Unknown UpdateProjectCheckResponseSource discriminator: #{hash["kind"].inspect}")
   end
+end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX9dfb165f47 SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX9dfb165f47
-    JOB = 'job'
-    VALUES = ['job'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateProjectCheckResponseSourceVariant0Kind SDK namespace.
+module UpdateProjectCheckResponseSourceVariant0Kind
+  INTEGRATION = 'integration'
+  VALUES = ['integration'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX9dfb165f47', 'enum', "Unknown UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX9dfb165f47: #{value}")
-    end
+    raise SdkValidationError.new('UpdateProjectCheckResponseSourceVariant0Kind', 'enum', "Unknown UpdateProjectCheckResponseSourceVariant0Kind: #{value}")
   end
+end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX28203ea00c SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX28203ea00c
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateProjectCheckResponseSourceVariant1Kind SDK namespace.
+module UpdateProjectCheckResponseSourceVariant1Kind
+  WEBHOOK = 'webhook'
+  VALUES = ['webhook'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateProjectCheckResponseSourceVariant1Kind', 'enum', "Unknown UpdateProjectCheckResponseSourceVariant1Kind: #{value}")
   end
+end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXb141483ef2 SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXb141483ef2
-    TURBOREPO = 'Turborepo'
-    VALUES = ['Turborepo'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateProjectCheckResponseSourceVariant2Kind SDK namespace.
+module UpdateProjectCheckResponseSourceVariant2Kind
+  GIT_PROVIDER = 'git-provider'
+  VALUES = ['git-provider'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateProjectCheckResponseSourceVariant2Kind', 'enum', "Unknown UpdateProjectCheckResponseSourceVariant2Kind: #{value}")
   end
+end
 
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX903f1d4de3 SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX903f1d4de3
-    TURBOREPO = 'turborepo'
-    VALUES = ['turborepo'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX903f1d4de3', 'enum', "Unknown UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX903f1d4de3: #{value}")
-    end
+# Defines the UpdateProjectCheckResponseSourceVariant2Provider SDK namespace.
+module UpdateProjectCheckResponseSourceVariant2Provider
+  BITBUCKET = 'bitbucket'
+  GITHUB = 'github'
+  GITLAB = 'gitlab'
+  VALUES = ['bitbucket', 'github', 'gitlab'].freeze
+  def self.from_value(value)
+    value
   end
-
-  # Defines the UpdateDeploymentCheckRunResponseVariant0SourceVariant4SubKind SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0SourceVariant4SubKind
-    VERCEL_CI_CHECK = 'vercel-ci-check'
-    VALUES = ['vercel-ci-check'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the UpdateDeploymentCheckRunResponseVariant0Status SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant0Status
-    COMPLETED = 'completed'
-    QUEUED = 'queued'
-    RUNNING = 'running'
-    VALUES = %w[completed queued running].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the UpdateDeploymentCheckRunResponseVariant1Blocks SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant1Blocks
-    BUILD_START = 'build-start'
-    DEPLOYMENT_ALIAS = 'deployment-alias'
-    DEPLOYMENT_PROMOTION = 'deployment-promotion'
-    DEPLOYMENT_START = 'deployment-start'
-    NONE = 'none'
-    VALUES = %w[
-      build-start deployment-alias deployment-promotion deployment-start none
-    ].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the UpdateDeploymentCheckRunResponseVariant1Conclusion SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant1Conclusion
-    CANCELED = 'canceled'
-    FAILED = 'failed'
-    NEUTRAL = 'neutral'
-    SKIPPED = 'skipped'
-    SUCCEEDED = 'succeeded'
-    TIMEOUT = 'timeout'
-    VALUES = %w[canceled failed neutral skipped succeeded timeout].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the UpdateDeploymentCheckRunResponseVariant1Requires SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant1Requires
-    BUILD_READY = 'build-ready'
-    DEPLOYMENT_URL = 'deployment-url'
-    NONE = 'none'
-    VALUES = %w[build-ready deployment-url none].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the UpdateDeploymentCheckRunResponseVariant1SourceVariant0Origin SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant1SourceVariant0Origin
-    CONFIG = 'config'
-    VALUES = ['config'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateDeploymentCheckRunResponseVariant1SourceVariant0Origin', 'enum', "Unknown UpdateDeploymentCheckRunResponseVariant1SourceVariant0Origin: #{value}")
-    end
-  end
-
-  # Defines the UpdateDeploymentCheckRunResponseVariant1SourceVariant0SubKind SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant1SourceVariant0SubKind
-    VERCEL_CI = 'vercel-ci'
-    VALUES = ['vercel-ci'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the UpdateDeploymentCheckRunResponseVariant1SourceVariant1Origin SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant1SourceVariant1Origin
-    PLATFORM = 'platform'
-    VALUES = ['platform'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateDeploymentCheckRunResponseVariant1SourceVariant1Origin', 'enum', "Unknown UpdateDeploymentCheckRunResponseVariant1SourceVariant1Origin: #{value}")
-    end
-  end
-
-  # Defines the UpdateDeploymentCheckRunResponseVariant1SourceVariant1SubKind SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant1SourceVariant1SubKind
-    VERCEL_CI_SENTINEL = 'vercel-ci-sentinel'
-    VALUES = ['vercel-ci-sentinel'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the UpdateDeploymentCheckRunResponseVariant1Status SDK namespace.
-  module UpdateDeploymentCheckRunResponseVariant1Status
-    COMPLETED = 'completed'
-    QUEUED = 'queued'
-    RUNNING = 'running'
-    VALUES = %w[completed queued running].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUpdateProjectCheckResponseSourceVariant0Metadata
-    FIELDS = {
-      external_resource_id: 'externalResourceId',
-      integration_configuration_id: 'integrationConfigurationId',
-      integration_id: 'integrationId',
-      kind: 'kind',
-      resource_id: 'resourceId'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      integration_configuration_id
-      integration_id
-      kind
-    ].freeze
-    DECODERS = {
-      kind: lambda do |value|
-        ::OctridevVercel::UpdateProjectCheckResponseSourceVariant0Kind.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for UpdateProjectCheckResponseSourceVariant0.
-  class UpdateProjectCheckResponseSourceVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateProjectCheckResponseSourceVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateProjectCheckResponseSourceVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateProjectCheckResponseSourceVariant0Metadata::DECODERS
-
-    attr_reader :external_resource_id, :integration_configuration_id, :integration_id, :kind,
-                :resource_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUpdateProjectCheckResponseSourceVariant1Metadata
-    FIELDS = {
-      kind: 'kind',
-      webhook_id: 'webhookId'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      kind
-    ].freeze
-    DECODERS = {
-      kind: lambda do |value|
-        ::OctridevVercel::UpdateProjectCheckResponseSourceVariant1Kind.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for UpdateProjectCheckResponseSourceVariant1.
-  class UpdateProjectCheckResponseSourceVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateProjectCheckResponseSourceVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateProjectCheckResponseSourceVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateProjectCheckResponseSourceVariant1Metadata::DECODERS
-
-    attr_reader :kind, :webhook_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUpdateProjectCheckResponseSourceVariant2Metadata
-    FIELDS = {
-      external_check_name: 'externalCheckName',
-      kind: 'kind',
-      provider: 'provider'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      external_check_name
-      kind
-      provider
-    ].freeze
-    DECODERS = {
-      kind: lambda do |value|
-        ::OctridevVercel::UpdateProjectCheckResponseSourceVariant2Kind.from_value(value)
-      end,
-      provider: lambda do |value|
-        ::OctridevVercel::UpdateProjectCheckResponseSourceVariant2Provider.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for UpdateProjectCheckResponseSourceVariant2.
-  class UpdateProjectCheckResponseSourceVariant2
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateProjectCheckResponseSourceVariant2Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateProjectCheckResponseSourceVariant2Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateProjectCheckResponseSourceVariant2Metadata::DECODERS
-
-    attr_reader :external_check_name, :kind, :provider
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Defines the UpdateProjectCheckResponseSource SDK namespace.
-  module UpdateProjectCheckResponseSource
-    DISCRIMINATOR_MAPPING = {
-      'integration' => -> { UpdateProjectCheckResponseSourceVariant0 },
-      'webhook' => -> { UpdateProjectCheckResponseSourceVariant1 },
-      'git-provider' => -> { UpdateProjectCheckResponseSourceVariant2 }
-    }.freeze
-
-    def self.from_hash(hash)
-      return hash unless hash.is_a?(::Hash)
-
-      type = DISCRIMINATOR_MAPPING[hash['kind']]&.call
-      return type.from_hash(hash) if type
-
-      raise SdkValidationError.new('UpdateProjectCheckResponseSource', 'variant', "Unknown UpdateProjectCheckResponseSource discriminator: #{hash['kind'].inspect}")
-    end
-  end
-
-  # Defines the UpdateProjectCheckResponseSourceVariant0Kind SDK namespace.
-  module UpdateProjectCheckResponseSourceVariant0Kind
-    INTEGRATION = 'integration'
-    VALUES = ['integration'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateProjectCheckResponseSourceVariant0Kind', 'enum', "Unknown UpdateProjectCheckResponseSourceVariant0Kind: #{value}")
-    end
-  end
-
-  # Defines the UpdateProjectCheckResponseSourceVariant1Kind SDK namespace.
-  module UpdateProjectCheckResponseSourceVariant1Kind
-    WEBHOOK = 'webhook'
-    VALUES = ['webhook'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateProjectCheckResponseSourceVariant1Kind', 'enum', "Unknown UpdateProjectCheckResponseSourceVariant1Kind: #{value}")
-    end
-  end
-
-  # Defines the UpdateProjectCheckResponseSourceVariant2Kind SDK namespace.
-  module UpdateProjectCheckResponseSourceVariant2Kind
-    GIT_PROVIDER = 'git-provider'
-    VALUES = ['git-provider'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateProjectCheckResponseSourceVariant2Kind', 'enum', "Unknown UpdateProjectCheckResponseSourceVariant2Kind: #{value}")
-    end
-  end
-
-  # Defines the UpdateProjectCheckResponseSourceVariant2Provider SDK namespace.
-  module UpdateProjectCheckResponseSourceVariant2Provider
-    BITBUCKET = 'bitbucket'
-    GITHUB = 'github'
-    GITLAB = 'gitlab'
-    VALUES = %w[bitbucket github gitlab].freeze
-    def self.from_value(value)
-      value
-    end
-  end
+end
 end

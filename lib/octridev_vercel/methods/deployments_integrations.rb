@@ -24,6 +24,7 @@ module OctridevVercel
         outcomes: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(status_url) do
           Validation.validate_pattern('statusUrl', status_url, '^https?://|^sso:')
           Validation.validate_uri('statusUrl', status_url)
@@ -32,13 +33,13 @@ module OctridevVercel
         SdkClient.request(
           'PATCH',
           [
-            '/v1/deployments/',
+            "/v1/deployments/",
             SdkClient.encode_path_segment(deployment_id),
-            '/integrations/',
+            "/integrations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/resources/',
+            "/resources/",
             SdkClient.encode_path_segment(resource_id),
-            '/actions/',
+            "/actions/",
             SdkClient.encode_path_segment(action)
           ].join,
           config: config,
@@ -46,11 +47,11 @@ module OctridevVercel
             'status' => status,
             'statusText' => status_text,
             'statusUrl' => status_url,
-            'outcomes' => outcomes
+            'outcomes' => outcomes,
           },
           decoder: :empty,
           operation_id: 'update_integration_deployment_action',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

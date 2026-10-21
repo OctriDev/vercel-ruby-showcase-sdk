@@ -37,11 +37,12 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 50) }
 
         SdkClient.request(
           'GET',
-          '/v2/sandboxes/drives',
+          "/v2/sandboxes/drives",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
@@ -51,12 +52,12 @@ module OctridevVercel
             'namePrefix' => QueryValue.new(name_prefix, style: 'form', explode: true),
             'sortOrder' => QueryValue.new(sort_order, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::ListDrivesResponse,
           decoder: :json,
           operation_id: 'list_drives',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -70,26 +71,34 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_drive) do |config:, name_or_id:, project_id: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_drive) do |
+        config:,
+        name_or_id:,
+        project_id: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.validate_length('nameOrId', name_or_id, max: 64)
         Validation.validate_pattern('nameOrId', name_or_id, '^[a-zA-Z0-9_-]+$')
 
         SdkClient.request(
           'GET',
           [
-            '/v2/sandboxes/drives/',
+            "/v2/sandboxes/drives/",
             SdkClient.encode_path_segment(name_or_id)
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::GetDriveResponse,
           decoder: :json,
           operation_id: 'get_drive',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -109,30 +118,40 @@ module OctridevVercel
       #   The maximum quota is 16 TiB. Request a quota above 16 TiB at vercel.com
       # @param region [GetOrCreateDriveRegion] Region where the drive is stored.
       #   Defaults to iad1.
-      singleton_class.define_method(:get_or_create_drive) do |config:, name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, project_id: NOT_GIVEN, max_size_bytes: NOT_GIVEN, region: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_or_create_drive) do |
+        config:,
+        name:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        project_id: NOT_GIVEN,
+        max_size_bytes: NOT_GIVEN,
+        region: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.validate_length('name', name, max: 64)
         Validation.validate_pattern('name', name, '^[a-zA-Z0-9_-]+$')
 
         SdkClient.request(
           'POST',
           [
-            '/v2/sandboxes/drives/',
+            "/v2/sandboxes/drives/",
             SdkClient.encode_path_segment(name)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'projectId' => project_id,
             'maxSizeBytes' => max_size_bytes,
-            'region' => region
+            'region' => region,
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::GetOrCreateDriveResponse,
           decoder: :json,
           operation_id: 'get_or_create_drive',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -155,25 +174,26 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('name', name, max: 64)
         Validation.validate_pattern('name', name, '^[a-zA-Z0-9_-]+$')
 
         SdkClient.request(
           'DELETE',
           [
-            '/v2/sandboxes/drives/',
+            "/v2/sandboxes/drives/",
             SdkClient.encode_path_segment(name)
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::DeleteDriveResponse,
           decoder: :json,
           operation_id: 'delete_drive',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -198,6 +218,7 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('name', name, max: 64)
         Validation.validate_pattern('name', name, '^[a-zA-Z0-9_-]+$')
 
@@ -207,23 +228,23 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            '/v2/sandboxes/drives/',
+            "/v2/sandboxes/drives/",
             SdkClient.encode_path_segment(name),
-            '/fork'
+            "/fork"
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'name' => name2
+            'name' => name2,
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::ForkDriveResponse,
           decoder: :json,
           operation_id: 'fork_drive',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

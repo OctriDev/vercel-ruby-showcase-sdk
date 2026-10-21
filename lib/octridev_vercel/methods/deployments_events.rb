@@ -29,13 +29,29 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_deployment_events) do |config:, id_or_url:, direction: NOT_GIVEN, follow: NOT_GIVEN, limit: NOT_GIVEN, name: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, status_code: NOT_GIVEN, delimiter: NOT_GIVEN, builds: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_deployment_events) do |
+        config:,
+        id_or_url:,
+        direction: NOT_GIVEN,
+        follow: NOT_GIVEN,
+        limit: NOT_GIVEN,
+        name: NOT_GIVEN,
+        since: NOT_GIVEN,
+        until_: NOT_GIVEN,
+        status_code: NOT_GIVEN,
+        delimiter: NOT_GIVEN,
+        builds: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v3/deployments/',
+            "/v3/deployments/",
             SdkClient.encode_path_segment(id_or_url),
-            '/events'
+            "/events"
           ].join,
           config: config,
           query: {
@@ -49,12 +65,12 @@ module OctridevVercel
             'delimiter' => QueryValue.new(delimiter, style: 'form', explode: true),
             'builds' => QueryValue.new(builds, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: [::OctridevVercel::GetDeploymentEventsResponseItem],
           decoder: :json,
           operation_id: 'get_deployment_events',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

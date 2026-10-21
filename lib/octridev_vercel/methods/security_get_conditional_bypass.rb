@@ -15,14 +15,24 @@ module OctridevVercel
       #
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
-      singleton_class.define_method(:get_conditional_bypass) do |config:, project_id:, slug: NOT_GIVEN, domain: NOT_GIVEN, limit: NOT_GIVEN, offset: NOT_GIVEN, team_id: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_conditional_bypass) do |
+        config:,
+        project_id:,
+        slug: NOT_GIVEN,
+        domain: NOT_GIVEN,
+        limit: NOT_GIVEN,
+        offset: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         Validation.if_given(offset) { Validation.validate_length('offset', offset, max: 512) }
 
         SdkClient.request(
           'GET',
-          '/v1/security/firewall/bypass/rules',
+          "/v1/security/firewall/bypass/rules",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
@@ -30,12 +40,12 @@ module OctridevVercel
             'domain' => QueryValue.new(domain, style: 'form', explode: true),
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'offset' => QueryValue.new(offset, style: 'form', explode: true),
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::GetConditionalBypassResponse,
           decoder: :json,
           operation_id: 'get_conditional_bypass',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

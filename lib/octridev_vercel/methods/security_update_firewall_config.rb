@@ -24,19 +24,20 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PATCH',
-          '/v1/security/firewall/config',
+          "/v1/security/firewall/config",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: body,
           decoder: :json,
           operation_id: 'update_firewall_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

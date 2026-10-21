@@ -23,22 +23,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
           [
-            '/v1/vercel-ci/invocations/',
+            "/v1/vercel-ci/invocations/",
             SdkClient.encode_path_segment(invocation_id),
-            '/attempts'
+            "/attempts"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::VercelCi::ListVercelCiInvocationAttemptsResponse,
           decoder: :json,
           operation_id: 'list_vercel_ci_invocation_attempts',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

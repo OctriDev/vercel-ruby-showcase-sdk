@@ -30,6 +30,7 @@ module OctridevVercel
         body: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(x_vercel_digest) do
           Validation.validate_length('x-vercel-digest', x_vercel_digest, max: 40)
         end
@@ -38,22 +39,22 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          '/v2/files',
+          "/v2/files",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: body,
           content_type: 'application/octet-stream',
           decoder: :json,
           operation_id: 'upload_file',
           extra_headers: SdkClient.serialize_headers({
-                                                       'x-vercel-digest' => SdkClient.header_value(x_vercel_digest),
-                                                       'x-now-digest' => SdkClient.header_value(x_now_digest),
-                                                       'x-now-size' => SdkClient.header_value(x_now_size)
-                                                     }),
-          request_options: request_options
+            'x-vercel-digest' => SdkClient.header_value(x_vercel_digest),
+            'x-now-digest' => SdkClient.header_value(x_now_digest),
+            'x-now-size' => SdkClient.header_value(x_now_size),
+          }),
+          request_options: request_options,
         ).data
       end
 
@@ -72,22 +73,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
           [
-            '/v6/deployments/',
+            "/v6/deployments/",
             SdkClient.encode_path_segment(id),
-            '/files'
+            "/files"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: [::OctridevVercel::FileTree],
           decoder: :json,
           operation_id: 'list_deployment_files',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -99,24 +101,33 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_deployment_file_contents) do |config:, id:, file_id:, path: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_deployment_file_contents) do |
+        config:,
+        id:,
+        file_id:,
+        path: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v8/deployments/',
+            "/v8/deployments/",
             SdkClient.encode_path_segment(id),
-            '/files/',
+            "/files/",
             SdkClient.encode_path_segment(file_id)
           ].join,
           config: config,
           query: {
             'path' => QueryValue.new(path, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :empty,
           operation_id: 'get_deployment_file_contents',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

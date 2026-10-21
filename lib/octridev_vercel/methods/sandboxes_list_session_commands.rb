@@ -25,22 +25,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
           [
-            '/v2/sandboxes/sessions/',
+            "/v2/sandboxes/sessions/",
             SdkClient.encode_path_segment(session_id),
-            '/cmd'
+            "/cmd"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::ListSessionCommandsResponse,
           decoder: :json,
           operation_id: 'list_session_commands',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

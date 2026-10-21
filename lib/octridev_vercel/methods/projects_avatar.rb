@@ -26,24 +26,25 @@ module OctridevVercel
         body: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/avatar'
+            "/avatar"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: body,
           content_type: 'application/octet-stream',
           return_type: ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponse,
           decoder: :json,
           operation_id: 'upload_project_avatar',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -63,22 +64,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/avatar'
+            "/avatar"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponse,
           decoder: :json,
           operation_id: 'delete_project_avatar',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -12,23 +12,24 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesByNameForkV3Metadata
         FIELDS = {
-          network_policy: 'networkPolicy',
-          resources: 'resources',
-          ports: 'ports',
-          image: 'image',
-          timeout: 'timeout',
-          env: 'env',
-          mounts: 'mounts',
-          region: 'region',
-          failover_regions: 'failoverRegions',
-          network_id: 'networkId',
-          name: 'name',
-          persistent: 'persistent',
-          snapshot_expiration: 'snapshotExpiration',
-          keep_last_snapshots: 'keepLastSnapshots',
-          tags: 'tags'
+          network_policy: "networkPolicy",
+          resources: "resources",
+          ports: "ports",
+          image: "image",
+          timeout: "timeout",
+          env: "env",
+          mounts: "mounts",
+          region: "region",
+          failover_regions: "failoverRegions",
+          network_id: "networkId",
+          name: "name",
+          persistent: "persistent",
+          snapshot_expiration: "snapshotExpiration",
+          keep_last_snapshots: "keepLastSnapshots",
+          tags: "tags",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           network_policy: lambda do |value|
             ::OctridevVercel::CreateSandboxesByNameForkV3RequestNetworkPolicy.from_hash(value)
@@ -44,7 +45,7 @@ module OctridevVercel
           end,
           keep_last_snapshots: lambda do |value|
             ::OctridevVercel::CreateSandboxesByNameForkV3RequestKeepLastSnapshots.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -103,9 +104,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesByNameForkV3ResponseMetadata
         FIELDS = {
-          routes: 'routes',
-          sandbox: 'sandbox',
-          session: 'session'
+          routes: "routes",
+          sandbox: "sandbox",
+          session: "session",
         }.freeze
         REQUIRED_FIELDS = %i[
           routes
@@ -121,7 +122,7 @@ module OctridevVercel
           end,
           session: lambda do |value|
             ::OctridevVercel::Session.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -155,11 +156,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesV4ResourcesMetadata
         FIELDS = {
-          vcpus: 'vcpus',
-          memory: 'memory'
+          vcpus: "vcpus",
+          memory: "memory",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for CreateSandboxesV4Resources.
@@ -192,26 +195,27 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesV4Metadata
         FIELDS = {
-          network_policy: 'networkPolicy',
-          architecture: 'architecture',
-          resources: 'resources',
-          source: 'source',
-          project_id: 'projectId',
-          ports: 'ports',
-          image: 'image',
-          timeout: 'timeout',
-          env: 'env',
-          mounts: 'mounts',
-          region: 'region',
-          failover_regions: 'failoverRegions',
-          network_id: 'networkId',
-          name: 'name',
-          persistent: 'persistent',
-          snapshot_expiration: 'snapshotExpiration',
-          keep_last_snapshots: 'keepLastSnapshots',
-          tags: 'tags'
+          network_policy: "networkPolicy",
+          architecture: "architecture",
+          resources: "resources",
+          source: "source",
+          project_id: "projectId",
+          ports: "ports",
+          image: "image",
+          timeout: "timeout",
+          env: "env",
+          mounts: "mounts",
+          region: "region",
+          failover_regions: "failoverRegions",
+          network_id: "networkId",
+          name: "name",
+          persistent: "persistent",
+          snapshot_expiration: "snapshotExpiration",
+          keep_last_snapshots: "keepLastSnapshots",
+          tags: "tags",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           network_policy: lambda do |value|
             ::OctridevVercel::CreateSandboxesV4RequestNetworkPolicy.from_hash(value)
@@ -233,7 +237,7 @@ module OctridevVercel
           end,
           keep_last_snapshots: lambda do |value|
             ::OctridevVercel::CreateSandboxesV4RequestKeepLastSnapshots.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -298,9 +302,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesV4ResponseMetadata
         FIELDS = {
-          routes: 'routes',
-          sandbox: 'sandbox',
-          session: 'session'
+          routes: "routes",
+          sandbox: "sandbox",
+          session: "session",
         }.freeze
         REQUIRED_FIELDS = %i[
           routes
@@ -316,7 +320,7 @@ module OctridevVercel
           end,
           session: lambda do |value|
             ::OctridevVercel::Session.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -368,9 +372,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = %w[
-          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
-          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
+        VALUES = [
+          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
+          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
         ].freeze
         def self.from_value(value)
           value
@@ -422,9 +426,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = %w[
-          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
-          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
+        VALUES = [
+          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
+          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
         ].freeze
         def self.from_value(value)
           value
@@ -452,9 +456,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = %w[
-          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
-          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
+        VALUES = [
+          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
+          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
         ].freeze
         def self.from_value(value)
           value
@@ -465,7 +469,7 @@ module OctridevVercel
       module GetSessionCommandParameter
         TRUE = 'true'
         FALSE = 'false'
-        VALUES = %w[true false].freeze
+        VALUES = ['true', 'false'].freeze
         def self.from_value(value)
           value
         end
@@ -475,7 +479,7 @@ module OctridevVercel
       module ListDrivesParameter534ce49c
         ASC = 'asc'
         DESC = 'desc'
-        VALUES = %w[asc desc].freeze
+        VALUES = ['asc', 'desc'].freeze
         def self.from_value(value)
           value
         end
@@ -485,7 +489,7 @@ module OctridevVercel
       module CreateSandboxesV3MountsValueMode
         SNAPSHOT = 'snapshot'
         READ_WRITE = 'read-write'
-        VALUES = %w[snapshot read-write].freeze
+        VALUES = ['snapshot', 'read-write'].freeze
         def self.from_value(value)
           value
         end
@@ -495,7 +499,7 @@ module OctridevVercel
       module CreateSandboxesV2MountsValueMode
         SNAPSHOT = 'snapshot'
         READ_WRITE = 'read-write'
-        VALUES = %w[snapshot read-write].freeze
+        VALUES = ['snapshot', 'read-write'].freeze
         def self.from_value(value)
           value
         end
@@ -522,9 +526,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = %w[
-          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
-          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
+        VALUES = [
+          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
+          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
         ].freeze
         def self.from_value(value)
           value
@@ -552,9 +556,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = %w[
-          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
-          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
+        VALUES = [
+          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
+          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
         ].freeze
         def self.from_value(value)
           value
@@ -565,7 +569,7 @@ module OctridevVercel
       module CreateSandboxesV3Architecture
         AMD64 = 'amd64'
         ARM64 = 'arm64'
-        VALUES = %w[amd64 arm64].freeze
+        VALUES = ['amd64', 'arm64'].freeze
         def self.from_value(value)
           value
         end

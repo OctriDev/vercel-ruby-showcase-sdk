@@ -27,19 +27,20 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
-          '/v1/ai-gateway/routers',
+          "/v1/ai-gateway/routers",
           config: config,
           query: {
             'ownerId' => QueryValue.new(owner_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::AiGatewayRouterList,
           decoder: :json,
           operation_id: 'list_ai_gateway_routers',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -20,27 +20,36 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_vercel_ci_invocation_tree) do |config:, invocation_id:, attempt: NOT_GIVEN, follow: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_vercel_ci_invocation_tree) do |
+        config:,
+        invocation_id:,
+        attempt: NOT_GIVEN,
+        follow: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.if_given(attempt) { Validation.validate_pattern('attempt', attempt, '^[1-9][0-9]*$') }
 
         SdkClient.request(
           'GET',
           [
-            '/v1/vercel-ci/invocations/',
+            "/v1/vercel-ci/invocations/",
             SdkClient.encode_path_segment(invocation_id),
-            '/tree'
+            "/tree"
           ].join,
           config: config,
           query: {
             'attempt' => QueryValue.new(attempt, style: 'form', explode: true),
             'follow' => QueryValue.new(follow, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::VercelCi::GetVercelCiInvocationTreeResponse,
           decoder: :json,
           operation_id: 'get_vercel_ci_invocation_tree',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

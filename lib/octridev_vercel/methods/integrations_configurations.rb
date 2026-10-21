@@ -17,21 +17,30 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_configurations) do |config:, view:, installation_type: NOT_GIVEN, integration_id_or_slug: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_configurations) do |
+        config:,
+        view:,
+        installation_type: NOT_GIVEN,
+        integration_id_or_slug: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
-          '/v1/integrations/configurations',
+          "/v1/integrations/configurations",
           config: config,
           query: {
             'view' => QueryValue.new(view, style: 'form', explode: true),
             'installationType' => QueryValue.new(installation_type, style: 'form', explode: true),
             'integrationIdOrSlug' => QueryValue.new(integration_id_or_slug, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :json,
           operation_id: 'get_configurations',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

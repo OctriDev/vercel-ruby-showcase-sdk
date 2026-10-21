@@ -23,20 +23,21 @@ module OctridevVercel
         team_id: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
-          '/v1/security/firewall/bypass/rules',
+          "/v1/security/firewall/bypass/rules",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'domain' => QueryValue.new(domain, style: 'form', explode: true),
             'slug' => QueryValue.new(slug, style: 'form', explode: true),
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Security::DeleteConditionalBypassResponse,
           decoder: :json,
           operation_id: 'delete_conditional_bypass',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

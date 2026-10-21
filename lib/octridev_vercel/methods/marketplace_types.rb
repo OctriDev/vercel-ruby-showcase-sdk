@@ -12,13 +12,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateInstallationBillingPlanDetailsItemMetadata
         FIELDS = {
-          label: 'label',
-          value: 'value'
+          label: "label",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           label
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateInstallationBillingPlanDetailsItem.
@@ -47,13 +48,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateInstallationBillingPlanHighlightedDetailsItemMetadata
         FIELDS = {
-          label: 'label',
-          value: 'value'
+          label: "label",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           label
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateInstallationBillingPlanHighlightedDetailsItem.
@@ -82,15 +84,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateInstallationBillingPlanMetadata
         FIELDS = {
-          id: 'id',
-          type: 'type',
-          name: 'name',
-          description: 'description',
-          payment_method_required: 'paymentMethodRequired',
-          cost: 'cost',
-          details: 'details',
-          highlighted_details: 'highlightedDetails',
-          effective_date: 'effectiveDate'
+          id: "id",
+          type: "type",
+          name: "name",
+          description: "description",
+          payment_method_required: "paymentMethodRequired",
+          cost: "cost",
+          details: "details",
+          highlighted_details: "highlightedDetails",
+          effective_date: "effectiveDate",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -106,7 +108,7 @@ module OctridevVercel
           end,
           highlighted_details: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::UpdateInstallationBillingPlanHighlightedDetailsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -139,12 +141,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateInstallationMetadata
         FIELDS = {
-          status: 'status',
-          external_id: 'externalId',
-          billing_plan: 'billingPlan',
-          notification: 'notification'
+          status: "status",
+          external_id: "externalId",
+          billing_plan: "billingPlan",
+          notification: "notification",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::UpdateInstallationStatus.from_value(value)
@@ -154,7 +157,7 @@ module OctridevVercel
           end,
           notification: lambda do |value|
             ::OctridevVercel::UpdateInstallationRequestNotification.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -186,13 +189,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetAccountInfoResponseContactMetadata
         FIELDS = {
-          email: 'email',
-          name: 'name'
+          email: "email",
+          name: "name",
         }.freeze
         REQUIRED_FIELDS = %i[
           email
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for GetAccountInfoResponseContact.
@@ -222,9 +226,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetAccountInfoResponseMetadata
         FIELDS = {
-          contact: 'contact',
-          name: 'name',
-          url: 'url'
+          contact: "contact",
+          name: "name",
+          url: "url",
         }.freeze
         REQUIRED_FIELDS = %i[
           contact
@@ -233,7 +237,7 @@ module OctridevVercel
         DECODERS = {
           contact: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetAccountInfoResponseContact.from_hash(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           contact
@@ -271,10 +275,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetMemberResponseMetadata
         FIELDS = {
-          global_user_id: 'globalUserId',
-          id: 'id',
-          role: 'role',
-          user_email: 'userEmail'
+          global_user_id: "globalUserId",
+          id: "id",
+          role: "role",
+          user_email: "userEmail",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -283,7 +287,7 @@ module OctridevVercel
         DECODERS = {
           role: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetMemberResponseRole.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -315,13 +319,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRotateInstallationCredentialMetadata
         FIELDS = {
-          client_secret: 'client_secret',
-          client_id: 'client_id'
+          client_secret: "client_secret",
+          client_id: "client_id",
         }.freeze
         REQUIRED_FIELDS = %i[
           client_secret
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for RotateInstallationCredential.
@@ -350,10 +355,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRotateInstallationCredentialResponseMetadata
         FIELDS = {
-          access_token: 'access_token',
-          expires_in: 'expires_in',
-          scope: 'scope',
-          token_type: 'token_type'
+          access_token: "access_token",
+          expires_in: "expires_in",
+          scope: "scope",
+          token_type: "token_type",
         }.freeze
         REQUIRED_FIELDS = %i[
           access_token
@@ -364,7 +369,7 @@ module OctridevVercel
         DECODERS = {
           token_type: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::RotateInstallationCredentialResponseTokenType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -394,15 +399,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRevokeInstallationCredentialMetadata
         FIELDS = {
-          token: 'token',
-          client_secret: 'client_secret',
-          client_id: 'client_id'
+          token: "token",
+          client_secret: "client_secret",
+          client_id: "client_id",
         }.freeze
         REQUIRED_FIELDS = %i[
           token
           client_secret
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for RevokeInstallationCredential.
@@ -431,8 +437,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRevokeInstallationCredentialResponseMetadata
         FIELDS = {
-          already_revoked: 'already_revoked',
-          revoked: 'revoked'
+          already_revoked: "already_revoked",
+          revoked: "revoked",
         }.freeze
         REQUIRED_FIELDS = %i[
           already_revoked
@@ -444,7 +450,7 @@ module OctridevVercel
           end,
           revoked: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::RevokeInstallationCredentialResponseRevoked.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -474,7 +480,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateEventMetadata
         FIELDS = {
-          event: 'event'
+          event: "event",
         }.freeze
         REQUIRED_FIELDS = %i[
           event
@@ -482,7 +488,7 @@ module OctridevVercel
         DECODERS = {
           event: lambda do |value|
             ::OctridevVercel::CreateEventRequestEvent.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -513,10 +519,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetIntegrationResourcesResponseResourcesItemNotificationMetadata
         FIELDS = {
-          href: 'href',
-          level: 'level',
-          message: 'message',
-          title: 'title'
+          href: "href",
+          level: "level",
+          message: "message",
+          title: "title",
         }.freeze
         REQUIRED_FIELDS = %i[
           level
@@ -525,7 +531,7 @@ module OctridevVercel
         DECODERS = {
           level: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetIntegrationResourcesResponseResourcesItemNotificationLevel.from_value(value)
-          end
+          end,
         }.freeze
       end
 

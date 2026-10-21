@@ -18,41 +18,48 @@ module OctridevVercel
         joined_from:,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/teams/',
+            "/v1/teams/",
             SdkClient.encode_path_segment(team_id),
-            '/request'
+            "/request"
           ].join,
           config: config,
           body: {
-            'joinedFrom' => joined_from
+            'joinedFrom' => joined_from,
           },
           return_type: ::OctridevVercel::Methods::Teams::RequestAccessToTeamResponse,
           decoder: :json,
           operation_id: 'request_access_to_team',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
       # Retrieves the status of a user's request to join a team. Use `userId` to identify whose request to check; the endpoint returns the authenticated user's status when that path segment is not provided. A declined request is reported as not found.
       #
       # Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
-      singleton_class.define_method(:get_team_access_request) do |config:, user_id:, team_id:, request_options: nil|
+      singleton_class.define_method(:get_team_access_request) do |
+        config:,
+        user_id:,
+        team_id:,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/teams/',
+            "/v1/teams/",
             SdkClient.encode_path_segment(team_id),
-            '/request/',
+            "/request/",
             SdkClient.encode_path_segment(user_id)
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Teams::GetTeamAccessRequestResponse,
           decoder: :json,
           operation_id: 'get_team_access_request',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

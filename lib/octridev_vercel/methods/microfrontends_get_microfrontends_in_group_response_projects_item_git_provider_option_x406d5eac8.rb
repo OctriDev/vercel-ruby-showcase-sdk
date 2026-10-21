@@ -13,7 +13,7 @@ module OctridevVercel
       module GetMicrofrontendsInGroupResponseProjectsItemGitProviderOptionX406d5eac8e
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = %w[disabled enabled].freeze
+        VALUES = ['disabled', 'enabled'].freeze
         def self.from_value(value)
           value
         end
@@ -35,7 +35,7 @@ module OctridevVercel
         JOB = 'job'
         WEB = 'web'
         WORKER = 'worker'
-        VALUES = %w[cron job web worker].freeze
+        VALUES = ['cron', 'job', 'web', 'worker'].freeze
         def self.from_value(value)
           value
         end
@@ -77,8 +77,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = %w[
-          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+        VALUES = [
+          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
         ].freeze
         def self.from_value(value)
           value
@@ -153,7 +153,7 @@ module OctridevVercel
       module GetMicrofrontendsInGroupResponseProjectsItemAliasItemEnvironment
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[preview production].freeze
+        VALUES = ['preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -163,7 +163,7 @@ module OctridevVercel
       module GetMicrofrontendsInGroupResponseProjectsItemRollingReleaseGateAction
         PAUSE = 'pause'
         ROLLBACK = 'rollback'
-        VALUES = %w[pause rollback].freeze
+        VALUES = ['pause', 'rollback'].freeze
         def self.from_value(value)
           value
         end
@@ -174,7 +174,7 @@ module OctridevVercel
         ACCEPT = 'accept'
         CANCEL = 'cancel'
         DELETE = 'delete'
-        VALUES = %w[accept cancel delete].freeze
+        VALUES = ['accept', 'cancel', 'delete'].freeze
         def self.from_value(value)
           value
         end
@@ -299,9 +299,9 @@ module OctridevVercel
         SIN1 = 'sin1'
         SYD1 = 'syd1'
         YUL1 = 'yul1'
-        VALUES = %w[
-          arn1 bom1 cdg1 cle1 cpt1 dub1 fra1 gru1 hkg1 hnd1 iad1
-          icn1 kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
+        VALUES = [
+          'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'iad1',
+          'icn1', 'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
         ].freeze
         def self.from_value(value)
           value
@@ -313,7 +313,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[development preview production].freeze
+        VALUES = ['development', 'preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -340,9 +340,9 @@ module OctridevVercel
         SIN1 = 'sin1'
         SYD1 = 'syd1'
         YUL1 = 'yul1'
-        VALUES = %w[
-          arn1 bom1 cdg1 cle1 cpt1 dub1 fra1 gru1 hkg1 hnd1 iad1
-          icn1 kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
+        VALUES = [
+          'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'iad1',
+          'icn1', 'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
         ].freeze
         def self.from_value(value)
           value
@@ -358,8 +358,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value
@@ -431,7 +431,7 @@ module OctridevVercel
       module GetMicrofrontendsInGroupResponseProjectsItemDefaultResourceCoXb4d745fe7e
         DOWNGRADE = 'downgrade'
         UPGRADE = 'upgrade'
-        VALUES = %w[downgrade upgrade].freeze
+        VALUES = ['downgrade', 'upgrade'].freeze
         def self.from_value(value)
           value
         end
@@ -442,7 +442,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -453,7 +453,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = %w[enhanced standard turbo].freeze
+        VALUES = ['enhanced', 'standard', 'turbo'].freeze
         def self.from_value(value)
           value
         end
@@ -526,8 +526,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value
@@ -549,7 +549,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = %w[completed registered running].freeze
+        VALUES = ['completed', 'registered', 'running'].freeze
         def self.from_value(value)
           value
         end
@@ -580,7 +580,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = %w[endsWith equals startsWith].freeze
+        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
         def self.from_value(value)
           value
         end

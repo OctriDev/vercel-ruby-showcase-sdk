@@ -5,669 +5,669 @@
 
 # projects domain models
 module OctridevVercel
-  # API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4.
-  class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Metadata::DECODERS
+# API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4.
+class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Metadata::DECODERS
 
-    attr_reader :store_id, :type
+  attr_reader :store_id, :type
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5.
-  class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5.
+class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6.
-  class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6.
+class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7.
-  class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7.
+class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8.
-  class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8.
+class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9.
-  class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9.
+class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10.
-  class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10.
+class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11.
-  class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11.
+class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12.
-  class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12.
+class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13.
-  class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13.
+class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14.
-  class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14.
+class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Metadata
-    FIELDS = {
-      integration_configuration_id: 'integrationConfigurationId',
-      integration_id: 'integrationId',
-      integration_product_id: 'integrationProductId',
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      integration_configuration_id
-      integration_id
-      integration_product_id
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15.
-  class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :integration_configuration_id, :integration_id, :integration_product_id, :store_id,
-                :type
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Metadata
+  FIELDS = {
+    integration_configuration_id: "integrationConfigurationId",
+    integration_id: "integrationId",
+    integration_product_id: "integrationProductId",
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    integration_configuration_id
+    integration_id
+    integration_product_id
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15.
+class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :integration_configuration_id, :integration_id, :integration_product_id, :store_id,
+              :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Metadata
-    FIELDS = {
-      project_id: 'projectId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      project_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16.
-  class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :project_id, :type
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Metadata
+  FIELDS = {
+    project_id: "projectId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    project_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16.
+class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :project_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemMetadata
-    FIELDS = {
-      comment: 'comment',
-      configuration_id: 'configurationId',
-      content_hint: 'contentHint',
-      created_at: 'createdAt',
-      created_by: 'createdBy',
-      custom_environment_ids: 'customEnvironmentIds',
-      decrypted: 'decrypted',
-      edge_config_id: 'edgeConfigId',
-      edge_config_token_id: 'edgeConfigTokenId',
-      git_branch: 'gitBranch',
-      id: 'id',
-      key: 'key',
-      security_issues: 'securityIssues',
-      sunset_secret_id: 'sunsetSecretId',
-      system: 'system',
-      target: 'target',
-      type: 'type',
-      updated_at: 'updatedAt',
-      updated_by: 'updatedBy',
-      value: 'value',
-      visibility: 'visibility'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      key
-      security_issues
-      type
-      value
-    ].freeze
-    DECODERS = {
-      decrypted: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemDecrypted.from_value(value)
-      end,
-      security_issues: lambda do |value|
-        value&.map { |item| ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemSecurityIssuesItem.from_value(item) }
-      end,
-      system: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemSystem.from_value(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemType.from_value(value)
-      end,
-      visibility: lambda do |value|
-        ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemVisibility.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2EnvsItem.
-  class FilterProjectEnvsResponseVariant2EnvsItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :comment, :configuration_id, :content_hint, :created_at, :created_by,
-                :custom_environment_ids, :decrypted, :edge_config_id, :edge_config_token_id,
-                :git_branch, :id, :key, :security_issues, :system, :target, :type, :updated_at,
-                :updated_by, :value
-    # @return [String] This is used to identify variables that have been migrated from type secret to sensitive.
-    attr_reader :sunset_secret_id
-    # @return [FilterProjectEnvsResponseVariant2EnvsItemVisibility] User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
-    attr_reader :visibility
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2EnvsItemMetadata
+  FIELDS = {
+    comment: "comment",
+    configuration_id: "configurationId",
+    content_hint: "contentHint",
+    created_at: "createdAt",
+    created_by: "createdBy",
+    custom_environment_ids: "customEnvironmentIds",
+    decrypted: "decrypted",
+    edge_config_id: "edgeConfigId",
+    edge_config_token_id: "edgeConfigTokenId",
+    git_branch: "gitBranch",
+    id: "id",
+    key: "key",
+    security_issues: "securityIssues",
+    sunset_secret_id: "sunsetSecretId",
+    system: "system",
+    target: "target",
+    type: "type",
+    updated_at: "updatedAt",
+    updated_by: "updatedBy",
+    value: "value",
+    visibility: "visibility",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    key
+    security_issues
+    type
+    value
+  ].freeze
+  DECODERS = {
+    decrypted: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemDecrypted.from_value(value)
+    end,
+    security_issues: lambda do |value|
+      value&.map { |item| ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemSecurityIssuesItem.from_value(item) }
+    end,
+    system: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemSystem.from_value(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemType.from_value(value)
+    end,
+    visibility: lambda do |value|
+      ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItemVisibility.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2EnvsItem.
+class FilterProjectEnvsResponseVariant2EnvsItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2EnvsItemMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :comment, :configuration_id, :content_hint, :created_at, :created_by,
+              :custom_environment_ids, :decrypted, :edge_config_id, :edge_config_token_id,
+              :git_branch, :id, :key, :security_issues, :system, :target, :type, :updated_at,
+              :updated_by, :value
+  # @return [String] This is used to identify variables that have been migrated from type secret to sensitive.
+  attr_reader :sunset_secret_id
+  # @return [FilterProjectEnvsResponseVariant2EnvsItemVisibility] User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+  attr_reader :visibility
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalFilterProjectEnvsResponseVariant2Metadata
-    FIELDS = {
-      envs: 'envs',
-      hidden_production_env_count: 'hiddenProductionEnvCount'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      envs
-      hidden_production_env_count
-    ].freeze
-    DECODERS = {
-      envs: lambda do |value|
-        value&.map { |item| ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItem.from_hash(item) }
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for FilterProjectEnvsResponseVariant2.
-  class FilterProjectEnvsResponseVariant2
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalFilterProjectEnvsResponseVariant2Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalFilterProjectEnvsResponseVariant2Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :envs, :hidden_production_env_count
+# Internal model hydration metadata.
+class SdkInternalFilterProjectEnvsResponseVariant2Metadata
+  FIELDS = {
+    envs: "envs",
+    hidden_production_env_count: "hiddenProductionEnvCount",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    envs
+    hidden_production_env_count
+  ].freeze
+  DECODERS = {
+    envs: lambda do |value|
+      value&.map { |item| ::OctridevVercel::FilterProjectEnvsResponseVariant2EnvsItem.from_hash(item) }
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for FilterProjectEnvsResponseVariant2.
+class FilterProjectEnvsResponseVariant2
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalFilterProjectEnvsResponseVariant2Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalFilterProjectEnvsResponseVariant2Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalFilterProjectEnvsResponseVariant2Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :envs, :hidden_production_env_count
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the FilterProjectEnvsResponse SDK namespace.
-  module FilterProjectEnvsResponse
-    def self.from_hash(hash)
-      shape_mapping = {
-        'key' => FilterProjectEnvsResponseVariant0,
-        'pagination' => FilterProjectEnvsResponseVariant1,
-        'hiddenProductionEnvCount' => FilterProjectEnvsResponseVariant2
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      decoded unless type.nil?
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant0Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant0Type
-    REDIS_URL = 'redis-url'
-    VALUES = ['redis-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant0Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant0Type: #{value}")
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant1Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant1Type
-    REDIS_REST_API_URL = 'redis-rest-api-url'
-    VALUES = ['redis-rest-api-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant1Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant1Type: #{value}")
-    end
+# Defines the FilterProjectEnvsResponse SDK namespace.
+module FilterProjectEnvsResponse
+  def self.from_hash(hash)
+    shape_mapping = {
+      "key" => FilterProjectEnvsResponseVariant0,
+      "pagination" => FilterProjectEnvsResponseVariant1,
+      "hiddenProductionEnvCount" => FilterProjectEnvsResponseVariant2,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
   end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant0Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant0Type
+  REDIS_URL = 'redis-url'
+  VALUES = ['redis-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant0Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant0Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant1Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant1Type
+  REDIS_REST_API_URL = 'redis-rest-api-url'
+  VALUES = ['redis-rest-api-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant1Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant1Type: #{value}")
+  end
+end
 end

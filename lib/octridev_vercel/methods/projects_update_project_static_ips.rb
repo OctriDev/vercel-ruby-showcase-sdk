@@ -37,10 +37,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectTracingSamplingRulesItemMetadata
         FIELDS = {
-          rate: 'rate',
-          env: 'env',
-          request_path: 'requestPath',
-          destination: 'destination'
+          rate: "rate",
+          env: "env",
+          request_path: "requestPath",
+          destination: "destination",
         }.freeze
         REQUIRED_FIELDS = %i[
           rate
@@ -51,7 +51,7 @@ module OctridevVercel
           end,
           destination: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectTracingSamplingRulesItemDestination.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -88,15 +88,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectTracingMetadata
         FIELDS = {
-          domains: 'domains',
-          ignore_paths: 'ignorePaths',
-          sampling_rules: 'samplingRules'
+          domains: "domains",
+          ignore_paths: "ignorePaths",
+          sampling_rules: "samplingRules",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           sampling_rules: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UpdateProjectTracingSamplingRulesItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -132,14 +133,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectOidcTokenConfigMetadata
         FIELDS = {
-          enabled: 'enabled',
-          issuer_mode: 'issuerMode'
+          enabled: "enabled",
+          issuer_mode: "issuerMode",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           issuer_mode: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectOidcTokenConfigIssuerMode.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -173,8 +175,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectPasswordProtectionMetadata
         FIELDS = {
-          deployment_type: 'deploymentType',
-          password: 'password'
+          deployment_type: "deploymentType",
+          password: "password",
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment_type
@@ -182,7 +184,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectPasswordProtectionDeploymentType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -216,8 +218,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectPassportMetadata
         FIELDS = {
-          connector_id: 'connectorId',
-          deployment_type: 'deploymentType'
+          connector_id: "connectorId",
+          deployment_type: "deploymentType",
         }.freeze
         REQUIRED_FIELDS = %i[
           connector_id
@@ -225,7 +227,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectPassportDeploymentType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -256,17 +258,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectSandboxMetadata
         FIELDS = {
-          region: 'region',
-          failover_regions: 'failoverRegions'
+          region: "region",
+          failover_regions: "failoverRegions",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           region: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectSandboxRegion.from_value(value)
           end,
           failover_regions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UpdateProjectSandboxFailoverRegionsItem.from_value(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -300,7 +303,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectSsoProtectionMetadata
         FIELDS = {
-          deployment_type: 'deploymentType'
+          deployment_type: "deploymentType",
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment_type
@@ -308,7 +311,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectSsoProtectionDeploymentType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -340,13 +343,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectTrustedIpsAddressesItemMetadata
         FIELDS = {
-          value: 'value',
-          note: 'note'
+          value: "value",
+          note: "note",
         }.freeze
         REQUIRED_FIELDS = %i[
           value
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateProjectTrustedIpsAddressesItem.
@@ -378,8 +382,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectTrustedIpsMetadata
         FIELDS = {
-          deployment_type: 'deploymentType',
-          addresses: 'addresses'
+          deployment_type: "deploymentType",
+          addresses: "addresses",
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment_type
@@ -391,7 +395,7 @@ module OctridevVercel
           end,
           addresses: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UpdateProjectTrustedIpsAddressesItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -424,12 +428,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectTrustedSourcesMetadata
         FIELDS = {
-          enable_vercel_ci_same_repository: 'enableVercelCiSameRepository',
-          projects: 'projects',
-          oidc_providers: 'oidcProviders'
+          enable_vercel_ci_same_repository: "enableVercelCiSameRepository",
+          projects: "projects",
+          oidc_providers: "oidcProviders",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateProjectTrustedSources.
@@ -461,12 +467,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectOptionsAllowlistPathsItemMetadata
         FIELDS = {
-          value: 'value'
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           value
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateProjectOptionsAllowlistPathsItem.
@@ -496,7 +503,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectOptionsAllowlistMetadata
         FIELDS = {
-          paths: 'paths'
+          paths: "paths",
         }.freeze
         REQUIRED_FIELDS = %i[
           paths
@@ -504,7 +511,7 @@ module OctridevVercel
         DECODERS = {
           paths: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UpdateProjectOptionsAllowlistPathsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 

@@ -5,679 +5,680 @@
 
 # teams domain models
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalTeamLimitedSamlConnectionMetadata
-    FIELDS = {
-      connected_at: 'connectedAt',
-      last_received_webhook_event: 'lastReceivedWebhookEvent',
-      last_synced_at: 'lastSyncedAt',
-      state: 'state',
-      sync_state: 'syncState',
-      type: 'type',
-      status: 'status'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      connected_at
-      state
-      type
-      status
-    ].freeze
-    DECODERS = {
-      sync_state: lambda do |value|
-        ::OctridevVercel::TeamLimitedSamlConnectionSyncState.from_value(value)
-      end
-    }.freeze
+# Internal model hydration metadata.
+class SdkInternalTeamLimitedSamlConnectionMetadata
+  FIELDS = {
+    connected_at: "connectedAt",
+    last_received_webhook_event: "lastReceivedWebhookEvent",
+    last_synced_at: "lastSyncedAt",
+    state: "state",
+    sync_state: "syncState",
+    type: "type",
+    status: "status",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    connected_at
+    state
+    type
+    status
+  ].freeze
+  DECODERS = {
+    sync_state: lambda do |value|
+      ::OctridevVercel::TeamLimitedSamlConnectionSyncState.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for TeamLimitedSamlConnection.
+# Information for the SAML Single Sign-On configuration.
+class TeamLimitedSamlConnection
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalTeamLimitedSamlConnectionMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalTeamLimitedSamlConnectionMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalTeamLimitedSamlConnectionMetadata::DECODERS
+
+  # @return [Float] Timestamp (in milliseconds) of when the configuration was connected.
+  attr_reader :connected_at
+  # @return [Float] Timestamp (in milliseconds) of when the last webhook event was received from WorkOS.
+  attr_reader :last_received_webhook_event
+  # @return [Float] Timestamp (in milliseconds) of when the last directory sync was performed.
+  attr_reader :last_synced_at
+  # @return [String] Current state of the connection.
+  attr_reader :state
+  # @return [TeamLimitedSamlConnectionSyncState] Controls whether directory sync events are processed. - 'SETUP': Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as 'ACTIVE' for backwards compatibility.
+  attr_reader :sync_state
+  # @return [String] The Identity Provider "type", for example Okta.
+  attr_reader :type
+  # @return [String] Required `string` value serialized in the `status` wire field.
+  attr_reader :status
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for TeamLimitedSamlConnection.
-  # Information for the SAML Single Sign-On configuration.
-  class TeamLimitedSamlConnection
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalTeamLimitedSamlConnectionMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalTeamLimitedSamlConnectionMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalTeamLimitedSamlConnectionMetadata::DECODERS
-
-    # @return [Float] Timestamp (in milliseconds) of when the configuration was connected.
-    attr_reader :connected_at
-    # @return [Float] Timestamp (in milliseconds) of when the last webhook event was received from WorkOS.
-    attr_reader :last_received_webhook_event
-    # @return [Float] Timestamp (in milliseconds) of when the last directory sync was performed.
-    attr_reader :last_synced_at
-    # @return [String] Current state of the connection.
-    attr_reader :state
-    # @return [TeamLimitedSamlConnectionSyncState] Controls whether directory sync events are processed. - 'SETUP': Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as 'ACTIVE' for backwards compatibility.
-    attr_reader :sync_state
-    # @return [String] The Identity Provider "type", for example Okta.
-    attr_reader :type
-    # @return [String] Required `string` value serialized in the `status` wire field.
-    attr_reader :status
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalTeamLimitedSamlDirectoryMetadata
-    FIELDS = {
-      connected_at: 'connectedAt',
-      last_received_webhook_event: 'lastReceivedWebhookEvent',
-      last_synced_at: 'lastSyncedAt',
-      state: 'state',
-      sync_state: 'syncState',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      connected_at
-      state
-      type
-    ].freeze
-    DECODERS = {
-      sync_state: lambda do |value|
-        ::OctridevVercel::TeamLimitedSamlDirectorySyncState.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalTeamLimitedSamlDirectoryMetadata
+  FIELDS = {
+    connected_at: "connectedAt",
+    last_received_webhook_event: "lastReceivedWebhookEvent",
+    last_synced_at: "lastSyncedAt",
+    state: "state",
+    sync_state: "syncState",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    connected_at
+    state
+    type
+  ].freeze
+  DECODERS = {
+    sync_state: lambda do |value|
+      ::OctridevVercel::TeamLimitedSamlDirectorySyncState.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for TeamLimitedSamlDirectory.
+# Information for the Directory Sync configuration.
+class TeamLimitedSamlDirectory
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalTeamLimitedSamlDirectoryMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalTeamLimitedSamlDirectoryMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalTeamLimitedSamlDirectoryMetadata::DECODERS
+
+  # @return [Float] Timestamp (in milliseconds) of when the configuration was connected.
+  attr_reader :connected_at
+  # @return [Float] Timestamp (in milliseconds) of when the last webhook event was received from WorkOS.
+  attr_reader :last_received_webhook_event
+  # @return [Float] Timestamp (in milliseconds) of when the last directory sync was performed.
+  attr_reader :last_synced_at
+  # @return [String] Current state of the connection.
+  attr_reader :state
+  # @return [TeamLimitedSamlDirectorySyncState] Controls whether directory sync events are processed. - 'SETUP': Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as 'ACTIVE' for backwards compatibility.
+  attr_reader :sync_state
+  # @return [String] The Identity Provider "type", for example Okta.
+  attr_reader :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for TeamLimitedSamlDirectory.
-  # Information for the Directory Sync configuration.
-  class TeamLimitedSamlDirectory
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalTeamLimitedSamlDirectoryMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalTeamLimitedSamlDirectoryMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalTeamLimitedSamlDirectoryMetadata::DECODERS
-
-    # @return [Float] Timestamp (in milliseconds) of when the configuration was connected.
-    attr_reader :connected_at
-    # @return [Float] Timestamp (in milliseconds) of when the last webhook event was received from WorkOS.
-    attr_reader :last_received_webhook_event
-    # @return [Float] Timestamp (in milliseconds) of when the last directory sync was performed.
-    attr_reader :last_synced_at
-    # @return [String] Current state of the connection.
-    attr_reader :state
-    # @return [TeamLimitedSamlDirectorySyncState] Controls whether directory sync events are processed. - 'SETUP': Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as 'ACTIVE' for backwards compatibility.
-    attr_reader :sync_state
-    # @return [String] The Identity Provider "type", for example Okta.
-    attr_reader :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalTeamLimitedSamlMetadata
-    FIELDS = {
-      connection: 'connection',
-      directory: 'directory',
-      enforced: 'enforced'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      enforced
-    ].freeze
-    DECODERS = {
-      connection: lambda do |value|
-        ::OctridevVercel::TeamLimitedSamlConnection.from_hash(value)
-      end,
-      directory: lambda do |value|
-        ::OctridevVercel::TeamLimitedSamlDirectory.from_hash(value)
-      end,
-      enforced: lambda do |value|
-        ::OctridevVercel::TeamLimitedSamlEnforced.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalTeamLimitedSamlMetadata
+  FIELDS = {
+    connection: "connection",
+    directory: "directory",
+    enforced: "enforced",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    enforced
+  ].freeze
+  DECODERS = {
+    connection: lambda do |value|
+      ::OctridevVercel::TeamLimitedSamlConnection.from_hash(value)
+    end,
+    directory: lambda do |value|
+      ::OctridevVercel::TeamLimitedSamlDirectory.from_hash(value)
+    end,
+    enforced: lambda do |value|
+      ::OctridevVercel::TeamLimitedSamlEnforced.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for TeamLimitedSaml.
+# When "Single Sign-On (SAML)" is configured, this object contains information that allows the client-side to identify whether or not this Team has SAML enforced.
+class TeamLimitedSaml
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalTeamLimitedSamlMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalTeamLimitedSamlMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalTeamLimitedSamlMetadata::DECODERS
+
+  # @return [TeamLimitedSamlConnection] Information for the SAML Single Sign-On configuration.
+  attr_reader :connection
+  # @return [TeamLimitedSamlDirectory] Information for the Directory Sync configuration.
+  attr_reader :directory
+  # @return [TeamLimitedSamlEnforced] When `true`, interactions with the Team **must** be done with an authentication token that has been authenticated with the Team's SAML Single Sign-On provider.
+  attr_reader :enforced
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for TeamLimitedSaml.
-  # When "Single Sign-On (SAML)" is configured, this object contains information that allows the client-side to identify whether or not this Team has SAML enforced.
-  class TeamLimitedSaml
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalTeamLimitedSamlMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalTeamLimitedSamlMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalTeamLimitedSamlMetadata::DECODERS
-
-    # @return [TeamLimitedSamlConnection] Information for the SAML Single Sign-On configuration.
-    attr_reader :connection
-    # @return [TeamLimitedSamlDirectory] Information for the Directory Sync configuration.
-    attr_reader :directory
-    # @return [TeamLimitedSamlEnforced] When `true`, interactions with the Team **must** be done with an authentication token that has been authenticated with the Team's SAML Single Sign-On provider.
-    attr_reader :enforced
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalTeamLimitedMetadata
-    FIELDS = {
-      avatar: 'avatar',
-      created_at: 'createdAt',
-      id: 'id',
-      limited: 'limited',
-      limited_by: 'limitedBy',
-      membership: 'membership',
-      name: 'name',
-      org_root_team_id: 'orgRootTeamId',
-      parent_id: 'parentId',
-      saml: 'saml',
-      slug: 'slug'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      avatar
-      created_at
-      id
-      limited
-      limited_by
-      name
-      slug
-    ].freeze
-    DECODERS = {
-      limited: lambda do |value|
-        ::OctridevVercel::TeamLimitedLimited.from_value(value)
-      end,
-      limited_by: lambda do |value|
-        value&.map { |item| ::OctridevVercel::TeamLimitedLimitedByItem.from_value(item) }
-      end,
-      membership: lambda do |value|
-        ::OctridevVercel::TeamLimitedMembership.from_hash(value)
-      end,
-      saml: lambda do |value|
-        ::OctridevVercel::TeamLimitedSaml.from_hash(value)
-      end
-    }.freeze
-    NULLABLE_FIELDS = %i[
-      avatar
-      name
-    ].freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalTeamLimitedMetadata
+  FIELDS = {
+    avatar: "avatar",
+    created_at: "createdAt",
+    id: "id",
+    limited: "limited",
+    limited_by: "limitedBy",
+    membership: "membership",
+    name: "name",
+    org_root_team_id: "orgRootTeamId",
+    parent_id: "parentId",
+    saml: "saml",
+    slug: "slug",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    avatar
+    created_at
+    id
+    limited
+    limited_by
+    name
+    slug
+  ].freeze
+  DECODERS = {
+    limited: lambda do |value|
+      ::OctridevVercel::TeamLimitedLimited.from_value(value)
+    end,
+    limited_by: lambda do |value|
+      value&.map { |item| ::OctridevVercel::TeamLimitedLimitedByItem.from_value(item) }
+    end,
+    membership: lambda do |value|
+      ::OctridevVercel::TeamLimitedMembership.from_hash(value)
+    end,
+    saml: lambda do |value|
+      ::OctridevVercel::TeamLimitedSaml.from_hash(value)
+    end,
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    avatar
+    name
+  ].freeze
+end
+
+# API model for TeamLimited.
+# A limited form of data representing a Team, due to the authentication token missing privileges to read the full Team data.
+class TeamLimited
+  include ListTeamsResponseTeamsItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalTeamLimitedMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalTeamLimitedMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalTeamLimitedMetadata::DECODERS
+
+  # @return [String] The ID of the file used as avatar for this Team.
+  attr_reader :avatar
+  # @return [Float] UNIX timestamp (in milliseconds) when the Team was created.
+  attr_reader :created_at
+  # @return [String] The Team's unique identifier.
+  attr_reader :id
+  # @return [TeamLimitedLimited] Property indicating that this Team data contains only limited information, due to the authentication token missing privileges to read the full Team data or due to team having MFA enforced and the user not having MFA enabled. Re-login with the Team's configured SAML Single Sign-On provider in order to upgrade the authentication token with the necessary privileges.
+  attr_reader :limited
+  # @return [Array_of_TeamLimitedLimitedByItem] Required array value serialized in the `limitedBy` wire field.
+  attr_reader :limited_by
+  # @return [TeamLimitedMembership] The membership of the authenticated User in relation to the Team.
+  attr_reader :membership
+  # @return [String] Name associated with the Team account, or `null` if none has been provided.
+  attr_reader :name
+  # @return [String] Best-effort ID of the organization’s root billing team. When present, compare `orgRootTeamId === id` to identify the root team. It may be omitted even when `parentId` is set if organization resolution fails or the referenced organization is missing. Always omitted for non-organization teams.
+  attr_reader :org_root_team_id
+  # @return [String] The organizationId for teams that belong to an organization (set on both the organization's root team and its child teams).
+  attr_reader :parent_id
+  # @return [TeamLimitedSaml] When "Single Sign-On (SAML)" is configured, this object contains information that allows the client-side to identify whether or not this Team has SAML enforced.
+  attr_reader :saml
+  # @return [String] The Team's slug, which is unique across the Vercel platform.
+  attr_reader :slug
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for TeamLimited.
-  # A limited form of data representing a Team, due to the authentication token missing privileges to read the full Team data.
-  class TeamLimited
-    include ListTeamsResponseTeamsItem
-
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalTeamLimitedMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalTeamLimitedMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalTeamLimitedMetadata::DECODERS
-
-    # @return [String] The ID of the file used as avatar for this Team.
-    attr_reader :avatar
-    # @return [Float] UNIX timestamp (in milliseconds) when the Team was created.
-    attr_reader :created_at
-    # @return [String] The Team's unique identifier.
-    attr_reader :id
-    # @return [TeamLimitedLimited] Property indicating that this Team data contains only limited information, due to the authentication token missing privileges to read the full Team data or due to team having MFA enforced and the user not having MFA enabled. Re-login with the Team's configured SAML Single Sign-On provider in order to upgrade the authentication token with the necessary privileges.
-    attr_reader :limited
-    # @return [Array_of_TeamLimitedLimitedByItem] Required array value serialized in the `limitedBy` wire field.
-    attr_reader :limited_by
-    # @return [TeamLimitedMembership] The membership of the authenticated User in relation to the Team.
-    attr_reader :membership
-    # @return [String] Name associated with the Team account, or `null` if none has been provided.
-    attr_reader :name
-    # @return [String] Best-effort ID of the organization’s root billing team. When present, compare `orgRootTeamId === id` to identify the root team. It may be omitted even when `parentId` is set if organization resolution fails or the referenced organization is missing. Always omitted for non-organization teams.
-    attr_reader :org_root_team_id
-    # @return [String] The organizationId for teams that belong to an organization (set on both the organization's root team and its child teams).
-    attr_reader :parent_id
-    # @return [TeamLimitedSaml] When "Single Sign-On (SAML)" is configured, this object contains information that allows the client-side to identify whether or not this Team has SAML enforced.
-    attr_reader :saml
-    # @return [String] The Team's slug, which is unique across the Vercel platform.
-    attr_reader :slug
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalTeamLimitedMetadata::NULLABLE_FIELDS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalTeamLimitedMetadata::NULLABLE_FIELDS)
   end
 
-  # Defines the TeamLimitedLimited SDK namespace.
-  module TeamLimitedLimited
-    TRUE = true
-    VALUES = [true].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('TeamLimitedLimited', 'enum', "Unknown TeamLimitedLimited: #{value}")
-    end
+# Defines the TeamLimitedLimited SDK namespace.
+module TeamLimitedLimited
+  TRUE = true
+  VALUES = [true].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('TeamLimitedLimited', 'enum', "Unknown TeamLimitedLimited: #{value}")
+  end
+end
+
+# Defines the TeamLimitedLimitedByItem SDK namespace.
+module TeamLimitedLimitedByItem
+  INVALIDATED = 'invalidated'
+  MFA = 'mfa'
+  SCOPE = 'scope'
+  VALUES = ['invalidated', 'mfa', 'scope'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the TeamLimitedMembershipConfirmed SDK namespace.
+module TeamLimitedMembershipConfirmed
+  TRUE = true
+  VALUES = [true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the TeamLimitedMembershipIsOrgBackingTeamMembership SDK namespace.
+module TeamLimitedMembershipIsOrgBackingTeamMembership
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the TeamLimitedMembershipJoinedFromOrigin SDK namespace.
+module TeamLimitedMembershipJoinedFromOrigin
+  ACCOUNT_UPDATE = 'account-update'
+  BITBUCKET = 'bitbucket'
+  DSYNC = 'dsync'
+  FEEDBACK = 'feedback'
+  GITHUB = 'github'
+  GITLAB = 'gitlab'
+  IMPORT = 'import'
+  LINK = 'link'
+  MAIL = 'mail'
+  NSNB_AUTO_APPROVE = 'nsnb-auto-approve'
+  NSNB_HOBBY_UPGRADE = 'nsnb-hobby-upgrade'
+  NSNB_INVITE = 'nsnb-invite'
+  NSNB_REDEPLOY = 'nsnb-redeploy'
+  NSNB_REDEPLOY_ATTRIBUTION_CARD = 'nsnb-redeploy-attribution-card'
+  NSNB_REQUEST_ACCESS = 'nsnb-request-access'
+  NSNB_VIEWER_UPGRADE = 'nsnb-viewer-upgrade'
+  ORGANIZATION_TEAMS = 'organization-teams'
+  SAML = 'saml'
+  TEAMS = 'teams'
+  VALUES = [
+    'account-update', 'bitbucket', 'dsync', 'feedback', 'github', 'gitlab', 'import', 'link', 'mail',
+    'nsnb-auto-approve', 'nsnb-hobby-upgrade', 'nsnb-invite', 'nsnb-redeploy',
+    'nsnb-redeploy-attribution-card', 'nsnb-request-access', 'nsnb-viewer-upgrade',
+    'organization-teams', 'saml', 'teams'
+  ].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the TeamLimitedMembershipRole SDK namespace.
+module TeamLimitedMembershipRole
+  BILLING = 'BILLING'
+  CONTRIBUTOR = 'CONTRIBUTOR'
+  DEVELOPER = 'DEVELOPER'
+  MEMBER = 'MEMBER'
+  OWNER = 'OWNER'
+  SECURITY = 'SECURITY'
+  VIEWER = 'VIEWER'
+  VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
+  VALUES = [
+    'BILLING', 'CONTRIBUTOR', 'DEVELOPER', 'MEMBER', 'OWNER', 'SECURITY', 'VIEWER',
+    'VIEWER_FOR_PLUS'
+  ].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the TeamLimitedMembershipTeamPermissionsItem SDK namespace.
+module TeamLimitedMembershipTeamPermissionsItem
+  AI_GATEWAY_BUDGET_MANAGER = 'AiGatewayBudgetManager'
+  AI_GATEWAY_CREDITS = 'AiGatewayCredits'
+  AI_GATEWAY_SETTINGS = 'AiGatewaySettings'
+  AI_GATEWAY_TRANSCRIPTS_MANAGER = 'AiGatewayTranscriptsManager'
+  AI_GATEWAY_TRANSCRIPTS_VIEWER = 'AiGatewayTranscriptsViewer'
+  AI_GATEWAY_USER = 'AiGatewayUser'
+  CONNECTOR_MANAGER = 'ConnectorManager'
+  CREATE_PROJECT = 'CreateProject'
+  ENV_VARIABLE_MANAGER = 'EnvVariableManager'
+  ENVIRONMENT_MANAGER = 'EnvironmentManager'
+  FULL_PRODUCTION_DEPLOYMENT = 'FullProductionDeployment'
+  INTEGRATION_MANAGER = 'IntegrationManager'
+  ORG_ADMIN = 'OrgAdmin'
+  ORG_VIEWER = 'OrgViewer'
+  USAGE_VIEWER = 'UsageViewer'
+  V0_BUILDER = 'V0Builder'
+  V0_CHATTER = 'V0Chatter'
+  V0_VIEWER = 'V0Viewer'
+  WORKFLOW_DECRYPTOR = 'WorkflowDecryptor'
+  VALUES = [
+    'AiGatewayBudgetManager', 'AiGatewayCredits', 'AiGatewaySettings', 'AiGatewayTranscriptsManager',
+    'AiGatewayTranscriptsViewer', 'AiGatewayUser', 'ConnectorManager', 'CreateProject',
+    'EnvVariableManager', 'EnvironmentManager', 'FullProductionDeployment', 'IntegrationManager',
+    'OrgAdmin', 'OrgViewer', 'UsageViewer', 'V0Builder', 'V0Chatter', 'V0Viewer',
+    'WorkflowDecryptor'
+  ].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the TeamLimitedMembershipTeamRolesItem SDK namespace.
+module TeamLimitedMembershipTeamRolesItem
+  BILLING = 'BILLING'
+  CONTRIBUTOR = 'CONTRIBUTOR'
+  DEVELOPER = 'DEVELOPER'
+  MEMBER = 'MEMBER'
+  OWNER = 'OWNER'
+  SECURITY = 'SECURITY'
+  VIEWER = 'VIEWER'
+  VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
+  VALUES = [
+    'BILLING', 'CONTRIBUTOR', 'DEVELOPER', 'MEMBER', 'OWNER', 'SECURITY', 'VIEWER',
+    'VIEWER_FOR_PLUS'
+  ].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the TeamLimitedSamlConnectionSyncState SDK namespace.
+module TeamLimitedSamlConnectionSyncState
+  ACTIVE = 'ACTIVE'
+  SETUP = 'SETUP'
+  VALUES = ['ACTIVE', 'SETUP'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the TeamLimitedSamlDirectorySyncState SDK namespace.
+module TeamLimitedSamlDirectorySyncState
+  ACTIVE = 'ACTIVE'
+  SETUP = 'SETUP'
+  VALUES = ['ACTIVE', 'SETUP'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the TeamLimitedSamlEnforced SDK namespace.
+module TeamLimitedSamlEnforced
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0LintMetadata
+  FIELDS = {
+    targets: "targets",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    targets
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UpdateTeamRequestDefaultProjectJobsVariant0Lint.
+class UpdateTeamRequestDefaultProjectJobsVariant0Lint
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0LintMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0LintMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0LintMetadata::DECODERS
+
+  attr_reader :targets
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the TeamLimitedLimitedByItem SDK namespace.
-  module TeamLimitedLimitedByItem
-    INVALIDATED = 'invalidated'
-    MFA = 'mfa'
-    SCOPE = 'scope'
-    VALUES = %w[invalidated mfa scope].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the TeamLimitedMembershipConfirmed SDK namespace.
-  module TeamLimitedMembershipConfirmed
-    TRUE = true
-    VALUES = [true].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0TypecheckMetadata
+  FIELDS = {
+    targets: "targets",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    targets
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UpdateTeamRequestDefaultProjectJobsVariant0Typecheck.
+class UpdateTeamRequestDefaultProjectJobsVariant0Typecheck
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0TypecheckMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0TypecheckMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0TypecheckMetadata::DECODERS
+
+  attr_reader :targets
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the TeamLimitedMembershipIsOrgBackingTeamMembership SDK namespace.
-  module TeamLimitedMembershipIsOrgBackingTeamMembership
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the TeamLimitedMembershipJoinedFromOrigin SDK namespace.
-  module TeamLimitedMembershipJoinedFromOrigin
-    ACCOUNT_UPDATE = 'account-update'
-    BITBUCKET = 'bitbucket'
-    DSYNC = 'dsync'
-    FEEDBACK = 'feedback'
-    GITHUB = 'github'
-    GITLAB = 'gitlab'
-    IMPORT = 'import'
-    LINK = 'link'
-    MAIL = 'mail'
-    NSNB_AUTO_APPROVE = 'nsnb-auto-approve'
-    NSNB_HOBBY_UPGRADE = 'nsnb-hobby-upgrade'
-    NSNB_INVITE = 'nsnb-invite'
-    NSNB_REDEPLOY = 'nsnb-redeploy'
-    NSNB_REDEPLOY_ATTRIBUTION_CARD = 'nsnb-redeploy-attribution-card'
-    NSNB_REQUEST_ACCESS = 'nsnb-request-access'
-    NSNB_VIEWER_UPGRADE = 'nsnb-viewer-upgrade'
-    ORGANIZATION_TEAMS = 'organization-teams'
-    SAML = 'saml'
-    TEAMS = 'teams'
-    VALUES = %w[
-      account-update bitbucket dsync feedback github gitlab import link mail
-      nsnb-auto-approve nsnb-hobby-upgrade nsnb-invite nsnb-redeploy
-      nsnb-redeploy-attribution-card nsnb-request-access nsnb-viewer-upgrade
-      organization-teams saml teams
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0Metadata
+  FIELDS = {
+    lint: "lint",
+    typecheck: "typecheck",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    lint: lambda do |value|
+      ::OctridevVercel::UpdateTeamRequestDefaultProjectJobsVariant0Lint.from_hash(value)
+    end,
+    typecheck: lambda do |value|
+      ::OctridevVercel::UpdateTeamRequestDefaultProjectJobsVariant0Typecheck.from_hash(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateTeamRequestDefaultProjectJobsVariant0.
+class UpdateTeamRequestDefaultProjectJobsVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0Metadata::DECODERS
+
+  attr_reader :lint, :typecheck
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the TeamLimitedMembershipRole SDK namespace.
-  module TeamLimitedMembershipRole
-    BILLING = 'BILLING'
-    CONTRIBUTOR = 'CONTRIBUTOR'
-    DEVELOPER = 'DEVELOPER'
-    MEMBER = 'MEMBER'
-    OWNER = 'OWNER'
-    SECURITY = 'SECURITY'
-    VIEWER = 'VIEWER'
-    VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
-    VALUES = %w[
-      BILLING CONTRIBUTOR DEVELOPER MEMBER OWNER SECURITY VIEWER
-      VIEWER_FOR_PLUS
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the TeamLimitedMembershipTeamPermissionsItem SDK namespace.
-  module TeamLimitedMembershipTeamPermissionsItem
-    AI_GATEWAY_BUDGET_MANAGER = 'AiGatewayBudgetManager'
-    AI_GATEWAY_CREDITS = 'AiGatewayCredits'
-    AI_GATEWAY_SETTINGS = 'AiGatewaySettings'
-    AI_GATEWAY_TRANSCRIPTS_MANAGER = 'AiGatewayTranscriptsManager'
-    AI_GATEWAY_TRANSCRIPTS_VIEWER = 'AiGatewayTranscriptsViewer'
-    AI_GATEWAY_USER = 'AiGatewayUser'
-    CONNECTOR_MANAGER = 'ConnectorManager'
-    CREATE_PROJECT = 'CreateProject'
-    ENV_VARIABLE_MANAGER = 'EnvVariableManager'
-    ENVIRONMENT_MANAGER = 'EnvironmentManager'
-    FULL_PRODUCTION_DEPLOYMENT = 'FullProductionDeployment'
-    INTEGRATION_MANAGER = 'IntegrationManager'
-    ORG_ADMIN = 'OrgAdmin'
-    ORG_VIEWER = 'OrgViewer'
-    USAGE_VIEWER = 'UsageViewer'
-    V0_BUILDER = 'V0Builder'
-    V0_CHATTER = 'V0Chatter'
-    V0_VIEWER = 'V0Viewer'
-    WORKFLOW_DECRYPTOR = 'WorkflowDecryptor'
-    VALUES = %w[
-      AiGatewayBudgetManager AiGatewayCredits AiGatewaySettings AiGatewayTranscriptsManager
-      AiGatewayTranscriptsViewer AiGatewayUser ConnectorManager CreateProject
-      EnvVariableManager EnvironmentManager FullProductionDeployment IntegrationManager
-      OrgAdmin OrgViewer UsageViewer V0Builder V0Chatter V0Viewer
-      WorkflowDecryptor
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Defines the UpdateTeamRequestDefaultProjectJobs SDK namespace.
+module UpdateTeamRequestDefaultProjectJobs
+  def self.from_hash(hash)
+    return hash if hash.is_a?(::String)
+    return UpdateTeamRequestDefaultProjectJobsVariant0.from_hash(hash)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX48e2d04b8eMetadata
+  FIELDS = {
+    type: "type",
+    target: "target",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    target
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd21b7dbc52.from_value(value)
+    end,
+    target: lambda do |value|
+      ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX919ba0edf7.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX48e2d04b8e.
+class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX48e2d04b8e
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX48e2d04b8eMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX48e2d04b8eMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX48e2d04b8eMetadata::DECODERS
+
+  attr_reader :type, :target
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the TeamLimitedMembershipTeamRolesItem SDK namespace.
-  module TeamLimitedMembershipTeamRolesItem
-    BILLING = 'BILLING'
-    CONTRIBUTOR = 'CONTRIBUTOR'
-    DEVELOPER = 'DEVELOPER'
-    MEMBER = 'MEMBER'
-    OWNER = 'OWNER'
-    SECURITY = 'SECURITY'
-    VIEWER = 'VIEWER'
-    VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
-    VALUES = %w[
-      BILLING CONTRIBUTOR DEVELOPER MEMBER OWNER SECURITY VIEWER
-      VIEWER_FOR_PLUS
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the TeamLimitedSamlConnectionSyncState SDK namespace.
-  module TeamLimitedSamlConnectionSyncState
-    ACTIVE = 'ACTIVE'
-    SETUP = 'SETUP'
-    VALUES = %w[ACTIVE SETUP].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX01d5dd705bMetadata
+  FIELDS = {
+    type: "type",
+    environment_id: "environmentId",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    environment_id
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXc719301468.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX01d5dd705b.
+class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX01d5dd705b
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX01d5dd705bMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX01d5dd705bMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX01d5dd705bMetadata::DECODERS
+
+  attr_reader :type, :environment_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the TeamLimitedSamlDirectorySyncState SDK namespace.
-  module TeamLimitedSamlDirectorySyncState
-    ACTIVE = 'ACTIVE'
-    SETUP = 'SETUP'
-    VALUES = %w[ACTIVE SETUP].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the TeamLimitedSamlEnforced SDK namespace.
-  module TeamLimitedSamlEnforced
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX46a4a480fbMetadata
+  FIELDS = {
+    provider: "provider",
+    org: "org",
+    repo: "repo",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    provider
+    org
+  ].freeze
+  DECODERS = {
+    provider: lambda do |value|
+      ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXe8fceff53c.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX46a4a480fb.
+class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX46a4a480fb
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX46a4a480fbMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX46a4a480fbMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX46a4a480fbMetadata::DECODERS
+
+  attr_reader :provider, :org, :repo
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0LintMetadata
-    FIELDS = {
-      targets: 'targets'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      targets
-    ].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UpdateTeamRequestDefaultProjectJobsVariant0Lint.
-  class UpdateTeamRequestDefaultProjectJobsVariant0Lint
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0LintMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0LintMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0LintMetadata::DECODERS
-
-    attr_reader :targets
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
-
-  # Internal model hydration metadata.
-  class SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0TypecheckMetadata
-    FIELDS = {
-      targets: 'targets'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      targets
-    ].freeze
-    DECODERS = {}.freeze
-  end
-
-  # API model for UpdateTeamRequestDefaultProjectJobsVariant0Typecheck.
-  class UpdateTeamRequestDefaultProjectJobsVariant0Typecheck
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0TypecheckMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0TypecheckMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0TypecheckMetadata::DECODERS
-
-    attr_reader :targets
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0Metadata
-    FIELDS = {
-      lint: 'lint',
-      typecheck: 'typecheck'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      lint: lambda do |value|
-        ::OctridevVercel::UpdateTeamRequestDefaultProjectJobsVariant0Lint.from_hash(value)
-      end,
-      typecheck: lambda do |value|
-        ::OctridevVercel::UpdateTeamRequestDefaultProjectJobsVariant0Typecheck.from_hash(value)
-      end
-    }.freeze
-  end
-
-  # API model for UpdateTeamRequestDefaultProjectJobsVariant0.
-  class UpdateTeamRequestDefaultProjectJobsVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateTeamRequestDefaultProjectJobsVariant0Metadata::DECODERS
-
-    attr_reader :lint, :typecheck
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Defines the UpdateTeamRequestDefaultProjectJobs SDK namespace.
-  module UpdateTeamRequestDefaultProjectJobs
-    def self.from_hash(hash)
-      return hash if hash.is_a?(::String)
-
-      UpdateTeamRequestDefaultProjectJobsVariant0.from_hash(hash)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX48e2d04b8eMetadata
-    FIELDS = {
-      type: 'type',
-      target: 'target'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      target
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd21b7dbc52.from_value(value)
-      end,
-      target: lambda do |value|
-        ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX919ba0edf7.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX48e2d04b8e.
-  class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX48e2d04b8e
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX48e2d04b8eMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX48e2d04b8eMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX48e2d04b8eMetadata::DECODERS
-
-    attr_reader :type, :target
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX01d5dd705bMetadata
-    FIELDS = {
-      type: 'type',
-      environment_id: 'environmentId'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      environment_id
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXc719301468.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX01d5dd705b.
-  class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX01d5dd705b
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX01d5dd705bMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX01d5dd705bMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX01d5dd705bMetadata::DECODERS
-
-    attr_reader :type, :environment_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX46a4a480fbMetadata
-    FIELDS = {
-      provider: 'provider',
-      org: 'org',
-      repo: 'repo'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      provider
-      org
-    ].freeze
-    DECODERS = {
-      provider: lambda do |value|
-        ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXe8fceff53c.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX46a4a480fb.
-  class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX46a4a480fb
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX46a4a480fbMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX46a4a480fbMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX46a4a480fbMetadata::DECODERS
-
-    attr_reader :provider, :org, :repo
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
+end
 end

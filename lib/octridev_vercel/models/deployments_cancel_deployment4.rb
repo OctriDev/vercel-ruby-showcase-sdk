@@ -5,664 +5,669 @@
 
 # deployments domain models
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseGitSourceVariant17Metadata
-    FIELDS = {
-      commit_metadata: 'commitMetadata',
-      org: 'org',
-      ref: 'ref',
-      repo: 'repo',
-      repo_id: 'repoId',
-      repo_pushed_at: 'repoPushedAt',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      org
-      ref
-      repo
-      sha
-      type
-    ].freeze
-    DECODERS = {
-      commit_metadata: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseGitSourceVariant17CommitMetadata.from_hash(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseGitSourceVariant17Type.from_value(value)
-      end
-    }.freeze
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseGitSourceVariant17Metadata
+  FIELDS = {
+    commit_metadata: "commitMetadata",
+    org: "org",
+    ref: "ref",
+    repo: "repo",
+    repo_id: "repoId",
+    repo_pushed_at: "repoPushedAt",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    org
+    ref
+    repo
+    sha
+    type
+  ].freeze
+  DECODERS = {
+    commit_metadata: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseGitSourceVariant17CommitMetadata.from_hash(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseGitSourceVariant17Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseGitSourceVariant17.
+class CancelDeploymentResponseGitSourceVariant17
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseGitSourceVariant17Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseGitSourceVariant17Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseGitSourceVariant17Metadata::DECODERS
+
+  attr_reader :commit_metadata, :org, :ref, :repo, :repo_id, :repo_pushed_at, :sha, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseGitSourceVariant17.
-  class CancelDeploymentResponseGitSourceVariant17
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseGitSourceVariant17Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseGitSourceVariant17Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseGitSourceVariant17Metadata::DECODERS
-
-    attr_reader :commit_metadata, :org, :ref, :repo, :repo_id, :repo_pushed_at, :sha, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseGitSourceVariant18Metadata
-    FIELDS = {
-      owner: 'owner',
-      ref: 'ref',
-      repo: 'repo',
-      repo_id: 'repoId',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      owner
-      ref
-      repo
-      repo_id
-      sha
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseGitSourceVariant18Type.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseGitSourceVariant18Metadata
+  FIELDS = {
+    owner: "owner",
+    ref: "ref",
+    repo: "repo",
+    repo_id: "repoId",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    owner
+    ref
+    repo
+    repo_id
+    sha
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseGitSourceVariant18Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseGitSourceVariant18.
+class CancelDeploymentResponseGitSourceVariant18
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseGitSourceVariant18Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseGitSourceVariant18Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseGitSourceVariant18Metadata::DECODERS
+
+  attr_reader :owner, :ref, :repo, :repo_id, :sha, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for CancelDeploymentResponseGitSourceVariant18.
-  class CancelDeploymentResponseGitSourceVariant18
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseGitSourceVariant18Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseGitSourceVariant18Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseGitSourceVariant18Metadata::DECODERS
-
-    attr_reader :owner, :ref, :repo, :repo_id, :sha, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseGitSource SDK namespace.
-  module CancelDeploymentResponseGitSource
-    def self.from_hash(hash)
-      shape_mapping = {
-        'gitUrl' => CancelDeploymentResponseGitSourceVariant11
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      lossy = nil
-      [CancelDeploymentResponseGitSourceVariant0, CancelDeploymentResponseGitSourceVariant1, CancelDeploymentResponseGitSourceVariant2, CancelDeploymentResponseGitSourceVariant3, CancelDeploymentResponseGitSourceVariant4, CancelDeploymentResponseGitSourceVariant5, CancelDeploymentResponseGitSourceVariant6, CancelDeploymentResponseGitSourceVariant7, CancelDeploymentResponseGitSourceVariant8, CancelDeploymentResponseGitSourceVariant9, CancelDeploymentResponseGitSourceVariant10, CancelDeploymentResponseGitSourceVariant12, CancelDeploymentResponseGitSourceVariant13, CancelDeploymentResponseGitSourceVariant14, CancelDeploymentResponseGitSourceVariant15, CancelDeploymentResponseGitSourceVariant16, CancelDeploymentResponseGitSourceVariant17, CancelDeploymentResponseGitSourceVariant18].each do |type|
-        decoded = type.from_hash(hash)
-        return decoded if SdkModel.keeps_every_key?(hash, decoded)
+# Defines the CancelDeploymentResponseGitSource SDK namespace.
+module CancelDeploymentResponseGitSource
+  def self.from_hash(hash)
+    shape_mapping = {
+      "gitUrl" => CancelDeploymentResponseGitSourceVariant11,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    lossy = nil
+    [CancelDeploymentResponseGitSourceVariant0, CancelDeploymentResponseGitSourceVariant1, CancelDeploymentResponseGitSourceVariant2, CancelDeploymentResponseGitSourceVariant3, CancelDeploymentResponseGitSourceVariant4, CancelDeploymentResponseGitSourceVariant5, CancelDeploymentResponseGitSourceVariant6, CancelDeploymentResponseGitSourceVariant7, CancelDeploymentResponseGitSourceVariant8, CancelDeploymentResponseGitSourceVariant9, CancelDeploymentResponseGitSourceVariant10, CancelDeploymentResponseGitSourceVariant12, CancelDeploymentResponseGitSourceVariant13, CancelDeploymentResponseGitSourceVariant14, CancelDeploymentResponseGitSourceVariant15, CancelDeploymentResponseGitSourceVariant16, CancelDeploymentResponseGitSourceVariant17, CancelDeploymentResponseGitSourceVariant18].each do |type|
+      decoded = type.from_hash(hash)
+      return decoded if SdkModel.keeps_every_key?(hash, decoded)
 
-        lossy ||= decoded
-      rescue ::StandardError
-        next
-      end
-      lossy unless lossy.nil?
+      lossy ||= decoded
+    rescue ::StandardError
+      next
     end
+    return lossy unless lossy.nil?
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant0Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant0Type
+  GITHUB = 'github'
+  VALUES = ['github'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant1Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant1Type
+  GITHUB = 'github'
+  VALUES = ['github'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant10Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant10Type
+  CURSOR_ORIGIN = 'cursor-origin'
+  VALUES = ['cursor-origin'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant11Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant11Type
+  CUSTOM = 'custom'
+  VALUES = ['custom'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant12Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant12Type
+  GITHUB = 'github'
+  VALUES = ['github'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant13Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant13Type
+  GITHUB_CUSTOM_HOST = 'github-custom-host'
+  VALUES = ['github-custom-host'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant14Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant14Type
+  GITHUB_LIMITED = 'github-limited'
+  VALUES = ['github-limited'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant15Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant15Type
+  GITLAB = 'gitlab'
+  VALUES = ['gitlab'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant16Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant16Type
+  BITBUCKET = 'bitbucket'
+  VALUES = ['bitbucket'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant17Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant17Type
+  VERCEL = 'vercel'
+  VALUES = ['vercel'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant18Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant18Type
+  CURSOR_ORIGIN = 'cursor-origin'
+  VALUES = ['cursor-origin'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant2Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant2Type
+  GITHUB_CUSTOM_HOST = 'github-custom-host'
+  VALUES = ['github-custom-host'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant3Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant3Type
+  GITHUB_CUSTOM_HOST = 'github-custom-host'
+  VALUES = ['github-custom-host'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant4Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant4Type
+  GITHUB_LIMITED = 'github-limited'
+  VALUES = ['github-limited'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant5Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant5Type
+  GITHUB_LIMITED = 'github-limited'
+  VALUES = ['github-limited'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant6Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant6Type
+  GITLAB = 'gitlab'
+  VALUES = ['gitlab'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant7Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant7Type
+  BITBUCKET = 'bitbucket'
+  VALUES = ['bitbucket'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant8Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant8Type
+  BITBUCKET = 'bitbucket'
+  VALUES = ['bitbucket'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseGitSourceVariant9Type SDK namespace.
+module CancelDeploymentResponseGitSourceVariant9Type
+  VERCEL = 'vercel'
+  VALUES = ['vercel'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseMicrofrontendsVariant0Metadata
+  FIELDS = {
+    default_app_project_name: "defaultAppProjectName",
+    default_route: "defaultRoute",
+    group_ids: "groupIds",
+    is_default_app: "isDefaultApp",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    default_app_project_name
+    group_ids
+  ].freeze
+  DECODERS = {
+    is_default_app: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseMicrofrontendsVariant0IsDefaultApp.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseMicrofrontendsVariant0.
+class CancelDeploymentResponseMicrofrontendsVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseMicrofrontendsVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseMicrofrontendsVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseMicrofrontendsVariant0Metadata::DECODERS
+
+  attr_reader :is_default_app
+  # @return [String] The project name of the default app of this deployment's microfrontends group.
+  attr_reader :default_app_project_name
+  # @return [String] A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI.
+  attr_reader :default_route
+  # @return [Array_of_String] The group of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+  attr_reader :group_ids
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant0Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant0Type
-    GITHUB = 'github'
-    VALUES = ['github'].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant1Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant1Type
-    GITHUB = 'github'
-    VALUES = ['github'].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseMicrofrontendsVariant1Metadata
+  FIELDS = {
+    default_app_project_name: "defaultAppProjectName",
+    default_route: "defaultRoute",
+    group_ids: "groupIds",
+    is_default_app: "isDefaultApp",
+    mfe_config_upload_state: "mfeConfigUploadState",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    default_app_project_name
+    group_ids
+    is_default_app
+  ].freeze
+  DECODERS = {
+    is_default_app: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseMicrofrontendsVariant1IsDefaultApp.from_value(value)
+    end,
+    mfe_config_upload_state: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseMicrofrontendsVariant1MfeConfigUploadState.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseMicrofrontendsVariant1.
+class CancelDeploymentResponseMicrofrontendsVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseMicrofrontendsVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseMicrofrontendsVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseMicrofrontendsVariant1Metadata::DECODERS
+
+  attr_reader :is_default_app
+  # @return [String] The project name of the default app of this deployment's microfrontends group.
+  attr_reader :default_app_project_name
+  # @return [String] A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI.
+  attr_reader :default_route
+  # @return [Array_of_String] The group of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+  attr_reader :group_ids
+  # @return [CancelDeploymentResponseMicrofrontendsVariant1MfeConfigUploadState] The result of the microfrontends config upload during deployment creation / build. Only set for default app deployments. The config upload is attempted during deployment create, and then again during the build. If the config is not in the root directory, or the deployment is prebuilt, the config cannot be uploaded during deployment create. The upload during deployment build finds the config even if it's not in the root directory, as it has access to all files. Uploading the…
+  attr_reader :mfe_config_upload_state
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant10Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant10Type
-    CURSOR_ORIGIN = 'cursor-origin'
-    VALUES = ['cursor-origin'].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant11Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant11Type
-    CUSTOM = 'custom'
-    VALUES = ['custom'].freeze
-    def self.from_value(value)
-      value
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Defines the CancelDeploymentResponseMicrofrontends SDK namespace.
+module CancelDeploymentResponseMicrofrontends
+  def self.from_hash(hash)
+    lossy = nil
+    [CancelDeploymentResponseMicrofrontendsVariant0, CancelDeploymentResponseMicrofrontendsVariant1].each do |type|
+      decoded = type.from_hash(hash)
+      return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+      lossy ||= decoded
+    rescue ::StandardError
+      next
     end
+    return lossy unless lossy.nil?
+  end
+end
+
+# Defines the CancelDeploymentResponseMicrofrontendsVariant0IsDefaultApp SDK namespace.
+module CancelDeploymentResponseMicrofrontendsVariant0IsDefaultApp
+  FALSE = false
+  VALUES = [false].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseMicrofrontendsVariant1IsDefaultApp SDK namespace.
+module CancelDeploymentResponseMicrofrontendsVariant1IsDefaultApp
+  TRUE = true
+  VALUES = [true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CancelDeploymentResponseMicrofrontendsVariant1MfeConfigUploadState SDK namespace.
+module CancelDeploymentResponseMicrofrontendsVariant1MfeConfigUploadState
+  NO_CONFIG = 'no_config'
+  SUCCESS = 'success'
+  WAITING_ON_BUILD = 'waiting_on_build'
+  VALUES = ['no_config', 'success', 'waiting_on_build'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseRoutesItemVariant0DestinationVariant1Metadata
+  FIELDS = {
+    path: "path",
+    service: "service",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    service
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseRoutesItemVariant0DestinationVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseRoutesItemVariant0DestinationVariant1.
+class CancelDeploymentResponseRoutesItemVariant0DestinationVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0DestinationVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0DestinationVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseRoutesItemVariant0DestinationVariant1Metadata::DECODERS
+
+  attr_reader :service
+  # @return [String] Routing-only path used to select a route inside the target service.
+  attr_reader :path
+  # @return [CancelDeploymentResponseRoutesItemVariant0DestinationVariant1Type] Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+  attr_reader :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant12Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant12Type
-    GITHUB = 'github'
-    VALUES = ['github'].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant13Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant13Type
-    GITHUB_CUSTOM_HOST = 'github-custom-host'
-    VALUES = ['github-custom-host'].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant1Metadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant1.
+class CancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant1Metadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant14Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant14Type
-    GITHUB_LIMITED = 'github-limited'
-    VALUES = ['github-limited'].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant15Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant15Type
-    GITLAB = 'gitlab'
-    VALUES = ['gitlab'].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0Metadata
+  FIELDS = {
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    value
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseRoutesItemVariant0HasItemVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseRoutesItemVariant0HasItemVariant0.
+class CancelDeploymentResponseRoutesItemVariant0HasItemVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0Metadata::DECODERS
+
+  attr_reader :type, :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant16Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant16Type
-    BITBUCKET = 'bitbucket'
-    VALUES = ['bitbucket'].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant17Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant17Type
-    VERCEL = 'vercel'
-    VALUES = ['vercel'].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant1Metadata
+  FIELDS = {
+    eq: "eq",
+    gt: "gt",
+    gte: "gte",
+    inc: "inc",
+    lt: "lt",
+    lte: "lte",
+    neq: "neq",
+    ninc: "ninc",
+    pre: "pre",
+    re: "re",
+    suf: "suf",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant1.
+class CancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant1Metadata::DECODERS
+
+  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant18Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant18Type
-    CURSOR_ORIGIN = 'cursor-origin'
-    VALUES = ['cursor-origin'].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant2Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant2Type
-    GITHUB_CUSTOM_HOST = 'github-custom-host'
-    VALUES = ['github-custom-host'].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1Metadata
+  FIELDS = {
+    key: "key",
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    key
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::CancelDeploymentResponseRoutesItemVariant0HasItemVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for CancelDeploymentResponseRoutesItemVariant0HasItemVariant1.
+class CancelDeploymentResponseRoutesItemVariant0HasItemVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1Metadata::DECODERS
+
+  attr_reader :key, :type, :value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant3Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant3Type
-    GITHUB_CUSTOM_HOST = 'github-custom-host'
-    VALUES = ['github-custom-host'].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant4Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant4Type
-    GITHUB_LIMITED = 'github-limited'
-    VALUES = ['github-limited'].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the CancelDeploymentResponseGitSourceVariant5Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant5Type
-    GITHUB_LIMITED = 'github-limited'
-    VALUES = ['github-limited'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the CancelDeploymentResponseGitSourceVariant6Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant6Type
-    GITLAB = 'gitlab'
-    VALUES = ['gitlab'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the CancelDeploymentResponseGitSourceVariant7Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant7Type
-    BITBUCKET = 'bitbucket'
-    VALUES = ['bitbucket'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the CancelDeploymentResponseGitSourceVariant8Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant8Type
-    BITBUCKET = 'bitbucket'
-    VALUES = ['bitbucket'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the CancelDeploymentResponseGitSourceVariant9Type SDK namespace.
-  module CancelDeploymentResponseGitSourceVariant9Type
-    VERCEL = 'vercel'
-    VALUES = ['vercel'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseMicrofrontendsVariant0Metadata
-    FIELDS = {
-      default_app_project_name: 'defaultAppProjectName',
-      default_route: 'defaultRoute',
-      group_ids: 'groupIds',
-      is_default_app: 'isDefaultApp'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      default_app_project_name
-      group_ids
-    ].freeze
-    DECODERS = {
-      is_default_app: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseMicrofrontendsVariant0IsDefaultApp.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CancelDeploymentResponseMicrofrontendsVariant0.
-  class CancelDeploymentResponseMicrofrontendsVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseMicrofrontendsVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseMicrofrontendsVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseMicrofrontendsVariant0Metadata::DECODERS
-
-    attr_reader :is_default_app
-    # @return [String] The project name of the default app of this deployment's microfrontends group.
-    attr_reader :default_app_project_name
-    # @return [String] A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI.
-    attr_reader :default_route
-    # @return [Array_of_String] The group of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
-    attr_reader :group_ids
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseMicrofrontendsVariant1Metadata
-    FIELDS = {
-      default_app_project_name: 'defaultAppProjectName',
-      default_route: 'defaultRoute',
-      group_ids: 'groupIds',
-      is_default_app: 'isDefaultApp',
-      mfe_config_upload_state: 'mfeConfigUploadState'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      default_app_project_name
-      group_ids
-      is_default_app
-    ].freeze
-    DECODERS = {
-      is_default_app: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseMicrofrontendsVariant1IsDefaultApp.from_value(value)
-      end,
-      mfe_config_upload_state: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseMicrofrontendsVariant1MfeConfigUploadState.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CancelDeploymentResponseMicrofrontendsVariant1.
-  class CancelDeploymentResponseMicrofrontendsVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseMicrofrontendsVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseMicrofrontendsVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseMicrofrontendsVariant1Metadata::DECODERS
-
-    attr_reader :is_default_app
-    # @return [String] The project name of the default app of this deployment's microfrontends group.
-    attr_reader :default_app_project_name
-    # @return [String] A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI.
-    attr_reader :default_route
-    # @return [Array_of_String] The group of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
-    attr_reader :group_ids
-    # @return [CancelDeploymentResponseMicrofrontendsVariant1MfeConfigUploadState] The result of the microfrontends config upload during deployment creation / build. Only set for default app deployments. The config upload is attempted during deployment create, and then again during the build. If the config is not in the root directory, or the deployment is prebuilt, the config cannot be uploaded during deployment create. The upload during deployment build finds the config even if it's not in the root directory, as it has access to all files. Uploading the…
-    attr_reader :mfe_config_upload_state
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Defines the CancelDeploymentResponseMicrofrontends SDK namespace.
-  module CancelDeploymentResponseMicrofrontends
-    def self.from_hash(hash)
-      lossy = nil
-      [CancelDeploymentResponseMicrofrontendsVariant0, CancelDeploymentResponseMicrofrontendsVariant1].each do |type|
-        decoded = type.from_hash(hash)
-        return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-        lossy ||= decoded
-      rescue ::StandardError
-        next
-      end
-      lossy unless lossy.nil?
-    end
-  end
-
-  # Defines the CancelDeploymentResponseMicrofrontendsVariant0IsDefaultApp SDK namespace.
-  module CancelDeploymentResponseMicrofrontendsVariant0IsDefaultApp
-    FALSE = false
-    VALUES = [false].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the CancelDeploymentResponseMicrofrontendsVariant1IsDefaultApp SDK namespace.
-  module CancelDeploymentResponseMicrofrontendsVariant1IsDefaultApp
-    TRUE = true
-    VALUES = [true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the CancelDeploymentResponseMicrofrontendsVariant1MfeConfigUploadState SDK namespace.
-  module CancelDeploymentResponseMicrofrontendsVariant1MfeConfigUploadState
-    NO_CONFIG = 'no_config'
-    SUCCESS = 'success'
-    WAITING_ON_BUILD = 'waiting_on_build'
-    VALUES = %w[no_config success waiting_on_build].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseRoutesItemVariant0DestinationVariant1Metadata
-    FIELDS = {
-      path: 'path',
-      service: 'service',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      service
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseRoutesItemVariant0DestinationVariant1Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CancelDeploymentResponseRoutesItemVariant0DestinationVariant1.
-  class CancelDeploymentResponseRoutesItemVariant0DestinationVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0DestinationVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0DestinationVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseRoutesItemVariant0DestinationVariant1Metadata::DECODERS
-
-    attr_reader :service
-    # @return [String] Routing-only path used to select a route inside the target service.
-    attr_reader :path
-    # @return [CancelDeploymentResponseRoutesItemVariant0DestinationVariant1Type] Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
-    attr_reader :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant1Metadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
-  end
-
-  # API model for CancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant1.
-  class CancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant1Metadata::DECODERS
-
-    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0Metadata
-    FIELDS = {
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      value
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseRoutesItemVariant0HasItemVariant0Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CancelDeploymentResponseRoutesItemVariant0HasItemVariant0.
-  class CancelDeploymentResponseRoutesItemVariant0HasItemVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant0Metadata::DECODERS
-
-    attr_reader :type, :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant1Metadata
-    FIELDS = {
-      eq: 'eq',
-      gt: 'gt',
-      gte: 'gte',
-      inc: 'inc',
-      lt: 'lt',
-      lte: 'lte',
-      neq: 'neq',
-      ninc: 'ninc',
-      pre: 'pre',
-      re: 're',
-      suf: 'suf'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
-  end
-
-  # API model for CancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant1.
-  class CancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant1Metadata::DECODERS
-
-    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1Metadata
-    FIELDS = {
-      key: 'key',
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      key
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::CancelDeploymentResponseRoutesItemVariant0HasItemVariant1Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for CancelDeploymentResponseRoutesItemVariant0HasItemVariant1.
-  class CancelDeploymentResponseRoutesItemVariant0HasItemVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCancelDeploymentResponseRoutesItemVariant0HasItemVariant1Metadata::DECODERS
-
-    attr_reader :key, :type, :value
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalCancelDeploymentResponseRoutesItemVariant0LocaleMetadata
-    FIELDS = {
-      cookie: 'cookie',
-      redirect: 'redirect'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
-  end
+# Internal model hydration metadata.
+class SdkInternalCancelDeploymentResponseRoutesItemVariant0LocaleMetadata
+  FIELDS = {
+    cookie: "cookie",
+    redirect: "redirect",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 end

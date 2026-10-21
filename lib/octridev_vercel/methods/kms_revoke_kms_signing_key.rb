@@ -27,24 +27,25 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/kms/issuers/',
+            "/v1/kms/issuers/",
             SdkClient.encode_path_segment(issuer_id),
-            '/keys/',
+            "/keys/",
             SdkClient.encode_path_segment(key_id),
-            '/revoke'
+            "/revoke"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Kms::RevokeKmsSigningKeyResponse,
           decoder: :json,
           operation_id: 'revoke_kms_signing_key',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -13,7 +13,7 @@ module OctridevVercel
       module CreateStorageStoresBlobAccess
         PUBLIC = 'public'
         PRIVATE = 'private'
-        VALUES = %w[public private].freeze
+        VALUES = ['public', 'private'].freeze
         def self.from_value(value)
           value
         end

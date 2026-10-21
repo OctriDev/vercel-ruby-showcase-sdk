@@ -23,22 +23,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
           [
-            '/v2/deployments/',
+            "/v2/deployments/",
             SdkClient.encode_path_segment(deployment_id),
-            '/check-runs'
+            "/check-runs"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::ChecksV2::ListDeploymentCheckRunsResponse,
           decoder: :json,
           operation_id: 'list_deployment_check_runs',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -57,25 +58,26 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v2/deployments/',
+            "/v2/deployments/",
             SdkClient.encode_path_segment(deployment_id),
-            '/check-runs'
+            "/check-runs"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'checkId' => check_id
+            'checkId' => check_id,
           },
           return_type: ::OctridevVercel::CreateDeploymentCheckRunResponse,
           decoder: :json,
           operation_id: 'create_deployment_check_run',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -87,24 +89,32 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_deployment_check_run) do |config:, deployment_id:, check_run_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_deployment_check_run) do |
+        config:,
+        deployment_id:,
+        check_run_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v2/deployments/',
+            "/v2/deployments/",
             SdkClient.encode_path_segment(deployment_id),
-            '/check-runs/',
+            "/check-runs/",
             SdkClient.encode_path_segment(check_run_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::GetDeploymentCheckRunResponse,
           decoder: :json,
           operation_id: 'get_deployment_check_run',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -130,6 +140,7 @@ module OctridevVercel
         conclusion_text: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(external_url) do
           Validation.validate_pattern('externalUrl', external_url, '^https?://|^sso:')
           Validation.validate_uri('externalUrl', external_url)
@@ -138,15 +149,15 @@ module OctridevVercel
         SdkClient.request(
           'PATCH',
           [
-            '/v2/deployments/',
+            "/v2/deployments/",
             SdkClient.encode_path_segment(deployment_id),
-            '/check-runs/',
+            "/check-runs/",
             SdkClient.encode_path_segment(check_run_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'externalId' => external_id,
@@ -155,12 +166,12 @@ module OctridevVercel
             'output' => output,
             'completedAt' => completed_at,
             'conclusion' => conclusion,
-            'conclusionText' => conclusion_text
+            'conclusionText' => conclusion_text,
           },
           return_type: ::OctridevVercel::UpdateDeploymentCheckRunResponse,
           decoder: :json,
           operation_id: 'update_deployment_check_run',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

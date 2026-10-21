@@ -16,23 +16,30 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_route_versions) do |config:, project_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_route_versions) do |
+        config:,
+        project_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(project_id),
-            '/routes/versions'
+            "/routes/versions"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::ProjectRoutes::GetRouteVersionsResponse,
           decoder: :json,
           operation_id: 'get_route_versions',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -52,26 +59,27 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(project_id),
-            '/routes/versions'
+            "/routes/versions"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'id' => id,
-            'action' => action
+            'action' => action,
           },
           return_type: ::OctridevVercel::Methods::ProjectRoutes::UpdateRouteVersionsResponse,
           decoder: :json,
           operation_id: 'update_route_versions',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

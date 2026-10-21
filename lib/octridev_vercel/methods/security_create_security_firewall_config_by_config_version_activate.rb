@@ -20,18 +20,19 @@ module OctridevVercel
         config_version:,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/security/firewall/config/',
+            "/v1/security/firewall/config/",
             SdkClient.encode_path_segment(config_version),
-            '/activate'
+            "/activate"
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Security::CreateSecurityFirewallConfigByConfigVersionActivateResponse,
           decoder: :json,
           operation_id: 'create_security_firewall_config_by_config_version_activate',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

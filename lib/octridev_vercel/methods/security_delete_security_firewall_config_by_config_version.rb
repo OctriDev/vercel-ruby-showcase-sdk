@@ -20,16 +20,17 @@ module OctridevVercel
         config_version:,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/security/firewall/config/',
+            "/v1/security/firewall/config/",
             SdkClient.encode_path_segment(config_version)
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'delete_security_firewall_config_by_config_version',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

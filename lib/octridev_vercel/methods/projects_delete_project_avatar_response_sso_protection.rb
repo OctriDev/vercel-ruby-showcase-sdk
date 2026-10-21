@@ -36,9 +36,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseStaticIpsMetadata
         FIELDS = {
-          builds: 'builds',
-          enabled: 'enabled',
-          regions: 'regions'
+          builds: "builds",
+          enabled: "enabled",
+          regions: "regions",
         }.freeze
         REQUIRED_FIELDS = %i[
           builds
@@ -51,7 +51,7 @@ module OctridevVercel
           end,
           enabled: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseStaticIpsEnabled.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -81,10 +81,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseTracingSamplingRulesItemMetadata
         FIELDS = {
-          destination: 'destination',
-          env: 'env',
-          rate: 'rate',
-          request_path: 'requestPath'
+          destination: "destination",
+          env: "env",
+          rate: "rate",
+          request_path: "requestPath",
         }.freeze
         REQUIRED_FIELDS = %i[
           rate
@@ -95,7 +95,7 @@ module OctridevVercel
           end,
           env: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseTracingSamplingRulesItemEnv.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -127,15 +127,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseTracingMetadata
         FIELDS = {
-          domains: 'domains',
-          ignore_paths: 'ignorePaths',
-          sampling_rules: 'samplingRules'
+          domains: "domains",
+          ignore_paths: "ignorePaths",
+          sampling_rules: "samplingRules",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           sampling_rules: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseTracingSamplingRulesItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -165,15 +166,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseTrustedSourcesMetadata
         FIELDS = {
-          enable_vercel_ci_same_repository: 'enableVercelCiSameRepository',
-          oidc_providers: 'oidcProviders',
-          projects: 'projects'
+          enable_vercel_ci_same_repository: "enableVercelCiSameRepository",
+          oidc_providers: "oidcProviders",
+          projects: "projects",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           enable_vercel_ci_same_repository: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseTrustedSourcesEnableVercelCiSameRepository.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -205,11 +207,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseUsageStatusMetadata
         FIELDS = {
-          bypass_throttle_until: 'bypassThrottleUntil',
-          exceeded_allowance_until: 'exceededAllowanceUntil',
-          kind: 'kind',
-          team_throttled: 'teamThrottled',
-          throttled: 'throttled'
+          bypass_throttle_until: "bypassThrottleUntil",
+          exceeded_allowance_until: "exceededAllowanceUntil",
+          kind: "kind",
+          team_throttled: "teamThrottled",
+          throttled: "throttled",
         }.freeze
         REQUIRED_FIELDS = %i[
           kind
@@ -223,7 +225,7 @@ module OctridevVercel
           end,
           throttled: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseUsageStatusThrottled.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -262,11 +264,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseWebAnalyticsMetadata
         FIELDS = {
-          canceled_at: 'canceledAt',
-          disabled_at: 'disabledAt',
-          enabled_at: 'enabledAt',
-          has_data: 'hasData',
-          id: 'id'
+          canceled_at: "canceledAt",
+          disabled_at: "disabledAt",
+          enabled_at: "enabledAt",
+          has_data: "hasData",
+          id: "id",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -274,7 +276,7 @@ module OctridevVercel
         DECODERS = {
           has_data: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseWebAnalyticsHasData.from_value(value)
-          end
+          end,
         }.freeze
       end
 

@@ -36,6 +36,7 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(name) do
           Validation.validate_length('name', name, max: 128)
           Validation.validate_pattern('name', name, '^[a-zA-Z0-9_-]+$')
@@ -45,7 +46,7 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          '/v2/sandboxes/sessions',
+          "/v2/sandboxes/sessions",
           config: config,
           query: {
             'project' => QueryValue.new(project, style: 'form', explode: true),
@@ -54,11 +55,11 @@ module OctridevVercel
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'sortOrder' => QueryValue.new(sort_order, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :json,
           operation_id: 'list_sessions',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

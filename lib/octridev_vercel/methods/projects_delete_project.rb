@@ -24,20 +24,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v9/projects/',
+            "/v9/projects/",
             SdkClient.encode_path_segment(id_or_name)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :empty,
           operation_id: 'delete_project',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

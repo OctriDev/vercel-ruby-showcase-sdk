@@ -24,7 +24,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = %w[endsWith equals startsWith].freeze
+        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
         def self.from_value(value)
           value
         end
@@ -35,7 +35,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = %w[enhanced standard turbo].freeze
+        VALUES = ['enhanced', 'standard', 'turbo'].freeze
         def self.from_value(value)
           value
         end
@@ -66,7 +66,7 @@ module OctridevVercel
       module UpdateMicrofrontendsResponseResourceConfigBuildMachineSelection
         ELASTIC = 'elastic'
         FIXED = 'fixed'
-        VALUES = %w[elastic fixed].freeze
+        VALUES = ['elastic', 'fixed'].freeze
         def self.from_value(value)
           value
         end
@@ -106,7 +106,7 @@ module OctridevVercel
         PERFORMANCE_XL = 'performance_xl'
         STANDARD = 'standard'
         STANDARD_LEGACY = 'standard_legacy'
-        VALUES = %w[performance performance_xl standard standard_legacy].freeze
+        VALUES = ['performance', 'performance_xl', 'standard', 'standard_legacy'].freeze
         def self.from_value(value)
           value
         end
@@ -168,8 +168,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = %w[
-          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+        VALUES = [
+          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
         ].freeze
         def self.from_value(value)
           value
@@ -191,7 +191,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[development preview production].freeze
+        VALUES = ['development', 'preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -222,7 +222,7 @@ module OctridevVercel
         PREVIEW = 'PREVIEW'
         PRODUCTION = 'PRODUCTION'
         STAGING = 'STAGING'
-        VALUES = %w[PREVIEW PRODUCTION STAGING].freeze
+        VALUES = ['PREVIEW', 'PRODUCTION', 'STAGING'].freeze
         def self.from_value(value)
           value
         end
@@ -243,7 +243,7 @@ module OctridevVercel
         PERFORMANCE_XL = 'performance_xl'
         STANDARD = 'standard'
         STANDARD_LEGACY = 'standard_legacy'
-        VALUES = %w[performance performance_xl standard standard_legacy].freeze
+        VALUES = ['performance', 'performance_xl', 'standard', 'standard_legacy'].freeze
         def self.from_value(value)
           value
         end
@@ -274,7 +274,7 @@ module OctridevVercel
       module ListProjectsResponseVariant2ProjectsItemAliasItemEnvironment
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[preview production].freeze
+        VALUES = ['preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -356,17 +356,17 @@ module OctridevVercel
         VUEPRESS = 'vuepress'
         XMCP = 'xmcp'
         ZOLA = 'zola'
-        VALUES = %w[
-          actix-web angular ash astro axum blitzjs brunch bun container
-          create-react-app django docusaurus docusaurus-2 dojo eleventy elysia
-          ember eve express factory-eve fastapi fasthtml fastify flask
-          gatsby go gridsome h3 hexo hono hugo hydrogen ionic-angular
-          ionic-react jekyll koa mastra middleman nestjs nextjs nitro node
-          nuxtjs parcel polymer preact python react-router redwoodjs remix
-          ruby rust saber sanity sanity-v2 sapper scully services
-          solidstart solidstart-1 stencil storybook svelte sveltekit sveltekit-1
-          tanstack-start tanstack-start-lovable umijs vite vitepress vue
-          vuepress xmcp zola
+        VALUES = [
+          'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
+          'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
+          'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask',
+          'gatsby', 'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular',
+          'ionic-react', 'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node',
+          'nuxtjs', 'parcel', 'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix',
+          'ruby', 'rust', 'saber', 'sanity', 'sanity-v2', 'sapper', 'scully', 'services',
+          'solidstart', 'solidstart-1', 'stencil', 'storybook', 'svelte', 'sveltekit', 'sveltekit-1',
+          'tanstack-start', 'tanstack-start-lovable', 'umijs', 'vite', 'vitepress', 'vue',
+          'vuepress', 'xmcp', 'zola'
         ].freeze
         def self.from_value(value)
           value
@@ -378,7 +378,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = %w[PROMOTED ROLLING STAGED].freeze
+        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
         def self.from_value(value)
           value
         end
@@ -388,7 +388,7 @@ module OctridevVercel
       module AcceptProjectTransferRequestResponsePartnerCallsItemResultStatus
         ERRORED = 'errored'
         FULFILLED = 'fulfilled'
-        VALUES = %w[errored fulfilled].freeze
+        VALUES = ['errored', 'fulfilled'].freeze
         def self.from_value(value)
           value
         end
@@ -409,7 +409,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[development preview production].freeze
+        VALUES = ['development', 'preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -420,7 +420,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -431,7 +431,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -450,7 +450,7 @@ module OctridevVercel
       module UpdateProjectTracingSamplingRulesItemEnv
         PRODUCTION = 'production'
         PREVIEW = 'preview'
-        VALUES = %w[production preview].freeze
+        VALUES = ['production', 'preview'].freeze
         def self.from_value(value)
           value
         end
@@ -494,7 +494,7 @@ module OctridevVercel
         PERFORMANCE_XL = 'performance_xl'
         STANDARD = 'standard'
         STANDARD_LEGACY = 'standard_legacy'
-        VALUES = %w[performance performance_xl standard standard_legacy].freeze
+        VALUES = ['performance', 'performance_xl', 'standard', 'standard_legacy'].freeze
         def self.from_value(value)
           value
         end

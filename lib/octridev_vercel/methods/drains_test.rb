@@ -26,21 +26,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
-          '/v1/drains/test',
+          "/v1/drains/test",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'schemas' => schemas,
-            'delivery' => delivery
+            'delivery' => delivery,
           },
           decoder: :json,
           operation_id: 'test_drain',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -32,6 +32,7 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('idOrName', id_or_name, max: 255)
 
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
@@ -41,9 +42,9 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            '/v1/vcr/repository/',
+            "/v1/vcr/repository/",
             SdkClient.encode_path_segment(id_or_name),
-            '/images'
+            "/images"
           ].join,
           config: config,
           query: {
@@ -52,16 +53,16 @@ module OctridevVercel
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'untagged' => QueryValue.new(untagged, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::VcrImageList,
           decoder: :json,
           operation_id: 'list_repository_images',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
-      ListRepositoryImagesPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
+    ListRepositoryImagesPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
 
       # Lists images and their tags for a container registry repository. Supply `projectId` and `idOrName` to identify the repository, and use `untagged` to filter for images without tags. Use `cursor` to continue through paginated results.
       #
@@ -101,11 +102,9 @@ module OctridevVercel
             )
             items = page.images || []
             break if items.empty?
-
             items.each { |item| y << item }
             next_cursor = page.next_cursor
             break if next_cursor.nil?
-
             cursor = next_cursor
           end
         end
@@ -137,12 +136,10 @@ module OctridevVercel
             )
             items = page.images || []
             break if items.empty?
-
             next_cursor = page.next_cursor
             has_more = !next_cursor.nil?
             y << ListRepositoryImagesPage.new(data: page, items: items, has_more: has_more)
             break unless has_more
-
             cursor = next_cursor
           end
         end

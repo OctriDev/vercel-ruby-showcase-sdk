@@ -5,531 +5,531 @@
 
 # drains domain models
 module OctridevVercel
-  # Defines the UpdateDrainResponseVariant0DeliveryVariant3Type SDK namespace.
-  module UpdateDrainResponseVariant0DeliveryVariant3Type
-    S3 = 's3'
-    VALUES = ['s3'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant0DeliveryVariant3Type SDK namespace.
+module UpdateDrainResponseVariant0DeliveryVariant3Type
+  S3 = 's3'
+  VALUES = ['s3'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant0DeliveryVariant3Type', 'enum', "Unknown UpdateDrainResponseVariant0DeliveryVariant3Type: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant0DeliveryVariant3Type', 'enum', "Unknown UpdateDrainResponseVariant0DeliveryVariant3Type: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0DeliveryVariant4Target SDK namespace.
-  module UpdateDrainResponseVariant0DeliveryVariant4Target
-    VERCEL_OTEL_TRACES_DB = 'vercel-otel-traces-db'
-    VALUES = ['vercel-otel-traces-db'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant0DeliveryVariant4Target SDK namespace.
+module UpdateDrainResponseVariant0DeliveryVariant4Target
+  VERCEL_OTEL_TRACES_DB = 'vercel-otel-traces-db'
+  VALUES = ['vercel-otel-traces-db'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0DeliveryVariant4Type SDK namespace.
-  module UpdateDrainResponseVariant0DeliveryVariant4Type
-    INTERNAL = 'internal'
-    VALUES = ['internal'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant0DeliveryVariant4Type SDK namespace.
+module UpdateDrainResponseVariant0DeliveryVariant4Type
+  INTERNAL = 'internal'
+  VALUES = ['internal'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant0DeliveryVariant4Type', 'enum', "Unknown UpdateDrainResponseVariant0DeliveryVariant4Type: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant0DeliveryVariant4Type', 'enum', "Unknown UpdateDrainResponseVariant0DeliveryVariant4Type: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0DisabledReason SDK namespace.
-  module UpdateDrainResponseVariant0DisabledReason
-    ACCOUNT_PLAN_DOWNGRADE = 'account-plan-downgrade'
-    DISABLED_BY_ADMIN = 'disabled-by-admin'
-    DISABLED_BY_OWNER = 'disabled-by-owner'
-    FEATURE_NOT_AVAILABLE = 'feature-not-available'
-    LIMITS_EXCEEDED = 'limits-exceeded'
-    VALUES = %w[
-      account-plan-downgrade disabled-by-admin disabled-by-owner feature-not-available
-      limits-exceeded
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant0DisabledReason SDK namespace.
+module UpdateDrainResponseVariant0DisabledReason
+  ACCOUNT_PLAN_DOWNGRADE = 'account-plan-downgrade'
+  DISABLED_BY_ADMIN = 'disabled-by-admin'
+  DISABLED_BY_OWNER = 'disabled-by-owner'
+  FEATURE_NOT_AVAILABLE = 'feature-not-available'
+  LIMITS_EXCEEDED = 'limits-exceeded'
+  VALUES = [
+    'account-plan-downgrade', 'disabled-by-admin', 'disabled-by-owner', 'feature-not-available',
+    'limits-exceeded'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0FilterV2FilterVariant0DeploymentEnX3c3e08f318 SDK namespace.
-  module UpdateDrainResponseVariant0FilterV2FilterVariant0DeploymentEnX3c3e08f318
-    PREVIEW = 'preview'
-    PRODUCTION = 'production'
-    VALUES = %w[preview production].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant0FilterV2FilterVariant0DeploymentEnX3c3e08f318 SDK namespace.
+module UpdateDrainResponseVariant0FilterV2FilterVariant0DeploymentEnX3c3e08f318
+  PREVIEW = 'preview'
+  PRODUCTION = 'production'
+  VALUES = ['preview', 'production'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0FilterV2FilterVariant0LogLegacyExcXf1ca8f2ac4 SDK namespace.
-  module UpdateDrainResponseVariant0FilterV2FilterVariant0LogLegacyExcXf1ca8f2ac4
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant0FilterV2FilterVariant0LogLegacyExcXf1ca8f2ac4 SDK namespace.
+module UpdateDrainResponseVariant0FilterV2FilterVariant0LogLegacyExcXf1ca8f2ac4
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0FilterV2FilterVariant0LogSourcesItem SDK namespace.
-  module UpdateDrainResponseVariant0FilterV2FilterVariant0LogSourcesItem
-    BUILD = 'build'
-    EDGE = 'edge'
-    EXTERNAL = 'external'
-    FIREWALL = 'firewall'
-    LAMBDA = 'lambda'
-    REDIRECT = 'redirect'
-    STATIC = 'static'
-    VALUES = %w[build edge external firewall lambda redirect static].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant0FilterV2FilterVariant0LogSourcesItem SDK namespace.
+module UpdateDrainResponseVariant0FilterV2FilterVariant0LogSourcesItem
+  BUILD = 'build'
+  EDGE = 'edge'
+  EXTERNAL = 'external'
+  FIREWALL = 'firewall'
+  LAMBDA = 'lambda'
+  REDIRECT = 'redirect'
+  STATIC = 'static'
+  VALUES = ['build', 'edge', 'external', 'firewall', 'lambda', 'redirect', 'static'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0FilterV2FilterVariant0Type SDK namespace.
-  module UpdateDrainResponseVariant0FilterV2FilterVariant0Type
-    BASIC = 'basic'
-    VALUES = ['basic'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant0FilterV2FilterVariant0Type SDK namespace.
+module UpdateDrainResponseVariant0FilterV2FilterVariant0Type
+  BASIC = 'basic'
+  VALUES = ['basic'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant0FilterV2FilterVariant0Type', 'enum', "Unknown UpdateDrainResponseVariant0FilterV2FilterVariant0Type: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant0FilterV2FilterVariant0Type', 'enum', "Unknown UpdateDrainResponseVariant0FilterV2FilterVariant0Type: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0FilterV2FilterVariant1Type SDK namespace.
-  module UpdateDrainResponseVariant0FilterV2FilterVariant1Type
-    ODATA = 'odata'
-    VALUES = ['odata'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant0FilterV2FilterVariant1Type SDK namespace.
+module UpdateDrainResponseVariant0FilterV2FilterVariant1Type
+  ODATA = 'odata'
+  VALUES = ['odata'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant0FilterV2FilterVariant1Type', 'enum', "Unknown UpdateDrainResponseVariant0FilterV2FilterVariant1Type: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant0FilterV2FilterVariant1Type', 'enum', "Unknown UpdateDrainResponseVariant0FilterV2FilterVariant1Type: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0FilterV2Version SDK namespace.
-  module UpdateDrainResponseVariant0FilterV2Version
-    V2 = 'v2'
-    VALUES = ['v2'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant0FilterV2Version SDK namespace.
+module UpdateDrainResponseVariant0FilterV2Version
+  V2 = 'v2'
+  VALUES = ['v2'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0SamplingItemEnv SDK namespace.
-  module UpdateDrainResponseVariant0SamplingItemEnv
-    PREVIEW = 'preview'
-    PRODUCTION = 'production'
-    VALUES = %w[preview production].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant0SamplingItemEnv SDK namespace.
+module UpdateDrainResponseVariant0SamplingItemEnv
+  PREVIEW = 'preview'
+  PRODUCTION = 'production'
+  VALUES = ['preview', 'production'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0SamplingItemType SDK namespace.
-  module UpdateDrainResponseVariant0SamplingItemType
-    HEAD_SAMPLING = 'head_sampling'
-    VALUES = ['head_sampling'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant0SamplingItemType SDK namespace.
+module UpdateDrainResponseVariant0SamplingItemType
+  HEAD_SAMPLING = 'head_sampling'
+  VALUES = ['head_sampling'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0SourceVariant0DefaultFor SDK namespace.
-  module UpdateDrainResponseVariant0SourceVariant0DefaultFor
-    EVE_TRACING = 'eve-tracing'
-    VALUES = ['eve-tracing'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant0SourceVariant0DefaultFor SDK namespace.
+module UpdateDrainResponseVariant0SourceVariant0DefaultFor
+  EVE_TRACING = 'eve-tracing'
+  VALUES = ['eve-tracing'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0SourceVariant0Kind SDK namespace.
-  module UpdateDrainResponseVariant0SourceVariant0Kind
-    SELF_SERVED = 'self-served'
-    VALUES = ['self-served'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant0SourceVariant0Kind SDK namespace.
+module UpdateDrainResponseVariant0SourceVariant0Kind
+  SELF_SERVED = 'self-served'
+  VALUES = ['self-served'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant0SourceVariant0Kind', 'enum', "Unknown UpdateDrainResponseVariant0SourceVariant0Kind: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant0SourceVariant0Kind', 'enum', "Unknown UpdateDrainResponseVariant0SourceVariant0Kind: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0SourceVariant1Kind SDK namespace.
-  module UpdateDrainResponseVariant0SourceVariant1Kind
-    INTEGRATION = 'integration'
-    VALUES = ['integration'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant0SourceVariant1Kind SDK namespace.
+module UpdateDrainResponseVariant0SourceVariant1Kind
+  INTEGRATION = 'integration'
+  VALUES = ['integration'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant0SourceVariant1Kind', 'enum', "Unknown UpdateDrainResponseVariant0SourceVariant1Kind: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant0SourceVariant1Kind', 'enum', "Unknown UpdateDrainResponseVariant0SourceVariant1Kind: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant0Status SDK namespace.
-  module UpdateDrainResponseVariant0Status
-    DISABLED = 'disabled'
-    ENABLED = 'enabled'
-    ERRORED = 'errored'
-    VALUES = %w[disabled enabled errored].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant0Status SDK namespace.
+module UpdateDrainResponseVariant0Status
+  DISABLED = 'disabled'
+  ENABLED = 'enabled'
+  ERRORED = 'errored'
+  VALUES = ['disabled', 'enabled', 'errored'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant0Compression SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant0Compression
-    GZIP = 'gzip'
-    NONE = 'none'
-    VALUES = %w[gzip none].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1DeliveryVariant0Compression SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant0Compression
+  GZIP = 'gzip'
+  NONE = 'none'
+  VALUES = ['gzip', 'none'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant0Encoding SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant0Encoding
-    JSON = 'json'
-    NDJSON = 'ndjson'
-    VALUES = %w[json ndjson].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1DeliveryVariant0Encoding SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant0Encoding
+  JSON = 'json'
+  NDJSON = 'ndjson'
+  VALUES = ['json', 'ndjson'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant0SecretVariant1Kind SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant0SecretVariant1Kind
-    INTEGRATION_SECRET = 'INTEGRATION_SECRET'
-    VALUES = ['INTEGRATION_SECRET'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1DeliveryVariant0SecretVariant1Kind SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant0SecretVariant1Kind
+  INTEGRATION_SECRET = 'INTEGRATION_SECRET'
+  VALUES = ['INTEGRATION_SECRET'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant0Type SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant0Type
-    HTTP = 'http'
-    VALUES = ['http'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant1DeliveryVariant0Type SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant0Type
+  HTTP = 'http'
+  VALUES = ['http'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant1DeliveryVariant0Type', 'enum', "Unknown UpdateDrainResponseVariant1DeliveryVariant0Type: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant1DeliveryVariant0Type', 'enum', "Unknown UpdateDrainResponseVariant1DeliveryVariant0Type: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant1Encoding SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant1Encoding
-    JSON = 'json'
-    PROTO = 'proto'
-    VALUES = %w[json proto].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1DeliveryVariant1Encoding SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant1Encoding
+  JSON = 'json'
+  PROTO = 'proto'
+  VALUES = ['json', 'proto'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant1SecretVariant1Kind SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant1SecretVariant1Kind
-    INTEGRATION_SECRET = 'INTEGRATION_SECRET'
-    VALUES = ['INTEGRATION_SECRET'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1DeliveryVariant1SecretVariant1Kind SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant1SecretVariant1Kind
+  INTEGRATION_SECRET = 'INTEGRATION_SECRET'
+  VALUES = ['INTEGRATION_SECRET'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant1Type SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant1Type
-    OTLPHTTP = 'otlphttp'
-    VALUES = ['otlphttp'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant1DeliveryVariant1Type SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant1Type
+  OTLPHTTP = 'otlphttp'
+  VALUES = ['otlphttp'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant1DeliveryVariant1Type', 'enum', "Unknown UpdateDrainResponseVariant1DeliveryVariant1Type: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant1DeliveryVariant1Type', 'enum', "Unknown UpdateDrainResponseVariant1DeliveryVariant1Type: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant2Type SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant2Type
-    CLICKHOUSE = 'clickhouse'
-    VALUES = ['clickhouse'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant1DeliveryVariant2Type SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant2Type
+  CLICKHOUSE = 'clickhouse'
+  VALUES = ['clickhouse'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant1DeliveryVariant2Type', 'enum', "Unknown UpdateDrainResponseVariant1DeliveryVariant2Type: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant1DeliveryVariant2Type', 'enum', "Unknown UpdateDrainResponseVariant1DeliveryVariant2Type: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant3Compression SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant3Compression
-    NONE = 'none'
-    VALUES = ['none'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1DeliveryVariant3Compression SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant3Compression
+  NONE = 'none'
+  VALUES = ['none'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant3Encoding SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant3Encoding
-    JSON = 'json'
-    NDJSON = 'ndjson'
-    VALUES = %w[json ndjson].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1DeliveryVariant3Encoding SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant3Encoding
+  JSON = 'json'
+  NDJSON = 'ndjson'
+  VALUES = ['json', 'ndjson'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant3FileStructure SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant3FileStructure
-    HIVE = 'hive'
-    VALUES = ['hive'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1DeliveryVariant3FileStructure SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant3FileStructure
+  HIVE = 'hive'
+  VALUES = ['hive'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant3ObjectAcl SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant3ObjectAcl
-    AUTHENTICATED_READ = 'authenticated-read'
-    AWS_EXEC_READ = 'aws-exec-read'
-    BUCKET_OWNER_FULL_CONTROL = 'bucket-owner-full-control'
-    BUCKET_OWNER_READ = 'bucket-owner-read'
-    PRIVATE = 'private'
-    PUBLIC_READ = 'public-read'
-    PUBLIC_READ_WRITE = 'public-read-write'
-    VALUES = %w[
-      authenticated-read aws-exec-read bucket-owner-full-control bucket-owner-read
-      private public-read public-read-write
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1DeliveryVariant3ObjectAcl SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant3ObjectAcl
+  AUTHENTICATED_READ = 'authenticated-read'
+  AWS_EXEC_READ = 'aws-exec-read'
+  BUCKET_OWNER_FULL_CONTROL = 'bucket-owner-full-control'
+  BUCKET_OWNER_READ = 'bucket-owner-read'
+  PRIVATE = 'private'
+  PUBLIC_READ = 'public-read'
+  PUBLIC_READ_WRITE = 'public-read-write'
+  VALUES = [
+    'authenticated-read', 'aws-exec-read', 'bucket-owner-full-control', 'bucket-owner-read',
+    'private', 'public-read', 'public-read-write'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant3ServerSideEncryption SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant3ServerSideEncryption
-    AES256 = 'AES256'
-    AWS_KMS = 'aws:kms'
-    AWS_KMS_DSSE = 'aws:kms:dsse'
-    VALUES = ['AES256', 'aws:kms', 'aws:kms:dsse'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1DeliveryVariant3ServerSideEncryption SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant3ServerSideEncryption
+  AES256 = 'AES256'
+  AWS_KMS = 'aws:kms'
+  AWS_KMS_DSSE = 'aws:kms:dsse'
+  VALUES = ['AES256', 'aws:kms', 'aws:kms:dsse'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant3Type SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant3Type
-    S3 = 's3'
-    VALUES = ['s3'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant1DeliveryVariant3Type SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant3Type
+  S3 = 's3'
+  VALUES = ['s3'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant1DeliveryVariant3Type', 'enum', "Unknown UpdateDrainResponseVariant1DeliveryVariant3Type: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant1DeliveryVariant3Type', 'enum', "Unknown UpdateDrainResponseVariant1DeliveryVariant3Type: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant4Target SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant4Target
-    VERCEL_OTEL_TRACES_DB = 'vercel-otel-traces-db'
-    VALUES = ['vercel-otel-traces-db'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1DeliveryVariant4Target SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant4Target
+  VERCEL_OTEL_TRACES_DB = 'vercel-otel-traces-db'
+  VALUES = ['vercel-otel-traces-db'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DeliveryVariant4Type SDK namespace.
-  module UpdateDrainResponseVariant1DeliveryVariant4Type
-    INTERNAL = 'internal'
-    VALUES = ['internal'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant1DeliveryVariant4Type SDK namespace.
+module UpdateDrainResponseVariant1DeliveryVariant4Type
+  INTERNAL = 'internal'
+  VALUES = ['internal'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant1DeliveryVariant4Type', 'enum', "Unknown UpdateDrainResponseVariant1DeliveryVariant4Type: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant1DeliveryVariant4Type', 'enum', "Unknown UpdateDrainResponseVariant1DeliveryVariant4Type: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1DisabledReason SDK namespace.
-  module UpdateDrainResponseVariant1DisabledReason
-    ACCOUNT_PLAN_DOWNGRADE = 'account-plan-downgrade'
-    DISABLED_BY_ADMIN = 'disabled-by-admin'
-    DISABLED_BY_OWNER = 'disabled-by-owner'
-    FEATURE_NOT_AVAILABLE = 'feature-not-available'
-    LIMITS_EXCEEDED = 'limits-exceeded'
-    VALUES = %w[
-      account-plan-downgrade disabled-by-admin disabled-by-owner feature-not-available
-      limits-exceeded
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1DisabledReason SDK namespace.
+module UpdateDrainResponseVariant1DisabledReason
+  ACCOUNT_PLAN_DOWNGRADE = 'account-plan-downgrade'
+  DISABLED_BY_ADMIN = 'disabled-by-admin'
+  DISABLED_BY_OWNER = 'disabled-by-owner'
+  FEATURE_NOT_AVAILABLE = 'feature-not-available'
+  LIMITS_EXCEEDED = 'limits-exceeded'
+  VALUES = [
+    'account-plan-downgrade', 'disabled-by-admin', 'disabled-by-owner', 'feature-not-available',
+    'limits-exceeded'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1FilterV2FilterVariant0DeploymentEnX9eb84fd4ef SDK namespace.
-  module UpdateDrainResponseVariant1FilterV2FilterVariant0DeploymentEnX9eb84fd4ef
-    PREVIEW = 'preview'
-    PRODUCTION = 'production'
-    VALUES = %w[preview production].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1FilterV2FilterVariant0DeploymentEnX9eb84fd4ef SDK namespace.
+module UpdateDrainResponseVariant1FilterV2FilterVariant0DeploymentEnX9eb84fd4ef
+  PREVIEW = 'preview'
+  PRODUCTION = 'production'
+  VALUES = ['preview', 'production'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1FilterV2FilterVariant0LogLegacyExcX9202fff8fd SDK namespace.
-  module UpdateDrainResponseVariant1FilterV2FilterVariant0LogLegacyExcX9202fff8fd
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1FilterV2FilterVariant0LogLegacyExcX9202fff8fd SDK namespace.
+module UpdateDrainResponseVariant1FilterV2FilterVariant0LogLegacyExcX9202fff8fd
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1FilterV2FilterVariant0LogSourcesItem SDK namespace.
-  module UpdateDrainResponseVariant1FilterV2FilterVariant0LogSourcesItem
-    BUILD = 'build'
-    EDGE = 'edge'
-    EXTERNAL = 'external'
-    FIREWALL = 'firewall'
-    LAMBDA = 'lambda'
-    REDIRECT = 'redirect'
-    STATIC = 'static'
-    VALUES = %w[build edge external firewall lambda redirect static].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1FilterV2FilterVariant0LogSourcesItem SDK namespace.
+module UpdateDrainResponseVariant1FilterV2FilterVariant0LogSourcesItem
+  BUILD = 'build'
+  EDGE = 'edge'
+  EXTERNAL = 'external'
+  FIREWALL = 'firewall'
+  LAMBDA = 'lambda'
+  REDIRECT = 'redirect'
+  STATIC = 'static'
+  VALUES = ['build', 'edge', 'external', 'firewall', 'lambda', 'redirect', 'static'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1FilterV2FilterVariant0Type SDK namespace.
-  module UpdateDrainResponseVariant1FilterV2FilterVariant0Type
-    BASIC = 'basic'
-    VALUES = ['basic'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant1FilterV2FilterVariant0Type SDK namespace.
+module UpdateDrainResponseVariant1FilterV2FilterVariant0Type
+  BASIC = 'basic'
+  VALUES = ['basic'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant1FilterV2FilterVariant0Type', 'enum', "Unknown UpdateDrainResponseVariant1FilterV2FilterVariant0Type: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant1FilterV2FilterVariant0Type', 'enum', "Unknown UpdateDrainResponseVariant1FilterV2FilterVariant0Type: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1FilterV2FilterVariant1Type SDK namespace.
-  module UpdateDrainResponseVariant1FilterV2FilterVariant1Type
-    ODATA = 'odata'
-    VALUES = ['odata'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant1FilterV2FilterVariant1Type SDK namespace.
+module UpdateDrainResponseVariant1FilterV2FilterVariant1Type
+  ODATA = 'odata'
+  VALUES = ['odata'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant1FilterV2FilterVariant1Type', 'enum', "Unknown UpdateDrainResponseVariant1FilterV2FilterVariant1Type: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant1FilterV2FilterVariant1Type', 'enum', "Unknown UpdateDrainResponseVariant1FilterV2FilterVariant1Type: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1FilterV2Version SDK namespace.
-  module UpdateDrainResponseVariant1FilterV2Version
-    V2 = 'v2'
-    VALUES = ['v2'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1FilterV2Version SDK namespace.
+module UpdateDrainResponseVariant1FilterV2Version
+  V2 = 'v2'
+  VALUES = ['v2'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1ProjectAccessVariant0Access SDK namespace.
-  module UpdateDrainResponseVariant1ProjectAccessVariant0Access
-    ALL = 'all'
-    VALUES = ['all'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant1ProjectAccessVariant0Access SDK namespace.
+module UpdateDrainResponseVariant1ProjectAccessVariant0Access
+  ALL = 'all'
+  VALUES = ['all'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant1ProjectAccessVariant0Access', 'enum', "Unknown UpdateDrainResponseVariant1ProjectAccessVariant0Access: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant1ProjectAccessVariant0Access', 'enum', "Unknown UpdateDrainResponseVariant1ProjectAccessVariant0Access: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1ProjectAccessVariant0ManagedBy SDK namespace.
-  module UpdateDrainResponseVariant1ProjectAccessVariant0ManagedBy
-    DRAIN = 'drain'
-    INTEGRATION = 'integration'
-    VALUES = %w[drain integration].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1ProjectAccessVariant0ManagedBy SDK namespace.
+module UpdateDrainResponseVariant1ProjectAccessVariant0ManagedBy
+  DRAIN = 'drain'
+  INTEGRATION = 'integration'
+  VALUES = ['drain', 'integration'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1ProjectAccessVariant1Access SDK namespace.
-  module UpdateDrainResponseVariant1ProjectAccessVariant1Access
-    SOME = 'some'
-    VALUES = ['some'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant1ProjectAccessVariant1Access SDK namespace.
+module UpdateDrainResponseVariant1ProjectAccessVariant1Access
+  SOME = 'some'
+  VALUES = ['some'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant1ProjectAccessVariant1Access', 'enum', "Unknown UpdateDrainResponseVariant1ProjectAccessVariant1Access: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant1ProjectAccessVariant1Access', 'enum', "Unknown UpdateDrainResponseVariant1ProjectAccessVariant1Access: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1ProjectAccessVariant1ManagedBy SDK namespace.
-  module UpdateDrainResponseVariant1ProjectAccessVariant1ManagedBy
-    DRAIN = 'drain'
-    INTEGRATION = 'integration'
-    VALUES = %w[drain integration].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1ProjectAccessVariant1ManagedBy SDK namespace.
+module UpdateDrainResponseVariant1ProjectAccessVariant1ManagedBy
+  DRAIN = 'drain'
+  INTEGRATION = 'integration'
+  VALUES = ['drain', 'integration'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1SamplingItemEnv SDK namespace.
-  module UpdateDrainResponseVariant1SamplingItemEnv
-    PREVIEW = 'preview'
-    PRODUCTION = 'production'
-    VALUES = %w[preview production].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1SamplingItemEnv SDK namespace.
+module UpdateDrainResponseVariant1SamplingItemEnv
+  PREVIEW = 'preview'
+  PRODUCTION = 'production'
+  VALUES = ['preview', 'production'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1SamplingItemType SDK namespace.
-  module UpdateDrainResponseVariant1SamplingItemType
-    HEAD_SAMPLING = 'head_sampling'
-    VALUES = ['head_sampling'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1SamplingItemType SDK namespace.
+module UpdateDrainResponseVariant1SamplingItemType
+  HEAD_SAMPLING = 'head_sampling'
+  VALUES = ['head_sampling'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1SourceVariant0DefaultFor SDK namespace.
-  module UpdateDrainResponseVariant1SourceVariant0DefaultFor
-    EVE_TRACING = 'eve-tracing'
-    VALUES = ['eve-tracing'].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1SourceVariant0DefaultFor SDK namespace.
+module UpdateDrainResponseVariant1SourceVariant0DefaultFor
+  EVE_TRACING = 'eve-tracing'
+  VALUES = ['eve-tracing'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1SourceVariant0Kind SDK namespace.
-  module UpdateDrainResponseVariant1SourceVariant0Kind
-    SELF_SERVED = 'self-served'
-    VALUES = ['self-served'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant1SourceVariant0Kind SDK namespace.
+module UpdateDrainResponseVariant1SourceVariant0Kind
+  SELF_SERVED = 'self-served'
+  VALUES = ['self-served'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant1SourceVariant0Kind', 'enum', "Unknown UpdateDrainResponseVariant1SourceVariant0Kind: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant1SourceVariant0Kind', 'enum', "Unknown UpdateDrainResponseVariant1SourceVariant0Kind: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1SourceVariant1Kind SDK namespace.
-  module UpdateDrainResponseVariant1SourceVariant1Kind
-    INTEGRATION = 'integration'
-    VALUES = ['integration'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the UpdateDrainResponseVariant1SourceVariant1Kind SDK namespace.
+module UpdateDrainResponseVariant1SourceVariant1Kind
+  INTEGRATION = 'integration'
+  VALUES = ['integration'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('UpdateDrainResponseVariant1SourceVariant1Kind', 'enum', "Unknown UpdateDrainResponseVariant1SourceVariant1Kind: #{value}")
-    end
+    raise SdkValidationError.new('UpdateDrainResponseVariant1SourceVariant1Kind', 'enum', "Unknown UpdateDrainResponseVariant1SourceVariant1Kind: #{value}")
   end
+end
 
-  # Defines the UpdateDrainResponseVariant1Status SDK namespace.
-  module UpdateDrainResponseVariant1Status
-    DISABLED = 'disabled'
-    ENABLED = 'enabled'
-    ERRORED = 'errored'
-    VALUES = %w[disabled enabled errored].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateDrainResponseVariant1Status SDK namespace.
+module UpdateDrainResponseVariant1Status
+  DISABLED = 'disabled'
+  ENABLED = 'enabled'
+  ERRORED = 'errored'
+  VALUES = ['disabled', 'enabled', 'errored'].freeze
+  def self.from_value(value)
+    value
   end
+end
 end

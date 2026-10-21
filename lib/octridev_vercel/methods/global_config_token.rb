@@ -16,24 +16,32 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_edge_config_token) do |config:, edge_config_id:, token:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_edge_config_token) do |
+        config:,
+        edge_config_id:,
+        token:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/global-config/',
+            "/v1/global-config/",
             SdkClient.encode_path_segment(edge_config_id),
-            '/token/',
+            "/token/",
             SdkClient.encode_path_segment(token)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::GlobalConfigToken,
           decoder: :json,
           operation_id: 'get_edge_config_token',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -52,6 +60,7 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_pattern('edgeConfigId', edge_config_id, '^ecfg_')
 
         Validation.validate_length('label', label, max: 52)
@@ -59,22 +68,22 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            '/v1/global-config/',
+            "/v1/global-config/",
             SdkClient.encode_path_segment(edge_config_id),
-            '/token'
+            "/token"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'label' => label
+            'label' => label,
           },
           return_type: ::OctridevVercel::Methods::GlobalConfig::CreateEdgeConfigTokenResponse,
           decoder: :json,
           operation_id: 'create_edge_config_token',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

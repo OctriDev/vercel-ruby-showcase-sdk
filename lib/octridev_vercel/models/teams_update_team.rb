@@ -5,405 +5,406 @@
 
 # teams domain models
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd6ad927605Metadata
-    FIELDS = {
-      provider: 'provider',
-      namespace: 'namespace',
-      project: 'project'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      provider
-      namespace
-    ].freeze
-    DECODERS = {
-      provider: lambda do |value|
-        ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX8758bbb072.from_value(value)
-      end
-    }.freeze
+# Internal model hydration metadata.
+class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd6ad927605Metadata
+  FIELDS = {
+    provider: "provider",
+    namespace: "namespace",
+    project: "project",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    provider
+    namespace
+  ].freeze
+  DECODERS = {
+    provider: lambda do |value|
+      ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX8758bbb072.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd6ad927605.
+class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd6ad927605
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd6ad927605Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd6ad927605Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd6ad927605Metadata::DECODERS
+
+  attr_reader :provider, :namespace, :project
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd6ad927605.
-  class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd6ad927605
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd6ad927605Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd6ad927605Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd6ad927605Metadata::DECODERS
-
-    attr_reader :provider, :namespace, :project
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemMetadata
-    FIELDS = {
-      enabled: 'enabled',
-      environments: 'environments',
-      sources: 'sources'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      enabled
-      environments
-      sources
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemMetadata
+  FIELDS = {
+    enabled: "enabled",
+    environments: "environments",
+    sources: "sources",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    enabled
+    environments
+    sources
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0Item.
+class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0Item
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemMetadata::DECODERS
+
+  attr_reader :enabled, :environments, :sources
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0Item.
-  class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0Item
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItemMetadata::DECODERS
-
-    attr_reader :enabled, :environments, :sources
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1c34075c8bMetadata
-    FIELDS = {
-      type: 'type',
-      target: 'target'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      target
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX2415b48317.from_value(value)
-      end,
-      target: lambda do |value|
-        ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX82f7565e77.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1c34075c8bMetadata
+  FIELDS = {
+    type: "type",
+    target: "target",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    target
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX2415b48317.from_value(value)
+    end,
+    target: lambda do |value|
+      ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX82f7565e77.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1c34075c8b.
+class UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1c34075c8b
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1c34075c8bMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1c34075c8bMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1c34075c8bMetadata::DECODERS
+
+  attr_reader :type, :target
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1c34075c8b.
-  class UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1c34075c8b
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1c34075c8bMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1c34075c8bMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1c34075c8bMetadata::DECODERS
-
-    attr_reader :type, :target
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5b071ed950Metadata
-    FIELDS = {
-      type: 'type',
-      environment_id: 'environmentId'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      environment_id
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarXb385646aff.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5b071ed950Metadata
+  FIELDS = {
+    type: "type",
+    environment_id: "environmentId",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    environment_id
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarXb385646aff.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5b071ed950.
+class UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5b071ed950
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5b071ed950Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5b071ed950Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5b071ed950Metadata::DECODERS
+
+  attr_reader :type, :environment_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5b071ed950.
-  class UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5b071ed950
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5b071ed950Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5b071ed950Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5b071ed950Metadata::DECODERS
-
-    attr_reader :type, :environment_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemMetadata
-    FIELDS = {
-      enabled: 'enabled',
-      environments: 'environments',
-      sources: 'sources'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      enabled
-      environments
-      sources
-    ].freeze
-    DECODERS = {
-      sources: lambda do |value|
-        value&.map { |item| ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX7549926cb8.from_value(item) }
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemMetadata
+  FIELDS = {
+    enabled: "enabled",
+    environments: "environments",
+    sources: "sources",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    enabled
+    environments
+    sources
+  ].freeze
+  DECODERS = {
+    sources: lambda do |value|
+      value&.map { |item| ::OctridevVercel::UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX7549926cb8.from_value(item) }
+    end,
+  }.freeze
+end
+
+# API model for UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0Item.
+class UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0Item
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemMetadata::DECODERS
+
+  attr_reader :enabled, :environments, :sources
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0Item.
-  class UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0Item
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0ItemMetadata::DECODERS
-
-    attr_reader :enabled, :environments, :sources
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0Metadata
-    FIELDS = {
-      git_sources: 'gitSources',
-      deployment_sources: 'deploymentSources'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateTeamRequestDeploymentPolicyVariant0Metadata
+  FIELDS = {
+    git_sources: "gitSources",
+    deployment_sources: "deploymentSources",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UpdateTeamRequestDeploymentPolicyVariant0.
+class UpdateTeamRequestDeploymentPolicyVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0Metadata::DECODERS
+
+  attr_reader :git_sources, :deployment_sources
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UpdateTeamRequestDeploymentPolicyVariant0.
-  class UpdateTeamRequestDeploymentPolicyVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateTeamRequestDeploymentPolicyVariant0Metadata::DECODERS
-
-    attr_reader :git_sources, :deployment_sources
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UpdateTeamRequestDeploymentPolicy SDK namespace.
-  module UpdateTeamRequestDeploymentPolicy
-    def self.from_hash(hash)
-      return hash if hash.is_a?(::String)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      UpdateTeamRequestDeploymentPolicyVariant0.from_hash(hash)
-    end
+# Defines the UpdateTeamRequestDeploymentPolicy SDK namespace.
+module UpdateTeamRequestDeploymentPolicy
+  def self.from_hash(hash)
+    return hash if hash.is_a?(::String)
+    return UpdateTeamRequestDeploymentPolicyVariant0.from_hash(hash)
+  end
+end
+
+# Defines the UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX82f7565e77 SDK namespace.
+module UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX82f7565e77
+  PRODUCTION = 'production'
+  PREVIEW = 'preview'
+  VALUES = ['production', 'preview'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX2415b48317 SDK namespace.
+module UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX2415b48317
+  SYSTEM = 'system'
+  VALUES = ['system'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX2415b48317', 'enum', "Unknown UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX2415b48317: #{value}")
+  end
+end
+
+# Defines the UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarXb385646aff SDK namespace.
+module UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarXb385646aff
+  CUSTOM = 'custom'
+  VALUES = ['custom'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarXb385646aff', 'enum', "Unknown UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarXb385646aff: #{value}")
+  end
+end
+
+# Defines the UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX7549926cb8 SDK namespace.
+module UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX7549926cb8
+  GIT = 'git'
+  CLI = 'cli'
+  REST_API = 'rest-api'
+  DEPLOY_HOOK = 'deploy-hook'
+  INTEGRATION = 'integration'
+  V0 = 'v0'
+  VALUES = ['git', 'cli', 'rest-api', 'deploy-hook', 'integration', 'v0'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX919ba0edf7 SDK namespace.
+module UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX919ba0edf7
+  PRODUCTION = 'production'
+  PREVIEW = 'preview'
+  VALUES = ['production', 'preview'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd21b7dbc52 SDK namespace.
+module UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd21b7dbc52
+  SYSTEM = 'system'
+  VALUES = ['system'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd21b7dbc52', 'enum', "Unknown UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd21b7dbc52: #{value}")
+  end
+end
+
+# Defines the UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXc719301468 SDK namespace.
+module UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXc719301468
+  CUSTOM = 'custom'
+  VALUES = ['custom'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXc719301468', 'enum', "Unknown UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXc719301468: #{value}")
+  end
+end
+
+# Defines the UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXe8fceff53c SDK namespace.
+module UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXe8fceff53c
+  GITHUB = 'github'
+  BITBUCKET = 'bitbucket'
+  VALUES = ['github', 'bitbucket'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX8758bbb072 SDK namespace.
+module UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX8758bbb072
+  GITLAB = 'gitlab'
+  VALUES = ['gitlab'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUpdateTeamRequestNsnbConfigVariant0Metadata
+  FIELDS = {
+    preference: "preference",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    preference
+  ].freeze
+  DECODERS = {
+    preference: lambda do |value|
+      ::OctridevVercel::UpdateTeamRequestNsnbConfigVariant0Preference.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UpdateTeamRequestNsnbConfigVariant0.
+class UpdateTeamRequestNsnbConfigVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUpdateTeamRequestNsnbConfigVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUpdateTeamRequestNsnbConfigVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUpdateTeamRequestNsnbConfigVariant0Metadata::DECODERS
+
+  # @return [UpdateTeamRequestNsnbConfigVariant0Preference] The NSNB preference for the team.
+  attr_reader :preference
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX82f7565e77 SDK namespace.
-  module UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX82f7565e77
-    PRODUCTION = 'production'
-    PREVIEW = 'preview'
-    VALUES = %w[production preview].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX2415b48317 SDK namespace.
-  module UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX2415b48317
-    SYSTEM = 'system'
-    VALUES = ['system'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX2415b48317', 'enum', "Unknown UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX2415b48317: #{value}")
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarXb385646aff SDK namespace.
-  module UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarXb385646aff
-    CUSTOM = 'custom'
-    VALUES = ['custom'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarXb385646aff', 'enum', "Unknown UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarXb385646aff: #{value}")
-    end
+# Defines the UpdateTeamRequestNsnbConfig SDK namespace.
+module UpdateTeamRequestNsnbConfig
+  def self.from_hash(hash)
+    return hash if hash.is_a?(::String)
+    return UpdateTeamRequestNsnbConfigVariant0.from_hash(hash)
   end
+end
 
-  # Defines the UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX7549926cb8 SDK namespace.
-  module UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX7549926cb8
-    GIT = 'git'
-    CLI = 'cli'
-    REST_API = 'rest-api'
-    DEPLOY_HOOK = 'deploy-hook'
-    INTEGRATION = 'integration'
-    V0 = 'v0'
-    VALUES = %w[git cli rest-api deploy-hook integration v0].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the UpdateTeamRequestNsnbConfigVariant0Preference SDK namespace.
+module UpdateTeamRequestNsnbConfigVariant0Preference
+  AUTO_APPROVAL = 'auto-approval'
+  MANUAL_APPROVAL = 'manual-approval'
+  BLOCK = 'block'
+  VALUES = ['auto-approval', 'manual-approval', 'block'].freeze
+  def self.from_value(value)
+    value
   end
-
-  # Defines the UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX919ba0edf7 SDK namespace.
-  module UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX919ba0edf7
-    PRODUCTION = 'production'
-    PREVIEW = 'preview'
-    VALUES = %w[production preview].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd21b7dbc52 SDK namespace.
-  module UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd21b7dbc52
-    SYSTEM = 'system'
-    VALUES = ['system'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd21b7dbc52', 'enum', "Unknown UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd21b7dbc52: #{value}")
-    end
-  end
-
-  # Defines the UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXc719301468 SDK namespace.
-  module UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXc719301468
-    CUSTOM = 'custom'
-    VALUES = ['custom'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXc719301468', 'enum', "Unknown UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXc719301468: #{value}")
-    end
-  end
-
-  # Defines the UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXe8fceff53c SDK namespace.
-  module UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXe8fceff53c
-    GITHUB = 'github'
-    BITBUCKET = 'bitbucket'
-    VALUES = %w[github bitbucket].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX8758bbb072 SDK namespace.
-  module UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX8758bbb072
-    GITLAB = 'gitlab'
-    VALUES = ['gitlab'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUpdateTeamRequestNsnbConfigVariant0Metadata
-    FIELDS = {
-      preference: 'preference'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      preference
-    ].freeze
-    DECODERS = {
-      preference: lambda do |value|
-        ::OctridevVercel::UpdateTeamRequestNsnbConfigVariant0Preference.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for UpdateTeamRequestNsnbConfigVariant0.
-  class UpdateTeamRequestNsnbConfigVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUpdateTeamRequestNsnbConfigVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUpdateTeamRequestNsnbConfigVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUpdateTeamRequestNsnbConfigVariant0Metadata::DECODERS
-
-    # @return [UpdateTeamRequestNsnbConfigVariant0Preference] The NSNB preference for the team.
-    attr_reader :preference
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Defines the UpdateTeamRequestNsnbConfig SDK namespace.
-  module UpdateTeamRequestNsnbConfig
-    def self.from_hash(hash)
-      return hash if hash.is_a?(::String)
-
-      UpdateTeamRequestNsnbConfigVariant0.from_hash(hash)
-    end
-  end
-
-  # Defines the UpdateTeamRequestNsnbConfigVariant0Preference SDK namespace.
-  module UpdateTeamRequestNsnbConfigVariant0Preference
-    AUTO_APPROVAL = 'auto-approval'
-    MANUAL_APPROVAL = 'manual-approval'
-    BLOCK = 'block'
-    VALUES = %w[auto-approval manual-approval block].freeze
-    def self.from_value(value)
-      value
-    end
-  end
+end
 end

@@ -20,38 +20,43 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_session_command_logs) do |config:, session_id:, cmd_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil, &block|
-        unless block
-          return enum_for(
-            __method__,
-            config: config,
-            session_id: session_id,
-            cmd_id: cmd_id,
-            team_id: team_id,
-            slug: slug,
-            request_options: request_options
-          )
-        end
+      singleton_class.define_method(:get_session_command_logs) do |
+        config:,
+        session_id:,
+        cmd_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil,
+        &block
+      |
+    return enum_for(
+          __method__,
+          config: config,
+          session_id: session_id,
+          cmd_id: cmd_id,
+          team_id: team_id,
+          slug: slug,
+          request_options: request_options,
+        ) unless block
         SdkClient.stream(
           'GET', [
-            '/v2/sandboxes/sessions/',
+            "/v2/sandboxes/sessions/",
             SdkClient.encode_path_segment(session_id),
-            '/cmd/',
+            "/cmd/",
             SdkClient.encode_path_segment(cmd_id),
-            '/logs'
+            "/logs"
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
-          },
+          'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+          'slug' => QueryValue.new(slug, style: 'form', explode: true),
+        },
           operation_id: 'get_session_command_logs',
           stream_format: :ndjson,
-          stream_media_type: 'application/x-ndjson',
+          stream_media_type: "application/x-ndjson",
           request_options: request_options
         ).each do |ev|
           break if ev.data == '[DONE]'
-
           decoded = JSON.parse(ev.data)
           block.call(SdkClient.decode_event(decoded, ::OctridevVercel::GetSessionCommandLogsResponse))
         end

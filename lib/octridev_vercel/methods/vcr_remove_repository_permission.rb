@@ -33,6 +33,7 @@ module OctridevVercel
         team_slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('idOrName', id_or_name, max: 255)
 
         Validation.if_given(team_id2) do
@@ -48,23 +49,23 @@ module OctridevVercel
         SdkClient.request(
           'DELETE',
           [
-            '/v1/vcr/repository/',
+            "/v1/vcr/repository/",
             SdkClient.encode_path_segment(id_or_name),
-            '/permissions'
+            "/permissions"
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'teamId' => team_id2,
-            'teamSlug' => team_slug
+            'teamSlug' => team_slug,
           },
           decoder: :empty,
           operation_id: 'remove_repository_permission',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

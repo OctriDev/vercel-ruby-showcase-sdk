@@ -57,20 +57,21 @@ module OctridevVercel
         attach_stdin: NOT_GIVEN,
         request_options: nil
       )
-        Validation.if_given(timeout) { Validation.validate_range('timeout', timeout, min: 100, max: 18_000_000) }
+
+        Validation.if_given(timeout) { Validation.validate_range('timeout', timeout, min: 100, max: 18000000) }
 
         SdkClient.request(
           'POST',
           [
-            '/v2/sandboxes/sessions/',
+            "/v2/sandboxes/sessions/",
             SdkClient.encode_path_segment(session_id),
-            '/cmd'
+            "/cmd"
           ].join,
           config: config,
           query: {
             'cmdId' => QueryValue.new(cmd_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'command' => command,
@@ -81,12 +82,12 @@ module OctridevVercel
             'wait' => wait,
             'logs' => logs,
             'timeout' => timeout,
-            'attachStdin' => attach_stdin
+            'attachStdin' => attach_stdin,
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::RunSessionCommandResponse,
           decoder: :json,
           operation_id: 'run_session_command',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

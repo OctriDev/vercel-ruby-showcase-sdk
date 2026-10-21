@@ -12,18 +12,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateCheckMetadata
         FIELDS = {
-          name: 'name',
-          path: 'path',
-          blocking: 'blocking',
-          details_url: 'detailsUrl',
-          external_id: 'externalId',
-          rerequestable: 'rerequestable'
+          name: "name",
+          path: "path",
+          blocking: "blocking",
+          details_url: "detailsUrl",
+          external_id: "externalId",
+          rerequestable: "rerequestable",
         }.freeze
         REQUIRED_FIELDS = %i[
           name
           blocking
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for CreateCheck.
@@ -63,9 +64,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateCheckResponseOutputMetricsCLSMetadata
         FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
+          previous_value: "previousValue",
+          source: "source",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           source
@@ -74,7 +75,7 @@ module OctridevVercel
         DECODERS = {
           source: lambda do |value|
             ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsCLSSource.from_value(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           value
@@ -107,9 +108,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateCheckResponseOutputMetricsFCPMetadata
         FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
+          previous_value: "previousValue",
+          source: "source",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           source
@@ -118,7 +119,7 @@ module OctridevVercel
         DECODERS = {
           source: lambda do |value|
             ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsFCPSource.from_value(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           value
@@ -151,9 +152,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateCheckResponseOutputMetricsLCPMetadata
         FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
+          previous_value: "previousValue",
+          source: "source",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           source
@@ -162,7 +163,7 @@ module OctridevVercel
         DECODERS = {
           source: lambda do |value|
             ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsLCPSource.from_value(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           value
@@ -195,9 +196,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateCheckResponseOutputMetricsTBTMetadata
         FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
+          previous_value: "previousValue",
+          source: "source",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           source
@@ -206,7 +207,7 @@ module OctridevVercel
         DECODERS = {
           source: lambda do |value|
             ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsTBTSource.from_value(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           value
@@ -239,9 +240,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateCheckResponseOutputMetricsVirtualExperienceScoreMetadata
         FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
+          previous_value: "previousValue",
+          source: "source",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           source
@@ -250,7 +251,7 @@ module OctridevVercel
         DECODERS = {
           source: lambda do |value|
             ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsVirtualExperienceScoreSource.from_value(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           value
@@ -283,11 +284,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateCheckResponseOutputMetricsMetadata
         FIELDS = {
-          cls: 'CLS',
-          fcp: 'FCP',
-          lcp: 'LCP',
-          tbt: 'TBT',
-          virtual_experience_score: 'virtualExperienceScore'
+          cls: "CLS",
+          fcp: "FCP",
+          lcp: "LCP",
+          tbt: "TBT",
+          virtual_experience_score: "virtualExperienceScore",
         }.freeze
         REQUIRED_FIELDS = %i[
           cls
@@ -310,7 +311,7 @@ module OctridevVercel
           end,
           virtual_experience_score: lambda do |value|
             ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetricsVirtualExperienceScore.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -340,13 +341,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateCheckResponseOutputMetadata
         FIELDS = {
-          metrics: 'metrics'
+          metrics: "metrics",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           metrics: lambda do |value|
             ::OctridevVercel::Methods::Checks::CreateCheckResponseOutputMetrics.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -376,22 +378,22 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateCheckResponseMetadata
         FIELDS = {
-          blocking: 'blocking',
-          completed_at: 'completedAt',
-          conclusion: 'conclusion',
-          created_at: 'createdAt',
-          deployment_id: 'deploymentId',
-          details_url: 'detailsUrl',
-          external_id: 'externalId',
-          id: 'id',
-          integration_id: 'integrationId',
-          name: 'name',
-          output: 'output',
-          path: 'path',
-          rerequestable: 'rerequestable',
-          started_at: 'startedAt',
-          status: 'status',
-          updated_at: 'updatedAt'
+          blocking: "blocking",
+          completed_at: "completedAt",
+          conclusion: "conclusion",
+          created_at: "createdAt",
+          deployment_id: "deploymentId",
+          details_url: "detailsUrl",
+          external_id: "externalId",
+          id: "id",
+          integration_id: "integrationId",
+          name: "name",
+          output: "output",
+          path: "path",
+          rerequestable: "rerequestable",
+          started_at: "startedAt",
+          status: "status",
+          updated_at: "updatedAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           blocking
@@ -418,7 +420,7 @@ module OctridevVercel
           end,
           status: lambda do |value|
             ::OctridevVercel::Methods::Checks::CreateCheckResponseStatus.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -450,9 +452,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListChecksResponseChecksItemOutputMetricsCLSMetadata
         FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
+          previous_value: "previousValue",
+          source: "source",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           source
@@ -461,7 +463,7 @@ module OctridevVercel
         DECODERS = {
           source: lambda do |value|
             ::OctridevVercel::Methods::Checks::ListChecksResponseChecksItemOutputMetricsCLSSource.from_value(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           value
@@ -494,9 +496,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListChecksResponseChecksItemOutputMetricsFCPMetadata
         FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
+          previous_value: "previousValue",
+          source: "source",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           source
@@ -505,7 +507,7 @@ module OctridevVercel
         DECODERS = {
           source: lambda do |value|
             ::OctridevVercel::Methods::Checks::ListChecksResponseChecksItemOutputMetricsFCPSource.from_value(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           value
@@ -538,9 +540,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListChecksResponseChecksItemOutputMetricsLCPMetadata
         FIELDS = {
-          previous_value: 'previousValue',
-          source: 'source',
-          value: 'value'
+          previous_value: "previousValue",
+          source: "source",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           source
@@ -549,7 +551,7 @@ module OctridevVercel
         DECODERS = {
           source: lambda do |value|
             ::OctridevVercel::Methods::Checks::ListChecksResponseChecksItemOutputMetricsLCPSource.from_value(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           value

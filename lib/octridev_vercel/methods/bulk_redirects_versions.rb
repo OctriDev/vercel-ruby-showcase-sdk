@@ -16,20 +16,27 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_versions) do |config:, project_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_versions) do |
+        config:,
+        project_id:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
-          '/v1/bulk-redirects/versions',
+          "/v1/bulk-redirects/versions",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::BulkRedirects::GetVersionsResponse,
           decoder: :json,
           operation_id: 'get_versions',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -50,26 +57,27 @@ module OctridevVercel
         name: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(name) { Validation.validate_length('name', name, max: 256) }
 
         SdkClient.request(
           'POST',
-          '/v1/bulk-redirects/versions',
+          "/v1/bulk-redirects/versions",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'id' => id,
             'action' => action,
-            'name' => name
+            'name' => name,
           },
           return_type: ::OctridevVercel::Methods::BulkRedirects::UpdateVersionResponse,
           decoder: :json,
           operation_id: 'update_version',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

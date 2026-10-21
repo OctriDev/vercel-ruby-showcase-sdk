@@ -27,24 +27,25 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('idOrName', id_or_name, max: 255)
 
         SdkClient.request(
           'DELETE',
           [
-            '/v1/vcr/repository/',
+            "/v1/vcr/repository/",
             SdkClient.encode_path_segment(id_or_name),
-            '/permissions/all'
+            "/permissions/all"
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :empty,
           operation_id: 'clear_repository_permissions',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

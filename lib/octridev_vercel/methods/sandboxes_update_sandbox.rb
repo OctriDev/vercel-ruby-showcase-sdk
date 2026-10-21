@@ -79,6 +79,7 @@ module OctridevVercel
         tags: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_length('name', name, max: 128)
         Validation.validate_pattern('name', name, '^[a-zA-Z0-9_-]+$')
 
@@ -99,7 +100,7 @@ module OctridevVercel
         SdkClient.request(
           'PATCH',
           [
-            '/v2/sandboxes/',
+            "/v2/sandboxes/",
             SdkClient.encode_path_segment(name)
           ].join,
           config: config,
@@ -107,7 +108,7 @@ module OctridevVercel
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'resume' => QueryValue.new(resume, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'resources' => resources,
@@ -124,12 +125,12 @@ module OctridevVercel
             'env' => env,
             'ports' => ports,
             'currentSnapshotId' => current_snapshot_id,
-            'tags' => tags
+            'tags' => tags,
           },
           return_type: ::OctridevVercel::UpdateSandboxResponse,
           decoder: :json,
           operation_id: 'update_sandbox',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

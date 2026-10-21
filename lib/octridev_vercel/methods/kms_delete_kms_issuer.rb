@@ -24,20 +24,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/kms/issuers/',
+            "/v1/kms/issuers/",
             SdkClient.encode_path_segment(issuer_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           decoder: :empty,
           operation_id: 'delete_kms_issuer',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

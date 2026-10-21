@@ -15,8 +15,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = %w[
-          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+        VALUES = [
+          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
         ].freeze
         def self.from_value(value)
           value
@@ -28,7 +28,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = %w[PROMOTED ROLLING STAGED].freeze
+        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
         def self.from_value(value)
           value
         end
@@ -81,8 +81,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value
@@ -134,7 +134,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = %w[enterprise hobby pro].freeze
+        VALUES = ['enterprise', 'hobby', 'pro'].freeze
         def self.from_value(value)
           value
         end
@@ -147,9 +147,9 @@ module OctridevVercel
         PRODUCTION = 'production'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-        VALUES = %w[
-          all preview production prod_deployment_urls_and_all_previews
-          all_except_custom_domains
+        VALUES = [
+          'all', 'preview', 'production', 'prod_deployment_urls_and_all_previews',
+          'all_except_custom_domains'
         ].freeze
         def self.from_value(value)
           value
@@ -217,9 +217,9 @@ module OctridevVercel
         SIN1 = 'sin1'
         SYD1 = 'syd1'
         YUL1 = 'yul1'
-        VALUES = %w[
-          arn1 bom1 cdg1 cle1 cpt1 dub1 fra1 gru1 hkg1 hnd1 iad1
-          icn1 kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
+        VALUES = [
+          'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'iad1',
+          'icn1', 'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
         ].freeze
         def self.from_value(value)
           value
@@ -269,7 +269,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = %w[enhanced standard turbo].freeze
+        VALUES = ['enhanced', 'standard', 'turbo'].freeze
         def self.from_value(value)
           value
         end
@@ -281,7 +281,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = %w[canceled failed skipped succeeded].freeze
+        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
         def self.from_value(value)
           value
         end
@@ -312,7 +312,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = %w[challenge deny log].freeze
+        VALUES = ['challenge', 'deny', 'log'].freeze
         def self.from_value(value)
           value
         end
@@ -322,7 +322,7 @@ module OctridevVercel
       module CreateProjectResponseAliasItemEnvironment
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[preview production].freeze
+        VALUES = ['preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -362,7 +362,7 @@ module OctridevVercel
       module ListProjectsResponseVariant2ProjectsItemDeploymentPolicyDeploXfa1615f355
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[preview production].freeze
+        VALUES = ['preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -399,9 +399,9 @@ module OctridevVercel
         SIN1 = 'sin1'
         SYD1 = 'syd1'
         YUL1 = 'yul1'
-        VALUES = %w[
-          arn1 bom1 cdg1 cle1 cpt1 dub1 fra1 gru1 hkg1 hnd1 iad1
-          icn1 kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
+        VALUES = [
+          'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'iad1',
+          'icn1', 'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
         ].freeze
         def self.from_value(value)
           value
@@ -433,7 +433,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[development preview production].freeze
+        VALUES = ['development', 'preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -464,7 +464,7 @@ module OctridevVercel
         PRODUCTION = 'production'
         PREVIEW = 'preview'
         DEVELOPMENT = 'development'
-        VALUES = %w[production preview development].freeze
+        VALUES = ['production', 'preview', 'development'].freeze
         def self.from_value(value)
           value
         end
@@ -484,7 +484,7 @@ module OctridevVercel
       module ListProjectsResponseVariant0ItemResourceConfigBuildMachineElaX477917b3ab
         DOWNGRADE = 'downgrade'
         UPGRADE = 'upgrade'
-        VALUES = %w[downgrade upgrade].freeze
+        VALUES = ['downgrade', 'upgrade'].freeze
         def self.from_value(value)
           value
         end
@@ -504,7 +504,7 @@ module OctridevVercel
       module ListProjectsResponseVariant1ProjectsItemAliasItemEnvironment
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[preview production].freeze
+        VALUES = ['preview', 'production'].freeze
         def self.from_value(value)
           value
         end
@@ -514,7 +514,7 @@ module OctridevVercel
       module ListProjectsDomainsParameter1761f8f9
         PRODUCTION = 'production'
         PREVIEW = 'preview'
-        VALUES = %w[production preview].freeze
+        VALUES = ['production', 'preview'].freeze
         def self.from_value(value)
           value
         end
@@ -556,7 +556,7 @@ module OctridevVercel
         PERFORMANCE_XL = 'performance_xl'
         STANDARD = 'standard'
         STANDARD_LEGACY = 'standard_legacy'
-        VALUES = %w[performance performance_xl standard standard_legacy].freeze
+        VALUES = ['performance', 'performance_xl', 'standard', 'standard_legacy'].freeze
         def self.from_value(value)
           value
         end

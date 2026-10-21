@@ -48,7 +48,7 @@ module OctridevVercel
         CACHED = 'cached'
         FAILED = 'failed'
         SKIPPED = 'skipped'
-        VALUES = %w[succeeded cached failed skipped].freeze
+        VALUES = ['succeeded', 'cached', 'failed', 'skipped'].freeze
         def self.from_value(value)
           value
         end
@@ -80,7 +80,7 @@ module OctridevVercel
         SUCCEEDED = 'succeeded'
         FAILED = 'failed'
         SKIPPED = 'skipped'
-        VALUES = %w[succeeded failed skipped].freeze
+        VALUES = ['succeeded', 'failed', 'skipped'].freeze
         def self.from_value(value)
           value
         end
@@ -129,8 +129,8 @@ module OctridevVercel
         ERROR = 'error'
         SYSTEM_ERROR = 'systemError'
         FATAL = 'fatal'
-        VALUES = %w[
-          trace debug command info warn error systemError fatal
+        VALUES = [
+          'trace', 'debug', 'command', 'info', 'warn', 'error', 'systemError', 'fatal'
         ].freeze
         def self.from_value(value)
           value
@@ -155,7 +155,7 @@ module OctridevVercel
         GITHUB = 'github'
         GITLAB = 'gitlab'
         VERCEL = 'vercel'
-        VALUES = %w[bitbucket cursor-origin github gitlab vercel].freeze
+        VALUES = ['bitbucket', 'cursor-origin', 'github', 'gitlab', 'vercel'].freeze
         def self.from_value(value)
           value
         end
@@ -357,8 +357,8 @@ module OctridevVercel
         ERROR = 'error'
         SYSTEM_ERROR = 'systemError'
         FATAL = 'fatal'
-        VALUES = %w[
-          trace debug command info warn error systemError fatal
+        VALUES = [
+          'trace', 'debug', 'command', 'info', 'warn', 'error', 'systemError', 'fatal'
         ].freeze
         def self.from_value(value)
           value
@@ -492,7 +492,7 @@ module OctridevVercel
         GITLAB = 'gitlab'
         BITBUCKET = 'bitbucket'
         VERCEL = 'vercel'
-        VALUES = %w[github gitlab bitbucket vercel].freeze
+        VALUES = ['github', 'gitlab', 'bitbucket', 'vercel'].freeze
         def self.from_value(value)
           value
         end
@@ -541,8 +541,8 @@ module OctridevVercel
         ERROR = 'error'
         SYSTEM_ERROR = 'systemError'
         FATAL = 'fatal'
-        VALUES = %w[
-          trace debug command info warn error systemError fatal
+        VALUES = [
+          'trace', 'debug', 'command', 'info', 'warn', 'error', 'systemError', 'fatal'
         ].freeze
         def self.from_value(value)
           value

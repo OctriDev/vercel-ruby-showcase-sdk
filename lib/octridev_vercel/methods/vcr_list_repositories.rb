@@ -30,29 +30,30 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 1000) }
 
         Validation.if_given(cursor) { Validation.validate_length('cursor', cursor, max: 1024) }
 
         SdkClient.request(
           'GET',
-          '/v1/vcr/repository',
+          "/v1/vcr/repository",
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::VcrRepositoryList,
           decoder: :json,
           operation_id: 'list_repositories',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
-      ListRepositoriesPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
+    ListRepositoriesPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
 
       # Lists container registry repositories for a project in the authenticated team. Supply `projectId` to select the project; use `cursor` to continue through paginated results and `limit` to control the page size.
       #
@@ -88,11 +89,9 @@ module OctridevVercel
             )
             items = page.repositories || []
             break if items.empty?
-
             items.each { |item| y << item }
             next_cursor = page.next_cursor
             break if next_cursor.nil?
-
             cursor = next_cursor
           end
         end
@@ -120,12 +119,10 @@ module OctridevVercel
             )
             items = page.repositories || []
             break if items.empty?
-
             next_cursor = page.next_cursor
             has_more = !next_cursor.nil?
             y << ListRepositoriesPage.new(data: page, items: items, has_more: has_more)
             break unless has_more
-
             cursor = next_cursor
           end
         end

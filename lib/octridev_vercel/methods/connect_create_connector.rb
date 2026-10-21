@@ -102,6 +102,7 @@ module OctridevVercel
         events: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(icon) { Validation.validate_pattern('icon', icon, '^[0-9a-fA-F]{40}$') }
 
         Validation.if_given(background_color) do
@@ -122,11 +123,11 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          '/v1/connect/connectors',
+          "/v1/connect/connectors",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'data' => data,
@@ -147,13 +148,13 @@ module OctridevVercel
             'triggerVerificationInput' => trigger_verification_input,
             'triggerRegistrationInput' => trigger_registration_input,
             'triggerDestination' => trigger_destination,
-            'events' => events
+            'events' => events,
           },
           return_type: ::OctridevVercel::ConnectConnectorCreateResult,
           decoder: :json,
           operation_id: 'create_connector',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError, '500' => ::OctridevVercel::ConnectError, '502' => ::OctridevVercel::ConnectError }
+          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError, '500' => ::OctridevVercel::ConnectError, '502' => ::OctridevVercel::ConnectError },
         ).data
       end
     end

@@ -21,21 +21,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'POST',
           [
-            '/v1/connect/connectors/',
+            "/v1/connect/connectors/",
             SdkClient.encode_path_segment(connector),
-            '/managed/eject'
+            "/managed/eject"
           ].join,
           config: config,
           query: {
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::ConnectConnector,
           decoder: :json,
           operation_id: 'eject_managed_connector',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

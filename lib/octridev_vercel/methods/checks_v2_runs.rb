@@ -25,24 +25,25 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'GET',
           [
-            '/v2/projects/',
+            "/v2/projects/",
             SdkClient.encode_path_segment(project_id_or_name),
-            '/checks/',
+            "/checks/",
             SdkClient.encode_path_segment(check_id),
-            '/runs'
+            "/runs"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::ChecksV2::ListCheckRunsResponse,
           decoder: :json,
           operation_id: 'list_check_runs',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

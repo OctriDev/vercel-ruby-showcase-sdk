@@ -17,20 +17,26 @@ module OctridevVercel
       #   configuration (installation) the resource belongs to
       # @param resource_id [String] The ID provided by the 3rd party provider for
       #   the given resource
-      singleton_class.define_method(:get_integration_resource) do |config:, integration_configuration_id:, resource_id:, request_options: nil|
+      singleton_class.define_method(:get_integration_resource) do |
+        config:,
+        integration_configuration_id:,
+        resource_id:,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/installations/',
+            "/v1/installations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/resources/',
+            "/resources/",
             SdkClient.encode_path_segment(resource_id)
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Marketplace::GetIntegrationResourceResponse,
           decoder: :json,
           operation_id: 'get_integration_resource',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

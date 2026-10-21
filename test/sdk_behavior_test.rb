@@ -151,9 +151,9 @@ class SdkBehaviorTest < Minitest::Test
         end
         assert_equal value, actual, "header #{name}"
       end
-      return unless !item['expect']['bodyText'].nil? && request_spec['bodyKind'] == 'json'
-
-      assert_equal JSON.parse(item['expect']['bodyText']), JSON.parse(seen.body)
+      if !item['expect']['bodyText'].nil? && request_spec['bodyKind'] == 'json'
+        assert_equal JSON.parse(item['expect']['bodyText']), JSON.parse(seen.body)
+      end
     end
   end
 end

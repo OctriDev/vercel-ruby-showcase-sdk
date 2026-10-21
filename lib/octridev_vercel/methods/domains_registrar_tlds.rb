@@ -12,41 +12,52 @@ module OctridevVercel
       # Lists the top-level domains supported for domain registration. Use this operation to discover which TLDs are available before requesting TLD metadata or checking domain availability. The response is an array of TLD names.
       #
       # Get a list of TLDs supported by Vercel
-      singleton_class.define_method(:get_supported_tlds) do |config:, team_id: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_supported_tlds) do |
+        config:,
+        team_id: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
-          '/v1/registrar/tlds/supported',
+          "/v1/registrar/tlds/supported",
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           return_type: [::OctridevVercel::TldName],
           decoder: :json,
           operation_id: 'get_supported_tlds',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
 
       # Retrieves metadata for a specific top-level domain. Use this operation to find the language codes supported for the TLD and their corresponding language names. The response contains a map of supported language codes.
       #
       # Get the metadata for a specific TLD.
-      singleton_class.define_method(:get_tld) do |config:, tld:, team_id: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_tld) do |
+        config:,
+        tld:,
+        team_id: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/registrar/tlds/',
+            "/v1/registrar/tlds/",
             SdkClient.encode_path_segment(tld)
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetTldResponse,
           decoder: :json,
           operation_id: 'get_tld',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
 
@@ -56,24 +67,31 @@ module OctridevVercel
       #
       # @param years [String] The number of years to get the price for. If not
       #   provided, the minimum number of years for the TLD will be used.
-      singleton_class.define_method(:get_tld_price) do |config:, tld:, years: NOT_GIVEN, team_id: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_tld_price) do |
+        config:,
+        tld:,
+        years: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/registrar/tlds/',
+            "/v1/registrar/tlds/",
             SdkClient.encode_path_segment(tld),
-            '/price'
+            "/price"
           ].join,
           config: config,
           query: {
             'years' => QueryValue.new(years, style: 'form', explode: true),
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetTldPriceResponse,
           decoder: :json,
           operation_id: 'get_tld_price',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
     end

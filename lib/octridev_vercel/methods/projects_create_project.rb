@@ -92,23 +92,23 @@ module OctridevVercel
         resource_config: NOT_GIVEN,
         request_options: nil
       )
+
         __sdk_validate_create_project(name: name, preview_deployment_suffix: preview_deployment_suffix, build_command: build_command, command_for_ignoring_build_step: command_for_ignoring_build_step, dev_command: dev_command, install_command: install_command, output_directory: output_directory, root_directory: root_directory, serverless_function_region: serverless_function_region)
 
         SdkClient.request(
           'POST',
-          '/v11/projects',
+          "/v11/projects",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: __sdk_body_create_project_part1(name: name, enable_preview_feedback: enable_preview_feedback, enable_production_feedback: enable_production_feedback, preview_deployments_disabled: preview_deployments_disabled, preview_deployment_suffix: preview_deployment_suffix, build_command: build_command, command_for_ignoring_build_step: command_for_ignoring_build_step, dev_command: dev_command, environment_variables: environment_variables, framework: framework, git_repository: git_repository, install_command: install_command, skip_git_connect_during_link: skip_git_connect_during_link, sso_protection: sso_protection, sandbox: sandbox, output_directory: output_directory, public_source: public_source, root_directory: root_directory).merge(
-            __sdk_body_create_project_part2(serverless_function_region: serverless_function_region, serverless_function_zero_config_failover: serverless_function_zero_config_failover, oidc_token_config: oidc_token_config, enable_affected_projects_deployments: enable_affected_projects_deployments, resource_config: resource_config)
-          ),
+            __sdk_body_create_project_part2(serverless_function_region: serverless_function_region, serverless_function_zero_config_failover: serverless_function_zero_config_failover, oidc_token_config: oidc_token_config, enable_affected_projects_deployments: enable_affected_projects_deployments, resource_config: resource_config)),
           return_type: ::OctridevVercel::Methods::Projects::CreateProjectResponse,
           decoder: :json,
           operation_id: 'create_project',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -193,7 +193,7 @@ module OctridevVercel
           'sandbox' => sandbox,
           'outputDirectory' => output_directory,
           'publicSource' => public_source,
-          'rootDirectory' => root_directory
+          'rootDirectory' => root_directory,
         }
       end
       private_class_method :__sdk_body_create_project_part1
@@ -210,7 +210,7 @@ module OctridevVercel
           'serverlessFunctionZeroConfigFailover' => serverless_function_zero_config_failover,
           'oidcTokenConfig' => oidc_token_config,
           'enableAffectedProjectsDeployments' => enable_affected_projects_deployments,
-          'resourceConfig' => resource_config
+          'resourceConfig' => resource_config,
         }
       end
       private_class_method :__sdk_body_create_project_part2

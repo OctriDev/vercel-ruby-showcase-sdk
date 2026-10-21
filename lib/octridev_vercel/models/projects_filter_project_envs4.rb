@@ -5,702 +5,702 @@
 
 # projects domain models
 module OctridevVercel
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant10Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant10Type
-    POSTGRES_USER = 'postgres-user'
-    VALUES = ['postgres-user'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant10Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant10Type
+  POSTGRES_USER = 'postgres-user'
+  VALUES = ['postgres-user'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant10Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant10Type: #{value}")
-    end
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant10Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant10Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant11Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant11Type
-    POSTGRES_HOST = 'postgres-host'
-    VALUES = ['postgres-host'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant11Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant11Type
+  POSTGRES_HOST = 'postgres-host'
+  VALUES = ['postgres-host'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant11Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant11Type: #{value}")
-    end
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant11Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant11Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant12Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant12Type
-    POSTGRES_PASSWORD = 'postgres-password'
-    VALUES = ['postgres-password'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant12Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant12Type
+  POSTGRES_PASSWORD = 'postgres-password'
+  VALUES = ['postgres-password'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant12Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant12Type: #{value}")
-    end
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant12Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant12Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant13Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant13Type
-    POSTGRES_DATABASE = 'postgres-database'
-    VALUES = ['postgres-database'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant13Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant13Type
+  POSTGRES_DATABASE = 'postgres-database'
+  VALUES = ['postgres-database'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant13Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant13Type: #{value}")
-    end
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant13Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant13Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant14Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant14Type
-    POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
-    VALUES = ['postgres-url-no-ssl'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant14Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant14Type
+  POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
+  VALUES = ['postgres-url-no-ssl'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant14Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant14Type: #{value}")
-    end
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant14Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant14Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant15Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant15Type
-    INTEGRATION_STORE_SECRET = 'integration-store-secret'
-    VALUES = ['integration-store-secret'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant15Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant15Type
+  INTEGRATION_STORE_SECRET = 'integration-store-secret'
+  VALUES = ['integration-store-secret'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant15Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant15Type: #{value}")
-    end
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant15Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant15Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant16Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant16Type
-    FLAGS_CONNECTION_STRING = 'flags-connection-string'
-    VALUES = ['flags-connection-string'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant16Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant16Type
+  FLAGS_CONNECTION_STRING = 'flags-connection-string'
+  VALUES = ['flags-connection-string'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant16Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant16Type: #{value}")
-    end
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant16Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant16Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant2Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant2Type
-    REDIS_REST_API_TOKEN = 'redis-rest-api-token'
-    VALUES = ['redis-rest-api-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant2Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant2Type
+  REDIS_REST_API_TOKEN = 'redis-rest-api-token'
+  VALUES = ['redis-rest-api-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant2Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant2Type: #{value}")
-    end
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant2Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant2Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant3Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant3Type
-    REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
-    VALUES = ['redis-rest-api-read-only-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant3Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant3Type
+  REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
+  VALUES = ['redis-rest-api-read-only-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant3Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant3Type: #{value}")
-    end
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant3Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant3Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant4Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant4Type
-    BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
-    VALUES = ['blob-read-write-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant4Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant4Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant5Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant5Type
-    BLOB_STORE_ID = 'blob-store-id'
-    VALUES = ['blob-store-id'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant5Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant5Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant6Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant6Type
-    BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
-    VALUES = ['blob-webhook-public-key'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant6Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant6Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant7Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant7Type
-    POSTGRES_URL = 'postgres-url'
-    VALUES = ['postgres-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant7Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant7Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant8Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant8Type
-    POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
-    VALUES = ['postgres-url-non-pooling'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant8Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant8Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant0ContentHintVariant9Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0ContentHintVariant9Type
-    POSTGRES_PRISMA_URL = 'postgres-prisma-url'
-    VALUES = ['postgres-prisma-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant9Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant9Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant0Decrypted SDK namespace.
-  module FilterProjectEnvsResponseVariant0Decrypted
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant0SecurityIssuesItem SDK namespace.
-  module FilterProjectEnvsResponseVariant0SecurityIssuesItem
-    FLAGS_SECRET_NEEDS_SPLIT = 'flags-secret-needs-split'
-    READABLE_SECRET = 'readable-secret'
-    VALUES = %w[flags-secret-needs-split readable-secret].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant0System SDK namespace.
-  module FilterProjectEnvsResponseVariant0System
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant0TargetVariant0Item SDK namespace.
-  module FilterProjectEnvsResponseVariant0TargetVariant0Item
-    DEVELOPMENT = 'development'
-    PREVIEW = 'preview'
-    PRODUCTION = 'production'
-    VALUES = %w[development preview production].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant0TargetVariant1 SDK namespace.
-  module FilterProjectEnvsResponseVariant0TargetVariant1
-    DEVELOPMENT = 'development'
-    PREVIEW = 'preview'
-    PRODUCTION = 'production'
-    VALUES = %w[development preview production].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant0Type SDK namespace.
-  module FilterProjectEnvsResponseVariant0Type
-    ENCRYPTED = 'encrypted'
-    PLAIN = 'plain'
-    SECRET = 'secret'
-    SENSITIVE = 'sensitive'
-    SYSTEM = 'system'
-    VALUES = %w[encrypted plain secret sensitive system].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant0Visibility SDK namespace.
-  module FilterProjectEnvsResponseVariant0Visibility
-    CONFIG = 'config'
-    SECRET = 'secret'
-    VALUES = %w[config secret].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant0Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant0Type
-    REDIS_URL = 'redis-url'
-    VALUES = ['redis-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant0Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant0Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant1Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant1Type
-    REDIS_REST_API_URL = 'redis-rest-api-url'
-    VALUES = ['redis-rest-api-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant1Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant1Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant10Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant10Type
-    POSTGRES_USER = 'postgres-user'
-    VALUES = ['postgres-user'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant10Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant10Type: #{value}")
-    end
-  end
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant4Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant4Type
+  BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
+  VALUES = ['blob-read-write-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant4Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant4Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant5Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant5Type
+  BLOB_STORE_ID = 'blob-store-id'
+  VALUES = ['blob-store-id'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant5Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant5Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant6Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant6Type
+  BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
+  VALUES = ['blob-webhook-public-key'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant6Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant6Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant7Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant7Type
+  POSTGRES_URL = 'postgres-url'
+  VALUES = ['postgres-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant7Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant7Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant8Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant8Type
+  POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
+  VALUES = ['postgres-url-non-pooling'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant8Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant8Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0ContentHintVariant9Type SDK namespace.
+module FilterProjectEnvsResponseVariant0ContentHintVariant9Type
+  POSTGRES_PRISMA_URL = 'postgres-prisma-url'
+  VALUES = ['postgres-prisma-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant0ContentHintVariant9Type', 'enum', "Unknown FilterProjectEnvsResponseVariant0ContentHintVariant9Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0Decrypted SDK namespace.
+module FilterProjectEnvsResponseVariant0Decrypted
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0SecurityIssuesItem SDK namespace.
+module FilterProjectEnvsResponseVariant0SecurityIssuesItem
+  FLAGS_SECRET_NEEDS_SPLIT = 'flags-secret-needs-split'
+  READABLE_SECRET = 'readable-secret'
+  VALUES = ['flags-secret-needs-split', 'readable-secret'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0System SDK namespace.
+module FilterProjectEnvsResponseVariant0System
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0TargetVariant0Item SDK namespace.
+module FilterProjectEnvsResponseVariant0TargetVariant0Item
+  DEVELOPMENT = 'development'
+  PREVIEW = 'preview'
+  PRODUCTION = 'production'
+  VALUES = ['development', 'preview', 'production'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0TargetVariant1 SDK namespace.
+module FilterProjectEnvsResponseVariant0TargetVariant1
+  DEVELOPMENT = 'development'
+  PREVIEW = 'preview'
+  PRODUCTION = 'production'
+  VALUES = ['development', 'preview', 'production'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0Type SDK namespace.
+module FilterProjectEnvsResponseVariant0Type
+  ENCRYPTED = 'encrypted'
+  PLAIN = 'plain'
+  SECRET = 'secret'
+  SENSITIVE = 'sensitive'
+  SYSTEM = 'system'
+  VALUES = ['encrypted', 'plain', 'secret', 'sensitive', 'system'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant0Visibility SDK namespace.
+module FilterProjectEnvsResponseVariant0Visibility
+  CONFIG = 'config'
+  SECRET = 'secret'
+  VALUES = ['config', 'secret'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant0Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant0Type
+  REDIS_URL = 'redis-url'
+  VALUES = ['redis-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant0Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant0Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant1Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant1Type
+  REDIS_REST_API_URL = 'redis-rest-api-url'
+  VALUES = ['redis-rest-api-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant1Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant1Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant10Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant10Type
+  POSTGRES_USER = 'postgres-user'
+  VALUES = ['postgres-user'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant10Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant10Type: #{value}")
+  end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant11Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant11Type
-    POSTGRES_HOST = 'postgres-host'
-    VALUES = ['postgres-host'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant11Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant11Type: #{value}")
-    end
-  end
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant11Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant11Type
+  POSTGRES_HOST = 'postgres-host'
+  VALUES = ['postgres-host'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant11Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant11Type: #{value}")
+  end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant12Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant12Type
-    POSTGRES_PASSWORD = 'postgres-password'
-    VALUES = ['postgres-password'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant12Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant12Type: #{value}")
-    end
-  end
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant12Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant12Type
+  POSTGRES_PASSWORD = 'postgres-password'
+  VALUES = ['postgres-password'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant12Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant12Type: #{value}")
+  end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant13Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant13Type
-    POSTGRES_DATABASE = 'postgres-database'
-    VALUES = ['postgres-database'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant13Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant13Type: #{value}")
-    end
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant13Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant13Type
+  POSTGRES_DATABASE = 'postgres-database'
+  VALUES = ['postgres-database'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant13Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant13Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant14Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant14Type
-    POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
-    VALUES = ['postgres-url-no-ssl'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant14Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant14Type
+  POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
+  VALUES = ['postgres-url-no-ssl'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant14Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant14Type: #{value}")
-    end
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant14Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant14Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant15Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant15Type
-    INTEGRATION_STORE_SECRET = 'integration-store-secret'
-    VALUES = ['integration-store-secret'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant15Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant15Type
+  INTEGRATION_STORE_SECRET = 'integration-store-secret'
+  VALUES = ['integration-store-secret'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant15Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant15Type: #{value}")
-    end
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant15Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant15Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant16Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant16Type
-    FLAGS_CONNECTION_STRING = 'flags-connection-string'
-    VALUES = ['flags-connection-string'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant16Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant16Type: #{value}")
-    end
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant16Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant16Type
+  FLAGS_CONNECTION_STRING = 'flags-connection-string'
+  VALUES = ['flags-connection-string'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant16Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant16Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant2Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant2Type
-    REDIS_REST_API_TOKEN = 'redis-rest-api-token'
-    VALUES = ['redis-rest-api-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant2Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant2Type: #{value}")
-    end
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant2Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant2Type
+  REDIS_REST_API_TOKEN = 'redis-rest-api-token'
+  VALUES = ['redis-rest-api-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant2Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant2Type: #{value}")
   end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant3Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant3Type
-    REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
-    VALUES = ['redis-rest-api-read-only-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant3Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant3Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant4Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant4Type
-    BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
-    VALUES = ['blob-read-write-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant4Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant4Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant5Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant5Type
-    BLOB_STORE_ID = 'blob-store-id'
-    VALUES = ['blob-store-id'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant5Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant5Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant6Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant6Type
-    BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
-    VALUES = ['blob-webhook-public-key'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant6Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant6Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant7Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant7Type
-    POSTGRES_URL = 'postgres-url'
-    VALUES = ['postgres-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant7Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant7Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant8Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant8Type
-    POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
-    VALUES = ['postgres-url-non-pooling'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant8Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant8Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant9Type SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant9Type
-    POSTGRES_PRISMA_URL = 'postgres-prisma-url'
-    VALUES = ['postgres-prisma-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant9Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant9Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemDecrypted SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemDecrypted
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemSecurityIssuesItem SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemSecurityIssuesItem
-    FLAGS_SECRET_NEEDS_SPLIT = 'flags-secret-needs-split'
-    READABLE_SECRET = 'readable-secret'
-    VALUES = %w[flags-secret-needs-split readable-secret].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemSystem SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemSystem
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemTargetVariant0Item SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemTargetVariant0Item
-    DEVELOPMENT = 'development'
-    PREVIEW = 'preview'
-    PRODUCTION = 'production'
-    VALUES = %w[development preview production].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemTargetVariant1 SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemTargetVariant1
-    DEVELOPMENT = 'development'
-    PREVIEW = 'preview'
-    PRODUCTION = 'production'
-    VALUES = %w[development preview production].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemType SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemType
-    ENCRYPTED = 'encrypted'
-    PLAIN = 'plain'
-    SECRET = 'secret'
-    SENSITIVE = 'sensitive'
-    SYSTEM = 'system'
-    VALUES = %w[encrypted plain secret sensitive system].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant1EnvsItemVisibility SDK namespace.
-  module FilterProjectEnvsResponseVariant1EnvsItemVisibility
-    CONFIG = 'config'
-    SECRET = 'secret'
-    VALUES = %w[config secret].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant0Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant0Type
-    REDIS_URL = 'redis-url'
-    VALUES = ['redis-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant0Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant0Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant1Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant1Type
-    REDIS_REST_API_URL = 'redis-rest-api-url'
-    VALUES = ['redis-rest-api-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant1Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant1Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Type
-    POSTGRES_USER = 'postgres-user'
-    VALUES = ['postgres-user'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Type
-    POSTGRES_HOST = 'postgres-host'
-    VALUES = ['postgres-host'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Type
-    POSTGRES_PASSWORD = 'postgres-password'
-    VALUES = ['postgres-password'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Type: #{value}")
-    end
-  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant3Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant3Type
+  REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
+  VALUES = ['redis-rest-api-read-only-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant3Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant3Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant4Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant4Type
+  BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
+  VALUES = ['blob-read-write-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant4Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant4Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant5Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant5Type
+  BLOB_STORE_ID = 'blob-store-id'
+  VALUES = ['blob-store-id'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant5Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant5Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant6Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant6Type
+  BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
+  VALUES = ['blob-webhook-public-key'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant6Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant6Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant7Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant7Type
+  POSTGRES_URL = 'postgres-url'
+  VALUES = ['postgres-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant7Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant7Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant8Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant8Type
+  POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
+  VALUES = ['postgres-url-non-pooling'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant8Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant8Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant9Type SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant9Type
+  POSTGRES_PRISMA_URL = 'postgres-prisma-url'
+  VALUES = ['postgres-prisma-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant9Type', 'enum', "Unknown FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant9Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemDecrypted SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemDecrypted
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemSecurityIssuesItem SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemSecurityIssuesItem
+  FLAGS_SECRET_NEEDS_SPLIT = 'flags-secret-needs-split'
+  READABLE_SECRET = 'readable-secret'
+  VALUES = ['flags-secret-needs-split', 'readable-secret'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemSystem SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemSystem
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemTargetVariant0Item SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemTargetVariant0Item
+  DEVELOPMENT = 'development'
+  PREVIEW = 'preview'
+  PRODUCTION = 'production'
+  VALUES = ['development', 'preview', 'production'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemTargetVariant1 SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemTargetVariant1
+  DEVELOPMENT = 'development'
+  PREVIEW = 'preview'
+  PRODUCTION = 'production'
+  VALUES = ['development', 'preview', 'production'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemType SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemType
+  ENCRYPTED = 'encrypted'
+  PLAIN = 'plain'
+  SECRET = 'secret'
+  SENSITIVE = 'sensitive'
+  SYSTEM = 'system'
+  VALUES = ['encrypted', 'plain', 'secret', 'sensitive', 'system'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant1EnvsItemVisibility SDK namespace.
+module FilterProjectEnvsResponseVariant1EnvsItemVisibility
+  CONFIG = 'config'
+  SECRET = 'secret'
+  VALUES = ['config', 'secret'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant0Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant0Type
+  REDIS_URL = 'redis-url'
+  VALUES = ['redis-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant0Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant0Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant1Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant1Type
+  REDIS_REST_API_URL = 'redis-rest-api-url'
+  VALUES = ['redis-rest-api-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant1Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant1Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Type
+  POSTGRES_USER = 'postgres-user'
+  VALUES = ['postgres-user'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Type
+  POSTGRES_HOST = 'postgres-host'
+  VALUES = ['postgres-host'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Type
+  POSTGRES_PASSWORD = 'postgres-password'
+  VALUES = ['postgres-password'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12Type: #{value}")
+  end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Type
-    POSTGRES_DATABASE = 'postgres-database'
-    VALUES = ['postgres-database'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Type: #{value}")
-    end
-  end
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Type
+  POSTGRES_DATABASE = 'postgres-database'
+  VALUES = ['postgres-database'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13Type: #{value}")
+  end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Type
-    POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
-    VALUES = ['postgres-url-no-ssl'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Type
-    INTEGRATION_STORE_SECRET = 'integration-store-secret'
-    VALUES = ['integration-store-secret'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Type: #{value}")
-    end
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Type
+  POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
+  VALUES = ['postgres-url-no-ssl'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14Type: #{value}")
   end
+end
 
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Type
-    FLAGS_CONNECTION_STRING = 'flags-connection-string'
-    VALUES = ['flags-connection-string'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant2Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant2Type
-    REDIS_REST_API_TOKEN = 'redis-rest-api-token'
-    VALUES = ['redis-rest-api-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant2Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant2Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant3Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant3Type
-    REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
-    VALUES = ['redis-rest-api-read-only-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant3Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant3Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Type
-    BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
-    VALUES = ['blob-read-write-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Type
-    BLOB_STORE_ID = 'blob-store-id'
-    VALUES = ['blob-store-id'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Type
-    BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
-    VALUES = ['blob-webhook-public-key'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Type
-    POSTGRES_URL = 'postgres-url'
-    VALUES = ['postgres-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Type
-    POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
-    VALUES = ['postgres-url-non-pooling'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Type SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Type
-    POSTGRES_PRISMA_URL = 'postgres-prisma-url'
-    VALUES = ['postgres-prisma-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Type: #{value}")
-    end
-  end
-
-  # Defines the FilterProjectEnvsResponseVariant2EnvsItemDecrypted SDK namespace.
-  module FilterProjectEnvsResponseVariant2EnvsItemDecrypted
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Type
+  INTEGRATION_STORE_SECRET = 'integration-store-secret'
+  VALUES = ['integration-store-secret'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15Type: #{value}")
   end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Type
+  FLAGS_CONNECTION_STRING = 'flags-connection-string'
+  VALUES = ['flags-connection-string'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant2Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant2Type
+  REDIS_REST_API_TOKEN = 'redis-rest-api-token'
+  VALUES = ['redis-rest-api-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant2Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant2Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant3Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant3Type
+  REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
+  VALUES = ['redis-rest-api-read-only-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant3Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant3Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Type
+  BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
+  VALUES = ['blob-read-write-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Type
+  BLOB_STORE_ID = 'blob-store-id'
+  VALUES = ['blob-store-id'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Type
+  BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
+  VALUES = ['blob-webhook-public-key'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Type
+  POSTGRES_URL = 'postgres-url'
+  VALUES = ['postgres-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Type
+  POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
+  VALUES = ['postgres-url-non-pooling'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Type SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Type
+  POSTGRES_PRISMA_URL = 'postgres-prisma-url'
+  VALUES = ['postgres-prisma-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Type', 'enum', "Unknown FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9Type: #{value}")
+  end
+end
+
+# Defines the FilterProjectEnvsResponseVariant2EnvsItemDecrypted SDK namespace.
+module FilterProjectEnvsResponseVariant2EnvsItemDecrypted
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
 end

@@ -29,25 +29,26 @@ module OctridevVercel
         claims_schema: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PATCH',
           [
-            '/v1/kms/issuers/',
+            "/v1/kms/issuers/",
             SdkClient.encode_path_segment(issuer_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'name' => name,
-            'claimsSchema' => claims_schema
+            'claimsSchema' => claims_schema,
           },
           return_type: ::OctridevVercel::Methods::Kms::UpdateKmsIssuerResponse,
           decoder: :json,
           operation_id: 'update_kms_issuer',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

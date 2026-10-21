@@ -33,14 +33,15 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         SdkClient.request(
           'GET',
           [
-            '/v1/access-groups/',
+            "/v1/access-groups/",
             SdkClient.encode_path_segment(id_or_name),
-            '/members'
+            "/members"
           ].join,
           config: config,
           query: {
@@ -48,12 +49,12 @@ module OctridevVercel
             'next' => QueryValue.new(next_, style: 'form', explode: true),
             'search' => QueryValue.new(search, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::AccessGroups::ListAccessGroupMembersResponse,
           decoder: :json,
           operation_id: 'list_access_group_members',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

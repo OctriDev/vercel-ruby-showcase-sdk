@@ -23,29 +23,30 @@ module OctridevVercel
         contact_information: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.validate_range('expectedPrice', expected_price, min: 0.01)
 
         SdkClient.request(
           'POST',
           [
-            '/v1/registrar/domains/',
+            "/v1/registrar/domains/",
             SdkClient.encode_path_segment(domain),
-            '/renew'
+            "/renew"
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           body: {
             'years' => years,
             'expectedPrice' => expected_price,
-            'contactInformation' => contact_information
+            'contactInformation' => contact_information,
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::RenewDomainResponse,
           decoder: :json,
           operation_id: 'renew_domain',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
     end

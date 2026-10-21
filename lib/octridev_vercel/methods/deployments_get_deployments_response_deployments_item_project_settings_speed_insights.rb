@@ -37,11 +37,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemProjectSettingsWebAnalyticsMetadata
         FIELDS = {
-          canceled_at: 'canceledAt',
-          disabled_at: 'disabledAt',
-          enabled_at: 'enabledAt',
-          has_data: 'hasData',
-          id: 'id'
+          canceled_at: "canceledAt",
+          disabled_at: "disabledAt",
+          enabled_at: "enabledAt",
+          has_data: "hasData",
+          id: "id",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -49,7 +49,7 @@ module OctridevVercel
         DECODERS = {
           has_data: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemProjectSettingsWebAnalyticsHasData.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -79,25 +79,26 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemProjectSettingsMetadata
         FIELDS = {
-          build_command: 'buildCommand',
-          command_for_ignoring_build_step: 'commandForIgnoringBuildStep',
-          created_at: 'createdAt',
-          customer_support_code_visibility: 'customerSupportCodeVisibility',
-          dev_command: 'devCommand',
-          framework: 'framework',
-          git_comments: 'gitComments',
-          git_fork_protection: 'gitForkProtection',
-          git_lfs: 'gitLFS',
-          install_command: 'installCommand',
-          node_version: 'nodeVersion',
-          output_directory: 'outputDirectory',
-          root_directory: 'rootDirectory',
-          skip_git_connect_during_link: 'skipGitConnectDuringLink',
-          source_files_outside_root_directory: 'sourceFilesOutsideRootDirectory',
-          speed_insights: 'speedInsights',
-          web_analytics: 'webAnalytics'
+          build_command: "buildCommand",
+          command_for_ignoring_build_step: "commandForIgnoringBuildStep",
+          created_at: "createdAt",
+          customer_support_code_visibility: "customerSupportCodeVisibility",
+          dev_command: "devCommand",
+          framework: "framework",
+          git_comments: "gitComments",
+          git_fork_protection: "gitForkProtection",
+          git_lfs: "gitLFS",
+          install_command: "installCommand",
+          node_version: "nodeVersion",
+          output_directory: "outputDirectory",
+          root_directory: "rootDirectory",
+          skip_git_connect_during_link: "skipGitConnectDuringLink",
+          source_files_outside_root_directory: "sourceFilesOutsideRootDirectory",
+          speed_insights: "speedInsights",
+          web_analytics: "webAnalytics",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           customer_support_code_visibility: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemProjectSettingsCustomerSX01e02be4c4.from_value(value)
@@ -128,7 +129,7 @@ module OctridevVercel
           end,
           web_analytics: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemProjectSettingsWebAnalytics.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -165,11 +166,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemSeatBlockMetadata
         FIELDS = {
-          block_code: 'blockCode',
-          git_provider: 'gitProvider',
-          git_user_id: 'gitUserId',
-          is_verified: 'isVerified',
-          user_id: 'userId'
+          block_code: "blockCode",
+          git_provider: "gitProvider",
+          git_user_id: "gitUserId",
+          is_verified: "isVerified",
+          user_id: "userId",
         }.freeze
         REQUIRED_FIELDS = %i[
           block_code
@@ -183,7 +184,7 @@ module OctridevVercel
           end,
           is_verified: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemSeatBlockIsVerified.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -222,48 +223,48 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemMetadata
         FIELDS = {
-          alias_assigned: 'aliasAssigned',
-          alias_error: 'aliasError',
-          attribution: 'attribution',
-          building_at: 'buildingAt',
-          checks: 'checks',
-          checks_conclusion: 'checksConclusion',
-          checks_state: 'checksState',
-          connect_builds_enabled: 'connectBuildsEnabled',
-          connect_configuration_id: 'connectConfigurationId',
-          created: 'created',
-          created_at: 'createdAt',
-          creator: 'creator',
-          custom_environment: 'customEnvironment',
-          default_route: 'defaultRoute',
-          deleted: 'deleted',
-          error_code: 'errorCode',
-          error_message: 'errorMessage',
-          expiration: 'expiration',
-          inspector_url: 'inspectorUrl',
-          is_rollback_candidate: 'isRollbackCandidate',
-          manual_provisioning: 'manualProvisioning',
-          meta: 'meta',
-          name: 'name',
-          oom_report: 'oomReport',
-          passive_connect_configuration_id: 'passiveConnectConfigurationId',
-          platform: 'platform',
-          prebuilt: 'prebuilt',
-          project_id: 'projectId',
-          project_settings: 'projectSettings',
-          proposed_expiration: 'proposedExpiration',
-          ready: 'ready',
-          ready_state: 'readyState',
-          ready_substate: 'readySubstate',
-          seat_block: 'seatBlock',
-          soft_deleted_by_retention: 'softDeletedByRetention',
-          source: 'source',
-          state: 'state',
-          target: 'target',
-          type: 'type',
-          uid: 'uid',
-          undeleted: 'undeleted',
-          url: 'url'
+          alias_assigned: "aliasAssigned",
+          alias_error: "aliasError",
+          attribution: "attribution",
+          building_at: "buildingAt",
+          checks: "checks",
+          checks_conclusion: "checksConclusion",
+          checks_state: "checksState",
+          connect_builds_enabled: "connectBuildsEnabled",
+          connect_configuration_id: "connectConfigurationId",
+          created: "created",
+          created_at: "createdAt",
+          creator: "creator",
+          custom_environment: "customEnvironment",
+          default_route: "defaultRoute",
+          deleted: "deleted",
+          error_code: "errorCode",
+          error_message: "errorMessage",
+          expiration: "expiration",
+          inspector_url: "inspectorUrl",
+          is_rollback_candidate: "isRollbackCandidate",
+          manual_provisioning: "manualProvisioning",
+          meta: "meta",
+          name: "name",
+          oom_report: "oomReport",
+          passive_connect_configuration_id: "passiveConnectConfigurationId",
+          platform: "platform",
+          prebuilt: "prebuilt",
+          project_id: "projectId",
+          project_settings: "projectSettings",
+          proposed_expiration: "proposedExpiration",
+          ready: "ready",
+          ready_state: "readyState",
+          ready_substate: "readySubstate",
+          seat_block: "seatBlock",
+          soft_deleted_by_retention: "softDeletedByRetention",
+          source: "source",
+          state: "state",
+          target: "target",
+          type: "type",
+          uid: "uid",
+          undeleted: "undeleted",
+          url: "url",
         }.freeze
         REQUIRED_FIELDS = %i[
           created
@@ -343,7 +344,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemType.from_value(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           inspector_url
@@ -450,8 +451,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseMetadata
         FIELDS = {
-          deployments: 'deployments',
-          pagination: 'pagination'
+          deployments: "deployments",
+          pagination: "pagination",
         }.freeze
         REQUIRED_FIELDS = %i[
           deployments
@@ -463,7 +464,7 @@ module OctridevVercel
           end,
           pagination: lambda do |value|
             ::OctridevVercel::Pagination.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -495,8 +496,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteDeploymentResponseMetadata
         FIELDS = {
-          state: 'state',
-          uid: 'uid'
+          state: "state",
+          uid: "uid",
         }.freeze
         REQUIRED_FIELDS = %i[
           state
@@ -505,7 +506,7 @@ module OctridevVercel
         DECODERS = {
           state: lambda do |value|
             ::OctridevVercel::Methods::Deployments::DeleteDeploymentResponseState.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -539,7 +540,7 @@ module OctridevVercel
       module CancelDeploymentResponseImagesContentDispositionType
         ATTACHMENT = 'attachment'
         INLINE = 'inline'
-        VALUES = %w[attachment inline].freeze
+        VALUES = ['attachment', 'inline'].freeze
         def self.from_value(value)
           value
         end
@@ -552,7 +553,7 @@ module OctridevVercel
         DENY = 'deny'
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
-        VALUES = %w[bypass challenge deny log rate_limit].freeze
+        VALUES = ['bypass', 'challenge', 'deny', 'log', 'rate_limit'].freeze
         def self.from_value(value)
           value
         end

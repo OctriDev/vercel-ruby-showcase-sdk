@@ -12,15 +12,19 @@ module OctridevVercel
       # Retrieves the active and draft firewall configurations for a project, along with its configuration versions. Use this operation to inspect the current WAF settings and review available versions before changing or activating a configuration.
       #
       # Lists WAF configs for a project
-      singleton_class.define_method(:get_security_firewall_config) do |config:, request_options: nil|
+      singleton_class.define_method(:get_security_firewall_config) do |
+        config:,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
-          '/v1/security/firewall/config',
+          "/v1/security/firewall/config",
           config: config,
           return_type: ::OctridevVercel::Methods::Security::GetSecurityFirewallConfigResponse,
           decoder: :json,
           operation_id: 'get_security_firewall_config',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -15,24 +15,31 @@ module OctridevVercel
       #
       # @param years [String] The number of years to get the price for. If not
       #   provided, the minimum number of years for the TLD will be used.
-      singleton_class.define_method(:get_domain_price) do |config:, domain:, years: NOT_GIVEN, team_id: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_domain_price) do |
+        config:,
+        domain:,
+        years: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/registrar/domains/',
+            "/v1/registrar/domains/",
             SdkClient.encode_path_segment(domain),
-            '/price'
+            "/price"
           ].join,
           config: config,
           query: {
             'years' => QueryValue.new(years, style: 'form', explode: true),
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetDomainPriceResponse,
           decoder: :json,
           operation_id: 'get_domain_price',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
 
@@ -43,25 +50,32 @@ module OctridevVercel
       # @param domains [Array_of_DomainName] an array of at most 50 item(s)
       # @param years [Float] The number of years to get the price for. If not
       #   provided, the minimum number of years for the TLD will be used.
-      singleton_class.define_method(:get_bulk_price) do |config:, domains:, team_id: NOT_GIVEN, years: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_bulk_price) do |
+        config:,
+        domains:,
+        team_id: NOT_GIVEN,
+        years: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.validate_items('domains', domains, min: 1, max: 50)
 
         SdkClient.request(
           'POST',
-          '/v1/registrar/domains/price',
+          "/v1/registrar/domains/price",
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           body: {
             'domains' => domains,
-            'years' => years
+            'years' => years,
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetBulkPriceResponse,
           decoder: :json,
           operation_id: 'get_bulk_price',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
     end

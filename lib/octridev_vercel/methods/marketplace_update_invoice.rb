@@ -39,15 +39,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitPrepaymentBalancesBalancesItemMetadata
         FIELDS = {
-          resource_id: 'resourceId',
-          credit: 'credit',
-          name_label: 'nameLabel',
-          currency_value_in_cents: 'currencyValueInCents'
+          resource_id: "resourceId",
+          credit: "credit",
+          name_label: "nameLabel",
+          currency_value_in_cents: "currencyValueInCents",
         }.freeze
         REQUIRED_FIELDS = %i[
           currency_value_in_cents
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for SubmitPrepaymentBalancesBalancesItem.
@@ -84,8 +85,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitPrepaymentBalancesMetadata
         FIELDS = {
-          timestamp: 'timestamp',
-          balances: 'balances'
+          timestamp: "timestamp",
+          balances: "balances",
         }.freeze
         REQUIRED_FIELDS = %i[
           timestamp
@@ -94,7 +95,7 @@ module OctridevVercel
         DECODERS = {
           balances: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::SubmitPrepaymentBalancesBalancesItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -126,12 +127,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceSecretsSecretsItemEnvironmentOverridesMetadata
         FIELDS = {
-          development: 'development',
-          preview: 'preview',
-          production: 'production'
+          development: "development",
+          preview: "preview",
+          production: "production",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateResourceSecretsSecretsItemEnvironmentOverrides.
@@ -166,10 +169,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceSecretsSecretsItemMetadata
         FIELDS = {
-          name: 'name',
-          value: 'value',
-          prefix: 'prefix',
-          environment_overrides: 'environmentOverrides'
+          name: "name",
+          value: "value",
+          prefix: "prefix",
+          environment_overrides: "environmentOverrides",
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -178,7 +181,7 @@ module OctridevVercel
         DECODERS = {
           environment_overrides: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::UpdateResourceSecretsSecretsItemEnvironmentOverrides.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -210,8 +213,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceSecretsMetadata
         FIELDS = {
-          secrets: 'secrets',
-          partial: 'partial'
+          secrets: "secrets",
+          partial: "partial",
         }.freeze
         REQUIRED_FIELDS = %i[
           secrets
@@ -219,7 +222,7 @@ module OctridevVercel
         DECODERS = {
           secrets: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::UpdateResourceSecretsSecretsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -251,12 +254,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceSecretsByIdSecretsItemEnvironmentOverridesMetadata
         FIELDS = {
-          development: 'development',
-          preview: 'preview',
-          production: 'production'
+          development: "development",
+          preview: "preview",
+          production: "production",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateResourceSecretsByIdSecretsItemEnvironmentOverrides.
@@ -291,10 +296,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceSecretsByIdSecretsItemMetadata
         FIELDS = {
-          name: 'name',
-          value: 'value',
-          prefix: 'prefix',
-          environment_overrides: 'environmentOverrides'
+          name: "name",
+          value: "value",
+          prefix: "prefix",
+          environment_overrides: "environmentOverrides",
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -303,7 +308,7 @@ module OctridevVercel
         DECODERS = {
           environment_overrides: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::UpdateResourceSecretsByIdSecretsItemEnvironmentOverrides.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -335,8 +340,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceSecretsByIdMetadata
         FIELDS = {
-          secrets: 'secrets',
-          partial: 'partial'
+          secrets: "secrets",
+          partial: "partial",
         }.freeze
         REQUIRED_FIELDS = %i[
           secrets
@@ -344,7 +349,7 @@ module OctridevVercel
         DECODERS = {
           secrets: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::UpdateResourceSecretsByIdSecretsItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -376,15 +381,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateInstallationsByIntegrationConfigurationIdResourcesByResX71e74b42bdMetadata
         FIELDS = {
-          id: 'id',
-          slug: 'slug',
-          origin: 'origin',
-          category: 'category',
-          name: 'name',
-          description: 'description',
-          is_archived: 'isArchived',
-          created_at: 'createdAt',
-          updated_at: 'updatedAt'
+          id: "id",
+          slug: "slug",
+          origin: "origin",
+          category: "category",
+          name: "name",
+          description: "description",
+          is_archived: "isArchived",
+          created_at: "createdAt",
+          updated_at: "updatedAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -394,7 +399,7 @@ module OctridevVercel
         DECODERS = {
           category: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::CreateInstallationsByIntegrationConfigurationIdResourcesByResXba61bb22d6.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -425,7 +430,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateInstallationsByIntegrationConfigurationIdResourcesByResX466ac7f69cMetadata
         FIELDS = {
-          items: 'items'
+          items: "items",
         }.freeze
         REQUIRED_FIELDS = %i[
           items
@@ -433,7 +438,7 @@ module OctridevVercel
         DECODERS = {
           items: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::CreateInstallationsByIntegrationConfigurationIdResourcesByResX71e74b42bd.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -463,14 +468,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateInstallationsByIntegrationConfigurationIdResourcesByResX5235ac8d4aMetadata
         FIELDS = {
-          slug: 'slug',
-          origin: 'origin',
-          name: 'name',
-          category: 'category',
-          description: 'description',
-          is_archived: 'isArchived',
-          created_at: 'createdAt',
-          updated_at: 'updatedAt'
+          slug: "slug",
+          origin: "origin",
+          name: "name",
+          category: "category",
+          description: "description",
+          is_archived: "isArchived",
+          created_at: "createdAt",
+          updated_at: "updatedAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           slug
@@ -479,7 +484,7 @@ module OctridevVercel
         DECODERS = {
           category: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::UpdateInstallationsByIntegrationConfigurationIdResourcesByResX11a2dc8bf4.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -510,10 +515,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalHeadInstallationsByIntegrationConfigurationIdResourcesByResouXf7ec779c48Metadata
         FIELDS = {
-          digest: 'digest',
-          items: 'items',
-          purpose: 'purpose',
-          updated_at: 'updatedAt'
+          digest: "digest",
+          items: "items",
+          purpose: "purpose",
+          updated_at: "updatedAt",
         }.freeze
         REQUIRED_FIELDS = %i[
           digest
@@ -526,7 +531,7 @@ module OctridevVercel
           end,
           purpose: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::HeadInstallationsByIntegrationConfigurationIdResourcesByResouX7f5507347f.from_value(value)
-          end
+          end,
         }.freeze
       end
 

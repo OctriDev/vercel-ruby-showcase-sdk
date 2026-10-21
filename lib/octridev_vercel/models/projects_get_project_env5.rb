@@ -5,668 +5,672 @@
 
 # projects_get domain models
 module OctridevVercel
-  # Defines the GetProjectEnvResponseVariant1ContentHintVariant2Type SDK namespace.
-  module GetProjectEnvResponseVariant1ContentHintVariant2Type
-    REDIS_REST_API_TOKEN = 'redis-rest-api-token'
-    VALUES = ['redis-rest-api-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+# Defines the GetProjectEnvResponseVariant1ContentHintVariant2Type SDK namespace.
+module GetProjectEnvResponseVariant1ContentHintVariant2Type
+  REDIS_REST_API_TOKEN = 'redis-rest-api-token'
+  VALUES = ['redis-rest-api-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
 
-      raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant2Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant2Type: #{value}")
-    end
+    raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant2Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant2Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant1ContentHintVariant3Type SDK namespace.
+module GetProjectEnvResponseVariant1ContentHintVariant3Type
+  REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
+  VALUES = ['redis-rest-api-read-only-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant3Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant3Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant1ContentHintVariant4Type SDK namespace.
+module GetProjectEnvResponseVariant1ContentHintVariant4Type
+  BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
+  VALUES = ['blob-read-write-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant4Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant4Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant1ContentHintVariant5Type SDK namespace.
+module GetProjectEnvResponseVariant1ContentHintVariant5Type
+  BLOB_STORE_ID = 'blob-store-id'
+  VALUES = ['blob-store-id'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant5Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant5Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant1ContentHintVariant6Type SDK namespace.
+module GetProjectEnvResponseVariant1ContentHintVariant6Type
+  BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
+  VALUES = ['blob-webhook-public-key'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant6Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant6Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant1ContentHintVariant7Type SDK namespace.
+module GetProjectEnvResponseVariant1ContentHintVariant7Type
+  POSTGRES_URL = 'postgres-url'
+  VALUES = ['postgres-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant7Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant7Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant1ContentHintVariant8Type SDK namespace.
+module GetProjectEnvResponseVariant1ContentHintVariant8Type
+  POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
+  VALUES = ['postgres-url-non-pooling'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant8Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant8Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant1ContentHintVariant9Type SDK namespace.
+module GetProjectEnvResponseVariant1ContentHintVariant9Type
+  POSTGRES_PRISMA_URL = 'postgres-prisma-url'
+  VALUES = ['postgres-prisma-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant9Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant9Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant1Decrypted SDK namespace.
+module GetProjectEnvResponseVariant1Decrypted
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant1TargetVariant0Item SDK namespace.
+module GetProjectEnvResponseVariant1TargetVariant0Item
+  PRODUCTION = 'production'
+  PREVIEW = 'preview'
+  DEVELOPMENT = 'development'
+  VALUES = ['production', 'preview', 'development'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant1TargetVariant1 SDK namespace.
+module GetProjectEnvResponseVariant1TargetVariant1
+  PRODUCTION = 'production'
+  PREVIEW = 'preview'
+  DEVELOPMENT = 'development'
+  VALUES = ['production', 'preview', 'development'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant1Type SDK namespace.
+module GetProjectEnvResponseVariant1Type
+  ENCRYPTED = 'encrypted'
+  PLAIN = 'plain'
+  SECRET = 'secret'
+  SENSITIVE = 'sensitive'
+  SYSTEM = 'system'
+  VALUES = ['encrypted', 'plain', 'secret', 'sensitive', 'system'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant1Visibility SDK namespace.
+module GetProjectEnvResponseVariant1Visibility
+  CONFIG = 'config'
+  SECRET = 'secret'
+  VALUES = ['config', 'secret'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant0Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant0Type
+  REDIS_URL = 'redis-url'
+  VALUES = ['redis-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant0Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant0Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant1Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant1Type
+  REDIS_REST_API_URL = 'redis-rest-api-url'
+  VALUES = ['redis-rest-api-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant1Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant1Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant10Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant10Type
+  POSTGRES_USER = 'postgres-user'
+  VALUES = ['postgres-user'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant10Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant10Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant11Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant11Type
+  POSTGRES_HOST = 'postgres-host'
+  VALUES = ['postgres-host'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant11Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant11Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant12Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant12Type
+  POSTGRES_PASSWORD = 'postgres-password'
+  VALUES = ['postgres-password'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant12Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant12Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant13Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant13Type
+  POSTGRES_DATABASE = 'postgres-database'
+  VALUES = ['postgres-database'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant13Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant13Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant14Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant14Type
+  POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
+  VALUES = ['postgres-url-no-ssl'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant14Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant14Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant15Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant15Type
+  INTEGRATION_STORE_SECRET = 'integration-store-secret'
+  VALUES = ['integration-store-secret'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant15Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant15Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant16Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant16Type
+  FLAGS_CONNECTION_STRING = 'flags-connection-string'
+  VALUES = ['flags-connection-string'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant16Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant16Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant2Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant2Type
+  REDIS_REST_API_TOKEN = 'redis-rest-api-token'
+  VALUES = ['redis-rest-api-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant2Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant2Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant3Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant3Type
+  REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
+  VALUES = ['redis-rest-api-read-only-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant3Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant3Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant4Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant4Type
+  BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
+  VALUES = ['blob-read-write-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant4Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant4Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant5Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant5Type
+  BLOB_STORE_ID = 'blob-store-id'
+  VALUES = ['blob-store-id'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant5Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant5Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant6Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant6Type
+  BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
+  VALUES = ['blob-webhook-public-key'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant6Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant6Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant7Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant7Type
+  POSTGRES_URL = 'postgres-url'
+  VALUES = ['postgres-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant7Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant7Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant8Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant8Type
+  POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
+  VALUES = ['postgres-url-non-pooling'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant8Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant8Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2ContentHintVariant9Type SDK namespace.
+module GetProjectEnvResponseVariant2ContentHintVariant9Type
+  POSTGRES_PRISMA_URL = 'postgres-prisma-url'
+  VALUES = ['postgres-prisma-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant9Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant9Type: #{value}")
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2Decrypted SDK namespace.
+module GetProjectEnvResponseVariant2Decrypted
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2InternalContentHintType SDK namespace.
+module GetProjectEnvResponseVariant2InternalContentHintType
+  FLAGS_SECRET = 'flags-secret'
+  VALUES = ['flags-secret'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2TargetVariant1 SDK namespace.
+module GetProjectEnvResponseVariant2TargetVariant1
+  PRODUCTION = 'production'
+  PREVIEW = 'preview'
+  DEVELOPMENT = 'development'
+  VALUES = ['production', 'preview', 'development'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2Type SDK namespace.
+module GetProjectEnvResponseVariant2Type
+  ENCRYPTED = 'encrypted'
+  PLAIN = 'plain'
+  SECRET = 'secret'
+  SENSITIVE = 'sensitive'
+  SYSTEM = 'system'
+  VALUES = ['encrypted', 'plain', 'secret', 'sensitive', 'system'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GetProjectEnvResponseVariant2Visibility SDK namespace.
+module GetProjectEnvResponseVariant2Visibility
+  CONFIG = 'config'
+  SECRET = 'secret'
+  VALUES = ['config', 'secret'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0AppMetadata
+  FIELDS = {
+    client_id: "clientId",
+    id: "id",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for GetProjectsResponseCreatorVariant0ViaVariant0App.
+class GetProjectsResponseCreatorVariant0ViaVariant0App
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0AppMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0AppMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0AppMetadata::DECODERS
+
+  # @return [String] The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+  attr_reader :client_id
+  # @return [String] The internal ID of the Vercel App backing this principal.
+  attr_reader :id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetProjectEnvResponseVariant1ContentHintVariant3Type SDK namespace.
-  module GetProjectEnvResponseVariant1ContentHintVariant3Type
-    REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
-    VALUES = ['redis-rest-api-read-only-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant3Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant3Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the GetProjectEnvResponseVariant1ContentHintVariant4Type SDK namespace.
-  module GetProjectEnvResponseVariant1ContentHintVariant4Type
-    BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
-    VALUES = ['blob-read-write-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant4Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant4Type: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0Metadata
+  FIELDS = {
+    app: "app",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    app
+    type
+  ].freeze
+  DECODERS = {
+    app: lambda do |value|
+      ::OctridevVercel::GetProjectsResponseCreatorVariant0ViaVariant0App.from_hash(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::GetProjectsResponseCreatorVariant0ViaVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for GetProjectsResponseCreatorVariant0ViaVariant0.
+# Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
+class GetProjectsResponseCreatorVariant0ViaVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0Metadata::DECODERS
+
+  attr_reader :app, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetProjectEnvResponseVariant1ContentHintVariant5Type SDK namespace.
-  module GetProjectEnvResponseVariant1ContentHintVariant5Type
-    BLOB_STORE_ID = 'blob-store-id'
-    VALUES = ['blob-store-id'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant5Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant5Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the GetProjectEnvResponseVariant1ContentHintVariant6Type SDK namespace.
-  module GetProjectEnvResponseVariant1ContentHintVariant6Type
-    BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
-    VALUES = ['blob-webhook-public-key'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant6Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant6Type: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1IntegrationMetadata
+  FIELDS = {
+    configuration_id: "configurationId",
+    integration_id: "integrationId",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    configuration_id
+    integration_id
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for GetProjectsResponseCreatorVariant0ViaVariant1Integration.
+class GetProjectsResponseCreatorVariant0ViaVariant1Integration
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1IntegrationMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1IntegrationMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1IntegrationMetadata::DECODERS
+
+  attr_reader :configuration_id, :integration_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetProjectEnvResponseVariant1ContentHintVariant7Type SDK namespace.
-  module GetProjectEnvResponseVariant1ContentHintVariant7Type
-    POSTGRES_URL = 'postgres-url'
-    VALUES = ['postgres-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant7Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant7Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the GetProjectEnvResponseVariant1ContentHintVariant8Type SDK namespace.
-  module GetProjectEnvResponseVariant1ContentHintVariant8Type
-    POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
-    VALUES = ['postgres-url-non-pooling'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant8Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant8Type: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1Metadata
+  FIELDS = {
+    integration: "integration",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    integration
+    type
+  ].freeze
+  DECODERS = {
+    integration: lambda do |value|
+      ::OctridevVercel::GetProjectsResponseCreatorVariant0ViaVariant1Integration.from_hash(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::GetProjectsResponseCreatorVariant0ViaVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for GetProjectsResponseCreatorVariant0ViaVariant1.
+# Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
+class GetProjectsResponseCreatorVariant0ViaVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1Metadata::DECODERS
+
+  attr_reader :integration, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetProjectEnvResponseVariant1ContentHintVariant9Type SDK namespace.
-  module GetProjectEnvResponseVariant1ContentHintVariant9Type
-    POSTGRES_PRISMA_URL = 'postgres-prisma-url'
-    VALUES = ['postgres-prisma-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant1ContentHintVariant9Type', 'enum', "Unknown GetProjectEnvResponseVariant1ContentHintVariant9Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the GetProjectEnvResponseVariant1Decrypted SDK namespace.
-  module GetProjectEnvResponseVariant1Decrypted
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetProjectsResponseCreatorVariant0UserMetadata
+  FIELDS = {
+    id: "id",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for GetProjectsResponseCreatorVariant0User.
+class GetProjectsResponseCreatorVariant0User
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetProjectsResponseCreatorVariant0UserMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant0UserMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetProjectsResponseCreatorVariant0UserMetadata::DECODERS
+
+  attr_reader :id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetProjectEnvResponseVariant1TargetVariant0Item SDK namespace.
-  module GetProjectEnvResponseVariant1TargetVariant0Item
-    PRODUCTION = 'production'
-    PREVIEW = 'preview'
-    DEVELOPMENT = 'development'
-    VALUES = %w[production preview development].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the GetProjectEnvResponseVariant1TargetVariant1 SDK namespace.
-  module GetProjectEnvResponseVariant1TargetVariant1
-    PRODUCTION = 'production'
-    PREVIEW = 'preview'
-    DEVELOPMENT = 'development'
-    VALUES = %w[production preview development].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetProjectsResponseCreatorVariant0Metadata
+  FIELDS = {
+    type: "type",
+    via: "via",
+    user: "user",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    type
+    via
+    user
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetProjectsResponseCreatorVariant0Type.from_value(value)
+    end,
+    user: lambda do |value|
+      ::OctridevVercel::GetProjectsResponseCreatorVariant0User.from_hash(value)
+    end,
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    via
+  ].freeze
+end
+
+# API model for GetProjectsResponseCreatorVariant0.
+class GetProjectsResponseCreatorVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetProjectsResponseCreatorVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetProjectsResponseCreatorVariant0Metadata::DECODERS
+
+  attr_reader :type, :via, :user
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetProjectEnvResponseVariant1Type SDK namespace.
-  module GetProjectEnvResponseVariant1Type
-    ENCRYPTED = 'encrypted'
-    PLAIN = 'plain'
-    SECRET = 'secret'
-    SENSITIVE = 'sensitive'
-    SYSTEM = 'system'
-    VALUES = %w[encrypted plain secret sensitive system].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalGetProjectsResponseCreatorVariant0Metadata::NULLABLE_FIELDS)
   end
 
-  # Defines the GetProjectEnvResponseVariant1Visibility SDK namespace.
-  module GetProjectEnvResponseVariant1Visibility
-    CONFIG = 'config'
-    SECRET = 'secret'
-    VALUES = %w[config secret].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetProjectsResponseCreatorVariant1AppMetadata
+  FIELDS = {
+    client_id: "clientId",
+    id: "id",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for GetProjectsResponseCreatorVariant1App.
+class GetProjectsResponseCreatorVariant1App
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetProjectsResponseCreatorVariant1AppMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant1AppMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetProjectsResponseCreatorVariant1AppMetadata::DECODERS
+
+  # @return [String] The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+  attr_reader :client_id
+  # @return [String] The internal ID of the Vercel App backing this principal.
+  attr_reader :id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant0Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant0Type
-    REDIS_URL = 'redis-url'
-    VALUES = ['redis-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant0Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant0Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant1Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant1Type
-    REDIS_REST_API_URL = 'redis-rest-api-url'
-    VALUES = ['redis-rest-api-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant1Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant1Type: #{value}")
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant10Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant10Type
-    POSTGRES_USER = 'postgres-user'
-    VALUES = ['postgres-user'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant10Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant10Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant11Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant11Type
-    POSTGRES_HOST = 'postgres-host'
-    VALUES = ['postgres-host'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant11Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant11Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant12Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant12Type
-    POSTGRES_PASSWORD = 'postgres-password'
-    VALUES = ['postgres-password'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant12Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant12Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant13Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant13Type
-    POSTGRES_DATABASE = 'postgres-database'
-    VALUES = ['postgres-database'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant13Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant13Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant14Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant14Type
-    POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
-    VALUES = ['postgres-url-no-ssl'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant14Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant14Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant15Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant15Type
-    INTEGRATION_STORE_SECRET = 'integration-store-secret'
-    VALUES = ['integration-store-secret'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant15Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant15Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant16Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant16Type
-    FLAGS_CONNECTION_STRING = 'flags-connection-string'
-    VALUES = ['flags-connection-string'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant16Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant16Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant2Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant2Type
-    REDIS_REST_API_TOKEN = 'redis-rest-api-token'
-    VALUES = ['redis-rest-api-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant2Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant2Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant3Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant3Type
-    REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
-    VALUES = ['redis-rest-api-read-only-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant3Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant3Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant4Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant4Type
-    BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
-    VALUES = ['blob-read-write-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant4Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant4Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant5Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant5Type
-    BLOB_STORE_ID = 'blob-store-id'
-    VALUES = ['blob-store-id'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant5Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant5Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant6Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant6Type
-    BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
-    VALUES = ['blob-webhook-public-key'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant6Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant6Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant7Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant7Type
-    POSTGRES_URL = 'postgres-url'
-    VALUES = ['postgres-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant7Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant7Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant8Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant8Type
-    POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
-    VALUES = ['postgres-url-non-pooling'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant8Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant8Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2ContentHintVariant9Type SDK namespace.
-  module GetProjectEnvResponseVariant2ContentHintVariant9Type
-    POSTGRES_PRISMA_URL = 'postgres-prisma-url'
-    VALUES = ['postgres-prisma-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('GetProjectEnvResponseVariant2ContentHintVariant9Type', 'enum', "Unknown GetProjectEnvResponseVariant2ContentHintVariant9Type: #{value}")
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2Decrypted SDK namespace.
-  module GetProjectEnvResponseVariant2Decrypted
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2InternalContentHintType SDK namespace.
-  module GetProjectEnvResponseVariant2InternalContentHintType
-    FLAGS_SECRET = 'flags-secret'
-    VALUES = ['flags-secret'].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2TargetVariant1 SDK namespace.
-  module GetProjectEnvResponseVariant2TargetVariant1
-    PRODUCTION = 'production'
-    PREVIEW = 'preview'
-    DEVELOPMENT = 'development'
-    VALUES = %w[production preview development].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2Type SDK namespace.
-  module GetProjectEnvResponseVariant2Type
-    ENCRYPTED = 'encrypted'
-    PLAIN = 'plain'
-    SECRET = 'secret'
-    SENSITIVE = 'sensitive'
-    SYSTEM = 'system'
-    VALUES = %w[encrypted plain secret sensitive system].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Defines the GetProjectEnvResponseVariant2Visibility SDK namespace.
-  module GetProjectEnvResponseVariant2Visibility
-    CONFIG = 'config'
-    SECRET = 'secret'
-    VALUES = %w[config secret].freeze
-    def self.from_value(value)
-      value
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0AppMetadata
-    FIELDS = {
-      client_id: 'clientId',
-      id: 'id'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-    ].freeze
-    DECODERS = {}.freeze
-  end
-
-  # API model for GetProjectsResponseCreatorVariant0ViaVariant0App.
-  class GetProjectsResponseCreatorVariant0ViaVariant0App
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0AppMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0AppMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0AppMetadata::DECODERS
-
-    # @return [String] The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-    attr_reader :client_id
-    # @return [String] The internal ID of the Vercel App backing this principal.
-    attr_reader :id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0Metadata
-    FIELDS = {
-      app: 'app',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      app
-      type
-    ].freeze
-    DECODERS = {
-      app: lambda do |value|
-        ::OctridevVercel::GetProjectsResponseCreatorVariant0ViaVariant0App.from_hash(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::GetProjectsResponseCreatorVariant0ViaVariant0Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for GetProjectsResponseCreatorVariant0ViaVariant0.
-  # Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
-  class GetProjectsResponseCreatorVariant0ViaVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant0Metadata::DECODERS
-
-    attr_reader :app, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1IntegrationMetadata
-    FIELDS = {
-      configuration_id: 'configurationId',
-      integration_id: 'integrationId'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      configuration_id
-      integration_id
-    ].freeze
-    DECODERS = {}.freeze
-  end
-
-  # API model for GetProjectsResponseCreatorVariant0ViaVariant1Integration.
-  class GetProjectsResponseCreatorVariant0ViaVariant1Integration
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1IntegrationMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1IntegrationMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1IntegrationMetadata::DECODERS
-
-    attr_reader :configuration_id, :integration_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1Metadata
-    FIELDS = {
-      integration: 'integration',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      integration
-      type
-    ].freeze
-    DECODERS = {
-      integration: lambda do |value|
-        ::OctridevVercel::GetProjectsResponseCreatorVariant0ViaVariant1Integration.from_hash(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::GetProjectsResponseCreatorVariant0ViaVariant1Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for GetProjectsResponseCreatorVariant0ViaVariant1.
-  # Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
-  class GetProjectsResponseCreatorVariant0ViaVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetProjectsResponseCreatorVariant0ViaVariant1Metadata::DECODERS
-
-    attr_reader :integration, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalGetProjectsResponseCreatorVariant0UserMetadata
-    FIELDS = {
-      id: 'id'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-    ].freeze
-    DECODERS = {}.freeze
-  end
-
-  # API model for GetProjectsResponseCreatorVariant0User.
-  class GetProjectsResponseCreatorVariant0User
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetProjectsResponseCreatorVariant0UserMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant0UserMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetProjectsResponseCreatorVariant0UserMetadata::DECODERS
-
-    attr_reader :id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalGetProjectsResponseCreatorVariant0Metadata
-    FIELDS = {
-      type: 'type',
-      via: 'via',
-      user: 'user'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      type
-      via
-      user
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetProjectsResponseCreatorVariant0Type.from_value(value)
-      end,
-      user: lambda do |value|
-        ::OctridevVercel::GetProjectsResponseCreatorVariant0User.from_hash(value)
-      end
-    }.freeze
-    NULLABLE_FIELDS = %i[
-      via
-    ].freeze
-  end
-
-  # API model for GetProjectsResponseCreatorVariant0.
-  class GetProjectsResponseCreatorVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetProjectsResponseCreatorVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetProjectsResponseCreatorVariant0Metadata::DECODERS
-
-    attr_reader :type, :via, :user
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalGetProjectsResponseCreatorVariant0Metadata::NULLABLE_FIELDS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalGetProjectsResponseCreatorVariant1AppMetadata
-    FIELDS = {
-      client_id: 'clientId',
-      id: 'id'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-    ].freeze
-    DECODERS = {}.freeze
-  end
-
-  # API model for GetProjectsResponseCreatorVariant1App.
-  class GetProjectsResponseCreatorVariant1App
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetProjectsResponseCreatorVariant1AppMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetProjectsResponseCreatorVariant1AppMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetProjectsResponseCreatorVariant1AppMetadata::DECODERS
-
-    # @return [String] The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-    attr_reader :client_id
-    # @return [String] The internal ID of the Vercel App backing this principal.
-    attr_reader :id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
+end
 end

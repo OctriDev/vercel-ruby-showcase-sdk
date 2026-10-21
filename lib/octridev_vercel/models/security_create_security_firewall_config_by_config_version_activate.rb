@@ -5,665 +5,667 @@
 
 # security domain models
 module OctridevVercel
-  # API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9c3686567c.
-  class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9c3686567c
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9c3686567cMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9c3686567cMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9c3686567cMetadata::DECODERS
+# API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9c3686567c.
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9c3686567c
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9c3686567cMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9c3686567cMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9c3686567cMetadata::DECODERS
 
-    attr_reader :action, :action_duration, :bypass_system, :log_headers, :rate_limit, :redirect
+  attr_reader :action, :action_duration, :bypass_system, :log_headers, :rate_limit, :redirect
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67eMetadata
-    FIELDS = {
-      mitigate: 'mitigate'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      mitigate: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9c3686567c.from_hash(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67e.
-  class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67e
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67eMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67eMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67eMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :mitigate
+# Internal model hydration metadata.
+class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67eMetadata
+  FIELDS = {
+    mitigate: "mitigate",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    mitigate: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9c3686567c.from_hash(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67e.
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67e
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67eMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67eMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67eMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :mitigate
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602Metadata
-    FIELDS = {
-      key: 'key',
-      neg: 'neg',
-      op: 'op',
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      op
-      type
-    ].freeze
-    DECODERS = {
-      neg: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX63b1890634.from_value(value)
-      end,
-      op: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9cd0a4f5bb.from_value(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXb863d77077.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602.
-  class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :key, :neg, :op, :type, :value
+# Internal model hydration metadata.
+class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602Metadata
+  FIELDS = {
+    key: "key",
+    neg: "neg",
+    op: "op",
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    op
+    type
+  ].freeze
+  DECODERS = {
+    neg: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX63b1890634.from_value(value)
+    end,
+    op: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9cd0a4f5bb.from_value(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXb863d77077.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602.
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :key, :neg, :op, :type, :value
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410Metadata
-    FIELDS = {
-      conditions: 'conditions'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      conditions
-    ].freeze
-    DECODERS = {
-      conditions: lambda do |value|
-        value&.map { |item| ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602.from_hash(item) }
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410.
-  class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :conditions
+# Internal model hydration metadata.
+class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410Metadata
+  FIELDS = {
+    conditions: "conditions",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    conditions
+  ].freeze
+  DECODERS = {
+    conditions: lambda do |value|
+      value&.map { |item| ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9fda3e3602.from_hash(item) }
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410.
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :conditions
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9Metadata
-    FIELDS = {
-      action: 'action',
-      active: 'active',
-      condition_group: 'conditionGroup',
-      description: 'description',
-      id: 'id',
-      name: 'name',
-      valid: 'valid',
-      validation_errors: 'validationErrors'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      action
-      active
-      condition_group
-      id
-      name
-      valid
-      validation_errors
-    ].freeze
-    DECODERS = {
-      action: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67e.from_hash(value)
-      end,
-      active: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXb7722ad9e6.from_value(value)
-      end,
-      condition_group: lambda do |value|
-        value&.map { |item| ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410.from_hash(item) }
-      end,
-      valid: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9252b6769c.from_value(value)
-      end
-    }.freeze
-    NULLABLE_FIELDS = %i[
-      validation_errors
-    ].freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9.
-  class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :action, :active, :condition_group, :description, :id, :name, :valid,
-                :validation_errors
+# Internal model hydration metadata.
+class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9Metadata
+  FIELDS = {
+    action: "action",
+    active: "active",
+    condition_group: "conditionGroup",
+    description: "description",
+    id: "id",
+    name: "name",
+    valid: "valid",
+    validation_errors: "validationErrors",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    action
+    active
+    condition_group
+    id
+    name
+    valid
+    validation_errors
+  ].freeze
+  DECODERS = {
+    action: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX906502f67e.from_hash(value)
+    end,
+    active: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXb7722ad9e6.from_value(value)
+    end,
+    condition_group: lambda do |value|
+      value&.map { |item| ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf329a1b410.from_hash(item) }
+    end,
+    valid: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9252b6769c.from_value(value)
+    end,
+  }.freeze
+  NULLABLE_FIELDS = %i[
+    validation_errors
+  ].freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9.
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9Metadata::NULLABLE_FIELDS)
-    end
+  attr_reader :action, :active, :condition_group, :description, :id, :name, :valid,
+              :validation_errors
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cbMetadata
-    FIELDS = {
-      action: 'action',
-      algo: 'algo',
-      keys: 'keys',
-      limit: 'limit',
-      window: 'window'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      algo
-      keys
-      limit
-      window
-    ].freeze
-    DECODERS = {
-      action: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXb11788418f.from_value(value)
-      end,
-      algo: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf00b2e744b.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9Metadata::NULLABLE_FIELDS)
   end
 
-  # API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cb.
-  class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cb
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cbMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cbMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cbMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :action, :algo, :keys, :limit, :window
+# Internal model hydration metadata.
+class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cbMetadata
+  FIELDS = {
+    action: "action",
+    algo: "algo",
+    keys: "keys",
+    limit: "limit",
+    window: "window",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    algo
+    keys
+    limit
+    window
+  ].freeze
+  DECODERS = {
+    action: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXb11788418f.from_value(value)
+    end,
+    algo: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf00b2e744b.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cb.
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cb
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cbMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cbMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cbMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :action, :algo, :keys, :limit, :window
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904Metadata
-    FIELDS = {
-      location: 'location',
-      permanent: 'permanent'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      location
-      permanent
-    ].freeze
-    DECODERS = {
-      permanent: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXec77153d7b.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904.
-  class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :location, :permanent
+# Internal model hydration metadata.
+class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904Metadata
+  FIELDS = {
+    location: "location",
+    permanent: "permanent",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    location
+    permanent
+  ].freeze
+  DECODERS = {
+    permanent: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXec77153d7b.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904.
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :location, :permanent
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931eMetadata
-    FIELDS = {
-      action: 'action',
-      action_duration: 'actionDuration',
-      bypass_system: 'bypassSystem',
-      log_headers: 'logHeaders',
-      rate_limit: 'rateLimit',
-      redirect: 'redirect'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      action
-    ].freeze
-    DECODERS = {
-      action: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX73957a3c47.from_value(value)
-      end,
-      bypass_system: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdd0499ac17.from_value(value)
-      end,
-      rate_limit: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cb.from_hash(value)
-      end,
-      redirect: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904.from_hash(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931e.
-  class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931e
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931eMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931eMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931eMetadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :action, :action_duration, :bypass_system, :log_headers, :rate_limit, :redirect
+# Internal model hydration metadata.
+class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931eMetadata
+  FIELDS = {
+    action: "action",
+    action_duration: "actionDuration",
+    bypass_system: "bypassSystem",
+    log_headers: "logHeaders",
+    rate_limit: "rateLimit",
+    redirect: "redirect",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    action
+  ].freeze
+  DECODERS = {
+    action: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX73957a3c47.from_value(value)
+    end,
+    bypass_system: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdd0499ac17.from_value(value)
+    end,
+    rate_limit: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX405c72c3cb.from_hash(value)
+    end,
+    redirect: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdccd244904.from_hash(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931e.
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931e
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931eMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931eMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931eMetadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :action, :action_duration, :bypass_system, :log_headers, :rate_limit, :redirect
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27Metadata
-    FIELDS = {
-      mitigate: 'mitigate'
-    }.freeze
-    REQUIRED_FIELDS = %i[].freeze
-    DECODERS = {
-      mitigate: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931e.from_hash(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27.
-  class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :mitigate
+# Internal model hydration metadata.
+class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27Metadata
+  FIELDS = {
+    mitigate: "mitigate",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+  ].freeze
+  DECODERS = {
+    mitigate: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfb9794931e.from_hash(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27.
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :mitigate
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370Metadata
-    FIELDS = {
-      key: 'key',
-      neg: 'neg',
-      op: 'op',
-      type: 'type',
-      value: 'value'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      op
-      type
-    ].freeze
-    DECODERS = {
-      neg: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXee904587f4.from_value(value)
-      end,
-      op: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfdb3a422e0.from_value(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe12be7fe14.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370.
-  class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :key, :neg, :op, :type, :value
+# Internal model hydration metadata.
+class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370Metadata
+  FIELDS = {
+    key: "key",
+    neg: "neg",
+    op: "op",
+    type: "type",
+    value: "value",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    op
+    type
+  ].freeze
+  DECODERS = {
+    neg: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXee904587f4.from_value(value)
+    end,
+    op: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfdb3a422e0.from_value(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe12be7fe14.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370.
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :key, :neg, :op, :type, :value
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0Metadata
-    FIELDS = {
-      conditions: 'conditions'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      conditions
-    ].freeze
-    DECODERS = {
-      conditions: lambda do |value|
-        value&.map { |item| ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370.from_hash(item) }
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0.
-  class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :conditions
+# Internal model hydration metadata.
+class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0Metadata
+  FIELDS = {
+    conditions: "conditions",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    conditions
+  ].freeze
+  DECODERS = {
+    conditions: lambda do |value|
+      value&.map { |item| ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5171579370.from_hash(item) }
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0.
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :conditions
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076Metadata
-    FIELDS = {
-      action: 'action',
-      active: 'active',
-      condition_group: 'conditionGroup',
-      description: 'description',
-      id: 'id',
-      name: 'name',
-      valid: 'valid',
-      validation_errors: 'validationErrors'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      action
-      active
-      condition_group
-      id
-      name
-      valid
-      validation_errors
-    ].freeze
-    DECODERS = {
-      action: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27.from_hash(value)
-      end,
-      active: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf8a36c80bc.from_value(value)
-      end,
-      condition_group: lambda do |value|
-        value&.map { |item| ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0.from_hash(item) }
-      end,
-      valid: lambda do |value|
-        ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX23dd6fd7c0.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076.
-  class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :action, :active, :condition_group, :description, :id, :name, :valid,
-                :validation_errors
+# Internal model hydration metadata.
+class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076Metadata
+  FIELDS = {
+    action: "action",
+    active: "active",
+    condition_group: "conditionGroup",
+    description: "description",
+    id: "id",
+    name: "name",
+    valid: "valid",
+    validation_errors: "validationErrors",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    action
+    active
+    condition_group
+    id
+    name
+    valid
+    validation_errors
+  ].freeze
+  DECODERS = {
+    action: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7022beab27.from_hash(value)
+    end,
+    active: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf8a36c80bc.from_value(value)
+    end,
+    condition_group: lambda do |value|
+      value&.map { |item| ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX44b047d5c0.from_hash(item) }
+    end,
+    valid: lambda do |value|
+      ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX23dd6fd7c0.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076.
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :action, :active, :condition_group, :description, :id, :name, :valid,
+              :validation_errors
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItem SDK namespace.
-  module CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItem
-    def self.from_hash(hash)
-      lossy = nil
-      [CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9, CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076].each do |type|
-        decoded = type.from_hash(hash)
-        return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-        lossy ||= decoded
-      rescue ::StandardError
-        next
-      end
-      lossy unless lossy.nil?
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXcc5857802e SDK namespace.
-  module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXcc5857802e
-    ALLOW = 'allow'
-    BYPASS = 'bypass'
-    CHALLENGE = 'challenge'
-    DENY = 'deny'
-    LOG = 'log'
-    RATE_LIMIT = 'rate_limit'
-    REDIRECT = 'redirect'
-    VALUES = %w[allow bypass challenge deny log rate_limit redirect].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXef7aa25b77 SDK namespace.
-  module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXef7aa25b77
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
+# Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItem SDK namespace.
+module CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItem
+  def self.from_hash(hash)
+    lossy = nil
+    [CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX587be2efd9, CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX52bf4fd076].each do |type|
+      decoded = type.from_hash(hash)
+      return decoded if SdkModel.keeps_every_key?(hash, decoded)
 
-  # Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXa3291a993a SDK namespace.
-  module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXa3291a993a
-    UNKNOWN = '*'
-    VALUES = ['*'].freeze
-    def self.from_value(value)
-      value
+      lossy ||= decoded
+    rescue ::StandardError
+      next
     end
+    return lossy unless lossy.nil?
   end
+end
 
-  # Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXeaabeeab1a SDK namespace.
-  module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXeaabeeab1a
-    CHALLENGE = 'challenge'
-    DENY = 'deny'
-    LOG = 'log'
-    RATE_LIMIT = 'rate_limit'
-    VALUES = %w[challenge deny log rate_limit].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXcc5857802e SDK namespace.
+module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXcc5857802e
+  ALLOW = 'allow'
+  BYPASS = 'bypass'
+  CHALLENGE = 'challenge'
+  DENY = 'deny'
+  LOG = 'log'
+  RATE_LIMIT = 'rate_limit'
+  REDIRECT = 'redirect'
+  VALUES = ['allow', 'bypass', 'challenge', 'deny', 'log', 'rate_limit', 'redirect'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf24f2ecbc0 SDK namespace.
-  module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf24f2ecbc0
-    FIXED_WINDOW = 'fixed_window'
-    TOKEN_BUCKET = 'token_bucket'
-    VALUES = %w[fixed_window token_bucket].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXef7aa25b77 SDK namespace.
+module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXef7aa25b77
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX608ee64571 SDK namespace.
-  module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX608ee64571
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXa3291a993a SDK namespace.
+module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXa3291a993a
+  UNKNOWN = '*'
+  VALUES = ['*'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXb7722ad9e6 SDK namespace.
-  module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXb7722ad9e6
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXeaabeeab1a SDK namespace.
+module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXeaabeeab1a
+  CHALLENGE = 'challenge'
+  DENY = 'deny'
+  LOG = 'log'
+  RATE_LIMIT = 'rate_limit'
+  VALUES = ['challenge', 'deny', 'log', 'rate_limit'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX63b1890634 SDK namespace.
-  module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX63b1890634
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf24f2ecbc0 SDK namespace.
+module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXf24f2ecbc0
+  FIXED_WINDOW = 'fixed_window'
+  TOKEN_BUCKET = 'token_bucket'
+  VALUES = ['fixed_window', 'token_bucket'].freeze
+  def self.from_value(value)
+    value
   end
+end
 
-  # Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9cd0a4f5bb SDK namespace.
-  module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9cd0a4f5bb
-    EQ = 'eq'
-    EX = 'ex'
-    GT = 'gt'
-    GTE = 'gte'
-    INC = 'inc'
-    LIST = 'list'
-    LT = 'lt'
-    LTE = 'lte'
-    NEQ = 'neq'
-    NEX = 'nex'
-    NINC = 'ninc'
-    PRE = 'pre'
-    RE = 're'
-    SUB = 'sub'
-    SUF = 'suf'
-    VALUES = %w[
-      eq ex gt gte inc list lt lte neq nex ninc pre re sub
-      suf
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX608ee64571 SDK namespace.
+module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX608ee64571
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
+
+# Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXb7722ad9e6 SDK namespace.
+module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXb7722ad9e6
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX63b1890634 SDK namespace.
+module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX63b1890634
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9cd0a4f5bb SDK namespace.
+module CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9cd0a4f5bb
+  EQ = 'eq'
+  EX = 'ex'
+  GT = 'gt'
+  GTE = 'gte'
+  INC = 'inc'
+  LIST = 'list'
+  LT = 'lt'
+  LTE = 'lte'
+  NEQ = 'neq'
+  NEX = 'nex'
+  NINC = 'ninc'
+  PRE = 'pre'
+  RE = 're'
+  SUB = 'sub'
+  SUF = 'suf'
+  VALUES = [
+    'eq', 'ex', 'gt', 'gte', 'inc', 'list', 'lt', 'lte', 'neq', 'nex', 'ninc', 'pre', 're', 'sub',
+    'suf'
+  ].freeze
+  def self.from_value(value)
+    value
+  end
+end
 end

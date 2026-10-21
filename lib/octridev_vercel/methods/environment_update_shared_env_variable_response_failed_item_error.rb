@@ -36,7 +36,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateSharedEnvVariableResponseFailedItemMetadata
         FIELDS = {
-          error: 'error'
+          error: "error",
         }.freeze
         REQUIRED_FIELDS = %i[
           error
@@ -44,7 +44,7 @@ module OctridevVercel
         DECODERS = {
           error: lambda do |value|
             ::OctridevVercel::Methods::Environment::UpdateSharedEnvVariableResponseFailedItemError.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -74,28 +74,29 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateSharedEnvVariableResponseUpdatedItemMetadata
         FIELDS = {
-          apply_to_all_custom_environments: 'applyToAllCustomEnvironments',
-          comment: 'comment',
-          created: 'created',
-          created_at: 'createdAt',
-          created_by: 'createdBy',
-          custom_environment_ids: 'customEnvironmentIds',
-          decrypted: 'decrypted',
-          deleted_at: 'deletedAt',
-          deleted_by: 'deletedBy',
-          id: 'id',
-          key: 'key',
-          last_edited_by_display_name: 'lastEditedByDisplayName',
-          last_edited_by_principal: 'lastEditedByPrincipal',
-          owner_id: 'ownerId',
-          project_id: 'projectId',
-          target: 'target',
-          type: 'type',
-          updated_at: 'updatedAt',
-          updated_by: 'updatedBy',
-          value: 'value'
+          apply_to_all_custom_environments: "applyToAllCustomEnvironments",
+          comment: "comment",
+          created: "created",
+          created_at: "createdAt",
+          created_by: "createdBy",
+          custom_environment_ids: "customEnvironmentIds",
+          decrypted: "decrypted",
+          deleted_at: "deletedAt",
+          deleted_by: "deletedBy",
+          id: "id",
+          key: "key",
+          last_edited_by_display_name: "lastEditedByDisplayName",
+          last_edited_by_principal: "lastEditedByPrincipal",
+          owner_id: "ownerId",
+          project_id: "projectId",
+          target: "target",
+          type: "type",
+          updated_at: "updatedAt",
+          updated_by: "updatedBy",
+          value: "value",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           apply_to_all_custom_environments: lambda do |value|
             ::OctridevVercel::Methods::Environment::UpdateSharedEnvVariableResponseUpdatedItemApplyToAllCustomEnvironments.from_value(value)
@@ -111,7 +112,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Environment::UpdateSharedEnvVariableResponseUpdatedItemType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -180,8 +181,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateSharedEnvVariableResponseMetadata
         FIELDS = {
-          failed: 'failed',
-          updated: 'updated'
+          failed: "failed",
+          updated: "updated",
         }.freeze
         REQUIRED_FIELDS = %i[
           failed
@@ -193,7 +194,7 @@ module OctridevVercel
           end,
           updated: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Environment::UpdateSharedEnvVariableResponseUpdatedItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -223,12 +224,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteSharedEnvVariableMetadata
         FIELDS = {
-          ids: 'ids'
+          ids: "ids",
         }.freeze
         REQUIRED_FIELDS = %i[
           ids
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for DeleteSharedEnvVariable.
@@ -258,23 +260,24 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteSharedEnvVariableResponseFailedItemErrorMetadata
         FIELDS = {
-          action: 'action',
-          code: 'code',
-          env_var_id: 'envVarId',
-          env_var_key: 'envVarKey',
-          git_branch: 'gitBranch',
-          key: 'key',
-          link: 'link',
-          message: 'message',
-          project: 'project',
-          target: 'target',
-          value: 'value'
+          action: "action",
+          code: "code",
+          env_var_id: "envVarId",
+          env_var_key: "envVarKey",
+          git_branch: "gitBranch",
+          key: "key",
+          link: "link",
+          message: "message",
+          project: "project",
+          target: "target",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           code
           message
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for DeleteSharedEnvVariableResponseFailedItemError.
@@ -304,7 +307,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteSharedEnvVariableResponseFailedItemMetadata
         FIELDS = {
-          error: 'error'
+          error: "error",
         }.freeze
         REQUIRED_FIELDS = %i[
           error
@@ -312,7 +315,7 @@ module OctridevVercel
         DECODERS = {
           error: lambda do |value|
             ::OctridevVercel::Methods::Environment::DeleteSharedEnvVariableResponseFailedItemError.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -342,8 +345,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteSharedEnvVariableResponseMetadata
         FIELDS = {
-          deleted: 'deleted',
-          failed: 'failed'
+          deleted: "deleted",
+          failed: "failed",
         }.freeze
         REQUIRED_FIELDS = %i[
           deleted
@@ -352,7 +355,7 @@ module OctridevVercel
         DECODERS = {
           failed: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Environment::DeleteSharedEnvVariableResponseFailedItem.from_hash(item) }
-          end
+          end,
         }.freeze
       end
 
@@ -382,28 +385,29 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSharedEnvVarResponseMetadata
         FIELDS = {
-          apply_to_all_custom_environments: 'applyToAllCustomEnvironments',
-          comment: 'comment',
-          created: 'created',
-          created_at: 'createdAt',
-          created_by: 'createdBy',
-          custom_environment_ids: 'customEnvironmentIds',
-          decrypted: 'decrypted',
-          deleted_at: 'deletedAt',
-          deleted_by: 'deletedBy',
-          id: 'id',
-          key: 'key',
-          last_edited_by_display_name: 'lastEditedByDisplayName',
-          last_edited_by_principal: 'lastEditedByPrincipal',
-          owner_id: 'ownerId',
-          project_id: 'projectId',
-          target: 'target',
-          type: 'type',
-          updated_at: 'updatedAt',
-          updated_by: 'updatedBy',
-          value: 'value'
+          apply_to_all_custom_environments: "applyToAllCustomEnvironments",
+          comment: "comment",
+          created: "created",
+          created_at: "createdAt",
+          created_by: "createdBy",
+          custom_environment_ids: "customEnvironmentIds",
+          decrypted: "decrypted",
+          deleted_at: "deletedAt",
+          deleted_by: "deletedBy",
+          id: "id",
+          key: "key",
+          last_edited_by_display_name: "lastEditedByDisplayName",
+          last_edited_by_principal: "lastEditedByPrincipal",
+          owner_id: "ownerId",
+          project_id: "projectId",
+          target: "target",
+          type: "type",
+          updated_at: "updatedAt",
+          updated_by: "updatedBy",
+          value: "value",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           apply_to_all_custom_environments: lambda do |value|
             ::OctridevVercel::Methods::Environment::GetSharedEnvVarResponseApplyToAllCustomEnvironments.from_value(value)
@@ -419,7 +423,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Environment::GetSharedEnvVarResponseType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -488,12 +492,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUnlinkSharedEnvVariableResponseMetadata
         FIELDS = {
-          id: 'id'
+          id: "id",
         }.freeze
         REQUIRED_FIELDS = %i[
           id
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UnlinkSharedEnvVariableResponse.
@@ -522,8 +527,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateCustomEnvironmentBranchMatcherMetadata
         FIELDS = {
-          type: 'type',
-          pattern: 'pattern'
+          type: "type",
+          pattern: "pattern",
         }.freeze
         REQUIRED_FIELDS = %i[
           type
@@ -532,7 +537,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Environment::CreateCustomEnvironmentBranchMatcherType.from_value(value)
-          end
+          end,
         }.freeze
       end
     end

@@ -12,23 +12,29 @@ module OctridevVercel
       # Retrieves the availability status for a specific domain. Use `domain` to check whether the name is available before attempting to purchase it. If it is available, you can purchase it through the single-domain or multiple-domain purchase endpoint.
       #
       # Get availability for a specific domain. If the domain is available, it can be purchased using the Buy a domain endpoint or the Buy multiple domains endpoint.
-      singleton_class.define_method(:get_domain_availability) do |config:, domain:, team_id: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_domain_availability) do |
+        config:,
+        domain:,
+        team_id: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/registrar/domains/',
+            "/v1/registrar/domains/",
             SdkClient.encode_path_segment(domain),
-            '/availability'
+            "/availability"
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetDomainAvailabilityResponse,
           decoder: :json,
           operation_id: 'get_domain_availability',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '404' => ::OctridevVercel::NotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '404' => ::OctridevVercel::NotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
 
@@ -37,24 +43,30 @@ module OctridevVercel
       # Get availability for multiple domains. If the domains are available, they can be purchased using the Buy a domain endpoint or the Buy multiple domains endpoint.
       #
       # @param domains [Array_of_DomainName] an array of at most 50 item(s)
-      singleton_class.define_method(:get_bulk_availability) do |config:, domains:, team_id: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_bulk_availability) do |
+        config:,
+        domains:,
+        team_id: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.validate_items('domains', domains, min: 1, max: 50)
 
         SdkClient.request(
           'POST',
-          '/v1/registrar/domains/availability',
+          "/v1/registrar/domains/availability",
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           body: {
-            'domains' => domains
+            'domains' => domains,
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetBulkAvailabilityResponse,
           decoder: :json,
           operation_id: 'get_bulk_availability',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
     end

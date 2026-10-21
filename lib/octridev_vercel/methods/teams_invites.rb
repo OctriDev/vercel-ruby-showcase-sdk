@@ -22,19 +22,20 @@ module OctridevVercel
         team_id:,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/teams/',
+            "/v1/teams/",
             SdkClient.encode_path_segment(team_id),
-            '/invites/',
+            "/invites/",
             SdkClient.encode_path_segment(invite_id)
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Teams::DeleteTeamInviteCodeResponse,
           decoder: :json,
           operation_id: 'delete_team_invite_code',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

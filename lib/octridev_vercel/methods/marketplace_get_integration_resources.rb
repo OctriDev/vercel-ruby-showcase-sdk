@@ -12,19 +12,24 @@ module OctridevVercel
       # Lists the resources associated with an integration installation. Use the installation identifier to retrieve its resources, including each resource's partner and product identifiers and its name.
       #
       # Get all resources for a given installation ID.
-      singleton_class.define_method(:get_integration_resources) do |config:, integration_configuration_id:, request_options: nil|
+      singleton_class.define_method(:get_integration_resources) do |
+        config:,
+        integration_configuration_id:,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/installations/',
+            "/v1/installations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/resources'
+            "/resources"
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Marketplace::GetIntegrationResourcesResponse,
           decoder: :json,
           operation_id: 'get_integration_resources',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

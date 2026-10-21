@@ -5,673 +5,675 @@
 
 # projects_delete domain models
 module OctridevVercel
-  # API model for DeleteProjectAvatarResponseEnvItemContentHintVariant8.
-  class DeleteProjectAvatarResponseEnvItemContentHintVariant8
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant8Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant8Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant8Metadata::DECODERS
+# API model for DeleteProjectAvatarResponseEnvItemContentHintVariant8.
+class DeleteProjectAvatarResponseEnvItemContentHintVariant8
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant8Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant8Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant8Metadata::DECODERS
 
-    attr_reader :store_id, :type
+  attr_reader :store_id, :type
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant9Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant9Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for DeleteProjectAvatarResponseEnvItemContentHintVariant9.
-  class DeleteProjectAvatarResponseEnvItemContentHintVariant9
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant9Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant9Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant9Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant9Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant9Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for DeleteProjectAvatarResponseEnvItemContentHintVariant9.
+class DeleteProjectAvatarResponseEnvItemContentHintVariant9
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant9Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant9Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant9Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant10Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant10Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for DeleteProjectAvatarResponseEnvItemContentHintVariant10.
-  class DeleteProjectAvatarResponseEnvItemContentHintVariant10
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant10Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant10Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant10Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant10Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant10Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for DeleteProjectAvatarResponseEnvItemContentHintVariant10.
+class DeleteProjectAvatarResponseEnvItemContentHintVariant10
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant10Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant10Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant10Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant11Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant11Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for DeleteProjectAvatarResponseEnvItemContentHintVariant11.
-  class DeleteProjectAvatarResponseEnvItemContentHintVariant11
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant11Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant11Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant11Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant11Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant11Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for DeleteProjectAvatarResponseEnvItemContentHintVariant11.
+class DeleteProjectAvatarResponseEnvItemContentHintVariant11
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant11Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant11Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant11Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant12Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant12Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for DeleteProjectAvatarResponseEnvItemContentHintVariant12.
-  class DeleteProjectAvatarResponseEnvItemContentHintVariant12
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant12Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant12Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant12Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant12Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant12Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for DeleteProjectAvatarResponseEnvItemContentHintVariant12.
+class DeleteProjectAvatarResponseEnvItemContentHintVariant12
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant12Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant12Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant12Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant13Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant13Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for DeleteProjectAvatarResponseEnvItemContentHintVariant13.
-  class DeleteProjectAvatarResponseEnvItemContentHintVariant13
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant13Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant13Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant13Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant13Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant13Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for DeleteProjectAvatarResponseEnvItemContentHintVariant13.
+class DeleteProjectAvatarResponseEnvItemContentHintVariant13
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant13Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant13Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant13Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant14Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant14Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for DeleteProjectAvatarResponseEnvItemContentHintVariant14.
-  class DeleteProjectAvatarResponseEnvItemContentHintVariant14
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant14Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant14Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant14Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant14Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant14Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for DeleteProjectAvatarResponseEnvItemContentHintVariant14.
+class DeleteProjectAvatarResponseEnvItemContentHintVariant14
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant14Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant14Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant14Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant15Metadata
-    FIELDS = {
-      integration_configuration_id: 'integrationConfigurationId',
-      integration_id: 'integrationId',
-      integration_product_id: 'integrationProductId',
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      integration_configuration_id
-      integration_id
-      integration_product_id
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant15Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for DeleteProjectAvatarResponseEnvItemContentHintVariant15.
-  class DeleteProjectAvatarResponseEnvItemContentHintVariant15
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant15Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant15Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant15Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :integration_configuration_id, :integration_id, :integration_product_id, :store_id,
-                :type
+# Internal model hydration metadata.
+class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant15Metadata
+  FIELDS = {
+    integration_configuration_id: "integrationConfigurationId",
+    integration_id: "integrationId",
+    integration_product_id: "integrationProductId",
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    integration_configuration_id
+    integration_id
+    integration_product_id
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant15Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for DeleteProjectAvatarResponseEnvItemContentHintVariant15.
+class DeleteProjectAvatarResponseEnvItemContentHintVariant15
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant15Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant15Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant15Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :integration_configuration_id, :integration_id, :integration_product_id, :store_id,
+              :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant16Metadata
-    FIELDS = {
-      project_id: 'projectId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      project_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant16Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for DeleteProjectAvatarResponseEnvItemContentHintVariant16.
-  class DeleteProjectAvatarResponseEnvItemContentHintVariant16
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant16Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant16Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant16Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :project_id, :type
+# Internal model hydration metadata.
+class SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant16Metadata
+  FIELDS = {
+    project_id: "projectId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    project_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::DeleteProjectAvatarResponseEnvItemContentHintVariant16Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for DeleteProjectAvatarResponseEnvItemContentHintVariant16.
+class DeleteProjectAvatarResponseEnvItemContentHintVariant16
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant16Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant16Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalDeleteProjectAvatarResponseEnvItemContentHintVariant16Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :project_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHint SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHint
-    DISCRIMINATOR_MAPPING = {
-      'redis-url' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant0 },
-      'redis-rest-api-url' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant1 },
-      'redis-rest-api-token' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant2 },
-      'redis-rest-api-read-only-token' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant3 },
-      'blob-read-write-token' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant4 },
-      'blob-store-id' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant5 },
-      'blob-webhook-public-key' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant6 },
-      'postgres-url' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant7 },
-      'postgres-url-non-pooling' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant8 },
-      'postgres-prisma-url' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant9 },
-      'postgres-user' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant10 },
-      'postgres-host' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant11 },
-      'postgres-password' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant12 },
-      'postgres-database' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant13 },
-      'postgres-url-no-ssl' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant14 },
-      'integration-store-secret' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant15 },
-      'flags-connection-string' => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant16 }
-    }.freeze
-
-    def self.from_hash(hash)
-      return hash unless hash.is_a?(::Hash)
-
-      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
-      return type.from_hash(hash) if type
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHint', 'variant', "Unknown DeleteProjectAvatarResponseEnvItemContentHint discriminator: #{hash['type'].inspect}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant0Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant0Type
-    REDIS_URL = 'redis-url'
-    VALUES = ['redis-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant0Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant0Type: #{value}")
-    end
+# Defines the DeleteProjectAvatarResponseEnvItemContentHint SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHint
+  DISCRIMINATOR_MAPPING = {
+    "redis-url" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant0 },
+    "redis-rest-api-url" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant1 },
+    "redis-rest-api-token" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant2 },
+    "redis-rest-api-read-only-token" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant3 },
+    "blob-read-write-token" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant4 },
+    "blob-store-id" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant5 },
+    "blob-webhook-public-key" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant6 },
+    "postgres-url" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant7 },
+    "postgres-url-non-pooling" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant8 },
+    "postgres-prisma-url" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant9 },
+    "postgres-user" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant10 },
+    "postgres-host" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant11 },
+    "postgres-password" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant12 },
+    "postgres-database" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant13 },
+    "postgres-url-no-ssl" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant14 },
+    "integration-store-secret" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant15 },
+    "flags-connection-string" => -> { DeleteProjectAvatarResponseEnvItemContentHintVariant16 },
+  }.freeze
+
+  def self.from_hash(hash)
+    return hash unless hash.is_a?(::Hash)
+    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
+    return type.from_hash(hash) if type
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHint', 'variant', "Unknown DeleteProjectAvatarResponseEnvItemContentHint discriminator: #{hash["type"].inspect}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant0Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant0Type
+  REDIS_URL = 'redis-url'
+  VALUES = ['redis-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant0Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant0Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant1Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant1Type
+  REDIS_REST_API_URL = 'redis-rest-api-url'
+  VALUES = ['redis-rest-api-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant1Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant1Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant10Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant10Type
+  POSTGRES_USER = 'postgres-user'
+  VALUES = ['postgres-user'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant10Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant10Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant11Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant11Type
+  POSTGRES_HOST = 'postgres-host'
+  VALUES = ['postgres-host'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant11Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant11Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant12Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant12Type
+  POSTGRES_PASSWORD = 'postgres-password'
+  VALUES = ['postgres-password'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant12Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant12Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant13Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant13Type
+  POSTGRES_DATABASE = 'postgres-database'
+  VALUES = ['postgres-database'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant13Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant13Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant14Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant14Type
+  POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
+  VALUES = ['postgres-url-no-ssl'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant14Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant14Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant15Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant15Type
+  INTEGRATION_STORE_SECRET = 'integration-store-secret'
+  VALUES = ['integration-store-secret'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant15Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant15Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant16Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant16Type
+  FLAGS_CONNECTION_STRING = 'flags-connection-string'
+  VALUES = ['flags-connection-string'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant16Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant16Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant2Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant2Type
+  REDIS_REST_API_TOKEN = 'redis-rest-api-token'
+  VALUES = ['redis-rest-api-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant2Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant2Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant3Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant3Type
+  REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
+  VALUES = ['redis-rest-api-read-only-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant3Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant3Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant4Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant4Type
+  BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
+  VALUES = ['blob-read-write-token'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant4Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant4Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant5Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant5Type
+  BLOB_STORE_ID = 'blob-store-id'
+  VALUES = ['blob-store-id'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant5Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant5Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant6Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant6Type
+  BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
+  VALUES = ['blob-webhook-public-key'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant6Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant6Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant7Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant7Type
+  POSTGRES_URL = 'postgres-url'
+  VALUES = ['postgres-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant7Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant7Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant8Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant8Type
+  POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
+  VALUES = ['postgres-url-non-pooling'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant8Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant8Type: #{value}")
+  end
+end
+
+# Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant9Type SDK namespace.
+module DeleteProjectAvatarResponseEnvItemContentHintVariant9Type
+  POSTGRES_PRISMA_URL = 'postgres-prisma-url'
+  VALUES = ['postgres-prisma-url'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant9Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant9Type: #{value}")
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalDeleteProjectAvatarResponseExpirationVariant0Metadata
+  FIELDS = {
+    expires_at: "expiresAt",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    expires_at
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for DeleteProjectAvatarResponseExpirationVariant0.
+class DeleteProjectAvatarResponseExpirationVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalDeleteProjectAvatarResponseExpirationVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseExpirationVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalDeleteProjectAvatarResponseExpirationVariant0Metadata::DECODERS
+
+  # @return [Float] Unix ms timestamp when the project is scheduled to expire.
+  attr_reader :expires_at
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant1Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant1Type
-    REDIS_REST_API_URL = 'redis-rest-api-url'
-    VALUES = ['redis-rest-api-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant1Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant1Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant10Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant10Type
-    POSTGRES_USER = 'postgres-user'
-    VALUES = ['postgres-user'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant10Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant10Type: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalDeleteProjectAvatarResponseExpirationVariant1Metadata
+  FIELDS = {
+    locked_at: "lockedAt",
+    locked_by: "lockedBy",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    locked_at
+    locked_by
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for DeleteProjectAvatarResponseExpirationVariant1.
+class DeleteProjectAvatarResponseExpirationVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalDeleteProjectAvatarResponseExpirationVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseExpirationVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalDeleteProjectAvatarResponseExpirationVariant1Metadata::DECODERS
+
+  # @return [Float] Unix ms timestamp when the project was locked.
+  attr_reader :locked_at
+  # @return [String] userId of the actor that triggered the lock (system or admin).
+  attr_reader :locked_by
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant11Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant11Type
-    POSTGRES_HOST = 'postgres-host'
-    VALUES = ['postgres-host'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant11Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant11Type: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant12Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant12Type
-    POSTGRES_PASSWORD = 'postgres-password'
-    VALUES = ['postgres-password'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant12Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant12Type: #{value}")
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant13Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant13Type
-    POSTGRES_DATABASE = 'postgres-database'
-    VALUES = ['postgres-database'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant13Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant13Type: #{value}")
-    end
+# Defines the DeleteProjectAvatarResponseExpiration SDK namespace.
+module DeleteProjectAvatarResponseExpiration
+  def self.from_hash(hash)
+    shape_mapping = {
+      "expiresAt" => DeleteProjectAvatarResponseExpirationVariant0,
+      "lockedAt" => DeleteProjectAvatarResponseExpirationVariant1,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
   end
+end
 
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant14Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant14Type
-    POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
-    VALUES = ['postgres-url-no-ssl'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant14Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant14Type: #{value}")
-    end
-  end
-
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant15Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant15Type
-    INTEGRATION_STORE_SECRET = 'integration-store-secret'
-    VALUES = ['integration-store-secret'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant15Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant15Type: #{value}")
-    end
-  end
-
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant16Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant16Type
-    FLAGS_CONNECTION_STRING = 'flags-connection-string'
-    VALUES = ['flags-connection-string'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant16Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant16Type: #{value}")
-    end
-  end
-
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant2Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant2Type
-    REDIS_REST_API_TOKEN = 'redis-rest-api-token'
-    VALUES = ['redis-rest-api-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant2Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant2Type: #{value}")
-    end
-  end
-
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant3Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant3Type
-    REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
-    VALUES = ['redis-rest-api-read-only-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant3Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant3Type: #{value}")
-    end
-  end
-
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant4Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant4Type
-    BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
-    VALUES = ['blob-read-write-token'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant4Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant4Type: #{value}")
-    end
-  end
-
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant5Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant5Type
-    BLOB_STORE_ID = 'blob-store-id'
-    VALUES = ['blob-store-id'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant5Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant5Type: #{value}")
-    end
-  end
-
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant6Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant6Type
-    BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
-    VALUES = ['blob-webhook-public-key'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant6Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant6Type: #{value}")
-    end
-  end
-
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant7Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant7Type
-    POSTGRES_URL = 'postgres-url'
-    VALUES = ['postgres-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant7Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant7Type: #{value}")
-    end
-  end
-
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant8Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant8Type
-    POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
-    VALUES = ['postgres-url-non-pooling'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant8Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant8Type: #{value}")
-    end
-  end
-
-  # Defines the DeleteProjectAvatarResponseEnvItemContentHintVariant9Type SDK namespace.
-  module DeleteProjectAvatarResponseEnvItemContentHintVariant9Type
-    POSTGRES_PRISMA_URL = 'postgres-prisma-url'
-    VALUES = ['postgres-prisma-url'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('DeleteProjectAvatarResponseEnvItemContentHintVariant9Type', 'enum', "Unknown DeleteProjectAvatarResponseEnvItemContentHintVariant9Type: #{value}")
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalDeleteProjectAvatarResponseExpirationVariant0Metadata
-    FIELDS = {
-      expires_at: 'expiresAt'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      expires_at
-    ].freeze
-    DECODERS = {}.freeze
-  end
-
-  # API model for DeleteProjectAvatarResponseExpirationVariant0.
-  class DeleteProjectAvatarResponseExpirationVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalDeleteProjectAvatarResponseExpirationVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseExpirationVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalDeleteProjectAvatarResponseExpirationVariant0Metadata::DECODERS
-
-    # @return [Float] Unix ms timestamp when the project is scheduled to expire.
-    attr_reader :expires_at
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalDeleteProjectAvatarResponseExpirationVariant1Metadata
-    FIELDS = {
-      locked_at: 'lockedAt',
-      locked_by: 'lockedBy'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      locked_at
-      locked_by
-    ].freeze
-    DECODERS = {}.freeze
-  end
-
-  # API model for DeleteProjectAvatarResponseExpirationVariant1.
-  class DeleteProjectAvatarResponseExpirationVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalDeleteProjectAvatarResponseExpirationVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseExpirationVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalDeleteProjectAvatarResponseExpirationVariant1Metadata::DECODERS
-
-    # @return [Float] Unix ms timestamp when the project was locked.
-    attr_reader :locked_at
-    # @return [String] userId of the actor that triggered the lock (system or admin).
-    attr_reader :locked_by
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Defines the DeleteProjectAvatarResponseExpiration SDK namespace.
-  module DeleteProjectAvatarResponseExpiration
-    def self.from_hash(hash)
-      shape_mapping = {
-        'expiresAt' => DeleteProjectAvatarResponseExpirationVariant0,
-        'lockedAt' => DeleteProjectAvatarResponseExpirationVariant1
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      decoded unless type.nil?
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalDeleteProjectAvatarResponseInternalRoutesItemVariant0Metadata
-    FIELDS = {
-      expiry: 'expiry',
-      src: 'src',
-      status: 'status'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      src
-      status
-    ].freeze
-    DECODERS = {}.freeze
-  end
+# Internal model hydration metadata.
+class SdkInternalDeleteProjectAvatarResponseInternalRoutesItemVariant0Metadata
+  FIELDS = {
+    expiry: "expiry",
+    src: "src",
+    status: "status",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    src
+    status
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
 end

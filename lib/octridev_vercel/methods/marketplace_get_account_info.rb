@@ -12,19 +12,24 @@ module OctridevVercel
       # Retrieves account contact information and the team name associated with an integration installation. Use the installation identifier to look up the best available contact, which can change as team members and their roles change.
       #
       # Fetches the best account or user’s contact info
-      singleton_class.define_method(:get_account_info) do |config:, integration_configuration_id:, request_options: nil|
+      singleton_class.define_method(:get_account_info) do |
+        config:,
+        integration_configuration_id:,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/installations/',
+            "/v1/installations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/account'
+            "/account"
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Marketplace::GetAccountInfoResponse,
           decoder: :json,
           operation_id: 'get_account_info',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

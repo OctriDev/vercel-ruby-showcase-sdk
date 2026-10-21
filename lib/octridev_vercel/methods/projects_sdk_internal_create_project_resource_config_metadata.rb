@@ -12,22 +12,23 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResourceConfigMetadata
         FIELDS = {
-          build_machine_type: 'buildMachineType',
-          fluid: 'fluid',
-          function_default_regions: 'functionDefaultRegions',
-          function_default_timeout: 'functionDefaultTimeout',
-          function_default_memory_type: 'functionDefaultMemoryType',
-          function_zero_config_failover: 'functionZeroConfigFailover',
-          elastic_concurrency_enabled: 'elasticConcurrencyEnabled',
-          build_machine_selection: 'buildMachineSelection',
-          build_machine_elastic_last_updated: 'buildMachineElasticLastUpdated',
-          build_machine_elastic_reason: 'buildMachineElasticReason',
-          build_machine_elastic_transition: 'buildMachineElasticTransition',
-          is_nsnb_disabled: 'isNSNBDisabled',
-          build_queue: 'buildQueue',
-          enable_functions_beta: 'enableFunctionsBeta'
+          build_machine_type: "buildMachineType",
+          fluid: "fluid",
+          function_default_regions: "functionDefaultRegions",
+          function_default_timeout: "functionDefaultTimeout",
+          function_default_memory_type: "functionDefaultMemoryType",
+          function_zero_config_failover: "functionZeroConfigFailover",
+          elastic_concurrency_enabled: "elasticConcurrencyEnabled",
+          build_machine_selection: "buildMachineSelection",
+          build_machine_elastic_last_updated: "buildMachineElasticLastUpdated",
+          build_machine_elastic_reason: "buildMachineElasticReason",
+          build_machine_elastic_transition: "buildMachineElasticTransition",
+          is_nsnb_disabled: "isNSNBDisabled",
+          build_queue: "buildQueue",
+          enable_functions_beta: "enableFunctionsBeta",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           build_machine_type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResourceConfigBuildMachineType.from_value(value)
@@ -46,7 +47,7 @@ module OctridevVercel
           end,
           build_queue: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResourceConfigBuildQueue.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -85,11 +86,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvironmentVariablesItemMetadata
         FIELDS = {
-          key: 'key',
-          target: 'target',
-          git_branch: 'gitBranch',
-          type: 'type',
-          value: 'value'
+          key: "key",
+          target: "target",
+          git_branch: "gitBranch",
+          type: "type",
+          value: "value",
         }.freeze
         REQUIRED_FIELDS = %i[
           key
@@ -99,7 +100,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvironmentVariablesItemType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -138,29 +139,29 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectMetadata
         FIELDS = {
-          enable_preview_feedback: 'enablePreviewFeedback',
-          enable_production_feedback: 'enableProductionFeedback',
-          preview_deployments_disabled: 'previewDeploymentsDisabled',
-          preview_deployment_suffix: 'previewDeploymentSuffix',
-          build_command: 'buildCommand',
-          command_for_ignoring_build_step: 'commandForIgnoringBuildStep',
-          dev_command: 'devCommand',
-          environment_variables: 'environmentVariables',
-          framework: 'framework',
-          git_repository: 'gitRepository',
-          install_command: 'installCommand',
-          name: 'name',
-          skip_git_connect_during_link: 'skipGitConnectDuringLink',
-          sso_protection: 'ssoProtection',
-          sandbox: 'sandbox',
-          output_directory: 'outputDirectory',
-          public_source: 'publicSource',
-          root_directory: 'rootDirectory',
-          serverless_function_region: 'serverlessFunctionRegion',
-          serverless_function_zero_config_failover: 'serverlessFunctionZeroConfigFailover',
-          oidc_token_config: 'oidcTokenConfig',
-          enable_affected_projects_deployments: 'enableAffectedProjectsDeployments',
-          resource_config: 'resourceConfig'
+          enable_preview_feedback: "enablePreviewFeedback",
+          enable_production_feedback: "enableProductionFeedback",
+          preview_deployments_disabled: "previewDeploymentsDisabled",
+          preview_deployment_suffix: "previewDeploymentSuffix",
+          build_command: "buildCommand",
+          command_for_ignoring_build_step: "commandForIgnoringBuildStep",
+          dev_command: "devCommand",
+          environment_variables: "environmentVariables",
+          framework: "framework",
+          git_repository: "gitRepository",
+          install_command: "installCommand",
+          name: "name",
+          skip_git_connect_during_link: "skipGitConnectDuringLink",
+          sso_protection: "ssoProtection",
+          sandbox: "sandbox",
+          output_directory: "outputDirectory",
+          public_source: "publicSource",
+          root_directory: "rootDirectory",
+          serverless_function_region: "serverlessFunctionRegion",
+          serverless_function_zero_config_failover: "serverlessFunctionZeroConfigFailover",
+          oidc_token_config: "oidcTokenConfig",
+          enable_affected_projects_deployments: "enableAffectedProjectsDeployments",
+          resource_config: "resourceConfig",
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -183,7 +184,7 @@ module OctridevVercel
           end,
           resource_config: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResourceConfig.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -257,14 +258,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseAliasItemDeploymentAliasErrorMetadata
         FIELDS = {
-          code: 'code',
-          message: 'message'
+          code: "code",
+          message: "message",
         }.freeze
         REQUIRED_FIELDS = %i[
           code
           message
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for CreateProjectResponseAliasItemDeploymentAliasError.
@@ -293,8 +295,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseAliasItemDeploymentBranchMatcherMetadata
         FIELDS = {
-          pattern: 'pattern',
-          type: 'type'
+          pattern: "pattern",
+          type: "type",
         }.freeze
         REQUIRED_FIELDS = %i[
           pattern
@@ -303,7 +305,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseAliasItemDeploymentBranchMatcherType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -336,14 +338,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseAliasItemDeploymentBuildsItemMetadata
         FIELDS = {
-          dest: 'dest',
-          src: 'src',
-          use: 'use'
+          dest: "dest",
+          src: "src",
+          use: "use",
         }.freeze
         REQUIRED_FIELDS = %i[
           use
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for CreateProjectResponseAliasItemDeploymentBuildsItem.
@@ -372,18 +375,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseAliasItemDeploymentCreatorMetadata
         FIELDS = {
-          email: 'email',
-          github_login: 'githubLogin',
-          gitlab_login: 'gitlabLogin',
-          uid: 'uid',
-          username: 'username'
+          email: "email",
+          github_login: "githubLogin",
+          gitlab_login: "gitlabLogin",
+          uid: "uid",
+          username: "username",
         }.freeze
         REQUIRED_FIELDS = %i[
           email
           uid
           username
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for CreateProjectResponseAliasItemDeploymentCreator.
@@ -412,19 +416,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseAliasItemDeploymentOidcTokenClaimsMetadata
         FIELDS = {
-          aud: 'aud',
-          custom_environment_id: 'custom_environment_id',
-          deployment_id: 'deployment_id',
-          environment: 'environment',
-          iss: 'iss',
-          mfe_group_ids: 'mfe_group_ids',
-          owner: 'owner',
-          owner_id: 'owner_id',
-          plan: 'plan',
-          project: 'project',
-          project_id: 'project_id',
-          scope: 'scope',
-          sub: 'sub'
+          aud: "aud",
+          custom_environment_id: "custom_environment_id",
+          deployment_id: "deployment_id",
+          environment: "environment",
+          iss: "iss",
+          mfe_group_ids: "mfe_group_ids",
+          owner: "owner",
+          owner_id: "owner_id",
+          plan: "plan",
+          project: "project",
+          project_id: "project_id",
+          scope: "scope",
+          sub: "sub",
         }.freeze
         REQUIRED_FIELDS = %i[
           aud
@@ -437,7 +441,8 @@ module OctridevVercel
           scope
           sub
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for CreateProjectResponseAliasItemDeploymentOidcTokenClaims.

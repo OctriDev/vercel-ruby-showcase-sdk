@@ -37,15 +37,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCountEventsResponseQueryMetadata
         FIELDS = {
-          filter: 'filter',
-          since: 'since',
-          until_: 'until'
+          filter: "filter",
+          since: "since",
+          until_: "until",
         }.freeze
         REQUIRED_FIELDS = %i[
           since
           until_
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for CountEventsResponseQuery.
@@ -74,9 +75,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCountEventsResponseMetadata
         FIELDS = {
-          data: 'data',
-          query: 'query',
-          version: 'version'
+          data: "data",
+          query: "query",
+          version: "version",
         }.freeze
         REQUIRED_FIELDS = %i[
           data
@@ -89,7 +90,7 @@ module OctridevVercel
           end,
           query: lambda do |value|
             ::OctridevVercel::Methods::WebAnalytics::CountEventsResponseQuery.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -141,10 +142,10 @@ module OctridevVercel
         EVENT_NAME = 'eventName'
         FLAGS = 'flags'
         EVENT_DATA = 'eventData'
-        VALUES = %w[
-          hour day week month year country deviceType environment
-          requestPath referrerHostname osName browserName route utmSource
-          utmMedium utmCampaign utmContent utmTerm eventName flags eventData
+        VALUES = [
+          'hour', 'day', 'week', 'month', 'year', 'country', 'deviceType', 'environment',
+          'requestPath', 'referrerHostname', 'osName', 'browserName', 'route', 'utmSource',
+          'utmMedium', 'utmCampaign', 'utmContent', 'utmTerm', 'eventName', 'flags', 'eventData'
         ].freeze
         def self.from_value(value)
           value
@@ -172,10 +173,10 @@ module OctridevVercel
         UTM_CONTENT = 'utmContent'
         UTM_TERM = 'utmTerm'
         FLAGS = 'flags'
-        VALUES = %w[
-          hour day week month year country deviceType environment
-          requestPath referrerHostname osName browserName route utmSource
-          utmMedium utmCampaign utmContent utmTerm flags
+        VALUES = [
+          'hour', 'day', 'week', 'month', 'year', 'country', 'deviceType', 'environment',
+          'requestPath', 'referrerHostname', 'osName', 'browserName', 'route', 'utmSource',
+          'utmMedium', 'utmCampaign', 'utmContent', 'utmTerm', 'flags'
         ].freeze
         def self.from_value(value)
           value

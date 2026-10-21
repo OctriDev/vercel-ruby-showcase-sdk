@@ -12,22 +12,28 @@ module OctridevVercel
       # Retrieves the contact information schema for a domain's TLD. Use the schema to identify any TLD-specific contact fields you need to supply when registering a domain. The required fields can differ between TLDs.
       #
       # Some TLDs require additional contact information. Use this endpoint to get the schema for the tld-specific contact information for a domain.
-      singleton_class.define_method(:get_contact_info_schema) do |config:, domain:, team_id: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_contact_info_schema) do |
+        config:,
+        domain:,
+        team_id: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/registrar/domains/',
+            "/v1/registrar/domains/",
             SdkClient.encode_path_segment(domain),
-            '/contact-info/schema'
+            "/contact-info/schema"
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
           },
           decoder: :json,
           operation_id: 'get_contact_info_schema',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
+          errors: { '401' => ::OctridevVercel::Unauthorized, '403' => ::OctridevVercel::NotAuthorizedForScope, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
         ).data
       end
     end

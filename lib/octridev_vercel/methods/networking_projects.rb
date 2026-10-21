@@ -27,27 +27,28 @@ module OctridevVercel
         regions: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(regions) { Validation.validate_items('regions', regions, min: 0, max: 3) }
 
         SdkClient.request(
           'PATCH',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/shared-connect-links'
+            "/shared-connect-links"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'builds' => builds,
-            'regions' => regions
+            'regions' => regions,
           },
           decoder: :json,
           operation_id: 'update_static_ips',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -5,326 +5,329 @@
 
 # networking domain models
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalNetworkHostedZonesMetadata
-    FIELDS = {
-      count: 'count'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      count
-    ].freeze
-    DECODERS = {}.freeze
+# Internal model hydration metadata.
+class SdkInternalNetworkHostedZonesMetadata
+  FIELDS = {
+    count: "count",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    count
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for NetworkHostedZones.
+# Metadata about any AWS Route53 Hosted Zones associated with the Network.
+class NetworkHostedZones
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalNetworkHostedZonesMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalNetworkHostedZonesMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalNetworkHostedZonesMetadata::DECODERS
+
+  # @return [Float] The number of AWS Route53 Hosted Zones associated with the Network.
+  attr_reader :count
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for NetworkHostedZones.
-  # Metadata about any AWS Route53 Hosted Zones associated with the Network.
-  class NetworkHostedZones
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalNetworkHostedZonesMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalNetworkHostedZonesMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalNetworkHostedZonesMetadata::DECODERS
-
-    # @return [Float] The number of AWS Route53 Hosted Zones associated with the Network.
-    attr_reader :count
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalNetworkPeeringConnectionsMetadata
-    FIELDS = {
-      count: 'count'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      count
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalNetworkPeeringConnectionsMetadata
+  FIELDS = {
+    count: "count",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    count
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for NetworkPeeringConnections.
+# Metadata about any AWS Route53 Hosted Zones associated with the Network.
+class NetworkPeeringConnections
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalNetworkPeeringConnectionsMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalNetworkPeeringConnectionsMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalNetworkPeeringConnectionsMetadata::DECODERS
+
+  # @return [Float] The number of AWS Route53 Hosted Zones associated with the Network.
+  attr_reader :count
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for NetworkPeeringConnections.
-  # Metadata about any AWS Route53 Hosted Zones associated with the Network.
-  class NetworkPeeringConnections
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalNetworkPeeringConnectionsMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalNetworkPeeringConnectionsMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalNetworkPeeringConnectionsMetadata::DECODERS
-
-    # @return [Float] The number of AWS Route53 Hosted Zones associated with the Network.
-    attr_reader :count
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalNetworkProjectsMetadata
-    FIELDS = {
-      count: 'count',
-      ids: 'ids'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      count
-      ids
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalNetworkProjectsMetadata
+  FIELDS = {
+    count: "count",
+    ids: "ids",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    count
+    ids
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for NetworkProjects.
+# Metadata about any projects associated with the Network.
+class NetworkProjects
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalNetworkProjectsMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalNetworkProjectsMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalNetworkProjectsMetadata::DECODERS
+
+  # @return [Float] Required `number` value serialized in the `count` wire field.
+  attr_reader :count
+  # @return [Array_of_String] Required array value serialized in the `ids` wire field.
+  attr_reader :ids
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for NetworkProjects.
-  # Metadata about any projects associated with the Network.
-  class NetworkProjects
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalNetworkProjectsMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalNetworkProjectsMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalNetworkProjectsMetadata::DECODERS
-
-    # @return [Float] Required `number` value serialized in the `count` wire field.
-    attr_reader :count
-    # @return [Array_of_String] Required array value serialized in the `ids` wire field.
-    attr_reader :ids
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalNetworkMetadata
-    FIELDS = {
-      aws_account_id: 'awsAccountId',
-      aws_availability_zone_ids: 'awsAvailabilityZoneIds',
-      aws_region: 'awsRegion',
-      cidr: 'cidr',
-      created_at: 'createdAt',
-      egress_ip_addresses: 'egressIpAddresses',
-      hosted_zones: 'hostedZones',
-      id: 'id',
-      name: 'name',
-      peering_connections: 'peeringConnections',
-      projects: 'projects',
-      region: 'region',
-      status: 'status',
-      team_id: 'teamId',
-      vpc_id: 'vpcId'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      aws_account_id
-      aws_region
-      cidr
-      created_at
-      id
-      name
-      status
-      team_id
-    ].freeze
-    DECODERS = {
-      hosted_zones: lambda do |value|
-        ::OctridevVercel::NetworkHostedZones.from_hash(value)
-      end,
-      peering_connections: lambda do |value|
-        ::OctridevVercel::NetworkPeeringConnections.from_hash(value)
-      end,
-      projects: lambda do |value|
-        ::OctridevVercel::NetworkProjects.from_hash(value)
-      end,
-      status: lambda do |value|
-        ::OctridevVercel::NetworkStatus.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalNetworkMetadata
+  FIELDS = {
+    aws_account_id: "awsAccountId",
+    aws_availability_zone_ids: "awsAvailabilityZoneIds",
+    aws_region: "awsRegion",
+    cidr: "cidr",
+    created_at: "createdAt",
+    egress_ip_addresses: "egressIpAddresses",
+    hosted_zones: "hostedZones",
+    id: "id",
+    name: "name",
+    peering_connections: "peeringConnections",
+    projects: "projects",
+    region: "region",
+    status: "status",
+    team_id: "teamId",
+    vpc_id: "vpcId",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    aws_account_id
+    aws_region
+    cidr
+    created_at
+    id
+    name
+    status
+    team_id
+  ].freeze
+  DECODERS = {
+    hosted_zones: lambda do |value|
+      ::OctridevVercel::NetworkHostedZones.from_hash(value)
+    end,
+    peering_connections: lambda do |value|
+      ::OctridevVercel::NetworkPeeringConnections.from_hash(value)
+    end,
+    projects: lambda do |value|
+      ::OctridevVercel::NetworkProjects.from_hash(value)
+    end,
+    status: lambda do |value|
+      ::OctridevVercel::NetworkStatus.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for Network.
+# Typed representation of the `Network` API schema.
+class Network
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalNetworkMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalNetworkMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalNetworkMetadata::DECODERS
+
+  # @return [String] The ID of the AWS Account in which the network exists.
+  attr_reader :aws_account_id
+  # @return [Array_of_String] The IDs of the AWS Availability Zones in which the network exists, if specified during creation.
+  attr_reader :aws_availability_zone_ids
+  # @return [String] The AWS Region in which the network exists.
+  attr_reader :aws_region
+  # @return [String] The CIDR range of the Network.
+  attr_reader :cidr
+  # @return [Float] The date at which the Network was created, represented as a UNIX timestamp since EPOCH.
+  attr_reader :created_at
+  # @return [Array_of_String] Optional array value serialized in the `egressIpAddresses` wire field.
+  attr_reader :egress_ip_addresses
+  # @return [NetworkHostedZones] Metadata about any AWS Route53 Hosted Zones associated with the Network.
+  attr_reader :hosted_zones
+  # @return [String] The unique identifier of the Network.
+  attr_reader :id
+  # @return [String] The name of the network.
+  attr_reader :name
+  # @return [NetworkPeeringConnections] Metadata about any AWS Route53 Hosted Zones associated with the Network.
+  attr_reader :peering_connections
+  # @return [NetworkProjects] Metadata about any projects associated with the Network.
+  attr_reader :projects
+  # @return [String] The Vercel region in which the Network exists.
+  attr_reader :region
+  # @return [NetworkStatus] The status of the Network.
+  attr_reader :status
+  # @return [String] The unique identifier of the Team that owns the Network.
+  attr_reader :team_id
+  # @return [String] The ID of the VPC which hosts the network.
+  attr_reader :vpc_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for Network.
-  # Typed representation of the `Network` API schema.
-  class Network
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalNetworkMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalNetworkMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalNetworkMetadata::DECODERS
-
-    # @return [String] The ID of the AWS Account in which the network exists.
-    attr_reader :aws_account_id
-    # @return [Array_of_String] The IDs of the AWS Availability Zones in which the network exists, if specified during creation.
-    attr_reader :aws_availability_zone_ids
-    # @return [String] The AWS Region in which the network exists.
-    attr_reader :aws_region
-    # @return [String] The CIDR range of the Network.
-    attr_reader :cidr
-    # @return [Float] The date at which the Network was created, represented as a UNIX timestamp since EPOCH.
-    attr_reader :created_at
-    # @return [Array_of_String] Optional array value serialized in the `egressIpAddresses` wire field.
-    attr_reader :egress_ip_addresses
-    # @return [NetworkHostedZones] Metadata about any AWS Route53 Hosted Zones associated with the Network.
-    attr_reader :hosted_zones
-    # @return [String] The unique identifier of the Network.
-    attr_reader :id
-    # @return [String] The name of the network.
-    attr_reader :name
-    # @return [NetworkPeeringConnections] Metadata about any AWS Route53 Hosted Zones associated with the Network.
-    attr_reader :peering_connections
-    # @return [NetworkProjects] Metadata about any projects associated with the Network.
-    attr_reader :projects
-    # @return [String] The Vercel region in which the Network exists.
-    attr_reader :region
-    # @return [NetworkStatus] The status of the Network.
-    attr_reader :status
-    # @return [String] The unique identifier of the Team that owns the Network.
-    attr_reader :team_id
-    # @return [String] The ID of the VPC which hosts the network.
-    attr_reader :vpc_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the NetworkStatus SDK namespace.
-  module NetworkStatus
-    CREATE_IN_PROGRESS = 'create_in_progress'
-    DELETE_IN_PROGRESS = 'delete_in_progress'
-    ERROR = 'error'
-    READY = 'ready'
-    VALUES = %w[create_in_progress delete_in_progress error ready].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Defines the NetworkStatus SDK namespace.
+module NetworkStatus
+  CREATE_IN_PROGRESS = 'create_in_progress'
+  DELETE_IN_PROGRESS = 'delete_in_progress'
+  ERROR = 'error'
+  READY = 'ready'
+  VALUES = ['create_in_progress', 'delete_in_progress', 'error', 'ready'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalPrivateLinkEndpointMetadata
+  FIELDS = {
+    aws_dns_entries: "awsDnsEntries",
+    aws_service_name: "awsServiceName",
+    created_at: "createdAt",
+    endpoint_id: "endpointId",
+    name: "name",
+    private_dns_names: "privateDnsNames",
+    project_id: "projectId",
+    status: "status",
+    status_message: "statusMessage",
+    team_id: "teamId",
+    updated_at: "updatedAt",
+    vercel_region: "vercelRegion",
+    vpc_endpoint_id: "vpcEndpointId",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    aws_service_name
+    created_at
+    endpoint_id
+    name
+    project_id
+    status
+    team_id
+    updated_at
+    vercel_region
+  ].freeze
+  DECODERS = {
+    status: lambda do |value|
+      ::OctridevVercel::PrivateLinkEndpointStatus.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for PrivateLinkEndpoint.
+# A PrivateLink endpoint, which connects a project to an AWS VPC endpoint service in a single region so that traffic reaches the service over AWS PrivateLink rather than the public internet.
+class PrivateLinkEndpoint
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalPrivateLinkEndpointMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalPrivateLinkEndpointMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalPrivateLinkEndpointMetadata::DECODERS
+
+  # @return [Array_of_String] The regional DNS names assigned to the endpoint by AWS. Use these to reach the service when private DNS is not enabled.
+  attr_reader :aws_dns_entries
+  # @return [String] The AWS VPC endpoint service the endpoint connects to.
+  attr_reader :aws_service_name
+  # @return [Float] Timestamp in milliseconds since the UNIX epoch for when the endpoint was created.
+  attr_reader :created_at
+  # @return [String] The unique identifier of the PrivateLink endpoint.
+  attr_reader :endpoint_id
+  # @return [String] The name of the PrivateLink endpoint, shown in the Vercel dashboard.
+  attr_reader :name
+  # @return [Array_of_String] The private DNS names of the endpoint service, populated when private DNS is enabled for the endpoint.
+  attr_reader :private_dns_names
+  # @return [String] The identifier of the project the PrivateLink endpoint belongs to.
+  attr_reader :project_id
+  # @return [PrivateLinkEndpointStatus] The current state of the endpoint. - `creating`: the endpoint is being created. - `pending-acceptance`: waiting for the endpoint service owner to accept the connection. Only occurs for services that require manual acceptance. - `provisioning`: the connection was accepted and AWS is finishing setup. - `available`: the endpoint is fully provisioned and ready to use. - `rejected`: the endpoint service owner rejected the connection. - `failed`: the endpoint could not be…
+  attr_reader :status
+  # @return [String] A human-readable explanation of why the endpoint could not be provisioned. Only set when `status` is `failed`, and absent for every other status including `rejected`, since AWS does not report a rejection reason.
+  attr_reader :status_message
+  # @return [String] The identifier of the team that owns the PrivateLink endpoint.
+  attr_reader :team_id
+  # @return [Float] Timestamp in milliseconds since the UNIX epoch for when the endpoint was last updated.
+  attr_reader :updated_at
+  # @return [String] The Vercel region the endpoint is provisioned in.
+  attr_reader :vercel_region
+  # @return [String] The identifier of the underlying AWS VPC endpoint. Absent until AWS has created the endpoint.
+  attr_reader :vpc_endpoint_id
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalPrivateLinkEndpointMetadata
-    FIELDS = {
-      aws_dns_entries: 'awsDnsEntries',
-      aws_service_name: 'awsServiceName',
-      created_at: 'createdAt',
-      endpoint_id: 'endpointId',
-      name: 'name',
-      private_dns_names: 'privateDnsNames',
-      project_id: 'projectId',
-      status: 'status',
-      status_message: 'statusMessage',
-      team_id: 'teamId',
-      updated_at: 'updatedAt',
-      vercel_region: 'vercelRegion',
-      vpc_endpoint_id: 'vpcEndpointId'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      aws_service_name
-      created_at
-      endpoint_id
-      name
-      project_id
-      status
-      team_id
-      updated_at
-      vercel_region
-    ].freeze
-    DECODERS = {
-      status: lambda do |value|
-        ::OctridevVercel::PrivateLinkEndpointStatus.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for PrivateLinkEndpoint.
-  # A PrivateLink endpoint, which connects a project to an AWS VPC endpoint service in a single region so that traffic reaches the service over AWS PrivateLink rather than the public internet.
-  class PrivateLinkEndpoint
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalPrivateLinkEndpointMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalPrivateLinkEndpointMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalPrivateLinkEndpointMetadata::DECODERS
-
-    # @return [Array_of_String] The regional DNS names assigned to the endpoint by AWS. Use these to reach the service when private DNS is not enabled.
-    attr_reader :aws_dns_entries
-    # @return [String] The AWS VPC endpoint service the endpoint connects to.
-    attr_reader :aws_service_name
-    # @return [Float] Timestamp in milliseconds since the UNIX epoch for when the endpoint was created.
-    attr_reader :created_at
-    # @return [String] The unique identifier of the PrivateLink endpoint.
-    attr_reader :endpoint_id
-    # @return [String] The name of the PrivateLink endpoint, shown in the Vercel dashboard.
-    attr_reader :name
-    # @return [Array_of_String] The private DNS names of the endpoint service, populated when private DNS is enabled for the endpoint.
-    attr_reader :private_dns_names
-    # @return [String] The identifier of the project the PrivateLink endpoint belongs to.
-    attr_reader :project_id
-    # @return [PrivateLinkEndpointStatus] The current state of the endpoint. - `creating`: the endpoint is being created. - `pending-acceptance`: waiting for the endpoint service owner to accept the connection. Only occurs for services that require manual acceptance. - `provisioning`: the connection was accepted and AWS is finishing setup. - `available`: the endpoint is fully provisioned and ready to use. - `rejected`: the endpoint service owner rejected the connection. - `failed`: the endpoint could not be…
-    attr_reader :status
-    # @return [String] A human-readable explanation of why the endpoint could not be provisioned. Only set when `status` is `failed`, and absent for every other status including `rejected`, since AWS does not report a rejection reason.
-    attr_reader :status_message
-    # @return [String] The identifier of the team that owns the PrivateLink endpoint.
-    attr_reader :team_id
-    # @return [Float] Timestamp in milliseconds since the UNIX epoch for when the endpoint was last updated.
-    attr_reader :updated_at
-    # @return [String] The Vercel region the endpoint is provisioned in.
-    attr_reader :vercel_region
-    # @return [String] The identifier of the underlying AWS VPC endpoint. Absent until AWS has created the endpoint.
-    attr_reader :vpc_endpoint_id
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the PrivateLinkEndpointStatus SDK namespace.
-  module PrivateLinkEndpointStatus
-    AVAILABLE = 'available'
-    CREATING = 'creating'
-    DELETING = 'deleting'
-    FAILED = 'failed'
-    PENDING_ACCEPTANCE = 'pending-acceptance'
-    PROVISIONING = 'provisioning'
-    REJECTED = 'rejected'
-    VALUES = %w[
-      available creating deleting failed pending-acceptance provisioning rejected
-    ].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the PrivateLinkEndpointStatus SDK namespace.
+module PrivateLinkEndpointStatus
+  AVAILABLE = 'available'
+  CREATING = 'creating'
+  DELETING = 'deleting'
+  FAILED = 'failed'
+  PENDING_ACCEPTANCE = 'pending-acceptance'
+  PROVISIONING = 'provisioning'
+  REJECTED = 'rejected'
+  VALUES = [
+    'available', 'creating', 'deleting', 'failed', 'pending-acceptance', 'provisioning', 'rejected'
+  ].freeze
+  def self.from_value(value)
+    value
   end
+end
 end

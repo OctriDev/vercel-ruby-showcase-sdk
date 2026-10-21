@@ -25,8 +25,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = %w[
-          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+        VALUES = [
+          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
         ].freeze
         def self.from_value(value)
           value
@@ -40,7 +40,7 @@ module OctridevVercel
         PENDING = 'pending'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = %w[failed in-progress pending skipped succeeded].freeze
+        VALUES = ['failed', 'in-progress', 'pending', 'skipped', 'succeeded'].freeze
         def self.from_value(value)
           value
         end
@@ -50,7 +50,7 @@ module OctridevVercel
       module ListProjectsResponseVariant2ProjectsItemOidcTokenConfigIssuerMode
         GLOBAL = 'global'
         TEAM = 'team'
-        VALUES = %w[global team].freeze
+        VALUES = ['global', 'team'].freeze
         def self.from_value(value)
           value
         end
@@ -80,7 +80,7 @@ module OctridevVercel
         PRODUCTION = 'production'
         PREVIEW = 'preview'
         DEVELOPMENT = 'development'
-        VALUES = %w[production preview development].freeze
+        VALUES = ['production', 'preview', 'development'].freeze
         def self.from_value(value)
           value
         end
@@ -172,17 +172,17 @@ module OctridevVercel
         VUEPRESS = 'vuepress'
         XMCP = 'xmcp'
         ZOLA = 'zola'
-        VALUES = %w[
-          actix-web angular ash astro axum blitzjs brunch bun container
-          create-react-app django docusaurus docusaurus-2 dojo eleventy elysia
-          ember eve express factory-eve fastapi fasthtml fastify flask
-          gatsby go gridsome h3 hexo hono hugo hydrogen ionic-angular
-          ionic-react jekyll koa mastra middleman nestjs nextjs nitro node
-          nuxtjs parcel polymer preact python react-router redwoodjs remix
-          ruby rust saber sanity sanity-v2 sapper scully services
-          solidstart solidstart-1 stencil storybook svelte sveltekit sveltekit-1
-          tanstack-start tanstack-start-lovable umijs vite vitepress vue
-          vuepress xmcp zola
+        VALUES = [
+          'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
+          'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
+          'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask',
+          'gatsby', 'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular',
+          'ionic-react', 'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node',
+          'nuxtjs', 'parcel', 'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix',
+          'ruby', 'rust', 'saber', 'sanity', 'sanity-v2', 'sapper', 'scully', 'services',
+          'solidstart', 'solidstart-1', 'stencil', 'storybook', 'svelte', 'sveltekit', 'sveltekit-1',
+          'tanstack-start', 'tanstack-start-lovable', 'umijs', 'vite', 'vitepress', 'vue',
+          'vuepress', 'xmcp', 'zola'
         ].freeze
         def self.from_value(value)
           value
@@ -201,10 +201,10 @@ module OctridevVercel
         LONG_BUILD_DURATION = 'long-build-duration'
         SHORT_BUILD_DURATION = 'short-build-duration'
         ENTERPRISE_FLOOR = 'enterprise-floor'
-        VALUES = %w[
-          oom-failure enospc-failure build-timeout-failure basic-floor
-          high-peak-memory sustained-high-cpu high-peak-disk long-build-duration
-          short-build-duration enterprise-floor
+        VALUES = [
+          'oom-failure', 'enospc-failure', 'build-timeout-failure', 'basic-floor',
+          'high-peak-memory', 'sustained-high-cpu', 'high-peak-disk', 'long-build-duration',
+          'short-build-duration', 'enterprise-floor'
         ].freeze
         def self.from_value(value)
           value
@@ -226,7 +226,7 @@ module OctridevVercel
       module DeleteProjectAvatarResponseResourceConfigBuildMachineElasticTX2f9227f5d6
         DOWNGRADE = 'downgrade'
         UPGRADE = 'upgrade'
-        VALUES = %w[downgrade upgrade].freeze
+        VALUES = ['downgrade', 'upgrade'].freeze
         def self.from_value(value)
           value
         end
@@ -305,7 +305,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = %w[endsWith equals startsWith].freeze
+        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
         def self.from_value(value)
           value
         end
@@ -357,7 +357,7 @@ module OctridevVercel
         PERFORMANCE_XL = 'performance_xl'
         STANDARD = 'standard'
         STANDARD_LEGACY = 'standard_legacy'
-        VALUES = %w[performance performance_xl standard standard_legacy].freeze
+        VALUES = ['performance', 'performance_xl', 'standard', 'standard_legacy'].freeze
         def self.from_value(value)
           value
         end
@@ -367,7 +367,7 @@ module OctridevVercel
       module ListProjectsResponseVariant2ProjectsItemResourceConfigBuildMaXb2f2129a0a
         ELASTIC = 'elastic'
         FIXED = 'fixed'
-        VALUES = %w[elastic fixed].freeze
+        VALUES = ['elastic', 'fixed'].freeze
         def self.from_value(value)
           value
         end
@@ -379,8 +379,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = %w[
-          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+        VALUES = [
+          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
         ].freeze
         def self.from_value(value)
           value
@@ -422,7 +422,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = %w[endsWith equals startsWith].freeze
+        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
         def self.from_value(value)
           value
         end
@@ -446,8 +446,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = %w[
-          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
+        VALUES = [
+          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
         ].freeze
         def self.from_value(value)
           value
@@ -516,7 +516,7 @@ module OctridevVercel
       module GetProjectsResponseResourceConfigBuildMachineElasticTransitionDirection
         DOWNGRADE = 'downgrade'
         UPGRADE = 'upgrade'
-        VALUES = %w[downgrade upgrade].freeze
+        VALUES = ['downgrade', 'upgrade'].freeze
         def self.from_value(value)
           value
         end
@@ -537,7 +537,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = %w[development preview production].freeze
+        VALUES = ['development', 'preview', 'production'].freeze
         def self.from_value(value)
           value
         end

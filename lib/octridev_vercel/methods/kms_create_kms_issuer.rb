@@ -41,6 +41,7 @@ module OctridevVercel
         import_key_id: NOT_GIVEN,
         request_options: nil
       )
+
         Validation.if_given(import_key_id) do
           Validation.validate_length('importKeyId', import_key_id, max: 128)
           Validation.validate_pattern('importKeyId', import_key_id, '^[A-Za-z0-9._-]+$')
@@ -48,11 +49,11 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          '/v1/kms/issuers',
+          "/v1/kms/issuers",
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'name' => name,
@@ -60,12 +61,12 @@ module OctridevVercel
             'claimsSchema' => claims_schema,
             'policy' => policy,
             'importKey' => import_key,
-            'importKeyId' => import_key_id
+            'importKeyId' => import_key_id,
           },
           return_type: ::OctridevVercel::Methods::Kms::CreateKmsIssuerResponse,
           decoder: :json,
           operation_id: 'create_kms_issuer',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -12,14 +12,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectProtectionBypassUpdateMetadata
         FIELDS = {
-          secret: 'secret',
-          is_env_var: 'isEnvVar',
-          note: 'note'
+          secret: "secret",
+          is_env_var: "isEnvVar",
+          note: "note",
         }.freeze
         REQUIRED_FIELDS = %i[
           secret
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateProjectProtectionBypassUpdate.
@@ -54,11 +55,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectProtectionBypassMetadata
         FIELDS = {
-          revoke: 'revoke',
-          generate: 'generate',
-          update: 'update'
+          revoke: "revoke",
+          generate: "generate",
+          update: "update",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
         DECODERS = {
           revoke: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectProtectionBypassRevoke.from_hash(value)
@@ -68,7 +70,7 @@ module OctridevVercel
           end,
           update: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectProtectionBypassUpdate.from_hash(value)
-          end
+          end,
         }.freeze
       end
 
@@ -103,10 +105,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectProtectionBypassResponseMetadata
         FIELDS = {
-          protection_bypass: 'protectionBypass'
+          protection_bypass: "protectionBypass",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateProjectProtectionBypassResponse.
@@ -135,10 +139,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectsRollbackDescriptionMetadata
         FIELDS = {
-          description: 'description'
+          description: "description",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateProjectsRollbackDescription.
@@ -168,15 +174,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsMetadata
         FIELDS = {
-          microfrontends_group_id: 'microfrontendsGroupId',
-          enabled: 'enabled',
-          is_default_app: 'isDefaultApp',
-          default_route: 'defaultRoute',
-          route_observability_to_this_project: 'routeObservabilityToThisProject',
-          do_not_route_with_microfrontends_routing: 'doNotRouteWithMicrofrontendsRouting'
+          microfrontends_group_id: "microfrontendsGroupId",
+          enabled: "enabled",
+          is_default_app: "isDefaultApp",
+          default_route: "defaultRoute",
+          route_observability_to_this_project: "routeObservabilityToThisProject",
+          do_not_route_with_microfrontends_routing: "doNotRouteWithMicrofrontendsRouting",
         }.freeze
-        REQUIRED_FIELDS = %i[].freeze
-        DECODERS = {}.freeze
+        REQUIRED_FIELDS = %i[
+        ].freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateMicrofrontends.
@@ -216,14 +224,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseAliasItemDeploymentAliasErrorMetadata
         FIELDS = {
-          code: 'code',
-          message: 'message'
+          code: "code",
+          message: "message",
         }.freeze
         REQUIRED_FIELDS = %i[
           code
           message
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateMicrofrontendsResponseAliasItemDeploymentAliasError.
@@ -252,8 +261,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseAliasItemDeploymentBranchMatcherMetadata
         FIELDS = {
-          pattern: 'pattern',
-          type: 'type'
+          pattern: "pattern",
+          type: "type",
         }.freeze
         REQUIRED_FIELDS = %i[
           pattern
@@ -262,7 +271,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseAliasItemDeploymentBranchMatcherType.from_value(value)
-          end
+          end,
         }.freeze
       end
 
@@ -295,14 +304,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseAliasItemDeploymentBuildsItemMetadata
         FIELDS = {
-          dest: 'dest',
-          src: 'src',
-          use: 'use'
+          dest: "dest",
+          src: "src",
+          use: "use",
         }.freeze
         REQUIRED_FIELDS = %i[
           use
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateMicrofrontendsResponseAliasItemDeploymentBuildsItem.
@@ -331,18 +341,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseAliasItemDeploymentCreatorMetadata
         FIELDS = {
-          email: 'email',
-          github_login: 'githubLogin',
-          gitlab_login: 'gitlabLogin',
-          uid: 'uid',
-          username: 'username'
+          email: "email",
+          github_login: "githubLogin",
+          gitlab_login: "gitlabLogin",
+          uid: "uid",
+          username: "username",
         }.freeze
         REQUIRED_FIELDS = %i[
           email
           uid
           username
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateMicrofrontendsResponseAliasItemDeploymentCreator.
@@ -371,19 +382,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseAliasItemDeploymentOidcTokenClaimsMetadata
         FIELDS = {
-          aud: 'aud',
-          custom_environment_id: 'custom_environment_id',
-          deployment_id: 'deployment_id',
-          environment: 'environment',
-          iss: 'iss',
-          mfe_group_ids: 'mfe_group_ids',
-          owner: 'owner',
-          owner_id: 'owner_id',
-          plan: 'plan',
-          project: 'project',
-          project_id: 'project_id',
-          scope: 'scope',
-          sub: 'sub'
+          aud: "aud",
+          custom_environment_id: "custom_environment_id",
+          deployment_id: "deployment_id",
+          environment: "environment",
+          iss: "iss",
+          mfe_group_ids: "mfe_group_ids",
+          owner: "owner",
+          owner_id: "owner_id",
+          plan: "plan",
+          project: "project",
+          project_id: "project_id",
+          scope: "scope",
+          sub: "sub",
         }.freeze
         REQUIRED_FIELDS = %i[
           aud
@@ -396,7 +407,8 @@ module OctridevVercel
           scope
           sub
         ].freeze
-        DECODERS = {}.freeze
+        DECODERS = {
+        }.freeze
       end
 
       # API model for UpdateMicrofrontendsResponseAliasItemDeploymentOidcTokenClaims.
@@ -426,42 +438,42 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseAliasItemDeploymentMetadata
         FIELDS = {
-          alias_: 'alias',
-          alias_assigned: 'aliasAssigned',
-          alias_error: 'aliasError',
-          alias_final: 'aliasFinal',
-          automatic_aliases: 'automaticAliases',
-          branch_matcher: 'branchMatcher',
-          building_at: 'buildingAt',
-          builds: 'builds',
-          checks_conclusion: 'checksConclusion',
-          checks_state: 'checksState',
-          connect_builds_enabled: 'connectBuildsEnabled',
-          connect_configuration_id: 'connectConfigurationId',
-          created_at: 'createdAt',
-          created_in: 'createdIn',
-          creator: 'creator',
-          deleted_at: 'deletedAt',
-          deployment_hostname: 'deploymentHostname',
-          forced: 'forced',
-          id: 'id',
-          meta: 'meta',
-          monorepo_manager: 'monorepoManager',
-          name: 'name',
-          oidc_token_claims: 'oidcTokenClaims',
-          plan: 'plan',
-          preview_comments_enabled: 'previewCommentsEnabled',
-          private: 'private',
-          ready_at: 'readyAt',
-          ready_state: 'readyState',
-          ready_substate: 'readySubstate',
-          requested_at: 'requestedAt',
-          target: 'target',
-          team_id: 'teamId',
-          type: 'type',
-          url: 'url',
-          user_id: 'userId',
-          with_cache: 'withCache'
+          alias_: "alias",
+          alias_assigned: "aliasAssigned",
+          alias_error: "aliasError",
+          alias_final: "aliasFinal",
+          automatic_aliases: "automaticAliases",
+          branch_matcher: "branchMatcher",
+          building_at: "buildingAt",
+          builds: "builds",
+          checks_conclusion: "checksConclusion",
+          checks_state: "checksState",
+          connect_builds_enabled: "connectBuildsEnabled",
+          connect_configuration_id: "connectConfigurationId",
+          created_at: "createdAt",
+          created_in: "createdIn",
+          creator: "creator",
+          deleted_at: "deletedAt",
+          deployment_hostname: "deploymentHostname",
+          forced: "forced",
+          id: "id",
+          meta: "meta",
+          monorepo_manager: "monorepoManager",
+          name: "name",
+          oidc_token_claims: "oidcTokenClaims",
+          plan: "plan",
+          preview_comments_enabled: "previewCommentsEnabled",
+          private: "private",
+          ready_at: "readyAt",
+          ready_state: "readyState",
+          ready_substate: "readySubstate",
+          requested_at: "requestedAt",
+          target: "target",
+          team_id: "teamId",
+          type: "type",
+          url: "url",
+          user_id: "userId",
+          with_cache: "withCache",
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -524,7 +536,7 @@ module OctridevVercel
           end,
           with_cache: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseAliasItemDeploymentWithCache.from_value(value)
-          end
+          end,
         }.freeze
         NULLABLE_FIELDS = %i[
           creator

@@ -17,23 +17,30 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_microfrontends_config_for_project) do |config:, project_id_or_name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_microfrontends_config_for_project) do |
+        config:,
+        project_id_or_name:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         SdkClient.request(
           'GET',
           [
-            '/v1/microfrontends/projects/',
+            "/v1/microfrontends/projects/",
             SdkClient.encode_path_segment(project_id_or_name),
-            '/production-mfe-config'
+            "/production-mfe-config"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Microfrontends::GetMicrofrontendsConfigForProjectResponse,
           decoder: :json,
           operation_id: 'get_microfrontends_config_for_project',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

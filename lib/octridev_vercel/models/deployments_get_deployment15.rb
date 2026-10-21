@@ -5,682 +5,685 @@
 
 # deployments domain models
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant17Metadata
-    FIELDS = {
-      commit_metadata: 'commitMetadata',
-      org: 'org',
-      ref: 'ref',
-      repo: 'repo',
-      repo_id: 'repoId',
-      repo_pushed_at: 'repoPushedAt',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      org
-      ref
-      repo
-      sha
-      type
-    ].freeze
-    DECODERS = {
-      commit_metadata: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant17CommitMetadata.from_hash(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant17Type.from_value(value)
-      end
-    }.freeze
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant17Metadata
+  FIELDS = {
+    commit_metadata: "commitMetadata",
+    org: "org",
+    ref: "ref",
+    repo: "repo",
+    repo_id: "repoId",
+    repo_pushed_at: "repoPushedAt",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    org
+    ref
+    repo
+    sha
+    type
+  ].freeze
+  DECODERS = {
+    commit_metadata: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant17CommitMetadata.from_hash(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant17Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant2GitSourceVariant17.
+class GetDeploymentResponseVariant2GitSourceVariant17
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17Metadata::DECODERS
+
+  attr_reader :commit_metadata, :org, :ref, :repo, :repo_id, :repo_pushed_at, :sha, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant17.
-  class GetDeploymentResponseVariant2GitSourceVariant17
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant17Metadata::DECODERS
-
-    attr_reader :commit_metadata, :org, :ref, :repo, :repo_id, :repo_pushed_at, :sha, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2GitSourceVariant18Metadata
-    FIELDS = {
-      owner: 'owner',
-      ref: 'ref',
-      repo: 'repo',
-      repo_id: 'repoId',
-      sha: 'sha',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      owner
-      ref
-      repo
-      repo_id
-      sha
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant18Type.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2GitSourceVariant18Metadata
+  FIELDS = {
+    owner: "owner",
+    ref: "ref",
+    repo: "repo",
+    repo_id: "repoId",
+    sha: "sha",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    owner
+    ref
+    repo
+    repo_id
+    sha
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2GitSourceVariant18Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant2GitSourceVariant18.
+class GetDeploymentResponseVariant2GitSourceVariant18
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant18Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant18Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant18Metadata::DECODERS
+
+  attr_reader :owner, :ref, :repo, :repo_id, :sha, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant2GitSourceVariant18.
-  class GetDeploymentResponseVariant2GitSourceVariant18
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant18Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant18Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2GitSourceVariant18Metadata::DECODERS
-
-    attr_reader :owner, :ref, :repo, :repo_id, :sha, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2LambdasItemOutputItemMetadata
-    FIELDS = {
-      function_name: 'functionName',
-      path: 'path'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      function_name
-      path
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2LambdasItemOutputItemMetadata
+  FIELDS = {
+    function_name: "functionName",
+    path: "path",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    function_name
+    path
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant2LambdasItemOutputItem.
+class GetDeploymentResponseVariant2LambdasItemOutputItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2LambdasItemOutputItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2LambdasItemOutputItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2LambdasItemOutputItemMetadata::DECODERS
+
+  attr_reader :function_name, :path
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant2LambdasItemOutputItem.
-  class GetDeploymentResponseVariant2LambdasItemOutputItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2LambdasItemOutputItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2LambdasItemOutputItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2LambdasItemOutputItemMetadata::DECODERS
-
-    attr_reader :function_name, :path
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2LambdasItemMetadata
-    FIELDS = {
-      created_at: 'createdAt',
-      entrypoint: 'entrypoint',
-      id: 'id',
-      ready_state: 'readyState',
-      ready_state_at: 'readyStateAt',
-      output: 'output'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-      output
-    ].freeze
-    DECODERS = {
-      ready_state: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2LambdasItemReadyState.from_value(value)
-      end,
-      output: lambda do |value|
-        value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant2LambdasItemOutputItem.from_hash(item) }
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2LambdasItemMetadata
+  FIELDS = {
+    created_at: "createdAt",
+    entrypoint: "entrypoint",
+    id: "id",
+    ready_state: "readyState",
+    ready_state_at: "readyStateAt",
+    output: "output",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+    output
+  ].freeze
+  DECODERS = {
+    ready_state: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2LambdasItemReadyState.from_value(value)
+    end,
+    output: lambda do |value|
+      value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant2LambdasItemOutputItem.from_hash(item) }
+    end,
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant2LambdasItem.
+# A partial representation of a Build used by the deployment endpoint.
+class GetDeploymentResponseVariant2LambdasItem
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2LambdasItemMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2LambdasItemMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2LambdasItemMetadata::DECODERS
+
+  attr_reader :created_at, :entrypoint, :id, :ready_state, :ready_state_at, :output
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant2LambdasItem.
-  # A partial representation of a Build used by the deployment endpoint.
-  class GetDeploymentResponseVariant2LambdasItem
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2LambdasItemMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2LambdasItemMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2LambdasItemMetadata::DECODERS
-
-    attr_reader :created_at, :entrypoint, :id, :ready_state, :ready_state_at, :output
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2ManualProvisioningMetadata
-    FIELDS = {
-      completed_at: 'completedAt',
-      state: 'state'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      state
-    ].freeze
-    DECODERS = {
-      state: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2ManualProvisioningState.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2ManualProvisioningMetadata
+  FIELDS = {
+    completed_at: "completedAt",
+    state: "state",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    state
+  ].freeze
+  DECODERS = {
+    state: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2ManualProvisioningState.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant2ManualProvisioning.
+# Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
+class GetDeploymentResponseVariant2ManualProvisioning
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2ManualProvisioningMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2ManualProvisioningMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2ManualProvisioningMetadata::DECODERS
+
+  # @return [Float] Timestamp when manual provisioning completed
+  attr_reader :completed_at
+  # @return [GetDeploymentResponseVariant2ManualProvisioningState] Current provisioning state
+  attr_reader :state
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant2ManualProvisioning.
-  # Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
-  class GetDeploymentResponseVariant2ManualProvisioning
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2ManualProvisioningMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2ManualProvisioningMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2ManualProvisioningMetadata::DECODERS
-
-    # @return [Float] Timestamp when manual provisioning completed
-    attr_reader :completed_at
-    # @return [GetDeploymentResponseVariant2ManualProvisioningState] Current provisioning state
-    attr_reader :state
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2OidcTokenClaimsMetadata
-    FIELDS = {
-      aud: 'aud',
-      custom_environment_id: 'custom_environment_id',
-      deployment_id: 'deployment_id',
-      environment: 'environment',
-      iss: 'iss',
-      mfe_group_ids: 'mfe_group_ids',
-      owner: 'owner',
-      owner_id: 'owner_id',
-      plan: 'plan',
-      project: 'project',
-      project_id: 'project_id',
-      scope: 'scope',
-      sub: 'sub'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      aud
-      environment
-      iss
-      owner
-      owner_id
-      project
-      project_id
-      scope
-      sub
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2OidcTokenClaimsMetadata
+  FIELDS = {
+    aud: "aud",
+    custom_environment_id: "custom_environment_id",
+    deployment_id: "deployment_id",
+    environment: "environment",
+    iss: "iss",
+    mfe_group_ids: "mfe_group_ids",
+    owner: "owner",
+    owner_id: "owner_id",
+    plan: "plan",
+    project: "project",
+    project_id: "project_id",
+    scope: "scope",
+    sub: "sub",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    aud
+    environment
+    iss
+    owner
+    owner_id
+    project
+    project_id
+    scope
+    sub
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant2OidcTokenClaims.
+class GetDeploymentResponseVariant2OidcTokenClaims
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2OidcTokenClaimsMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2OidcTokenClaimsMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2OidcTokenClaimsMetadata::DECODERS
+
+  attr_reader :aud, :custom_environment_id, :deployment_id, :environment, :iss, :mfe_group_ids,
+              :owner, :owner_id, :plan, :project, :project_id, :scope, :sub
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant2OidcTokenClaims.
-  class GetDeploymentResponseVariant2OidcTokenClaims
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2OidcTokenClaimsMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2OidcTokenClaimsMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2OidcTokenClaimsMetadata::DECODERS
-
-    attr_reader :aud, :custom_environment_id, :deployment_id, :environment, :iss, :mfe_group_ids,
-                :owner, :owner_id, :plan, :project, :project_id, :scope, :sub
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2ProjectMetadata
-    FIELDS = {
-      framework: 'framework',
-      id: 'id',
-      name: 'name'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-      name
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2ProjectMetadata
+  FIELDS = {
+    framework: "framework",
+    id: "id",
+    name: "name",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+    name
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant2Project.
+# The public project information associated with the deployment.
+class GetDeploymentResponseVariant2Project
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2ProjectMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2ProjectMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2ProjectMetadata::DECODERS
+
+  attr_reader :framework, :id, :name
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant2Project.
-  # The public project information associated with the deployment.
-  class GetDeploymentResponseVariant2Project
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2ProjectMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2ProjectMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2ProjectMetadata::DECODERS
-
-    attr_reader :framework, :id, :name
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2TeamMetadata
-    FIELDS = {
-      avatar: 'avatar',
-      id: 'id',
-      name: 'name',
-      slug: 'slug'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      id
-      name
-      slug
-    ].freeze
-    DECODERS = {}.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2TeamMetadata
+  FIELDS = {
+    avatar: "avatar",
+    id: "id",
+    name: "name",
+    slug: "slug",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    id
+    name
+    slug
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant2Team.
+# The team that owns the deployment if any
+class GetDeploymentResponseVariant2Team
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2TeamMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2TeamMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2TeamMetadata::DECODERS
+
+  attr_reader :avatar, :id, :name, :slug
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant2Team.
-  # The team that owns the deployment if any
-  class GetDeploymentResponseVariant2Team
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2TeamMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2TeamMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2TeamMetadata::DECODERS
-
-    attr_reader :avatar, :id, :name, :slug
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalGetDeploymentResponseVariant2Metadata
-    FIELDS = {
-      alias_: 'alias',
-      alias_assigned: 'aliasAssigned',
-      alias_error: 'aliasError',
-      alias_final: 'aliasFinal',
-      alias_warning: 'aliasWarning',
-      auto_assign_custom_domains: 'autoAssignCustomDomains',
-      automatic_aliases: 'automaticAliases',
-      booted_at: 'bootedAt',
-      build_container_finished_at: 'buildContainerFinishedAt',
-      build_error_at: 'buildErrorAt',
-      building_at: 'buildingAt',
-      build_skipped: 'buildSkipped',
-      canceled_at: 'canceledAt',
-      checks_conclusion: 'checksConclusion',
-      checks_state: 'checksState',
-      created_at: 'createdAt',
-      creator: 'creator',
-      custom_environment: 'customEnvironment',
-      default_route: 'defaultRoute',
-      deleted_at: 'deletedAt',
-      duration: 'duration',
-      error_code: 'errorCode',
-      error_link: 'errorLink',
-      error_message: 'errorMessage',
-      error_step: 'errorStep',
-      git_source: 'gitSource',
-      id: 'id',
-      init_ready_at: 'initReadyAt',
-      is_first_branch_deployment: 'isFirstBranchDeployment',
-      lambdas: 'lambdas',
-      manual_provisioning: 'manualProvisioning',
-      meta: 'meta',
-      name: 'name',
-      node_version: 'nodeVersion',
-      oidc_token_claims: 'oidcTokenClaims',
-      oom_report: 'oomReport',
-      origin_cache_region: 'originCacheRegion',
-      passive_regions: 'passiveRegions',
-      prebuilt: 'prebuilt',
-      preview_comments_enabled: 'previewCommentsEnabled',
-      project: 'project',
-      public: 'public',
-      ready: 'ready',
-      ready_state: 'readyState',
-      ready_state_reason: 'readyStateReason',
-      ready_substate: 'readySubstate',
-      regions: 'regions',
-      soft_deleted_by_retention: 'softDeletedByRetention',
-      source: 'source',
-      status: 'status',
-      target: 'target',
-      team: 'team',
-      tty_build_logs: 'ttyBuildLogs',
-      type: 'type',
-      undeleted_at: 'undeletedAt',
-      url: 'url',
-      user_aliases: 'userAliases',
-      user_configured_deployment_id: 'userConfiguredDeploymentId',
-      version: 'version'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      alias_assigned
-      booted_at
-      building_at
-      build_skipped
-      created_at
-      creator
-      duration
-      id
-      meta
-      name
-      public
-      ready_state
-      regions
-      status
-      type
-      url
-      version
-    ].freeze
-    DECODERS = {
-      alias_assigned: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2AliasAssigned.from_value(value)
-      end,
-      alias_error: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2AliasError.from_hash(value)
-      end,
-      alias_warning: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2AliasWarning.from_hash(value)
-      end,
-      auto_assign_custom_domains: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2AutoAssignCustomDomains.from_value(value)
-      end,
-      build_skipped: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2BuildSkipped.from_value(value)
-      end,
-      checks_conclusion: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2ChecksConclusion.from_value(value)
-      end,
-      checks_state: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2ChecksState.from_value(value)
-      end,
-      creator: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2Creator.from_hash(value)
-      end,
-      duration: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2Duration.from_hash(value)
-      end,
-      is_first_branch_deployment: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2IsFirstBranchDeployment.from_value(value)
-      end,
-      lambdas: lambda do |value|
-        value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant2LambdasItem.from_hash(item) }
-      end,
-      manual_provisioning: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2ManualProvisioning.from_hash(value)
-      end,
-      node_version: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2NodeVersion.from_value(value)
-      end,
-      oidc_token_claims: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2OidcTokenClaims.from_hash(value)
-      end,
-      oom_report: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2OomReport.from_value(value)
-      end,
-      prebuilt: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2Prebuilt.from_value(value)
-      end,
-      preview_comments_enabled: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2PreviewCommentsEnabled.from_value(value)
-      end,
-      project: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2Project.from_hash(value)
-      end,
-      public: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2Public.from_value(value)
-      end,
-      ready_state: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2ReadyState.from_value(value)
-      end,
-      ready_substate: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2ReadySubstate.from_value(value)
-      end,
-      soft_deleted_by_retention: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2SoftDeletedByRetention.from_value(value)
-      end,
-      source: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2Source.from_value(value)
-      end,
-      status: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2Status.from_value(value)
-      end,
-      target: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2Target.from_value(value)
-      end,
-      team: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2Team.from_hash(value)
-      end,
-      tty_build_logs: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2TtyBuildLogs.from_value(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2Type.from_value(value)
-      end,
-      version: lambda do |value|
-        ::OctridevVercel::GetDeploymentResponseVariant2Version.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalGetDeploymentResponseVariant2Metadata
+  FIELDS = {
+    alias_: "alias",
+    alias_assigned: "aliasAssigned",
+    alias_error: "aliasError",
+    alias_final: "aliasFinal",
+    alias_warning: "aliasWarning",
+    auto_assign_custom_domains: "autoAssignCustomDomains",
+    automatic_aliases: "automaticAliases",
+    booted_at: "bootedAt",
+    build_container_finished_at: "buildContainerFinishedAt",
+    build_error_at: "buildErrorAt",
+    building_at: "buildingAt",
+    build_skipped: "buildSkipped",
+    canceled_at: "canceledAt",
+    checks_conclusion: "checksConclusion",
+    checks_state: "checksState",
+    created_at: "createdAt",
+    creator: "creator",
+    custom_environment: "customEnvironment",
+    default_route: "defaultRoute",
+    deleted_at: "deletedAt",
+    duration: "duration",
+    error_code: "errorCode",
+    error_link: "errorLink",
+    error_message: "errorMessage",
+    error_step: "errorStep",
+    git_source: "gitSource",
+    id: "id",
+    init_ready_at: "initReadyAt",
+    is_first_branch_deployment: "isFirstBranchDeployment",
+    lambdas: "lambdas",
+    manual_provisioning: "manualProvisioning",
+    meta: "meta",
+    name: "name",
+    node_version: "nodeVersion",
+    oidc_token_claims: "oidcTokenClaims",
+    oom_report: "oomReport",
+    origin_cache_region: "originCacheRegion",
+    passive_regions: "passiveRegions",
+    prebuilt: "prebuilt",
+    preview_comments_enabled: "previewCommentsEnabled",
+    project: "project",
+    public: "public",
+    ready: "ready",
+    ready_state: "readyState",
+    ready_state_reason: "readyStateReason",
+    ready_substate: "readySubstate",
+    regions: "regions",
+    soft_deleted_by_retention: "softDeletedByRetention",
+    source: "source",
+    status: "status",
+    target: "target",
+    team: "team",
+    tty_build_logs: "ttyBuildLogs",
+    type: "type",
+    undeleted_at: "undeletedAt",
+    url: "url",
+    user_aliases: "userAliases",
+    user_configured_deployment_id: "userConfiguredDeploymentId",
+    version: "version",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    alias_assigned
+    booted_at
+    building_at
+    build_skipped
+    created_at
+    creator
+    duration
+    id
+    meta
+    name
+    public
+    ready_state
+    regions
+    status
+    type
+    url
+    version
+  ].freeze
+  DECODERS = {
+    alias_assigned: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2AliasAssigned.from_value(value)
+    end,
+    alias_error: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2AliasError.from_hash(value)
+    end,
+    alias_warning: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2AliasWarning.from_hash(value)
+    end,
+    auto_assign_custom_domains: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2AutoAssignCustomDomains.from_value(value)
+    end,
+    build_skipped: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2BuildSkipped.from_value(value)
+    end,
+    checks_conclusion: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2ChecksConclusion.from_value(value)
+    end,
+    checks_state: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2ChecksState.from_value(value)
+    end,
+    creator: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2Creator.from_hash(value)
+    end,
+    duration: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2Duration.from_hash(value)
+    end,
+    is_first_branch_deployment: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2IsFirstBranchDeployment.from_value(value)
+    end,
+    lambdas: lambda do |value|
+      value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant2LambdasItem.from_hash(item) }
+    end,
+    manual_provisioning: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2ManualProvisioning.from_hash(value)
+    end,
+    node_version: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2NodeVersion.from_value(value)
+    end,
+    oidc_token_claims: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2OidcTokenClaims.from_hash(value)
+    end,
+    oom_report: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2OomReport.from_value(value)
+    end,
+    prebuilt: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2Prebuilt.from_value(value)
+    end,
+    preview_comments_enabled: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2PreviewCommentsEnabled.from_value(value)
+    end,
+    project: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2Project.from_hash(value)
+    end,
+    public: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2Public.from_value(value)
+    end,
+    ready_state: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2ReadyState.from_value(value)
+    end,
+    ready_substate: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2ReadySubstate.from_value(value)
+    end,
+    soft_deleted_by_retention: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2SoftDeletedByRetention.from_value(value)
+    end,
+    source: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2Source.from_value(value)
+    end,
+    status: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2Status.from_value(value)
+    end,
+    target: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2Target.from_value(value)
+    end,
+    team: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2Team.from_hash(value)
+    end,
+    tty_build_logs: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2TtyBuildLogs.from_value(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2Type.from_value(value)
+    end,
+    version: lambda do |value|
+      ::OctridevVercel::GetDeploymentResponseVariant2Version.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for GetDeploymentResponseVariant2.
+class GetDeploymentResponseVariant2
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalGetDeploymentResponseVariant2Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalGetDeploymentResponseVariant2Metadata::DECODERS
+
+  attr_reader :alias_final, :alias_warning, :automatic_aliases, :booted_at, :build_error_at,
+              :building_at, :build_skipped, :canceled_at, :checks_conclusion, :checks_state,
+              :custom_environment, :error_code, :error_link, :error_message, :error_step,
+              :git_source, :init_ready_at, :is_first_branch_deployment, :lambdas, :meta,
+              :oidc_token_claims, :oom_report, :origin_cache_region, :prebuilt, :ready,
+              :ready_state_reason, :status, :tty_build_logs, :type
+  # @return [Array_of_String] A list of all the aliases (default aliases, staging aliases and production aliases) that were assigned upon deployment creation
+  attr_reader :alias_
+  # @return [GetDeploymentResponseVariant2AliasAssigned] A boolean that will be true when the aliases from the alias property were assigned successfully
+  attr_reader :alias_assigned
+  # @return [GetDeploymentResponseVariant2AliasError] An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
+  attr_reader :alias_error
+  # @return [GetDeploymentResponseVariant2AutoAssignCustomDomains] applies to custom domains only, defaults to `true`
+  attr_reader :auto_assign_custom_domains
+  # @return [Float] Since April 2025 it necessary for On-Demand Concurrency Minutes calculation
+  attr_reader :build_container_finished_at
+  # @return [Float] A number containing the date when the deployment was created in milliseconds
+  attr_reader :created_at
+  # @return [GetDeploymentResponseVariant2Creator] Information about the deployment creator
+  attr_reader :creator
+  # @return [String] Computed field that is only available for deployments with a microfrontend configuration.
+  attr_reader :default_route
+  # @return [Float] A number containing the date when the deployment was deleted at milliseconds
+  attr_reader :deleted_at
+  # @return [GetDeploymentResponseVariant2Duration] Build timestamps, elapsed durations, and billing measurements. The object is always present, but fields are omitted when their source timestamps are unavailable, such as for running or legacy deployments.
+  attr_reader :duration
+  # @return [String] A string holding the unique ID of the deployment
+  attr_reader :id
+  # @return [GetDeploymentResponseVariant2ManualProvisioning] Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
+  attr_reader :manual_provisioning
+  # @return [String] The name of the project associated with the deployment at the time that the deployment was created
+  attr_reader :name
+  # @return [GetDeploymentResponseVariant2NodeVersion] If set it overrides the `projectSettings.nodeVersion` for this deployment.
+  attr_reader :node_version
+  # @return [Array_of_String] Since November 2023 this field defines a set of regions that we will deploy the lambda to passively Lambdas will be deployed to these regions but only invoked if all of the primary `regions` are marked as out of service
+  attr_reader :passive_regions
+  # @return [GetDeploymentResponseVariant2PreviewCommentsEnabled] Whether or not preview comments are enabled for the deployment
+  attr_reader :preview_comments_enabled
+  # @return [GetDeploymentResponseVariant2Project] The public project information associated with the deployment.
+  attr_reader :project
+  # @return [GetDeploymentResponseVariant2Public] A boolean representing if the deployment is public or not. By default this is `false`
+  attr_reader :public
+  # @return [GetDeploymentResponseVariant2ReadyState] The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+  attr_reader :ready_state
+  # @return [GetDeploymentResponseVariant2ReadySubstate] Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic
+  attr_reader :ready_substate
+  # @return [Array_of_String] The regions the deployment exists in
+  attr_reader :regions
+  # @return [GetDeploymentResponseVariant2SoftDeletedByRetention] flag to indicate if the deployment was deleted by retention policy
+  attr_reader :soft_deleted_by_retention
+  # @return [GetDeploymentResponseVariant2Source] Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+  attr_reader :source
+  # @return [GetDeploymentResponseVariant2Target] If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+  attr_reader :target
+  # @return [GetDeploymentResponseVariant2Team] The team that owns the deployment if any
+  attr_reader :team
+  # @return [Float] A number containing the date when the deployment was undeleted at milliseconds
+  attr_reader :undeleted_at
+  # @return [String] A string with the unique URL of the deployment
+  attr_reader :url
+  # @return [Array_of_String] An array of domains that were provided by the user when creating the Deployment.
+  attr_reader :user_aliases
+  # @return [String] Since January 2025 User-configured deployment ID for skew protection with pre-built deployments. This is set when users configure a custom deploymentId in their next.config.js file. This allows Next.js to use skew protection even when deployments are pre-built outside of Vercel's build system.
+  attr_reader :user_configured_deployment_id
+  # @return [GetDeploymentResponseVariant2Version] The platform version that was used to create the deployment.
+  attr_reader :version
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for GetDeploymentResponseVariant2.
-  class GetDeploymentResponseVariant2
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalGetDeploymentResponseVariant2Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant2Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalGetDeploymentResponseVariant2Metadata::DECODERS
-
-    attr_reader :alias_final, :alias_warning, :automatic_aliases, :booted_at, :build_error_at,
-                :building_at, :build_skipped, :canceled_at, :checks_conclusion, :checks_state,
-                :custom_environment, :error_code, :error_link, :error_message, :error_step,
-                :git_source, :init_ready_at, :is_first_branch_deployment, :lambdas, :meta,
-                :oidc_token_claims, :oom_report, :origin_cache_region, :prebuilt, :ready,
-                :ready_state_reason, :status, :tty_build_logs, :type
-    # @return [Array_of_String] A list of all the aliases (default aliases, staging aliases and production aliases) that were assigned upon deployment creation
-    attr_reader :alias_
-    # @return [GetDeploymentResponseVariant2AliasAssigned] A boolean that will be true when the aliases from the alias property were assigned successfully
-    attr_reader :alias_assigned
-    # @return [GetDeploymentResponseVariant2AliasError] An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
-    attr_reader :alias_error
-    # @return [GetDeploymentResponseVariant2AutoAssignCustomDomains] applies to custom domains only, defaults to `true`
-    attr_reader :auto_assign_custom_domains
-    # @return [Float] Since April 2025 it necessary for On-Demand Concurrency Minutes calculation
-    attr_reader :build_container_finished_at
-    # @return [Float] A number containing the date when the deployment was created in milliseconds
-    attr_reader :created_at
-    # @return [GetDeploymentResponseVariant2Creator] Information about the deployment creator
-    attr_reader :creator
-    # @return [String] Computed field that is only available for deployments with a microfrontend configuration.
-    attr_reader :default_route
-    # @return [Float] A number containing the date when the deployment was deleted at milliseconds
-    attr_reader :deleted_at
-    # @return [GetDeploymentResponseVariant2Duration] Build timestamps, elapsed durations, and billing measurements. The object is always present, but fields are omitted when their source timestamps are unavailable, such as for running or legacy deployments.
-    attr_reader :duration
-    # @return [String] A string holding the unique ID of the deployment
-    attr_reader :id
-    # @return [GetDeploymentResponseVariant2ManualProvisioning] Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
-    attr_reader :manual_provisioning
-    # @return [String] The name of the project associated with the deployment at the time that the deployment was created
-    attr_reader :name
-    # @return [GetDeploymentResponseVariant2NodeVersion] If set it overrides the `projectSettings.nodeVersion` for this deployment.
-    attr_reader :node_version
-    # @return [Array_of_String] Since November 2023 this field defines a set of regions that we will deploy the lambda to passively Lambdas will be deployed to these regions but only invoked if all of the primary `regions` are marked as out of service
-    attr_reader :passive_regions
-    # @return [GetDeploymentResponseVariant2PreviewCommentsEnabled] Whether or not preview comments are enabled for the deployment
-    attr_reader :preview_comments_enabled
-    # @return [GetDeploymentResponseVariant2Project] The public project information associated with the deployment.
-    attr_reader :project
-    # @return [GetDeploymentResponseVariant2Public] A boolean representing if the deployment is public or not. By default this is `false`
-    attr_reader :public
-    # @return [GetDeploymentResponseVariant2ReadyState] The state of the deployment depending on the process of deploying, or if it is ready or in an error state
-    attr_reader :ready_state
-    # @return [GetDeploymentResponseVariant2ReadySubstate] Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic
-    attr_reader :ready_substate
-    # @return [Array_of_String] The regions the deployment exists in
-    attr_reader :regions
-    # @return [GetDeploymentResponseVariant2SoftDeletedByRetention] flag to indicate if the deployment was deleted by retention policy
-    attr_reader :soft_deleted_by_retention
-    # @return [GetDeploymentResponseVariant2Source] Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
-    attr_reader :source
-    # @return [GetDeploymentResponseVariant2Target] If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
-    attr_reader :target
-    # @return [GetDeploymentResponseVariant2Team] The team that owns the deployment if any
-    attr_reader :team
-    # @return [Float] A number containing the date when the deployment was undeleted at milliseconds
-    attr_reader :undeleted_at
-    # @return [String] A string with the unique URL of the deployment
-    attr_reader :url
-    # @return [Array_of_String] An array of domains that were provided by the user when creating the Deployment.
-    attr_reader :user_aliases
-    # @return [String] Since January 2025 User-configured deployment ID for skew protection with pre-built deployments. This is set when users configure a custom deploymentId in their next.config.js file. This allows Next.js to use skew protection even when deployments are pre-built outside of Vercel's build system.
-    attr_reader :user_configured_deployment_id
-    # @return [GetDeploymentResponseVariant2Version] The platform version that was used to create the deployment.
-    attr_reader :version
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the GetDeploymentResponse SDK namespace.
-  module GetDeploymentResponse
-    def self.from_hash(hash)
-      shape_mapping = {
-        'build' => GetDeploymentResponseVariant1
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      return decoded unless type.nil?
-
-      lossy = nil
-      [GetDeploymentResponseVariant0, GetDeploymentResponseVariant2].each do |type|
-        decoded = type.from_hash(hash)
-        return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-        lossy ||= decoded
-      rescue ::StandardError
-        next
-      end
-      lossy unless lossy.nil?
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Defines the GetDeploymentResponseVariant0AliasAssigned SDK namespace.
-  module GetDeploymentResponseVariant0AliasAssigned
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
-  end
+# Defines the GetDeploymentResponse SDK namespace.
+module GetDeploymentResponse
+  def self.from_hash(hash)
+    shape_mapping = {
+      "build" => GetDeploymentResponseVariant1,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+    lossy = nil
+    [GetDeploymentResponseVariant0, GetDeploymentResponseVariant2].each do |type|
+      decoded = type.from_hash(hash)
+      return decoded if SdkModel.keeps_every_key?(hash, decoded)
 
-  # Defines the GetDeploymentResponseVariant0ReadyState SDK namespace.
-  module GetDeploymentResponseVariant0ReadyState
-    BLOCKED = 'BLOCKED'
-    BUILDING = 'BUILDING'
-    CANCELED = 'CANCELED'
-    ERROR = 'ERROR'
-    INITIALIZING = 'INITIALIZING'
-    QUEUED = 'QUEUED'
-    READY = 'READY'
-    VALUES = %w[BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY].freeze
-    def self.from_value(value)
-      value
+      lossy ||= decoded
+    rescue ::StandardError
+      next
     end
+    return lossy unless lossy.nil?
   end
+end
 
-  # Defines the GetDeploymentResponseVariant0Target SDK namespace.
-  module GetDeploymentResponseVariant0Target
-    PRODUCTION = 'production'
-    STAGING = 'staging'
-    VALUES = %w[production staging].freeze
-    def self.from_value(value)
-      value
-    end
+# Defines the GetDeploymentResponseVariant0AliasAssigned SDK namespace.
+module GetDeploymentResponseVariant0AliasAssigned
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
   end
+end
+
+# Defines the GetDeploymentResponseVariant0ReadyState SDK namespace.
+module GetDeploymentResponseVariant0ReadyState
+  BLOCKED = 'BLOCKED'
+  BUILDING = 'BUILDING'
+  CANCELED = 'CANCELED'
+  ERROR = 'ERROR'
+  INITIALIZING = 'INITIALIZING'
+  QUEUED = 'QUEUED'
+  READY = 'READY'
+  VALUES = ['BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the GetDeploymentResponseVariant0Target SDK namespace.
+module GetDeploymentResponseVariant0Target
+  PRODUCTION = 'production'
+  STAGING = 'staging'
+  VALUES = ['production', 'staging'].freeze
+  def self.from_value(value)
+    value
+  end
+end
 end

@@ -43,17 +43,18 @@ module OctridevVercel
         do_not_route_with_microfrontends_routing: NOT_GIVEN,
         request_options: nil
       )
+
         SdkClient.request(
           'PATCH',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(project_id),
-            '/microfrontends'
+            "/microfrontends"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
             'microfrontendsGroupId' => microfrontends_group_id,
@@ -61,12 +62,12 @@ module OctridevVercel
             'isDefaultApp' => is_default_app,
             'defaultRoute' => default_route,
             'routeObservabilityToThisProject' => route_observability_to_this_project,
-            'doNotRouteWithMicrofrontendsRouting' => do_not_route_with_microfrontends_routing
+            'doNotRouteWithMicrofrontendsRouting' => do_not_route_with_microfrontends_routing,
           },
           return_type: ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponse,
           decoder: :json,
           operation_id: 'update_microfrontends',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

@@ -35,6 +35,7 @@ module OctridevVercel
         usage:,
         request_options: nil
       )
+
         Validation.validate_date_time('timestamp', timestamp)
 
         Validation.validate_date_time('eod', eod)
@@ -42,9 +43,9 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            '/v1/installations/',
+            "/v1/installations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/billing'
+            "/billing"
           ].join,
           config: config,
           body: {
@@ -52,11 +53,11 @@ module OctridevVercel
             'eod' => eod,
             'period' => period,
             'billing' => billing,
-            'usage' => usage
+            'usage' => usage,
           },
           decoder: :empty,
           operation_id: 'submit_billing_data',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

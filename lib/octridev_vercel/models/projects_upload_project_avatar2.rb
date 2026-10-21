@@ -5,663 +5,662 @@
 
 # projects_upload domain models
 module OctridevVercel
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991Metadata
-    FIELDS = {
-      target: 'target',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      target
-      type
-    ].freeze
-    DECODERS = {
-      target: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9323d58548.from_value(value)
-      end,
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX7fe498219f.from_value(value)
-      end
-    }.freeze
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991Metadata
+  FIELDS = {
+    target: "target",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    target
+    type
+  ].freeze
+  DECODERS = {
+    target: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9323d58548.from_value(value)
+    end,
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX7fe498219f.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991.
+class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991Metadata::DECODERS
+
+  attr_reader :target, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991.
-  class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991Metadata::DECODERS
-
-    attr_reader :target, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763cebMetadata
-    FIELDS = {
-      environment_id: 'environmentId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      environment_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX6b2daf3c61.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763cebMetadata
+  FIELDS = {
+    environment_id: "environmentId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    environment_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX6b2daf3c61.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763ceb.
+class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763ceb
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763cebMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763cebMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763cebMetadata::DECODERS
+
+  attr_reader :environment_id, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763ceb.
-  class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763ceb
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763cebMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763cebMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763cebMetadata::DECODERS
-
-    attr_reader :environment_id, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9e29202ba0 SDK namespace.
-  module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9e29202ba0
-    DISCRIMINATOR_MAPPING = {
-      'system' => -> { UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991 },
-      'custom' => -> { UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763ceb }
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    def self.from_hash(hash)
-      return hash unless hash.is_a?(::Hash)
+# Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9e29202ba0 SDK namespace.
+module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9e29202ba0
+  DISCRIMINATOR_MAPPING = {
+    "system" => -> { UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991 },
+    "custom" => -> { UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763ceb },
+  }.freeze
 
-      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
-      return type.from_hash(hash) if type
+  def self.from_hash(hash)
+    return hash unless hash.is_a?(::Hash)
+    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
+    return type.from_hash(hash) if type
 
-      raise SdkValidationError.new('UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9e29202ba0', 'variant', "Unknown UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9e29202ba0 discriminator: #{hash['type'].inspect}")
-    end
+    raise SdkValidationError.new('UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9e29202ba0', 'variant', "Unknown UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9e29202ba0 discriminator: #{hash["type"].inspect}")
+  end
+end
+
+# Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9323d58548 SDK namespace.
+module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9323d58548
+  PREVIEW = 'preview'
+  PRODUCTION = 'production'
+  VALUES = ['preview', 'production'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX7fe498219f SDK namespace.
+module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX7fe498219f
+  SYSTEM = 'system'
+  VALUES = ['system'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX7fe498219f', 'enum', "Unknown UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX7fe498219f: #{value}")
+  end
+end
+
+# Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX6b2daf3c61 SDK namespace.
+module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX6b2daf3c61
+  CUSTOM = 'custom'
+  VALUES = ['custom'].freeze
+  def self.from_value(value)
+    return value if VALUES.include?(value)
+
+    raise SdkValidationError.new('UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX6b2daf3c61', 'enum', "Unknown UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX6b2daf3c61: #{value}")
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26Metadata
+  FIELDS = {
+    org: "org",
+    provider: "provider",
+    repo: "repo",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    org
+    provider
+  ].freeze
+  DECODERS = {
+    provider: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX7012ed9a31.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26.
+class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26Metadata::DECODERS
+
+  attr_reader :org, :provider, :repo
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9323d58548 SDK namespace.
-  module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9323d58548
-    PREVIEW = 'preview'
-    PRODUCTION = 'production'
-    VALUES = %w[preview production].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX7fe498219f SDK namespace.
-  module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX7fe498219f
-    SYSTEM = 'system'
-    VALUES = ['system'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-      raise SdkValidationError.new('UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX7fe498219f', 'enum', "Unknown UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX7fe498219f: #{value}")
-    end
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83bMetadata
+  FIELDS = {
+    namespace: "namespace",
+    project: "project",
+    provider: "provider",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    namespace
+    provider
+  ].freeze
+  DECODERS = {
+    provider: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX1b368c27b3.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83b.
+class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83b
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83bMetadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83bMetadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83bMetadata::DECODERS
+
+  attr_reader :namespace, :project, :provider
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX6b2daf3c61 SDK namespace.
-  module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX6b2daf3c61
-    CUSTOM = 'custom'
-    VALUES = ['custom'].freeze
-    def self.from_value(value)
-      return value if VALUES.include?(value)
-
-      raise SdkValidationError.new('UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX6b2daf3c61', 'enum', "Unknown UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX6b2daf3c61: #{value}")
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26Metadata
-    FIELDS = {
-      org: 'org',
-      provider: 'provider',
-      repo: 'repo'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      org
-      provider
-    ].freeze
-    DECODERS = {
-      provider: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX7012ed9a31.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourcesItem SDK namespace.
+module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourcesItem
+  def self.from_hash(hash)
+    shape_mapping = {
+      "org" => UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26,
+      "namespace" => UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83b,
+    }
+    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+    decoded = type&.from_hash(hash)
+    return decoded unless type.nil?
+  end
+end
+
+# Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX7012ed9a31 SDK namespace.
+module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX7012ed9a31
+  BITBUCKET = 'bitbucket'
+  GITHUB = 'github'
+  VALUES = ['bitbucket', 'github'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX1b368c27b3 SDK namespace.
+module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX1b368c27b3
+  GITLAB = 'gitlab'
+  VALUES = ['gitlab'].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseDismissedToastsItemValueVariant2Metadata
+  FIELDS = {
+    current_value: "currentValue",
+    previous_value: "previousValue",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    current_value
+    previous_value
+  ].freeze
+  DECODERS = {
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseDismissedToastsItemValueVariant2.
+class UploadProjectAvatarResponseDismissedToastsItemValueVariant2
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseDismissedToastsItemValueVariant2Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDismissedToastsItemValueVariant2Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseDismissedToastsItemValueVariant2Metadata::DECODERS
+
+  attr_reader :current_value, :previous_value
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26.
-  class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26Metadata::DECODERS
-
-    attr_reader :org, :provider, :repo
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83bMetadata
-    FIELDS = {
-      namespace: 'namespace',
-      project: 'project',
-      provider: 'provider'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      namespace
-      provider
-    ].freeze
-    DECODERS = {
-      provider: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX1b368c27b3.from_value(value)
-      end
-    }.freeze
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Defines the UploadProjectAvatarResponseDismissedToastsItemValue SDK namespace.
+module UploadProjectAvatarResponseDismissedToastsItemValue
+  def self.from_hash(hash)
+    return hash if hash.is_a?(::String)
+    return hash if hash.is_a?(::Float)
+    return UploadProjectAvatarResponseDismissedToastsItemValueVariant3.from_value(hash) if [true, false].include?(hash)
+    return UploadProjectAvatarResponseDismissedToastsItemValueVariant2.from_hash(hash)
+  end
+end
+
+# Defines the UploadProjectAvatarResponseDismissedToastsItemValueVariant2CuX0d58654f43 SDK namespace.
+module UploadProjectAvatarResponseDismissedToastsItemValueVariant2CuX0d58654f43
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UploadProjectAvatarResponseDismissedToastsItemValueVariant2PrXf2e7d8a098 SDK namespace.
+module UploadProjectAvatarResponseDismissedToastsItemValueVariant2PrXf2e7d8a098
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Defines the UploadProjectAvatarResponseDismissedToastsItemValueVariant3 SDK namespace.
+module UploadProjectAvatarResponseDismissedToastsItemValueVariant3
+  FALSE = false
+  TRUE = true
+  VALUES = [false, true].freeze
+  def self.from_value(value)
+    value
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant0Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant0Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseEnvItemContentHintVariant0.
+class UploadProjectAvatarResponseEnvItemContentHintVariant0
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant0Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant0Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant0Metadata::DECODERS
+
+  attr_reader :store_id, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # API model for UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83b.
-  class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83b
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83bMetadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83bMetadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83bMetadata::DECODERS
-
-    attr_reader :namespace, :project, :provider
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourcesItem SDK namespace.
-  module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourcesItem
-    def self.from_hash(hash)
-      shape_mapping = {
-        'org' => UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26,
-        'namespace' => UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83b
-      }
-      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-      decoded = type&.from_hash(hash)
-      decoded unless type.nil?
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant1Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant1Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseEnvItemContentHintVariant1.
+class UploadProjectAvatarResponseEnvItemContentHintVariant1
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant1Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant1Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant1Metadata::DECODERS
+
+  attr_reader :store_id, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX7012ed9a31 SDK namespace.
-  module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX7012ed9a31
-    BITBUCKET = 'bitbucket'
-    GITHUB = 'github'
-    VALUES = %w[bitbucket github].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX1b368c27b3 SDK namespace.
-  module UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX1b368c27b3
-    GITLAB = 'gitlab'
-    VALUES = ['gitlab'].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant2Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant2Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseEnvItemContentHintVariant2.
+class UploadProjectAvatarResponseEnvItemContentHintVariant2
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant2Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant2Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant2Metadata::DECODERS
+
+  attr_reader :store_id, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseDismissedToastsItemValueVariant2Metadata
-    FIELDS = {
-      current_value: 'currentValue',
-      previous_value: 'previousValue'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      current_value
-      previous_value
-    ].freeze
-    DECODERS = {}.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UploadProjectAvatarResponseDismissedToastsItemValueVariant2.
-  class UploadProjectAvatarResponseDismissedToastsItemValueVariant2
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseDismissedToastsItemValueVariant2Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseDismissedToastsItemValueVariant2Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseDismissedToastsItemValueVariant2Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :current_value, :previous_value
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant3Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant3Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UploadProjectAvatarResponseEnvItemContentHintVariant3.
+class UploadProjectAvatarResponseEnvItemContentHintVariant3
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant3Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant3Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant3Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the UploadProjectAvatarResponseDismissedToastsItemValue SDK namespace.
-  module UploadProjectAvatarResponseDismissedToastsItemValue
-    def self.from_hash(hash)
-      return hash if hash.is_a?(::String)
-      return hash if hash.is_a?(::Float)
-      return UploadProjectAvatarResponseDismissedToastsItemValueVariant3.from_value(hash) if [true, false].include?(hash)
-
-      UploadProjectAvatarResponseDismissedToastsItemValueVariant2.from_hash(hash)
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UploadProjectAvatarResponseDismissedToastsItemValueVariant2CuX0d58654f43 SDK namespace.
-  module UploadProjectAvatarResponseDismissedToastsItemValueVariant2CuX0d58654f43
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant4Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant4Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseEnvItemContentHintVariant4.
+class UploadProjectAvatarResponseEnvItemContentHintVariant4
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant4Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant4Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant4Metadata::DECODERS
+
+  attr_reader :store_id, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Defines the UploadProjectAvatarResponseDismissedToastsItemValueVariant2PrXf2e7d8a098 SDK namespace.
-  module UploadProjectAvatarResponseDismissedToastsItemValueVariant2PrXf2e7d8a098
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # Defines the UploadProjectAvatarResponseDismissedToastsItemValueVariant3 SDK namespace.
-  module UploadProjectAvatarResponseDismissedToastsItemValueVariant3
-    FALSE = false
-    TRUE = true
-    VALUES = [false, true].freeze
-    def self.from_value(value)
-      value
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
+
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant5Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant5Type.from_value(value)
+    end,
+  }.freeze
+end
+
+# API model for UploadProjectAvatarResponseEnvItemContentHintVariant5.
+class UploadProjectAvatarResponseEnvItemContentHintVariant5
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant5Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant5Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant5Metadata::DECODERS
+
+  attr_reader :store_id, :type
+
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant0Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant0Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UploadProjectAvatarResponseEnvItemContentHintVariant0.
-  class UploadProjectAvatarResponseEnvItemContentHintVariant0
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant0Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant0Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant0Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant6Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant6Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UploadProjectAvatarResponseEnvItemContentHintVariant6.
+class UploadProjectAvatarResponseEnvItemContentHintVariant6
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant6Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant6Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant6Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant1Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant1Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UploadProjectAvatarResponseEnvItemContentHintVariant1.
-  class UploadProjectAvatarResponseEnvItemContentHintVariant1
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant1Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant1Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant1Metadata::DECODERS
+  def to_h
+    SdkModel.to_h(self, FIELDS)
+  end
+end
 
-    attr_reader :store_id, :type
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant7Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant7Type.from_value(value)
+    end,
+  }.freeze
+end
 
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
+# API model for UploadProjectAvatarResponseEnvItemContentHintVariant7.
+class UploadProjectAvatarResponseEnvItemContentHintVariant7
+  CONSTRUCTION_SURFACE = :named
+  FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant7Metadata::FIELDS
+  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant7Metadata::REQUIRED_FIELDS
+  DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant7Metadata::DECODERS
 
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
+  attr_reader :store_id, :type
 
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def initialize(**attributes)
+    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+    freeze
   end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant2Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant2Type.from_value(value)
-      end
-    }.freeze
+  def self.from_hash(data)
+    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
   end
 
-  # API model for UploadProjectAvatarResponseEnvItemContentHintVariant2.
-  class UploadProjectAvatarResponseEnvItemContentHintVariant2
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant2Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant2Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant2Metadata::DECODERS
-
-    attr_reader :store_id, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
+  def to_h
+    SdkModel.to_h(self, FIELDS)
   end
+end
 
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant3Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant3Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for UploadProjectAvatarResponseEnvItemContentHintVariant3.
-  class UploadProjectAvatarResponseEnvItemContentHintVariant3
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant3Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant3Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant3Metadata::DECODERS
-
-    attr_reader :store_id, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant4Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant4Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for UploadProjectAvatarResponseEnvItemContentHintVariant4.
-  class UploadProjectAvatarResponseEnvItemContentHintVariant4
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant4Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant4Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant4Metadata::DECODERS
-
-    attr_reader :store_id, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant5Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant5Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for UploadProjectAvatarResponseEnvItemContentHintVariant5.
-  class UploadProjectAvatarResponseEnvItemContentHintVariant5
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant5Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant5Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant5Metadata::DECODERS
-
-    attr_reader :store_id, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant6Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant6Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for UploadProjectAvatarResponseEnvItemContentHintVariant6.
-  class UploadProjectAvatarResponseEnvItemContentHintVariant6
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant6Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant6Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant6Metadata::DECODERS
-
-    attr_reader :store_id, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant7Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant7Type.from_value(value)
-      end
-    }.freeze
-  end
-
-  # API model for UploadProjectAvatarResponseEnvItemContentHintVariant7.
-  class UploadProjectAvatarResponseEnvItemContentHintVariant7
-    CONSTRUCTION_SURFACE = :named
-    FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant7Metadata::FIELDS
-    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant7Metadata::REQUIRED_FIELDS
-    DECODERS = SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant7Metadata::DECODERS
-
-    attr_reader :store_id, :type
-
-    def initialize(**attributes)
-      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-      freeze
-    end
-
-    def self.from_hash(data)
-      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-    end
-
-    def to_h
-      SdkModel.to_h(self, FIELDS)
-    end
-  end
-
-  # Internal model hydration metadata.
-  class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant8Metadata
-    FIELDS = {
-      store_id: 'storeId',
-      type: 'type'
-    }.freeze
-    REQUIRED_FIELDS = %i[
-      store_id
-      type
-    ].freeze
-    DECODERS = {
-      type: lambda do |value|
-        ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant8Type.from_value(value)
-      end
-    }.freeze
-  end
+# Internal model hydration metadata.
+class SdkInternalUploadProjectAvatarResponseEnvItemContentHintVariant8Metadata
+  FIELDS = {
+    store_id: "storeId",
+    type: "type",
+  }.freeze
+  REQUIRED_FIELDS = %i[
+    store_id
+    type
+  ].freeze
+  DECODERS = {
+    type: lambda do |value|
+      ::OctridevVercel::UploadProjectAvatarResponseEnvItemContentHintVariant8Type.from_value(value)
+    end,
+  }.freeze
+end
 end

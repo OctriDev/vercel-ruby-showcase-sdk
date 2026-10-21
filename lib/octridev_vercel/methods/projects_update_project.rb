@@ -155,27 +155,27 @@ module OctridevVercel
         dismissed_toasts: NOT_GIVEN,
         request_options: nil
       )
+
         __sdk_validate_update_project(build_command: build_command, command_for_ignoring_build_step: command_for_ignoring_build_step, dev_command: dev_command, install_command: install_command, name: name, output_directory: output_directory, preview_deployment_suffix: preview_deployment_suffix, root_directory: root_directory, serverless_function_region: serverless_function_region, skew_protection_boundary_at: skew_protection_boundary_at, skew_protection_max_age: skew_protection_max_age, skew_protection_allowed_domains: skew_protection_allowed_domains, connect_configurations: connect_configurations, dismissed_toasts: dismissed_toasts)
 
         SdkClient.request(
           'PATCH',
           [
-            '/v9/projects/',
+            "/v9/projects/",
             SdkClient.encode_path_segment(id_or_name)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: __sdk_body_update_project_part1(auto_expose_system_envs: auto_expose_system_envs, auto_assign_custom_domains: auto_assign_custom_domains, auto_assign_custom_domains_updated_by: auto_assign_custom_domains_updated_by, build_command: build_command, command_for_ignoring_build_step: command_for_ignoring_build_step, customer_support_code_visibility: customer_support_code_visibility, dev_command: dev_command, directory_listing: directory_listing, framework: framework, git_fork_protection: git_fork_protection, git_lfs: git_lfs, protected_sourcemaps: protected_sourcemaps, install_command: install_command, name: name, node_version: node_version, output_directory: output_directory, preview_deployments_disabled: preview_deployments_disabled, preview_deployment_suffix: preview_deployment_suffix).merge(
             __sdk_body_update_project_part2(resource_config: resource_config, public_source: public_source, root_directory: root_directory, serverless_function_region: serverless_function_region, serverless_function_zero_config_failover: serverless_function_zero_config_failover, skew_protection_boundary_at: skew_protection_boundary_at, skew_protection_max_age: skew_protection_max_age, skew_protection_allowed_domains: skew_protection_allowed_domains, skip_git_connect_during_link: skip_git_connect_during_link, source_files_outside_root_directory: source_files_outside_root_directory, enable_preview_feedback: enable_preview_feedback, enable_production_feedback: enable_production_feedback, enable_affected_projects_deployments: enable_affected_projects_deployments, enable_external_rewrite_caching: enable_external_rewrite_caching, static_ips: static_ips, tracing: tracing, oidc_token_config: oidc_token_config, password_protection: password_protection),
-            __sdk_body_update_project_part3(passport: passport, sandbox: sandbox, sso_protection: sso_protection, trusted_ips: trusted_ips, trusted_sources: trusted_sources, deployment_policy: deployment_policy, options_allowlist: options_allowlist, connect_configurations: connect_configurations, dismissed_toasts: dismissed_toasts)
-          ),
+            __sdk_body_update_project_part3(passport: passport, sandbox: sandbox, sso_protection: sso_protection, trusted_ips: trusted_ips, trusted_sources: trusted_sources, deployment_policy: deployment_policy, options_allowlist: options_allowlist, connect_configurations: connect_configurations, dismissed_toasts: dismissed_toasts)),
           return_type: ::OctridevVercel::Methods::Projects::UpdateProjectResponse,
           decoder: :json,
           operation_id: 'update_project',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
 
@@ -285,7 +285,7 @@ module OctridevVercel
           'nodeVersion' => node_version,
           'outputDirectory' => output_directory,
           'previewDeploymentsDisabled' => preview_deployments_disabled,
-          'previewDeploymentSuffix' => preview_deployment_suffix
+          'previewDeploymentSuffix' => preview_deployment_suffix,
         }
       end
       private_class_method :__sdk_body_update_project_part1
@@ -328,7 +328,7 @@ module OctridevVercel
           'staticIps' => static_ips,
           'tracing' => tracing,
           'oidcTokenConfig' => oidc_token_config,
-          'passwordProtection' => password_protection
+          'passwordProtection' => password_protection,
         }
       end
       private_class_method :__sdk_body_update_project_part2
@@ -353,7 +353,7 @@ module OctridevVercel
           'deploymentPolicy' => deployment_policy,
           'optionsAllowlist' => options_allowlist,
           'connectConfigurations' => connect_configurations,
-          'dismissedToasts' => dismissed_toasts
+          'dismissedToasts' => dismissed_toasts,
         }
       end
       private_class_method :__sdk_body_update_project_part3

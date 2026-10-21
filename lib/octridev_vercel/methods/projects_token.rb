@@ -18,7 +18,15 @@ module OctridevVercel
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
       # @param source [String] The source that is calling the endpoint.
-      singleton_class.define_method(:get_project_token) do |config:, id_or_name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, source: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_project_token) do |
+        config:,
+        id_or_name:,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        source: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.validate_length('idOrName', id_or_name, max: 150)
 
         Validation.if_given(source) { Validation.validate_length('source', source, max: 150) }
@@ -26,22 +34,22 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            '/v1/projects/',
+            "/v1/projects/",
             SdkClient.encode_path_segment(id_or_name),
-            '/token'
+            "/token"
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           body: {
-            'source' => source
+            'source' => source,
           },
           return_type: ::OctridevVercel::Methods::Projects::GetProjectTokenResponse,
           decoder: :json,
           operation_id: 'get_project_token',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

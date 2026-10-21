@@ -73,7 +73,7 @@ module OctridevVercel
         SKIPPED = 'skipped'
         STALE = 'stale'
         SUCCEEDED = 'succeeded'
-        VALUES = %w[canceled failed neutral skipped stale succeeded].freeze
+        VALUES = ['canceled', 'failed', 'neutral', 'skipped', 'stale', 'succeeded'].freeze
         def self.from_value(value)
           value
         end
@@ -93,7 +93,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = %w[completed registered running].freeze
+        VALUES = ['completed', 'registered', 'running'].freeze
         def self.from_value(value)
           value
         end
@@ -168,7 +168,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = %w[completed registered running].freeze
+        VALUES = ['completed', 'registered', 'running'].freeze
         def self.from_value(value)
           value
         end
@@ -192,7 +192,7 @@ module OctridevVercel
         SKIPPED = 'skipped'
         STALE = 'stale'
         SUCCEEDED = 'succeeded'
-        VALUES = %w[canceled failed neutral skipped stale succeeded].freeze
+        VALUES = ['canceled', 'failed', 'neutral', 'skipped', 'stale', 'succeeded'].freeze
         def self.from_value(value)
           value
         end
@@ -229,7 +229,7 @@ module OctridevVercel
       module UpdateCheckStatus
         RUNNING = 'running'
         COMPLETED = 'completed'
-        VALUES = %w[running completed].freeze
+        VALUES = ['running', 'completed'].freeze
         def self.from_value(value)
           value
         end
@@ -258,7 +258,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = %w[completed registered running].freeze
+        VALUES = ['completed', 'registered', 'running'].freeze
         def self.from_value(value)
           value
         end
@@ -299,7 +299,7 @@ module OctridevVercel
         SKIPPED = 'skipped'
         STALE = 'stale'
         SUCCEEDED = 'succeeded'
-        VALUES = %w[canceled failed neutral skipped stale succeeded].freeze
+        VALUES = ['canceled', 'failed', 'neutral', 'skipped', 'stale', 'succeeded'].freeze
         def self.from_value(value)
           value
         end

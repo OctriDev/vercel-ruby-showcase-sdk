@@ -18,18 +18,19 @@ module OctridevVercel
         resource_id:,
         request_options: nil
       )
+
         SdkClient.request(
           'DELETE',
           [
-            '/v1/installations/',
+            "/v1/installations/",
             SdkClient.encode_path_segment(integration_configuration_id),
-            '/resources/',
+            "/resources/",
             SdkClient.encode_path_segment(resource_id)
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'delete_integration_resource',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end

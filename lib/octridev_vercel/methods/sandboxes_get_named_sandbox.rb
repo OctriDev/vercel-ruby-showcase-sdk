@@ -22,14 +22,23 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_named_sandbox) do |config:, name:, project_id: NOT_GIVEN, resume: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
+      singleton_class.define_method(:get_named_sandbox) do |
+        config:,
+        name:,
+        project_id: NOT_GIVEN,
+        resume: NOT_GIVEN,
+        team_id: NOT_GIVEN,
+        slug: NOT_GIVEN,
+        request_options: nil
+      |
+
         Validation.validate_length('name', name, max: 128)
         Validation.validate_pattern('name', name, '^[a-zA-Z0-9_-]+$')
 
         SdkClient.request(
           'GET',
           [
-            '/v2/sandboxes/',
+            "/v2/sandboxes/",
             SdkClient.encode_path_segment(name)
           ].join,
           config: config,
@@ -37,12 +46,12 @@ module OctridevVercel
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'resume' => QueryValue.new(resume, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+            'slug' => QueryValue.new(slug, style: 'form', explode: true),
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::GetNamedSandboxResponse,
           decoder: :json,
           operation_id: 'get_named_sandbox',
-          request_options: request_options
+          request_options: request_options,
         ).data
       end
     end
