@@ -13,7 +13,7 @@ module OctridevVercel
       module ListProjectsResponseVariant0ItemRollingReleaseGateAction
         PAUSE = 'pause'
         ROLLBACK = 'rollback'
-        VALUES = ['pause', 'rollback'].freeze
+        VALUES = %w[pause rollback].freeze
         def self.from_value(value)
           value
         end
@@ -28,8 +28,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -41,7 +41,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -68,10 +68,10 @@ module OctridevVercel
         OOM_FAILURE = 'oom-failure'
         SHORT_BUILD_DURATION = 'short-build-duration'
         SUSTAINED_HIGH_CPU = 'sustained-high-cpu'
-        VALUES = [
-          'basic-floor', 'build-timeout-failure', 'enospc-failure', 'enterprise-floor',
-          'high-peak-disk', 'high-peak-memory', 'long-build-duration', 'oom-failure',
-          'short-build-duration', 'sustained-high-cpu'
+        VALUES = %w[
+          basic-floor build-timeout-failure enospc-failure enterprise-floor
+          high-peak-disk high-peak-memory long-build-duration oom-failure
+          short-build-duration sustained-high-cpu
         ].freeze
         def self.from_value(value)
           value
@@ -107,8 +107,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -119,7 +119,7 @@ module OctridevVercel
       module DeleteProjectAvatarResponseTracingSamplingRulesItemDestination
         EXTERNAL = 'external'
         INTERNAL = 'internal'
-        VALUES = ['external', 'internal'].freeze
+        VALUES = %w[external internal].freeze
         def self.from_value(value)
           value
         end
@@ -151,7 +151,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = ['completed', 'registered', 'running'].freeze
+        VALUES = %w[completed registered running].freeze
         def self.from_value(value)
           value
         end
@@ -172,7 +172,7 @@ module OctridevVercel
       module UploadProjectAvatarResponseOidcTokenConfigIssuerMode
         GLOBAL = 'global'
         TEAM = 'team'
-        VALUES = ['global', 'team'].freeze
+        VALUES = %w[global team].freeze
         def self.from_value(value)
           value
         end
@@ -183,7 +183,7 @@ module OctridevVercel
         PREVIEW = 'PREVIEW'
         PRODUCTION = 'PRODUCTION'
         STAGING = 'STAGING'
-        VALUES = ['PREVIEW', 'PRODUCTION', 'STAGING'].freeze
+        VALUES = %w[PREVIEW PRODUCTION STAGING].freeze
         def self.from_value(value)
           value
         end
@@ -201,10 +201,10 @@ module OctridevVercel
         OOM_FAILURE = 'oom-failure'
         SHORT_BUILD_DURATION = 'short-build-duration'
         SUSTAINED_HIGH_CPU = 'sustained-high-cpu'
-        VALUES = [
-          'basic-floor', 'build-timeout-failure', 'enospc-failure', 'enterprise-floor',
-          'high-peak-disk', 'high-peak-memory', 'long-build-duration', 'oom-failure',
-          'short-build-duration', 'sustained-high-cpu'
+        VALUES = %w[
+          basic-floor build-timeout-failure enospc-failure enterprise-floor
+          high-peak-disk high-peak-memory long-build-duration oom-failure
+          short-build-duration sustained-high-cpu
         ].freeze
         def self.from_value(value)
           value
@@ -225,7 +225,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = ['completed', 'registered', 'running'].freeze
+        VALUES = %w[completed registered running].freeze
         def self.from_value(value)
           value
         end
@@ -235,7 +235,7 @@ module OctridevVercel
       module CreateProjectResponseResourceConfigBuildQueueConfiguration
         SKIP_NAMESPACE_QUEUE = 'SKIP_NAMESPACE_QUEUE'
         WAIT_FOR_NAMESPACE_QUEUE = 'WAIT_FOR_NAMESPACE_QUEUE'
-        VALUES = ['SKIP_NAMESPACE_QUEUE', 'WAIT_FOR_NAMESPACE_QUEUE'].freeze
+        VALUES = %w[SKIP_NAMESPACE_QUEUE WAIT_FOR_NAMESPACE_QUEUE].freeze
         def self.from_value(value)
           value
         end
@@ -245,7 +245,7 @@ module OctridevVercel
       module ListProjectsResponseVariant1ProjectsItemResourceConfigBuildQuXc0de3a822f
         SKIP_NAMESPACE_QUEUE = 'SKIP_NAMESPACE_QUEUE'
         WAIT_FOR_NAMESPACE_QUEUE = 'WAIT_FOR_NAMESPACE_QUEUE'
-        VALUES = ['SKIP_NAMESPACE_QUEUE', 'WAIT_FOR_NAMESPACE_QUEUE'].freeze
+        VALUES = %w[SKIP_NAMESPACE_QUEUE WAIT_FOR_NAMESPACE_QUEUE].freeze
         def self.from_value(value)
           value
         end
@@ -275,7 +275,7 @@ module OctridevVercel
       module ListProjectsDomainsParameterEe3c06e7
         TRUE = 'true'
         FALSE = 'false'
-        VALUES = ['true', 'false'].freeze
+        VALUES = %w[true false].freeze
         def self.from_value(value)
           value
         end
@@ -286,7 +286,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = ['enterprise', 'hobby', 'pro'].freeze
+        VALUES = %w[enterprise hobby pro].freeze
         def self.from_value(value)
           value
         end
@@ -336,7 +336,7 @@ module OctridevVercel
       module CreateProjectResponseSecurityRulesetsValueRateLimitAlgo
         FIXED_WINDOW = 'fixed_window'
         TOKEN_BUCKET = 'token_bucket'
-        VALUES = ['fixed_window', 'token_bucket'].freeze
+        VALUES = %w[fixed_window token_bucket].freeze
         def self.from_value(value)
           value
         end
@@ -348,7 +348,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
+        VALUES = %w[canceled failed skipped succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -359,7 +359,7 @@ module OctridevVercel
         PRODUCTION = 'production'
         PREVIEW = 'preview'
         DEVELOPMENT = 'development'
-        VALUES = ['production', 'preview', 'development'].freeze
+        VALUES = %w[production preview development].freeze
         def self.from_value(value)
           value
         end
@@ -370,7 +370,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -432,7 +432,7 @@ module OctridevVercel
         CNAME = 'CNAME'
         DNS_01 = 'dns-01'
         HTTP = 'http'
-        VALUES = ['A', 'CNAME', 'dns-01', 'http'].freeze
+        VALUES = %w[A CNAME dns-01 http].freeze
         def self.from_value(value)
           value
         end
@@ -444,7 +444,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
+        VALUES = %w[canceled failed skipped succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -455,7 +455,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = ['enterprise', 'hobby', 'pro'].freeze
+        VALUES = %w[enterprise hobby pro].freeze
         def self.from_value(value)
           value
         end
@@ -467,7 +467,7 @@ module OctridevVercel
         CNAME = 'CNAME'
         DNS_01 = 'dns-01'
         HTTP = 'http'
-        VALUES = ['A', 'CNAME', 'dns-01', 'http'].freeze
+        VALUES = %w[A CNAME dns-01 http].freeze
         def self.from_value(value)
           value
         end
@@ -499,7 +499,7 @@ module OctridevVercel
         PERFORMANCE_XL = 'performance_xl'
         STANDARD = 'standard'
         STANDARD_LEGACY = 'standard_legacy'
-        VALUES = ['performance', 'performance_xl', 'standard', 'standard_legacy'].freeze
+        VALUES = %w[performance performance_xl standard standard_legacy].freeze
         def self.from_value(value)
           value
         end
@@ -522,7 +522,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
+        VALUES = %w[basic enhanced standard turbo].freeze
         def self.from_value(value)
           value
         end
@@ -557,8 +557,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -581,7 +581,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
+        VALUES = %w[canceled failed skipped succeeded].freeze
         def self.from_value(value)
           value
         end

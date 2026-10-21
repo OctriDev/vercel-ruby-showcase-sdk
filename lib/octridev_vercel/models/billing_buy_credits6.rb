@@ -5,44 +5,44 @@
 
 # billing domain models
 module OctridevVercel
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1Status SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1Status
-  CANCELED = 'canceled'
-  FAILED = 'failed'
-  PENDING = 'pending'
-  RUNNING = 'running'
-  VALUES = ['canceled', 'failed', 'pending', 'running'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1Status SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1Status
+    CANCELED = 'canceled'
+    FAILED = 'failed'
+    PENDING = 'pending'
+    RUNNING = 'running'
+    VALUES = %w[canceled failed pending running].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Mode SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Mode
-  ASYNC = 'async'
-  VALUES = ['async'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Mode SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Mode
+    ASYNC = 'async'
+    VALUES = ['async'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Status SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Status
-  SUCCEEDED = 'succeeded'
-  VALUES = ['succeeded'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Status SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Status
+    SUCCEEDED = 'succeeded'
+    VALUES = ['succeeded'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentStatus SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentStatus
-  FAILED = 'failed'
-  PENDING = 'pending'
-  SUCCEEDED = 'succeeded'
-  VALUES = ['failed', 'pending', 'succeeded'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentStatus SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentStatus
+    FAILED = 'failed'
+    PENDING = 'pending'
+    SUCCEEDED = 'succeeded'
+    VALUES = %w[failed pending succeeded].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 end

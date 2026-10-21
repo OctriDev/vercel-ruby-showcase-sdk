@@ -5,660 +5,650 @@
 
 # deployments domain models
 module OctridevVercel
-# API model for CreateDeploymentResponseVariant1OidcTokenClaims.
-class CreateDeploymentResponseVariant1OidcTokenClaims
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1OidcTokenClaimsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1OidcTokenClaimsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1OidcTokenClaimsMetadata::DECODERS
+  # API model for CreateDeploymentResponseVariant1OidcTokenClaims.
+  class CreateDeploymentResponseVariant1OidcTokenClaims
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1OidcTokenClaimsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1OidcTokenClaimsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1OidcTokenClaimsMetadata::DECODERS
 
-  attr_reader :aud, :custom_environment_id, :deployment_id, :environment, :iss, :mfe_group_ids,
-              :owner, :owner_id, :plan, :project, :project_id, :scope, :sub
+    attr_reader :aud, :custom_environment_id, :deployment_id, :environment, :iss, :mfe_group_ids,
+                :owner, :owner_id, :plan, :project, :project_id, :scope, :sub
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1PlatformCreatorMetadata
+    FIELDS = {
+      avatar: 'avatar',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      name
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1PlatformCreator.
+  # The user on the external platform who triggered the deployment.
+  class CreateDeploymentResponseVariant1PlatformCreator
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformCreatorMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformCreatorMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1PlatformCreatorMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1PlatformCreatorMetadata
-  FIELDS = {
-    avatar: "avatar",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    name
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] URL of the platform user's avatar image.
+    attr_reader :avatar
+    # @return [String] Display name of the platform user.
+    attr_reader :name
 
-# API model for CreateDeploymentResponseVariant1PlatformCreator.
-# The user on the external platform who triggered the deployment.
-class CreateDeploymentResponseVariant1PlatformCreator
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformCreatorMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformCreatorMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1PlatformCreatorMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] URL of the platform user's avatar image.
-  attr_reader :avatar
-  # @return [String] Display name of the platform user.
-  attr_reader :name
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1PlatformOriginMetadata
+    FIELDS = {
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      value
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1PlatformOriginType.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1PlatformOrigin.
+  # Reference back to the entity on the platform that initiated the deployment.
+  class CreateDeploymentResponseVariant1PlatformOrigin
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformOriginMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformOriginMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1PlatformOriginMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1PlatformOriginMetadata
-  FIELDS = {
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    value
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1PlatformOriginType.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [CreateDeploymentResponseVariant1PlatformOriginType] Whether the value is an opaque identifier or a URL.
+    attr_reader :type
+    # @return [String] The identifier or URL pointing to the originating entity.
+    attr_reader :value
 
-# API model for CreateDeploymentResponseVariant1PlatformOrigin.
-# Reference back to the entity on the platform that initiated the deployment.
-class CreateDeploymentResponseVariant1PlatformOrigin
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformOriginMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformOriginMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1PlatformOriginMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [CreateDeploymentResponseVariant1PlatformOriginType] Whether the value is an opaque identifier or a URL.
-  attr_reader :type
-  # @return [String] The identifier or URL pointing to the originating entity.
-  attr_reader :value
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1PlatformSourceMetadata
+    FIELDS = {
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      name
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1PlatformSource.
+  # The external platform that created the deployment (e.g. its display name).
+  class CreateDeploymentResponseVariant1PlatformSource
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformSourceMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformSourceMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1PlatformSourceMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1PlatformSourceMetadata
-  FIELDS = {
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    name
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] Display name of the platform.
+    attr_reader :name
 
-# API model for CreateDeploymentResponseVariant1PlatformSource.
-# The external platform that created the deployment (e.g. its display name).
-class CreateDeploymentResponseVariant1PlatformSource
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformSourceMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformSourceMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1PlatformSourceMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Display name of the platform.
-  attr_reader :name
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1PlatformMetadata
+    FIELDS = {
+      creator: 'creator',
+      meta: 'meta',
+      origin: 'origin',
+      source: 'source'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      creator
+      origin
+      source
+    ].freeze
+    DECODERS = {
+      creator: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1PlatformCreator.from_hash(value)
+      end,
+      origin: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1PlatformOrigin.from_hash(value)
+      end,
+      source: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1PlatformSource.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1Platform.
+  # Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)
+  class CreateDeploymentResponseVariant1Platform
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1PlatformMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1PlatformMetadata
-  FIELDS = {
-    creator: "creator",
-    meta: "meta",
-    origin: "origin",
-    source: "source",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    creator
-    origin
-    source
-  ].freeze
-  DECODERS = {
-    creator: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1PlatformCreator.from_hash(value)
-    end,
-    origin: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1PlatformOrigin.from_hash(value)
-    end,
-    source: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1PlatformSource.from_hash(value)
-    end,
-  }.freeze
-end
+    # @return [CreateDeploymentResponseVariant1PlatformCreator] The user on the external platform who triggered the deployment.
+    attr_reader :creator
+    # @return [Hash] Arbitrary key-value metadata provided by the platform.
+    attr_reader :meta
+    # @return [CreateDeploymentResponseVariant1PlatformOrigin] Reference back to the entity on the platform that initiated the deployment.
+    attr_reader :origin
+    # @return [CreateDeploymentResponseVariant1PlatformSource] The external platform that created the deployment (e.g. its display name).
+    attr_reader :source
 
-# API model for CreateDeploymentResponseVariant1Platform.
-# Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)
-class CreateDeploymentResponseVariant1Platform
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1PlatformMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1PlatformMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [CreateDeploymentResponseVariant1PlatformCreator] The user on the external platform who triggered the deployment.
-  attr_reader :creator
-  # @return [Hash] Arbitrary key-value metadata provided by the platform.
-  attr_reader :meta
-  # @return [CreateDeploymentResponseVariant1PlatformOrigin] Reference back to the entity on the platform that initiated the deployment.
-  attr_reader :origin
-  # @return [CreateDeploymentResponseVariant1PlatformSource] The external platform that created the deployment (e.g. its display name).
-  attr_reader :source
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ProjectMetadata
+    FIELDS = {
+      framework: 'framework',
+      id: 'id',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1Project.
+  # The public project information associated with the deployment.
+  class CreateDeploymentResponseVariant1Project
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ProjectMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ProjectMetadata
-  FIELDS = {
-    framework: "framework",
-    id: "id",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :framework, :id, :name
 
-# API model for CreateDeploymentResponseVariant1Project.
-# The public project information associated with the deployment.
-class CreateDeploymentResponseVariant1Project
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ProjectMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :framework, :id, :name
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ProjectSettingsSpeedInsightsMetadata
+    FIELDS = {
+      canceled_at: 'canceledAt',
+      data_received_at: 'dataReceivedAt',
+      disabled_at: 'disabledAt',
+      enabled_at: 'enabledAt',
+      has_data: 'hasData',
+      id: 'id',
+      paid_at: 'paidAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+    ].freeze
+    DECODERS = {
+      has_data: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ProjectSettingsSpeedInsightsHasData.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ProjectSettingsSpeedInsights.
+  class CreateDeploymentResponseVariant1ProjectSettingsSpeedInsights
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsSpeedInsightsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsSpeedInsightsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsSpeedInsightsMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ProjectSettingsSpeedInsightsMetadata
-  FIELDS = {
-    canceled_at: "canceledAt",
-    data_received_at: "dataReceivedAt",
-    disabled_at: "disabledAt",
-    enabled_at: "enabledAt",
-    has_data: "hasData",
-    id: "id",
-    paid_at: "paidAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-  ].freeze
-  DECODERS = {
-    has_data: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ProjectSettingsSpeedInsightsHasData.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :canceled_at, :disabled_at, :enabled_at, :has_data, :id, :paid_at
+    # @return [Float] When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads "first free data point observed", not necessarily "first ever".
+    attr_reader :data_received_at
 
-# API model for CreateDeploymentResponseVariant1ProjectSettingsSpeedInsights.
-class CreateDeploymentResponseVariant1ProjectSettingsSpeedInsights
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsSpeedInsightsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsSpeedInsightsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsSpeedInsightsMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :canceled_at, :disabled_at, :enabled_at, :has_data, :id, :paid_at
-  # @return [Float] When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads "first free data point observed", not necessarily "first ever".
-  attr_reader :data_received_at
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ProjectSettingsWebAnalyticsMetadata
+    FIELDS = {
+      canceled_at: 'canceledAt',
+      disabled_at: 'disabledAt',
+      enabled_at: 'enabledAt',
+      has_data: 'hasData',
+      id: 'id'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+    ].freeze
+    DECODERS = {
+      has_data: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ProjectSettingsWebAnalyticsHasData.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ProjectSettingsWebAnalytics.
+  class CreateDeploymentResponseVariant1ProjectSettingsWebAnalytics
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsWebAnalyticsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsWebAnalyticsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsWebAnalyticsMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ProjectSettingsWebAnalyticsMetadata
-  FIELDS = {
-    canceled_at: "canceledAt",
-    disabled_at: "disabledAt",
-    enabled_at: "enabledAt",
-    has_data: "hasData",
-    id: "id",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-  ].freeze
-  DECODERS = {
-    has_data: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ProjectSettingsWebAnalyticsHasData.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :canceled_at, :disabled_at, :enabled_at, :has_data, :id
 
-# API model for CreateDeploymentResponseVariant1ProjectSettingsWebAnalytics.
-class CreateDeploymentResponseVariant1ProjectSettingsWebAnalytics
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsWebAnalyticsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsWebAnalyticsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsWebAnalyticsMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :canceled_at, :disabled_at, :enabled_at, :has_data, :id
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ProjectSettingsMetadata
+    FIELDS = {
+      build_command: 'buildCommand',
+      command_for_ignoring_build_step: 'commandForIgnoringBuildStep',
+      dev_command: 'devCommand',
+      framework: 'framework',
+      install_command: 'installCommand',
+      node_version: 'nodeVersion',
+      output_directory: 'outputDirectory',
+      speed_insights: 'speedInsights',
+      web_analytics: 'webAnalytics'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      framework: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ProjectSettingsFramework.from_value(value)
+      end,
+      node_version: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ProjectSettingsNodeVersion.from_value(value)
+      end,
+      speed_insights: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ProjectSettingsSpeedInsights.from_hash(value)
+      end,
+      web_analytics: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ProjectSettingsWebAnalytics.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ProjectSettings.
+  class CreateDeploymentResponseVariant1ProjectSettings
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ProjectSettingsMetadata
-  FIELDS = {
-    build_command: "buildCommand",
-    command_for_ignoring_build_step: "commandForIgnoringBuildStep",
-    dev_command: "devCommand",
-    framework: "framework",
-    install_command: "installCommand",
-    node_version: "nodeVersion",
-    output_directory: "outputDirectory",
-    speed_insights: "speedInsights",
-    web_analytics: "webAnalytics",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    framework: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ProjectSettingsFramework.from_value(value)
-    end,
-    node_version: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ProjectSettingsNodeVersion.from_value(value)
-    end,
-    speed_insights: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ProjectSettingsSpeedInsights.from_hash(value)
-    end,
-    web_analytics: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ProjectSettingsWebAnalytics.from_hash(value)
-    end,
-  }.freeze
-end
+    attr_reader :build_command, :command_for_ignoring_build_step, :dev_command, :framework,
+                :install_command, :node_version, :output_directory, :speed_insights, :web_analytics
 
-# API model for CreateDeploymentResponseVariant1ProjectSettings.
-class CreateDeploymentResponseVariant1ProjectSettings
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ProjectSettingsMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :build_command, :command_for_ignoring_build_step, :dev_command, :framework,
-              :install_command, :node_version, :output_directory, :speed_insights, :web_analytics
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ResourceConfigBuildMachineMetadata
+    FIELDS = {
+      cores: 'cores',
+      default_purchase_type: 'defaultPurchaseType',
+      machine_selection_type: 'machineSelectionType',
+      memory: 'memory',
+      purchase_type: 'purchaseType',
+      selection_source: 'selectionSource'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      default_purchase_type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ResourceConfigBuildMachineDefXb9be938228.from_value(value)
+      end,
+      machine_selection_type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ResourceConfigBuildMachineMacXe901e3f8b9.from_value(value)
+      end,
+      purchase_type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ResourceConfigBuildMachinePurchaseType.from_value(value)
+      end,
+      selection_source: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ResourceConfigBuildMachineSelX9b78ab66fe.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ResourceConfigBuildMachine.
+  # Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`.
+  class CreateDeploymentResponseVariant1ResourceConfigBuildMachine
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ResourceConfigBuildMachineMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ResourceConfigBuildMachineMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ResourceConfigBuildMachineMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ResourceConfigBuildMachineMetadata
-  FIELDS = {
-    cores: "cores",
-    default_purchase_type: "defaultPurchaseType",
-    machine_selection_type: "machineSelectionType",
-    memory: "memory",
-    purchase_type: "purchaseType",
-    selection_source: "selectionSource",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    default_purchase_type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ResourceConfigBuildMachineDefXb9be938228.from_value(value)
-    end,
-    machine_selection_type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ResourceConfigBuildMachineMacXe901e3f8b9.from_value(value)
-    end,
-    purchase_type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ResourceConfigBuildMachinePurchaseType.from_value(value)
-    end,
-    selection_source: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ResourceConfigBuildMachineSelX9b78ab66fe.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [Float] Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive.
+    attr_reader :cores
+    # @return [CreateDeploymentResponseVariant1ResourceConfigBuildMachineDefXb9be938228] The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.
+    attr_reader :default_purchase_type
+    # @return [CreateDeploymentResponseVariant1ResourceConfigBuildMachineMacXe901e3f8b9] Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.
+    attr_reader :machine_selection_type
+    # @return [Float] Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive.
+    attr_reader :memory
+    # @return [CreateDeploymentResponseVariant1ResourceConfigBuildMachinePurchaseType] Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project.
+    attr_reader :purchase_type
+    # @return [CreateDeploymentResponseVariant1ResourceConfigBuildMachineSelX9b78ab66fe] The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.
+    attr_reader :selection_source
 
-# API model for CreateDeploymentResponseVariant1ResourceConfigBuildMachine.
-# Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`.
-class CreateDeploymentResponseVariant1ResourceConfigBuildMachine
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ResourceConfigBuildMachineMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ResourceConfigBuildMachineMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ResourceConfigBuildMachineMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [Float] Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive.
-  attr_reader :cores
-  # @return [CreateDeploymentResponseVariant1ResourceConfigBuildMachineDefXb9be938228] The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.
-  attr_reader :default_purchase_type
-  # @return [CreateDeploymentResponseVariant1ResourceConfigBuildMachineMacXe901e3f8b9] Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.
-  attr_reader :machine_selection_type
-  # @return [Float] Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive.
-  attr_reader :memory
-  # @return [CreateDeploymentResponseVariant1ResourceConfigBuildMachinePurchaseType] Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project.
-  attr_reader :purchase_type
-  # @return [CreateDeploymentResponseVariant1ResourceConfigBuildMachineSelX9b78ab66fe] The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.
-  attr_reader :selection_source
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ResourceConfigMetadata
+    FIELDS = {
+      build_machine: 'buildMachine'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      build_machine: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ResourceConfigBuildMachine.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ResourceConfig.
+  class CreateDeploymentResponseVariant1ResourceConfig
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ResourceConfigMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ResourceConfigMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ResourceConfigMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ResourceConfigMetadata
-  FIELDS = {
-    build_machine: "buildMachine",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    build_machine: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ResourceConfigBuildMachine.from_hash(value)
-    end,
-  }.freeze
-end
+    # @return [CreateDeploymentResponseVariant1ResourceConfigBuildMachine] Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`.
+    attr_reader :build_machine
 
-# API model for CreateDeploymentResponseVariant1ResourceConfig.
-class CreateDeploymentResponseVariant1ResourceConfig
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ResourceConfigMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ResourceConfigMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ResourceConfigMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [CreateDeploymentResponseVariant1ResourceConfigBuildMachine] Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`.
-  attr_reader :build_machine
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1Metadata
+    FIELDS = {
+      path: 'path',
+      service: 'service',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      service
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1RoutesItemVariant0DestinationX2704a80d7e.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1.
+  class CreateDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1Metadata
-  FIELDS = {
-    path: "path",
-    service: "service",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    service
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1RoutesItemVariant0DestinationX2704a80d7e.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :service
+    # @return [String] Routing-only path used to select a route inside the target service.
+    attr_reader :path
+    # @return [CreateDeploymentResponseVariant1RoutesItemVariant0DestinationX2704a80d7e] Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+    attr_reader :type
 
-# API model for CreateDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1.
-class CreateDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :service
-  # @return [String] Routing-only path used to select a route inside the target service.
-  attr_reader :path
-  # @return [CreateDeploymentResponseVariant1RoutesItemVariant0DestinationX2704a80d7e] Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
-  attr_reader :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariX8a2550bbccMetadata
+    FIELDS = {
+      eq: 'eq',
+      gt: 'gt',
+      gte: 'gte',
+      inc: 'inc',
+      lt: 'lt',
+      lte: 'lte',
+      neq: 'neq',
+      ninc: 'ninc',
+      pre: 'pre',
+      re: 're',
+      suf: 'suf'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariX8a2550bbcc.
+  class CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariX8a2550bbcc
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariX8a2550bbccMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariX8a2550bbccMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariX8a2550bbccMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariX8a2550bbccMetadata
-  FIELDS = {
-    eq: "eq",
-    gt: "gt",
-    gte: "gte",
-    inc: "inc",
-    lt: "lt",
-    lte: "lte",
-    neq: "neq",
-    ninc: "ninc",
-    pre: "pre",
-    re: "re",
-    suf: "suf",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
 
-# API model for CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariX8a2550bbcc.
-class CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariX8a2550bbcc
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariX8a2550bbccMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariX8a2550bbccMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariX8a2550bbccMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Metadata
+    FIELDS = {
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      value
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0.
+  class CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Metadata
-  FIELDS = {
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    value
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :type, :value
 
-# API model for CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0.
-class CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :type, :value
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariXfece5453b9Metadata
+    FIELDS = {
+      eq: 'eq',
+      gt: 'gt',
+      gte: 'gte',
+      inc: 'inc',
+      lt: 'lt',
+      lte: 'lte',
+      neq: 'neq',
+      ninc: 'ninc',
+      pre: 'pre',
+      re: 're',
+      suf: 'suf'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariXfece5453b9.
+  class CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariXfece5453b9
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariXfece5453b9Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariXfece5453b9Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariXfece5453b9Metadata::DECODERS
+
+    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariXfece5453b9Metadata
-  FIELDS = {
-    eq: "eq",
-    gt: "gt",
-    gte: "gte",
-    inc: "inc",
-    lt: "lt",
-    lte: "lte",
-    neq: "neq",
-    ninc: "ninc",
-    pre: "pre",
-    re: "re",
-    suf: "suf",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariXfece5453b9.
-class CreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariXfece5453b9
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariXfece5453b9Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariXfece5453b9Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1RoutesItemVariant0HasItemVariXfece5453b9Metadata::DECODERS
-
-  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
 end

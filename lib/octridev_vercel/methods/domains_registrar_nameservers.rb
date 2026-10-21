@@ -19,25 +19,24 @@ module OctridevVercel
         team_id: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/nameservers"
+            '/nameservers'
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           body: {
-            'nameservers' => nameservers,
+            'nameservers' => nameservers
           },
           decoder: :empty,
           operation_id: 'update_domain_nameservers',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
     end

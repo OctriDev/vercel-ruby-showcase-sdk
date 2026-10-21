@@ -24,23 +24,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v9/domains/",
+            '/v9/domains/',
             SdkClient.encode_path_segment(domain),
-            "/claim"
+            '/claim'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Domains::ClaimDomainOwnershipResponse,
           decoder: :json,
           operation_id: 'claim_domain_ownership',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

@@ -12,29 +12,23 @@ module OctridevVercel
       # Retrieves the authorization code for a domain registered with the domain registrar. Use this code when transferring the domain from the registrar to another registrar. The domain must be eligible for transfer out before its code can be retrieved.
       #
       # Get the auth code for a domain. This is required to transfer a domain from Vercel to another registrar.
-      singleton_class.define_method(:get_domain_auth_code) do |
-        config:,
-        domain:,
-        team_id: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_domain_auth_code) do |config:, domain:, team_id: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/auth-code"
+            '/auth-code'
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetDomainAuthCodeResponse,
           decoder: :json,
           operation_id: 'get_domain_auth_code',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '409' => ::OctridevVercel::DomainCannotBeTransferedOutUntil, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '409' => ::OctridevVercel::DomainCannotBeTransferedOutUntil, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
     end

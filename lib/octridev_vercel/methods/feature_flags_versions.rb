@@ -31,17 +31,16 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         SdkClient.request(
           'GET',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id_or_name),
-            "/feature-flags/flags/",
+            '/feature-flags/flags/',
             SdkClient.encode_path_segment(flag_id_or_slug),
-            "/versions"
+            '/versions'
           ].join,
           config: config,
           query: {
@@ -50,12 +49,12 @@ module OctridevVercel
             'environment' => QueryValue.new(environment, style: 'form', explode: true),
             'withMetadata' => QueryValue.new(with_metadata, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::FeatureFlags::ListFlagVersionsResponse,
           decoder: :json,
           operation_id: 'list_flag_versions',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

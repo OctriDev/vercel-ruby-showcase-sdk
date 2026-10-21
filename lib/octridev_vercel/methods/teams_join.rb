@@ -20,22 +20,21 @@ module OctridevVercel
         invite_code: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/teams/",
+            '/v1/teams/',
             SdkClient.encode_path_segment(team_id),
-            "/members/teams/join"
+            '/members/teams/join'
           ].join,
           config: config,
           body: {
-            'inviteCode' => invite_code,
+            'inviteCode' => invite_code
           },
           return_type: ::OctridevVercel::Methods::Teams::JoinTeamResponse,
           decoder: :json,
           operation_id: 'join_team',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

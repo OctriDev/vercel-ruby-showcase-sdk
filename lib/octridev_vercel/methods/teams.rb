@@ -15,27 +15,21 @@ module OctridevVercel
       #
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
-      singleton_class.define_method(:get_teams) do |
-        config:,
-        team_id:,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_teams) do |config:, team_id:, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v2/teams/",
+            '/v2/teams/',
             SdkClient.encode_path_segment(team_id)
           ].join,
           config: config,
           query: {
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Team,
           decoder: :json,
           operation_id: 'get_teams',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -135,25 +129,25 @@ module OctridevVercel
         resource_config: NOT_GIVEN,
         request_options: nil
       )
-
         __sdk_validate_update_team(avatar: avatar, description: description, name: name)
 
         SdkClient.request(
           'PATCH',
           [
-            "/v2/teams/",
+            '/v2/teams/',
             SdkClient.encode_path_segment(team_id)
           ].join,
           config: config,
           query: {
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: __sdk_body_update_team_part1(avatar: avatar, description: description, email_domain: email_domain, name: name, preview_deployment_suffix: preview_deployment_suffix, regenerate_invite_code: regenerate_invite_code, saml: saml, slug2: slug2, enable_preview_feedback: enable_preview_feedback, enable_production_feedback: enable_production_feedback, sensitive_environment_variable_policy: sensitive_environment_variable_policy, disjunctive_production_secret_policy: disjunctive_production_secret_policy, remote_caching: remote_caching, hide_ip_addresses: hide_ip_addresses, hide_ip_addresses_in_log_drains: hide_ip_addresses_in_log_drains, dp_access_requests_mode: dp_access_requests_mode, require_verified_commits: require_verified_commits, disable_repository_dispatch_events: disable_repository_dispatch_events).merge(
-            __sdk_body_update_team_part2(default_deployment_protection: default_deployment_protection, default_passport: default_passport, default_expiration_settings: default_expiration_settings, deployment_policy: deployment_policy, strict_deployment_protection_settings: strict_deployment_protection_settings, strict_shareable_links: strict_shareable_links, strict_password_protection_settings: strict_password_protection_settings, strict_connectors: strict_connectors, nsnb_config: nsnb_config, default_project_jobs: default_project_jobs, resource_config: resource_config)),
+            __sdk_body_update_team_part2(default_deployment_protection: default_deployment_protection, default_passport: default_passport, default_expiration_settings: default_expiration_settings, deployment_policy: deployment_policy, strict_deployment_protection_settings: strict_deployment_protection_settings, strict_shareable_links: strict_shareable_links, strict_password_protection_settings: strict_password_protection_settings, strict_connectors: strict_connectors, nsnb_config: nsnb_config, default_project_jobs: default_project_jobs, resource_config: resource_config)
+          ),
           return_type: ::OctridevVercel::Team,
           decoder: :json,
           operation_id: 'update_team',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -211,7 +205,7 @@ module OctridevVercel
           'hideIpAddressesInLogDrains' => hide_ip_addresses_in_log_drains,
           'dpAccessRequestsMode' => dp_access_requests_mode,
           'requireVerifiedCommits' => require_verified_commits,
-          'disableRepositoryDispatchEvents' => disable_repository_dispatch_events,
+          'disableRepositoryDispatchEvents' => disable_repository_dispatch_events
         }
       end
       private_class_method :__sdk_body_update_team_part1
@@ -240,7 +234,7 @@ module OctridevVercel
           'strictConnectors' => strict_connectors,
           'nsnbConfig' => nsnb_config,
           'defaultProjectJobs' => default_project_jobs,
-          'resourceConfig' => resource_config,
+          'resourceConfig' => resource_config
         }
       end
       private_class_method :__sdk_body_update_team_part2
@@ -261,20 +255,19 @@ module OctridevVercel
         until_: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
-          "/v2/teams",
+          '/v2/teams',
           config: config,
           query: {
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'since' => QueryValue.new(since, style: 'form', explode: true),
-            'until' => QueryValue.new(until_, style: 'form', explode: true),
+            'until' => QueryValue.new(until_, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Teams::ListTeamsResponse,
           decoder: :json,
           operation_id: 'list_teams',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -294,24 +287,23 @@ module OctridevVercel
         attribution: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('slug', slug, max: 48)
 
         Validation.if_given(name) { Validation.validate_length('name', name, max: 256) }
 
         SdkClient.request(
           'POST',
-          "/v1/teams",
+          '/v1/teams',
           config: config,
           body: {
             'slug' => slug,
             'name' => name,
-            'attribution' => attribution,
+            'attribution' => attribution
           },
           return_type: ::OctridevVercel::Methods::Teams::CreateTeamResponse,
           decoder: :json,
           operation_id: 'create_team',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -334,25 +326,24 @@ module OctridevVercel
         reasons: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/teams/",
+            '/v1/teams/',
             SdkClient.encode_path_segment(team_id)
           ].join,
           config: config,
           query: {
             'newDefaultTeamId' => QueryValue.new(new_default_team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'reasons' => reasons,
+            'reasons' => reasons
           },
           return_type: ::OctridevVercel::Methods::Teams::DeleteTeamResponse,
           decoder: :json,
           operation_id: 'delete_team',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

@@ -12,13 +12,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalReplaceDomainsByDomainRecordsResponseMetadata
         FIELDS = {
-          record_ids: "recordIds",
+          record_ids: 'recordIds'
         }.freeze
         REQUIRED_FIELDS = %i[
           record_ids
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ReplaceDomainsByDomainRecordsResponse.
@@ -47,16 +46,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainsRecordsByRecordIdResponseMetadata
         FIELDS = {
-          comment: "comment",
-          created_at: "createdAt",
-          creator: "creator",
-          domain: "domain",
-          id: "id",
-          name: "name",
-          record_type: "recordType",
-          ttl: "ttl",
-          type: "type",
-          value: "value",
+          comment: 'comment',
+          created_at: 'createdAt',
+          creator: 'creator',
+          domain: 'domain',
+          id: 'id',
+          name: 'name',
+          record_type: 'recordType',
+          ttl: 'ttl',
+          type: 'type',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           creator
@@ -73,7 +72,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Domains::GetDomainsRecordsByRecordIdResponseType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -104,15 +103,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainConfigResponseRecommendedCNAMEItemMetadata
         FIELDS = {
-          rank: "rank",
-          value: "value",
+          rank: 'rank',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           rank
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDomainConfigResponseRecommendedCNAMEItem.
@@ -142,15 +140,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainConfigResponseRecommendedIPv4ItemMetadata
         FIELDS = {
-          rank: "rank",
-          value: "value",
+          rank: 'rank',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           rank
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDomainConfigResponseRecommendedIPv4Item.
@@ -180,11 +177,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainConfigResponseMetadata
         FIELDS = {
-          accepted_challenges: "acceptedChallenges",
-          configured_by: "configuredBy",
-          recommended_cname: "recommendedCNAME",
-          recommended_ipv4: "recommendedIPv4",
-          misconfigured: "misconfigured",
+          accepted_challenges: 'acceptedChallenges',
+          configured_by: 'configuredBy',
+          recommended_cname: 'recommendedCNAME',
+          recommended_ipv4: 'recommendedIPv4',
+          misconfigured: 'misconfigured'
         }.freeze
         REQUIRED_FIELDS = %i[
           accepted_challenges
@@ -208,7 +205,7 @@ module OctridevVercel
           end,
           misconfigured: lambda do |value|
             ::OctridevVercel::Methods::Domains::GetDomainConfigResponseMisconfigured.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           configured_by
@@ -250,15 +247,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainVerificationRecordResponseMetadata
         FIELDS = {
-          txt_record: "txtRecord",
-          verification_domain: "verificationDomain",
+          txt_record: 'txtRecord',
+          verification_domain: 'verificationDomain'
         }.freeze
         REQUIRED_FIELDS = %i[
           txt_record
           verification_domain
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDomainVerificationRecordResponse.
@@ -287,11 +283,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalClaimDomainOwnershipResponseDomainCreatorMetadata
         FIELDS = {
-          customer_id: "customerId",
-          email: "email",
-          id: "id",
-          is_domain_reseller: "isDomainReseller",
-          username: "username",
+          customer_id: 'customerId',
+          email: 'email',
+          id: 'id',
+          is_domain_reseller: 'isDomainReseller',
+          username: 'username'
         }.freeze
         REQUIRED_FIELDS = %i[
           email
@@ -301,7 +297,7 @@ module OctridevVercel
         DECODERS = {
           is_domain_reseller: lambda do |value|
             ::OctridevVercel::Methods::Domains::ClaimDomainOwnershipResponseDomainCreatorIsDomainReseller.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -332,23 +328,23 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalClaimDomainOwnershipResponseDomainMetadata
         FIELDS = {
-          bought_at: "boughtAt",
-          created_at: "createdAt",
-          creator: "creator",
-          custom_nameservers: "customNameservers",
-          ech_mode: "echMode",
-          expires_at: "expiresAt",
-          id: "id",
-          intended_nameservers: "intendedNameservers",
-          name: "name",
-          nameservers: "nameservers",
-          renew: "renew",
-          service_type: "serviceType",
-          team_id: "teamId",
-          transferred_at: "transferredAt",
-          transfer_started_at: "transferStartedAt",
-          user_id: "userId",
-          verified: "verified",
+          bought_at: 'boughtAt',
+          created_at: 'createdAt',
+          creator: 'creator',
+          custom_nameservers: 'customNameservers',
+          ech_mode: 'echMode',
+          expires_at: 'expiresAt',
+          id: 'id',
+          intended_nameservers: 'intendedNameservers',
+          name: 'name',
+          nameservers: 'nameservers',
+          renew: 'renew',
+          service_type: 'serviceType',
+          team_id: 'teamId',
+          transferred_at: 'transferredAt',
+          transfer_started_at: 'transferStartedAt',
+          user_id: 'userId',
+          verified: 'verified'
         }.freeze
         REQUIRED_FIELDS = %i[
           bought_at
@@ -380,7 +376,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Domains::ClaimDomainOwnershipResponseDomainVerified.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           bought_at
@@ -445,7 +441,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalClaimDomainOwnershipResponseMetadata
         FIELDS = {
-          domain: "domain",
+          domain: 'domain'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -453,7 +449,7 @@ module OctridevVercel
         DECODERS = {
           domain: lambda do |value|
             ::OctridevVercel::Methods::Domains::ClaimDomainOwnershipResponseDomain.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -483,10 +479,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainProjectDomainsResponseProjectDomainsItemVerificationItemMetadata
         FIELDS = {
-          domain: "domain",
-          reason: "reason",
-          type: "type",
-          value: "value",
+          domain: 'domain',
+          reason: 'reason',
+          type: 'type',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -494,8 +490,7 @@ module OctridevVercel
           type
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDomainProjectDomainsResponseProjectDomainsItemVerificationItem.
@@ -525,17 +520,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainProjectDomainsResponseProjectDomainsItemMetadata
         FIELDS = {
-          apex_name: "apexName",
-          created_at: "createdAt",
-          custom_environment_id: "customEnvironmentId",
-          git_branch: "gitBranch",
-          name: "name",
-          project_id: "projectId",
-          redirect: "redirect",
-          redirect_status_code: "redirectStatusCode",
-          updated_at: "updatedAt",
-          verification: "verification",
-          verified: "verified",
+          apex_name: 'apexName',
+          created_at: 'createdAt',
+          custom_environment_id: 'customEnvironmentId',
+          git_branch: 'gitBranch',
+          name: 'name',
+          project_id: 'projectId',
+          redirect: 'redirect',
+          redirect_status_code: 'redirectStatusCode',
+          updated_at: 'updatedAt',
+          verification: 'verification',
+          verified: 'verified'
         }.freeze
         REQUIRED_FIELDS = %i[
           apex_name
@@ -552,7 +547,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Domains::GetDomainProjectDomainsResponseProjectDomainsItemVerified.from_value(value)
-          end,
+          end
         }.freeze
       end
     end

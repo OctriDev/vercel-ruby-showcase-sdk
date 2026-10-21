@@ -13,7 +13,7 @@ module OctridevVercel
       module ListProjectsResponseVariant1ProjectsItemRollingReleaseGateAction
         PAUSE = 'pause'
         ROLLBACK = 'rollback'
-        VALUES = ['pause', 'rollback'].freeze
+        VALUES = %w[pause rollback].freeze
         def self.from_value(value)
           value
         end
@@ -24,7 +24,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = ['enterprise', 'hobby', 'pro'].freeze
+        VALUES = %w[enterprise hobby pro].freeze
         def self.from_value(value)
           value
         end
@@ -44,7 +44,7 @@ module OctridevVercel
       module CreateProjectResponseResourceConfigBuildMachineElasticTransitX59007cb1fd
         DOWNGRADE = 'downgrade'
         UPGRADE = 'upgrade'
-        VALUES = ['downgrade', 'upgrade'].freeze
+        VALUES = %w[downgrade upgrade].freeze
         def self.from_value(value)
           value
         end
@@ -115,7 +115,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -135,7 +135,7 @@ module OctridevVercel
       module CreateProjectResponseTracingSamplingRulesItemDestination
         EXTERNAL = 'external'
         INTERNAL = 'internal'
-        VALUES = ['external', 'internal'].freeze
+        VALUES = %w[external internal].freeze
         def self.from_value(value)
           value
         end
@@ -217,7 +217,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
+        VALUES = %w[canceled failed skipped succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -240,7 +240,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = ['completed', 'registered', 'running'].freeze
+        VALUES = %w[completed registered running].freeze
         def self.from_value(value)
           value
         end
@@ -250,7 +250,7 @@ module OctridevVercel
       module UpdateProjectResourceConfigBuildQueueConfiguration
         SKIP_NAMESPACE_QUEUE = 'SKIP_NAMESPACE_QUEUE'
         WAIT_FOR_NAMESPACE_QUEUE = 'WAIT_FOR_NAMESPACE_QUEUE'
-        VALUES = ['SKIP_NAMESPACE_QUEUE', 'WAIT_FOR_NAMESPACE_QUEUE'].freeze
+        VALUES = %w[SKIP_NAMESPACE_QUEUE WAIT_FOR_NAMESPACE_QUEUE].freeze
         def self.from_value(value)
           value
         end
@@ -261,7 +261,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
+        VALUES = %w[PROMOTED ROLLING STAGED].freeze
         def self.from_value(value)
           value
         end
@@ -271,7 +271,7 @@ module OctridevVercel
       module GetProjectsResponseResourceConfigBuildMachineSelection
         ELASTIC = 'elastic'
         FIXED = 'fixed'
-        VALUES = ['elastic', 'fixed'].freeze
+        VALUES = %w[elastic fixed].freeze
         def self.from_value(value)
           value
         end
@@ -302,7 +302,7 @@ module OctridevVercel
         SECRET = 'secret'
         SENSITIVE = 'sensitive'
         SYSTEM = 'system'
-        VALUES = ['encrypted', 'plain', 'secret', 'sensitive', 'system'].freeze
+        VALUES = %w[encrypted plain secret sensitive system].freeze
         def self.from_value(value)
           value
         end
@@ -338,9 +338,9 @@ module OctridevVercel
         SIN1 = 'sin1'
         SYD1 = 'syd1'
         YUL1 = 'yul1'
-        VALUES = [
-          'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'iad1',
-          'icn1', 'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
+        VALUES = %w[
+          arn1 bom1 cdg1 cle1 cpt1 dub1 fra1 gru1 hkg1 hnd1 iad1
+          icn1 kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
         ].freeze
         def self.from_value(value)
           value
@@ -417,9 +417,9 @@ module OctridevVercel
         SIN1 = 'sin1'
         SYD1 = 'syd1'
         YUL1 = 'yul1'
-        VALUES = [
-          'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'iad1',
-          'icn1', 'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
+        VALUES = %w[
+          arn1 bom1 cdg1 cle1 cpt1 dub1 fra1 gru1 hkg1 hnd1 iad1
+          icn1 kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
         ].freeze
         def self.from_value(value)
           value
@@ -461,7 +461,7 @@ module OctridevVercel
       module ListProjectsResponseVariant0ItemAliasItemEnvironment
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end
@@ -501,7 +501,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = ['enterprise', 'hobby', 'pro'].freeze
+        VALUES = %w[enterprise hobby pro].freeze
         def self.from_value(value)
           value
         end
@@ -512,7 +512,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = ['enterprise', 'hobby', 'pro'].freeze
+        VALUES = %w[enterprise hobby pro].freeze
         def self.from_value(value)
           value
         end
@@ -575,7 +575,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
+        VALUES = %w[PROMOTED ROLLING STAGED].freeze
         def self.from_value(value)
           value
         end

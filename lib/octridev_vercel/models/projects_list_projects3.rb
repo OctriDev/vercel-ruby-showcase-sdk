@@ -5,641 +5,636 @@
 
 # projects_list domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Metadata
-  FIELDS = {
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    value
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Type.from_value(value)
-    end,
-    value: lambda do |value|
-      ::OctridevVercel::ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Value.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1.
-class ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Metadata::DECODERS
-
-  attr_reader :type, :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Metadata
+    FIELDS = {
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      value
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Type.from_value(value)
+      end,
+      value: lambda do |value|
+        ::OctridevVercel::ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Value.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1.
+  class ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Metadata::DECODERS
+
+    attr_reader :type, :value
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalListProjectsResponseItemInternalRoutesItemVariant1MitigateMetadata
-  FIELDS = {
-    action: "action",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    action
-  ].freeze
-  DECODERS = {
-    action: lambda do |value|
-      ::OctridevVercel::ListProjectsResponseItemInternalRoutesItemVariant1MitigateAction.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for ListProjectsResponseItemInternalRoutesItemVariant1Mitigate.
-class ListProjectsResponseItemInternalRoutesItemVariant1Mitigate
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1MitigateMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1MitigateMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1MitigateMetadata::DECODERS
-
-  attr_reader :action
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalListProjectsResponseItemInternalRoutesItemVariant1MitigateMetadata
+    FIELDS = {
+      action: 'action'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      action
+    ].freeze
+    DECODERS = {
+      action: lambda do |value|
+        ::OctridevVercel::ListProjectsResponseItemInternalRoutesItemVariant1MitigateAction.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for ListProjectsResponseItemInternalRoutesItemVariant1Mitigate.
+  class ListProjectsResponseItemInternalRoutesItemVariant1Mitigate
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1MitigateMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1MitigateMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1MitigateMetadata::DECODERS
+
+    attr_reader :action
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalListProjectsResponseItemInternalRoutesItemVariant1Metadata
-  FIELDS = {
-    has: "has",
-    mitigate: "mitigate",
-    src: "src",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    has
-    mitigate
-  ].freeze
-  DECODERS = {
-    mitigate: lambda do |value|
-      ::OctridevVercel::ListProjectsResponseItemInternalRoutesItemVariant1Mitigate.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for ListProjectsResponseItemInternalRoutesItemVariant1.
-class ListProjectsResponseItemInternalRoutesItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1Metadata::DECODERS
-
-  attr_reader :has, :mitigate, :src
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalListProjectsResponseItemInternalRoutesItemVariant1Metadata
+    FIELDS = {
+      has: 'has',
+      mitigate: 'mitigate',
+      src: 'src'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      has
+      mitigate
+    ].freeze
+    DECODERS = {
+      mitigate: lambda do |value|
+        ::OctridevVercel::ListProjectsResponseItemInternalRoutesItemVariant1Mitigate.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for ListProjectsResponseItemInternalRoutesItemVariant1.
+  class ListProjectsResponseItemInternalRoutesItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectsResponseItemInternalRoutesItemVariant1Metadata::DECODERS
+
+    attr_reader :has, :mitigate, :src
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the ListProjectsResponseItemInternalRoutesItem SDK namespace.
-module ListProjectsResponseItemInternalRoutesItem
-  def self.from_hash(hash)
-    shape_mapping = {
-      "status" => ListProjectsResponseItemInternalRoutesItemVariant0,
-      "has" => ListProjectsResponseItemInternalRoutesItemVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-  end
-end
-
-# Defines the ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant0Key SDK namespace.
-module ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant0Key
-  X_VERCEL_IP_COUNTRY = 'x-vercel-ip-country'
-  VALUES = ['x-vercel-ip-country'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant0Type SDK namespace.
-module ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant0Type
-  HEADER = 'header'
-  VALUES = ['header'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant0Type', 'enum', "Unknown ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant0Type: #{value}")
-  end
-end
-
-# Defines the ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Type SDK namespace.
-module ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Type
-  HOST = 'host'
-  VALUES = ['host'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Type', 'enum', "Unknown ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Type: #{value}")
-  end
-end
-
-# Defines the ListProjectsResponseItemInternalRoutesItemVariant1MitigateAction SDK namespace.
-module ListProjectsResponseItemInternalRoutesItemVariant1MitigateAction
-  BLOCK_LEGAL_CWC = 'block_legal_cwc'
-  VALUES = ['block_legal_cwc'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalListProjectsResponseItemLinkVariant0DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for ListProjectsResponseItemLinkVariant0DeployHooksItem.
-class ListProjectsResponseItemLinkVariant0DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectsResponseItemLinkVariant0DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant0DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectsResponseItemLinkVariant0DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the ListProjectsResponseItemInternalRoutesItem SDK namespace.
+  module ListProjectsResponseItemInternalRoutesItem
+    def self.from_hash(hash)
+      shape_mapping = {
+        'status' => ListProjectsResponseItemInternalRoutesItemVariant0,
+        'has' => ListProjectsResponseItemInternalRoutesItemVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant0Key SDK namespace.
+  module ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant0Key
+    X_VERCEL_IP_COUNTRY = 'x-vercel-ip-country'
+    VALUES = ['x-vercel-ip-country'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant0Type SDK namespace.
+  module ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant0Type
+    HEADER = 'header'
+    VALUES = ['header'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Internal model hydration metadata.
-class SdkInternalListProjectsResponseItemLinkVariant0Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    org: "org",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    repo_owner_id: "repoOwnerId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    org
-    production_branch
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::ListProjectsResponseItemLinkVariant0DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::ListProjectsResponseItemLinkVariant0Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::ListProjectsResponseItemLinkVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for ListProjectsResponseItemLinkVariant0.
-class ListProjectsResponseItemLinkVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectsResponseItemLinkVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectsResponseItemLinkVariant0Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
-              :repo_id, :sourceless, :type, :updated_at
-  # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-  attr_reader :repo_owner_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant0Type', 'enum', "Unknown ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant0Type: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Type SDK namespace.
+  module ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Type
+    HOST = 'host'
+    VALUES = ['host'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Type', 'enum', "Unknown ListProjectsResponseItemInternalRoutesItemVariant1HasItemVariant1Type: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalListProjectsResponseItemLinkVariant1DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for ListProjectsResponseItemLinkVariant1DeployHooksItem.
-class ListProjectsResponseItemLinkVariant1DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectsResponseItemLinkVariant1DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant1DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectsResponseItemLinkVariant1DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the ListProjectsResponseItemInternalRoutesItemVariant1MitigateAction SDK namespace.
+  module ListProjectsResponseItemInternalRoutesItemVariant1MitigateAction
+    BLOCK_LEGAL_CWC = 'block_legal_cwc'
+    VALUES = ['block_legal_cwc'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalListProjectsResponseItemLinkVariant0DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for ListProjectsResponseItemLinkVariant0DeployHooksItem.
+  class ListProjectsResponseItemLinkVariant0DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectsResponseItemLinkVariant0DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant0DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectsResponseItemLinkVariant0DeployHooksItemMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalListProjectsResponseItemLinkVariant1Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    org: "org",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    repo_owner_id: "repoOwnerId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    org
-    production_branch
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::ListProjectsResponseItemLinkVariant1DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::ListProjectsResponseItemLinkVariant1Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::ListProjectsResponseItemLinkVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :created_at, :id, :name, :ref, :url
 
-# API model for ListProjectsResponseItemLinkVariant1.
-class ListProjectsResponseItemLinkVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectsResponseItemLinkVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectsResponseItemLinkVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
-              :repo_id, :sourceless, :type, :updated_at
-  # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-  attr_reader :repo_owner_id
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalListProjectsResponseItemLinkVariant0Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      org: 'org',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      repo_owner_id: 'repoOwnerId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      org
+      production_branch
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::ListProjectsResponseItemLinkVariant0DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::ListProjectsResponseItemLinkVariant0Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::ListProjectsResponseItemLinkVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for ListProjectsResponseItemLinkVariant0.
+  class ListProjectsResponseItemLinkVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectsResponseItemLinkVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectsResponseItemLinkVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalListProjectsResponseItemLinkVariant2DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
+                :repo_id, :sourceless, :type, :updated_at
+    # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+    attr_reader :repo_owner_id
 
-# API model for ListProjectsResponseItemLinkVariant2DeployHooksItem.
-class ListProjectsResponseItemLinkVariant2DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectsResponseItemLinkVariant2DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant2DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectsResponseItemLinkVariant2DeployHooksItemMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :created_at, :id, :name, :ref, :url
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalListProjectsResponseItemLinkVariant1DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for ListProjectsResponseItemLinkVariant1DeployHooksItem.
+  class ListProjectsResponseItemLinkVariant1DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectsResponseItemLinkVariant1DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant1DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectsResponseItemLinkVariant1DeployHooksItemMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalListProjectsResponseItemLinkVariant2Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    host: "host",
-    org: "org",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    repo_owner_id: "repoOwnerId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    host
-    org
-    production_branch
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::ListProjectsResponseItemLinkVariant2DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::ListProjectsResponseItemLinkVariant2Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::ListProjectsResponseItemLinkVariant2Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :created_at, :id, :name, :ref, :url
 
-# API model for ListProjectsResponseItemLinkVariant2.
-class ListProjectsResponseItemLinkVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectsResponseItemLinkVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectsResponseItemLinkVariant2Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :host, :org, :production_branch, :repo,
-              :repo_id, :sourceless, :type, :updated_at
-  # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-  attr_reader :repo_owner_id
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalListProjectsResponseItemLinkVariant1Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      org: 'org',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      repo_owner_id: 'repoOwnerId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      org
+      production_branch
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::ListProjectsResponseItemLinkVariant1DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::ListProjectsResponseItemLinkVariant1Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::ListProjectsResponseItemLinkVariant1Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for ListProjectsResponseItemLinkVariant1.
+  class ListProjectsResponseItemLinkVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectsResponseItemLinkVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectsResponseItemLinkVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalListProjectsResponseItemLinkVariant3DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
+                :repo_id, :sourceless, :type, :updated_at
+    # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+    attr_reader :repo_owner_id
 
-# API model for ListProjectsResponseItemLinkVariant3DeployHooksItem.
-class ListProjectsResponseItemLinkVariant3DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectsResponseItemLinkVariant3DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant3DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectsResponseItemLinkVariant3DeployHooksItemMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :created_at, :id, :name, :ref, :url
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalListProjectsResponseItemLinkVariant2DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for ListProjectsResponseItemLinkVariant2DeployHooksItem.
+  class ListProjectsResponseItemLinkVariant2DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectsResponseItemLinkVariant2DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant2DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectsResponseItemLinkVariant2DeployHooksItemMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalListProjectsResponseItemLinkVariant3Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    production_branch: "productionBranch",
-    project_id: "projectId",
-    project_name: "projectName",
-    project_namespace: "projectNamespace",
-    project_name_with_namespace: "projectNameWithNamespace",
-    project_owner_id: "projectOwnerId",
-    project_url: "projectUrl",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    production_branch
-    project_id
-    project_name
-    project_namespace
-    project_name_with_namespace
-    project_url
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::ListProjectsResponseItemLinkVariant3DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::ListProjectsResponseItemLinkVariant3Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::ListProjectsResponseItemLinkVariant3Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :created_at, :id, :name, :ref, :url
 
-# API model for ListProjectsResponseItemLinkVariant3.
-class ListProjectsResponseItemLinkVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectsResponseItemLinkVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectsResponseItemLinkVariant3Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :production_branch, :project_id,
-              :project_name, :project_namespace, :project_name_with_namespace, :project_url,
-              :sourceless, :type, :updated_at
-  # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
-  attr_reader :project_owner_id
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalListProjectsResponseItemLinkVariant2Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      host: 'host',
+      org: 'org',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      repo_owner_id: 'repoOwnerId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      host
+      org
+      production_branch
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::ListProjectsResponseItemLinkVariant2DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::ListProjectsResponseItemLinkVariant2Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::ListProjectsResponseItemLinkVariant2Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for ListProjectsResponseItemLinkVariant2.
+  class ListProjectsResponseItemLinkVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectsResponseItemLinkVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectsResponseItemLinkVariant2Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalListProjectsResponseItemLinkVariant4DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :host, :org, :production_branch, :repo,
+                :repo_id, :sourceless, :type, :updated_at
+    # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+    attr_reader :repo_owner_id
 
-# API model for ListProjectsResponseItemLinkVariant4DeployHooksItem.
-class ListProjectsResponseItemLinkVariant4DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectsResponseItemLinkVariant4DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant4DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectsResponseItemLinkVariant4DeployHooksItemMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :created_at, :id, :name, :ref, :url
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalListProjectsResponseItemLinkVariant3DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for ListProjectsResponseItemLinkVariant3DeployHooksItem.
+  class ListProjectsResponseItemLinkVariant3DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectsResponseItemLinkVariant3DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant3DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectsResponseItemLinkVariant3DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
+
+  # Internal model hydration metadata.
+  class SdkInternalListProjectsResponseItemLinkVariant3Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      production_branch: 'productionBranch',
+      project_id: 'projectId',
+      project_name: 'projectName',
+      project_namespace: 'projectNamespace',
+      project_name_with_namespace: 'projectNameWithNamespace',
+      project_owner_id: 'projectOwnerId',
+      project_url: 'projectUrl',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      production_branch
+      project_id
+      project_name
+      project_namespace
+      project_name_with_namespace
+      project_url
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::ListProjectsResponseItemLinkVariant3DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::ListProjectsResponseItemLinkVariant3Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::ListProjectsResponseItemLinkVariant3Type.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for ListProjectsResponseItemLinkVariant3.
+  class ListProjectsResponseItemLinkVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectsResponseItemLinkVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectsResponseItemLinkVariant3Metadata::DECODERS
+
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :production_branch, :project_id,
+                :project_name, :project_namespace, :project_name_with_namespace, :project_url,
+                :sourceless, :type, :updated_at
+    # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
+    attr_reader :project_owner_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalListProjectsResponseItemLinkVariant4DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for ListProjectsResponseItemLinkVariant4DeployHooksItem.
+  class ListProjectsResponseItemLinkVariant4DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectsResponseItemLinkVariant4DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectsResponseItemLinkVariant4DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectsResponseItemLinkVariant4DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
 end

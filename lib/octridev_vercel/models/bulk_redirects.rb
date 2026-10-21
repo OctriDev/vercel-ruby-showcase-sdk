@@ -5,402 +5,402 @@
 
 # bulk_redirects domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalDeleteRedirectsResponseVariant0VersionMetadata
-  FIELDS = {
-    alias_: "alias",
-    created_by: "createdBy",
-    id: "id",
-    is_live: "isLive",
-    is_staging: "isStaging",
-    key: "key",
-    last_modified: "lastModified",
-    name: "name",
-    redirect_count: "redirectCount",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_by
-    id
-    key
-    last_modified
-  ].freeze
-  DECODERS = {
-    is_live: lambda do |value|
-      ::OctridevVercel::DeleteRedirectsResponseVariant0VersionIsLive.from_value(value)
-    end,
-    is_staging: lambda do |value|
-      ::OctridevVercel::DeleteRedirectsResponseVariant0VersionIsStaging.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for DeleteRedirectsResponseVariant0Version.
-class DeleteRedirectsResponseVariant0Version
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalDeleteRedirectsResponseVariant0VersionMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalDeleteRedirectsResponseVariant0VersionMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalDeleteRedirectsResponseVariant0VersionMetadata::DECODERS
-
-  attr_reader :created_by, :last_modified
-  # @return [String] The staging link for previewing redirects in this version.
-  attr_reader :alias_
-  # @return [String] The unique identifier for the version.
-  attr_reader :id
-  # @return [DeleteRedirectsResponseVariant0VersionIsLive] Whether this version is currently live in production.
-  attr_reader :is_live
-  # @return [DeleteRedirectsResponseVariant0VersionIsStaging] Whether this version has not been promoted to production yet and is not serving end users.
-  attr_reader :is_staging
-  # @return [String] The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
-  attr_reader :key
-  # @return [String] Optional name for the version. If not provided, defaults to an ISO timestamp string.
-  attr_reader :name
-  # @return [Float] The number of redirects in this version.
-  attr_reader :redirect_count
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalDeleteRedirectsResponseVariant0VersionMetadata
+    FIELDS = {
+      alias_: 'alias',
+      created_by: 'createdBy',
+      id: 'id',
+      is_live: 'isLive',
+      is_staging: 'isStaging',
+      key: 'key',
+      last_modified: 'lastModified',
+      name: 'name',
+      redirect_count: 'redirectCount'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_by
+      id
+      key
+      last_modified
+    ].freeze
+    DECODERS = {
+      is_live: lambda do |value|
+        ::OctridevVercel::DeleteRedirectsResponseVariant0VersionIsLive.from_value(value)
+      end,
+      is_staging: lambda do |value|
+        ::OctridevVercel::DeleteRedirectsResponseVariant0VersionIsStaging.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
+  # API model for DeleteRedirectsResponseVariant0Version.
+  class DeleteRedirectsResponseVariant0Version
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalDeleteRedirectsResponseVariant0VersionMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalDeleteRedirectsResponseVariant0VersionMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalDeleteRedirectsResponseVariant0VersionMetadata::DECODERS
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+    attr_reader :created_by, :last_modified
+    # @return [String] The staging link for previewing redirects in this version.
+    attr_reader :alias_
+    # @return [String] The unique identifier for the version.
+    attr_reader :id
+    # @return [DeleteRedirectsResponseVariant0VersionIsLive] Whether this version is currently live in production.
+    attr_reader :is_live
+    # @return [DeleteRedirectsResponseVariant0VersionIsStaging] Whether this version has not been promoted to production yet and is not serving end users.
+    attr_reader :is_staging
+    # @return [String] The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+    attr_reader :key
+    # @return [String] Optional name for the version. If not provided, defaults to an ISO timestamp string.
+    attr_reader :name
+    # @return [Float] The number of redirects in this version.
+    attr_reader :redirect_count
 
-# Internal model hydration metadata.
-class SdkInternalDeleteRedirectsResponseVariant0Metadata
-  FIELDS = {
-    alias_: "alias",
-    version: "version",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    version
-  ].freeze
-  DECODERS = {
-    version: lambda do |value|
-      ::OctridevVercel::DeleteRedirectsResponseVariant0Version.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for DeleteRedirectsResponseVariant0.
-class DeleteRedirectsResponseVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalDeleteRedirectsResponseVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalDeleteRedirectsResponseVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalDeleteRedirectsResponseVariant0Metadata::DECODERS
-
-  attr_reader :alias_, :version
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalDeleteRedirectsResponseVariant1VersionMetadata
-  FIELDS = {
-    alias_: "alias",
-    created_by: "createdBy",
-    id: "id",
-    is_live: "isLive",
-    is_staging: "isStaging",
-    key: "key",
-    last_modified: "lastModified",
-    name: "name",
-    redirect_count: "redirectCount",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_by
-    id
-    key
-    last_modified
-  ].freeze
-  DECODERS = {
-    is_live: lambda do |value|
-      ::OctridevVercel::DeleteRedirectsResponseVariant1VersionIsLive.from_value(value)
-    end,
-    is_staging: lambda do |value|
-      ::OctridevVercel::DeleteRedirectsResponseVariant1VersionIsStaging.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for DeleteRedirectsResponseVariant1Version.
-class DeleteRedirectsResponseVariant1Version
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalDeleteRedirectsResponseVariant1VersionMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalDeleteRedirectsResponseVariant1VersionMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalDeleteRedirectsResponseVariant1VersionMetadata::DECODERS
-
-  attr_reader :created_by, :last_modified
-  # @return [String] The staging link for previewing redirects in this version.
-  attr_reader :alias_
-  # @return [String] The unique identifier for the version.
-  attr_reader :id
-  # @return [DeleteRedirectsResponseVariant1VersionIsLive] Whether this version is currently live in production.
-  attr_reader :is_live
-  # @return [DeleteRedirectsResponseVariant1VersionIsStaging] Whether this version has not been promoted to production yet and is not serving end users.
-  attr_reader :is_staging
-  # @return [String] The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
-  attr_reader :key
-  # @return [String] Optional name for the version. If not provided, defaults to an ISO timestamp string.
-  attr_reader :name
-  # @return [Float] The number of redirects in this version.
-  attr_reader :redirect_count
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalDeleteRedirectsResponseVariant1Metadata
-  FIELDS = {
-    alias_: "alias",
-    version: "version",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    alias_
-    version
-  ].freeze
-  DECODERS = {
-    version: lambda do |value|
-      ::OctridevVercel::DeleteRedirectsResponseVariant1Version.from_hash(value)
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    alias_
-  ].freeze
-end
-
-# API model for DeleteRedirectsResponseVariant1.
-class DeleteRedirectsResponseVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalDeleteRedirectsResponseVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalDeleteRedirectsResponseVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalDeleteRedirectsResponseVariant1Metadata::DECODERS
-
-  attr_reader :alias_, :version
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalDeleteRedirectsResponseVariant1Metadata::NULLABLE_FIELDS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalDeleteRedirectsResponseVariant2VersionMetadata
-  FIELDS = {
-    alias_: "alias",
-    created_by: "createdBy",
-    id: "id",
-    is_live: "isLive",
-    is_staging: "isStaging",
-    key: "key",
-    last_modified: "lastModified",
-    name: "name",
-    redirect_count: "redirectCount",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_by
-    id
-    key
-    last_modified
-  ].freeze
-  DECODERS = {
-    is_live: lambda do |value|
-      ::OctridevVercel::DeleteRedirectsResponseVariant2VersionIsLive.from_value(value)
-    end,
-    is_staging: lambda do |value|
-      ::OctridevVercel::DeleteRedirectsResponseVariant2VersionIsStaging.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for DeleteRedirectsResponseVariant2Version.
-class DeleteRedirectsResponseVariant2Version
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalDeleteRedirectsResponseVariant2VersionMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalDeleteRedirectsResponseVariant2VersionMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalDeleteRedirectsResponseVariant2VersionMetadata::DECODERS
-
-  attr_reader :created_by, :last_modified
-  # @return [String] The staging link for previewing redirects in this version.
-  attr_reader :alias_
-  # @return [String] The unique identifier for the version.
-  attr_reader :id
-  # @return [DeleteRedirectsResponseVariant2VersionIsLive] Whether this version is currently live in production.
-  attr_reader :is_live
-  # @return [DeleteRedirectsResponseVariant2VersionIsStaging] Whether this version has not been promoted to production yet and is not serving end users.
-  attr_reader :is_staging
-  # @return [String] The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
-  attr_reader :key
-  # @return [String] Optional name for the version. If not provided, defaults to an ISO timestamp string.
-  attr_reader :name
-  # @return [Float] The number of redirects in this version.
-  attr_reader :redirect_count
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalDeleteRedirectsResponseVariant2Metadata
-  FIELDS = {
-    alias_: "alias",
-    version: "version",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    alias_
-    version
-  ].freeze
-  DECODERS = {
-    version: lambda do |value|
-      ::OctridevVercel::DeleteRedirectsResponseVariant2Version.from_hash(value)
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    alias_
-  ].freeze
-end
-
-# API model for DeleteRedirectsResponseVariant2.
-class DeleteRedirectsResponseVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalDeleteRedirectsResponseVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalDeleteRedirectsResponseVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalDeleteRedirectsResponseVariant2Metadata::DECODERS
-
-  attr_reader :alias_, :version
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalDeleteRedirectsResponseVariant2Metadata::NULLABLE_FIELDS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the DeleteRedirectsResponse SDK namespace.
-module DeleteRedirectsResponse
-  def self.from_hash(hash)
-    lossy = nil
-    [DeleteRedirectsResponseVariant0, DeleteRedirectsResponseVariant1, DeleteRedirectsResponseVariant2].each do |type|
-      decoded = type.from_hash(hash)
-      return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-      lossy ||= decoded
-    rescue ::StandardError
-      next
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
     end
-    return lossy unless lossy.nil?
-  end
-end
 
-# Defines the DeleteRedirectsResponseVariant0VersionIsLive SDK namespace.
-module DeleteRedirectsResponseVariant0VersionIsLive
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-# Defines the DeleteRedirectsResponseVariant0VersionIsStaging SDK namespace.
-module DeleteRedirectsResponseVariant0VersionIsStaging
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the DeleteRedirectsResponseVariant1VersionIsLive SDK namespace.
-module DeleteRedirectsResponseVariant1VersionIsLive
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Internal model hydration metadata.
+  class SdkInternalDeleteRedirectsResponseVariant0Metadata
+    FIELDS = {
+      alias_: 'alias',
+      version: 'version'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      version
+    ].freeze
+    DECODERS = {
+      version: lambda do |value|
+        ::OctridevVercel::DeleteRedirectsResponseVariant0Version.from_hash(value)
+      end
+    }.freeze
   end
-end
 
-# Defines the DeleteRedirectsResponseVariant1VersionIsStaging SDK namespace.
-module DeleteRedirectsResponseVariant1VersionIsStaging
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
+  # API model for DeleteRedirectsResponseVariant0.
+  class DeleteRedirectsResponseVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalDeleteRedirectsResponseVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalDeleteRedirectsResponseVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalDeleteRedirectsResponseVariant0Metadata::DECODERS
 
-# Defines the DeleteRedirectsResponseVariant2VersionIsLive SDK namespace.
-module DeleteRedirectsResponseVariant2VersionIsLive
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    attr_reader :alias_, :version
 
-# Defines the DeleteRedirectsResponseVariant2VersionIsStaging SDK namespace.
-module DeleteRedirectsResponseVariant2VersionIsStaging
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
+
+  # Internal model hydration metadata.
+  class SdkInternalDeleteRedirectsResponseVariant1VersionMetadata
+    FIELDS = {
+      alias_: 'alias',
+      created_by: 'createdBy',
+      id: 'id',
+      is_live: 'isLive',
+      is_staging: 'isStaging',
+      key: 'key',
+      last_modified: 'lastModified',
+      name: 'name',
+      redirect_count: 'redirectCount'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_by
+      id
+      key
+      last_modified
+    ].freeze
+    DECODERS = {
+      is_live: lambda do |value|
+        ::OctridevVercel::DeleteRedirectsResponseVariant1VersionIsLive.from_value(value)
+      end,
+      is_staging: lambda do |value|
+        ::OctridevVercel::DeleteRedirectsResponseVariant1VersionIsStaging.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for DeleteRedirectsResponseVariant1Version.
+  class DeleteRedirectsResponseVariant1Version
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalDeleteRedirectsResponseVariant1VersionMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalDeleteRedirectsResponseVariant1VersionMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalDeleteRedirectsResponseVariant1VersionMetadata::DECODERS
+
+    attr_reader :created_by, :last_modified
+    # @return [String] The staging link for previewing redirects in this version.
+    attr_reader :alias_
+    # @return [String] The unique identifier for the version.
+    attr_reader :id
+    # @return [DeleteRedirectsResponseVariant1VersionIsLive] Whether this version is currently live in production.
+    attr_reader :is_live
+    # @return [DeleteRedirectsResponseVariant1VersionIsStaging] Whether this version has not been promoted to production yet and is not serving end users.
+    attr_reader :is_staging
+    # @return [String] The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+    attr_reader :key
+    # @return [String] Optional name for the version. If not provided, defaults to an ISO timestamp string.
+    attr_reader :name
+    # @return [Float] The number of redirects in this version.
+    attr_reader :redirect_count
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalDeleteRedirectsResponseVariant1Metadata
+    FIELDS = {
+      alias_: 'alias',
+      version: 'version'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      alias_
+      version
+    ].freeze
+    DECODERS = {
+      version: lambda do |value|
+        ::OctridevVercel::DeleteRedirectsResponseVariant1Version.from_hash(value)
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      alias_
+    ].freeze
+  end
+
+  # API model for DeleteRedirectsResponseVariant1.
+  class DeleteRedirectsResponseVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalDeleteRedirectsResponseVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalDeleteRedirectsResponseVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalDeleteRedirectsResponseVariant1Metadata::DECODERS
+
+    attr_reader :alias_, :version
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalDeleteRedirectsResponseVariant1Metadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalDeleteRedirectsResponseVariant2VersionMetadata
+    FIELDS = {
+      alias_: 'alias',
+      created_by: 'createdBy',
+      id: 'id',
+      is_live: 'isLive',
+      is_staging: 'isStaging',
+      key: 'key',
+      last_modified: 'lastModified',
+      name: 'name',
+      redirect_count: 'redirectCount'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_by
+      id
+      key
+      last_modified
+    ].freeze
+    DECODERS = {
+      is_live: lambda do |value|
+        ::OctridevVercel::DeleteRedirectsResponseVariant2VersionIsLive.from_value(value)
+      end,
+      is_staging: lambda do |value|
+        ::OctridevVercel::DeleteRedirectsResponseVariant2VersionIsStaging.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for DeleteRedirectsResponseVariant2Version.
+  class DeleteRedirectsResponseVariant2Version
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalDeleteRedirectsResponseVariant2VersionMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalDeleteRedirectsResponseVariant2VersionMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalDeleteRedirectsResponseVariant2VersionMetadata::DECODERS
+
+    attr_reader :created_by, :last_modified
+    # @return [String] The staging link for previewing redirects in this version.
+    attr_reader :alias_
+    # @return [String] The unique identifier for the version.
+    attr_reader :id
+    # @return [DeleteRedirectsResponseVariant2VersionIsLive] Whether this version is currently live in production.
+    attr_reader :is_live
+    # @return [DeleteRedirectsResponseVariant2VersionIsStaging] Whether this version has not been promoted to production yet and is not serving end users.
+    attr_reader :is_staging
+    # @return [String] The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+    attr_reader :key
+    # @return [String] Optional name for the version. If not provided, defaults to an ISO timestamp string.
+    attr_reader :name
+    # @return [Float] The number of redirects in this version.
+    attr_reader :redirect_count
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalDeleteRedirectsResponseVariant2Metadata
+    FIELDS = {
+      alias_: 'alias',
+      version: 'version'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      alias_
+      version
+    ].freeze
+    DECODERS = {
+      version: lambda do |value|
+        ::OctridevVercel::DeleteRedirectsResponseVariant2Version.from_hash(value)
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      alias_
+    ].freeze
+  end
+
+  # API model for DeleteRedirectsResponseVariant2.
+  class DeleteRedirectsResponseVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalDeleteRedirectsResponseVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalDeleteRedirectsResponseVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalDeleteRedirectsResponseVariant2Metadata::DECODERS
+
+    attr_reader :alias_, :version
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalDeleteRedirectsResponseVariant2Metadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the DeleteRedirectsResponse SDK namespace.
+  module DeleteRedirectsResponse
+    def self.from_hash(hash)
+      lossy = nil
+      [DeleteRedirectsResponseVariant0, DeleteRedirectsResponseVariant1, DeleteRedirectsResponseVariant2].each do |type|
+        decoded = type.from_hash(hash)
+        return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+        lossy ||= decoded
+      rescue ::StandardError
+        next
+      end
+      lossy unless lossy.nil?
+    end
+  end
+
+  # Defines the DeleteRedirectsResponseVariant0VersionIsLive SDK namespace.
+  module DeleteRedirectsResponseVariant0VersionIsLive
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the DeleteRedirectsResponseVariant0VersionIsStaging SDK namespace.
+  module DeleteRedirectsResponseVariant0VersionIsStaging
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the DeleteRedirectsResponseVariant1VersionIsLive SDK namespace.
+  module DeleteRedirectsResponseVariant1VersionIsLive
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the DeleteRedirectsResponseVariant1VersionIsStaging SDK namespace.
+  module DeleteRedirectsResponseVariant1VersionIsStaging
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the DeleteRedirectsResponseVariant2VersionIsLive SDK namespace.
+  module DeleteRedirectsResponseVariant2VersionIsLive
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the DeleteRedirectsResponseVariant2VersionIsStaging SDK namespace.
+  module DeleteRedirectsResponseVariant2VersionIsStaging
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
 end

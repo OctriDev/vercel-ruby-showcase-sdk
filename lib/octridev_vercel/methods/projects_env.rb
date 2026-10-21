@@ -38,15 +38,14 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(git_branch) { Validation.validate_length('gitBranch', git_branch, max: 250) }
 
         SdkClient.request(
           'GET',
           [
-            "/v10/projects/",
+            '/v10/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/env"
+            '/env'
           ].join,
           config: config,
           query: {
@@ -56,12 +55,12 @@ module OctridevVercel
             'customEnvironmentId' => QueryValue.new(custom_environment_id, style: 'form', explode: true),
             'customEnvironmentSlug' => QueryValue.new(custom_environment_slug, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::FilterProjectEnvsResponse,
           decoder: :json,
           operation_id: 'filter_project_envs',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -84,25 +83,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v10/projects/",
+            '/v10/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/env"
+            '/env'
           ].join,
           config: config,
           query: {
             'upsert' => QueryValue.new(upsert, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: body,
           return_type: ::OctridevVercel::Methods::Projects::CreateProjectEnvResponse,
           decoder: :json,
           operation_id: 'create_project_env',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -116,32 +114,24 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_project_env) do |
-        config:,
-        id_or_name:,
-        id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_project_env) do |config:, id_or_name:, id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/env/",
+            '/env/',
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::GetProjectEnvResponse,
           decoder: :json,
           operation_id: 'get_project_env',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -165,24 +155,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v9/projects/",
+            '/v9/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/env/",
+            '/env/',
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'customEnvironmentId' => QueryValue.new(custom_environment_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'remove_project_env',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -220,7 +209,6 @@ module OctridevVercel
         comment: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(git_branch) { Validation.validate_length('gitBranch', git_branch, max: 250) }
 
         Validation.if_given(comment) { Validation.validate_length('comment', comment, max: 500) }
@@ -228,15 +216,15 @@ module OctridevVercel
         SdkClient.request(
           'PATCH',
           [
-            "/v9/projects/",
+            '/v9/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/env/",
+            '/env/',
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'key' => key,
@@ -245,12 +233,12 @@ module OctridevVercel
             'type' => type,
             'value' => value,
             'customEnvironmentIds' => custom_environment_ids,
-            'comment' => comment,
+            'comment' => comment
           },
           return_type: ::OctridevVercel::Methods::Projects::EditProjectEnvResponse,
           decoder: :json,
           operation_id: 'edit_project_env',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -271,28 +259,27 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('ids', ids, min: 1, max: 1000)
 
         SdkClient.request(
           'DELETE',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/env"
+            '/env'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'ids' => ids,
+            'ids' => ids
           },
           return_type: ::OctridevVercel::Methods::Projects::BatchRemoveProjectEnvResponse,
           decoder: :json,
           operation_id: 'batch_remove_project_env',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

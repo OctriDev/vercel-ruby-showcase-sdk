@@ -16,30 +16,23 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_edge_config_tokens) do |
-        config:,
-        edge_config_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_edge_config_tokens) do |config:, edge_config_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/global-config/",
+            '/v1/global-config/',
             SdkClient.encode_path_segment(edge_config_id),
-            "/tokens"
+            '/tokens'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: [::OctridevVercel::GlobalConfigToken],
           decoder: :json,
           operation_id: 'get_edge_config_tokens',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -59,7 +52,6 @@ module OctridevVercel
         ids: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_pattern('edgeConfigId', edge_config_id, '^ecfg_')
 
         Validation.if_given(tokens) { Validation.validate_items('tokens', tokens, min: 1) }
@@ -69,22 +61,22 @@ module OctridevVercel
         SdkClient.request(
           'DELETE',
           [
-            "/v1/global-config/",
+            '/v1/global-config/',
             SdkClient.encode_path_segment(edge_config_id),
-            "/tokens"
+            '/tokens'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'tokens' => tokens,
-            'ids' => ids,
+            'ids' => ids
           },
           decoder: :empty,
           operation_id: 'delete_edge_config_tokens',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

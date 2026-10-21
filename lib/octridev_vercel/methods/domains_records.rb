@@ -17,42 +17,36 @@ module OctridevVercel
         domain:,
         request_options: nil
       )
-
         SdkClient.request(
           'PUT',
           [
-            "/domains/",
+            '/domains/',
             SdkClient.encode_path_segment(domain),
-            "/records"
+            '/records'
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Domains::ReplaceDomainsByDomainRecordsResponse,
           decoder: :json,
           operation_id: 'replace_domains_by_domain_records',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
       # Retrieves a DNS record by its unique identifier. Use this operation to inspect the record's domain, name, type, value, and other available properties. The response contains the requested record.
       #
       # @param record_id [String] The unique ID of the DNS record
-      singleton_class.define_method(:get_domains_records_by_record_id) do |
-        config:,
-        record_id:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_domains_records_by_record_id) do |config:, record_id:, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/domains/records/",
+            '/domains/records/',
             SdkClient.encode_path_segment(record_id)
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Domains::GetDomainsRecordsByRecordIdResponse,
           decoder: :json,
           operation_id: 'get_domains_records_by_record_id',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

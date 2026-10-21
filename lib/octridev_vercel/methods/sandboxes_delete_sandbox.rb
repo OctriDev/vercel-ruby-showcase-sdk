@@ -31,7 +31,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 128)
         Validation.validate_pattern('name', name, '^[a-zA-Z0-9_-]+$')
 
@@ -40,7 +39,7 @@ module OctridevVercel
         SdkClient.request(
           'DELETE',
           [
-            "/v2/sandboxes/",
+            '/v2/sandboxes/',
             SdkClient.encode_path_segment(name)
           ].join,
           config: config,
@@ -48,12 +47,12 @@ module OctridevVercel
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'deleteOrphanSnapshots' => QueryValue.new(delete_orphan_snapshots, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::DeleteSandboxResponse,
           decoder: :json,
           operation_id: 'delete_sandbox',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

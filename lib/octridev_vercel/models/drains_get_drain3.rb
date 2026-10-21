@@ -5,692 +5,692 @@
 
 # drains domain models
 module OctridevVercel
-# API model for GetDrainResponseVariant1FilterV2FilterVariant0Project.
-class GetDrainResponseVariant1FilterV2FilterVariant0Project
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0ProjectMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0ProjectMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0ProjectMetadata::DECODERS
+  # API model for GetDrainResponseVariant1FilterV2FilterVariant0Project.
+  class GetDrainResponseVariant1FilterV2FilterVariant0Project
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0ProjectMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0ProjectMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0ProjectMetadata::DECODERS
 
-  attr_reader :ids
+    attr_reader :ids
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0Metadata
-  FIELDS = {
-    deployment: "deployment",
-    log: "log",
-    project: "project",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-    deployment: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1FilterV2FilterVariant0Deployment.from_hash(value)
-    end,
-    log: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1FilterV2FilterVariant0Log.from_hash(value)
-    end,
-    project: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1FilterV2FilterVariant0Project.from_hash(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1FilterV2FilterVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDrainResponseVariant1FilterV2FilterVariant0.
-class GetDrainResponseVariant1FilterV2FilterVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0Metadata::DECODERS
-
-  attr_reader :deployment, :log, :project, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDrainResponseVariant1FilterV2FilterVariant1Metadata
-  FIELDS = {
-    text: "text",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    text
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1FilterV2FilterVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDrainResponseVariant1FilterV2FilterVariant1.
-class GetDrainResponseVariant1FilterV2FilterVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant1Metadata::DECODERS
-
-  attr_reader :text, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDrainResponseVariant1FilterV2Metadata
-  FIELDS = {
-    filter: "filter",
-    version: "version",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    filter
-    version
-  ].freeze
-  DECODERS = {
-    version: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1FilterV2Version.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDrainResponseVariant1FilterV2.
-class GetDrainResponseVariant1FilterV2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDrainResponseVariant1FilterV2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1FilterV2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDrainResponseVariant1FilterV2Metadata::DECODERS
-
-  attr_reader :filter, :version
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDrainResponseVariant1ProjectAccessVariant0Metadata
-  FIELDS = {
-    access: "access",
-    managed_by: "managedBy",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    access
-    managed_by
-  ].freeze
-  DECODERS = {
-    access: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1ProjectAccessVariant0Access.from_value(value)
-    end,
-    managed_by: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1ProjectAccessVariant0ManagedBy.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDrainResponseVariant1ProjectAccessVariant0.
-class GetDrainResponseVariant1ProjectAccessVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDrainResponseVariant1ProjectAccessVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1ProjectAccessVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDrainResponseVariant1ProjectAccessVariant0Metadata::DECODERS
-
-  attr_reader :access, :managed_by
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDrainResponseVariant1ProjectAccessVariant1Metadata
-  FIELDS = {
-    access: "access",
-    project_ids: "projectIds",
-    managed_by: "managedBy",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    access
-    project_ids
-    managed_by
-  ].freeze
-  DECODERS = {
-    access: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1ProjectAccessVariant1Access.from_value(value)
-    end,
-    managed_by: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1ProjectAccessVariant1ManagedBy.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDrainResponseVariant1ProjectAccessVariant1.
-class GetDrainResponseVariant1ProjectAccessVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDrainResponseVariant1ProjectAccessVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1ProjectAccessVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDrainResponseVariant1ProjectAccessVariant1Metadata::DECODERS
-
-  attr_reader :access, :project_ids, :managed_by
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDrainResponseVariant1Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    delivery: "delivery",
-    disabled_at: "disabledAt",
-    disabled_by: "disabledBy",
-    disabled_reason: "disabledReason",
-    first_error_timestamp: "firstErrorTimestamp",
-    id: "id",
-    name: "name",
-    owner_id: "ownerId",
-    project_ids: "projectIds",
-    sampling: "sampling",
-    schemas: "schemas",
-    source: "source",
-    status: "status",
-    team_id: "teamId",
-    updated_at: "updatedAt",
-    filter_v2: "filterV2",
-    integration_configuration_uri: "integrationConfigurationUri",
-    integration_icon: "integrationIcon",
-    integration_website: "integrationWebsite",
-    project_access: "projectAccess",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    delivery
-    id
-    name
-    owner_id
-    schemas
-    source
-    updated_at
-  ].freeze
-  DECODERS = {
-    disabled_reason: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1DisabledReason.from_value(value)
-    end,
-    sampling: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetDrainResponseVariant1SamplingItem.from_hash(item) }
-    end,
-    schemas: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1Schemas.from_hash(value)
-    end,
-    status: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1Status.from_value(value)
-    end,
-    filter_v2: lambda do |value|
-      ::OctridevVercel::GetDrainResponseVariant1FilterV2.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for GetDrainResponseVariant1.
-class GetDrainResponseVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDrainResponseVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDrainResponseVariant1Metadata::DECODERS
-
-  attr_reader :created_at, :delivery, :disabled_at, :disabled_by, :disabled_reason,
-              :first_error_timestamp, :id, :name, :owner_id, :project_ids, :sampling, :schemas,
-              :source, :status, :team_id, :updated_at, :filter_v2, :integration_configuration_uri,
-              :integration_icon, :integration_website, :project_access
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the GetDrainResponse SDK namespace.
-module GetDrainResponse
-  def self.from_hash(hash)
-    lossy = nil
-    [GetDrainResponseVariant0, GetDrainResponseVariant1].each do |type|
-      decoded = type.from_hash(hash)
-      return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-      lossy ||= decoded
-    rescue ::StandardError
-      next
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
     end
-    return lossy unless lossy.nil?
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant0Compression SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant0Compression
-  GZIP = 'gzip'
-  NONE = 'none'
-  VALUES = ['gzip', 'none'].freeze
-  def self.from_value(value)
-    value
+  # Internal model hydration metadata.
+  class SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0Metadata
+    FIELDS = {
+      deployment: 'deployment',
+      log: 'log',
+      project: 'project',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {
+      deployment: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1FilterV2FilterVariant0Deployment.from_hash(value)
+      end,
+      log: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1FilterV2FilterVariant0Log.from_hash(value)
+      end,
+      project: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1FilterV2FilterVariant0Project.from_hash(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1FilterV2FilterVariant0Type.from_value(value)
+      end
+    }.freeze
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant0Encoding SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant0Encoding
-  JSON = 'json'
-  NDJSON = 'ndjson'
-  VALUES = ['json', 'ndjson'].freeze
-  def self.from_value(value)
-    value
+  # API model for GetDrainResponseVariant1FilterV2FilterVariant0.
+  class GetDrainResponseVariant1FilterV2FilterVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant0Metadata::DECODERS
+
+    attr_reader :deployment, :log, :project, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant0SecretVariant1Kind SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant0SecretVariant1Kind
-  INTEGRATION_SECRET = 'INTEGRATION_SECRET'
-  VALUES = ['INTEGRATION_SECRET'].freeze
-  def self.from_value(value)
-    value
+  # Internal model hydration metadata.
+  class SdkInternalGetDrainResponseVariant1FilterV2FilterVariant1Metadata
+    FIELDS = {
+      text: 'text',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      text
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1FilterV2FilterVariant1Type.from_value(value)
+      end
+    }.freeze
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant0Type SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant0Type
-  HTTP = 'http'
-  VALUES = ['http'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # API model for GetDrainResponseVariant1FilterV2FilterVariant1.
+  class GetDrainResponseVariant1FilterV2FilterVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDrainResponseVariant1FilterV2FilterVariant1Metadata::DECODERS
 
-    raise SdkValidationError.new('GetDrainResponseVariant0DeliveryVariant0Type', 'enum', "Unknown GetDrainResponseVariant0DeliveryVariant0Type: #{value}")
+    attr_reader :text, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant1Encoding SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant1Encoding
-  JSON = 'json'
-  PROTO = 'proto'
-  VALUES = ['json', 'proto'].freeze
-  def self.from_value(value)
-    value
+  # Internal model hydration metadata.
+  class SdkInternalGetDrainResponseVariant1FilterV2Metadata
+    FIELDS = {
+      filter: 'filter',
+      version: 'version'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      filter
+      version
+    ].freeze
+    DECODERS = {
+      version: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1FilterV2Version.from_value(value)
+      end
+    }.freeze
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant1SecretVariant1Kind SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant1SecretVariant1Kind
-  INTEGRATION_SECRET = 'INTEGRATION_SECRET'
-  VALUES = ['INTEGRATION_SECRET'].freeze
-  def self.from_value(value)
-    value
+  # API model for GetDrainResponseVariant1FilterV2.
+  class GetDrainResponseVariant1FilterV2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDrainResponseVariant1FilterV2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1FilterV2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDrainResponseVariant1FilterV2Metadata::DECODERS
+
+    attr_reader :filter, :version
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant1Type SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant1Type
-  OTLPHTTP = 'otlphttp'
-  VALUES = ['otlphttp'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetDrainResponseVariant0DeliveryVariant1Type', 'enum', "Unknown GetDrainResponseVariant0DeliveryVariant1Type: #{value}")
+  # Internal model hydration metadata.
+  class SdkInternalGetDrainResponseVariant1ProjectAccessVariant0Metadata
+    FIELDS = {
+      access: 'access',
+      managed_by: 'managedBy'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      access
+      managed_by
+    ].freeze
+    DECODERS = {
+      access: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1ProjectAccessVariant0Access.from_value(value)
+      end,
+      managed_by: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1ProjectAccessVariant0ManagedBy.from_value(value)
+      end
+    }.freeze
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant2Type SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant2Type
-  CLICKHOUSE = 'clickhouse'
-  VALUES = ['clickhouse'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # API model for GetDrainResponseVariant1ProjectAccessVariant0.
+  class GetDrainResponseVariant1ProjectAccessVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDrainResponseVariant1ProjectAccessVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1ProjectAccessVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDrainResponseVariant1ProjectAccessVariant0Metadata::DECODERS
 
-    raise SdkValidationError.new('GetDrainResponseVariant0DeliveryVariant2Type', 'enum', "Unknown GetDrainResponseVariant0DeliveryVariant2Type: #{value}")
+    attr_reader :access, :managed_by
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant3Compression SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant3Compression
-  NONE = 'none'
-  VALUES = ['none'].freeze
-  def self.from_value(value)
-    value
+  # Internal model hydration metadata.
+  class SdkInternalGetDrainResponseVariant1ProjectAccessVariant1Metadata
+    FIELDS = {
+      access: 'access',
+      project_ids: 'projectIds',
+      managed_by: 'managedBy'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      access
+      project_ids
+      managed_by
+    ].freeze
+    DECODERS = {
+      access: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1ProjectAccessVariant1Access.from_value(value)
+      end,
+      managed_by: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1ProjectAccessVariant1ManagedBy.from_value(value)
+      end
+    }.freeze
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant3Encoding SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant3Encoding
-  JSON = 'json'
-  NDJSON = 'ndjson'
-  VALUES = ['json', 'ndjson'].freeze
-  def self.from_value(value)
-    value
+  # API model for GetDrainResponseVariant1ProjectAccessVariant1.
+  class GetDrainResponseVariant1ProjectAccessVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDrainResponseVariant1ProjectAccessVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1ProjectAccessVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDrainResponseVariant1ProjectAccessVariant1Metadata::DECODERS
+
+    attr_reader :access, :project_ids, :managed_by
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant3FileStructure SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant3FileStructure
-  HIVE = 'hive'
-  VALUES = ['hive'].freeze
-  def self.from_value(value)
-    value
+  # Internal model hydration metadata.
+  class SdkInternalGetDrainResponseVariant1Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      delivery: 'delivery',
+      disabled_at: 'disabledAt',
+      disabled_by: 'disabledBy',
+      disabled_reason: 'disabledReason',
+      first_error_timestamp: 'firstErrorTimestamp',
+      id: 'id',
+      name: 'name',
+      owner_id: 'ownerId',
+      project_ids: 'projectIds',
+      sampling: 'sampling',
+      schemas: 'schemas',
+      source: 'source',
+      status: 'status',
+      team_id: 'teamId',
+      updated_at: 'updatedAt',
+      filter_v2: 'filterV2',
+      integration_configuration_uri: 'integrationConfigurationUri',
+      integration_icon: 'integrationIcon',
+      integration_website: 'integrationWebsite',
+      project_access: 'projectAccess'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      delivery
+      id
+      name
+      owner_id
+      schemas
+      source
+      updated_at
+    ].freeze
+    DECODERS = {
+      disabled_reason: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1DisabledReason.from_value(value)
+      end,
+      sampling: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetDrainResponseVariant1SamplingItem.from_hash(item) }
+      end,
+      schemas: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1Schemas.from_hash(value)
+      end,
+      status: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1Status.from_value(value)
+      end,
+      filter_v2: lambda do |value|
+        ::OctridevVercel::GetDrainResponseVariant1FilterV2.from_hash(value)
+      end
+    }.freeze
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant3ObjectAcl SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant3ObjectAcl
-  AUTHENTICATED_READ = 'authenticated-read'
-  AWS_EXEC_READ = 'aws-exec-read'
-  BUCKET_OWNER_FULL_CONTROL = 'bucket-owner-full-control'
-  BUCKET_OWNER_READ = 'bucket-owner-read'
-  PRIVATE = 'private'
-  PUBLIC_READ = 'public-read'
-  PUBLIC_READ_WRITE = 'public-read-write'
-  VALUES = [
-    'authenticated-read', 'aws-exec-read', 'bucket-owner-full-control', 'bucket-owner-read',
-    'private', 'public-read', 'public-read-write'
-  ].freeze
-  def self.from_value(value)
-    value
+  # API model for GetDrainResponseVariant1.
+  class GetDrainResponseVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDrainResponseVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDrainResponseVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDrainResponseVariant1Metadata::DECODERS
+
+    attr_reader :created_at, :delivery, :disabled_at, :disabled_by, :disabled_reason,
+                :first_error_timestamp, :id, :name, :owner_id, :project_ids, :sampling, :schemas,
+                :source, :status, :team_id, :updated_at, :filter_v2, :integration_configuration_uri,
+                :integration_icon, :integration_website, :project_access
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant3ServerSideEncryption SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant3ServerSideEncryption
-  AES256 = 'AES256'
-  AWS_KMS = 'aws:kms'
-  AWS_KMS_DSSE = 'aws:kms:dsse'
-  VALUES = ['AES256', 'aws:kms', 'aws:kms:dsse'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponse SDK namespace.
+  module GetDrainResponse
+    def self.from_hash(hash)
+      lossy = nil
+      [GetDrainResponseVariant0, GetDrainResponseVariant1].each do |type|
+        decoded = type.from_hash(hash)
+        return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+        lossy ||= decoded
+      rescue ::StandardError
+        next
+      end
+      lossy unless lossy.nil?
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant3Type SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant3Type
-  S3 = 's3'
-  VALUES = ['s3'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetDrainResponseVariant0DeliveryVariant3Type', 'enum', "Unknown GetDrainResponseVariant0DeliveryVariant3Type: #{value}")
+  # Defines the GetDrainResponseVariant0DeliveryVariant0Compression SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant0Compression
+    GZIP = 'gzip'
+    NONE = 'none'
+    VALUES = %w[gzip none].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant4Target SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant4Target
-  VERCEL_OTEL_TRACES_DB = 'vercel-otel-traces-db'
-  VALUES = ['vercel-otel-traces-db'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponseVariant0DeliveryVariant0Encoding SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant0Encoding
+    JSON = 'json'
+    NDJSON = 'ndjson'
+    VALUES = %w[json ndjson].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0DeliveryVariant4Type SDK namespace.
-module GetDrainResponseVariant0DeliveryVariant4Type
-  INTERNAL = 'internal'
-  VALUES = ['internal'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetDrainResponseVariant0DeliveryVariant4Type', 'enum', "Unknown GetDrainResponseVariant0DeliveryVariant4Type: #{value}")
+  # Defines the GetDrainResponseVariant0DeliveryVariant0SecretVariant1Kind SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant0SecretVariant1Kind
+    INTEGRATION_SECRET = 'INTEGRATION_SECRET'
+    VALUES = ['INTEGRATION_SECRET'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0DisabledReason SDK namespace.
-module GetDrainResponseVariant0DisabledReason
-  ACCOUNT_PLAN_DOWNGRADE = 'account-plan-downgrade'
-  DISABLED_BY_ADMIN = 'disabled-by-admin'
-  DISABLED_BY_OWNER = 'disabled-by-owner'
-  FEATURE_NOT_AVAILABLE = 'feature-not-available'
-  LIMITS_EXCEEDED = 'limits-exceeded'
-  VALUES = [
-    'account-plan-downgrade', 'disabled-by-admin', 'disabled-by-owner', 'feature-not-available',
-    'limits-exceeded'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponseVariant0DeliveryVariant0Type SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant0Type
+    HTTP = 'http'
+    VALUES = ['http'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDrainResponseVariant0DeliveryVariant0Type', 'enum', "Unknown GetDrainResponseVariant0DeliveryVariant0Type: #{value}")
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0FilterV2FilterVariant0DeploymentEnvironmentsItem SDK namespace.
-module GetDrainResponseVariant0FilterV2FilterVariant0DeploymentEnvironmentsItem
-  PREVIEW = 'preview'
-  PRODUCTION = 'production'
-  VALUES = ['preview', 'production'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponseVariant0DeliveryVariant1Encoding SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant1Encoding
+    JSON = 'json'
+    PROTO = 'proto'
+    VALUES = %w[json proto].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0FilterV2FilterVariant0LogLegacyExcludX181a2d80e7 SDK namespace.
-module GetDrainResponseVariant0FilterV2FilterVariant0LogLegacyExcludX181a2d80e7
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponseVariant0DeliveryVariant1SecretVariant1Kind SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant1SecretVariant1Kind
+    INTEGRATION_SECRET = 'INTEGRATION_SECRET'
+    VALUES = ['INTEGRATION_SECRET'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0FilterV2FilterVariant0LogSourcesItem SDK namespace.
-module GetDrainResponseVariant0FilterV2FilterVariant0LogSourcesItem
-  BUILD = 'build'
-  EDGE = 'edge'
-  EXTERNAL = 'external'
-  FIREWALL = 'firewall'
-  LAMBDA = 'lambda'
-  REDIRECT = 'redirect'
-  STATIC = 'static'
-  VALUES = ['build', 'edge', 'external', 'firewall', 'lambda', 'redirect', 'static'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponseVariant0DeliveryVariant1Type SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant1Type
+    OTLPHTTP = 'otlphttp'
+    VALUES = ['otlphttp'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDrainResponseVariant0DeliveryVariant1Type', 'enum', "Unknown GetDrainResponseVariant0DeliveryVariant1Type: #{value}")
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0FilterV2FilterVariant0Type SDK namespace.
-module GetDrainResponseVariant0FilterV2FilterVariant0Type
-  BASIC = 'basic'
-  VALUES = ['basic'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the GetDrainResponseVariant0DeliveryVariant2Type SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant2Type
+    CLICKHOUSE = 'clickhouse'
+    VALUES = ['clickhouse'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('GetDrainResponseVariant0FilterV2FilterVariant0Type', 'enum', "Unknown GetDrainResponseVariant0FilterV2FilterVariant0Type: #{value}")
+      raise SdkValidationError.new('GetDrainResponseVariant0DeliveryVariant2Type', 'enum', "Unknown GetDrainResponseVariant0DeliveryVariant2Type: #{value}")
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0FilterV2FilterVariant1Type SDK namespace.
-module GetDrainResponseVariant0FilterV2FilterVariant1Type
-  ODATA = 'odata'
-  VALUES = ['odata'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetDrainResponseVariant0FilterV2FilterVariant1Type', 'enum', "Unknown GetDrainResponseVariant0FilterV2FilterVariant1Type: #{value}")
+  # Defines the GetDrainResponseVariant0DeliveryVariant3Compression SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant3Compression
+    NONE = 'none'
+    VALUES = ['none'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0FilterV2Version SDK namespace.
-module GetDrainResponseVariant0FilterV2Version
-  V2 = 'v2'
-  VALUES = ['v2'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponseVariant0DeliveryVariant3Encoding SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant3Encoding
+    JSON = 'json'
+    NDJSON = 'ndjson'
+    VALUES = %w[json ndjson].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0SamplingItemEnv SDK namespace.
-module GetDrainResponseVariant0SamplingItemEnv
-  PREVIEW = 'preview'
-  PRODUCTION = 'production'
-  VALUES = ['preview', 'production'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponseVariant0DeliveryVariant3FileStructure SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant3FileStructure
+    HIVE = 'hive'
+    VALUES = ['hive'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0SamplingItemType SDK namespace.
-module GetDrainResponseVariant0SamplingItemType
-  HEAD_SAMPLING = 'head_sampling'
-  VALUES = ['head_sampling'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponseVariant0DeliveryVariant3ObjectAcl SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant3ObjectAcl
+    AUTHENTICATED_READ = 'authenticated-read'
+    AWS_EXEC_READ = 'aws-exec-read'
+    BUCKET_OWNER_FULL_CONTROL = 'bucket-owner-full-control'
+    BUCKET_OWNER_READ = 'bucket-owner-read'
+    PRIVATE = 'private'
+    PUBLIC_READ = 'public-read'
+    PUBLIC_READ_WRITE = 'public-read-write'
+    VALUES = %w[
+      authenticated-read aws-exec-read bucket-owner-full-control bucket-owner-read
+      private public-read public-read-write
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0SourceVariant0DefaultFor SDK namespace.
-module GetDrainResponseVariant0SourceVariant0DefaultFor
-  EVE_TRACING = 'eve-tracing'
-  VALUES = ['eve-tracing'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponseVariant0DeliveryVariant3ServerSideEncryption SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant3ServerSideEncryption
+    AES256 = 'AES256'
+    AWS_KMS = 'aws:kms'
+    AWS_KMS_DSSE = 'aws:kms:dsse'
+    VALUES = ['AES256', 'aws:kms', 'aws:kms:dsse'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0SourceVariant0Kind SDK namespace.
-module GetDrainResponseVariant0SourceVariant0Kind
-  SELF_SERVED = 'self-served'
-  VALUES = ['self-served'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the GetDrainResponseVariant0DeliveryVariant3Type SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant3Type
+    S3 = 's3'
+    VALUES = ['s3'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('GetDrainResponseVariant0SourceVariant0Kind', 'enum', "Unknown GetDrainResponseVariant0SourceVariant0Kind: #{value}")
+      raise SdkValidationError.new('GetDrainResponseVariant0DeliveryVariant3Type', 'enum', "Unknown GetDrainResponseVariant0DeliveryVariant3Type: #{value}")
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0SourceVariant1Kind SDK namespace.
-module GetDrainResponseVariant0SourceVariant1Kind
-  INTEGRATION = 'integration'
-  VALUES = ['integration'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetDrainResponseVariant0SourceVariant1Kind', 'enum', "Unknown GetDrainResponseVariant0SourceVariant1Kind: #{value}")
+  # Defines the GetDrainResponseVariant0DeliveryVariant4Target SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant4Target
+    VERCEL_OTEL_TRACES_DB = 'vercel-otel-traces-db'
+    VALUES = ['vercel-otel-traces-db'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant0Status SDK namespace.
-module GetDrainResponseVariant0Status
-  DISABLED = 'disabled'
-  ENABLED = 'enabled'
-  ERRORED = 'errored'
-  VALUES = ['disabled', 'enabled', 'errored'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponseVariant0DeliveryVariant4Type SDK namespace.
+  module GetDrainResponseVariant0DeliveryVariant4Type
+    INTERNAL = 'internal'
+    VALUES = ['internal'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDrainResponseVariant0DeliveryVariant4Type', 'enum', "Unknown GetDrainResponseVariant0DeliveryVariant4Type: #{value}")
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant1DeliveryVariant0Compression SDK namespace.
-module GetDrainResponseVariant1DeliveryVariant0Compression
-  GZIP = 'gzip'
-  NONE = 'none'
-  VALUES = ['gzip', 'none'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponseVariant0DisabledReason SDK namespace.
+  module GetDrainResponseVariant0DisabledReason
+    ACCOUNT_PLAN_DOWNGRADE = 'account-plan-downgrade'
+    DISABLED_BY_ADMIN = 'disabled-by-admin'
+    DISABLED_BY_OWNER = 'disabled-by-owner'
+    FEATURE_NOT_AVAILABLE = 'feature-not-available'
+    LIMITS_EXCEEDED = 'limits-exceeded'
+    VALUES = %w[
+      account-plan-downgrade disabled-by-admin disabled-by-owner feature-not-available
+      limits-exceeded
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant1DeliveryVariant0Encoding SDK namespace.
-module GetDrainResponseVariant1DeliveryVariant0Encoding
-  JSON = 'json'
-  NDJSON = 'ndjson'
-  VALUES = ['json', 'ndjson'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponseVariant0FilterV2FilterVariant0DeploymentEnvironmentsItem SDK namespace.
+  module GetDrainResponseVariant0FilterV2FilterVariant0DeploymentEnvironmentsItem
+    PREVIEW = 'preview'
+    PRODUCTION = 'production'
+    VALUES = %w[preview production].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant1DeliveryVariant0SecretVariant1Kind SDK namespace.
-module GetDrainResponseVariant1DeliveryVariant0SecretVariant1Kind
-  INTEGRATION_SECRET = 'INTEGRATION_SECRET'
-  VALUES = ['INTEGRATION_SECRET'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetDrainResponseVariant0FilterV2FilterVariant0LogLegacyExcludX181a2d80e7 SDK namespace.
+  module GetDrainResponseVariant0FilterV2FilterVariant0LogLegacyExcludX181a2d80e7
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetDrainResponseVariant1DeliveryVariant0Type SDK namespace.
-module GetDrainResponseVariant1DeliveryVariant0Type
-  HTTP = 'http'
-  VALUES = ['http'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetDrainResponseVariant1DeliveryVariant0Type', 'enum', "Unknown GetDrainResponseVariant1DeliveryVariant0Type: #{value}")
+  # Defines the GetDrainResponseVariant0FilterV2FilterVariant0LogSourcesItem SDK namespace.
+  module GetDrainResponseVariant0FilterV2FilterVariant0LogSourcesItem
+    BUILD = 'build'
+    EDGE = 'edge'
+    EXTERNAL = 'external'
+    FIREWALL = 'firewall'
+    LAMBDA = 'lambda'
+    REDIRECT = 'redirect'
+    STATIC = 'static'
+    VALUES = %w[build edge external firewall lambda redirect static].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
+
+  # Defines the GetDrainResponseVariant0FilterV2FilterVariant0Type SDK namespace.
+  module GetDrainResponseVariant0FilterV2FilterVariant0Type
+    BASIC = 'basic'
+    VALUES = ['basic'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDrainResponseVariant0FilterV2FilterVariant0Type', 'enum', "Unknown GetDrainResponseVariant0FilterV2FilterVariant0Type: #{value}")
+    end
+  end
+
+  # Defines the GetDrainResponseVariant0FilterV2FilterVariant1Type SDK namespace.
+  module GetDrainResponseVariant0FilterV2FilterVariant1Type
+    ODATA = 'odata'
+    VALUES = ['odata'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDrainResponseVariant0FilterV2FilterVariant1Type', 'enum', "Unknown GetDrainResponseVariant0FilterV2FilterVariant1Type: #{value}")
+    end
+  end
+
+  # Defines the GetDrainResponseVariant0FilterV2Version SDK namespace.
+  module GetDrainResponseVariant0FilterV2Version
+    V2 = 'v2'
+    VALUES = ['v2'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDrainResponseVariant0SamplingItemEnv SDK namespace.
+  module GetDrainResponseVariant0SamplingItemEnv
+    PREVIEW = 'preview'
+    PRODUCTION = 'production'
+    VALUES = %w[preview production].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDrainResponseVariant0SamplingItemType SDK namespace.
+  module GetDrainResponseVariant0SamplingItemType
+    HEAD_SAMPLING = 'head_sampling'
+    VALUES = ['head_sampling'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDrainResponseVariant0SourceVariant0DefaultFor SDK namespace.
+  module GetDrainResponseVariant0SourceVariant0DefaultFor
+    EVE_TRACING = 'eve-tracing'
+    VALUES = ['eve-tracing'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDrainResponseVariant0SourceVariant0Kind SDK namespace.
+  module GetDrainResponseVariant0SourceVariant0Kind
+    SELF_SERVED = 'self-served'
+    VALUES = ['self-served'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDrainResponseVariant0SourceVariant0Kind', 'enum', "Unknown GetDrainResponseVariant0SourceVariant0Kind: #{value}")
+    end
+  end
+
+  # Defines the GetDrainResponseVariant0SourceVariant1Kind SDK namespace.
+  module GetDrainResponseVariant0SourceVariant1Kind
+    INTEGRATION = 'integration'
+    VALUES = ['integration'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDrainResponseVariant0SourceVariant1Kind', 'enum', "Unknown GetDrainResponseVariant0SourceVariant1Kind: #{value}")
+    end
+  end
+
+  # Defines the GetDrainResponseVariant0Status SDK namespace.
+  module GetDrainResponseVariant0Status
+    DISABLED = 'disabled'
+    ENABLED = 'enabled'
+    ERRORED = 'errored'
+    VALUES = %w[disabled enabled errored].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDrainResponseVariant1DeliveryVariant0Compression SDK namespace.
+  module GetDrainResponseVariant1DeliveryVariant0Compression
+    GZIP = 'gzip'
+    NONE = 'none'
+    VALUES = %w[gzip none].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDrainResponseVariant1DeliveryVariant0Encoding SDK namespace.
+  module GetDrainResponseVariant1DeliveryVariant0Encoding
+    JSON = 'json'
+    NDJSON = 'ndjson'
+    VALUES = %w[json ndjson].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDrainResponseVariant1DeliveryVariant0SecretVariant1Kind SDK namespace.
+  module GetDrainResponseVariant1DeliveryVariant0SecretVariant1Kind
+    INTEGRATION_SECRET = 'INTEGRATION_SECRET'
+    VALUES = ['INTEGRATION_SECRET'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDrainResponseVariant1DeliveryVariant0Type SDK namespace.
+  module GetDrainResponseVariant1DeliveryVariant0Type
+    HTTP = 'http'
+    VALUES = ['http'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDrainResponseVariant1DeliveryVariant0Type', 'enum', "Unknown GetDrainResponseVariant1DeliveryVariant0Type: #{value}")
+    end
+  end
 end

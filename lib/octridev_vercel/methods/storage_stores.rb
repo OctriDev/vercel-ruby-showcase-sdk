@@ -10,29 +10,22 @@ module OctridevVercel
     # Defines the Storage SDK namespace.
     module Storage
       # Retrieves a storage store by its identifier. Use `skip-metadata` to control whether project metadata is included and `include-guides` to control whether guides are included in the response.
-      singleton_class.define_method(:get_storage_stores_by_id) do |
-        config:,
-        id:,
-        skip_metadata: NOT_GIVEN,
-        include_guides: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_storage_stores_by_id) do |config:, id:, skip_metadata: NOT_GIVEN, include_guides: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/storage/stores/",
+            '/storage/stores/',
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'skip-metadata' => QueryValue.new(skip_metadata, style: 'form', explode: true),
-            'include-guides' => QueryValue.new(include_guides, style: 'form', explode: true),
+            'include-guides' => QueryValue.new(include_guides, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Storage::GetStorageStoresByIdResponse,
           decoder: :json,
           operation_id: 'get_storage_stores_by_id',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -45,25 +38,24 @@ module OctridevVercel
         project_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 70)
 
         Validation.if_given(project_id) { Validation.validate_length('projectId', project_id, max: 50) }
 
         SdkClient.request(
           'POST',
-          "/storage/stores/blob",
+          '/storage/stores/blob',
           config: config,
           body: {
             'name' => name,
             'region' => region,
             'access' => access,
-            'projectId' => project_id,
+            'projectId' => project_id
           },
           return_type: ::OctridevVercel::Methods::Storage::CreateStorageStoresBlobResponse,
           decoder: :json,
           operation_id: 'create_storage_stores_blob',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -73,18 +65,17 @@ module OctridevVercel
         id:,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/storage/stores/blob/",
+            '/storage/stores/blob/',
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Storage::DeleteStorageStoresBlobByIdResponse,
           decoder: :json,
           operation_id: 'delete_storage_stores_blob_by_id',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

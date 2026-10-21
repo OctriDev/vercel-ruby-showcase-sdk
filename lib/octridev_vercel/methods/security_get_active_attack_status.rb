@@ -16,30 +16,22 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_active_attack_status) do |
-        config:,
-        project_id:,
-        since: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_active_attack_status) do |config:, project_id:, since: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         Validation.if_given(since) { Validation.validate_range('since', since, min: 1) }
 
         SdkClient.request(
           'GET',
-          "/v1/security/firewall/attack-status",
+          '/v1/security/firewall/attack-status',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'since' => QueryValue.new(since, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'get_active_attack_status',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

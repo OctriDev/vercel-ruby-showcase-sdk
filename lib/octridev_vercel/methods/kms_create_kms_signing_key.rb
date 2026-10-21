@@ -45,7 +45,6 @@ module OctridevVercel
         import_key_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(revoke_previous_after_hours) do
           Validation.validate_range('revokePreviousAfterHours', revoke_previous_after_hours, min: 0)
         end
@@ -58,26 +57,26 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id),
-            "/keys"
+            '/keys'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'activation' => activation,
             'revokePreviousAfterHours' => revoke_previous_after_hours,
             'revokePreviousAt' => revoke_previous_at,
             'importKey' => import_key,
-            'importKeyId' => import_key_id,
+            'importKeyId' => import_key_id
           },
           return_type: ::OctridevVercel::Methods::Kms::CreateKmsSigningKeyResponse,
           decoder: :json,
           operation_id: 'create_kms_signing_key',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

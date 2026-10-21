@@ -31,28 +31,27 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/cmd/",
+            '/cmd/',
             SdkClient.encode_path_segment(cmd_id),
-            "/kill"
+            '/kill'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'signal' => signal,
+            'signal' => signal
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::KillSessionCommandResponse,
           decoder: :json,
           operation_id: 'kill_session_command',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

@@ -35,7 +35,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('idOrName', id_or_name, max: 255)
 
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
@@ -43,9 +42,9 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            "/v1/vcr/repository/",
+            '/v1/vcr/repository/',
             SdkClient.encode_path_segment(id_or_name),
-            "/tags"
+            '/tags'
           ].join,
           config: config,
           query: {
@@ -55,16 +54,16 @@ module OctridevVercel
             'sortBy' => QueryValue.new(sort_by, style: 'form', explode: true),
             'sortOrder' => QueryValue.new(sort_order, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Vcr::ListRepositoryTagsResponse,
           decoder: :json,
           operation_id: 'list_repository_tags',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
-    ListRepositoryTagsPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
+      ListRepositoryTagsPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
 
       # Lists tags in a VCR repository, with optional pagination and sorting for non-pinned tags. Use `cursor` to continue from a previous page and the sort parameters to control tag ordering. The response includes a `nextCursor` when another page is available.
       #
@@ -108,9 +107,11 @@ module OctridevVercel
             )
             items = page.tags || []
             break if items.empty?
+
             items.each { |item| y << item }
             next_cursor = page.next_cursor
             break if next_cursor.nil?
+
             cursor = next_cursor
           end
         end
@@ -144,10 +145,12 @@ module OctridevVercel
             )
             items = page.tags || []
             break if items.empty?
+
             next_cursor = page.next_cursor
             has_more = !next_cursor.nil?
             y << ListRepositoryTagsPage.new(data: page, items: items, has_more: has_more)
             break unless has_more
+
             cursor = next_cursor
           end
         end

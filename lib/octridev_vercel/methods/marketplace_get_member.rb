@@ -12,26 +12,20 @@ module OctridevVercel
       # Retrieves the role and other available information for a member of an integration installation. Use the member's user ID from the SSO OIDC token's `user_id` claim to identify the member.
       #
       # Returns the member role and other information for a given member ID ("user_id" claim in the SSO OIDC token).
-      singleton_class.define_method(:get_member) do |
-        config:,
-        integration_configuration_id:,
-        member_id:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_member) do |config:, integration_configuration_id:, member_id:, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/member/",
+            '/member/',
             SdkClient.encode_path_segment(member_id)
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Marketplace::GetMemberResponse,
           decoder: :json,
           operation_id: 'get_member',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

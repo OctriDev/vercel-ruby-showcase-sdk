@@ -25,7 +25,6 @@ module OctridevVercel
         project_ids: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_pattern('url', url, '^https?://')
         Validation.validate_uri('url', url)
 
@@ -35,21 +34,21 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          "/v1/webhooks",
+          '/v1/webhooks',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'url' => url,
             'events' => events,
-            'projectIds' => project_ids,
+            'projectIds' => project_ids
           },
           return_type: ::OctridevVercel::Methods::V35f83988::CreateWebhookResponse,
           decoder: :json,
           operation_id: 'create_webhook',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -60,30 +59,23 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_webhooks) do |
-        config:,
-        project_id: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_webhooks) do |config:, project_id: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         Validation.if_given(project_id) do
           Validation.validate_pattern('projectId', project_id, '^[a-zA-z0-9_]+$')
         end
 
         SdkClient.request(
           'GET',
-          "/v1/webhooks",
+          '/v1/webhooks',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'get_webhooks',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -94,29 +86,22 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_webhook) do |
-        config:,
-        id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_webhook) do |config:, id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/webhooks/",
+            '/v1/webhooks/',
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::V35f83988::GetWebhookResponse,
           decoder: :json,
           operation_id: 'get_webhook',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -134,21 +119,20 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/webhooks/",
+            '/v1/webhooks/',
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'delete_webhook',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

@@ -17,30 +17,23 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_flag_settings) do |
-        config:,
-        project_id_or_name:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_flag_settings) do |config:, project_id_or_name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id_or_name),
-            "/feature-flags/settings"
+            '/feature-flags/settings'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::FeatureFlags::GetFlagSettingsResponse,
           decoder: :json,
           operation_id: 'get_flag_settings',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -63,30 +56,29 @@ module OctridevVercel
         environments: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(entities) { Validation.validate_items('entities', entities, max: 32) }
 
         SdkClient.request(
           'PATCH',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id_or_name),
-            "/feature-flags/settings"
+            '/feature-flags/settings'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'enabled' => enabled,
             'entities' => entities,
-            'environments' => environments,
+            'environments' => environments
           },
           return_type: ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSettingsResponse,
           decoder: :json,
           operation_id: 'update_flag_settings',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -107,25 +99,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         SdkClient.request(
           'GET',
           [
-            "/v1/teams/",
+            '/v1/teams/',
             SdkClient.encode_path_segment(team_id),
-            "/feature-flags/settings"
+            '/feature-flags/settings'
           ].join,
           config: config,
           query: {
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'list_team_flag_settings',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

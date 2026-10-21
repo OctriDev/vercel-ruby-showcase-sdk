@@ -16,26 +16,15 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_billing_plans) do |
-        config:,
-        integration_id_or_slug:,
-        product_id_or_slug:,
-        integration_configuration_id: NOT_GIVEN,
-        metadata: NOT_GIVEN,
-        source: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_billing_plans) do |config:, integration_id_or_slug:, product_id_or_slug:, integration_configuration_id: NOT_GIVEN, metadata: NOT_GIVEN, source: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/integrations/integration/",
+            '/v1/integrations/integration/',
             SdkClient.encode_path_segment(integration_id_or_slug),
-            "/products/",
+            '/products/',
             SdkClient.encode_path_segment(product_id_or_slug),
-            "/plans"
+            '/plans'
           ].join,
           config: config,
           query: {
@@ -43,12 +32,12 @@ module OctridevVercel
             'metadata' => QueryValue.new(metadata, style: 'form', explode: true),
             'source' => QueryValue.new(source, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Integrations::GetBillingPlansResponse,
           decoder: :json,
           operation_id: 'get_billing_plans',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

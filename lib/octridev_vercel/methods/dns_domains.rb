@@ -19,23 +19,13 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_records) do |
-        config:,
-        domain:,
-        limit: NOT_GIVEN,
-        since: NOT_GIVEN,
-        until_: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_records) do |config:, domain:, limit: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v5/domains/",
+            '/v5/domains/',
             SdkClient.encode_path_segment(domain),
-            "/records"
+            '/records'
           ].join,
           config: config,
           query: {
@@ -43,11 +33,11 @@ module OctridevVercel
             'since' => QueryValue.new(since, style: 'form', explode: true),
             'until' => QueryValue.new(until_, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'get_records',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -69,26 +59,25 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/domains/",
+            '/v2/domains/',
             SdkClient.encode_path_segment(domain),
-            "/records"
+            '/records'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'type' => type,
+            'type' => type
           },
           return_type: ::OctridevVercel::CreateRecordResponse,
           decoder: :json,
           operation_id: 'create_record',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -122,23 +111,22 @@ module OctridevVercel
         comment: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(type) { Validation.validate_length('type', type, max: 255) }
 
-        Validation.if_given(ttl) { Validation.validate_range('ttl', ttl, min: 60, max: 2147483647) }
+        Validation.if_given(ttl) { Validation.validate_range('ttl', ttl, min: 60, max: 2_147_483_647) }
 
         Validation.if_given(comment) { Validation.validate_length('comment', comment, max: 500) }
 
         SdkClient.request(
           'PATCH',
           [
-            "/v1/domains/records/",
+            '/v1/domains/records/',
             SdkClient.encode_path_segment(record_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
@@ -148,12 +136,12 @@ module OctridevVercel
             'mxPriority' => mx_priority,
             'srv' => srv,
             'https' => https,
-            'comment' => comment,
+            'comment' => comment
           },
           return_type: ::OctridevVercel::Methods::Dns::UpdateRecordResponse,
           decoder: :json,
           operation_id: 'update_record',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -172,23 +160,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v2/domains/",
+            '/v2/domains/',
             SdkClient.encode_path_segment(domain),
-            "/records/",
+            '/records/',
             SdkClient.encode_path_segment(record_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'remove_record',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

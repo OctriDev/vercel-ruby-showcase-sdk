@@ -52,7 +52,6 @@ module OctridevVercel
         prepayment_amount_cents: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 128)
 
         Validation.validate_pattern('integrationConfigurationId', integration_configuration_id, '^icfg_[a-zA-Z0-9]+$')
@@ -63,11 +62,11 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          "/v1/storage/stores/integration/direct",
+          '/v1/storage/stores/integration/direct',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
@@ -79,12 +78,12 @@ module OctridevVercel
             'source' => source,
             'billingPlanId' => billing_plan_id,
             'paymentMethodId' => payment_method_id,
-            'prepaymentAmountCents' => prepayment_amount_cents,
+            'prepaymentAmountCents' => prepayment_amount_cents
           },
           return_type: ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponse,
           decoder: :json,
           operation_id: 'create_integration_store_direct',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

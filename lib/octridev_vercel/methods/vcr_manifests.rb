@@ -26,7 +26,6 @@ module OctridevVercel
         reference:,
         request_options: nil
       )
-
         Validation.validate_length('teamSlug', team_slug, max: 255)
         Validation.validate_pattern('teamSlug', team_slug, '^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$')
 
@@ -42,19 +41,19 @@ module OctridevVercel
         SdkClient.request(
           'PUT',
           [
-            "/v2/",
+            '/v2/',
             SdkClient.encode_path_segment(team_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(project_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(repository_name),
-            "/manifests/",
+            '/manifests/',
             SdkClient.encode_path_segment(reference)
           ].join,
           config: config,
           decoder: :json,
           operation_id: 'replace_by_team_slug_by_project_slug_by_repository_name_manifests_by_reference',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -75,7 +74,6 @@ module OctridevVercel
         reference:,
         request_options: nil
       )
-
         Validation.validate_length('teamSlug', team_slug, max: 255)
         Validation.validate_pattern('teamSlug', team_slug, '^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$')
 
@@ -91,19 +89,19 @@ module OctridevVercel
         SdkClient.request(
           'HEAD',
           [
-            "/v2/",
+            '/v2/',
             SdkClient.encode_path_segment(team_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(project_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(repository_name),
-            "/manifests/",
+            '/manifests/',
             SdkClient.encode_path_segment(reference)
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'head_by_team_slug_by_project_slug_by_repository_name_manifests_by_reference',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -116,15 +114,7 @@ module OctridevVercel
       #   component.
       # @param repository_name [String] Single Docker repository name component.
       # @param reference [String] Manifest reference: a tag or digest.
-      singleton_class.define_method(:get_by_team_slug_by_project_slug_by_repository_name_manifests_by_reference) do |
-        config:,
-        team_slug:,
-        project_slug:,
-        repository_name:,
-        reference:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_by_team_slug_by_project_slug_by_repository_name_manifests_by_reference) do |config:, team_slug:, project_slug:, repository_name:, reference:, request_options: nil|
         Validation.validate_length('teamSlug', team_slug, max: 255)
         Validation.validate_pattern('teamSlug', team_slug, '^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$')
 
@@ -140,19 +130,19 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            "/v2/",
+            '/v2/',
             SdkClient.encode_path_segment(team_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(project_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(repository_name),
-            "/manifests/",
+            '/manifests/',
             SdkClient.encode_path_segment(reference)
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'get_by_team_slug_by_project_slug_by_repository_name_manifests_by_reference',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -173,7 +163,6 @@ module OctridevVercel
         reference:,
         request_options: nil
       )
-
         Validation.validate_length('teamSlug', team_slug, max: 255)
         Validation.validate_pattern('teamSlug', team_slug, '^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$')
 
@@ -189,19 +178,19 @@ module OctridevVercel
         SdkClient.request(
           'DELETE',
           [
-            "/v2/",
+            '/v2/',
             SdkClient.encode_path_segment(team_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(project_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(repository_name),
-            "/manifests/",
+            '/manifests/',
             SdkClient.encode_path_segment(reference)
           ].join,
           config: config,
           decoder: :json,
           operation_id: 'delete_by_team_slug_by_project_slug_by_repository_name_manifests_by_reference',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

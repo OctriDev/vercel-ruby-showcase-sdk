@@ -12,15 +12,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListNamedSandboxesResponsePaginationMetadata
         FIELDS = {
-          count: "count",
-          next_: "next",
+          count: 'count',
+          next_: 'next'
         }.freeze
         REQUIRED_FIELDS = %i[
           count
           next_
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
         NULLABLE_FIELDS = %i[
           next_
         ].freeze
@@ -52,8 +51,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListNamedSandboxesResponseMetadata
         FIELDS = {
-          pagination: "pagination",
-          sandboxes: "sandboxes",
+          pagination: 'pagination',
+          sandboxes: 'sandboxes'
         }.freeze
         REQUIRED_FIELDS = %i[
           pagination
@@ -65,7 +64,7 @@ module OctridevVercel
           end,
           sandboxes: lambda do |value|
             value&.map { |item| ::OctridevVercel::NamedSandbox.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -95,13 +94,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesV2ResourcesMetadata
         FIELDS = {
-          vcpus: "vcpus",
-          memory: "memory",
+          vcpus: 'vcpus',
+          memory: 'memory'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateSandboxesV2Resources.
@@ -134,15 +131,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesV2KeepLastSnapshotsMetadata
         FIELDS = {
-          count: "count",
-          expiration: "expiration",
-          delete_evicted: "deleteEvicted",
+          count: 'count',
+          expiration: 'expiration',
+          delete_evicted: 'deleteEvicted'
         }.freeze
         REQUIRED_FIELDS = %i[
           count
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateSandboxesV2KeepLastSnapshots.
@@ -177,28 +173,27 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesV2Metadata
         FIELDS = {
-          network_policy: "networkPolicy",
-          runtime: "runtime",
-          architecture: "architecture",
-          resources: "resources",
-          source: "source",
-          project_id: "projectId",
-          ports: "ports",
-          image: "image",
-          timeout: "timeout",
-          env: "env",
-          mounts: "mounts",
-          region: "region",
-          failover_regions: "failoverRegions",
-          network_id: "networkId",
-          name: "name",
-          persistent: "persistent",
-          snapshot_expiration: "snapshotExpiration",
-          keep_last_snapshots: "keepLastSnapshots",
-          tags: "tags",
+          network_policy: 'networkPolicy',
+          runtime: 'runtime',
+          architecture: 'architecture',
+          resources: 'resources',
+          source: 'source',
+          project_id: 'projectId',
+          ports: 'ports',
+          image: 'image',
+          timeout: 'timeout',
+          env: 'env',
+          mounts: 'mounts',
+          region: 'region',
+          failover_regions: 'failoverRegions',
+          network_id: 'networkId',
+          name: 'name',
+          persistent: 'persistent',
+          snapshot_expiration: 'snapshotExpiration',
+          keep_last_snapshots: 'keepLastSnapshots',
+          tags: 'tags'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           network_policy: lambda do |value|
             ::OctridevVercel::CreateSandboxesV2RequestNetworkPolicy.from_hash(value)
@@ -223,7 +218,7 @@ module OctridevVercel
           end,
           keep_last_snapshots: lambda do |value|
             ::OctridevVercel::Methods::Sandboxes::CreateSandboxesV2KeepLastSnapshots.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -290,9 +285,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesV2ResponseMetadata
         FIELDS = {
-          routes: "routes",
-          sandbox: "sandbox",
-          session: "session",
+          routes: 'routes',
+          sandbox: 'sandbox',
+          session: 'session'
         }.freeze
         REQUIRED_FIELDS = %i[
           routes
@@ -308,7 +303,7 @@ module OctridevVercel
           end,
           session: lambda do |value|
             ::OctridevVercel::Session.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -342,15 +337,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListDrivesResponsePaginationMetadata
         FIELDS = {
-          count: "count",
-          next_: "next",
+          count: 'count',
+          next_: 'next'
         }.freeze
         REQUIRED_FIELDS = %i[
           count
           next_
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
         NULLABLE_FIELDS = %i[
           next_
         ].freeze
@@ -382,8 +376,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListDrivesResponseMetadata
         FIELDS = {
-          drives: "drives",
-          pagination: "pagination",
+          drives: 'drives',
+          pagination: 'pagination'
         }.freeze
         REQUIRED_FIELDS = %i[
           drives
@@ -395,7 +389,7 @@ module OctridevVercel
           end,
           pagination: lambda do |value|
             ::OctridevVercel::Methods::Sandboxes::ListDrivesResponsePagination.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -425,7 +419,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDriveResponseMetadata
         FIELDS = {
-          drive: "drive",
+          drive: 'drive'
         }.freeze
         REQUIRED_FIELDS = %i[
           drive
@@ -433,7 +427,7 @@ module OctridevVercel
         DECODERS = {
           drive: lambda do |value|
             ::OctridevVercel::Drive.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -464,16 +458,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetOrCreateDriveMetadata
         FIELDS = {
-          project_id: "projectId",
-          max_size_bytes: "maxSizeBytes",
-          region: "region",
+          project_id: 'projectId',
+          max_size_bytes: 'maxSizeBytes',
+          region: 'region'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           region: lambda do |value|
             ::OctridevVercel::Methods::Sandboxes::GetOrCreateDriveRegion.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -508,7 +501,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetOrCreateDriveResponseMetadata
         FIELDS = {
-          drive: "drive",
+          drive: 'drive'
         }.freeze
         REQUIRED_FIELDS = %i[
           drive
@@ -516,7 +509,7 @@ module OctridevVercel
         DECODERS = {
           drive: lambda do |value|
             ::OctridevVercel::Drive.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -547,7 +540,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteDriveResponseMetadata
         FIELDS = {
-          drive: "drive",
+          drive: 'drive'
         }.freeze
         REQUIRED_FIELDS = %i[
           drive
@@ -555,7 +548,7 @@ module OctridevVercel
         DECODERS = {
           drive: lambda do |value|
             ::OctridevVercel::Drive.from_hash(value)
-          end,
+          end
         }.freeze
       end
     end

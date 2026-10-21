@@ -25,29 +25,28 @@ module OctridevVercel
         current_route: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('prompt', prompt, max: 2000)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id),
-            "/routes/generate"
+            '/routes/generate'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'prompt' => prompt,
-            'currentRoute' => current_route,
+            'currentRoute' => current_route
           },
           return_type: ::OctridevVercel::Methods::ProjectRoutes::GenerateRouteResponse,
           decoder: :json,
           operation_id: 'generate_route',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

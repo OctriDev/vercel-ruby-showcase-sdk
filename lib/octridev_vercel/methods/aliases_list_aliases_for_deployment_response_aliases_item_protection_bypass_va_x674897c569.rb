@@ -13,7 +13,7 @@ module OctridevVercel
       module ListAliasesForDeploymentResponseAliasesItemProtectionBypassVaX674897c569
         GRANTED = 'granted'
         REQUESTED = 'requested'
-        VALUES = ['granted', 'requested'].freeze
+        VALUES = %w[granted requested].freeze
         def self.from_value(value)
           value
         end
@@ -23,7 +23,7 @@ module OctridevVercel
       module ListAliasesResponseAliasesItemProtectionBypassValueVariant1Access
         GRANTED = 'granted'
         REQUESTED = 'requested'
-        VALUES = ['granted', 'requested'].freeze
+        VALUES = %w[granted requested].freeze
         def self.from_value(value)
           value
         end
@@ -44,7 +44,7 @@ module OctridevVercel
       module GetAliasResponseProtectionBypassValueVariant1Access
         GRANTED = 'granted'
         REQUESTED = 'requested'
-        VALUES = ['granted', 'requested'].freeze
+        VALUES = %w[granted requested].freeze
         def self.from_value(value)
           value
         end
@@ -65,7 +65,7 @@ module OctridevVercel
       module PatchUrlProtectionBypassVariant1ScopeAccess
         DENIED = 'denied'
         GRANTED = 'granted'
-        VALUES = ['denied', 'granted'].freeze
+        VALUES = %w[denied granted].freeze
         def self.from_value(value)
           value
         end
@@ -150,7 +150,7 @@ module OctridevVercel
       module PatchUrlProtectionBypassVariant2OverrideAction
         CREATE = 'create'
         REVOKE = 'revoke'
-        VALUES = ['create', 'revoke'].freeze
+        VALUES = %w[create revoke].freeze
         def self.from_value(value)
           value
         end

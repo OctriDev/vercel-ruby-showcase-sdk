@@ -12,8 +12,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateDrainFilterMetadata
         FIELDS = {
-          version: "version",
-          filter: "filter",
+          version: 'version',
+          filter: 'filter'
         }.freeze
         REQUIRED_FIELDS = %i[
           version
@@ -22,7 +22,7 @@ module OctridevVercel
         DECODERS = {
           filter: lambda do |value|
             ::OctridevVercel::CreateDrainRequestFilterFilter.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -54,10 +54,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateDrainSamplingItemMetadata
         FIELDS = {
-          type: "type",
-          rate: "rate",
-          env: "env",
-          request_path: "requestPath",
+          type: 'type',
+          rate: 'rate',
+          env: 'env',
+          request_path: 'requestPath'
         }.freeze
         REQUIRED_FIELDS = %i[
           type
@@ -66,7 +66,7 @@ module OctridevVercel
         DECODERS = {
           env: lambda do |value|
             ::OctridevVercel::Methods::Drains::CreateDrainSamplingItemEnv.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -102,13 +102,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateDrainTransformsItemMetadata
         FIELDS = {
-          id: "id",
+          id: 'id'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateDrainTransformsItem.
@@ -137,15 +136,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateDrainMetadata
         FIELDS = {
-          name: "name",
-          projects: "projects",
-          project_ids: "projectIds",
-          filter: "filter",
-          schemas: "schemas",
-          delivery: "delivery",
-          sampling: "sampling",
-          transforms: "transforms",
-          source: "source",
+          name: 'name',
+          projects: 'projects',
+          project_ids: 'projectIds',
+          filter: 'filter',
+          schemas: 'schemas',
+          delivery: 'delivery',
+          sampling: 'sampling',
+          transforms: 'transforms',
+          source: 'source'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -170,7 +169,7 @@ module OctridevVercel
           end,
           source: lambda do |value|
             ::OctridevVercel::CreateDrainRequestSource.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -204,10 +203,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDrainsResponseDrainsVariant0ItemSamplingItemMetadata
         FIELDS = {
-          env: "env",
-          rate: "rate",
-          request_path: "requestPath",
-          type: "type",
+          env: 'env',
+          rate: 'rate',
+          request_path: 'requestPath',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           rate
@@ -219,7 +218,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant0ItemSamplingItemType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -249,18 +248,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDrainsResponseDrainsVariant0ItemSchemasMetadata
         FIELDS = {
-          ai_gateway: "ai_gateway",
-          analytics: "analytics",
-          audit_log: "audit_log",
-          connect: "connect",
-          log: "log",
-          speed_insights: "speed_insights",
-          trace: "trace",
+          ai_gateway: 'ai_gateway',
+          analytics: 'analytics',
+          audit_log: 'audit_log',
+          connect: 'connect',
+          log: 'log',
+          speed_insights: 'speed_insights',
+          trace: 'trace'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDrainsResponseDrainsVariant0ItemSchemas.
@@ -289,8 +286,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDrainsResponseDrainsVariant0ItemFilterV2Metadata
         FIELDS = {
-          filter: "filter",
-          version: "version",
+          filter: 'filter',
+          version: 'version'
         }.freeze
         REQUIRED_FIELDS = %i[
           filter
@@ -302,7 +299,7 @@ module OctridevVercel
           end,
           version: lambda do |value|
             ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant0ItemFilterV2Version.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -334,23 +331,23 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDrainsResponseDrainsVariant0ItemMetadata
         FIELDS = {
-          created_at: "createdAt",
-          delivery: "delivery",
-          disabled_at: "disabledAt",
-          disabled_by: "disabledBy",
-          disabled_reason: "disabledReason",
-          first_error_timestamp: "firstErrorTimestamp",
-          id: "id",
-          name: "name",
-          owner_id: "ownerId",
-          project_ids: "projectIds",
-          sampling: "sampling",
-          schemas: "schemas",
-          source: "source",
-          status: "status",
-          team_id: "teamId",
-          updated_at: "updatedAt",
-          filter_v2: "filterV2",
+          created_at: 'createdAt',
+          delivery: 'delivery',
+          disabled_at: 'disabledAt',
+          disabled_by: 'disabledBy',
+          disabled_reason: 'disabledReason',
+          first_error_timestamp: 'firstErrorTimestamp',
+          id: 'id',
+          name: 'name',
+          owner_id: 'ownerId',
+          project_ids: 'projectIds',
+          sampling: 'sampling',
+          schemas: 'schemas',
+          source: 'source',
+          status: 'status',
+          team_id: 'teamId',
+          updated_at: 'updatedAt',
+          filter_v2: 'filterV2'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -383,7 +380,7 @@ module OctridevVercel
           end,
           filter_v2: lambda do |value|
             ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant0ItemFilterV2.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -419,10 +416,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDrainsResponseDrainsVariant1ItemSamplingItemMetadata
         FIELDS = {
-          env: "env",
-          rate: "rate",
-          request_path: "requestPath",
-          type: "type",
+          env: 'env',
+          rate: 'rate',
+          request_path: 'requestPath',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           rate
@@ -434,7 +431,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant1ItemSamplingItemType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -464,18 +461,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDrainsResponseDrainsVariant1ItemSchemasMetadata
         FIELDS = {
-          ai_gateway: "ai_gateway",
-          analytics: "analytics",
-          audit_log: "audit_log",
-          connect: "connect",
-          log: "log",
-          speed_insights: "speed_insights",
-          trace: "trace",
+          ai_gateway: 'ai_gateway',
+          analytics: 'analytics',
+          audit_log: 'audit_log',
+          connect: 'connect',
+          log: 'log',
+          speed_insights: 'speed_insights',
+          trace: 'trace'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDrainsResponseDrainsVariant1ItemSchemas.
@@ -504,8 +499,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDrainsResponseDrainsVariant1ItemFilterV2Metadata
         FIELDS = {
-          filter: "filter",
-          version: "version",
+          filter: 'filter',
+          version: 'version'
         }.freeze
         REQUIRED_FIELDS = %i[
           filter
@@ -517,7 +512,7 @@ module OctridevVercel
           end,
           version: lambda do |value|
             ::OctridevVercel::Methods::Drains::GetDrainsResponseDrainsVariant1ItemFilterV2Version.from_value(value)
-          end,
+          end
         }.freeze
       end
 

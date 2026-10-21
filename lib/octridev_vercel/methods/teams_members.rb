@@ -29,28 +29,15 @@ module OctridevVercel
       # @param eligible_members_for_project_id [String] Include team members who are
       #   eligible to be members of the specified project.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_team_members) do |
-        config:,
-        team_id:,
-        limit: NOT_GIVEN,
-        since: NOT_GIVEN,
-        until_: NOT_GIVEN,
-        search: NOT_GIVEN,
-        role: NOT_GIVEN,
-        exclude_project: NOT_GIVEN,
-        eligible_members_for_project_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_team_members) do |config:, team_id:, limit: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, search: NOT_GIVEN, role: NOT_GIVEN, exclude_project: NOT_GIVEN, eligible_members_for_project_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1) }
 
         SdkClient.request(
           'GET',
           [
-            "/v3/teams/",
+            '/v3/teams/',
             SdkClient.encode_path_segment(team_id),
-            "/members"
+            '/members'
           ].join,
           config: config,
           query: {
@@ -61,12 +48,12 @@ module OctridevVercel
             'role' => QueryValue.new(role, style: 'form', explode: true),
             'excludeProject' => QueryValue.new(exclude_project, style: 'form', explode: true),
             'eligibleMembersForProjectId' => QueryValue.new(eligible_members_for_project_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Teams::GetTeamMembersResponse,
           decoder: :json,
           operation_id: 'get_team_members',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -84,23 +71,22 @@ module OctridevVercel
         body: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/teams/",
+            '/v2/teams/',
             SdkClient.encode_path_segment(team_id),
-            "/members"
+            '/members'
           ].join,
           config: config,
           query: {
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: body,
           return_type: ::OctridevVercel::InvitedTeamMember,
           decoder: :json,
           operation_id: 'invite_user_to_team',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -126,13 +112,12 @@ module OctridevVercel
         joined_from: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v1/teams/",
+            '/v1/teams/',
             SdkClient.encode_path_segment(team_id),
-            "/members/",
+            '/members/',
             SdkClient.encode_path_segment(uid)
           ].join,
           config: config,
@@ -141,12 +126,12 @@ module OctridevVercel
             'role' => role,
             'teamPermissions' => team_permissions,
             'projects' => projects,
-            'joinedFrom' => joined_from,
+            'joinedFrom' => joined_from
           },
           return_type: ::OctridevVercel::Methods::Teams::UpdateTeamMemberResponse,
           decoder: :json,
           operation_id: 'update_team_member',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -164,23 +149,22 @@ module OctridevVercel
         new_default_team_id: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/teams/",
+            '/v1/teams/',
             SdkClient.encode_path_segment(team_id),
-            "/members/",
+            '/members/',
             SdkClient.encode_path_segment(uid)
           ].join,
           config: config,
           query: {
-            'newDefaultTeamId' => QueryValue.new(new_default_team_id, style: 'form', explode: true),
+            'newDefaultTeamId' => QueryValue.new(new_default_team_id, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Teams::RemoveTeamMemberResponse,
           decoder: :json,
           operation_id: 'remove_team_member',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

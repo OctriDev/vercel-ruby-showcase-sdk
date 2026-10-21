@@ -25,27 +25,26 @@ module OctridevVercel
         total:,
         request_options: nil
       )
-
         Validation.validate_pattern('total', total, '^[0-9]+(\\.[0-9]+)?$')
 
         SdkClient.request(
           'POST',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/billing/invoices/",
+            '/billing/invoices/',
             SdkClient.encode_path_segment(invoice_id),
-            "/actions"
+            '/actions'
           ].join,
           config: config,
           body: {
             'action' => action,
             'reason' => reason,
-            'total' => total,
+            'total' => total
           },
           decoder: :empty,
           operation_id: 'update_invoice',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

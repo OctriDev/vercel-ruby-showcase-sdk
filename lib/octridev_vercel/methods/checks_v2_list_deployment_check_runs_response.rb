@@ -35,13 +35,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateDeploymentCheckRunMetadata
         FIELDS = {
-          check_id: "checkId",
+          check_id: 'checkId'
         }.freeze
         REQUIRED_FIELDS = %i[
           check_id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateDeploymentCheckRun.
@@ -70,23 +69,22 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateDeploymentCheckRunMetadata
         FIELDS = {
-          external_id: "externalId",
-          external_url: "externalUrl",
-          status: "status",
-          output: "output",
-          completed_at: "completedAt",
-          conclusion: "conclusion",
-          conclusion_text: "conclusionText",
+          external_id: 'externalId',
+          external_url: 'externalUrl',
+          status: 'status',
+          output: 'output',
+          completed_at: 'completedAt',
+          conclusion: 'conclusion',
+          conclusion_text: 'conclusionText'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::ChecksV2::UpdateDeploymentCheckRunStatus.from_value(value)
           end,
           conclusion: lambda do |value|
             ::OctridevVercel::Methods::ChecksV2::UpdateDeploymentCheckRunConclusion.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -130,8 +128,8 @@ module OctridevVercel
         DEPLOYMENT_ALIAS = 'deployment-alias'
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         NONE = 'none'
-        VALUES = [
-          'build-start', 'deployment-start', 'deployment-alias', 'deployment-promotion', 'none'
+        VALUES = %w[
+          build-start deployment-start deployment-alias deployment-promotion none
         ].freeze
         def self.from_value(value)
           value
@@ -143,7 +141,7 @@ module OctridevVercel
         BUILD_READY = 'build-ready'
         DEPLOYMENT_URL = 'deployment-url'
         NONE = 'none'
-        VALUES = ['build-ready', 'deployment-url', 'none'].freeze
+        VALUES = %w[build-ready deployment-url none].freeze
         def self.from_value(value)
           value
         end
@@ -156,8 +154,8 @@ module OctridevVercel
         DEPLOYMENT_ALIAS = 'deployment-alias'
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         NONE = 'none'
-        VALUES = [
-          'build-start', 'deployment-start', 'deployment-alias', 'deployment-promotion', 'none'
+        VALUES = %w[
+          build-start deployment-start deployment-alias deployment-promotion none
         ].freeze
         def self.from_value(value)
           value
@@ -172,7 +170,7 @@ module OctridevVercel
         FAILED = 'failed'
         NEUTRAL = 'neutral'
         SUCCEEDED = 'succeeded'
-        VALUES = ['canceled', 'skipped', 'timeout', 'failed', 'neutral', 'succeeded'].freeze
+        VALUES = %w[canceled skipped timeout failed neutral succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -183,7 +181,7 @@ module OctridevVercel
         BUILD_READY = 'build-ready'
         DEPLOYMENT_URL = 'deployment-url'
         NONE = 'none'
-        VALUES = ['build-ready', 'deployment-url', 'none'].freeze
+        VALUES = %w[build-ready deployment-url none].freeze
         def self.from_value(value)
           value
         end
@@ -195,7 +193,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         VERCEL = 'vercel'
         WEBHOOK = 'webhook'
-        VALUES = ['git-provider', 'integration', 'vercel', 'webhook'].freeze
+        VALUES = %w[git-provider integration vercel webhook].freeze
         def self.from_value(value)
           value
         end
@@ -206,7 +204,7 @@ module OctridevVercel
         QUEUED = 'queued'
         RUNNING = 'running'
         COMPLETED = 'completed'
-        VALUES = ['queued', 'running', 'completed'].freeze
+        VALUES = %w[queued running completed].freeze
         def self.from_value(value)
           value
         end
@@ -238,7 +236,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         VERCEL = 'vercel'
         WEBHOOK = 'webhook'
-        VALUES = ['git-provider', 'integration', 'vercel', 'webhook'].freeze
+        VALUES = %w[git-provider integration vercel webhook].freeze
         def self.from_value(value)
           value
         end
@@ -251,8 +249,8 @@ module OctridevVercel
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         DEPLOYMENT_START = 'deployment-start'
         NONE = 'none'
-        VALUES = [
-          'build-start', 'deployment-alias', 'deployment-promotion', 'deployment-start', 'none'
+        VALUES = %w[
+          build-start deployment-alias deployment-promotion deployment-start none
         ].freeze
         def self.from_value(value)
           value
@@ -266,8 +264,8 @@ module OctridevVercel
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         DEPLOYMENT_START = 'deployment-start'
         NONE = 'none'
-        VALUES = [
-          'build-start', 'deployment-alias', 'deployment-promotion', 'deployment-start', 'none'
+        VALUES = %w[
+          build-start deployment-alias deployment-promotion deployment-start none
         ].freeze
         def self.from_value(value)
           value
@@ -279,7 +277,7 @@ module OctridevVercel
         BUILD_READY = 'build-ready'
         DEPLOYMENT_URL = 'deployment-url'
         NONE = 'none'
-        VALUES = ['build-ready', 'deployment-url', 'none'].freeze
+        VALUES = %w[build-ready deployment-url none].freeze
         def self.from_value(value)
           value
         end
@@ -291,7 +289,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         VERCEL = 'vercel'
         WEBHOOK = 'webhook'
-        VALUES = ['git-provider', 'integration', 'vercel', 'webhook'].freeze
+        VALUES = %w[git-provider integration vercel webhook].freeze
         def self.from_value(value)
           value
         end
@@ -303,7 +301,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         VERCEL = 'vercel'
         WEBHOOK = 'webhook'
-        VALUES = ['git-provider', 'integration', 'vercel', 'webhook'].freeze
+        VALUES = %w[git-provider integration vercel webhook].freeze
         def self.from_value(value)
           value
         end
@@ -316,8 +314,8 @@ module OctridevVercel
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         DEPLOYMENT_START = 'deployment-start'
         NONE = 'none'
-        VALUES = [
-          'build-start', 'deployment-alias', 'deployment-promotion', 'deployment-start', 'none'
+        VALUES = %w[
+          build-start deployment-alias deployment-promotion deployment-start none
         ].freeze
         def self.from_value(value)
           value
@@ -329,7 +327,7 @@ module OctridevVercel
         BUILD_READY = 'build-ready'
         DEPLOYMENT_URL = 'deployment-url'
         NONE = 'none'
-        VALUES = ['build-ready', 'deployment-url', 'none'].freeze
+        VALUES = %w[build-ready deployment-url none].freeze
         def self.from_value(value)
           value
         end
@@ -350,7 +348,7 @@ module OctridevVercel
         BUILD_READY = 'build-ready'
         DEPLOYMENT_URL = 'deployment-url'
         NONE = 'none'
-        VALUES = ['build-ready', 'deployment-url', 'none'].freeze
+        VALUES = %w[build-ready deployment-url none].freeze
         def self.from_value(value)
           value
         end
@@ -361,7 +359,7 @@ module OctridevVercel
         BUILD_READY = 'build-ready'
         DEPLOYMENT_URL = 'deployment-url'
         NONE = 'none'
-        VALUES = ['build-ready', 'deployment-url', 'none'].freeze
+        VALUES = %w[build-ready deployment-url none].freeze
         def self.from_value(value)
           value
         end
@@ -384,8 +382,8 @@ module OctridevVercel
         DEPLOYMENT_ALIAS = 'deployment-alias'
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         NONE = 'none'
-        VALUES = [
-          'build-start', 'deployment-start', 'deployment-alias', 'deployment-promotion', 'none'
+        VALUES = %w[
+          build-start deployment-start deployment-alias deployment-promotion none
         ].freeze
         def self.from_value(value)
           value
@@ -399,8 +397,8 @@ module OctridevVercel
         DEPLOYMENT_PROMOTION = 'deployment-promotion'
         DEPLOYMENT_START = 'deployment-start'
         NONE = 'none'
-        VALUES = [
-          'build-start', 'deployment-alias', 'deployment-promotion', 'deployment-start', 'none'
+        VALUES = %w[
+          build-start deployment-alias deployment-promotion deployment-start none
         ].freeze
         def self.from_value(value)
           value

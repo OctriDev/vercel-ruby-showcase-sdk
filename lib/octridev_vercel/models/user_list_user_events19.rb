@@ -5,680 +5,675 @@
 
 # user domain models
 module OctridevVercel
-# API model for UserEventPayloadVariant120JobVariant5.
-# Required object value serialized in the `job` wire field.
-class UserEventPayloadVariant120JobVariant5
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant120JobVariant5Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant5Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant120JobVariant5Metadata::DECODERS
+  # API model for UserEventPayloadVariant120JobVariant5.
+  # Required object value serialized in the `job` wire field.
+  class UserEventPayloadVariant120JobVariant5
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant120JobVariant5Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant5Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant120JobVariant5Metadata::DECODERS
 
-  # @return [UserEventPayloadVariant120JobVariant5Authorized] Optional enumerated value serialized in the `authorized` wire field.
-  attr_reader :authorized
-  # @return [String] Optional `string` value serialized in the `authorizedBy` wire field.
-  attr_reader :authorized_by
-  # @return [UserEventPayloadVariant120JobVariant5Commit] Optional object value serialized in the `commit` wire field.
-  attr_reader :commit
-  # @return [UserEventPayloadVariant120JobVariant5CommitVerification] Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
-  attr_reader :commit_verification
-  # @return [Float] Since April 2023 Cached count of how many projects are connected to the repo. Saves a few Cosmos queries down the road in the main flow.
-  attr_reader :connected_project_count
-  # @return [Float] Optional `number` value serialized in the `createdAt` wire field.
-  attr_reader :created_at
-  # @return [String] Optional `string` value serialized in the `customEnvId` wire field.
-  attr_reader :custom_env_id
-  # @return [UserEventPayloadVariant120JobVariant5DeployHook] Optional object value serialized in the `deployHook` wire field.
-  attr_reader :deploy_hook
-  # @return [String] Optional `string` value serialized in the `deploymentId` wire field.
-  attr_reader :deployment_id
-  # @return [UserEventPayloadVariant120JobVariant5Eventful] Optional enumerated value serialized in the `eventful` wire field.
-  attr_reader :eventful
-  # @return [UserEventPayloadVariant120JobVariant5ForceNew] Optional enumerated value serialized in the `forceNew` wire field.
-  attr_reader :force_new
-  # @return [UserEventPayloadVariant120JobVariant5GitComments] Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
-  attr_reader :git_comments
-  # @return [Array_of_UserEventPayloadVariant120JobVariant5GitHashtagVercelItem] Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
-  attr_reader :git_hashtag_vercel
-  # @return [UserEventPayloadVariant120JobVariant5HeadInfo] GitLab
-  attr_reader :head_info
-  # @return [UserEventPayloadVariant120JobVariant5IsManualGitDeploy] Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
-  attr_reader :is_manual_git_deploy
-  # @return [Array_of_Array_of_String] Since December 2022 Pairs of projects and owner ids to build for this build request.
-  attr_reader :job_pairs
-  # @return [Array_of_String] Since December 2022 All project ids associated to this job. Think monorepo. This job will be for one of these project.
-  attr_reader :job_project_ids
-  # @return [String] Optional `string` value serialized in the `linkedProjectId` wire field.
-  attr_reader :linked_project_id
-  # @return [UserEventPayloadVariant120JobVariant5NsnbSideEffect] Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can deterministically explain why this SHA was allowed to deploy.
-  attr_reader :nsnb_side_effect
-  # @return [Float] Optional `number` value serialized in the `prId` wire field.
-  attr_reader :pr_id
-  # @return [Float] Since April 2023 If set then it is a cached result of asking the remote for the PR ID the commit that triggered this Job. Or zero if it was not a PR. This prevents a few git round trips by the git updater.
-  attr_reader :pr_id_or_zero
-  # @return [UserEventPayloadVariant120JobVariant5Project] Required object value serialized in the `project` wire field.
-  attr_reader :project
-  # @return [String] Optional `string` value serialized in the `projectId` wire field.
-  attr_reader :project_id
-  # @return [UserEventPayloadVariant120JobVariant5Provider] Required enumerated value serialized in the `provider` wire field.
-  attr_reader :provider
-  # @return [String] Required `string` value serialized in the `ref` wire field.
-  attr_reader :ref
-  # @return [Float] Optional `number` value serialized in the `repoPushedAt` wire field.
-  attr_reader :repo_pushed_at
-  # @return [String] Required `string` value serialized in the `sha` wire field.
-  attr_reader :sha
-  # @return [UserEventPayloadVariant120JobVariant5Silent] Optional enumerated value serialized in the `silent` wire field.
-  attr_reader :silent
-  # @return [Array_of_Array_of_String] Since June 2024 Pairs of projects and owner ids to immediately finish (without building) because we want to create them in a skipped state.
-  attr_reader :skipped_job_pairs
-  # @return [String] Optional `string` value serialized in the `target` wire field.
-  attr_reader :target
-  # @return [UserEventPayloadVariant120JobVariant5Type] Required enumerated value serialized in the `type` wire field.
-  attr_reader :type
-  # @return [String] Optional `string` value serialized in the `url` wire field.
-  attr_reader :url
-  # @return [UserEventPayloadVariant120JobVariant5WithCache] Optional enumerated value serialized in the `withCache` wire field.
-  attr_reader :with_cache
+    # @return [UserEventPayloadVariant120JobVariant5Authorized] Optional enumerated value serialized in the `authorized` wire field.
+    attr_reader :authorized
+    # @return [String] Optional `string` value serialized in the `authorizedBy` wire field.
+    attr_reader :authorized_by
+    # @return [UserEventPayloadVariant120JobVariant5Commit] Optional object value serialized in the `commit` wire field.
+    attr_reader :commit
+    # @return [UserEventPayloadVariant120JobVariant5CommitVerification] Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
+    attr_reader :commit_verification
+    # @return [Float] Since April 2023 Cached count of how many projects are connected to the repo. Saves a few Cosmos queries down the road in the main flow.
+    attr_reader :connected_project_count
+    # @return [Float] Optional `number` value serialized in the `createdAt` wire field.
+    attr_reader :created_at
+    # @return [String] Optional `string` value serialized in the `customEnvId` wire field.
+    attr_reader :custom_env_id
+    # @return [UserEventPayloadVariant120JobVariant5DeployHook] Optional object value serialized in the `deployHook` wire field.
+    attr_reader :deploy_hook
+    # @return [String] Optional `string` value serialized in the `deploymentId` wire field.
+    attr_reader :deployment_id
+    # @return [UserEventPayloadVariant120JobVariant5Eventful] Optional enumerated value serialized in the `eventful` wire field.
+    attr_reader :eventful
+    # @return [UserEventPayloadVariant120JobVariant5ForceNew] Optional enumerated value serialized in the `forceNew` wire field.
+    attr_reader :force_new
+    # @return [UserEventPayloadVariant120JobVariant5GitComments] Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
+    attr_reader :git_comments
+    # @return [Array_of_UserEventPayloadVariant120JobVariant5GitHashtagVercelItem] Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
+    attr_reader :git_hashtag_vercel
+    # @return [UserEventPayloadVariant120JobVariant5HeadInfo] GitLab
+    attr_reader :head_info
+    # @return [UserEventPayloadVariant120JobVariant5IsManualGitDeploy] Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
+    attr_reader :is_manual_git_deploy
+    # @return [Array_of_Array_of_String] Since December 2022 Pairs of projects and owner ids to build for this build request.
+    attr_reader :job_pairs
+    # @return [Array_of_String] Since December 2022 All project ids associated to this job. Think monorepo. This job will be for one of these project.
+    attr_reader :job_project_ids
+    # @return [String] Optional `string` value serialized in the `linkedProjectId` wire field.
+    attr_reader :linked_project_id
+    # @return [UserEventPayloadVariant120JobVariant5NsnbSideEffect] Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can deterministically explain why this SHA was allowed to deploy.
+    attr_reader :nsnb_side_effect
+    # @return [Float] Optional `number` value serialized in the `prId` wire field.
+    attr_reader :pr_id
+    # @return [Float] Since April 2023 If set then it is a cached result of asking the remote for the PR ID the commit that triggered this Job. Or zero if it was not a PR. This prevents a few git round trips by the git updater.
+    attr_reader :pr_id_or_zero
+    # @return [UserEventPayloadVariant120JobVariant5Project] Required object value serialized in the `project` wire field.
+    attr_reader :project
+    # @return [String] Optional `string` value serialized in the `projectId` wire field.
+    attr_reader :project_id
+    # @return [UserEventPayloadVariant120JobVariant5Provider] Required enumerated value serialized in the `provider` wire field.
+    attr_reader :provider
+    # @return [String] Required `string` value serialized in the `ref` wire field.
+    attr_reader :ref
+    # @return [Float] Optional `number` value serialized in the `repoPushedAt` wire field.
+    attr_reader :repo_pushed_at
+    # @return [String] Required `string` value serialized in the `sha` wire field.
+    attr_reader :sha
+    # @return [UserEventPayloadVariant120JobVariant5Silent] Optional enumerated value serialized in the `silent` wire field.
+    attr_reader :silent
+    # @return [Array_of_Array_of_String] Since June 2024 Pairs of projects and owner ids to immediately finish (without building) because we want to create them in a skipped state.
+    attr_reader :skipped_job_pairs
+    # @return [String] Optional `string` value serialized in the `target` wire field.
+    attr_reader :target
+    # @return [UserEventPayloadVariant120JobVariant5Type] Required enumerated value serialized in the `type` wire field.
+    attr_reader :type
+    # @return [String] Optional `string` value serialized in the `url` wire field.
+    attr_reader :url
+    # @return [UserEventPayloadVariant120JobVariant5WithCache] Optional enumerated value serialized in the `withCache` wire field.
+    attr_reader :with_cache
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant120JobVariant6GitCommentsMetadata
+    FIELDS = {
+      on_commit: 'onCommit',
+      on_pull_request: 'onPullRequest'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      on_commit
+      on_pull_request
+    ].freeze
+    DECODERS = {
+      on_commit: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant6GitCommentsOnCommit.from_value(value)
+      end,
+      on_pull_request: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequest.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant120JobVariant6GitComments.
+  # Optional object value serialized in the `gitComments` wire field.
+  class UserEventPayloadVariant120JobVariant6GitComments
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6GitCommentsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6GitCommentsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant120JobVariant6GitCommentsMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant120JobVariant6GitCommentsMetadata
-  FIELDS = {
-    on_commit: "onCommit",
-    on_pull_request: "onPullRequest",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    on_commit
-    on_pull_request
-  ].freeze
-  DECODERS = {
-    on_commit: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant6GitCommentsOnCommit.from_value(value)
-    end,
-    on_pull_request: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequest.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant120JobVariant6GitCommentsOnCommit] Required enumerated value serialized in the `onCommit` wire field.
+    attr_reader :on_commit
+    # @return [UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequest] Required enumerated value serialized in the `onPullRequest` wire field.
+    attr_reader :on_pull_request
 
-# API model for UserEventPayloadVariant120JobVariant6GitComments.
-# Optional object value serialized in the `gitComments` wire field.
-class UserEventPayloadVariant120JobVariant6GitComments
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6GitCommentsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6GitCommentsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant120JobVariant6GitCommentsMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant120JobVariant6GitCommentsOnCommit] Required enumerated value serialized in the `onCommit` wire field.
-  attr_reader :on_commit
-  # @return [UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequest] Required enumerated value serialized in the `onPullRequest` wire field.
-  attr_reader :on_pull_request
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoProjectMetadata
+    FIELDS = {
+      default_branch: 'defaultBranch',
+      id: 'id',
+      name: 'name',
+      namespace: 'namespace',
+      path: 'path',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant120JobVariant6HeadInfoProject.
+  # Required object value serialized in the `project` wire field.
+  class UserEventPayloadVariant120JobVariant6HeadInfoProject
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoProjectMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoProjectMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoProjectMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoProjectMetadata
-  FIELDS = {
-    default_branch: "defaultBranch",
-    id: "id",
-    name: "name",
-    namespace: "namespace",
-    path: "path",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] Optional `string` value serialized in the `defaultBranch` wire field.
+    attr_reader :default_branch
+    # @return [String] Required `string` value serialized in the `id` wire field.
+    attr_reader :id
+    # @return [String] Optional `string` value serialized in the `name` wire field.
+    attr_reader :name
+    # @return [String] Optional `string` value serialized in the `namespace` wire field.
+    attr_reader :namespace
+    # @return [String] Optional `string` value serialized in the `path` wire field.
+    attr_reader :path
+    # @return [String] Optional `string` value serialized in the `url` wire field.
+    attr_reader :url
 
-# API model for UserEventPayloadVariant120JobVariant6HeadInfoProject.
-# Required object value serialized in the `project` wire field.
-class UserEventPayloadVariant120JobVariant6HeadInfoProject
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoProjectMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoProjectMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoProjectMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Optional `string` value serialized in the `defaultBranch` wire field.
-  attr_reader :default_branch
-  # @return [String] Required `string` value serialized in the `id` wire field.
-  attr_reader :id
-  # @return [String] Optional `string` value serialized in the `name` wire field.
-  attr_reader :name
-  # @return [String] Optional `string` value serialized in the `namespace` wire field.
-  attr_reader :namespace
-  # @return [String] Optional `string` value serialized in the `path` wire field.
-  attr_reader :path
-  # @return [String] Optional `string` value serialized in the `url` wire field.
-  attr_reader :url
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoMetadata
+    FIELDS = {
+      project: 'project',
+      ref: 'ref',
+      sha: 'sha'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      project
+      ref
+      sha
+    ].freeze
+    DECODERS = {
+      project: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant6HeadInfoProject.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant120JobVariant6HeadInfo.
+  # GitLab
+  class UserEventPayloadVariant120JobVariant6HeadInfo
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoMetadata
-  FIELDS = {
-    project: "project",
-    ref: "ref",
-    sha: "sha",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    project
-    ref
-    sha
-  ].freeze
-  DECODERS = {
-    project: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant6HeadInfoProject.from_hash(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant120JobVariant6HeadInfoProject] Required object value serialized in the `project` wire field.
+    attr_reader :project
+    # @return [String] Required `string` value serialized in the `ref` wire field.
+    attr_reader :ref
+    # @return [String] Required `string` value serialized in the `sha` wire field.
+    attr_reader :sha
 
-# API model for UserEventPayloadVariant120JobVariant6HeadInfo.
-# GitLab
-class UserEventPayloadVariant120JobVariant6HeadInfo
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant120JobVariant6HeadInfoMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant120JobVariant6HeadInfoProject] Required object value serialized in the `project` wire field.
-  attr_reader :project
-  # @return [String] Required `string` value serialized in the `ref` wire field.
-  attr_reader :ref
-  # @return [String] Required `string` value serialized in the `sha` wire field.
-  attr_reader :sha
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant120JobVariant6ProjectMetadata
+    FIELDS = {
+      default_branch: 'defaultBranch',
+      id: 'id',
+      name: 'name',
+      namespace: 'namespace',
+      path: 'path',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant120JobVariant6Project.
+  # Required object value serialized in the `project` wire field.
+  class UserEventPayloadVariant120JobVariant6Project
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6ProjectMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6ProjectMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant120JobVariant6ProjectMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant120JobVariant6ProjectMetadata
-  FIELDS = {
-    default_branch: "defaultBranch",
-    id: "id",
-    name: "name",
-    namespace: "namespace",
-    path: "path",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] Optional `string` value serialized in the `defaultBranch` wire field.
+    attr_reader :default_branch
+    # @return [String] Required `string` value serialized in the `id` wire field.
+    attr_reader :id
+    # @return [String] Optional `string` value serialized in the `name` wire field.
+    attr_reader :name
+    # @return [String] Optional `string` value serialized in the `namespace` wire field.
+    attr_reader :namespace
+    # @return [String] Optional `string` value serialized in the `path` wire field.
+    attr_reader :path
+    # @return [String] Optional `string` value serialized in the `url` wire field.
+    attr_reader :url
 
-# API model for UserEventPayloadVariant120JobVariant6Project.
-# Required object value serialized in the `project` wire field.
-class UserEventPayloadVariant120JobVariant6Project
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6ProjectMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6ProjectMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant120JobVariant6ProjectMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Optional `string` value serialized in the `defaultBranch` wire field.
-  attr_reader :default_branch
-  # @return [String] Required `string` value serialized in the `id` wire field.
-  attr_reader :id
-  # @return [String] Optional `string` value serialized in the `name` wire field.
-  attr_reader :name
-  # @return [String] Optional `string` value serialized in the `namespace` wire field.
-  attr_reader :namespace
-  # @return [String] Optional `string` value serialized in the `path` wire field.
-  attr_reader :path
-  # @return [String] Optional `string` value serialized in the `url` wire field.
-  attr_reader :url
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant120JobVariant6Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      custom_env_id: 'customEnvId',
+      eventful: 'eventful',
+      git_comments: 'gitComments',
+      head_info: 'headInfo',
+      linked_project_id: 'linkedProjectId',
+      pr_id: 'prId',
+      project: 'project',
+      project_id: 'projectId',
+      provider: 'provider',
+      ref: 'ref',
+      sha: 'sha',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      head_info
+      pr_id
+      project
+      provider
+      ref
+      sha
+      type
+    ].freeze
+    DECODERS = {
+      eventful: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant6Eventful.from_value(value)
+      end,
+      git_comments: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant6GitComments.from_hash(value)
+      end,
+      head_info: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant6HeadInfo.from_hash(value)
+      end,
+      project: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant6Project.from_hash(value)
+      end,
+      provider: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant6Provider.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant6Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant120JobVariant6.
+  # Required object value serialized in the `job` wire field.
+  class UserEventPayloadVariant120JobVariant6
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant120JobVariant6Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant120JobVariant6Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    custom_env_id: "customEnvId",
-    eventful: "eventful",
-    git_comments: "gitComments",
-    head_info: "headInfo",
-    linked_project_id: "linkedProjectId",
-    pr_id: "prId",
-    project: "project",
-    project_id: "projectId",
-    provider: "provider",
-    ref: "ref",
-    sha: "sha",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    head_info
-    pr_id
-    project
-    provider
-    ref
-    sha
-    type
-  ].freeze
-  DECODERS = {
-    eventful: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant6Eventful.from_value(value)
-    end,
-    git_comments: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant6GitComments.from_hash(value)
-    end,
-    head_info: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant6HeadInfo.from_hash(value)
-    end,
-    project: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant6Project.from_hash(value)
-    end,
-    provider: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant6Provider.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant6Type.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [Float] Optional `number` value serialized in the `createdAt` wire field.
+    attr_reader :created_at
+    # @return [String] Optional `string` value serialized in the `customEnvId` wire field.
+    attr_reader :custom_env_id
+    # @return [UserEventPayloadVariant120JobVariant6Eventful] Optional enumerated value serialized in the `eventful` wire field.
+    attr_reader :eventful
+    # @return [UserEventPayloadVariant120JobVariant6GitComments] Optional object value serialized in the `gitComments` wire field.
+    attr_reader :git_comments
+    # @return [UserEventPayloadVariant120JobVariant6HeadInfo] GitLab
+    attr_reader :head_info
+    # @return [String] Optional `string` value serialized in the `linkedProjectId` wire field.
+    attr_reader :linked_project_id
+    # @return [Float] Required `number` value serialized in the `prId` wire field.
+    attr_reader :pr_id
+    # @return [UserEventPayloadVariant120JobVariant6Project] Required object value serialized in the `project` wire field.
+    attr_reader :project
+    # @return [String] Optional `string` value serialized in the `projectId` wire field.
+    attr_reader :project_id
+    # @return [UserEventPayloadVariant120JobVariant6Provider] Required enumerated value serialized in the `provider` wire field.
+    attr_reader :provider
+    # @return [String] Required `string` value serialized in the `ref` wire field.
+    attr_reader :ref
+    # @return [String] Required `string` value serialized in the `sha` wire field.
+    attr_reader :sha
+    # @return [UserEventPayloadVariant120JobVariant6Type] Required enumerated value serialized in the `type` wire field.
+    attr_reader :type
 
-# API model for UserEventPayloadVariant120JobVariant6.
-# Required object value serialized in the `job` wire field.
-class UserEventPayloadVariant120JobVariant6
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant6Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant120JobVariant6Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [Float] Optional `number` value serialized in the `createdAt` wire field.
-  attr_reader :created_at
-  # @return [String] Optional `string` value serialized in the `customEnvId` wire field.
-  attr_reader :custom_env_id
-  # @return [UserEventPayloadVariant120JobVariant6Eventful] Optional enumerated value serialized in the `eventful` wire field.
-  attr_reader :eventful
-  # @return [UserEventPayloadVariant120JobVariant6GitComments] Optional object value serialized in the `gitComments` wire field.
-  attr_reader :git_comments
-  # @return [UserEventPayloadVariant120JobVariant6HeadInfo] GitLab
-  attr_reader :head_info
-  # @return [String] Optional `string` value serialized in the `linkedProjectId` wire field.
-  attr_reader :linked_project_id
-  # @return [Float] Required `number` value serialized in the `prId` wire field.
-  attr_reader :pr_id
-  # @return [UserEventPayloadVariant120JobVariant6Project] Required object value serialized in the `project` wire field.
-  attr_reader :project
-  # @return [String] Optional `string` value serialized in the `projectId` wire field.
-  attr_reader :project_id
-  # @return [UserEventPayloadVariant120JobVariant6Provider] Required enumerated value serialized in the `provider` wire field.
-  attr_reader :provider
-  # @return [String] Required `string` value serialized in the `ref` wire field.
-  attr_reader :ref
-  # @return [String] Required `string` value serialized in the `sha` wire field.
-  attr_reader :sha
-  # @return [UserEventPayloadVariant120JobVariant6Type] Required enumerated value serialized in the `type` wire field.
-  attr_reader :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant120JobVariant7DeployHookMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      id
+      name
+      ref
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant120JobVariant7DeployHook.
+  # Optional object value serialized in the `deployHook` wire field.
+  class UserEventPayloadVariant120JobVariant7DeployHook
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7DeployHookMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7DeployHookMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant120JobVariant7DeployHookMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant120JobVariant7DeployHookMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    id
-    name
-    ref
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [Float] Required `number` value serialized in the `createdAt` wire field.
+    attr_reader :created_at
+    # @return [String] Required `string` value serialized in the `id` wire field.
+    attr_reader :id
+    # @return [String] Required `string` value serialized in the `name` wire field.
+    attr_reader :name
+    # @return [String] Required `string` value serialized in the `ref` wire field.
+    attr_reader :ref
 
-# API model for UserEventPayloadVariant120JobVariant7DeployHook.
-# Optional object value serialized in the `deployHook` wire field.
-class UserEventPayloadVariant120JobVariant7DeployHook
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7DeployHookMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7DeployHookMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant120JobVariant7DeployHookMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [Float] Required `number` value serialized in the `createdAt` wire field.
-  attr_reader :created_at
-  # @return [String] Required `string` value serialized in the `id` wire field.
-  attr_reader :id
-  # @return [String] Required `string` value serialized in the `name` wire field.
-  attr_reader :name
-  # @return [String] Required `string` value serialized in the `ref` wire field.
-  attr_reader :ref
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant120JobVariant7GitCommentsMetadata
+    FIELDS = {
+      on_commit: 'onCommit',
+      on_pull_request: 'onPullRequest'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      on_commit
+      on_pull_request
+    ].freeze
+    DECODERS = {
+      on_commit: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant7GitCommentsOnCommit.from_value(value)
+      end,
+      on_pull_request: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequest.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant120JobVariant7GitComments.
+  # Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
+  class UserEventPayloadVariant120JobVariant7GitComments
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7GitCommentsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7GitCommentsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant120JobVariant7GitCommentsMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant120JobVariant7GitCommentsMetadata
-  FIELDS = {
-    on_commit: "onCommit",
-    on_pull_request: "onPullRequest",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    on_commit
-    on_pull_request
-  ].freeze
-  DECODERS = {
-    on_commit: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant7GitCommentsOnCommit.from_value(value)
-    end,
-    on_pull_request: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequest.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant120JobVariant7GitCommentsOnCommit] Required enumerated value serialized in the `onCommit` wire field.
+    attr_reader :on_commit
+    # @return [UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequest] Required enumerated value serialized in the `onPullRequest` wire field.
+    attr_reader :on_pull_request
 
-# API model for UserEventPayloadVariant120JobVariant7GitComments.
-# Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
-class UserEventPayloadVariant120JobVariant7GitComments
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7GitCommentsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7GitCommentsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant120JobVariant7GitCommentsMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant120JobVariant7GitCommentsOnCommit] Required enumerated value serialized in the `onCommit` wire field.
-  attr_reader :on_commit
-  # @return [UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequest] Required enumerated value serialized in the `onPullRequest` wire field.
-  attr_reader :on_pull_request
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthorMetadata
+    FIELDS = {
+      date: 'date',
+      email: 'email',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      date
+      email
+      name
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthor.
+  # Required object value serialized in the `author` wire field.
+  class UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthor
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthorMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthorMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthorMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthorMetadata
-  FIELDS = {
-    date: "date",
-    email: "email",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    date
-    email
-    name
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] Required `string` value serialized in the `date` wire field.
+    attr_reader :date
+    # @return [String] Required `string` value serialized in the `email` wire field.
+    attr_reader :email
+    # @return [String] Required `string` value serialized in the `name` wire field.
+    attr_reader :name
 
-# API model for UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthor.
-# Required object value serialized in the `author` wire field.
-class UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthor
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthorMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthorMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthorMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `date` wire field.
-  attr_reader :date
-  # @return [String] Required `string` value serialized in the `email` wire field.
-  attr_reader :email
-  # @return [String] Required `string` value serialized in the `name` wire field.
-  attr_reader :name
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitterMetadata
+    FIELDS = {
+      date: 'date',
+      email: 'email',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      date
+      email
+      name
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitter.
+  # Required object value serialized in the `committer` wire field.
+  class UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitter
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitterMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitterMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitterMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitterMetadata
-  FIELDS = {
-    date: "date",
-    email: "email",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    date
-    email
-    name
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] Required `string` value serialized in the `date` wire field.
+    attr_reader :date
+    # @return [String] Required `string` value serialized in the `email` wire field.
+    attr_reader :email
+    # @return [String] Required `string` value serialized in the `name` wire field.
+    attr_reader :name
 
-# API model for UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitter.
-# Required object value serialized in the `committer` wire field.
-class UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitter
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitterMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitterMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitterMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `date` wire field.
-  attr_reader :date
-  # @return [String] Required `string` value serialized in the `email` wire field.
-  attr_reader :email
-  # @return [String] Required `string` value serialized in the `name` wire field.
-  attr_reader :name
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataMetadata
+    FIELDS = {
+      author: 'author',
+      committer: 'committer',
+      message: 'message'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      author
+      committer
+      message
+    ].freeze
+    DECODERS = {
+      author: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthor.from_hash(value)
+      end,
+      committer: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitter.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadata.
+  # Optional object value serialized in the `commitMetadata` wire field.
+  class UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadata
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataMetadata
-  FIELDS = {
-    author: "author",
-    committer: "committer",
-    message: "message",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    author
-    committer
-    message
-  ].freeze
-  DECODERS = {
-    author: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthor.from_hash(value)
-    end,
-    committer: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitter.from_hash(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthor] Required object value serialized in the `author` wire field.
+    attr_reader :author
+    # @return [UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitter] Required object value serialized in the `committer` wire field.
+    attr_reader :committer
+    # @return [String] Required `string` value serialized in the `message` wire field.
+    attr_reader :message
 
-# API model for UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadata.
-# Optional object value serialized in the `commitMetadata` wire field.
-class UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadata
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataAuthor] Required object value serialized in the `author` wire field.
-  attr_reader :author
-  # @return [UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadataCommitter] Required object value serialized in the `committer` wire field.
-  attr_reader :committer
-  # @return [String] Required `string` value serialized in the `message` wire field.
-  attr_reader :message
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoMetadata
+    FIELDS = {
+      commit_metadata: 'commitMetadata',
+      org: 'org',
+      ref: 'ref',
+      repo: 'repo',
+      sha: 'sha'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      org
+      ref
+      repo
+      sha
+    ].freeze
+    DECODERS = {
+      commit_metadata: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadata.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UserEventPayloadVariant120JobVariant7HeadInfo.
+  # Vercel
+  class UserEventPayloadVariant120JobVariant7HeadInfo
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoMetadata::DECODERS
+
+    # @return [UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadata] Optional object value serialized in the `commitMetadata` wire field.
+    attr_reader :commit_metadata
+    # @return [String] Required `string` value serialized in the `org` wire field.
+    attr_reader :org
+    # @return [String] Required `string` value serialized in the `ref` wire field.
+    attr_reader :ref
+    # @return [String] Required `string` value serialized in the `repo` wire field.
+    attr_reader :repo
+    # @return [String] Required `string` value serialized in the `sha` wire field.
+    attr_reader :sha
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoMetadata
-  FIELDS = {
-    commit_metadata: "commitMetadata",
-    org: "org",
-    ref: "ref",
-    repo: "repo",
-    sha: "sha",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    org
-    ref
-    repo
-    sha
-  ].freeze
-  DECODERS = {
-    commit_metadata: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadata.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant120JobVariant7HeadInfo.
-# Vercel
-class UserEventPayloadVariant120JobVariant7HeadInfo
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant120JobVariant7HeadInfoMetadata::DECODERS
-
-  # @return [UserEventPayloadVariant120JobVariant7HeadInfoCommitMetadata] Optional object value serialized in the `commitMetadata` wire field.
-  attr_reader :commit_metadata
-  # @return [String] Required `string` value serialized in the `org` wire field.
-  attr_reader :org
-  # @return [String] Required `string` value serialized in the `ref` wire field.
-  attr_reader :ref
-  # @return [String] Required `string` value serialized in the `repo` wire field.
-  attr_reader :repo
-  # @return [String] Required `string` value serialized in the `sha` wire field.
-  attr_reader :sha
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
 end

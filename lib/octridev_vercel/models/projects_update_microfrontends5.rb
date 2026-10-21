@@ -5,681 +5,678 @@
 
 # projects_update domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseLinkVariant3Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    production_branch: "productionBranch",
-    project_id: "projectId",
-    project_name: "projectName",
-    project_namespace: "projectNamespace",
-    project_name_with_namespace: "projectNameWithNamespace",
-    project_owner_id: "projectOwnerId",
-    project_url: "projectUrl",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    production_branch
-    project_id
-    project_name
-    project_namespace
-    project_name_with_namespace
-    project_url
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant3DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant3Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant3Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateMicrofrontendsResponseLinkVariant3.
-class UpdateMicrofrontendsResponseLinkVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant3Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :production_branch, :project_id,
-              :project_name, :project_namespace, :project_name_with_namespace, :project_url,
-              :sourceless, :type, :updated_at
-  # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
-  attr_reader :project_owner_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseLinkVariant3Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      production_branch: 'productionBranch',
+      project_id: 'projectId',
+      project_name: 'projectName',
+      project_namespace: 'projectNamespace',
+      project_name_with_namespace: 'projectNameWithNamespace',
+      project_owner_id: 'projectOwnerId',
+      project_url: 'projectUrl',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      production_branch
+      project_id
+      project_name
+      project_namespace
+      project_name_with_namespace
+      project_url
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant3DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant3Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant3Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateMicrofrontendsResponseLinkVariant3.
+  class UpdateMicrofrontendsResponseLinkVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant3Metadata::DECODERS
+
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :production_branch, :project_id,
+                :project_name, :project_namespace, :project_name_with_namespace, :project_url,
+                :sourceless, :type, :updated_at
+    # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
+    attr_reader :project_owner_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseLinkVariant4DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateMicrofrontendsResponseLinkVariant4DeployHooksItem.
-class UpdateMicrofrontendsResponseLinkVariant4DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant4DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant4DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant4DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseLinkVariant4DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateMicrofrontendsResponseLinkVariant4DeployHooksItem.
+  class UpdateMicrofrontendsResponseLinkVariant4DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant4DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant4DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant4DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseLinkVariant4Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    name: "name",
-    owner: "owner",
-    production_branch: "productionBranch",
-    slug: "slug",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-    uuid: "uuid",
-    workspace_uuid: "workspaceUuid",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    name
-    owner
-    production_branch
-    slug
-    type
-    uuid
-    workspace_uuid
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant4DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant4Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant4Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateMicrofrontendsResponseLinkVariant4.
-class UpdateMicrofrontendsResponseLinkVariant4
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant4Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant4Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant4Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :name, :owner, :production_branch,
-              :slug, :sourceless, :type, :updated_at, :uuid, :workspace_uuid
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseLinkVariant4Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      name: 'name',
+      owner: 'owner',
+      production_branch: 'productionBranch',
+      slug: 'slug',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt',
+      uuid: 'uuid',
+      workspace_uuid: 'workspaceUuid'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      name
+      owner
+      production_branch
+      slug
+      type
+      uuid
+      workspace_uuid
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant4DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant4Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant4Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateMicrofrontendsResponseLinkVariant4.
+  class UpdateMicrofrontendsResponseLinkVariant4
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant4Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant4Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant4Metadata::DECODERS
+
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :name, :owner, :production_branch,
+                :slug, :sourceless, :type, :updated_at, :uuid, :workspace_uuid
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseLinkVariant5DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateMicrofrontendsResponseLinkVariant5DeployHooksItem.
-class UpdateMicrofrontendsResponseLinkVariant5DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant5DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant5DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant5DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseLinkVariant5DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateMicrofrontendsResponseLinkVariant5DeployHooksItem.
+  class UpdateMicrofrontendsResponseLinkVariant5DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant5DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant5DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant5DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseLinkVariant5Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    org: "org",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    org
-    production_branch
-    repo
-    repo_id
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant5DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant5Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant5Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateMicrofrontendsResponseLinkVariant5.
-class UpdateMicrofrontendsResponseLinkVariant5
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant5Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant5Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant5Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
-              :repo_id, :sourceless, :type, :updated_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseLinkVariant5Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      org: 'org',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      org
+      production_branch
+      repo
+      repo_id
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant5DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant5Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant5Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateMicrofrontendsResponseLinkVariant5.
+  class UpdateMicrofrontendsResponseLinkVariant5
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant5Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant5Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant5Metadata::DECODERS
+
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
+                :repo_id, :sourceless, :type, :updated_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseLinkVariant6DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateMicrofrontendsResponseLinkVariant6DeployHooksItem.
-class UpdateMicrofrontendsResponseLinkVariant6DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant6DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant6DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant6DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseLinkVariant6DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateMicrofrontendsResponseLinkVariant6DeployHooksItem.
+  class UpdateMicrofrontendsResponseLinkVariant6DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant6DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant6DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant6DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseLinkVariant6Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    org: "org",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    org
-    production_branch
-    repo
-    repo_id
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant6DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant6Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant6Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateMicrofrontendsResponseLinkVariant6.
-class UpdateMicrofrontendsResponseLinkVariant6
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant6Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant6Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant6Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
-              :repo_id, :sourceless, :type, :updated_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseLinkVariant6Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      org: 'org',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      org
+      production_branch
+      repo
+      repo_id
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant6DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant6Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant6Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateMicrofrontendsResponseLinkVariant6.
+  class UpdateMicrofrontendsResponseLinkVariant6
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant6Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant6Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant6Metadata::DECODERS
+
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
+                :repo_id, :sourceless, :type, :updated_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseLinkVariant7DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateMicrofrontendsResponseLinkVariant7DeployHooksItem.
-class UpdateMicrofrontendsResponseLinkVariant7DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant7DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant7DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant7DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseLinkVariant7DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateMicrofrontendsResponseLinkVariant7DeployHooksItem.
+  class UpdateMicrofrontendsResponseLinkVariant7DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant7DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant7DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant7DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseLinkVariant7Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    owner: "owner",
-    owner_id: "ownerId",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    owner
-    owner_id
-    production_branch
-    repo
-    repo_id
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant7DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant7Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant7Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateMicrofrontendsResponseLinkVariant7.
-class UpdateMicrofrontendsResponseLinkVariant7
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant7Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant7Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant7Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :production_branch, :repo, :sourceless,
-              :type, :updated_at
-  # @return [String] Owner (namespace) slug, e.g. `acme`.
-  attr_reader :owner
-  # @return [String] Origin namespace id (`ns_…`) of the owner.
-  attr_reader :owner_id
-  # @return [String] Origin repository id.
-  attr_reader :repo_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseLinkVariant7Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      owner: 'owner',
+      owner_id: 'ownerId',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      owner
+      owner_id
+      production_branch
+      repo
+      repo_id
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant7DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant7Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseLinkVariant7Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateMicrofrontendsResponseLinkVariant7.
+  class UpdateMicrofrontendsResponseLinkVariant7
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant7Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseLinkVariant7Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseLinkVariant7Metadata::DECODERS
+
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :production_branch, :repo, :sourceless,
+                :type, :updated_at
+    # @return [String] Owner (namespace) slug, e.g. `acme`.
+    attr_reader :owner
+    # @return [String] Origin namespace id (`ns_…`) of the owner.
+    attr_reader :owner_id
+    # @return [String] Origin repository id.
+    attr_reader :repo_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the UpdateMicrofrontendsResponseLink SDK namespace.
+  module UpdateMicrofrontendsResponseLink
+    DISCRIMINATOR_MAPPING = {
+      'github' => -> { UpdateMicrofrontendsResponseLinkVariant0 },
+      'github-limited' => -> { UpdateMicrofrontendsResponseLinkVariant1 },
+      'github-custom-host' => -> { UpdateMicrofrontendsResponseLinkVariant2 },
+      'gitlab' => -> { UpdateMicrofrontendsResponseLinkVariant3 },
+      'bitbucket' => -> { UpdateMicrofrontendsResponseLinkVariant4 },
+      'vercel' => -> { UpdateMicrofrontendsResponseLinkVariant5 },
+      'v0' => -> { UpdateMicrofrontendsResponseLinkVariant6 },
+      'cursor-origin' => -> { UpdateMicrofrontendsResponseLinkVariant7 }
+    }.freeze
+
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseLink', 'variant', "Unknown UpdateMicrofrontendsResponseLink discriminator: #{hash['type'].inspect}")
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLink SDK namespace.
-module UpdateMicrofrontendsResponseLink
-  DISCRIMINATOR_MAPPING = {
-    "github" => -> { UpdateMicrofrontendsResponseLinkVariant0 },
-    "github-limited" => -> { UpdateMicrofrontendsResponseLinkVariant1 },
-    "github-custom-host" => -> { UpdateMicrofrontendsResponseLinkVariant2 },
-    "gitlab" => -> { UpdateMicrofrontendsResponseLinkVariant3 },
-    "bitbucket" => -> { UpdateMicrofrontendsResponseLinkVariant4 },
-    "vercel" => -> { UpdateMicrofrontendsResponseLinkVariant5 },
-    "v0" => -> { UpdateMicrofrontendsResponseLinkVariant6 },
-    "cursor-origin" => -> { UpdateMicrofrontendsResponseLinkVariant7 },
-  }.freeze
-
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseLink', 'variant', "Unknown UpdateMicrofrontendsResponseLink discriminator: #{hash["type"].inspect}")
+  # Defines the UpdateMicrofrontendsResponseLinkVariant0Sourceless SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant0Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant0Sourceless SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant0Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UpdateMicrofrontendsResponseLinkVariant0Type SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant0Type
+    GITHUB = 'github'
+    VALUES = ['github'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant0Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant0Type: #{value}")
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant0Type SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant0Type
-  GITHUB = 'github'
-  VALUES = ['github'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant0Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant0Type: #{value}")
+  # Defines the UpdateMicrofrontendsResponseLinkVariant1Sourceless SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant1Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant1Sourceless SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant1Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UpdateMicrofrontendsResponseLinkVariant1Type SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant1Type
+    GITHUB_LIMITED = 'github-limited'
+    VALUES = ['github-limited'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant1Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant1Type: #{value}")
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant1Type SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant1Type
-  GITHUB_LIMITED = 'github-limited'
-  VALUES = ['github-limited'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant1Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant1Type: #{value}")
+  # Defines the UpdateMicrofrontendsResponseLinkVariant2Sourceless SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant2Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant2Sourceless SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant2Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UpdateMicrofrontendsResponseLinkVariant2Type SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant2Type
+    GITHUB_CUSTOM_HOST = 'github-custom-host'
+    VALUES = ['github-custom-host'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant2Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant2Type: #{value}")
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant2Type SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant2Type
-  GITHUB_CUSTOM_HOST = 'github-custom-host'
-  VALUES = ['github-custom-host'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant2Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant2Type: #{value}")
+  # Defines the UpdateMicrofrontendsResponseLinkVariant3Sourceless SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant3Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant3Sourceless SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant3Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UpdateMicrofrontendsResponseLinkVariant3Type SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant3Type
+    GITLAB = 'gitlab'
+    VALUES = ['gitlab'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant3Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant3Type: #{value}")
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant3Type SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant3Type
-  GITLAB = 'gitlab'
-  VALUES = ['gitlab'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant3Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant3Type: #{value}")
+  # Defines the UpdateMicrofrontendsResponseLinkVariant4Sourceless SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant4Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant4Sourceless SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant4Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UpdateMicrofrontendsResponseLinkVariant4Type SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant4Type
+    BITBUCKET = 'bitbucket'
+    VALUES = ['bitbucket'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant4Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant4Type: #{value}")
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant4Type SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant4Type
-  BITBUCKET = 'bitbucket'
-  VALUES = ['bitbucket'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant4Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant4Type: #{value}")
+  # Defines the UpdateMicrofrontendsResponseLinkVariant5Sourceless SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant5Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant5Sourceless SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant5Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UpdateMicrofrontendsResponseLinkVariant5Type SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant5Type
+    VERCEL = 'vercel'
+    VALUES = ['vercel'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant5Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant5Type: #{value}")
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant5Type SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant5Type
-  VERCEL = 'vercel'
-  VALUES = ['vercel'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant5Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant5Type: #{value}")
+  # Defines the UpdateMicrofrontendsResponseLinkVariant6Sourceless SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant6Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant6Sourceless SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant6Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UpdateMicrofrontendsResponseLinkVariant6Type SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant6Type
+    V0 = 'v0'
+    VALUES = ['v0'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant6Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant6Type: #{value}")
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant6Type SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant6Type
-  V0 = 'v0'
-  VALUES = ['v0'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant6Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant6Type: #{value}")
+  # Defines the UpdateMicrofrontendsResponseLinkVariant7Sourceless SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant7Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UpdateMicrofrontendsResponseLinkVariant7Sourceless SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant7Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the UpdateMicrofrontendsResponseLinkVariant7Type SDK namespace.
+  module UpdateMicrofrontendsResponseLinkVariant7Type
+    CURSOR_ORIGIN = 'cursor-origin'
+    VALUES = ['cursor-origin'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant7Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant7Type: #{value}")
+    end
   end
-end
-
-# Defines the UpdateMicrofrontendsResponseLinkVariant7Type SDK namespace.
-module UpdateMicrofrontendsResponseLinkVariant7Type
-  CURSOR_ORIGIN = 'cursor-origin'
-  VALUES = ['cursor-origin'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseLinkVariant7Type', 'enum', "Unknown UpdateMicrofrontendsResponseLinkVariant7Type: #{value}")
-  end
-end
 end

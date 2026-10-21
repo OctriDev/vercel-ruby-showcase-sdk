@@ -36,17 +36,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectDomainResponseMetadata
         FIELDS = {
-          apex_name: "apexName",
-          created_at: "createdAt",
-          custom_environment_id: "customEnvironmentId",
-          git_branch: "gitBranch",
-          name: "name",
-          project_id: "projectId",
-          redirect: "redirect",
-          redirect_status_code: "redirectStatusCode",
-          updated_at: "updatedAt",
-          verification: "verification",
-          verified: "verified",
+          apex_name: 'apexName',
+          created_at: 'createdAt',
+          custom_environment_id: 'customEnvironmentId',
+          git_branch: 'gitBranch',
+          name: 'name',
+          project_id: 'projectId',
+          redirect: 'redirect',
+          redirect_status_code: 'redirectStatusCode',
+          updated_at: 'updatedAt',
+          verification: 'verification',
+          verified: 'verified'
         }.freeze
         REQUIRED_FIELDS = %i[
           apex_name
@@ -63,7 +63,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectDomainResponseVerified.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -98,12 +98,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRemoveProjectDomainMetadata
         FIELDS = {
-          remove_redirects: "removeRedirects",
+          remove_redirects: 'removeRedirects'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for RemoveProjectDomain.
@@ -133,11 +131,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddProjectDomainMetadata
         FIELDS = {
-          name: "name",
-          git_branch: "gitBranch",
-          custom_environment_id: "customEnvironmentId",
-          redirect: "redirect",
-          redirect_status_code: "redirectStatusCode",
+          name: 'name',
+          git_branch: 'gitBranch',
+          custom_environment_id: 'customEnvironmentId',
+          redirect: 'redirect',
+          redirect_status_code: 'redirectStatusCode'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -145,7 +143,7 @@ module OctridevVercel
         DECODERS = {
           redirect_status_code: lambda do |value|
             ::OctridevVercel::Methods::Projects::AddProjectDomainRedirectStatusCode.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -184,10 +182,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddProjectDomainResponseVerificationItemMetadata
         FIELDS = {
-          domain: "domain",
-          reason: "reason",
-          type: "type",
-          value: "value",
+          domain: 'domain',
+          reason: 'reason',
+          type: 'type',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -195,8 +193,7 @@ module OctridevVercel
           type
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for AddProjectDomainResponseVerificationItem.
@@ -226,17 +223,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddProjectDomainResponseMetadata
         FIELDS = {
-          apex_name: "apexName",
-          created_at: "createdAt",
-          custom_environment_id: "customEnvironmentId",
-          git_branch: "gitBranch",
-          name: "name",
-          project_id: "projectId",
-          redirect: "redirect",
-          redirect_status_code: "redirectStatusCode",
-          updated_at: "updatedAt",
-          verification: "verification",
-          verified: "verified",
+          apex_name: 'apexName',
+          created_at: 'createdAt',
+          custom_environment_id: 'customEnvironmentId',
+          git_branch: 'gitBranch',
+          name: 'name',
+          project_id: 'projectId',
+          redirect: 'redirect',
+          redirect_status_code: 'redirectStatusCode',
+          updated_at: 'updatedAt',
+          verification: 'verification',
+          verified: 'verified'
         }.freeze
         REQUIRED_FIELDS = %i[
           apex_name
@@ -253,7 +250,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Projects::AddProjectDomainResponseVerified.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -288,10 +285,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalMoveProjectDomainMetadata
         FIELDS = {
-          project_id: "projectId",
-          git_branch: "gitBranch",
-          redirect: "redirect",
-          redirect_status_code: "redirectStatusCode",
+          project_id: 'projectId',
+          git_branch: 'gitBranch',
+          redirect: 'redirect',
+          redirect_status_code: 'redirectStatusCode'
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
@@ -299,7 +296,7 @@ module OctridevVercel
         DECODERS = {
           redirect_status_code: lambda do |value|
             ::OctridevVercel::Methods::Projects::MoveProjectDomainRedirectStatusCode.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -336,10 +333,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalMoveProjectDomainResponseVerificationItemMetadata
         FIELDS = {
-          domain: "domain",
-          reason: "reason",
-          type: "type",
-          value: "value",
+          domain: 'domain',
+          reason: 'reason',
+          type: 'type',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -347,8 +344,7 @@ module OctridevVercel
           type
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for MoveProjectDomainResponseVerificationItem.
@@ -378,17 +374,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalMoveProjectDomainResponseMetadata
         FIELDS = {
-          apex_name: "apexName",
-          created_at: "createdAt",
-          custom_environment_id: "customEnvironmentId",
-          git_branch: "gitBranch",
-          name: "name",
-          project_id: "projectId",
-          redirect: "redirect",
-          redirect_status_code: "redirectStatusCode",
-          updated_at: "updatedAt",
-          verification: "verification",
-          verified: "verified",
+          apex_name: 'apexName',
+          created_at: 'createdAt',
+          custom_environment_id: 'customEnvironmentId',
+          git_branch: 'gitBranch',
+          name: 'name',
+          project_id: 'projectId',
+          redirect: 'redirect',
+          redirect_status_code: 'redirectStatusCode',
+          updated_at: 'updatedAt',
+          verification: 'verification',
+          verified: 'verified'
         }.freeze
         REQUIRED_FIELDS = %i[
           apex_name
@@ -405,7 +401,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Projects::MoveProjectDomainResponseVerified.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -440,16 +436,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalVerifyProjectDomainResponseMetadata
         FIELDS = {
-          apex_name: "apexName",
-          created_at: "createdAt",
-          custom_environment_id: "customEnvironmentId",
-          git_branch: "gitBranch",
-          name: "name",
-          project_id: "projectId",
-          redirect: "redirect",
-          redirect_status_code: "redirectStatusCode",
-          updated_at: "updatedAt",
-          verified: "verified",
+          apex_name: 'apexName',
+          created_at: 'createdAt',
+          custom_environment_id: 'customEnvironmentId',
+          git_branch: 'gitBranch',
+          name: 'name',
+          project_id: 'projectId',
+          redirect: 'redirect',
+          redirect_status_code: 'redirectStatusCode',
+          updated_at: 'updatedAt',
+          verified: 'verified'
         }.freeze
         REQUIRED_FIELDS = %i[
           apex_name
@@ -463,7 +459,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Projects::VerifyProjectDomainResponseVerified.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -496,8 +492,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant0Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -506,7 +502,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant0Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -536,8 +532,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant1Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -546,7 +542,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant1Type.from_value(value)
-          end,
+          end
         }.freeze
       end
     end

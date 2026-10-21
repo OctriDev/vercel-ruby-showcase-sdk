@@ -12,29 +12,23 @@ module OctridevVercel
       # Retrieves the registrant contact verification status for a domain. Use this after purchasing a domain to check whether its registrant contact has been verified. A 400 is returned if the domain was bought less than 30 minutes before the request.
       #
       # Get the registrant contact verification status for a domain. Use this after purchasing a domain to determine whether the contact has been verified. Note that a bought_too_recently error will be returned if the domain was bought less than 30 minutes before the request.
-      singleton_class.define_method(:get_domain_contact_verification) do |
-        config:,
-        domain:,
-        team_id: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_domain_contact_verification) do |config:, domain:, team_id: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/contact-verification"
+            '/contact-verification'
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::GetDomainContactVerificationResponse,
           decoder: :json,
           operation_id: 'get_domain_contact_verification',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::DomainNotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
     end

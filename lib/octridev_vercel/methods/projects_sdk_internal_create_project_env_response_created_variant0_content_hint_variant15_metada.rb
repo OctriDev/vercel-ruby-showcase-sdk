@@ -12,11 +12,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant15Metadata
         FIELDS = {
-          integration_configuration_id: "integrationConfigurationId",
-          integration_id: "integrationId",
-          integration_product_id: "integrationProductId",
-          store_id: "storeId",
-          type: "type",
+          integration_configuration_id: 'integrationConfigurationId',
+          integration_id: 'integrationId',
+          integration_product_id: 'integrationProductId',
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           integration_configuration_id
@@ -28,7 +28,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant15Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -59,8 +59,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant16Metadata
         FIELDS = {
-          project_id: "projectId",
-          type: "type",
+          project_id: 'projectId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
@@ -69,7 +69,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant16Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -99,8 +99,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0InternalContentHintMetadata
         FIELDS = {
-          encrypted_value: "encryptedValue",
-          type: "type",
+          encrypted_value: 'encryptedValue',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           encrypted_value
@@ -109,7 +109,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0InternalContentHintType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -142,29 +142,29 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0Metadata
         FIELDS = {
-          comment: "comment",
-          configuration_id: "configurationId",
-          content_hint: "contentHint",
-          created_at: "createdAt",
-          created_by: "createdBy",
-          custom_environment_ids: "customEnvironmentIds",
-          decrypted: "decrypted",
-          edge_config_id: "edgeConfigId",
-          edge_config_token_id: "edgeConfigTokenId",
-          git_branch: "gitBranch",
-          id: "id",
-          internal_content_hint: "internalContentHint",
-          key: "key",
-          legacy_value: "legacyValue",
-          sunset_secret_id: "sunsetSecretId",
-          target: "target",
-          type: "type",
-          updated_at: "updatedAt",
-          updated_by: "updatedBy",
-          value: "value",
-          visibility: "visibility",
-          vsm_value: "vsmValue",
-          system: "system",
+          comment: 'comment',
+          configuration_id: 'configurationId',
+          content_hint: 'contentHint',
+          created_at: 'createdAt',
+          created_by: 'createdBy',
+          custom_environment_ids: 'customEnvironmentIds',
+          decrypted: 'decrypted',
+          edge_config_id: 'edgeConfigId',
+          edge_config_token_id: 'edgeConfigTokenId',
+          git_branch: 'gitBranch',
+          id: 'id',
+          internal_content_hint: 'internalContentHint',
+          key: 'key',
+          legacy_value: 'legacyValue',
+          sunset_secret_id: 'sunsetSecretId',
+          target: 'target',
+          type: 'type',
+          updated_at: 'updatedAt',
+          updated_by: 'updatedBy',
+          value: 'value',
+          visibility: 'visibility',
+          vsm_value: 'vsmValue',
+          system: 'system'
         }.freeze
         REQUIRED_FIELDS = %i[
           key
@@ -186,7 +186,7 @@ module OctridevVercel
           end,
           system: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0System.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -227,8 +227,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant1ItemInternalContentHintMetadata
         FIELDS = {
-          encrypted_value: "encryptedValue",
-          type: "type",
+          encrypted_value: 'encryptedValue',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           encrypted_value
@@ -237,7 +237,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant1ItemInternalContentHintType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -270,29 +270,29 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant1ItemMetadata
         FIELDS = {
-          comment: "comment",
-          configuration_id: "configurationId",
-          content_hint: "contentHint",
-          created_at: "createdAt",
-          created_by: "createdBy",
-          custom_environment_ids: "customEnvironmentIds",
-          decrypted: "decrypted",
-          edge_config_id: "edgeConfigId",
-          edge_config_token_id: "edgeConfigTokenId",
-          git_branch: "gitBranch",
-          id: "id",
-          internal_content_hint: "internalContentHint",
-          key: "key",
-          legacy_value: "legacyValue",
-          sunset_secret_id: "sunsetSecretId",
-          target: "target",
-          type: "type",
-          updated_at: "updatedAt",
-          updated_by: "updatedBy",
-          value: "value",
-          visibility: "visibility",
-          vsm_value: "vsmValue",
-          system: "system",
+          comment: 'comment',
+          configuration_id: 'configurationId',
+          content_hint: 'contentHint',
+          created_at: 'createdAt',
+          created_by: 'createdBy',
+          custom_environment_ids: 'customEnvironmentIds',
+          decrypted: 'decrypted',
+          edge_config_id: 'edgeConfigId',
+          edge_config_token_id: 'edgeConfigTokenId',
+          git_branch: 'gitBranch',
+          id: 'id',
+          internal_content_hint: 'internalContentHint',
+          key: 'key',
+          legacy_value: 'legacyValue',
+          sunset_secret_id: 'sunsetSecretId',
+          target: 'target',
+          type: 'type',
+          updated_at: 'updatedAt',
+          updated_by: 'updatedBy',
+          value: 'value',
+          visibility: 'visibility',
+          vsm_value: 'vsmValue',
+          system: 'system'
         }.freeze
         REQUIRED_FIELDS = %i[
           key
@@ -317,7 +317,7 @@ module OctridevVercel
           end,
           system: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant1ItemSystem.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -359,24 +359,23 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseFailedItemErrorMetadata
         FIELDS = {
-          action: "action",
-          code: "code",
-          env_var_id: "envVarId",
-          env_var_key: "envVarKey",
-          git_branch: "gitBranch",
-          key: "key",
-          link: "link",
-          message: "message",
-          project: "project",
-          target: "target",
-          value: "value",
+          action: 'action',
+          code: 'code',
+          env_var_id: 'envVarId',
+          env_var_key: 'envVarKey',
+          git_branch: 'gitBranch',
+          key: 'key',
+          link: 'link',
+          message: 'message',
+          project: 'project',
+          target: 'target',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           code
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateProjectEnvResponseFailedItemError.
@@ -406,7 +405,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseFailedItemMetadata
         FIELDS = {
-          error: "error",
+          error: 'error'
         }.freeze
         REQUIRED_FIELDS = %i[
           error
@@ -414,7 +413,7 @@ module OctridevVercel
         DECODERS = {
           error: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseFailedItemError.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -444,8 +443,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseMetadata
         FIELDS = {
-          created: "created",
-          failed: "failed",
+          created: 'created',
+          failed: 'failed'
         }.freeze
         REQUIRED_FIELDS = %i[
           failed
@@ -453,7 +452,7 @@ module OctridevVercel
         DECODERS = {
           failed: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseFailedItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -483,23 +482,22 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalEditProjectEnvMetadata
         FIELDS = {
-          key: "key",
-          target: "target",
-          git_branch: "gitBranch",
-          type: "type",
-          value: "value",
-          custom_environment_ids: "customEnvironmentIds",
-          comment: "comment",
+          key: 'key',
+          target: 'target',
+          git_branch: 'gitBranch',
+          type: 'type',
+          value: 'value',
+          custom_environment_ids: 'customEnvironmentIds',
+          comment: 'comment'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           target: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::EditProjectEnvTargetItem.from_value(item) }
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::EditProjectEnvType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -542,8 +540,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalEditProjectEnvResponseInternalContentHintMetadata
         FIELDS = {
-          encrypted_value: "encryptedValue",
-          type: "type",
+          encrypted_value: 'encryptedValue',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           encrypted_value
@@ -552,7 +550,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::EditProjectEnvResponseInternalContentHintType.from_value(value)
-          end,
+          end
         }.freeze
       end
     end

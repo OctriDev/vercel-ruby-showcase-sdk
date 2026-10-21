@@ -32,13 +32,12 @@ module OctridevVercel
         custom_claims: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id)
           ].join,
           config: config,
@@ -51,12 +50,12 @@ module OctridevVercel
             'notification' => notification,
             'extras' => extras,
             'secrets' => secrets,
-            'customClaims' => custom_claims,
+            'customClaims' => custom_claims
           },
           return_type: ::OctridevVercel::Methods::Marketplace::UpdateResourceResponse,
           decoder: :json,
           operation_id: 'update_resource',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

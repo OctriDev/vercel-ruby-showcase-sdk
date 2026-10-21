@@ -18,32 +18,24 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_rolling_release) do |
-        config:,
-        id_or_name:,
-        state: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_rolling_release) do |config:, id_or_name:, state: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/rolling-release"
+            '/rolling-release'
           ].join,
           config: config,
           query: {
             'state' => QueryValue.new(state, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::RollingRelease::GetRollingReleaseResponse,
           decoder: :json,
           operation_id: 'get_rolling_release',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

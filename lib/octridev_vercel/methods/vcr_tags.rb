@@ -19,16 +19,7 @@ module OctridevVercel
       # @param repository_name [String] Single Docker repository name component.
       # @param last [String] Opaque pagination cursor returned by a previous list
       #   response.
-      singleton_class.define_method(:get_by_team_slug_by_project_slug_by_repository_name_tags_list) do |
-        config:,
-        team_slug:,
-        project_slug:,
-        repository_name:,
-        count: NOT_GIVEN,
-        last: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_by_team_slug_by_project_slug_by_repository_name_tags_list) do |config:, team_slug:, project_slug:, repository_name:, count: NOT_GIVEN, last: NOT_GIVEN, request_options: nil|
         Validation.validate_length('teamSlug', team_slug, max: 255)
         Validation.validate_pattern('teamSlug', team_slug, '^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$')
 
@@ -45,23 +36,23 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            "/v2/",
+            '/v2/',
             SdkClient.encode_path_segment(team_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(project_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(repository_name),
-            "/tags/list"
+            '/tags/list'
           ].join,
           config: config,
           query: {
             'n' => QueryValue.new(count, style: 'form', explode: true),
-            'last' => QueryValue.new(last, style: 'form', explode: true),
+            'last' => QueryValue.new(last, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Vcr::GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse,
           decoder: :json,
           operation_id: 'get_by_team_slug_by_project_slug_by_repository_name_tags_list',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

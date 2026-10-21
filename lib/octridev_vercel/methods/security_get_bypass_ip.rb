@@ -21,19 +21,7 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_bypass_ip) do |
-        config:,
-        project_id:,
-        limit: NOT_GIVEN,
-        source_ip: NOT_GIVEN,
-        domain: NOT_GIVEN,
-        project_scope: NOT_GIVEN,
-        offset: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_bypass_ip) do |config:, project_id:, limit: NOT_GIVEN, source_ip: NOT_GIVEN, domain: NOT_GIVEN, project_scope: NOT_GIVEN, offset: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         Validation.if_given(limit) { Validation.validate_range('limit', limit, max: 256) }
 
         Validation.if_given(source_ip) { Validation.validate_length('sourceIp', source_ip, max: 49) }
@@ -47,7 +35,7 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          "/v1/security/firewall/bypass",
+          '/v1/security/firewall/bypass',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
@@ -57,12 +45,12 @@ module OctridevVercel
             'projectScope' => QueryValue.new(project_scope, style: 'form', explode: true),
             'offset' => QueryValue.new(offset, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Security::GetBypassIpResponse,
           decoder: :json,
           operation_id: 'get_bypass_ip',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

@@ -58,36 +58,38 @@ module OctridevVercel
         request_options: nil,
         &block
       )
-    return enum_for(
-          __method__,
-          config: config,
-          session_id: session_id,
-          cmd_id: cmd_id,
-          command: command,
-          team_id: team_id,
-          slug: slug,
-          args: args,
-          cwd: cwd,
-          env: env,
-          sudo: sudo,
-          wait: wait,
-          logs: logs,
-          timeout: timeout,
-          attach_stdin: attach_stdin,
-          request_options: request_options,
-        ) unless block
+        unless block
+          return enum_for(
+            __method__,
+            config: config,
+            session_id: session_id,
+            cmd_id: cmd_id,
+            command: command,
+            team_id: team_id,
+            slug: slug,
+            args: args,
+            cwd: cwd,
+            env: env,
+            sudo: sudo,
+            wait: wait,
+            logs: logs,
+            timeout: timeout,
+            attach_stdin: attach_stdin,
+            request_options: request_options
+          )
+        end
         SdkClient.stream(
           'POST', [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/cmd"
+            '/cmd'
           ].join,
           config: config,
           query: {
-          'cmdId' => QueryValue.new(cmd_id, style: 'form', explode: true),
-          'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-          'slug' => QueryValue.new(slug, style: 'form', explode: true),
-        },
+            'cmdId' => QueryValue.new(cmd_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
           body: {
             'command' => command,
             'args' => args,
@@ -97,15 +99,16 @@ module OctridevVercel
             'wait' => wait,
             'logs' => logs,
             'timeout' => timeout,
-            'attachStdin' => attach_stdin,
+            'attachStdin' => attach_stdin
           },
           content_type: 'application/json',
           operation_id: 'run_session_command_stream',
           stream_format: :ndjson,
-          stream_media_type: "application/x-ndjson",
+          stream_media_type: 'application/x-ndjson',
           request_options: request_options
         ).each do |ev|
           break if ev.data == '[DONE]'
+
           decoded = JSON.parse(ev.data)
           block.call(decoded)
         end

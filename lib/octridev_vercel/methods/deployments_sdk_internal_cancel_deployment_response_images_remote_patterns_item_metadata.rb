@@ -12,11 +12,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseImagesRemotePatternsItemMetadata
         FIELDS = {
-          hostname: "hostname",
-          pathname: "pathname",
-          port: "port",
-          protocol: "protocol",
-          search: "search",
+          hostname: 'hostname',
+          pathname: 'pathname',
+          port: 'port',
+          protocol: 'protocol',
+          search: 'search'
         }.freeze
         REQUIRED_FIELDS = %i[
           hostname
@@ -24,7 +24,7 @@ module OctridevVercel
         DECODERS = {
           protocol: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseImagesRemotePatternsItemProtocol.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -63,19 +63,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseImagesMetadata
         FIELDS = {
-          content_disposition_type: "contentDispositionType",
-          content_security_policy: "contentSecurityPolicy",
-          dangerously_allow_svg: "dangerouslyAllowSVG",
-          domains: "domains",
-          formats: "formats",
-          local_patterns: "localPatterns",
-          minimum_cache_ttl: "minimumCacheTTL",
-          qualities: "qualities",
-          remote_patterns: "remotePatterns",
-          sizes: "sizes",
+          content_disposition_type: 'contentDispositionType',
+          content_security_policy: 'contentSecurityPolicy',
+          dangerously_allow_svg: 'dangerouslyAllowSVG',
+          domains: 'domains',
+          formats: 'formats',
+          local_patterns: 'localPatterns',
+          minimum_cache_ttl: 'minimumCacheTTL',
+          qualities: 'qualities',
+          remote_patterns: 'remotePatterns',
+          sizes: 'sizes'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           content_disposition_type: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseImagesContentDispositionType.from_value(value)
@@ -91,7 +90,7 @@ module OctridevVercel
           end,
           remote_patterns: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseImagesRemotePatternsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -123,12 +122,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseIntegrationsMetadata
         FIELDS = {
-          claimed_at: "claimedAt",
-          completed_at: "completedAt",
-          skipped_at: "skippedAt",
-          skipped_by: "skippedBy",
-          started_at: "startedAt",
-          status: "status",
+          claimed_at: 'claimedAt',
+          completed_at: 'completedAt',
+          skipped_at: 'skippedAt',
+          skipped_by: 'skippedBy',
+          started_at: 'startedAt',
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           started_at
@@ -137,7 +136,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseIntegrationsStatus.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -167,15 +166,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseLambdasItemOutputItemMetadata
         FIELDS = {
-          function_name: "functionName",
-          path: "path",
+          function_name: 'functionName',
+          path: 'path'
         }.freeze
         REQUIRED_FIELDS = %i[
           function_name
           path
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CancelDeploymentResponseLambdasItemOutputItem.
@@ -204,12 +202,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseLambdasItemMetadata
         FIELDS = {
-          created_at: "createdAt",
-          entrypoint: "entrypoint",
-          id: "id",
-          ready_state: "readyState",
-          ready_state_at: "readyStateAt",
-          output: "output",
+          created_at: 'createdAt',
+          entrypoint: 'entrypoint',
+          id: 'id',
+          ready_state: 'readyState',
+          ready_state_at: 'readyStateAt',
+          output: 'output'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -221,7 +219,7 @@ module OctridevVercel
           end,
           output: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseLambdasItemOutputItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -252,8 +250,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseManualProvisioningMetadata
         FIELDS = {
-          completed_at: "completedAt",
-          state: "state",
+          completed_at: 'completedAt',
+          state: 'state'
         }.freeze
         REQUIRED_FIELDS = %i[
           state
@@ -261,7 +259,7 @@ module OctridevVercel
         DECODERS = {
           state: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseManualProvisioningState.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -295,19 +293,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseOidcTokenClaimsMetadata
         FIELDS = {
-          aud: "aud",
-          custom_environment_id: "custom_environment_id",
-          deployment_id: "deployment_id",
-          environment: "environment",
-          iss: "iss",
-          mfe_group_ids: "mfe_group_ids",
-          owner: "owner",
-          owner_id: "owner_id",
-          plan: "plan",
-          project: "project",
-          project_id: "project_id",
-          scope: "scope",
-          sub: "sub",
+          aud: 'aud',
+          custom_environment_id: 'custom_environment_id',
+          deployment_id: 'deployment_id',
+          environment: 'environment',
+          iss: 'iss',
+          mfe_group_ids: 'mfe_group_ids',
+          owner: 'owner',
+          owner_id: 'owner_id',
+          plan: 'plan',
+          project: 'project',
+          project_id: 'project_id',
+          scope: 'scope',
+          sub: 'sub'
         }.freeze
         REQUIRED_FIELDS = %i[
           aud
@@ -320,8 +318,7 @@ module OctridevVercel
           scope
           sub
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CancelDeploymentResponseOidcTokenClaims.
@@ -351,14 +348,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponsePlatformCreatorMetadata
         FIELDS = {
-          avatar: "avatar",
-          name: "name",
+          avatar: 'avatar',
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CancelDeploymentResponsePlatformCreator.
@@ -391,8 +387,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponsePlatformOriginMetadata
         FIELDS = {
-          type: "type",
-          value: "value",
+          type: 'type',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           type
@@ -401,7 +397,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponsePlatformOriginType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -435,13 +431,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponsePlatformSourceMetadata
         FIELDS = {
-          name: "name",
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CancelDeploymentResponsePlatformSource.
@@ -472,10 +467,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponsePlatformMetadata
         FIELDS = {
-          creator: "creator",
-          meta: "meta",
-          origin: "origin",
-          source: "source",
+          creator: 'creator',
+          meta: 'meta',
+          origin: 'origin',
+          source: 'source'
         }.freeze
         REQUIRED_FIELDS = %i[
           creator
@@ -491,7 +486,7 @@ module OctridevVercel
           end,
           source: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponsePlatformSource.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -529,16 +524,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseProjectMetadata
         FIELDS = {
-          framework: "framework",
-          id: "id",
-          name: "name",
+          framework: 'framework',
+          id: 'id',
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
     end
   end

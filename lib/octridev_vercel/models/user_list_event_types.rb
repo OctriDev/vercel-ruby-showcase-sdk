@@ -5,1007 +5,1007 @@
 
 # user domain models
 module OctridevVercel
-# Defines the ListEventTypeName SDK namespace.
-module ListEventTypeName
-  ACCESS_GROUP_CREATED = 'access-group-created'
-  ACCESS_GROUP_DELETED = 'access-group-deleted'
-  ACCESS_GROUP_PROJECT_UPDATED = 'access-group-project-updated'
-  ACCESS_GROUP_UPDATED = 'access-group-updated'
-  ACCESS_GROUP_USER_ADDED = 'access-group-user-added'
-  ACCESS_GROUP_USER_REMOVED = 'access-group-user-removed'
-  ADMIN_AGENTIC_PROVISIONING_ACCOUNT_UNLINKED = 'admin-agentic-provisioning-account-unlinked'
-  ADMIN_PLAN_UPDATED = 'admin-plan-updated'
-  ADMIN_PREVIEW_DEPLOYMENT_SUFFIX_CLEAR = 'admin-preview-deployment-suffix-clear'
-  ADMIN_SAML_IDP_MATERIAL_DELETED = 'admin-saml-idp-material-deleted'
-  ADMIN_SAML_IDP_MATERIAL_SET = 'admin-saml-idp-material-set'
-  ADMIN_SAML_SP_SIGNING_KEY_CREATED = 'admin-saml-sp-signing-key-created'
-  ADMIN_SAML_SP_SIGNING_KEY_UPDATED = 'admin-saml-sp-signing-key-updated'
-  ADMIN_SECONDARY_EMAIL_ADDED = 'admin-secondary-email-added'
-  ADMIN_SECONDARY_EMAIL_REMOVED = 'admin-secondary-email-removed'
-  ADMIN_TEAM_NAME_UPDATE = 'admin-team-name-update'
-  ADMIN_TEAM_SLUG_UPDATE = 'admin-team-slug-update'
-  ADMIN_USER_DELETE = 'admin-user-delete'
-  ADMIN_USER_PRIMARY_EMAIL_UPDATED = 'admin-user-primary-email-updated'
-  ADMIN_USERNAME_UPDATED = 'admin-username-updated'
-  AGENTIC_PROVISIONING_ACCOUNT_BLOCKED = 'agentic-provisioning-account-blocked'
-  AGENTIC_PROVISIONING_ACCOUNT_LINKED = 'agentic-provisioning-account-linked'
-  AGENTIC_PROVISIONING_ACCOUNT_RELINKED = 'agentic-provisioning-account-relinked'
-  AGENTIC_PROVISIONING_ACCOUNT_UNLINKED = 'agentic-provisioning-account-unlinked'
-  AGENTIC_PROVISIONING_CREDENTIALS_ROTATED = 'agentic-provisioning-credentials-rotated'
-  AGENTIC_PROVISIONING_PLAN_CHANGED = 'agentic-provisioning-plan-changed'
-  AGENTIC_PROVISIONING_TEAM_CREATED = 'agentic-provisioning-team-created'
-  AI_ALERT_INVESTIGATION = 'ai-alert-investigation'
-  AI_CODE_REVIEW = 'ai-code-review'
-  AI_GATEWAY_ACCESS_POLICY_CREATED = 'ai-gateway-access-policy-created'
-  AI_GATEWAY_ACCESS_POLICY_DELETED = 'ai-gateway-access-policy-deleted'
-  AI_GATEWAY_ACCESS_POLICY_MEMBER_ADDED = 'ai-gateway-access-policy-member-added'
-  AI_GATEWAY_ACCESS_POLICY_MEMBER_REMOVED = 'ai-gateway-access-policy-member-removed'
-  AI_GATEWAY_ACCESS_POLICY_UPDATED = 'ai-gateway-access-policy-updated'
-  AI_GATEWAY_API_KEY_CREATED = 'ai-gateway-api-key-created'
-  AI_GATEWAY_API_KEY_DELETED = 'ai-gateway-api-key-deleted'
-  AI_GATEWAY_API_KEY_QUOTA_UPDATED = 'ai-gateway-api-key-quota-updated'
-  AI_GATEWAY_AUTO_RELOAD_UPDATED = 'ai-gateway-auto-reload-updated'
-  AI_GATEWAY_BUDGET_DEFAULT_UPDATED = 'ai-gateway-budget-default-updated'
-  AI_GATEWAY_BYOK_CREDENTIAL_CREATED = 'ai-gateway-byok-credential-created'
-  AI_GATEWAY_BYOK_CREDENTIAL_DELETED = 'ai-gateway-byok-credential-deleted'
-  AI_GATEWAY_BYOK_CREDENTIAL_UPDATED = 'ai-gateway-byok-credential-updated'
-  AI_GATEWAY_BYOK_MODEL_MAPPINGS_UPDATED = 'ai-gateway-byok-model-mappings-updated'
-  AI_GATEWAY_CREDITS_PURCHASED = 'ai-gateway-credits-purchased'
-  AI_GATEWAY_GUARDRAILS_UPDATED = 'ai-gateway-guardrails-updated'
-  AI_GATEWAY_HIPAA_COMPLIANCE_TOGGLED = 'ai-gateway-hipaa-compliance-toggled'
-  AI_GATEWAY_INFERENCE_REGIONS_UPDATED = 'ai-gateway-inference-regions-updated'
-  AI_GATEWAY_MODEL_ALLOWLIST_MODELS_UPDATED = 'ai-gateway-model-allowlist-models-updated'
-  AI_GATEWAY_MODEL_ALLOWLIST_TOGGLED = 'ai-gateway-model-allowlist-toggled'
-  AI_GATEWAY_MODEL_CATALOG_ALERT_SETTINGS_UPDATED = 'ai-gateway-model-catalog-alert-settings-updated'
-  AI_GATEWAY_PRIVATE_MODEL_CREATED = 'ai-gateway-private-model-created'
-  AI_GATEWAY_PRIVATE_MODEL_DELETED = 'ai-gateway-private-model-deleted'
-  AI_GATEWAY_PRIVATE_MODEL_UPDATED = 'ai-gateway-private-model-updated'
-  AI_GATEWAY_PRIVATE_PROVIDER_CREATED = 'ai-gateway-private-provider-created'
-  AI_GATEWAY_PRIVATE_PROVIDER_DELETED = 'ai-gateway-private-provider-deleted'
-  AI_GATEWAY_PRIVATE_PROVIDER_UPDATED = 'ai-gateway-private-provider-updated'
-  AI_GATEWAY_PROMPT_TRAINING_OPT_OUT_TOGGLED = 'ai-gateway-prompt-training-opt-out-toggled'
-  AI_GATEWAY_PROVIDER_ALLOWLIST_PROVIDERS_UPDATED = 'ai-gateway-provider-allowlist-providers-updated'
-  AI_GATEWAY_PROVIDER_ALLOWLIST_TOGGLED = 'ai-gateway-provider-allowlist-toggled'
-  AI_GATEWAY_RULE_CREATED = 'ai-gateway-rule-created'
-  AI_GATEWAY_RULE_DELETED = 'ai-gateway-rule-deleted'
-  AI_GATEWAY_RULE_UPDATED = 'ai-gateway-rule-updated'
-  AI_GATEWAY_SCOPE_BUDGET_UPDATED = 'ai-gateway-scope-budget-updated'
-  AI_GATEWAY_TRANSCRIPTS_DEFAULT_DISABLED = 'ai-gateway-transcripts-default-disabled'
-  AI_GATEWAY_TRANSCRIPTS_DEFAULT_ENABLED = 'ai-gateway-transcripts-default-enabled'
-  AI_GATEWAY_TRANSCRIPTS_DISABLED = 'ai-gateway-transcripts-disabled'
-  AI_GATEWAY_TRANSCRIPTS_ENABLED = 'ai-gateway-transcripts-enabled'
-  AI_GATEWAY_TRANSCRIPTS_RETENTION_UPDATED = 'ai-gateway-transcripts-retention-updated'
-  AI_GATEWAY_VIRTUAL_MODEL_CONFIG_ARCHIVED = 'ai-gateway-virtual-model-config-archived'
-  AI_GATEWAY_VIRTUAL_MODEL_CONFIG_CREATED = 'ai-gateway-virtual-model-config-created'
-  AI_GATEWAY_VIRTUAL_MODEL_CONFIG_DELETED = 'ai-gateway-virtual-model-config-deleted'
-  AI_GATEWAY_VIRTUAL_MODEL_CONFIG_RESTORED = 'ai-gateway-virtual-model-config-restored'
-  AI_GATEWAY_VIRTUAL_MODEL_CONFIG_UPDATED = 'ai-gateway-virtual-model-config-updated'
-  AI_GATEWAY_ZERO_DATA_RETENTION_TOGGLED = 'ai-gateway-zero-data-retention-toggled'
-  AI_OMNIAGENT = 'ai-omniagent'
-  ALERT_INVESTIGATION_PROJECT_ALLOWLIST_UPDATED = 'alert-investigation-project-allowlist-updated'
-  ALERT_RULE_CREATED = 'alert-rule-created'
-  ALERT_RULE_DELETED = 'alert-rule-deleted'
-  ALERT_RULE_UPDATED = 'alert-rule-updated'
-  ALIAS = 'alias'
-  ALIAS_CHOWN = 'alias-chown'
-  ALIAS_DELETE = 'alias-delete'
-  ALIAS_INVITE_CREATED = 'alias-invite-created'
-  ALIAS_INVITE_JOINED = 'alias-invite-joined'
-  ALIAS_INVITE_REVOKED = 'alias-invite-revoked'
-  ALIAS_PROTECTION_BYPASS_CREATED = 'alias-protection-bypass-created'
-  ALIAS_PROTECTION_BYPASS_EXCEPTION = 'alias-protection-bypass-exception'
-  ALIAS_PROTECTION_BYPASS_REGENERATED = 'alias-protection-bypass-regenerated'
-  ALIAS_PROTECTION_BYPASS_REVOKED = 'alias-protection-bypass-revoked'
-  ALIAS_SYSTEM = 'alias-system'
-  ALIAS_USER_SCOPED_ACCESS_DENIED = 'alias-user-scoped-access-denied'
-  ALIAS_USER_SCOPED_ACCESS_GRANTED = 'alias-user-scoped-access-granted'
-  ALIAS_USER_SCOPED_ACCESS_REQUESTED = 'alias-user-scoped-access-requested'
-  ALIAS_USER_SCOPED_ACCESS_REVOKED = 'alias-user-scoped-access-revoked'
-  ALIASES_ASSIGNED = 'aliases-assigned'
-  ATTACK_MODE_DISABLED = 'attack-mode-disabled'
-  ATTACK_MODE_ENABLED = 'attack-mode-enabled'
-  AUDIT_LOG_EXPORT_DOWNLOADED = 'audit-log-export-downloaded'
-  AUDIT_LOG_EXPORT_REQUESTED = 'audit-log-export-requested'
-  AUTHORIZE_GIT_DEPLOYMENT = 'authorize-git-deployment'
-  AUTO_EXPOSE_SYSTEM_ENVS = 'auto-expose-system-envs'
-  AVATAR = 'avatar'
-  BILLING_SETTINGS_UPDATED = 'billing-settings-updated'
-  BULK_REDIRECTS_SETTINGS_UPDATED = 'bulk-redirects-settings-updated'
-  BULK_REDIRECTS_VERSION_PROMOTED = 'bulk-redirects-version-promoted'
-  BULK_REDIRECTS_VERSION_RESTORED = 'bulk-redirects-version-restored'
-  CERT = 'cert'
-  CERT_AUTORENEW = 'cert-autorenew'
-  CERT_CHOWN = 'cert-chown'
-  CERT_CLONE = 'cert-clone'
-  CERT_DELETE = 'cert-delete'
-  CERT_RENEW = 'cert-renew'
-  CERT_REPLACE = 'cert-replace'
-  CERT_SYSTEM_CREATE = 'cert-system-create'
-  CODE_OWNERS_CONFIG_UPDATED = 'code-owners-config-updated'
-  COMPLIANCE_DOCUMENT_DOWNLOADED = 'compliance-document-downloaded'
-  COMPLIANCE_DOCUMENT_PREVIEWED = 'compliance-document-previewed'
-  COMPLIANCE_DOCUMENTS_BULK_DOWNLOADED = 'compliance-documents-bulk-downloaded'
-  CONCURRENT_BUILDS_UPDATE = 'concurrent-builds-update'
-  CONNECT_ATTACH_PROJECT = 'connect-attach-project'
-  CONNECT_BITBUCKET = 'connect-bitbucket'
-  CONNECT_BITBUCKET_APP = 'connect-bitbucket-app'
-  CONNECT_CONFIGURATION_CREATED = 'connect-configuration-created'
-  CONNECT_CONFIGURATION_DELETED = 'connect-configuration-deleted'
-  CONNECT_CONFIGURATION_LINK_UPDATED = 'connect-configuration-link-updated'
-  CONNECT_CONFIGURATION_LINKED = 'connect-configuration-linked'
-  CONNECT_CONFIGURATION_UNLINKED = 'connect-configuration-unlinked'
-  CONNECT_CONFIGURATION_UPDATED = 'connect-configuration-updated'
-  CONNECT_CREATE_CONNECTOR = 'connect-create-connector'
-  CONNECT_DELETE_CONNECTOR = 'connect-delete-connector'
-  CONNECT_DELETE_INSTALLATION = 'connect-delete-installation'
-  CONNECT_DETACH_PROJECT = 'connect-detach-project'
-  CONNECT_GITHUB = 'connect-github'
-  CONNECT_GITHUB_CUSTOM_HOST = 'connect-github-custom-host'
-  CONNECT_GITHUB_LIMITED = 'connect-github-limited'
-  CONNECT_GITLAB = 'connect-gitlab'
-  CONNECT_GITLAB_APP = 'connect-gitlab-app'
-  CONNECT_IMPORT_TOKENS = 'connect-import-tokens'
-  CONNECT_REVOKE_ALL_TOKENS = 'connect-revoke-all-tokens'
-  CONNECT_UPDATE_CONNECTOR = 'connect-update-connector'
-  CONNECT_UPDATE_TRIGGER_DESTINATIONS = 'connect-update-trigger-destinations'
-  CONNECT_UPSERT_INSTALLATION = 'connect-upsert-installation'
-  CUSTOM_ALERT_CREATED = 'custom-alert-created'
-  CUSTOM_ALERT_DELETED = 'custom-alert-deleted'
-  CUSTOM_ALERT_UPDATED = 'custom-alert-updated'
-  CUSTOM_ENVIRONMENTS_SETTINGS_UPDATED = 'custom-environments-settings-updated'
-  CUSTOM_METRIC_METADATA_DELETED = 'custom-metric-metadata-deleted'
-  CUSTOM_METRIC_METADATA_UPDATED = 'custom-metric-metadata-updated'
-  CUSTOM_SUFFIX_CLEAR = 'custom-suffix-clear'
-  CUSTOM_SUFFIX_DISABLE = 'custom-suffix-disable'
-  CUSTOM_SUFFIX_ENABLE = 'custom-suffix-enable'
-  CUSTOM_SUFFIX_PENDING = 'custom-suffix-pending'
-  CUSTOM_SUFFIX_READY = 'custom-suffix-ready'
-  DEFAULT_PASSWORD_PROTECTION = 'default-password-protection'
-  DEFAULT_SSO_PROTECTION = 'default-sso-protection'
-  DEPLOY_HOOK_CREATED = 'deploy-hook-created'
-  DEPLOY_HOOK_DEDUPED = 'deploy-hook-deduped'
-  DEPLOY_HOOK_DELETED = 'deploy-hook-deleted'
-  DEPLOY_HOOK_PROCESSED = 'deploy-hook-processed'
-  DEPLOYMENT = 'deployment'
-  DEPLOYMENT_CHECK_CREATED = 'deployment-check-created'
-  DEPLOYMENT_CHECK_DELETED = 'deployment-check-deleted'
-  DEPLOYMENT_CHECK_UPDATED = 'deployment-check-updated'
-  DEPLOYMENT_CHOWN = 'deployment-chown'
-  DEPLOYMENT_CREATION_BLOCKED = 'deployment-creation-blocked'
-  DEPLOYMENT_DELETE = 'deployment-delete'
-  DEPLOYMENT_POLICY_BLOCKED = 'deployment-policy-blocked'
-  DEPLOYMENT_PROTECTION_ACCESS_REQUESTS = 'deployment-protection-access-requests'
-  DEPLOYMENT_UNDELETED = 'deployment-undeleted'
-  DISABLED_INTEGRATION_INSTALLATION_REMOVED = 'disabled-integration-installation-removed'
-  DISCONNECT_BITBUCKET_APP = 'disconnect-bitbucket-app'
-  DISCONNECT_GITHUB = 'disconnect-github'
-  DISCONNECT_GITHUB_CUSTOM_HOST = 'disconnect-github-custom-host'
-  DISCONNECT_GITHUB_LIMITED = 'disconnect-github-limited'
-  DISCONNECT_GITLAB_APP = 'disconnect-gitlab-app'
-  DNS_ADD = 'dns-add'
-  DNS_DELETE = 'dns-delete'
-  DNS_RECORD_INTERNAL = 'dns-record-internal'
-  DNS_UPDATE = 'dns-update'
-  DNS_ZONEFILE_IMPORT = 'dns-zonefile-import'
-  DOMAIN = 'domain'
-  DOMAIN_BUY = 'domain-buy'
-  DOMAIN_CDN = 'domain-cdn'
-  DOMAIN_CHOWN = 'domain-chown'
-  DOMAIN_CUSTOM_NS_CHANGE = 'domain-custom-ns-change'
-  DOMAIN_DELEGATED = 'domain-delegated'
-  DOMAIN_DELETE = 'domain-delete'
-  DOMAIN_ECH_CHANGE = 'domain-ech-change'
-  DOMAIN_MOVE_IN = 'domain-move-in'
-  DOMAIN_MOVE_OUT = 'domain-move-out'
-  DOMAIN_MOVE_OUT_REQUEST_SENT = 'domain-move-out-request-sent'
-  DOMAIN_RENEW_CHANGE = 'domain-renew-change'
-  DOMAIN_SERVICE_TYPE_UPDATED = 'domain-service-type-updated'
-  DOMAIN_TRANSFER_IN = 'domain-transfer-in'
-  DOMAIN_TRANSFER_IN_CANCELED = 'domain-transfer-in-canceled'
-  DOMAIN_TRANSFER_IN_COMPLETED = 'domain-transfer-in-completed'
-  DOMAIN_ZONE_CHANGE = 'domain-zone-change'
-  DOMAIN_ZONE_CHANGE_INTERNAL = 'domain-zone-change-internal'
-  DRAIN_CREATED = 'drain-created'
-  DRAIN_DELETED = 'drain-deleted'
-  DRAIN_DISABLED = 'drain-disabled'
-  DRAIN_ENABLED = 'drain-enabled'
-  DRAIN_UPDATED = 'drain-updated'
-  EDGE_CACHE_DANGEROUSLY_DELETE_BY_SRC_IMAGES = 'edge-cache-dangerously-delete-by-src-images'
-  EDGE_CACHE_DANGEROUSLY_DELETE_BY_TAGS = 'edge-cache-dangerously-delete-by-tags'
-  EDGE_CACHE_DANGEROUSLY_DELETE_IMMUTABLE_STATIC = 'edge-cache-dangerously-delete-immutable-static'
-  EDGE_CACHE_INVALIDATE_BY_SRC_IMAGES = 'edge-cache-invalidate-by-src-images'
-  EDGE_CACHE_INVALIDATE_BY_TAGS = 'edge-cache-invalidate-by-tags'
-  EDGE_CACHE_PURGE_ALL = 'edge-cache-purge-all'
-  EDGE_CACHE_ROLLBACK_PURGE = 'edge-cache-rollback-purge'
-  EDGE_CONFIG_BACKUP_RESTORED = 'edge-config-backup-restored'
-  EDGE_CONFIG_CREATED = 'edge-config-created'
-  EDGE_CONFIG_DELETED = 'edge-config-deleted'
-  EDGE_CONFIG_ITEMS_UPDATED = 'edge-config-items-updated'
-  EDGE_CONFIG_SCHEMA_DELETED = 'edge-config-schema-deleted'
-  EDGE_CONFIG_SCHEMA_UPDATED = 'edge-config-schema-updated'
-  EDGE_CONFIG_TOKEN_CREATED = 'edge-config-token-created'
-  EDGE_CONFIG_TOKEN_DELETED = 'edge-config-token-deleted'
-  EDGE_CONFIG_TRANSFER_IN = 'edge-config-transfer-in'
-  EDGE_CONFIG_TRANSFER_OUT = 'edge-config-transfer-out'
-  EDGE_CONFIG_UPDATED = 'edge-config-updated'
-  EMAIL = 'email'
-  EMAIL_NOTIFICATION_RULE_REMOVED = 'email-notification-rule-removed'
-  EMAIL_NOTIFICATION_RULE_UPDATED = 'email-notification-rule-updated'
-  EMU_MEMBER_REMOVED_UNVERIFIED_DOMAIN = 'emu-member-removed-unverified-domain'
-  ENFORCE_DISJUNCTIVE_PRODUCTION_SECRETS = 'enforce-disjunctive-production-secrets'
-  ENFORCE_SENSITIVE_ENVIRONMENT_VARIABLES = 'enforce-sensitive-environment-variables'
-  ENV_VARIABLE_ADD = 'env-variable-add'
-  ENV_VARIABLE_DELETE = 'env-variable-delete'
-  ENV_VARIABLE_EDIT = 'env-variable-edit'
-  ENV_VARIABLE_MASKED = 'env-variable-masked'
-  ENV_VARIABLE_READ = 'env-variable-read'
-  ENV_VARIABLE_READ_CLI_DEV = 'env-variable-read:cli:dev'
-  ENV_VARIABLE_READ_CLI_ENV_ADD = 'env-variable-read:cli:env:add'
-  ENV_VARIABLE_READ_CLI_ENV_LS = 'env-variable-read:cli:env:ls'
-  ENV_VARIABLE_READ_CLI_ENV_PULL = 'env-variable-read:cli:env:pull'
-  ENV_VARIABLE_READ_CLI_ENV_RM = 'env-variable-read:cli:env:rm'
-  ENV_VARIABLE_READ_CLI_PULL = 'env-variable-read:cli:pull'
-  ENV_VARIABLE_READ_UNKNOWN_SOURCE = 'env-variable-read:unknown-source'
-  ENV_VARIABLE_READ_V0_ENV_PULL = 'env-variable-read:v0:env:pull'
-  ENV_VARIABLE_ROTATED = 'env-variable-rotated'
-  EXPERIMENT_CREATED = 'experiment-created'
-  EXPERIMENT_DELETED = 'experiment-deleted'
-  EXPERIMENT_TRANSITIONED = 'experiment-transitioned'
-  EXPERIMENT_UPDATED = 'experiment-updated'
-  FIREWALL_BYPASS_CREATED = 'firewall-bypass-created'
-  FIREWALL_BYPASS_DELETED = 'firewall-bypass-deleted'
-  FIREWALL_CONDITIONAL_BYPASS_CREATED = 'firewall-conditional-bypass-created'
-  FIREWALL_CONDITIONAL_BYPASS_DELETED = 'firewall-conditional-bypass-deleted'
-  FIREWALL_CONFIG_MODIFIED = 'firewall-config-modified'
-  FIREWALL_CONFIG_PROMOTED = 'firewall-config-promoted'
-  FIREWALL_CONFIG_REMOVED = 'firewall-config-removed'
-  FIREWALL_MANAGED_RULEGROUP_UPDATED = 'firewall-managed-rulegroup-updated'
-  FIREWALL_MANAGED_RULESET_UPDATED = 'firewall-managed-ruleset-updated'
-  FLAG = 'flag'
-  FLAG_ARCHIVED = 'flag-archived'
-  FLAG_CREATED = 'flag-created'
-  FLAG_DELETED = 'flag-deleted'
-  FLAG_UNARCHIVED = 'flag-unarchived'
-  FLAG_UPDATED = 'flag-updated'
-  FLAGS_CONNECTION_CREATED = 'flags-connection-created'
-  FLAGS_CONNECTION_DELETED = 'flags-connection-deleted'
-  FLAGS_EXPLORER_SUBSCRIPTION = 'flags-explorer-subscription'
-  FLAGS_SDK_KEY = 'flags-sdk-key'
-  FLAGS_SDK_KEY_ADDED = 'flags-sdk-key-added'
-  FLAGS_SDK_KEY_DELETED = 'flags-sdk-key-deleted'
-  FLAGS_SDK_KEY_READ = 'flags-sdk-key-read'
-  FLAGS_SEGMENT = 'flags-segment'
-  FLAGS_SETTINGS = 'flags-settings'
-  FLAGS_TRANSFERRED = 'flags-transferred'
-  FLAT_RATE_CDN_AUTO_UPGRADE_CONSENT = 'flat-rate-cdn-auto-upgrade-consent'
-  GIT_INTEGRATION_REPO_PUSH = 'git-integration-repo-push'
-  GIT_ACCOUNT_INTEGRATION_LINK_ADDED = 'git_account_integration_link_added'
-  GLOBAL_CONFIG_BACKUP_RESTORED = 'global-config-backup-restored'
-  GLOBAL_CONFIG_CREATED = 'global-config-created'
-  GLOBAL_CONFIG_DELETED = 'global-config-deleted'
-  GLOBAL_CONFIG_ITEMS_UPDATED = 'global-config-items-updated'
-  GLOBAL_CONFIG_SCHEMA_DELETED = 'global-config-schema-deleted'
-  GLOBAL_CONFIG_SCHEMA_UPDATED = 'global-config-schema-updated'
-  GLOBAL_CONFIG_TOKEN_CREATED = 'global-config-token-created'
-  GLOBAL_CONFIG_TOKEN_DELETED = 'global-config-token-deleted'
-  GLOBAL_CONFIG_TRANSFER_IN = 'global-config-transfer-in'
-  GLOBAL_CONFIG_TRANSFER_OUT = 'global-config-transfer-out'
-  GLOBAL_CONFIG_UPDATED = 'global-config-updated'
-  INSTANT_ROLLBACK_CREATED = 'instant-rollback-created'
-  INTEGRATION_CONFIGURATION_CREDENTIAL_REVOKED = 'integration-configuration-credential-revoked'
-  INTEGRATION_CONFIGURATION_CREDENTIAL_ROTATED = 'integration-configuration-credential-rotated'
-  INTEGRATION_CONFIGURATION_OWNER_CHANGED = 'integration-configuration-owner-changed'
-  INTEGRATION_CONFIGURATION_SCOPE_CHANGE_CONFIRMED = 'integration-configuration-scope-change-confirmed'
-  INTEGRATION_CONFIGURATION_TRANSFER_IN_SUCCESS = 'integration-configuration-transfer-in-success'
-  INTEGRATION_CONFIGURATION_TRANSFER_OUT_SUCCESS = 'integration-configuration-transfer-out-success'
-  INTEGRATION_CONFIGURATIONS_DISABLED = 'integration-configurations-disabled'
-  INTEGRATION_INSTALLATION_BILLING_PLAN_UPDATED = 'integration-installation-billing-plan-updated'
-  INTEGRATION_INSTALLATION_COMPLETED = 'integration-installation-completed'
-  INTEGRATION_INSTALLATION_PERMISSION_UPDATED = 'integration-installation-permission-updated'
-  INTEGRATION_INSTALLATION_REMOVED = 'integration-installation-removed'
-  INTEGRATION_RESOURCE_REDIS_COMMAND_EXECUTED = 'integration-resource-redis-command-executed'
-  INTEGRATION_RESOURCE_SQL_QUERY_EXECUTED = 'integration-resource-sql-query-executed'
-  INTEGRATION_SCOPE_CHANGED = 'integration-scope-changed'
-  INVOICE_MODIFIED = 'invoice-modified'
-  INVOICE_REFUNDED = 'invoice-refunded'
-  KMS_ISSUER_CREATED = 'kms-issuer-created'
-  KMS_ISSUER_DELETED = 'kms-issuer-deleted'
-  KMS_ISSUER_KEY_ACTIVATED = 'kms-issuer-key-activated'
-  KMS_ISSUER_KEY_CREATED = 'kms-issuer-key-created'
-  KMS_ISSUER_KEY_REVOKED = 'kms-issuer-key-revoked'
-  KMS_ISSUER_KEY_ROTATED = 'kms-issuer-key-rotated'
-  KMS_ISSUER_POLICY_CREATED = 'kms-issuer-policy-created'
-  KMS_ISSUER_POLICY_DELETED = 'kms-issuer-policy-deleted'
-  KMS_ISSUER_POLICY_UPDATED = 'kms-issuer-policy-updated'
-  KMS_ISSUER_UPDATED = 'kms-issuer-updated'
-  LOG_DRAIN_CREATED = 'log-drain-created'
-  LOG_DRAIN_DELETED = 'log-drain-deleted'
-  LOG_DRAIN_DISABLED = 'log-drain-disabled'
-  LOG_DRAIN_ENABLED = 'log-drain-enabled'
-  LOGIN = 'login'
-  LOGIN_CONNECTION_LINKED = 'login-connection-linked'
-  LOGIN_CONNECTION_UNLINKED = 'login-connection-unlinked'
-  MANUAL_DEPLOYMENT_PROMOTION_CREATED = 'manual-deployment-promotion-created'
-  MARKETPLACE_AUTO_CARD_COLLECTION_UPDATED = 'marketplace-auto-card-collection-updated'
-  MARKETPLACE_BILLING_COLLECTION_UPDATED = 'marketplace-billing-collection-updated'
-  MARKETPLACE_FLEX_COMMIT_OPT_IN = 'marketplace-flex-commit-opt-in'
-  MARKETPLACE_INTEGRATION_ALLOWLIST_UPDATED = 'marketplace-integration-allowlist-updated'
-  MESSAGEBOARD_CREATED = 'messageboard-created'
-  MESSAGEBOARD_PRIVATE_CREATED = 'messageboard-private-created'
-  MESSAGEBOARD_PRIVATE_SPACE_CREATED = 'messageboard-private-space-created'
-  MESSAGEBOARD_PRIVATE_SPACE_UPDATED = 'messageboard-private-space-updated'
-  MESSAGEBOARD_SCHEMA_REGISTERED = 'messageboard-schema-registered'
-  MESSAGEBOARD_SPACE_CREATED = 'messageboard-space-created'
-  MESSAGEBOARD_SPACE_UPDATED = 'messageboard-space-updated'
-  MESSAGEBOARD_VISIBILITY_UPDATED = 'messageboard-visibility-updated'
-  MICROFRONTEND_GROUP_ADDED = 'microfrontend-group-added'
-  MICROFRONTEND_GROUP_DELETED = 'microfrontend-group-deleted'
-  MICROFRONTEND_GROUP_UPDATED = 'microfrontend-group-updated'
-  MICROFRONTEND_PROJECT_ADDED_TO_GROUP = 'microfrontend-project-added-to-group'
-  MICROFRONTEND_PROJECT_REMOVED_FROM_GROUP = 'microfrontend-project-removed-from-group'
-  MICROFRONTEND_PROJECT_UPDATED = 'microfrontend-project-updated'
-  MONITORING_ALERT_UPDATED = 'monitoring-alert-updated'
-  MONITORING_DISABLED = 'monitoring-disabled'
-  MONITORING_ENABLED = 'monitoring-enabled'
-  OAUTH_APP_CONNECTION_CREATED = 'oauth-app-connection-created'
-  OAUTH_APP_CONNECTION_REMOVED = 'oauth-app-connection-removed'
-  OAUTH_APP_CONNECTION_UPDATED = 'oauth-app-connection-updated'
-  OAUTH_APP_CREATED = 'oauth-app-created'
-  OAUTH_APP_DELETED = 'oauth-app-deleted'
-  OAUTH_APP_SECRET_DELETED = 'oauth-app-secret-deleted'
-  OAUTH_APP_SECRET_GENERATED = 'oauth-app-secret-generated'
-  OAUTH_APP_TOKEN_CREATED = 'oauth-app-token-created'
-  OAUTH_APP_UPDATED = 'oauth-app-updated'
-  OBSERVABILITY_DISABLED = 'observability-disabled'
-  OBSERVABILITY_ENABLED = 'observability-enabled'
-  OBSERVABILITY_PLUS_PROJECT_DISABLED = 'observability-plus-project-disabled'
-  OBSERVABILITY_PLUS_PROJECT_ENABLED = 'observability-plus-project-enabled'
-  OIDC_POLICY_CREATED = 'oidc-policy-created'
-  OIDC_POLICY_DELETED = 'oidc-policy-deleted'
-  OIDC_POLICY_UPDATED = 'oidc-policy-updated'
-  OIDC_POLICY_USED_TO_OBTAIN_APP_TOKEN = 'oidc-policy-used-to-obtain-app-token'
-  ORGANIZATION_AVATAR_UPDATE = 'organization-avatar-update'
-  ORGANIZATION_CREATE = 'organization-create'
-  ORGANIZATION_DELETE = 'organization-delete'
-  ORGANIZATION_DSYNC_DELETE = 'organization-dsync-delete'
-  ORGANIZATION_DSYNC_GROUP_DELETE = 'organization-dsync-group-delete'
-  ORGANIZATION_DSYNC_GROUP_UPSERT = 'organization-dsync-group-upsert'
-  ORGANIZATION_DSYNC_SYNC_START = 'organization-dsync-sync-start'
-  ORGANIZATION_EMU_DOMAINS_MERGED = 'organization-emu-domains-merged'
-  ORGANIZATION_EMU_TEAM_UPDATED = 'organization-emu-team-updated'
-  ORGANIZATION_EMU_UPDATED = 'organization-emu-updated'
-  ORGANIZATION_SLUG_UPDATE = 'organization-slug-update'
-  ORGANIZATION_SSO_ENFORCED = 'organization-sso-enforced'
-  ORGANIZATION_TEAM_ADD = 'organization-team-add'
-  ORGANIZATION_TEAM_CREATE = 'organization-team-create'
-  ORGANIZATION_TEAM_DELETE = 'organization-team-delete'
-  ORGANIZATION_TEAM_SSO_UPDATE = 'organization-team-sso-update'
-  ORGANIZATION_UPDATE_ACCOUNT_FLOW_DISMISSED = 'organization-update-account-flow-dismissed'
-  ORGANIZATION_UPDATE_ACCOUNT_FLOW_TRIGGERED = 'organization-update-account-flow-triggered'
-  OWNER_BLOCKED = 'owner-blocked'
-  OWNER_SOFT_BLOCKED = 'owner-soft-blocked'
-  OWNER_SOFT_UNBLOCKED = 'owner-soft-unblocked'
-  OWNER_UNBLOCKED = 'owner-unblocked'
-  PAGE_INTEGRITY_CONFIG_UPDATED = 'page-integrity-config-updated'
-  PAGE_INTEGRITY_HEADER_APPROVED = 'page-integrity-header-approved'
-  PAGE_INTEGRITY_HEADER_REJECTED = 'page-integrity-header-rejected'
-  PAGE_INTEGRITY_INVENTORY_CLEARED = 'page-integrity-inventory-cleared'
-  PAGE_INTEGRITY_RESOURCE_APPROVED = 'page-integrity-resource-approved'
-  PAGE_INTEGRITY_RESOURCE_DELETED = 'page-integrity-resource-deleted'
-  PAGE_INTEGRITY_RESOURCE_REJECTED = 'page-integrity-resource-rejected'
-  PAGE_INTEGRITY_SCRIPT_APPROVAL_RULE_CREATED = 'page-integrity-script-approval-rule-created'
-  PAGE_INTEGRITY_SCRIPT_APPROVAL_RULE_DELETED = 'page-integrity-script-approval-rule-deleted'
-  PASSKEY_CREATED = 'passkey-created'
-  PASSKEY_DELETED = 'passkey-deleted'
-  PASSKEY_UPDATED = 'passkey-updated'
-  PASSPORT_ACCESS_GRANTED = 'passport-access-granted'
-  PASSWORD_PROTECTION_DISABLED = 'password-protection-disabled'
-  PASSWORD_PROTECTION_ENABLED = 'password-protection-enabled'
-  PAYMENT_METHOD_ADDED = 'payment-method-added'
-  PAYMENT_METHOD_DEFAULT_UPDATED = 'payment-method-default-updated'
-  PAYMENT_METHOD_REMOVED = 'payment-method-removed'
-  PLAN = 'plan'
-  PREVIEW_DEPLOYMENT_SUFFIX_DISABLED = 'preview-deployment-suffix-disabled'
-  PREVIEW_DEPLOYMENT_SUFFIX_ENABLED = 'preview-deployment-suffix-enabled'
-  PREVIEW_DEPLOYMENT_SUFFIX_UPDATE = 'preview-deployment-suffix-update'
-  PRIVATELINK_ENDPOINT_CREATED = 'privatelink-endpoint-created'
-  PRIVATELINK_ENDPOINT_DELETED = 'privatelink-endpoint-deleted'
-  PRIVATELINK_ENDPOINT_UPDATED = 'privatelink-endpoint-updated'
-  PRODUCTION_BRANCH_UPDATED = 'production-branch-updated'
-  PROJECT_ADD_ALIAS = 'project-add-alias'
-  PROJECT_ADD_REDIRECT = 'project-add-redirect'
-  PROJECT_AFFECTED_PROJECTS_DEPLOYMENTS_UPDATED = 'project-affected-projects-deployments-updated'
-  PROJECT_ALIAS_CONFIGURED_CHANGE = 'project-alias-configured-change'
-  PROJECT_ANALYTICS_DISABLED = 'project-analytics-disabled'
-  PROJECT_ANALYTICS_ENABLED = 'project-analytics-enabled'
-  PROJECT_AUTO_ASSIGN_CUSTOM_PRODUCTION_DOMAINS_UPDATED =
-    'project-auto-assign-custom-production-domains-updated'
-  PROJECT_AUTOMATION_BYPASS = 'project-automation-bypass'
-  PROJECT_AVATAR_DARK_MODE_UPDATE = 'project-avatar-dark-mode-update'
-  PROJECT_AVATAR_UPDATE = 'project-avatar-update'
-  PROJECT_BUILD_COMMAND_UPDATED = 'project-build-command-updated'
-  PROJECT_BUILD_LOGS_AND_SOURCE_PROTECTION_UPDATED = 'project-build-logs-and-source-protection-updated'
-  PROJECT_BUILD_MACHINE_UPDATED = 'project-build-machine-updated'
-  PROJECT_CARD_WIDGET_PREFERENCE_UPDATED = 'project-card-widget-preference-updated'
-  PROJECT_CLIENT_CERT_DELETE = 'project-client-cert-delete'
-  PROJECT_CLIENT_CERT_UPLOAD = 'project-client-cert-upload'
-  PROJECT_CONNECT_CONFIGURATIONS = 'project-connect-configurations'
-  PROJECT_CONSOLIDATED_GIT_COMMIT_STATUS_UPDATED = 'project-consolidated-git-commit-status-updated'
-  PROJECT_CREATED = 'project-created'
-  PROJECT_CRON_JOBS_TOGGLED = 'project-cron-jobs-toggled'
-  PROJECT_CUSTOM_ENVIRONMENT_CREATED = 'project-custom-environment-created'
-  PROJECT_CUSTOM_ENVIRONMENT_DELETED = 'project-custom-environment-deleted'
-  PROJECT_CUSTOM_ENVIRONMENT_SCHEDULES_DEFAULT_UPDATED =
-    'project-custom-environment-schedules-default-updated'
-  PROJECT_CUSTOM_ENVIRONMENT_UPDATED = 'project-custom-environment-updated'
-  PROJECT_CUSTOMER_SUCCESS_CODE_VISIBILITY_UPDATED = 'project-customer-success-code-visibility-updated'
-  PROJECT_DELETE = 'project-delete'
-  PROJECT_DEPLOYMENT_POLICY_UPDATED = 'project-deployment-policy-updated'
-  PROJECT_DEPLOYMENT_RETENTION_UPDATED = 'project-deployment-retention-updated'
-  PROJECT_DIRECTORY_LISTING = 'project-directory-listing'
-  PROJECT_DOMAIN_DELETED = 'project-domain-deleted'
-  PROJECT_DOMAIN_MOVED = 'project-domain-moved'
-  PROJECT_DOMAIN_UNVERIFIED = 'project-domain-unverified'
-  PROJECT_DOMAIN_UPDATED = 'project-domain-updated'
-  PROJECT_DOMAIN_VERIFIED = 'project-domain-verified'
-  PROJECT_ELASTIC_CONCURRENCY_UPDATED = 'project-elastic-concurrency-updated'
-  PROJECT_EXPIRATION_LOCKED = 'project-expiration-locked'
-  PROJECT_EXPIRATION_REACHED = 'project-expiration-reached'
-  PROJECT_EXPIRATION_SCHEDULED = 'project-expiration-scheduled'
-  PROJECT_EXPIRATION_UNLOCKED = 'project-expiration-unlocked'
-  PROJECT_EXTERNAL_REWRITE_CACHING_UPDATED = 'project-external-rewrite-caching-updated'
-  PROJECT_FRAMEWORK_UPDATED = 'project-framework-updated'
-  PROJECT_FUNCTION_CPU_MEMORY = 'project-function-cpu-memory'
-  PROJECT_FUNCTION_FAILOVER = 'project-function-failover'
-  PROJECT_FUNCTION_MAX_DURATION = 'project-function-max-duration'
-  PROJECT_FUNCTION_REGIONS = 'project-function-regions'
-  PROJECT_FUNCTIONS_BETA_UPDATED = 'project-functions-beta-updated'
-  PROJECT_FUNCTIONS_FLUID_DISABLED = 'project-functions-fluid-disabled'
-  PROJECT_FUNCTIONS_FLUID_ENABLED = 'project-functions-fluid-enabled'
-  PROJECT_GIT_COMMIT_COMMENTS_TOGGLED = 'project-git-commit-comments-toggled'
-  PROJECT_GIT_COMMIT_STATUS_TOGGLED = 'project-git-commit-status-toggled'
-  PROJECT_GIT_CREATE_DEPLOYMENTS_TOGGLED = 'project-git-create-deployments-toggled'
-  PROJECT_GIT_CREDENTIAL_BOUND_CREATED = 'project-git-credential-bound-created'
-  PROJECT_GIT_CREDENTIAL_BOUND_DELETED = 'project-git-credential-bound-deleted'
-  PROJECT_GIT_CREDENTIAL_BOUND_UPDATED = 'project-git-credential-bound-updated'
-  PROJECT_GIT_CREDENTIAL_GRANT_CREATED = 'project-git-credential-grant-created'
-  PROJECT_GIT_CREDENTIAL_GRANT_DELETED = 'project-git-credential-grant-deleted'
-  PROJECT_GIT_CREDENTIAL_GRANT_UPDATED = 'project-git-credential-grant-updated'
-  PROJECT_GIT_FORK_PROTECTION_UPDATED = 'project-git-fork-protection-updated'
-  PROJECT_GIT_LFS_TOGGLED = 'project-git-lfs-toggled'
-  PROJECT_GIT_PR_COMMENTS_TOGGLED = 'project-git-pr-comments-toggled'
-  PROJECT_GIT_REPOSITORY_CONNECTED = 'project-git-repository-connected'
-  PROJECT_GIT_REPOSITORY_DISCONNECTED = 'project-git-repository-disconnected'
-  PROJECT_GIT_REPOSITORY_DISPATCH_EVENTS_TOGGLED = 'project-git-repository-dispatch-events-toggled'
-  PROJECT_GIT_REQUIRE_VERIFIED_COMMITS_TOGGLED = 'project-git-require-verified-commits-toggled'
-  PROJECT_IGNORED_BUILD_STEP_UPDATED = 'project-ignored-build-step-updated'
-  PROJECT_INSTALL_COMMAND_UPDATED = 'project-install-command-updated'
-  PROJECT_MEMBER_ADDED = 'project-member-added'
-  PROJECT_MEMBER_INVITED = 'project-member-invited'
-  PROJECT_MEMBER_REMOVED = 'project-member-removed'
-  PROJECT_MEMBER_REMOVED_BATCH = 'project-member-removed-batch'
-  PROJECT_MEMBER_UPDATED = 'project-member-updated'
-  PROJECT_MOVE_IN_SUCCESS = 'project-move-in-success'
-  PROJECT_MOVE_OUT_FAILED = 'project-move-out-failed'
-  PROJECT_MOVE_OUT_STARTED = 'project-move-out-started'
-  PROJECT_MOVE_OUT_SUCCESS = 'project-move-out-success'
-  PROJECT_NAME = 'project-name'
-  PROJECT_NODE_VERSION_UPDATED = 'project-node-version-updated'
-  PROJECT_OIDC_ISSUER_MODE_UPDATED = 'project-oidc-issuer-mode-updated'
-  PROJECT_OIDC_TOKEN_CREATED = 'project-oidc-token-created'
-  PROJECT_OPTIONS_ALLOWLIST = 'project-options-allowlist'
-  PROJECT_OUTPUT_DIRECTORY_UPDATED = 'project-output-directory-updated'
-  PROJECT_PASSPORT_UPDATED = 'project-passport-updated'
-  PROJECT_PASSWORD_PROTECTION = 'project-password-protection'
-  PROJECT_PAUSED = 'project-paused'
-  PROJECT_PREVIEW_DEPLOYMENT_SUFFIX = 'project-preview-deployment-suffix'
-  PROJECT_PREVIEW_ENVIRONMENT_BRANCH_TRACKING_UPDATED = 'project-preview-environment-branch-tracking-updated'
-  PROJECT_PRIORITIZE_PRODUCTION_BUILDS_UPDATED = 'project-prioritize-production-builds-updated'
-  PROJECT_PROGRAM_ENROLLMENT_CHANGED = 'project-program-enrollment-changed'
-  PROJECT_PROTECTED_SOURCEMAPS_UPDATED = 'project-protected-sourcemaps-updated'
-  PROJECT_ROLLBACK_DESCRIPTION_UPDATED = 'project-rollback-description-updated'
-  PROJECT_ROLLING_RELEASE_ABORTED = 'project-rolling-release-aborted'
-  PROJECT_ROLLING_RELEASE_APPROVED = 'project-rolling-release-approved'
-  PROJECT_ROLLING_RELEASE_COMPLETED = 'project-rolling-release-completed'
-  PROJECT_ROLLING_RELEASE_CONFIGURED = 'project-rolling-release-configured'
-  PROJECT_ROLLING_RELEASE_CONTINUED = 'project-rolling-release-continued'
-  PROJECT_ROLLING_RELEASE_DISABLED = 'project-rolling-release-disabled'
-  PROJECT_ROLLING_RELEASE_ENABLED = 'project-rolling-release-enabled'
-  PROJECT_ROLLING_RELEASE_PAUSED = 'project-rolling-release-paused'
-  PROJECT_ROLLING_RELEASE_STARTED = 'project-rolling-release-started'
-  PROJECT_ROLLING_RELEASE_SUGGESTED_ACTIONS_GENERATED = 'project-rolling-release-suggested-actions-generated'
-  PROJECT_ROLLING_RELEASE_TIMER = 'project-rolling-release-timer'
-  PROJECT_ROOT_DIRECTORY_UPDATED = 'project-root-directory-updated'
-  PROJECT_ROUTES_VERSION_PROMOTED = 'project-routes-version-promoted'
-  PROJECT_ROUTES_VERSION_RESTORED = 'project-routes-version-restored'
-  PROJECT_SANDBOX_CONFIG_UPDATED = 'project-sandbox-config-updated'
-  PROJECT_SANDBOX_URL_PROTECTION_UPDATED = 'project-sandbox-url-protection-updated'
-  PROJECT_SKEW_PROTECTION_ALLOWED_DOMAINS_UPDATED = 'project-skew-protection-allowed-domains-updated'
-  PROJECT_SKEW_PROTECTION_MAX_AGE_UPDATED = 'project-skew-protection-max-age-updated'
-  PROJECT_SKEW_PROTECTION_THRESHOLD_UPDATED = 'project-skew-protection-threshold-updated'
-  PROJECT_SOURCE_FILES_OUTSIDE_ROOT_DIRECTORY_UPDATED = 'project-source-files-outside-root-directory-updated'
-  PROJECT_SPEED_INSIGHTS_DISABLED = 'project-speed-insights-disabled'
-  PROJECT_SPEED_INSIGHTS_ENABLED = 'project-speed-insights-enabled'
-  PROJECT_SPEED_INSIGHTS_FREE_DATA_STARTED = 'project-speed-insights-free-data-started'
-  PROJECT_SSO_PROTECTION = 'project-sso-protection'
-  PROJECT_STATIC_IPS_UPDATED = 'project-static-ips-updated'
-  PROJECT_TRUSTED_IPS = 'project-trusted-ips'
-  PROJECT_TRUSTED_SOURCES = 'project-trusted-sources'
-  PROJECT_UNPAUSED = 'project-unpaused'
-  PROJECT_WEB_ANALYTICS_DISABLED = 'project-web-analytics-disabled'
-  PROJECT_WEB_ANALYTICS_ENABLED = 'project-web-analytics-enabled'
-  PROTECTED_GIT_SCOPE_ADDED = 'protected-git-scope-added'
-  PROTECTED_GIT_SCOPE_REMOVED = 'protected-git-scope-removed'
-  REPOSITORY_CI_ENV_VARIABLE_CREATE = 'repository-ci-env-variable-create'
-  REPOSITORY_CI_ENV_VARIABLE_DELETE = 'repository-ci-env-variable-delete'
-  REPOSITORY_CI_ENV_VARIABLE_UPDATE = 'repository-ci-env-variable-update'
-  RUNTIME_CACHE_PURGE_ALL = 'runtime-cache-purge-all'
-  SAML_CONNECTION_CREATED = 'saml-connection-created'
-  SAML_CONNECTION_DELETED = 'saml-connection-deleted'
-  SANDBOX_ALIAS_ASSIGNED = 'sandbox-alias-assigned'
-  SANDBOX_ALIAS_DELETE = 'sandbox-alias-delete'
-  SANDBOX_DRIVE_CREATED = 'sandbox-drive-created'
-  SANDBOX_DRIVE_DELETED = 'sandbox-drive-deleted'
-  SANDBOX_DRIVE_SNAPSHOT_CREATED = 'sandbox-drive-snapshot-created'
-  SANDBOX_DRIVE_SNAPSHOT_DELETED = 'sandbox-drive-snapshot-deleted'
-  SANDBOX_SIGNED_COMMIT_IDENTITY_CONFIGURED = 'sandbox-signed-commit-identity-configured'
-  SANDBOX_SNAPSHOT_REGIONS_UPDATED = 'sandbox-snapshot-regions-updated'
-  SCALE = 'scale'
-  SCALE_AUTO = 'scale-auto'
-  SECONDARY_EMAIL_ADDED = 'secondary-email-added'
-  SECONDARY_EMAIL_REMOVED = 'secondary-email-removed'
-  SECONDARY_EMAIL_VERIFIED = 'secondary-email-verified'
-  SECRET_ADD = 'secret-add'
-  SECRET_DELETE = 'secret-delete'
-  SECRET_RENAME = 'secret-rename'
-  SECURITY_LIST_CREATED = 'security-list-created'
-  SECURITY_LIST_DELETED = 'security-list-deleted'
-  SECURITY_LIST_UPDATED = 'security-list-updated'
-  SECURITY_PLUS_UPDATED = 'security-plus-updated'
-  SET_BIO = 'set-bio'
-  SET_NAME = 'set-name'
-  SET_PROFILES = 'set-profiles'
-  SET_SCALE = 'set-scale'
-  SHARED_ENV_VARIABLE_CREATE = 'shared-env-variable-create'
-  SHARED_ENV_VARIABLE_DELETE = 'shared-env-variable-delete'
-  SHARED_ENV_VARIABLE_READ = 'shared-env-variable-read'
-  SHARED_ENV_VARIABLE_REPO_LINK = 'shared-env-variable-repo-link'
-  SHARED_ENV_VARIABLE_REPO_UNLINK = 'shared-env-variable-repo-unlink'
-  SHARED_ENV_VARIABLE_UPDATE = 'shared-env-variable-update'
-  SHOW_IP_ADDRESSES = 'show-ip-addresses'
-  SIGNUP = 'signup'
-  SIGNUP_VIA_BITBUCKET = 'signup-via-bitbucket'
-  SIGNUP_VIA_GITHUB = 'signup-via-github'
-  SIGNUP_VIA_GITLAB = 'signup-via-gitlab'
-  SPEED_INSIGHTS_SETTINGS_UPDATED = 'speed-insights-settings-updated'
-  SPEND_CREATED = 'spend-created'
-  SPEND_DELETED = 'spend-deleted'
-  SPEND_UPDATED = 'spend-updated'
-  SSO_LOGIN = 'sso-login'
-  STORAGE_ACCEPT_TOS = 'storage-accept-tos'
-  STORAGE_ACCESS_TOKEN_SET = 'storage-access-token-set'
-  STORAGE_ACCESSED_DATA_BROWSER = 'storage-accessed-data-browser'
-  STORAGE_CONNECT_PROJECT = 'storage-connect-project'
-  STORAGE_CREATE = 'storage-create'
-  STORAGE_DELETE = 'storage-delete'
-  STORAGE_DISCONNECT_PROJECT = 'storage-disconnect-project'
-  STORAGE_DISCONNECT_PROJECTS = 'storage-disconnect-projects'
-  STORAGE_INACTIVE_STORE_DELETED = 'storage-inactive-store-deleted'
-  STORAGE_RESET_CREDENTIALS = 'storage-reset-credentials'
-  STORAGE_RESOURCE_REPL_COMMAND = 'storage-resource-repl-command'
-  STORAGE_SET_LOCKED = 'storage-set-locked'
-  STORAGE_TRANSFER_IN_SUCCESS = 'storage-transfer-in-success'
-  STORAGE_TRANSFER_OUT_SUCCESS = 'storage-transfer-out-success'
-  STORAGE_TRANSFER_REQUEST_CREATED = 'storage-transfer-request-created'
-  STORAGE_UPDATE = 'storage-update'
-  STORAGE_UPDATE_PROJECT_CONNECTION = 'storage-update-project-connection'
-  STORAGE_UPGRADE_PROJECT_CONNECTION_TO_OIDC = 'storage-upgrade-project-connection-to-oidc'
-  STORAGE_VIEW_SECRET = 'storage-view-secret'
-  STRICT_CONNECTORS = 'strict-connectors'
-  STRICT_DEPLOYMENT_PROTECTION_SETTINGS = 'strict-deployment-protection-settings'
-  STRICT_PASSWORD_PROTECTION_SETTINGS = 'strict-password-protection-settings'
-  STRICT_SHAREABLE_LINKS = 'strict-shareable-links'
-  SUBSCRIPTION_CREATED = 'subscription-created'
-  SUBSCRIPTION_PRODUCT_ADDED = 'subscription-product-added'
-  SUBSCRIPTION_PRODUCT_REMOVED = 'subscription-product-removed'
-  SUBSCRIPTION_UPDATED = 'subscription-updated'
-  SUPPORT_SESSION_CREATED = 'support-session-created'
-  TEAM = 'team'
-  TEAM_AGENT_BILLING_MIGRATION_DECISION_CHANGED = 'team-agent-billing-migration-decision-changed'
-  TEAM_AVATAR_UPDATE = 'team-avatar-update'
-  TEAM_COLLABORATION_SETTINGS_UPDATED = 'team-collaboration-settings-updated'
-  TEAM_DEFAULT_BUILD_MACHINE_UPDATED = 'team-default-build-machine-updated'
-  TEAM_DEFAULT_PASSPORT_UPDATED = 'team-default-passport-updated'
-  TEAM_DELETE = 'team-delete'
-  TEAM_DEPLOYMENT_POLICY_UPDATED = 'team-deployment-policy-updated'
-  TEAM_DEPLOYMENT_STORAGE_HIGH_RETENTION_OPT_IN = 'team-deployment-storage-high-retention-opt-in'
-  TEAM_DEPLOYMENT_STORAGE_RETENTION_OPT_OUT = 'team-deployment-storage-retention-opt-out'
-  TEAM_DOMAIN_VERIFICATION_CREATED = 'team-domain-verification-created'
-  TEAM_DOMAIN_VERIFICATION_DELETED = 'team-domain-verification-deleted'
-  TEAM_DOMAIN_VERIFICATION_VERIFIED = 'team-domain-verification-verified'
-  TEAM_EMAIL_DOMAIN_UPDATE = 'team-email-domain-update'
-  TEAM_EMU_UPDATED = 'team-emu-updated'
-  TEAM_ENDED_TRIAL = 'team-ended-trial'
-  TEAM_FIREWALL_CONFIG_MODIFIED = 'team-firewall-config-modified'
-  TEAM_FIREWALL_CONFIG_PROMOTED = 'team-firewall-config-promoted'
-  TEAM_GIT_REPOSITORY_DISPATCH_EVENTS_TOGGLED = 'team-git-repository-dispatch-events-toggled'
-  TEAM_GIT_REQUIRE_VERIFIED_COMMITS_TOGGLED = 'team-git-require-verified-commits-toggled'
-  TEAM_INVITE_BULK_DELETE = 'team-invite-bulk-delete'
-  TEAM_INVITE_CODE_RESET = 'team-invite-code-reset'
-  TEAM_INVITE_LINK_CREATED = 'team-invite-link-created'
-  TEAM_INVITE_LINK_DELETED = 'team-invite-link-deleted'
-  TEAM_IP_BLOCKING_RULES_CREATED = 'team-ip-blocking-rules-created'
-  TEAM_IP_BLOCKING_RULES_REMOVED = 'team-ip-blocking-rules-removed'
-  TEAM_MEMBER_ADD = 'team-member-add'
-  TEAM_MEMBER_CONFIRM_REQUEST = 'team-member-confirm-request'
-  TEAM_MEMBER_DECLINE_REQUEST = 'team-member-decline-request'
-  TEAM_MEMBER_DELETE = 'team-member-delete'
-  TEAM_MEMBER_ENTITLEMENT_ADDED = 'team-member-entitlement-added'
-  TEAM_MEMBER_ENTITLEMENT_CANCELED = 'team-member-entitlement-canceled'
-  TEAM_MEMBER_ENTITLEMENT_REACTIVATED = 'team-member-entitlement-reactivated'
-  TEAM_MEMBER_ENTITLEMENT_REMOVED = 'team-member-entitlement-removed'
-  TEAM_MEMBER_JOIN = 'team-member-join'
-  TEAM_MEMBER_LEAVE = 'team-member-leave'
-  TEAM_MEMBER_REQUEST_ACCESS = 'team-member-request-access'
-  TEAM_MEMBER_ROLE_UPDATE = 'team-member-role-update'
-  TEAM_MEMBER_SSO_AUTHORIZATION_ATTEMPT = 'team-member-sso-authorization-attempt'
-  TEAM_MFA_ENFORCEMENT_UPDATED = 'team-mfa-enforcement-updated'
-  TEAM_NAME_UPDATE = 'team-name-update'
-  TEAM_PAID_INVOICE = 'team-paid-invoice'
-  TEAM_PROGRAM_ENROLLMENT_CHANGED = 'team-program-enrollment-changed'
-  TEAM_REMOTE_CACHING_PURGE = 'team-remote-caching-purge'
-  TEAM_REMOTE_CACHING_UPDATE = 'team-remote-caching-update'
-  TEAM_SAML_ENFORCED = 'team-saml-enforced'
-  TEAM_SAML_ROLES = 'team-saml-roles'
-  TEAM_SLUG_UPDATE = 'team-slug-update'
-  TEAM_TOKENS_INVALIDATED = 'team-tokens-invalidated'
-  TRACING_CONFIGURED = 'tracing-configured'
-  TRACING_DISABLED = 'tracing-disabled'
-  TRACING_PAUSED = 'tracing-paused'
-  TRACING_RESUMED = 'tracing-resumed'
-  UNLINK_LOGIN_CONNECTION = 'unlink-login-connection'
-  UPDATE_ACCOUNT_FLOW_DISMISSED = 'update-account-flow-dismissed'
-  UPDATE_ACCOUNT_FLOW_TRIGGERED = 'update-account-flow-triggered'
-  USER_AUTO_BLOCK_CONFIGURED = 'user-auto-block-configured'
-  USER_BLOCKED = 'user-blocked'
-  USER_DELETE = 'user-delete'
-  USER_DELETE_REQUESTED = 'user-delete-requested'
-  USER_EMU_ACCOUNT_ARCHIVED = 'user-emu-account-archived'
-  USER_EMU_ACCOUNT_DELETED = 'user-emu-account-deleted'
-  USER_EMU_ACCOUNT_RECOVERED = 'user-emu-account-recovered'
-  USER_EMU_ACCOUNT_UPDATE_OPTED_IN = 'user-emu-account-update-opted-in'
-  USER_EMU_ACCOUNT_UPDATE_OPTED_OUT = 'user-emu-account-update-opted-out'
-  USER_EMU_RECOVERY_EMAIL_SENT = 'user-emu-recovery-email-sent'
-  USER_EMU_RECOVERY_INITIATED = 'user-emu-recovery-initiated'
-  USER_EMU_TOGGLED = 'user-emu-toggled'
-  USER_MFA_CHALLENGE_FAILED = 'user-mfa-challenge-failed'
-  USER_MFA_CHALLENGE_INITIATED = 'user-mfa-challenge-initiated'
-  USER_MFA_CHALLENGE_VERIFIED = 'user-mfa-challenge-verified'
-  USER_MFA_CHANGE_FAILED = 'user-mfa-change-failed'
-  USER_MFA_CONFIGURATION_UPDATED = 'user-mfa-configuration-updated'
-  USER_MFA_RECOVERY_CODE_USED = 'user-mfa-recovery-code-used'
-  USER_MFA_RECOVERY_CODES_REGENERATED = 'user-mfa-recovery-codes-regenerated'
-  USER_MFA_REMOVED = 'user-mfa-removed'
-  USER_MFA_SETUP_SKIPPED = 'user-mfa-setup-skipped'
-  USER_MFA_TOTP_VERIFICATION_STARTED = 'user-mfa-totp-verification-started'
-  USER_MFA_TOTP_VERIFIED = 'user-mfa-totp-verified'
-  USER_PHONE_REMOVED = 'user-phone-removed'
-  USER_PHONE_UPDATED = 'user-phone-updated'
-  USER_PRIMARY_EMAIL_UPDATED = 'user-primary-email-updated'
-  USER_PROVIDER_EMAIL_CLAIM_EVALUATED = 'user-provider-email-claim-evaluated'
-  USER_SUDO_MODE_REMOVED = 'user-sudo-mode-removed'
-  USER_TOKEN_CREATED = 'user-token-created'
-  USER_TOKEN_DELETED = 'user-token-deleted'
-  USER_TOKENS_DELETED = 'user-tokens-deleted'
-  USER_UNBLOCKED = 'user-unblocked'
-  USERNAME = 'username'
-  V0_CHAT_AI_USAGE = 'v0-chat-ai-usage'
-  V0_CHAT_CREATED = 'v0-chat-created'
-  V0_CHAT_MESSAGE_SENT = 'v0-chat-message-sent'
-  V0_MIGRATION_PAYMENT_CONFIRMED = 'v0-migration-payment-confirmed'
-  V0_MIGRATION_SUBSCRIPTION_COMPLETED = 'v0-migration-subscription-completed'
-  VCR_IMAGE_DELETED = 'vcr-image-deleted'
-  VCR_IMAGE_PUSHED = 'vcr-image-pushed'
-  VCR_REPOSITORY_CREATED = 'vcr-repository-created'
-  VCR_REPOSITORY_DELETED = 'vcr-repository-deleted'
-  VCR_REPOSITORY_PERMISSION_ADDED = 'vcr-repository-permission-added'
-  VCR_REPOSITORY_PERMISSION_REMOVED = 'vcr-repository-permission-removed'
-  VCR_REPOSITORY_PERMISSIONS_CLEARED = 'vcr-repository-permissions-cleared'
-  VCR_REPOSITORY_VISIBILITY_CHANGED = 'vcr-repository-visibility-changed'
-  VERCEL_AGENT_ELEVATED_PERMISSIONS_APPROVED = 'vercel-agent-elevated-permissions-approved'
-  VERCEL_AGENT_ELEVATED_PERMISSIONS_REQUESTED = 'vercel-agent-elevated-permissions-requested'
-  VERCEL_AGENT_SESSION_CREATED = 'vercel-agent-session-created'
-  VERCEL_AGENT_TEAM_TRIAL_CREDITS_APPLIED = 'vercel-agent-team-trial-credits-applied'
-  VERCEL_APP_INSTALLATION_REQUEST_DISMISSED = 'vercel-app-installation-request-dismissed'
-  VERCEL_APP_INSTALLATION_REQUESTED = 'vercel-app-installation-requested'
-  VERCEL_APP_INSTALLATION_UPDATED = 'vercel-app-installation-updated'
-  VERCEL_APP_INSTALLED = 'vercel-app-installed'
-  VERCEL_APP_TOKENS_REVOKED = 'vercel-app-tokens-revoked'
-  VERCEL_APP_UNINSTALLED = 'vercel-app-uninstalled'
-  VERCEL_CI_REPOSITORY_SETTINGS_UPDATED = 'vercel-ci-repository-settings-updated'
-  VERCEL_TOOLBAR = 'vercel-toolbar'
-  VPC_PEERING_CONNECTION_ACCEPTED = 'vpc-peering-connection-accepted'
-  VPC_PEERING_CONNECTION_DELETED = 'vpc-peering-connection-deleted'
-  VPC_PEERING_CONNECTION_REJECTED = 'vpc-peering-connection-rejected'
-  VPC_PEERING_CONNECTION_UPDATED = 'vpc-peering-connection-updated'
-  VULNERABILITY_BANNER_DISMISSED = 'vulnerability-banner-dismissed'
-  WEB_ANALYTICS_TIER_UPDATED = 'web-analytics-tier-updated'
-  WEBHOOK_CREATED = 'webhook-created'
-  WEBHOOK_DELETED = 'webhook-deleted'
-  WEBHOOK_UPDATED = 'webhook-updated'
-  WORKFLOW_DEPLOYMENT_KEY_ACCESSED = 'workflow-deployment-key-accessed'
-  VALUES = [
-    'access-group-created', 'access-group-deleted', 'access-group-project-updated',
-    'access-group-updated', 'access-group-user-added', 'access-group-user-removed',
-    'admin-agentic-provisioning-account-unlinked', 'admin-plan-updated',
-    'admin-preview-deployment-suffix-clear', 'admin-saml-idp-material-deleted',
-    'admin-saml-idp-material-set', 'admin-saml-sp-signing-key-created',
-    'admin-saml-sp-signing-key-updated', 'admin-secondary-email-added',
-    'admin-secondary-email-removed', 'admin-team-name-update', 'admin-team-slug-update',
-    'admin-user-delete', 'admin-user-primary-email-updated', 'admin-username-updated',
-    'agentic-provisioning-account-blocked', 'agentic-provisioning-account-linked',
-    'agentic-provisioning-account-relinked', 'agentic-provisioning-account-unlinked',
-    'agentic-provisioning-credentials-rotated', 'agentic-provisioning-plan-changed',
-    'agentic-provisioning-team-created', 'ai-alert-investigation', 'ai-code-review',
-    'ai-gateway-access-policy-created', 'ai-gateway-access-policy-deleted',
-    'ai-gateway-access-policy-member-added', 'ai-gateway-access-policy-member-removed',
-    'ai-gateway-access-policy-updated', 'ai-gateway-api-key-created', 'ai-gateway-api-key-deleted',
-    'ai-gateway-api-key-quota-updated', 'ai-gateway-auto-reload-updated',
-    'ai-gateway-budget-default-updated', 'ai-gateway-byok-credential-created',
-    'ai-gateway-byok-credential-deleted', 'ai-gateway-byok-credential-updated',
-    'ai-gateway-byok-model-mappings-updated', 'ai-gateway-credits-purchased',
-    'ai-gateway-guardrails-updated', 'ai-gateway-hipaa-compliance-toggled',
-    'ai-gateway-inference-regions-updated', 'ai-gateway-model-allowlist-models-updated',
-    'ai-gateway-model-allowlist-toggled', 'ai-gateway-model-catalog-alert-settings-updated',
-    'ai-gateway-private-model-created', 'ai-gateway-private-model-deleted',
-    'ai-gateway-private-model-updated', 'ai-gateway-private-provider-created',
-    'ai-gateway-private-provider-deleted', 'ai-gateway-private-provider-updated',
-    'ai-gateway-prompt-training-opt-out-toggled', 'ai-gateway-provider-allowlist-providers-updated',
-    'ai-gateway-provider-allowlist-toggled', 'ai-gateway-rule-created', 'ai-gateway-rule-deleted',
-    'ai-gateway-rule-updated', 'ai-gateway-scope-budget-updated',
-    'ai-gateway-transcripts-default-disabled', 'ai-gateway-transcripts-default-enabled',
-    'ai-gateway-transcripts-disabled', 'ai-gateway-transcripts-enabled',
-    'ai-gateway-transcripts-retention-updated', 'ai-gateway-virtual-model-config-archived',
-    'ai-gateway-virtual-model-config-created', 'ai-gateway-virtual-model-config-deleted',
-    'ai-gateway-virtual-model-config-restored', 'ai-gateway-virtual-model-config-updated',
-    'ai-gateway-zero-data-retention-toggled', 'ai-omniagent',
-    'alert-investigation-project-allowlist-updated', 'alert-rule-created', 'alert-rule-deleted',
-    'alert-rule-updated', 'alias', 'alias-chown', 'alias-delete', 'alias-invite-created',
-    'alias-invite-joined', 'alias-invite-revoked', 'alias-protection-bypass-created',
-    'alias-protection-bypass-exception', 'alias-protection-bypass-regenerated',
-    'alias-protection-bypass-revoked', 'alias-system', 'alias-user-scoped-access-denied',
-    'alias-user-scoped-access-granted', 'alias-user-scoped-access-requested',
-    'alias-user-scoped-access-revoked', 'aliases-assigned', 'attack-mode-disabled',
-    'attack-mode-enabled', 'audit-log-export-downloaded', 'audit-log-export-requested',
-    'authorize-git-deployment', 'auto-expose-system-envs', 'avatar', 'billing-settings-updated',
-    'bulk-redirects-settings-updated', 'bulk-redirects-version-promoted',
-    'bulk-redirects-version-restored', 'cert', 'cert-autorenew', 'cert-chown', 'cert-clone',
-    'cert-delete', 'cert-renew', 'cert-replace', 'cert-system-create', 'code-owners-config-updated',
-    'compliance-document-downloaded', 'compliance-document-previewed',
-    'compliance-documents-bulk-downloaded', 'concurrent-builds-update', 'connect-attach-project',
-    'connect-bitbucket', 'connect-bitbucket-app', 'connect-configuration-created',
-    'connect-configuration-deleted', 'connect-configuration-link-updated',
-    'connect-configuration-linked', 'connect-configuration-unlinked',
-    'connect-configuration-updated'
-  ].push(
-    'connect-create-connector', 'connect-delete-connector', 'connect-delete-installation',
-    'connect-detach-project', 'connect-github', 'connect-github-custom-host',
-    'connect-github-limited', 'connect-gitlab', 'connect-gitlab-app', 'connect-import-tokens',
-    'connect-revoke-all-tokens', 'connect-update-connector', 'connect-update-trigger-destinations',
-    'connect-upsert-installation', 'custom-alert-created', 'custom-alert-deleted',
-    'custom-alert-updated', 'custom-environments-settings-updated', 'custom-metric-metadata-deleted',
-    'custom-metric-metadata-updated', 'custom-suffix-clear', 'custom-suffix-disable',
-    'custom-suffix-enable', 'custom-suffix-pending', 'custom-suffix-ready',
-    'default-password-protection', 'default-sso-protection', 'deploy-hook-created',
-    'deploy-hook-deduped', 'deploy-hook-deleted', 'deploy-hook-processed', 'deployment',
-    'deployment-check-created', 'deployment-check-deleted', 'deployment-check-updated',
-    'deployment-chown', 'deployment-creation-blocked', 'deployment-delete',
-    'deployment-policy-blocked', 'deployment-protection-access-requests', 'deployment-undeleted',
-    'disabled-integration-installation-removed', 'disconnect-bitbucket-app', 'disconnect-github',
-    'disconnect-github-custom-host', 'disconnect-github-limited', 'disconnect-gitlab-app', 'dns-add',
-    'dns-delete', 'dns-record-internal', 'dns-update', 'dns-zonefile-import', 'domain', 'domain-buy',
-    'domain-cdn', 'domain-chown', 'domain-custom-ns-change', 'domain-delegated', 'domain-delete',
-    'domain-ech-change', 'domain-move-in', 'domain-move-out', 'domain-move-out-request-sent',
-    'domain-renew-change', 'domain-service-type-updated', 'domain-transfer-in',
-    'domain-transfer-in-canceled', 'domain-transfer-in-completed', 'domain-zone-change',
-    'domain-zone-change-internal', 'drain-created', 'drain-deleted', 'drain-disabled',
-    'drain-enabled', 'drain-updated', 'edge-cache-dangerously-delete-by-src-images',
-    'edge-cache-dangerously-delete-by-tags', 'edge-cache-dangerously-delete-immutable-static',
-    'edge-cache-invalidate-by-src-images', 'edge-cache-invalidate-by-tags', 'edge-cache-purge-all',
-    'edge-cache-rollback-purge', 'edge-config-backup-restored', 'edge-config-created',
-    'edge-config-deleted', 'edge-config-items-updated', 'edge-config-schema-deleted',
-    'edge-config-schema-updated', 'edge-config-token-created', 'edge-config-token-deleted',
-    'edge-config-transfer-in', 'edge-config-transfer-out', 'edge-config-updated', 'email',
-    'email-notification-rule-removed', 'email-notification-rule-updated',
-    'emu-member-removed-unverified-domain', 'enforce-disjunctive-production-secrets',
-    'enforce-sensitive-environment-variables', 'env-variable-add', 'env-variable-delete',
-    'env-variable-edit', 'env-variable-masked', 'env-variable-read', 'env-variable-read:cli:dev',
-    'env-variable-read:cli:env:add', 'env-variable-read:cli:env:ls',
-    'env-variable-read:cli:env:pull', 'env-variable-read:cli:env:rm', 'env-variable-read:cli:pull',
-    'env-variable-read:unknown-source', 'env-variable-read:v0:env:pull', 'env-variable-rotated',
-    'experiment-created', 'experiment-deleted', 'experiment-transitioned', 'experiment-updated',
-    'firewall-bypass-created', 'firewall-bypass-deleted', 'firewall-conditional-bypass-created',
-    'firewall-conditional-bypass-deleted', 'firewall-config-modified', 'firewall-config-promoted',
-    'firewall-config-removed', 'firewall-managed-rulegroup-updated',
-    'firewall-managed-ruleset-updated', 'flag', 'flag-archived', 'flag-created', 'flag-deleted',
-    'flag-unarchived', 'flag-updated', 'flags-connection-created', 'flags-connection-deleted',
-    'flags-explorer-subscription', 'flags-sdk-key', 'flags-sdk-key-added', 'flags-sdk-key-deleted',
-    'flags-sdk-key-read', 'flags-segment', 'flags-settings', 'flags-transferred',
-    'flat-rate-cdn-auto-upgrade-consent', 'git-integration-repo-push',
-    'git_account_integration_link_added', 'global-config-backup-restored', 'global-config-created',
-    'global-config-deleted', 'global-config-items-updated', 'global-config-schema-deleted',
-    'global-config-schema-updated', 'global-config-token-created', 'global-config-token-deleted',
-    'global-config-transfer-in', 'global-config-transfer-out', 'global-config-updated',
-    'instant-rollback-created', 'integration-configuration-credential-revoked',
-    'integration-configuration-credential-rotated', 'integration-configuration-owner-changed',
-    'integration-configuration-scope-change-confirmed',
-    'integration-configuration-transfer-in-success',
-    'integration-configuration-transfer-out-success', 'integration-configurations-disabled',
-    'integration-installation-billing-plan-updated', 'integration-installation-completed',
-    'integration-installation-permission-updated', 'integration-installation-removed',
-    'integration-resource-redis-command-executed', 'integration-resource-sql-query-executed',
-    'integration-scope-changed', 'invoice-modified', 'invoice-refunded', 'kms-issuer-created',
-    'kms-issuer-deleted', 'kms-issuer-key-activated', 'kms-issuer-key-created',
-    'kms-issuer-key-revoked', 'kms-issuer-key-rotated', 'kms-issuer-policy-created',
-    'kms-issuer-policy-deleted', 'kms-issuer-policy-updated', 'kms-issuer-updated',
-    'log-drain-created', 'log-drain-deleted', 'log-drain-disabled', 'log-drain-enabled', 'login',
-    'login-connection-linked', 'login-connection-unlinked', 'manual-deployment-promotion-created',
-    'marketplace-auto-card-collection-updated', 'marketplace-billing-collection-updated',
-    'marketplace-flex-commit-opt-in', 'marketplace-integration-allowlist-updated',
-    'messageboard-created', 'messageboard-private-created', 'messageboard-private-space-created',
-    'messageboard-private-space-updated', 'messageboard-schema-registered',
-    'messageboard-space-created', 'messageboard-space-updated', 'messageboard-visibility-updated',
-    'microfrontend-group-added', 'microfrontend-group-deleted', 'microfrontend-group-updated',
-    'microfrontend-project-added-to-group', 'microfrontend-project-removed-from-group',
-    'microfrontend-project-updated', 'monitoring-alert-updated', 'monitoring-disabled',
-    'monitoring-enabled', 'oauth-app-connection-created', 'oauth-app-connection-removed',
-    'oauth-app-connection-updated', 'oauth-app-created', 'oauth-app-deleted',
-    'oauth-app-secret-deleted', 'oauth-app-secret-generated', 'oauth-app-token-created',
-    'oauth-app-updated', 'observability-disabled', 'observability-enabled',
-    'observability-plus-project-disabled', 'observability-plus-project-enabled',
-    'oidc-policy-created', 'oidc-policy-deleted', 'oidc-policy-updated',
-    'oidc-policy-used-to-obtain-app-token', 'organization-avatar-update', 'organization-create',
-    'organization-delete', 'organization-dsync-delete', 'organization-dsync-group-delete',
-    'organization-dsync-group-upsert', 'organization-dsync-sync-start',
-    'organization-emu-domains-merged', 'organization-emu-team-updated', 'organization-emu-updated',
-    'organization-slug-update', 'organization-sso-enforced', 'organization-team-add',
-    'organization-team-create', 'organization-team-delete', 'organization-team-sso-update',
-    'organization-update-account-flow-dismissed', 'organization-update-account-flow-triggered',
-    'owner-blocked', 'owner-soft-blocked', 'owner-soft-unblocked', 'owner-unblocked',
-    'page-integrity-config-updated', 'page-integrity-header-approved',
-    'page-integrity-header-rejected', 'page-integrity-inventory-cleared',
-    'page-integrity-resource-approved', 'page-integrity-resource-deleted',
-    'page-integrity-resource-rejected', 'page-integrity-script-approval-rule-created',
-    'page-integrity-script-approval-rule-deleted', 'passkey-created', 'passkey-deleted',
-    'passkey-updated', 'passport-access-granted', 'password-protection-disabled',
-    'password-protection-enabled', 'payment-method-added', 'payment-method-default-updated',
-    'payment-method-removed', 'plan', 'preview-deployment-suffix-disabled',
-    'preview-deployment-suffix-enabled', 'preview-deployment-suffix-update',
-    'privatelink-endpoint-created', 'privatelink-endpoint-deleted', 'privatelink-endpoint-updated',
-    'production-branch-updated', 'project-add-alias', 'project-add-redirect',
-    'project-affected-projects-deployments-updated', 'project-alias-configured-change',
-    'project-analytics-disabled', 'project-analytics-enabled',
-    'project-auto-assign-custom-production-domains-updated', 'project-automation-bypass',
-    'project-avatar-dark-mode-update', 'project-avatar-update', 'project-build-command-updated',
-    'project-build-logs-and-source-protection-updated', 'project-build-machine-updated',
-    'project-card-widget-preference-updated', 'project-client-cert-delete',
-    'project-client-cert-upload', 'project-connect-configurations',
-    'project-consolidated-git-commit-status-updated', 'project-created', 'project-cron-jobs-toggled',
-    'project-custom-environment-created', 'project-custom-environment-deleted',
-    'project-custom-environment-schedules-default-updated', 'project-custom-environment-updated',
-    'project-customer-success-code-visibility-updated', 'project-delete',
-    'project-deployment-policy-updated', 'project-deployment-retention-updated',
-    'project-directory-listing', 'project-domain-deleted', 'project-domain-moved',
-    'project-domain-unverified', 'project-domain-updated', 'project-domain-verified',
-    'project-elastic-concurrency-updated', 'project-expiration-locked', 'project-expiration-reached',
-    'project-expiration-scheduled', 'project-expiration-unlocked',
-    'project-external-rewrite-caching-updated', 'project-framework-updated',
-    'project-function-cpu-memory', 'project-function-failover', 'project-function-max-duration',
-    'project-function-regions', 'project-functions-beta-updated', 'project-functions-fluid-disabled',
-    'project-functions-fluid-enabled', 'project-git-commit-comments-toggled',
-    'project-git-commit-status-toggled', 'project-git-create-deployments-toggled',
-    'project-git-credential-bound-created', 'project-git-credential-bound-deleted',
-    'project-git-credential-bound-updated', 'project-git-credential-grant-created',
-    'project-git-credential-grant-deleted', 'project-git-credential-grant-updated',
-    'project-git-fork-protection-updated', 'project-git-lfs-toggled',
-    'project-git-pr-comments-toggled', 'project-git-repository-connected',
-    'project-git-repository-disconnected', 'project-git-repository-dispatch-events-toggled',
-    'project-git-require-verified-commits-toggled', 'project-ignored-build-step-updated',
-    'project-install-command-updated', 'project-member-added', 'project-member-invited',
-    'project-member-removed', 'project-member-removed-batch', 'project-member-updated',
-    'project-move-in-success', 'project-move-out-failed', 'project-move-out-started',
-    'project-move-out-success', 'project-name', 'project-node-version-updated',
-    'project-oidc-issuer-mode-updated', 'project-oidc-token-created', 'project-options-allowlist',
-    'project-output-directory-updated', 'project-passport-updated', 'project-password-protection',
-    'project-paused', 'project-preview-deployment-suffix',
-    'project-preview-environment-branch-tracking-updated',
-    'project-prioritize-production-builds-updated', 'project-program-enrollment-changed',
-    'project-protected-sourcemaps-updated', 'project-rollback-description-updated',
-    'project-rolling-release-aborted', 'project-rolling-release-approved',
-    'project-rolling-release-completed', 'project-rolling-release-configured',
-    'project-rolling-release-continued', 'project-rolling-release-disabled',
-    'project-rolling-release-enabled', 'project-rolling-release-paused',
-    'project-rolling-release-started', 'project-rolling-release-suggested-actions-generated',
-    'project-rolling-release-timer', 'project-root-directory-updated',
-    'project-routes-version-promoted', 'project-routes-version-restored',
-    'project-sandbox-config-updated', 'project-sandbox-url-protection-updated',
-    'project-skew-protection-allowed-domains-updated', 'project-skew-protection-max-age-updated',
-    'project-skew-protection-threshold-updated',
-    'project-source-files-outside-root-directory-updated', 'project-speed-insights-disabled',
-    'project-speed-insights-enabled', 'project-speed-insights-free-data-started',
-    'project-sso-protection', 'project-static-ips-updated', 'project-trusted-ips',
-    'project-trusted-sources', 'project-unpaused', 'project-web-analytics-disabled',
-    'project-web-analytics-enabled', 'protected-git-scope-added', 'protected-git-scope-removed',
-    'repository-ci-env-variable-create', 'repository-ci-env-variable-delete',
-    'repository-ci-env-variable-update', 'runtime-cache-purge-all', 'saml-connection-created',
-    'saml-connection-deleted', 'sandbox-alias-assigned', 'sandbox-alias-delete',
-    'sandbox-drive-created', 'sandbox-drive-deleted', 'sandbox-drive-snapshot-created',
-    'sandbox-drive-snapshot-deleted', 'sandbox-signed-commit-identity-configured',
-    'sandbox-snapshot-regions-updated', 'scale', 'scale-auto', 'secondary-email-added',
-    'secondary-email-removed', 'secondary-email-verified', 'secret-add', 'secret-delete',
-    'secret-rename', 'security-list-created', 'security-list-deleted', 'security-list-updated',
-    'security-plus-updated', 'set-bio', 'set-name', 'set-profiles', 'set-scale',
-    'shared-env-variable-create', 'shared-env-variable-delete', 'shared-env-variable-read',
-    'shared-env-variable-repo-link', 'shared-env-variable-repo-unlink', 'shared-env-variable-update',
-    'show-ip-addresses', 'signup', 'signup-via-bitbucket', 'signup-via-github', 'signup-via-gitlab',
-    'speed-insights-settings-updated', 'spend-created', 'spend-deleted', 'spend-updated',
-    'sso-login', 'storage-accept-tos', 'storage-access-token-set', 'storage-accessed-data-browser',
-    'storage-connect-project', 'storage-create', 'storage-delete', 'storage-disconnect-project',
-    'storage-disconnect-projects', 'storage-inactive-store-deleted', 'storage-reset-credentials',
-    'storage-resource-repl-command', 'storage-set-locked', 'storage-transfer-in-success',
-    'storage-transfer-out-success', 'storage-transfer-request-created', 'storage-update',
-    'storage-update-project-connection', 'storage-upgrade-project-connection-to-oidc',
-    'storage-view-secret', 'strict-connectors', 'strict-deployment-protection-settings',
-    'strict-password-protection-settings', 'strict-shareable-links', 'subscription-created',
-    'subscription-product-added', 'subscription-product-removed', 'subscription-updated',
-    'support-session-created', 'team', 'team-agent-billing-migration-decision-changed',
-    'team-avatar-update', 'team-collaboration-settings-updated',
-    'team-default-build-machine-updated', 'team-default-passport-updated', 'team-delete',
-    'team-deployment-policy-updated', 'team-deployment-storage-high-retention-opt-in',
-    'team-deployment-storage-retention-opt-out', 'team-domain-verification-created',
-    'team-domain-verification-deleted', 'team-domain-verification-verified',
-    'team-email-domain-update', 'team-emu-updated', 'team-ended-trial',
-    'team-firewall-config-modified', 'team-firewall-config-promoted',
-    'team-git-repository-dispatch-events-toggled', 'team-git-require-verified-commits-toggled',
-    'team-invite-bulk-delete', 'team-invite-code-reset', 'team-invite-link-created',
-    'team-invite-link-deleted', 'team-ip-blocking-rules-created', 'team-ip-blocking-rules-removed',
-    'team-member-add', 'team-member-confirm-request', 'team-member-decline-request',
-    'team-member-delete', 'team-member-entitlement-added', 'team-member-entitlement-canceled',
-    'team-member-entitlement-reactivated', 'team-member-entitlement-removed', 'team-member-join',
-    'team-member-leave', 'team-member-request-access', 'team-member-role-update',
-    'team-member-sso-authorization-attempt', 'team-mfa-enforcement-updated', 'team-name-update',
-    'team-paid-invoice', 'team-program-enrollment-changed', 'team-remote-caching-purge',
-    'team-remote-caching-update', 'team-saml-enforced', 'team-saml-roles', 'team-slug-update',
-    'team-tokens-invalidated', 'tracing-configured', 'tracing-disabled', 'tracing-paused',
-    'tracing-resumed', 'unlink-login-connection', 'update-account-flow-dismissed',
-    'update-account-flow-triggered', 'user-auto-block-configured', 'user-blocked', 'user-delete',
-    'user-delete-requested', 'user-emu-account-archived', 'user-emu-account-deleted',
-    'user-emu-account-recovered', 'user-emu-account-update-opted-in',
-    'user-emu-account-update-opted-out', 'user-emu-recovery-email-sent',
-    'user-emu-recovery-initiated', 'user-emu-toggled', 'user-mfa-challenge-failed',
-    'user-mfa-challenge-initiated', 'user-mfa-challenge-verified', 'user-mfa-change-failed',
-    'user-mfa-configuration-updated', 'user-mfa-recovery-code-used',
-    'user-mfa-recovery-codes-regenerated', 'user-mfa-removed', 'user-mfa-setup-skipped',
-    'user-mfa-totp-verification-started', 'user-mfa-totp-verified', 'user-phone-removed',
-    'user-phone-updated', 'user-primary-email-updated', 'user-provider-email-claim-evaluated',
-    'user-sudo-mode-removed', 'user-token-created', 'user-token-deleted', 'user-tokens-deleted',
-    'user-unblocked', 'username', 'v0-chat-ai-usage', 'v0-chat-created', 'v0-chat-message-sent',
-    'v0-migration-payment-confirmed', 'v0-migration-subscription-completed', 'vcr-image-deleted',
-    'vcr-image-pushed', 'vcr-repository-created', 'vcr-repository-deleted',
-    'vcr-repository-permission-added', 'vcr-repository-permission-removed',
-    'vcr-repository-permissions-cleared', 'vcr-repository-visibility-changed',
-    'vercel-agent-elevated-permissions-approved', 'vercel-agent-elevated-permissions-requested',
-    'vercel-agent-session-created', 'vercel-agent-team-trial-credits-applied',
-    'vercel-app-installation-request-dismissed', 'vercel-app-installation-requested',
-    'vercel-app-installation-updated', 'vercel-app-installed', 'vercel-app-tokens-revoked',
-    'vercel-app-uninstalled', 'vercel-ci-repository-settings-updated', 'vercel-toolbar',
-    'vpc-peering-connection-accepted', 'vpc-peering-connection-deleted',
-    'vpc-peering-connection-rejected', 'vpc-peering-connection-updated',
-    'vulnerability-banner-dismissed', 'web-analytics-tier-updated', 'webhook-created',
-    'webhook-deleted', 'webhook-updated', 'workflow-deployment-key-accessed'
-  ).freeze
-  def self.from_value(value)
-    value
+  # Defines the ListEventTypeName SDK namespace.
+  module ListEventTypeName
+    ACCESS_GROUP_CREATED = 'access-group-created'
+    ACCESS_GROUP_DELETED = 'access-group-deleted'
+    ACCESS_GROUP_PROJECT_UPDATED = 'access-group-project-updated'
+    ACCESS_GROUP_UPDATED = 'access-group-updated'
+    ACCESS_GROUP_USER_ADDED = 'access-group-user-added'
+    ACCESS_GROUP_USER_REMOVED = 'access-group-user-removed'
+    ADMIN_AGENTIC_PROVISIONING_ACCOUNT_UNLINKED = 'admin-agentic-provisioning-account-unlinked'
+    ADMIN_PLAN_UPDATED = 'admin-plan-updated'
+    ADMIN_PREVIEW_DEPLOYMENT_SUFFIX_CLEAR = 'admin-preview-deployment-suffix-clear'
+    ADMIN_SAML_IDP_MATERIAL_DELETED = 'admin-saml-idp-material-deleted'
+    ADMIN_SAML_IDP_MATERIAL_SET = 'admin-saml-idp-material-set'
+    ADMIN_SAML_SP_SIGNING_KEY_CREATED = 'admin-saml-sp-signing-key-created'
+    ADMIN_SAML_SP_SIGNING_KEY_UPDATED = 'admin-saml-sp-signing-key-updated'
+    ADMIN_SECONDARY_EMAIL_ADDED = 'admin-secondary-email-added'
+    ADMIN_SECONDARY_EMAIL_REMOVED = 'admin-secondary-email-removed'
+    ADMIN_TEAM_NAME_UPDATE = 'admin-team-name-update'
+    ADMIN_TEAM_SLUG_UPDATE = 'admin-team-slug-update'
+    ADMIN_USER_DELETE = 'admin-user-delete'
+    ADMIN_USER_PRIMARY_EMAIL_UPDATED = 'admin-user-primary-email-updated'
+    ADMIN_USERNAME_UPDATED = 'admin-username-updated'
+    AGENTIC_PROVISIONING_ACCOUNT_BLOCKED = 'agentic-provisioning-account-blocked'
+    AGENTIC_PROVISIONING_ACCOUNT_LINKED = 'agentic-provisioning-account-linked'
+    AGENTIC_PROVISIONING_ACCOUNT_RELINKED = 'agentic-provisioning-account-relinked'
+    AGENTIC_PROVISIONING_ACCOUNT_UNLINKED = 'agentic-provisioning-account-unlinked'
+    AGENTIC_PROVISIONING_CREDENTIALS_ROTATED = 'agentic-provisioning-credentials-rotated'
+    AGENTIC_PROVISIONING_PLAN_CHANGED = 'agentic-provisioning-plan-changed'
+    AGENTIC_PROVISIONING_TEAM_CREATED = 'agentic-provisioning-team-created'
+    AI_ALERT_INVESTIGATION = 'ai-alert-investigation'
+    AI_CODE_REVIEW = 'ai-code-review'
+    AI_GATEWAY_ACCESS_POLICY_CREATED = 'ai-gateway-access-policy-created'
+    AI_GATEWAY_ACCESS_POLICY_DELETED = 'ai-gateway-access-policy-deleted'
+    AI_GATEWAY_ACCESS_POLICY_MEMBER_ADDED = 'ai-gateway-access-policy-member-added'
+    AI_GATEWAY_ACCESS_POLICY_MEMBER_REMOVED = 'ai-gateway-access-policy-member-removed'
+    AI_GATEWAY_ACCESS_POLICY_UPDATED = 'ai-gateway-access-policy-updated'
+    AI_GATEWAY_API_KEY_CREATED = 'ai-gateway-api-key-created'
+    AI_GATEWAY_API_KEY_DELETED = 'ai-gateway-api-key-deleted'
+    AI_GATEWAY_API_KEY_QUOTA_UPDATED = 'ai-gateway-api-key-quota-updated'
+    AI_GATEWAY_AUTO_RELOAD_UPDATED = 'ai-gateway-auto-reload-updated'
+    AI_GATEWAY_BUDGET_DEFAULT_UPDATED = 'ai-gateway-budget-default-updated'
+    AI_GATEWAY_BYOK_CREDENTIAL_CREATED = 'ai-gateway-byok-credential-created'
+    AI_GATEWAY_BYOK_CREDENTIAL_DELETED = 'ai-gateway-byok-credential-deleted'
+    AI_GATEWAY_BYOK_CREDENTIAL_UPDATED = 'ai-gateway-byok-credential-updated'
+    AI_GATEWAY_BYOK_MODEL_MAPPINGS_UPDATED = 'ai-gateway-byok-model-mappings-updated'
+    AI_GATEWAY_CREDITS_PURCHASED = 'ai-gateway-credits-purchased'
+    AI_GATEWAY_GUARDRAILS_UPDATED = 'ai-gateway-guardrails-updated'
+    AI_GATEWAY_HIPAA_COMPLIANCE_TOGGLED = 'ai-gateway-hipaa-compliance-toggled'
+    AI_GATEWAY_INFERENCE_REGIONS_UPDATED = 'ai-gateway-inference-regions-updated'
+    AI_GATEWAY_MODEL_ALLOWLIST_MODELS_UPDATED = 'ai-gateway-model-allowlist-models-updated'
+    AI_GATEWAY_MODEL_ALLOWLIST_TOGGLED = 'ai-gateway-model-allowlist-toggled'
+    AI_GATEWAY_MODEL_CATALOG_ALERT_SETTINGS_UPDATED = 'ai-gateway-model-catalog-alert-settings-updated'
+    AI_GATEWAY_PRIVATE_MODEL_CREATED = 'ai-gateway-private-model-created'
+    AI_GATEWAY_PRIVATE_MODEL_DELETED = 'ai-gateway-private-model-deleted'
+    AI_GATEWAY_PRIVATE_MODEL_UPDATED = 'ai-gateway-private-model-updated'
+    AI_GATEWAY_PRIVATE_PROVIDER_CREATED = 'ai-gateway-private-provider-created'
+    AI_GATEWAY_PRIVATE_PROVIDER_DELETED = 'ai-gateway-private-provider-deleted'
+    AI_GATEWAY_PRIVATE_PROVIDER_UPDATED = 'ai-gateway-private-provider-updated'
+    AI_GATEWAY_PROMPT_TRAINING_OPT_OUT_TOGGLED = 'ai-gateway-prompt-training-opt-out-toggled'
+    AI_GATEWAY_PROVIDER_ALLOWLIST_PROVIDERS_UPDATED = 'ai-gateway-provider-allowlist-providers-updated'
+    AI_GATEWAY_PROVIDER_ALLOWLIST_TOGGLED = 'ai-gateway-provider-allowlist-toggled'
+    AI_GATEWAY_RULE_CREATED = 'ai-gateway-rule-created'
+    AI_GATEWAY_RULE_DELETED = 'ai-gateway-rule-deleted'
+    AI_GATEWAY_RULE_UPDATED = 'ai-gateway-rule-updated'
+    AI_GATEWAY_SCOPE_BUDGET_UPDATED = 'ai-gateway-scope-budget-updated'
+    AI_GATEWAY_TRANSCRIPTS_DEFAULT_DISABLED = 'ai-gateway-transcripts-default-disabled'
+    AI_GATEWAY_TRANSCRIPTS_DEFAULT_ENABLED = 'ai-gateway-transcripts-default-enabled'
+    AI_GATEWAY_TRANSCRIPTS_DISABLED = 'ai-gateway-transcripts-disabled'
+    AI_GATEWAY_TRANSCRIPTS_ENABLED = 'ai-gateway-transcripts-enabled'
+    AI_GATEWAY_TRANSCRIPTS_RETENTION_UPDATED = 'ai-gateway-transcripts-retention-updated'
+    AI_GATEWAY_VIRTUAL_MODEL_CONFIG_ARCHIVED = 'ai-gateway-virtual-model-config-archived'
+    AI_GATEWAY_VIRTUAL_MODEL_CONFIG_CREATED = 'ai-gateway-virtual-model-config-created'
+    AI_GATEWAY_VIRTUAL_MODEL_CONFIG_DELETED = 'ai-gateway-virtual-model-config-deleted'
+    AI_GATEWAY_VIRTUAL_MODEL_CONFIG_RESTORED = 'ai-gateway-virtual-model-config-restored'
+    AI_GATEWAY_VIRTUAL_MODEL_CONFIG_UPDATED = 'ai-gateway-virtual-model-config-updated'
+    AI_GATEWAY_ZERO_DATA_RETENTION_TOGGLED = 'ai-gateway-zero-data-retention-toggled'
+    AI_OMNIAGENT = 'ai-omniagent'
+    ALERT_INVESTIGATION_PROJECT_ALLOWLIST_UPDATED = 'alert-investigation-project-allowlist-updated'
+    ALERT_RULE_CREATED = 'alert-rule-created'
+    ALERT_RULE_DELETED = 'alert-rule-deleted'
+    ALERT_RULE_UPDATED = 'alert-rule-updated'
+    ALIAS = 'alias'
+    ALIAS_CHOWN = 'alias-chown'
+    ALIAS_DELETE = 'alias-delete'
+    ALIAS_INVITE_CREATED = 'alias-invite-created'
+    ALIAS_INVITE_JOINED = 'alias-invite-joined'
+    ALIAS_INVITE_REVOKED = 'alias-invite-revoked'
+    ALIAS_PROTECTION_BYPASS_CREATED = 'alias-protection-bypass-created'
+    ALIAS_PROTECTION_BYPASS_EXCEPTION = 'alias-protection-bypass-exception'
+    ALIAS_PROTECTION_BYPASS_REGENERATED = 'alias-protection-bypass-regenerated'
+    ALIAS_PROTECTION_BYPASS_REVOKED = 'alias-protection-bypass-revoked'
+    ALIAS_SYSTEM = 'alias-system'
+    ALIAS_USER_SCOPED_ACCESS_DENIED = 'alias-user-scoped-access-denied'
+    ALIAS_USER_SCOPED_ACCESS_GRANTED = 'alias-user-scoped-access-granted'
+    ALIAS_USER_SCOPED_ACCESS_REQUESTED = 'alias-user-scoped-access-requested'
+    ALIAS_USER_SCOPED_ACCESS_REVOKED = 'alias-user-scoped-access-revoked'
+    ALIASES_ASSIGNED = 'aliases-assigned'
+    ATTACK_MODE_DISABLED = 'attack-mode-disabled'
+    ATTACK_MODE_ENABLED = 'attack-mode-enabled'
+    AUDIT_LOG_EXPORT_DOWNLOADED = 'audit-log-export-downloaded'
+    AUDIT_LOG_EXPORT_REQUESTED = 'audit-log-export-requested'
+    AUTHORIZE_GIT_DEPLOYMENT = 'authorize-git-deployment'
+    AUTO_EXPOSE_SYSTEM_ENVS = 'auto-expose-system-envs'
+    AVATAR = 'avatar'
+    BILLING_SETTINGS_UPDATED = 'billing-settings-updated'
+    BULK_REDIRECTS_SETTINGS_UPDATED = 'bulk-redirects-settings-updated'
+    BULK_REDIRECTS_VERSION_PROMOTED = 'bulk-redirects-version-promoted'
+    BULK_REDIRECTS_VERSION_RESTORED = 'bulk-redirects-version-restored'
+    CERT = 'cert'
+    CERT_AUTORENEW = 'cert-autorenew'
+    CERT_CHOWN = 'cert-chown'
+    CERT_CLONE = 'cert-clone'
+    CERT_DELETE = 'cert-delete'
+    CERT_RENEW = 'cert-renew'
+    CERT_REPLACE = 'cert-replace'
+    CERT_SYSTEM_CREATE = 'cert-system-create'
+    CODE_OWNERS_CONFIG_UPDATED = 'code-owners-config-updated'
+    COMPLIANCE_DOCUMENT_DOWNLOADED = 'compliance-document-downloaded'
+    COMPLIANCE_DOCUMENT_PREVIEWED = 'compliance-document-previewed'
+    COMPLIANCE_DOCUMENTS_BULK_DOWNLOADED = 'compliance-documents-bulk-downloaded'
+    CONCURRENT_BUILDS_UPDATE = 'concurrent-builds-update'
+    CONNECT_ATTACH_PROJECT = 'connect-attach-project'
+    CONNECT_BITBUCKET = 'connect-bitbucket'
+    CONNECT_BITBUCKET_APP = 'connect-bitbucket-app'
+    CONNECT_CONFIGURATION_CREATED = 'connect-configuration-created'
+    CONNECT_CONFIGURATION_DELETED = 'connect-configuration-deleted'
+    CONNECT_CONFIGURATION_LINK_UPDATED = 'connect-configuration-link-updated'
+    CONNECT_CONFIGURATION_LINKED = 'connect-configuration-linked'
+    CONNECT_CONFIGURATION_UNLINKED = 'connect-configuration-unlinked'
+    CONNECT_CONFIGURATION_UPDATED = 'connect-configuration-updated'
+    CONNECT_CREATE_CONNECTOR = 'connect-create-connector'
+    CONNECT_DELETE_CONNECTOR = 'connect-delete-connector'
+    CONNECT_DELETE_INSTALLATION = 'connect-delete-installation'
+    CONNECT_DETACH_PROJECT = 'connect-detach-project'
+    CONNECT_GITHUB = 'connect-github'
+    CONNECT_GITHUB_CUSTOM_HOST = 'connect-github-custom-host'
+    CONNECT_GITHUB_LIMITED = 'connect-github-limited'
+    CONNECT_GITLAB = 'connect-gitlab'
+    CONNECT_GITLAB_APP = 'connect-gitlab-app'
+    CONNECT_IMPORT_TOKENS = 'connect-import-tokens'
+    CONNECT_REVOKE_ALL_TOKENS = 'connect-revoke-all-tokens'
+    CONNECT_UPDATE_CONNECTOR = 'connect-update-connector'
+    CONNECT_UPDATE_TRIGGER_DESTINATIONS = 'connect-update-trigger-destinations'
+    CONNECT_UPSERT_INSTALLATION = 'connect-upsert-installation'
+    CUSTOM_ALERT_CREATED = 'custom-alert-created'
+    CUSTOM_ALERT_DELETED = 'custom-alert-deleted'
+    CUSTOM_ALERT_UPDATED = 'custom-alert-updated'
+    CUSTOM_ENVIRONMENTS_SETTINGS_UPDATED = 'custom-environments-settings-updated'
+    CUSTOM_METRIC_METADATA_DELETED = 'custom-metric-metadata-deleted'
+    CUSTOM_METRIC_METADATA_UPDATED = 'custom-metric-metadata-updated'
+    CUSTOM_SUFFIX_CLEAR = 'custom-suffix-clear'
+    CUSTOM_SUFFIX_DISABLE = 'custom-suffix-disable'
+    CUSTOM_SUFFIX_ENABLE = 'custom-suffix-enable'
+    CUSTOM_SUFFIX_PENDING = 'custom-suffix-pending'
+    CUSTOM_SUFFIX_READY = 'custom-suffix-ready'
+    DEFAULT_PASSWORD_PROTECTION = 'default-password-protection'
+    DEFAULT_SSO_PROTECTION = 'default-sso-protection'
+    DEPLOY_HOOK_CREATED = 'deploy-hook-created'
+    DEPLOY_HOOK_DEDUPED = 'deploy-hook-deduped'
+    DEPLOY_HOOK_DELETED = 'deploy-hook-deleted'
+    DEPLOY_HOOK_PROCESSED = 'deploy-hook-processed'
+    DEPLOYMENT = 'deployment'
+    DEPLOYMENT_CHECK_CREATED = 'deployment-check-created'
+    DEPLOYMENT_CHECK_DELETED = 'deployment-check-deleted'
+    DEPLOYMENT_CHECK_UPDATED = 'deployment-check-updated'
+    DEPLOYMENT_CHOWN = 'deployment-chown'
+    DEPLOYMENT_CREATION_BLOCKED = 'deployment-creation-blocked'
+    DEPLOYMENT_DELETE = 'deployment-delete'
+    DEPLOYMENT_POLICY_BLOCKED = 'deployment-policy-blocked'
+    DEPLOYMENT_PROTECTION_ACCESS_REQUESTS = 'deployment-protection-access-requests'
+    DEPLOYMENT_UNDELETED = 'deployment-undeleted'
+    DISABLED_INTEGRATION_INSTALLATION_REMOVED = 'disabled-integration-installation-removed'
+    DISCONNECT_BITBUCKET_APP = 'disconnect-bitbucket-app'
+    DISCONNECT_GITHUB = 'disconnect-github'
+    DISCONNECT_GITHUB_CUSTOM_HOST = 'disconnect-github-custom-host'
+    DISCONNECT_GITHUB_LIMITED = 'disconnect-github-limited'
+    DISCONNECT_GITLAB_APP = 'disconnect-gitlab-app'
+    DNS_ADD = 'dns-add'
+    DNS_DELETE = 'dns-delete'
+    DNS_RECORD_INTERNAL = 'dns-record-internal'
+    DNS_UPDATE = 'dns-update'
+    DNS_ZONEFILE_IMPORT = 'dns-zonefile-import'
+    DOMAIN = 'domain'
+    DOMAIN_BUY = 'domain-buy'
+    DOMAIN_CDN = 'domain-cdn'
+    DOMAIN_CHOWN = 'domain-chown'
+    DOMAIN_CUSTOM_NS_CHANGE = 'domain-custom-ns-change'
+    DOMAIN_DELEGATED = 'domain-delegated'
+    DOMAIN_DELETE = 'domain-delete'
+    DOMAIN_ECH_CHANGE = 'domain-ech-change'
+    DOMAIN_MOVE_IN = 'domain-move-in'
+    DOMAIN_MOVE_OUT = 'domain-move-out'
+    DOMAIN_MOVE_OUT_REQUEST_SENT = 'domain-move-out-request-sent'
+    DOMAIN_RENEW_CHANGE = 'domain-renew-change'
+    DOMAIN_SERVICE_TYPE_UPDATED = 'domain-service-type-updated'
+    DOMAIN_TRANSFER_IN = 'domain-transfer-in'
+    DOMAIN_TRANSFER_IN_CANCELED = 'domain-transfer-in-canceled'
+    DOMAIN_TRANSFER_IN_COMPLETED = 'domain-transfer-in-completed'
+    DOMAIN_ZONE_CHANGE = 'domain-zone-change'
+    DOMAIN_ZONE_CHANGE_INTERNAL = 'domain-zone-change-internal'
+    DRAIN_CREATED = 'drain-created'
+    DRAIN_DELETED = 'drain-deleted'
+    DRAIN_DISABLED = 'drain-disabled'
+    DRAIN_ENABLED = 'drain-enabled'
+    DRAIN_UPDATED = 'drain-updated'
+    EDGE_CACHE_DANGEROUSLY_DELETE_BY_SRC_IMAGES = 'edge-cache-dangerously-delete-by-src-images'
+    EDGE_CACHE_DANGEROUSLY_DELETE_BY_TAGS = 'edge-cache-dangerously-delete-by-tags'
+    EDGE_CACHE_DANGEROUSLY_DELETE_IMMUTABLE_STATIC = 'edge-cache-dangerously-delete-immutable-static'
+    EDGE_CACHE_INVALIDATE_BY_SRC_IMAGES = 'edge-cache-invalidate-by-src-images'
+    EDGE_CACHE_INVALIDATE_BY_TAGS = 'edge-cache-invalidate-by-tags'
+    EDGE_CACHE_PURGE_ALL = 'edge-cache-purge-all'
+    EDGE_CACHE_ROLLBACK_PURGE = 'edge-cache-rollback-purge'
+    EDGE_CONFIG_BACKUP_RESTORED = 'edge-config-backup-restored'
+    EDGE_CONFIG_CREATED = 'edge-config-created'
+    EDGE_CONFIG_DELETED = 'edge-config-deleted'
+    EDGE_CONFIG_ITEMS_UPDATED = 'edge-config-items-updated'
+    EDGE_CONFIG_SCHEMA_DELETED = 'edge-config-schema-deleted'
+    EDGE_CONFIG_SCHEMA_UPDATED = 'edge-config-schema-updated'
+    EDGE_CONFIG_TOKEN_CREATED = 'edge-config-token-created'
+    EDGE_CONFIG_TOKEN_DELETED = 'edge-config-token-deleted'
+    EDGE_CONFIG_TRANSFER_IN = 'edge-config-transfer-in'
+    EDGE_CONFIG_TRANSFER_OUT = 'edge-config-transfer-out'
+    EDGE_CONFIG_UPDATED = 'edge-config-updated'
+    EMAIL = 'email'
+    EMAIL_NOTIFICATION_RULE_REMOVED = 'email-notification-rule-removed'
+    EMAIL_NOTIFICATION_RULE_UPDATED = 'email-notification-rule-updated'
+    EMU_MEMBER_REMOVED_UNVERIFIED_DOMAIN = 'emu-member-removed-unverified-domain'
+    ENFORCE_DISJUNCTIVE_PRODUCTION_SECRETS = 'enforce-disjunctive-production-secrets'
+    ENFORCE_SENSITIVE_ENVIRONMENT_VARIABLES = 'enforce-sensitive-environment-variables'
+    ENV_VARIABLE_ADD = 'env-variable-add'
+    ENV_VARIABLE_DELETE = 'env-variable-delete'
+    ENV_VARIABLE_EDIT = 'env-variable-edit'
+    ENV_VARIABLE_MASKED = 'env-variable-masked'
+    ENV_VARIABLE_READ = 'env-variable-read'
+    ENV_VARIABLE_READ_CLI_DEV = 'env-variable-read:cli:dev'
+    ENV_VARIABLE_READ_CLI_ENV_ADD = 'env-variable-read:cli:env:add'
+    ENV_VARIABLE_READ_CLI_ENV_LS = 'env-variable-read:cli:env:ls'
+    ENV_VARIABLE_READ_CLI_ENV_PULL = 'env-variable-read:cli:env:pull'
+    ENV_VARIABLE_READ_CLI_ENV_RM = 'env-variable-read:cli:env:rm'
+    ENV_VARIABLE_READ_CLI_PULL = 'env-variable-read:cli:pull'
+    ENV_VARIABLE_READ_UNKNOWN_SOURCE = 'env-variable-read:unknown-source'
+    ENV_VARIABLE_READ_V0_ENV_PULL = 'env-variable-read:v0:env:pull'
+    ENV_VARIABLE_ROTATED = 'env-variable-rotated'
+    EXPERIMENT_CREATED = 'experiment-created'
+    EXPERIMENT_DELETED = 'experiment-deleted'
+    EXPERIMENT_TRANSITIONED = 'experiment-transitioned'
+    EXPERIMENT_UPDATED = 'experiment-updated'
+    FIREWALL_BYPASS_CREATED = 'firewall-bypass-created'
+    FIREWALL_BYPASS_DELETED = 'firewall-bypass-deleted'
+    FIREWALL_CONDITIONAL_BYPASS_CREATED = 'firewall-conditional-bypass-created'
+    FIREWALL_CONDITIONAL_BYPASS_DELETED = 'firewall-conditional-bypass-deleted'
+    FIREWALL_CONFIG_MODIFIED = 'firewall-config-modified'
+    FIREWALL_CONFIG_PROMOTED = 'firewall-config-promoted'
+    FIREWALL_CONFIG_REMOVED = 'firewall-config-removed'
+    FIREWALL_MANAGED_RULEGROUP_UPDATED = 'firewall-managed-rulegroup-updated'
+    FIREWALL_MANAGED_RULESET_UPDATED = 'firewall-managed-ruleset-updated'
+    FLAG = 'flag'
+    FLAG_ARCHIVED = 'flag-archived'
+    FLAG_CREATED = 'flag-created'
+    FLAG_DELETED = 'flag-deleted'
+    FLAG_UNARCHIVED = 'flag-unarchived'
+    FLAG_UPDATED = 'flag-updated'
+    FLAGS_CONNECTION_CREATED = 'flags-connection-created'
+    FLAGS_CONNECTION_DELETED = 'flags-connection-deleted'
+    FLAGS_EXPLORER_SUBSCRIPTION = 'flags-explorer-subscription'
+    FLAGS_SDK_KEY = 'flags-sdk-key'
+    FLAGS_SDK_KEY_ADDED = 'flags-sdk-key-added'
+    FLAGS_SDK_KEY_DELETED = 'flags-sdk-key-deleted'
+    FLAGS_SDK_KEY_READ = 'flags-sdk-key-read'
+    FLAGS_SEGMENT = 'flags-segment'
+    FLAGS_SETTINGS = 'flags-settings'
+    FLAGS_TRANSFERRED = 'flags-transferred'
+    FLAT_RATE_CDN_AUTO_UPGRADE_CONSENT = 'flat-rate-cdn-auto-upgrade-consent'
+    GIT_INTEGRATION_REPO_PUSH = 'git-integration-repo-push'
+    GIT_ACCOUNT_INTEGRATION_LINK_ADDED = 'git_account_integration_link_added'
+    GLOBAL_CONFIG_BACKUP_RESTORED = 'global-config-backup-restored'
+    GLOBAL_CONFIG_CREATED = 'global-config-created'
+    GLOBAL_CONFIG_DELETED = 'global-config-deleted'
+    GLOBAL_CONFIG_ITEMS_UPDATED = 'global-config-items-updated'
+    GLOBAL_CONFIG_SCHEMA_DELETED = 'global-config-schema-deleted'
+    GLOBAL_CONFIG_SCHEMA_UPDATED = 'global-config-schema-updated'
+    GLOBAL_CONFIG_TOKEN_CREATED = 'global-config-token-created'
+    GLOBAL_CONFIG_TOKEN_DELETED = 'global-config-token-deleted'
+    GLOBAL_CONFIG_TRANSFER_IN = 'global-config-transfer-in'
+    GLOBAL_CONFIG_TRANSFER_OUT = 'global-config-transfer-out'
+    GLOBAL_CONFIG_UPDATED = 'global-config-updated'
+    INSTANT_ROLLBACK_CREATED = 'instant-rollback-created'
+    INTEGRATION_CONFIGURATION_CREDENTIAL_REVOKED = 'integration-configuration-credential-revoked'
+    INTEGRATION_CONFIGURATION_CREDENTIAL_ROTATED = 'integration-configuration-credential-rotated'
+    INTEGRATION_CONFIGURATION_OWNER_CHANGED = 'integration-configuration-owner-changed'
+    INTEGRATION_CONFIGURATION_SCOPE_CHANGE_CONFIRMED = 'integration-configuration-scope-change-confirmed'
+    INTEGRATION_CONFIGURATION_TRANSFER_IN_SUCCESS = 'integration-configuration-transfer-in-success'
+    INTEGRATION_CONFIGURATION_TRANSFER_OUT_SUCCESS = 'integration-configuration-transfer-out-success'
+    INTEGRATION_CONFIGURATIONS_DISABLED = 'integration-configurations-disabled'
+    INTEGRATION_INSTALLATION_BILLING_PLAN_UPDATED = 'integration-installation-billing-plan-updated'
+    INTEGRATION_INSTALLATION_COMPLETED = 'integration-installation-completed'
+    INTEGRATION_INSTALLATION_PERMISSION_UPDATED = 'integration-installation-permission-updated'
+    INTEGRATION_INSTALLATION_REMOVED = 'integration-installation-removed'
+    INTEGRATION_RESOURCE_REDIS_COMMAND_EXECUTED = 'integration-resource-redis-command-executed'
+    INTEGRATION_RESOURCE_SQL_QUERY_EXECUTED = 'integration-resource-sql-query-executed'
+    INTEGRATION_SCOPE_CHANGED = 'integration-scope-changed'
+    INVOICE_MODIFIED = 'invoice-modified'
+    INVOICE_REFUNDED = 'invoice-refunded'
+    KMS_ISSUER_CREATED = 'kms-issuer-created'
+    KMS_ISSUER_DELETED = 'kms-issuer-deleted'
+    KMS_ISSUER_KEY_ACTIVATED = 'kms-issuer-key-activated'
+    KMS_ISSUER_KEY_CREATED = 'kms-issuer-key-created'
+    KMS_ISSUER_KEY_REVOKED = 'kms-issuer-key-revoked'
+    KMS_ISSUER_KEY_ROTATED = 'kms-issuer-key-rotated'
+    KMS_ISSUER_POLICY_CREATED = 'kms-issuer-policy-created'
+    KMS_ISSUER_POLICY_DELETED = 'kms-issuer-policy-deleted'
+    KMS_ISSUER_POLICY_UPDATED = 'kms-issuer-policy-updated'
+    KMS_ISSUER_UPDATED = 'kms-issuer-updated'
+    LOG_DRAIN_CREATED = 'log-drain-created'
+    LOG_DRAIN_DELETED = 'log-drain-deleted'
+    LOG_DRAIN_DISABLED = 'log-drain-disabled'
+    LOG_DRAIN_ENABLED = 'log-drain-enabled'
+    LOGIN = 'login'
+    LOGIN_CONNECTION_LINKED = 'login-connection-linked'
+    LOGIN_CONNECTION_UNLINKED = 'login-connection-unlinked'
+    MANUAL_DEPLOYMENT_PROMOTION_CREATED = 'manual-deployment-promotion-created'
+    MARKETPLACE_AUTO_CARD_COLLECTION_UPDATED = 'marketplace-auto-card-collection-updated'
+    MARKETPLACE_BILLING_COLLECTION_UPDATED = 'marketplace-billing-collection-updated'
+    MARKETPLACE_FLEX_COMMIT_OPT_IN = 'marketplace-flex-commit-opt-in'
+    MARKETPLACE_INTEGRATION_ALLOWLIST_UPDATED = 'marketplace-integration-allowlist-updated'
+    MESSAGEBOARD_CREATED = 'messageboard-created'
+    MESSAGEBOARD_PRIVATE_CREATED = 'messageboard-private-created'
+    MESSAGEBOARD_PRIVATE_SPACE_CREATED = 'messageboard-private-space-created'
+    MESSAGEBOARD_PRIVATE_SPACE_UPDATED = 'messageboard-private-space-updated'
+    MESSAGEBOARD_SCHEMA_REGISTERED = 'messageboard-schema-registered'
+    MESSAGEBOARD_SPACE_CREATED = 'messageboard-space-created'
+    MESSAGEBOARD_SPACE_UPDATED = 'messageboard-space-updated'
+    MESSAGEBOARD_VISIBILITY_UPDATED = 'messageboard-visibility-updated'
+    MICROFRONTEND_GROUP_ADDED = 'microfrontend-group-added'
+    MICROFRONTEND_GROUP_DELETED = 'microfrontend-group-deleted'
+    MICROFRONTEND_GROUP_UPDATED = 'microfrontend-group-updated'
+    MICROFRONTEND_PROJECT_ADDED_TO_GROUP = 'microfrontend-project-added-to-group'
+    MICROFRONTEND_PROJECT_REMOVED_FROM_GROUP = 'microfrontend-project-removed-from-group'
+    MICROFRONTEND_PROJECT_UPDATED = 'microfrontend-project-updated'
+    MONITORING_ALERT_UPDATED = 'monitoring-alert-updated'
+    MONITORING_DISABLED = 'monitoring-disabled'
+    MONITORING_ENABLED = 'monitoring-enabled'
+    OAUTH_APP_CONNECTION_CREATED = 'oauth-app-connection-created'
+    OAUTH_APP_CONNECTION_REMOVED = 'oauth-app-connection-removed'
+    OAUTH_APP_CONNECTION_UPDATED = 'oauth-app-connection-updated'
+    OAUTH_APP_CREATED = 'oauth-app-created'
+    OAUTH_APP_DELETED = 'oauth-app-deleted'
+    OAUTH_APP_SECRET_DELETED = 'oauth-app-secret-deleted'
+    OAUTH_APP_SECRET_GENERATED = 'oauth-app-secret-generated'
+    OAUTH_APP_TOKEN_CREATED = 'oauth-app-token-created'
+    OAUTH_APP_UPDATED = 'oauth-app-updated'
+    OBSERVABILITY_DISABLED = 'observability-disabled'
+    OBSERVABILITY_ENABLED = 'observability-enabled'
+    OBSERVABILITY_PLUS_PROJECT_DISABLED = 'observability-plus-project-disabled'
+    OBSERVABILITY_PLUS_PROJECT_ENABLED = 'observability-plus-project-enabled'
+    OIDC_POLICY_CREATED = 'oidc-policy-created'
+    OIDC_POLICY_DELETED = 'oidc-policy-deleted'
+    OIDC_POLICY_UPDATED = 'oidc-policy-updated'
+    OIDC_POLICY_USED_TO_OBTAIN_APP_TOKEN = 'oidc-policy-used-to-obtain-app-token'
+    ORGANIZATION_AVATAR_UPDATE = 'organization-avatar-update'
+    ORGANIZATION_CREATE = 'organization-create'
+    ORGANIZATION_DELETE = 'organization-delete'
+    ORGANIZATION_DSYNC_DELETE = 'organization-dsync-delete'
+    ORGANIZATION_DSYNC_GROUP_DELETE = 'organization-dsync-group-delete'
+    ORGANIZATION_DSYNC_GROUP_UPSERT = 'organization-dsync-group-upsert'
+    ORGANIZATION_DSYNC_SYNC_START = 'organization-dsync-sync-start'
+    ORGANIZATION_EMU_DOMAINS_MERGED = 'organization-emu-domains-merged'
+    ORGANIZATION_EMU_TEAM_UPDATED = 'organization-emu-team-updated'
+    ORGANIZATION_EMU_UPDATED = 'organization-emu-updated'
+    ORGANIZATION_SLUG_UPDATE = 'organization-slug-update'
+    ORGANIZATION_SSO_ENFORCED = 'organization-sso-enforced'
+    ORGANIZATION_TEAM_ADD = 'organization-team-add'
+    ORGANIZATION_TEAM_CREATE = 'organization-team-create'
+    ORGANIZATION_TEAM_DELETE = 'organization-team-delete'
+    ORGANIZATION_TEAM_SSO_UPDATE = 'organization-team-sso-update'
+    ORGANIZATION_UPDATE_ACCOUNT_FLOW_DISMISSED = 'organization-update-account-flow-dismissed'
+    ORGANIZATION_UPDATE_ACCOUNT_FLOW_TRIGGERED = 'organization-update-account-flow-triggered'
+    OWNER_BLOCKED = 'owner-blocked'
+    OWNER_SOFT_BLOCKED = 'owner-soft-blocked'
+    OWNER_SOFT_UNBLOCKED = 'owner-soft-unblocked'
+    OWNER_UNBLOCKED = 'owner-unblocked'
+    PAGE_INTEGRITY_CONFIG_UPDATED = 'page-integrity-config-updated'
+    PAGE_INTEGRITY_HEADER_APPROVED = 'page-integrity-header-approved'
+    PAGE_INTEGRITY_HEADER_REJECTED = 'page-integrity-header-rejected'
+    PAGE_INTEGRITY_INVENTORY_CLEARED = 'page-integrity-inventory-cleared'
+    PAGE_INTEGRITY_RESOURCE_APPROVED = 'page-integrity-resource-approved'
+    PAGE_INTEGRITY_RESOURCE_DELETED = 'page-integrity-resource-deleted'
+    PAGE_INTEGRITY_RESOURCE_REJECTED = 'page-integrity-resource-rejected'
+    PAGE_INTEGRITY_SCRIPT_APPROVAL_RULE_CREATED = 'page-integrity-script-approval-rule-created'
+    PAGE_INTEGRITY_SCRIPT_APPROVAL_RULE_DELETED = 'page-integrity-script-approval-rule-deleted'
+    PASSKEY_CREATED = 'passkey-created'
+    PASSKEY_DELETED = 'passkey-deleted'
+    PASSKEY_UPDATED = 'passkey-updated'
+    PASSPORT_ACCESS_GRANTED = 'passport-access-granted'
+    PASSWORD_PROTECTION_DISABLED = 'password-protection-disabled'
+    PASSWORD_PROTECTION_ENABLED = 'password-protection-enabled'
+    PAYMENT_METHOD_ADDED = 'payment-method-added'
+    PAYMENT_METHOD_DEFAULT_UPDATED = 'payment-method-default-updated'
+    PAYMENT_METHOD_REMOVED = 'payment-method-removed'
+    PLAN = 'plan'
+    PREVIEW_DEPLOYMENT_SUFFIX_DISABLED = 'preview-deployment-suffix-disabled'
+    PREVIEW_DEPLOYMENT_SUFFIX_ENABLED = 'preview-deployment-suffix-enabled'
+    PREVIEW_DEPLOYMENT_SUFFIX_UPDATE = 'preview-deployment-suffix-update'
+    PRIVATELINK_ENDPOINT_CREATED = 'privatelink-endpoint-created'
+    PRIVATELINK_ENDPOINT_DELETED = 'privatelink-endpoint-deleted'
+    PRIVATELINK_ENDPOINT_UPDATED = 'privatelink-endpoint-updated'
+    PRODUCTION_BRANCH_UPDATED = 'production-branch-updated'
+    PROJECT_ADD_ALIAS = 'project-add-alias'
+    PROJECT_ADD_REDIRECT = 'project-add-redirect'
+    PROJECT_AFFECTED_PROJECTS_DEPLOYMENTS_UPDATED = 'project-affected-projects-deployments-updated'
+    PROJECT_ALIAS_CONFIGURED_CHANGE = 'project-alias-configured-change'
+    PROJECT_ANALYTICS_DISABLED = 'project-analytics-disabled'
+    PROJECT_ANALYTICS_ENABLED = 'project-analytics-enabled'
+    PROJECT_AUTO_ASSIGN_CUSTOM_PRODUCTION_DOMAINS_UPDATED =
+      'project-auto-assign-custom-production-domains-updated'
+    PROJECT_AUTOMATION_BYPASS = 'project-automation-bypass'
+    PROJECT_AVATAR_DARK_MODE_UPDATE = 'project-avatar-dark-mode-update'
+    PROJECT_AVATAR_UPDATE = 'project-avatar-update'
+    PROJECT_BUILD_COMMAND_UPDATED = 'project-build-command-updated'
+    PROJECT_BUILD_LOGS_AND_SOURCE_PROTECTION_UPDATED = 'project-build-logs-and-source-protection-updated'
+    PROJECT_BUILD_MACHINE_UPDATED = 'project-build-machine-updated'
+    PROJECT_CARD_WIDGET_PREFERENCE_UPDATED = 'project-card-widget-preference-updated'
+    PROJECT_CLIENT_CERT_DELETE = 'project-client-cert-delete'
+    PROJECT_CLIENT_CERT_UPLOAD = 'project-client-cert-upload'
+    PROJECT_CONNECT_CONFIGURATIONS = 'project-connect-configurations'
+    PROJECT_CONSOLIDATED_GIT_COMMIT_STATUS_UPDATED = 'project-consolidated-git-commit-status-updated'
+    PROJECT_CREATED = 'project-created'
+    PROJECT_CRON_JOBS_TOGGLED = 'project-cron-jobs-toggled'
+    PROJECT_CUSTOM_ENVIRONMENT_CREATED = 'project-custom-environment-created'
+    PROJECT_CUSTOM_ENVIRONMENT_DELETED = 'project-custom-environment-deleted'
+    PROJECT_CUSTOM_ENVIRONMENT_SCHEDULES_DEFAULT_UPDATED =
+      'project-custom-environment-schedules-default-updated'
+    PROJECT_CUSTOM_ENVIRONMENT_UPDATED = 'project-custom-environment-updated'
+    PROJECT_CUSTOMER_SUCCESS_CODE_VISIBILITY_UPDATED = 'project-customer-success-code-visibility-updated'
+    PROJECT_DELETE = 'project-delete'
+    PROJECT_DEPLOYMENT_POLICY_UPDATED = 'project-deployment-policy-updated'
+    PROJECT_DEPLOYMENT_RETENTION_UPDATED = 'project-deployment-retention-updated'
+    PROJECT_DIRECTORY_LISTING = 'project-directory-listing'
+    PROJECT_DOMAIN_DELETED = 'project-domain-deleted'
+    PROJECT_DOMAIN_MOVED = 'project-domain-moved'
+    PROJECT_DOMAIN_UNVERIFIED = 'project-domain-unverified'
+    PROJECT_DOMAIN_UPDATED = 'project-domain-updated'
+    PROJECT_DOMAIN_VERIFIED = 'project-domain-verified'
+    PROJECT_ELASTIC_CONCURRENCY_UPDATED = 'project-elastic-concurrency-updated'
+    PROJECT_EXPIRATION_LOCKED = 'project-expiration-locked'
+    PROJECT_EXPIRATION_REACHED = 'project-expiration-reached'
+    PROJECT_EXPIRATION_SCHEDULED = 'project-expiration-scheduled'
+    PROJECT_EXPIRATION_UNLOCKED = 'project-expiration-unlocked'
+    PROJECT_EXTERNAL_REWRITE_CACHING_UPDATED = 'project-external-rewrite-caching-updated'
+    PROJECT_FRAMEWORK_UPDATED = 'project-framework-updated'
+    PROJECT_FUNCTION_CPU_MEMORY = 'project-function-cpu-memory'
+    PROJECT_FUNCTION_FAILOVER = 'project-function-failover'
+    PROJECT_FUNCTION_MAX_DURATION = 'project-function-max-duration'
+    PROJECT_FUNCTION_REGIONS = 'project-function-regions'
+    PROJECT_FUNCTIONS_BETA_UPDATED = 'project-functions-beta-updated'
+    PROJECT_FUNCTIONS_FLUID_DISABLED = 'project-functions-fluid-disabled'
+    PROJECT_FUNCTIONS_FLUID_ENABLED = 'project-functions-fluid-enabled'
+    PROJECT_GIT_COMMIT_COMMENTS_TOGGLED = 'project-git-commit-comments-toggled'
+    PROJECT_GIT_COMMIT_STATUS_TOGGLED = 'project-git-commit-status-toggled'
+    PROJECT_GIT_CREATE_DEPLOYMENTS_TOGGLED = 'project-git-create-deployments-toggled'
+    PROJECT_GIT_CREDENTIAL_BOUND_CREATED = 'project-git-credential-bound-created'
+    PROJECT_GIT_CREDENTIAL_BOUND_DELETED = 'project-git-credential-bound-deleted'
+    PROJECT_GIT_CREDENTIAL_BOUND_UPDATED = 'project-git-credential-bound-updated'
+    PROJECT_GIT_CREDENTIAL_GRANT_CREATED = 'project-git-credential-grant-created'
+    PROJECT_GIT_CREDENTIAL_GRANT_DELETED = 'project-git-credential-grant-deleted'
+    PROJECT_GIT_CREDENTIAL_GRANT_UPDATED = 'project-git-credential-grant-updated'
+    PROJECT_GIT_FORK_PROTECTION_UPDATED = 'project-git-fork-protection-updated'
+    PROJECT_GIT_LFS_TOGGLED = 'project-git-lfs-toggled'
+    PROJECT_GIT_PR_COMMENTS_TOGGLED = 'project-git-pr-comments-toggled'
+    PROJECT_GIT_REPOSITORY_CONNECTED = 'project-git-repository-connected'
+    PROJECT_GIT_REPOSITORY_DISCONNECTED = 'project-git-repository-disconnected'
+    PROJECT_GIT_REPOSITORY_DISPATCH_EVENTS_TOGGLED = 'project-git-repository-dispatch-events-toggled'
+    PROJECT_GIT_REQUIRE_VERIFIED_COMMITS_TOGGLED = 'project-git-require-verified-commits-toggled'
+    PROJECT_IGNORED_BUILD_STEP_UPDATED = 'project-ignored-build-step-updated'
+    PROJECT_INSTALL_COMMAND_UPDATED = 'project-install-command-updated'
+    PROJECT_MEMBER_ADDED = 'project-member-added'
+    PROJECT_MEMBER_INVITED = 'project-member-invited'
+    PROJECT_MEMBER_REMOVED = 'project-member-removed'
+    PROJECT_MEMBER_REMOVED_BATCH = 'project-member-removed-batch'
+    PROJECT_MEMBER_UPDATED = 'project-member-updated'
+    PROJECT_MOVE_IN_SUCCESS = 'project-move-in-success'
+    PROJECT_MOVE_OUT_FAILED = 'project-move-out-failed'
+    PROJECT_MOVE_OUT_STARTED = 'project-move-out-started'
+    PROJECT_MOVE_OUT_SUCCESS = 'project-move-out-success'
+    PROJECT_NAME = 'project-name'
+    PROJECT_NODE_VERSION_UPDATED = 'project-node-version-updated'
+    PROJECT_OIDC_ISSUER_MODE_UPDATED = 'project-oidc-issuer-mode-updated'
+    PROJECT_OIDC_TOKEN_CREATED = 'project-oidc-token-created'
+    PROJECT_OPTIONS_ALLOWLIST = 'project-options-allowlist'
+    PROJECT_OUTPUT_DIRECTORY_UPDATED = 'project-output-directory-updated'
+    PROJECT_PASSPORT_UPDATED = 'project-passport-updated'
+    PROJECT_PASSWORD_PROTECTION = 'project-password-protection'
+    PROJECT_PAUSED = 'project-paused'
+    PROJECT_PREVIEW_DEPLOYMENT_SUFFIX = 'project-preview-deployment-suffix'
+    PROJECT_PREVIEW_ENVIRONMENT_BRANCH_TRACKING_UPDATED = 'project-preview-environment-branch-tracking-updated'
+    PROJECT_PRIORITIZE_PRODUCTION_BUILDS_UPDATED = 'project-prioritize-production-builds-updated'
+    PROJECT_PROGRAM_ENROLLMENT_CHANGED = 'project-program-enrollment-changed'
+    PROJECT_PROTECTED_SOURCEMAPS_UPDATED = 'project-protected-sourcemaps-updated'
+    PROJECT_ROLLBACK_DESCRIPTION_UPDATED = 'project-rollback-description-updated'
+    PROJECT_ROLLING_RELEASE_ABORTED = 'project-rolling-release-aborted'
+    PROJECT_ROLLING_RELEASE_APPROVED = 'project-rolling-release-approved'
+    PROJECT_ROLLING_RELEASE_COMPLETED = 'project-rolling-release-completed'
+    PROJECT_ROLLING_RELEASE_CONFIGURED = 'project-rolling-release-configured'
+    PROJECT_ROLLING_RELEASE_CONTINUED = 'project-rolling-release-continued'
+    PROJECT_ROLLING_RELEASE_DISABLED = 'project-rolling-release-disabled'
+    PROJECT_ROLLING_RELEASE_ENABLED = 'project-rolling-release-enabled'
+    PROJECT_ROLLING_RELEASE_PAUSED = 'project-rolling-release-paused'
+    PROJECT_ROLLING_RELEASE_STARTED = 'project-rolling-release-started'
+    PROJECT_ROLLING_RELEASE_SUGGESTED_ACTIONS_GENERATED = 'project-rolling-release-suggested-actions-generated'
+    PROJECT_ROLLING_RELEASE_TIMER = 'project-rolling-release-timer'
+    PROJECT_ROOT_DIRECTORY_UPDATED = 'project-root-directory-updated'
+    PROJECT_ROUTES_VERSION_PROMOTED = 'project-routes-version-promoted'
+    PROJECT_ROUTES_VERSION_RESTORED = 'project-routes-version-restored'
+    PROJECT_SANDBOX_CONFIG_UPDATED = 'project-sandbox-config-updated'
+    PROJECT_SANDBOX_URL_PROTECTION_UPDATED = 'project-sandbox-url-protection-updated'
+    PROJECT_SKEW_PROTECTION_ALLOWED_DOMAINS_UPDATED = 'project-skew-protection-allowed-domains-updated'
+    PROJECT_SKEW_PROTECTION_MAX_AGE_UPDATED = 'project-skew-protection-max-age-updated'
+    PROJECT_SKEW_PROTECTION_THRESHOLD_UPDATED = 'project-skew-protection-threshold-updated'
+    PROJECT_SOURCE_FILES_OUTSIDE_ROOT_DIRECTORY_UPDATED = 'project-source-files-outside-root-directory-updated'
+    PROJECT_SPEED_INSIGHTS_DISABLED = 'project-speed-insights-disabled'
+    PROJECT_SPEED_INSIGHTS_ENABLED = 'project-speed-insights-enabled'
+    PROJECT_SPEED_INSIGHTS_FREE_DATA_STARTED = 'project-speed-insights-free-data-started'
+    PROJECT_SSO_PROTECTION = 'project-sso-protection'
+    PROJECT_STATIC_IPS_UPDATED = 'project-static-ips-updated'
+    PROJECT_TRUSTED_IPS = 'project-trusted-ips'
+    PROJECT_TRUSTED_SOURCES = 'project-trusted-sources'
+    PROJECT_UNPAUSED = 'project-unpaused'
+    PROJECT_WEB_ANALYTICS_DISABLED = 'project-web-analytics-disabled'
+    PROJECT_WEB_ANALYTICS_ENABLED = 'project-web-analytics-enabled'
+    PROTECTED_GIT_SCOPE_ADDED = 'protected-git-scope-added'
+    PROTECTED_GIT_SCOPE_REMOVED = 'protected-git-scope-removed'
+    REPOSITORY_CI_ENV_VARIABLE_CREATE = 'repository-ci-env-variable-create'
+    REPOSITORY_CI_ENV_VARIABLE_DELETE = 'repository-ci-env-variable-delete'
+    REPOSITORY_CI_ENV_VARIABLE_UPDATE = 'repository-ci-env-variable-update'
+    RUNTIME_CACHE_PURGE_ALL = 'runtime-cache-purge-all'
+    SAML_CONNECTION_CREATED = 'saml-connection-created'
+    SAML_CONNECTION_DELETED = 'saml-connection-deleted'
+    SANDBOX_ALIAS_ASSIGNED = 'sandbox-alias-assigned'
+    SANDBOX_ALIAS_DELETE = 'sandbox-alias-delete'
+    SANDBOX_DRIVE_CREATED = 'sandbox-drive-created'
+    SANDBOX_DRIVE_DELETED = 'sandbox-drive-deleted'
+    SANDBOX_DRIVE_SNAPSHOT_CREATED = 'sandbox-drive-snapshot-created'
+    SANDBOX_DRIVE_SNAPSHOT_DELETED = 'sandbox-drive-snapshot-deleted'
+    SANDBOX_SIGNED_COMMIT_IDENTITY_CONFIGURED = 'sandbox-signed-commit-identity-configured'
+    SANDBOX_SNAPSHOT_REGIONS_UPDATED = 'sandbox-snapshot-regions-updated'
+    SCALE = 'scale'
+    SCALE_AUTO = 'scale-auto'
+    SECONDARY_EMAIL_ADDED = 'secondary-email-added'
+    SECONDARY_EMAIL_REMOVED = 'secondary-email-removed'
+    SECONDARY_EMAIL_VERIFIED = 'secondary-email-verified'
+    SECRET_ADD = 'secret-add'
+    SECRET_DELETE = 'secret-delete'
+    SECRET_RENAME = 'secret-rename'
+    SECURITY_LIST_CREATED = 'security-list-created'
+    SECURITY_LIST_DELETED = 'security-list-deleted'
+    SECURITY_LIST_UPDATED = 'security-list-updated'
+    SECURITY_PLUS_UPDATED = 'security-plus-updated'
+    SET_BIO = 'set-bio'
+    SET_NAME = 'set-name'
+    SET_PROFILES = 'set-profiles'
+    SET_SCALE = 'set-scale'
+    SHARED_ENV_VARIABLE_CREATE = 'shared-env-variable-create'
+    SHARED_ENV_VARIABLE_DELETE = 'shared-env-variable-delete'
+    SHARED_ENV_VARIABLE_READ = 'shared-env-variable-read'
+    SHARED_ENV_VARIABLE_REPO_LINK = 'shared-env-variable-repo-link'
+    SHARED_ENV_VARIABLE_REPO_UNLINK = 'shared-env-variable-repo-unlink'
+    SHARED_ENV_VARIABLE_UPDATE = 'shared-env-variable-update'
+    SHOW_IP_ADDRESSES = 'show-ip-addresses'
+    SIGNUP = 'signup'
+    SIGNUP_VIA_BITBUCKET = 'signup-via-bitbucket'
+    SIGNUP_VIA_GITHUB = 'signup-via-github'
+    SIGNUP_VIA_GITLAB = 'signup-via-gitlab'
+    SPEED_INSIGHTS_SETTINGS_UPDATED = 'speed-insights-settings-updated'
+    SPEND_CREATED = 'spend-created'
+    SPEND_DELETED = 'spend-deleted'
+    SPEND_UPDATED = 'spend-updated'
+    SSO_LOGIN = 'sso-login'
+    STORAGE_ACCEPT_TOS = 'storage-accept-tos'
+    STORAGE_ACCESS_TOKEN_SET = 'storage-access-token-set'
+    STORAGE_ACCESSED_DATA_BROWSER = 'storage-accessed-data-browser'
+    STORAGE_CONNECT_PROJECT = 'storage-connect-project'
+    STORAGE_CREATE = 'storage-create'
+    STORAGE_DELETE = 'storage-delete'
+    STORAGE_DISCONNECT_PROJECT = 'storage-disconnect-project'
+    STORAGE_DISCONNECT_PROJECTS = 'storage-disconnect-projects'
+    STORAGE_INACTIVE_STORE_DELETED = 'storage-inactive-store-deleted'
+    STORAGE_RESET_CREDENTIALS = 'storage-reset-credentials'
+    STORAGE_RESOURCE_REPL_COMMAND = 'storage-resource-repl-command'
+    STORAGE_SET_LOCKED = 'storage-set-locked'
+    STORAGE_TRANSFER_IN_SUCCESS = 'storage-transfer-in-success'
+    STORAGE_TRANSFER_OUT_SUCCESS = 'storage-transfer-out-success'
+    STORAGE_TRANSFER_REQUEST_CREATED = 'storage-transfer-request-created'
+    STORAGE_UPDATE = 'storage-update'
+    STORAGE_UPDATE_PROJECT_CONNECTION = 'storage-update-project-connection'
+    STORAGE_UPGRADE_PROJECT_CONNECTION_TO_OIDC = 'storage-upgrade-project-connection-to-oidc'
+    STORAGE_VIEW_SECRET = 'storage-view-secret'
+    STRICT_CONNECTORS = 'strict-connectors'
+    STRICT_DEPLOYMENT_PROTECTION_SETTINGS = 'strict-deployment-protection-settings'
+    STRICT_PASSWORD_PROTECTION_SETTINGS = 'strict-password-protection-settings'
+    STRICT_SHAREABLE_LINKS = 'strict-shareable-links'
+    SUBSCRIPTION_CREATED = 'subscription-created'
+    SUBSCRIPTION_PRODUCT_ADDED = 'subscription-product-added'
+    SUBSCRIPTION_PRODUCT_REMOVED = 'subscription-product-removed'
+    SUBSCRIPTION_UPDATED = 'subscription-updated'
+    SUPPORT_SESSION_CREATED = 'support-session-created'
+    TEAM = 'team'
+    TEAM_AGENT_BILLING_MIGRATION_DECISION_CHANGED = 'team-agent-billing-migration-decision-changed'
+    TEAM_AVATAR_UPDATE = 'team-avatar-update'
+    TEAM_COLLABORATION_SETTINGS_UPDATED = 'team-collaboration-settings-updated'
+    TEAM_DEFAULT_BUILD_MACHINE_UPDATED = 'team-default-build-machine-updated'
+    TEAM_DEFAULT_PASSPORT_UPDATED = 'team-default-passport-updated'
+    TEAM_DELETE = 'team-delete'
+    TEAM_DEPLOYMENT_POLICY_UPDATED = 'team-deployment-policy-updated'
+    TEAM_DEPLOYMENT_STORAGE_HIGH_RETENTION_OPT_IN = 'team-deployment-storage-high-retention-opt-in'
+    TEAM_DEPLOYMENT_STORAGE_RETENTION_OPT_OUT = 'team-deployment-storage-retention-opt-out'
+    TEAM_DOMAIN_VERIFICATION_CREATED = 'team-domain-verification-created'
+    TEAM_DOMAIN_VERIFICATION_DELETED = 'team-domain-verification-deleted'
+    TEAM_DOMAIN_VERIFICATION_VERIFIED = 'team-domain-verification-verified'
+    TEAM_EMAIL_DOMAIN_UPDATE = 'team-email-domain-update'
+    TEAM_EMU_UPDATED = 'team-emu-updated'
+    TEAM_ENDED_TRIAL = 'team-ended-trial'
+    TEAM_FIREWALL_CONFIG_MODIFIED = 'team-firewall-config-modified'
+    TEAM_FIREWALL_CONFIG_PROMOTED = 'team-firewall-config-promoted'
+    TEAM_GIT_REPOSITORY_DISPATCH_EVENTS_TOGGLED = 'team-git-repository-dispatch-events-toggled'
+    TEAM_GIT_REQUIRE_VERIFIED_COMMITS_TOGGLED = 'team-git-require-verified-commits-toggled'
+    TEAM_INVITE_BULK_DELETE = 'team-invite-bulk-delete'
+    TEAM_INVITE_CODE_RESET = 'team-invite-code-reset'
+    TEAM_INVITE_LINK_CREATED = 'team-invite-link-created'
+    TEAM_INVITE_LINK_DELETED = 'team-invite-link-deleted'
+    TEAM_IP_BLOCKING_RULES_CREATED = 'team-ip-blocking-rules-created'
+    TEAM_IP_BLOCKING_RULES_REMOVED = 'team-ip-blocking-rules-removed'
+    TEAM_MEMBER_ADD = 'team-member-add'
+    TEAM_MEMBER_CONFIRM_REQUEST = 'team-member-confirm-request'
+    TEAM_MEMBER_DECLINE_REQUEST = 'team-member-decline-request'
+    TEAM_MEMBER_DELETE = 'team-member-delete'
+    TEAM_MEMBER_ENTITLEMENT_ADDED = 'team-member-entitlement-added'
+    TEAM_MEMBER_ENTITLEMENT_CANCELED = 'team-member-entitlement-canceled'
+    TEAM_MEMBER_ENTITLEMENT_REACTIVATED = 'team-member-entitlement-reactivated'
+    TEAM_MEMBER_ENTITLEMENT_REMOVED = 'team-member-entitlement-removed'
+    TEAM_MEMBER_JOIN = 'team-member-join'
+    TEAM_MEMBER_LEAVE = 'team-member-leave'
+    TEAM_MEMBER_REQUEST_ACCESS = 'team-member-request-access'
+    TEAM_MEMBER_ROLE_UPDATE = 'team-member-role-update'
+    TEAM_MEMBER_SSO_AUTHORIZATION_ATTEMPT = 'team-member-sso-authorization-attempt'
+    TEAM_MFA_ENFORCEMENT_UPDATED = 'team-mfa-enforcement-updated'
+    TEAM_NAME_UPDATE = 'team-name-update'
+    TEAM_PAID_INVOICE = 'team-paid-invoice'
+    TEAM_PROGRAM_ENROLLMENT_CHANGED = 'team-program-enrollment-changed'
+    TEAM_REMOTE_CACHING_PURGE = 'team-remote-caching-purge'
+    TEAM_REMOTE_CACHING_UPDATE = 'team-remote-caching-update'
+    TEAM_SAML_ENFORCED = 'team-saml-enforced'
+    TEAM_SAML_ROLES = 'team-saml-roles'
+    TEAM_SLUG_UPDATE = 'team-slug-update'
+    TEAM_TOKENS_INVALIDATED = 'team-tokens-invalidated'
+    TRACING_CONFIGURED = 'tracing-configured'
+    TRACING_DISABLED = 'tracing-disabled'
+    TRACING_PAUSED = 'tracing-paused'
+    TRACING_RESUMED = 'tracing-resumed'
+    UNLINK_LOGIN_CONNECTION = 'unlink-login-connection'
+    UPDATE_ACCOUNT_FLOW_DISMISSED = 'update-account-flow-dismissed'
+    UPDATE_ACCOUNT_FLOW_TRIGGERED = 'update-account-flow-triggered'
+    USER_AUTO_BLOCK_CONFIGURED = 'user-auto-block-configured'
+    USER_BLOCKED = 'user-blocked'
+    USER_DELETE = 'user-delete'
+    USER_DELETE_REQUESTED = 'user-delete-requested'
+    USER_EMU_ACCOUNT_ARCHIVED = 'user-emu-account-archived'
+    USER_EMU_ACCOUNT_DELETED = 'user-emu-account-deleted'
+    USER_EMU_ACCOUNT_RECOVERED = 'user-emu-account-recovered'
+    USER_EMU_ACCOUNT_UPDATE_OPTED_IN = 'user-emu-account-update-opted-in'
+    USER_EMU_ACCOUNT_UPDATE_OPTED_OUT = 'user-emu-account-update-opted-out'
+    USER_EMU_RECOVERY_EMAIL_SENT = 'user-emu-recovery-email-sent'
+    USER_EMU_RECOVERY_INITIATED = 'user-emu-recovery-initiated'
+    USER_EMU_TOGGLED = 'user-emu-toggled'
+    USER_MFA_CHALLENGE_FAILED = 'user-mfa-challenge-failed'
+    USER_MFA_CHALLENGE_INITIATED = 'user-mfa-challenge-initiated'
+    USER_MFA_CHALLENGE_VERIFIED = 'user-mfa-challenge-verified'
+    USER_MFA_CHANGE_FAILED = 'user-mfa-change-failed'
+    USER_MFA_CONFIGURATION_UPDATED = 'user-mfa-configuration-updated'
+    USER_MFA_RECOVERY_CODE_USED = 'user-mfa-recovery-code-used'
+    USER_MFA_RECOVERY_CODES_REGENERATED = 'user-mfa-recovery-codes-regenerated'
+    USER_MFA_REMOVED = 'user-mfa-removed'
+    USER_MFA_SETUP_SKIPPED = 'user-mfa-setup-skipped'
+    USER_MFA_TOTP_VERIFICATION_STARTED = 'user-mfa-totp-verification-started'
+    USER_MFA_TOTP_VERIFIED = 'user-mfa-totp-verified'
+    USER_PHONE_REMOVED = 'user-phone-removed'
+    USER_PHONE_UPDATED = 'user-phone-updated'
+    USER_PRIMARY_EMAIL_UPDATED = 'user-primary-email-updated'
+    USER_PROVIDER_EMAIL_CLAIM_EVALUATED = 'user-provider-email-claim-evaluated'
+    USER_SUDO_MODE_REMOVED = 'user-sudo-mode-removed'
+    USER_TOKEN_CREATED = 'user-token-created'
+    USER_TOKEN_DELETED = 'user-token-deleted'
+    USER_TOKENS_DELETED = 'user-tokens-deleted'
+    USER_UNBLOCKED = 'user-unblocked'
+    USERNAME = 'username'
+    V0_CHAT_AI_USAGE = 'v0-chat-ai-usage'
+    V0_CHAT_CREATED = 'v0-chat-created'
+    V0_CHAT_MESSAGE_SENT = 'v0-chat-message-sent'
+    V0_MIGRATION_PAYMENT_CONFIRMED = 'v0-migration-payment-confirmed'
+    V0_MIGRATION_SUBSCRIPTION_COMPLETED = 'v0-migration-subscription-completed'
+    VCR_IMAGE_DELETED = 'vcr-image-deleted'
+    VCR_IMAGE_PUSHED = 'vcr-image-pushed'
+    VCR_REPOSITORY_CREATED = 'vcr-repository-created'
+    VCR_REPOSITORY_DELETED = 'vcr-repository-deleted'
+    VCR_REPOSITORY_PERMISSION_ADDED = 'vcr-repository-permission-added'
+    VCR_REPOSITORY_PERMISSION_REMOVED = 'vcr-repository-permission-removed'
+    VCR_REPOSITORY_PERMISSIONS_CLEARED = 'vcr-repository-permissions-cleared'
+    VCR_REPOSITORY_VISIBILITY_CHANGED = 'vcr-repository-visibility-changed'
+    VERCEL_AGENT_ELEVATED_PERMISSIONS_APPROVED = 'vercel-agent-elevated-permissions-approved'
+    VERCEL_AGENT_ELEVATED_PERMISSIONS_REQUESTED = 'vercel-agent-elevated-permissions-requested'
+    VERCEL_AGENT_SESSION_CREATED = 'vercel-agent-session-created'
+    VERCEL_AGENT_TEAM_TRIAL_CREDITS_APPLIED = 'vercel-agent-team-trial-credits-applied'
+    VERCEL_APP_INSTALLATION_REQUEST_DISMISSED = 'vercel-app-installation-request-dismissed'
+    VERCEL_APP_INSTALLATION_REQUESTED = 'vercel-app-installation-requested'
+    VERCEL_APP_INSTALLATION_UPDATED = 'vercel-app-installation-updated'
+    VERCEL_APP_INSTALLED = 'vercel-app-installed'
+    VERCEL_APP_TOKENS_REVOKED = 'vercel-app-tokens-revoked'
+    VERCEL_APP_UNINSTALLED = 'vercel-app-uninstalled'
+    VERCEL_CI_REPOSITORY_SETTINGS_UPDATED = 'vercel-ci-repository-settings-updated'
+    VERCEL_TOOLBAR = 'vercel-toolbar'
+    VPC_PEERING_CONNECTION_ACCEPTED = 'vpc-peering-connection-accepted'
+    VPC_PEERING_CONNECTION_DELETED = 'vpc-peering-connection-deleted'
+    VPC_PEERING_CONNECTION_REJECTED = 'vpc-peering-connection-rejected'
+    VPC_PEERING_CONNECTION_UPDATED = 'vpc-peering-connection-updated'
+    VULNERABILITY_BANNER_DISMISSED = 'vulnerability-banner-dismissed'
+    WEB_ANALYTICS_TIER_UPDATED = 'web-analytics-tier-updated'
+    WEBHOOK_CREATED = 'webhook-created'
+    WEBHOOK_DELETED = 'webhook-deleted'
+    WEBHOOK_UPDATED = 'webhook-updated'
+    WORKFLOW_DEPLOYMENT_KEY_ACCESSED = 'workflow-deployment-key-accessed'
+    VALUES = %w[
+      access-group-created access-group-deleted access-group-project-updated
+      access-group-updated access-group-user-added access-group-user-removed
+      admin-agentic-provisioning-account-unlinked admin-plan-updated
+      admin-preview-deployment-suffix-clear admin-saml-idp-material-deleted
+      admin-saml-idp-material-set admin-saml-sp-signing-key-created
+      admin-saml-sp-signing-key-updated admin-secondary-email-added
+      admin-secondary-email-removed admin-team-name-update admin-team-slug-update
+      admin-user-delete admin-user-primary-email-updated admin-username-updated
+      agentic-provisioning-account-blocked agentic-provisioning-account-linked
+      agentic-provisioning-account-relinked agentic-provisioning-account-unlinked
+      agentic-provisioning-credentials-rotated agentic-provisioning-plan-changed
+      agentic-provisioning-team-created ai-alert-investigation ai-code-review
+      ai-gateway-access-policy-created ai-gateway-access-policy-deleted
+      ai-gateway-access-policy-member-added ai-gateway-access-policy-member-removed
+      ai-gateway-access-policy-updated ai-gateway-api-key-created ai-gateway-api-key-deleted
+      ai-gateway-api-key-quota-updated ai-gateway-auto-reload-updated
+      ai-gateway-budget-default-updated ai-gateway-byok-credential-created
+      ai-gateway-byok-credential-deleted ai-gateway-byok-credential-updated
+      ai-gateway-byok-model-mappings-updated ai-gateway-credits-purchased
+      ai-gateway-guardrails-updated ai-gateway-hipaa-compliance-toggled
+      ai-gateway-inference-regions-updated ai-gateway-model-allowlist-models-updated
+      ai-gateway-model-allowlist-toggled ai-gateway-model-catalog-alert-settings-updated
+      ai-gateway-private-model-created ai-gateway-private-model-deleted
+      ai-gateway-private-model-updated ai-gateway-private-provider-created
+      ai-gateway-private-provider-deleted ai-gateway-private-provider-updated
+      ai-gateway-prompt-training-opt-out-toggled ai-gateway-provider-allowlist-providers-updated
+      ai-gateway-provider-allowlist-toggled ai-gateway-rule-created ai-gateway-rule-deleted
+      ai-gateway-rule-updated ai-gateway-scope-budget-updated
+      ai-gateway-transcripts-default-disabled ai-gateway-transcripts-default-enabled
+      ai-gateway-transcripts-disabled ai-gateway-transcripts-enabled
+      ai-gateway-transcripts-retention-updated ai-gateway-virtual-model-config-archived
+      ai-gateway-virtual-model-config-created ai-gateway-virtual-model-config-deleted
+      ai-gateway-virtual-model-config-restored ai-gateway-virtual-model-config-updated
+      ai-gateway-zero-data-retention-toggled ai-omniagent
+      alert-investigation-project-allowlist-updated alert-rule-created alert-rule-deleted
+      alert-rule-updated alias alias-chown alias-delete alias-invite-created
+      alias-invite-joined alias-invite-revoked alias-protection-bypass-created
+      alias-protection-bypass-exception alias-protection-bypass-regenerated
+      alias-protection-bypass-revoked alias-system alias-user-scoped-access-denied
+      alias-user-scoped-access-granted alias-user-scoped-access-requested
+      alias-user-scoped-access-revoked aliases-assigned attack-mode-disabled
+      attack-mode-enabled audit-log-export-downloaded audit-log-export-requested
+      authorize-git-deployment auto-expose-system-envs avatar billing-settings-updated
+      bulk-redirects-settings-updated bulk-redirects-version-promoted
+      bulk-redirects-version-restored cert cert-autorenew cert-chown cert-clone
+      cert-delete cert-renew cert-replace cert-system-create code-owners-config-updated
+      compliance-document-downloaded compliance-document-previewed
+      compliance-documents-bulk-downloaded concurrent-builds-update connect-attach-project
+      connect-bitbucket connect-bitbucket-app connect-configuration-created
+      connect-configuration-deleted connect-configuration-link-updated
+      connect-configuration-linked connect-configuration-unlinked
+      connect-configuration-updated
+    ].push(
+      'connect-create-connector', 'connect-delete-connector', 'connect-delete-installation',
+      'connect-detach-project', 'connect-github', 'connect-github-custom-host',
+      'connect-github-limited', 'connect-gitlab', 'connect-gitlab-app', 'connect-import-tokens',
+      'connect-revoke-all-tokens', 'connect-update-connector', 'connect-update-trigger-destinations',
+      'connect-upsert-installation', 'custom-alert-created', 'custom-alert-deleted',
+      'custom-alert-updated', 'custom-environments-settings-updated', 'custom-metric-metadata-deleted',
+      'custom-metric-metadata-updated', 'custom-suffix-clear', 'custom-suffix-disable',
+      'custom-suffix-enable', 'custom-suffix-pending', 'custom-suffix-ready',
+      'default-password-protection', 'default-sso-protection', 'deploy-hook-created',
+      'deploy-hook-deduped', 'deploy-hook-deleted', 'deploy-hook-processed', 'deployment',
+      'deployment-check-created', 'deployment-check-deleted', 'deployment-check-updated',
+      'deployment-chown', 'deployment-creation-blocked', 'deployment-delete',
+      'deployment-policy-blocked', 'deployment-protection-access-requests', 'deployment-undeleted',
+      'disabled-integration-installation-removed', 'disconnect-bitbucket-app', 'disconnect-github',
+      'disconnect-github-custom-host', 'disconnect-github-limited', 'disconnect-gitlab-app', 'dns-add',
+      'dns-delete', 'dns-record-internal', 'dns-update', 'dns-zonefile-import', 'domain', 'domain-buy',
+      'domain-cdn', 'domain-chown', 'domain-custom-ns-change', 'domain-delegated', 'domain-delete',
+      'domain-ech-change', 'domain-move-in', 'domain-move-out', 'domain-move-out-request-sent',
+      'domain-renew-change', 'domain-service-type-updated', 'domain-transfer-in',
+      'domain-transfer-in-canceled', 'domain-transfer-in-completed', 'domain-zone-change',
+      'domain-zone-change-internal', 'drain-created', 'drain-deleted', 'drain-disabled',
+      'drain-enabled', 'drain-updated', 'edge-cache-dangerously-delete-by-src-images',
+      'edge-cache-dangerously-delete-by-tags', 'edge-cache-dangerously-delete-immutable-static',
+      'edge-cache-invalidate-by-src-images', 'edge-cache-invalidate-by-tags', 'edge-cache-purge-all',
+      'edge-cache-rollback-purge', 'edge-config-backup-restored', 'edge-config-created',
+      'edge-config-deleted', 'edge-config-items-updated', 'edge-config-schema-deleted',
+      'edge-config-schema-updated', 'edge-config-token-created', 'edge-config-token-deleted',
+      'edge-config-transfer-in', 'edge-config-transfer-out', 'edge-config-updated', 'email',
+      'email-notification-rule-removed', 'email-notification-rule-updated',
+      'emu-member-removed-unverified-domain', 'enforce-disjunctive-production-secrets',
+      'enforce-sensitive-environment-variables', 'env-variable-add', 'env-variable-delete',
+      'env-variable-edit', 'env-variable-masked', 'env-variable-read', 'env-variable-read:cli:dev',
+      'env-variable-read:cli:env:add', 'env-variable-read:cli:env:ls',
+      'env-variable-read:cli:env:pull', 'env-variable-read:cli:env:rm', 'env-variable-read:cli:pull',
+      'env-variable-read:unknown-source', 'env-variable-read:v0:env:pull', 'env-variable-rotated',
+      'experiment-created', 'experiment-deleted', 'experiment-transitioned', 'experiment-updated',
+      'firewall-bypass-created', 'firewall-bypass-deleted', 'firewall-conditional-bypass-created',
+      'firewall-conditional-bypass-deleted', 'firewall-config-modified', 'firewall-config-promoted',
+      'firewall-config-removed', 'firewall-managed-rulegroup-updated',
+      'firewall-managed-ruleset-updated', 'flag', 'flag-archived', 'flag-created', 'flag-deleted',
+      'flag-unarchived', 'flag-updated', 'flags-connection-created', 'flags-connection-deleted',
+      'flags-explorer-subscription', 'flags-sdk-key', 'flags-sdk-key-added', 'flags-sdk-key-deleted',
+      'flags-sdk-key-read', 'flags-segment', 'flags-settings', 'flags-transferred',
+      'flat-rate-cdn-auto-upgrade-consent', 'git-integration-repo-push',
+      'git_account_integration_link_added', 'global-config-backup-restored', 'global-config-created',
+      'global-config-deleted', 'global-config-items-updated', 'global-config-schema-deleted',
+      'global-config-schema-updated', 'global-config-token-created', 'global-config-token-deleted',
+      'global-config-transfer-in', 'global-config-transfer-out', 'global-config-updated',
+      'instant-rollback-created', 'integration-configuration-credential-revoked',
+      'integration-configuration-credential-rotated', 'integration-configuration-owner-changed',
+      'integration-configuration-scope-change-confirmed',
+      'integration-configuration-transfer-in-success',
+      'integration-configuration-transfer-out-success', 'integration-configurations-disabled',
+      'integration-installation-billing-plan-updated', 'integration-installation-completed',
+      'integration-installation-permission-updated', 'integration-installation-removed',
+      'integration-resource-redis-command-executed', 'integration-resource-sql-query-executed',
+      'integration-scope-changed', 'invoice-modified', 'invoice-refunded', 'kms-issuer-created',
+      'kms-issuer-deleted', 'kms-issuer-key-activated', 'kms-issuer-key-created',
+      'kms-issuer-key-revoked', 'kms-issuer-key-rotated', 'kms-issuer-policy-created',
+      'kms-issuer-policy-deleted', 'kms-issuer-policy-updated', 'kms-issuer-updated',
+      'log-drain-created', 'log-drain-deleted', 'log-drain-disabled', 'log-drain-enabled', 'login',
+      'login-connection-linked', 'login-connection-unlinked', 'manual-deployment-promotion-created',
+      'marketplace-auto-card-collection-updated', 'marketplace-billing-collection-updated',
+      'marketplace-flex-commit-opt-in', 'marketplace-integration-allowlist-updated',
+      'messageboard-created', 'messageboard-private-created', 'messageboard-private-space-created',
+      'messageboard-private-space-updated', 'messageboard-schema-registered',
+      'messageboard-space-created', 'messageboard-space-updated', 'messageboard-visibility-updated',
+      'microfrontend-group-added', 'microfrontend-group-deleted', 'microfrontend-group-updated',
+      'microfrontend-project-added-to-group', 'microfrontend-project-removed-from-group',
+      'microfrontend-project-updated', 'monitoring-alert-updated', 'monitoring-disabled',
+      'monitoring-enabled', 'oauth-app-connection-created', 'oauth-app-connection-removed',
+      'oauth-app-connection-updated', 'oauth-app-created', 'oauth-app-deleted',
+      'oauth-app-secret-deleted', 'oauth-app-secret-generated', 'oauth-app-token-created',
+      'oauth-app-updated', 'observability-disabled', 'observability-enabled',
+      'observability-plus-project-disabled', 'observability-plus-project-enabled',
+      'oidc-policy-created', 'oidc-policy-deleted', 'oidc-policy-updated',
+      'oidc-policy-used-to-obtain-app-token', 'organization-avatar-update', 'organization-create',
+      'organization-delete', 'organization-dsync-delete', 'organization-dsync-group-delete',
+      'organization-dsync-group-upsert', 'organization-dsync-sync-start',
+      'organization-emu-domains-merged', 'organization-emu-team-updated', 'organization-emu-updated',
+      'organization-slug-update', 'organization-sso-enforced', 'organization-team-add',
+      'organization-team-create', 'organization-team-delete', 'organization-team-sso-update',
+      'organization-update-account-flow-dismissed', 'organization-update-account-flow-triggered',
+      'owner-blocked', 'owner-soft-blocked', 'owner-soft-unblocked', 'owner-unblocked',
+      'page-integrity-config-updated', 'page-integrity-header-approved',
+      'page-integrity-header-rejected', 'page-integrity-inventory-cleared',
+      'page-integrity-resource-approved', 'page-integrity-resource-deleted',
+      'page-integrity-resource-rejected', 'page-integrity-script-approval-rule-created',
+      'page-integrity-script-approval-rule-deleted', 'passkey-created', 'passkey-deleted',
+      'passkey-updated', 'passport-access-granted', 'password-protection-disabled',
+      'password-protection-enabled', 'payment-method-added', 'payment-method-default-updated',
+      'payment-method-removed', 'plan', 'preview-deployment-suffix-disabled',
+      'preview-deployment-suffix-enabled', 'preview-deployment-suffix-update',
+      'privatelink-endpoint-created', 'privatelink-endpoint-deleted', 'privatelink-endpoint-updated',
+      'production-branch-updated', 'project-add-alias', 'project-add-redirect',
+      'project-affected-projects-deployments-updated', 'project-alias-configured-change',
+      'project-analytics-disabled', 'project-analytics-enabled',
+      'project-auto-assign-custom-production-domains-updated', 'project-automation-bypass',
+      'project-avatar-dark-mode-update', 'project-avatar-update', 'project-build-command-updated',
+      'project-build-logs-and-source-protection-updated', 'project-build-machine-updated',
+      'project-card-widget-preference-updated', 'project-client-cert-delete',
+      'project-client-cert-upload', 'project-connect-configurations',
+      'project-consolidated-git-commit-status-updated', 'project-created', 'project-cron-jobs-toggled',
+      'project-custom-environment-created', 'project-custom-environment-deleted',
+      'project-custom-environment-schedules-default-updated', 'project-custom-environment-updated',
+      'project-customer-success-code-visibility-updated', 'project-delete',
+      'project-deployment-policy-updated', 'project-deployment-retention-updated',
+      'project-directory-listing', 'project-domain-deleted', 'project-domain-moved',
+      'project-domain-unverified', 'project-domain-updated', 'project-domain-verified',
+      'project-elastic-concurrency-updated', 'project-expiration-locked', 'project-expiration-reached',
+      'project-expiration-scheduled', 'project-expiration-unlocked',
+      'project-external-rewrite-caching-updated', 'project-framework-updated',
+      'project-function-cpu-memory', 'project-function-failover', 'project-function-max-duration',
+      'project-function-regions', 'project-functions-beta-updated', 'project-functions-fluid-disabled',
+      'project-functions-fluid-enabled', 'project-git-commit-comments-toggled',
+      'project-git-commit-status-toggled', 'project-git-create-deployments-toggled',
+      'project-git-credential-bound-created', 'project-git-credential-bound-deleted',
+      'project-git-credential-bound-updated', 'project-git-credential-grant-created',
+      'project-git-credential-grant-deleted', 'project-git-credential-grant-updated',
+      'project-git-fork-protection-updated', 'project-git-lfs-toggled',
+      'project-git-pr-comments-toggled', 'project-git-repository-connected',
+      'project-git-repository-disconnected', 'project-git-repository-dispatch-events-toggled',
+      'project-git-require-verified-commits-toggled', 'project-ignored-build-step-updated',
+      'project-install-command-updated', 'project-member-added', 'project-member-invited',
+      'project-member-removed', 'project-member-removed-batch', 'project-member-updated',
+      'project-move-in-success', 'project-move-out-failed', 'project-move-out-started',
+      'project-move-out-success', 'project-name', 'project-node-version-updated',
+      'project-oidc-issuer-mode-updated', 'project-oidc-token-created', 'project-options-allowlist',
+      'project-output-directory-updated', 'project-passport-updated', 'project-password-protection',
+      'project-paused', 'project-preview-deployment-suffix',
+      'project-preview-environment-branch-tracking-updated',
+      'project-prioritize-production-builds-updated', 'project-program-enrollment-changed',
+      'project-protected-sourcemaps-updated', 'project-rollback-description-updated',
+      'project-rolling-release-aborted', 'project-rolling-release-approved',
+      'project-rolling-release-completed', 'project-rolling-release-configured',
+      'project-rolling-release-continued', 'project-rolling-release-disabled',
+      'project-rolling-release-enabled', 'project-rolling-release-paused',
+      'project-rolling-release-started', 'project-rolling-release-suggested-actions-generated',
+      'project-rolling-release-timer', 'project-root-directory-updated',
+      'project-routes-version-promoted', 'project-routes-version-restored',
+      'project-sandbox-config-updated', 'project-sandbox-url-protection-updated',
+      'project-skew-protection-allowed-domains-updated', 'project-skew-protection-max-age-updated',
+      'project-skew-protection-threshold-updated',
+      'project-source-files-outside-root-directory-updated', 'project-speed-insights-disabled',
+      'project-speed-insights-enabled', 'project-speed-insights-free-data-started',
+      'project-sso-protection', 'project-static-ips-updated', 'project-trusted-ips',
+      'project-trusted-sources', 'project-unpaused', 'project-web-analytics-disabled',
+      'project-web-analytics-enabled', 'protected-git-scope-added', 'protected-git-scope-removed',
+      'repository-ci-env-variable-create', 'repository-ci-env-variable-delete',
+      'repository-ci-env-variable-update', 'runtime-cache-purge-all', 'saml-connection-created',
+      'saml-connection-deleted', 'sandbox-alias-assigned', 'sandbox-alias-delete',
+      'sandbox-drive-created', 'sandbox-drive-deleted', 'sandbox-drive-snapshot-created',
+      'sandbox-drive-snapshot-deleted', 'sandbox-signed-commit-identity-configured',
+      'sandbox-snapshot-regions-updated', 'scale', 'scale-auto', 'secondary-email-added',
+      'secondary-email-removed', 'secondary-email-verified', 'secret-add', 'secret-delete',
+      'secret-rename', 'security-list-created', 'security-list-deleted', 'security-list-updated',
+      'security-plus-updated', 'set-bio', 'set-name', 'set-profiles', 'set-scale',
+      'shared-env-variable-create', 'shared-env-variable-delete', 'shared-env-variable-read',
+      'shared-env-variable-repo-link', 'shared-env-variable-repo-unlink', 'shared-env-variable-update',
+      'show-ip-addresses', 'signup', 'signup-via-bitbucket', 'signup-via-github', 'signup-via-gitlab',
+      'speed-insights-settings-updated', 'spend-created', 'spend-deleted', 'spend-updated',
+      'sso-login', 'storage-accept-tos', 'storage-access-token-set', 'storage-accessed-data-browser',
+      'storage-connect-project', 'storage-create', 'storage-delete', 'storage-disconnect-project',
+      'storage-disconnect-projects', 'storage-inactive-store-deleted', 'storage-reset-credentials',
+      'storage-resource-repl-command', 'storage-set-locked', 'storage-transfer-in-success',
+      'storage-transfer-out-success', 'storage-transfer-request-created', 'storage-update',
+      'storage-update-project-connection', 'storage-upgrade-project-connection-to-oidc',
+      'storage-view-secret', 'strict-connectors', 'strict-deployment-protection-settings',
+      'strict-password-protection-settings', 'strict-shareable-links', 'subscription-created',
+      'subscription-product-added', 'subscription-product-removed', 'subscription-updated',
+      'support-session-created', 'team', 'team-agent-billing-migration-decision-changed',
+      'team-avatar-update', 'team-collaboration-settings-updated',
+      'team-default-build-machine-updated', 'team-default-passport-updated', 'team-delete',
+      'team-deployment-policy-updated', 'team-deployment-storage-high-retention-opt-in',
+      'team-deployment-storage-retention-opt-out', 'team-domain-verification-created',
+      'team-domain-verification-deleted', 'team-domain-verification-verified',
+      'team-email-domain-update', 'team-emu-updated', 'team-ended-trial',
+      'team-firewall-config-modified', 'team-firewall-config-promoted',
+      'team-git-repository-dispatch-events-toggled', 'team-git-require-verified-commits-toggled',
+      'team-invite-bulk-delete', 'team-invite-code-reset', 'team-invite-link-created',
+      'team-invite-link-deleted', 'team-ip-blocking-rules-created', 'team-ip-blocking-rules-removed',
+      'team-member-add', 'team-member-confirm-request', 'team-member-decline-request',
+      'team-member-delete', 'team-member-entitlement-added', 'team-member-entitlement-canceled',
+      'team-member-entitlement-reactivated', 'team-member-entitlement-removed', 'team-member-join',
+      'team-member-leave', 'team-member-request-access', 'team-member-role-update',
+      'team-member-sso-authorization-attempt', 'team-mfa-enforcement-updated', 'team-name-update',
+      'team-paid-invoice', 'team-program-enrollment-changed', 'team-remote-caching-purge',
+      'team-remote-caching-update', 'team-saml-enforced', 'team-saml-roles', 'team-slug-update',
+      'team-tokens-invalidated', 'tracing-configured', 'tracing-disabled', 'tracing-paused',
+      'tracing-resumed', 'unlink-login-connection', 'update-account-flow-dismissed',
+      'update-account-flow-triggered', 'user-auto-block-configured', 'user-blocked', 'user-delete',
+      'user-delete-requested', 'user-emu-account-archived', 'user-emu-account-deleted',
+      'user-emu-account-recovered', 'user-emu-account-update-opted-in',
+      'user-emu-account-update-opted-out', 'user-emu-recovery-email-sent',
+      'user-emu-recovery-initiated', 'user-emu-toggled', 'user-mfa-challenge-failed',
+      'user-mfa-challenge-initiated', 'user-mfa-challenge-verified', 'user-mfa-change-failed',
+      'user-mfa-configuration-updated', 'user-mfa-recovery-code-used',
+      'user-mfa-recovery-codes-regenerated', 'user-mfa-removed', 'user-mfa-setup-skipped',
+      'user-mfa-totp-verification-started', 'user-mfa-totp-verified', 'user-phone-removed',
+      'user-phone-updated', 'user-primary-email-updated', 'user-provider-email-claim-evaluated',
+      'user-sudo-mode-removed', 'user-token-created', 'user-token-deleted', 'user-tokens-deleted',
+      'user-unblocked', 'username', 'v0-chat-ai-usage', 'v0-chat-created', 'v0-chat-message-sent',
+      'v0-migration-payment-confirmed', 'v0-migration-subscription-completed', 'vcr-image-deleted',
+      'vcr-image-pushed', 'vcr-repository-created', 'vcr-repository-deleted',
+      'vcr-repository-permission-added', 'vcr-repository-permission-removed',
+      'vcr-repository-permissions-cleared', 'vcr-repository-visibility-changed',
+      'vercel-agent-elevated-permissions-approved', 'vercel-agent-elevated-permissions-requested',
+      'vercel-agent-session-created', 'vercel-agent-team-trial-credits-applied',
+      'vercel-app-installation-request-dismissed', 'vercel-app-installation-requested',
+      'vercel-app-installation-updated', 'vercel-app-installed', 'vercel-app-tokens-revoked',
+      'vercel-app-uninstalled', 'vercel-ci-repository-settings-updated', 'vercel-toolbar',
+      'vpc-peering-connection-accepted', 'vpc-peering-connection-deleted',
+      'vpc-peering-connection-rejected', 'vpc-peering-connection-updated',
+      'vulnerability-banner-dismissed', 'web-analytics-tier-updated', 'webhook-created',
+      'webhook-deleted', 'webhook-updated', 'workflow-deployment-key-accessed'
+    ).freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 end

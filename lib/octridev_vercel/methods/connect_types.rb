@@ -12,12 +12,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConnectorTokenAuthorizationDetailsItemMetadata
         FIELDS = {
-          type: "type",
+          type: 'type'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetConnectorTokenAuthorizationDetailsItem.
@@ -48,23 +46,22 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConnectorTokenMetadata
         FIELDS = {
-          subject: "subject",
-          installation_id: "installationId",
-          audience: "audience",
-          scopes: "scopes",
-          resources: "resources",
-          authorization_details: "authorizationDetails",
-          validity_buffer_ms: "validityBufferMs",
+          subject: 'subject',
+          installation_id: 'installationId',
+          audience: 'audience',
+          scopes: 'scopes',
+          resources: 'resources',
+          authorization_details: 'authorizationDetails',
+          validity_buffer_ms: 'validityBufferMs'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           subject: lambda do |value|
             ::OctridevVercel::GetConnectorTokenRequestSubject.from_hash(value)
           end,
           authorization_details: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Connect::GetConnectorTokenAuthorizationDetailsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -97,17 +94,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConnectorTokenResponseConnectorMetadata
         FIELDS = {
-          id: "id",
-          type: "type",
-          uid: "uid",
+          id: 'id',
+          type: 'type',
+          uid: 'uid'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
           type
           uid
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetConnectorTokenResponseConnector.
@@ -136,18 +132,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConnectorTokenResponseMetadata
         FIELDS = {
-          authorization_id: "authorizationId",
-          claims: "claims",
-          connector: "connector",
-          expires_at: "expiresAt",
-          external_subject: "externalSubject",
-          installation_id: "installationId",
-          metadata: "metadata",
-          name: "name",
-          tenant_id: "tenantId",
-          token: "token",
-          token_group_id: "tokenGroupId",
-          token_id: "tokenId",
+          authorization_id: 'authorizationId',
+          claims: 'claims',
+          connector: 'connector',
+          expires_at: 'expiresAt',
+          external_subject: 'externalSubject',
+          installation_id: 'installationId',
+          metadata: 'metadata',
+          name: 'name',
+          tenant_id: 'tenantId',
+          token: 'token',
+          token_group_id: 'tokenGroupId',
+          token_id: 'tokenId'
         }.freeze
         REQUIRED_FIELDS = %i[
           connector
@@ -158,7 +154,7 @@ module OctridevVercel
         DECODERS = {
           connector: lambda do |value|
             ::OctridevVercel::Methods::Connect::GetConnectorTokenResponseConnector.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -197,12 +193,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateConnectorAuthorizationRequestAuthorizationDetailsItemMetadata
         FIELDS = {
-          type: "type",
+          type: 'type'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateConnectorAuthorizationRequestAuthorizationDetailsItem.
@@ -233,29 +227,28 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateConnectorAuthorizationRequestMetadata
         FIELDS = {
-          subject: "subject",
-          installation_id: "installationId",
-          audience: "audience",
-          scopes: "scopes",
-          resources: "resources",
-          authorization_details: "authorizationDetails",
-          validity_buffer_ms: "validityBufferMs",
-          return_url: "returnUrl",
-          webhook: "webhook",
-          prompt: "prompt",
-          device_code: "deviceCode",
-          expires_in_ms: "expiresInMs",
-          additional_params: "additionalParams",
+          subject: 'subject',
+          installation_id: 'installationId',
+          audience: 'audience',
+          scopes: 'scopes',
+          resources: 'resources',
+          authorization_details: 'authorizationDetails',
+          validity_buffer_ms: 'validityBufferMs',
+          return_url: 'returnUrl',
+          webhook: 'webhook',
+          prompt: 'prompt',
+          device_code: 'deviceCode',
+          expires_in_ms: 'expiresInMs',
+          additional_params: 'additionalParams'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           subject: lambda do |value|
             ::OctridevVercel::CreateConnectorAuthorizationRequestRequestSubject.from_hash(value)
           end,
           authorization_details: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Connect::CreateConnectorAuthorizationRequestAuthorizationDetailsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -289,13 +282,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateConnectorAuthorizationRequestResponseConnectorMetadata
         FIELDS = {
-          display_name: "displayName",
-          id: "id",
-          name: "name",
-          service: "service",
-          service_name: "serviceName",
-          type: "type",
-          uid: "uid",
+          display_name: 'displayName',
+          id: 'id',
+          name: 'name',
+          service: 'service',
+          service_name: 'serviceName',
+          type: 'type',
+          uid: 'uid'
         }.freeze
         REQUIRED_FIELDS = %i[
           display_name
@@ -304,8 +297,7 @@ module OctridevVercel
           type
           uid
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateConnectorAuthorizationRequestResponseConnector.
@@ -347,12 +339,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateConnectorAuthorizationRequestResponseMetadata
         FIELDS = {
-          connector: "connector",
-          device_code: "deviceCode",
-          expires_at: "expiresAt",
-          request: "request",
-          url: "url",
-          verifier: "verifier",
+          connector: 'connector',
+          device_code: 'deviceCode',
+          expires_at: 'expiresAt',
+          request: 'request',
+          url: 'url',
+          verifier: 'verifier'
         }.freeze
         REQUIRED_FIELDS = %i[
           connector
@@ -364,7 +356,7 @@ module OctridevVercel
         DECODERS = {
           connector: lambda do |value|
             ::OctridevVercel::Methods::Connect::CreateConnectorAuthorizationRequestResponseConnector.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -396,7 +388,7 @@ module OctridevVercel
         NAME = 'name'
         CREATED_AT = 'createdAt'
         UPDATED_AT = 'updatedAt'
-        VALUES = ['name', 'createdAt', 'updatedAt'].freeze
+        VALUES = %w[name createdAt updatedAt].freeze
         def self.from_value(value)
           value
         end

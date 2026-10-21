@@ -31,61 +31,54 @@ module OctridevVercel
         team_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_range('expectedPrice', expected_price, min: 0.01)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/transfer"
+            '/transfer'
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           body: {
             'authCode' => auth_code,
             'autoRenew' => auto_renew,
             'years' => years,
             'expectedPrice' => expected_price,
-            'contactInformation' => contact_information,
+            'contactInformation' => contact_information
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::TransferInDomainResponse,
           decoder: :json,
           operation_id: 'transfer_in_domain',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
       # Retrieves the transfer status for a domain. Use the status to check the progress or outcome of an incoming domain transfer. The response reports the transfer's current state.
       #
       # Get the transfer status for a domain
-      singleton_class.define_method(:get_domain_transfer_in) do |
-        config:,
-        domain:,
-        team_id: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_domain_transfer_in) do |config:, domain:, team_id: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/transfer"
+            '/transfer'
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::GetDomainTransferInResponse,
           decoder: :json,
           operation_id: 'get_domain_transfer_in',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::NotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '400' => ::OctridevVercel::HttpApiDecodeError, '401' => ::OctridevVercel::Unauthorized, '404' => ::OctridevVercel::NotFound, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
     end

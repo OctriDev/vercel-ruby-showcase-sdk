@@ -5,497 +5,497 @@
 
 # integrations domain models
 module OctridevVercel
-# API model for GetConfigurationResponseVariant1.
-class GetConfigurationResponseVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetConfigurationResponseVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetConfigurationResponseVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetConfigurationResponseVariant1Metadata::DECODERS
+  # API model for GetConfigurationResponseVariant1.
+  class GetConfigurationResponseVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetConfigurationResponseVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetConfigurationResponseVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetConfigurationResponseVariant1Metadata::DECODERS
 
-  attr_reader :disabled_reason, :type
-  # @return [String] Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.
-  attr_reader :accepted_policies_inherited_from_installation_id
-  # @return [Float] A timestamp that tells you when the configuration was installed successfully
-  attr_reader :completed_at
-  # @return [Float] A timestamp that tells you when the configuration was created
-  attr_reader :created_at
-  # @return [Float] Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.
-  attr_reader :customer_delete_requested_at
-  # @return [Float] A timestamp that tells you when the configuration was deleted.
-  attr_reader :deleted_at
-  # @return [Float] A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.
-  attr_reader :delete_requested_at
-  # @return [Float] A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is 'transferred', meaning the associated user is changed to one with access to the team.
-  attr_reader :disabled_at
-  # @return [String] An external identifier defined by the integration vendor.
-  attr_reader :external_id
-  # @return [String] The unique identifier of the configuration
-  attr_reader :id
-  # @return [GetConfigurationResponseVariant1InstallationType] Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'
-  attr_reader :installation_type
-  # @return [String] The unique identifier of the app the configuration was created for
-  attr_reader :integration_id
-  # @return [String] The user or team ID that owns the configuration
-  attr_reader :owner_id
-  # @return [Array_of_String] When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.
-  attr_reader :projects
-  # @return [Array_of_String] The resources that are allowed to be accessed by the configuration.
-  attr_reader :scopes
-  # @return [String] The slug of the integration the configuration is created for.
-  attr_reader :slug
-  # @return [GetConfigurationResponseVariant1Source] Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
-  attr_reader :source
-  # @return [GetConfigurationResponseVariant1Status] The configuration status. Optional. If not defined, assume 'ready'.
-  attr_reader :status
-  # @return [String] When the configuration was created for a team, this will show the ID of the team.
-  attr_reader :team_id
-  # @return [Float] A timestamp that tells you when the configuration was updated.
-  attr_reader :updated_at
-  # @return [String] The ID of the user that created the configuration.
-  attr_reader :user_id
+    attr_reader :disabled_reason, :type
+    # @return [String] Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.
+    attr_reader :accepted_policies_inherited_from_installation_id
+    # @return [Float] A timestamp that tells you when the configuration was installed successfully
+    attr_reader :completed_at
+    # @return [Float] A timestamp that tells you when the configuration was created
+    attr_reader :created_at
+    # @return [Float] Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.
+    attr_reader :customer_delete_requested_at
+    # @return [Float] A timestamp that tells you when the configuration was deleted.
+    attr_reader :deleted_at
+    # @return [Float] A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.
+    attr_reader :delete_requested_at
+    # @return [Float] A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is 'transferred', meaning the associated user is changed to one with access to the team.
+    attr_reader :disabled_at
+    # @return [String] An external identifier defined by the integration vendor.
+    attr_reader :external_id
+    # @return [String] The unique identifier of the configuration
+    attr_reader :id
+    # @return [GetConfigurationResponseVariant1InstallationType] Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'
+    attr_reader :installation_type
+    # @return [String] The unique identifier of the app the configuration was created for
+    attr_reader :integration_id
+    # @return [String] The user or team ID that owns the configuration
+    attr_reader :owner_id
+    # @return [Array_of_String] When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.
+    attr_reader :projects
+    # @return [Array_of_String] The resources that are allowed to be accessed by the configuration.
+    attr_reader :scopes
+    # @return [String] The slug of the integration the configuration is created for.
+    attr_reader :slug
+    # @return [GetConfigurationResponseVariant1Source] Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
+    attr_reader :source
+    # @return [GetConfigurationResponseVariant1Status] The configuration status. Optional. If not defined, assume 'ready'.
+    attr_reader :status
+    # @return [String] When the configuration was created for a team, this will show the ID of the team.
+    attr_reader :team_id
+    # @return [Float] A timestamp that tells you when the configuration was updated.
+    attr_reader :updated_at
+    # @return [String] The ID of the user that created the configuration.
+    attr_reader :user_id
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetConfigurationResponseVariant2Metadata
-  FIELDS = {
-    accepted_policies_inherited_from_installation_id: "acceptedPoliciesInheritedFromInstallationId",
-    completed_at: "completedAt",
-    created_at: "createdAt",
-    customer_delete_requested_at: "customerDeleteRequestedAt",
-    deleted_at: "deletedAt",
-    delete_requested_at: "deleteRequestedAt",
-    disabled_at: "disabledAt",
-    disabled_reason: "disabledReason",
-    external_id: "externalId",
-    id: "id",
-    installation_type: "installationType",
-    integration_id: "integrationId",
-    owner_id: "ownerId",
-    projects: "projects",
-    scopes: "scopes",
-    slug: "slug",
-    source: "source",
-    status: "status",
-    team_id: "teamId",
-    type: "type",
-    updated_at: "updatedAt",
-    user_id: "userId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    disabled_reason: lambda do |value|
-      ::OctridevVercel::GetConfigurationResponseVariant2DisabledReason.from_value(value)
-    end,
-    installation_type: lambda do |value|
-      ::OctridevVercel::GetConfigurationResponseVariant2InstallationType.from_value(value)
-    end,
-    source: lambda do |value|
-      ::OctridevVercel::GetConfigurationResponseVariant2Source.from_value(value)
-    end,
-    status: lambda do |value|
-      ::OctridevVercel::GetConfigurationResponseVariant2Status.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetConfigurationResponseVariant2Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetConfigurationResponseVariant2.
-class GetConfigurationResponseVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetConfigurationResponseVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetConfigurationResponseVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetConfigurationResponseVariant2Metadata::DECODERS
-
-  attr_reader :disabled_reason, :type
-  # @return [String] Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.
-  attr_reader :accepted_policies_inherited_from_installation_id
-  # @return [Float] A timestamp that tells you when the configuration was installed successfully
-  attr_reader :completed_at
-  # @return [Float] A timestamp that tells you when the configuration was created
-  attr_reader :created_at
-  # @return [Float] Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.
-  attr_reader :customer_delete_requested_at
-  # @return [Float] A timestamp that tells you when the configuration was deleted.
-  attr_reader :deleted_at
-  # @return [Float] A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.
-  attr_reader :delete_requested_at
-  # @return [Float] A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is 'transferred', meaning the associated user is changed to one with access to the team.
-  attr_reader :disabled_at
-  # @return [String] An external identifier defined by the integration vendor.
-  attr_reader :external_id
-  # @return [String] The unique identifier of the configuration
-  attr_reader :id
-  # @return [GetConfigurationResponseVariant2InstallationType] Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'
-  attr_reader :installation_type
-  # @return [String] The unique identifier of the app the configuration was created for
-  attr_reader :integration_id
-  # @return [String] The user or team ID that owns the configuration
-  attr_reader :owner_id
-  # @return [Array_of_String] When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.
-  attr_reader :projects
-  # @return [Array_of_String] The resources that are allowed to be accessed by the configuration.
-  attr_reader :scopes
-  # @return [String] The slug of the integration the configuration is created for.
-  attr_reader :slug
-  # @return [GetConfigurationResponseVariant2Source] Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
-  attr_reader :source
-  # @return [GetConfigurationResponseVariant2Status] The configuration status. Optional. If not defined, assume 'ready'.
-  attr_reader :status
-  # @return [String] When the configuration was created for a team, this will show the ID of the team.
-  attr_reader :team_id
-  # @return [Float] A timestamp that tells you when the configuration was updated.
-  attr_reader :updated_at
-  # @return [String] The ID of the user that created the configuration.
-  attr_reader :user_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the GetConfigurationResponse SDK namespace.
-module GetConfigurationResponse
-  def self.from_hash(hash)
-    shape_mapping = {
-      "notification" => GetConfigurationResponseVariant0,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-    lossy = nil
-    [GetConfigurationResponseVariant1, GetConfigurationResponseVariant2].each do |type|
-      decoded = type.from_hash(hash)
-      return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-      lossy ||= decoded
-    rescue ::StandardError
-      next
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
     end
-    return lossy unless lossy.nil?
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant0CanConfigureOpenTelemetry SDK namespace.
-module GetConfigurationResponseVariant0CanConfigureOpenTelemetry
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Internal model hydration metadata.
+  class SdkInternalGetConfigurationResponseVariant2Metadata
+    FIELDS = {
+      accepted_policies_inherited_from_installation_id: 'acceptedPoliciesInheritedFromInstallationId',
+      completed_at: 'completedAt',
+      created_at: 'createdAt',
+      customer_delete_requested_at: 'customerDeleteRequestedAt',
+      deleted_at: 'deletedAt',
+      delete_requested_at: 'deleteRequestedAt',
+      disabled_at: 'disabledAt',
+      disabled_reason: 'disabledReason',
+      external_id: 'externalId',
+      id: 'id',
+      installation_type: 'installationType',
+      integration_id: 'integrationId',
+      owner_id: 'ownerId',
+      projects: 'projects',
+      scopes: 'scopes',
+      slug: 'slug',
+      source: 'source',
+      status: 'status',
+      team_id: 'teamId',
+      type: 'type',
+      updated_at: 'updatedAt',
+      user_id: 'userId'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      disabled_reason: lambda do |value|
+        ::OctridevVercel::GetConfigurationResponseVariant2DisabledReason.from_value(value)
+      end,
+      installation_type: lambda do |value|
+        ::OctridevVercel::GetConfigurationResponseVariant2InstallationType.from_value(value)
+      end,
+      source: lambda do |value|
+        ::OctridevVercel::GetConfigurationResponseVariant2Source.from_value(value)
+      end,
+      status: lambda do |value|
+        ::OctridevVercel::GetConfigurationResponseVariant2Status.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetConfigurationResponseVariant2Type.from_value(value)
+      end
+    }.freeze
   end
-end
 
-# Defines the GetConfigurationResponseVariant0DisabledReason SDK namespace.
-module GetConfigurationResponseVariant0DisabledReason
-  ACCOUNT_PLAN_DOWNGRADE = 'account-plan-downgrade'
-  DISABLED_BY_ADMIN = 'disabled-by-admin'
-  DISABLED_BY_OWNER = 'disabled-by-owner'
-  FEATURE_NOT_AVAILABLE = 'feature-not-available'
-  ORIGINAL_OWNER_LEFT_THE_TEAM = 'original-owner-left-the-team'
-  ORIGINAL_OWNER_ROLE_DOWNGRADED = 'original-owner-role-downgraded'
-  VALUES = [
-    'account-plan-downgrade', 'disabled-by-admin', 'disabled-by-owner', 'feature-not-available',
-    'original-owner-left-the-team', 'original-owner-role-downgraded'
-  ].freeze
-  def self.from_value(value)
-    value
+  # API model for GetConfigurationResponseVariant2.
+  class GetConfigurationResponseVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetConfigurationResponseVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetConfigurationResponseVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetConfigurationResponseVariant2Metadata::DECODERS
+
+    attr_reader :disabled_reason, :type
+    # @return [String] Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.
+    attr_reader :accepted_policies_inherited_from_installation_id
+    # @return [Float] A timestamp that tells you when the configuration was installed successfully
+    attr_reader :completed_at
+    # @return [Float] A timestamp that tells you when the configuration was created
+    attr_reader :created_at
+    # @return [Float] Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.
+    attr_reader :customer_delete_requested_at
+    # @return [Float] A timestamp that tells you when the configuration was deleted.
+    attr_reader :deleted_at
+    # @return [Float] A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.
+    attr_reader :delete_requested_at
+    # @return [Float] A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is 'transferred', meaning the associated user is changed to one with access to the team.
+    attr_reader :disabled_at
+    # @return [String] An external identifier defined by the integration vendor.
+    attr_reader :external_id
+    # @return [String] The unique identifier of the configuration
+    attr_reader :id
+    # @return [GetConfigurationResponseVariant2InstallationType] Defines the installation type. - 'external' integrations are installed via the existing integrations flow - 'marketplace' integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume 'external'
+    attr_reader :installation_type
+    # @return [String] The unique identifier of the app the configuration was created for
+    attr_reader :integration_id
+    # @return [String] The user or team ID that owns the configuration
+    attr_reader :owner_id
+    # @return [Array_of_String] When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.
+    attr_reader :projects
+    # @return [Array_of_String] The resources that are allowed to be accessed by the configuration.
+    attr_reader :scopes
+    # @return [String] The slug of the integration the configuration is created for.
+    attr_reader :slug
+    # @return [GetConfigurationResponseVariant2Source] Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.
+    attr_reader :source
+    # @return [GetConfigurationResponseVariant2Status] The configuration status. Optional. If not defined, assume 'ready'.
+    attr_reader :status
+    # @return [String] When the configuration was created for a team, this will show the ID of the team.
+    attr_reader :team_id
+    # @return [Float] A timestamp that tells you when the configuration was updated.
+    attr_reader :updated_at
+    # @return [String] The ID of the user that created the configuration.
+    attr_reader :user_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant0InstallationType SDK namespace.
-module GetConfigurationResponseVariant0InstallationType
-  EXTERNAL = 'external'
-  MARKETPLACE = 'marketplace'
-  VALUES = ['external', 'marketplace'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponse SDK namespace.
+  module GetConfigurationResponse
+    def self.from_hash(hash)
+      shape_mapping = {
+        'notification' => GetConfigurationResponseVariant0
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      return decoded unless type.nil?
+
+      lossy = nil
+      [GetConfigurationResponseVariant1, GetConfigurationResponseVariant2].each do |type|
+        decoded = type.from_hash(hash)
+        return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+        lossy ||= decoded
+      rescue ::StandardError
+        next
+      end
+      lossy unless lossy.nil?
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant0NotificationLevel SDK namespace.
-module GetConfigurationResponseVariant0NotificationLevel
-  ERROR = 'error'
-  INFO = 'info'
-  WARN = 'warn'
-  VALUES = ['error', 'info', 'warn'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant0CanConfigureOpenTelemetry SDK namespace.
+  module GetConfigurationResponseVariant0CanConfigureOpenTelemetry
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant0ProjectSelection SDK namespace.
-module GetConfigurationResponseVariant0ProjectSelection
-  ALL = 'all'
-  SELECTED = 'selected'
-  VALUES = ['all', 'selected'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant0DisabledReason SDK namespace.
+  module GetConfigurationResponseVariant0DisabledReason
+    ACCOUNT_PLAN_DOWNGRADE = 'account-plan-downgrade'
+    DISABLED_BY_ADMIN = 'disabled-by-admin'
+    DISABLED_BY_OWNER = 'disabled-by-owner'
+    FEATURE_NOT_AVAILABLE = 'feature-not-available'
+    ORIGINAL_OWNER_LEFT_THE_TEAM = 'original-owner-left-the-team'
+    ORIGINAL_OWNER_ROLE_DOWNGRADED = 'original-owner-role-downgraded'
+    VALUES = %w[
+      account-plan-downgrade disabled-by-admin disabled-by-owner feature-not-available
+      original-owner-left-the-team original-owner-role-downgraded
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant0Source SDK namespace.
-module GetConfigurationResponseVariant0Source
-  BACKOFFICE = 'backoffice'
-  CLI = 'cli'
-  DEPLOY_BUTTON = 'deploy-button'
-  EXTERNAL = 'external'
-  IMPORT_RECOMMENDED_INTEGRATIONS = 'import-recommended-integrations'
-  MARKETPLACE = 'marketplace'
-  OAUTH = 'oauth'
-  ORGANIZATION = 'organization'
-  RESOURCE_CLAIMS = 'resource-claims'
-  V0 = 'v0'
-  VALUES = [
-    'backoffice', 'cli', 'deploy-button', 'external', 'import-recommended-integrations',
-    'marketplace', 'oauth', 'organization', 'resource-claims', 'v0'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant0InstallationType SDK namespace.
+  module GetConfigurationResponseVariant0InstallationType
+    EXTERNAL = 'external'
+    MARKETPLACE = 'marketplace'
+    VALUES = %w[external marketplace].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant0Status SDK namespace.
-module GetConfigurationResponseVariant0Status
-  ERROR = 'error'
-  ONBOARDING = 'onboarding'
-  PENDING = 'pending'
-  READY = 'ready'
-  RESUMED = 'resumed'
-  SUSPENDED = 'suspended'
-  UNINSTALLED = 'uninstalled'
-  VALUES = ['error', 'onboarding', 'pending', 'ready', 'resumed', 'suspended', 'uninstalled'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant0NotificationLevel SDK namespace.
+  module GetConfigurationResponseVariant0NotificationLevel
+    ERROR = 'error'
+    INFO = 'info'
+    WARN = 'warn'
+    VALUES = %w[error info warn].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant0TransferRequestVariant0BillinX841ddc8dae SDK namespace.
-module GetConfigurationResponseVariant0TransferRequestVariant0BillinX841ddc8dae
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant0ProjectSelection SDK namespace.
+  module GetConfigurationResponseVariant0ProjectSelection
+    ALL = 'all'
+    SELECTED = 'selected'
+    VALUES = %w[all selected].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant0TransferRequestVariant0BillingPlanScope SDK namespace.
-module GetConfigurationResponseVariant0TransferRequestVariant0BillingPlanScope
-  INSTALLATION = 'installation'
-  RESOURCE = 'resource'
-  VALUES = ['installation', 'resource'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant0Source SDK namespace.
+  module GetConfigurationResponseVariant0Source
+    BACKOFFICE = 'backoffice'
+    CLI = 'cli'
+    DEPLOY_BUTTON = 'deploy-button'
+    EXTERNAL = 'external'
+    IMPORT_RECOMMENDED_INTEGRATIONS = 'import-recommended-integrations'
+    MARKETPLACE = 'marketplace'
+    OAUTH = 'oauth'
+    ORGANIZATION = 'organization'
+    RESOURCE_CLAIMS = 'resource-claims'
+    V0 = 'v0'
+    VALUES = %w[
+      backoffice cli deploy-button external import-recommended-integrations
+      marketplace oauth organization resource-claims v0
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant0TransferRequestVariant0BillingPlanType SDK namespace.
-module GetConfigurationResponseVariant0TransferRequestVariant0BillingPlanType
-  PREPAYMENT = 'prepayment'
-  SUBSCRIPTION = 'subscription'
-  VALUES = ['prepayment', 'subscription'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant0Status SDK namespace.
+  module GetConfigurationResponseVariant0Status
+    ERROR = 'error'
+    ONBOARDING = 'onboarding'
+    PENDING = 'pending'
+    READY = 'ready'
+    RESUMED = 'resumed'
+    SUSPENDED = 'suspended'
+    UNINSTALLED = 'uninstalled'
+    VALUES = %w[error onboarding pending ready resumed suspended uninstalled].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant0TransferRequestVariant0Kind SDK namespace.
-module GetConfigurationResponseVariant0TransferRequestVariant0Kind
-  TRANSFER_TO_MARKETPLACE = 'transfer-to-marketplace'
-  VALUES = ['transfer-to-marketplace'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetConfigurationResponseVariant0TransferRequestVariant0Kind', 'enum', "Unknown GetConfigurationResponseVariant0TransferRequestVariant0Kind: #{value}")
+  # Defines the GetConfigurationResponseVariant0TransferRequestVariant0BillinX841ddc8dae SDK namespace.
+  module GetConfigurationResponseVariant0TransferRequestVariant0BillinX841ddc8dae
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant0TransferRequestVariant1Kind SDK namespace.
-module GetConfigurationResponseVariant0TransferRequestVariant1Kind
-  TRANSFER_FROM_MARKETPLACE = 'transfer-from-marketplace'
-  VALUES = ['transfer-from-marketplace'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetConfigurationResponseVariant0TransferRequestVariant1Kind', 'enum', "Unknown GetConfigurationResponseVariant0TransferRequestVariant1Kind: #{value}")
+  # Defines the GetConfigurationResponseVariant0TransferRequestVariant0BillingPlanScope SDK namespace.
+  module GetConfigurationResponseVariant0TransferRequestVariant0BillingPlanScope
+    INSTALLATION = 'installation'
+    RESOURCE = 'resource'
+    VALUES = %w[installation resource].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant0Type SDK namespace.
-module GetConfigurationResponseVariant0Type
-  INTEGRATION_CONFIGURATION = 'integration-configuration'
-  VALUES = ['integration-configuration'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant0TransferRequestVariant0BillingPlanType SDK namespace.
+  module GetConfigurationResponseVariant0TransferRequestVariant0BillingPlanType
+    PREPAYMENT = 'prepayment'
+    SUBSCRIPTION = 'subscription'
+    VALUES = %w[prepayment subscription].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant1DisabledReason SDK namespace.
-module GetConfigurationResponseVariant1DisabledReason
-  ACCOUNT_PLAN_DOWNGRADE = 'account-plan-downgrade'
-  DISABLED_BY_ADMIN = 'disabled-by-admin'
-  DISABLED_BY_OWNER = 'disabled-by-owner'
-  FEATURE_NOT_AVAILABLE = 'feature-not-available'
-  ORIGINAL_OWNER_LEFT_THE_TEAM = 'original-owner-left-the-team'
-  ORIGINAL_OWNER_ROLE_DOWNGRADED = 'original-owner-role-downgraded'
-  VALUES = [
-    'account-plan-downgrade', 'disabled-by-admin', 'disabled-by-owner', 'feature-not-available',
-    'original-owner-left-the-team', 'original-owner-role-downgraded'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
+  # Defines the GetConfigurationResponseVariant0TransferRequestVariant0Kind SDK namespace.
+  module GetConfigurationResponseVariant0TransferRequestVariant0Kind
+    TRANSFER_TO_MARKETPLACE = 'transfer-to-marketplace'
+    VALUES = ['transfer-to-marketplace'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Defines the GetConfigurationResponseVariant1InstallationType SDK namespace.
-module GetConfigurationResponseVariant1InstallationType
-  EXTERNAL = 'external'
-  MARKETPLACE = 'marketplace'
-  VALUES = ['external', 'marketplace'].freeze
-  def self.from_value(value)
-    value
+      raise SdkValidationError.new('GetConfigurationResponseVariant0TransferRequestVariant0Kind', 'enum', "Unknown GetConfigurationResponseVariant0TransferRequestVariant0Kind: #{value}")
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant1Source SDK namespace.
-module GetConfigurationResponseVariant1Source
-  BACKOFFICE = 'backoffice'
-  CLI = 'cli'
-  DEPLOY_BUTTON = 'deploy-button'
-  EXTERNAL = 'external'
-  IMPORT_RECOMMENDED_INTEGRATIONS = 'import-recommended-integrations'
-  MARKETPLACE = 'marketplace'
-  OAUTH = 'oauth'
-  ORGANIZATION = 'organization'
-  RESOURCE_CLAIMS = 'resource-claims'
-  V0 = 'v0'
-  VALUES = [
-    'backoffice', 'cli', 'deploy-button', 'external', 'import-recommended-integrations',
-    'marketplace', 'oauth', 'organization', 'resource-claims', 'v0'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
+  # Defines the GetConfigurationResponseVariant0TransferRequestVariant1Kind SDK namespace.
+  module GetConfigurationResponseVariant0TransferRequestVariant1Kind
+    TRANSFER_FROM_MARKETPLACE = 'transfer-from-marketplace'
+    VALUES = ['transfer-from-marketplace'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Defines the GetConfigurationResponseVariant1Status SDK namespace.
-module GetConfigurationResponseVariant1Status
-  ERROR = 'error'
-  ONBOARDING = 'onboarding'
-  PENDING = 'pending'
-  READY = 'ready'
-  RESUMED = 'resumed'
-  SUSPENDED = 'suspended'
-  UNINSTALLED = 'uninstalled'
-  VALUES = ['error', 'onboarding', 'pending', 'ready', 'resumed', 'suspended', 'uninstalled'].freeze
-  def self.from_value(value)
-    value
+      raise SdkValidationError.new('GetConfigurationResponseVariant0TransferRequestVariant1Kind', 'enum', "Unknown GetConfigurationResponseVariant0TransferRequestVariant1Kind: #{value}")
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant1Type SDK namespace.
-module GetConfigurationResponseVariant1Type
-  INTEGRATION_CONFIGURATION = 'integration-configuration'
-  VALUES = ['integration-configuration'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant0Type SDK namespace.
+  module GetConfigurationResponseVariant0Type
+    INTEGRATION_CONFIGURATION = 'integration-configuration'
+    VALUES = ['integration-configuration'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant2DisabledReason SDK namespace.
-module GetConfigurationResponseVariant2DisabledReason
-  ACCOUNT_PLAN_DOWNGRADE = 'account-plan-downgrade'
-  DISABLED_BY_ADMIN = 'disabled-by-admin'
-  DISABLED_BY_OWNER = 'disabled-by-owner'
-  FEATURE_NOT_AVAILABLE = 'feature-not-available'
-  ORIGINAL_OWNER_LEFT_THE_TEAM = 'original-owner-left-the-team'
-  ORIGINAL_OWNER_ROLE_DOWNGRADED = 'original-owner-role-downgraded'
-  VALUES = [
-    'account-plan-downgrade', 'disabled-by-admin', 'disabled-by-owner', 'feature-not-available',
-    'original-owner-left-the-team', 'original-owner-role-downgraded'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant1DisabledReason SDK namespace.
+  module GetConfigurationResponseVariant1DisabledReason
+    ACCOUNT_PLAN_DOWNGRADE = 'account-plan-downgrade'
+    DISABLED_BY_ADMIN = 'disabled-by-admin'
+    DISABLED_BY_OWNER = 'disabled-by-owner'
+    FEATURE_NOT_AVAILABLE = 'feature-not-available'
+    ORIGINAL_OWNER_LEFT_THE_TEAM = 'original-owner-left-the-team'
+    ORIGINAL_OWNER_ROLE_DOWNGRADED = 'original-owner-role-downgraded'
+    VALUES = %w[
+      account-plan-downgrade disabled-by-admin disabled-by-owner feature-not-available
+      original-owner-left-the-team original-owner-role-downgraded
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant2InstallationType SDK namespace.
-module GetConfigurationResponseVariant2InstallationType
-  EXTERNAL = 'external'
-  MARKETPLACE = 'marketplace'
-  VALUES = ['external', 'marketplace'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant1InstallationType SDK namespace.
+  module GetConfigurationResponseVariant1InstallationType
+    EXTERNAL = 'external'
+    MARKETPLACE = 'marketplace'
+    VALUES = %w[external marketplace].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant2Source SDK namespace.
-module GetConfigurationResponseVariant2Source
-  BACKOFFICE = 'backoffice'
-  CLI = 'cli'
-  DEPLOY_BUTTON = 'deploy-button'
-  EXTERNAL = 'external'
-  IMPORT_RECOMMENDED_INTEGRATIONS = 'import-recommended-integrations'
-  MARKETPLACE = 'marketplace'
-  OAUTH = 'oauth'
-  ORGANIZATION = 'organization'
-  RESOURCE_CLAIMS = 'resource-claims'
-  V0 = 'v0'
-  VALUES = [
-    'backoffice', 'cli', 'deploy-button', 'external', 'import-recommended-integrations',
-    'marketplace', 'oauth', 'organization', 'resource-claims', 'v0'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant1Source SDK namespace.
+  module GetConfigurationResponseVariant1Source
+    BACKOFFICE = 'backoffice'
+    CLI = 'cli'
+    DEPLOY_BUTTON = 'deploy-button'
+    EXTERNAL = 'external'
+    IMPORT_RECOMMENDED_INTEGRATIONS = 'import-recommended-integrations'
+    MARKETPLACE = 'marketplace'
+    OAUTH = 'oauth'
+    ORGANIZATION = 'organization'
+    RESOURCE_CLAIMS = 'resource-claims'
+    V0 = 'v0'
+    VALUES = %w[
+      backoffice cli deploy-button external import-recommended-integrations
+      marketplace oauth organization resource-claims v0
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant2Status SDK namespace.
-module GetConfigurationResponseVariant2Status
-  ERROR = 'error'
-  ONBOARDING = 'onboarding'
-  PENDING = 'pending'
-  READY = 'ready'
-  RESUMED = 'resumed'
-  SUSPENDED = 'suspended'
-  UNINSTALLED = 'uninstalled'
-  VALUES = ['error', 'onboarding', 'pending', 'ready', 'resumed', 'suspended', 'uninstalled'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant1Status SDK namespace.
+  module GetConfigurationResponseVariant1Status
+    ERROR = 'error'
+    ONBOARDING = 'onboarding'
+    PENDING = 'pending'
+    READY = 'ready'
+    RESUMED = 'resumed'
+    SUSPENDED = 'suspended'
+    UNINSTALLED = 'uninstalled'
+    VALUES = %w[error onboarding pending ready resumed suspended uninstalled].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetConfigurationResponseVariant2Type SDK namespace.
-module GetConfigurationResponseVariant2Type
-  INTEGRATION_CONFIGURATION = 'integration-configuration'
-  VALUES = ['integration-configuration'].freeze
-  def self.from_value(value)
-    value
+  # Defines the GetConfigurationResponseVariant1Type SDK namespace.
+  module GetConfigurationResponseVariant1Type
+    INTEGRATION_CONFIGURATION = 'integration-configuration'
+    VALUES = ['integration-configuration'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
+
+  # Defines the GetConfigurationResponseVariant2DisabledReason SDK namespace.
+  module GetConfigurationResponseVariant2DisabledReason
+    ACCOUNT_PLAN_DOWNGRADE = 'account-plan-downgrade'
+    DISABLED_BY_ADMIN = 'disabled-by-admin'
+    DISABLED_BY_OWNER = 'disabled-by-owner'
+    FEATURE_NOT_AVAILABLE = 'feature-not-available'
+    ORIGINAL_OWNER_LEFT_THE_TEAM = 'original-owner-left-the-team'
+    ORIGINAL_OWNER_ROLE_DOWNGRADED = 'original-owner-role-downgraded'
+    VALUES = %w[
+      account-plan-downgrade disabled-by-admin disabled-by-owner feature-not-available
+      original-owner-left-the-team original-owner-role-downgraded
+    ].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetConfigurationResponseVariant2InstallationType SDK namespace.
+  module GetConfigurationResponseVariant2InstallationType
+    EXTERNAL = 'external'
+    MARKETPLACE = 'marketplace'
+    VALUES = %w[external marketplace].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetConfigurationResponseVariant2Source SDK namespace.
+  module GetConfigurationResponseVariant2Source
+    BACKOFFICE = 'backoffice'
+    CLI = 'cli'
+    DEPLOY_BUTTON = 'deploy-button'
+    EXTERNAL = 'external'
+    IMPORT_RECOMMENDED_INTEGRATIONS = 'import-recommended-integrations'
+    MARKETPLACE = 'marketplace'
+    OAUTH = 'oauth'
+    ORGANIZATION = 'organization'
+    RESOURCE_CLAIMS = 'resource-claims'
+    V0 = 'v0'
+    VALUES = %w[
+      backoffice cli deploy-button external import-recommended-integrations
+      marketplace oauth organization resource-claims v0
+    ].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetConfigurationResponseVariant2Status SDK namespace.
+  module GetConfigurationResponseVariant2Status
+    ERROR = 'error'
+    ONBOARDING = 'onboarding'
+    PENDING = 'pending'
+    READY = 'ready'
+    RESUMED = 'resumed'
+    SUSPENDED = 'suspended'
+    UNINSTALLED = 'uninstalled'
+    VALUES = %w[error onboarding pending ready resumed suspended uninstalled].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetConfigurationResponseVariant2Type SDK namespace.
+  module GetConfigurationResponseVariant2Type
+    INTEGRATION_CONFIGURATION = 'integration-configuration'
+    VALUES = ['integration-configuration'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
 end

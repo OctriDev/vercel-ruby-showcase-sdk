@@ -32,7 +32,6 @@ module OctridevVercel
         note: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(domain) do
           Validation.validate_length('domain', domain, max: 2544)
           Validation.validate_pattern('domain', domain, '([a-z]+[a-z.]+)$')
@@ -42,12 +41,12 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          "/v1/security/firewall/bypass",
+          '/v1/security/firewall/bypass',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'domain' => domain,
@@ -55,12 +54,12 @@ module OctridevVercel
             'sourceIp' => source_ip,
             'allSources' => all_sources,
             'ttl' => ttl,
-            'note' => note,
+            'note' => note
           },
           return_type: ::OctridevVercel::AddBypassIpResponse,
           decoder: :json,
           operation_id: 'add_bypass_ip',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

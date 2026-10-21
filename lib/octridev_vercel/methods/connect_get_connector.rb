@@ -23,30 +23,23 @@ module OctridevVercel
       #   with teamId. If both are omitted, Vercel uses the team associated with the
       #   token or the authenticated user's default team. The request returns 401 if
       #   no team can be selected.
-      singleton_class.define_method(:get_connector) do |
-        config:,
-        connector:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_connector) do |config:, connector:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/connect/connectors/",
+            '/v1/connect/connectors/',
             SdkClient.encode_path_segment(connector)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::ConnectConnector,
           decoder: :json,
           operation_id: 'get_connector',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError },
+          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError }
         ).data
       end
     end

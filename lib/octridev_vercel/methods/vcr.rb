@@ -12,18 +12,14 @@ module OctridevVercel
       # Checks whether the Docker Registry API v2 is supported. Send valid credentials in the `Authorization` header to receive a successful response and proceed with registry requests. Without credentials, the registry returns an authentication challenge for the Docker client.
       #
       # GET /v2/ Docker Registry v2 version check. Returns a 401 challenge when no credentials are provided, prompting the Docker client to send auth. With valid credentials, returns 200 so the client can proceed.
-      singleton_class.define_method(:get_root) do |
-        config:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_root) do |config:, request_options: nil|
         SdkClient.request(
           'GET',
-          "/v2/",
+          '/v2/',
           config: config,
           decoder: :json,
           operation_id: 'get_root',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

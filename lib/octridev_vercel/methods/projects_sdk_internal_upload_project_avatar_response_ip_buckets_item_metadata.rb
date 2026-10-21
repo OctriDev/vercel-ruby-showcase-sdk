@@ -12,9 +12,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseIpBucketsItemMetadata
         FIELDS = {
-          bucket: "bucket",
-          default: "default",
-          support_until: "supportUntil",
+          bucket: 'bucket',
+          default: 'default',
+          support_until: 'supportUntil'
         }.freeze
         REQUIRED_FIELDS = %i[
           bucket
@@ -22,7 +22,7 @@ module OctridevVercel
         DECODERS = {
           default: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseIpBucketsItemDefault.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -52,13 +52,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseJobsFlagDefinitionsPresentMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UploadProjectAvatarResponseJobsFlagDefinitionsPresent.
@@ -87,13 +86,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseJobsLintMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UploadProjectAvatarResponseJobsLint.
@@ -122,13 +120,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseJobsMfeConfigPresentMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UploadProjectAvatarResponseJobsMfeConfigPresent.
@@ -157,13 +154,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseJobsTypecheckMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UploadProjectAvatarResponseJobsTypecheck.
@@ -192,13 +188,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseJobsMetadata
         FIELDS = {
-          flag_definitions_present: "flag-definitions-present",
-          lint: "lint",
-          mfe_config_present: "mfe-config-present",
-          typecheck: "typecheck",
+          flag_definitions_present: 'flag-definitions-present',
+          lint: 'lint',
+          mfe_config_present: 'mfe-config-present',
+          typecheck: 'typecheck'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           flag_definitions_present: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseJobsFlagDefinitionsPresent.from_hash(value)
@@ -211,7 +206,7 @@ module OctridevVercel
           end,
           typecheck: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseJobsTypecheck.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -241,12 +236,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseLastAliasRequestMetadata
         FIELDS = {
-          from_deployment_id: "fromDeploymentId",
-          from_rolling_release_id: "fromRollingReleaseId",
-          job_status: "jobStatus",
-          requested_at: "requestedAt",
-          to_deployment_id: "toDeploymentId",
-          type: "type",
+          from_deployment_id: 'fromDeploymentId',
+          from_rolling_release_id: 'fromRollingReleaseId',
+          job_status: 'jobStatus',
+          requested_at: 'requestedAt',
+          to_deployment_id: 'toDeploymentId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           from_deployment_id
@@ -261,7 +256,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseLastAliasRequestType.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           from_deployment_id
@@ -296,15 +291,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseLatestDeploymentsItemAliasErrorMetadata
         FIELDS = {
-          code: "code",
-          message: "message",
+          code: 'code',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           code
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UploadProjectAvatarResponseLatestDeploymentsItemAliasError.
@@ -333,8 +327,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseLatestDeploymentsItemBranchMatcherMetadata
         FIELDS = {
-          pattern: "pattern",
-          type: "type",
+          pattern: 'pattern',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           pattern
@@ -343,7 +337,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseLatestDeploymentsItemBranchMatcherType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -376,15 +370,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseLatestDeploymentsItemBuildsItemMetadata
         FIELDS = {
-          dest: "dest",
-          src: "src",
-          use: "use",
+          dest: 'dest',
+          src: 'src',
+          use: 'use'
         }.freeze
         REQUIRED_FIELDS = %i[
           use
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UploadProjectAvatarResponseLatestDeploymentsItemBuildsItem.
@@ -413,19 +406,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseLatestDeploymentsItemCreatorMetadata
         FIELDS = {
-          email: "email",
-          github_login: "githubLogin",
-          gitlab_login: "gitlabLogin",
-          uid: "uid",
-          username: "username",
+          email: 'email',
+          github_login: 'githubLogin',
+          gitlab_login: 'gitlabLogin',
+          uid: 'uid',
+          username: 'username'
         }.freeze
         REQUIRED_FIELDS = %i[
           email
           uid
           username
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UploadProjectAvatarResponseLatestDeploymentsItemCreator.
@@ -454,19 +446,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseLatestDeploymentsItemOidcTokenClaimsMetadata
         FIELDS = {
-          aud: "aud",
-          custom_environment_id: "custom_environment_id",
-          deployment_id: "deployment_id",
-          environment: "environment",
-          iss: "iss",
-          mfe_group_ids: "mfe_group_ids",
-          owner: "owner",
-          owner_id: "owner_id",
-          plan: "plan",
-          project: "project",
-          project_id: "project_id",
-          scope: "scope",
-          sub: "sub",
+          aud: 'aud',
+          custom_environment_id: 'custom_environment_id',
+          deployment_id: 'deployment_id',
+          environment: 'environment',
+          iss: 'iss',
+          mfe_group_ids: 'mfe_group_ids',
+          owner: 'owner',
+          owner_id: 'owner_id',
+          plan: 'plan',
+          project: 'project',
+          project_id: 'project_id',
+          scope: 'scope',
+          sub: 'sub'
         }.freeze
         REQUIRED_FIELDS = %i[
           aud
@@ -479,8 +471,7 @@ module OctridevVercel
           scope
           sub
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UploadProjectAvatarResponseLatestDeploymentsItemOidcTokenClaims.

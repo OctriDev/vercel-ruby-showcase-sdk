@@ -35,14 +35,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAccessGroupProjectsResponseProjectsItemProjectMetadata
         FIELDS = {
-          framework: "framework",
-          latest_deployment_id: "latestDeploymentId",
-          name: "name",
+          framework: 'framework',
+          latest_deployment_id: 'latestDeploymentId',
+          name: 'name'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ListAccessGroupProjectsResponseProjectsItemProject.
@@ -71,11 +69,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAccessGroupProjectsResponseProjectsItemMetadata
         FIELDS = {
-          created_at: "createdAt",
-          project: "project",
-          project_id: "projectId",
-          role: "role",
-          updated_at: "updatedAt",
+          created_at: 'createdAt',
+          project: 'project',
+          project_id: 'projectId',
+          role: 'role',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -90,7 +88,7 @@ module OctridevVercel
           end,
           role: lambda do |value|
             ::OctridevVercel::Methods::AccessGroups::ListAccessGroupProjectsResponseProjectsItemRole.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -120,8 +118,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAccessGroupProjectsResponseMetadata
         FIELDS = {
-          pagination: "pagination",
-          projects: "projects",
+          pagination: 'pagination',
+          projects: 'projects'
         }.freeze
         REQUIRED_FIELDS = %i[
           pagination
@@ -133,7 +131,7 @@ module OctridevVercel
           end,
           projects: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::AccessGroups::ListAccessGroupProjectsResponseProjectsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -163,8 +161,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateAccessGroupProjectMetadata
         FIELDS = {
-          project_id: "projectId",
-          role: "role",
+          project_id: 'projectId',
+          role: 'role'
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
@@ -173,7 +171,7 @@ module OctridevVercel
         DECODERS = {
           role: lambda do |value|
             ::OctridevVercel::Methods::AccessGroups::CreateAccessGroupProjectRole.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -206,12 +204,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateAccessGroupProjectResponseMetadata
         FIELDS = {
-          access_group_id: "accessGroupId",
-          created_at: "createdAt",
-          project_id: "projectId",
-          role: "role",
-          team_id: "teamId",
-          updated_at: "updatedAt",
+          access_group_id: 'accessGroupId',
+          created_at: 'createdAt',
+          project_id: 'projectId',
+          role: 'role',
+          team_id: 'teamId',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           access_group_id
@@ -224,7 +222,7 @@ module OctridevVercel
         DECODERS = {
           role: lambda do |value|
             ::OctridevVercel::Methods::AccessGroups::CreateAccessGroupProjectResponseRole.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -254,12 +252,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalReadAccessGroupProjectResponseMetadata
         FIELDS = {
-          access_group_id: "accessGroupId",
-          created_at: "createdAt",
-          project_id: "projectId",
-          role: "role",
-          team_id: "teamId",
-          updated_at: "updatedAt",
+          access_group_id: 'accessGroupId',
+          created_at: 'createdAt',
+          project_id: 'projectId',
+          role: 'role',
+          team_id: 'teamId',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           access_group_id
@@ -272,7 +270,7 @@ module OctridevVercel
         DECODERS = {
           role: lambda do |value|
             ::OctridevVercel::Methods::AccessGroups::ReadAccessGroupProjectResponseRole.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -302,7 +300,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateAccessGroupProjectMetadata
         FIELDS = {
-          role: "role",
+          role: 'role'
         }.freeze
         REQUIRED_FIELDS = %i[
           role
@@ -310,7 +308,7 @@ module OctridevVercel
         DECODERS = {
           role: lambda do |value|
             ::OctridevVercel::Methods::AccessGroups::UpdateAccessGroupProjectRole.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           role
@@ -344,12 +342,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateAccessGroupProjectResponseMetadata
         FIELDS = {
-          access_group_id: "accessGroupId",
-          created_at: "createdAt",
-          project_id: "projectId",
-          role: "role",
-          team_id: "teamId",
-          updated_at: "updatedAt",
+          access_group_id: 'accessGroupId',
+          created_at: 'createdAt',
+          project_id: 'projectId',
+          role: 'role',
+          team_id: 'teamId',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           access_group_id
@@ -362,7 +360,7 @@ module OctridevVercel
         DECODERS = {
           role: lambda do |value|
             ::OctridevVercel::Methods::AccessGroups::UpdateAccessGroupProjectResponseRole.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -395,7 +393,7 @@ module OctridevVercel
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
         PROJECT_GUEST = 'PROJECT_GUEST'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
-        VALUES = ['ADMIN', 'PROJECT_DEVELOPER', 'PROJECT_GUEST', 'PROJECT_VIEWER'].freeze
+        VALUES = %w[ADMIN PROJECT_DEVELOPER PROJECT_GUEST PROJECT_VIEWER].freeze
         def self.from_value(value)
           value
         end
@@ -426,7 +424,7 @@ module OctridevVercel
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
         PROJECT_GUEST = 'PROJECT_GUEST'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
-        VALUES = ['ADMIN', 'PROJECT_DEVELOPER', 'PROJECT_GUEST', 'PROJECT_VIEWER'].freeze
+        VALUES = %w[ADMIN PROJECT_DEVELOPER PROJECT_GUEST PROJECT_VIEWER].freeze
         def self.from_value(value)
           value
         end
@@ -453,12 +451,12 @@ module OctridevVercel
         V0_CHATTER = 'V0Chatter'
         V0_VIEWER = 'V0Viewer'
         WORKFLOW_DECRYPTOR = 'WorkflowDecryptor'
-        VALUES = [
-          'AiGatewayBudgetManager', 'AiGatewayCredits', 'AiGatewaySettings',
-          'AiGatewayTranscriptsManager', 'AiGatewayTranscriptsViewer', 'AiGatewayUser',
-          'ConnectorManager', 'CreateProject', 'EnvVariableManager', 'EnvironmentManager',
-          'FullProductionDeployment', 'IntegrationManager', 'OrgAdmin', 'OrgViewer', 'UsageViewer',
-          'V0Builder', 'V0Chatter', 'V0Viewer', 'WorkflowDecryptor'
+        VALUES = %w[
+          AiGatewayBudgetManager AiGatewayCredits AiGatewaySettings
+          AiGatewayTranscriptsManager AiGatewayTranscriptsViewer AiGatewayUser
+          ConnectorManager CreateProject EnvVariableManager EnvironmentManager
+          FullProductionDeployment IntegrationManager OrgAdmin OrgViewer UsageViewer
+          V0Builder V0Chatter V0Viewer WorkflowDecryptor
         ].freeze
         def self.from_value(value)
           value
@@ -471,7 +469,7 @@ module OctridevVercel
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
         PROJECT_GUEST = 'PROJECT_GUEST'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
-        VALUES = ['ADMIN', 'PROJECT_DEVELOPER', 'PROJECT_GUEST', 'PROJECT_VIEWER'].freeze
+        VALUES = %w[ADMIN PROJECT_DEVELOPER PROJECT_GUEST PROJECT_VIEWER].freeze
         def self.from_value(value)
           value
         end
@@ -497,9 +495,9 @@ module OctridevVercel
         SECURITY = 'SECURITY'
         VIEWER = 'VIEWER'
         VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
-        VALUES = [
-          'BILLING', 'CONTRIBUTOR', 'DEVELOPER', 'MEMBER', 'OWNER', 'SECURITY', 'VIEWER',
-          'VIEWER_FOR_PLUS'
+        VALUES = %w[
+          BILLING CONTRIBUTOR DEVELOPER MEMBER OWNER SECURITY VIEWER
+          VIEWER_FOR_PLUS
         ].freeze
         def self.from_value(value)
           value
@@ -521,7 +519,7 @@ module OctridevVercel
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
         PROJECT_GUEST = 'PROJECT_GUEST'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
-        VALUES = ['ADMIN', 'PROJECT_DEVELOPER', 'PROJECT_GUEST', 'PROJECT_VIEWER'].freeze
+        VALUES = %w[ADMIN PROJECT_DEVELOPER PROJECT_GUEST PROJECT_VIEWER].freeze
         def self.from_value(value)
           value
         end
@@ -541,7 +539,7 @@ module OctridevVercel
         ADMIN = 'ADMIN'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
-        VALUES = ['ADMIN', 'PROJECT_VIEWER', 'PROJECT_DEVELOPER'].freeze
+        VALUES = %w[ADMIN PROJECT_VIEWER PROJECT_DEVELOPER].freeze
         def self.from_value(value)
           value
         end
@@ -552,7 +550,7 @@ module OctridevVercel
         ADMIN = 'ADMIN'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
-        VALUES = ['ADMIN', 'PROJECT_VIEWER', 'PROJECT_DEVELOPER'].freeze
+        VALUES = %w[ADMIN PROJECT_VIEWER PROJECT_DEVELOPER].freeze
         def self.from_value(value)
           value
         end
@@ -563,7 +561,7 @@ module OctridevVercel
         ADMIN = 'ADMIN'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
-        VALUES = ['ADMIN', 'PROJECT_VIEWER', 'PROJECT_DEVELOPER'].freeze
+        VALUES = %w[ADMIN PROJECT_VIEWER PROJECT_DEVELOPER].freeze
         def self.from_value(value)
           value
         end

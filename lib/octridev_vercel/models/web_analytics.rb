@@ -5,254 +5,250 @@
 
 # web_analytics domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalCountEventsResponseDataVariant0Metadata
-  FIELDS = {
-    browser_name: "browserName",
-    country: "country",
-    device_type: "deviceType",
-    environment: "environment",
-    event_data: "eventData",
-    event_name: "eventName",
-    flags: "flags",
-    os_name: "osName",
-    project_id: "projectId",
-    project_name: "projectName",
-    referrer_hostname: "referrerHostname",
-    request_hostname: "requestHostname",
-    request_path: "requestPath",
-    route: "route",
-    utm_campaign: "utmCampaign",
-    utm_content: "utmContent",
-    utm_medium: "utmMedium",
-    utm_source: "utmSource",
-    utm_term: "utmTerm",
-    visitor_id: "visitorId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    browser_name
-    country
-    device_type
-    environment
-    event_data
-    event_name
-    flags
-    os_name
-    project_id
-    project_name
-    referrer_hostname
-    request_hostname
-    request_path
-    route
-    utm_campaign
-    utm_content
-    utm_medium
-    utm_source
-    utm_term
-    visitor_id
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for CountEventsResponseDataVariant0.
-class CountEventsResponseDataVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCountEventsResponseDataVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCountEventsResponseDataVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCountEventsResponseDataVariant0Metadata::DECODERS
-
-  attr_reader :browser_name, :country, :device_type, :environment, :event_data, :event_name, :flags,
-              :os_name, :project_id, :project_name, :referrer_hostname, :request_hostname,
-              :request_path, :route, :utm_campaign, :utm_content, :utm_medium, :utm_source,
-              :utm_term, :visitor_id
-  # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
-  attr_reader :additional_properties
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCountEventsResponseDataVariant0Metadata
+    FIELDS = {
+      browser_name: 'browserName',
+      country: 'country',
+      device_type: 'deviceType',
+      environment: 'environment',
+      event_data: 'eventData',
+      event_name: 'eventName',
+      flags: 'flags',
+      os_name: 'osName',
+      project_id: 'projectId',
+      project_name: 'projectName',
+      referrer_hostname: 'referrerHostname',
+      request_hostname: 'requestHostname',
+      request_path: 'requestPath',
+      route: 'route',
+      utm_campaign: 'utmCampaign',
+      utm_content: 'utmContent',
+      utm_medium: 'utmMedium',
+      utm_source: 'utmSource',
+      utm_term: 'utmTerm',
+      visitor_id: 'visitorId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      browser_name
+      country
+      device_type
+      environment
+      event_data
+      event_name
+      flags
+      os_name
+      project_id
+      project_name
+      referrer_hostname
+      request_hostname
+      request_path
+      route
+      utm_campaign
+      utm_content
+      utm_medium
+      utm_source
+      utm_term
+      visitor_id
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
+  # API model for CountEventsResponseDataVariant0.
+  class CountEventsResponseDataVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCountEventsResponseDataVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCountEventsResponseDataVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCountEventsResponseDataVariant0Metadata::DECODERS
+
+    attr_reader :browser_name, :country, :device_type, :environment, :event_data, :event_name, :flags,
+                :os_name, :project_id, :project_name, :referrer_hostname, :request_hostname,
+                :request_path, :route, :utm_campaign, :utm_content, :utm_medium, :utm_source,
+                :utm_term, :visitor_id
+    # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
+    attr_reader :additional_properties
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS, extras: true)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS, extras: true)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCountEventsResponseDataVariant1Metadata
-  FIELDS = {
-    count: "count",
-    visitors: "visitors",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    count
-    visitors
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for CountEventsResponseDataVariant1.
-class CountEventsResponseDataVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCountEventsResponseDataVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCountEventsResponseDataVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCountEventsResponseDataVariant1Metadata::DECODERS
-
-  attr_reader :count, :visitors
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCountEventsResponseDataVariant1Metadata
+    FIELDS = {
+      count: 'count',
+      visitors: 'visitors'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      count
+      visitors
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CountEventsResponseDataVariant1.
+  class CountEventsResponseDataVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCountEventsResponseDataVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCountEventsResponseDataVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCountEventsResponseDataVariant1Metadata::DECODERS
+
+    attr_reader :count, :visitors
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the CountEventsResponseData SDK namespace.
-module CountEventsResponseData
-  def self.from_hash(hash)
-    shape_mapping = {
-      "browserName" => CountEventsResponseDataVariant0,
-      "count" => CountEventsResponseDataVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCountPageviewsResponseDataVariant0Metadata
-  FIELDS = {
-    browser_name: "browserName",
-    country: "country",
-    device_type: "deviceType",
-    environment: "environment",
-    flags: "flags",
-    os_name: "osName",
-    project_id: "projectId",
-    project_name: "projectName",
-    referrer_hostname: "referrerHostname",
-    request_hostname: "requestHostname",
-    request_path: "requestPath",
-    route: "route",
-    utm_campaign: "utmCampaign",
-    utm_content: "utmContent",
-    utm_medium: "utmMedium",
-    utm_source: "utmSource",
-    utm_term: "utmTerm",
-    visitor_id: "visitorId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    browser_name
-    country
-    device_type
-    environment
-    flags
-    os_name
-    project_id
-    project_name
-    referrer_hostname
-    request_hostname
-    request_path
-    route
-    utm_campaign
-    utm_content
-    utm_medium
-    utm_source
-    utm_term
-    visitor_id
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for CountPageviewsResponseDataVariant0.
-class CountPageviewsResponseDataVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCountPageviewsResponseDataVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCountPageviewsResponseDataVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCountPageviewsResponseDataVariant0Metadata::DECODERS
-
-  attr_reader :browser_name, :country, :device_type, :environment, :flags, :os_name, :project_id,
-              :project_name, :referrer_hostname, :request_hostname, :request_path, :route,
-              :utm_campaign, :utm_content, :utm_medium, :utm_source, :utm_term, :visitor_id
-  # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
-  attr_reader :additional_properties
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
-    freeze
+  # Defines the CountEventsResponseData SDK namespace.
+  module CountEventsResponseData
+    def self.from_hash(hash)
+      shape_mapping = {
+        'browserName' => CountEventsResponseDataVariant0,
+        'count' => CountEventsResponseDataVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
+  # Internal model hydration metadata.
+  class SdkInternalCountPageviewsResponseDataVariant0Metadata
+    FIELDS = {
+      browser_name: 'browserName',
+      country: 'country',
+      device_type: 'deviceType',
+      environment: 'environment',
+      flags: 'flags',
+      os_name: 'osName',
+      project_id: 'projectId',
+      project_name: 'projectName',
+      referrer_hostname: 'referrerHostname',
+      request_hostname: 'requestHostname',
+      request_path: 'requestPath',
+      route: 'route',
+      utm_campaign: 'utmCampaign',
+      utm_content: 'utmContent',
+      utm_medium: 'utmMedium',
+      utm_source: 'utmSource',
+      utm_term: 'utmTerm',
+      visitor_id: 'visitorId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      browser_name
+      country
+      device_type
+      environment
+      flags
+      os_name
+      project_id
+      project_name
+      referrer_hostname
+      request_hostname
+      request_path
+      route
+      utm_campaign
+      utm_content
+      utm_medium
+      utm_source
+      utm_term
+      visitor_id
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS, extras: true)
-  end
-end
+  # API model for CountPageviewsResponseDataVariant0.
+  class CountPageviewsResponseDataVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCountPageviewsResponseDataVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCountPageviewsResponseDataVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCountPageviewsResponseDataVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCountPageviewsResponseDataVariant1Metadata
-  FIELDS = {
-    pageviews: "pageviews",
-    visitors: "visitors",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    pageviews
-    visitors
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :browser_name, :country, :device_type, :environment, :flags, :os_name, :project_id,
+                :project_name, :referrer_hostname, :request_hostname, :request_path, :route,
+                :utm_campaign, :utm_content, :utm_medium, :utm_source, :utm_term, :visitor_id
+    # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
+    attr_reader :additional_properties
 
-# API model for CountPageviewsResponseDataVariant1.
-class CountPageviewsResponseDataVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCountPageviewsResponseDataVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCountPageviewsResponseDataVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCountPageviewsResponseDataVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
+      freeze
+    end
 
-  attr_reader :pageviews, :visitors
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS, extras: true)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCountPageviewsResponseDataVariant1Metadata
+    FIELDS = {
+      pageviews: 'pageviews',
+      visitors: 'visitors'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      pageviews
+      visitors
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CountPageviewsResponseDataVariant1.
+  class CountPageviewsResponseDataVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCountPageviewsResponseDataVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCountPageviewsResponseDataVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCountPageviewsResponseDataVariant1Metadata::DECODERS
 
-# Defines the CountPageviewsResponseData SDK namespace.
-module CountPageviewsResponseData
-  def self.from_hash(hash)
-    shape_mapping = {
-      "browserName" => CountPageviewsResponseDataVariant0,
-      "pageviews" => CountPageviewsResponseDataVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
+    attr_reader :pageviews, :visitors
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
+
+  # Defines the CountPageviewsResponseData SDK namespace.
+  module CountPageviewsResponseData
+    def self.from_hash(hash)
+      shape_mapping = {
+        'browserName' => CountPageviewsResponseDataVariant0,
+        'pageviews' => CountPageviewsResponseDataVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
+  end
 end

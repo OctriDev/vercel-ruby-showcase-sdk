@@ -39,34 +39,33 @@ module OctridevVercel
         close: NOT_GIVEN,
         request_options: nil
       )
-
-        Validation.if_given(data) { Validation.validate_length('data', data, max: 1000000) }
+        Validation.if_given(data) { Validation.validate_length('data', data, max: 1_000_000) }
 
         Validation.if_given(offset) { Validation.validate_range('offset', offset, min: 0) }
 
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/cmd/",
+            '/cmd/',
             SdkClient.encode_path_segment(cmd_id),
-            "/stdin"
+            '/stdin'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'data' => data,
             'offset' => offset,
-            'close' => close,
+            'close' => close
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::WriteSessionCommandStdinResponse,
           decoder: :json,
           operation_id: 'write_session_command_stdin',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

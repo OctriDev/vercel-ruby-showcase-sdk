@@ -24,23 +24,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
           [
-            "/v2/deployments/",
+            '/v2/deployments/',
             SdkClient.encode_path_segment(id),
-            "/aliases"
+            '/aliases'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Aliases::ListAliasesForDeploymentResponse,
           decoder: :json,
           operation_id: 'list_aliases_for_deployment',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -66,27 +65,26 @@ module OctridevVercel
         redirect: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/deployments/",
+            '/v2/deployments/',
             SdkClient.encode_path_segment(id),
-            "/aliases"
+            '/aliases'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'alias' => alias_,
-            'redirect' => redirect,
+            'redirect' => redirect
           },
           return_type: ::OctridevVercel::Methods::Aliases::AssignAliasResponse,
           decoder: :json,
           operation_id: 'assign_alias',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -118,10 +116,9 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
-          "/v4/aliases",
+          '/v4/aliases',
           config: config,
           query: {
             'domain' => QueryValue.new(domain, style: 'form', explode: true),
@@ -132,12 +129,12 @@ module OctridevVercel
             'until' => QueryValue.new(until_, style: 'form', explode: true),
             'rollbackDeploymentId' => QueryValue.new(rollback_deployment_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Aliases::ListAliasesResponse,
           decoder: :json,
           operation_id: 'list_aliases',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -157,22 +154,11 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_alias) do |
-        config:,
-        id_or_alias:,
-        from: NOT_GIVEN,
-        project_id: NOT_GIVEN,
-        since: NOT_GIVEN,
-        until_: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_alias) do |config:, id_or_alias:, from: NOT_GIVEN, project_id: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v4/aliases/",
+            '/v4/aliases/',
             SdkClient.encode_path_segment(id_or_alias)
           ].join,
           config: config,
@@ -182,12 +168,12 @@ module OctridevVercel
             'since' => QueryValue.new(since, style: 'form', explode: true),
             'until' => QueryValue.new(until_, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Aliases::GetAliasResponse,
           decoder: :json,
           operation_id: 'get_alias',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -206,22 +192,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v2/aliases/",
+            '/v2/aliases/',
             SdkClient.encode_path_segment(alias_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Aliases::DeleteAliasResponse,
           decoder: :json,
           operation_id: 'delete_alias',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

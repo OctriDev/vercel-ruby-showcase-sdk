@@ -5,275 +5,277 @@
 
 # log_drains domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalCreateLogDrainResponseSourceVariant0Metadata
-  FIELDS = {
-    default_for: "defaultFor",
-    kind: "kind",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    kind
-  ].freeze
-  DECODERS = {
-    default_for: lambda do |value|
-      ::OctridevVercel::CreateLogDrainResponseSourceVariant0DefaultFor.from_value(value)
-    end,
-    kind: lambda do |value|
-      ::OctridevVercel::CreateLogDrainResponseSourceVariant0Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateLogDrainResponseSourceVariant0.
-class CreateLogDrainResponseSourceVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateLogDrainResponseSourceVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateLogDrainResponseSourceVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateLogDrainResponseSourceVariant0Metadata::DECODERS
-
-  attr_reader :kind
-  # @return [CreateLogDrainResponseSourceVariant0DefaultFor] Informational marker for a system-owned default drain.
-  attr_reader :default_for
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateLogDrainResponseSourceVariant0Metadata
+    FIELDS = {
+      default_for: 'defaultFor',
+      kind: 'kind'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      kind
+    ].freeze
+    DECODERS = {
+      default_for: lambda do |value|
+        ::OctridevVercel::CreateLogDrainResponseSourceVariant0DefaultFor.from_value(value)
+      end,
+      kind: lambda do |value|
+        ::OctridevVercel::CreateLogDrainResponseSourceVariant0Kind.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateLogDrainResponseSourceVariant0.
+  class CreateLogDrainResponseSourceVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateLogDrainResponseSourceVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateLogDrainResponseSourceVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateLogDrainResponseSourceVariant0Metadata::DECODERS
+
+    attr_reader :kind
+    # @return [CreateLogDrainResponseSourceVariant0DefaultFor] Informational marker for a system-owned default drain.
+    attr_reader :default_for
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateLogDrainResponseSourceVariant1Metadata
-  FIELDS = {
-    external_resource_id: "externalResourceId",
-    integration_configuration_id: "integrationConfigurationId",
-    integration_id: "integrationId",
-    kind: "kind",
-    resource_id: "resourceId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    integration_configuration_id
-    integration_id
-    kind
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::CreateLogDrainResponseSourceVariant1Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateLogDrainResponseSourceVariant1.
-class CreateLogDrainResponseSourceVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateLogDrainResponseSourceVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateLogDrainResponseSourceVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateLogDrainResponseSourceVariant1Metadata::DECODERS
-
-  attr_reader :external_resource_id, :integration_configuration_id, :integration_id, :kind,
-              :resource_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateLogDrainResponseSourceVariant1Metadata
+    FIELDS = {
+      external_resource_id: 'externalResourceId',
+      integration_configuration_id: 'integrationConfigurationId',
+      integration_id: 'integrationId',
+      kind: 'kind',
+      resource_id: 'resourceId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      integration_configuration_id
+      integration_id
+      kind
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::CreateLogDrainResponseSourceVariant1Kind.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateLogDrainResponseSourceVariant1.
+  class CreateLogDrainResponseSourceVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateLogDrainResponseSourceVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateLogDrainResponseSourceVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateLogDrainResponseSourceVariant1Metadata::DECODERS
+
+    attr_reader :external_resource_id, :integration_configuration_id, :integration_id, :kind,
+                :resource_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the CreateLogDrainResponseSource SDK namespace.
+  module CreateLogDrainResponseSource
+    DISCRIMINATOR_MAPPING = {
+      'self-served' => -> { CreateLogDrainResponseSourceVariant0 },
+      'integration' => -> { CreateLogDrainResponseSourceVariant1 }
+    }.freeze
 
-# Defines the CreateLogDrainResponseSource SDK namespace.
-module CreateLogDrainResponseSource
-  DISCRIMINATOR_MAPPING = {
-    "self-served" => -> { CreateLogDrainResponseSourceVariant0 },
-    "integration" => -> { CreateLogDrainResponseSourceVariant1 },
-  }.freeze
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
 
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["kind"]]&.call
-    return type.from_hash(hash) if type
+      type = DISCRIMINATOR_MAPPING[hash['kind']]&.call
+      return type.from_hash(hash) if type
 
-    raise SdkValidationError.new('CreateLogDrainResponseSource', 'variant', "Unknown CreateLogDrainResponseSource discriminator: #{hash["kind"].inspect}")
-  end
-end
-
-# Defines the CreateLogDrainResponseSourceVariant0DefaultFor SDK namespace.
-module CreateLogDrainResponseSourceVariant0DefaultFor
-  EVE_TRACING = 'eve-tracing'
-  VALUES = ['eve-tracing'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateLogDrainResponseSourceVariant0Kind SDK namespace.
-module CreateLogDrainResponseSourceVariant0Kind
-  SELF_SERVED = 'self-served'
-  VALUES = ['self-served'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateLogDrainResponseSourceVariant0Kind', 'enum', "Unknown CreateLogDrainResponseSourceVariant0Kind: #{value}")
-  end
-end
-
-# Defines the CreateLogDrainResponseSourceVariant1Kind SDK namespace.
-module CreateLogDrainResponseSourceVariant1Kind
-  INTEGRATION = 'integration'
-  VALUES = ['integration'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateLogDrainResponseSourceVariant1Kind', 'enum', "Unknown CreateLogDrainResponseSourceVariant1Kind: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant0Metadata
-  FIELDS = {
-    default_for: "defaultFor",
-    kind: "kind",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    kind
-  ].freeze
-  DECODERS = {
-    default_for: lambda do |value|
-      ::OctridevVercel::GetIntegrationLogDrainsResponseItemSourceVariant0DefaultFor.from_value(value)
-    end,
-    kind: lambda do |value|
-      ::OctridevVercel::GetIntegrationLogDrainsResponseItemSourceVariant0Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetIntegrationLogDrainsResponseItemSourceVariant0.
-class GetIntegrationLogDrainsResponseItemSourceVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant0Metadata::DECODERS
-
-  attr_reader :kind
-  # @return [GetIntegrationLogDrainsResponseItemSourceVariant0DefaultFor] Informational marker for a system-owned default drain.
-  attr_reader :default_for
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('CreateLogDrainResponseSource', 'variant', "Unknown CreateLogDrainResponseSource discriminator: #{hash['kind'].inspect}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the CreateLogDrainResponseSourceVariant0DefaultFor SDK namespace.
+  module CreateLogDrainResponseSourceVariant0DefaultFor
+    EVE_TRACING = 'eve-tracing'
+    VALUES = ['eve-tracing'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the CreateLogDrainResponseSourceVariant0Kind SDK namespace.
+  module CreateLogDrainResponseSourceVariant0Kind
+    SELF_SERVED = 'self-served'
+    VALUES = ['self-served'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Internal model hydration metadata.
-class SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant1Metadata
-  FIELDS = {
-    external_resource_id: "externalResourceId",
-    integration_configuration_id: "integrationConfigurationId",
-    integration_id: "integrationId",
-    kind: "kind",
-    resource_id: "resourceId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    integration_configuration_id
-    integration_id
-    kind
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::GetIntegrationLogDrainsResponseItemSourceVariant1Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetIntegrationLogDrainsResponseItemSourceVariant1.
-class GetIntegrationLogDrainsResponseItemSourceVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant1Metadata::DECODERS
-
-  attr_reader :external_resource_id, :integration_configuration_id, :integration_id, :kind,
-              :resource_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('CreateLogDrainResponseSourceVariant0Kind', 'enum', "Unknown CreateLogDrainResponseSourceVariant0Kind: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the CreateLogDrainResponseSourceVariant1Kind SDK namespace.
+  module CreateLogDrainResponseSourceVariant1Kind
+    INTEGRATION = 'integration'
+    VALUES = ['integration'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateLogDrainResponseSourceVariant1Kind', 'enum', "Unknown CreateLogDrainResponseSourceVariant1Kind: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant0Metadata
+    FIELDS = {
+      default_for: 'defaultFor',
+      kind: 'kind'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      kind
+    ].freeze
+    DECODERS = {
+      default_for: lambda do |value|
+        ::OctridevVercel::GetIntegrationLogDrainsResponseItemSourceVariant0DefaultFor.from_value(value)
+      end,
+      kind: lambda do |value|
+        ::OctridevVercel::GetIntegrationLogDrainsResponseItemSourceVariant0Kind.from_value(value)
+      end
+    }.freeze
   end
-end
 
-# Defines the GetIntegrationLogDrainsResponseItemSource SDK namespace.
-module GetIntegrationLogDrainsResponseItemSource
-  DISCRIMINATOR_MAPPING = {
-    "self-served" => -> { GetIntegrationLogDrainsResponseItemSourceVariant0 },
-    "integration" => -> { GetIntegrationLogDrainsResponseItemSourceVariant1 },
-  }.freeze
+  # API model for GetIntegrationLogDrainsResponseItemSourceVariant0.
+  class GetIntegrationLogDrainsResponseItemSourceVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant0Metadata::DECODERS
 
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["kind"]]&.call
-    return type.from_hash(hash) if type
+    attr_reader :kind
+    # @return [GetIntegrationLogDrainsResponseItemSourceVariant0DefaultFor] Informational marker for a system-owned default drain.
+    attr_reader :default_for
 
-    raise SdkValidationError.new('GetIntegrationLogDrainsResponseItemSource', 'variant', "Unknown GetIntegrationLogDrainsResponseItemSource discriminator: #{hash["kind"].inspect}")
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the GetIntegrationLogDrainsResponseItemSourceVariant0DefaultFor SDK namespace.
-module GetIntegrationLogDrainsResponseItemSourceVariant0DefaultFor
-  EVE_TRACING = 'eve-tracing'
-  VALUES = ['eve-tracing'].freeze
-  def self.from_value(value)
-    value
+  # Internal model hydration metadata.
+  class SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant1Metadata
+    FIELDS = {
+      external_resource_id: 'externalResourceId',
+      integration_configuration_id: 'integrationConfigurationId',
+      integration_id: 'integrationId',
+      kind: 'kind',
+      resource_id: 'resourceId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      integration_configuration_id
+      integration_id
+      kind
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::GetIntegrationLogDrainsResponseItemSourceVariant1Kind.from_value(value)
+      end
+    }.freeze
   end
-end
 
-# Defines the GetIntegrationLogDrainsResponseItemSourceVariant0Kind SDK namespace.
-module GetIntegrationLogDrainsResponseItemSourceVariant0Kind
-  SELF_SERVED = 'self-served'
-  VALUES = ['self-served'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # API model for GetIntegrationLogDrainsResponseItemSourceVariant1.
+  class GetIntegrationLogDrainsResponseItemSourceVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetIntegrationLogDrainsResponseItemSourceVariant1Metadata::DECODERS
 
-    raise SdkValidationError.new('GetIntegrationLogDrainsResponseItemSourceVariant0Kind', 'enum', "Unknown GetIntegrationLogDrainsResponseItemSourceVariant0Kind: #{value}")
+    attr_reader :external_resource_id, :integration_configuration_id, :integration_id, :kind,
+                :resource_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the GetIntegrationLogDrainsResponseItemSourceVariant1Kind SDK namespace.
-module GetIntegrationLogDrainsResponseItemSourceVariant1Kind
-  INTEGRATION = 'integration'
-  VALUES = ['integration'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the GetIntegrationLogDrainsResponseItemSource SDK namespace.
+  module GetIntegrationLogDrainsResponseItemSource
+    DISCRIMINATOR_MAPPING = {
+      'self-served' => -> { GetIntegrationLogDrainsResponseItemSourceVariant0 },
+      'integration' => -> { GetIntegrationLogDrainsResponseItemSourceVariant1 }
+    }.freeze
 
-    raise SdkValidationError.new('GetIntegrationLogDrainsResponseItemSourceVariant1Kind', 'enum', "Unknown GetIntegrationLogDrainsResponseItemSourceVariant1Kind: #{value}")
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['kind']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('GetIntegrationLogDrainsResponseItemSource', 'variant', "Unknown GetIntegrationLogDrainsResponseItemSource discriminator: #{hash['kind'].inspect}")
+    end
   end
-end
+
+  # Defines the GetIntegrationLogDrainsResponseItemSourceVariant0DefaultFor SDK namespace.
+  module GetIntegrationLogDrainsResponseItemSourceVariant0DefaultFor
+    EVE_TRACING = 'eve-tracing'
+    VALUES = ['eve-tracing'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetIntegrationLogDrainsResponseItemSourceVariant0Kind SDK namespace.
+  module GetIntegrationLogDrainsResponseItemSourceVariant0Kind
+    SELF_SERVED = 'self-served'
+    VALUES = ['self-served'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetIntegrationLogDrainsResponseItemSourceVariant0Kind', 'enum', "Unknown GetIntegrationLogDrainsResponseItemSourceVariant0Kind: #{value}")
+    end
+  end
+
+  # Defines the GetIntegrationLogDrainsResponseItemSourceVariant1Kind SDK namespace.
+  module GetIntegrationLogDrainsResponseItemSourceVariant1Kind
+    INTEGRATION = 'integration'
+    VALUES = ['integration'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetIntegrationLogDrainsResponseItemSourceVariant1Kind', 'enum', "Unknown GetIntegrationLogDrainsResponseItemSourceVariant1Kind: #{value}")
+    end
+  end
 end

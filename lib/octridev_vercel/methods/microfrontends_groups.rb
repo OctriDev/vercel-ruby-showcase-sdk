@@ -16,24 +16,18 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_microfrontends_groups) do |
-        config:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_microfrontends_groups) do |config:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
-          "/v1/microfrontends/groups",
+          '/v1/microfrontends/groups',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'get_microfrontends_groups',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -44,30 +38,23 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_microfrontends_in_group) do |
-        config:,
-        group_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_microfrontends_in_group) do |config:, group_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/microfrontends/groups/",
+            '/v1/microfrontends/groups/',
             SdkClient.encode_path_segment(group_id),
-            "/projects"
+            '/projects'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Microfrontends::GetMicrofrontendsInGroupResponse,
           decoder: :json,
           operation_id: 'get_microfrontends_in_group',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end
