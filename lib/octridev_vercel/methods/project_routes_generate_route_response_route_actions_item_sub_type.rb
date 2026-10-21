@@ -14,7 +14,7 @@ module OctridevVercel
         RESPONSE_HEADERS = 'response-headers'
         TRANSFORM_REQUEST_HEADER = 'transform-request-header'
         TRANSFORM_REQUEST_QUERY = 'transform-request-query'
-        VALUES = ['response-headers', 'transform-request-header', 'transform-request-query'].freeze
+        VALUES = %w[response-headers transform-request-header transform-request-query].freeze
         def self.from_value(value)
           value
         end
@@ -36,7 +36,7 @@ module OctridevVercel
         EQUALS = 'equals'
         PATH_TO_REGEXP = 'path-to-regexp'
         REGEX = 'regex'
-        VALUES = ['equals', 'path-to-regexp', 'regex'].freeze
+        VALUES = %w[equals path-to-regexp regex].freeze
         def self.from_value(value)
           value
         end
@@ -48,7 +48,7 @@ module OctridevVercel
         REWRITE = 'rewrite'
         SET_STATUS = 'set_status'
         TRANSFORM = 'transform'
-        VALUES = ['redirect', 'rewrite', 'set_status', 'transform'].freeze
+        VALUES = %w[redirect rewrite set_status transform].freeze
         def self.from_value(value)
           value
         end
@@ -60,7 +60,7 @@ module OctridevVercel
         HEADER = 'header'
         HOST = 'host'
         QUERY = 'query'
-        VALUES = ['cookie', 'header', 'host', 'query'].freeze
+        VALUES = %w[cookie header host query].freeze
         def self.from_value(value)
           value
         end
@@ -71,7 +71,7 @@ module OctridevVercel
         COOKIE = 'cookie'
         HEADER = 'header'
         QUERY = 'query'
-        VALUES = ['cookie', 'header', 'query'].freeze
+        VALUES = %w[cookie header query].freeze
         def self.from_value(value)
           value
         end
@@ -92,7 +92,7 @@ module OctridevVercel
         COOKIE = 'cookie'
         HEADER = 'header'
         QUERY = 'query'
-        VALUES = ['cookie', 'header', 'query'].freeze
+        VALUES = %w[cookie header query].freeze
         def self.from_value(value)
           value
         end
@@ -153,7 +153,7 @@ module OctridevVercel
         HEADER = 'header'
         COOKIE = 'cookie'
         QUERY = 'query'
-        VALUES = ['host', 'header', 'cookie', 'query'].freeze
+        VALUES = %w[host header cookie query].freeze
         def self.from_value(value)
           value
         end
@@ -185,7 +185,7 @@ module OctridevVercel
         COOKIE = 'cookie'
         HEADER = 'header'
         QUERY = 'query'
-        VALUES = ['cookie', 'header', 'query'].freeze
+        VALUES = %w[cookie header query].freeze
         def self.from_value(value)
           value
         end
@@ -196,7 +196,7 @@ module OctridevVercel
         EQUALS = 'equals'
         PATH_TO_REGEXP = 'path-to-regexp'
         REGEX = 'regex'
-        VALUES = ['equals', 'path-to-regexp', 'regex'].freeze
+        VALUES = %w[equals path-to-regexp regex].freeze
         def self.from_value(value)
           value
         end
@@ -227,7 +227,7 @@ module OctridevVercel
         COOKIE = 'cookie'
         HEADER = 'header'
         QUERY = 'query'
-        VALUES = ['cookie', 'header', 'query'].freeze
+        VALUES = %w[cookie header query].freeze
         def self.from_value(value)
           value
         end
@@ -249,7 +249,7 @@ module OctridevVercel
         HEADER = 'header'
         COOKIE = 'cookie'
         QUERY = 'query'
-        VALUES = ['host', 'header', 'cookie', 'query'].freeze
+        VALUES = %w[host header cookie query].freeze
         def self.from_value(value)
           value
         end
@@ -259,7 +259,7 @@ module OctridevVercel
       module AddRouteResponseRouteRouteMitigateAction
         CHALLENGE = 'challenge'
         DENY = 'deny'
-        VALUES = ['challenge', 'deny'].freeze
+        VALUES = %w[challenge deny].freeze
         def self.from_value(value)
           value
         end
@@ -280,7 +280,7 @@ module OctridevVercel
         APPEND = 'append'
         SET = 'set'
         DELETE = 'delete'
-        VALUES = ['append', 'set', 'delete'].freeze
+        VALUES = %w[append set delete].freeze
         def self.from_value(value)
           value
         end
@@ -292,7 +292,7 @@ module OctridevVercel
         REWRITE = 'rewrite'
         SET_STATUS = 'set_status'
         TRANSFORM = 'transform'
-        VALUES = ['redirect', 'rewrite', 'set_status', 'transform'].freeze
+        VALUES = %w[redirect rewrite set_status transform].freeze
         def self.from_value(value)
           value
         end
@@ -314,7 +314,7 @@ module OctridevVercel
         HEADER = 'header'
         COOKIE = 'cookie'
         QUERY = 'query'
-        VALUES = ['host', 'header', 'cookie', 'query'].freeze
+        VALUES = %w[host header cookie query].freeze
         def self.from_value(value)
           value
         end
@@ -436,7 +436,7 @@ module OctridevVercel
         APPEND = 'append'
         DELETE = 'delete'
         SET = 'set'
-        VALUES = ['append', 'delete', 'set'].freeze
+        VALUES = %w[append delete set].freeze
         def self.from_value(value)
           value
         end
@@ -447,7 +447,7 @@ module OctridevVercel
         EQUALS = 'equals'
         PATH_TO_REGEXP = 'path-to-regexp'
         REGEX = 'regex'
-        VALUES = ['equals', 'path-to-regexp', 'regex'].freeze
+        VALUES = %w[equals path-to-regexp regex].freeze
         def self.from_value(value)
           value
         end
@@ -478,7 +478,7 @@ module OctridevVercel
         APPEND = 'append'
         DELETE = 'delete'
         SET = 'set'
-        VALUES = ['append', 'delete', 'set'].freeze
+        VALUES = %w[append delete set].freeze
         def self.from_value(value)
           value
         end
@@ -490,7 +490,7 @@ module OctridevVercel
         REWRITE = 'rewrite'
         SET_STATUS = 'set_status'
         TRANSFORM = 'transform'
-        VALUES = ['redirect', 'rewrite', 'set_status', 'transform'].freeze
+        VALUES = %w[redirect rewrite set_status transform].freeze
         def self.from_value(value)
           value
         end
@@ -532,7 +532,7 @@ module OctridevVercel
         REWRITE = 'rewrite'
         SET_STATUS = 'set_status'
         TRANSFORM = 'transform'
-        VALUES = ['redirect', 'rewrite', 'set_status', 'transform'].freeze
+        VALUES = %w[redirect rewrite set_status transform].freeze
         def self.from_value(value)
           value
         end
@@ -573,7 +573,7 @@ module OctridevVercel
         REWRITE = 'rewrite'
         SET_STATUS = 'set_status'
         TRANSFORM = 'transform'
-        VALUES = ['redirect', 'rewrite', 'set_status', 'transform'].freeze
+        VALUES = %w[redirect rewrite set_status transform].freeze
         def self.from_value(value)
           value
         end

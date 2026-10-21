@@ -5,88 +5,87 @@
 
 # dns domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalCreateRecordResponseVariant0Metadata
-  FIELDS = {
-    uid: "uid",
-    updated: "updated",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    updated
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for CreateRecordResponseVariant0.
-class CreateRecordResponseVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateRecordResponseVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateRecordResponseVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateRecordResponseVariant0Metadata::DECODERS
-
-  attr_reader :uid, :updated
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateRecordResponseVariant0Metadata
+    FIELDS = {
+      uid: 'uid',
+      updated: 'updated'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      updated
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateRecordResponseVariant0.
+  class CreateRecordResponseVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateRecordResponseVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateRecordResponseVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateRecordResponseVariant0Metadata::DECODERS
+
+    attr_reader :uid, :updated
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateRecordResponseVariant1Metadata
-  FIELDS = {
-    uid: "uid",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    uid
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for CreateRecordResponseVariant1.
-class CreateRecordResponseVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateRecordResponseVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateRecordResponseVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateRecordResponseVariant1Metadata::DECODERS
-
-  # @return [String] The id of the newly created DNS record
-  attr_reader :uid
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateRecordResponseVariant1Metadata
+    FIELDS = {
+      uid: 'uid'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      uid
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateRecordResponseVariant1.
+  class CreateRecordResponseVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateRecordResponseVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateRecordResponseVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateRecordResponseVariant1Metadata::DECODERS
+
+    # @return [String] The id of the newly created DNS record
+    attr_reader :uid
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the CreateRecordResponse SDK namespace.
+  module CreateRecordResponse
+    def self.from_hash(hash)
+      shape_mapping = {
+        'updated' => CreateRecordResponseVariant0
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      return decoded unless type.nil?
 
-# Defines the CreateRecordResponse SDK namespace.
-module CreateRecordResponse
-  def self.from_hash(hash)
-    shape_mapping = {
-      "updated" => CreateRecordResponseVariant0,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-    return CreateRecordResponseVariant1.from_hash(hash)
+      CreateRecordResponseVariant1.from_hash(hash)
+    end
   end
-end
 end

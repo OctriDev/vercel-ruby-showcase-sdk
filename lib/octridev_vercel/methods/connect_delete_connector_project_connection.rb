@@ -32,24 +32,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/connect/connectors/",
+            '/v1/connect/connectors/',
             SdkClient.encode_path_segment(connector),
-            "/projects/",
+            '/projects/',
             SdkClient.encode_path_segment(project_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'delete_connector_project_connection',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError },
+          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError }
         ).data
       end
     end

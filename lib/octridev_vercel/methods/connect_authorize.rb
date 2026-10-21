@@ -34,11 +34,10 @@ module OctridevVercel
         additional_params: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/connect/authorize/",
+            '/v1/connect/authorize/',
             SdkClient.encode_path_segment(connector)
           ].join,
           config: config,
@@ -55,12 +54,12 @@ module OctridevVercel
             'prompt' => prompt,
             'deviceCode' => device_code,
             'expiresInMs' => expires_in_ms,
-            'additionalParams' => additional_params,
+            'additionalParams' => additional_params
           },
           return_type: ::OctridevVercel::Methods::Connect::CreateConnectorAuthorizationRequestResponse,
           decoder: :json,
           operation_id: 'create_connector_authorization_request',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

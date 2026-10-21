@@ -85,17 +85,17 @@ module OctridevVercel
         NODE = 'node'
         GO = 'go'
         MASTRA = 'mastra'
-        VALUES = [
-          'services', 'container', 'blitzjs', 'nextjs', 'gatsby', 'remix', 'react-router', 'astro',
-          'hexo', 'eleventy', 'docusaurus-2', 'docusaurus', 'preact', 'solidstart-1', 'solidstart',
-          'dojo', 'ember', 'vue', 'scully', 'ionic-angular', 'angular', 'polymer', 'svelte',
-          'sveltekit', 'sveltekit-1', 'ionic-react', 'create-react-app', 'gridsome', 'umijs',
-          'sapper', 'saber', 'stencil', 'nuxtjs', 'redwoodjs', 'hugo', 'jekyll', 'brunch',
-          'middleman', 'zola', 'hydrogen', 'vite', 'tanstack-start', 'tanstack-start-lovable',
-          'vitepress', 'vuepress', 'parcel', 'fastapi', 'flask', 'fasthtml', 'django', 'ash',
-          'factory-eve', 'eve', 'sanity', 'sanity-v2', 'storybook', 'nitro', 'hono', 'express', 'h3',
-          'koa', 'nestjs', 'elysia', 'fastify', 'xmcp', 'python', 'ruby', 'rust', 'axum',
-          'actix-web', 'bun', 'node', 'go', 'mastra'
+        VALUES = %w[
+          services container blitzjs nextjs gatsby remix react-router astro
+          hexo eleventy docusaurus-2 docusaurus preact solidstart-1 solidstart
+          dojo ember vue scully ionic-angular angular polymer svelte
+          sveltekit sveltekit-1 ionic-react create-react-app gridsome umijs
+          sapper saber stencil nuxtjs redwoodjs hugo jekyll brunch
+          middleman zola hydrogen vite tanstack-start tanstack-start-lovable
+          vitepress vuepress parcel fastapi flask fasthtml django ash
+          factory-eve eve sanity sanity-v2 storybook nitro hono express h3
+          koa nestjs elysia fastify xmcp python ruby rust axum
+          actix-web bun node go mastra
         ].freeze
         def self.from_value(value)
           value
@@ -116,9 +116,9 @@ module OctridevVercel
         REPORT = 'report'
         STDERR = 'stderr'
         STDOUT = 'stdout'
-        VALUES = [
-          'command', 'delimiter', 'deployment-state', 'edge-function-invocation', 'exit', 'fatal',
-          'metric', 'middleware', 'middleware-invocation', 'report', 'stderr', 'stdout'
+        VALUES = %w[
+          command delimiter deployment-state edge-function-invocation exit fatal
+          metric middleware middleware-invocation report stderr stdout
         ].freeze
         def self.from_value(value)
           value
@@ -130,7 +130,7 @@ module OctridevVercel
         COMPLETE = 'COMPLETE'
         PENDING = 'PENDING'
         TIMEOUT = 'TIMEOUT'
-        VALUES = ['COMPLETE', 'PENDING', 'TIMEOUT'].freeze
+        VALUES = %w[COMPLETE PENDING TIMEOUT].freeze
         def self.from_value(value)
           value
         end
@@ -150,9 +150,9 @@ module OctridevVercel
         REPORT = 'report'
         STDERR = 'stderr'
         STDOUT = 'stdout'
-        VALUES = [
-          'command', 'delimiter', 'deployment-state', 'edge-function-invocation', 'exit', 'fatal',
-          'metric', 'middleware', 'middleware-invocation', 'report', 'stderr', 'stdout'
+        VALUES = %w[
+          command delimiter deployment-state edge-function-invocation exit fatal
+          metric middleware middleware-invocation report stderr stdout
         ].freeze
         def self.from_value(value)
           value
@@ -184,7 +184,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         SYSTEM = 'system'
         USER = 'user'
-        VALUES = ['app', 'integration', 'system', 'user'].freeze
+        VALUES = %w[app integration system user].freeze
         def self.from_value(value)
           value
         end
@@ -204,7 +204,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = ['enterprise', 'hobby', 'pro'].freeze
+        VALUES = %w[enterprise hobby pro].freeze
         def self.from_value(value)
           value
         end
@@ -214,7 +214,7 @@ module OctridevVercel
       module GetDeploymentEventsParameter
         BACKWARD = 'backward'
         FORWARD = 'forward'
-        VALUES = ['backward', 'forward'].freeze
+        VALUES = %w[backward forward].freeze
         def self.from_value(value)
           value
         end
@@ -244,7 +244,7 @@ module OctridevVercel
       module GetDeploymentEventsResponseVariant1Level
         ERROR = 'error'
         WARNING = 'warning'
-        VALUES = ['error', 'warning'].freeze
+        VALUES = %w[error warning].freeze
         def self.from_value(value)
           value
         end
@@ -275,7 +275,7 @@ module OctridevVercel
         BITBUCKET = 'bitbucket'
         GITHUB = 'github'
         GITLAB = 'gitlab'
-        VALUES = ['bitbucket', 'github', 'gitlab'].freeze
+        VALUES = %w[bitbucket github gitlab].freeze
         def self.from_value(value)
           value
         end
@@ -287,7 +287,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
+        VALUES = %w[canceled failed skipped succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -369,17 +369,17 @@ module OctridevVercel
         VUEPRESS = 'vuepress'
         XMCP = 'xmcp'
         ZOLA = 'zola'
-        VALUES = [
-          'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
-          'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
-          'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask',
-          'gatsby', 'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular',
-          'ionic-react', 'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node',
-          'nuxtjs', 'parcel', 'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix',
-          'ruby', 'rust', 'saber', 'sanity', 'sanity-v2', 'sapper', 'scully', 'services',
-          'solidstart', 'solidstart-1', 'stencil', 'storybook', 'svelte', 'sveltekit', 'sveltekit-1',
-          'tanstack-start', 'tanstack-start-lovable', 'umijs', 'vite', 'vitepress', 'vue',
-          'vuepress', 'xmcp', 'zola'
+        VALUES = %w[
+          actix-web angular ash astro axum blitzjs brunch bun container
+          create-react-app django docusaurus docusaurus-2 dojo eleventy elysia
+          ember eve express factory-eve fastapi fasthtml fastify flask
+          gatsby go gridsome h3 hexo hono hugo hydrogen ionic-angular
+          ionic-react jekyll koa mastra middleman nestjs nextjs nitro node
+          nuxtjs parcel polymer preact python react-router redwoodjs remix
+          ruby rust saber sanity sanity-v2 sapper scully services
+          solidstart solidstart-1 stencil storybook svelte sveltekit sveltekit-1
+          tanstack-start tanstack-start-lovable umijs vite vitepress vue
+          vuepress xmcp zola
         ].freeze
         def self.from_value(value)
           value
@@ -422,7 +422,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         NONE = 'none'
         STANDARD = 'standard'
-        VALUES = ['basic', 'enhanced', 'none', 'standard'].freeze
+        VALUES = %w[basic enhanced none standard].freeze
         def self.from_value(value)
           value
         end
@@ -442,9 +442,9 @@ module OctridevVercel
         REPORT = 'report'
         STDERR = 'stderr'
         STDOUT = 'stdout'
-        VALUES = [
-          'command', 'delimiter', 'deployment-state', 'edge-function-invocation', 'exit', 'fatal',
-          'metric', 'middleware', 'middleware-invocation', 'report', 'stderr', 'stdout'
+        VALUES = %w[
+          command delimiter deployment-state edge-function-invocation exit fatal
+          metric middleware middleware-invocation report stderr stdout
         ].freeze
         def self.from_value(value)
           value
@@ -455,7 +455,7 @@ module OctridevVercel
       module GetDeploymentsResponseDeploymentsItemTarget
         PRODUCTION = 'production'
         STAGING = 'staging'
-        VALUES = ['production', 'staging'].freeze
+        VALUES = %w[production staging].freeze
         def self.from_value(value)
           value
         end
@@ -467,7 +467,7 @@ module OctridevVercel
         PERFORMANCE_XL = 'performance_xl'
         STANDARD = 'standard'
         STANDARD_LEGACY = 'standard_legacy'
-        VALUES = ['performance', 'performance_xl', 'standard', 'standard_legacy'].freeze
+        VALUES = %w[performance performance_xl standard standard_legacy].freeze
         def self.from_value(value)
           value
         end
@@ -487,7 +487,7 @@ module OctridevVercel
         PROJECT_SETTING = 'PROJECT_SETTING'
         SKIP_QUEUE = 'SKIP_QUEUE'
         TEAM_SETTING = 'TEAM_SETTING'
-        VALUES = ['PROJECT_SETTING', 'SKIP_QUEUE', 'TEAM_SETTING'].freeze
+        VALUES = %w[PROJECT_SETTING SKIP_QUEUE TEAM_SETTING].freeze
         def self.from_value(value)
           value
         end
@@ -517,7 +517,7 @@ module OctridevVercel
       module CancelDeploymentResponseImagesRemotePatternsItemProtocol
         HTTP = 'http'
         HTTPS = 'https'
-        VALUES = ['http', 'https'].freeze
+        VALUES = %w[http https].freeze
         def self.from_value(value)
           value
         end
@@ -549,7 +549,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
+        VALUES = %w[basic enhanced standard turbo].freeze
         def self.from_value(value)
           value
         end

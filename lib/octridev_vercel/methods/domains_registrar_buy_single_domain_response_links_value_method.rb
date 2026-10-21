@@ -16,7 +16,7 @@ module OctridevVercel
         PUT = 'PUT'
         DELETE = 'DELETE'
         PATCH = 'PATCH'
-        VALUES = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'].freeze
+        VALUES = %w[GET POST PUT DELETE PATCH].freeze
         def self.from_value(value)
           value
         end
@@ -29,7 +29,7 @@ module OctridevVercel
         PUT = 'PUT'
         DELETE = 'DELETE'
         PATCH = 'PATCH'
-        VALUES = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'].freeze
+        VALUES = %w[GET POST PUT DELETE PATCH].freeze
         def self.from_value(value)
           value
         end
@@ -41,7 +41,7 @@ module OctridevVercel
         PURCHASING = 'purchasing'
         COMPLETED = 'completed'
         FAILED = 'failed'
-        VALUES = ['draft', 'purchasing', 'completed', 'failed'].freeze
+        VALUES = %w[draft purchasing completed failed].freeze
         def self.from_value(value)
           value
         end

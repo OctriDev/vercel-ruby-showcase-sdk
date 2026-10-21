@@ -12,8 +12,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListEnvironmentCustomResponseMetadata
         FIELDS = {
-          account_limit: "accountLimit",
-          environments: "environments",
+          account_limit: 'accountLimit',
+          environments: 'environments'
         }.freeze
         REQUIRED_FIELDS = %i[
           account_limit
@@ -25,7 +25,7 @@ module OctridevVercel
           end,
           environments: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Environment::ListEnvironmentCustomResponseEnvironmentsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -57,8 +57,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetCustomEnvironmentResponseBranchMatcherMetadata
         FIELDS = {
-          pattern: "pattern",
-          type: "type",
+          pattern: 'pattern',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           pattern
@@ -67,7 +67,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Environment::GetCustomEnvironmentResponseBranchMatcherType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -101,10 +101,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetCustomEnvironmentResponseDomainsItemVerificationItemMetadata
         FIELDS = {
-          domain: "domain",
-          reason: "reason",
-          type: "type",
-          value: "value",
+          domain: 'domain',
+          reason: 'reason',
+          type: 'type',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -112,8 +112,7 @@ module OctridevVercel
           type
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetCustomEnvironmentResponseDomainsItemVerificationItem.
@@ -143,17 +142,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetCustomEnvironmentResponseDomainsItemMetadata
         FIELDS = {
-          apex_name: "apexName",
-          created_at: "createdAt",
-          custom_environment_id: "customEnvironmentId",
-          git_branch: "gitBranch",
-          name: "name",
-          project_id: "projectId",
-          redirect: "redirect",
-          redirect_status_code: "redirectStatusCode",
-          updated_at: "updatedAt",
-          verification: "verification",
-          verified: "verified",
+          apex_name: 'apexName',
+          created_at: 'createdAt',
+          custom_environment_id: 'customEnvironmentId',
+          git_branch: 'gitBranch',
+          name: 'name',
+          project_id: 'projectId',
+          redirect: 'redirect',
+          redirect_status_code: 'redirectStatusCode',
+          updated_at: 'updatedAt',
+          verification: 'verification',
+          verified: 'verified'
         }.freeze
         REQUIRED_FIELDS = %i[
           apex_name
@@ -170,7 +169,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Environment::GetCustomEnvironmentResponseDomainsItemVerified.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -206,15 +205,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetCustomEnvironmentResponseMetadata
         FIELDS = {
-          branch_matcher: "branchMatcher",
-          created_at: "createdAt",
-          current_deployment_aliases: "currentDeploymentAliases",
-          description: "description",
-          domains: "domains",
-          id: "id",
-          slug: "slug",
-          type: "type",
-          updated_at: "updatedAt",
+          branch_matcher: 'branchMatcher',
+          created_at: 'createdAt',
+          current_deployment_aliases: 'currentDeploymentAliases',
+          description: 'description',
+          domains: 'domains',
+          id: 'id',
+          slug: 'slug',
+          type: 'type',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -232,7 +231,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Environment::GetCustomEnvironmentResponseType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -280,8 +279,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateCustomEnvironmentBranchMatcherMetadata
         FIELDS = {
-          type: "type",
-          pattern: "pattern",
+          type: 'type',
+          pattern: 'pattern'
         }.freeze
         REQUIRED_FIELDS = %i[
           type
@@ -290,7 +289,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Environment::UpdateCustomEnvironmentBranchMatcherType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -324,16 +323,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateCustomEnvironmentMetadata
         FIELDS = {
-          slug: "slug",
-          description: "description",
-          branch_matcher: "branchMatcher",
+          slug: 'slug',
+          description: 'description',
+          branch_matcher: 'branchMatcher'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           branch_matcher: lambda do |value|
             ::OctridevVercel::Methods::Environment::UpdateCustomEnvironmentBranchMatcher.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -368,8 +366,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateCustomEnvironmentResponseBranchMatcherMetadata
         FIELDS = {
-          pattern: "pattern",
-          type: "type",
+          pattern: 'pattern',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           pattern
@@ -378,7 +376,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Environment::UpdateCustomEnvironmentResponseBranchMatcherType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -412,10 +410,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateCustomEnvironmentResponseDomainsItemVerificationItemMetadata
         FIELDS = {
-          domain: "domain",
-          reason: "reason",
-          type: "type",
-          value: "value",
+          domain: 'domain',
+          reason: 'reason',
+          type: 'type',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -423,8 +421,7 @@ module OctridevVercel
           type
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateCustomEnvironmentResponseDomainsItemVerificationItem.
@@ -454,17 +451,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateCustomEnvironmentResponseDomainsItemMetadata
         FIELDS = {
-          apex_name: "apexName",
-          created_at: "createdAt",
-          custom_environment_id: "customEnvironmentId",
-          git_branch: "gitBranch",
-          name: "name",
-          project_id: "projectId",
-          redirect: "redirect",
-          redirect_status_code: "redirectStatusCode",
-          updated_at: "updatedAt",
-          verification: "verification",
-          verified: "verified",
+          apex_name: 'apexName',
+          created_at: 'createdAt',
+          custom_environment_id: 'customEnvironmentId',
+          git_branch: 'gitBranch',
+          name: 'name',
+          project_id: 'projectId',
+          redirect: 'redirect',
+          redirect_status_code: 'redirectStatusCode',
+          updated_at: 'updatedAt',
+          verification: 'verification',
+          verified: 'verified'
         }.freeze
         REQUIRED_FIELDS = %i[
           apex_name
@@ -481,7 +478,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Environment::UpdateCustomEnvironmentResponseDomainsItemVerified.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -517,15 +514,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateCustomEnvironmentResponseMetadata
         FIELDS = {
-          branch_matcher: "branchMatcher",
-          created_at: "createdAt",
-          current_deployment_aliases: "currentDeploymentAliases",
-          description: "description",
-          domains: "domains",
-          id: "id",
-          slug: "slug",
-          type: "type",
-          updated_at: "updatedAt",
+          branch_matcher: 'branchMatcher',
+          created_at: 'createdAt',
+          current_deployment_aliases: 'currentDeploymentAliases',
+          description: 'description',
+          domains: 'domains',
+          id: 'id',
+          slug: 'slug',
+          type: 'type',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -543,7 +540,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Environment::UpdateCustomEnvironmentResponseType.from_value(value)
-          end,
+          end
         }.freeze
       end
     end

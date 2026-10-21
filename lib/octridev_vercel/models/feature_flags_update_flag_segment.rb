@@ -5,666 +5,659 @@
 
 # feature_flags domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0Metadata
-  FIELDS = {
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    type
-  ].freeze
-end
-
-# API model for UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0.
-class UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0Metadata::DECODERS
-
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0Metadata
+    FIELDS = {
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {}.freeze
+    NULLABLE_FIELDS = %i[
+      type
+    ].freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0Metadata::NULLABLE_FIELDS)
+  # API model for UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0.
+  class UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0Metadata::DECODERS
+
+    attr_reader :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0Metadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1Metadata
-  FIELDS = {
-    type: "type",
-    kind: "kind",
-    attribute: "attribute",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    kind
-    attribute
-  ].freeze
-  DECODERS = {
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    type
-  ].freeze
-end
-
-# API model for UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1.
-class UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1Metadata::DECODERS
-
-  attr_reader :type, :kind, :attribute
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1Metadata
+    FIELDS = {
+      type: 'type',
+      kind: 'kind',
+      attribute: 'attribute'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      kind
+      attribute
+    ].freeze
+    DECODERS = {}.freeze
+    NULLABLE_FIELDS = %i[
+      type
+    ].freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1Metadata::NULLABLE_FIELDS)
+  # API model for UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1.
+  class UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1Metadata::DECODERS
+
+    attr_reader :type, :kind, :attribute
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1Metadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the UpdateFlagSegmentRequestDataRulesItemConditionsItemLhs SDK namespace.
+  module UpdateFlagSegmentRequestDataRulesItemConditionsItemLhs
+    def self.from_hash(hash)
+      shape_mapping = {
+        'kind' => UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      return decoded unless type.nil?
 
-# Defines the UpdateFlagSegmentRequestDataRulesItemConditionsItemLhs SDK namespace.
-module UpdateFlagSegmentRequestDataRulesItemConditionsItemLhs
-  def self.from_hash(hash)
-    shape_mapping = {
-      "kind" => UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-    return UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0.from_hash(hash)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX36f6331b52Metadata
-  FIELDS = {
-    label: "label",
-    note: "note",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    value
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX36f6331b52.
-class UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX36f6331b52
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX36f6331b52Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX36f6331b52Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX36f6331b52Metadata::DECODERS
-
-  attr_reader :label, :note, :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0.from_hash(hash)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX36f6331b52Metadata
+    FIELDS = {
+      label: 'label',
+      note: 'note',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      value
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX36f6331b52.
+  class UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX36f6331b52
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX36f6331b52Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX36f6331b52Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX36f6331b52Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX6313db80edMetadata
-  FIELDS = {
-    label: "label",
-    note: "note",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    value
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :label, :note, :value
 
-# API model for UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX6313db80ed.
-class UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX6313db80ed
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX6313db80edMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX6313db80edMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX6313db80edMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :label, :note, :value
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX6313db80edMetadata
+    FIELDS = {
+      label: 'label',
+      note: 'note',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      value
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX6313db80ed.
+  class UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX6313db80ed
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX6313db80edMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX6313db80edMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantX6313db80edMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Metadata
-  FIELDS = {
-    type: "type",
-    items: "items",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    items
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :label, :note, :value
 
-# API model for UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0.
-class UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :type, :items
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Metadata
+    FIELDS = {
+      type: 'type',
+      items: 'items'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      items
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0.
+  class UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1Metadata
-  FIELDS = {
-    type: "type",
-    pattern: "pattern",
-    flags: "flags",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    pattern
-    flags
-  ].freeze
-  DECODERS = {
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    type
-  ].freeze
-end
+    attr_reader :type, :items
 
-# API model for UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1.
-class UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :type, :pattern, :flags
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1Metadata::NULLABLE_FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1Metadata
+    FIELDS = {
+      type: 'type',
+      pattern: 'pattern',
+      flags: 'flags'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      pattern
+      flags
+    ].freeze
+    DECODERS = {}.freeze
+    NULLABLE_FIELDS = %i[
+      type
+    ].freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1.
+  class UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1Metadata::DECODERS
 
-# Defines the UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs SDK namespace.
-module UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs
-  def self.from_hash(hash)
-    return hash if hash.is_a?(::String)
-    return hash if hash.is_a?(::Float)
-    return Boolean.from_value(hash) if [true, false].include?(hash)
-    shape_mapping = {
-      "items" => UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0,
-      "pattern" => UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-  end
-end
+    attr_reader :type, :pattern, :flags
 
-# Defines the UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Type SDK namespace.
-module UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Type
-  LIST_INLINE = 'list/inline'
-  LIST = 'list'
-  VALUES = ['list/inline', 'list'].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant0Metadata
-  FIELDS = {
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    type
-  ].freeze
-end
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1Metadata::NULLABLE_FIELDS)
+    end
 
-# API model for UpdateFlagSegmentRequestDataRulesItemOutcomeVariant0.
-class UpdateFlagSegmentRequestDataRulesItemOutcomeVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant0Metadata::DECODERS
-
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant0Metadata::NULLABLE_FIELDS)
+  # Defines the UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs SDK namespace.
+  module UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs
+    def self.from_hash(hash)
+      return hash if hash.is_a?(::String)
+      return hash if hash.is_a?(::Float)
+      return Boolean.from_value(hash) if [true, false].include?(hash)
+
+      shape_mapping = {
+        'items' => UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0,
+        'pattern' => UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1BaseMetadata
-  FIELDS = {
-    type: "type",
-    kind: "kind",
-    attribute: "attribute",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    kind
-    attribute
-  ].freeze
-  DECODERS = {
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    type
-  ].freeze
-end
-
-# API model for UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Base.
-class UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Base
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1BaseMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1BaseMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1BaseMetadata::DECODERS
-
-  attr_reader :type, :kind, :attribute
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Type SDK namespace.
+  module UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0Type
+    LIST_INLINE = 'list/inline'
+    LIST = 'list'
+    VALUES = ['list/inline', 'list'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1BaseMetadata::NULLABLE_FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant0Metadata
+    FIELDS = {
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {}.freeze
+    NULLABLE_FIELDS = %i[
+      type
+    ].freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateFlagSegmentRequestDataRulesItemOutcomeVariant0.
+  class UpdateFlagSegmentRequestDataRulesItemOutcomeVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Metadata
-  FIELDS = {
-    type: "type",
-    base: "base",
-    pass_promille: "passPromille",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    base
-    pass_promille
-  ].freeze
-  DECODERS = {
-    base: lambda do |value|
-      ::OctridevVercel::UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Base.from_hash(value)
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    type
-  ].freeze
-end
+    attr_reader :type
 
-# API model for UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1.
-class UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :type, :base, :pass_promille
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant0Metadata::NULLABLE_FIELDS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Metadata::NULLABLE_FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1BaseMetadata
+    FIELDS = {
+      type: 'type',
+      kind: 'kind',
+      attribute: 'attribute'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      kind
+      attribute
+    ].freeze
+    DECODERS = {}.freeze
+    NULLABLE_FIELDS = %i[
+      type
+    ].freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Base.
+  class UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Base
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1BaseMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1BaseMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1BaseMetadata::DECODERS
 
-# Defines the UpdateFlagSegmentRequestDataRulesItemOutcome SDK namespace.
-module UpdateFlagSegmentRequestDataRulesItemOutcome
-  def self.from_hash(hash)
-    shape_mapping = {
-      "base" => UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-    return UpdateFlagSegmentRequestDataRulesItemOutcomeVariant0.from_hash(hash)
-  end
-end
+    attr_reader :type, :kind, :attribute
 
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptionsMetadata
-  FIELDS = {
-    ignore_case: "ignoreCase",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    ignore_case: lambda do |value|
-      ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCX63a82067d2.from_value(value)
-    end,
-  }.freeze
-end
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-# API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptions.
-class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptions
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptionsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptionsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptionsMetadata::DECODERS
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1BaseMetadata::NULLABLE_FIELDS)
+    end
 
-  attr_reader :ignore_case
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Metadata
+    FIELDS = {
+      type: 'type',
+      base: 'base',
+      pass_promille: 'passPromille'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      base
+      pass_promille
+    ].freeze
+    DECODERS = {
+      base: lambda do |value|
+        ::OctridevVercel::UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Base.from_hash(value)
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      type
+    ].freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1.
+  class UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant0Metadata
-  FIELDS = {
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX50ce6c60de.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :type, :base, :pass_promille
 
-# API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant0.
-class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Metadata::NULLABLE_FIELDS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the UpdateFlagSegmentRequestDataRulesItemOutcome SDK namespace.
+  module UpdateFlagSegmentRequestDataRulesItemOutcome
+    def self.from_hash(hash)
+      shape_mapping = {
+        'base' => UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      return decoded unless type.nil?
+
+      UpdateFlagSegmentRequestDataRulesItemOutcomeVariant0.from_hash(hash)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant1Metadata
-  FIELDS = {
-    attribute: "attribute",
-    kind: "kind",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    attribute
-    kind
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX4b04fa94f1.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant1.
-class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant1Metadata::DECODERS
-
-  attr_reader :attribute, :kind, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptionsMetadata
+    FIELDS = {
+      ignore_case: 'ignoreCase'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      ignore_case: lambda do |value|
+        ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCX63a82067d2.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptions.
+  class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptions
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptionsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptionsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptionsMetadata::DECODERS
+
+    attr_reader :ignore_case
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX00427006d0Metadata
-  FIELDS = {
-    label: "label",
-    note: "note",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    value
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX00427006d0.
-class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX00427006d0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX00427006d0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX00427006d0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX00427006d0Metadata::DECODERS
-
-  attr_reader :label, :note, :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant0Metadata
+    FIELDS = {
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX50ce6c60de.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant0.
+  class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant0Metadata::DECODERS
+
+    attr_reader :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX579c112e44Metadata
-  FIELDS = {
-    label: "label",
-    note: "note",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    value
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX579c112e44.
-class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX579c112e44
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX579c112e44Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX579c112e44Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX579c112e44Metadata::DECODERS
-
-  attr_reader :label, :note, :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant1Metadata
+    FIELDS = {
+      attribute: 'attribute',
+      kind: 'kind',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      attribute
+      kind
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX4b04fa94f1.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant1.
+  class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant1Metadata::DECODERS
+
+    attr_reader :attribute, :kind, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant2Metadata
-  FIELDS = {
-    items: "items",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    items
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX8b48b3ea27.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant2.
-class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant2Metadata::DECODERS
-
-  attr_reader :items, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX00427006d0Metadata
+    FIELDS = {
+      label: 'label',
+      note: 'note',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      value
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX00427006d0.
+  class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX00427006d0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX00427006d0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX00427006d0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX00427006d0Metadata::DECODERS
+
+    attr_reader :label, :note, :value
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX579c112e44Metadata
+    FIELDS = {
+      label: 'label',
+      note: 'note',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      value
+    ].freeze
+    DECODERS = {}.freeze
   end
-end
 
-# Internal model hydration metadata.
-class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant3Metadata
-  FIELDS = {
-    flags: "flags",
-    pattern: "pattern",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    flags
-    pattern
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRXe2a6119c3d.from_value(value)
-    end,
-  }.freeze
-end
+  # API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX579c112e44.
+  class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX579c112e44
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX579c112e44Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX579c112e44Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX579c112e44Metadata::DECODERS
+
+    attr_reader :label, :note, :value
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant2Metadata
+    FIELDS = {
+      items: 'items',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      items
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX8b48b3ea27.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant2.
+  class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant2Metadata::DECODERS
+
+    attr_reader :items, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant3Metadata
+    FIELDS = {
+      flags: 'flags',
+      pattern: 'pattern',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      flags
+      pattern
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRXe2a6119c3d.from_value(value)
+      end
+    }.freeze
+  end
 end

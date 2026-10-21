@@ -25,29 +25,28 @@ module OctridevVercel
         note: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('conditionGroup', condition_group, min: 1, max: 25)
 
         Validation.if_given(note) { Validation.validate_length('note', note, max: 500) }
 
         SdkClient.request(
           'POST',
-          "/v1/security/firewall/bypass/rules",
+          '/v1/security/firewall/bypass/rules',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'slug' => QueryValue.new(slug, style: 'form', explode: true),
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           body: {
             'domain' => domain,
             'conditionGroup' => condition_group,
-            'note' => note,
+            'note' => note
           },
           return_type: ::OctridevVercel::Methods::Security::CreateConditionalBypassResponse,
           decoder: :json,
           operation_id: 'create_conditional_bypass',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

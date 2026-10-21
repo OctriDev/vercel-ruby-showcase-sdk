@@ -21,25 +21,24 @@ module OctridevVercel
         message:,
         request_options: nil
       )
-
-        Validation.validate_length('message', message, max: 44000)
+        Validation.validate_length('message', message, max: 44_000)
         Validation.validate_pattern('message', message, '^[A-Za-z0-9+/]*={0,2}$')
 
         SdkClient.request(
           'POST',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id),
-            "/sign/message"
+            '/sign/message'
           ].join,
           config: config,
           body: {
-            'message' => message,
+            'message' => message
           },
           return_type: ::OctridevVercel::Methods::Kms::SignKmsMessageResponse,
           decoder: :json,
           operation_id: 'sign_kms_message',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

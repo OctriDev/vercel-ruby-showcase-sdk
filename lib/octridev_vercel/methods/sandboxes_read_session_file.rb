@@ -31,26 +31,25 @@ module OctridevVercel
         cwd: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/fs/read"
+            '/fs/read'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'path' => path,
-            'cwd' => cwd,
+            'cwd' => cwd
           },
           decoder: :bytes,
           operation_id: 'read_session_file',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

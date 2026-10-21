@@ -77,7 +77,6 @@ module OctridevVercel
         tags: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 128)
         Validation.validate_pattern('name', name, '^[a-zA-Z0-9_-]+$')
 
@@ -103,15 +102,15 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/",
+            '/v2/sandboxes/',
             SdkClient.encode_path_segment(name),
-            "/fork"
+            '/fork'
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'networkPolicy' => network_policy,
@@ -128,12 +127,12 @@ module OctridevVercel
             'persistent' => persistent,
             'snapshotExpiration' => snapshot_expiration,
             'keepLastSnapshots' => keep_last_snapshots,
-            'tags' => tags,
+            'tags' => tags
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::CreateSandboxesByNameForkV2Response,
           decoder: :json,
           operation_id: 'create_sandboxes_by_name_fork_v2',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -208,7 +207,6 @@ module OctridevVercel
         tags: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 128)
         Validation.validate_pattern('name', name, '^[a-zA-Z0-9_-]+$')
 
@@ -234,15 +232,15 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            "/v3/sandboxes/",
+            '/v3/sandboxes/',
             SdkClient.encode_path_segment(name),
-            "/fork"
+            '/fork'
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'networkPolicy' => network_policy,
@@ -259,12 +257,12 @@ module OctridevVercel
             'persistent' => persistent,
             'snapshotExpiration' => snapshot_expiration,
             'keepLastSnapshots' => keep_last_snapshots,
-            'tags' => tags,
+            'tags' => tags
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::CreateSandboxesByNameForkV3Response,
           decoder: :json,
           operation_id: 'create_sandboxes_by_name_fork_v3',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

@@ -26,7 +26,6 @@ module OctridevVercel
         digest:,
         request_options: nil
       )
-
         Validation.validate_length('teamSlug', team_slug, max: 255)
         Validation.validate_pattern('teamSlug', team_slug, '^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$')
 
@@ -42,19 +41,19 @@ module OctridevVercel
         SdkClient.request(
           'HEAD',
           [
-            "/v2/",
+            '/v2/',
             SdkClient.encode_path_segment(team_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(project_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(repository_name),
-            "/blobs/",
+            '/blobs/',
             SdkClient.encode_path_segment(digest)
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'head_by_team_slug_by_project_slug_by_repository_name_blobs_by_digest',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -67,15 +66,7 @@ module OctridevVercel
       #   component.
       # @param repository_name [String] Single Docker repository name component.
       # @param digest [String] Content-addressable digest (algorithm:hex).
-      singleton_class.define_method(:get_by_team_slug_by_project_slug_by_repository_name_blobs_by_digest) do |
-        config:,
-        team_slug:,
-        project_slug:,
-        repository_name:,
-        digest:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_by_team_slug_by_project_slug_by_repository_name_blobs_by_digest) do |config:, team_slug:, project_slug:, repository_name:, digest:, request_options: nil|
         Validation.validate_length('teamSlug', team_slug, max: 255)
         Validation.validate_pattern('teamSlug', team_slug, '^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$')
 
@@ -91,19 +82,19 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            "/v2/",
+            '/v2/',
             SdkClient.encode_path_segment(team_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(project_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(repository_name),
-            "/blobs/",
+            '/blobs/',
             SdkClient.encode_path_segment(digest)
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'get_by_team_slug_by_project_slug_by_repository_name_blobs_by_digest',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -124,7 +115,6 @@ module OctridevVercel
         digest:,
         request_options: nil
       )
-
         Validation.validate_length('teamSlug', team_slug, max: 255)
         Validation.validate_pattern('teamSlug', team_slug, '^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$')
 
@@ -140,19 +130,19 @@ module OctridevVercel
         SdkClient.request(
           'DELETE',
           [
-            "/v2/",
+            '/v2/',
             SdkClient.encode_path_segment(team_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(project_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(repository_name),
-            "/blobs/",
+            '/blobs/',
             SdkClient.encode_path_segment(digest)
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'delete_by_team_slug_by_project_slug_by_repository_name_blobs_by_digest',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -165,15 +155,7 @@ module OctridevVercel
       #   component.
       # @param repository_name [String] Single Docker repository name component.
       # @param uuid [String] Blob upload session identifier.
-      singleton_class.define_method(:get_by_team_slug_by_project_slug_by_repository_name_blobs_uploads_by_uuid) do |
-        config:,
-        team_slug:,
-        project_slug:,
-        repository_name:,
-        uuid:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_by_team_slug_by_project_slug_by_repository_name_blobs_uploads_by_uuid) do |config:, team_slug:, project_slug:, repository_name:, uuid:, request_options: nil|
         Validation.validate_length('teamSlug', team_slug, max: 255)
         Validation.validate_pattern('teamSlug', team_slug, '^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$')
 
@@ -189,19 +171,19 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            "/v2/",
+            '/v2/',
             SdkClient.encode_path_segment(team_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(project_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(repository_name),
-            "/blobs/uploads/",
+            '/blobs/uploads/',
             SdkClient.encode_path_segment(uuid)
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'get_by_team_slug_by_project_slug_by_repository_name_blobs_uploads_by_uuid',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -222,7 +204,6 @@ module OctridevVercel
         uuid:,
         request_options: nil
       )
-
         Validation.validate_length('teamSlug', team_slug, max: 255)
         Validation.validate_pattern('teamSlug', team_slug, '^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$')
 
@@ -238,19 +219,19 @@ module OctridevVercel
         SdkClient.request(
           'DELETE',
           [
-            "/v2/",
+            '/v2/',
             SdkClient.encode_path_segment(team_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(project_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(repository_name),
-            "/blobs/uploads/",
+            '/blobs/uploads/',
             SdkClient.encode_path_segment(uuid)
           ].join,
           config: config,
           decoder: :empty,
           operation_id: 'delete_by_team_slug_by_project_slug_by_repository_name_blobs_uploads_by_uuid',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -271,7 +252,6 @@ module OctridevVercel
         uuid:,
         request_options: nil
       )
-
         Validation.validate_length('teamSlug', team_slug, max: 255)
         Validation.validate_pattern('teamSlug', team_slug, '^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$')
 
@@ -287,19 +267,19 @@ module OctridevVercel
         SdkClient.request(
           'PATCH',
           [
-            "/v2/",
+            '/v2/',
             SdkClient.encode_path_segment(team_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(project_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(repository_name),
-            "/blobs/uploads/",
+            '/blobs/uploads/',
             SdkClient.encode_path_segment(uuid)
           ].join,
           config: config,
           decoder: :json,
           operation_id: 'update_by_team_slug_by_project_slug_by_repository_name_blobs_uploads_by_uuid',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -322,7 +302,6 @@ module OctridevVercel
         digest:,
         request_options: nil
       )
-
         Validation.validate_length('teamSlug', team_slug, max: 255)
         Validation.validate_pattern('teamSlug', team_slug, '^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$')
 
@@ -341,22 +320,22 @@ module OctridevVercel
         SdkClient.request(
           'PUT',
           [
-            "/v2/",
+            '/v2/',
             SdkClient.encode_path_segment(team_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(project_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(repository_name),
-            "/blobs/uploads/",
+            '/blobs/uploads/',
             SdkClient.encode_path_segment(uuid)
           ].join,
           config: config,
           query: {
-            'digest' => QueryValue.new(digest, style: 'form', explode: true),
+            'digest' => QueryValue.new(digest, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'replace_by_team_slug_by_project_slug_by_repository_name_blobs_uploads_by_uuid',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -379,7 +358,6 @@ module OctridevVercel
         from: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('teamSlug', team_slug, max: 255)
         Validation.validate_pattern('teamSlug', team_slug, '^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$')
 
@@ -402,22 +380,22 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            "/v2/",
+            '/v2/',
             SdkClient.encode_path_segment(team_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(project_slug),
-            "/",
+            '/',
             SdkClient.encode_path_segment(repository_name),
-            "/blobs/uploads/"
+            '/blobs/uploads/'
           ].join,
           config: config,
           query: {
             'mount' => QueryValue.new(mount, style: 'form', explode: true),
-            'from' => QueryValue.new(from, style: 'form', explode: true),
+            'from' => QueryValue.new(from, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'create_by_team_slug_by_project_slug_by_repository_name_blobs_uploads',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

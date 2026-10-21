@@ -23,24 +23,23 @@ module OctridevVercel
         partial: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PUT',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id),
-            "/secrets"
+            '/secrets'
           ].join,
           config: config,
           body: {
             'secrets' => secrets,
-            'partial' => partial,
+            'partial' => partial
           },
           decoder: :empty,
           operation_id: 'update_resource_secrets_by_id',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

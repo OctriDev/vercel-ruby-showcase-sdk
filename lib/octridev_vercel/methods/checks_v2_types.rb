@@ -12,21 +12,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListProjectChecksResponseChecksItemMetadata
         FIELDS = {
-          blocks: "blocks",
-          created_at: "createdAt",
-          deleted_at: "deletedAt",
-          id: "id",
-          is_rerequestable: "isRerequestable",
-          name: "name",
-          owner_id: "ownerId",
-          project_id: "projectId",
-          requires: "requires",
-          source: "source",
-          source_integration_configuration_id: "sourceIntegrationConfigurationId",
-          source_kind: "sourceKind",
-          targets: "targets",
-          timeout: "timeout",
-          updated_at: "updatedAt",
+          blocks: 'blocks',
+          created_at: 'createdAt',
+          deleted_at: 'deletedAt',
+          id: 'id',
+          is_rerequestable: 'isRerequestable',
+          name: 'name',
+          owner_id: 'ownerId',
+          project_id: 'projectId',
+          requires: 'requires',
+          source: 'source',
+          source_integration_configuration_id: 'sourceIntegrationConfigurationId',
+          source_kind: 'sourceKind',
+          targets: 'targets',
+          timeout: 'timeout',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           blocks
@@ -58,7 +58,7 @@ module OctridevVercel
           end,
           source_kind: lambda do |value|
             ::OctridevVercel::Methods::ChecksV2::ListProjectChecksResponseChecksItemSourceKind.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -92,8 +92,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListProjectChecksResponseMetadata
         FIELDS = {
-          available_native_checks: "availableNativeChecks",
-          checks: "checks",
+          available_native_checks: 'availableNativeChecks',
+          checks: 'checks'
         }.freeze
         REQUIRED_FIELDS = %i[
           available_native_checks
@@ -102,7 +102,7 @@ module OctridevVercel
         DECODERS = {
           checks: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::ChecksV2::ListProjectChecksResponseChecksItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -132,13 +132,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectCheckMetadata
         FIELDS = {
-          name: "name",
-          is_rerequestable: "isRerequestable",
-          requires: "requires",
-          targets: "targets",
-          blocks: "blocks",
-          source: "source",
-          timeout: "timeout",
+          name: 'name',
+          is_rerequestable: 'isRerequestable',
+          requires: 'requires',
+          targets: 'targets',
+          blocks: 'blocks',
+          source: 'source',
+          timeout: 'timeout'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -153,7 +153,7 @@ module OctridevVercel
           end,
           source: lambda do |value|
             ::OctridevVercel::CreateProjectCheckRequestSource.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -185,21 +185,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectCheckResponseMetadata
         FIELDS = {
-          blocks: "blocks",
-          created_at: "createdAt",
-          deleted_at: "deletedAt",
-          id: "id",
-          is_rerequestable: "isRerequestable",
-          name: "name",
-          owner_id: "ownerId",
-          project_id: "projectId",
-          requires: "requires",
-          source: "source",
-          source_integration_configuration_id: "sourceIntegrationConfigurationId",
-          source_kind: "sourceKind",
-          targets: "targets",
-          timeout: "timeout",
-          updated_at: "updatedAt",
+          blocks: 'blocks',
+          created_at: 'createdAt',
+          deleted_at: 'deletedAt',
+          id: 'id',
+          is_rerequestable: 'isRerequestable',
+          name: 'name',
+          owner_id: 'ownerId',
+          project_id: 'projectId',
+          requires: 'requires',
+          source: 'source',
+          source_integration_configuration_id: 'sourceIntegrationConfigurationId',
+          source_kind: 'sourceKind',
+          targets: 'targets',
+          timeout: 'timeout',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           blocks
@@ -231,7 +231,7 @@ module OctridevVercel
           end,
           source_kind: lambda do |value|
             ::OctridevVercel::Methods::ChecksV2::CreateProjectCheckResponseSourceKind.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -265,21 +265,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectCheckResponseMetadata
         FIELDS = {
-          blocks: "blocks",
-          created_at: "createdAt",
-          deleted_at: "deletedAt",
-          id: "id",
-          is_rerequestable: "isRerequestable",
-          name: "name",
-          owner_id: "ownerId",
-          project_id: "projectId",
-          requires: "requires",
-          source: "source",
-          source_integration_configuration_id: "sourceIntegrationConfigurationId",
-          source_kind: "sourceKind",
-          targets: "targets",
-          timeout: "timeout",
-          updated_at: "updatedAt",
+          blocks: 'blocks',
+          created_at: 'createdAt',
+          deleted_at: 'deletedAt',
+          id: 'id',
+          is_rerequestable: 'isRerequestable',
+          name: 'name',
+          owner_id: 'ownerId',
+          project_id: 'projectId',
+          requires: 'requires',
+          source: 'source',
+          source_integration_configuration_id: 'sourceIntegrationConfigurationId',
+          source_kind: 'sourceKind',
+          targets: 'targets',
+          timeout: 'timeout',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           blocks
@@ -311,7 +311,7 @@ module OctridevVercel
           end,
           source_kind: lambda do |value|
             ::OctridevVercel::Methods::ChecksV2::GetProjectCheckResponseSourceKind.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -345,22 +345,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectCheckMetadata
         FIELDS = {
-          name: "name",
-          is_rerequestable: "isRerequestable",
-          requires: "requires",
-          targets: "targets",
-          blocks: "blocks",
-          timeout: "timeout",
+          name: 'name',
+          is_rerequestable: 'isRerequestable',
+          requires: 'requires',
+          targets: 'targets',
+          blocks: 'blocks',
+          timeout: 'timeout'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           requires: lambda do |value|
             ::OctridevVercel::Methods::ChecksV2::UpdateProjectCheckRequires.from_value(value)
           end,
           blocks: lambda do |value|
             ::OctridevVercel::Methods::ChecksV2::UpdateProjectCheckBlocks.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -390,21 +389,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectCheckResponseMetadata
         FIELDS = {
-          blocks: "blocks",
-          created_at: "createdAt",
-          deleted_at: "deletedAt",
-          id: "id",
-          is_rerequestable: "isRerequestable",
-          name: "name",
-          owner_id: "ownerId",
-          project_id: "projectId",
-          requires: "requires",
-          source: "source",
-          source_integration_configuration_id: "sourceIntegrationConfigurationId",
-          source_kind: "sourceKind",
-          targets: "targets",
-          timeout: "timeout",
-          updated_at: "updatedAt",
+          blocks: 'blocks',
+          created_at: 'createdAt',
+          deleted_at: 'deletedAt',
+          id: 'id',
+          is_rerequestable: 'isRerequestable',
+          name: 'name',
+          owner_id: 'ownerId',
+          project_id: 'projectId',
+          requires: 'requires',
+          source: 'source',
+          source_integration_configuration_id: 'sourceIntegrationConfigurationId',
+          source_kind: 'sourceKind',
+          targets: 'targets',
+          timeout: 'timeout',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           blocks
@@ -436,7 +435,7 @@ module OctridevVercel
           end,
           source_kind: lambda do |value|
             ::OctridevVercel::Methods::ChecksV2::UpdateProjectCheckResponseSourceKind.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -470,7 +469,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectCheckResponseMetadata
         FIELDS = {
-          success: "success",
+          success: 'success'
         }.freeze
         REQUIRED_FIELDS = %i[
           success
@@ -478,7 +477,7 @@ module OctridevVercel
         DECODERS = {
           success: lambda do |value|
             ::OctridevVercel::Methods::ChecksV2::DeleteProjectCheckResponseSuccess.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -508,7 +507,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListCheckRunsResponseMetadata
         FIELDS = {
-          runs: "runs",
+          runs: 'runs'
         }.freeze
         REQUIRED_FIELDS = %i[
           runs
@@ -516,7 +515,7 @@ module OctridevVercel
         DECODERS = {
           runs: lambda do |value|
             value&.map { |item| ::OctridevVercel::ListCheckRunsResponseRunsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -546,7 +545,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListDeploymentCheckRunsResponseMetadata
         FIELDS = {
-          runs: "runs",
+          runs: 'runs'
         }.freeze
         REQUIRED_FIELDS = %i[
           runs
@@ -554,7 +553,7 @@ module OctridevVercel
         DECODERS = {
           runs: lambda do |value|
             value&.map { |item| ::OctridevVercel::ListDeploymentCheckRunsResponseRunsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
     end

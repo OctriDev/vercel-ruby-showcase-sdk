@@ -34,31 +34,30 @@ module OctridevVercel
         token_claims: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('environments', environments, min: 1)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id),
-            "/policies"
+            '/policies'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'kind' => kind,
             'projectId' => project_id,
             'environments' => environments,
-            'tokenClaims' => token_claims,
+            'tokenClaims' => token_claims
           },
           return_type: ::OctridevVercel::CreateKmsIssuerPolicyResponse,
           decoder: :json,
           operation_id: 'create_kms_issuer_policy',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

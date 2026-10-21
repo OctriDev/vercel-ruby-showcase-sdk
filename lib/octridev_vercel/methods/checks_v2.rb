@@ -24,24 +24,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
           [
-            "/v2/projects/",
+            '/v2/projects/',
             SdkClient.encode_path_segment(project_id_or_name),
-            "/checks"
+            '/checks'
           ].join,
           config: config,
           query: {
             'blocks' => QueryValue.new(blocks, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::ChecksV2::ListProjectChecksResponse,
           decoder: :json,
           operation_id: 'list_project_checks',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -68,18 +67,17 @@ module OctridevVercel
         timeout: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/projects/",
+            '/v2/projects/',
             SdkClient.encode_path_segment(project_id_or_name),
-            "/checks"
+            '/checks'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
@@ -88,12 +86,12 @@ module OctridevVercel
             'targets' => targets,
             'blocks' => blocks,
             'source' => source,
-            'timeout' => timeout,
+            'timeout' => timeout
           },
           return_type: ::OctridevVercel::Methods::ChecksV2::CreateProjectCheckResponse,
           decoder: :json,
           operation_id: 'create_project_check',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -105,32 +103,24 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_project_check) do |
-        config:,
-        project_id_or_name:,
-        check_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_project_check) do |config:, project_id_or_name:, check_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v2/projects/",
+            '/v2/projects/',
             SdkClient.encode_path_segment(project_id_or_name),
-            "/checks/",
+            '/checks/',
             SdkClient.encode_path_segment(check_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::ChecksV2::GetProjectCheckResponse,
           decoder: :json,
           operation_id: 'get_project_check',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -155,19 +145,18 @@ module OctridevVercel
         timeout: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v2/projects/",
+            '/v2/projects/',
             SdkClient.encode_path_segment(project_id_or_name),
-            "/checks/",
+            '/checks/',
             SdkClient.encode_path_segment(check_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
@@ -175,12 +164,12 @@ module OctridevVercel
             'requires' => requires,
             'targets' => targets,
             'blocks' => blocks,
-            'timeout' => timeout,
+            'timeout' => timeout
           },
           return_type: ::OctridevVercel::Methods::ChecksV2::UpdateProjectCheckResponse,
           decoder: :json,
           operation_id: 'update_project_check',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -199,24 +188,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v2/projects/",
+            '/v2/projects/',
             SdkClient.encode_path_segment(project_id_or_name),
-            "/checks/",
+            '/checks/',
             SdkClient.encode_path_segment(check_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::ChecksV2::DeleteProjectCheckResponse,
           decoder: :json,
           operation_id: 'delete_project_check',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

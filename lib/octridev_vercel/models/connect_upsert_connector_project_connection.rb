@@ -5,574 +5,574 @@
 
 # connect domain models
 module OctridevVercel
-# API model for ConnectUpsertProjectConnectionRequest.
-# Environments enabled for a connector project connection.
-class ConnectUpsertProjectConnectionRequest
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectUpsertProjectConnectionRequestMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectUpsertProjectConnectionRequestMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectUpsertProjectConnectionRequestMetadata::DECODERS
+  # API model for ConnectUpsertProjectConnectionRequest.
+  # Environments enabled for a connector project connection.
+  class ConnectUpsertProjectConnectionRequest
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectUpsertProjectConnectionRequestMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectUpsertProjectConnectionRequestMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectUpsertProjectConnectionRequestMetadata::DECODERS
 
-  # @return [Array_of_String] One or more built-in environment names or stable custom environment IDs that belong to the project. Duplicate values are accepted and removed.
-  attr_reader :environments
+    # @return [Array_of_String] One or more built-in environment names or stable custom environment IDs that belong to the project. Duplicate values are accepted and removed.
+    attr_reader :environments
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant0Metadata
-  FIELDS = {
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateConnectorAuthorizationRequestRequestSubjectVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateConnectorAuthorizationRequestRequestSubjectVariant0.
-class CreateConnectorAuthorizationRequestRequestSubjectVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant0Metadata::DECODERS
-
-  attr_reader :type
-  # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
-  attr_reader :additional_properties
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS, extras: true)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant1Metadata
-  FIELDS = {
-    type: "type",
-    id: "id",
-    issuer: "issuer",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateConnectorAuthorizationRequestRequestSubjectVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateConnectorAuthorizationRequestRequestSubjectVariant1.
-class CreateConnectorAuthorizationRequestRequestSubjectVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant1Metadata::DECODERS
-
-  attr_reader :type, :id, :issuer
-  # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
-  attr_reader :additional_properties
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS, extras: true)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant2Metadata
-  FIELDS = {
-    type: "type",
-    sub: "sub",
-    iss: "iss",
-    aud: "aud",
-    additional_claims: "additionalClaims",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateConnectorAuthorizationRequestRequestSubjectVariant2Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateConnectorAuthorizationRequestRequestSubjectVariant2.
-class CreateConnectorAuthorizationRequestRequestSubjectVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant2Metadata::DECODERS
-
-  attr_reader :type, :sub, :iss, :aud, :additional_claims
-  # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
-  attr_reader :additional_properties
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS, extras: true)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant3Metadata
-  FIELDS = {
-    type: "type",
-    token: "token",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    token
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateConnectorAuthorizationRequestRequestSubjectVariant3Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateConnectorAuthorizationRequestRequestSubjectVariant3.
-class CreateConnectorAuthorizationRequestRequestSubjectVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant3Metadata::DECODERS
-
-  attr_reader :type, :token
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant4Metadata
-  FIELDS = {
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for CreateConnectorAuthorizationRequestRequestSubjectVariant4.
-class CreateConnectorAuthorizationRequestRequestSubjectVariant4
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant4Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant4Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant4Metadata::DECODERS
-
-  attr_reader :type
-  # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
-  attr_reader :additional_properties
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS, extras: true)
-  end
-end
-
-# Defines the CreateConnectorAuthorizationRequestRequestSubject SDK namespace.
-module CreateConnectorAuthorizationRequestRequestSubject
-  def self.from_hash(hash)
-    shape_mapping = {
-      "token" => CreateConnectorAuthorizationRequestRequestSubjectVariant3,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-    lossy = nil
-    [CreateConnectorAuthorizationRequestRequestSubjectVariant0, CreateConnectorAuthorizationRequestRequestSubjectVariant1, CreateConnectorAuthorizationRequestRequestSubjectVariant2, CreateConnectorAuthorizationRequestRequestSubjectVariant4].each do |type|
-      decoded = type.from_hash(hash)
-      return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-      lossy ||= decoded
-    rescue ::StandardError
-      next
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
     end
-    return lossy unless lossy.nil?
-  end
-end
 
-# Defines the CreateConnectorAuthorizationRequestRequestSubjectVariant0Type SDK namespace.
-module CreateConnectorAuthorizationRequestRequestSubjectVariant0Type
-  APP = 'app'
-  VALUES = ['app'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateConnectorAuthorizationRequestRequestSubjectVariant1Type SDK namespace.
-module CreateConnectorAuthorizationRequestRequestSubjectVariant1Type
-  USER = 'user'
-  VALUES = ['user'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateConnectorAuthorizationRequestRequestSubjectVariant2Type SDK namespace.
-module CreateConnectorAuthorizationRequestRequestSubjectVariant2Type
-  JWT_BEARER = 'jwt-bearer'
-  VALUES = ['jwt-bearer'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateConnectorAuthorizationRequestRequestSubjectVariant3Type SDK namespace.
-module CreateConnectorAuthorizationRequestRequestSubjectVariant3Type
-  TOKEN = 'token'
-  VALUES = ['token'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the CreateConnectorAuthorizationRequestRequestSubjectVariant4Type SDK namespace.
-module CreateConnectorAuthorizationRequestRequestSubjectVariant4Type
-  APP = 'app'
-  USER = 'user'
-  JWT_BEARER = 'jwt-bearer'
-  TOKEN = 'token'
-  VALUES = ['app', 'user', 'jwt-bearer', 'token'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetConnectorTokenRequestSubjectVariant0Metadata
-  FIELDS = {
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetConnectorTokenRequestSubjectVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetConnectorTokenRequestSubjectVariant0.
-class GetConnectorTokenRequestSubjectVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetConnectorTokenRequestSubjectVariant0Metadata::DECODERS
-
-  attr_reader :type
-  # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
-  attr_reader :additional_properties
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS, extras: true)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetConnectorTokenRequestSubjectVariant1Metadata
-  FIELDS = {
-    type: "type",
-    id: "id",
-    issuer: "issuer",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetConnectorTokenRequestSubjectVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetConnectorTokenRequestSubjectVariant1.
-class GetConnectorTokenRequestSubjectVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetConnectorTokenRequestSubjectVariant1Metadata::DECODERS
-
-  attr_reader :type, :id, :issuer
-  # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
-  attr_reader :additional_properties
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS, extras: true)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetConnectorTokenRequestSubjectVariant2Metadata
-  FIELDS = {
-    type: "type",
-    sub: "sub",
-    iss: "iss",
-    aud: "aud",
-    additional_claims: "additionalClaims",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetConnectorTokenRequestSubjectVariant2Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetConnectorTokenRequestSubjectVariant2.
-class GetConnectorTokenRequestSubjectVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetConnectorTokenRequestSubjectVariant2Metadata::DECODERS
-
-  attr_reader :type, :sub, :iss, :aud, :additional_claims
-  # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
-  attr_reader :additional_properties
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS, extras: true)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetConnectorTokenRequestSubjectVariant3Metadata
-  FIELDS = {
-    type: "type",
-    token: "token",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    token
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetConnectorTokenRequestSubjectVariant3Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetConnectorTokenRequestSubjectVariant3.
-class GetConnectorTokenRequestSubjectVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetConnectorTokenRequestSubjectVariant3Metadata::DECODERS
-
-  attr_reader :type, :token
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetConnectorTokenRequestSubjectVariant4Metadata
-  FIELDS = {
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetConnectorTokenRequestSubjectVariant4.
-class GetConnectorTokenRequestSubjectVariant4
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant4Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant4Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetConnectorTokenRequestSubjectVariant4Metadata::DECODERS
-
-  attr_reader :type
-  # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
-  attr_reader :additional_properties
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS, extras: true)
-  end
-end
-
-# Defines the GetConnectorTokenRequestSubject SDK namespace.
-module GetConnectorTokenRequestSubject
-  def self.from_hash(hash)
-    shape_mapping = {
-      "token" => GetConnectorTokenRequestSubjectVariant3,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-    lossy = nil
-    [GetConnectorTokenRequestSubjectVariant0, GetConnectorTokenRequestSubjectVariant1, GetConnectorTokenRequestSubjectVariant2, GetConnectorTokenRequestSubjectVariant4].each do |type|
-      decoded = type.from_hash(hash)
-      return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-      lossy ||= decoded
-    rescue ::StandardError
-      next
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
     end
-    return lossy unless lossy.nil?
-  end
-end
 
-# Defines the GetConnectorTokenRequestSubjectVariant0Type SDK namespace.
-module GetConnectorTokenRequestSubjectVariant0Type
-  APP = 'app'
-  VALUES = ['app'].freeze
-  def self.from_value(value)
-    value
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the GetConnectorTokenRequestSubjectVariant1Type SDK namespace.
-module GetConnectorTokenRequestSubjectVariant1Type
-  USER = 'user'
-  VALUES = ['user'].freeze
-  def self.from_value(value)
-    value
+  # Internal model hydration metadata.
+  class SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant0Metadata
+    FIELDS = {
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateConnectorAuthorizationRequestRequestSubjectVariant0Type.from_value(value)
+      end
+    }.freeze
   end
-end
 
-# Defines the GetConnectorTokenRequestSubjectVariant2Type SDK namespace.
-module GetConnectorTokenRequestSubjectVariant2Type
-  JWT_BEARER = 'jwt-bearer'
-  VALUES = ['jwt-bearer'].freeze
-  def self.from_value(value)
-    value
-  end
-end
+  # API model for CreateConnectorAuthorizationRequestRequestSubjectVariant0.
+  class CreateConnectorAuthorizationRequestRequestSubjectVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant0Metadata::DECODERS
 
-# Defines the GetConnectorTokenRequestSubjectVariant3Type SDK namespace.
-module GetConnectorTokenRequestSubjectVariant3Type
-  TOKEN = 'token'
-  VALUES = ['token'].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    attr_reader :type
+    # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
+    attr_reader :additional_properties
 
-# Defines the GetConnectorTokenRequestSubjectVariant4Type SDK namespace.
-module GetConnectorTokenRequestSubjectVariant4Type
-  APP = 'app'
-  USER = 'user'
-  JWT_BEARER = 'jwt-bearer'
-  TOKEN = 'token'
-  VALUES = ['app', 'user', 'jwt-bearer', 'token'].freeze
-  def self.from_value(value)
-    value
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS, extras: true)
+    end
   end
-end
+
+  # Internal model hydration metadata.
+  class SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant1Metadata
+    FIELDS = {
+      type: 'type',
+      id: 'id',
+      issuer: 'issuer'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateConnectorAuthorizationRequestRequestSubjectVariant1Type.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for CreateConnectorAuthorizationRequestRequestSubjectVariant1.
+  class CreateConnectorAuthorizationRequestRequestSubjectVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant1Metadata::DECODERS
+
+    attr_reader :type, :id, :issuer
+    # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
+    attr_reader :additional_properties
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS, extras: true)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant2Metadata
+    FIELDS = {
+      type: 'type',
+      sub: 'sub',
+      iss: 'iss',
+      aud: 'aud',
+      additional_claims: 'additionalClaims'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateConnectorAuthorizationRequestRequestSubjectVariant2Type.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for CreateConnectorAuthorizationRequestRequestSubjectVariant2.
+  class CreateConnectorAuthorizationRequestRequestSubjectVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant2Metadata::DECODERS
+
+    attr_reader :type, :sub, :iss, :aud, :additional_claims
+    # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
+    attr_reader :additional_properties
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS, extras: true)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant3Metadata
+    FIELDS = {
+      type: 'type',
+      token: 'token'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      token
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateConnectorAuthorizationRequestRequestSubjectVariant3Type.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for CreateConnectorAuthorizationRequestRequestSubjectVariant3.
+  class CreateConnectorAuthorizationRequestRequestSubjectVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant3Metadata::DECODERS
+
+    attr_reader :type, :token
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant4Metadata
+    FIELDS = {
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for CreateConnectorAuthorizationRequestRequestSubjectVariant4.
+  class CreateConnectorAuthorizationRequestRequestSubjectVariant4
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant4Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant4Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateConnectorAuthorizationRequestRequestSubjectVariant4Metadata::DECODERS
+
+    attr_reader :type
+    # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
+    attr_reader :additional_properties
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS, extras: true)
+    end
+  end
+
+  # Defines the CreateConnectorAuthorizationRequestRequestSubject SDK namespace.
+  module CreateConnectorAuthorizationRequestRequestSubject
+    def self.from_hash(hash)
+      shape_mapping = {
+        'token' => CreateConnectorAuthorizationRequestRequestSubjectVariant3
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      return decoded unless type.nil?
+
+      lossy = nil
+      [CreateConnectorAuthorizationRequestRequestSubjectVariant0, CreateConnectorAuthorizationRequestRequestSubjectVariant1, CreateConnectorAuthorizationRequestRequestSubjectVariant2, CreateConnectorAuthorizationRequestRequestSubjectVariant4].each do |type|
+        decoded = type.from_hash(hash)
+        return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+        lossy ||= decoded
+      rescue ::StandardError
+        next
+      end
+      lossy unless lossy.nil?
+    end
+  end
+
+  # Defines the CreateConnectorAuthorizationRequestRequestSubjectVariant0Type SDK namespace.
+  module CreateConnectorAuthorizationRequestRequestSubjectVariant0Type
+    APP = 'app'
+    VALUES = ['app'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateConnectorAuthorizationRequestRequestSubjectVariant1Type SDK namespace.
+  module CreateConnectorAuthorizationRequestRequestSubjectVariant1Type
+    USER = 'user'
+    VALUES = ['user'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateConnectorAuthorizationRequestRequestSubjectVariant2Type SDK namespace.
+  module CreateConnectorAuthorizationRequestRequestSubjectVariant2Type
+    JWT_BEARER = 'jwt-bearer'
+    VALUES = ['jwt-bearer'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateConnectorAuthorizationRequestRequestSubjectVariant3Type SDK namespace.
+  module CreateConnectorAuthorizationRequestRequestSubjectVariant3Type
+    TOKEN = 'token'
+    VALUES = ['token'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the CreateConnectorAuthorizationRequestRequestSubjectVariant4Type SDK namespace.
+  module CreateConnectorAuthorizationRequestRequestSubjectVariant4Type
+    APP = 'app'
+    USER = 'user'
+    JWT_BEARER = 'jwt-bearer'
+    TOKEN = 'token'
+    VALUES = %w[app user jwt-bearer token].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalGetConnectorTokenRequestSubjectVariant0Metadata
+    FIELDS = {
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetConnectorTokenRequestSubjectVariant0Type.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for GetConnectorTokenRequestSubjectVariant0.
+  class GetConnectorTokenRequestSubjectVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetConnectorTokenRequestSubjectVariant0Metadata::DECODERS
+
+    attr_reader :type
+    # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
+    attr_reader :additional_properties
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS, extras: true)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalGetConnectorTokenRequestSubjectVariant1Metadata
+    FIELDS = {
+      type: 'type',
+      id: 'id',
+      issuer: 'issuer'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetConnectorTokenRequestSubjectVariant1Type.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for GetConnectorTokenRequestSubjectVariant1.
+  class GetConnectorTokenRequestSubjectVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetConnectorTokenRequestSubjectVariant1Metadata::DECODERS
+
+    attr_reader :type, :id, :issuer
+    # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
+    attr_reader :additional_properties
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS, extras: true)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalGetConnectorTokenRequestSubjectVariant2Metadata
+    FIELDS = {
+      type: 'type',
+      sub: 'sub',
+      iss: 'iss',
+      aud: 'aud',
+      additional_claims: 'additionalClaims'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetConnectorTokenRequestSubjectVariant2Type.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for GetConnectorTokenRequestSubjectVariant2.
+  class GetConnectorTokenRequestSubjectVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetConnectorTokenRequestSubjectVariant2Metadata::DECODERS
+
+    attr_reader :type, :sub, :iss, :aud, :additional_claims
+    # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
+    attr_reader :additional_properties
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS, extras: true)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalGetConnectorTokenRequestSubjectVariant3Metadata
+    FIELDS = {
+      type: 'type',
+      token: 'token'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      token
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetConnectorTokenRequestSubjectVariant3Type.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for GetConnectorTokenRequestSubjectVariant3.
+  class GetConnectorTokenRequestSubjectVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetConnectorTokenRequestSubjectVariant3Metadata::DECODERS
+
+    attr_reader :type, :token
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalGetConnectorTokenRequestSubjectVariant4Metadata
+    FIELDS = {
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for GetConnectorTokenRequestSubjectVariant4.
+  class GetConnectorTokenRequestSubjectVariant4
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant4Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetConnectorTokenRequestSubjectVariant4Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetConnectorTokenRequestSubjectVariant4Metadata::DECODERS
+
+    attr_reader :type
+    # @return [Hash{String => Object}] Keys the schema admits beside the declared fields.
+    attr_reader :additional_properties
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS, extras: true)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, extras: true)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS, extras: true)
+    end
+  end
+
+  # Defines the GetConnectorTokenRequestSubject SDK namespace.
+  module GetConnectorTokenRequestSubject
+    def self.from_hash(hash)
+      shape_mapping = {
+        'token' => GetConnectorTokenRequestSubjectVariant3
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      return decoded unless type.nil?
+
+      lossy = nil
+      [GetConnectorTokenRequestSubjectVariant0, GetConnectorTokenRequestSubjectVariant1, GetConnectorTokenRequestSubjectVariant2, GetConnectorTokenRequestSubjectVariant4].each do |type|
+        decoded = type.from_hash(hash)
+        return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+        lossy ||= decoded
+      rescue ::StandardError
+        next
+      end
+      lossy unless lossy.nil?
+    end
+  end
+
+  # Defines the GetConnectorTokenRequestSubjectVariant0Type SDK namespace.
+  module GetConnectorTokenRequestSubjectVariant0Type
+    APP = 'app'
+    VALUES = ['app'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetConnectorTokenRequestSubjectVariant1Type SDK namespace.
+  module GetConnectorTokenRequestSubjectVariant1Type
+    USER = 'user'
+    VALUES = ['user'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetConnectorTokenRequestSubjectVariant2Type SDK namespace.
+  module GetConnectorTokenRequestSubjectVariant2Type
+    JWT_BEARER = 'jwt-bearer'
+    VALUES = ['jwt-bearer'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetConnectorTokenRequestSubjectVariant3Type SDK namespace.
+  module GetConnectorTokenRequestSubjectVariant3Type
+    TOKEN = 'token'
+    VALUES = ['token'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetConnectorTokenRequestSubjectVariant4Type SDK namespace.
+  module GetConnectorTokenRequestSubjectVariant4Type
+    APP = 'app'
+    USER = 'user'
+    JWT_BEARER = 'jwt-bearer'
+    TOKEN = 'token'
+    VALUES = %w[app user jwt-bearer token].freeze
+    def self.from_value(value)
+      value
+    end
+  end
 end

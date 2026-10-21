@@ -54,13 +54,12 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
           [
-            "/v9/projects/",
+            '/v9/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/domains"
+            '/domains'
           ].join,
           config: config,
           query: {
@@ -76,12 +75,12 @@ module OctridevVercel
             'until' => QueryValue.new(until_, style: 'form', explode: true),
             'order' => QueryValue.new(order, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::ListProjectsDomainsResponse,
           decoder: :json,
           operation_id: 'list_projects_domains',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -94,32 +93,24 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_project_domain) do |
-        config:,
-        id_or_name:,
-        domain:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_project_domain) do |config:, id_or_name:, domain:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v9/projects/",
+            '/v9/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/domains/",
+            '/domains/',
             SdkClient.encode_path_segment(domain)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Projects::GetProjectDomainResponse,
           decoder: :json,
           operation_id: 'get_project_domain',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -147,31 +138,30 @@ module OctridevVercel
         redirect_status_code: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(git_branch) { Validation.validate_length('gitBranch', git_branch, max: 250) }
 
         SdkClient.request(
           'PATCH',
           [
-            "/v9/projects/",
+            '/v9/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/domains/",
+            '/domains/',
             SdkClient.encode_path_segment(domain)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'gitBranch' => git_branch,
             'redirect' => redirect,
-            'redirectStatusCode' => redirect_status_code,
+            'redirectStatusCode' => redirect_status_code
           },
           return_type: ::OctridevVercel::Methods::Projects::UpdateProjectDomainResponse,
           decoder: :json,
           operation_id: 'update_project_domain',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -195,26 +185,25 @@ module OctridevVercel
         remove_redirects: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v9/projects/",
+            '/v9/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/domains/",
+            '/domains/',
             SdkClient.encode_path_segment(domain)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'removeRedirects' => remove_redirects,
+            'removeRedirects' => remove_redirects
           },
           decoder: :json,
           operation_id: 'remove_project_domain',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -245,32 +234,31 @@ module OctridevVercel
         redirect_status_code: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(git_branch) { Validation.validate_length('gitBranch', git_branch, max: 250) }
 
         SdkClient.request(
           'POST',
           [
-            "/v10/projects/",
+            '/v10/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/domains"
+            '/domains'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
             'gitBranch' => git_branch,
             'customEnvironmentId' => custom_environment_id,
             'redirect' => redirect,
-            'redirectStatusCode' => redirect_status_code,
+            'redirectStatusCode' => redirect_status_code
           },
           return_type: ::OctridevVercel::Methods::Projects::AddProjectDomainResponse,
           decoder: :json,
           operation_id: 'add_project_domain',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -300,33 +288,32 @@ module OctridevVercel
         redirect_status_code: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(git_branch) { Validation.validate_length('gitBranch', git_branch, max: 250) }
 
         SdkClient.request(
           'POST',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/domains/",
+            '/domains/',
             SdkClient.encode_path_segment(domain),
-            "/move"
+            '/move'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'projectId' => project_id,
             'gitBranch' => git_branch,
             'redirect' => redirect,
-            'redirectStatusCode' => redirect_status_code,
+            'redirectStatusCode' => redirect_status_code
           },
           return_type: ::OctridevVercel::Methods::Projects::MoveProjectDomainResponse,
           decoder: :json,
           operation_id: 'move_project_domain',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -347,25 +334,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v9/projects/",
+            '/v9/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/domains/",
+            '/domains/',
             SdkClient.encode_path_segment(domain),
-            "/verify"
+            '/verify'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Projects::VerifyProjectDomainResponse,
           decoder: :json,
           operation_id: 'verify_project_domain',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

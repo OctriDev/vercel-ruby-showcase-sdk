@@ -35,32 +35,31 @@ module OctridevVercel
         language_code: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_range('expectedPrice', expected_price, min: 0.01)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/registrar/domains/",
+            '/v1/registrar/domains/',
             SdkClient.encode_path_segment(domain),
-            "/buy"
+            '/buy'
           ].join,
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           body: {
             'autoRenew' => auto_renew,
             'years' => years,
             'expectedPrice' => expected_price,
             'contactInformation' => contact_information,
-            'languageCode' => language_code,
+            'languageCode' => language_code
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::BuySingleDomainResponse,
           decoder: :json,
           operation_id: 'buy_single_domain',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
 
@@ -79,25 +78,24 @@ module OctridevVercel
         team_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('domains', domains, min: 1)
 
         SdkClient.request(
           'POST',
-          "/v1/registrar/domains/buy",
+          '/v1/registrar/domains/buy',
           config: config,
           query: {
-            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true)
           },
           body: {
             'domains' => domains,
-            'contactInformation' => contact_information,
+            'contactInformation' => contact_information
           },
           return_type: ::OctridevVercel::Methods::DomainsRegistrar::BuyDomainsResponse,
           decoder: :json,
           operation_id: 'buy_domains',
           request_options: request_options,
-          errors: { '401' => ::OctridevVercel::Unauthorized, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError },
+          errors: { '401' => ::OctridevVercel::Unauthorized, '429' => ::OctridevVercel::TooManyRequests, '500' => ::OctridevVercel::InternalServerError }
         ).data
       end
     end

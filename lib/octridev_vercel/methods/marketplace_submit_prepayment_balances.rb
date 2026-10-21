@@ -23,24 +23,23 @@ module OctridevVercel
         balances:,
         request_options: nil
       )
-
         Validation.validate_date_time('timestamp', timestamp)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/billing/balance"
+            '/billing/balance'
           ].join,
           config: config,
           body: {
             'timestamp' => timestamp,
-            'balances' => balances,
+            'balances' => balances
           },
           decoder: :empty,
           operation_id: 'submit_prepayment_balances',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

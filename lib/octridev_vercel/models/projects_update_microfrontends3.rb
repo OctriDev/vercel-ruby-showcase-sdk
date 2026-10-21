@@ -5,675 +5,673 @@
 
 # projects_update domain models
 module OctridevVercel
-# API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant8.
-class UpdateMicrofrontendsResponseEnvItemContentHintVariant8
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant8Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant8Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant8Metadata::DECODERS
+  # API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant8.
+  class UpdateMicrofrontendsResponseEnvItemContentHintVariant8
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant8Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant8Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant8Metadata::DECODERS
 
-  attr_reader :store_id, :type
+    attr_reader :store_id, :type
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant9Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant9Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant9.
+  class UpdateMicrofrontendsResponseEnvItemContentHintVariant9
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant9Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant9Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant9Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant9Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant9Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :store_id, :type
 
-# API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant9.
-class UpdateMicrofrontendsResponseEnvItemContentHintVariant9
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant9Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant9Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant9Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :store_id, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant10Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant10Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant10.
+  class UpdateMicrofrontendsResponseEnvItemContentHintVariant10
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant10Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant10Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant10Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant10Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant10Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :store_id, :type
 
-# API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant10.
-class UpdateMicrofrontendsResponseEnvItemContentHintVariant10
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant10Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant10Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant10Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :store_id, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant11Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant11Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant11.
+  class UpdateMicrofrontendsResponseEnvItemContentHintVariant11
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant11Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant11Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant11Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant11Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant11Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :store_id, :type
 
-# API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant11.
-class UpdateMicrofrontendsResponseEnvItemContentHintVariant11
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant11Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant11Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant11Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :store_id, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant12Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant12Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant12.
+  class UpdateMicrofrontendsResponseEnvItemContentHintVariant12
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant12Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant12Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant12Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant12Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant12Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :store_id, :type
 
-# API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant12.
-class UpdateMicrofrontendsResponseEnvItemContentHintVariant12
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant12Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant12Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant12Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :store_id, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant13Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant13Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant13.
+  class UpdateMicrofrontendsResponseEnvItemContentHintVariant13
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant13Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant13Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant13Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant13Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant13Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :store_id, :type
 
-# API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant13.
-class UpdateMicrofrontendsResponseEnvItemContentHintVariant13
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant13Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant13Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant13Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :store_id, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant14Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant14Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant14.
+  class UpdateMicrofrontendsResponseEnvItemContentHintVariant14
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant14Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant14Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant14Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant14Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant14Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :store_id, :type
 
-# API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant14.
-class UpdateMicrofrontendsResponseEnvItemContentHintVariant14
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant14Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant14Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant14Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :store_id, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant15Metadata
+    FIELDS = {
+      integration_configuration_id: 'integrationConfigurationId',
+      integration_id: 'integrationId',
+      integration_product_id: 'integrationProductId',
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      integration_configuration_id
+      integration_id
+      integration_product_id
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant15Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant15.
+  class UpdateMicrofrontendsResponseEnvItemContentHintVariant15
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant15Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant15Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant15Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant15Metadata
-  FIELDS = {
-    integration_configuration_id: "integrationConfigurationId",
-    integration_id: "integrationId",
-    integration_product_id: "integrationProductId",
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    integration_configuration_id
-    integration_id
-    integration_product_id
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant15Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :integration_configuration_id, :integration_id, :integration_product_id, :store_id,
+                :type
 
-# API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant15.
-class UpdateMicrofrontendsResponseEnvItemContentHintVariant15
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant15Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant15Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant15Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :integration_configuration_id, :integration_id, :integration_product_id, :store_id,
-              :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant16Metadata
+    FIELDS = {
+      project_id: 'projectId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      project_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant16Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant16.
+  class UpdateMicrofrontendsResponseEnvItemContentHintVariant16
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant16Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant16Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant16Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant16Metadata
-  FIELDS = {
-    project_id: "projectId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    project_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateMicrofrontendsResponseEnvItemContentHintVariant16Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :project_id, :type
 
-# API model for UpdateMicrofrontendsResponseEnvItemContentHintVariant16.
-class UpdateMicrofrontendsResponseEnvItemContentHintVariant16
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant16Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant16Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseEnvItemContentHintVariant16Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :project_id, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHint SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHint
+    DISCRIMINATOR_MAPPING = {
+      'redis-url' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant0 },
+      'redis-rest-api-url' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant1 },
+      'redis-rest-api-token' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant2 },
+      'redis-rest-api-read-only-token' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant3 },
+      'blob-read-write-token' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant4 },
+      'blob-store-id' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant5 },
+      'blob-webhook-public-key' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant6 },
+      'postgres-url' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant7 },
+      'postgres-url-non-pooling' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant8 },
+      'postgres-prisma-url' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant9 },
+      'postgres-user' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant10 },
+      'postgres-host' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant11 },
+      'postgres-password' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant12 },
+      'postgres-database' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant13 },
+      'postgres-url-no-ssl' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant14 },
+      'integration-store-secret' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant15 },
+      'flags-connection-string' => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant16 }
+    }.freeze
+
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHint', 'variant', "Unknown UpdateMicrofrontendsResponseEnvItemContentHint discriminator: #{hash['type'].inspect}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant0Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant0Type
+    REDIS_URL = 'redis-url'
+    VALUES = ['redis-url'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHint SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHint
-  DISCRIMINATOR_MAPPING = {
-    "redis-url" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant0 },
-    "redis-rest-api-url" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant1 },
-    "redis-rest-api-token" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant2 },
-    "redis-rest-api-read-only-token" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant3 },
-    "blob-read-write-token" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant4 },
-    "blob-store-id" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant5 },
-    "blob-webhook-public-key" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant6 },
-    "postgres-url" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant7 },
-    "postgres-url-non-pooling" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant8 },
-    "postgres-prisma-url" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant9 },
-    "postgres-user" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant10 },
-    "postgres-host" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant11 },
-    "postgres-password" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant12 },
-    "postgres-database" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant13 },
-    "postgres-url-no-ssl" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant14 },
-    "integration-store-secret" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant15 },
-    "flags-connection-string" => -> { UpdateMicrofrontendsResponseEnvItemContentHintVariant16 },
-  }.freeze
-
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHint', 'variant', "Unknown UpdateMicrofrontendsResponseEnvItemContentHint discriminator: #{hash["type"].inspect}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant0Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant0Type
-  REDIS_URL = 'redis-url'
-  VALUES = ['redis-url'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant0Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant0Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant1Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant1Type
-  REDIS_REST_API_URL = 'redis-rest-api-url'
-  VALUES = ['redis-rest-api-url'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant1Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant1Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant10Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant10Type
-  POSTGRES_USER = 'postgres-user'
-  VALUES = ['postgres-user'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant10Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant10Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant11Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant11Type
-  POSTGRES_HOST = 'postgres-host'
-  VALUES = ['postgres-host'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant11Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant11Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant12Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant12Type
-  POSTGRES_PASSWORD = 'postgres-password'
-  VALUES = ['postgres-password'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant12Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant12Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant13Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant13Type
-  POSTGRES_DATABASE = 'postgres-database'
-  VALUES = ['postgres-database'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant13Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant13Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant14Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant14Type
-  POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
-  VALUES = ['postgres-url-no-ssl'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant14Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant14Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant15Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant15Type
-  INTEGRATION_STORE_SECRET = 'integration-store-secret'
-  VALUES = ['integration-store-secret'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant15Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant15Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant16Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant16Type
-  FLAGS_CONNECTION_STRING = 'flags-connection-string'
-  VALUES = ['flags-connection-string'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant16Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant16Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant2Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant2Type
-  REDIS_REST_API_TOKEN = 'redis-rest-api-token'
-  VALUES = ['redis-rest-api-token'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant2Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant2Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant3Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant3Type
-  REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
-  VALUES = ['redis-rest-api-read-only-token'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant3Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant3Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant4Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant4Type
-  BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
-  VALUES = ['blob-read-write-token'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant4Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant4Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant5Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant5Type
-  BLOB_STORE_ID = 'blob-store-id'
-  VALUES = ['blob-store-id'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant5Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant5Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant6Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant6Type
-  BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
-  VALUES = ['blob-webhook-public-key'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant6Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant6Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant7Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant7Type
-  POSTGRES_URL = 'postgres-url'
-  VALUES = ['postgres-url'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant7Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant7Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant8Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant8Type
-  POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
-  VALUES = ['postgres-url-non-pooling'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant8Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant8Type: #{value}")
-  end
-end
-
-# Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant9Type SDK namespace.
-module UpdateMicrofrontendsResponseEnvItemContentHintVariant9Type
-  POSTGRES_PRISMA_URL = 'postgres-prisma-url'
-  VALUES = ['postgres-prisma-url'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant9Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant9Type: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseExpirationVariant0Metadata
-  FIELDS = {
-    expires_at: "expiresAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    expires_at
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateMicrofrontendsResponseExpirationVariant0.
-class UpdateMicrofrontendsResponseExpirationVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseExpirationVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseExpirationVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseExpirationVariant0Metadata::DECODERS
-
-  # @return [Float] Unix ms timestamp when the project is scheduled to expire.
-  attr_reader :expires_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant0Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant0Type: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant1Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant1Type
+    REDIS_REST_API_URL = 'redis-rest-api-url'
+    VALUES = ['redis-rest-api-url'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant1Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant1Type: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant10Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant10Type
+    POSTGRES_USER = 'postgres-user'
+    VALUES = ['postgres-user'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseExpirationVariant1Metadata
-  FIELDS = {
-    locked_at: "lockedAt",
-    locked_by: "lockedBy",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    locked_at
-    locked_by
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateMicrofrontendsResponseExpirationVariant1.
-class UpdateMicrofrontendsResponseExpirationVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateMicrofrontendsResponseExpirationVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseExpirationVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateMicrofrontendsResponseExpirationVariant1Metadata::DECODERS
-
-  # @return [Float] Unix ms timestamp when the project was locked.
-  attr_reader :locked_at
-  # @return [String] userId of the actor that triggered the lock (system or admin).
-  attr_reader :locked_by
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant10Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant10Type: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant11Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant11Type
+    POSTGRES_HOST = 'postgres-host'
+    VALUES = ['postgres-host'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant11Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant11Type: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant12Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant12Type
+    POSTGRES_PASSWORD = 'postgres-password'
+    VALUES = ['postgres-password'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Defines the UpdateMicrofrontendsResponseExpiration SDK namespace.
-module UpdateMicrofrontendsResponseExpiration
-  def self.from_hash(hash)
-    shape_mapping = {
-      "expiresAt" => UpdateMicrofrontendsResponseExpirationVariant0,
-      "lockedAt" => UpdateMicrofrontendsResponseExpirationVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant12Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant12Type: #{value}")
+    end
   end
-end
 
-# Internal model hydration metadata.
-class SdkInternalUpdateMicrofrontendsResponseInternalRoutesItemVariant0Metadata
-  FIELDS = {
-    expiry: "expiry",
-    src: "src",
-    status: "status",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    src
-    status
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant13Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant13Type
+    POSTGRES_DATABASE = 'postgres-database'
+    VALUES = ['postgres-database'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant13Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant13Type: #{value}")
+    end
+  end
+
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant14Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant14Type
+    POSTGRES_URL_NO_SSL = 'postgres-url-no-ssl'
+    VALUES = ['postgres-url-no-ssl'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant14Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant14Type: #{value}")
+    end
+  end
+
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant15Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant15Type
+    INTEGRATION_STORE_SECRET = 'integration-store-secret'
+    VALUES = ['integration-store-secret'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant15Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant15Type: #{value}")
+    end
+  end
+
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant16Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant16Type
+    FLAGS_CONNECTION_STRING = 'flags-connection-string'
+    VALUES = ['flags-connection-string'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant16Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant16Type: #{value}")
+    end
+  end
+
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant2Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant2Type
+    REDIS_REST_API_TOKEN = 'redis-rest-api-token'
+    VALUES = ['redis-rest-api-token'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant2Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant2Type: #{value}")
+    end
+  end
+
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant3Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant3Type
+    REDIS_REST_API_READ_ONLY_TOKEN = 'redis-rest-api-read-only-token'
+    VALUES = ['redis-rest-api-read-only-token'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant3Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant3Type: #{value}")
+    end
+  end
+
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant4Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant4Type
+    BLOB_READ_WRITE_TOKEN = 'blob-read-write-token'
+    VALUES = ['blob-read-write-token'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant4Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant4Type: #{value}")
+    end
+  end
+
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant5Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant5Type
+    BLOB_STORE_ID = 'blob-store-id'
+    VALUES = ['blob-store-id'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant5Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant5Type: #{value}")
+    end
+  end
+
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant6Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant6Type
+    BLOB_WEBHOOK_PUBLIC_KEY = 'blob-webhook-public-key'
+    VALUES = ['blob-webhook-public-key'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant6Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant6Type: #{value}")
+    end
+  end
+
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant7Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant7Type
+    POSTGRES_URL = 'postgres-url'
+    VALUES = ['postgres-url'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant7Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant7Type: #{value}")
+    end
+  end
+
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant8Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant8Type
+    POSTGRES_URL_NON_POOLING = 'postgres-url-non-pooling'
+    VALUES = ['postgres-url-non-pooling'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant8Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant8Type: #{value}")
+    end
+  end
+
+  # Defines the UpdateMicrofrontendsResponseEnvItemContentHintVariant9Type SDK namespace.
+  module UpdateMicrofrontendsResponseEnvItemContentHintVariant9Type
+    POSTGRES_PRISMA_URL = 'postgres-prisma-url'
+    VALUES = ['postgres-prisma-url'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateMicrofrontendsResponseEnvItemContentHintVariant9Type', 'enum', "Unknown UpdateMicrofrontendsResponseEnvItemContentHintVariant9Type: #{value}")
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseExpirationVariant0Metadata
+    FIELDS = {
+      expires_at: 'expiresAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      expires_at
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for UpdateMicrofrontendsResponseExpirationVariant0.
+  class UpdateMicrofrontendsResponseExpirationVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseExpirationVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseExpirationVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseExpirationVariant0Metadata::DECODERS
+
+    # @return [Float] Unix ms timestamp when the project is scheduled to expire.
+    attr_reader :expires_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseExpirationVariant1Metadata
+    FIELDS = {
+      locked_at: 'lockedAt',
+      locked_by: 'lockedBy'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      locked_at
+      locked_by
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for UpdateMicrofrontendsResponseExpirationVariant1.
+  class UpdateMicrofrontendsResponseExpirationVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateMicrofrontendsResponseExpirationVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateMicrofrontendsResponseExpirationVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateMicrofrontendsResponseExpirationVariant1Metadata::DECODERS
+
+    # @return [Float] Unix ms timestamp when the project was locked.
+    attr_reader :locked_at
+    # @return [String] userId of the actor that triggered the lock (system or admin).
+    attr_reader :locked_by
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the UpdateMicrofrontendsResponseExpiration SDK namespace.
+  module UpdateMicrofrontendsResponseExpiration
+    def self.from_hash(hash)
+      shape_mapping = {
+        'expiresAt' => UpdateMicrofrontendsResponseExpirationVariant0,
+        'lockedAt' => UpdateMicrofrontendsResponseExpirationVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUpdateMicrofrontendsResponseInternalRoutesItemVariant0Metadata
+    FIELDS = {
+      expiry: 'expiry',
+      src: 'src',
+      status: 'status'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      src
+      status
+    ].freeze
+    DECODERS = {}.freeze
+  end
 end

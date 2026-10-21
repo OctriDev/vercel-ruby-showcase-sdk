@@ -52,7 +52,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('by', by, min: 1, max: 2)
 
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
@@ -61,7 +60,7 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          "/v1/query/web-analytics/events/aggregate",
+          '/v1/query/web-analytics/events/aggregate',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
@@ -71,12 +70,12 @@ module OctridevVercel
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'filter' => QueryValue.new(filter, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::WebAnalytics::AggregateEventsResponse,
           decoder: :json,
           operation_id: 'aggregate_events',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -111,12 +110,11 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(filter) { Validation.validate_length('filter', filter, max: 2048) }
 
         SdkClient.request(
           'GET',
-          "/v1/query/web-analytics/events/count",
+          '/v1/query/web-analytics/events/count',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
@@ -124,12 +122,12 @@ module OctridevVercel
             'until' => QueryValue.new(until_, style: 'form', explode: true),
             'filter' => QueryValue.new(filter, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::WebAnalytics::CountEventsResponse,
           decoder: :json,
           operation_id: 'count_events',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

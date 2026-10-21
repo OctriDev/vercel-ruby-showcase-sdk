@@ -19,25 +19,24 @@ module OctridevVercel
         items:,
         request_options: nil
       )
-
         Validation.validate_items('items', items, max: 50)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id),
-            "/experimentation/items"
+            '/experimentation/items'
           ].join,
           config: config,
           body: {
-            'items' => items,
+            'items' => items
           },
           decoder: :empty,
           operation_id: 'create_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_items',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

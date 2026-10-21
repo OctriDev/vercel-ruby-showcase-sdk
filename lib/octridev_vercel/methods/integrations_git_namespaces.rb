@@ -24,19 +24,18 @@ module OctridevVercel
         viewer_metadata: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
-          "/v1/integrations/git-namespaces",
+          '/v1/integrations/git-namespaces',
           config: config,
           query: {
             'host' => QueryValue.new(host, style: 'form', explode: true),
             'provider' => QueryValue.new(provider, style: 'form', explode: true),
-            'viewerMetadata' => QueryValue.new(viewer_metadata, style: 'form', explode: true),
+            'viewerMetadata' => QueryValue.new(viewer_metadata, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'git_namespaces',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

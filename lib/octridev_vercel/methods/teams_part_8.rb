@@ -28,25 +28,24 @@ module OctridevVercel
         reasons: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/teams/",
+            '/v1/teams/',
             SdkClient.encode_path_segment(team_id)
           ].join,
           config: config,
           query: {
             'newDefaultTeamId' => QueryValue.new(new_default_team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'reasons' => reasons,
+            'reasons' => reasons
           },
           return_type: ::OctridevVercel::Methods::Teams::DeleteTeamResponse,
           decoder: :json,
           operation_id: 'delete_team',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -63,20 +62,19 @@ module OctridevVercel
         team_id:,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/teams/",
+            '/v1/teams/',
             SdkClient.encode_path_segment(team_id),
-            "/invites/",
+            '/invites/',
             SdkClient.encode_path_segment(invite_id)
           ].join,
           config: config,
           return_type: ::OctridevVercel::Methods::Teams::DeleteTeamInviteCodeResponse,
           decoder: :json,
           operation_id: 'delete_team_invite_code',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -103,28 +101,27 @@ module OctridevVercel
         enable_polyrepo_branch_routing: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v1/teams/",
+            '/v1/teams/',
             SdkClient.encode_path_segment(team_id),
-            "/microfrontends/",
+            '/microfrontends/',
             SdkClient.encode_path_segment(group_id)
           ].join,
           config: config,
           query: {
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
             'fallbackEnvironment' => fallback_environment,
-            'enablePolyrepoBranchRouting' => enable_polyrepo_branch_routing,
+            'enablePolyrepoBranchRouting' => enable_polyrepo_branch_routing
           },
           return_type: ::OctridevVercel::Methods::Teams::UpdateMicrofrontendsGroupResponse,
           decoder: :json,
           operation_id: 'update_microfrontends_group',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -143,22 +140,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/teams/",
+            '/v1/teams/',
             SdkClient.encode_path_segment(team_id),
-            "/microfrontends/",
+            '/microfrontends/',
             SdkClient.encode_path_segment(group_id)
           ].join,
           config: config,
           query: {
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'delete_microfrontends_group',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

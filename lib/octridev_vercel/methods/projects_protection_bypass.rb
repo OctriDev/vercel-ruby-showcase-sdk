@@ -34,28 +34,27 @@ module OctridevVercel
         update: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/protection-bypass"
+            '/protection-bypass'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'revoke' => revoke,
             'generate' => generate,
-            'update' => update,
+            'update' => update
           },
           return_type: ::OctridevVercel::Methods::Projects::UpdateProjectProtectionBypassResponse,
           decoder: :json,
           operation_id: 'update_project_protection_bypass',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

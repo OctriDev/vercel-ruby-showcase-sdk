@@ -12,100 +12,100 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseMetadata
         FIELDS = {
-          alias_: "alias",
-          alias_assigned: "aliasAssigned",
-          alias_assigned_at: "aliasAssignedAt",
-          alias_error: "aliasError",
-          alias_final: "aliasFinal",
-          alias_warning: "aliasWarning",
-          always_refuse_to_build: "alwaysRefuseToBuild",
-          atproto: "atproto",
-          attribution: "attribution",
-          auto_assign_custom_domains: "autoAssignCustomDomains",
-          automatic_aliases: "automaticAliases",
-          booted_at: "bootedAt",
-          build: "build",
-          build_artifact_urls: "buildArtifactUrls",
-          build_container_finished_at: "buildContainerFinishedAt",
-          build_error_at: "buildErrorAt",
-          building_at: "buildingAt",
-          builds: "builds",
-          build_skipped: "buildSkipped",
-          canceled_at: "canceledAt",
-          checks: "checks",
-          checks_conclusion: "checksConclusion",
-          checks_state: "checksState",
-          config: "config",
-          connect_builds_enabled: "connectBuildsEnabled",
-          connect_configuration_id: "connectConfigurationId",
-          created_at: "createdAt",
-          created_in: "createdIn",
-          creator: "creator",
-          crons: "crons",
-          custom_environment: "customEnvironment",
-          default_route: "defaultRoute",
-          deleted_at: "deletedAt",
-          duration: "duration",
-          env: "env",
-          error_code: "errorCode",
-          error_link: "errorLink",
-          error_message: "errorMessage",
-          error_step: "errorStep",
-          flags: "flags",
-          functions: "functions",
-          git_repo: "gitRepo",
-          git_source: "gitSource",
-          id: "id",
-          images: "images",
-          init_ready_at: "initReadyAt",
-          inspector_url: "inspectorUrl",
-          integrations: "integrations",
-          is_first_branch_deployment: "isFirstBranchDeployment",
-          is_in_concurrent_builds_queue: "isInConcurrentBuildsQueue",
-          is_instant_static: "isInstantStatic",
-          is_in_system_builds_queue: "isInSystemBuildsQueue",
-          lambdas: "lambdas",
-          manual_provisioning: "manualProvisioning",
-          meta: "meta",
-          microfrontends: "microfrontends",
-          monorepo_manager: "monorepoManager",
-          name: "name",
-          node_version: "nodeVersion",
-          oidc_token_claims: "oidcTokenClaims",
-          oom_report: "oomReport",
-          origin_cache_region: "originCacheRegion",
-          owner_id: "ownerId",
-          passive_connect_configuration_id: "passiveConnectConfigurationId",
-          passive_regions: "passiveRegions",
-          plan: "plan",
-          platform: "platform",
-          prebuilt: "prebuilt",
-          preview_comments_enabled: "previewCommentsEnabled",
-          project: "project",
-          project_id: "projectId",
-          project_settings: "projectSettings",
-          public: "public",
-          ready: "ready",
-          ready_state: "readyState",
-          ready_state_reason: "readyStateReason",
-          ready_substate: "readySubstate",
-          regions: "regions",
-          resource_config: "resourceConfig",
-          routes: "routes",
-          seat_block: "seatBlock",
-          services: "services",
-          soft_deleted_by_retention: "softDeletedByRetention",
-          source: "source",
-          status: "status",
-          target: "target",
-          team: "team",
-          tty_build_logs: "ttyBuildLogs",
-          type: "type",
-          undeleted_at: "undeletedAt",
-          url: "url",
-          user_aliases: "userAliases",
-          user_configured_deployment_id: "userConfiguredDeploymentId",
-          version: "version",
+          alias_: 'alias',
+          alias_assigned: 'aliasAssigned',
+          alias_assigned_at: 'aliasAssignedAt',
+          alias_error: 'aliasError',
+          alias_final: 'aliasFinal',
+          alias_warning: 'aliasWarning',
+          always_refuse_to_build: 'alwaysRefuseToBuild',
+          atproto: 'atproto',
+          attribution: 'attribution',
+          auto_assign_custom_domains: 'autoAssignCustomDomains',
+          automatic_aliases: 'automaticAliases',
+          booted_at: 'bootedAt',
+          build: 'build',
+          build_artifact_urls: 'buildArtifactUrls',
+          build_container_finished_at: 'buildContainerFinishedAt',
+          build_error_at: 'buildErrorAt',
+          building_at: 'buildingAt',
+          builds: 'builds',
+          build_skipped: 'buildSkipped',
+          canceled_at: 'canceledAt',
+          checks: 'checks',
+          checks_conclusion: 'checksConclusion',
+          checks_state: 'checksState',
+          config: 'config',
+          connect_builds_enabled: 'connectBuildsEnabled',
+          connect_configuration_id: 'connectConfigurationId',
+          created_at: 'createdAt',
+          created_in: 'createdIn',
+          creator: 'creator',
+          crons: 'crons',
+          custom_environment: 'customEnvironment',
+          default_route: 'defaultRoute',
+          deleted_at: 'deletedAt',
+          duration: 'duration',
+          env: 'env',
+          error_code: 'errorCode',
+          error_link: 'errorLink',
+          error_message: 'errorMessage',
+          error_step: 'errorStep',
+          flags: 'flags',
+          functions: 'functions',
+          git_repo: 'gitRepo',
+          git_source: 'gitSource',
+          id: 'id',
+          images: 'images',
+          init_ready_at: 'initReadyAt',
+          inspector_url: 'inspectorUrl',
+          integrations: 'integrations',
+          is_first_branch_deployment: 'isFirstBranchDeployment',
+          is_in_concurrent_builds_queue: 'isInConcurrentBuildsQueue',
+          is_instant_static: 'isInstantStatic',
+          is_in_system_builds_queue: 'isInSystemBuildsQueue',
+          lambdas: 'lambdas',
+          manual_provisioning: 'manualProvisioning',
+          meta: 'meta',
+          microfrontends: 'microfrontends',
+          monorepo_manager: 'monorepoManager',
+          name: 'name',
+          node_version: 'nodeVersion',
+          oidc_token_claims: 'oidcTokenClaims',
+          oom_report: 'oomReport',
+          origin_cache_region: 'originCacheRegion',
+          owner_id: 'ownerId',
+          passive_connect_configuration_id: 'passiveConnectConfigurationId',
+          passive_regions: 'passiveRegions',
+          plan: 'plan',
+          platform: 'platform',
+          prebuilt: 'prebuilt',
+          preview_comments_enabled: 'previewCommentsEnabled',
+          project: 'project',
+          project_id: 'projectId',
+          project_settings: 'projectSettings',
+          public: 'public',
+          ready: 'ready',
+          ready_state: 'readyState',
+          ready_state_reason: 'readyStateReason',
+          ready_substate: 'readySubstate',
+          regions: 'regions',
+          resource_config: 'resourceConfig',
+          routes: 'routes',
+          seat_block: 'seatBlock',
+          services: 'services',
+          soft_deleted_by_retention: 'softDeletedByRetention',
+          source: 'source',
+          status: 'status',
+          target: 'target',
+          team: 'team',
+          tty_build_logs: 'ttyBuildLogs',
+          type: 'type',
+          undeleted_at: 'undeletedAt',
+          url: 'url',
+          user_aliases: 'userAliases',
+          user_configured_deployment_id: 'userConfiguredDeploymentId',
+          version: 'version'
         }.freeze
         REQUIRED_FIELDS = %i[
           alias_assigned
@@ -299,7 +299,7 @@ module OctridevVercel
           end,
           version: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseVersion.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           inspector_url
@@ -426,15 +426,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemAliasErrorMetadata
         FIELDS = {
-          code: "code",
-          message: "message",
+          code: 'code',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           code
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDeploymentsResponseDeploymentsItemAliasError.
@@ -464,16 +463,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemAttributionCommitMetaMetadata
         FIELDS = {
-          email: "email",
-          is_verified: "isVerified",
-          name: "name",
+          email: 'email',
+          is_verified: 'isVerified',
+          name: 'name'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           is_verified: lambda do |value|
             ::OctridevVercel::Methods::Deployments::GetDeploymentsResponseDeploymentsItemAttributionCommitMetaIsVerified.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -509,17 +507,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemAttributionGitUserMetadata
         FIELDS = {
-          id: "id",
-          login: "login",
-          provider: "provider",
-          type: "type",
+          id: 'id',
+          login: 'login',
+          provider: 'provider',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
           login
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDeploymentsResponseDeploymentsItemAttributionGitUser.
@@ -555,16 +552,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentsResponseDeploymentsItemAttributionVercelUserMetadata
         FIELDS = {
-          id: "id",
-          team_roles: "teamRoles",
-          username: "username",
+          id: 'id',
+          team_roles: 'teamRoles',
+          username: 'username'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
           username
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
     end
   end

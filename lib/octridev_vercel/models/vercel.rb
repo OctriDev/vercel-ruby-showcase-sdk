@@ -5,374 +5,370 @@
 
 # vercel domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalVercelBadRequestErrorErrorMetadata
-  FIELDS = {
-    code: "code",
-    message: "message",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-    message
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for VercelBadRequestErrorError.
-# Required object value serialized in the `error` wire field.
-class VercelBadRequestErrorError
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalVercelBadRequestErrorErrorMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalVercelBadRequestErrorErrorMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalVercelBadRequestErrorErrorMetadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `code` wire field.
-  attr_reader :code
-  # @return [String] Required `string` value serialized in the `message` wire field.
-  attr_reader :message
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalVercelBadRequestErrorErrorMetadata
+    FIELDS = {
+      code: 'code',
+      message: 'message'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+      message
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for VercelBadRequestErrorError.
+  # Required object value serialized in the `error` wire field.
+  class VercelBadRequestErrorError
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalVercelBadRequestErrorErrorMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalVercelBadRequestErrorErrorMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalVercelBadRequestErrorErrorMetadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `code` wire field.
+    attr_reader :code
+    # @return [String] Required `string` value serialized in the `message` wire field.
+    attr_reader :message
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalVercelBadRequestErrorMetadata
-  FIELDS = {
-    error: "error",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    error
-  ].freeze
-  DECODERS = {
-    error: lambda do |value|
-      ::OctridevVercel::VercelBadRequestErrorError.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for VercelBadRequestError.
-# Typed representation of the `VercelBadRequestError` API schema.
-class VercelBadRequestError
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalVercelBadRequestErrorMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalVercelBadRequestErrorMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalVercelBadRequestErrorMetadata::DECODERS
-
-  # @return [VercelBadRequestErrorError] Required object value serialized in the `error` wire field.
-  attr_reader :error
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalVercelBadRequestErrorMetadata
+    FIELDS = {
+      error: 'error'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      error
+    ].freeze
+    DECODERS = {
+      error: lambda do |value|
+        ::OctridevVercel::VercelBadRequestErrorError.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for VercelBadRequestError.
+  # Typed representation of the `VercelBadRequestError` API schema.
+  class VercelBadRequestError
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalVercelBadRequestErrorMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalVercelBadRequestErrorMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalVercelBadRequestErrorMetadata::DECODERS
+
+    # @return [VercelBadRequestErrorError] Required object value serialized in the `error` wire field.
+    attr_reader :error
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalVercelBaseErrorMetadata
-  FIELDS = {
-    code: "code",
-    message: "message",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-    message
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for VercelBaseError.
-# Typed representation of the `VercelBaseError` API schema.
-class VercelBaseError
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalVercelBaseErrorMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalVercelBaseErrorMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalVercelBaseErrorMetadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `code` wire field.
-  attr_reader :code
-  # @return [String] Required `string` value serialized in the `message` wire field.
-  attr_reader :message
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalVercelBaseErrorMetadata
+    FIELDS = {
+      code: 'code',
+      message: 'message'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+      message
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for VercelBaseError.
+  # Typed representation of the `VercelBaseError` API schema.
+  class VercelBaseError
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalVercelBaseErrorMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalVercelBaseErrorMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalVercelBaseErrorMetadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `code` wire field.
+    attr_reader :code
+    # @return [String] Required `string` value serialized in the `message` wire field.
+    attr_reader :message
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalVercelForbiddenErrorErrorMetadata
-  FIELDS = {
-    code: "code",
-    message: "message",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-    message
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for VercelForbiddenErrorError.
-# Required object value serialized in the `error` wire field.
-class VercelForbiddenErrorError
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalVercelForbiddenErrorErrorMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalVercelForbiddenErrorErrorMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalVercelForbiddenErrorErrorMetadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `code` wire field.
-  attr_reader :code
-  # @return [String] Required `string` value serialized in the `message` wire field.
-  attr_reader :message
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalVercelForbiddenErrorErrorMetadata
+    FIELDS = {
+      code: 'code',
+      message: 'message'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+      message
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for VercelForbiddenErrorError.
+  # Required object value serialized in the `error` wire field.
+  class VercelForbiddenErrorError
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalVercelForbiddenErrorErrorMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalVercelForbiddenErrorErrorMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalVercelForbiddenErrorErrorMetadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `code` wire field.
+    attr_reader :code
+    # @return [String] Required `string` value serialized in the `message` wire field.
+    attr_reader :message
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalVercelForbiddenErrorMetadata
-  FIELDS = {
-    error: "error",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    error
-  ].freeze
-  DECODERS = {
-    error: lambda do |value|
-      ::OctridevVercel::VercelForbiddenErrorError.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for VercelForbiddenError.
-# Typed representation of the `VercelForbiddenError` API schema.
-class VercelForbiddenError
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalVercelForbiddenErrorMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalVercelForbiddenErrorMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalVercelForbiddenErrorMetadata::DECODERS
-
-  # @return [VercelForbiddenErrorError] Required object value serialized in the `error` wire field.
-  attr_reader :error
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalVercelForbiddenErrorMetadata
+    FIELDS = {
+      error: 'error'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      error
+    ].freeze
+    DECODERS = {
+      error: lambda do |value|
+        ::OctridevVercel::VercelForbiddenErrorError.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for VercelForbiddenError.
+  # Typed representation of the `VercelForbiddenError` API schema.
+  class VercelForbiddenError
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalVercelForbiddenErrorMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalVercelForbiddenErrorMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalVercelForbiddenErrorMetadata::DECODERS
+
+    # @return [VercelForbiddenErrorError] Required object value serialized in the `error` wire field.
+    attr_reader :error
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalVercelNotFoundErrorErrorMetadata
-  FIELDS = {
-    code: "code",
-    message: "message",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-    message
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for VercelNotFoundErrorError.
-# Required object value serialized in the `error` wire field.
-class VercelNotFoundErrorError
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalVercelNotFoundErrorErrorMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalVercelNotFoundErrorErrorMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalVercelNotFoundErrorErrorMetadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `code` wire field.
-  attr_reader :code
-  # @return [String] Required `string` value serialized in the `message` wire field.
-  attr_reader :message
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalVercelNotFoundErrorErrorMetadata
+    FIELDS = {
+      code: 'code',
+      message: 'message'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+      message
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for VercelNotFoundErrorError.
+  # Required object value serialized in the `error` wire field.
+  class VercelNotFoundErrorError
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalVercelNotFoundErrorErrorMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalVercelNotFoundErrorErrorMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalVercelNotFoundErrorErrorMetadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `code` wire field.
+    attr_reader :code
+    # @return [String] Required `string` value serialized in the `message` wire field.
+    attr_reader :message
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalVercelNotFoundErrorMetadata
-  FIELDS = {
-    error: "error",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    error
-  ].freeze
-  DECODERS = {
-    error: lambda do |value|
-      ::OctridevVercel::VercelNotFoundErrorError.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for VercelNotFoundError.
-# Typed representation of the `VercelNotFoundError` API schema.
-class VercelNotFoundError
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalVercelNotFoundErrorMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalVercelNotFoundErrorMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalVercelNotFoundErrorMetadata::DECODERS
-
-  # @return [VercelNotFoundErrorError] Required object value serialized in the `error` wire field.
-  attr_reader :error
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalVercelNotFoundErrorMetadata
+    FIELDS = {
+      error: 'error'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      error
+    ].freeze
+    DECODERS = {
+      error: lambda do |value|
+        ::OctridevVercel::VercelNotFoundErrorError.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for VercelNotFoundError.
+  # Typed representation of the `VercelNotFoundError` API schema.
+  class VercelNotFoundError
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalVercelNotFoundErrorMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalVercelNotFoundErrorMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalVercelNotFoundErrorMetadata::DECODERS
+
+    # @return [VercelNotFoundErrorError] Required object value serialized in the `error` wire field.
+    attr_reader :error
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalVercelRateLimitErrorErrorMetadata
-  FIELDS = {
-    code: "code",
-    message: "message",
-    limit: "limit",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-    message
-  ].freeze
-  DECODERS = {
-    limit: lambda do |value|
-      ::OctridevVercel::RateLimitNotice.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for VercelRateLimitErrorError.
-# Required object value serialized in the `error` wire field.
-class VercelRateLimitErrorError
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalVercelRateLimitErrorErrorMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalVercelRateLimitErrorErrorMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalVercelRateLimitErrorErrorMetadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `code` wire field.
-  attr_reader :code
-  # @return [String] Required `string` value serialized in the `message` wire field.
-  attr_reader :message
-  # @return [RateLimitNotice] Optional object value serialized in the `limit` wire field.
-  attr_reader :limit
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalVercelRateLimitErrorErrorMetadata
+    FIELDS = {
+      code: 'code',
+      message: 'message',
+      limit: 'limit'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+      message
+    ].freeze
+    DECODERS = {
+      limit: lambda do |value|
+        ::OctridevVercel::RateLimitNotice.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for VercelRateLimitErrorError.
+  # Required object value serialized in the `error` wire field.
+  class VercelRateLimitErrorError
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalVercelRateLimitErrorErrorMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalVercelRateLimitErrorErrorMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalVercelRateLimitErrorErrorMetadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `code` wire field.
+    attr_reader :code
+    # @return [String] Required `string` value serialized in the `message` wire field.
+    attr_reader :message
+    # @return [RateLimitNotice] Optional object value serialized in the `limit` wire field.
+    attr_reader :limit
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalVercelRateLimitErrorMetadata
-  FIELDS = {
-    error: "error",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    error
-  ].freeze
-  DECODERS = {
-    error: lambda do |value|
-      ::OctridevVercel::VercelRateLimitErrorError.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for VercelRateLimitError.
-# Typed representation of the `VercelRateLimitError` API schema.
-class VercelRateLimitError
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalVercelRateLimitErrorMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalVercelRateLimitErrorMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalVercelRateLimitErrorMetadata::DECODERS
-
-  # @return [VercelRateLimitErrorError] Required object value serialized in the `error` wire field.
-  attr_reader :error
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalVercelRateLimitErrorMetadata
+    FIELDS = {
+      error: 'error'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      error
+    ].freeze
+    DECODERS = {
+      error: lambda do |value|
+        ::OctridevVercel::VercelRateLimitErrorError.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
+  # API model for VercelRateLimitError.
+  # Typed representation of the `VercelRateLimitError` API schema.
+  class VercelRateLimitError
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalVercelRateLimitErrorMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalVercelRateLimitErrorMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalVercelRateLimitErrorMetadata::DECODERS
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+    # @return [VercelRateLimitErrorError] Required object value serialized in the `error` wire field.
+    attr_reader :error
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 end

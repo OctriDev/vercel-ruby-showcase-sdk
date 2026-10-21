@@ -12,9 +12,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetEdgeConfigBackupsResponseBackupsItemMetadata
         FIELDS = {
-          metadata: "metadata",
-          id: "id",
-          last_modified: "lastModified",
+          metadata: 'metadata',
+          id: 'id',
+          last_modified: 'lastModified'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -23,7 +23,7 @@ module OctridevVercel
         DECODERS = {
           metadata: lambda do |value|
             ::OctridevVercel::Methods::GlobalConfig::GetEdgeConfigBackupsResponseBackupsItemMetadata.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -53,8 +53,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetEdgeConfigBackupsResponsePaginationMetadata
         FIELDS = {
-          has_next: "hasNext",
-          next_: "next",
+          has_next: 'hasNext',
+          next_: 'next'
         }.freeze
         REQUIRED_FIELDS = %i[
           has_next
@@ -62,7 +62,7 @@ module OctridevVercel
         DECODERS = {
           has_next: lambda do |value|
             ::OctridevVercel::Methods::GlobalConfig::GetEdgeConfigBackupsResponsePaginationHasNext.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -92,8 +92,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetEdgeConfigBackupsResponseMetadata
         FIELDS = {
-          backups: "backups",
-          pagination: "pagination",
+          backups: 'backups',
+          pagination: 'pagination'
         }.freeze
         REQUIRED_FIELDS = %i[
           backups
@@ -105,7 +105,7 @@ module OctridevVercel
           end,
           pagination: lambda do |value|
             ::OctridevVercel::Methods::GlobalConfig::GetEdgeConfigBackupsResponsePagination.from_hash(value)
-          end,
+          end
         }.freeze
       end
 

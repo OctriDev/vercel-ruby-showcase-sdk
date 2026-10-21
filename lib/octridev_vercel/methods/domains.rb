@@ -17,29 +17,22 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_domains) do |
-        config:,
-        domain:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_domains) do |config:, domain:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v5/domains/",
+            '/v5/domains/',
             SdkClient.encode_path_segment(domain)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Domains::GetDomainsResponse,
           decoder: :json,
           operation_id: 'get_domains',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -62,22 +55,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
-          "/v5/domains",
+          '/v5/domains',
           config: config,
           query: {
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'since' => QueryValue.new(since, style: 'form', explode: true),
             'until' => QueryValue.new(until_, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Domains::ListDomainsResponse,
           decoder: :json,
           operation_id: 'list_domains',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -97,22 +89,21 @@ module OctridevVercel
         method: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
-          "/v7/domains",
+          '/v7/domains',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'method' => method,
+            'method' => method
           },
           return_type: ::OctridevVercel::Methods::Domains::CreateOrTransferDomainResponse,
           decoder: :json,
           operation_id: 'create_or_transfer_domain',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -131,23 +122,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v3/domains/",
+            '/v3/domains/',
             SdkClient.encode_path_segment(domain)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: body,
           return_type: ::OctridevVercel::UpdateDomainsResponse,
           decoder: :json,
           operation_id: 'update_domains',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -166,22 +156,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v6/domains/",
+            '/v6/domains/',
             SdkClient.encode_path_segment(domain)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Domains::DeleteDomainResponse,
           decoder: :json,
           operation_id: 'delete_domain',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

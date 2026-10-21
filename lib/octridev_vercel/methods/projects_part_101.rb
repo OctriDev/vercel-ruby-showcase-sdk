@@ -70,9 +70,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = [
-          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
-          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
+        VALUES = %w[
+          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
+          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
         ].freeze
         def self.from_value(value)
           value
@@ -105,7 +105,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
+        VALUES = %w[basic enhanced standard turbo].freeze
         def self.from_value(value)
           value
         end
@@ -117,7 +117,7 @@ module OctridevVercel
         CNAME = 'CNAME'
         DNS_01 = 'dns-01'
         HTTP = 'http'
-        VALUES = ['A', 'CNAME', 'dns-01', 'http'].freeze
+        VALUES = %w[A CNAME dns-01 http].freeze
         def self.from_value(value)
           value
         end
@@ -128,7 +128,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -159,7 +159,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -233,7 +233,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = ['enterprise', 'hobby', 'pro'].freeze
+        VALUES = %w[enterprise hobby pro].freeze
         def self.from_value(value)
           value
         end
@@ -245,8 +245,8 @@ module OctridevVercel
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-        VALUES = [
-          'all', 'preview', 'prod_deployment_urls_and_all_previews', 'all_except_custom_domains'
+        VALUES = %w[
+          all preview prod_deployment_urls_and_all_previews all_except_custom_domains
         ].freeze
         def self.from_value(value)
           value
@@ -268,8 +268,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = [
-          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+        VALUES = %w[
+          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
         ].freeze
         def self.from_value(value)
           value
@@ -282,8 +282,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = [
-          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+        VALUES = %w[
+          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
         ].freeze
         def self.from_value(value)
           value
@@ -321,9 +321,9 @@ module OctridevVercel
         SIN1 = 'sin1'
         SYD1 = 'syd1'
         YUL1 = 'yul1'
-        VALUES = [
-          'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'iad1',
-          'icn1', 'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
+        VALUES = %w[
+          arn1 bom1 cdg1 cle1 cpt1 dub1 fra1 gru1 hkg1 hnd1 iad1
+          icn1 kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
         ].freeze
         def self.from_value(value)
           value
@@ -339,7 +339,7 @@ module OctridevVercel
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
         REDIRECT = 'redirect'
-        VALUES = ['allow', 'bypass', 'challenge', 'deny', 'log', 'rate_limit', 'redirect'].freeze
+        VALUES = %w[allow bypass challenge deny log rate_limit redirect].freeze
         def self.from_value(value)
           value
         end
@@ -350,7 +350,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -432,7 +432,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
+        VALUES = %w[PROMOTED ROLLING STAGED].freeze
         def self.from_value(value)
           value
         end
@@ -453,7 +453,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = ['enterprise', 'hobby', 'pro'].freeze
+        VALUES = %w[enterprise hobby pro].freeze
         def self.from_value(value)
           value
         end
@@ -474,8 +474,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = [
-          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+        VALUES = %w[
+          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
         ].freeze
         def self.from_value(value)
           value
@@ -520,7 +520,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         REST_API = 'rest-api'
         V0 = 'v0'
-        VALUES = ['cli', 'deploy-hook', 'git', 'integration', 'rest-api', 'v0'].freeze
+        VALUES = %w[cli deploy-hook git integration rest-api v0].freeze
         def self.from_value(value)
           value
         end

@@ -35,16 +35,15 @@ module OctridevVercel
         source: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(sampling) { Validation.validate_items('sampling', sampling, max: 10) }
 
         SdkClient.request(
           'POST',
-          "/v1/drains",
+          '/v1/drains',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
@@ -55,12 +54,12 @@ module OctridevVercel
             'delivery' => delivery,
             'sampling' => sampling,
             'transforms' => transforms,
-            'source' => source,
+            'source' => source
           },
           return_type: ::OctridevVercel::CreateDrainResponse,
           decoder: :json,
           operation_id: 'create_drain',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -71,29 +70,21 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_drains) do |
-        config:,
-        project_id: NOT_GIVEN,
-        include_metadata: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_drains) do |config:, project_id: NOT_GIVEN, include_metadata: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
-          "/v1/drains",
+          '/v1/drains',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'includeMetadata' => QueryValue.new(include_metadata, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Drains::GetDrainsResponse,
           decoder: :json,
           operation_id: 'get_drains',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -111,21 +102,20 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/drains/",
+            '/v1/drains/',
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'delete_drain',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -136,29 +126,22 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_drain) do |
-        config:,
-        id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_drain) do |config:, id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/drains/",
+            '/v1/drains/',
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::GetDrainResponse,
           decoder: :json,
           operation_id: 'get_drain',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -192,19 +175,18 @@ module OctridevVercel
         source: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(sampling) { Validation.validate_items('sampling', sampling, max: 10) }
 
         SdkClient.request(
           'PATCH',
           [
-            "/v1/drains/",
+            '/v1/drains/',
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
@@ -216,12 +198,12 @@ module OctridevVercel
             'sampling' => sampling,
             'transforms' => transforms,
             'status' => status,
-            'source' => source,
+            'source' => source
           },
           return_type: ::OctridevVercel::UpdateDrainResponse,
           decoder: :json,
           operation_id: 'update_drain',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

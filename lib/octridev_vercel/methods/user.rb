@@ -12,7 +12,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListUserEventsResponseMetadata
         FIELDS = {
-          events: "events",
+          events: 'events'
         }.freeze
         REQUIRED_FIELDS = %i[
           events
@@ -20,7 +20,7 @@ module OctridevVercel
         DECODERS = {
           events: lambda do |value|
             value&.map { |item| ::OctridevVercel::UserEvent.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -52,7 +52,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetAuthUserResponseMetadata
         FIELDS = {
-          user: "user",
+          user: 'user'
         }.freeze
         REQUIRED_FIELDS = %i[
           user
@@ -60,7 +60,7 @@ module OctridevVercel
         DECODERS = {
           user: lambda do |value|
             ::OctridevVercel::GetAuthUserResponseUser.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -92,15 +92,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRequestDeleteReasonsItemMetadata
         FIELDS = {
-          slug: "slug",
-          description: "description",
+          slug: 'slug',
+          description: 'description'
         }.freeze
         REQUIRED_FIELDS = %i[
           slug
           description
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for RequestDeleteReasonsItem.
@@ -133,14 +132,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRequestDeleteMetadata
         FIELDS = {
-          reasons: "reasons",
+          reasons: 'reasons'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           reasons: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::User::RequestDeleteReasonsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -171,17 +169,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRequestDeleteResponseMetadata
         FIELDS = {
-          email: "email",
-          id: "id",
-          message: "message",
+          email: 'email',
+          id: 'id',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           email
           id
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for RequestDeleteResponse.
@@ -250,10 +247,9 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
-          "/v3/events",
+          '/v3/events',
           config: config,
           query: {
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
@@ -266,12 +262,12 @@ module OctridevVercel
             'entityId' => QueryValue.new(entity_id, style: 'form', explode: true),
             'withPayload' => QueryValue.new(with_payload, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::User::ListUserEventsResponse,
           decoder: :json,
           operation_id: 'list_user_events',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -288,38 +284,33 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
-          "/v1/events/types",
+          '/v1/events/types',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::ListEventTypesResponse,
           decoder: :json,
           operation_id: 'list_event_types',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
       # Retrieves information about the authenticated user. Use this endpoint to obtain the user information associated with the request's authentication context.
       #
       # Retrieves information related to the currently authenticated User.
-      singleton_class.define_method(:get_auth_user) do |
-        config:,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_auth_user) do |config:, request_options: nil|
         SdkClient.request(
           'GET',
-          "/v2/user",
+          '/v2/user',
           config: config,
           return_type: ::OctridevVercel::Methods::User::GetAuthUserResponse,
           decoder: :json,
           operation_id: 'get_auth_user',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -334,18 +325,17 @@ module OctridevVercel
         reasons: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
-          "/v1/user",
+          '/v1/user',
           config: config,
           body: {
-            'reasons' => reasons,
+            'reasons' => reasons
           },
           return_type: ::OctridevVercel::Methods::User::RequestDeleteResponse,
           decoder: :json,
           operation_id: 'request_delete',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

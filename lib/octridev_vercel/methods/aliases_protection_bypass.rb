@@ -25,23 +25,22 @@ module OctridevVercel
         body: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/aliases/",
+            '/aliases/',
             SdkClient.encode_path_segment(id),
-            "/protection-bypass"
+            '/protection-bypass'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: body,
           decoder: :json,
           operation_id: 'patch_url_protection_bypass',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

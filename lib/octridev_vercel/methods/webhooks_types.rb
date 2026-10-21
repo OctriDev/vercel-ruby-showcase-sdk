@@ -12,9 +12,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateWebhookMetadata
         FIELDS = {
-          url: "url",
-          events: "events",
-          project_ids: "projectIds",
+          url: 'url',
+          events: 'events',
+          project_ids: 'projectIds'
         }.freeze
         REQUIRED_FIELDS = %i[
           url
@@ -23,7 +23,7 @@ module OctridevVercel
         DECODERS = {
           events: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::V35f83988::CreateWebhookEventsItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -53,15 +53,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateWebhookResponseMetadata
         FIELDS = {
-          alert_rule_ids: "alertRuleIds",
-          created_at: "createdAt",
-          events: "events",
-          id: "id",
-          owner_id: "ownerId",
-          project_ids: "projectIds",
-          secret: "secret",
-          updated_at: "updatedAt",
-          url: "url",
+          alert_rule_ids: 'alertRuleIds',
+          created_at: 'createdAt',
+          events: 'events',
+          id: 'id',
+          owner_id: 'ownerId',
+          project_ids: 'projectIds',
+          secret: 'secret',
+          updated_at: 'updatedAt',
+          url: 'url'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -75,7 +75,7 @@ module OctridevVercel
         DECODERS = {
           events: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::V35f83988::CreateWebhookResponseEventsItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -121,14 +121,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetWebhookResponseMetadata
         FIELDS = {
-          alert_rule_ids: "alertRuleIds",
-          created_at: "createdAt",
-          events: "events",
-          id: "id",
-          owner_id: "ownerId",
-          project_ids: "projectIds",
-          updated_at: "updatedAt",
-          url: "url",
+          alert_rule_ids: 'alertRuleIds',
+          created_at: 'createdAt',
+          events: 'events',
+          id: 'id',
+          owner_id: 'ownerId',
+          project_ids: 'projectIds',
+          updated_at: 'updatedAt',
+          url: 'url'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -141,7 +141,7 @@ module OctridevVercel
         DECODERS = {
           events: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::V35f83988::GetWebhookResponseEventsItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 

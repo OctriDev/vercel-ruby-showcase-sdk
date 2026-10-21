@@ -18,8 +18,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -70,9 +70,9 @@ module OctridevVercel
         REPORT = 'report'
         STDERR = 'stderr'
         STDOUT = 'stdout'
-        VALUES = [
-          'command', 'delimiter', 'deployment-state', 'edge-function-invocation', 'exit', 'fatal',
-          'metric', 'middleware', 'middleware-invocation', 'report', 'stderr', 'stdout'
+        VALUES = %w[
+          command delimiter deployment-state edge-function-invocation exit fatal
+          metric middleware middleware-invocation report stderr stdout
         ].freeze
         def self.from_value(value)
           value
@@ -89,8 +89,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'DELETED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED DELETED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -111,7 +111,7 @@ module OctridevVercel
         BITBUCKET = 'bitbucket'
         GITHUB = 'github'
         GITLAB = 'gitlab'
-        VALUES = ['bitbucket', 'github', 'gitlab'].freeze
+        VALUES = %w[bitbucket github gitlab].freeze
         def self.from_value(value)
           value
         end
@@ -143,9 +143,9 @@ module OctridevVercel
         PROJECT_SETTING = 'project-setting'
         TEAM_ENTITLEMENT = 'team-entitlement'
         TEAM_SETTING = 'team-setting'
-        VALUES = [
-          'deployment-override', 'elastic-algorithm', 'plan-default', 'project-setting',
-          'team-entitlement', 'team-setting'
+        VALUES = %w[
+          deployment-override elastic-algorithm plan-default project-setting
+          team-entitlement team-setting
         ].freeze
         def self.from_value(value)
           value
@@ -158,7 +158,7 @@ module OctridevVercel
         ERROR = 'ERROR'
         INITIALIZING = 'INITIALIZING'
         READY = 'READY'
-        VALUES = ['BUILDING', 'ERROR', 'INITIALIZING', 'READY'].freeze
+        VALUES = %w[BUILDING ERROR INITIALIZING READY].freeze
         def self.from_value(value)
           value
         end
@@ -172,7 +172,7 @@ module OctridevVercel
         PRERENDER = 'PRERENDER'
         REVALIDATED = 'REVALIDATED'
         STALE = 'STALE'
-        VALUES = ['BYPASS', 'HIT', 'MISS', 'PRERENDER', 'REVALIDATED', 'STALE'].freeze
+        VALUES = %w[BYPASS HIT MISS PRERENDER REVALIDATED STALE].freeze
         def self.from_value(value)
           value
         end
@@ -192,7 +192,7 @@ module OctridevVercel
       module CancelDeploymentResponseTarget
         PRODUCTION = 'production'
         STAGING = 'staging'
-        VALUES = ['production', 'staging'].freeze
+        VALUES = %w[production staging].freeze
         def self.from_value(value)
           value
         end
@@ -202,7 +202,7 @@ module OctridevVercel
       module CancelDeploymentResponseResourceConfigBuildMachineMachineSelectionType
         ELASTIC = 'elastic'
         FIXED = 'fixed'
-        VALUES = ['elastic', 'fixed'].freeze
+        VALUES = %w[elastic fixed].freeze
         def self.from_value(value)
           value
         end
@@ -254,7 +254,7 @@ module OctridevVercel
         COMPLETE = 'COMPLETE'
         PENDING = 'PENDING'
         TIMEOUT = 'TIMEOUT'
-        VALUES = ['COMPLETE', 'PENDING', 'TIMEOUT'].freeze
+        VALUES = %w[COMPLETE PENDING TIMEOUT].freeze
         def self.from_value(value)
           value
         end
@@ -265,7 +265,7 @@ module OctridevVercel
         FAILED = 'failed'
         PENDING = 'pending'
         SUCCEEDED = 'succeeded'
-        VALUES = ['failed', 'pending', 'succeeded'].freeze
+        VALUES = %w[failed pending succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -279,7 +279,7 @@ module OctridevVercel
         PRERENDER = 'PRERENDER'
         REVALIDATED = 'REVALIDATED'
         STALE = 'STALE'
-        VALUES = ['BYPASS', 'HIT', 'MISS', 'PRERENDER', 'REVALIDATED', 'STALE'].freeze
+        VALUES = %w[BYPASS HIT MISS PRERENDER REVALIDATED STALE].freeze
         def self.from_value(value)
           value
         end
@@ -370,17 +370,17 @@ module OctridevVercel
         VUEPRESS = 'vuepress'
         XMCP = 'xmcp'
         ZOLA = 'zola'
-        VALUES = [
-          'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
-          'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
-          'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask',
-          'gatsby', 'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular',
-          'ionic-react', 'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node',
-          'nuxtjs', 'parcel', 'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix',
-          'ruby', 'rust', 'saber', 'sanity', 'sanity-v2', 'sapper', 'scully', 'services',
-          'solidstart', 'solidstart-1', 'stencil', 'storybook', 'svelte', 'sveltekit', 'sveltekit-1',
-          'tanstack-start', 'tanstack-start-lovable', 'umijs', 'vite', 'vitepress', 'vue',
-          'vuepress', 'xmcp', 'zola'
+        VALUES = %w[
+          actix-web angular ash astro axum blitzjs brunch bun container
+          create-react-app django docusaurus docusaurus-2 dojo eleventy elysia
+          ember eve express factory-eve fastapi fasthtml fastify flask
+          gatsby go gridsome h3 hexo hono hugo hydrogen ionic-angular
+          ionic-react jekyll koa mastra middleman nestjs nextjs nitro node
+          nuxtjs parcel polymer preact python react-router redwoodjs remix
+          ruby rust saber sanity sanity-v2 sapper scully services
+          solidstart solidstart-1 stencil storybook svelte sveltekit sveltekit-1
+          tanstack-start tanstack-start-lovable umijs vite vitepress vue
+          vuepress xmcp zola
         ].freeze
         def self.from_value(value)
           value
@@ -391,7 +391,7 @@ module OctridevVercel
       module CancelDeploymentResponseConfigFunctionType
         FLUID = 'fluid'
         STANDARD = 'standard'
-        VALUES = ['fluid', 'standard'].freeze
+        VALUES = %w[fluid standard].freeze
         def self.from_value(value)
           value
         end
@@ -401,7 +401,7 @@ module OctridevVercel
       module GetDeploymentEventsResponseVariant3Level
         ERROR = 'error'
         WARNING = 'warning'
-        VALUES = ['error', 'warning'].freeze
+        VALUES = %w[error warning].freeze
         def self.from_value(value)
           value
         end
@@ -411,7 +411,7 @@ module OctridevVercel
       module CreateDeploymentParameter
         V_0 = '0'
         V_1 = '1'
-        VALUES = ['0', '1'].freeze
+        VALUES = %w[0 1].freeze
         def self.from_value(value)
           value
         end
@@ -422,7 +422,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
+        VALUES = %w[PROMOTED ROLLING STAGED].freeze
         def self.from_value(value)
           value
         end
@@ -453,7 +453,7 @@ module OctridevVercel
         FAILED = 'failed'
         PENDING = 'pending'
         SUCCEEDED = 'succeeded'
-        VALUES = ['failed', 'pending', 'succeeded'].freeze
+        VALUES = %w[failed pending succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -476,7 +476,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
+        VALUES = %w[basic enhanced standard turbo].freeze
         def self.from_value(value)
           value
         end
@@ -492,8 +492,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'DELETED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED DELETED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -514,7 +514,7 @@ module OctridevVercel
       module CancelDeploymentResponseFunctionsValueArchitecture
         ARM64 = 'arm64'
         X86_64 = 'x86_64'
-        VALUES = ['arm64', 'x86_64'].freeze
+        VALUES = %w[arm64 x86_64].freeze
         def self.from_value(value)
           value
         end
@@ -534,7 +534,7 @@ module OctridevVercel
       module GetDeploymentsResponseDeploymentsItemPlatformOriginType
         ID = 'id'
         URL = 'url'
-        VALUES = ['id', 'url'].freeze
+        VALUES = %w[id url].freeze
         def self.from_value(value)
           value
         end

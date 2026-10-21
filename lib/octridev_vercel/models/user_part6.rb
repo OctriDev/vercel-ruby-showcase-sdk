@@ -5,409 +5,408 @@
 
 # user domain models (part 6)
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalListEventTypesResponseCategoriesItemMetadata
-  FIELDS = {
-    label: "label",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    label
-    name
-  ].freeze
-  DECODERS = {
-    name: lambda do |value|
-      ::OctridevVercel::ListEventTypesResponseCategoriesItemName.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for ListEventTypesResponseCategoriesItem.
-# Required object value serialized in the `categories[]` wire field.
-class ListEventTypesResponseCategoriesItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListEventTypesResponseCategoriesItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListEventTypesResponseCategoriesItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListEventTypesResponseCategoriesItemMetadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `label` wire field.
-  attr_reader :label
-  # @return [ListEventTypesResponseCategoriesItemName] Required enumerated value serialized in the `name` wire field.
-  attr_reader :name
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalListEventTypesResponseCategoriesItemMetadata
+    FIELDS = {
+      label: 'label',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      label
+      name
+    ].freeze
+    DECODERS = {
+      name: lambda do |value|
+        ::OctridevVercel::ListEventTypesResponseCategoriesItemName.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for ListEventTypesResponseCategoriesItem.
+  # Required object value serialized in the `categories[]` wire field.
+  class ListEventTypesResponseCategoriesItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListEventTypesResponseCategoriesItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListEventTypesResponseCategoriesItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListEventTypesResponseCategoriesItemMetadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `label` wire field.
+    attr_reader :label
+    # @return [ListEventTypesResponseCategoriesItemName] Required enumerated value serialized in the `name` wire field.
+    attr_reader :name
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalListEventTypesResponseMetadata
-  FIELDS = {
-    categories: "categories",
-    types: "types",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    categories
-    types
-  ].freeze
-  DECODERS = {
-    categories: lambda do |value|
-      value&.map { |item| ::OctridevVercel::ListEventTypesResponseCategoriesItem.from_hash(item) }
-    end,
-    types: lambda do |value|
-      value&.map { |item| ::OctridevVercel::ListEventType.from_hash(item) }
-    end,
-  }.freeze
-end
-
-# API model for ListEventTypesResponse.
-# Response returned by the List Event Types endpoint.
-class ListEventTypesResponse
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListEventTypesResponseMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListEventTypesResponseMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListEventTypesResponseMetadata::DECODERS
-
-  # @return [Array_of_ListEventTypesResponseCategoriesItem] Required array value serialized in the `categories` wire field.
-  attr_reader :categories
-  # @return [Array_of_ListEventType] Required array value serialized in the `types` wire field.
-  attr_reader :types
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalListEventTypesResponseMetadata
+    FIELDS = {
+      categories: 'categories',
+      types: 'types'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      categories
+      types
+    ].freeze
+    DECODERS = {
+      categories: lambda do |value|
+        value&.map { |item| ::OctridevVercel::ListEventTypesResponseCategoriesItem.from_hash(item) }
+      end,
+      types: lambda do |value|
+        value&.map { |item| ::OctridevVercel::ListEventType.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for ListEventTypesResponse.
+  # Response returned by the List Event Types endpoint.
+  class ListEventTypesResponse
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListEventTypesResponseMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListEventTypesResponseMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListEventTypesResponseMetadata::DECODERS
+
+    # @return [Array_of_ListEventTypesResponseCategoriesItem] Required array value serialized in the `categories` wire field.
+    attr_reader :categories
+    # @return [Array_of_ListEventType] Required array value serialized in the `types` wire field.
+    attr_reader :types
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the ListEventTypesResponseCategoriesItemName SDK namespace.
-module ListEventTypesResponseCategoriesItemName
-  ACCOUNT = 'account'
-  AI = 'ai'
-  AI_GATEWAY = 'ai-gateway'
-  BILLING = 'billing'
-  CONNECT = 'connect'
-  DEPLOYMENT = 'deployment'
-  DOMAIN = 'domain'
-  EDGE = 'edge'
-  ENV_VARIABLE = 'env-variable'
-  FEATURE_FLAGS = 'feature-flags'
-  FIREWALL = 'firewall'
-  INTEGRATION = 'integration'
-  MICROFRONTENDS = 'microfrontends'
-  NETWORK = 'network'
-  OBSERVABILITY = 'observability'
-  OTHER = 'other'
-  PROJECT = 'project'
-  SECURITY = 'security'
-  STORAGE = 'storage'
-  TEAM = 'team'
-  V0 = 'v0'
-  VERCEL_APP = 'vercel-app'
-  WORKFLOW = 'workflow'
-  VALUES = [
-    'account', 'ai', 'ai-gateway', 'billing', 'connect', 'deployment', 'domain', 'edge',
-    'env-variable', 'feature-flags', 'firewall', 'integration', 'microfrontends', 'network',
-    'observability', 'other', 'project', 'security', 'storage', 'team', 'v0', 'vercel-app',
-    'workflow'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventEntitiesItemMetadata
-  FIELDS = {
-    end_: "end",
-    start: "start",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    end_
-    start
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UserEventEntitiesItemType.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventEntitiesItem.
-# A list of "entities" within the event `text`. Useful for enhancing the displayed text with additional styling and links.
-class UserEventEntitiesItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventEntitiesItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventEntitiesItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventEntitiesItemMetadata::DECODERS
-
-  # @return [Float] The index of where the entity ends within the `text` (non-inclusive).
-  attr_reader :end_
-  # @return [Float] The index of where the entity begins within the `text` (inclusive).
-  attr_reader :start
-  # @return [UserEventEntitiesItemType] The type of entity.
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the ListEventTypesResponseCategoriesItemName SDK namespace.
+  module ListEventTypesResponseCategoriesItemName
+    ACCOUNT = 'account'
+    AI = 'ai'
+    AI_GATEWAY = 'ai-gateway'
+    BILLING = 'billing'
+    CONNECT = 'connect'
+    DEPLOYMENT = 'deployment'
+    DOMAIN = 'domain'
+    EDGE = 'edge'
+    ENV_VARIABLE = 'env-variable'
+    FEATURE_FLAGS = 'feature-flags'
+    FIREWALL = 'firewall'
+    INTEGRATION = 'integration'
+    MICROFRONTENDS = 'microfrontends'
+    NETWORK = 'network'
+    OBSERVABILITY = 'observability'
+    OTHER = 'other'
+    PROJECT = 'project'
+    SECURITY = 'security'
+    STORAGE = 'storage'
+    TEAM = 'team'
+    V0 = 'v0'
+    VERCEL_APP = 'vercel-app'
+    WORKFLOW = 'workflow'
+    VALUES = %w[
+      account ai ai-gateway billing connect deployment domain edge
+      env-variable feature-flags firewall integration microfrontends network
+      observability other project security storage team v0 vercel-app
+      workflow
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventEntitiesItemMetadata
+    FIELDS = {
+      end_: 'end',
+      start: 'start',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      end_
+      start
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UserEventEntitiesItemType.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventEntitiesItem.
+  # A list of "entities" within the event `text`. Useful for enhancing the displayed text with additional styling and links.
+  class UserEventEntitiesItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventEntitiesItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventEntitiesItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventEntitiesItemMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventUserMetadata
-  FIELDS = {
-    avatar: "avatar",
-    email: "email",
-    slug: "slug",
-    uid: "uid",
-    username: "username",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    avatar
-    email
-    uid
-    username
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [Float] The index of where the entity ends within the `text` (non-inclusive).
+    attr_reader :end_
+    # @return [Float] The index of where the entity begins within the `text` (inclusive).
+    attr_reader :start
+    # @return [UserEventEntitiesItemType] The type of entity.
+    attr_reader :type
 
-# API model for UserEventUser.
-# Metadata for {@link userId}.
-class UserEventUser
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventUserMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventUserMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventUserMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `avatar` wire field.
-  attr_reader :avatar
-  # @return [String] Required `string` value serialized in the `email` wire field.
-  attr_reader :email
-  # @return [String] Optional `string` value serialized in the `slug` wire field.
-  attr_reader :slug
-  # @return [String] Required `string` value serialized in the `uid` wire field.
-  attr_reader :uid
-  # @return [String] Required `string` value serialized in the `username` wire field.
-  attr_reader :username
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventUserMetadata
+    FIELDS = {
+      avatar: 'avatar',
+      email: 'email',
+      slug: 'slug',
+      uid: 'uid',
+      username: 'username'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      avatar
+      email
+      uid
+      username
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEventUser.
+  # Metadata for {@link userId}.
+  class UserEventUser
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventUserMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventUserMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventUserMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventMetadata
-  FIELDS = {
-    categories: "categories",
-    created_at: "createdAt",
-    entities: "entities",
-    id: "id",
-    payload: "payload",
-    principal: "principal",
-    principal_id: "principalId",
-    request_id: "requestId",
-    session_id: "sessionId",
-    text: "text",
-    token_id: "tokenId",
-    type: "type",
-    user: "user",
-    user_id: "userId",
-    via: "via",
-    via_ids: "viaIds",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    entities
-    id
-    principal_id
-    text
-  ].freeze
-  DECODERS = {
-    categories: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UserEventCategoriesItem.from_value(item) }
-    end,
-    entities: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UserEventEntitiesItem.from_hash(item) }
-    end,
-    payload: lambda do |value|
-      ::OctridevVercel::UserEventPayload.from_hash(value)
-    end,
-    principal: lambda do |value|
-      ::OctridevVercel::UserEventPrincipal.from_hash(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UserEventType.from_value(value)
-    end,
-    user: lambda do |value|
-      ::OctridevVercel::UserEventUser.from_hash(value)
-    end,
-    via: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UserEventViaItem.from_hash(item) }
-    end,
-  }.freeze
-end
+    # @return [String] Required `string` value serialized in the `avatar` wire field.
+    attr_reader :avatar
+    # @return [String] Required `string` value serialized in the `email` wire field.
+    attr_reader :email
+    # @return [String] Optional `string` value serialized in the `slug` wire field.
+    attr_reader :slug
+    # @return [String] Required `string` value serialized in the `uid` wire field.
+    attr_reader :uid
+    # @return [String] Required `string` value serialized in the `username` wire field.
+    attr_reader :username
 
-# API model for UserEvent.
-# Array of events generated by the User.
-class UserEvent
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [Array_of_UserEventCategoriesItem] The categories that group this event with related event types. An event can belong to multiple categories (e.g. a firewall event is both Firewall and Security). The first entry is the "primary" category. Use the `/events/types` endpoint to discover the full list of categories.
-  attr_reader :categories
-  # @return [Float] Timestamp (in milliseconds) of when the event was generated.
-  attr_reader :created_at
-  # @return [Array_of_UserEventEntitiesItem] A list of "entities" within the event `text`. Useful for enhancing the displayed text with additional styling and links.
-  attr_reader :entities
-  # @return [String] The unique identifier of the Event.
-  attr_reader :id
-  # @return [UserEventPayload] Optional API value serialized in the `payload` wire field.
-  attr_reader :payload
-  # @return [UserEventPrincipal] Optional API value serialized in the `principal` wire field.
-  attr_reader :principal
-  # @return [String] The ID of the principal who generated the event. The principal is typically a user, but it could also be an app, an integration, etc. The principal may have delegated its authority to an acting party, and so {@link viaIds} should be checked as well.
-  attr_reader :principal_id
-  # @return [String] Optional `string` value serialized in the `requestId` wire field.
-  attr_reader :request_id
-  # @return [String] The ID of the session that the principal's token belongs to, when it belongs to one.
-  attr_reader :session_id
-  # @return [String] The human-readable text of the Event.
-  attr_reader :text
-  # @return [String] The public ID of the token that the principal authenticated with, when the request behind this event carried one.
-  attr_reader :token_id
-  # @return [UserEventType] The type of the event.
-  attr_reader :type
-  # @return [UserEventUser] Metadata for {@link userId}.
-  attr_reader :user
-  # @return [String] When the principal who generated the event is a user, this is their ID; otherwise, it is empty.
-  attr_reader :user_id
-  # @return [Array_of_UserEventViaItem] Metadata for {@link viaIds}.
-  attr_reader :via
-  # @return [Array_of_String] If the principal delegated its authority (for example, a user delegating to an app), then this array contains the ID of the current actor. For example, if `principalId` is "user123" and `viaIds` is `["app456"]`, we can say the event was triggered by - "app456 on behalf of user123", or - "user123 via app4556". Both are equivalent. Arbitrarily long chains of delegation can be represented. For example, if `principalId` is "user123" and `viaIds` is `["service1", "service2"]`, we…
-  attr_reader :via_ids
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventMetadata
+    FIELDS = {
+      categories: 'categories',
+      created_at: 'createdAt',
+      entities: 'entities',
+      id: 'id',
+      payload: 'payload',
+      principal: 'principal',
+      principal_id: 'principalId',
+      request_id: 'requestId',
+      session_id: 'sessionId',
+      text: 'text',
+      token_id: 'tokenId',
+      type: 'type',
+      user: 'user',
+      user_id: 'userId',
+      via: 'via',
+      via_ids: 'viaIds'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      entities
+      id
+      principal_id
+      text
+    ].freeze
+    DECODERS = {
+      categories: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UserEventCategoriesItem.from_value(item) }
+      end,
+      entities: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UserEventEntitiesItem.from_hash(item) }
+      end,
+      payload: lambda do |value|
+        ::OctridevVercel::UserEventPayload.from_hash(value)
+      end,
+      principal: lambda do |value|
+        ::OctridevVercel::UserEventPrincipal.from_hash(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UserEventType.from_value(value)
+      end,
+      user: lambda do |value|
+        ::OctridevVercel::UserEventUser.from_hash(value)
+      end,
+      via: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UserEventViaItem.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UserEvent.
+  # Array of events generated by the User.
+  class UserEvent
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventMetadata::DECODERS
 
-# Defines the UserEventCategoriesItem SDK namespace.
-module UserEventCategoriesItem
-  ACCOUNT = 'account'
-  AI = 'ai'
-  AI_GATEWAY = 'ai-gateway'
-  BILLING = 'billing'
-  CONNECT = 'connect'
-  DEPLOYMENT = 'deployment'
-  DOMAIN = 'domain'
-  EDGE = 'edge'
-  ENV_VARIABLE = 'env-variable'
-  FEATURE_FLAGS = 'feature-flags'
-  FIREWALL = 'firewall'
-  INTEGRATION = 'integration'
-  MICROFRONTENDS = 'microfrontends'
-  NETWORK = 'network'
-  OBSERVABILITY = 'observability'
-  OTHER = 'other'
-  PROJECT = 'project'
-  SECURITY = 'security'
-  STORAGE = 'storage'
-  TEAM = 'team'
-  V0 = 'v0'
-  VERCEL_APP = 'vercel-app'
-  WORKFLOW = 'workflow'
-  VALUES = [
-    'account', 'ai', 'ai-gateway', 'billing', 'connect', 'deployment', 'domain', 'edge',
-    'env-variable', 'feature-flags', 'firewall', 'integration', 'microfrontends', 'network',
-    'observability', 'other', 'project', 'security', 'storage', 'team', 'v0', 'vercel-app',
-    'workflow'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    # @return [Array_of_UserEventCategoriesItem] The categories that group this event with related event types. An event can belong to multiple categories (e.g. a firewall event is both Firewall and Security). The first entry is the "primary" category. Use the `/events/types` endpoint to discover the full list of categories.
+    attr_reader :categories
+    # @return [Float] Timestamp (in milliseconds) of when the event was generated.
+    attr_reader :created_at
+    # @return [Array_of_UserEventEntitiesItem] A list of "entities" within the event `text`. Useful for enhancing the displayed text with additional styling and links.
+    attr_reader :entities
+    # @return [String] The unique identifier of the Event.
+    attr_reader :id
+    # @return [UserEventPayload] Optional API value serialized in the `payload` wire field.
+    attr_reader :payload
+    # @return [UserEventPrincipal] Optional API value serialized in the `principal` wire field.
+    attr_reader :principal
+    # @return [String] The ID of the principal who generated the event. The principal is typically a user, but it could also be an app, an integration, etc. The principal may have delegated its authority to an acting party, and so {@link viaIds} should be checked as well.
+    attr_reader :principal_id
+    # @return [String] Optional `string` value serialized in the `requestId` wire field.
+    attr_reader :request_id
+    # @return [String] The ID of the session that the principal's token belongs to, when it belongs to one.
+    attr_reader :session_id
+    # @return [String] The human-readable text of the Event.
+    attr_reader :text
+    # @return [String] The public ID of the token that the principal authenticated with, when the request behind this event carried one.
+    attr_reader :token_id
+    # @return [UserEventType] The type of the event.
+    attr_reader :type
+    # @return [UserEventUser] Metadata for {@link userId}.
+    attr_reader :user
+    # @return [String] When the principal who generated the event is a user, this is their ID; otherwise, it is empty.
+    attr_reader :user_id
+    # @return [Array_of_UserEventViaItem] Metadata for {@link viaIds}.
+    attr_reader :via
+    # @return [Array_of_String] If the principal delegated its authority (for example, a user delegating to an app), then this array contains the ID of the current actor. For example, if `principalId` is "user123" and `viaIds` is `["app456"]`, we can say the event was triggered by - "app456 on behalf of user123", or - "user123 via app4556". Both are equivalent. Arbitrarily long chains of delegation can be represented. For example, if `principalId` is "user123" and `viaIds` is `["service1", "service2"]`, we…
+    attr_reader :via_ids
 
-# Defines the UserEventEntitiesItemType SDK namespace.
-module UserEventEntitiesItemType
-  APP = 'app'
-  AUTHOR = 'author'
-  BITBUCKET_LOGIN = 'bitbucket_login'
-  BOLD = 'bold'
-  DEPLOYMENT_HOST = 'deployment_host'
-  DEPLOYMENT_INSPECTOR = 'deployment_inspector'
-  DNS_RECORD = 'dns_record'
-  EDGE_CONFIG = 'edge-config'
-  ENV_VAR_NAME = 'env_var_name'
-  FLAG = 'flag'
-  FLAGS_SEGMENT = 'flags-segment'
-  FLAGS_SETTINGS = 'flags-settings'
-  GIT_LINK = 'git_link'
-  GITHUB_LOGIN = 'github_login'
-  GITLAB_LOGIN = 'gitlab_login'
-  HOOK_NAME = 'hook_name'
-  INTEGRATION = 'integration'
-  LINK = 'link'
-  PROJECT_NAME = 'project_name'
-  SCALING_RULES = 'scaling_rules'
-  STORE = 'store'
-  SYSTEM = 'system'
-  TARGET = 'target'
-  VALUES = [
-    'app', 'author', 'bitbucket_login', 'bold', 'deployment_host', 'deployment_inspector',
-    'dns_record', 'edge-config', 'env_var_name', 'flag', 'flags-segment', 'flags-settings',
-    'git_link', 'github_login', 'gitlab_login', 'hook_name', 'integration', 'link', 'project_name',
-    'scaling_rules', 'store', 'system', 'target'
-  ].freeze
-  def self.from_value(value)
-    value
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
+
+  # Defines the UserEventCategoriesItem SDK namespace.
+  module UserEventCategoriesItem
+    ACCOUNT = 'account'
+    AI = 'ai'
+    AI_GATEWAY = 'ai-gateway'
+    BILLING = 'billing'
+    CONNECT = 'connect'
+    DEPLOYMENT = 'deployment'
+    DOMAIN = 'domain'
+    EDGE = 'edge'
+    ENV_VARIABLE = 'env-variable'
+    FEATURE_FLAGS = 'feature-flags'
+    FIREWALL = 'firewall'
+    INTEGRATION = 'integration'
+    MICROFRONTENDS = 'microfrontends'
+    NETWORK = 'network'
+    OBSERVABILITY = 'observability'
+    OTHER = 'other'
+    PROJECT = 'project'
+    SECURITY = 'security'
+    STORAGE = 'storage'
+    TEAM = 'team'
+    V0 = 'v0'
+    VERCEL_APP = 'vercel-app'
+    WORKFLOW = 'workflow'
+    VALUES = %w[
+      account ai ai-gateway billing connect deployment domain edge
+      env-variable feature-flags firewall integration microfrontends network
+      observability other project security storage team v0 vercel-app
+      workflow
+    ].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UserEventEntitiesItemType SDK namespace.
+  module UserEventEntitiesItemType
+    APP = 'app'
+    AUTHOR = 'author'
+    BITBUCKET_LOGIN = 'bitbucket_login'
+    BOLD = 'bold'
+    DEPLOYMENT_HOST = 'deployment_host'
+    DEPLOYMENT_INSPECTOR = 'deployment_inspector'
+    DNS_RECORD = 'dns_record'
+    EDGE_CONFIG = 'edge-config'
+    ENV_VAR_NAME = 'env_var_name'
+    FLAG = 'flag'
+    FLAGS_SEGMENT = 'flags-segment'
+    FLAGS_SETTINGS = 'flags-settings'
+    GIT_LINK = 'git_link'
+    GITHUB_LOGIN = 'github_login'
+    GITLAB_LOGIN = 'gitlab_login'
+    HOOK_NAME = 'hook_name'
+    INTEGRATION = 'integration'
+    LINK = 'link'
+    PROJECT_NAME = 'project_name'
+    SCALING_RULES = 'scaling_rules'
+    STORE = 'store'
+    SYSTEM = 'system'
+    TARGET = 'target'
+    VALUES = %w[
+      app author bitbucket_login bold deployment_host deployment_inspector
+      dns_record edge-config env_var_name flag flags-segment flags-settings
+      git_link github_login gitlab_login hook_name integration link project_name
+      scaling_rules store system target
+    ].freeze
+    def self.from_value(value)
+      value
+    end
+  end
 end

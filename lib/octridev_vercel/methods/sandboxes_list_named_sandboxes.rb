@@ -44,12 +44,11 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 50) }
 
         SdkClient.request(
           'GET',
-          "/v2/sandboxes",
+          '/v2/sandboxes',
           config: config,
           query: {
             'project' => QueryValue.new(project, style: 'form', explode: true),
@@ -61,12 +60,12 @@ module OctridevVercel
             'status' => QueryValue.new(status, style: 'form', explode: true),
             'tags' => QueryValue.new(tags, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::ListNamedSandboxesResponse,
           decoder: :json,
           operation_id: 'list_named_sandboxes',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

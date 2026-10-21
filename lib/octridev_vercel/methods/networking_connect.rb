@@ -33,12 +33,11 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(search) { Validation.validate_length('search', search, max: 255) }
 
         SdkClient.request(
           'GET',
-          "/v1/connect/networks",
+          '/v1/connect/networks',
           config: config,
           query: {
             'includeHostedZones' => QueryValue.new(include_hosted_zones, style: 'form', explode: true),
@@ -46,12 +45,12 @@ module OctridevVercel
             'includeProjects' => QueryValue.new(include_projects, style: 'form', explode: true),
             'search' => QueryValue.new(search, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: [::OctridevVercel::Network],
           decoder: :json,
           operation_id: 'list_networks',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -75,7 +74,6 @@ module OctridevVercel
         aws_availability_zone_ids: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 255)
 
         Validation.if_given(aws_availability_zone_ids) do
@@ -84,22 +82,22 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          "/v1/connect/networks",
+          '/v1/connect/networks',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'cidr' => cidr,
             'name' => name,
             'region' => region,
-            'awsAvailabilityZoneIds' => aws_availability_zone_ids,
+            'awsAvailabilityZoneIds' => aws_availability_zone_ids
           },
           return_type: ::OctridevVercel::Network,
           decoder: :json,
           operation_id: 'create_network',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -118,21 +116,20 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/connect/networks/",
+            '/v1/connect/networks/',
             SdkClient.encode_path_segment(network_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'delete_network',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -154,27 +151,26 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 255)
 
         SdkClient.request(
           'PATCH',
           [
-            "/v1/connect/networks/",
+            '/v1/connect/networks/',
             SdkClient.encode_path_segment(network_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'name' => name,
+            'name' => name
           },
           return_type: ::OctridevVercel::Network,
           decoder: :json,
           operation_id: 'update_network',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -194,22 +190,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
           [
-            "/v1/connect/networks/",
+            '/v1/connect/networks/',
             SdkClient.encode_path_segment(network_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Network,
           decoder: :json,
           operation_id: 'read_network',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

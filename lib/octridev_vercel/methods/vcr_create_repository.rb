@@ -28,26 +28,25 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('name', name, max: 255)
         Validation.validate_pattern('name', name, '^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$')
 
         SdkClient.request(
           'POST',
-          "/v1/vcr/repository",
+          '/v1/vcr/repository',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'projectId' => project_id,
-            'name' => name,
+            'name' => name
           },
           return_type: ::OctridevVercel::Methods::Vcr::CreateRepositoryResponse,
           decoder: :json,
           operation_id: 'create_repository',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

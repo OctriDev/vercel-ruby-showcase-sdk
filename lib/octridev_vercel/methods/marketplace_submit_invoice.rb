@@ -36,15 +36,14 @@ module OctridevVercel
         test: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_date_time('invoiceDate', invoice_date)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/billing/invoices"
+            '/billing/invoices'
           ].join,
           config: config,
           body: {
@@ -55,12 +54,12 @@ module OctridevVercel
             'memo' => memo,
             'discounts' => discounts,
             'final' => final,
-            'test' => test,
+            'test' => test
           },
           return_type: ::OctridevVercel::Methods::Marketplace::SubmitInvoiceResponse,
           decoder: :json,
           operation_id: 'submit_invoice',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

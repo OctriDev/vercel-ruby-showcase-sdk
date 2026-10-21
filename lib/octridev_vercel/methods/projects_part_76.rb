@@ -45,7 +45,7 @@ module OctridevVercel
       module UpdateMicrofrontendsResponseTracingSamplingRulesItemDestination
         EXTERNAL = 'external'
         INTERNAL = 'internal'
-        VALUES = ['external', 'internal'].freeze
+        VALUES = %w[external internal].freeze
         def self.from_value(value)
           value
         end
@@ -71,7 +71,7 @@ module OctridevVercel
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
         REDIRECT = 'redirect'
-        VALUES = ['allow', 'bypass', 'challenge', 'deny', 'log', 'rate_limit', 'redirect'].freeze
+        VALUES = %w[allow bypass challenge deny log rate_limit redirect].freeze
         def self.from_value(value)
           value
         end
@@ -128,8 +128,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -153,7 +153,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -173,7 +173,7 @@ module OctridevVercel
       module CreateProjectResourceConfigBuildMachineSelection
         ELASTIC = 'elastic'
         FIXED = 'fixed'
-        VALUES = ['elastic', 'fixed'].freeze
+        VALUES = %w[elastic fixed].freeze
         def self.from_value(value)
           value
         end
@@ -194,7 +194,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -205,7 +205,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -217,8 +217,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = [
-          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+        VALUES = %w[
+          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
         ].freeze
         def self.from_value(value)
           value
@@ -256,9 +256,9 @@ module OctridevVercel
         SIN1 = 'sin1'
         SYD1 = 'syd1'
         YUL1 = 'yul1'
-        VALUES = [
-          'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'iad1',
-          'icn1', 'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
+        VALUES = %w[
+          arn1 bom1 cdg1 cle1 cpt1 dub1 fra1 gru1 hkg1 hnd1 iad1
+          icn1 kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
         ].freeze
         def self.from_value(value)
           value
@@ -428,7 +428,7 @@ module OctridevVercel
         CNAME = 'CNAME'
         DNS_01 = 'dns-01'
         HTTP = 'http'
-        VALUES = ['A', 'CNAME', 'dns-01', 'http'].freeze
+        VALUES = %w[A CNAME dns-01 http].freeze
         def self.from_value(value)
           value
         end
@@ -477,7 +477,7 @@ module OctridevVercel
       module UpdateProjectResponseEnvItemVisibility
         CONFIG = 'config'
         SECRET = 'secret'
-        VALUES = ['config', 'secret'].freeze
+        VALUES = %w[config secret].freeze
         def self.from_value(value)
           value
         end
@@ -489,7 +489,7 @@ module OctridevVercel
         CNAME = 'CNAME'
         DNS_01 = 'dns-01'
         HTTP = 'http'
-        VALUES = ['A', 'CNAME', 'dns-01', 'http'].freeze
+        VALUES = %w[A CNAME dns-01 http].freeze
         def self.from_value(value)
           value
         end
@@ -519,7 +519,7 @@ module OctridevVercel
       module UploadProjectAvatarResponseEnvItemVisibility
         CONFIG = 'config'
         SECRET = 'secret'
-        VALUES = ['config', 'secret'].freeze
+        VALUES = %w[config secret].freeze
         def self.from_value(value)
           value
         end
@@ -566,9 +566,9 @@ module OctridevVercel
         SIN1 = 'sin1'
         SYD1 = 'syd1'
         YUL1 = 'yul1'
-        VALUES = [
-          'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'iad1',
-          'icn1', 'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
+        VALUES = %w[
+          arn1 bom1 cdg1 cle1 cpt1 dub1 fra1 gru1 hkg1 hnd1 iad1
+          icn1 kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
         ].freeze
         def self.from_value(value)
           value

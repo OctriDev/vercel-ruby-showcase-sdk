@@ -27,26 +27,25 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/rolling-release/start"
+            '/rolling-release/start'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'canaryDeploymentId' => canary_deployment_id,
+            'canaryDeploymentId' => canary_deployment_id
           },
           return_type: ::OctridevVercel::Methods::RollingRelease::StartRollingReleaseResponse,
           decoder: :json,
           operation_id: 'start_rolling_release',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

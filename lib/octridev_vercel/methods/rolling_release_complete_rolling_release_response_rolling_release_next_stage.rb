@@ -47,12 +47,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCompleteRollingReleaseResponseRollingReleaseStagesItemMetadata
         FIELDS = {
-          duration: "duration",
-          index: "index",
-          is_final_stage: "isFinalStage",
-          linear_shift: "linearShift",
-          require_approval: "requireApproval",
-          target_percentage: "targetPercentage",
+          duration: 'duration',
+          index: 'index',
+          is_final_stage: 'isFinalStage',
+          linear_shift: 'linearShift',
+          require_approval: 'requireApproval',
+          target_percentage: 'targetPercentage'
         }.freeze
         REQUIRED_FIELDS = %i[
           duration
@@ -70,7 +70,7 @@ module OctridevVercel
           end,
           require_approval: lambda do |value|
             ::OctridevVercel::Methods::RollingRelease::CompleteRollingReleaseResponseRollingReleaseStagesItemRequireApproval.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           duration
@@ -115,18 +115,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCompleteRollingReleaseResponseRollingReleaseMetadata
         FIELDS = {
-          active_stage: "activeStage",
-          advancement_type: "advancementType",
-          canary_deployment: "canaryDeployment",
-          current_canary_percentage: "currentCanaryPercentage",
-          current_deployment: "currentDeployment",
-          next_stage: "nextStage",
-          queued_deployment_id: "queuedDeploymentId",
-          stages: "stages",
-          started_at: "startedAt",
-          state: "state",
-          substate: "substate",
-          updated_at: "updatedAt",
+          active_stage: 'activeStage',
+          advancement_type: 'advancementType',
+          canary_deployment: 'canaryDeployment',
+          current_canary_percentage: 'currentCanaryPercentage',
+          current_deployment: 'currentDeployment',
+          next_stage: 'nextStage',
+          queued_deployment_id: 'queuedDeploymentId',
+          stages: 'stages',
+          started_at: 'startedAt',
+          state: 'state',
+          substate: 'substate',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           active_stage
@@ -165,7 +165,7 @@ module OctridevVercel
           end,
           substate: lambda do |value|
             ::OctridevVercel::Methods::RollingRelease::CompleteRollingReleaseResponseRollingReleaseSubstate.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           active_stage
@@ -227,7 +227,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCompleteRollingReleaseResponseMetadata
         FIELDS = {
-          rolling_release: "rollingRelease",
+          rolling_release: 'rollingRelease'
         }.freeze
         REQUIRED_FIELDS = %i[
           rolling_release
@@ -235,7 +235,7 @@ module OctridevVercel
         DECODERS = {
           rolling_release: lambda do |value|
             ::OctridevVercel::Methods::RollingRelease::CompleteRollingReleaseResponseRollingRelease.from_hash(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           rolling_release
@@ -286,8 +286,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -380,7 +380,7 @@ module OctridevVercel
         ACTIVE = 'ACTIVE'
         COMPLETE = 'COMPLETE'
         ABORTED = 'ABORTED'
-        VALUES = ['ACTIVE', 'COMPLETE', 'ABORTED'].freeze
+        VALUES = %w[ACTIVE COMPLETE ABORTED].freeze
         def self.from_value(value)
           value
         end
@@ -401,7 +401,7 @@ module OctridevVercel
         ABORTED = 'ABORTED'
         ACTIVE = 'ACTIVE'
         COMPLETE = 'COMPLETE'
-        VALUES = ['ABORTED', 'ACTIVE', 'COMPLETE'].freeze
+        VALUES = %w[ABORTED ACTIVE COMPLETE].freeze
         def self.from_value(value)
           value
         end
@@ -420,7 +420,7 @@ module OctridevVercel
       module GetRollingReleaseConfigResponseRollingReleaseGateAction
         PAUSE = 'pause'
         ROLLBACK = 'rollback'
-        VALUES = ['pause', 'rollback'].freeze
+        VALUES = %w[pause rollback].freeze
         def self.from_value(value)
           value
         end
@@ -430,7 +430,7 @@ module OctridevVercel
       module CompleteRollingReleaseResponseRollingReleaseCurrentDeploymentTarget
         PRODUCTION = 'production'
         STAGING = 'staging'
-        VALUES = ['production', 'staging'].freeze
+        VALUES = %w[production staging].freeze
         def self.from_value(value)
           value
         end
@@ -450,7 +450,7 @@ module OctridevVercel
       module StartRollingReleaseResponseRollingReleaseCanaryDeploymentTarget
         PRODUCTION = 'production'
         STAGING = 'staging'
-        VALUES = ['production', 'staging'].freeze
+        VALUES = %w[production staging].freeze
         def self.from_value(value)
           value
         end
@@ -475,8 +475,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -517,7 +517,7 @@ module OctridevVercel
       module ApproveRollingReleaseStageResponseRollingReleaseAdvancementType
         AUTOMATIC = 'automatic'
         MANUAL_APPROVAL = 'manual-approval'
-        VALUES = ['automatic', 'manual-approval'].freeze
+        VALUES = %w[automatic manual-approval].freeze
         def self.from_value(value)
           value
         end
@@ -557,7 +557,7 @@ module OctridevVercel
       module StartRollingReleaseResponseRollingReleaseAdvancementType
         AUTOMATIC = 'automatic'
         MANUAL_APPROVAL = 'manual-approval'
-        VALUES = ['automatic', 'manual-approval'].freeze
+        VALUES = %w[automatic manual-approval].freeze
         def self.from_value(value)
           value
         end

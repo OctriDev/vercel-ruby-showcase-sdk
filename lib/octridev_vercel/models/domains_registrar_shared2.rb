@@ -5,480 +5,482 @@
 
 # domains_registrar domain models
 module OctridevVercel
-# Defines the InternalServerErrorCode SDK namespace.
-module InternalServerErrorCode
-  INTERNAL_SERVER_ERROR = 'internal_server_error'
-  VALUES = ['internal_server_error'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the InternalServerErrorStatus SDK namespace.
-module InternalServerErrorStatus
-  V_500 = 500
-  VALUES = [500].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalInvalidAdditionalContactInfoMetadata
-  FIELDS = {
-    status: "status",
-    code: "code",
-    message: "message",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    status
-    code
-    message
-  ].freeze
-  DECODERS = {
-    status: lambda do |value|
-      ::OctridevVercel::InvalidAdditionalContactInfoStatus.from_value(value)
-    end,
-    code: lambda do |value|
-      ::OctridevVercel::InvalidAdditionalContactInfoCode.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for InvalidAdditionalContactInfo.
-# Additional contact information provided for the TLD is invalid.
-class InvalidAdditionalContactInfo
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalInvalidAdditionalContactInfoMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalInvalidAdditionalContactInfoMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalInvalidAdditionalContactInfoMetadata::DECODERS
-
-  # @return [InvalidAdditionalContactInfoStatus] Required enumerated value serialized in the `status` wire field.
-  attr_reader :status
-  # @return [InvalidAdditionalContactInfoCode] Required enumerated value serialized in the `code` wire field.
-  attr_reader :code
-  # @return [String] Required `string` value serialized in the `message` wire field.
-  attr_reader :message
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the InternalServerErrorCode SDK namespace.
+  module InternalServerErrorCode
+    INTERNAL_SERVER_ERROR = 'internal_server_error'
+    VALUES = ['internal_server_error'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the InternalServerErrorStatus SDK namespace.
+  module InternalServerErrorStatus
+    V_500 = 500
+    VALUES = [500].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the InvalidAdditionalContactInfoCode SDK namespace.
-module InvalidAdditionalContactInfoCode
-  INVALID_ADDITIONAL_CONTACT_INFO = 'invalid_additional_contact_info'
-  VALUES = ['invalid_additional_contact_info'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the InvalidAdditionalContactInfoStatus SDK namespace.
-module InvalidAdditionalContactInfoStatus
-  V_400 = 400
-  VALUES = [400].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalIssueMetadata
-  FIELDS = {
-    path: "path",
-    message: "message",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    path
-    message
-  ].freeze
-  DECODERS = {
-    path: lambda do |value|
-      value&.map { |item| ::OctridevVercel::PropertyKey.from_hash(item) }
-    end,
-  }.freeze
-end
-
-# API model for Issue.
-# Represents an error encountered while parsing a value to match the schema
-class Issue
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalIssueMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalIssueMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalIssueMetadata::DECODERS
-
-  # @return [Array_of_PropertyKey] The path to the property where the issue occurred
-  attr_reader :path
-  # @return [String] A descriptive message explaining the issue
-  attr_reader :message
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalInvalidAdditionalContactInfoMetadata
+    FIELDS = {
+      status: 'status',
+      code: 'code',
+      message: 'message'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      status
+      code
+      message
+    ].freeze
+    DECODERS = {
+      status: lambda do |value|
+        ::OctridevVercel::InvalidAdditionalContactInfoStatus.from_value(value)
+      end,
+      code: lambda do |value|
+        ::OctridevVercel::InvalidAdditionalContactInfoCode.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for InvalidAdditionalContactInfo.
+  # Additional contact information provided for the TLD is invalid.
+  class InvalidAdditionalContactInfo
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalInvalidAdditionalContactInfoMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalInvalidAdditionalContactInfoMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalInvalidAdditionalContactInfoMetadata::DECODERS
+
+    # @return [InvalidAdditionalContactInfoStatus] Required enumerated value serialized in the `status` wire field.
+    attr_reader :status
+    # @return [InvalidAdditionalContactInfoCode] Required enumerated value serialized in the `code` wire field.
+    attr_reader :code
+    # @return [String] Required `string` value serialized in the `message` wire field.
+    attr_reader :message
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalLanguageCodeRequiredMetadata
-  FIELDS = {
-    status: "status",
-    code: "code",
-    message: "message",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    status
-    code
-    message
-  ].freeze
-  DECODERS = {
-    status: lambda do |value|
-      ::OctridevVercel::LanguageCodeRequiredStatus.from_value(value)
-    end,
-    code: lambda do |value|
-      ::OctridevVercel::LanguageCodeRequiredCode.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for LanguageCodeRequired.
-# A language code is required for punycode domains.
-class LanguageCodeRequired
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalLanguageCodeRequiredMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalLanguageCodeRequiredMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalLanguageCodeRequiredMetadata::DECODERS
-
-  # @return [LanguageCodeRequiredStatus] Required enumerated value serialized in the `status` wire field.
-  attr_reader :status
-  # @return [LanguageCodeRequiredCode] Required enumerated value serialized in the `code` wire field.
-  attr_reader :code
-  # @return [String] Required `string` value serialized in the `message` wire field.
-  attr_reader :message
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the InvalidAdditionalContactInfoCode SDK namespace.
+  module InvalidAdditionalContactInfoCode
+    INVALID_ADDITIONAL_CONTACT_INFO = 'invalid_additional_contact_info'
+    VALUES = ['invalid_additional_contact_info'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the InvalidAdditionalContactInfoStatus SDK namespace.
+  module InvalidAdditionalContactInfoStatus
+    V_400 = 400
+    VALUES = [400].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the LanguageCodeRequiredCode SDK namespace.
-module LanguageCodeRequiredCode
-  LANGUAGE_CODE_REQUIRED = 'language_code_required'
-  VALUES = ['language_code_required'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the LanguageCodeRequiredStatus SDK namespace.
-module LanguageCodeRequiredStatus
-  V_400 = 400
-  VALUES = [400].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the Nameserver SDK value decoder.
-module Nameserver
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NonEmptyTrimmedString SDK value decoder.
-module NonEmptyTrimmedString
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalPropertyKeyVariant2Metadata
-  FIELDS = {
-    tag: "_tag",
-    key: "key",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    tag
-    key
-  ].freeze
-  DECODERS = {
-    tag: lambda do |value|
-      ::OctridevVercel::PropertyKeyVariant2Tag.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for PropertyKeyVariant2.
-class PropertyKeyVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalPropertyKeyVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalPropertyKeyVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalPropertyKeyVariant2Metadata::DECODERS
-
-  # @return [PropertyKeyVariant2Tag] Required enumerated value serialized in the `_tag` wire field.
-  attr_reader :tag
-  # @return [String] Required `string` value serialized in the `key` wire field.
-  attr_reader :key
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalIssueMetadata
+    FIELDS = {
+      path: 'path',
+      message: 'message'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      path
+      message
+    ].freeze
+    DECODERS = {
+      path: lambda do |value|
+        value&.map { |item| ::OctridevVercel::PropertyKey.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for Issue.
+  # Represents an error encountered while parsing a value to match the schema
+  class Issue
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalIssueMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalIssueMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalIssueMetadata::DECODERS
+
+    # @return [Array_of_PropertyKey] The path to the property where the issue occurred
+    attr_reader :path
+    # @return [String] A descriptive message explaining the issue
+    attr_reader :message
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the PropertyKey SDK namespace.
-module PropertyKey
-  def self.from_hash(hash)
-    return hash if hash.is_a?(::String)
-    return hash if hash.is_a?(::Float)
-    return PropertyKeyVariant2.from_hash(hash)
-  end
-end
-
-# Defines the PropertyKeyVariant2Tag SDK namespace.
-module PropertyKeyVariant2Tag
-  SYMBOL = 'symbol'
-  VALUES = ['symbol'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSearchDomainsResponseResultsItemVariant0Metadata
-  FIELDS = {
-    domain: "domain",
-    available: "available",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    domain
-    available
-  ].freeze
-  DECODERS = {
-    domain: lambda do |value|
-      ::OctridevVercel::DomainName.from_value(value)
-    end,
-    available: lambda do |value|
-      ::OctridevVercel::SearchDomainsResponseResultsItemVariant0Available.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for SearchDomainsResponseResultsItemVariant0.
-class SearchDomainsResponseResultsItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSearchDomainsResponseResultsItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSearchDomainsResponseResultsItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSearchDomainsResponseResultsItemVariant0Metadata::DECODERS
-
-  # @return [DomainName] A valid domain name
-  attr_reader :domain
-  # @return [SearchDomainsResponseResultsItemVariant0Available] `false` means the domain is unavailable or its availability could not be confirmed.
-  attr_reader :available
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalLanguageCodeRequiredMetadata
+    FIELDS = {
+      status: 'status',
+      code: 'code',
+      message: 'message'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      status
+      code
+      message
+    ].freeze
+    DECODERS = {
+      status: lambda do |value|
+        ::OctridevVercel::LanguageCodeRequiredStatus.from_value(value)
+      end,
+      code: lambda do |value|
+        ::OctridevVercel::LanguageCodeRequiredCode.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for LanguageCodeRequired.
+  # A language code is required for punycode domains.
+  class LanguageCodeRequired
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalLanguageCodeRequiredMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalLanguageCodeRequiredMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalLanguageCodeRequiredMetadata::DECODERS
+
+    # @return [LanguageCodeRequiredStatus] Required enumerated value serialized in the `status` wire field.
+    attr_reader :status
+    # @return [LanguageCodeRequiredCode] Required enumerated value serialized in the `code` wire field.
+    attr_reader :code
+    # @return [String] Required `string` value serialized in the `message` wire field.
+    attr_reader :message
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSearchDomainsResponseResultsItemVariant1Metadata
-  FIELDS = {
-    domain: "domain",
-    available: "available",
-    years: "years",
-    price: "price",
-    renewal_price: "renewalPrice",
-    premium: "premium",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    domain
-    available
-    years
-    price
-    renewal_price
-    premium
-  ].freeze
-  DECODERS = {
-    domain: lambda do |value|
-      ::OctridevVercel::DomainName.from_value(value)
-    end,
-    available: lambda do |value|
-      ::OctridevVercel::SearchDomainsResponseResultsItemVariant1Available.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for SearchDomainsResponseResultsItemVariant1.
-class SearchDomainsResponseResultsItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSearchDomainsResponseResultsItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSearchDomainsResponseResultsItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSearchDomainsResponseResultsItemVariant1Metadata::DECODERS
-
-  attr_reader :available, :years, :price, :renewal_price, :premium
-  # @return [DomainName] A valid domain name
-  attr_reader :domain
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the LanguageCodeRequiredCode SDK namespace.
+  module LanguageCodeRequiredCode
+    LANGUAGE_CODE_REQUIRED = 'language_code_required'
+    VALUES = ['language_code_required'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the LanguageCodeRequiredStatus SDK namespace.
+  module LanguageCodeRequiredStatus
+    V_400 = 400
+    VALUES = [400].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the SearchDomainsResponseResultsItem SDK namespace.
-module SearchDomainsResponseResultsItem
-  def self.from_hash(hash)
-    shape_mapping = {
-      "years" => SearchDomainsResponseResultsItemVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-    return SearchDomainsResponseResultsItemVariant0.from_hash(hash)
-  end
-end
-
-# Defines the SearchDomainsResponseResultsItemVariant0Available SDK namespace.
-module SearchDomainsResponseResultsItemVariant0Available
-  FALSE = false
-  VALUES = [false].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the SearchDomainsResponseResultsItemVariant1Available SDK namespace.
-module SearchDomainsResponseResultsItemVariant1Available
-  TRUE = true
-  VALUES = [true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUnauthorizedMetadata
-  FIELDS = {
-    status: "status",
-    code: "code",
-    message: "message",
-    reason: "reason",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    status
-    code
-    message
-  ].freeze
-  DECODERS = {
-    status: lambda do |value|
-      ::OctridevVercel::UnauthorizedStatus.from_value(value)
-    end,
-    code: lambda do |value|
-      ::OctridevVercel::UnauthorizedCode.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for Unauthorized.
-# Typed representation of the `Unauthorized` API schema.
-class Unauthorized
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUnauthorizedMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUnauthorizedMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUnauthorizedMetadata::DECODERS
-
-  # @return [UnauthorizedStatus] Required enumerated value serialized in the `status` wire field.
-  attr_reader :status
-  # @return [UnauthorizedCode] Required enumerated value serialized in the `code` wire field.
-  attr_reader :code
-  # @return [String] Required `string` value serialized in the `message` wire field.
-  attr_reader :message
-  # @return [String] Optional `string` value serialized in the `reason` wire field.
-  attr_reader :reason
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the Nameserver SDK value decoder.
+  module Nameserver
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the NonEmptyTrimmedString SDK value decoder.
+  module NonEmptyTrimmedString
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalPropertyKeyVariant2Metadata
+    FIELDS = {
+      tag: '_tag',
+      key: 'key'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      tag
+      key
+    ].freeze
+    DECODERS = {
+      tag: lambda do |value|
+        ::OctridevVercel::PropertyKeyVariant2Tag.from_value(value)
+      end
+    }.freeze
   end
-end
 
-# Defines the UnauthorizedCode SDK namespace.
-module UnauthorizedCode
-  UNAUTHORIZED = 'unauthorized'
-  VALUES = ['unauthorized'].freeze
-  def self.from_value(value)
-    value
-  end
-end
+  # API model for PropertyKeyVariant2.
+  class PropertyKeyVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalPropertyKeyVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalPropertyKeyVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalPropertyKeyVariant2Metadata::DECODERS
 
-# Defines the UnauthorizedStatus SDK namespace.
-module UnauthorizedStatus
-  V_401 = 401
-  VALUES = [401].freeze
-  def self.from_value(value)
-    value
+    # @return [PropertyKeyVariant2Tag] Required enumerated value serialized in the `_tag` wire field.
+    attr_reader :tag
+    # @return [String] Required `string` value serialized in the `key` wire field.
+    attr_reader :key
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
+
+  # Defines the PropertyKey SDK namespace.
+  module PropertyKey
+    def self.from_hash(hash)
+      return hash if hash.is_a?(::String)
+      return hash if hash.is_a?(::Float)
+
+      PropertyKeyVariant2.from_hash(hash)
+    end
+  end
+
+  # Defines the PropertyKeyVariant2Tag SDK namespace.
+  module PropertyKeyVariant2Tag
+    SYMBOL = 'symbol'
+    VALUES = ['symbol'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalSearchDomainsResponseResultsItemVariant0Metadata
+    FIELDS = {
+      domain: 'domain',
+      available: 'available'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      domain
+      available
+    ].freeze
+    DECODERS = {
+      domain: lambda do |value|
+        ::OctridevVercel::DomainName.from_value(value)
+      end,
+      available: lambda do |value|
+        ::OctridevVercel::SearchDomainsResponseResultsItemVariant0Available.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for SearchDomainsResponseResultsItemVariant0.
+  class SearchDomainsResponseResultsItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSearchDomainsResponseResultsItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSearchDomainsResponseResultsItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSearchDomainsResponseResultsItemVariant0Metadata::DECODERS
+
+    # @return [DomainName] A valid domain name
+    attr_reader :domain
+    # @return [SearchDomainsResponseResultsItemVariant0Available] `false` means the domain is unavailable or its availability could not be confirmed.
+    attr_reader :available
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalSearchDomainsResponseResultsItemVariant1Metadata
+    FIELDS = {
+      domain: 'domain',
+      available: 'available',
+      years: 'years',
+      price: 'price',
+      renewal_price: 'renewalPrice',
+      premium: 'premium'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      domain
+      available
+      years
+      price
+      renewal_price
+      premium
+    ].freeze
+    DECODERS = {
+      domain: lambda do |value|
+        ::OctridevVercel::DomainName.from_value(value)
+      end,
+      available: lambda do |value|
+        ::OctridevVercel::SearchDomainsResponseResultsItemVariant1Available.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for SearchDomainsResponseResultsItemVariant1.
+  class SearchDomainsResponseResultsItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSearchDomainsResponseResultsItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSearchDomainsResponseResultsItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSearchDomainsResponseResultsItemVariant1Metadata::DECODERS
+
+    attr_reader :available, :years, :price, :renewal_price, :premium
+    # @return [DomainName] A valid domain name
+    attr_reader :domain
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the SearchDomainsResponseResultsItem SDK namespace.
+  module SearchDomainsResponseResultsItem
+    def self.from_hash(hash)
+      shape_mapping = {
+        'years' => SearchDomainsResponseResultsItemVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      return decoded unless type.nil?
+
+      SearchDomainsResponseResultsItemVariant0.from_hash(hash)
+    end
+  end
+
+  # Defines the SearchDomainsResponseResultsItemVariant0Available SDK namespace.
+  module SearchDomainsResponseResultsItemVariant0Available
+    FALSE = false
+    VALUES = [false].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the SearchDomainsResponseResultsItemVariant1Available SDK namespace.
+  module SearchDomainsResponseResultsItemVariant1Available
+    TRUE = true
+    VALUES = [true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUnauthorizedMetadata
+    FIELDS = {
+      status: 'status',
+      code: 'code',
+      message: 'message',
+      reason: 'reason'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      status
+      code
+      message
+    ].freeze
+    DECODERS = {
+      status: lambda do |value|
+        ::OctridevVercel::UnauthorizedStatus.from_value(value)
+      end,
+      code: lambda do |value|
+        ::OctridevVercel::UnauthorizedCode.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for Unauthorized.
+  # Typed representation of the `Unauthorized` API schema.
+  class Unauthorized
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUnauthorizedMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUnauthorizedMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUnauthorizedMetadata::DECODERS
+
+    # @return [UnauthorizedStatus] Required enumerated value serialized in the `status` wire field.
+    attr_reader :status
+    # @return [UnauthorizedCode] Required enumerated value serialized in the `code` wire field.
+    attr_reader :code
+    # @return [String] Required `string` value serialized in the `message` wire field.
+    attr_reader :message
+    # @return [String] Optional `string` value serialized in the `reason` wire field.
+    attr_reader :reason
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the UnauthorizedCode SDK namespace.
+  module UnauthorizedCode
+    UNAUTHORIZED = 'unauthorized'
+    VALUES = ['unauthorized'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UnauthorizedStatus SDK namespace.
+  module UnauthorizedStatus
+    V_401 = 401
+    VALUES = [401].freeze
+    def self.from_value(value)
+      value
+    end
+  end
 end

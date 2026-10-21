@@ -5,662 +5,653 @@
 
 # global_config domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalGetEdgeConfigBackupResponseVariant0BackupMetadata
-  FIELDS = {
-    digest: "digest",
-    items: "items",
-    slug: "slug",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    digest
-    items
-    slug
-    updated_at
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetEdgeConfigBackupResponseVariant0Backup.
-class GetEdgeConfigBackupResponseVariant0Backup
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0BackupMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0BackupMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant0BackupMetadata::DECODERS
-
-  attr_reader :digest, :items, :updated_at
-  # @return [String] Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-  attr_reader :slug
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetEdgeConfigBackupResponseVariant0BackupMetadata
+    FIELDS = {
+      digest: 'digest',
+      items: 'items',
+      slug: 'slug',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      digest
+      items
+      slug
+      updated_at
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
+  # API model for GetEdgeConfigBackupResponseVariant0Backup.
+  class GetEdgeConfigBackupResponseVariant0Backup
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0BackupMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0BackupMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant0BackupMetadata::DECODERS
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+    attr_reader :digest, :items, :updated_at
+    # @return [String] Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
+    attr_reader :slug
 
-# Internal model hydration metadata.
-class SdkInternalGetEdgeConfigBackupResponseVariant0MetadataMetadata
-  FIELDS = {
-    items_bytes: "itemsBytes",
-    items_count: "itemsCount",
-    updated_at: "updatedAt",
-    updated_by: "updatedBy",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetEdgeConfigBackupResponseVariant0Metadata.
-class GetEdgeConfigBackupResponseVariant0Metadata
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0MetadataMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0MetadataMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant0MetadataMetadata::DECODERS
-
-  attr_reader :items_bytes, :items_count, :updated_at, :updated_by
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetEdgeConfigBackupResponseVariant0UserMetadata
-  FIELDS = {
-    avatar: "avatar",
-    email: "email",
-    id: "id",
-    name: "name",
-    username: "username",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    email
-    id
-    username
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetEdgeConfigBackupResponseVariant0User.
-class GetEdgeConfigBackupResponseVariant0User
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0UserMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0UserMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant0UserMetadata::DECODERS
-
-  attr_reader :avatar, :email, :id, :name, :username
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetEdgeConfigBackupResponseVariant0Metadata
-  FIELDS = {
-    backup: "backup",
-    id: "id",
-    last_modified: "lastModified",
-    metadata: "metadata",
-    user: "user",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    backup
-    id
-    last_modified
-    metadata
-  ].freeze
-  DECODERS = {
-    backup: lambda do |value|
-      ::OctridevVercel::GetEdgeConfigBackupResponseVariant0Backup.from_hash(value)
-    end,
-    metadata: lambda do |value|
-      ::OctridevVercel::GetEdgeConfigBackupResponseVariant0Metadata.from_hash(value)
-    end,
-    user: lambda do |value|
-      ::OctridevVercel::GetEdgeConfigBackupResponseVariant0User.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for GetEdgeConfigBackupResponseVariant0.
-class GetEdgeConfigBackupResponseVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant0Metadata::DECODERS
-
-  attr_reader :backup, :id, :last_modified, :metadata, :user
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetEdgeConfigBackupResponseVariant1BackupMetadata
-  FIELDS = {
-    digest: "digest",
-    items: "items",
-    slug: "slug",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    digest
-    items
-    slug
-    updated_at
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetEdgeConfigBackupResponseVariant1Backup.
-class GetEdgeConfigBackupResponseVariant1Backup
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1BackupMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1BackupMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant1BackupMetadata::DECODERS
-
-  attr_reader :digest, :items, :updated_at
-  # @return [String] Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-  attr_reader :slug
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetEdgeConfigBackupResponseVariant1MetadataMetadata
-  FIELDS = {
-    items_bytes: "itemsBytes",
-    items_count: "itemsCount",
-    updated_at: "updatedAt",
-    updated_by: "updatedBy",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetEdgeConfigBackupResponseVariant1Metadata.
-class GetEdgeConfigBackupResponseVariant1Metadata
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1MetadataMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1MetadataMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant1MetadataMetadata::DECODERS
-
-  attr_reader :items_bytes, :items_count, :updated_at, :updated_by
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetEdgeConfigBackupResponseVariant1UserMetadata
-  FIELDS = {
-    avatar: "avatar",
-    email: "email",
-    id: "id",
-    name: "name",
-    username: "username",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    email
-    id
-    username
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetEdgeConfigBackupResponseVariant1User.
-class GetEdgeConfigBackupResponseVariant1User
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1UserMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1UserMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant1UserMetadata::DECODERS
-
-  attr_reader :avatar, :email, :id, :name, :username
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetEdgeConfigBackupResponseVariant1Metadata
-  FIELDS = {
-    backup: "backup",
-    id: "id",
-    last_modified: "lastModified",
-    metadata: "metadata",
-    user: "user",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    backup
-    id
-    last_modified
-    metadata
-    user
-  ].freeze
-  DECODERS = {
-    backup: lambda do |value|
-      ::OctridevVercel::GetEdgeConfigBackupResponseVariant1Backup.from_hash(value)
-    end,
-    metadata: lambda do |value|
-      ::OctridevVercel::GetEdgeConfigBackupResponseVariant1Metadata.from_hash(value)
-    end,
-    user: lambda do |value|
-      ::OctridevVercel::GetEdgeConfigBackupResponseVariant1User.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for GetEdgeConfigBackupResponseVariant1.
-class GetEdgeConfigBackupResponseVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant1Metadata::DECODERS
-
-  attr_reader :backup, :id, :last_modified, :metadata, :user
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the GetEdgeConfigBackupResponse SDK namespace.
-module GetEdgeConfigBackupResponse
-  def self.from_hash(hash)
-    lossy = nil
-    [GetEdgeConfigBackupResponseVariant0, GetEdgeConfigBackupResponseVariant1].each do |type|
-      decoded = type.from_hash(hash)
-      return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-      lossy ||= decoded
-    rescue ::StandardError
-      next
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
     end
-    return lossy unless lossy.nil?
-  end
-end
 
-# Internal model hydration metadata.
-class SdkInternalGlobalConfigItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    description: "description",
-    edge_config_id: "edgeConfigId",
-    key: "key",
-    updated_at: "updatedAt",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    edge_config_id
-    key
-    updated_at
-    value
-  ].freeze
-  DECODERS = {
-    value: lambda do |value|
-      ::OctridevVercel::GlobalConfigItemValue.from_hash(value)
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    value
-  ].freeze
-end
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-# API model for GlobalConfigItem.
-# The Global Config.
-class GlobalConfigItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGlobalConfigItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGlobalConfigItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGlobalConfigItemMetadata::DECODERS
-
-  # @return [Float] Required `number` value serialized in the `createdAt` wire field.
-  attr_reader :created_at
-  # @return [String] Optional `string` value serialized in the `description` wire field.
-  attr_reader :description
-  # @return [String] Required `string` value serialized in the `edgeConfigId` wire field.
-  attr_reader :edge_config_id
-  # @return [String] Required `string` value serialized in the `key` wire field.
-  attr_reader :key
-  # @return [Float] Required `number` value serialized in the `updatedAt` wire field.
-  attr_reader :updated_at
-  # @return [GlobalConfigItemValue] Required API value serialized in the `value` wire field.
-  attr_reader :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalGlobalConfigItemMetadata::NULLABLE_FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetEdgeConfigBackupResponseVariant0MetadataMetadata
+    FIELDS = {
+      items_bytes: 'itemsBytes',
+      items_count: 'itemsCount',
+      updated_at: 'updatedAt',
+      updated_by: 'updatedBy'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetEdgeConfigBackupResponseVariant0Metadata.
+  class GetEdgeConfigBackupResponseVariant0Metadata
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0MetadataMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0MetadataMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant0MetadataMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGlobalConfigTokenMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    edge_config_id: "edgeConfigId",
-    id: "id",
-    label: "label",
-    partial_token: "partialToken",
-    token: "token",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    edge_config_id
-    id
-    label
-    partial_token
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :items_bytes, :items_count, :updated_at, :updated_by
 
-# API model for GlobalConfigToken.
-# The Global Config.
-class GlobalConfigToken
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGlobalConfigTokenMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGlobalConfigTokenMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGlobalConfigTokenMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [Float] Required `number` value serialized in the `createdAt` wire field.
-  attr_reader :created_at
-  # @return [String] Required `string` value serialized in the `edgeConfigId` wire field.
-  attr_reader :edge_config_id
-  # @return [String] This is not the token itself, but rather an id to identify the token by
-  attr_reader :id
-  # @return [String] Required `string` value serialized in the `label` wire field.
-  attr_reader :label
-  # @return [String] A partially-masked representation of the token, safe to display in UIs. The format is the first 3 characters of the token followed by a fixed 8-character `*` mask (e.g. `550e8400-e29b-41d4-a716-446655440000` → `550********`). The mask length is intentionally fixed (not proportional to the original token length) to avoid leaking the token length. Prefer this field for display/reference in UIs and logs. The full, plaintext token is only disclosed once at creation time via…
-  attr_reader :partial_token
-  # @return [String] Deprecated: the full, plaintext token. - Returned once by `POST /v1/edge-config/:edgeConfigId/token` (create). - Still returned by `GET /v1/edge-config/:edgeConfigId/token/:token` (detail) for backwards compatibility, but scheduled for removal. - **Not** returned by `GET /v1/edge-config/:edgeConfigId/tokens` (list); use `partialToken` for display and `id` to reference tokens. Do not rely on this field being present on read operations. Prefer `partialToken` for display and…
-  attr_reader :token
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetEdgeConfigBackupResponseVariant0UserMetadata
+    FIELDS = {
+      avatar: 'avatar',
+      email: 'email',
+      id: 'id',
+      name: 'name',
+      username: 'username'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      email
+      id
+      username
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetEdgeConfigBackupResponseVariant0User.
+  class GetEdgeConfigBackupResponseVariant0User
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0UserMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0UserMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant0UserMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant0Metadata
-  FIELDS = {
-    operation: "operation",
-    key: "key",
-    value: "value",
-    description: "description",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    operation
-    key
-    value
-  ].freeze
-  DECODERS = {
-    operation: lambda do |value|
-      ::OctridevVercel::PatchEdgeConfigItemsRequestItemsItemVariant0Operation.from_value(value)
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    value
-  ].freeze
-end
+    attr_reader :avatar, :email, :id, :name, :username
 
-# API model for PatchEdgeConfigItemsRequestItemsItemVariant0.
-class PatchEdgeConfigItemsRequestItemsItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :operation, :key, :value, :description
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant0Metadata::NULLABLE_FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetEdgeConfigBackupResponseVariant0Metadata
+    FIELDS = {
+      backup: 'backup',
+      id: 'id',
+      last_modified: 'lastModified',
+      metadata: 'metadata',
+      user: 'user'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      backup
+      id
+      last_modified
+      metadata
+    ].freeze
+    DECODERS = {
+      backup: lambda do |value|
+        ::OctridevVercel::GetEdgeConfigBackupResponseVariant0Backup.from_hash(value)
+      end,
+      metadata: lambda do |value|
+        ::OctridevVercel::GetEdgeConfigBackupResponseVariant0Metadata.from_hash(value)
+      end,
+      user: lambda do |value|
+        ::OctridevVercel::GetEdgeConfigBackupResponseVariant0User.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetEdgeConfigBackupResponseVariant0.
+  class GetEdgeConfigBackupResponseVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant1Metadata
-  FIELDS = {
-    operation: "operation",
-    key: "key",
-    value: "value",
-    description: "description",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    operation
-    key
-    value
-  ].freeze
-  DECODERS = {
-    operation: lambda do |value|
-      ::OctridevVercel::PatchEdgeConfigItemsRequestItemsItemVariant1Operation.from_value(value)
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    value
-  ].freeze
-end
+    attr_reader :backup, :id, :last_modified, :metadata, :user
 
-# API model for PatchEdgeConfigItemsRequestItemsItemVariant1.
-class PatchEdgeConfigItemsRequestItemsItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :operation, :key, :value, :description
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant1Metadata::NULLABLE_FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetEdgeConfigBackupResponseVariant1BackupMetadata
+    FIELDS = {
+      digest: 'digest',
+      items: 'items',
+      slug: 'slug',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      digest
+      items
+      slug
+      updated_at
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetEdgeConfigBackupResponseVariant1Backup.
+  class GetEdgeConfigBackupResponseVariant1Backup
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1BackupMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1BackupMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant1BackupMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant2Metadata
-  FIELDS = {
-    operation: "operation",
-    key: "key",
-    value: "value",
-    description: "description",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    operation
-    key
-    description
-  ].freeze
-  DECODERS = {
-    operation: lambda do |value|
-      ::OctridevVercel::PatchEdgeConfigItemsRequestItemsItemVariant2Operation.from_value(value)
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    description
-  ].freeze
-end
+    attr_reader :digest, :items, :updated_at
+    # @return [String] Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
+    attr_reader :slug
 
-# API model for PatchEdgeConfigItemsRequestItemsItemVariant2.
-class PatchEdgeConfigItemsRequestItemsItemVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant2Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :operation, :key, :value, :description
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant2Metadata::NULLABLE_FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetEdgeConfigBackupResponseVariant1MetadataMetadata
+    FIELDS = {
+      items_bytes: 'itemsBytes',
+      items_count: 'itemsCount',
+      updated_at: 'updatedAt',
+      updated_by: 'updatedBy'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetEdgeConfigBackupResponseVariant1Metadata.
+  class GetEdgeConfigBackupResponseVariant1Metadata
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1MetadataMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1MetadataMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant1MetadataMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata
-  FIELDS = {
-    operation: "operation",
-    key: "key",
-    value: "value",
-    description: "description",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    operation
-    key
-  ].freeze
-  DECODERS = {
-    operation: lambda do |value|
-      ::OctridevVercel::PatchEdgeConfigItemsRequestItemsItemVariant3Operation.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :items_bytes, :items_count, :updated_at, :updated_by
 
-# API model for PatchEdgeConfigItemsRequestItemsItemVariant3.
-class PatchEdgeConfigItemsRequestItemsItemVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :operation, :key, :value, :description
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetEdgeConfigBackupResponseVariant1UserMetadata
+    FIELDS = {
+      avatar: 'avatar',
+      email: 'email',
+      id: 'id',
+      name: 'name',
+      username: 'username'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      email
+      id
+      username
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetEdgeConfigBackupResponseVariant1User.
+  class GetEdgeConfigBackupResponseVariant1User
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1UserMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1UserMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant1UserMetadata::DECODERS
+
+    attr_reader :avatar, :email, :id, :name, :username
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
+
+  # Internal model hydration metadata.
+  class SdkInternalGetEdgeConfigBackupResponseVariant1Metadata
+    FIELDS = {
+      backup: 'backup',
+      id: 'id',
+      last_modified: 'lastModified',
+      metadata: 'metadata',
+      user: 'user'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      backup
+      id
+      last_modified
+      metadata
+      user
+    ].freeze
+    DECODERS = {
+      backup: lambda do |value|
+        ::OctridevVercel::GetEdgeConfigBackupResponseVariant1Backup.from_hash(value)
+      end,
+      metadata: lambda do |value|
+        ::OctridevVercel::GetEdgeConfigBackupResponseVariant1Metadata.from_hash(value)
+      end,
+      user: lambda do |value|
+        ::OctridevVercel::GetEdgeConfigBackupResponseVariant1User.from_hash(value)
+      end
+    }.freeze
+  end
+
+  # API model for GetEdgeConfigBackupResponseVariant1.
+  class GetEdgeConfigBackupResponseVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetEdgeConfigBackupResponseVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetEdgeConfigBackupResponseVariant1Metadata::DECODERS
+
+    attr_reader :backup, :id, :last_modified, :metadata, :user
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the GetEdgeConfigBackupResponse SDK namespace.
+  module GetEdgeConfigBackupResponse
+    def self.from_hash(hash)
+      lossy = nil
+      [GetEdgeConfigBackupResponseVariant0, GetEdgeConfigBackupResponseVariant1].each do |type|
+        decoded = type.from_hash(hash)
+        return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+        lossy ||= decoded
+      rescue ::StandardError
+        next
+      end
+      lossy unless lossy.nil?
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalGlobalConfigItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      description: 'description',
+      edge_config_id: 'edgeConfigId',
+      key: 'key',
+      updated_at: 'updatedAt',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      edge_config_id
+      key
+      updated_at
+      value
+    ].freeze
+    DECODERS = {
+      value: lambda do |value|
+        ::OctridevVercel::GlobalConfigItemValue.from_hash(value)
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      value
+    ].freeze
+  end
+
+  # API model for GlobalConfigItem.
+  # The Global Config.
+  class GlobalConfigItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGlobalConfigItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGlobalConfigItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGlobalConfigItemMetadata::DECODERS
+
+    # @return [Float] Required `number` value serialized in the `createdAt` wire field.
+    attr_reader :created_at
+    # @return [String] Optional `string` value serialized in the `description` wire field.
+    attr_reader :description
+    # @return [String] Required `string` value serialized in the `edgeConfigId` wire field.
+    attr_reader :edge_config_id
+    # @return [String] Required `string` value serialized in the `key` wire field.
+    attr_reader :key
+    # @return [Float] Required `number` value serialized in the `updatedAt` wire field.
+    attr_reader :updated_at
+    # @return [GlobalConfigItemValue] Required API value serialized in the `value` wire field.
+    attr_reader :value
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalGlobalConfigItemMetadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalGlobalConfigTokenMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      edge_config_id: 'edgeConfigId',
+      id: 'id',
+      label: 'label',
+      partial_token: 'partialToken',
+      token: 'token'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      edge_config_id
+      id
+      label
+      partial_token
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for GlobalConfigToken.
+  # The Global Config.
+  class GlobalConfigToken
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGlobalConfigTokenMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGlobalConfigTokenMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGlobalConfigTokenMetadata::DECODERS
+
+    # @return [Float] Required `number` value serialized in the `createdAt` wire field.
+    attr_reader :created_at
+    # @return [String] Required `string` value serialized in the `edgeConfigId` wire field.
+    attr_reader :edge_config_id
+    # @return [String] This is not the token itself, but rather an id to identify the token by
+    attr_reader :id
+    # @return [String] Required `string` value serialized in the `label` wire field.
+    attr_reader :label
+    # @return [String] A partially-masked representation of the token, safe to display in UIs. The format is the first 3 characters of the token followed by a fixed 8-character `*` mask (e.g. `550e8400-e29b-41d4-a716-446655440000` → `550********`). The mask length is intentionally fixed (not proportional to the original token length) to avoid leaking the token length. Prefer this field for display/reference in UIs and logs. The full, plaintext token is only disclosed once at creation time via…
+    attr_reader :partial_token
+    # @return [String] Deprecated: the full, plaintext token. - Returned once by `POST /v1/edge-config/:edgeConfigId/token` (create). - Still returned by `GET /v1/edge-config/:edgeConfigId/token/:token` (detail) for backwards compatibility, but scheduled for removal. - **Not** returned by `GET /v1/edge-config/:edgeConfigId/tokens` (list); use `partialToken` for display and `id` to reference tokens. Do not rely on this field being present on read operations. Prefer `partialToken` for display and…
+    attr_reader :token
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant0Metadata
+    FIELDS = {
+      operation: 'operation',
+      key: 'key',
+      value: 'value',
+      description: 'description'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      operation
+      key
+      value
+    ].freeze
+    DECODERS = {
+      operation: lambda do |value|
+        ::OctridevVercel::PatchEdgeConfigItemsRequestItemsItemVariant0Operation.from_value(value)
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      value
+    ].freeze
+  end
+
+  # API model for PatchEdgeConfigItemsRequestItemsItemVariant0.
+  class PatchEdgeConfigItemsRequestItemsItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant0Metadata::DECODERS
+
+    attr_reader :operation, :key, :value, :description
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant0Metadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant1Metadata
+    FIELDS = {
+      operation: 'operation',
+      key: 'key',
+      value: 'value',
+      description: 'description'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      operation
+      key
+      value
+    ].freeze
+    DECODERS = {
+      operation: lambda do |value|
+        ::OctridevVercel::PatchEdgeConfigItemsRequestItemsItemVariant1Operation.from_value(value)
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      value
+    ].freeze
+  end
+
+  # API model for PatchEdgeConfigItemsRequestItemsItemVariant1.
+  class PatchEdgeConfigItemsRequestItemsItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant1Metadata::DECODERS
+
+    attr_reader :operation, :key, :value, :description
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant1Metadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant2Metadata
+    FIELDS = {
+      operation: 'operation',
+      key: 'key',
+      value: 'value',
+      description: 'description'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      operation
+      key
+      description
+    ].freeze
+    DECODERS = {
+      operation: lambda do |value|
+        ::OctridevVercel::PatchEdgeConfigItemsRequestItemsItemVariant2Operation.from_value(value)
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      description
+    ].freeze
+  end
+
+  # API model for PatchEdgeConfigItemsRequestItemsItemVariant2.
+  class PatchEdgeConfigItemsRequestItemsItemVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant2Metadata::DECODERS
+
+    attr_reader :operation, :key, :value, :description
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant2Metadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata
+    FIELDS = {
+      operation: 'operation',
+      key: 'key',
+      value: 'value',
+      description: 'description'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      operation
+      key
+    ].freeze
+    DECODERS = {
+      operation: lambda do |value|
+        ::OctridevVercel::PatchEdgeConfigItemsRequestItemsItemVariant3Operation.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for PatchEdgeConfigItemsRequestItemsItemVariant3.
+  class PatchEdgeConfigItemsRequestItemsItemVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata::DECODERS
+
+    attr_reader :operation, :key, :value, :description
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
 end

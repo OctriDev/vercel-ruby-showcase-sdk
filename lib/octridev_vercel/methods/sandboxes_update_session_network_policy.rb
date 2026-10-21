@@ -26,24 +26,23 @@ module OctridevVercel
         body: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/network-policy"
+            '/network-policy'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: body,
           return_type: ::OctridevVercel::Methods::Sandboxes::UpdateSessionNetworkPolicyResponse,
           decoder: :json,
           operation_id: 'update_session_network_policy',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

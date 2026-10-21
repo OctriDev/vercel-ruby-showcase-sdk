@@ -24,23 +24,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v12/deployments/",
+            '/v12/deployments/',
             SdkClient.encode_path_segment(id),
-            "/cancel"
+            '/cancel'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Deployments::CancelDeploymentResponse,
           decoder: :json,
           operation_id: 'cancel_deployment',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

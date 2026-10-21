@@ -5,672 +5,666 @@
 
 # projects_upload domain models (part 4)
 module OctridevVercel
-# API model for UploadProjectAvatarResponseInternalRoutesItemVariant0.
-class UploadProjectAvatarResponseInternalRoutesItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant0Metadata::DECODERS
+  # API model for UploadProjectAvatarResponseInternalRoutesItemVariant0.
+  class UploadProjectAvatarResponseInternalRoutesItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant0Metadata::DECODERS
 
-  attr_reader :expiry, :src, :status
+    attr_reader :expiry, :src, :status
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8Metadata
+    FIELDS = {
+      eq: 'eq'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      eq
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8.
+  class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8Metadata
-  FIELDS = {
-    eq: "eq",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    eq
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :eq
 
-# API model for UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8.
-class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :eq
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Metadata
+    FIELDS = {
+      key: 'key',
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      key
+      type
+      value
+    ].freeze
+    DECODERS = {
+      key: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Key.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Type.from_value(value)
+      end,
+      value: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0.
+  class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Metadata
-  FIELDS = {
-    key: "key",
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    key
-    type
-    value
-  ].freeze
-  DECODERS = {
-    key: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Key.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Type.from_value(value)
-    end,
-    value: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8.from_hash(value)
-    end,
-  }.freeze
-end
+    attr_reader :key, :type, :value
 
-# API model for UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0.
-class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :key, :type, :value
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413aMetadata
+    FIELDS = {
+      eq: 'eq'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      eq
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413a.
+  class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413a
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413aMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413aMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413aMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413aMetadata
-  FIELDS = {
-    eq: "eq",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    eq
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :eq
 
-# API model for UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413a.
-class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413a
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413aMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413aMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413aMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :eq
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Metadata
+    FIELDS = {
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      value
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Type.from_value(value)
+      end,
+      value: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413a.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1.
+  class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Metadata
-  FIELDS = {
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    value
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Type.from_value(value)
-    end,
-    value: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413a.from_hash(value)
-    end,
-  }.freeze
-end
+    attr_reader :type, :value
 
-# API model for UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1.
-class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :type, :value
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1MitigateMetadata
+    FIELDS = {
+      action: 'action'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      action
+    ].freeze
+    DECODERS = {
+      action: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1MitigateAction.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UploadProjectAvatarResponseInternalRoutesItemVariant1Mitigate.
+  class UploadProjectAvatarResponseInternalRoutesItemVariant1Mitigate
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1MitigateMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1MitigateMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1MitigateMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1MitigateMetadata
-  FIELDS = {
-    action: "action",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    action
-  ].freeze
-  DECODERS = {
-    action: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1MitigateAction.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :action
 
-# API model for UploadProjectAvatarResponseInternalRoutesItemVariant1Mitigate.
-class UploadProjectAvatarResponseInternalRoutesItemVariant1Mitigate
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1MitigateMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1MitigateMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1MitigateMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :action
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1Metadata
+    FIELDS = {
+      has: 'has',
+      mitigate: 'mitigate',
+      src: 'src'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      has
+      mitigate
+    ].freeze
+    DECODERS = {
+      mitigate: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1Mitigate.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for UploadProjectAvatarResponseInternalRoutesItemVariant1.
+  class UploadProjectAvatarResponseInternalRoutesItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1Metadata
-  FIELDS = {
-    has: "has",
-    mitigate: "mitigate",
-    src: "src",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    has
-    mitigate
-  ].freeze
-  DECODERS = {
-    mitigate: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseInternalRoutesItemVariant1Mitigate.from_hash(value)
-    end,
-  }.freeze
-end
+    attr_reader :has, :mitigate, :src
 
-# API model for UploadProjectAvatarResponseInternalRoutesItemVariant1.
-class UploadProjectAvatarResponseInternalRoutesItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseInternalRoutesItemVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :has, :mitigate, :src
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the UploadProjectAvatarResponseInternalRoutesItem SDK namespace.
+  module UploadProjectAvatarResponseInternalRoutesItem
+    def self.from_hash(hash)
+      shape_mapping = {
+        'status' => UploadProjectAvatarResponseInternalRoutesItemVariant0,
+        'has' => UploadProjectAvatarResponseInternalRoutesItemVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the UploadProjectAvatarResponseInternalRoutesItem SDK namespace.
-module UploadProjectAvatarResponseInternalRoutesItem
-  def self.from_hash(hash)
-    shape_mapping = {
-      "status" => UploadProjectAvatarResponseInternalRoutesItemVariant0,
-      "has" => UploadProjectAvatarResponseInternalRoutesItemVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-  end
-end
-
-# Defines the UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Key SDK namespace.
-module UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Key
-  X_VERCEL_IP_COUNTRY = 'x-vercel-ip-country'
-  VALUES = ['x-vercel-ip-country'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Type SDK namespace.
-module UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Type
-  HEADER = 'header'
-  VALUES = ['header'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Type', 'enum', "Unknown UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Type: #{value}")
-  end
-end
-
-# Defines the UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Type SDK namespace.
-module UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Type
-  HOST = 'host'
-  VALUES = ['host'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Type', 'enum', "Unknown UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Type: #{value}")
-  end
-end
-
-# Defines the UploadProjectAvatarResponseInternalRoutesItemVariant1MitigateAction SDK namespace.
-module UploadProjectAvatarResponseInternalRoutesItemVariant1MitigateAction
-  BLOCK_LEGAL_CWC = 'block_legal_cwc'
-  VALUES = ['block_legal_cwc'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseLinkVariant0DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UploadProjectAvatarResponseLinkVariant0DeployHooksItem.
-class UploadProjectAvatarResponseLinkVariant0DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant0DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant0DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant0DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Key SDK namespace.
+  module UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Key
+    X_VERCEL_IP_COUNTRY = 'x-vercel-ip-country'
+    VALUES = ['x-vercel-ip-country'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Type SDK namespace.
+  module UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Type
+    HEADER = 'header'
+    VALUES = ['header'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Type', 'enum', "Unknown UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0Type: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Type SDK namespace.
+  module UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Type
+    HOST = 'host'
+    VALUES = ['host'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseLinkVariant0Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    org: "org",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    repo_owner_id: "repoOwnerId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    org
-    production_branch
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UploadProjectAvatarResponseLinkVariant0DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseLinkVariant0Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseLinkVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UploadProjectAvatarResponseLinkVariant0.
-class UploadProjectAvatarResponseLinkVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant0Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
-              :repo_id, :sourceless, :type, :updated_at
-  # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-  attr_reader :repo_owner_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Type', 'enum', "Unknown UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1Type: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the UploadProjectAvatarResponseInternalRoutesItemVariant1MitigateAction SDK namespace.
+  module UploadProjectAvatarResponseInternalRoutesItemVariant1MitigateAction
+    BLOCK_LEGAL_CWC = 'block_legal_cwc'
+    VALUES = ['block_legal_cwc'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseLinkVariant1DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UploadProjectAvatarResponseLinkVariant1DeployHooksItem.
-class UploadProjectAvatarResponseLinkVariant1DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant1DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant1DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant1DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseLinkVariant0DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UploadProjectAvatarResponseLinkVariant0DeployHooksItem.
+  class UploadProjectAvatarResponseLinkVariant0DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant0DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant0DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant0DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseLinkVariant1Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    org: "org",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    repo_owner_id: "repoOwnerId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    org
-    production_branch
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UploadProjectAvatarResponseLinkVariant1DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseLinkVariant1Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseLinkVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UploadProjectAvatarResponseLinkVariant1.
-class UploadProjectAvatarResponseLinkVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant1Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
-              :repo_id, :sourceless, :type, :updated_at
-  # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-  attr_reader :repo_owner_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseLinkVariant0Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      org: 'org',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      repo_owner_id: 'repoOwnerId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      org
+      production_branch
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UploadProjectAvatarResponseLinkVariant0DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseLinkVariant0Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseLinkVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UploadProjectAvatarResponseLinkVariant0.
+  class UploadProjectAvatarResponseLinkVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant0Metadata::DECODERS
+
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
+                :repo_id, :sourceless, :type, :updated_at
+    # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+    attr_reader :repo_owner_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseLinkVariant2DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UploadProjectAvatarResponseLinkVariant2DeployHooksItem.
-class UploadProjectAvatarResponseLinkVariant2DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant2DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant2DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant2DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseLinkVariant1DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UploadProjectAvatarResponseLinkVariant1DeployHooksItem.
+  class UploadProjectAvatarResponseLinkVariant1DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant1DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant1DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant1DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseLinkVariant2Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    host: "host",
-    org: "org",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    repo_owner_id: "repoOwnerId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    host
-    org
-    production_branch
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UploadProjectAvatarResponseLinkVariant2DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseLinkVariant2Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseLinkVariant2Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UploadProjectAvatarResponseLinkVariant2.
-class UploadProjectAvatarResponseLinkVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant2Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :host, :org, :production_branch, :repo,
-              :repo_id, :sourceless, :type, :updated_at
-  # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-  attr_reader :repo_owner_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseLinkVariant1Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      org: 'org',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      repo_owner_id: 'repoOwnerId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      org
+      production_branch
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UploadProjectAvatarResponseLinkVariant1DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseLinkVariant1Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseLinkVariant1Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UploadProjectAvatarResponseLinkVariant1.
+  class UploadProjectAvatarResponseLinkVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant1Metadata::DECODERS
+
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
+                :repo_id, :sourceless, :type, :updated_at
+    # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+    attr_reader :repo_owner_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseLinkVariant3DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UploadProjectAvatarResponseLinkVariant3DeployHooksItem.
-class UploadProjectAvatarResponseLinkVariant3DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant3DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant3DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant3DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseLinkVariant2DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UploadProjectAvatarResponseLinkVariant2DeployHooksItem.
+  class UploadProjectAvatarResponseLinkVariant2DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant2DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant2DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant2DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseLinkVariant2Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      host: 'host',
+      org: 'org',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      repo_owner_id: 'repoOwnerId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      host
+      org
+      production_branch
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UploadProjectAvatarResponseLinkVariant2DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseLinkVariant2Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseLinkVariant2Type.from_value(value)
+      end
+    }.freeze
   end
-end
+
+  # API model for UploadProjectAvatarResponseLinkVariant2.
+  class UploadProjectAvatarResponseLinkVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant2Metadata::DECODERS
+
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :host, :org, :production_branch, :repo,
+                :repo_id, :sourceless, :type, :updated_at
+    # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+    attr_reader :repo_owner_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseLinkVariant3DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for UploadProjectAvatarResponseLinkVariant3DeployHooksItem.
+  class UploadProjectAvatarResponseLinkVariant3DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant3DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant3DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant3DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
 end

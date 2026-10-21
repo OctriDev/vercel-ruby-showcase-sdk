@@ -5,675 +5,680 @@
 
 # kms domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalCreateKmsIssuerPolicyResponseVariant0Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    environments: "environments",
-    kind: "kind",
-    project_id: "projectId",
-    team_id: "teamId",
-    token_claims: "tokenClaims",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    environments
-    kind
-    project_id
-    team_id
-    updated_at
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::CreateKmsIssuerPolicyResponseVariant0Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateKmsIssuerPolicyResponseVariant0.
-class CreateKmsIssuerPolicyResponseVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateKmsIssuerPolicyResponseVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateKmsIssuerPolicyResponseVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateKmsIssuerPolicyResponseVariant0Metadata::DECODERS
-
-  attr_reader :created_at, :kind, :project_id, :team_id, :token_claims, :updated_at
-  # @return [Array_of_String] Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
-  attr_reader :environments
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateKmsIssuerPolicyResponseVariant0Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      environments: 'environments',
+      kind: 'kind',
+      project_id: 'projectId',
+      team_id: 'teamId',
+      token_claims: 'tokenClaims',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      environments
+      kind
+      project_id
+      team_id
+      updated_at
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::CreateKmsIssuerPolicyResponseVariant0Kind.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateKmsIssuerPolicyResponseVariant0.
+  class CreateKmsIssuerPolicyResponseVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateKmsIssuerPolicyResponseVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateKmsIssuerPolicyResponseVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateKmsIssuerPolicyResponseVariant0Metadata::DECODERS
+
+    attr_reader :created_at, :kind, :project_id, :team_id, :token_claims, :updated_at
+    # @return [Array_of_String] Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
+    attr_reader :environments
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateKmsIssuerPolicyResponseVariant1Metadata
-  FIELDS = {
-    client_id: "clientId",
-    created_at: "createdAt",
-    kind: "kind",
-    token_claims: "tokenClaims",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    client_id
-    created_at
-    kind
-    updated_at
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::CreateKmsIssuerPolicyResponseVariant1Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateKmsIssuerPolicyResponseVariant1.
-class CreateKmsIssuerPolicyResponseVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateKmsIssuerPolicyResponseVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateKmsIssuerPolicyResponseVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateKmsIssuerPolicyResponseVariant1Metadata::DECODERS
-
-  attr_reader :client_id, :created_at, :kind, :token_claims, :updated_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateKmsIssuerPolicyResponseVariant1Metadata
+    FIELDS = {
+      client_id: 'clientId',
+      created_at: 'createdAt',
+      kind: 'kind',
+      token_claims: 'tokenClaims',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      client_id
+      created_at
+      kind
+      updated_at
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::CreateKmsIssuerPolicyResponseVariant1Kind.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateKmsIssuerPolicyResponseVariant1.
+  class CreateKmsIssuerPolicyResponseVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateKmsIssuerPolicyResponseVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateKmsIssuerPolicyResponseVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateKmsIssuerPolicyResponseVariant1Metadata::DECODERS
+
+    attr_reader :client_id, :created_at, :kind, :token_claims, :updated_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the CreateKmsIssuerPolicyResponse SDK namespace.
+  module CreateKmsIssuerPolicyResponse
+    DISCRIMINATOR_MAPPING = {
+      'project-grant' => -> { CreateKmsIssuerPolicyResponseVariant0 },
+      'connex-grant' => -> { CreateKmsIssuerPolicyResponseVariant1 }
+    }.freeze
 
-# Defines the CreateKmsIssuerPolicyResponse SDK namespace.
-module CreateKmsIssuerPolicyResponse
-  DISCRIMINATOR_MAPPING = {
-    "project-grant" => -> { CreateKmsIssuerPolicyResponseVariant0 },
-    "connex-grant" => -> { CreateKmsIssuerPolicyResponseVariant1 },
-  }.freeze
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
 
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["kind"]]&.call
-    return type.from_hash(hash) if type
+      type = DISCRIMINATOR_MAPPING[hash['kind']]&.call
+      return type.from_hash(hash) if type
 
-    raise SdkValidationError.new('CreateKmsIssuerPolicyResponse', 'variant', "Unknown CreateKmsIssuerPolicyResponse discriminator: #{hash["kind"].inspect}")
-  end
-end
-
-# Defines the CreateKmsIssuerPolicyResponseVariant0Kind SDK namespace.
-module CreateKmsIssuerPolicyResponseVariant0Kind
-  PROJECT_GRANT = 'project-grant'
-  VALUES = ['project-grant'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateKmsIssuerPolicyResponseVariant0Kind', 'enum', "Unknown CreateKmsIssuerPolicyResponseVariant0Kind: #{value}")
-  end
-end
-
-# Defines the CreateKmsIssuerPolicyResponseVariant1Kind SDK namespace.
-module CreateKmsIssuerPolicyResponseVariant1Kind
-  CONNEX_GRANT = 'connex-grant'
-  VALUES = ['connex-grant'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateKmsIssuerPolicyResponseVariant1Kind', 'enum', "Unknown CreateKmsIssuerPolicyResponseVariant1Kind: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateKmsIssuerRequestPolicyVariant0Metadata
-  FIELDS = {
-    kind: "kind",
-    team_id: "teamId",
-    project_id: "projectId",
-    environments: "environments",
-    token_claims: "tokenClaims",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    kind
-    team_id
-    project_id
-    environments
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::CreateKmsIssuerRequestPolicyVariant0Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateKmsIssuerRequestPolicyVariant0.
-class CreateKmsIssuerRequestPolicyVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateKmsIssuerRequestPolicyVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateKmsIssuerRequestPolicyVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateKmsIssuerRequestPolicyVariant0Metadata::DECODERS
-
-  attr_reader :kind
-  # @return [String] The team ID for the project grant policy.
-  attr_reader :team_id
-  # @return [String] The project ID for the project grant policy.
-  attr_reader :project_id
-  # @return [Array_of_String] The environments for the project grant policy. Each entry is a system environment (production, preview, development) or a custom environment ID (env_...).
-  attr_reader :environments
-  # @return [Hash] The claims that KMS should include in signed JWTs for this policy.
-  attr_reader :token_claims
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('CreateKmsIssuerPolicyResponse', 'variant', "Unknown CreateKmsIssuerPolicyResponse discriminator: #{hash['kind'].inspect}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the CreateKmsIssuerPolicyResponseVariant0Kind SDK namespace.
+  module CreateKmsIssuerPolicyResponseVariant0Kind
+    PROJECT_GRANT = 'project-grant'
+    VALUES = ['project-grant'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateKmsIssuerPolicyResponseVariant0Kind', 'enum', "Unknown CreateKmsIssuerPolicyResponseVariant0Kind: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the CreateKmsIssuerPolicyResponseVariant1Kind SDK namespace.
+  module CreateKmsIssuerPolicyResponseVariant1Kind
+    CONNEX_GRANT = 'connex-grant'
+    VALUES = ['connex-grant'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Internal model hydration metadata.
-class SdkInternalCreateKmsIssuerRequestPolicyVariant1Metadata
-  FIELDS = {
-    kind: "kind",
-    client_id: "clientId",
-    token_claims: "tokenClaims",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    kind
-    client_id
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::CreateKmsIssuerRequestPolicyVariant1Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateKmsIssuerRequestPolicyVariant1.
-class CreateKmsIssuerRequestPolicyVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateKmsIssuerRequestPolicyVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateKmsIssuerRequestPolicyVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateKmsIssuerRequestPolicyVariant1Metadata::DECODERS
-
-  attr_reader :kind
-  # @return [String] The Connex client ID for the Connex grant policy.
-  attr_reader :client_id
-  # @return [Hash] The claims that KMS should include in signed JWTs for this policy.
-  attr_reader :token_claims
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('CreateKmsIssuerPolicyResponseVariant1Kind', 'enum', "Unknown CreateKmsIssuerPolicyResponseVariant1Kind: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateKmsIssuerRequestPolicyVariant0Metadata
+    FIELDS = {
+      kind: 'kind',
+      team_id: 'teamId',
+      project_id: 'projectId',
+      environments: 'environments',
+      token_claims: 'tokenClaims'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      kind
+      team_id
+      project_id
+      environments
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::CreateKmsIssuerRequestPolicyVariant0Kind.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateKmsIssuerRequestPolicyVariant0.
+  class CreateKmsIssuerRequestPolicyVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateKmsIssuerRequestPolicyVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateKmsIssuerRequestPolicyVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateKmsIssuerRequestPolicyVariant0Metadata::DECODERS
 
-# Defines the CreateKmsIssuerRequestPolicy SDK namespace.
-module CreateKmsIssuerRequestPolicy
-  DISCRIMINATOR_MAPPING = {
-    "project-grant" => -> { CreateKmsIssuerRequestPolicyVariant0 },
-    "connex-grant" => -> { CreateKmsIssuerRequestPolicyVariant1 },
-  }.freeze
+    attr_reader :kind
+    # @return [String] The team ID for the project grant policy.
+    attr_reader :team_id
+    # @return [String] The project ID for the project grant policy.
+    attr_reader :project_id
+    # @return [Array_of_String] The environments for the project grant policy. Each entry is a system environment (production, preview, development) or a custom environment ID (env_...).
+    attr_reader :environments
+    # @return [Hash] The claims that KMS should include in signed JWTs for this policy.
+    attr_reader :token_claims
 
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["kind"]]&.call
-    return type.from_hash(hash) if type
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-    raise SdkValidationError.new('CreateKmsIssuerRequestPolicy', 'variant', "Unknown CreateKmsIssuerRequestPolicy discriminator: #{hash["kind"].inspect}")
-  end
-end
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-# Defines the CreateKmsIssuerRequestPolicyVariant0Kind SDK namespace.
-module CreateKmsIssuerRequestPolicyVariant0Kind
-  PROJECT_GRANT = 'project-grant'
-  VALUES = ['project-grant'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateKmsIssuerRequestPolicyVariant0Kind', 'enum', "Unknown CreateKmsIssuerRequestPolicyVariant0Kind: #{value}")
-  end
-end
-
-# Defines the CreateKmsIssuerRequestPolicyVariant1Kind SDK namespace.
-module CreateKmsIssuerRequestPolicyVariant1Kind
-  CONNEX_GRANT = 'connex-grant'
-  VALUES = ['connex-grant'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateKmsIssuerRequestPolicyVariant1Kind', 'enum', "Unknown CreateKmsIssuerRequestPolicyVariant1Kind: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateKmsIssuerResponsePoliciesItemVariant0Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    environments: "environments",
-    kind: "kind",
-    project_id: "projectId",
-    team_id: "teamId",
-    token_claims: "tokenClaims",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    environments
-    kind
-    project_id
-    team_id
-    updated_at
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::CreateKmsIssuerResponsePoliciesItemVariant0Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateKmsIssuerResponsePoliciesItemVariant0.
-class CreateKmsIssuerResponsePoliciesItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateKmsIssuerResponsePoliciesItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateKmsIssuerResponsePoliciesItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateKmsIssuerResponsePoliciesItemVariant0Metadata::DECODERS
-
-  attr_reader :created_at, :kind, :project_id, :team_id, :token_claims, :updated_at
-  # @return [Array_of_String] Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
-  attr_reader :environments
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateKmsIssuerRequestPolicyVariant1Metadata
+    FIELDS = {
+      kind: 'kind',
+      client_id: 'clientId',
+      token_claims: 'tokenClaims'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      kind
+      client_id
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::CreateKmsIssuerRequestPolicyVariant1Kind.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateKmsIssuerRequestPolicyVariant1.
+  class CreateKmsIssuerRequestPolicyVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateKmsIssuerRequestPolicyVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateKmsIssuerRequestPolicyVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateKmsIssuerRequestPolicyVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateKmsIssuerResponsePoliciesItemVariant1Metadata
-  FIELDS = {
-    client_id: "clientId",
-    created_at: "createdAt",
-    kind: "kind",
-    token_claims: "tokenClaims",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    client_id
-    created_at
-    kind
-    updated_at
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::CreateKmsIssuerResponsePoliciesItemVariant1Kind.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :kind
+    # @return [String] The Connex client ID for the Connex grant policy.
+    attr_reader :client_id
+    # @return [Hash] The claims that KMS should include in signed JWTs for this policy.
+    attr_reader :token_claims
 
-# API model for CreateKmsIssuerResponsePoliciesItemVariant1.
-class CreateKmsIssuerResponsePoliciesItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateKmsIssuerResponsePoliciesItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateKmsIssuerResponsePoliciesItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateKmsIssuerResponsePoliciesItemVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :client_id, :created_at, :kind, :token_claims, :updated_at
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the CreateKmsIssuerRequestPolicy SDK namespace.
+  module CreateKmsIssuerRequestPolicy
+    DISCRIMINATOR_MAPPING = {
+      'project-grant' => -> { CreateKmsIssuerRequestPolicyVariant0 },
+      'connex-grant' => -> { CreateKmsIssuerRequestPolicyVariant1 }
+    }.freeze
+
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['kind']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('CreateKmsIssuerRequestPolicy', 'variant', "Unknown CreateKmsIssuerRequestPolicy discriminator: #{hash['kind'].inspect}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the CreateKmsIssuerRequestPolicyVariant0Kind SDK namespace.
+  module CreateKmsIssuerRequestPolicyVariant0Kind
+    PROJECT_GRANT = 'project-grant'
+    VALUES = ['project-grant'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Defines the CreateKmsIssuerResponsePoliciesItem SDK namespace.
-module CreateKmsIssuerResponsePoliciesItem
-  DISCRIMINATOR_MAPPING = {
-    "project-grant" => -> { CreateKmsIssuerResponsePoliciesItemVariant0 },
-    "connex-grant" => -> { CreateKmsIssuerResponsePoliciesItemVariant1 },
-  }.freeze
-
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["kind"]]&.call
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('CreateKmsIssuerResponsePoliciesItem', 'variant', "Unknown CreateKmsIssuerResponsePoliciesItem discriminator: #{hash["kind"].inspect}")
-  end
-end
-
-# Defines the CreateKmsIssuerResponsePoliciesItemVariant0Kind SDK namespace.
-module CreateKmsIssuerResponsePoliciesItemVariant0Kind
-  PROJECT_GRANT = 'project-grant'
-  VALUES = ['project-grant'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateKmsIssuerResponsePoliciesItemVariant0Kind', 'enum', "Unknown CreateKmsIssuerResponsePoliciesItemVariant0Kind: #{value}")
-  end
-end
-
-# Defines the CreateKmsIssuerResponsePoliciesItemVariant1Kind SDK namespace.
-module CreateKmsIssuerResponsePoliciesItemVariant1Kind
-  CONNEX_GRANT = 'connex-grant'
-  VALUES = ['connex-grant'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('CreateKmsIssuerResponsePoliciesItemVariant1Kind', 'enum', "Unknown CreateKmsIssuerResponsePoliciesItemVariant1Kind: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetKmsIssuerResponsePoliciesItemVariant0Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    environments: "environments",
-    kind: "kind",
-    project_id: "projectId",
-    team_id: "teamId",
-    token_claims: "tokenClaims",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    environments
-    kind
-    project_id
-    team_id
-    updated_at
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::GetKmsIssuerResponsePoliciesItemVariant0Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetKmsIssuerResponsePoliciesItemVariant0.
-class GetKmsIssuerResponsePoliciesItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetKmsIssuerResponsePoliciesItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetKmsIssuerResponsePoliciesItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetKmsIssuerResponsePoliciesItemVariant0Metadata::DECODERS
-
-  attr_reader :created_at, :kind, :project_id, :team_id, :token_claims, :updated_at
-  # @return [Array_of_String] Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
-  attr_reader :environments
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('CreateKmsIssuerRequestPolicyVariant0Kind', 'enum', "Unknown CreateKmsIssuerRequestPolicyVariant0Kind: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the CreateKmsIssuerRequestPolicyVariant1Kind SDK namespace.
+  module CreateKmsIssuerRequestPolicyVariant1Kind
+    CONNEX_GRANT = 'connex-grant'
+    VALUES = ['connex-grant'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateKmsIssuerRequestPolicyVariant1Kind', 'enum', "Unknown CreateKmsIssuerRequestPolicyVariant1Kind: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetKmsIssuerResponsePoliciesItemVariant1Metadata
-  FIELDS = {
-    client_id: "clientId",
-    created_at: "createdAt",
-    kind: "kind",
-    token_claims: "tokenClaims",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    client_id
-    created_at
-    kind
-    updated_at
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::GetKmsIssuerResponsePoliciesItemVariant1Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetKmsIssuerResponsePoliciesItemVariant1.
-class GetKmsIssuerResponsePoliciesItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetKmsIssuerResponsePoliciesItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetKmsIssuerResponsePoliciesItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetKmsIssuerResponsePoliciesItemVariant1Metadata::DECODERS
-
-  attr_reader :client_id, :created_at, :kind, :token_claims, :updated_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateKmsIssuerResponsePoliciesItemVariant0Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      environments: 'environments',
+      kind: 'kind',
+      project_id: 'projectId',
+      team_id: 'teamId',
+      token_claims: 'tokenClaims',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      environments
+      kind
+      project_id
+      team_id
+      updated_at
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::CreateKmsIssuerResponsePoliciesItemVariant0Kind.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateKmsIssuerResponsePoliciesItemVariant0.
+  class CreateKmsIssuerResponsePoliciesItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateKmsIssuerResponsePoliciesItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateKmsIssuerResponsePoliciesItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateKmsIssuerResponsePoliciesItemVariant0Metadata::DECODERS
+
+    attr_reader :created_at, :kind, :project_id, :team_id, :token_claims, :updated_at
+    # @return [Array_of_String] Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
+    attr_reader :environments
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the GetKmsIssuerResponsePoliciesItem SDK namespace.
-module GetKmsIssuerResponsePoliciesItem
-  DISCRIMINATOR_MAPPING = {
-    "project-grant" => -> { GetKmsIssuerResponsePoliciesItemVariant0 },
-    "connex-grant" => -> { GetKmsIssuerResponsePoliciesItemVariant1 },
-  }.freeze
-
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["kind"]]&.call
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('GetKmsIssuerResponsePoliciesItem', 'variant', "Unknown GetKmsIssuerResponsePoliciesItem discriminator: #{hash["kind"].inspect}")
-  end
-end
-
-# Defines the GetKmsIssuerResponsePoliciesItemVariant0Kind SDK namespace.
-module GetKmsIssuerResponsePoliciesItemVariant0Kind
-  PROJECT_GRANT = 'project-grant'
-  VALUES = ['project-grant'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetKmsIssuerResponsePoliciesItemVariant0Kind', 'enum', "Unknown GetKmsIssuerResponsePoliciesItemVariant0Kind: #{value}")
-  end
-end
-
-# Defines the GetKmsIssuerResponsePoliciesItemVariant1Kind SDK namespace.
-module GetKmsIssuerResponsePoliciesItemVariant1Kind
-  CONNEX_GRANT = 'connex-grant'
-  VALUES = ['connex-grant'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetKmsIssuerResponsePoliciesItemVariant1Kind', 'enum', "Unknown GetKmsIssuerResponsePoliciesItemVariant1Kind: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant0Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    environments: "environments",
-    kind: "kind",
-    project_id: "projectId",
-    team_id: "teamId",
-    token_claims: "tokenClaims",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    environments
-    kind
-    project_id
-    team_id
-    updated_at
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::ListKmsIssuersResponseIssuersItemPoliciesItemVariant0Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for ListKmsIssuersResponseIssuersItemPoliciesItemVariant0.
-class ListKmsIssuersResponseIssuersItemPoliciesItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant0Metadata::DECODERS
-
-  attr_reader :created_at, :kind, :project_id, :team_id, :token_claims, :updated_at
-  # @return [Array_of_String] Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
-  attr_reader :environments
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateKmsIssuerResponsePoliciesItemVariant1Metadata
+    FIELDS = {
+      client_id: 'clientId',
+      created_at: 'createdAt',
+      kind: 'kind',
+      token_claims: 'tokenClaims',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      client_id
+      created_at
+      kind
+      updated_at
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::CreateKmsIssuerResponsePoliciesItemVariant1Kind.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateKmsIssuerResponsePoliciesItemVariant1.
+  class CreateKmsIssuerResponsePoliciesItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateKmsIssuerResponsePoliciesItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateKmsIssuerResponsePoliciesItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateKmsIssuerResponsePoliciesItemVariant1Metadata::DECODERS
+
+    attr_reader :client_id, :created_at, :kind, :token_claims, :updated_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the CreateKmsIssuerResponsePoliciesItem SDK namespace.
+  module CreateKmsIssuerResponsePoliciesItem
+    DISCRIMINATOR_MAPPING = {
+      'project-grant' => -> { CreateKmsIssuerResponsePoliciesItemVariant0 },
+      'connex-grant' => -> { CreateKmsIssuerResponsePoliciesItemVariant1 }
+    }.freeze
 
-# Internal model hydration metadata.
-class SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant1Metadata
-  FIELDS = {
-    client_id: "clientId",
-    created_at: "createdAt",
-    kind: "kind",
-    token_claims: "tokenClaims",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    client_id
-    created_at
-    kind
-    updated_at
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::ListKmsIssuersResponseIssuersItemPoliciesItemVariant1Kind.from_value(value)
-    end,
-  }.freeze
-end
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
 
-# API model for ListKmsIssuersResponseIssuersItemPoliciesItemVariant1.
-class ListKmsIssuersResponseIssuersItemPoliciesItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant1Metadata::DECODERS
+      type = DISCRIMINATOR_MAPPING[hash['kind']]&.call
+      return type.from_hash(hash) if type
 
-  attr_reader :client_id, :created_at, :kind, :token_claims, :updated_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('CreateKmsIssuerResponsePoliciesItem', 'variant', "Unknown CreateKmsIssuerResponsePoliciesItem discriminator: #{hash['kind'].inspect}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the CreateKmsIssuerResponsePoliciesItemVariant0Kind SDK namespace.
+  module CreateKmsIssuerResponsePoliciesItemVariant0Kind
+    PROJECT_GRANT = 'project-grant'
+    VALUES = ['project-grant'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateKmsIssuerResponsePoliciesItemVariant0Kind', 'enum', "Unknown CreateKmsIssuerResponsePoliciesItemVariant0Kind: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the CreateKmsIssuerResponsePoliciesItemVariant1Kind SDK namespace.
+  module CreateKmsIssuerResponsePoliciesItemVariant1Kind
+    CONNEX_GRANT = 'connex-grant'
+    VALUES = ['connex-grant'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('CreateKmsIssuerResponsePoliciesItemVariant1Kind', 'enum', "Unknown CreateKmsIssuerResponsePoliciesItemVariant1Kind: #{value}")
+    end
   end
-end
 
-# Defines the ListKmsIssuersResponseIssuersItemPoliciesItem SDK namespace.
-module ListKmsIssuersResponseIssuersItemPoliciesItem
-  DISCRIMINATOR_MAPPING = {
-    "project-grant" => -> { ListKmsIssuersResponseIssuersItemPoliciesItemVariant0 },
-    "connex-grant" => -> { ListKmsIssuersResponseIssuersItemPoliciesItemVariant1 },
-  }.freeze
-
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["kind"]]&.call
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('ListKmsIssuersResponseIssuersItemPoliciesItem', 'variant', "Unknown ListKmsIssuersResponseIssuersItemPoliciesItem discriminator: #{hash["kind"].inspect}")
+  # Internal model hydration metadata.
+  class SdkInternalGetKmsIssuerResponsePoliciesItemVariant0Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      environments: 'environments',
+      kind: 'kind',
+      project_id: 'projectId',
+      team_id: 'teamId',
+      token_claims: 'tokenClaims',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      environments
+      kind
+      project_id
+      team_id
+      updated_at
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::GetKmsIssuerResponsePoliciesItemVariant0Kind.from_value(value)
+      end
+    }.freeze
   end
-end
 
-# Defines the ListKmsIssuersResponseIssuersItemPoliciesItemVariant0Kind SDK namespace.
-module ListKmsIssuersResponseIssuersItemPoliciesItemVariant0Kind
-  PROJECT_GRANT = 'project-grant'
-  VALUES = ['project-grant'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # API model for GetKmsIssuerResponsePoliciesItemVariant0.
+  class GetKmsIssuerResponsePoliciesItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetKmsIssuerResponsePoliciesItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetKmsIssuerResponsePoliciesItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetKmsIssuerResponsePoliciesItemVariant0Metadata::DECODERS
 
-    raise SdkValidationError.new('ListKmsIssuersResponseIssuersItemPoliciesItemVariant0Kind', 'enum', "Unknown ListKmsIssuersResponseIssuersItemPoliciesItemVariant0Kind: #{value}")
+    attr_reader :created_at, :kind, :project_id, :team_id, :token_claims, :updated_at
+    # @return [Array_of_String] Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
+    attr_reader :environments
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 
-# Defines the ListKmsIssuersResponseIssuersItemPoliciesItemVariant1Kind SDK namespace.
-module ListKmsIssuersResponseIssuersItemPoliciesItemVariant1Kind
-  CONNEX_GRANT = 'connex-grant'
-  VALUES = ['connex-grant'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListKmsIssuersResponseIssuersItemPoliciesItemVariant1Kind', 'enum', "Unknown ListKmsIssuersResponseIssuersItemPoliciesItemVariant1Kind: #{value}")
+  # Internal model hydration metadata.
+  class SdkInternalGetKmsIssuerResponsePoliciesItemVariant1Metadata
+    FIELDS = {
+      client_id: 'clientId',
+      created_at: 'createdAt',
+      kind: 'kind',
+      token_claims: 'tokenClaims',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      client_id
+      created_at
+      kind
+      updated_at
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::GetKmsIssuerResponsePoliciesItemVariant1Kind.from_value(value)
+      end
+    }.freeze
   end
-end
+
+  # API model for GetKmsIssuerResponsePoliciesItemVariant1.
+  class GetKmsIssuerResponsePoliciesItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetKmsIssuerResponsePoliciesItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetKmsIssuerResponsePoliciesItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetKmsIssuerResponsePoliciesItemVariant1Metadata::DECODERS
+
+    attr_reader :client_id, :created_at, :kind, :token_claims, :updated_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the GetKmsIssuerResponsePoliciesItem SDK namespace.
+  module GetKmsIssuerResponsePoliciesItem
+    DISCRIMINATOR_MAPPING = {
+      'project-grant' => -> { GetKmsIssuerResponsePoliciesItemVariant0 },
+      'connex-grant' => -> { GetKmsIssuerResponsePoliciesItemVariant1 }
+    }.freeze
+
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['kind']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('GetKmsIssuerResponsePoliciesItem', 'variant', "Unknown GetKmsIssuerResponsePoliciesItem discriminator: #{hash['kind'].inspect}")
+    end
+  end
+
+  # Defines the GetKmsIssuerResponsePoliciesItemVariant0Kind SDK namespace.
+  module GetKmsIssuerResponsePoliciesItemVariant0Kind
+    PROJECT_GRANT = 'project-grant'
+    VALUES = ['project-grant'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetKmsIssuerResponsePoliciesItemVariant0Kind', 'enum', "Unknown GetKmsIssuerResponsePoliciesItemVariant0Kind: #{value}")
+    end
+  end
+
+  # Defines the GetKmsIssuerResponsePoliciesItemVariant1Kind SDK namespace.
+  module GetKmsIssuerResponsePoliciesItemVariant1Kind
+    CONNEX_GRANT = 'connex-grant'
+    VALUES = ['connex-grant'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetKmsIssuerResponsePoliciesItemVariant1Kind', 'enum', "Unknown GetKmsIssuerResponsePoliciesItemVariant1Kind: #{value}")
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant0Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      environments: 'environments',
+      kind: 'kind',
+      project_id: 'projectId',
+      team_id: 'teamId',
+      token_claims: 'tokenClaims',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      environments
+      kind
+      project_id
+      team_id
+      updated_at
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::ListKmsIssuersResponseIssuersItemPoliciesItemVariant0Kind.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for ListKmsIssuersResponseIssuersItemPoliciesItemVariant0.
+  class ListKmsIssuersResponseIssuersItemPoliciesItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant0Metadata::DECODERS
+
+    attr_reader :created_at, :kind, :project_id, :team_id, :token_claims, :updated_at
+    # @return [Array_of_String] Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
+    attr_reader :environments
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant1Metadata
+    FIELDS = {
+      client_id: 'clientId',
+      created_at: 'createdAt',
+      kind: 'kind',
+      token_claims: 'tokenClaims',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      client_id
+      created_at
+      kind
+      updated_at
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::ListKmsIssuersResponseIssuersItemPoliciesItemVariant1Kind.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for ListKmsIssuersResponseIssuersItemPoliciesItemVariant1.
+  class ListKmsIssuersResponseIssuersItemPoliciesItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListKmsIssuersResponseIssuersItemPoliciesItemVariant1Metadata::DECODERS
+
+    attr_reader :client_id, :created_at, :kind, :token_claims, :updated_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the ListKmsIssuersResponseIssuersItemPoliciesItem SDK namespace.
+  module ListKmsIssuersResponseIssuersItemPoliciesItem
+    DISCRIMINATOR_MAPPING = {
+      'project-grant' => -> { ListKmsIssuersResponseIssuersItemPoliciesItemVariant0 },
+      'connex-grant' => -> { ListKmsIssuersResponseIssuersItemPoliciesItemVariant1 }
+    }.freeze
+
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['kind']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('ListKmsIssuersResponseIssuersItemPoliciesItem', 'variant', "Unknown ListKmsIssuersResponseIssuersItemPoliciesItem discriminator: #{hash['kind'].inspect}")
+    end
+  end
+
+  # Defines the ListKmsIssuersResponseIssuersItemPoliciesItemVariant0Kind SDK namespace.
+  module ListKmsIssuersResponseIssuersItemPoliciesItemVariant0Kind
+    PROJECT_GRANT = 'project-grant'
+    VALUES = ['project-grant'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ListKmsIssuersResponseIssuersItemPoliciesItemVariant0Kind', 'enum', "Unknown ListKmsIssuersResponseIssuersItemPoliciesItemVariant0Kind: #{value}")
+    end
+  end
+
+  # Defines the ListKmsIssuersResponseIssuersItemPoliciesItemVariant1Kind SDK namespace.
+  module ListKmsIssuersResponseIssuersItemPoliciesItemVariant1Kind
+    CONNEX_GRANT = 'connex-grant'
+    VALUES = ['connex-grant'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ListKmsIssuersResponseIssuersItemPoliciesItemVariant1Kind', 'enum', "Unknown ListKmsIssuersResponseIssuersItemPoliciesItemVariant1Kind: #{value}")
+    end
+  end
 end

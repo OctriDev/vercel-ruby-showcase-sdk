@@ -15,8 +15,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = [
-          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+        VALUES = %w[
+          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
         ].freeze
         def self.from_value(value)
           value
@@ -28,7 +28,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
+        VALUES = %w[PROMOTED ROLLING STAGED].freeze
         def self.from_value(value)
           value
         end
@@ -58,7 +58,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
+        VALUES = %w[PROMOTED ROLLING STAGED].freeze
         def self.from_value(value)
           value
         end
@@ -91,7 +91,7 @@ module OctridevVercel
         SECRET = 'secret'
         SENSITIVE = 'sensitive'
         SYSTEM = 'system'
-        VALUES = ['encrypted', 'plain', 'secret', 'sensitive', 'system'].freeze
+        VALUES = %w[encrypted plain secret sensitive system].freeze
         def self.from_value(value)
           value
         end
@@ -103,8 +103,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = [
-          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+        VALUES = %w[
+          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
         ].freeze
         def self.from_value(value)
           value
@@ -145,7 +145,7 @@ module OctridevVercel
       module DeleteProjectAvatarResponseSecurityRulesetsValueRateLimitAlgo
         FIXED_WINDOW = 'fixed_window'
         TOKEN_BUCKET = 'token_bucket'
-        VALUES = ['fixed_window', 'token_bucket'].freeze
+        VALUES = %w[fixed_window token_bucket].freeze
         def self.from_value(value)
           value
         end
@@ -168,7 +168,7 @@ module OctridevVercel
         PENDING = 'pending'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = ['failed', 'in-progress', 'pending', 'skipped', 'succeeded'].freeze
+        VALUES = %w[failed in-progress pending skipped succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -199,7 +199,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = ['enterprise', 'hobby', 'pro'].freeze
+        VALUES = %w[enterprise hobby pro].freeze
         def self.from_value(value)
           value
         end
@@ -214,8 +214,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -226,7 +226,7 @@ module OctridevVercel
       module UploadProjectAvatarResponseTracingSamplingRulesItemEnv
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end
@@ -292,8 +292,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -306,7 +306,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
+        VALUES = %w[basic enhanced standard turbo].freeze
         def self.from_value(value)
           value
         end
@@ -328,7 +328,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
+        VALUES = %w[basic enhanced standard turbo].freeze
         def self.from_value(value)
           value
         end
@@ -338,7 +338,7 @@ module OctridevVercel
       module CreateProjectEnvResponseCreatedVariant1ItemVisibility
         CONFIG = 'config'
         SECRET = 'secret'
-        VALUES = ['config', 'secret'].freeze
+        VALUES = %w[config secret].freeze
         def self.from_value(value)
           value
         end
@@ -381,7 +381,7 @@ module OctridevVercel
         ACCEPT = 'accept'
         CANCEL = 'cancel'
         DELETE = 'delete'
-        VALUES = ['accept', 'cancel', 'delete'].freeze
+        VALUES = %w[accept cancel delete].freeze
         def self.from_value(value)
           value
         end
@@ -432,7 +432,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
+        VALUES = %w[PROMOTED ROLLING STAGED].freeze
         def self.from_value(value)
           value
         end
@@ -443,7 +443,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -455,8 +455,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = [
-          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+        VALUES = %w[
+          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
         ].freeze
         def self.from_value(value)
           value
@@ -489,7 +489,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -531,7 +531,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -571,7 +571,7 @@ module OctridevVercel
       module UploadProjectAvatarResponseLastAliasRequestType
         PROMOTE = 'promote'
         ROLLBACK = 'rollback'
-        VALUES = ['promote', 'rollback'].freeze
+        VALUES = %w[promote rollback].freeze
         def self.from_value(value)
           value
         end

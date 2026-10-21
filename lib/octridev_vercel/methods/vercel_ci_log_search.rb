@@ -31,7 +31,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('invocation', invocation, min: 1, max: 50)
 
         Validation.validate_length('search', search, max: 256)
@@ -40,19 +39,19 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          "/v1/vercel-ci/log-search",
+          '/v1/vercel-ci/log-search',
           config: config,
           query: {
             'invocation' => QueryValue.new(invocation, style: 'form', explode: true),
             'search' => QueryValue.new(search, style: 'form', explode: true),
             'level' => QueryValue.new(level, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::VercelCi::SearchVercelCiLogsResponse,
           decoder: :json,
           operation_id: 'search_vercel_ci_logs',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

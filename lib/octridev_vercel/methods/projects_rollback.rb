@@ -27,24 +27,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id),
-            "/rollback/",
+            '/rollback/',
             SdkClient.encode_path_segment(deployment_id)
           ].join,
           config: config,
           query: {
             'description' => QueryValue.new(description, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'request_rollback',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -60,23 +59,22 @@ module OctridevVercel
         description: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id),
-            "/rollback/",
+            '/rollback/',
             SdkClient.encode_path_segment(deployment_id),
-            "/update-description"
+            '/update-description'
           ].join,
           config: config,
           body: {
-            'description' => description,
+            'description' => description
           },
           decoder: :empty,
           operation_id: 'update_projects_rollback_description',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

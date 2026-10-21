@@ -12,25 +12,25 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListBillingChargesResponseMetadata
         FIELDS = {
-          billed_cost: "BilledCost",
-          billing_currency: "BillingCurrency",
-          charge_category: "ChargeCategory",
-          charge_period_end: "ChargePeriodEnd",
-          charge_period_start: "ChargePeriodStart",
-          consumed_quantity: "ConsumedQuantity",
-          consumed_unit: "ConsumedUnit",
-          effective_cost: "EffectiveCost",
-          pricing_category: "PricingCategory",
-          pricing_currency: "PricingCurrency",
-          pricing_quantity: "PricingQuantity",
-          pricing_unit: "PricingUnit",
-          region_id: "RegionId",
-          region_name: "RegionName",
-          service_category: "ServiceCategory",
-          service_name: "ServiceName",
-          service_provider_name: "ServiceProviderName",
-          sku_id: "SkuId",
-          tags: "Tags",
+          billed_cost: 'BilledCost',
+          billing_currency: 'BillingCurrency',
+          charge_category: 'ChargeCategory',
+          charge_period_end: 'ChargePeriodEnd',
+          charge_period_start: 'ChargePeriodStart',
+          consumed_quantity: 'ConsumedQuantity',
+          consumed_unit: 'ConsumedUnit',
+          effective_cost: 'EffectiveCost',
+          pricing_category: 'PricingCategory',
+          pricing_currency: 'PricingCurrency',
+          pricing_quantity: 'PricingQuantity',
+          pricing_unit: 'PricingUnit',
+          region_id: 'RegionId',
+          region_name: 'RegionName',
+          service_category: 'ServiceCategory',
+          service_name: 'ServiceName',
+          service_provider_name: 'ServiceProviderName',
+          sku_id: 'SkuId',
+          tags: 'Tags'
         }.freeze
         REQUIRED_FIELDS = %i[
           billed_cost
@@ -65,7 +65,7 @@ module OctridevVercel
           end,
           service_category: lambda do |value|
             ::OctridevVercel::Methods::Billing::ListBillingChargesResponseServiceCategory.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           consumed_quantity
@@ -132,19 +132,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListContractCommitmentsResponseMetadata
         FIELDS = {
-          billing_currency: "BillingCurrency",
-          contract_commitment_category: "ContractCommitmentCategory",
-          contract_commitment_cost: "ContractCommitmentCost",
-          contract_commitment_description: "ContractCommitmentDescription",
-          contract_commitment_id: "ContractCommitmentId",
-          contract_commitment_period_end: "ContractCommitmentPeriodEnd",
-          contract_commitment_period_start: "ContractCommitmentPeriodStart",
-          contract_commitment_quantity: "ContractCommitmentQuantity",
-          contract_commitment_type: "ContractCommitmentType",
-          contract_commitment_unit: "ContractCommitmentUnit",
-          contract_id: "ContractId",
-          contract_period_end: "ContractPeriodEnd",
-          contract_period_start: "ContractPeriodStart",
+          billing_currency: 'BillingCurrency',
+          contract_commitment_category: 'ContractCommitmentCategory',
+          contract_commitment_cost: 'ContractCommitmentCost',
+          contract_commitment_description: 'ContractCommitmentDescription',
+          contract_commitment_id: 'ContractCommitmentId',
+          contract_commitment_period_end: 'ContractCommitmentPeriodEnd',
+          contract_commitment_period_start: 'ContractCommitmentPeriodStart',
+          contract_commitment_quantity: 'ContractCommitmentQuantity',
+          contract_commitment_type: 'ContractCommitmentType',
+          contract_commitment_unit: 'ContractCommitmentUnit',
+          contract_id: 'ContractId',
+          contract_period_end: 'ContractPeriodEnd',
+          contract_period_start: 'ContractPeriodStart'
         }.freeze
         REQUIRED_FIELDS = %i[
           billing_currency
@@ -161,7 +161,7 @@ module OctridevVercel
         DECODERS = {
           contract_commitment_category: lambda do |value|
             ::OctridevVercel::Methods::Billing::ListContractCommitmentsResponseContractCommitmentCategory.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -216,9 +216,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalBuyCreditsItemMetadata
         FIELDS = {
-          type: "type",
-          credit_type: "creditType",
-          amount: "amount",
+          type: 'type',
+          credit_type: 'creditType',
+          amount: 'amount'
         }.freeze
         REQUIRED_FIELDS = %i[
           type
@@ -231,7 +231,7 @@ module OctridevVercel
           end,
           credit_type: lambda do |value|
             ::OctridevVercel::Methods::Billing::BuyCreditsItemCreditType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -266,7 +266,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalBuyCreditsMetadata
         FIELDS = {
-          item: "item",
+          item: 'item'
         }.freeze
         REQUIRED_FIELDS = %i[
           item
@@ -274,7 +274,7 @@ module OctridevVercel
         DECODERS = {
           item: lambda do |value|
             ::OctridevVercel::Methods::Billing::BuyCreditsItem.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -315,7 +315,7 @@ module OctridevVercel
         V0 = 'v0'
         GATEWAY = 'gateway'
         AGENT = 'agent'
-        VALUES = ['v0', 'gateway', 'agent'].freeze
+        VALUES = %w[v0 gateway agent].freeze
         def self.from_value(value)
           value
         end
@@ -327,7 +327,7 @@ module OctridevVercel
         DYNAMIC = 'Dynamic'
         OTHER = 'Other'
         STANDARD = 'Standard'
-        VALUES = ['Committed', 'Dynamic', 'Other', 'Standard'].freeze
+        VALUES = %w[Committed Dynamic Other Standard].freeze
         def self.from_value(value)
           value
         end
@@ -337,7 +337,7 @@ module OctridevVercel
       module ListContractCommitmentsResponseContractCommitmentCategory
         SPEND = 'Spend'
         USAGE = 'Usage'
-        VALUES = ['Spend', 'Usage'].freeze
+        VALUES = %w[Spend Usage].freeze
         def self.from_value(value)
           value
         end
@@ -350,7 +350,7 @@ module OctridevVercel
         PURCHASE = 'Purchase'
         TAX = 'Tax'
         USAGE = 'Usage'
-        VALUES = ['Adjustment', 'Credit', 'Purchase', 'Tax', 'Usage'].freeze
+        VALUES = %w[Adjustment Credit Purchase Tax Usage].freeze
         def self.from_value(value)
           value
         end
@@ -426,30 +426,33 @@ module OctridevVercel
         request_options: nil,
         &block
       )
-    return enum_for(
-          __method__,
-          config: config,
-          from: from,
-          to: to,
-          team_id: team_id,
-          slug: slug,
-          request_options: request_options,
-        ) unless block
+        unless block
+          return enum_for(
+            __method__,
+            config: config,
+            from: from,
+            to: to,
+            team_id: team_id,
+            slug: slug,
+            request_options: request_options
+          )
+        end
         SdkClient.stream(
-          'GET', "/v1/billing/charges",
+          'GET', '/v1/billing/charges',
           config: config,
           query: {
-          'from' => QueryValue.new(from, style: 'form', explode: true),
-          'to' => QueryValue.new(to, style: 'form', explode: true),
-          'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-          'slug' => QueryValue.new(slug, style: 'form', explode: true),
-        },
+            'from' => QueryValue.new(from, style: 'form', explode: true),
+            'to' => QueryValue.new(to, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
           operation_id: 'list_billing_charges',
           stream_format: :ndjson,
-          stream_media_type: "application/jsonl",
+          stream_media_type: 'application/jsonl',
           request_options: request_options
         ).each do |ev|
           break if ev.data == '[DONE]'
+
           decoded = JSON.parse(ev.data)
           block.call(SdkClient.decode_event(decoded, ::OctridevVercel::Methods::Billing::ListBillingChargesResponse))
         end
@@ -469,26 +472,29 @@ module OctridevVercel
         request_options: nil,
         &block
       )
-    return enum_for(
-          __method__,
-          config: config,
-          team_id: team_id,
-          slug: slug,
-          request_options: request_options,
-        ) unless block
+        unless block
+          return enum_for(
+            __method__,
+            config: config,
+            team_id: team_id,
+            slug: slug,
+            request_options: request_options
+          )
+        end
         SdkClient.stream(
-          'GET', "/v1/billing/contract-commitments",
+          'GET', '/v1/billing/contract-commitments',
           config: config,
           query: {
-          'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-          'slug' => QueryValue.new(slug, style: 'form', explode: true),
-        },
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
           operation_id: 'list_contract_commitments',
           stream_format: :ndjson,
-          stream_media_type: "application/jsonl",
+          stream_media_type: 'application/jsonl',
           request_options: request_options
         ).each do |ev|
           break if ev.data == '[DONE]'
+
           decoded = JSON.parse(ev.data)
           block.call(SdkClient.decode_event(decoded, ::OctridevVercel::Methods::Billing::ListContractCommitmentsResponse))
         end
@@ -511,23 +517,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
-          "/v1/billing/buy",
+          '/v1/billing/buy',
           config: config,
           query: {
             'source' => QueryValue.new(source, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'item' => item,
+            'item' => item
           },
           return_type: ::OctridevVercel::BuyCreditsResponse,
           decoder: :json,
           operation_id: 'buy_credits',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

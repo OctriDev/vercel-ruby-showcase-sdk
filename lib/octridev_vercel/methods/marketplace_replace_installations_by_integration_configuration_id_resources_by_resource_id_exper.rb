@@ -19,24 +19,23 @@ module OctridevVercel
         data:,
         request_options: nil
       )
-
         SdkClient.request(
           'PUT',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id),
-            "/experimentation/global-config"
+            '/experimentation/global-config'
           ].join,
           config: config,
           body: {
-            'data' => data,
+            'data' => data
           },
           return_type: ::OctridevVercel::Methods::Marketplace::ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c03db,
           decoder: :json,
           operation_id: 'replace_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_global_config',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

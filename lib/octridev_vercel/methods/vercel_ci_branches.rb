@@ -24,25 +24,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(query) { Validation.validate_length('query', query, max: 100) }
 
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 50) }
 
         SdkClient.request(
           'GET',
-          "/v2/vercel-ci/branches",
+          '/v2/vercel-ci/branches',
           config: config,
           query: {
             'query' => QueryValue.new(query, style: 'form', explode: true),
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::VercelCi::ListVercelCiBranchesResponse,
           decoder: :json,
           operation_id: 'list_vercel_ci_branches',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

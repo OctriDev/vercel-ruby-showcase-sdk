@@ -22,19 +22,18 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
-          "/ai-gateway/virtual-model-configs",
+          '/ai-gateway/virtual-model-configs',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::AiGatewayVirtualModelConfig,
           decoder: :json,
           operation_id: 'create_ai_gateway_virtual_model_config',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -45,22 +44,12 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_ai_gateway_virtual_model_config) do |
-        config:,
-        owner_id: NOT_GIVEN,
-        virtual_model_slug: NOT_GIVEN,
-        limit: NOT_GIVEN,
-        cursor: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_ai_gateway_virtual_model_config) do |config:, owner_id: NOT_GIVEN, virtual_model_slug: NOT_GIVEN, limit: NOT_GIVEN, cursor: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1) }
 
         SdkClient.request(
           'GET',
-          "/ai-gateway/virtual-model-configs",
+          '/ai-gateway/virtual-model-configs',
           config: config,
           query: {
             'ownerId' => QueryValue.new(owner_id, style: 'form', explode: true),
@@ -68,12 +57,12 @@ module OctridevVercel
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::GetAiGatewayVirtualModelConfigResponse,
           decoder: :json,
           operation_id: 'get_ai_gateway_virtual_model_config',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -90,19 +79,18 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
-          "/ai-gateway/virtual-model-configs",
+          '/ai-gateway/virtual-model-configs',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::AiGatewayVirtualModelConfig,
           decoder: :json,
           operation_id: 'update_ai_gateway_virtual_model_config',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -124,10 +112,9 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
-          "/ai-gateway/virtual-model-configs",
+          '/ai-gateway/virtual-model-configs',
           config: config,
           query: {
             'virtualModelSlug' => QueryValue.new(virtual_model_slug, style: 'form', explode: true),
@@ -136,11 +123,11 @@ module OctridevVercel
             'actingIp' => QueryValue.new(acting_ip, style: 'form', explode: true),
             'actingUserAgent' => QueryValue.new(acting_user_agent, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'delete_ai_gateway_virtual_model_config',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -161,12 +148,11 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1) }
 
         SdkClient.request(
           'GET',
-          "/ai-gateway/virtual-model-configs/list",
+          '/ai-gateway/virtual-model-configs/list',
           config: config,
           query: {
             'ownerId' => QueryValue.new(owner_id, style: 'form', explode: true),
@@ -174,16 +160,16 @@ module OctridevVercel
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'includeArchived' => QueryValue.new(include_archived, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::AiGatewayVirtualModelConfigList,
           decoder: :json,
           operation_id: 'list_ai_gateway_virtual_model_configs',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
-    ListAiGatewayVirtualModelConfigsPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
+      ListAiGatewayVirtualModelConfigsPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
 
       # Lists virtual model configurations for a team or across teams. Use `limit` and `cursor` to retrieve a page; team results are ordered by `virtualModelSlug`, while cross-team results are ordered newest first.
       #
@@ -216,9 +202,11 @@ module OctridevVercel
             )
             items = page.virtual_model_configs || []
             break if items.empty?
+
             items.each { |item| y << item }
             next_cursor = page.cursor
             break if next_cursor.nil?
+
             cursor = next_cursor
           end
         end
@@ -248,10 +236,12 @@ module OctridevVercel
             )
             items = page.virtual_model_configs || []
             break if items.empty?
+
             next_cursor = page.cursor
             has_more = !next_cursor.nil?
             y << ListAiGatewayVirtualModelConfigsPage.new(data: page, items: items, has_more: has_more)
             break unless has_more
+
             cursor = next_cursor
           end
         end
@@ -264,31 +254,23 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_ai_gateway_virtual_model_config_by_slug) do |
-        config:,
-        vmc_slug:,
-        owner_id: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_ai_gateway_virtual_model_config_by_slug) do |config:, vmc_slug:, owner_id: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/ai-gateway/virtual-model-configs/",
+            '/ai-gateway/virtual-model-configs/',
             SdkClient.encode_path_segment(vmc_slug)
           ].join,
           config: config,
           query: {
             'ownerId' => QueryValue.new(owner_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::AiGatewayVirtualModelConfig,
           decoder: :json,
           operation_id: 'get_ai_gateway_virtual_model_config_by_slug',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -306,22 +288,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/ai-gateway/virtual-model-configs/",
+            '/ai-gateway/virtual-model-configs/',
             SdkClient.encode_path_segment(vmc_slug)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::AiGatewayVirtualModelConfig,
           decoder: :json,
           operation_id: 'update_ai_gateway_virtual_model_config_by_slug',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -343,11 +324,10 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/ai-gateway/virtual-model-configs/",
+            '/ai-gateway/virtual-model-configs/',
             SdkClient.encode_path_segment(vmc_slug)
           ].join,
           config: config,
@@ -357,11 +337,11 @@ module OctridevVercel
             'actingIp' => QueryValue.new(acting_ip, style: 'form', explode: true),
             'actingUserAgent' => QueryValue.new(acting_user_agent, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'delete_ai_gateway_virtual_model_config_by_slug',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

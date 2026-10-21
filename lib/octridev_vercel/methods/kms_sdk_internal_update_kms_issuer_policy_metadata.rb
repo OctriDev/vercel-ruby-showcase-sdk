@@ -12,13 +12,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateKmsIssuerPolicyMetadata
         FIELDS = {
-          environments: "environments",
-          token_claims: "tokenClaims",
+          environments: 'environments',
+          token_claims: 'tokenClaims'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateKmsIssuerPolicy.
@@ -51,7 +49,7 @@ module OctridevVercel
       module UpdateKmsIssuerResponseOrigin
         EXTERNAL = 'external'
         VERCEL = 'vercel'
-        VALUES = ['external', 'vercel'].freeze
+        VALUES = %w[external vercel].freeze
         def self.from_value(value)
           value
         end
@@ -68,8 +66,8 @@ module OctridevVercel
         RS256 = 'RS256'
         RS384 = 'RS384'
         RS512 = 'RS512'
-        VALUES = [
-          'ES256', 'ES384', 'ES512', 'PS256', 'PS384', 'PS512', 'RS256', 'RS384', 'RS512'
+        VALUES = %w[
+          ES256 ES384 ES512 PS256 PS384 PS512 RS256 RS384 RS512
         ].freeze
         def self.from_value(value)
           value
@@ -80,7 +78,7 @@ module OctridevVercel
       module CreateKmsSigningKeyActivation
         AUTOMATIC = 'automatic'
         MANUAL = 'manual'
-        VALUES = ['automatic', 'manual'].freeze
+        VALUES = %w[automatic manual].freeze
         def self.from_value(value)
           value
         end
@@ -97,8 +95,8 @@ module OctridevVercel
         RS256 = 'RS256'
         RS384 = 'RS384'
         RS512 = 'RS512'
-        VALUES = [
-          'ES256', 'ES384', 'ES512', 'PS256', 'PS384', 'PS512', 'RS256', 'RS384', 'RS512'
+        VALUES = %w[
+          ES256 ES384 ES512 PS256 PS384 PS512 RS256 RS384 RS512
         ].freeze
         def self.from_value(value)
           value
@@ -119,7 +117,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end
@@ -129,7 +127,7 @@ module OctridevVercel
       module RevokeKmsSigningKeyResponseOrigin
         EXTERNAL = 'external'
         VERCEL = 'vercel'
-        VALUES = ['external', 'vercel'].freeze
+        VALUES = %w[external vercel].freeze
         def self.from_value(value)
           value
         end
@@ -146,8 +144,8 @@ module OctridevVercel
         RS256 = 'RS256'
         RS384 = 'RS384'
         RS512 = 'RS512'
-        VALUES = [
-          'ES256', 'ES384', 'ES512', 'PS256', 'PS384', 'PS512', 'RS256', 'RS384', 'RS512'
+        VALUES = %w[
+          ES256 ES384 ES512 PS256 PS384 PS512 RS256 RS384 RS512
         ].freeze
         def self.from_value(value)
           value
@@ -159,7 +157,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end
@@ -170,7 +168,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end
@@ -180,7 +178,7 @@ module OctridevVercel
       module DeleteKmsIssuerPolicyParameter
         PROJECT_GRANT = 'project-grant'
         CONNEX_GRANT = 'connex-grant'
-        VALUES = ['project-grant', 'connex-grant'].freeze
+        VALUES = %w[project-grant connex-grant].freeze
         def self.from_value(value)
           value
         end
@@ -197,8 +195,8 @@ module OctridevVercel
         RS256 = 'RS256'
         RS384 = 'RS384'
         RS512 = 'RS512'
-        VALUES = [
-          'ES256', 'ES384', 'ES512', 'PS256', 'PS384', 'PS512', 'RS256', 'RS384', 'RS512'
+        VALUES = %w[
+          ES256 ES384 ES512 PS256 PS384 PS512 RS256 RS384 RS512
         ].freeze
         def self.from_value(value)
           value
@@ -210,7 +208,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end
@@ -220,7 +218,7 @@ module OctridevVercel
       module CreateKmsIssuerResponseOrigin
         EXTERNAL = 'external'
         VERCEL = 'vercel'
-        VALUES = ['external', 'vercel'].freeze
+        VALUES = %w[external vercel].freeze
         def self.from_value(value)
           value
         end
@@ -237,8 +235,8 @@ module OctridevVercel
         RS256 = 'RS256'
         RS384 = 'RS384'
         RS512 = 'RS512'
-        VALUES = [
-          'ES256', 'ES384', 'ES512', 'PS256', 'PS384', 'PS512', 'RS256', 'RS384', 'RS512'
+        VALUES = %w[
+          ES256 ES384 ES512 PS256 PS384 PS512 RS256 RS384 RS512
         ].freeze
         def self.from_value(value)
           value
@@ -249,7 +247,7 @@ module OctridevVercel
       module ListKmsIssuersResponseIssuersItemOrigin
         EXTERNAL = 'external'
         VERCEL = 'vercel'
-        VALUES = ['external', 'vercel'].freeze
+        VALUES = %w[external vercel].freeze
         def self.from_value(value)
           value
         end
@@ -260,7 +258,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end
@@ -279,7 +277,7 @@ module OctridevVercel
       module GetKmsIssuerResponseOrigin
         EXTERNAL = 'external'
         VERCEL = 'vercel'
-        VALUES = ['external', 'vercel'].freeze
+        VALUES = %w[external vercel].freeze
         def self.from_value(value)
           value
         end
@@ -290,7 +288,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end
@@ -307,8 +305,8 @@ module OctridevVercel
         ES256 = 'ES256'
         ES384 = 'ES384'
         ES512 = 'ES512'
-        VALUES = [
-          'RS256', 'RS384', 'RS512', 'PS256', 'PS384', 'PS512', 'ES256', 'ES384', 'ES512'
+        VALUES = %w[
+          RS256 RS384 RS512 PS256 PS384 PS512 ES256 ES384 ES512
         ].freeze
         def self.from_value(value)
           value
@@ -320,7 +318,7 @@ module OctridevVercel
         ACTIVE = 'active'
         PENDING = 'pending'
         REVOKING = 'revoking'
-        VALUES = ['active', 'pending', 'revoking'].freeze
+        VALUES = %w[active pending revoking].freeze
         def self.from_value(value)
           value
         end

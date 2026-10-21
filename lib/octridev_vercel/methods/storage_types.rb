@@ -12,15 +12,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetStorageStoresByIdResponseStoreProjectFilterGitMetadata
         FIELDS = {
-          owners: "owners",
-          providers: "providers",
-          repos: "repos",
+          owners: 'owners',
+          providers: 'providers',
+          repos: 'repos'
         }.freeze
         REQUIRED_FIELDS = %i[
           providers
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetStorageStoresByIdResponseStoreProjectFilterGit.
@@ -49,14 +48,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetStorageStoresByIdResponseStoreProjectFilterMetadata
         FIELDS = {
-          git: "git",
+          git: 'git'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           git: lambda do |value|
             ::OctridevVercel::Methods::Storage::GetStorageStoresByIdResponseStoreProjectFilterGit.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -86,15 +84,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeX98d533f4c4Metadata
         FIELDS = {
-          environments: "environments",
-          slug: "slug",
+          environments: 'environments',
+          slug: 'slug'
         }.freeze
         REQUIRED_FIELDS = %i[
           environments
           slug
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeX98d533f4c4.
@@ -123,8 +120,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymentsMetadata
         FIELDS = {
-          actions: "actions",
-          required: "required",
+          actions: 'actions',
+          required: 'required'
         }.freeze
         REQUIRED_FIELDS = %i[
           actions
@@ -136,7 +133,7 @@ module OctridevVercel
           end,
           required: lambda do |value|
             ::OctridevVercel::Methods::Storage::GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymentsRequired.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -166,16 +163,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetStorageStoresByIdResponseStoreProjectsMetadataItemMetadata
         FIELDS = {
-          deployments: "deployments",
-          environments: "environments",
-          environment_variables: "environmentVariables",
-          env_var_prefix: "envVarPrefix",
-          framework: "framework",
-          id: "id",
-          latest_deployment: "latestDeployment",
-          make_env_vars_sensitive: "makeEnvVarsSensitive",
-          name: "name",
-          project_id: "projectId",
+          deployments: 'deployments',
+          environments: 'environments',
+          environment_variables: 'environmentVariables',
+          env_var_prefix: 'envVarPrefix',
+          framework: 'framework',
+          id: 'id',
+          latest_deployment: 'latestDeployment',
+          make_env_vars_sensitive: 'makeEnvVarsSensitive',
+          name: 'name',
+          project_id: 'projectId'
         }.freeze
         REQUIRED_FIELDS = %i[
           environments
@@ -194,7 +191,7 @@ module OctridevVercel
           end,
           make_env_vars_sensitive: lambda do |value|
             ::OctridevVercel::Methods::Storage::GetStorageStoresByIdResponseStoreProjectsMetadataItemMakeEnvVXef09504aef.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           env_var_prefix
@@ -228,11 +225,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetStorageStoresByIdResponseStoreMetadata
         FIELDS = {
-          project_filter: "projectFilter",
-          projects_metadata: "projectsMetadata",
-          status: "status",
-          total_connected_projects: "totalConnectedProjects",
-          usage_quota_exceeded: "usageQuotaExceeded",
+          project_filter: 'projectFilter',
+          projects_metadata: 'projectsMetadata',
+          status: 'status',
+          total_connected_projects: 'totalConnectedProjects',
+          usage_quota_exceeded: 'usageQuotaExceeded'
         }.freeze
         REQUIRED_FIELDS = %i[
           projects_metadata
@@ -251,7 +248,7 @@ module OctridevVercel
           end,
           usage_quota_exceeded: lambda do |value|
             ::OctridevVercel::Methods::Storage::GetStorageStoresByIdResponseStoreUsageQuotaExceeded.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           status
@@ -285,7 +282,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetStorageStoresByIdResponseMetadata
         FIELDS = {
-          store: "store",
+          store: 'store'
         }.freeze
         REQUIRED_FIELDS = %i[
           store
@@ -293,7 +290,7 @@ module OctridevVercel
         DECODERS = {
           store: lambda do |value|
             ::OctridevVercel::Methods::Storage::GetStorageStoresByIdResponseStore.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -323,10 +320,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateStorageStoresBlobMetadata
         FIELDS = {
-          name: "name",
-          region: "region",
-          access: "access",
-          project_id: "projectId",
+          name: 'name',
+          region: 'region',
+          access: 'access',
+          project_id: 'projectId'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -337,7 +334,7 @@ module OctridevVercel
           end,
           access: lambda do |value|
             ::OctridevVercel::Methods::Storage::CreateStorageStoresBlobAccess.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -367,15 +364,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateStorageStoresBlobResponseStoreProjectFilterGitMetadata
         FIELDS = {
-          owners: "owners",
-          providers: "providers",
-          repos: "repos",
+          owners: 'owners',
+          providers: 'providers',
+          repos: 'repos'
         }.freeze
         REQUIRED_FIELDS = %i[
           providers
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateStorageStoresBlobResponseStoreProjectFilterGit.
@@ -404,14 +400,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateStorageStoresBlobResponseStoreProjectFilterMetadata
         FIELDS = {
-          git: "git",
+          git: 'git'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           git: lambda do |value|
             ::OctridevVercel::Methods::Storage::CreateStorageStoresBlobResponseStoreProjectFilterGit.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -441,15 +436,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXdbb4725d02Metadata
         FIELDS = {
-          environments: "environments",
-          slug: "slug",
+          environments: 'environments',
+          slug: 'slug'
         }.freeze
         REQUIRED_FIELDS = %i[
           environments
           slug
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXdbb4725d02.
@@ -478,8 +472,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploymentsMetadata
         FIELDS = {
-          actions: "actions",
-          required: "required",
+          actions: 'actions',
+          required: 'required'
         }.freeze
         REQUIRED_FIELDS = %i[
           actions
@@ -491,7 +485,7 @@ module OctridevVercel
           end,
           required: lambda do |value|
             ::OctridevVercel::Methods::Storage::CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXe79f5e5c95.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -521,16 +515,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateStorageStoresBlobResponseStoreProjectsMetadataItemMetadata
         FIELDS = {
-          deployments: "deployments",
-          environments: "environments",
-          environment_variables: "environmentVariables",
-          env_var_prefix: "envVarPrefix",
-          framework: "framework",
-          id: "id",
-          latest_deployment: "latestDeployment",
-          make_env_vars_sensitive: "makeEnvVarsSensitive",
-          name: "name",
-          project_id: "projectId",
+          deployments: 'deployments',
+          environments: 'environments',
+          environment_variables: 'environmentVariables',
+          env_var_prefix: 'envVarPrefix',
+          framework: 'framework',
+          id: 'id',
+          latest_deployment: 'latestDeployment',
+          make_env_vars_sensitive: 'makeEnvVarsSensitive',
+          name: 'name',
+          project_id: 'projectId'
         }.freeze
         REQUIRED_FIELDS = %i[
           environments
@@ -549,7 +543,7 @@ module OctridevVercel
           end,
           make_env_vars_sensitive: lambda do |value|
             ::OctridevVercel::Methods::Storage::CreateStorageStoresBlobResponseStoreProjectsMetadataItemMakeEXfe5b9cf055.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           env_var_prefix

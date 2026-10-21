@@ -5,598 +5,596 @@
 
 # authentication domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalAuthTokenMetadata
-  FIELDS = {
-    active_at: "activeAt",
-    created_at: "createdAt",
-    expires_at: "expiresAt",
-    id: "id",
-    leaked_at: "leakedAt",
-    leaked_url: "leakedUrl",
-    name: "name",
-    origin: "origin",
-    prefix: "prefix",
-    revoked_at: "revokedAt",
-    scopes: "scopes",
-    suffix: "suffix",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    active_at
-    created_at
-    id
-    name
-    type
-  ].freeze
-  DECODERS = {
-    scopes: lambda do |value|
-      value&.map { |item| ::OctridevVercel::AuthTokenScopesItem.from_hash(item) }
-    end,
-  }.freeze
-end
-
-# API model for AuthToken.
-# Authentication token metadata.
-class AuthToken
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAuthTokenMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAuthTokenMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAuthTokenMetadata::DECODERS
-
-  # @return [Float] Timestamp (in milliseconds) of when the token was most recently used.
-  attr_reader :active_at
-  # @return [Float] Timestamp (in milliseconds) of when the token was created.
-  attr_reader :created_at
-  # @return [Float] Timestamp (in milliseconds) of when the token expires.
-  attr_reader :expires_at
-  # @return [String] The unique identifier of the token.
-  attr_reader :id
-  # @return [Float] Timestamp (in milliseconds) of when the token was marked as leaked.
-  attr_reader :leaked_at
-  # @return [String] URL where the token was discovered as leaked.
-  attr_reader :leaked_url
-  # @return [String] The human-readable name of the token.
-  attr_reader :name
-  # @return [String] The origin of how the token was created.
-  attr_reader :origin
-  # @return [String] The token's prefix, for identification purposes.
-  attr_reader :prefix
-  # @return [Float] Timestamp (in milliseconds) of when the token was revoked.
-  attr_reader :revoked_at
-  # @return [Array_of_AuthTokenScopesItem] The access scopes granted to the token.
-  attr_reader :scopes
-  # @return [String] The last few characters of the token, for identification purposes.
-  attr_reader :suffix
-  # @return [String] The type of the token.
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalAuthTokenMetadata
+    FIELDS = {
+      active_at: 'activeAt',
+      created_at: 'createdAt',
+      expires_at: 'expiresAt',
+      id: 'id',
+      leaked_at: 'leakedAt',
+      leaked_url: 'leakedUrl',
+      name: 'name',
+      origin: 'origin',
+      prefix: 'prefix',
+      revoked_at: 'revokedAt',
+      scopes: 'scopes',
+      suffix: 'suffix',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      active_at
+      created_at
+      id
+      name
+      type
+    ].freeze
+    DECODERS = {
+      scopes: lambda do |value|
+        value&.map { |item| ::OctridevVercel::AuthTokenScopesItem.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
+  # API model for AuthToken.
+  # Authentication token metadata.
+  class AuthToken
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAuthTokenMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAuthTokenMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAuthTokenMetadata::DECODERS
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+    # @return [Float] Timestamp (in milliseconds) of when the token was most recently used.
+    attr_reader :active_at
+    # @return [Float] Timestamp (in milliseconds) of when the token was created.
+    attr_reader :created_at
+    # @return [Float] Timestamp (in milliseconds) of when the token expires.
+    attr_reader :expires_at
+    # @return [String] The unique identifier of the token.
+    attr_reader :id
+    # @return [Float] Timestamp (in milliseconds) of when the token was marked as leaked.
+    attr_reader :leaked_at
+    # @return [String] URL where the token was discovered as leaked.
+    attr_reader :leaked_url
+    # @return [String] The human-readable name of the token.
+    attr_reader :name
+    # @return [String] The origin of how the token was created.
+    attr_reader :origin
+    # @return [String] The token's prefix, for identification purposes.
+    attr_reader :prefix
+    # @return [Float] Timestamp (in milliseconds) of when the token was revoked.
+    attr_reader :revoked_at
+    # @return [Array_of_AuthTokenScopesItem] The access scopes granted to the token.
+    attr_reader :scopes
+    # @return [String] The last few characters of the token, for identification purposes.
+    attr_reader :suffix
+    # @return [String] The type of the token.
+    attr_reader :type
 
-# Internal model hydration metadata.
-class SdkInternalAuthTokenScopesItemVariant0SudoMetadata
-  FIELDS = {
-    expires_at: "expiresAt",
-    origin: "origin",
-    verified_at: "verifiedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    expires_at
-    origin
-  ].freeze
-  DECODERS = {
-    origin: lambda do |value|
-      ::OctridevVercel::AuthTokenScopesItemVariant0SudoOrigin.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for AuthTokenScopesItemVariant0Sudo.
-# Optional object value serialized in the `sudo` wire field.
-class AuthTokenScopesItemVariant0Sudo
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAuthTokenScopesItemVariant0SudoMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAuthTokenScopesItemVariant0SudoMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAuthTokenScopesItemVariant0SudoMetadata::DECODERS
-
-  # @return [Float] Required `number` value serialized in the `expiresAt` wire field.
-  attr_reader :expires_at
-  # @return [AuthTokenScopesItemVariant0SudoOrigin] Possible step-up auth origins
-  attr_reader :origin
-  # @return [Float] Optional `number` value serialized in the `verifiedAt` wire field.
-  attr_reader :verified_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalAuthTokenScopesItemVariant0Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    expires_at: "expiresAt",
-    origin: "origin",
-    sudo: "sudo",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    type
-  ].freeze
-  DECODERS = {
-    origin: lambda do |value|
-      ::OctridevVercel::AuthTokenScopesItemVariant0Origin.from_value(value)
-    end,
-    sudo: lambda do |value|
-      ::OctridevVercel::AuthTokenScopesItemVariant0Sudo.from_hash(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::AuthTokenScopesItemVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for AuthTokenScopesItemVariant0.
-class AuthTokenScopesItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAuthTokenScopesItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAuthTokenScopesItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAuthTokenScopesItemVariant0Metadata::DECODERS
-
-  # @return [Float] Required `number` value serialized in the `createdAt` wire field.
-  attr_reader :created_at
-  # @return [Float] Optional `number` value serialized in the `expiresAt` wire field.
-  attr_reader :expires_at
-  # @return [AuthTokenScopesItemVariant0Origin] Optional enumerated value serialized in the `origin` wire field.
-  attr_reader :origin
-  # @return [AuthTokenScopesItemVariant0Sudo] Optional object value serialized in the `sudo` wire field.
-  attr_reader :sudo
-  # @return [AuthTokenScopesItemVariant0Type] Required enumerated value serialized in the `type` wire field.
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalAuthTokenScopesItemVariant1Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    expires_at: "expiresAt",
-    origin: "origin",
-    team_id: "teamId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    team_id
-    type
-  ].freeze
-  DECODERS = {
-    origin: lambda do |value|
-      ::OctridevVercel::AuthTokenScopesItemVariant1Origin.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::AuthTokenScopesItemVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for AuthTokenScopesItemVariant1.
-class AuthTokenScopesItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAuthTokenScopesItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAuthTokenScopesItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAuthTokenScopesItemVariant1Metadata::DECODERS
-
-  # @return [Float] Required `number` value serialized in the `createdAt` wire field.
-  attr_reader :created_at
-  # @return [Float] Optional `number` value serialized in the `expiresAt` wire field.
-  attr_reader :expires_at
-  # @return [AuthTokenScopesItemVariant1Origin] Optional enumerated value serialized in the `origin` wire field.
-  attr_reader :origin
-  # @return [String] Required `string` value serialized in the `teamId` wire field.
-  attr_reader :team_id
-  # @return [AuthTokenScopesItemVariant1Type] Required enumerated value serialized in the `type` wire field.
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the AuthTokenScopesItem SDK namespace.
-module AuthTokenScopesItem
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    mapping = { "user" => AuthTokenScopesItemVariant0, "team" => AuthTokenScopesItemVariant1 }
-    type = mapping[hash["type"]]
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('AuthTokenScopesItem', 'variant', "Unknown AuthTokenScopesItem discriminator: #{hash["type"].inspect}")
-  end
-end
-
-# Defines the AuthTokenScopesItemVariant0Origin SDK namespace.
-module AuthTokenScopesItemVariant0Origin
-  APP = 'app'
-  APPLE = 'apple'
-  BITBUCKET = 'bitbucket'
-  CHATGPT = 'chatgpt'
-  EMAIL = 'email'
-  EMU = 'emu'
-  GITHUB = 'github'
-  GITHUB_WEBHOOK = 'github-webhook'
-  GITLAB = 'gitlab'
-  GOOGLE = 'google'
-  INVITE = 'invite'
-  MANUAL = 'manual'
-  OTP = 'otp'
-  PASSKEY = 'passkey'
-  SAML = 'saml'
-  SMS = 'sms'
-  TOKEN_EXCHANGE_OIDC = 'token-exchange-oidc'
-  VALUES = [
-    'app', 'apple', 'bitbucket', 'chatgpt', 'email', 'emu', 'github', 'github-webhook', 'gitlab',
-    'google', 'invite', 'manual', 'otp', 'passkey', 'saml', 'sms', 'token-exchange-oidc'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AuthTokenScopesItemVariant0SudoOrigin SDK namespace.
-module AuthTokenScopesItemVariant0SudoOrigin
-  EMAIL_OTP = 'email-otp'
-  OTP = 'otp'
-  RECOVERY_CODE = 'recovery-code'
-  TOTP = 'totp'
-  WEBAUTHN = 'webauthn'
-  VALUES = ['email-otp', 'otp', 'recovery-code', 'totp', 'webauthn'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AuthTokenScopesItemVariant0Type SDK namespace.
-module AuthTokenScopesItemVariant0Type
-  USER = 'user'
-  VALUES = ['user'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('AuthTokenScopesItemVariant0Type', 'enum', "Unknown AuthTokenScopesItemVariant0Type: #{value}")
-  end
-end
-
-# Defines the AuthTokenScopesItemVariant1Origin SDK namespace.
-module AuthTokenScopesItemVariant1Origin
-  APP = 'app'
-  APPLE = 'apple'
-  BITBUCKET = 'bitbucket'
-  CHATGPT = 'chatgpt'
-  EMAIL = 'email'
-  EMU = 'emu'
-  GITHUB = 'github'
-  GITHUB_WEBHOOK = 'github-webhook'
-  GITLAB = 'gitlab'
-  GOOGLE = 'google'
-  INVITE = 'invite'
-  MANUAL = 'manual'
-  OTP = 'otp'
-  PASSKEY = 'passkey'
-  SAML = 'saml'
-  SMS = 'sms'
-  TOKEN_EXCHANGE_OIDC = 'token-exchange-oidc'
-  VALUES = [
-    'app', 'apple', 'bitbucket', 'chatgpt', 'email', 'emu', 'github', 'github-webhook', 'gitlab',
-    'google', 'invite', 'manual', 'otp', 'passkey', 'saml', 'sms', 'token-exchange-oidc'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AuthTokenScopesItemVariant1Type SDK namespace.
-module AuthTokenScopesItemVariant1Type
-  TEAM = 'team'
-  VALUES = ['team'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('AuthTokenScopesItemVariant1Type', 'enum', "Unknown AuthTokenScopesItemVariant1Type: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalExchangeSsoTokenResponseVariant0Metadata
-  FIELDS = {
-    access_token: "access_token",
-    expires_in: "expires_in",
-    id_token: "id_token",
-    refresh_token: "refresh_token",
-    token_type: "token_type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    access_token
-    id_token
-    token_type
-  ].freeze
-  DECODERS = {
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    access_token
-    token_type
-  ].freeze
-end
-
-# API model for ExchangeSsoTokenResponseVariant0.
-class ExchangeSsoTokenResponseVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalExchangeSsoTokenResponseVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalExchangeSsoTokenResponseVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalExchangeSsoTokenResponseVariant0Metadata::DECODERS
-
-  attr_reader :access_token, :expires_in, :id_token, :refresh_token, :token_type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalExchangeSsoTokenResponseVariant0Metadata::NULLABLE_FIELDS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalExchangeSsoTokenResponseVariant1Metadata
-  FIELDS = {
-    access_token: "access_token",
-    expires_in: "expires_in",
-    id_token: "id_token",
-    refresh_token: "refresh_token",
-    token_type: "token_type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    access_token
-    expires_in
-    id_token
-    refresh_token
-    token_type
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for ExchangeSsoTokenResponseVariant1.
-class ExchangeSsoTokenResponseVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalExchangeSsoTokenResponseVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalExchangeSsoTokenResponseVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalExchangeSsoTokenResponseVariant1Metadata::DECODERS
-
-  attr_reader :access_token, :expires_in, :id_token, :refresh_token, :token_type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the ExchangeSsoTokenResponse SDK namespace.
-module ExchangeSsoTokenResponse
-  def self.from_hash(hash)
-    lossy = nil
-    [ExchangeSsoTokenResponseVariant0, ExchangeSsoTokenResponseVariant1].each do |type|
-      decoded = type.from_hash(hash)
-      return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-      lossy ||= decoded
-    rescue ::StandardError
-      next
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
     end
-    return lossy unless lossy.nil?
-  end
-end
 
-# Internal model hydration metadata.
-class SdkInternalListAuthTokensResponseVariant0PaginationMetadata
-  FIELDS = {
-    count: "count",
-    next_: "next",
-    prev: "prev",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    count
-    next_
-    prev
-  ].freeze
-  DECODERS = {
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    next_
-    prev
-  ].freeze
-end
-
-# API model for ListAuthTokensResponseVariant0Pagination.
-class ListAuthTokensResponseVariant0Pagination
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListAuthTokensResponseVariant0PaginationMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListAuthTokensResponseVariant0PaginationMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListAuthTokensResponseVariant0PaginationMetadata::DECODERS
-
-  attr_reader :count, :next_, :prev
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalListAuthTokensResponseVariant0PaginationMetadata::NULLABLE_FIELDS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalListAuthTokensResponseVariant0Metadata
-  FIELDS = {
-    pagination: "pagination",
-    tokens: "tokens",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    pagination
-    tokens
-  ].freeze
-  DECODERS = {
-    pagination: lambda do |value|
-      ::OctridevVercel::ListAuthTokensResponseVariant0Pagination.from_hash(value)
-    end,
-    tokens: lambda do |value|
-      value&.map { |item| ::OctridevVercel::AuthToken.from_hash(item) }
-    end,
-  }.freeze
-end
-
-# API model for ListAuthTokensResponseVariant0.
-class ListAuthTokensResponseVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListAuthTokensResponseVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListAuthTokensResponseVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListAuthTokensResponseVariant0Metadata::DECODERS
-
-  attr_reader :pagination, :tokens
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalListAuthTokensResponseVariant1Metadata
-  FIELDS = {
-    pagination: "pagination",
-    tokens: "tokens",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    pagination
-    tokens
-  ].freeze
-  DECODERS = {
-    pagination: lambda do |value|
-      ::OctridevVercel::Pagination.from_hash(value)
-    end,
-    tokens: lambda do |value|
-      value&.map { |item| ::OctridevVercel::AuthToken.from_hash(item) }
-    end,
-  }.freeze
-end
-
-# API model for ListAuthTokensResponseVariant1.
-class ListAuthTokensResponseVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListAuthTokensResponseVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListAuthTokensResponseVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListAuthTokensResponseVariant1Metadata::DECODERS
-
-  attr_reader :tokens
-  # @return [Pagination] This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
-  attr_reader :pagination
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the ListAuthTokensResponse SDK namespace.
-module ListAuthTokensResponse
-  def self.from_hash(hash)
-    lossy = nil
-    [ListAuthTokensResponseVariant0, ListAuthTokensResponseVariant1].each do |type|
-      decoded = type.from_hash(hash)
-      return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-      lossy ||= decoded
-    rescue ::StandardError
-      next
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
     end
-    return lossy unless lossy.nil?
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
+
+  # Internal model hydration metadata.
+  class SdkInternalAuthTokenScopesItemVariant0SudoMetadata
+    FIELDS = {
+      expires_at: 'expiresAt',
+      origin: 'origin',
+      verified_at: 'verifiedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      expires_at
+      origin
+    ].freeze
+    DECODERS = {
+      origin: lambda do |value|
+        ::OctridevVercel::AuthTokenScopesItemVariant0SudoOrigin.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for AuthTokenScopesItemVariant0Sudo.
+  # Optional object value serialized in the `sudo` wire field.
+  class AuthTokenScopesItemVariant0Sudo
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAuthTokenScopesItemVariant0SudoMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAuthTokenScopesItemVariant0SudoMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAuthTokenScopesItemVariant0SudoMetadata::DECODERS
+
+    # @return [Float] Required `number` value serialized in the `expiresAt` wire field.
+    attr_reader :expires_at
+    # @return [AuthTokenScopesItemVariant0SudoOrigin] Possible step-up auth origins
+    attr_reader :origin
+    # @return [Float] Optional `number` value serialized in the `verifiedAt` wire field.
+    attr_reader :verified_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalAuthTokenScopesItemVariant0Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      expires_at: 'expiresAt',
+      origin: 'origin',
+      sudo: 'sudo',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      type
+    ].freeze
+    DECODERS = {
+      origin: lambda do |value|
+        ::OctridevVercel::AuthTokenScopesItemVariant0Origin.from_value(value)
+      end,
+      sudo: lambda do |value|
+        ::OctridevVercel::AuthTokenScopesItemVariant0Sudo.from_hash(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::AuthTokenScopesItemVariant0Type.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for AuthTokenScopesItemVariant0.
+  class AuthTokenScopesItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAuthTokenScopesItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAuthTokenScopesItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAuthTokenScopesItemVariant0Metadata::DECODERS
+
+    # @return [Float] Required `number` value serialized in the `createdAt` wire field.
+    attr_reader :created_at
+    # @return [Float] Optional `number` value serialized in the `expiresAt` wire field.
+    attr_reader :expires_at
+    # @return [AuthTokenScopesItemVariant0Origin] Optional enumerated value serialized in the `origin` wire field.
+    attr_reader :origin
+    # @return [AuthTokenScopesItemVariant0Sudo] Optional object value serialized in the `sudo` wire field.
+    attr_reader :sudo
+    # @return [AuthTokenScopesItemVariant0Type] Required enumerated value serialized in the `type` wire field.
+    attr_reader :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalAuthTokenScopesItemVariant1Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      expires_at: 'expiresAt',
+      origin: 'origin',
+      team_id: 'teamId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      team_id
+      type
+    ].freeze
+    DECODERS = {
+      origin: lambda do |value|
+        ::OctridevVercel::AuthTokenScopesItemVariant1Origin.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::AuthTokenScopesItemVariant1Type.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for AuthTokenScopesItemVariant1.
+  class AuthTokenScopesItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAuthTokenScopesItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAuthTokenScopesItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAuthTokenScopesItemVariant1Metadata::DECODERS
+
+    # @return [Float] Required `number` value serialized in the `createdAt` wire field.
+    attr_reader :created_at
+    # @return [Float] Optional `number` value serialized in the `expiresAt` wire field.
+    attr_reader :expires_at
+    # @return [AuthTokenScopesItemVariant1Origin] Optional enumerated value serialized in the `origin` wire field.
+    attr_reader :origin
+    # @return [String] Required `string` value serialized in the `teamId` wire field.
+    attr_reader :team_id
+    # @return [AuthTokenScopesItemVariant1Type] Required enumerated value serialized in the `type` wire field.
+    attr_reader :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the AuthTokenScopesItem SDK namespace.
+  module AuthTokenScopesItem
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      mapping = { 'user' => AuthTokenScopesItemVariant0, 'team' => AuthTokenScopesItemVariant1 }
+      type = mapping[hash['type']]
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('AuthTokenScopesItem', 'variant', "Unknown AuthTokenScopesItem discriminator: #{hash['type'].inspect}")
+    end
+  end
+
+  # Defines the AuthTokenScopesItemVariant0Origin SDK namespace.
+  module AuthTokenScopesItemVariant0Origin
+    APP = 'app'
+    APPLE = 'apple'
+    BITBUCKET = 'bitbucket'
+    CHATGPT = 'chatgpt'
+    EMAIL = 'email'
+    EMU = 'emu'
+    GITHUB = 'github'
+    GITHUB_WEBHOOK = 'github-webhook'
+    GITLAB = 'gitlab'
+    GOOGLE = 'google'
+    INVITE = 'invite'
+    MANUAL = 'manual'
+    OTP = 'otp'
+    PASSKEY = 'passkey'
+    SAML = 'saml'
+    SMS = 'sms'
+    TOKEN_EXCHANGE_OIDC = 'token-exchange-oidc'
+    VALUES = %w[
+      app apple bitbucket chatgpt email emu github github-webhook gitlab
+      google invite manual otp passkey saml sms token-exchange-oidc
+    ].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the AuthTokenScopesItemVariant0SudoOrigin SDK namespace.
+  module AuthTokenScopesItemVariant0SudoOrigin
+    EMAIL_OTP = 'email-otp'
+    OTP = 'otp'
+    RECOVERY_CODE = 'recovery-code'
+    TOTP = 'totp'
+    WEBAUTHN = 'webauthn'
+    VALUES = %w[email-otp otp recovery-code totp webauthn].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the AuthTokenScopesItemVariant0Type SDK namespace.
+  module AuthTokenScopesItemVariant0Type
+    USER = 'user'
+    VALUES = ['user'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('AuthTokenScopesItemVariant0Type', 'enum', "Unknown AuthTokenScopesItemVariant0Type: #{value}")
+    end
+  end
+
+  # Defines the AuthTokenScopesItemVariant1Origin SDK namespace.
+  module AuthTokenScopesItemVariant1Origin
+    APP = 'app'
+    APPLE = 'apple'
+    BITBUCKET = 'bitbucket'
+    CHATGPT = 'chatgpt'
+    EMAIL = 'email'
+    EMU = 'emu'
+    GITHUB = 'github'
+    GITHUB_WEBHOOK = 'github-webhook'
+    GITLAB = 'gitlab'
+    GOOGLE = 'google'
+    INVITE = 'invite'
+    MANUAL = 'manual'
+    OTP = 'otp'
+    PASSKEY = 'passkey'
+    SAML = 'saml'
+    SMS = 'sms'
+    TOKEN_EXCHANGE_OIDC = 'token-exchange-oidc'
+    VALUES = %w[
+      app apple bitbucket chatgpt email emu github github-webhook gitlab
+      google invite manual otp passkey saml sms token-exchange-oidc
+    ].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the AuthTokenScopesItemVariant1Type SDK namespace.
+  module AuthTokenScopesItemVariant1Type
+    TEAM = 'team'
+    VALUES = ['team'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('AuthTokenScopesItemVariant1Type', 'enum', "Unknown AuthTokenScopesItemVariant1Type: #{value}")
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalExchangeSsoTokenResponseVariant0Metadata
+    FIELDS = {
+      access_token: 'access_token',
+      expires_in: 'expires_in',
+      id_token: 'id_token',
+      refresh_token: 'refresh_token',
+      token_type: 'token_type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      access_token
+      id_token
+      token_type
+    ].freeze
+    DECODERS = {}.freeze
+    NULLABLE_FIELDS = %i[
+      access_token
+      token_type
+    ].freeze
+  end
+
+  # API model for ExchangeSsoTokenResponseVariant0.
+  class ExchangeSsoTokenResponseVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalExchangeSsoTokenResponseVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalExchangeSsoTokenResponseVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalExchangeSsoTokenResponseVariant0Metadata::DECODERS
+
+    attr_reader :access_token, :expires_in, :id_token, :refresh_token, :token_type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalExchangeSsoTokenResponseVariant0Metadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalExchangeSsoTokenResponseVariant1Metadata
+    FIELDS = {
+      access_token: 'access_token',
+      expires_in: 'expires_in',
+      id_token: 'id_token',
+      refresh_token: 'refresh_token',
+      token_type: 'token_type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      access_token
+      expires_in
+      id_token
+      refresh_token
+      token_type
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for ExchangeSsoTokenResponseVariant1.
+  class ExchangeSsoTokenResponseVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalExchangeSsoTokenResponseVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalExchangeSsoTokenResponseVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalExchangeSsoTokenResponseVariant1Metadata::DECODERS
+
+    attr_reader :access_token, :expires_in, :id_token, :refresh_token, :token_type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the ExchangeSsoTokenResponse SDK namespace.
+  module ExchangeSsoTokenResponse
+    def self.from_hash(hash)
+      lossy = nil
+      [ExchangeSsoTokenResponseVariant0, ExchangeSsoTokenResponseVariant1].each do |type|
+        decoded = type.from_hash(hash)
+        return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+        lossy ||= decoded
+      rescue ::StandardError
+        next
+      end
+      lossy unless lossy.nil?
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalListAuthTokensResponseVariant0PaginationMetadata
+    FIELDS = {
+      count: 'count',
+      next_: 'next',
+      prev: 'prev'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      count
+      next_
+      prev
+    ].freeze
+    DECODERS = {}.freeze
+    NULLABLE_FIELDS = %i[
+      next_
+      prev
+    ].freeze
+  end
+
+  # API model for ListAuthTokensResponseVariant0Pagination.
+  class ListAuthTokensResponseVariant0Pagination
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListAuthTokensResponseVariant0PaginationMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListAuthTokensResponseVariant0PaginationMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListAuthTokensResponseVariant0PaginationMetadata::DECODERS
+
+    attr_reader :count, :next_, :prev
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalListAuthTokensResponseVariant0PaginationMetadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalListAuthTokensResponseVariant0Metadata
+    FIELDS = {
+      pagination: 'pagination',
+      tokens: 'tokens'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      pagination
+      tokens
+    ].freeze
+    DECODERS = {
+      pagination: lambda do |value|
+        ::OctridevVercel::ListAuthTokensResponseVariant0Pagination.from_hash(value)
+      end,
+      tokens: lambda do |value|
+        value&.map { |item| ::OctridevVercel::AuthToken.from_hash(item) }
+      end
+    }.freeze
+  end
+
+  # API model for ListAuthTokensResponseVariant0.
+  class ListAuthTokensResponseVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListAuthTokensResponseVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListAuthTokensResponseVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListAuthTokensResponseVariant0Metadata::DECODERS
+
+    attr_reader :pagination, :tokens
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalListAuthTokensResponseVariant1Metadata
+    FIELDS = {
+      pagination: 'pagination',
+      tokens: 'tokens'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      pagination
+      tokens
+    ].freeze
+    DECODERS = {
+      pagination: lambda do |value|
+        ::OctridevVercel::Pagination.from_hash(value)
+      end,
+      tokens: lambda do |value|
+        value&.map { |item| ::OctridevVercel::AuthToken.from_hash(item) }
+      end
+    }.freeze
+  end
+
+  # API model for ListAuthTokensResponseVariant1.
+  class ListAuthTokensResponseVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListAuthTokensResponseVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListAuthTokensResponseVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListAuthTokensResponseVariant1Metadata::DECODERS
+
+    attr_reader :tokens
+    # @return [Pagination] This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+    attr_reader :pagination
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the ListAuthTokensResponse SDK namespace.
+  module ListAuthTokensResponse
+    def self.from_hash(hash)
+      lossy = nil
+      [ListAuthTokensResponseVariant0, ListAuthTokensResponseVariant1].each do |type|
+        decoded = type.from_hash(hash)
+        return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+        lossy ||= decoded
+      rescue ::StandardError
+        next
+      end
+      lossy unless lossy.nil?
+    end
+  end
 end

@@ -12,21 +12,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSecurityFirewallConfigByConfigVersionActivateResponseMetadata
         FIELDS = {
-          bot_id_enabled: "botIdEnabled",
-          changes: "changes",
-          conditions: "conditions",
-          crs: "crs",
-          firewall_enabled: "firewallEnabled",
-          id: "id",
-          ips: "ips",
-          log_headers: "logHeaders",
-          managed_rules: "managedRules",
-          owner_id: "ownerId",
-          project_key: "projectKey",
-          rules: "rules",
-          rulesets: "rulesets",
-          updated_at: "updatedAt",
-          version: "version",
+          bot_id_enabled: 'botIdEnabled',
+          changes: 'changes',
+          conditions: 'conditions',
+          crs: 'crs',
+          firewall_enabled: 'firewallEnabled',
+          id: 'id',
+          ips: 'ips',
+          log_headers: 'logHeaders',
+          managed_rules: 'managedRules',
+          owner_id: 'ownerId',
+          project_key: 'projectKey',
+          rules: 'rules',
+          rulesets: 'rulesets',
+          updated_at: 'updatedAt',
+          version: 'version'
         }.freeze
         REQUIRED_FIELDS = %i[
           changes
@@ -60,7 +60,7 @@ module OctridevVercel
           end,
           rules: lambda do |value|
             value&.map { |item| ::OctridevVercel::CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -92,15 +92,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBypassIpResponsePaginationMetadata
         FIELDS = {
-          id: "Id",
-          owner_id: "OwnerId",
+          id: 'Id',
+          owner_id: 'OwnerId'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
           owner_id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetBypassIpResponsePagination.
@@ -129,20 +128,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBypassIpResponseResultItemMetadata
         FIELDS = {
-          action: "Action",
-          actor_id: "ActorId",
-          created_at: "CreatedAt",
-          deleted_at: "DeletedAt",
-          domain: "Domain",
-          expires_at: "ExpiresAt",
-          id: "Id",
-          ip: "Ip",
-          is_project_rule: "IsProjectRule",
-          note: "Note",
-          owner_id: "OwnerId",
-          project_id: "ProjectId",
-          updated_at: "UpdatedAt",
-          updated_at_hour: "UpdatedAtHour",
+          action: 'Action',
+          actor_id: 'ActorId',
+          created_at: 'CreatedAt',
+          deleted_at: 'DeletedAt',
+          domain: 'Domain',
+          expires_at: 'ExpiresAt',
+          id: 'Id',
+          ip: 'Ip',
+          is_project_rule: 'IsProjectRule',
+          note: 'Note',
+          owner_id: 'OwnerId',
+          project_id: 'ProjectId',
+          updated_at: 'UpdatedAt',
+          updated_at_hour: 'UpdatedAtHour'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -159,7 +158,7 @@ module OctridevVercel
           end,
           is_project_rule: lambda do |value|
             ::OctridevVercel::Methods::Security::GetBypassIpResponseResultItemIsProjectRule.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -190,8 +189,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetBypassIpResponseMetadata
         FIELDS = {
-          pagination: "pagination",
-          result: "result",
+          pagination: 'pagination',
+          result: 'result'
         }.freeze
         REQUIRED_FIELDS = %i[
           result
@@ -202,7 +201,7 @@ module OctridevVercel
           end,
           result: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Security::GetBypassIpResponseResultItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -232,17 +231,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddBypassIpMetadata
         FIELDS = {
-          domain: "domain",
-          project_scope: "projectScope",
-          source_ip: "sourceIp",
-          all_sources: "allSources",
-          ttl: "ttl",
-          note: "note",
+          domain: 'domain',
+          project_scope: 'projectScope',
+          source_ip: 'sourceIp',
+          all_sources: 'allSources',
+          ttl: 'ttl',
+          note: 'note'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for AddBypassIp.
@@ -275,16 +272,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRemoveBypassIpMetadata
         FIELDS = {
-          domain: "domain",
-          project_scope: "projectScope",
-          source_ip: "sourceIp",
-          all_sources: "allSources",
-          note: "note",
+          domain: 'domain',
+          project_scope: 'projectScope',
+          source_ip: 'sourceIp',
+          all_sources: 'allSources',
+          note: 'note'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for RemoveBypassIp.
@@ -313,7 +308,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRemoveBypassIpResponseMetadata
         FIELDS = {
-          ok: "ok",
+          ok: 'ok'
         }.freeze
         REQUIRED_FIELDS = %i[
           ok
@@ -321,7 +316,7 @@ module OctridevVercel
         DECODERS = {
           ok: lambda do |value|
             ::OctridevVercel::Methods::Security::RemoveBypassIpResponseOk.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -351,7 +346,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateConditionalBypassConditionGroupItemMetadata
         FIELDS = {
-          conditions: "conditions",
+          conditions: 'conditions'
         }.freeze
         REQUIRED_FIELDS = %i[
           conditions
@@ -359,7 +354,7 @@ module OctridevVercel
         DECODERS = {
           conditions: lambda do |value|
             value&.map { |item| ::OctridevVercel::CreateConditionalBypassRequestConditionGroupItemConditionsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -389,9 +384,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateConditionalBypassMetadata
         FIELDS = {
-          domain: "domain",
-          condition_group: "conditionGroup",
-          note: "note",
+          domain: 'domain',
+          condition_group: 'conditionGroup',
+          note: 'note'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -400,7 +395,7 @@ module OctridevVercel
         DECODERS = {
           condition_group: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Security::CreateConditionalBypassConditionGroupItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -430,11 +425,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateConditionalBypassResponseResultConditionGroupItemConditionsItemMetadata
         FIELDS = {
-          key: "key",
-          neg: "neg",
-          op: "op",
-          type: "type",
-          value: "value",
+          key: 'key',
+          neg: 'neg',
+          op: 'op',
+          type: 'type',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           op
@@ -449,7 +444,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Security::CreateConditionalBypassResponseResultConditionGroupItemConditX89b4ba9fa9.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -479,7 +474,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateConditionalBypassResponseResultConditionGroupItemMetadata
         FIELDS = {
-          conditions: "conditions",
+          conditions: 'conditions'
         }.freeze
         REQUIRED_FIELDS = %i[
           conditions
@@ -487,7 +482,7 @@ module OctridevVercel
         DECODERS = {
           conditions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Security::CreateConditionalBypassResponseResultConditionGroupItemConditionsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -517,14 +512,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateConditionalBypassResponseResultMetadata
         FIELDS = {
-          condition: "condition",
-          condition_group: "conditionGroup",
-          created_at: "createdAt",
-          domain: "domain",
-          id: "id",
-          note: "note",
-          project_id: "projectId",
-          updated_at: "updatedAt",
+          condition: 'condition',
+          condition_group: 'conditionGroup',
+          created_at: 'createdAt',
+          domain: 'domain',
+          id: 'id',
+          note: 'note',
+          project_id: 'projectId',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           condition
@@ -538,7 +533,7 @@ module OctridevVercel
         DECODERS = {
           condition_group: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Security::CreateConditionalBypassResponseResultConditionGroupItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
     end

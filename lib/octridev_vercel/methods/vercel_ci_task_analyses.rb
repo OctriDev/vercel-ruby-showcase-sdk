@@ -24,27 +24,26 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('owner', owner, max: 100)
 
         Validation.validate_length('repo', repo, max: 100)
 
         SdkClient.request(
           'POST',
-          "/v1/vercel-ci/task-analyses",
+          '/v1/vercel-ci/task-analyses',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'owner' => owner,
-            'repo' => repo,
+            'repo' => repo
           },
           return_type: ::OctridevVercel::Methods::VercelCi::CreateVercelCiTaskAnalysisResponse,
           decoder: :json,
           operation_id: 'create_vercel_ci_task_analysis',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -55,29 +54,22 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_vercel_ci_task_analysis) do |
-        config:,
-        analysis_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_vercel_ci_task_analysis) do |config:, analysis_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/vercel-ci/task-analyses/",
+            '/v1/vercel-ci/task-analyses/',
             SdkClient.encode_path_segment(analysis_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::VercelCi::GetVercelCiTaskAnalysisResponse,
           decoder: :json,
           operation_id: 'get_vercel_ci_task_analysis',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -96,28 +88,27 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('tasks', tasks, min: 1, max: 100)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/vercel-ci/task-analyses/",
+            '/v1/vercel-ci/task-analyses/',
             SdkClient.encode_path_segment(analysis_id),
-            "/pull-request"
+            '/pull-request'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'tasks' => tasks,
+            'tasks' => tasks
           },
           return_type: ::OctridevVercel::Methods::VercelCi::CreateVercelCiTaskConfigurationPullRequestResponse,
           decoder: :json,
           operation_id: 'create_vercel_ci_task_configuration_pull_request',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -137,25 +128,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
           [
-            "/v1/vercel-ci/task-analyses/",
+            '/v1/vercel-ci/task-analyses/',
             SdkClient.encode_path_segment(analysis_id),
-            "/tasks"
+            '/tasks'
           ].join,
           config: config,
           query: {
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::VercelCi::ListVercelCiTaskAnalysisTasksResponse,
           decoder: :json,
           operation_id: 'list_vercel_ci_task_analysis_tasks',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

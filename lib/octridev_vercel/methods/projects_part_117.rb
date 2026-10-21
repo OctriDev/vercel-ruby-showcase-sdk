@@ -30,27 +30,26 @@ module OctridevVercel
         callback_secret: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/projects/",
+            '/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/transfer-request"
+            '/transfer-request'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'callbackUrl' => callback_url,
-            'callbackSecret' => callback_secret,
+            'callbackSecret' => callback_secret
           },
           return_type: ::OctridevVercel::Methods::Projects::CreateProjectTransferRequestResponse,
           decoder: :json,
           operation_id: 'create_project_transfer_request',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -73,7 +72,6 @@ module OctridevVercel
         accepted_policies: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(new_project_name) do
           Validation.validate_length('newProjectName', new_project_name, max: 100)
         end
@@ -81,23 +79,23 @@ module OctridevVercel
         SdkClient.request(
           'PUT',
           [
-            "/projects/transfer-request/",
+            '/projects/transfer-request/',
             SdkClient.encode_path_segment(code)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'newProjectName' => new_project_name,
             'paidFeatures' => paid_features,
-            'acceptedPolicies' => accepted_policies,
+            'acceptedPolicies' => accepted_policies
           },
           return_type: ::OctridevVercel::Methods::Projects::AcceptProjectTransferRequestResponse,
           decoder: :json,
           operation_id: 'accept_project_transfer_request',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -126,28 +124,27 @@ module OctridevVercel
         update: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(id_or_name),
-            "/protection-bypass"
+            '/protection-bypass'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'revoke' => revoke,
             'generate' => generate,
-            'update' => update,
+            'update' => update
           },
           return_type: ::OctridevVercel::Methods::Projects::UpdateProjectProtectionBypassResponse,
           decoder: :json,
           operation_id: 'update_project_protection_bypass',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -169,24 +166,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id),
-            "/rollback/",
+            '/rollback/',
             SdkClient.encode_path_segment(deployment_id)
           ].join,
           config: config,
           query: {
             'description' => QueryValue.new(description, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'request_rollback',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -202,23 +198,22 @@ module OctridevVercel
         description: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id),
-            "/rollback/",
+            '/rollback/',
             SdkClient.encode_path_segment(deployment_id),
-            "/update-description"
+            '/update-description'
           ].join,
           config: config,
           body: {
-            'description' => description,
+            'description' => description
           },
           decoder: :empty,
           operation_id: 'update_projects_rollback_description',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -256,18 +251,17 @@ module OctridevVercel
         do_not_route_with_microfrontends_routing: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id),
-            "/microfrontends"
+            '/microfrontends'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'microfrontendsGroupId' => microfrontends_group_id,
@@ -275,12 +269,12 @@ module OctridevVercel
             'isDefaultApp' => is_default_app,
             'defaultRoute' => default_route,
             'routeObservabilityToThisProject' => route_observability_to_this_project,
-            'doNotRouteWithMicrofrontendsRouting' => do_not_route_with_microfrontends_routing,
+            'doNotRouteWithMicrofrontendsRouting' => do_not_route_with_microfrontends_routing
           },
           return_type: ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponse,
           decoder: :json,
           operation_id: 'update_microfrontends',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -299,23 +293,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v10/projects/",
+            '/v10/projects/',
             SdkClient.encode_path_segment(project_id),
-            "/promote/",
+            '/promote/',
             SdkClient.encode_path_segment(deployment_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'request_promote',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -343,15 +336,14 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(limit) { Validation.validate_range('limit', limit, max: 100) }
 
         SdkClient.request(
           'GET',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id),
-            "/promote/aliases"
+            '/promote/aliases'
           ].join,
           config: config,
           query: {
@@ -360,11 +352,11 @@ module OctridevVercel
             'until' => QueryValue.new(until_, style: 'form', explode: true),
             'failedOnly' => QueryValue.new(failed_only, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'list_promote_aliases',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -383,22 +375,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id),
-            "/pause"
+            '/pause'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'pause_project',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -417,22 +408,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id),
-            "/unpause"
+            '/unpause'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'unpause_project',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

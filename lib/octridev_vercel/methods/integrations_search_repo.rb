@@ -29,10 +29,9 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
-          "/v1/integrations/search-repo",
+          '/v1/integrations/search-repo',
           config: config,
           query: {
             'query' => QueryValue.new(query, style: 'form', explode: true),
@@ -41,11 +40,11 @@ module OctridevVercel
             'installationId' => QueryValue.new(installation_id, style: 'form', explode: true),
             'host' => QueryValue.new(host, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'search_repo',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

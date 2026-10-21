@@ -5,664 +5,652 @@
 
 # deployments domain models
 module OctridevVercel
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7064aa42f0.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7064aa42f0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7064aa42f0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7064aa42f0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7064aa42f0Metadata::DECODERS
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7064aa42f0.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7064aa42f0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7064aa42f0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7064aa42f0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7064aa42f0Metadata::DECODERS
 
-  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7bfd6fc1b1Metadata
+    FIELDS = {
+      key: 'key',
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      key
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX27f45f61c0.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7bfd6fc1b1.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7bfd6fc1b1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7bfd6fc1b1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7bfd6fc1b1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7bfd6fc1b1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7bfd6fc1b1Metadata
-  FIELDS = {
-    key: "key",
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    key
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX27f45f61c0.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :key, :type, :value
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7bfd6fc1b1.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7bfd6fc1b1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7bfd6fc1b1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7bfd6fc1b1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7bfd6fc1b1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :key, :type, :value
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bca88Metadata
+    FIELDS = {
+      eq: 'eq',
+      gt: 'gt',
+      gte: 'gte',
+      inc: 'inc',
+      lt: 'lt',
+      lte: 'lte',
+      neq: 'neq',
+      ninc: 'ninc',
+      pre: 'pre',
+      re: 're',
+      suf: 'suf'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bca88.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bca88
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bca88Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bca88Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bca88Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bca88Metadata
-  FIELDS = {
-    eq: "eq",
-    gt: "gt",
-    gte: "gte",
-    inc: "inc",
-    lt: "lt",
-    lte: "lte",
-    neq: "neq",
-    ninc: "ninc",
-    pre: "pre",
-    re: "re",
-    suf: "suf",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bca88.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bca88
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bca88Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bca88Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bca88Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65e506db9cMetadata
+    FIELDS = {
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      value
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX4167355521.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65e506db9c.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65e506db9c
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65e506db9cMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65e506db9cMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65e506db9cMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65e506db9cMetadata
-  FIELDS = {
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    value
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX4167355521.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :type, :value
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65e506db9c.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65e506db9c
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65e506db9cMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65e506db9cMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65e506db9cMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :type, :value
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2631Metadata
+    FIELDS = {
+      eq: 'eq',
+      gt: 'gt',
+      gte: 'gte',
+      inc: 'inc',
+      lt: 'lt',
+      lte: 'lte',
+      neq: 'neq',
+      ninc: 'ninc',
+      pre: 'pre',
+      re: 're',
+      suf: 'suf'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2631.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2631
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2631Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2631Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2631Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2631Metadata
-  FIELDS = {
-    eq: "eq",
-    gt: "gt",
-    gte: "gte",
-    inc: "inc",
-    lt: "lt",
-    lte: "lte",
-    neq: "neq",
-    ninc: "ninc",
-    pre: "pre",
-    re: "re",
-    suf: "suf",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2631.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2631
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2631Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2631Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2631Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX01ae4b4741Metadata
+    FIELDS = {
+      key: 'key',
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      key
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX8d7e619c59.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX01ae4b4741.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX01ae4b4741
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX01ae4b4741Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX01ae4b4741Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX01ae4b4741Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX01ae4b4741Metadata
-  FIELDS = {
-    key: "key",
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    key
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX8d7e619c59.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :key, :type, :value
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX01ae4b4741.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX01ae4b4741
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX01ae4b4741Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX01ae4b4741Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX01ae4b4741Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :key, :type, :value
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4ccaMetadata
+    FIELDS = {
+      args: 'args',
+      env: 'env',
+      op: 'op',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      args
+      op
+      type
+    ].freeze
+    DECODERS = {
+      op: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXcadc9ba323.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65d779f52b.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4cca.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4cca
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4ccaMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4ccaMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4ccaMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4ccaMetadata
-  FIELDS = {
-    args: "args",
-    env: "env",
-    op: "op",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    args
-    op
-    type
-  ].freeze
-  DECODERS = {
-    op: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXcadc9ba323.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65d779f52b.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :args, :env, :op, :type
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4cca.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4cca
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4ccaMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4ccaMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4ccaMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :args, :env, :op, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesItemMetadata
+    FIELDS = {
+      destination: 'destination',
+      env: 'env',
+      has: 'has',
+      missing: 'missing',
+      respect_origin_cache_control: 'respectOriginCacheControl',
+      source: 'source',
+      status_code: 'statusCode',
+      transforms: 'transforms'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      destination
+      source
+    ].freeze
+    DECODERS = {
+      respect_origin_cache_control: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX1ff59bfe03.from_value(value)
+      end,
+      transforms: lambda do |value|
+        value&.map { |item| ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4cca.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesItem.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesItemMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesItemMetadata
-  FIELDS = {
-    destination: "destination",
-    env: "env",
-    has: "has",
-    missing: "missing",
-    respect_origin_cache_control: "respectOriginCacheControl",
-    source: "source",
-    status_code: "statusCode",
-    transforms: "transforms",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    destination
-    source
-  ].freeze
-  DECODERS = {
-    respect_origin_cache_control: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX1ff59bfe03.from_value(value)
-    end,
-    transforms: lambda do |value|
-      value&.map { |item| ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4cca.from_hash(item) }
-    end,
-  }.freeze
-end
+    attr_reader :destination, :env, :has, :missing, :respect_origin_cache_control, :source,
+                :status_code, :transforms
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RewritesItem.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RewritesItemMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :destination, :env, :has, :missing, :respect_origin_cache_control, :source,
-              :status_code, :transforms
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX220629b5b6Metadata
+    FIELDS = {
+      path: 'path',
+      service: 'service',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      service
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXee114dad95.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX220629b5b6.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX220629b5b6
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX220629b5b6Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX220629b5b6Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX220629b5b6Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX220629b5b6Metadata
-  FIELDS = {
-    path: "path",
-    service: "service",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    service
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXee114dad95.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :service
+    # @return [String] Routing-only path used to select a route inside the target service.
+    attr_reader :path
+    # @return [CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXee114dad95] Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+    attr_reader :type
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX220629b5b6.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX220629b5b6
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX220629b5b6Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX220629b5b6Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX220629b5b6Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :service
-  # @return [String] Routing-only path used to select a route inside the target service.
-  attr_reader :path
-  # @return [CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXee114dad95] Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
-  attr_reader :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82fc76Metadata
+    FIELDS = {
+      eq: 'eq',
+      gt: 'gt',
+      gte: 'gte',
+      inc: 'inc',
+      lt: 'lt',
+      lte: 'lte',
+      neq: 'neq',
+      ninc: 'ninc',
+      pre: 'pre',
+      re: 're',
+      suf: 'suf'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82fc76.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82fc76
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82fc76Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82fc76Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82fc76Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82fc76Metadata
-  FIELDS = {
-    eq: "eq",
-    gt: "gt",
-    gte: "gte",
-    inc: "inc",
-    lt: "lt",
-    lte: "lte",
-    neq: "neq",
-    ninc: "ninc",
-    pre: "pre",
-    re: "re",
-    suf: "suf",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82fc76.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82fc76
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82fc76Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82fc76Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82fc76Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX23e5b894c6Metadata
+    FIELDS = {
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      value
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX69c195e48b.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX23e5b894c6.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX23e5b894c6
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX23e5b894c6Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX23e5b894c6Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX23e5b894c6Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX23e5b894c6Metadata
-  FIELDS = {
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    value
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX69c195e48b.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :type, :value
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX23e5b894c6.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX23e5b894c6
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX23e5b894c6Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX23e5b894c6Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX23e5b894c6Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :type, :value
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2db5Metadata
+    FIELDS = {
+      eq: 'eq',
+      gt: 'gt',
+      gte: 'gte',
+      inc: 'inc',
+      lt: 'lt',
+      lte: 'lte',
+      neq: 'neq',
+      ninc: 'ninc',
+      pre: 'pre',
+      re: 're',
+      suf: 'suf'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2db5.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2db5
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2db5Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2db5Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2db5Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2db5Metadata
-  FIELDS = {
-    eq: "eq",
-    gt: "gt",
-    gte: "gte",
-    inc: "inc",
-    lt: "lt",
-    lte: "lte",
-    neq: "neq",
-    ninc: "ninc",
-    pre: "pre",
-    re: "re",
-    suf: "suf",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2db5.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2db5
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2db5Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2db5Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2db5Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX7e6d5b2800Metadata
+    FIELDS = {
+      key: 'key',
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      key
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX2064caae67.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX7e6d5b2800.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX7e6d5b2800
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX7e6d5b2800Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX7e6d5b2800Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX7e6d5b2800Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX7e6d5b2800Metadata
-  FIELDS = {
-    key: "key",
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    key
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX2064caae67.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :key, :type, :value
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX7e6d5b2800.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX7e6d5b2800
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX7e6d5b2800Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX7e6d5b2800Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX7e6d5b2800Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :key, :type, :value
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6f89f3c7d9Metadata
+    FIELDS = {
+      cookie: 'cookie',
+      redirect: 'redirect'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6f89f3c7d9.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6f89f3c7d9
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6f89f3c7d9Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6f89f3c7d9Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6f89f3c7d9Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6f89f3c7d9Metadata
-  FIELDS = {
-    cookie: "cookie",
-    redirect: "redirect",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :cookie, :redirect
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6f89f3c7d9.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6f89f3c7d9
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6f89f3c7d9Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6f89f3c7d9Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6f89f3c7d9Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :cookie, :redirect
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd83002f256Metadata
+    FIELDS = {
+      eq: 'eq',
+      gt: 'gt',
+      gte: 'gte',
+      inc: 'inc',
+      lt: 'lt',
+      lte: 'lte',
+      neq: 'neq',
+      ninc: 'ninc',
+      pre: 'pre',
+      re: 're',
+      suf: 'suf'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd83002f256.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd83002f256
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd83002f256Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd83002f256Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd83002f256Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd83002f256Metadata
-  FIELDS = {
-    eq: "eq",
-    gt: "gt",
-    gte: "gte",
-    inc: "inc",
-    lt: "lt",
-    lte: "lte",
-    neq: "neq",
-    ninc: "ninc",
-    pre: "pre",
-    re: "re",
-    suf: "suf",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd83002f256.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd83002f256
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd83002f256Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd83002f256Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd83002f256Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :eq, :gt, :gte, :inc, :lt, :lte, :neq, :ninc, :pre, :re, :suf
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX3fc6ea3cd4Metadata
+    FIELDS = {
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      value
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6b3d8c2c99.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX3fc6ea3cd4.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX3fc6ea3cd4
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX3fc6ea3cd4Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX3fc6ea3cd4Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX3fc6ea3cd4Metadata::DECODERS
+
+    attr_reader :type, :value
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX3fc6ea3cd4Metadata
-  FIELDS = {
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    value
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX6b3d8c2c99.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX3fc6ea3cd4.
-class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX3fc6ea3cd4
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX3fc6ea3cd4Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX3fc6ea3cd4Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX3fc6ea3cd4Metadata::DECODERS
-
-  attr_reader :type, :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
 end

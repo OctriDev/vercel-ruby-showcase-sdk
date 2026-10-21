@@ -29,26 +29,25 @@ module OctridevVercel
         expiration: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v3/sandboxes/sessions/",
+            '/v3/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/snapshot"
+            '/snapshot'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'expiration' => expiration,
+            'expiration' => expiration
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::CreateSandboxesSessionsBySessionIdSnapshotV3Response,
           decoder: :json,
           operation_id: 'create_sandboxes_sessions_by_session_id_snapshot_v3',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

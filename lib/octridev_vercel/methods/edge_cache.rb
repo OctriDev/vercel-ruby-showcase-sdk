@@ -12,8 +12,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalInvalidateByTagsMetadata
         FIELDS = {
-          tags: "tags",
-          target: "target",
+          tags: 'tags',
+          target: 'target'
         }.freeze
         REQUIRED_FIELDS = %i[
           tags
@@ -21,7 +21,7 @@ module OctridevVercel
         DECODERS = {
           target: lambda do |value|
             ::OctridevVercel::Methods::EdgeCache::InvalidateByTagsTarget.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -51,9 +51,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDangerouslyDeleteByTagsMetadata
         FIELDS = {
-          revalidation_deadline_seconds: "revalidationDeadlineSeconds",
-          tags: "tags",
-          target: "target",
+          revalidation_deadline_seconds: 'revalidationDeadlineSeconds',
+          tags: 'tags',
+          target: 'target'
         }.freeze
         REQUIRED_FIELDS = %i[
           tags
@@ -61,7 +61,7 @@ module OctridevVercel
         DECODERS = {
           target: lambda do |value|
             ::OctridevVercel::Methods::EdgeCache::DangerouslyDeleteByTagsTarget.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -91,13 +91,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalInvalidateBySrcImagesMetadata
         FIELDS = {
-          src_images: "srcImages",
+          src_images: 'srcImages'
         }.freeze
         REQUIRED_FIELDS = %i[
           src_images
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for InvalidateBySrcImages.
@@ -126,14 +125,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDangerouslyDeleteBySrcImagesMetadata
         FIELDS = {
-          revalidation_deadline_seconds: "revalidationDeadlineSeconds",
-          src_images: "srcImages",
+          revalidation_deadline_seconds: 'revalidationDeadlineSeconds',
+          src_images: 'srcImages'
         }.freeze
         REQUIRED_FIELDS = %i[
           src_images
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for DangerouslyDeleteBySrcImages.
@@ -163,7 +161,7 @@ module OctridevVercel
       module DangerouslyDeleteByTagsTarget
         PRODUCTION = 'production'
         PREVIEW = 'preview'
-        VALUES = ['production', 'preview'].freeze
+        VALUES = %w[production preview].freeze
         def self.from_value(value)
           value
         end
@@ -173,7 +171,7 @@ module OctridevVercel
       module InvalidateByTagsTarget
         PRODUCTION = 'production'
         PREVIEW = 'preview'
-        VALUES = ['production', 'preview'].freeze
+        VALUES = %w[production preview].freeze
         def self.from_value(value)
           value
         end
@@ -195,23 +193,22 @@ module OctridevVercel
         target: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
-          "/v1/edge-cache/invalidate-by-tags",
+          '/v1/edge-cache/invalidate-by-tags',
           config: config,
           query: {
             'projectIdOrName' => QueryValue.new(project_id_or_name, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'tags' => tags,
-            'target' => target,
+            'target' => target
           },
           decoder: :empty,
           operation_id: 'invalidate_by_tags',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -232,28 +229,27 @@ module OctridevVercel
         target: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(revalidation_deadline_seconds) do
-          Validation.validate_range('revalidationDeadlineSeconds', revalidation_deadline_seconds, min: 0, max: 31536000)
+          Validation.validate_range('revalidationDeadlineSeconds', revalidation_deadline_seconds, min: 0, max: 31_536_000)
         end
 
         SdkClient.request(
           'POST',
-          "/v1/edge-cache/dangerously-delete-by-tags",
+          '/v1/edge-cache/dangerously-delete-by-tags',
           config: config,
           query: {
             'projectIdOrName' => QueryValue.new(project_id_or_name, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'tags' => tags,
             'revalidationDeadlineSeconds' => revalidation_deadline_seconds,
-            'target' => target,
+            'target' => target
           },
           decoder: :empty,
           operation_id: 'dangerously_delete_by_tags',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -272,24 +268,23 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('srcImages', src_images, min: 1, max: 8)
 
         SdkClient.request(
           'POST',
-          "/v1/edge-cache/invalidate-by-src-images",
+          '/v1/edge-cache/invalidate-by-src-images',
           config: config,
           query: {
             'projectIdOrName' => QueryValue.new(project_id_or_name, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'srcImages' => src_images,
+            'srcImages' => src_images
           },
           decoder: :empty,
           operation_id: 'invalidate_by_src_images',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -309,29 +304,28 @@ module OctridevVercel
         revalidation_deadline_seconds: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('srcImages', src_images, min: 1, max: 8)
 
         Validation.if_given(revalidation_deadline_seconds) do
-          Validation.validate_range('revalidationDeadlineSeconds', revalidation_deadline_seconds, min: 0, max: 31536000)
+          Validation.validate_range('revalidationDeadlineSeconds', revalidation_deadline_seconds, min: 0, max: 31_536_000)
         end
 
         SdkClient.request(
           'POST',
-          "/v1/edge-cache/dangerously-delete-by-src-images",
+          '/v1/edge-cache/dangerously-delete-by-src-images',
           config: config,
           query: {
             'projectIdOrName' => QueryValue.new(project_id_or_name, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'srcImages' => src_images,
-            'revalidationDeadlineSeconds' => revalidation_deadline_seconds,
+            'revalidationDeadlineSeconds' => revalidation_deadline_seconds
           },
           decoder: :empty,
           operation_id: 'dangerously_delete_by_src_images',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

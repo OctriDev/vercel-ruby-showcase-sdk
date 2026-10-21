@@ -12,20 +12,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateKmsIssuerResponseSigningKeysItemMetadata
         FIELDS = {
-          activate_at: "activateAt",
-          activated_at: "activatedAt",
-          algorithm: "algorithm",
-          certificate_pem: "certificatePem",
-          created_at: "createdAt",
-          import_key_id: "importKeyId",
-          issuer_id: "issuerId",
-          key_id: "keyId",
-          public_key: "publicKey",
-          public_key_fingerprint: "publicKeyFingerprint",
-          public_key_pem: "publicKeyPem",
-          revoke_at: "revokeAt",
-          status: "status",
-          updated_at: "updatedAt",
+          activate_at: 'activateAt',
+          activated_at: 'activatedAt',
+          algorithm: 'algorithm',
+          certificate_pem: 'certificatePem',
+          created_at: 'createdAt',
+          import_key_id: 'importKeyId',
+          issuer_id: 'issuerId',
+          key_id: 'keyId',
+          public_key: 'publicKey',
+          public_key_fingerprint: 'publicKeyFingerprint',
+          public_key_pem: 'publicKeyPem',
+          revoke_at: 'revokeAt',
+          status: 'status',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           algorithm
@@ -42,7 +42,7 @@ module OctridevVercel
           end,
           status: lambda do |value|
             ::OctridevVercel::Methods::Kms::CreateKmsIssuerResponseSigningKeysItemStatus.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -83,17 +83,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateKmsIssuerResponseMetadata
         FIELDS = {
-          algorithm: "algorithm",
-          claims_schema: "claimsSchema",
-          created_at: "createdAt",
-          id: "id",
-          managed_by: "managedBy",
-          name: "name",
-          origin: "origin",
-          owner_id: "ownerId",
-          policies: "policies",
-          signing_keys: "signingKeys",
-          updated_at: "updatedAt",
+          algorithm: 'algorithm',
+          claims_schema: 'claimsSchema',
+          created_at: 'createdAt',
+          id: 'id',
+          managed_by: 'managedBy',
+          name: 'name',
+          origin: 'origin',
+          owner_id: 'ownerId',
+          policies: 'policies',
+          signing_keys: 'signingKeys',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           algorithm
@@ -118,7 +118,7 @@ module OctridevVercel
           end,
           signing_keys: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Kms::CreateKmsIssuerResponseSigningKeysItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -149,18 +149,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateKmsSigningKeyMetadata
         FIELDS = {
-          activation: "activation",
-          revoke_previous_after_hours: "revokePreviousAfterHours",
-          revoke_previous_at: "revokePreviousAt",
-          import_key: "importKey",
-          import_key_id: "importKeyId",
+          activation: 'activation',
+          revoke_previous_after_hours: 'revokePreviousAfterHours',
+          revoke_previous_at: 'revokePreviousAt',
+          import_key: 'importKey',
+          import_key_id: 'importKeyId'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           activation: lambda do |value|
             ::OctridevVercel::Methods::Kms::CreateKmsSigningKeyActivation.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -199,18 +198,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateKmsSigningKeyResponsePublicKeyMetadata
         FIELDS = {
-          alg: "alg",
-          key_ops: "key_ops",
-          kid: "kid",
-          kty: "kty",
-          use: "use",
-          x5c: "x5c",
-          x5t_s256: "x5t#S256",
+          alg: 'alg',
+          key_ops: 'key_ops',
+          kid: 'kid',
+          kty: 'kty',
+          use: 'use',
+          x5c: 'x5c',
+          x5t_s256: 'x5t#S256'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateKmsSigningKeyResponsePublicKey.
@@ -243,20 +240,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateKmsSigningKeyResponseMetadata
         FIELDS = {
-          activate_at: "activateAt",
-          activated_at: "activatedAt",
-          algorithm: "algorithm",
-          certificate_pem: "certificatePem",
-          created_at: "createdAt",
-          import_key_id: "importKeyId",
-          issuer_id: "issuerId",
-          key_id: "keyId",
-          public_key: "publicKey",
-          public_key_fingerprint: "publicKeyFingerprint",
-          public_key_pem: "publicKeyPem",
-          revoke_at: "revokeAt",
-          status: "status",
-          updated_at: "updatedAt",
+          activate_at: 'activateAt',
+          activated_at: 'activatedAt',
+          algorithm: 'algorithm',
+          certificate_pem: 'certificatePem',
+          created_at: 'createdAt',
+          import_key_id: 'importKeyId',
+          issuer_id: 'issuerId',
+          key_id: 'keyId',
+          public_key: 'publicKey',
+          public_key_fingerprint: 'publicKeyFingerprint',
+          public_key_pem: 'publicKeyPem',
+          revoke_at: 'revokeAt',
+          status: 'status',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           algorithm
@@ -273,7 +270,7 @@ module OctridevVercel
           end,
           status: lambda do |value|
             ::OctridevVercel::Methods::Kms::CreateKmsSigningKeyResponseStatus.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -314,12 +311,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalActivateKmsSigningKeyMetadata
         FIELDS = {
-          revoke_previous_after_hours: "revokePreviousAfterHours",
+          revoke_previous_after_hours: 'revokePreviousAfterHours'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ActivateKmsSigningKey.
@@ -349,18 +344,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalActivateKmsSigningKeyResponsePublicKeyMetadata
         FIELDS = {
-          alg: "alg",
-          key_ops: "key_ops",
-          kid: "kid",
-          kty: "kty",
-          use: "use",
-          x5c: "x5c",
-          x5t_s256: "x5t#S256",
+          alg: 'alg',
+          key_ops: 'key_ops',
+          kid: 'kid',
+          kty: 'kty',
+          use: 'use',
+          x5c: 'x5c',
+          x5t_s256: 'x5t#S256'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ActivateKmsSigningKeyResponsePublicKey.
@@ -393,20 +386,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalActivateKmsSigningKeyResponseMetadata
         FIELDS = {
-          activate_at: "activateAt",
-          activated_at: "activatedAt",
-          algorithm: "algorithm",
-          certificate_pem: "certificatePem",
-          created_at: "createdAt",
-          import_key_id: "importKeyId",
-          issuer_id: "issuerId",
-          key_id: "keyId",
-          public_key: "publicKey",
-          public_key_fingerprint: "publicKeyFingerprint",
-          public_key_pem: "publicKeyPem",
-          revoke_at: "revokeAt",
-          status: "status",
-          updated_at: "updatedAt",
+          activate_at: 'activateAt',
+          activated_at: 'activatedAt',
+          algorithm: 'algorithm',
+          certificate_pem: 'certificatePem',
+          created_at: 'createdAt',
+          import_key_id: 'importKeyId',
+          issuer_id: 'issuerId',
+          key_id: 'keyId',
+          public_key: 'publicKey',
+          public_key_fingerprint: 'publicKeyFingerprint',
+          public_key_pem: 'publicKeyPem',
+          revoke_at: 'revokeAt',
+          status: 'status',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           algorithm
@@ -423,7 +416,7 @@ module OctridevVercel
           end,
           status: lambda do |value|
             ::OctridevVercel::Methods::Kms::ActivateKmsSigningKeyResponseStatus.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -464,18 +457,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRevokeKmsSigningKeyResponseSigningKeysItemPublicKeyMetadata
         FIELDS = {
-          alg: "alg",
-          key_ops: "key_ops",
-          kid: "kid",
-          kty: "kty",
-          use: "use",
-          x5c: "x5c",
-          x5t_s256: "x5t#S256",
+          alg: 'alg',
+          key_ops: 'key_ops',
+          kid: 'kid',
+          kty: 'kty',
+          use: 'use',
+          x5c: 'x5c',
+          x5t_s256: 'x5t#S256'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for RevokeKmsSigningKeyResponseSigningKeysItemPublicKey.
@@ -508,20 +499,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRevokeKmsSigningKeyResponseSigningKeysItemMetadata
         FIELDS = {
-          activate_at: "activateAt",
-          activated_at: "activatedAt",
-          algorithm: "algorithm",
-          certificate_pem: "certificatePem",
-          created_at: "createdAt",
-          import_key_id: "importKeyId",
-          issuer_id: "issuerId",
-          key_id: "keyId",
-          public_key: "publicKey",
-          public_key_fingerprint: "publicKeyFingerprint",
-          public_key_pem: "publicKeyPem",
-          revoke_at: "revokeAt",
-          status: "status",
-          updated_at: "updatedAt",
+          activate_at: 'activateAt',
+          activated_at: 'activatedAt',
+          algorithm: 'algorithm',
+          certificate_pem: 'certificatePem',
+          created_at: 'createdAt',
+          import_key_id: 'importKeyId',
+          issuer_id: 'issuerId',
+          key_id: 'keyId',
+          public_key: 'publicKey',
+          public_key_fingerprint: 'publicKeyFingerprint',
+          public_key_pem: 'publicKeyPem',
+          revoke_at: 'revokeAt',
+          status: 'status',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           algorithm
@@ -538,7 +529,7 @@ module OctridevVercel
           end,
           status: lambda do |value|
             ::OctridevVercel::Methods::Kms::RevokeKmsSigningKeyResponseSigningKeysItemStatus.from_value(value)
-          end,
+          end
         }.freeze
       end
     end

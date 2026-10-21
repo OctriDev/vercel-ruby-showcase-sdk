@@ -30,25 +30,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/deployments/",
+            '/v1/deployments/',
             SdkClient.encode_path_segment(deployment_id),
-            "/checks/",
+            '/checks/',
             SdkClient.encode_path_segment(check_id),
-            "/rerequest"
+            '/rerequest'
           ].join,
           config: config,
           query: {
             'autoUpdate' => QueryValue.new(auto_update, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'rerequest_check',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

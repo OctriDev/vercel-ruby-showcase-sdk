@@ -43,12 +43,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamMemberJoinedFromMetadata
         FIELDS = {
-          sso_user_id: "ssoUserId",
+          sso_user_id: 'ssoUserId'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateTeamMemberJoinedFrom.
@@ -77,8 +75,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamMemberProjectsItemMetadata
         FIELDS = {
-          project_id: "projectId",
-          role: "role",
+          project_id: 'projectId',
+          role: 'role'
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
@@ -87,7 +85,7 @@ module OctridevVercel
         DECODERS = {
           role: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamMemberProjectsItemRole.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           role
@@ -123,14 +121,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamMemberMetadata
         FIELDS = {
-          confirmed: "confirmed",
-          role: "role",
-          team_permissions: "teamPermissions",
-          projects: "projects",
-          joined_from: "joinedFrom",
+          confirmed: 'confirmed',
+          role: 'role',
+          team_permissions: 'teamPermissions',
+          projects: 'projects',
+          joined_from: 'joinedFrom'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           confirmed: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamMemberConfirmed.from_value(value)
@@ -143,7 +140,7 @@ module OctridevVercel
           end,
           joined_from: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamMemberJoinedFrom.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -179,13 +176,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamMemberResponseMetadata
         FIELDS = {
-          id: "id",
+          id: 'id'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateTeamMemberResponse.
@@ -215,13 +211,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRemoveTeamMemberResponseMetadata
         FIELDS = {
-          id: "id",
+          id: 'id'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for RemoveTeamMemberResponse.
@@ -251,13 +246,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamSamlMetadata
         FIELDS = {
-          enforced: "enforced",
-          roles: "roles",
+          enforced: 'enforced',
+          roles: 'roles'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateTeamSaml.
@@ -289,12 +282,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamRemoteCachingMetadata
         FIELDS = {
-          enabled: "enabled",
+          enabled: 'enabled'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateTeamRemoteCaching.
@@ -325,8 +316,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamDefaultDeploymentProtectionPasswordProtectionMetadata
         FIELDS = {
-          deployment_type: "deploymentType",
-          password: "password",
+          deployment_type: 'deploymentType',
+          password: 'password'
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment_type
@@ -334,7 +325,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamDefaultDeploymentProtectionPasswordProtectionDeploymentType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -368,7 +359,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamDefaultDeploymentProtectionSsoProtectionMetadata
         FIELDS = {
-          deployment_type: "deploymentType",
+          deployment_type: 'deploymentType'
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment_type
@@ -376,7 +367,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamDefaultDeploymentProtectionSsoProtectionDeploymentType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -408,18 +399,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamDefaultDeploymentProtectionMetadata
         FIELDS = {
-          password_protection: "passwordProtection",
-          sso_protection: "ssoProtection",
+          password_protection: 'passwordProtection',
+          sso_protection: 'ssoProtection'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           password_protection: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamDefaultDeploymentProtectionPasswordProtection.from_hash(value)
           end,
           sso_protection: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamDefaultDeploymentProtectionSsoProtection.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -453,8 +443,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamDefaultPassportMetadata
         FIELDS = {
-          connector_id: "connectorId",
-          deployment_type: "deploymentType",
+          connector_id: 'connectorId',
+          deployment_type: 'deploymentType'
         }.freeze
         REQUIRED_FIELDS = %i[
           connector_id
@@ -462,7 +452,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamDefaultPassportDeploymentType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -493,15 +483,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateTeamDefaultExpirationSettingsMetadata
         FIELDS = {
-          expiration: "expiration",
-          expiration_production: "expirationProduction",
-          expiration_canceled: "expirationCanceled",
-          expiration_errored: "expirationErrored",
-          keep_current_retention: "keepCurrentRetention",
-          acknowledge_storage_billing: "acknowledgeStorageBilling",
+          expiration: 'expiration',
+          expiration_production: 'expirationProduction',
+          expiration_canceled: 'expirationCanceled',
+          expiration_errored: 'expirationErrored',
+          keep_current_retention: 'keepCurrentRetention',
+          acknowledge_storage_billing: 'acknowledgeStorageBilling'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           expiration: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamDefaultExpirationSettingsExpiration.from_value(value)
@@ -514,7 +503,7 @@ module OctridevVercel
           end,
           expiration_errored: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateTeamDefaultExpirationSettingsExpirationErrored.from_value(value)
-          end,
+          end
         }.freeze
       end
 

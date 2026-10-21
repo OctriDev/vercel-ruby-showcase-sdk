@@ -5,45 +5,45 @@
 
 # projects_create domain models
 module OctridevVercel
-# Defines the CreateProjectResponseTrustedIpsVariant0DeploymentType SDK namespace.
-module CreateProjectResponseTrustedIpsVariant0DeploymentType
-  ALL = 'all'
-  ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-  PREVIEW = 'preview'
-  PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-  PRODUCTION = 'production'
-  VALUES = [
-    'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews',
-    'production'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateProjectResponseTrustedIpsVariant0DeploymentType SDK namespace.
+  module CreateProjectResponseTrustedIpsVariant0DeploymentType
+    ALL = 'all'
+    ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
+    PREVIEW = 'preview'
+    PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
+    PRODUCTION = 'production'
+    VALUES = %w[
+      all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+      production
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateProjectResponseTrustedIpsVariant0ProtectionMode SDK namespace.
-module CreateProjectResponseTrustedIpsVariant0ProtectionMode
-  ADDITIONAL = 'additional'
-  EXCLUSIVE = 'exclusive'
-  VALUES = ['additional', 'exclusive'].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateProjectResponseTrustedIpsVariant0ProtectionMode SDK namespace.
+  module CreateProjectResponseTrustedIpsVariant0ProtectionMode
+    ADDITIONAL = 'additional'
+    EXCLUSIVE = 'exclusive'
+    VALUES = %w[additional exclusive].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the CreateProjectResponseTrustedIpsVariant1DeploymentType SDK namespace.
-module CreateProjectResponseTrustedIpsVariant1DeploymentType
-  ALL = 'all'
-  ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-  PREVIEW = 'preview'
-  PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-  PRODUCTION = 'production'
-  VALUES = [
-    'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews',
-    'production'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the CreateProjectResponseTrustedIpsVariant1DeploymentType SDK namespace.
+  module CreateProjectResponseTrustedIpsVariant1DeploymentType
+    ALL = 'all'
+    ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
+    PREVIEW = 'preview'
+    PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
+    PRODUCTION = 'production'
+    VALUES = %w[
+      all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+      production
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 end

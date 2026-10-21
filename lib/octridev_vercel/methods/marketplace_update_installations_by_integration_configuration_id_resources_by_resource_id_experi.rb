@@ -27,7 +27,6 @@ module OctridevVercel
         updated_at: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('slug', slug, max: 1024)
 
         Validation.validate_length('origin', origin, max: 2048)
@@ -39,11 +38,11 @@ module OctridevVercel
         SdkClient.request(
           'PATCH',
           [
-            "/v1/installations/",
+            '/v1/installations/',
             SdkClient.encode_path_segment(integration_configuration_id),
-            "/resources/",
+            '/resources/',
             SdkClient.encode_path_segment(resource_id),
-            "/experimentation/items/",
+            '/experimentation/items/',
             SdkClient.encode_path_segment(item_id)
           ].join,
           config: config,
@@ -55,11 +54,11 @@ module OctridevVercel
             'description' => description,
             'isArchived' => is_archived,
             'createdAt' => created_at,
-            'updatedAt' => updated_at,
+            'updatedAt' => updated_at
           },
           decoder: :empty,
           operation_id: 'update_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_items_by_item_id',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

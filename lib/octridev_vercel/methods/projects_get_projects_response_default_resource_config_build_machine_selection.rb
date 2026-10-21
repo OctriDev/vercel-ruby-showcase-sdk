@@ -13,7 +13,7 @@ module OctridevVercel
       module GetProjectsResponseDefaultResourceConfigBuildMachineSelection
         ELASTIC = 'elastic'
         FIXED = 'fixed'
-        VALUES = ['elastic', 'fixed'].freeze
+        VALUES = %w[elastic fixed].freeze
         def self.from_value(value)
           value
         end
@@ -24,7 +24,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -55,7 +55,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -87,7 +87,7 @@ module OctridevVercel
         PRODUCTION = 'production'
         PREVIEW = 'preview'
         DEVELOPMENT = 'development'
-        VALUES = ['production', 'preview', 'development'].freeze
+        VALUES = %w[production preview development].freeze
         def self.from_value(value)
           value
         end
@@ -128,7 +128,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -138,7 +138,7 @@ module OctridevVercel
       module ListProjectsResponseVariant2ProjectsItemDeploymentPolicyGitSoX212431cb39
         BITBUCKET = 'bitbucket'
         GITHUB = 'github'
-        VALUES = ['bitbucket', 'github'].freeze
+        VALUES = %w[bitbucket github].freeze
         def self.from_value(value)
           value
         end
@@ -159,7 +159,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -180,7 +180,7 @@ module OctridevVercel
       module ListProjectsParameter
         V_1 = '1'
         V_0 = '0'
-        VALUES = ['1', '0'].freeze
+        VALUES = %w[1 0].freeze
         def self.from_value(value)
           value
         end
@@ -191,7 +191,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = ['enhanced', 'standard', 'turbo'].freeze
+        VALUES = %w[enhanced standard turbo].freeze
         def self.from_value(value)
           value
         end
@@ -244,9 +244,9 @@ module OctridevVercel
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
         PRODUCTION = 'production'
-        VALUES = [
-          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews',
-          'production'
+        VALUES = %w[
+          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+          production
         ].freeze
         def self.from_value(value)
           value
@@ -276,7 +276,7 @@ module OctridevVercel
       module ListProjectsResponseVariant0ItemSecurityFirewallRoutesItemMitXccebdb975e
         FIXED_WINDOW = 'fixed_window'
         TOKEN_BUCKET = 'token_bucket'
-        VALUES = ['fixed_window', 'token_bucket'].freeze
+        VALUES = %w[fixed_window token_bucket].freeze
         def self.from_value(value)
           value
         end
@@ -306,7 +306,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -317,7 +317,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -388,7 +388,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
+        VALUES = %w[basic enhanced standard turbo].freeze
         def self.from_value(value)
           value
         end
@@ -399,7 +399,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = ['enhanced', 'standard', 'turbo'].freeze
+        VALUES = %w[enhanced standard turbo].freeze
         def self.from_value(value)
           value
         end
@@ -451,7 +451,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = ['completed', 'registered', 'running'].freeze
+        VALUES = %w[completed registered running].freeze
         def self.from_value(value)
           value
         end
@@ -462,7 +462,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -505,8 +505,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = [
-          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+        VALUES = %w[
+          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
         ].freeze
         def self.from_value(value)
           value
@@ -527,7 +527,7 @@ module OctridevVercel
       module UpdateMicrofrontendsResponseEnvItemVisibility
         CONFIG = 'config'
         SECRET = 'secret'
-        VALUES = ['config', 'secret'].freeze
+        VALUES = %w[config secret].freeze
         def self.from_value(value)
           value
         end
@@ -566,8 +566,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = [
-          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+        VALUES = %w[
+          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
         ].freeze
         def self.from_value(value)
           value

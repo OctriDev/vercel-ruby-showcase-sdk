@@ -14,7 +14,7 @@ module OctridevVercel
         ADMIN = 'ADMIN'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
-        VALUES = ['ADMIN', 'PROJECT_VIEWER', 'PROJECT_DEVELOPER'].freeze
+        VALUES = %w[ADMIN PROJECT_VIEWER PROJECT_DEVELOPER].freeze
         def self.from_value(value)
           value
         end

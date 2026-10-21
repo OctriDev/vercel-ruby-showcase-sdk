@@ -24,25 +24,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/teams/",
+            '/v1/teams/',
             SdkClient.encode_path_segment(team_id),
-            "/dsync-roles"
+            '/dsync-roles'
           ].join,
           config: config,
           query: {
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'roles' => roles,
+            'roles' => roles
           },
           return_type: ::OctridevVercel::Methods::Teams::PostTeamDsyncRolesResponse,
           decoder: :json,
           operation_id: 'post_team_dsync_roles',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

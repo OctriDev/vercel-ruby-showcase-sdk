@@ -27,20 +27,7 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_vercel_ci_task_logs) do |
-        config:,
-        invocation_id:,
-        attempt:,
-        task: NOT_GIVEN,
-        conclusion: NOT_GIVEN,
-        level: NOT_GIVEN,
-        search: NOT_GIVEN,
-        limit: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_vercel_ci_task_logs) do |config:, invocation_id:, attempt:, task: NOT_GIVEN, conclusion: NOT_GIVEN, level: NOT_GIVEN, search: NOT_GIVEN, limit: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         Validation.if_given(task) { Validation.validate_items('task', task, min: 1) }
 
         Validation.if_given(conclusion) { Validation.validate_items('conclusion', conclusion, min: 1) }
@@ -52,11 +39,11 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            "/v1/vercel-ci/invocations/",
+            '/v1/vercel-ci/invocations/',
             SdkClient.encode_path_segment(invocation_id),
-            "/attempts/",
+            '/attempts/',
             SdkClient.encode_path_segment(attempt),
-            "/task-logs"
+            '/task-logs'
           ].join,
           config: config,
           query: {
@@ -66,12 +53,12 @@ module OctridevVercel
             'search' => QueryValue.new(search, style: 'form', explode: true),
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::VercelCi::GetVercelCiTaskLogsResponse,
           decoder: :json,
           operation_id: 'get_vercel_ci_task_logs',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

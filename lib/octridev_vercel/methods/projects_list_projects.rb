@@ -69,12 +69,11 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(search) { Validation.validate_length('search', search, max: 100) }
 
         SdkClient.request(
           'GET',
-          "/v10/projects",
+          '/v10/projects',
           config: config,
           query: {
             'from' => QueryValue.new(from, style: 'form', explode: true),
@@ -95,11 +94,11 @@ module OctridevVercel
             'buildMachineTypes' => QueryValue.new(build_machine_types, style: 'form', explode: true),
             'buildQueueConfiguration' => QueryValue.new(build_queue_configuration, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'list_projects',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

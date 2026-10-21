@@ -24,23 +24,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v10/projects/",
+            '/v10/projects/',
             SdkClient.encode_path_segment(project_id),
-            "/promote/",
+            '/promote/',
             SdkClient.encode_path_segment(deployment_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'request_promote',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -68,15 +67,14 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(limit) { Validation.validate_range('limit', limit, max: 100) }
 
         SdkClient.request(
           'GET',
           [
-            "/v1/projects/",
+            '/v1/projects/',
             SdkClient.encode_path_segment(project_id),
-            "/promote/aliases"
+            '/promote/aliases'
           ].join,
           config: config,
           query: {
@@ -85,11 +83,11 @@ module OctridevVercel
             'until' => QueryValue.new(until_, style: 'form', explode: true),
             'failedOnly' => QueryValue.new(failed_only, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'list_promote_aliases',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

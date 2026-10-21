@@ -5,673 +5,671 @@
 
 # sandboxes domain models
 module OctridevVercel
-# API model for Drive.
-# This object contains information related to a Vercel Sandbox Drive.
-class Drive
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalDriveMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalDriveMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalDriveMetadata::DECODERS
+  # API model for Drive.
+  # This object contains information related to a Vercel Sandbox Drive.
+  class Drive
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalDriveMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalDriveMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalDriveMetadata::DECODERS
 
-  # @return [Float] The time when the drive was created, in milliseconds since the epoch.
-  attr_reader :created_at
-  # @return [String] Current sandbox name the drive is attached to, if any.
-  attr_reader :current_sandbox_name
-  # @return [String] Current session ID the drive is attached to, if any.
-  attr_reader :current_session_id
-  # @return [String] The unique drive ID.
-  attr_reader :id
-  # @return [Float] The maximum drive size in bytes.
-  attr_reader :max_size_bytes
-  # @return [String] The unique drive name within the project.
-  attr_reader :name
-  # @return [String] The ID of the source drive when this drive is a fork.
-  attr_reader :parent_drive_id
-  # @return [String] The project that owns the drive.
-  attr_reader :project_id
-  # @return [String] The region where the drive is stored.
-  attr_reader :region
-  # @return [String] The ID of the original drive at the root of this fork.
-  attr_reader :root_drive_id
-  # @return [Float] The last time the drive was updated, in milliseconds since the epoch.
-  attr_reader :updated_at
-  # @return [DriveV0] Whether this drive is managed by v0 on the customer's behalf.
-  attr_reader :v0
+    # @return [Float] The time when the drive was created, in milliseconds since the epoch.
+    attr_reader :created_at
+    # @return [String] Current sandbox name the drive is attached to, if any.
+    attr_reader :current_sandbox_name
+    # @return [String] Current session ID the drive is attached to, if any.
+    attr_reader :current_session_id
+    # @return [String] The unique drive ID.
+    attr_reader :id
+    # @return [Float] The maximum drive size in bytes.
+    attr_reader :max_size_bytes
+    # @return [String] The unique drive name within the project.
+    attr_reader :name
+    # @return [String] The ID of the source drive when this drive is a fork.
+    attr_reader :parent_drive_id
+    # @return [String] The project that owns the drive.
+    attr_reader :project_id
+    # @return [String] The region where the drive is stored.
+    attr_reader :region
+    # @return [String] The ID of the original drive at the root of this fork.
+    attr_reader :root_drive_id
+    # @return [Float] The last time the drive was updated, in milliseconds since the epoch.
+    attr_reader :updated_at
+    # @return [DriveV0] Whether this drive is managed by v0 on the customer's behalf.
+    attr_reader :v0
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the DriveV0 SDK namespace.
-module DriveV0
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetSessionCommandLogsResponseVariant0DataMetadata
-  FIELDS = {
-    code: "code",
-    message: "message",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    code
-    message
-  ].freeze
-  DECODERS = {
-    code: lambda do |value|
-      ::OctridevVercel::GetSessionCommandLogsResponseVariant0DataCode.from_value(value)
-    end,
-    message: lambda do |value|
-      ::OctridevVercel::GetSessionCommandLogsResponseVariant0DataMessage.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetSessionCommandLogsResponseVariant0Data.
-class GetSessionCommandLogsResponseVariant0Data
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSessionCommandLogsResponseVariant0DataMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSessionCommandLogsResponseVariant0DataMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSessionCommandLogsResponseVariant0DataMetadata::DECODERS
-
-  attr_reader :code, :message
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetSessionCommandLogsResponseVariant0Metadata
-  FIELDS = {
-    data: "data",
-    stream: "stream",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    data
-    stream
-  ].freeze
-  DECODERS = {
-    data: lambda do |value|
-      ::OctridevVercel::GetSessionCommandLogsResponseVariant0Data.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for GetSessionCommandLogsResponseVariant0.
-class GetSessionCommandLogsResponseVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSessionCommandLogsResponseVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSessionCommandLogsResponseVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSessionCommandLogsResponseVariant0Metadata::DECODERS
-
-  attr_reader :data, :stream
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetSessionCommandLogsResponseVariant1Metadata
-  FIELDS = {
-    data: "data",
-    stream: "stream",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    data
-    stream
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetSessionCommandLogsResponseVariant1.
-class GetSessionCommandLogsResponseVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSessionCommandLogsResponseVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSessionCommandLogsResponseVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSessionCommandLogsResponseVariant1Metadata::DECODERS
-
-  attr_reader :data, :stream
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the GetSessionCommandLogsResponse SDK namespace.
-module GetSessionCommandLogsResponse
-  def self.from_hash(hash)
-    lossy = nil
-    [GetSessionCommandLogsResponseVariant0, GetSessionCommandLogsResponseVariant1].each do |type|
-      decoded = type.from_hash(hash)
-      return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-      lossy ||= decoded
-    rescue ::StandardError
-      next
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
     end
-    return lossy unless lossy.nil?
-  end
-end
 
-# Defines the GetSessionCommandLogsResponseVariant0DataCode SDK namespace.
-module GetSessionCommandLogsResponseVariant0DataCode
-  SANDBOX_STREAM_CLOSED = 'sandbox_stream_closed'
-  VALUES = ['sandbox_stream_closed'].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-# Defines the GetSessionCommandLogsResponseVariant0DataMessage SDK namespace.
-module GetSessionCommandLogsResponseVariant0DataMessage
-  SANDBOX_STREAM_WAS_CLOSED_AND_IS_NOT_ACCEPTING_COMMANDS =
-    'Sandbox stream was closed and is not accepting commands.'
-  VALUES = ['Sandbox stream was closed and is not accepting commands.'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalNamedSandboxKeepLastSnapshotsMetadata
-  FIELDS = {
-    count: "count",
-    delete_evicted: "deleteEvicted",
-    expiration: "expiration",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    count
-    delete_evicted
-  ].freeze
-  DECODERS = {
-    delete_evicted: lambda do |value|
-      ::OctridevVercel::NamedSandboxKeepLastSnapshotsDeleteEvicted.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for NamedSandboxKeepLastSnapshots.
-# Keep-last snapshot configuration.
-class NamedSandboxKeepLastSnapshots
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalNamedSandboxKeepLastSnapshotsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalNamedSandboxKeepLastSnapshotsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalNamedSandboxKeepLastSnapshotsMetadata::DECODERS
-
-  # @return [Float] Number of most recent snapshots to keep.
-  attr_reader :count
-  # @return [NamedSandboxKeepLastSnapshotsDeleteEvicted] Whether to immediately delete evicted snapshots.
-  attr_reader :delete_evicted
-  # @return [Float] Expiration time in milliseconds for kept snapshots.
-  attr_reader :expiration
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the DriveV0 SDK namespace.
+  module DriveV0
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalNamedSandboxNetworkPolicyMetadata
-  FIELDS = {
-    allowed_cid_rs: "allowedCIDRs",
-    allowed_domains: "allowedDomains",
-    denied_cid_rs: "deniedCIDRs",
-    mode: "mode",
-    s3_key: "s3Key",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    mode
-  ].freeze
-  DECODERS = {
-    mode: lambda do |value|
-      ::OctridevVercel::NamedSandboxNetworkPolicyMode.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for NamedSandboxNetworkPolicy.
-# Network policy configuration.
-class NamedSandboxNetworkPolicy
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalNamedSandboxNetworkPolicyMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalNamedSandboxNetworkPolicyMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalNamedSandboxNetworkPolicyMetadata::DECODERS
-
-  # @return [Array_of_String] Optional array value serialized in the `allowedCIDRs` wire field.
-  attr_reader :allowed_cid_rs
-  # @return [Array_of_String] Optional array value serialized in the `allowedDomains` wire field.
-  attr_reader :allowed_domains
-  # @return [Array_of_String] Optional array value serialized in the `deniedCIDRs` wire field.
-  attr_reader :denied_cid_rs
-  # @return [NamedSandboxNetworkPolicyMode] Required enumerated value serialized in the `mode` wire field.
-  attr_reader :mode
-  # @return [String] Optional `string` value serialized in the `s3Key` wire field.
-  attr_reader :s3_key
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetSessionCommandLogsResponseVariant0DataMetadata
+    FIELDS = {
+      code: 'code',
+      message: 'message'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      code
+      message
+    ].freeze
+    DECODERS = {
+      code: lambda do |value|
+        ::OctridevVercel::GetSessionCommandLogsResponseVariant0DataCode.from_value(value)
+      end,
+      message: lambda do |value|
+        ::OctridevVercel::GetSessionCommandLogsResponseVariant0DataMessage.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetSessionCommandLogsResponseVariant0Data.
+  class GetSessionCommandLogsResponseVariant0Data
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSessionCommandLogsResponseVariant0DataMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSessionCommandLogsResponseVariant0DataMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSessionCommandLogsResponseVariant0DataMetadata::DECODERS
+
+    attr_reader :code, :message
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalNamedSandboxMetadata
-  FIELDS = {
-    architecture: "architecture",
-    created_at: "createdAt",
-    current_session_id: "currentSessionId",
-    current_snapshot_id: "currentSnapshotId",
-    cwd: "cwd",
-    expires_at: "expiresAt",
-    failover_regions: "failoverRegions",
-    image: "image",
-    keep_last_snapshots: "keepLastSnapshots",
-    memory: "memory",
-    mounts: "mounts",
-    name: "name",
-    network_id: "networkId",
-    network_policy: "networkPolicy",
-    persistent: "persistent",
-    region: "region",
-    runtime: "runtime",
-    snapshot_expiration: "snapshotExpiration",
-    status: "status",
-    status_updated_at: "statusUpdatedAt",
-    tags: "tags",
-    timeout: "timeout",
-    total_active_cpu_duration_ms: "totalActiveCpuDurationMs",
-    total_duration_ms: "totalDurationMs",
-    total_egress_bytes: "totalEgressBytes",
-    total_ingress_bytes: "totalIngressBytes",
-    updated_at: "updatedAt",
-    v0: "v0",
-    vcpus: "vcpus",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    current_session_id
-    name
-    persistent
-    status
-    status_updated_at
-    updated_at
-  ].freeze
-  DECODERS = {
-    architecture: lambda do |value|
-      ::OctridevVercel::NamedSandboxArchitecture.from_value(value)
-    end,
-    failover_regions: lambda do |value|
-      value&.map { |item| ::OctridevVercel::NamedSandboxFailoverRegionsItem.from_value(item) }
-    end,
-    keep_last_snapshots: lambda do |value|
-      ::OctridevVercel::NamedSandboxKeepLastSnapshots.from_hash(value)
-    end,
-    network_policy: lambda do |value|
-      ::OctridevVercel::NamedSandboxNetworkPolicy.from_hash(value)
-    end,
-    persistent: lambda do |value|
-      ::OctridevVercel::NamedSandboxPersistent.from_value(value)
-    end,
-    status: lambda do |value|
-      ::OctridevVercel::NamedSandboxStatus.from_value(value)
-    end,
-    v0: lambda do |value|
-      ::OctridevVercel::NamedSandboxV0.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for NamedSandbox.
-# This object contains information related to a Vercel NamedSandbox.
-class NamedSandbox
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalNamedSandboxMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalNamedSandboxMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalNamedSandboxMetadata::DECODERS
-
-  # @return [NamedSandboxArchitecture] CPU architecture of the sandbox. This value does not change.
-  attr_reader :architecture
-  # @return [Float] The time when the named sandbox was created, in milliseconds since the epoch.
-  attr_reader :created_at
-  # @return [String] Current session ID the sandbox is pointing to.
-  attr_reader :current_session_id
-  # @return [String] Current snapshot ID that the named sandbox is pointing to.
-  attr_reader :current_snapshot_id
-  # @return [String] The working directory of the sandbox.
-  attr_reader :cwd
-  # @return [Float] The time at which the currently running sandbox will time out, in milliseconds since the epoch. Only present while a session is running.
-  attr_reader :expires_at
-  # @return [Array_of_NamedSandboxFailoverRegionsItem] The regions the sandbox fails over to. Empty when it does not fail over.
-  attr_reader :failover_regions
-  # @return [String] Owner-qualified, digest-pinned reference of the container image the sandbox was created from ("{team}/{project}/{repository}@{manifestDigest}").
-  attr_reader :image
-  # @return [NamedSandboxKeepLastSnapshots] Keep-last snapshot configuration.
-  attr_reader :keep_last_snapshots
-  # @return [Float] Memory allocated in MB.
-  attr_reader :memory
-  # @return [Hash] Key-value pairs of mount path and drive.
-  attr_reader :mounts
-  # @return [String] The unique identifier of the sandbox.
-  attr_reader :name
-  # @return [String] The Connect network id for the target Secure Compute private network.
-  attr_reader :network_id
-  # @return [NamedSandboxNetworkPolicy] Network policy configuration.
-  attr_reader :network_policy
-  # @return [NamedSandboxPersistent] Whether the sandbox persists its state across restarts via automatic snapshots.
-  attr_reader :persistent
-  # @return [String] The region the sandbox is pinned to: the region stored on the sandbox, otherwise the platform default. Where a running session actually landed is reported by `session.region`.
-  attr_reader :region
-  # @return [String] Runtime identifier.
-  attr_reader :runtime
-  # @return [Float] Default snapshot expiration time in milliseconds. 0 means no expiration.
-  attr_reader :snapshot_expiration
-  # @return [NamedSandboxStatus] The status of the current sandbox.
-  attr_reader :status
-  # @return [Float] The time when the sandbox status was last updated, in milliseconds since the epoch.
-  attr_reader :status_updated_at
-  # @return [Hash] Key-value tags attached to the named sandbox.
-  attr_reader :tags
-  # @return [Float] Timeout in milliseconds.
-  attr_reader :timeout
-  # @return [Float] Cumulative active CPU duration in milliseconds across all sandbox runs.
-  attr_reader :total_active_cpu_duration_ms
-  # @return [Float] Cumulative wall-clock duration in milliseconds across all sandbox runs.
-  attr_reader :total_duration_ms
-  # @return [Float] Cumulative egress bytes across all sandbox runs.
-  attr_reader :total_egress_bytes
-  # @return [Float] Cumulative ingress bytes across all sandbox runs.
-  attr_reader :total_ingress_bytes
-  # @return [Float] The time when the named sandbox was last updated, in milliseconds since the epoch.
-  attr_reader :updated_at
-  # @return [NamedSandboxV0] Whether this sandbox is managed by v0 on the customer's behalf.
-  attr_reader :v0
-  # @return [Float] Number of virtual CPUs allocated.
-  attr_reader :vcpus
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetSessionCommandLogsResponseVariant0Metadata
+    FIELDS = {
+      data: 'data',
+      stream: 'stream'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      data
+      stream
+    ].freeze
+    DECODERS = {
+      data: lambda do |value|
+        ::OctridevVercel::GetSessionCommandLogsResponseVariant0Data.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetSessionCommandLogsResponseVariant0.
+  class GetSessionCommandLogsResponseVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSessionCommandLogsResponseVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSessionCommandLogsResponseVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSessionCommandLogsResponseVariant0Metadata::DECODERS
+
+    attr_reader :data, :stream
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the NamedSandboxArchitecture SDK namespace.
-module NamedSandboxArchitecture
-  AMD64 = 'amd64'
-  ARM64 = 'arm64'
-  VALUES = ['amd64', 'arm64'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxFailoverRegionsItem SDK namespace.
-module NamedSandboxFailoverRegionsItem
-  ARN1 = 'arn1'
-  BOM1 = 'bom1'
-  CDG1 = 'cdg1'
-  CLE1 = 'cle1'
-  CPT1 = 'cpt1'
-  DUB1 = 'dub1'
-  FRA1 = 'fra1'
-  GRU1 = 'gru1'
-  HKG1 = 'hkg1'
-  HND1 = 'hnd1'
-  IAD1 = 'iad1'
-  ICN1 = 'icn1'
-  KIX1 = 'kix1'
-  LHR1 = 'lhr1'
-  PDX1 = 'pdx1'
-  SFO1 = 'sfo1'
-  SIN1 = 'sin1'
-  SYD1 = 'syd1'
-  YUL1 = 'yul1'
-  VALUES = [
-    'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'iad1', 'icn1',
-    'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxKeepLastSnapshotsDeleteEvicted SDK namespace.
-module NamedSandboxKeepLastSnapshotsDeleteEvicted
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxMountsValueMode SDK namespace.
-module NamedSandboxMountsValueMode
-  READ_ONLY = 'read-only'
-  READ_WRITE = 'read-write'
-  SNAPSHOT = 'snapshot'
-  VALUES = ['read-only', 'read-write', 'snapshot'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxNetworkPolicyMode SDK namespace.
-module NamedSandboxNetworkPolicyMode
-  ALLOW_ALL = 'allow-all'
-  CUSTOM = 'custom'
-  DEFAULT_ALLOW = 'default-allow'
-  DEFAULT_DENY = 'default-deny'
-  DENY_ALL = 'deny-all'
-  VALUES = ['allow-all', 'custom', 'default-allow', 'default-deny', 'deny-all'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxPersistent SDK namespace.
-module NamedSandboxPersistent
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxStatus SDK namespace.
-module NamedSandboxStatus
-  RUNNING = 'running'
-  STOPPED = 'stopped'
-  STOPPING = 'stopping'
-  VALUES = ['running', 'stopped', 'stopping'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxV0 SDK namespace.
-module NamedSandboxV0
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSandboxInjectionRuleMetadata
-  FIELDS = {
-    domain: "domain",
-    header_names: "headerNames",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    domain
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for SandboxInjectionRule.
-# HTTP header injection rules for outgoing requests matching specific domains.
-class SandboxInjectionRule
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSandboxInjectionRuleMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSandboxInjectionRuleMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSandboxInjectionRuleMetadata::DECODERS
-
-  # @return [String] The domain (or pattern) that this injection rule applies to. Supports wildcards like *.vercel.com.
-  attr_reader :domain
-  # @return [Array_of_String] The names of HTTP headers that have value that will be injected for requests to this domain.
-  attr_reader :header_names
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetSessionCommandLogsResponseVariant1Metadata
+    FIELDS = {
+      data: 'data',
+      stream: 'stream'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      data
+      stream
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetSessionCommandLogsResponseVariant1.
+  class GetSessionCommandLogsResponseVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSessionCommandLogsResponseVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSessionCommandLogsResponseVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSessionCommandLogsResponseVariant1Metadata::DECODERS
+
+    attr_reader :data, :stream
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the GetSessionCommandLogsResponse SDK namespace.
+  module GetSessionCommandLogsResponse
+    def self.from_hash(hash)
+      lossy = nil
+      [GetSessionCommandLogsResponseVariant0, GetSessionCommandLogsResponseVariant1].each do |type|
+        decoded = type.from_hash(hash)
+        return decoded if SdkModel.keeps_every_key?(hash, decoded)
 
-# Internal model hydration metadata.
-class SdkInternalSandboxNetworkPolicyMetadata
-  FIELDS = {
-    allowed_cid_rs: "allowedCIDRs",
-    allowed_domains: "allowedDomains",
-    denied_cid_rs: "deniedCIDRs",
-    injection_rules: "injectionRules",
-    mode: "mode",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    mode
-  ].freeze
-  DECODERS = {
-    injection_rules: lambda do |value|
-      value&.map { |item| ::OctridevVercel::SandboxInjectionRule.from_hash(item) }
-    end,
-    mode: lambda do |value|
-      ::OctridevVercel::SandboxNetworkPolicyMode.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for SandboxNetworkPolicy.
-# The network policy applied to this sandbox, if any.
-class SandboxNetworkPolicy
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSandboxNetworkPolicyMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSandboxNetworkPolicyMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSandboxNetworkPolicyMetadata::DECODERS
-
-  # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to.
-  attr_reader :allowed_cid_rs
-  # @return [Array_of_String] List of domain names the sandbox is allowed to connect to. Supports wildcard patterns (e.g., "*.vercel.com" matches all subdomains).
-  attr_reader :allowed_domains
-  # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
-  attr_reader :denied_cid_rs
-  # @return [Array_of_SandboxInjectionRule] HTTP header injection rules for outgoing requests matching specific domains.
-  attr_reader :injection_rules
-  # @return [SandboxNetworkPolicyMode] The network policy mode. - 'allow-all': All traffic is allowed. - 'deny-all': All traffic is blocked. - 'custom': Traffic is controlled by explicit allow/deny rules.
-  attr_reader :mode
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+        lossy ||= decoded
+      rescue ::StandardError
+        next
+      end
+      lossy unless lossy.nil?
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the GetSessionCommandLogsResponseVariant0DataCode SDK namespace.
+  module GetSessionCommandLogsResponseVariant0DataCode
+    SANDBOX_STREAM_CLOSED = 'sandbox_stream_closed'
+    VALUES = ['sandbox_stream_closed'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the GetSessionCommandLogsResponseVariant0DataMessage SDK namespace.
+  module GetSessionCommandLogsResponseVariant0DataMessage
+    SANDBOX_STREAM_WAS_CLOSED_AND_IS_NOT_ACCEPTING_COMMANDS =
+      'Sandbox stream was closed and is not accepting commands.'
+    VALUES = ['Sandbox stream was closed and is not accepting commands.'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the SandboxNetworkPolicyMode SDK namespace.
-module SandboxNetworkPolicyMode
-  ALLOW_ALL = 'allow-all'
-  CUSTOM = 'custom'
-  DENY_ALL = 'deny-all'
-  VALUES = ['allow-all', 'custom', 'deny-all'].freeze
-  def self.from_value(value)
-    value
+  # Internal model hydration metadata.
+  class SdkInternalNamedSandboxKeepLastSnapshotsMetadata
+    FIELDS = {
+      count: 'count',
+      delete_evicted: 'deleteEvicted',
+      expiration: 'expiration'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      count
+      delete_evicted
+    ].freeze
+    DECODERS = {
+      delete_evicted: lambda do |value|
+        ::OctridevVercel::NamedSandboxKeepLastSnapshotsDeleteEvicted.from_value(value)
+      end
+    }.freeze
   end
-end
+
+  # API model for NamedSandboxKeepLastSnapshots.
+  # Keep-last snapshot configuration.
+  class NamedSandboxKeepLastSnapshots
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalNamedSandboxKeepLastSnapshotsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalNamedSandboxKeepLastSnapshotsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalNamedSandboxKeepLastSnapshotsMetadata::DECODERS
+
+    # @return [Float] Number of most recent snapshots to keep.
+    attr_reader :count
+    # @return [NamedSandboxKeepLastSnapshotsDeleteEvicted] Whether to immediately delete evicted snapshots.
+    attr_reader :delete_evicted
+    # @return [Float] Expiration time in milliseconds for kept snapshots.
+    attr_reader :expiration
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalNamedSandboxNetworkPolicyMetadata
+    FIELDS = {
+      allowed_cid_rs: 'allowedCIDRs',
+      allowed_domains: 'allowedDomains',
+      denied_cid_rs: 'deniedCIDRs',
+      mode: 'mode',
+      s3_key: 's3Key'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      mode
+    ].freeze
+    DECODERS = {
+      mode: lambda do |value|
+        ::OctridevVercel::NamedSandboxNetworkPolicyMode.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for NamedSandboxNetworkPolicy.
+  # Network policy configuration.
+  class NamedSandboxNetworkPolicy
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalNamedSandboxNetworkPolicyMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalNamedSandboxNetworkPolicyMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalNamedSandboxNetworkPolicyMetadata::DECODERS
+
+    # @return [Array_of_String] Optional array value serialized in the `allowedCIDRs` wire field.
+    attr_reader :allowed_cid_rs
+    # @return [Array_of_String] Optional array value serialized in the `allowedDomains` wire field.
+    attr_reader :allowed_domains
+    # @return [Array_of_String] Optional array value serialized in the `deniedCIDRs` wire field.
+    attr_reader :denied_cid_rs
+    # @return [NamedSandboxNetworkPolicyMode] Required enumerated value serialized in the `mode` wire field.
+    attr_reader :mode
+    # @return [String] Optional `string` value serialized in the `s3Key` wire field.
+    attr_reader :s3_key
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalNamedSandboxMetadata
+    FIELDS = {
+      architecture: 'architecture',
+      created_at: 'createdAt',
+      current_session_id: 'currentSessionId',
+      current_snapshot_id: 'currentSnapshotId',
+      cwd: 'cwd',
+      expires_at: 'expiresAt',
+      failover_regions: 'failoverRegions',
+      image: 'image',
+      keep_last_snapshots: 'keepLastSnapshots',
+      memory: 'memory',
+      mounts: 'mounts',
+      name: 'name',
+      network_id: 'networkId',
+      network_policy: 'networkPolicy',
+      persistent: 'persistent',
+      region: 'region',
+      runtime: 'runtime',
+      snapshot_expiration: 'snapshotExpiration',
+      status: 'status',
+      status_updated_at: 'statusUpdatedAt',
+      tags: 'tags',
+      timeout: 'timeout',
+      total_active_cpu_duration_ms: 'totalActiveCpuDurationMs',
+      total_duration_ms: 'totalDurationMs',
+      total_egress_bytes: 'totalEgressBytes',
+      total_ingress_bytes: 'totalIngressBytes',
+      updated_at: 'updatedAt',
+      v0: 'v0',
+      vcpus: 'vcpus'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      current_session_id
+      name
+      persistent
+      status
+      status_updated_at
+      updated_at
+    ].freeze
+    DECODERS = {
+      architecture: lambda do |value|
+        ::OctridevVercel::NamedSandboxArchitecture.from_value(value)
+      end,
+      failover_regions: lambda do |value|
+        value&.map { |item| ::OctridevVercel::NamedSandboxFailoverRegionsItem.from_value(item) }
+      end,
+      keep_last_snapshots: lambda do |value|
+        ::OctridevVercel::NamedSandboxKeepLastSnapshots.from_hash(value)
+      end,
+      network_policy: lambda do |value|
+        ::OctridevVercel::NamedSandboxNetworkPolicy.from_hash(value)
+      end,
+      persistent: lambda do |value|
+        ::OctridevVercel::NamedSandboxPersistent.from_value(value)
+      end,
+      status: lambda do |value|
+        ::OctridevVercel::NamedSandboxStatus.from_value(value)
+      end,
+      v0: lambda do |value|
+        ::OctridevVercel::NamedSandboxV0.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for NamedSandbox.
+  # This object contains information related to a Vercel NamedSandbox.
+  class NamedSandbox
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalNamedSandboxMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalNamedSandboxMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalNamedSandboxMetadata::DECODERS
+
+    # @return [NamedSandboxArchitecture] CPU architecture of the sandbox. This value does not change.
+    attr_reader :architecture
+    # @return [Float] The time when the named sandbox was created, in milliseconds since the epoch.
+    attr_reader :created_at
+    # @return [String] Current session ID the sandbox is pointing to.
+    attr_reader :current_session_id
+    # @return [String] Current snapshot ID that the named sandbox is pointing to.
+    attr_reader :current_snapshot_id
+    # @return [String] The working directory of the sandbox.
+    attr_reader :cwd
+    # @return [Float] The time at which the currently running sandbox will time out, in milliseconds since the epoch. Only present while a session is running.
+    attr_reader :expires_at
+    # @return [Array_of_NamedSandboxFailoverRegionsItem] The regions the sandbox fails over to. Empty when it does not fail over.
+    attr_reader :failover_regions
+    # @return [String] Owner-qualified, digest-pinned reference of the container image the sandbox was created from ("{team}/{project}/{repository}@{manifestDigest}").
+    attr_reader :image
+    # @return [NamedSandboxKeepLastSnapshots] Keep-last snapshot configuration.
+    attr_reader :keep_last_snapshots
+    # @return [Float] Memory allocated in MB.
+    attr_reader :memory
+    # @return [Hash] Key-value pairs of mount path and drive.
+    attr_reader :mounts
+    # @return [String] The unique identifier of the sandbox.
+    attr_reader :name
+    # @return [String] The Connect network id for the target Secure Compute private network.
+    attr_reader :network_id
+    # @return [NamedSandboxNetworkPolicy] Network policy configuration.
+    attr_reader :network_policy
+    # @return [NamedSandboxPersistent] Whether the sandbox persists its state across restarts via automatic snapshots.
+    attr_reader :persistent
+    # @return [String] The region the sandbox is pinned to: the region stored on the sandbox, otherwise the platform default. Where a running session actually landed is reported by `session.region`.
+    attr_reader :region
+    # @return [String] Runtime identifier.
+    attr_reader :runtime
+    # @return [Float] Default snapshot expiration time in milliseconds. 0 means no expiration.
+    attr_reader :snapshot_expiration
+    # @return [NamedSandboxStatus] The status of the current sandbox.
+    attr_reader :status
+    # @return [Float] The time when the sandbox status was last updated, in milliseconds since the epoch.
+    attr_reader :status_updated_at
+    # @return [Hash] Key-value tags attached to the named sandbox.
+    attr_reader :tags
+    # @return [Float] Timeout in milliseconds.
+    attr_reader :timeout
+    # @return [Float] Cumulative active CPU duration in milliseconds across all sandbox runs.
+    attr_reader :total_active_cpu_duration_ms
+    # @return [Float] Cumulative wall-clock duration in milliseconds across all sandbox runs.
+    attr_reader :total_duration_ms
+    # @return [Float] Cumulative egress bytes across all sandbox runs.
+    attr_reader :total_egress_bytes
+    # @return [Float] Cumulative ingress bytes across all sandbox runs.
+    attr_reader :total_ingress_bytes
+    # @return [Float] The time when the named sandbox was last updated, in milliseconds since the epoch.
+    attr_reader :updated_at
+    # @return [NamedSandboxV0] Whether this sandbox is managed by v0 on the customer's behalf.
+    attr_reader :v0
+    # @return [Float] Number of virtual CPUs allocated.
+    attr_reader :vcpus
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the NamedSandboxArchitecture SDK namespace.
+  module NamedSandboxArchitecture
+    AMD64 = 'amd64'
+    ARM64 = 'arm64'
+    VALUES = %w[amd64 arm64].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the NamedSandboxFailoverRegionsItem SDK namespace.
+  module NamedSandboxFailoverRegionsItem
+    ARN1 = 'arn1'
+    BOM1 = 'bom1'
+    CDG1 = 'cdg1'
+    CLE1 = 'cle1'
+    CPT1 = 'cpt1'
+    DUB1 = 'dub1'
+    FRA1 = 'fra1'
+    GRU1 = 'gru1'
+    HKG1 = 'hkg1'
+    HND1 = 'hnd1'
+    IAD1 = 'iad1'
+    ICN1 = 'icn1'
+    KIX1 = 'kix1'
+    LHR1 = 'lhr1'
+    PDX1 = 'pdx1'
+    SFO1 = 'sfo1'
+    SIN1 = 'sin1'
+    SYD1 = 'syd1'
+    YUL1 = 'yul1'
+    VALUES = %w[
+      arn1 bom1 cdg1 cle1 cpt1 dub1 fra1 gru1 hkg1 hnd1 iad1 icn1
+      kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
+    ].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the NamedSandboxKeepLastSnapshotsDeleteEvicted SDK namespace.
+  module NamedSandboxKeepLastSnapshotsDeleteEvicted
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the NamedSandboxMountsValueMode SDK namespace.
+  module NamedSandboxMountsValueMode
+    READ_ONLY = 'read-only'
+    READ_WRITE = 'read-write'
+    SNAPSHOT = 'snapshot'
+    VALUES = %w[read-only read-write snapshot].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the NamedSandboxNetworkPolicyMode SDK namespace.
+  module NamedSandboxNetworkPolicyMode
+    ALLOW_ALL = 'allow-all'
+    CUSTOM = 'custom'
+    DEFAULT_ALLOW = 'default-allow'
+    DEFAULT_DENY = 'default-deny'
+    DENY_ALL = 'deny-all'
+    VALUES = %w[allow-all custom default-allow default-deny deny-all].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the NamedSandboxPersistent SDK namespace.
+  module NamedSandboxPersistent
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the NamedSandboxStatus SDK namespace.
+  module NamedSandboxStatus
+    RUNNING = 'running'
+    STOPPED = 'stopped'
+    STOPPING = 'stopping'
+    VALUES = %w[running stopped stopping].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the NamedSandboxV0 SDK namespace.
+  module NamedSandboxV0
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalSandboxInjectionRuleMetadata
+    FIELDS = {
+      domain: 'domain',
+      header_names: 'headerNames'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      domain
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for SandboxInjectionRule.
+  # HTTP header injection rules for outgoing requests matching specific domains.
+  class SandboxInjectionRule
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSandboxInjectionRuleMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSandboxInjectionRuleMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSandboxInjectionRuleMetadata::DECODERS
+
+    # @return [String] The domain (or pattern) that this injection rule applies to. Supports wildcards like *.vercel.com.
+    attr_reader :domain
+    # @return [Array_of_String] The names of HTTP headers that have value that will be injected for requests to this domain.
+    attr_reader :header_names
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalSandboxNetworkPolicyMetadata
+    FIELDS = {
+      allowed_cid_rs: 'allowedCIDRs',
+      allowed_domains: 'allowedDomains',
+      denied_cid_rs: 'deniedCIDRs',
+      injection_rules: 'injectionRules',
+      mode: 'mode'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      mode
+    ].freeze
+    DECODERS = {
+      injection_rules: lambda do |value|
+        value&.map { |item| ::OctridevVercel::SandboxInjectionRule.from_hash(item) }
+      end,
+      mode: lambda do |value|
+        ::OctridevVercel::SandboxNetworkPolicyMode.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for SandboxNetworkPolicy.
+  # The network policy applied to this sandbox, if any.
+  class SandboxNetworkPolicy
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSandboxNetworkPolicyMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSandboxNetworkPolicyMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSandboxNetworkPolicyMetadata::DECODERS
+
+    # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to.
+    attr_reader :allowed_cid_rs
+    # @return [Array_of_String] List of domain names the sandbox is allowed to connect to. Supports wildcard patterns (e.g., "*.vercel.com" matches all subdomains).
+    attr_reader :allowed_domains
+    # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
+    attr_reader :denied_cid_rs
+    # @return [Array_of_SandboxInjectionRule] HTTP header injection rules for outgoing requests matching specific domains.
+    attr_reader :injection_rules
+    # @return [SandboxNetworkPolicyMode] The network policy mode. - 'allow-all': All traffic is allowed. - 'deny-all': All traffic is blocked. - 'custom': Traffic is controlled by explicit allow/deny rules.
+    attr_reader :mode
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the SandboxNetworkPolicyMode SDK namespace.
+  module SandboxNetworkPolicyMode
+    ALLOW_ALL = 'allow-all'
+    CUSTOM = 'custom'
+    DENY_ALL = 'deny-all'
+    VALUES = %w[allow-all custom deny-all].freeze
+    def self.from_value(value)
+      value
+    end
+  end
 end

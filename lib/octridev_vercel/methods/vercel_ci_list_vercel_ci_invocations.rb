@@ -43,7 +43,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(status) { Validation.validate_items('status', status, min: 1) }
 
         Validation.if_given(conclusion) { Validation.validate_items('conclusion', conclusion, min: 1) }
@@ -52,7 +51,7 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          "/v2/vercel-ci/invocations",
+          '/v2/vercel-ci/invocations',
           config: config,
           query: {
             'provider' => QueryValue.new(provider, style: 'form', explode: true),
@@ -69,12 +68,12 @@ module OctridevVercel
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::VercelCi::ListVercelCiInvocationsResponse,
           decoder: :json,
           operation_id: 'list_vercel_ci_invocations',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

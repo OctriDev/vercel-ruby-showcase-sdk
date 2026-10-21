@@ -27,28 +27,27 @@ module OctridevVercel
         name: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('redirects', redirects, min: 1, max: 100)
 
         Validation.if_given(name) { Validation.validate_length('name', name, max: 256) }
 
         SdkClient.request(
           'POST',
-          "/v1/bulk-redirects/restore",
+          '/v1/bulk-redirects/restore',
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'redirects' => redirects,
-            'name' => name,
+            'name' => name
           },
           return_type: ::OctridevVercel::Methods::BulkRedirects::RestoreRedirectsResponse,
           decoder: :json,
           operation_id: 'restore_redirects',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

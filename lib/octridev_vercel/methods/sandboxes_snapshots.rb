@@ -36,7 +36,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(name) do
           Validation.validate_length('name', name, max: 128)
           Validation.validate_pattern('name', name, '^[a-zA-Z0-9_-]+$')
@@ -46,7 +45,7 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          "/v2/sandboxes/snapshots",
+          '/v2/sandboxes/snapshots',
           config: config,
           query: {
             'project' => QueryValue.new(project, style: 'form', explode: true),
@@ -55,11 +54,11 @@ module OctridevVercel
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'sortOrder' => QueryValue.new(sort_order, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'list_session_snapshots',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -72,32 +71,25 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_session_snapshot) do |
-        config:,
-        snapshot_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_session_snapshot) do |config:, snapshot_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         Validation.validate_length('snapshotId', snapshot_id, max: 33)
         Validation.validate_pattern('snapshotId', snapshot_id, '^(?:snap_[A-Za-z0-9]{28}|vhs_[a-z0-9]{28})$')
 
         SdkClient.request(
           'GET',
           [
-            "/v2/sandboxes/snapshots/",
+            '/v2/sandboxes/snapshots/',
             SdkClient.encode_path_segment(snapshot_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::GetSessionSnapshotResponse,
           decoder: :json,
           operation_id: 'get_session_snapshot',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -116,25 +108,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('snapshotId', snapshot_id, max: 33)
         Validation.validate_pattern('snapshotId', snapshot_id, '^(?:snap_[A-Za-z0-9]{28}|vhs_[a-z0-9]{28})$')
 
         SdkClient.request(
           'DELETE',
           [
-            "/v2/sandboxes/snapshots/",
+            '/v2/sandboxes/snapshots/',
             SdkClient.encode_path_segment(snapshot_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::DeleteSessionSnapshotResponse,
           decoder: :json,
           operation_id: 'delete_session_snapshot',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end

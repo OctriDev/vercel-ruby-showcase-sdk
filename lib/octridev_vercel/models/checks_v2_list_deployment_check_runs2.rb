@@ -5,684 +5,683 @@
 
 # checks_v2 domain models
 module OctridevVercel
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0Blocks SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0Blocks
-  BUILD_START = 'build-start'
-  DEPLOYMENT_ALIAS = 'deployment-alias'
-  DEPLOYMENT_PROMOTION = 'deployment-promotion'
-  DEPLOYMENT_START = 'deployment-start'
-  NONE = 'none'
-  VALUES = [
-    'build-start', 'deployment-alias', 'deployment-promotion', 'deployment-start', 'none'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0Conclusion SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0Conclusion
-  CANCELED = 'canceled'
-  FAILED = 'failed'
-  NEUTRAL = 'neutral'
-  SKIPPED = 'skipped'
-  SUCCEEDED = 'succeeded'
-  TIMEOUT = 'timeout'
-  VALUES = ['canceled', 'failed', 'neutral', 'skipped', 'succeeded', 'timeout'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0Requires SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0Requires
-  BUILD_READY = 'build-ready'
-  DEPLOYMENT_URL = 'deployment-url'
-  NONE = 'none'
-  VALUES = ['build-ready', 'deployment-url', 'none'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant0Kind SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant0Kind
-  INTEGRATION = 'integration'
-  VALUES = ['integration'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant1Kind SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant1Kind
-  WEBHOOK = 'webhook'
-  VALUES = ['webhook'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant2Kind SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant2Kind
-  GIT_PROVIDER = 'git-provider'
-  VALUES = ['git-provider'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant2Provider SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant2Provider
-  BITBUCKET = 'bitbucket'
-  GITHUB = 'github'
-  GITLAB = 'gitlab'
-  VALUES = ['bitbucket', 'github', 'gitlab'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant3Origin SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant3Origin
-  API = 'api'
-  PLATFORM = 'platform'
-  VALUES = ['api', 'platform'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant3SubKind SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant3SubKind
-  VERCEL_NATIVE_CHECK = 'vercel-native-check'
-  VALUES = ['vercel-native-check'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Origin SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Origin
-  API = 'api'
-  VALUES = ['api'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X821561efe6 SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X821561efe6
-  INVOCATION = 'invocation'
-  VALUES = ['invocation'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X821561efe6', 'enum', "Unknown ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X821561efe6: #{value}")
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xbc38d7376b SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xbc38d7376b
-  DEPLOYMENT = 'deployment'
-  VALUES = ['deployment'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xbc38d7376b', 'enum', "Unknown ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xbc38d7376b: #{value}")
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xad7527b57a SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xad7527b57a
-  JOB = 'job'
-  VALUES = ['job'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xad7527b57a', 'enum', "Unknown ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xad7527b57a: #{value}")
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xc951a358f0 SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xc951a358f0
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X599aef4fd2 SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X599aef4fd2
-  TURBOREPO = 'Turborepo'
-  VALUES = ['Turborepo'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X04e06137c1 SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X04e06137c1
-  TURBOREPO = 'turborepo'
-  VALUES = ['turborepo'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X04e06137c1', 'enum', "Unknown ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X04e06137c1: #{value}")
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4SubKind SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4SubKind
-  VERCEL_CI_CHECK = 'vercel-ci-check'
-  VALUES = ['vercel-ci-check'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant0Status SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant0Status
-  COMPLETED = 'completed'
-  QUEUED = 'queued'
-  RUNNING = 'running'
-  VALUES = ['completed', 'queued', 'running'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant1Blocks SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant1Blocks
-  BUILD_START = 'build-start'
-  DEPLOYMENT_ALIAS = 'deployment-alias'
-  DEPLOYMENT_PROMOTION = 'deployment-promotion'
-  DEPLOYMENT_START = 'deployment-start'
-  NONE = 'none'
-  VALUES = [
-    'build-start', 'deployment-alias', 'deployment-promotion', 'deployment-start', 'none'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant1Conclusion SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant1Conclusion
-  CANCELED = 'canceled'
-  FAILED = 'failed'
-  NEUTRAL = 'neutral'
-  SKIPPED = 'skipped'
-  SUCCEEDED = 'succeeded'
-  TIMEOUT = 'timeout'
-  VALUES = ['canceled', 'failed', 'neutral', 'skipped', 'succeeded', 'timeout'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant1Requires SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant1Requires
-  BUILD_READY = 'build-ready'
-  DEPLOYMENT_URL = 'deployment-url'
-  NONE = 'none'
-  VALUES = ['build-ready', 'deployment-url', 'none'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0Origin SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0Origin
-  CONFIG = 'config'
-  VALUES = ['config'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0Origin', 'enum', "Unknown ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0Origin: #{value}")
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0SubKind SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0SubKind
-  VERCEL_CI = 'vercel-ci'
-  VALUES = ['vercel-ci'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1Origin SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1Origin
-  PLATFORM = 'platform'
-  VALUES = ['platform'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1Origin', 'enum', "Unknown ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1Origin: #{value}")
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1SubKind SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1SubKind
-  VERCEL_CI_SENTINEL = 'vercel-ci-sentinel'
-  VALUES = ['vercel-ci-sentinel'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the ListDeploymentCheckRunsResponseRunsItemVariant1Status SDK namespace.
-module ListDeploymentCheckRunsResponseRunsItemVariant1Status
-  COMPLETED = 'completed'
-  QUEUED = 'queued'
-  RUNNING = 'running'
-  VALUES = ['completed', 'queued', 'running'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalListProjectChecksResponseChecksItemSourceVariant0Metadata
-  FIELDS = {
-    external_resource_id: "externalResourceId",
-    integration_configuration_id: "integrationConfigurationId",
-    integration_id: "integrationId",
-    kind: "kind",
-    resource_id: "resourceId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    integration_configuration_id
-    integration_id
-    kind
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::ListProjectChecksResponseChecksItemSourceVariant0Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for ListProjectChecksResponseChecksItemSourceVariant0.
-class ListProjectChecksResponseChecksItemSourceVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectChecksResponseChecksItemSourceVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectChecksResponseChecksItemSourceVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectChecksResponseChecksItemSourceVariant0Metadata::DECODERS
-
-  attr_reader :external_resource_id, :integration_configuration_id, :integration_id, :kind,
-              :resource_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0Blocks SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0Blocks
+    BUILD_START = 'build-start'
+    DEPLOYMENT_ALIAS = 'deployment-alias'
+    DEPLOYMENT_PROMOTION = 'deployment-promotion'
+    DEPLOYMENT_START = 'deployment-start'
+    NONE = 'none'
+    VALUES = %w[
+      build-start deployment-alias deployment-promotion deployment-start none
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0Conclusion SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0Conclusion
+    CANCELED = 'canceled'
+    FAILED = 'failed'
+    NEUTRAL = 'neutral'
+    SKIPPED = 'skipped'
+    SUCCEEDED = 'succeeded'
+    TIMEOUT = 'timeout'
+    VALUES = %w[canceled failed neutral skipped succeeded timeout].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalListProjectChecksResponseChecksItemSourceVariant1Metadata
-  FIELDS = {
-    kind: "kind",
-    webhook_id: "webhookId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    kind
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::ListProjectChecksResponseChecksItemSourceVariant1Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for ListProjectChecksResponseChecksItemSourceVariant1.
-class ListProjectChecksResponseChecksItemSourceVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectChecksResponseChecksItemSourceVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectChecksResponseChecksItemSourceVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectChecksResponseChecksItemSourceVariant1Metadata::DECODERS
-
-  attr_reader :kind, :webhook_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0Requires SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0Requires
+    BUILD_READY = 'build-ready'
+    DEPLOYMENT_URL = 'deployment-url'
+    NONE = 'none'
+    VALUES = %w[build-ready deployment-url none].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant0Kind SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant0Kind
+    INTEGRATION = 'integration'
+    VALUES = ['integration'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalListProjectChecksResponseChecksItemSourceVariant2Metadata
-  FIELDS = {
-    external_check_name: "externalCheckName",
-    kind: "kind",
-    provider: "provider",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    external_check_name
-    kind
-    provider
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::ListProjectChecksResponseChecksItemSourceVariant2Kind.from_value(value)
-    end,
-    provider: lambda do |value|
-      ::OctridevVercel::ListProjectChecksResponseChecksItemSourceVariant2Provider.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for ListProjectChecksResponseChecksItemSourceVariant2.
-class ListProjectChecksResponseChecksItemSourceVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListProjectChecksResponseChecksItemSourceVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListProjectChecksResponseChecksItemSourceVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListProjectChecksResponseChecksItemSourceVariant2Metadata::DECODERS
-
-  attr_reader :external_check_name, :kind, :provider
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant1Kind SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant1Kind
+    WEBHOOK = 'webhook'
+    VALUES = ['webhook'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant2Kind SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant2Kind
+    GIT_PROVIDER = 'git-provider'
+    VALUES = ['git-provider'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Defines the ListProjectChecksResponseChecksItemSource SDK namespace.
-module ListProjectChecksResponseChecksItemSource
-  DISCRIMINATOR_MAPPING = {
-    "integration" => -> { ListProjectChecksResponseChecksItemSourceVariant0 },
-    "webhook" => -> { ListProjectChecksResponseChecksItemSourceVariant1 },
-    "git-provider" => -> { ListProjectChecksResponseChecksItemSourceVariant2 },
-  }.freeze
-
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["kind"]]&.call
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('ListProjectChecksResponseChecksItemSource', 'variant', "Unknown ListProjectChecksResponseChecksItemSource discriminator: #{hash["kind"].inspect}")
-  end
-end
-
-# Defines the ListProjectChecksResponseChecksItemSourceVariant0Kind SDK namespace.
-module ListProjectChecksResponseChecksItemSourceVariant0Kind
-  INTEGRATION = 'integration'
-  VALUES = ['integration'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListProjectChecksResponseChecksItemSourceVariant0Kind', 'enum', "Unknown ListProjectChecksResponseChecksItemSourceVariant0Kind: #{value}")
-  end
-end
-
-# Defines the ListProjectChecksResponseChecksItemSourceVariant1Kind SDK namespace.
-module ListProjectChecksResponseChecksItemSourceVariant1Kind
-  WEBHOOK = 'webhook'
-  VALUES = ['webhook'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListProjectChecksResponseChecksItemSourceVariant1Kind', 'enum', "Unknown ListProjectChecksResponseChecksItemSourceVariant1Kind: #{value}")
-  end
-end
-
-# Defines the ListProjectChecksResponseChecksItemSourceVariant2Kind SDK namespace.
-module ListProjectChecksResponseChecksItemSourceVariant2Kind
-  GIT_PROVIDER = 'git-provider'
-  VALUES = ['git-provider'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListProjectChecksResponseChecksItemSourceVariant2Kind', 'enum', "Unknown ListProjectChecksResponseChecksItemSourceVariant2Kind: #{value}")
-  end
-end
-
-# Defines the ListProjectChecksResponseChecksItemSourceVariant2Provider SDK namespace.
-module ListProjectChecksResponseChecksItemSourceVariant2Provider
-  BITBUCKET = 'bitbucket'
-  GITHUB = 'github'
-  GITLAB = 'gitlab'
-  VALUES = ['bitbucket', 'github', 'gitlab'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateDeploymentCheckRunResponseVariant0ExpectationRefMetadata
-  FIELDS = {
-    invocation_attempt: "invocationAttempt",
-    invocation_id: "invocationId",
-    job_definition_id: "jobDefinitionId",
-    job_run_attempt: "jobRunAttempt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    invocation_attempt
-    invocation_id
-    job_definition_id
-    job_run_attempt
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateDeploymentCheckRunResponseVariant0ExpectationRef.
-class UpdateDeploymentCheckRunResponseVariant0ExpectationRef
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0ExpectationRefMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0ExpectationRefMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0ExpectationRefMetadata::DECODERS
-
-  attr_reader :invocation_attempt, :invocation_id, :job_definition_id, :job_run_attempt
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant2Provider SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant2Provider
+    BITBUCKET = 'bitbucket'
+    GITHUB = 'github'
+    GITLAB = 'gitlab'
+    VALUES = %w[bitbucket github gitlab].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant3Origin SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant3Origin
+    API = 'api'
+    PLATFORM = 'platform'
+    VALUES = %w[api platform].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateDeploymentCheckRunResponseVariant0TaskSummaryMetadata
-  FIELDS = {
-    failed: "failed",
-    pending: "pending",
-    succeeded: "succeeded",
-    total: "total",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    failed
-    pending
-    succeeded
-    total
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateDeploymentCheckRunResponseVariant0TaskSummary.
-class UpdateDeploymentCheckRunResponseVariant0TaskSummary
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0TaskSummaryMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0TaskSummaryMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0TaskSummaryMetadata::DECODERS
-
-  attr_reader :failed, :pending, :succeeded, :total
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant3SubKind SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant3SubKind
+    VERCEL_NATIVE_CHECK = 'vercel-native-check'
+    VALUES = ['vercel-native-check'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Origin SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Origin
+    API = 'api'
+    VALUES = ['api'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X821561efe6 SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X821561efe6
+    INVOCATION = 'invocation'
+    VALUES = ['invocation'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Internal model hydration metadata.
-class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant0Metadata
-  FIELDS = {
-    external_resource_id: "externalResourceId",
-    integration_configuration_id: "integrationConfigurationId",
-    integration_id: "integrationId",
-    kind: "kind",
-    resource_id: "resourceId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    integration_configuration_id
-    integration_id
-    kind
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant0Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant0.
-class UpdateDeploymentCheckRunResponseVariant0SourceVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant0Metadata::DECODERS
-
-  attr_reader :external_resource_id, :integration_configuration_id, :integration_id, :kind,
-              :resource_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X821561efe6', 'enum', "Unknown ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X821561efe6: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xbc38d7376b SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xbc38d7376b
+    DEPLOYMENT = 'deployment'
+    VALUES = ['deployment'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xbc38d7376b', 'enum', "Unknown ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xbc38d7376b: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xad7527b57a SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xad7527b57a
+    JOB = 'job'
+    VALUES = ['job'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Internal model hydration metadata.
-class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant1Metadata
-  FIELDS = {
-    kind: "kind",
-    webhook_id: "webhookId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    kind
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant1Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant1.
-class UpdateDeploymentCheckRunResponseVariant0SourceVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant1Metadata::DECODERS
-
-  attr_reader :kind, :webhook_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xad7527b57a', 'enum', "Unknown ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xad7527b57a: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xc951a358f0 SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xc951a358f0
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant2Metadata
-  FIELDS = {
-    external_check_name: "externalCheckName",
-    kind: "kind",
-    provider: "provider",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    external_check_name
-    kind
-    provider
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant2Kind.from_value(value)
-    end,
-    provider: lambda do |value|
-      ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant2Provider.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant2.
-class UpdateDeploymentCheckRunResponseVariant0SourceVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant2Metadata::DECODERS
-
-  attr_reader :external_check_name, :kind, :provider
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X599aef4fd2 SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X599aef4fd2
+    TURBOREPO = 'Turborepo'
+    VALUES = ['Turborepo'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X04e06137c1 SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X04e06137c1
+    TURBOREPO = 'turborepo'
+    VALUES = ['turborepo'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X04e06137c1', 'enum', "Unknown ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X04e06137c1: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4SubKind SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4SubKind
+    VERCEL_CI_CHECK = 'vercel-ci-check'
+    VALUES = ['vercel-ci-check'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
+
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant0Status SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant0Status
+    COMPLETED = 'completed'
+    QUEUED = 'queued'
+    RUNNING = 'running'
+    VALUES = %w[completed queued running].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant1Blocks SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant1Blocks
+    BUILD_START = 'build-start'
+    DEPLOYMENT_ALIAS = 'deployment-alias'
+    DEPLOYMENT_PROMOTION = 'deployment-promotion'
+    DEPLOYMENT_START = 'deployment-start'
+    NONE = 'none'
+    VALUES = %w[
+      build-start deployment-alias deployment-promotion deployment-start none
+    ].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant1Conclusion SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant1Conclusion
+    CANCELED = 'canceled'
+    FAILED = 'failed'
+    NEUTRAL = 'neutral'
+    SKIPPED = 'skipped'
+    SUCCEEDED = 'succeeded'
+    TIMEOUT = 'timeout'
+    VALUES = %w[canceled failed neutral skipped succeeded timeout].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant1Requires SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant1Requires
+    BUILD_READY = 'build-ready'
+    DEPLOYMENT_URL = 'deployment-url'
+    NONE = 'none'
+    VALUES = %w[build-ready deployment-url none].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0Origin SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0Origin
+    CONFIG = 'config'
+    VALUES = ['config'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0Origin', 'enum', "Unknown ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0Origin: #{value}")
+    end
+  end
+
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0SubKind SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0SubKind
+    VERCEL_CI = 'vercel-ci'
+    VALUES = ['vercel-ci'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1Origin SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1Origin
+    PLATFORM = 'platform'
+    VALUES = ['platform'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1Origin', 'enum', "Unknown ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1Origin: #{value}")
+    end
+  end
+
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1SubKind SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1SubKind
+    VERCEL_CI_SENTINEL = 'vercel-ci-sentinel'
+    VALUES = ['vercel-ci-sentinel'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the ListDeploymentCheckRunsResponseRunsItemVariant1Status SDK namespace.
+  module ListDeploymentCheckRunsResponseRunsItemVariant1Status
+    COMPLETED = 'completed'
+    QUEUED = 'queued'
+    RUNNING = 'running'
+    VALUES = %w[completed queued running].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalListProjectChecksResponseChecksItemSourceVariant0Metadata
+    FIELDS = {
+      external_resource_id: 'externalResourceId',
+      integration_configuration_id: 'integrationConfigurationId',
+      integration_id: 'integrationId',
+      kind: 'kind',
+      resource_id: 'resourceId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      integration_configuration_id
+      integration_id
+      kind
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::ListProjectChecksResponseChecksItemSourceVariant0Kind.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for ListProjectChecksResponseChecksItemSourceVariant0.
+  class ListProjectChecksResponseChecksItemSourceVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectChecksResponseChecksItemSourceVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectChecksResponseChecksItemSourceVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectChecksResponseChecksItemSourceVariant0Metadata::DECODERS
+
+    attr_reader :external_resource_id, :integration_configuration_id, :integration_id, :kind,
+                :resource_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalListProjectChecksResponseChecksItemSourceVariant1Metadata
+    FIELDS = {
+      kind: 'kind',
+      webhook_id: 'webhookId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      kind
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::ListProjectChecksResponseChecksItemSourceVariant1Kind.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for ListProjectChecksResponseChecksItemSourceVariant1.
+  class ListProjectChecksResponseChecksItemSourceVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectChecksResponseChecksItemSourceVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectChecksResponseChecksItemSourceVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectChecksResponseChecksItemSourceVariant1Metadata::DECODERS
+
+    attr_reader :kind, :webhook_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalListProjectChecksResponseChecksItemSourceVariant2Metadata
+    FIELDS = {
+      external_check_name: 'externalCheckName',
+      kind: 'kind',
+      provider: 'provider'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      external_check_name
+      kind
+      provider
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::ListProjectChecksResponseChecksItemSourceVariant2Kind.from_value(value)
+      end,
+      provider: lambda do |value|
+        ::OctridevVercel::ListProjectChecksResponseChecksItemSourceVariant2Provider.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for ListProjectChecksResponseChecksItemSourceVariant2.
+  class ListProjectChecksResponseChecksItemSourceVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListProjectChecksResponseChecksItemSourceVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListProjectChecksResponseChecksItemSourceVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListProjectChecksResponseChecksItemSourceVariant2Metadata::DECODERS
+
+    attr_reader :external_check_name, :kind, :provider
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Defines the ListProjectChecksResponseChecksItemSource SDK namespace.
+  module ListProjectChecksResponseChecksItemSource
+    DISCRIMINATOR_MAPPING = {
+      'integration' => -> { ListProjectChecksResponseChecksItemSourceVariant0 },
+      'webhook' => -> { ListProjectChecksResponseChecksItemSourceVariant1 },
+      'git-provider' => -> { ListProjectChecksResponseChecksItemSourceVariant2 }
+    }.freeze
+
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['kind']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('ListProjectChecksResponseChecksItemSource', 'variant', "Unknown ListProjectChecksResponseChecksItemSource discriminator: #{hash['kind'].inspect}")
+    end
+  end
+
+  # Defines the ListProjectChecksResponseChecksItemSourceVariant0Kind SDK namespace.
+  module ListProjectChecksResponseChecksItemSourceVariant0Kind
+    INTEGRATION = 'integration'
+    VALUES = ['integration'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ListProjectChecksResponseChecksItemSourceVariant0Kind', 'enum', "Unknown ListProjectChecksResponseChecksItemSourceVariant0Kind: #{value}")
+    end
+  end
+
+  # Defines the ListProjectChecksResponseChecksItemSourceVariant1Kind SDK namespace.
+  module ListProjectChecksResponseChecksItemSourceVariant1Kind
+    WEBHOOK = 'webhook'
+    VALUES = ['webhook'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ListProjectChecksResponseChecksItemSourceVariant1Kind', 'enum', "Unknown ListProjectChecksResponseChecksItemSourceVariant1Kind: #{value}")
+    end
+  end
+
+  # Defines the ListProjectChecksResponseChecksItemSourceVariant2Kind SDK namespace.
+  module ListProjectChecksResponseChecksItemSourceVariant2Kind
+    GIT_PROVIDER = 'git-provider'
+    VALUES = ['git-provider'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ListProjectChecksResponseChecksItemSourceVariant2Kind', 'enum', "Unknown ListProjectChecksResponseChecksItemSourceVariant2Kind: #{value}")
+    end
+  end
+
+  # Defines the ListProjectChecksResponseChecksItemSourceVariant2Provider SDK namespace.
+  module ListProjectChecksResponseChecksItemSourceVariant2Provider
+    BITBUCKET = 'bitbucket'
+    GITHUB = 'github'
+    GITLAB = 'gitlab'
+    VALUES = %w[bitbucket github gitlab].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUpdateDeploymentCheckRunResponseVariant0ExpectationRefMetadata
+    FIELDS = {
+      invocation_attempt: 'invocationAttempt',
+      invocation_id: 'invocationId',
+      job_definition_id: 'jobDefinitionId',
+      job_run_attempt: 'jobRunAttempt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      invocation_attempt
+      invocation_id
+      job_definition_id
+      job_run_attempt
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for UpdateDeploymentCheckRunResponseVariant0ExpectationRef.
+  class UpdateDeploymentCheckRunResponseVariant0ExpectationRef
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0ExpectationRefMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0ExpectationRefMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0ExpectationRefMetadata::DECODERS
+
+    attr_reader :invocation_attempt, :invocation_id, :job_definition_id, :job_run_attempt
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUpdateDeploymentCheckRunResponseVariant0TaskSummaryMetadata
+    FIELDS = {
+      failed: 'failed',
+      pending: 'pending',
+      succeeded: 'succeeded',
+      total: 'total'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      failed
+      pending
+      succeeded
+      total
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for UpdateDeploymentCheckRunResponseVariant0TaskSummary.
+  class UpdateDeploymentCheckRunResponseVariant0TaskSummary
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0TaskSummaryMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0TaskSummaryMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0TaskSummaryMetadata::DECODERS
+
+    attr_reader :failed, :pending, :succeeded, :total
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant0Metadata
+    FIELDS = {
+      external_resource_id: 'externalResourceId',
+      integration_configuration_id: 'integrationConfigurationId',
+      integration_id: 'integrationId',
+      kind: 'kind',
+      resource_id: 'resourceId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      integration_configuration_id
+      integration_id
+      kind
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant0Kind.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant0.
+  class UpdateDeploymentCheckRunResponseVariant0SourceVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant0Metadata::DECODERS
+
+    attr_reader :external_resource_id, :integration_configuration_id, :integration_id, :kind,
+                :resource_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant1Metadata
+    FIELDS = {
+      kind: 'kind',
+      webhook_id: 'webhookId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      kind
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant1Kind.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant1.
+  class UpdateDeploymentCheckRunResponseVariant0SourceVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant1Metadata::DECODERS
+
+    attr_reader :kind, :webhook_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant2Metadata
+    FIELDS = {
+      external_check_name: 'externalCheckName',
+      kind: 'kind',
+      provider: 'provider'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      external_check_name
+      kind
+      provider
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant2Kind.from_value(value)
+      end,
+      provider: lambda do |value|
+        ::OctridevVercel::UpdateDeploymentCheckRunResponseVariant0SourceVariant2Provider.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for UpdateDeploymentCheckRunResponseVariant0SourceVariant2.
+  class UpdateDeploymentCheckRunResponseVariant0SourceVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateDeploymentCheckRunResponseVariant0SourceVariant2Metadata::DECODERS
+
+    attr_reader :external_check_name, :kind, :provider
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
 end

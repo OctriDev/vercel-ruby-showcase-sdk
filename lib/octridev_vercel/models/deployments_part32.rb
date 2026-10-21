@@ -5,663 +5,658 @@
 
 # deployments domain models (part 32)
 module OctridevVercel
-# API model for GetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcher.
-# Configuration for matching git branches to this environment
-class GetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcher
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcherMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcherMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcherMetadata::DECODERS
+  # API model for GetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcher.
+  # Configuration for matching git branches to this environment
+  class GetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcher
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcherMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcherMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcherMetadata::DECODERS
 
-  # @return [String] The pattern to match against branch names
-  attr_reader :pattern
-  # @return [GetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcherType] The type of matching to perform
-  attr_reader :type
+    # @return [String] The pattern to match against branch names
+    attr_reader :pattern
+    # @return [GetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcherType] The type of matching to perform
+    attr_reader :type
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601eMetadata
+    FIELDS = {
+      domain: 'domain',
+      reason: 'reason',
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      domain
+      reason
+      type
+      value
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601e.
+  # A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+  class GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601e
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601eMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601eMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601eMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601eMetadata
-  FIELDS = {
-    domain: "domain",
-    reason: "reason",
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    domain
-    reason
-    type
-    value
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :domain, :reason, :type, :value
 
-# API model for GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601e.
-# A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-class GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601e
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601eMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601eMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601eMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :domain, :reason, :type, :value
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItemMetadata
+    FIELDS = {
+      apex_name: 'apexName',
+      created_at: 'createdAt',
+      custom_environment_id: 'customEnvironmentId',
+      git_branch: 'gitBranch',
+      name: 'name',
+      project_id: 'projectId',
+      redirect: 'redirect',
+      redirect_status_code: 'redirectStatusCode',
+      updated_at: 'updatedAt',
+      verification: 'verification',
+      verified: 'verified'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      apex_name
+      name
+      project_id
+      verified
+    ].freeze
+    DECODERS = {
+      redirect_status_code: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXbda1956164.from_value(value)
+      end,
+      verification: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601e.from_hash(item) }
+      end,
+      verified: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb4e6be6cee.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem.
+  # List of domains associated with this environment
+  class GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItemMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItemMetadata
-  FIELDS = {
-    apex_name: "apexName",
-    created_at: "createdAt",
-    custom_environment_id: "customEnvironmentId",
-    git_branch: "gitBranch",
-    name: "name",
-    project_id: "projectId",
-    redirect: "redirect",
-    redirect_status_code: "redirectStatusCode",
-    updated_at: "updatedAt",
-    verification: "verification",
-    verified: "verified",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    apex_name
-    name
-    project_id
-    verified
-  ].freeze
-  DECODERS = {
-    redirect_status_code: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXbda1956164.from_value(value)
-    end,
-    verification: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601e.from_hash(item) }
-    end,
-    verified: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb4e6be6cee.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :apex_name, :created_at, :custom_environment_id, :git_branch, :name, :project_id,
+                :redirect, :redirect_status_code, :updated_at
+    # @return [Array_of_GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601e] A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+    attr_reader :verification
+    # @return [GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb4e6be6cee] `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+    attr_reader :verified
 
-# API model for GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem.
-# List of domains associated with this environment
-class GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItemMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :apex_name, :created_at, :custom_environment_id, :git_branch, :name, :project_id,
-              :redirect, :redirect_status_code, :updated_at
-  # @return [Array_of_GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb74821601e] A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-  attr_reader :verification
-  # @return [GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsXb4e6be6cee] `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-  attr_reader :verified
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0Metadata
+    FIELDS = {
+      branch_matcher: 'branchMatcher',
+      created_at: 'createdAt',
+      current_deployment_aliases: 'currentDeploymentAliases',
+      description: 'description',
+      domains: 'domains',
+      id: 'id',
+      slug: 'slug',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      id
+      slug
+      type
+      updated_at
+    ].freeze
+    DECODERS = {
+      branch_matcher: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcher.from_hash(value)
+      end,
+      domains: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem.from_hash(item) }
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1CustomEnvironmentVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetDeploymentResponseVariant1CustomEnvironmentVariant0.
+  # If the deployment was created using a Custom Environment, then this property contains information regarding the environment used.
+  class GetDeploymentResponseVariant1CustomEnvironmentVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0Metadata
-  FIELDS = {
-    branch_matcher: "branchMatcher",
-    created_at: "createdAt",
-    current_deployment_aliases: "currentDeploymentAliases",
-    description: "description",
-    domains: "domains",
-    id: "id",
-    slug: "slug",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    id
-    slug
-    type
-    updated_at
-  ].freeze
-  DECODERS = {
-    branch_matcher: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcher.from_hash(value)
-    end,
-    domains: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem.from_hash(item) }
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1CustomEnvironmentVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [GetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcher] Configuration for matching git branches to this environment
+    attr_reader :branch_matcher
+    # @return [Float] Timestamp when the environment was created
+    attr_reader :created_at
+    # @return [Array_of_String] List of aliases for the current deployment
+    attr_reader :current_deployment_aliases
+    # @return [String] Optional description of the environment's purpose
+    attr_reader :description
+    # @return [Array_of_GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem] List of domains associated with this environment
+    attr_reader :domains
+    # @return [String] Unique identifier for the custom environment (format: env_*)
+    attr_reader :id
+    # @return [String] URL-friendly name of the environment
+    attr_reader :slug
+    # @return [GetDeploymentResponseVariant1CustomEnvironmentVariant0Type] The type of environment (production, preview, or development)
+    attr_reader :type
+    # @return [Float] Timestamp when the environment was last updated
+    attr_reader :updated_at
 
-# API model for GetDeploymentResponseVariant1CustomEnvironmentVariant0.
-# If the deployment was created using a Custom Environment, then this property contains information regarding the environment used.
-class GetDeploymentResponseVariant1CustomEnvironmentVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [GetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcher] Configuration for matching git branches to this environment
-  attr_reader :branch_matcher
-  # @return [Float] Timestamp when the environment was created
-  attr_reader :created_at
-  # @return [Array_of_String] List of aliases for the current deployment
-  attr_reader :current_deployment_aliases
-  # @return [String] Optional description of the environment's purpose
-  attr_reader :description
-  # @return [Array_of_GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem] List of domains associated with this environment
-  attr_reader :domains
-  # @return [String] Unique identifier for the custom environment (format: env_*)
-  attr_reader :id
-  # @return [String] URL-friendly name of the environment
-  attr_reader :slug
-  # @return [GetDeploymentResponseVariant1CustomEnvironmentVariant0Type] The type of environment (production, preview, or development)
-  attr_reader :type
-  # @return [Float] Timestamp when the environment was last updated
-  attr_reader :updated_at
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant1Metadata
+    FIELDS = {
+      id: 'id'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetDeploymentResponseVariant1CustomEnvironmentVariant1.
+  # If the deployment was created using a Custom Environment, then this property contains information regarding the environment used.
+  class GetDeploymentResponseVariant1CustomEnvironmentVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant1Metadata
-  FIELDS = {
-    id: "id",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :id
 
-# API model for GetDeploymentResponseVariant1CustomEnvironmentVariant1.
-# If the deployment was created using a Custom Environment, then this property contains information regarding the environment used.
-class GetDeploymentResponseVariant1CustomEnvironmentVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentResponseVariant1CustomEnvironmentVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :id
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentResponseVariant1DurationMetadata
+    FIELDS = {
+      end_time: 'endTime',
+      end_time_capped: 'endTimeCapped',
+      start_time: 'startTime',
+      time_for_billing: 'timeForBilling',
+      time_to_container_exit: 'timeToContainerExit',
+      time_to_container_exit_capped: 'timeToContainerExitCapped',
+      time_to_ready: 'timeToReady'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetDeploymentResponseVariant1Duration.
+  class GetDeploymentResponseVariant1Duration
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentResponseVariant1DurationMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1DurationMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentResponseVariant1DurationMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentResponseVariant1DurationMetadata
-  FIELDS = {
-    end_time: "endTime",
-    end_time_capped: "endTimeCapped",
-    start_time: "startTime",
-    time_for_billing: "timeForBilling",
-    time_to_container_exit: "timeToContainerExit",
-    time_to_container_exit_capped: "timeToContainerExitCapped",
-    time_to_ready: "timeToReady",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [Float] Unix timestamp in milliseconds when the build container exited.
+    attr_reader :end_time
+    # @return [Float] Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`.
+    attr_reader :end_time_capped
+    # @return [Float] Unix timestamp in milliseconds when the deployment entered BUILDING.
+    attr_reader :start_time
+    # @return [Float] Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum.
+    attr_reader :time_for_billing
+    # @return [Float] Milliseconds from entering BUILDING until the build container exited, without the billing cap.
+    attr_reader :time_to_container_exit
+    # @return [Float] Build-container duration in milliseconds, capped at 45 minutes and without billing rounding.
+    attr_reader :time_to_container_exit_capped
+    # @return [Float] Milliseconds from entering BUILDING until the deployment reached its current ready state.
+    attr_reader :time_to_ready
 
-# API model for GetDeploymentResponseVariant1Duration.
-class GetDeploymentResponseVariant1Duration
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentResponseVariant1DurationMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1DurationMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentResponseVariant1DurationMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [Float] Unix timestamp in milliseconds when the build container exited.
-  attr_reader :end_time
-  # @return [Float] Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`.
-  attr_reader :end_time_capped
-  # @return [Float] Unix timestamp in milliseconds when the deployment entered BUILDING.
-  attr_reader :start_time
-  # @return [Float] Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum.
-  attr_reader :time_for_billing
-  # @return [Float] Milliseconds from entering BUILDING until the build container exited, without the billing cap.
-  attr_reader :time_to_container_exit
-  # @return [Float] Build-container duration in milliseconds, capped at 45 minutes and without billing rounding.
-  attr_reader :time_to_container_exit_capped
-  # @return [Float] Milliseconds from entering BUILDING until the deployment reached its current ready state.
-  attr_reader :time_to_ready
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentResponseVariant1FlagsVariant0Metadata
+    FIELDS = {
+      definitions: 'definitions'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      definitions
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetDeploymentResponseVariant1FlagsVariant0.
+  # Flags defined in the Build Output API, used by this deployment. Primarily used by the Toolbar to know about the used flags.
+  class GetDeploymentResponseVariant1FlagsVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentResponseVariant1FlagsVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1FlagsVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentResponseVariant1FlagsVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentResponseVariant1FlagsVariant0Metadata
-  FIELDS = {
-    definitions: "definitions",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    definitions
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :definitions
 
-# API model for GetDeploymentResponseVariant1FlagsVariant0.
-# Flags defined in the Build Output API, used by this deployment. Primarily used by the Toolbar to know about the used flags.
-class GetDeploymentResponseVariant1FlagsVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentResponseVariant1FlagsVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1FlagsVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentResponseVariant1FlagsVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :definitions
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentResponseVariant1GitRepoVariant0Metadata
+    FIELDS = {
+      default_branch: 'defaultBranch',
+      name: 'name',
+      namespace: 'namespace',
+      owner_type: 'ownerType',
+      path: 'path',
+      private: 'private',
+      project_id: 'projectId',
+      type: 'type',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      default_branch
+      name
+      namespace
+      owner_type
+      path
+      private
+      project_id
+      type
+      url
+    ].freeze
+    DECODERS = {
+      owner_type: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant0OwnerType.from_value(value)
+      end,
+      private: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant0Private.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetDeploymentResponseVariant1GitRepoVariant0.
+  class GetDeploymentResponseVariant1GitRepoVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentResponseVariant1GitRepoVariant0Metadata
-  FIELDS = {
-    default_branch: "defaultBranch",
-    name: "name",
-    namespace: "namespace",
-    owner_type: "ownerType",
-    path: "path",
-    private: "private",
-    project_id: "projectId",
-    type: "type",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    default_branch
-    name
-    namespace
-    owner_type
-    path
-    private
-    project_id
-    type
-    url
-  ].freeze
-  DECODERS = {
-    owner_type: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant0OwnerType.from_value(value)
-    end,
-    private: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant0Private.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :default_branch, :name, :namespace, :owner_type, :path, :private, :project_id, :type,
+                :url
 
-# API model for GetDeploymentResponseVariant1GitRepoVariant0.
-class GetDeploymentResponseVariant1GitRepoVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :default_branch, :name, :namespace, :owner_type, :path, :private, :project_id, :type,
-              :url
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentResponseVariant1GitRepoVariant1Metadata
+    FIELDS = {
+      default_branch: 'defaultBranch',
+      name: 'name',
+      org: 'org',
+      owner_type: 'ownerType',
+      path: 'path',
+      private: 'private',
+      repo: 'repo',
+      repo_id: 'repoId',
+      repo_owner_id: 'repoOwnerId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      default_branch
+      name
+      org
+      owner_type
+      path
+      private
+      repo
+      repo_id
+      repo_owner_id
+      type
+    ].freeze
+    DECODERS = {
+      owner_type: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant1OwnerType.from_value(value)
+      end,
+      private: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant1Private.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant1Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetDeploymentResponseVariant1GitRepoVariant1.
+  class GetDeploymentResponseVariant1GitRepoVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentResponseVariant1GitRepoVariant1Metadata
-  FIELDS = {
-    default_branch: "defaultBranch",
-    name: "name",
-    org: "org",
-    owner_type: "ownerType",
-    path: "path",
-    private: "private",
-    repo: "repo",
-    repo_id: "repoId",
-    repo_owner_id: "repoOwnerId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    default_branch
-    name
-    org
-    owner_type
-    path
-    private
-    repo
-    repo_id
-    repo_owner_id
-    type
-  ].freeze
-  DECODERS = {
-    owner_type: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant1OwnerType.from_value(value)
-    end,
-    private: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant1Private.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :default_branch, :name, :org, :owner_type, :path, :private, :repo, :repo_id,
+                :repo_owner_id, :type
 
-# API model for GetDeploymentResponseVariant1GitRepoVariant1.
-class GetDeploymentResponseVariant1GitRepoVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :default_branch, :name, :org, :owner_type, :path, :private, :repo, :repo_id,
-              :repo_owner_id, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentResponseVariant1GitRepoVariant2Metadata
+    FIELDS = {
+      default_branch: 'defaultBranch',
+      name: 'name',
+      owner: 'owner',
+      owner_type: 'ownerType',
+      path: 'path',
+      private: 'private',
+      repo_uuid: 'repoUuid',
+      slug: 'slug',
+      type: 'type',
+      workspace_uuid: 'workspaceUuid'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      default_branch
+      name
+      owner
+      owner_type
+      path
+      private
+      repo_uuid
+      slug
+      type
+      workspace_uuid
+    ].freeze
+    DECODERS = {
+      owner_type: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant2OwnerType.from_value(value)
+      end,
+      private: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant2Private.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant2Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetDeploymentResponseVariant1GitRepoVariant2.
+  class GetDeploymentResponseVariant1GitRepoVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant2Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentResponseVariant1GitRepoVariant2Metadata
-  FIELDS = {
-    default_branch: "defaultBranch",
-    name: "name",
-    owner: "owner",
-    owner_type: "ownerType",
-    path: "path",
-    private: "private",
-    repo_uuid: "repoUuid",
-    slug: "slug",
-    type: "type",
-    workspace_uuid: "workspaceUuid",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    default_branch
-    name
-    owner
-    owner_type
-    path
-    private
-    repo_uuid
-    slug
-    type
-    workspace_uuid
-  ].freeze
-  DECODERS = {
-    owner_type: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant2OwnerType.from_value(value)
-    end,
-    private: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant2Private.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant2Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :default_branch, :name, :owner, :owner_type, :path, :private, :repo_uuid, :slug, :type,
+                :workspace_uuid
 
-# API model for GetDeploymentResponseVariant1GitRepoVariant2.
-class GetDeploymentResponseVariant1GitRepoVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant2Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :default_branch, :name, :owner, :owner_type, :path, :private, :repo_uuid, :slug, :type,
-              :workspace_uuid
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentResponseVariant1GitRepoVariant3Metadata
+    FIELDS = {
+      default_branch: 'defaultBranch',
+      name: 'name',
+      org: 'org',
+      owner_type: 'ownerType',
+      path: 'path',
+      private: 'private',
+      repo: 'repo',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      default_branch
+      name
+      org
+      owner_type
+      path
+      private
+      repo
+      type
+    ].freeze
+    DECODERS = {
+      owner_type: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant3OwnerType.from_value(value)
+      end,
+      private: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant3Private.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant3Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetDeploymentResponseVariant1GitRepoVariant3.
+  class GetDeploymentResponseVariant1GitRepoVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant3Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentResponseVariant1GitRepoVariant3Metadata
-  FIELDS = {
-    default_branch: "defaultBranch",
-    name: "name",
-    org: "org",
-    owner_type: "ownerType",
-    path: "path",
-    private: "private",
-    repo: "repo",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    default_branch
-    name
-    org
-    owner_type
-    path
-    private
-    repo
-    type
-  ].freeze
-  DECODERS = {
-    owner_type: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant3OwnerType.from_value(value)
-    end,
-    private: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant3Private.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant3Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :default_branch, :name, :org, :owner_type, :path, :private, :repo, :type
 
-# API model for GetDeploymentResponseVariant1GitRepoVariant3.
-class GetDeploymentResponseVariant1GitRepoVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant3Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :default_branch, :name, :org, :owner_type, :path, :private, :repo, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentResponseVariant1GitRepoVariant4Metadata
+    FIELDS = {
+      default_branch: 'defaultBranch',
+      name: 'name',
+      owner: 'owner',
+      owner_type: 'ownerType',
+      path: 'path',
+      private: 'private',
+      repo: 'repo',
+      repo_id: 'repoId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      default_branch
+      name
+      owner
+      owner_type
+      path
+      private
+      repo
+      repo_id
+      type
+    ].freeze
+    DECODERS = {
+      owner_type: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant4OwnerType.from_value(value)
+      end,
+      private: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant4Private.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant4Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
+  # API model for GetDeploymentResponseVariant1GitRepoVariant4.
+  class GetDeploymentResponseVariant1GitRepoVariant4
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant4Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant4Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant4Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentResponseVariant1GitRepoVariant4Metadata
-  FIELDS = {
-    default_branch: "defaultBranch",
-    name: "name",
-    owner: "owner",
-    owner_type: "ownerType",
-    path: "path",
-    private: "private",
-    repo: "repo",
-    repo_id: "repoId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    default_branch
-    name
-    owner
-    owner_type
-    path
-    private
-    repo
-    repo_id
-    type
-  ].freeze
-  DECODERS = {
-    owner_type: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant4OwnerType.from_value(value)
-    end,
-    private: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant4Private.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitRepoVariant4Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :default_branch, :name, :owner_type, :path, :private, :repo, :type
+    # @return [String] Owner (namespace) slug.
+    attr_reader :owner
+    # @return [String] Origin repository id.
+    attr_reader :repo_id
 
-# API model for GetDeploymentResponseVariant1GitRepoVariant4.
-class GetDeploymentResponseVariant1GitRepoVariant4
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant4Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant4Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetDeploymentResponseVariant1GitRepoVariant4Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :default_branch, :name, :owner_type, :path, :private, :repo, :type
-  # @return [String] Owner (namespace) slug.
-  attr_reader :owner
-  # @return [String] Origin repository id.
-  attr_reader :repo_id
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetDeploymentResponseVariant1GitSourceVariant0Metadata
+    FIELDS = {
+      pr_id: 'prId',
+      ref: 'ref',
+      repo_id: 'repoId',
+      sha: 'sha',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      repo_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetDeploymentResponseVariant1GitSourceVariant0Type.from_value(value)
+      end
+    }.freeze
   end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetDeploymentResponseVariant1GitSourceVariant0Metadata
-  FIELDS = {
-    pr_id: "prId",
-    ref: "ref",
-    repo_id: "repoId",
-    sha: "sha",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    repo_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetDeploymentResponseVariant1GitSourceVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
 end

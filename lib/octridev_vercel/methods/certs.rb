@@ -12,11 +12,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetCertByIdResponseMetadata
         FIELDS = {
-          auto_renew: "autoRenew",
-          cns: "cns",
-          created_at: "createdAt",
-          expires_at: "expiresAt",
-          id: "id",
+          auto_renew: 'autoRenew',
+          cns: 'cns',
+          created_at: 'createdAt',
+          expires_at: 'expiresAt',
+          id: 'id'
         }.freeze
         REQUIRED_FIELDS = %i[
           auto_renew
@@ -28,7 +28,7 @@ module OctridevVercel
         DECODERS = {
           auto_renew: lambda do |value|
             ::OctridevVercel::Methods::Certs::GetCertByIdResponseAutoRenew.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -58,11 +58,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetCertsResponseCertsItemMetadata
         FIELDS = {
-          auto_renew: "autoRenew",
-          cns: "cns",
-          created_at: "createdAt",
-          expires_at: "expiresAt",
-          id: "id",
+          auto_renew: 'autoRenew',
+          cns: 'cns',
+          created_at: 'createdAt',
+          expires_at: 'expiresAt',
+          id: 'id'
         }.freeze
         REQUIRED_FIELDS = %i[
           auto_renew
@@ -74,7 +74,7 @@ module OctridevVercel
         DECODERS = {
           auto_renew: lambda do |value|
             ::OctridevVercel::Methods::Certs::GetCertsResponseCertsItemAutoRenew.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -104,8 +104,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetCertsResponseMetadata
         FIELDS = {
-          certs: "certs",
-          pagination: "pagination",
+          certs: 'certs',
+          pagination: 'pagination'
         }.freeze
         REQUIRED_FIELDS = %i[
           certs
@@ -117,7 +117,7 @@ module OctridevVercel
           end,
           pagination: lambda do |value|
             ::OctridevVercel::Pagination.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -149,12 +149,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalIssueCertMetadata
         FIELDS = {
-          cns: "cns",
+          cns: 'cns'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for IssueCert.
@@ -184,11 +182,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalIssueCertResponseMetadata
         FIELDS = {
-          auto_renew: "autoRenew",
-          cns: "cns",
-          created_at: "createdAt",
-          expires_at: "expiresAt",
-          id: "id",
+          auto_renew: 'autoRenew',
+          cns: 'cns',
+          created_at: 'createdAt',
+          expires_at: 'expiresAt',
+          id: 'id'
         }.freeze
         REQUIRED_FIELDS = %i[
           auto_renew
@@ -200,7 +198,7 @@ module OctridevVercel
         DECODERS = {
           auto_renew: lambda do |value|
             ::OctridevVercel::Methods::Certs::IssueCertResponseAutoRenew.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -230,18 +228,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadCertMetadata
         FIELDS = {
-          ca: "ca",
-          key: "key",
-          cert: "cert",
-          skip_validation: "skipValidation",
+          ca: 'ca',
+          key: 'key',
+          cert: 'cert',
+          skip_validation: 'skipValidation'
         }.freeze
         REQUIRED_FIELDS = %i[
           ca
           key
           cert
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UploadCert.
@@ -277,11 +274,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadCertResponseMetadata
         FIELDS = {
-          auto_renew: "autoRenew",
-          cns: "cns",
-          created_at: "createdAt",
-          expires_at: "expiresAt",
-          id: "id",
+          auto_renew: 'autoRenew',
+          cns: 'cns',
+          created_at: 'createdAt',
+          expires_at: 'expiresAt',
+          id: 'id'
         }.freeze
         REQUIRED_FIELDS = %i[
           auto_renew
@@ -293,7 +290,7 @@ module OctridevVercel
         DECODERS = {
           auto_renew: lambda do |value|
             ::OctridevVercel::Methods::Certs::UploadCertResponseAutoRenew.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -368,29 +365,22 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_cert_by_id) do |
-        config:,
-        id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_cert_by_id) do |config:, id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v8/certs/",
+            '/v8/certs/',
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Certs::GetCertByIdResponse,
           decoder: :json,
           operation_id: 'get_cert_by_id',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -409,21 +399,20 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v8/certs/",
+            '/v8/certs/',
             SdkClient.encode_path_segment(id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'remove_cert',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -434,25 +423,19 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_certs) do |
-        config:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_certs) do |config:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
-          "/v8/certs",
+          '/v8/certs',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Certs::GetCertsResponse,
           decoder: :json,
           operation_id: 'get_certs',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -471,22 +454,21 @@ module OctridevVercel
         cns: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
-          "/v8/certs",
+          '/v8/certs',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'cns' => cns,
+            'cns' => cns
           },
           return_type: ::OctridevVercel::Methods::Certs::IssueCertResponse,
           decoder: :json,
           operation_id: 'issue_cert',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
 
@@ -511,25 +493,24 @@ module OctridevVercel
         skip_validation: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PUT',
-          "/v8/certs",
+          '/v8/certs',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'ca' => ca,
             'key' => key,
             'cert' => cert,
-            'skipValidation' => skip_validation,
+            'skipValidation' => skip_validation
           },
           return_type: ::OctridevVercel::Methods::Certs::UploadCertResponse,
           decoder: :json,
           operation_id: 'upload_cert',
-          request_options: request_options,
+          request_options: request_options
         ).data
       end
     end
