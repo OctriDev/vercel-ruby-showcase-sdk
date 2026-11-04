@@ -21,25 +21,24 @@ module OctridevVercel
         message:,
         request_options: nil
       )
-
-        Validation.validate_length('message', message, max: 44000)
+        Validation.validate_length('message', message, max: 44_000)
         Validation.validate_pattern('message', message, '^[A-Za-z0-9+/]*={0,2}$')
 
         SdkClient.request(
           'POST',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id),
-            "/sign/message"
+            '/sign/message'
           ].join,
           config: config,
           body: {
-            'message' => message,
+            'message' => message
           },
           return_type: ::OctridevVercel::Methods::Kms::SignKmsMessageResponse,
           decoder: :json,
           operation_id: 'sign_kms_message',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -59,24 +58,23 @@ module OctridevVercel
         ttl: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id),
-            "/sign/token"
+            '/sign/token'
           ].join,
           config: config,
           body: {
             'claims' => claims,
             'headers' => headers,
-            'ttl' => ttl,
+            'ttl' => ttl
           },
           return_type: ::OctridevVercel::Methods::Kms::SignKmsTokenResponse,
           decoder: :json,
           operation_id: 'sign_kms_token',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -98,7 +96,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         Validation.if_given(next_) do
@@ -108,18 +105,18 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          "/v1/kms/issuers",
+          '/v1/kms/issuers',
           config: config,
           query: {
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'next' => QueryValue.new(next_, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Kms::ListKmsIssuersResponse,
           decoder: :json,
           operation_id: 'list_kms_issuers',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -155,7 +152,6 @@ module OctridevVercel
         import_key_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(import_key_id) do
           Validation.validate_length('importKeyId', import_key_id, max: 128)
           Validation.validate_pattern('importKeyId', import_key_id, '^[A-Za-z0-9._-]+$')
@@ -163,11 +159,11 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          "/v1/kms/issuers",
+          '/v1/kms/issuers',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
@@ -175,12 +171,12 @@ module OctridevVercel
             'claimsSchema' => claims_schema,
             'policy' => policy,
             'importKey' => import_key,
-            'importKeyId' => import_key_id,
+            'importKeyId' => import_key_id
           },
           return_type: ::OctridevVercel::Methods::Kms::CreateKmsIssuerResponse,
           decoder: :json,
           operation_id: 'create_kms_issuer',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -220,7 +216,6 @@ module OctridevVercel
         import_key_id: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(revoke_previous_after_hours) do
           Validation.validate_range('revokePreviousAfterHours', revoke_previous_after_hours, min: 0)
         end
@@ -233,26 +228,26 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id),
-            "/keys"
+            '/keys'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'activation' => activation,
             'revokePreviousAfterHours' => revoke_previous_after_hours,
             'revokePreviousAt' => revoke_previous_at,
             'importKey' => import_key,
-            'importKeyId' => import_key_id,
+            'importKeyId' => import_key_id
           },
           return_type: ::OctridevVercel::Methods::Kms::CreateKmsSigningKeyResponse,
           decoder: :json,
           operation_id: 'create_kms_signing_key',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -277,7 +272,6 @@ module OctridevVercel
         revoke_previous_after_hours: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(revoke_previous_after_hours) do
           Validation.validate_range('revokePreviousAfterHours', revoke_previous_after_hours, min: 0)
         end
@@ -285,24 +279,24 @@ module OctridevVercel
         SdkClient.request(
           'POST',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id),
-            "/keys/",
+            '/keys/',
             SdkClient.encode_path_segment(key_id),
-            "/activate"
+            '/activate'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'revokePreviousAfterHours' => revoke_previous_after_hours,
+            'revokePreviousAfterHours' => revoke_previous_after_hours
           },
           return_type: ::OctridevVercel::Methods::Kms::ActivateKmsSigningKeyResponse,
           decoder: :json,
           operation_id: 'activate_kms_signing_key',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -324,25 +318,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id),
-            "/keys/",
+            '/keys/',
             SdkClient.encode_path_segment(key_id),
-            "/revoke"
+            '/revoke'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Kms::RevokeKmsSigningKeyResponse,
           decoder: :json,
           operation_id: 'revoke_kms_signing_key',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -354,29 +347,22 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_kms_issuer) do |
-        config:,
-        issuer_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_kms_issuer) do |config:, issuer_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Kms::GetKmsIssuerResponse,
           decoder: :json,
           operation_id: 'get_kms_issuer',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -400,26 +386,25 @@ module OctridevVercel
         claims_schema: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'PATCH',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'name' => name,
-            'claimsSchema' => claims_schema,
+            'claimsSchema' => claims_schema
           },
           return_type: ::OctridevVercel::Methods::Kms::UpdateKmsIssuerResponse,
           decoder: :json,
           operation_id: 'update_kms_issuer',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -438,21 +423,20 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'delete_kms_issuer',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -481,31 +465,30 @@ module OctridevVercel
         token_claims: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('environments', environments, min: 1)
 
         SdkClient.request(
           'POST',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id),
-            "/policies"
+            '/policies'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'kind' => kind,
             'projectId' => project_id,
             'environments' => environments,
-            'tokenClaims' => token_claims,
+            'tokenClaims' => token_claims
           },
           return_type: ::OctridevVercel::CreateKmsIssuerPolicyResponse,
           decoder: :json,
           operation_id: 'create_kms_issuer_policy',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -535,32 +518,31 @@ module OctridevVercel
         token_claims: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(environments) { Validation.validate_items('environments', environments, min: 1) }
 
         SdkClient.request(
           'PATCH',
           [
-            "/v1/kms/issuers/",
+            '/v1/kms/issuers/',
             SdkClient.encode_path_segment(issuer_id),
-            "/policies/",
+            '/policies/',
             SdkClient.encode_path_segment(kind),
-            "/",
+            '/',
             SdkClient.encode_path_segment(policy_key)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'environments' => environments,
-            'tokenClaims' => token_claims,
+            'tokenClaims' => token_claims
           },
           return_type: ::OctridevVercel::UpdateKmsIssuerPolicyResponse,
           decoder: :json,
           operation_id: 'update_kms_issuer_policy',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
     end

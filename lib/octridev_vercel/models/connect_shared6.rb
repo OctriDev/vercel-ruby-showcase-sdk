@@ -5,650 +5,635 @@
 
 # connect domain models
 module OctridevVercel
-# API model for ConnectConnectorUpdateDataVariant0UserAuthorization.
-# User authorization grant settings.
-class ConnectConnectorUpdateDataVariant0UserAuthorization
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataVariant0UserAuthorizationMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0UserAuthorizationMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataVariant0UserAuthorizationMetadata::DECODERS
+  # API model for ConnectConnectorUpdateDataVariant0UserAuthorization.
+  # User authorization grant settings.
+  class ConnectConnectorUpdateDataVariant0UserAuthorization
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataVariant0UserAuthorizationMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0UserAuthorizationMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataVariant0UserAuthorizationMetadata::DECODERS
 
-  # @return [Boolean] Whether this OAuth grant is enabled.
-  attr_reader :enabled
-  # @return [Array_of_String] Default scopes to request when token params specify scopes: [\"*\"].
-  attr_reader :scopes
+    # @return [Boolean] Whether this OAuth grant is enabled.
+    attr_reader :enabled
+    # @return [Array_of_String] Default scopes to request when token params specify scopes: [\"*\"].
+    attr_reader :scopes
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataVariant0RefreshTokensMetadata
+    FIELDS = {
+      enabled: 'enabled'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      enabled
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for ConnectConnectorUpdateDataVariant0RefreshTokens.
+  # Refresh token settings.
+  class ConnectConnectorUpdateDataVariant0RefreshTokens
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataVariant0RefreshTokensMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0RefreshTokensMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataVariant0RefreshTokensMetadata::DECODERS
+
+    # @return [Boolean] Whether this OAuth grant is enabled.
+    attr_reader :enabled
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataVariant0RefreshTokensMetadata
-  FIELDS = {
-    enabled: "enabled",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    enabled
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateDataVariant0RefreshTokens.
-# Refresh token settings.
-class ConnectConnectorUpdateDataVariant0RefreshTokens
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataVariant0RefreshTokensMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0RefreshTokensMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataVariant0RefreshTokensMetadata::DECODERS
-
-  # @return [Boolean] Whether this OAuth grant is enabled.
-  attr_reader :enabled
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataVariant0ClientCredentialsMetadata
+    FIELDS = {
+      enabled: 'enabled',
+      scopes: 'scopes'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      enabled
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for ConnectConnectorUpdateDataVariant0ClientCredentials.
+  # Client credentials grant settings.
+  class ConnectConnectorUpdateDataVariant0ClientCredentials
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataVariant0ClientCredentialsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0ClientCredentialsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataVariant0ClientCredentialsMetadata::DECODERS
+
+    # @return [Boolean] Whether this OAuth grant is enabled.
+    attr_reader :enabled
+    # @return [Array_of_String] Default scopes to request when token params specify scopes: [\"*\"].
+    attr_reader :scopes
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataVariant0ForwardedClaimsMetadata
+    FIELDS = {
+      id_token: 'idToken'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for ConnectConnectorUpdateDataVariant0ForwardedClaims.
+  # Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.
+  class ConnectConnectorUpdateDataVariant0ForwardedClaims
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataVariant0ForwardedClaimsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0ForwardedClaimsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataVariant0ForwardedClaimsMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataVariant0ClientCredentialsMetadata
-  FIELDS = {
-    enabled: "enabled",
-    scopes: "scopes",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    enabled
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [Array_of_String] ID token claim names that Connect can expose.
+    attr_reader :id_token
 
-# API model for ConnectConnectorUpdateDataVariant0ClientCredentials.
-# Client credentials grant settings.
-class ConnectConnectorUpdateDataVariant0ClientCredentials
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataVariant0ClientCredentialsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0ClientCredentialsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataVariant0ClientCredentialsMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [Boolean] Whether this OAuth grant is enabled.
-  attr_reader :enabled
-  # @return [Array_of_String] Default scopes to request when token params specify scopes: [\"*\"].
-  attr_reader :scopes
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataVariant0JwtBearerMetadata
+    FIELDS = {
+      enabled: 'enabled',
+      scopes: 'scopes',
+      sub: 'sub',
+      iss: 'iss',
+      aud: 'aud',
+      additional_claims: 'additionalClaims',
+      ttl: 'ttl',
+      use_client_credentials: 'useClientCredentials'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for ConnectConnectorUpdateDataVariant0JwtBearer.
+  # JWT bearer grant settings.
+  class ConnectConnectorUpdateDataVariant0JwtBearer
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataVariant0JwtBearerMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0JwtBearerMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataVariant0JwtBearerMetadata::DECODERS
+
+    # @return [Boolean] Whether JWT bearer grants are enabled.
+    attr_reader :enabled
+    # @return [Array_of_String] Default scopes to request when token params specify scopes: [\"*\"].
+    attr_reader :scopes
+    # @return [String] Default JWT subject claim.
+    attr_reader :sub
+    # @return [String] Default JWT issuer claim.
+    attr_reader :iss
+    # @return [String] Default JWT audience claim.
+    attr_reader :aud
+    # @return [Hash] Additional claims included in generated JWT assertions.
+    attr_reader :additional_claims
+    # @return [Float] JWT lifetime in seconds.
+    attr_reader :ttl
+    # @return [Boolean] Whether JWT bearer requests also use client credentials.
+    attr_reader :use_client_credentials
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataVariant0ForwardedClaimsMetadata
-  FIELDS = {
-    id_token: "idToken",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateDataVariant0ForwardedClaims.
-# Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.
-class ConnectConnectorUpdateDataVariant0ForwardedClaims
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataVariant0ForwardedClaimsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0ForwardedClaimsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataVariant0ForwardedClaimsMetadata::DECODERS
-
-  # @return [Array_of_String] ID token claim names that Connect can expose.
-  attr_reader :id_token
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataVariant0ClientAssertionMetadata
+    FIELDS = {
+      type: 'type',
+      ttl: 'ttl',
+      claims: 'claims'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for ConnectConnectorUpdateDataVariant0ClientAssertion.
+  # `private_key_jwt` client assertion settings.
+  class ConnectConnectorUpdateDataVariant0ClientAssertion
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataVariant0ClientAssertionMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0ClientAssertionMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataVariant0ClientAssertionMetadata::DECODERS
+
+    # @return [String] OAuth client assertion type. Defaults to urn:ietf:params:oauth:client-assertion-type:jwt-bearer. An empty string clears the configured type.
+    attr_reader :type
+    # @return [Float] Client assertion lifetime in seconds.
+    attr_reader :ttl
+    # @return [Hash] Additional claims included in the client assertion.
+    attr_reader :claims
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataVariant0Metadata
+    FIELDS = {
+      server_url: 'serverUrl',
+      server_config: 'serverConfig',
+      client_id: 'clientId',
+      client_name: 'clientName',
+      token_endpoint_auth_method: 'tokenEndpointAuthMethod',
+      response_type: 'responseType',
+      pkce_required: 'pkceRequired',
+      code_challenge_method: 'codeChallengeMethod',
+      user_authorization: 'userAuthorization',
+      refresh_tokens: 'refreshTokens',
+      client_credentials: 'clientCredentials',
+      forwarded_claims: 'forwardedClaims',
+      default_audience: 'defaultAudience',
+      default_resource: 'defaultResource',
+      default_token_expires_in: 'defaultTokenExpiresIn',
+      authorization_url_params: 'authorizationUrlParams',
+      jwt_bearer: 'jwtBearer',
+      client_assertion: 'clientAssertion'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      server_config: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdateDataVariant0ServerConfig.from_hash(value)
+      end,
+      user_authorization: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdateDataVariant0UserAuthorization.from_hash(value)
+      end,
+      refresh_tokens: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdateDataVariant0RefreshTokens.from_hash(value)
+      end,
+      client_credentials: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdateDataVariant0ClientCredentials.from_hash(value)
+      end,
+      forwarded_claims: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdateDataVariant0ForwardedClaims.from_hash(value)
+      end,
+      jwt_bearer: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdateDataVariant0JwtBearer.from_hash(value)
+      end,
+      client_assertion: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdateDataVariant0ClientAssertion.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for ConnectConnectorUpdateDataVariant0.
+  class ConnectConnectorUpdateDataVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataVariant0JwtBearerMetadata
-  FIELDS = {
-    enabled: "enabled",
-    scopes: "scopes",
-    sub: "sub",
-    iss: "iss",
-    aud: "aud",
-    additional_claims: "additionalClaims",
-    ttl: "ttl",
-    use_client_credentials: "useClientCredentials",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] Authorization server base URL used for discovery.
+    attr_reader :server_url
+    # @return [ConnectConnectorUpdateDataVariant0ServerConfig] Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.
+    attr_reader :server_config
+    # @return [String] OAuth client ID.
+    attr_reader :client_id
+    # @return [String] OAuth client name.
+    attr_reader :client_name
+    # @return [String] OAuth token endpoint authentication method. Common values are client_secret_post, client_secret_basic, none, and private_key_jwt. If omitted, Vercel selects a supported method from serverConfig and otherwise uses client_secret_post.
+    attr_reader :token_endpoint_auth_method
+    # @return [String] OAuth authorization response type. Defaults to code. Other provider-supported values are accepted. An empty string clears the configured type.
+    attr_reader :response_type
+    # @return [Boolean] Whether user authorization must use PKCE.
+    attr_reader :pkce_required
+    # @return [String] PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it. An empty string clears the configured method.
+    attr_reader :code_challenge_method
+    # @return [ConnectConnectorUpdateDataVariant0UserAuthorization] User authorization grant settings.
+    attr_reader :user_authorization
+    # @return [ConnectConnectorUpdateDataVariant0RefreshTokens] Refresh token settings.
+    attr_reader :refresh_tokens
+    # @return [ConnectConnectorUpdateDataVariant0ClientCredentials] Client credentials grant settings.
+    attr_reader :client_credentials
+    # @return [ConnectConnectorUpdateDataVariant0ForwardedClaims] Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.
+    attr_reader :forwarded_claims
+    # @return [String] Default audience used when a token request omits one. An empty string clears the default.
+    attr_reader :default_audience
+    # @return [String] Default RFC 8707 resource sent on authorization and token requests when a token request omits one. An empty string clears the default.
+    attr_reader :default_resource
+    # @return [Float] Default token lifetime in seconds to use when the token response omits expires_in.
+    attr_reader :default_token_expires_in
+    # @return [Hash] Extra query parameters added to authorization URLs.
+    attr_reader :authorization_url_params
+    # @return [ConnectConnectorUpdateDataVariant0JwtBearer] JWT bearer grant settings.
+    attr_reader :jwt_bearer
+    # @return [ConnectConnectorUpdateDataVariant0ClientAssertion] `private_key_jwt` client assertion settings.
+    attr_reader :client_assertion
 
-# API model for ConnectConnectorUpdateDataVariant0JwtBearer.
-# JWT bearer grant settings.
-class ConnectConnectorUpdateDataVariant0JwtBearer
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataVariant0JwtBearerMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0JwtBearerMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataVariant0JwtBearerMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [Boolean] Whether JWT bearer grants are enabled.
-  attr_reader :enabled
-  # @return [Array_of_String] Default scopes to request when token params specify scopes: [\"*\"].
-  attr_reader :scopes
-  # @return [String] Default JWT subject claim.
-  attr_reader :sub
-  # @return [String] Default JWT issuer claim.
-  attr_reader :iss
-  # @return [String] Default JWT audience claim.
-  attr_reader :aud
-  # @return [Hash] Additional claims included in generated JWT assertions.
-  attr_reader :additional_claims
-  # @return [Float] JWT lifetime in seconds.
-  attr_reader :ttl
-  # @return [Boolean] Whether JWT bearer requests also use client credentials.
-  attr_reader :use_client_credentials
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataVariant0ClientAssertionMetadata
-  FIELDS = {
-    type: "type",
-    ttl: "ttl",
-    claims: "claims",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateDataVariant0ClientAssertion.
-# `private_key_jwt` client assertion settings.
-class ConnectConnectorUpdateDataVariant0ClientAssertion
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataVariant0ClientAssertionMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0ClientAssertionMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataVariant0ClientAssertionMetadata::DECODERS
-
-  # @return [String] OAuth client assertion type. Defaults to urn:ietf:params:oauth:client-assertion-type:jwt-bearer. An empty string clears the configured type.
-  attr_reader :type
-  # @return [Float] Client assertion lifetime in seconds.
-  attr_reader :ttl
-  # @return [Hash] Additional claims included in the client assertion.
-  attr_reader :claims
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataVariant1ToAddItemMetadata
+    FIELDS = {
+      scope: 'scope',
+      expires_at: 'expiresAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for ConnectConnectorUpdateDataVariant1ToAddItem.
+  # Required object value serialized in the `toAdd[]` wire field.
+  class ConnectConnectorUpdateDataVariant1ToAddItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataVariant1ToAddItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant1ToAddItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataVariant1ToAddItemMetadata::DECODERS
+
+    # @return [String] Optional scope associated with the API key value.
+    attr_reader :scope
+    # @return [Integer] The timestamp when the API key value expires in milliseconds.
+    attr_reader :expires_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataVariant0Metadata
-  FIELDS = {
-    server_url: "serverUrl",
-    server_config: "serverConfig",
-    client_id: "clientId",
-    client_name: "clientName",
-    token_endpoint_auth_method: "tokenEndpointAuthMethod",
-    response_type: "responseType",
-    pkce_required: "pkceRequired",
-    code_challenge_method: "codeChallengeMethod",
-    user_authorization: "userAuthorization",
-    refresh_tokens: "refreshTokens",
-    client_credentials: "clientCredentials",
-    forwarded_claims: "forwardedClaims",
-    default_audience: "defaultAudience",
-    default_resource: "defaultResource",
-    default_token_expires_in: "defaultTokenExpiresIn",
-    authorization_url_params: "authorizationUrlParams",
-    jwt_bearer: "jwtBearer",
-    client_assertion: "clientAssertion",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    server_config: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdateDataVariant0ServerConfig.from_hash(value)
-    end,
-    user_authorization: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdateDataVariant0UserAuthorization.from_hash(value)
-    end,
-    refresh_tokens: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdateDataVariant0RefreshTokens.from_hash(value)
-    end,
-    client_credentials: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdateDataVariant0ClientCredentials.from_hash(value)
-    end,
-    forwarded_claims: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdateDataVariant0ForwardedClaims.from_hash(value)
-    end,
-    jwt_bearer: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdateDataVariant0JwtBearer.from_hash(value)
-    end,
-    client_assertion: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdateDataVariant0ClientAssertion.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateDataVariant0.
-class ConnectConnectorUpdateDataVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataVariant0Metadata::DECODERS
-
-  # @return [String] Authorization server base URL used for discovery.
-  attr_reader :server_url
-  # @return [ConnectConnectorUpdateDataVariant0ServerConfig] Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.
-  attr_reader :server_config
-  # @return [String] OAuth client ID.
-  attr_reader :client_id
-  # @return [String] OAuth client name.
-  attr_reader :client_name
-  # @return [String] OAuth token endpoint authentication method. Common values are client_secret_post, client_secret_basic, none, and private_key_jwt. If omitted, Vercel selects a supported method from serverConfig and otherwise uses client_secret_post.
-  attr_reader :token_endpoint_auth_method
-  # @return [String] OAuth authorization response type. Defaults to code. Other provider-supported values are accepted. An empty string clears the configured type.
-  attr_reader :response_type
-  # @return [Boolean] Whether user authorization must use PKCE.
-  attr_reader :pkce_required
-  # @return [String] PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it. An empty string clears the configured method.
-  attr_reader :code_challenge_method
-  # @return [ConnectConnectorUpdateDataVariant0UserAuthorization] User authorization grant settings.
-  attr_reader :user_authorization
-  # @return [ConnectConnectorUpdateDataVariant0RefreshTokens] Refresh token settings.
-  attr_reader :refresh_tokens
-  # @return [ConnectConnectorUpdateDataVariant0ClientCredentials] Client credentials grant settings.
-  attr_reader :client_credentials
-  # @return [ConnectConnectorUpdateDataVariant0ForwardedClaims] Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.
-  attr_reader :forwarded_claims
-  # @return [String] Default audience used when a token request omits one. An empty string clears the default.
-  attr_reader :default_audience
-  # @return [String] Default RFC 8707 resource sent on authorization and token requests when a token request omits one. An empty string clears the default.
-  attr_reader :default_resource
-  # @return [Float] Default token lifetime in seconds to use when the token response omits expires_in.
-  attr_reader :default_token_expires_in
-  # @return [Hash] Extra query parameters added to authorization URLs.
-  attr_reader :authorization_url_params
-  # @return [ConnectConnectorUpdateDataVariant0JwtBearer] JWT bearer grant settings.
-  attr_reader :jwt_bearer
-  # @return [ConnectConnectorUpdateDataVariant0ClientAssertion] `private_key_jwt` client assertion settings.
-  attr_reader :client_assertion
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataVariant1ToUpdateItemMetadata
+    FIELDS = {
+      id: 'id',
+      scope: 'scope',
+      expires_at: 'expiresAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for ConnectConnectorUpdateDataVariant1ToUpdateItem.
+  # Required object value serialized in the `toUpdate[]` wire field.
+  class ConnectConnectorUpdateDataVariant1ToUpdateItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataVariant1ToUpdateItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant1ToUpdateItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataVariant1ToUpdateItemMetadata::DECODERS
+
+    # @return [String] Stored API key value ID.
+    attr_reader :id
+    # @return [String] Replacement scope. Use null to remove the scope.
+    attr_reader :scope
+    # @return [Object] The timestamp when the API key value expires in milliseconds.
+    attr_reader :expires_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataVariant1Metadata
+    FIELDS = {
+      to_delete: 'toDelete',
+      to_add: 'toAdd',
+      to_update: 'toUpdate',
+      instructions: 'instructions'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      to_add: lambda do |value|
+        value&.map { |item| ::OctridevVercel::ConnectConnectorUpdateDataVariant1ToAddItem.from_hash(item) }
+      end,
+      to_update: lambda do |value|
+        value&.map { |item| ::OctridevVercel::ConnectConnectorUpdateDataVariant1ToUpdateItem.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for ConnectConnectorUpdateDataVariant1.
+  class ConnectConnectorUpdateDataVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataVariant1ToAddItemMetadata
-  FIELDS = {
-    scope: "scope",
-    expires_at: "expiresAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [Array_of_String] Stored API key value IDs to delete.
+    attr_reader :to_delete
+    # @return [Array_of_ConnectConnectorUpdateDataVariant1ToAddItem] API key values to add.
+    attr_reader :to_add
+    # @return [Array_of_ConnectConnectorUpdateDataVariant1ToUpdateItem] Existing API key values to update.
+    attr_reader :to_update
+    # @return [String] Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.
+    attr_reader :instructions
 
-# API model for ConnectConnectorUpdateDataVariant1ToAddItem.
-# Required object value serialized in the `toAdd[]` wire field.
-class ConnectConnectorUpdateDataVariant1ToAddItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataVariant1ToAddItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant1ToAddItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataVariant1ToAddItemMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Optional scope associated with the API key value.
-  attr_reader :scope
-  # @return [Integer] The timestamp when the API key value expires in milliseconds.
-  attr_reader :expires_at
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataVariant2OwnerMetadata
+    FIELDS = {
+      type: 'type',
+      id: 'id',
+      slug: 'slug',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      id
+      slug
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdateDataVariant2OwnerType.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for ConnectConnectorUpdateDataVariant2Owner.
+  # GitHub App owner.
+  class ConnectConnectorUpdateDataVariant2Owner
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataVariant2OwnerMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant2OwnerMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataVariant2OwnerMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataVariant1ToUpdateItemMetadata
-  FIELDS = {
-    id: "id",
-    scope: "scope",
-    expires_at: "expiresAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [ConnectConnectorUpdateDataVariant2OwnerType] GitHub App owner type.
+    attr_reader :type
+    # @return [Integer] GitHub App owner numeric ID.
+    attr_reader :id
+    # @return [String] GitHub App owner login.
+    attr_reader :slug
+    # @return [String] GitHub App owner display name.
+    attr_reader :name
 
-# API model for ConnectConnectorUpdateDataVariant1ToUpdateItem.
-# Required object value serialized in the `toUpdate[]` wire field.
-class ConnectConnectorUpdateDataVariant1ToUpdateItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataVariant1ToUpdateItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant1ToUpdateItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataVariant1ToUpdateItemMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Stored API key value ID.
-  attr_reader :id
-  # @return [String] Replacement scope. Use null to remove the scope.
-  attr_reader :scope
-  # @return [Object] The timestamp when the API key value expires in milliseconds.
-  attr_reader :expires_at
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataVariant2Metadata
+    FIELDS = {
+      app_id: 'appId',
+      app_slug: 'appSlug',
+      app_name: 'appName',
+      client_id: 'clientId',
+      owner: 'owner',
+      extras: 'extras'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      owner: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdateDataVariant2Owner.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for ConnectConnectorUpdateDataVariant2.
+  class ConnectConnectorUpdateDataVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataVariant2Metadata::DECODERS
+
+    # @return [Integer] GitHub App numeric ID.
+    attr_reader :app_id
+    # @return [String] GitHub App slug.
+    attr_reader :app_slug
+    # @return [String] GitHub App display name.
+    attr_reader :app_name
+    # @return [String] GitHub App OAuth client ID.
+    attr_reader :client_id
+    # @return [ConnectConnectorUpdateDataVariant2Owner] GitHub App owner.
+    attr_reader :owner
+    # @return [Hash] Additional provider metadata stored with the connector.
+    attr_reader :extras
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataVariant3OwnerOrganizationMetadata
+    FIELDS = {
+      id: 'id',
+      slug: 'slug',
+      name: 'name',
+      logo_url: 'logoUrl'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      slug
+      name
+    ].freeze
+    DECODERS = {}.freeze
   end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataVariant1Metadata
-  FIELDS = {
-    to_delete: "toDelete",
-    to_add: "toAdd",
-    to_update: "toUpdate",
-    instructions: "instructions",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    to_add: lambda do |value|
-      value&.map { |item| ::OctridevVercel::ConnectConnectorUpdateDataVariant1ToAddItem.from_hash(item) }
-    end,
-    to_update: lambda do |value|
-      value&.map { |item| ::OctridevVercel::ConnectConnectorUpdateDataVariant1ToUpdateItem.from_hash(item) }
-    end,
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateDataVariant1.
-class ConnectConnectorUpdateDataVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataVariant1Metadata::DECODERS
-
-  # @return [Array_of_String] Stored API key value IDs to delete.
-  attr_reader :to_delete
-  # @return [Array_of_ConnectConnectorUpdateDataVariant1ToAddItem] API key values to add.
-  attr_reader :to_add
-  # @return [Array_of_ConnectConnectorUpdateDataVariant1ToUpdateItem] Existing API key values to update.
-  attr_reader :to_update
-  # @return [String] Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.
-  attr_reader :instructions
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataVariant2OwnerMetadata
-  FIELDS = {
-    type: "type",
-    id: "id",
-    slug: "slug",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    id
-    slug
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdateDataVariant2OwnerType.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateDataVariant2Owner.
-# GitHub App owner.
-class ConnectConnectorUpdateDataVariant2Owner
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataVariant2OwnerMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant2OwnerMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataVariant2OwnerMetadata::DECODERS
-
-  # @return [ConnectConnectorUpdateDataVariant2OwnerType] GitHub App owner type.
-  attr_reader :type
-  # @return [Integer] GitHub App owner numeric ID.
-  attr_reader :id
-  # @return [String] GitHub App owner login.
-  attr_reader :slug
-  # @return [String] GitHub App owner display name.
-  attr_reader :name
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataVariant2Metadata
-  FIELDS = {
-    app_id: "appId",
-    app_slug: "appSlug",
-    app_name: "appName",
-    client_id: "clientId",
-    owner: "owner",
-    extras: "extras",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    owner: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdateDataVariant2Owner.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateDataVariant2.
-class ConnectConnectorUpdateDataVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataVariant2Metadata::DECODERS
-
-  # @return [Integer] GitHub App numeric ID.
-  attr_reader :app_id
-  # @return [String] GitHub App slug.
-  attr_reader :app_slug
-  # @return [String] GitHub App display name.
-  attr_reader :app_name
-  # @return [String] GitHub App OAuth client ID.
-  attr_reader :client_id
-  # @return [ConnectConnectorUpdateDataVariant2Owner] GitHub App owner.
-  attr_reader :owner
-  # @return [Hash] Additional provider metadata stored with the connector.
-  attr_reader :extras
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataVariant3OwnerOrganizationMetadata
-  FIELDS = {
-    id: "id",
-    slug: "slug",
-    name: "name",
-    logo_url: "logoUrl",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    slug
-    name
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
 end

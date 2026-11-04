@@ -13,7 +13,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX6a3bd60d6b
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -41,9 +41,9 @@ module OctridevVercel
         BACKOFFICE = 'backoffice'
         IMPORT_RECOMMENDED_INTEGRATIONS = 'import-recommended-integrations'
         ORGANIZATION = 'organization'
-        VALUES = [
-          'marketplace', 'deploy-button', 'external', 'v0', 'resource-claims', 'cli', 'oauth',
-          'backoffice', 'import-recommended-integrations', 'organization'
+        VALUES = %w[
+          marketplace deploy-button external v0 resource-claims cli oauth
+          backoffice import-recommended-integrations organization
         ].freeze
         def self.from_value(value)
           value
@@ -54,7 +54,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX3a93f7c93a
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -104,7 +104,7 @@ module OctridevVercel
         MARKETPLACE = 'marketplace'
         EXTERNAL = 'external'
         PROVISIONING = 'provisioning'
-        VALUES = ['marketplace', 'external', 'provisioning'].freeze
+        VALUES = %w[marketplace external provisioning].freeze
         def self.from_value(value)
           value
         end
@@ -114,7 +114,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX402d536533
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -124,7 +124,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX64a165d70e
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -163,7 +163,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX8e67336fb1
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -192,7 +192,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX75b2eb4922
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -207,8 +207,8 @@ module OctridevVercel
         RESUMED = 'resumed'
         SUSPENDED = 'suspended'
         UNINSTALLED = 'uninstalled'
-        VALUES = [
-          'error', 'onboarding', 'pending', 'ready', 'resumed', 'suspended', 'uninstalled'
+        VALUES = %w[
+          error onboarding pending ready resumed suspended uninstalled
         ].freeze
         def self.from_value(value)
           value
@@ -229,7 +229,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0325dc6b6a
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -259,7 +259,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX87d9c3c3d1
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -269,7 +269,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX05900e9533
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -279,7 +279,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX454c8160f2
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -308,7 +308,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0916b53aa3
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -327,7 +327,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemProtocolsExperimeXf19ffdf779
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = ['disabled', 'enabled'].freeze
+        VALUES = %w[disabled enabled].freeze
         def self.from_value(value)
           value
         end
@@ -337,7 +337,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXf028c8ad34
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -367,7 +367,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemProtocolsWorkflowStatus
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = ['disabled', 'enabled'].freeze
+        VALUES = %w[disabled enabled].freeze
         def self.from_value(value)
           value
         end
@@ -454,9 +454,9 @@ module OctridevVercel
         BACKOFFICE = 'backoffice'
         IMPORT_RECOMMENDED_INTEGRATIONS = 'import-recommended-integrations'
         ORGANIZATION = 'organization'
-        VALUES = [
-          'marketplace', 'deploy-button', 'external', 'v0', 'resource-claims', 'cli', 'oauth',
-          'backoffice', 'import-recommended-integrations', 'organization'
+        VALUES = %w[
+          marketplace deploy-button external v0 resource-claims cli oauth
+          backoffice import-recommended-integrations organization
         ].freeze
         def self.from_value(value)
           value
@@ -505,7 +505,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProXffb0849d71
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -526,7 +526,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -541,8 +541,8 @@ module OctridevVercel
         RESUMED = 'resumed'
         SUSPENDED = 'suspended'
         UNINSTALLED = 'uninstalled'
-        VALUES = [
-          'error', 'onboarding', 'pending', 'ready', 'resumed', 'suspended', 'uninstalled'
+        VALUES = %w[
+          error onboarding pending ready resumed suspended uninstalled
         ].freeze
         def self.from_value(value)
           value
@@ -553,7 +553,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX925d093eb3
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end

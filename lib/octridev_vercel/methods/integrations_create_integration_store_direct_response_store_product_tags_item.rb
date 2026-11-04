@@ -68,17 +68,17 @@ module OctridevVercel
         VECTOR = 'vector'
         VIDEO = 'video'
         WORKFLOW = 'workflow'
-        VALUES = [
-          'ai', 'authentication', 'blob', 'checks', 'drains', 'edge-config', 'experimentation', 'kv',
-          'libsql', 'logDrain', 'mcp', 'messaging', 'mysql', 'observability', 'other', 'postgres',
-          'rds', 'redis', 'sqlite', 'storage', 'tag_agents', 'tag_ai', 'tag_analytics',
-          'tag_authentication', 'tag_checks', 'tag_cms', 'tag_code_repository', 'tag_code_review',
-          'tag_code_security', 'tag_code_testing', 'tag_commerce', 'tag_databases', 'tag_dev_tools',
-          'tag_experimentation', 'tag_flags', 'tag_logDrain', 'tag_logging', 'tag_messaging',
-          'tag_monitoring', 'tag_observability', 'tag_other', 'tag_payments', 'tag_performance',
-          'tag_productivity', 'tag_searching', 'tag_security', 'tag_storage', 'tag_support_agent',
-          'tag_testing', 'tag_traceDrain', 'tag_video', 'tag_web_automation', 'tag_workflow',
-          'traceDrain', 'vector', 'video', 'workflow'
+        VALUES = %w[
+          ai authentication blob checks drains edge-config experimentation kv
+          libsql logDrain mcp messaging mysql observability other postgres
+          rds redis sqlite storage tag_agents tag_ai tag_analytics
+          tag_authentication tag_checks tag_cms tag_code_repository tag_code_review
+          tag_code_security tag_code_testing tag_commerce tag_databases tag_dev_tools
+          tag_experimentation tag_flags tag_logDrain tag_logging tag_messaging
+          tag_monitoring tag_observability tag_other tag_payments tag_performance
+          tag_productivity tag_searching tag_security tag_storage tag_support_agent
+          tag_testing tag_traceDrain tag_video tag_web_automation tag_workflow
+          traceDrain vector video workflow
         ].freeze
         def self.from_value(value)
           value
@@ -104,8 +104,8 @@ module OctridevVercel
         RESUMED = 'resumed'
         SUSPENDED = 'suspended'
         UNINSTALLED = 'uninstalled'
-        VALUES = [
-          'error', 'onboarding', 'pending', 'ready', 'resumed', 'suspended', 'uninstalled'
+        VALUES = %w[
+          error onboarding pending ready resumed suspended uninstalled
         ].freeze
         def self.from_value(value)
           value
@@ -126,7 +126,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX87a7899770
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -155,7 +155,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX27d3e44c74
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -277,9 +277,9 @@ module OctridevVercel
         GITHUB_LIMITED = 'github-limited'
         GITLAB = 'gitlab'
         VERCEL = 'vercel'
-        VALUES = [
-          'bitbucket', 'cursor-origin', 'github', 'github-custom-host', 'github-limited', 'gitlab',
-          'vercel'
+        VALUES = %w[
+          bitbucket cursor-origin github github-custom-host github-limited gitlab
+          vercel
         ].freeze
         def self.from_value(value)
           value
@@ -290,7 +290,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemProtocolsLogDrainFormat
         JSON = 'json'
         NDJSON = 'ndjson'
-        VALUES = ['json', 'ndjson'].freeze
+        VALUES = %w[json ndjson].freeze
         def self.from_value(value)
           value
         end
@@ -377,7 +377,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProXb32d2698cb
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -387,7 +387,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb91172843c
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -436,7 +436,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX24608e2c59
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -481,13 +481,13 @@ module OctridevVercel
         TAG_VIDEO = 'tag_video'
         TAG_WEB_AUTOMATION = 'tag_web_automation'
         TAG_WORKFLOW = 'tag_workflow'
-        VALUES = [
-          'tag_agents', 'tag_ai', 'tag_analytics', 'tag_authentication', 'tag_cms',
-          'tag_code_repository', 'tag_code_review', 'tag_code_security', 'tag_code_testing',
-          'tag_commerce', 'tag_databases', 'tag_dev_tools', 'tag_experimentation', 'tag_flags',
-          'tag_logging', 'tag_messaging', 'tag_monitoring', 'tag_observability', 'tag_payments',
-          'tag_performance', 'tag_productivity', 'tag_searching', 'tag_security',
-          'tag_support_agent', 'tag_testing', 'tag_video', 'tag_web_automation', 'tag_workflow'
+        VALUES = %w[
+          tag_agents tag_ai tag_analytics tag_authentication tag_cms
+          tag_code_repository tag_code_review tag_code_security tag_code_testing
+          tag_commerce tag_databases tag_dev_tools tag_experimentation tag_flags
+          tag_logging tag_messaging tag_monitoring tag_observability tag_payments
+          tag_performance tag_productivity tag_searching tag_security
+          tag_support_agent tag_testing tag_video tag_web_automation tag_workflow
         ].freeze
         def self.from_value(value)
           value
@@ -498,7 +498,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX30b1213da4
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -508,7 +508,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXfdcfb8590e
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -538,7 +538,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX94090e6461
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -548,7 +548,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX86b5e98c48
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -577,7 +577,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProXd3721bd7e2
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end

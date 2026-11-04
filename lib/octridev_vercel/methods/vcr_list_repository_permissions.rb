@@ -31,7 +31,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('idOrName', id_or_name, max: 255)
 
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
@@ -41,9 +40,9 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            "/v1/vcr/repository/",
+            '/v1/vcr/repository/',
             SdkClient.encode_path_segment(id_or_name),
-            "/permissions"
+            '/permissions'
           ].join,
           config: config,
           query: {
@@ -51,16 +50,16 @@ module OctridevVercel
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::VcrRepositoryPermissionList,
           decoder: :json,
           operation_id: 'list_repository_permissions',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
-    ListRepositoryPermissionsPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
+      ListRepositoryPermissionsPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
 
       # Lists the teams that a container registry repository is shared with. Supply `projectId` and `idOrName` to identify the repository, and use `cursor` to continue through paginated results.
       #
@@ -98,9 +97,11 @@ module OctridevVercel
             )
             items = page.permissions || []
             break if items.empty?
+
             items.each { |item| y << item }
             next_cursor = page.next_cursor
             break if next_cursor.nil?
+
             cursor = next_cursor
           end
         end
@@ -130,10 +131,12 @@ module OctridevVercel
             )
             items = page.permissions || []
             break if items.empty?
+
             next_cursor = page.next_cursor
             has_more = !next_cursor.nil?
             y << ListRepositoryPermissionsPage.new(data: page, items: items, has_more: has_more)
             break unless has_more
+
             cursor = next_cursor
           end
         end
@@ -157,25 +160,24 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('idOrName', id_or_name, max: 255)
 
         SdkClient.request(
           'DELETE',
           [
-            "/v1/vcr/repository/",
+            '/v1/vcr/repository/',
             SdkClient.encode_path_segment(id_or_name),
-            "/permissions/all"
+            '/permissions/all'
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'clear_repository_permissions',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -205,7 +207,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('idOrName', id_or_name, max: 255)
 
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
@@ -213,9 +214,9 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            "/v1/vcr/repository/",
+            '/v1/vcr/repository/',
             SdkClient.encode_path_segment(id_or_name),
-            "/tags"
+            '/tags'
           ].join,
           config: config,
           query: {
@@ -225,16 +226,16 @@ module OctridevVercel
             'sortBy' => QueryValue.new(sort_by, style: 'form', explode: true),
             'sortOrder' => QueryValue.new(sort_order, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Vcr::ListRepositoryTagsResponse,
           decoder: :json,
           operation_id: 'list_repository_tags',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
-    ListRepositoryTagsPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
+      ListRepositoryTagsPage = ::Struct.new(:data, :items, :has_more, keyword_init: true)
 
       # Lists tags in a VCR repository, with optional pagination and sorting for non-pinned tags. Use `cursor` to continue from a previous page and the sort parameters to control tag ordering. The response includes a `nextCursor` when another page is available.
       #
@@ -278,9 +279,11 @@ module OctridevVercel
             )
             items = page.tags || []
             break if items.empty?
+
             items.each { |item| y << item }
             next_cursor = page.next_cursor
             break if next_cursor.nil?
+
             cursor = next_cursor
           end
         end
@@ -314,10 +317,12 @@ module OctridevVercel
             )
             items = page.tags || []
             break if items.empty?
+
             next_cursor = page.next_cursor
             has_more = !next_cursor.nil?
             y << ListRepositoryTagsPage.new(data: page, items: items, has_more: has_more)
             break unless has_more
+
             cursor = next_cursor
           end
         end
@@ -333,16 +338,7 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_repository_tag) do |
-        config:,
-        id_or_name:,
-        tag:,
-        project_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_repository_tag) do |config:, id_or_name:, tag:, project_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         Validation.validate_length('idOrName', id_or_name, max: 255)
 
         Validation.validate_length('tag', tag, max: 255)
@@ -350,21 +346,21 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            "/v1/vcr/repository/",
+            '/v1/vcr/repository/',
             SdkClient.encode_path_segment(id_or_name),
-            "/tags/",
+            '/tags/',
             SdkClient.encode_path_segment(tag)
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Vcr::GetRepositoryTagResponse,
           decoder: :json,
           operation_id: 'get_repository_tag',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -380,16 +376,7 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_repository_image) do |
-        config:,
-        id_or_name:,
-        image_id_or_digest:,
-        project_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_repository_image) do |config:, id_or_name:, image_id_or_digest:, project_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         Validation.validate_length('idOrName', id_or_name, max: 255)
 
         Validation.validate_length('imageIdOrDigest', image_id_or_digest, max: 255)
@@ -397,21 +384,21 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            "/v1/vcr/repository/",
+            '/v1/vcr/repository/',
             SdkClient.encode_path_segment(id_or_name),
-            "/images/",
+            '/images/',
             SdkClient.encode_path_segment(image_id_or_digest)
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Vcr::GetRepositoryImageResponse,
           decoder: :json,
           operation_id: 'get_repository_image',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -434,7 +421,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_length('idOrName', id_or_name, max: 255)
 
         Validation.validate_length('imageId', image_id, max: 255)
@@ -442,20 +428,20 @@ module OctridevVercel
         SdkClient.request(
           'DELETE',
           [
-            "/v1/vcr/repository/",
+            '/v1/vcr/repository/',
             SdkClient.encode_path_segment(id_or_name),
-            "/images/",
+            '/images/',
             SdkClient.encode_path_segment(image_id)
           ].join,
           config: config,
           query: {
             'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'delete_repository_image',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
     end

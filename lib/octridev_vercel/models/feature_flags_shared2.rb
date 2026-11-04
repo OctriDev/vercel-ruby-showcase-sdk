@@ -5,674 +5,673 @@
 
 # feature_flags domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalSegmentMetadataCreatorMetadata
-  FIELDS = {
-    id: "id",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for SegmentMetadataCreator.
-# Optional object value serialized in the `creator` wire field.
-class SegmentMetadataCreator
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSegmentMetadataCreatorMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSegmentMetadataCreatorMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSegmentMetadataCreatorMetadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `id` wire field.
-  attr_reader :id
-  # @return [String] Required `string` value serialized in the `name` wire field.
-  attr_reader :name
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalSegmentMetadataCreatorMetadata
+    FIELDS = {
+      id: 'id',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for SegmentMetadataCreator.
+  # Optional object value serialized in the `creator` wire field.
+  class SegmentMetadataCreator
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSegmentMetadataCreatorMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSegmentMetadataCreatorMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSegmentMetadataCreatorMetadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `id` wire field.
+    attr_reader :id
+    # @return [String] Required `string` value serialized in the `name` wire field.
+    attr_reader :name
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalSegmentMetadataMetadata
+    FIELDS = {
+      creator: 'creator'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      creator: lambda do |value|
+        ::OctridevVercel::SegmentMetadataCreator.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for SegmentMetadata.
+  # Optional object value serialized in the `metadata` wire field.
+  class SegmentMetadata
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSegmentMetadataMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSegmentMetadataMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSegmentMetadataMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalSegmentMetadataMetadata
-  FIELDS = {
-    creator: "creator",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    creator: lambda do |value|
-      ::OctridevVercel::SegmentMetadataCreator.from_hash(value)
-    end,
-  }.freeze
-end
+    # @return [SegmentMetadataCreator] Optional object value serialized in the `creator` wire field.
+    attr_reader :creator
 
-# API model for SegmentMetadata.
-# Optional object value serialized in the `metadata` wire field.
-class SegmentMetadata
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSegmentMetadataMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSegmentMetadataMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSegmentMetadataMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [SegmentMetadataCreator] Optional object value serialized in the `creator` wire field.
-  attr_reader :creator
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalSegmentMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      created_by: 'createdBy',
+      data: 'data',
+      description: 'description',
+      hint: 'hint',
+      id: 'id',
+      label: 'label',
+      project_id: 'projectId',
+      slug: 'slug',
+      type_name: 'typeName',
+      updated_at: 'updatedAt',
+      used_by_flags: 'usedByFlags',
+      used_by_segments: 'usedBySegments',
+      metadata: 'metadata'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      data
+      hint
+      id
+      label
+      project_id
+      slug
+      type_name
+      updated_at
+    ].freeze
+    DECODERS = {
+      data: lambda do |value|
+        ::OctridevVercel::SegmentData.from_hash(value)
+      end,
+      type_name: lambda do |value|
+        ::OctridevVercel::SegmentTypeName.from_value(value)
+      end,
+      metadata: lambda do |value|
+        ::OctridevVercel::SegmentMetadata.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for Segment.
+  # Typed representation of the `Segment` API schema.
+  class Segment
+    include UpdateFlagSegmentResponse
+
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSegmentMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSegmentMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSegmentMetadata::DECODERS
+
+    # @return [Float] Required `number` value serialized in the `createdAt` wire field.
+    attr_reader :created_at
+    # @return [String] Optional `string` value serialized in the `createdBy` wire field.
+    attr_reader :created_by
+    # @return [SegmentData] Required object value serialized in the `data` wire field.
+    attr_reader :data
+    # @return [String] Optional `string` value serialized in the `description` wire field.
+    attr_reader :description
+    # @return [String] Required `string` value serialized in the `hint` wire field.
+    attr_reader :hint
+    # @return [String] Required `string` value serialized in the `id` wire field.
+    attr_reader :id
+    # @return [String] Required `string` value serialized in the `label` wire field.
+    attr_reader :label
+    # @return [String] Required `string` value serialized in the `projectId` wire field.
+    attr_reader :project_id
+    # @return [String] Required `string` value serialized in the `slug` wire field.
+    attr_reader :slug
+    # @return [SegmentTypeName] Required enumerated value serialized in the `typeName` wire field.
+    attr_reader :type_name
+    # @return [Float] Required `number` value serialized in the `updatedAt` wire field.
+    attr_reader :updated_at
+    # @return [Array_of_String] Optional array value serialized in the `usedByFlags` wire field.
+    attr_reader :used_by_flags
+    # @return [Array_of_String] Optional array value serialized in the `usedBySegments` wire field.
+    attr_reader :used_by_segments
+    # @return [SegmentMetadata] Optional object value serialized in the `metadata` wire field.
+    attr_reader :metadata
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSegmentMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    created_by: "createdBy",
-    data: "data",
-    description: "description",
-    hint: "hint",
-    id: "id",
-    label: "label",
-    project_id: "projectId",
-    slug: "slug",
-    type_name: "typeName",
-    updated_at: "updatedAt",
-    used_by_flags: "usedByFlags",
-    used_by_segments: "usedBySegments",
-    metadata: "metadata",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    data
-    hint
-    id
-    label
-    project_id
-    slug
-    type_name
-    updated_at
-  ].freeze
-  DECODERS = {
-    data: lambda do |value|
-      ::OctridevVercel::SegmentData.from_hash(value)
-    end,
-    type_name: lambda do |value|
-      ::OctridevVercel::SegmentTypeName.from_value(value)
-    end,
-    metadata: lambda do |value|
-      ::OctridevVercel::SegmentMetadata.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for Segment.
-# Typed representation of the `Segment` API schema.
-class Segment
-  include UpdateFlagSegmentResponse
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSegmentMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSegmentMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSegmentMetadata::DECODERS
-
-  # @return [Float] Required `number` value serialized in the `createdAt` wire field.
-  attr_reader :created_at
-  # @return [String] Optional `string` value serialized in the `createdBy` wire field.
-  attr_reader :created_by
-  # @return [SegmentData] Required object value serialized in the `data` wire field.
-  attr_reader :data
-  # @return [String] Optional `string` value serialized in the `description` wire field.
-  attr_reader :description
-  # @return [String] Required `string` value serialized in the `hint` wire field.
-  attr_reader :hint
-  # @return [String] Required `string` value serialized in the `id` wire field.
-  attr_reader :id
-  # @return [String] Required `string` value serialized in the `label` wire field.
-  attr_reader :label
-  # @return [String] Required `string` value serialized in the `projectId` wire field.
-  attr_reader :project_id
-  # @return [String] Required `string` value serialized in the `slug` wire field.
-  attr_reader :slug
-  # @return [SegmentTypeName] Required enumerated value serialized in the `typeName` wire field.
-  attr_reader :type_name
-  # @return [Float] Required `number` value serialized in the `updatedAt` wire field.
-  attr_reader :updated_at
-  # @return [Array_of_String] Optional array value serialized in the `usedByFlags` wire field.
-  attr_reader :used_by_flags
-  # @return [Array_of_String] Optional array value serialized in the `usedBySegments` wire field.
-  attr_reader :used_by_segments
-  # @return [SegmentMetadata] Optional object value serialized in the `metadata` wire field.
-  attr_reader :metadata
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the SegmentDataRulesItemConditionsItemCmp SDK namespace.
+  module SegmentDataRulesItemConditionsItemCmp
+    CONTAINS = '!contains'
+    ENDS_WITH = '!endsWith'
+    EQ = '!eq'
+    EX = '!ex'
+    ONE_OF = '!oneOf'
+    REGEX = '!regex'
+    STARTS_WITH = '!startsWith'
+    AFTER = 'after'
+    BEFORE = 'before'
+    CONTAINS_2 = 'contains'
+    CONTAINS_ALL_OF = 'containsAllOf'
+    CONTAINS_ANY_OF = 'containsAnyOf'
+    CONTAINS_NONE_OF = 'containsNoneOf'
+    ENDS_WITH_2 = 'endsWith'
+    EQ_2 = 'eq'
+    EX_2 = 'ex'
+    GT = 'gt'
+    GTE = 'gte'
+    LT = 'lt'
+    LTE = 'lte'
+    ONE_OF_2 = 'oneOf'
+    REGEX_2 = 'regex'
+    STARTS_WITH_2 = 'startsWith'
+    VALUES = [
+      '!contains', '!endsWith', '!eq', '!ex', '!oneOf', '!regex', '!startsWith', 'after', 'before',
+      'contains', 'containsAllOf', 'containsAnyOf', 'containsNoneOf', 'endsWith', 'eq', 'ex', 'gt',
+      'gte', 'lt', 'lte', 'oneOf', 'regex', 'startsWith'
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the SegmentDataRulesItemConditionsItemCmpOptionsIgnoreCase SDK namespace.
+  module SegmentDataRulesItemConditionsItemCmpOptionsIgnoreCase
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the SegmentTypeName SDK namespace.
+  module SegmentTypeName
+    SEGMENT = 'segment'
+    VALUES = ['segment'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the SegmentDataRulesItemConditionsItemCmp SDK namespace.
-module SegmentDataRulesItemConditionsItemCmp
-  CONTAINS = '!contains'
-  ENDS_WITH = '!endsWith'
-  EQ = '!eq'
-  EX = '!ex'
-  ONE_OF = '!oneOf'
-  REGEX = '!regex'
-  STARTS_WITH = '!startsWith'
-  AFTER = 'after'
-  BEFORE = 'before'
-  CONTAINS_2 = 'contains'
-  CONTAINS_ALL_OF = 'containsAllOf'
-  CONTAINS_ANY_OF = 'containsAnyOf'
-  CONTAINS_NONE_OF = 'containsNoneOf'
-  ENDS_WITH_2 = 'endsWith'
-  EQ_2 = 'eq'
-  EX_2 = 'ex'
-  GT = 'gt'
-  GTE = 'gte'
-  LT = 'lt'
-  LTE = 'lte'
-  ONE_OF_2 = 'oneOf'
-  REGEX_2 = 'regex'
-  STARTS_WITH_2 = 'startsWith'
-  VALUES = [
-    '!contains', '!endsWith', '!eq', '!ex', '!oneOf', '!regex', '!startsWith', 'after', 'before',
-    'contains', 'containsAllOf', 'containsAnyOf', 'containsNoneOf', 'endsWith', 'eq', 'ex', 'gt',
-    'gte', 'lt', 'lte', 'oneOf', 'regex', 'startsWith'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the SegmentDataRulesItemConditionsItemCmpOptionsIgnoreCase SDK namespace.
-module SegmentDataRulesItemConditionsItemCmpOptionsIgnoreCase
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the SegmentTypeName SDK namespace.
-module SegmentTypeName
-  SEGMENT = 'segment'
-  VALUES = ['segment'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSegmentDataRulesItemConditionsItemLhsVariant0Metadata
-  FIELDS = {
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::SegmentDataRulesItemConditionsItemLhsVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for SegmentDataRulesItemConditionsItemLhsVariant0.
-class SegmentDataRulesItemConditionsItemLhsVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSegmentDataRulesItemConditionsItemLhsVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemConditionsItemLhsVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSegmentDataRulesItemConditionsItemLhsVariant0Metadata::DECODERS
-
-  # @return [SegmentDataRulesItemConditionsItemLhsVariant0Type] Required enumerated value serialized in the `type` wire field.
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalSegmentDataRulesItemConditionsItemLhsVariant0Metadata
+    FIELDS = {
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::SegmentDataRulesItemConditionsItemLhsVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for SegmentDataRulesItemConditionsItemLhsVariant0.
+  class SegmentDataRulesItemConditionsItemLhsVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSegmentDataRulesItemConditionsItemLhsVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemConditionsItemLhsVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSegmentDataRulesItemConditionsItemLhsVariant0Metadata::DECODERS
+
+    # @return [SegmentDataRulesItemConditionsItemLhsVariant0Type] Required enumerated value serialized in the `type` wire field.
+    attr_reader :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalSegmentDataRulesItemConditionsItemLhsVariant1Metadata
+    FIELDS = {
+      attribute: 'attribute',
+      kind: 'kind',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      attribute
+      kind
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::SegmentDataRulesItemConditionsItemLhsVariant1Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for SegmentDataRulesItemConditionsItemLhsVariant1.
+  class SegmentDataRulesItemConditionsItemLhsVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSegmentDataRulesItemConditionsItemLhsVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemConditionsItemLhsVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSegmentDataRulesItemConditionsItemLhsVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalSegmentDataRulesItemConditionsItemLhsVariant1Metadata
-  FIELDS = {
-    attribute: "attribute",
-    kind: "kind",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    attribute
-    kind
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::SegmentDataRulesItemConditionsItemLhsVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [String] Required `string` value serialized in the `attribute` wire field.
+    attr_reader :attribute
+    # @return [String] Required `string` value serialized in the `kind` wire field.
+    attr_reader :kind
+    # @return [SegmentDataRulesItemConditionsItemLhsVariant1Type] Required enumerated value serialized in the `type` wire field.
+    attr_reader :type
 
-# API model for SegmentDataRulesItemConditionsItemLhsVariant1.
-class SegmentDataRulesItemConditionsItemLhsVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSegmentDataRulesItemConditionsItemLhsVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemConditionsItemLhsVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSegmentDataRulesItemConditionsItemLhsVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `attribute` wire field.
-  attr_reader :attribute
-  # @return [String] Required `string` value serialized in the `kind` wire field.
-  attr_reader :kind
-  # @return [SegmentDataRulesItemConditionsItemLhsVariant1Type] Required enumerated value serialized in the `type` wire field.
-  attr_reader :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the SegmentDataRulesItemConditionsItemLhs SDK namespace.
+  module SegmentDataRulesItemConditionsItemLhs
+    DISCRIMINATOR_MAPPING = {
+      'segment' => -> { SegmentDataRulesItemConditionsItemLhsVariant0 },
+      'entity' => -> { SegmentDataRulesItemConditionsItemLhsVariant1 }
+    }.freeze
+
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('SegmentDataRulesItemConditionsItemLhs', 'variant', "Unknown SegmentDataRulesItemConditionsItemLhs discriminator: #{hash['type'].inspect}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the SegmentDataRulesItemConditionsItemLhsVariant0Type SDK namespace.
+  module SegmentDataRulesItemConditionsItemLhsVariant0Type
+    SEGMENT = 'segment'
+    VALUES = ['segment'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('SegmentDataRulesItemConditionsItemLhsVariant0Type', 'enum', "Unknown SegmentDataRulesItemConditionsItemLhsVariant0Type: #{value}")
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # Defines the SegmentDataRulesItemConditionsItemLhsVariant1Type SDK namespace.
+  module SegmentDataRulesItemConditionsItemLhsVariant1Type
+    ENTITY = 'entity'
+    VALUES = ['entity'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Defines the SegmentDataRulesItemConditionsItemLhs SDK namespace.
-module SegmentDataRulesItemConditionsItemLhs
-  DISCRIMINATOR_MAPPING = {
-    "segment" => -> { SegmentDataRulesItemConditionsItemLhsVariant0 },
-    "entity" => -> { SegmentDataRulesItemConditionsItemLhsVariant1 },
-  }.freeze
-
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('SegmentDataRulesItemConditionsItemLhs', 'variant', "Unknown SegmentDataRulesItemConditionsItemLhs discriminator: #{hash["type"].inspect}")
-  end
-end
-
-# Defines the SegmentDataRulesItemConditionsItemLhsVariant0Type SDK namespace.
-module SegmentDataRulesItemConditionsItemLhsVariant0Type
-  SEGMENT = 'segment'
-  VALUES = ['segment'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('SegmentDataRulesItemConditionsItemLhsVariant0Type', 'enum', "Unknown SegmentDataRulesItemConditionsItemLhsVariant0Type: #{value}")
-  end
-end
-
-# Defines the SegmentDataRulesItemConditionsItemLhsVariant1Type SDK namespace.
-module SegmentDataRulesItemConditionsItemLhsVariant1Type
-  ENTITY = 'entity'
-  VALUES = ['entity'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('SegmentDataRulesItemConditionsItemLhsVariant1Type', 'enum', "Unknown SegmentDataRulesItemConditionsItemLhsVariant1Type: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant0Metadata
-  FIELDS = {
-    label: "label",
-    note: "note",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    value
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for SegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant0.
-# Required object value serialized in the `items[]` wire field.
-class SegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant0Metadata::DECODERS
-
-  # @return [String] Optional `string` value serialized in the `label` wire field.
-  attr_reader :label
-  # @return [String] Optional `string` value serialized in the `note` wire field.
-  attr_reader :note
-  # @return [Float] Required `number` value serialized in the `value` wire field.
-  attr_reader :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('SegmentDataRulesItemConditionsItemLhsVariant1Type', 'enum', "Unknown SegmentDataRulesItemConditionsItemLhsVariant1Type: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant0Metadata
+    FIELDS = {
+      label: 'label',
+      note: 'note',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      value
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for SegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant0.
+  # Required object value serialized in the `items[]` wire field.
+  class SegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant0Metadata::DECODERS
+
+    # @return [String] Optional `string` value serialized in the `label` wire field.
+    attr_reader :label
+    # @return [String] Optional `string` value serialized in the `note` wire field.
+    attr_reader :note
+    # @return [Float] Required `number` value serialized in the `value` wire field.
+    attr_reader :value
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant1Metadata
-  FIELDS = {
-    label: "label",
-    note: "note",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    value
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for SegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant1.
-# Required object value serialized in the `items[]` wire field.
-class SegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant1Metadata::DECODERS
-
-  # @return [String] Optional `string` value serialized in the `label` wire field.
-  attr_reader :label
-  # @return [String] Optional `string` value serialized in the `note` wire field.
-  attr_reader :note
-  # @return [String] Required `string` value serialized in the `value` wire field.
-  attr_reader :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant1Metadata
+    FIELDS = {
+      label: 'label',
+      note: 'note',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      value
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for SegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant1.
+  # Required object value serialized in the `items[]` wire field.
+  class SegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2ItemsItemVariant1Metadata::DECODERS
+
+    # @return [String] Optional `string` value serialized in the `label` wire field.
+    attr_reader :label
+    # @return [String] Optional `string` value serialized in the `note` wire field.
+    attr_reader :note
+    # @return [String] Required `string` value serialized in the `value` wire field.
+    attr_reader :value
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2Metadata
+    FIELDS = {
+      items: 'items',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      items
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::SegmentDataRulesItemConditionsItemRhsVariant2Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for SegmentDataRulesItemConditionsItemRhsVariant2.
+  class SegmentDataRulesItemConditionsItemRhsVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2Metadata
-  FIELDS = {
-    items: "items",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    items
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::SegmentDataRulesItemConditionsItemRhsVariant2Type.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [Array_of_Object] Required array value serialized in the `items` wire field.
+    attr_reader :items
+    # @return [SegmentDataRulesItemConditionsItemRhsVariant2Type] Required enumerated value serialized in the `type` wire field.
+    attr_reader :type
 
-# API model for SegmentDataRulesItemConditionsItemRhsVariant2.
-class SegmentDataRulesItemConditionsItemRhsVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant2Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [Array_of_Object] Required array value serialized in the `items` wire field.
-  attr_reader :items
-  # @return [SegmentDataRulesItemConditionsItemRhsVariant2Type] Required enumerated value serialized in the `type` wire field.
-  attr_reader :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalSegmentDataRulesItemConditionsItemRhsVariant3Metadata
+    FIELDS = {
+      flags: 'flags',
+      pattern: 'pattern',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      flags
+      pattern
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::SegmentDataRulesItemConditionsItemRhsVariant3Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for SegmentDataRulesItemConditionsItemRhsVariant3.
+  class SegmentDataRulesItemConditionsItemRhsVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant3Metadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `flags` wire field.
+    attr_reader :flags
+    # @return [String] Required `string` value serialized in the `pattern` wire field.
+    attr_reader :pattern
+    # @return [SegmentDataRulesItemConditionsItemRhsVariant3Type] Required enumerated value serialized in the `type` wire field.
+    attr_reader :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # Defines the SegmentDataRulesItemConditionsItemRhs SDK namespace.
+  module SegmentDataRulesItemConditionsItemRhs
+    def self.from_hash(hash)
+      return hash if hash.is_a?(::String)
+      return hash if hash.is_a?(::Float)
+      return SegmentDataRulesItemConditionsItemRhsVariant4.from_value(hash) if [true, false].include?(hash)
 
-# Internal model hydration metadata.
-class SdkInternalSegmentDataRulesItemConditionsItemRhsVariant3Metadata
-  FIELDS = {
-    flags: "flags",
-    pattern: "pattern",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    flags
-    pattern
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::SegmentDataRulesItemConditionsItemRhsVariant3Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for SegmentDataRulesItemConditionsItemRhsVariant3.
-class SegmentDataRulesItemConditionsItemRhsVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSegmentDataRulesItemConditionsItemRhsVariant3Metadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `flags` wire field.
-  attr_reader :flags
-  # @return [String] Required `string` value serialized in the `pattern` wire field.
-  attr_reader :pattern
-  # @return [SegmentDataRulesItemConditionsItemRhsVariant3Type] Required enumerated value serialized in the `type` wire field.
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      shape_mapping = {
+        'items' => SegmentDataRulesItemConditionsItemRhsVariant2,
+        'flags' => SegmentDataRulesItemConditionsItemRhsVariant3
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the SegmentDataRulesItemConditionsItemRhsVariant2Type SDK namespace.
+  module SegmentDataRulesItemConditionsItemRhsVariant2Type
+    LIST = 'list'
+    LIST_INLINE = 'list/inline'
+    VALUES = ['list', 'list/inline'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the SegmentDataRulesItemConditionsItemRhsVariant3Type SDK namespace.
+  module SegmentDataRulesItemConditionsItemRhsVariant3Type
+    REGEX = 'regex'
+    VALUES = ['regex'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the SegmentDataRulesItemConditionsItemRhs SDK namespace.
-module SegmentDataRulesItemConditionsItemRhs
-  def self.from_hash(hash)
-    return hash if hash.is_a?(::String)
-    return hash if hash.is_a?(::Float)
-    return SegmentDataRulesItemConditionsItemRhsVariant4.from_value(hash) if [true, false].include?(hash)
-    shape_mapping = {
-      "items" => SegmentDataRulesItemConditionsItemRhsVariant2,
-      "flags" => SegmentDataRulesItemConditionsItemRhsVariant3,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-  end
-end
-
-# Defines the SegmentDataRulesItemConditionsItemRhsVariant2Type SDK namespace.
-module SegmentDataRulesItemConditionsItemRhsVariant2Type
-  LIST = 'list'
-  LIST_INLINE = 'list/inline'
-  VALUES = ['list', 'list/inline'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the SegmentDataRulesItemConditionsItemRhsVariant3Type SDK namespace.
-module SegmentDataRulesItemConditionsItemRhsVariant3Type
-  REGEX = 'regex'
-  VALUES = ['regex'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the SegmentDataRulesItemConditionsItemRhsVariant4 SDK namespace.
-module SegmentDataRulesItemConditionsItemRhsVariant4
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSegmentDataRulesItemOutcomeVariant0Metadata
-  FIELDS = {
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::SegmentDataRulesItemOutcomeVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for SegmentDataRulesItemOutcomeVariant0.
-class SegmentDataRulesItemOutcomeVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSegmentDataRulesItemOutcomeVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemOutcomeVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSegmentDataRulesItemOutcomeVariant0Metadata::DECODERS
-
-  # @return [SegmentDataRulesItemOutcomeVariant0Type] Required enumerated value serialized in the `type` wire field.
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the SegmentDataRulesItemConditionsItemRhsVariant4 SDK namespace.
+  module SegmentDataRulesItemConditionsItemRhsVariant4
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalSegmentDataRulesItemOutcomeVariant0Metadata
+    FIELDS = {
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::SegmentDataRulesItemOutcomeVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for SegmentDataRulesItemOutcomeVariant0.
+  class SegmentDataRulesItemOutcomeVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSegmentDataRulesItemOutcomeVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSegmentDataRulesItemOutcomeVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSegmentDataRulesItemOutcomeVariant0Metadata::DECODERS
+
+    # @return [SegmentDataRulesItemOutcomeVariant0Type] Required enumerated value serialized in the `type` wire field.
+    attr_reader :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
+  # Internal model hydration metadata.
+  class SdkInternalSegmentDataRulesItemOutcomeVariant1BaseMetadata
+    FIELDS = {
+      attribute: 'attribute',
+      kind: 'kind',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      attribute
+      kind
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::SegmentDataRulesItemOutcomeVariant1BaseType.from_value(value)
+      end
+    }.freeze
   end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSegmentDataRulesItemOutcomeVariant1BaseMetadata
-  FIELDS = {
-    attribute: "attribute",
-    kind: "kind",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    attribute
-    kind
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::SegmentDataRulesItemOutcomeVariant1BaseType.from_value(value)
-    end,
-  }.freeze
-end
 end

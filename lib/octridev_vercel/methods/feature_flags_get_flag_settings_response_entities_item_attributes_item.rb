@@ -39,9 +39,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetFlagSettingsResponseEntitiesItemMetadata
         FIELDS = {
-          attributes: "attributes",
-          kind: "kind",
-          label: "label",
+          attributes: 'attributes',
+          kind: 'kind',
+          label: 'label'
         }.freeze
         REQUIRED_FIELDS = %i[
           attributes
@@ -51,7 +51,7 @@ module OctridevVercel
         DECODERS = {
           attributes: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::GetFlagSettingsResponseEntitiesItemAttributesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -85,12 +85,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetFlagSettingsResponseMetadataMetadata
         FIELDS = {
-          active_flag_count: "activeFlagCount",
-          archived_flag_count: "archivedFlagCount",
-          config_updated_at: "configUpdatedAt",
-          pack_revision: "packRevision",
-          pack_size_in_bytes: "packSizeInBytes",
-          segment_count: "segmentCount",
+          active_flag_count: 'activeFlagCount',
+          archived_flag_count: 'archivedFlagCount',
+          config_updated_at: 'configUpdatedAt',
+          pack_revision: 'packRevision',
+          pack_size_in_bytes: 'packSizeInBytes',
+          segment_count: 'segmentCount'
         }.freeze
         REQUIRED_FIELDS = %i[
           active_flag_count
@@ -98,8 +98,7 @@ module OctridevVercel
           pack_size_in_bytes
           segment_count
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetFlagSettingsResponseMetadata.
@@ -133,15 +132,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetFlagSettingsResponseMetadata
         FIELDS = {
-          created_at: "createdAt",
-          enabled: "enabled",
-          entities: "entities",
-          environments: "environments",
-          metadata: "metadata",
-          owner_id: "ownerId",
-          project_id: "projectId",
-          type_name: "typeName",
-          updated_at: "updatedAt",
+          created_at: 'createdAt',
+          enabled: 'enabled',
+          entities: 'entities',
+          environments: 'environments',
+          metadata: 'metadata',
+          owner_id: 'ownerId',
+          project_id: 'projectId',
+          type_name: 'typeName',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -163,7 +162,7 @@ module OctridevVercel
           end,
           type_name: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::GetFlagSettingsResponseTypeName.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -198,15 +197,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSettingsEntitiesItemAttributesItemLabelsItemMetadata
         FIELDS = {
-          label: "label",
-          value: "value",
+          label: 'label',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           label
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateFlagSettingsEntitiesItemAttributesItemLabelsItem.
@@ -239,9 +237,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSettingsEntitiesItemAttributesItemMetadata
         FIELDS = {
-          key: "key",
-          type: "type",
-          labels: "labels",
+          key: 'key',
+          type: 'type',
+          labels: 'labels'
         }.freeze
         REQUIRED_FIELDS = %i[
           key
@@ -250,7 +248,7 @@ module OctridevVercel
         DECODERS = {
           labels: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSettingsEntitiesItemAttributesItemLabelsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -284,9 +282,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSettingsEntitiesItemMetadata
         FIELDS = {
-          kind: "kind",
-          label: "label",
-          attributes: "attributes",
+          kind: 'kind',
+          label: 'label',
+          attributes: 'attributes'
         }.freeze
         REQUIRED_FIELDS = %i[
           kind
@@ -296,7 +294,7 @@ module OctridevVercel
         DECODERS = {
           attributes: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSettingsEntitiesItemAttributesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -330,16 +328,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSettingsMetadata
         FIELDS = {
-          enabled: "enabled",
-          entities: "entities",
-          environments: "environments",
+          enabled: 'enabled',
+          entities: 'entities',
+          environments: 'environments'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           entities: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSettingsEntitiesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -375,15 +372,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSettingsResponseEntitiesItemAttributesItemLabelsItemMetadata
         FIELDS = {
-          label: "label",
-          value: "value",
+          label: 'label',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           label
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateFlagSettingsResponseEntitiesItemAttributesItemLabelsItem.
@@ -416,9 +412,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSettingsResponseEntitiesItemAttributesItemMetadata
         FIELDS = {
-          key: "key",
-          labels: "labels",
-          type: "type",
+          key: 'key',
+          labels: 'labels',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           key
@@ -427,7 +423,7 @@ module OctridevVercel
         DECODERS = {
           labels: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSettingsResponseEntitiesItemAttributesItemLabelsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -461,9 +457,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSettingsResponseEntitiesItemMetadata
         FIELDS = {
-          attributes: "attributes",
-          kind: "kind",
-          label: "label",
+          attributes: 'attributes',
+          kind: 'kind',
+          label: 'label'
         }.freeze
         REQUIRED_FIELDS = %i[
           attributes
@@ -473,7 +469,7 @@ module OctridevVercel
         DECODERS = {
           attributes: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSettingsResponseEntitiesItemAttributesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -507,12 +503,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSettingsResponseMetadataMetadata
         FIELDS = {
-          active_flag_count: "activeFlagCount",
-          archived_flag_count: "archivedFlagCount",
-          config_updated_at: "configUpdatedAt",
-          pack_revision: "packRevision",
-          pack_size_in_bytes: "packSizeInBytes",
-          segment_count: "segmentCount",
+          active_flag_count: 'activeFlagCount',
+          archived_flag_count: 'archivedFlagCount',
+          config_updated_at: 'configUpdatedAt',
+          pack_revision: 'packRevision',
+          pack_size_in_bytes: 'packSizeInBytes',
+          segment_count: 'segmentCount'
         }.freeze
         REQUIRED_FIELDS = %i[
           active_flag_count
@@ -520,8 +516,7 @@ module OctridevVercel
           pack_size_in_bytes
           segment_count
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateFlagSettingsResponseMetadata.

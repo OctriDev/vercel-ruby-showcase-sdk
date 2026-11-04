@@ -12,13 +12,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateWebInsightsToggleMetadata
         FIELDS = {
-          value: "value",
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateWebInsightsToggle.
@@ -51,7 +50,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateWebInsightsToggleResponseMetadata
         FIELDS = {
-          value: "value",
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           value
@@ -59,7 +58,7 @@ module OctridevVercel
         DECODERS = {
           value: lambda do |value|
             ::OctridevVercel::Methods::Web::CreateWebInsightsToggleResponseValue.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -107,21 +106,20 @@ module OctridevVercel
         value:,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
-          "/web/insights/toggle",
+          '/web/insights/toggle',
           config: config,
           query: {
-            'projectId' => QueryValue.new(project_id, style: 'form', explode: true),
+            'projectId' => QueryValue.new(project_id, style: 'form', explode: true)
           },
           body: {
-            'value' => value,
+            'value' => value
           },
           return_type: ::OctridevVercel::Methods::Web::CreateWebInsightsToggleResponse,
           decoder: :json,
           operation_id: 'create_web_insights_toggle',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
     end

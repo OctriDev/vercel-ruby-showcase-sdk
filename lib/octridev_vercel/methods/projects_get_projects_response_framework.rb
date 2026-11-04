@@ -85,17 +85,17 @@ module OctridevVercel
         VUEPRESS = 'vuepress'
         XMCP = 'xmcp'
         ZOLA = 'zola'
-        VALUES = [
-          'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
-          'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
-          'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask',
-          'gatsby', 'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular',
-          'ionic-react', 'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node',
-          'nuxtjs', 'parcel', 'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix',
-          'ruby', 'rust', 'saber', 'sanity', 'sanity-v2', 'sapper', 'scully', 'services',
-          'solidstart', 'solidstart-1', 'stencil', 'storybook', 'svelte', 'sveltekit', 'sveltekit-1',
-          'tanstack-start', 'tanstack-start-lovable', 'umijs', 'vite', 'vitepress', 'vue',
-          'vuepress', 'xmcp', 'zola'
+        VALUES = %w[
+          actix-web angular ash astro axum blitzjs brunch bun container
+          create-react-app django docusaurus docusaurus-2 dojo eleventy elysia
+          ember eve express factory-eve fastapi fasthtml fastify flask
+          gatsby go gridsome h3 hexo hono hugo hydrogen ionic-angular
+          ionic-react jekyll koa mastra middleman nestjs nextjs nitro node
+          nuxtjs parcel polymer preact python react-router redwoodjs remix
+          ruby rust saber sanity sanity-v2 sapper scully services
+          solidstart solidstart-1 stencil storybook svelte sveltekit sveltekit-1
+          tanstack-start tanstack-start-lovable umijs vite vitepress vue
+          vuepress xmcp zola
         ].freeze
         def self.from_value(value)
           value
@@ -188,7 +188,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -219,7 +219,7 @@ module OctridevVercel
       module GetProjectsResponseRollingReleaseGateAction
         PAUSE = 'pause'
         ROLLBACK = 'rollback'
-        VALUES = ['pause', 'rollback'].freeze
+        VALUES = %w[pause rollback].freeze
         def self.from_value(value)
           value
         end
@@ -249,7 +249,7 @@ module OctridevVercel
       module UpdateProjectResponseAliasItemEnvironment
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end
@@ -309,7 +309,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -370,7 +370,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -417,9 +417,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = [
-          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
-          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
+        VALUES = %w[
+          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
+          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
         ].freeze
         def self.from_value(value)
           value
@@ -495,9 +495,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = [
-          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
-          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
+        VALUES = %w[
+          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
+          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
         ].freeze
         def self.from_value(value)
           value
@@ -509,7 +509,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
+        VALUES = %w[PROMOTED ROLLING STAGED].freeze
         def self.from_value(value)
           value
         end
@@ -521,7 +521,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
+        VALUES = %w[basic enhanced standard turbo].freeze
         def self.from_value(value)
           value
         end
@@ -542,7 +542,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -552,7 +552,7 @@ module OctridevVercel
       module CreateProjectResponseLastAliasRequestType
         PROMOTE = 'promote'
         ROLLBACK = 'rollback'
-        VALUES = ['promote', 'rollback'].freeze
+        VALUES = %w[promote rollback].freeze
         def self.from_value(value)
           value
         end

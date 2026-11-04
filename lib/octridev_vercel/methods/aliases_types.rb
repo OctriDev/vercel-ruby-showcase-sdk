@@ -12,19 +12,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAliasesForDeploymentResponseAliasesItemMetadata
         FIELDS = {
-          alias_: "alias",
-          created: "created",
-          protection_bypass: "protectionBypass",
-          redirect: "redirect",
-          uid: "uid",
+          alias_: 'alias',
+          created: 'created',
+          protection_bypass: 'protectionBypass',
+          redirect: 'redirect',
+          uid: 'uid'
         }.freeze
         REQUIRED_FIELDS = %i[
           alias_
           created
           uid
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ListAliasesForDeploymentResponseAliasesItem.
@@ -67,7 +66,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAliasesForDeploymentResponseMetadata
         FIELDS = {
-          aliases: "aliases",
+          aliases: 'aliases'
         }.freeze
         REQUIRED_FIELDS = %i[
           aliases
@@ -75,7 +74,7 @@ module OctridevVercel
         DECODERS = {
           aliases: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Aliases::ListAliasesForDeploymentResponseAliasesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -110,13 +109,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAssignAliasMetadata
         FIELDS = {
-          alias_: "alias",
-          redirect: "redirect",
+          alias_: 'alias',
+          redirect: 'redirect'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for AssignAlias.
@@ -152,18 +149,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAssignAliasResponseMetadata
         FIELDS = {
-          alias_: "alias",
-          created: "created",
-          old_deployment_id: "oldDeploymentId",
-          uid: "uid",
+          alias_: 'alias',
+          created: 'created',
+          old_deployment_id: 'oldDeploymentId',
+          uid: 'uid'
         }.freeze
         REQUIRED_FIELDS = %i[
           alias_
           created
           uid
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for AssignAliasResponse.
@@ -203,15 +199,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAliasesResponseAliasesItemCreatorMetadata
         FIELDS = {
-          email: "email",
-          uid: "uid",
-          username: "username",
+          email: 'email',
+          uid: 'uid',
+          username: 'username'
         }.freeze
         REQUIRED_FIELDS = %i[
           uid
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ListAliasesResponseAliasesItemCreator.
@@ -250,15 +245,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAliasesResponseAliasesItemDeploymentMetadata
         FIELDS = {
-          id: "id",
-          meta: "meta",
-          url: "url",
+          id: 'id',
+          meta: 'meta',
+          url: 'url'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ListAliasesResponseAliasesItemDeployment.
@@ -297,15 +291,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant0ItemMetadata
         FIELDS = {
-          fallback_host: "fallbackHost",
-          project_id: "projectId",
+          fallback_host: 'fallbackHost',
+          project_id: 'projectId'
         }.freeze
         REQUIRED_FIELDS = %i[
           fallback_host
           project_id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant0Item.
@@ -342,17 +335,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant1ItemMetadata
         FIELDS = {
-          branch_alias: "branchAlias",
-          fallback_host: "fallbackHost",
-          project_id: "projectId",
+          branch_alias: 'branchAlias',
+          fallback_host: 'fallbackHost',
+          project_id: 'projectId'
         }.freeze
         REQUIRED_FIELDS = %i[
           branch_alias
           fallback_host
           project_id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant1Item.
@@ -391,18 +383,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant2ItemMetadata
         FIELDS = {
-          branch_alias: "branchAlias",
-          branch_deployment_id: "branchDeploymentId",
-          deployment_id: "deploymentId",
-          fallback_deployment_id: "fallbackDeploymentId",
-          fallback_host: "fallbackHost",
-          project_id: "projectId",
+          branch_alias: 'branchAlias',
+          branch_deployment_id: 'branchDeploymentId',
+          deployment_id: 'deploymentId',
+          fallback_deployment_id: 'fallbackDeploymentId',
+          fallback_host: 'fallbackHost',
+          project_id: 'projectId'
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant2Item.
@@ -446,13 +437,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAliasesResponseAliasesItemMicrofrontendsDefaultAppMetadata
         FIELDS = {
-          project_id: "projectId",
+          project_id: 'projectId'
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ListAliasesResponseAliasesItemMicrofrontendsDefaultApp.
@@ -485,8 +475,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListAliasesResponseAliasesItemMicrofrontendsMetadata
         FIELDS = {
-          applications: "applications",
-          default_app: "defaultApp",
+          applications: 'applications',
+          default_app: 'defaultApp'
         }.freeze
         REQUIRED_FIELDS = %i[
           applications
@@ -495,7 +485,7 @@ module OctridevVercel
         DECODERS = {
           default_app: lambda do |value|
             ::OctridevVercel::Methods::Aliases::ListAliasesResponseAliasesItemMicrofrontendsDefaultApp.from_hash(value)
-          end,
+          end
         }.freeze
       end
 

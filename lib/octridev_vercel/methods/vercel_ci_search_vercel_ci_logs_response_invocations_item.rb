@@ -39,8 +39,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSearchVercelCiLogsResponseMetadata
         FIELDS = {
-          invocations: "invocations",
-          has_more: "hasMore",
+          invocations: 'invocations',
+          has_more: 'hasMore'
         }.freeze
         REQUIRED_FIELDS = %i[
           invocations
@@ -49,7 +49,7 @@ module OctridevVercel
         DECODERS = {
           invocations: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::VercelCi::SearchVercelCiLogsResponseInvocationsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -85,17 +85,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiJobRunLogsResponseLinesItemMetadata
         FIELDS = {
-          level: "level",
-          timestamp: "timestamp",
-          message: "message",
+          level: 'level',
+          timestamp: 'timestamp',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           level
           timestamp
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetVercelCiJobRunLogsResponseLinesItem.
@@ -128,7 +127,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiJobRunLogsResponseMetadata
         FIELDS = {
-          lines: "lines",
+          lines: 'lines'
         }.freeze
         REQUIRED_FIELDS = %i[
           lines
@@ -136,7 +135,7 @@ module OctridevVercel
         DECODERS = {
           lines: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::VercelCi::GetVercelCiJobRunLogsResponseLinesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -170,17 +169,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiTaskRunLogsResponseLinesItemMetadata
         FIELDS = {
-          level: "level",
-          timestamp: "timestamp",
-          message: "message",
+          level: 'level',
+          timestamp: 'timestamp',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           level
           timestamp
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetVercelCiTaskRunLogsResponseLinesItem.
@@ -213,7 +211,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiTaskRunLogsResponseMetadata
         FIELDS = {
-          lines: "lines",
+          lines: 'lines'
         }.freeze
         REQUIRED_FIELDS = %i[
           lines
@@ -221,7 +219,7 @@ module OctridevVercel
         DECODERS = {
           lines: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::VercelCi::GetVercelCiTaskRunLogsResponseLinesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -466,7 +464,7 @@ module OctridevVercel
         CACHED = 'cached'
         FAILED = 'failed'
         SKIPPED = 'skipped'
-        VALUES = ['succeeded', 'cached', 'failed', 'skipped'].freeze
+        VALUES = %w[succeeded cached failed skipped].freeze
         def self.from_value(value)
           value
         end
@@ -498,7 +496,7 @@ module OctridevVercel
         SUCCEEDED = 'succeeded'
         FAILED = 'failed'
         SKIPPED = 'skipped'
-        VALUES = ['succeeded', 'failed', 'skipped'].freeze
+        VALUES = %w[succeeded failed skipped].freeze
         def self.from_value(value)
           value
         end
@@ -547,8 +545,8 @@ module OctridevVercel
         ERROR = 'error'
         SYSTEM_ERROR = 'systemError'
         FATAL = 'fatal'
-        VALUES = [
-          'trace', 'debug', 'command', 'info', 'warn', 'error', 'systemError', 'fatal'
+        VALUES = %w[
+          trace debug command info warn error systemError fatal
         ].freeze
         def self.from_value(value)
           value

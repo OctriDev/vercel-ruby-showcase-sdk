@@ -5,85 +5,86 @@
 
 # projects_delete domain models
 module OctridevVercel
-# API model for DeleteProjectAvatarResponseTrustedIpsVariant1.
-class DeleteProjectAvatarResponseTrustedIpsVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalDeleteProjectAvatarResponseTrustedIpsVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseTrustedIpsVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalDeleteProjectAvatarResponseTrustedIpsVariant1Metadata::DECODERS
+  # API model for DeleteProjectAvatarResponseTrustedIpsVariant1.
+  class DeleteProjectAvatarResponseTrustedIpsVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalDeleteProjectAvatarResponseTrustedIpsVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalDeleteProjectAvatarResponseTrustedIpsVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalDeleteProjectAvatarResponseTrustedIpsVariant1Metadata::DECODERS
 
-  attr_reader :deployment_type
+    attr_reader :deployment_type
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the DeleteProjectAvatarResponseTrustedIps SDK namespace.
+  module DeleteProjectAvatarResponseTrustedIps
+    def self.from_hash(hash)
+      shape_mapping = {
+        'addresses' => DeleteProjectAvatarResponseTrustedIpsVariant0
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      return decoded unless type.nil?
+
+      DeleteProjectAvatarResponseTrustedIpsVariant1.from_hash(hash)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the DeleteProjectAvatarResponseTrustedIpsVariant0DeploymentType SDK namespace.
+  module DeleteProjectAvatarResponseTrustedIpsVariant0DeploymentType
+    ALL = 'all'
+    ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
+    PREVIEW = 'preview'
+    PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
+    PRODUCTION = 'production'
+    VALUES = %w[
+      all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+      production
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
+  # Defines the DeleteProjectAvatarResponseTrustedIpsVariant0ProtectionMode SDK namespace.
+  module DeleteProjectAvatarResponseTrustedIpsVariant0ProtectionMode
+    ADDITIONAL = 'additional'
+    EXCLUSIVE = 'exclusive'
+    VALUES = %w[additional exclusive].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the DeleteProjectAvatarResponseTrustedIps SDK namespace.
-module DeleteProjectAvatarResponseTrustedIps
-  def self.from_hash(hash)
-    shape_mapping = {
-      "addresses" => DeleteProjectAvatarResponseTrustedIpsVariant0,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-    return DeleteProjectAvatarResponseTrustedIpsVariant1.from_hash(hash)
+  # Defines the DeleteProjectAvatarResponseTrustedIpsVariant1DeploymentType SDK namespace.
+  module DeleteProjectAvatarResponseTrustedIpsVariant1DeploymentType
+    ALL = 'all'
+    ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
+    PREVIEW = 'preview'
+    PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
+    PRODUCTION = 'production'
+    VALUES = %w[
+      all all_except_custom_domains preview prod_deployment_urls_and_all_previews
+      production
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
-
-# Defines the DeleteProjectAvatarResponseTrustedIpsVariant0DeploymentType SDK namespace.
-module DeleteProjectAvatarResponseTrustedIpsVariant0DeploymentType
-  ALL = 'all'
-  ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-  PREVIEW = 'preview'
-  PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-  PRODUCTION = 'production'
-  VALUES = [
-    'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews',
-    'production'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the DeleteProjectAvatarResponseTrustedIpsVariant0ProtectionMode SDK namespace.
-module DeleteProjectAvatarResponseTrustedIpsVariant0ProtectionMode
-  ADDITIONAL = 'additional'
-  EXCLUSIVE = 'exclusive'
-  VALUES = ['additional', 'exclusive'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the DeleteProjectAvatarResponseTrustedIpsVariant1DeploymentType SDK namespace.
-module DeleteProjectAvatarResponseTrustedIpsVariant1DeploymentType
-  ALL = 'all'
-  ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-  PREVIEW = 'preview'
-  PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-  PRODUCTION = 'production'
-  VALUES = [
-    'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews',
-    'production'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
 end

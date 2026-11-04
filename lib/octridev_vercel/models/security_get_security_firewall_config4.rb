@@ -5,678 +5,676 @@
 
 # security domain models
 module OctridevVercel
-# Defines the GetSecurityFirewallConfigResponseDraftRulesItemVariant1ConditX31d8ba4669 SDK namespace.
-module GetSecurityFirewallConfigResponseDraftRulesItemVariant1ConditX31d8ba4669
-  BOT_CATEGORY = 'bot_category'
-  BOT_NAME = 'bot_name'
-  BOT_PROTECTION = 'bot_protection'
-  BOT_STATUS = 'bot_status'
-  COOKIE = 'cookie'
-  DOMAIN_ENVIRONMENT = 'domain_environment'
-  ENVIRONMENT = 'environment'
-  GEO_AS_NUMBER = 'geo_as_number'
-  GEO_CITY = 'geo_city'
-  GEO_CONTINENT = 'geo_continent'
-  GEO_COUNTRY = 'geo_country'
-  GEO_COUNTRY_REGION = 'geo_country_region'
-  HEADER = 'header'
-  HOST = 'host'
-  IP_ADDRESS = 'ip_address'
-  JA3_DIGEST = 'ja3_digest'
-  JA4_DIGEST = 'ja4_digest'
-  METHOD = 'method'
-  PATH = 'path'
-  PROTOCOL = 'protocol'
-  QUERY = 'query'
-  RATE_LIMIT_API_ID = 'rate_limit_api_id'
-  RAW_PATH = 'raw_path'
-  REGION = 'region'
-  RESPONSE_CODE = 'response_code'
-  ROUTE = 'route'
-  RULESET = 'ruleset'
-  SCHEME = 'scheme'
-  SERVER_ACTION = 'server_action'
-  SHARED_CONDITION = 'shared_condition'
-  TARGET_PATH = 'target_path'
-  TRAFFIC_SOURCE = 'traffic_source'
-  TRUSTED_SOURCE = 'trusted_source'
-  USER_AGENT = 'user_agent'
-  VALUES = [
-    'bot_category', 'bot_name', 'bot_protection', 'bot_status', 'cookie', 'domain_environment',
-    'environment', 'geo_as_number', 'geo_city', 'geo_continent', 'geo_country', 'geo_country_region',
-    'header', 'host', 'ip_address', 'ja3_digest', 'ja4_digest', 'method', 'path', 'protocol',
-    'query', 'rate_limit_api_id', 'raw_path', 'region', 'response_code', 'route', 'ruleset',
-    'scheme', 'server_action', 'shared_condition', 'target_path', 'traffic_source', 'trusted_source',
-    'user_agent'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetSecurityFirewallConfigResponseDraftRulesItemVariant1Valid SDK namespace.
-module GetSecurityFirewallConfigResponseDraftRulesItemVariant1Valid
-  FALSE = false
-  VALUES = [false].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696Metadata
-  FIELDS = {
-    action: "action",
-    algo: "algo",
-    keys: "keys",
-    limit: "limit",
-    window: "window",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    algo
-    keys
-    limit
-    window
-  ].freeze
-  DECODERS = {
-    action: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX5faecbebbb.from_value(value)
-    end,
-    algo: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc349a81fb8.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696.
-class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696Metadata::DECODERS
-
-  attr_reader :action, :algo, :keys, :limit, :window
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the GetSecurityFirewallConfigResponseDraftRulesItemVariant1ConditX31d8ba4669 SDK namespace.
+  module GetSecurityFirewallConfigResponseDraftRulesItemVariant1ConditX31d8ba4669
+    BOT_CATEGORY = 'bot_category'
+    BOT_NAME = 'bot_name'
+    BOT_PROTECTION = 'bot_protection'
+    BOT_STATUS = 'bot_status'
+    COOKIE = 'cookie'
+    DOMAIN_ENVIRONMENT = 'domain_environment'
+    ENVIRONMENT = 'environment'
+    GEO_AS_NUMBER = 'geo_as_number'
+    GEO_CITY = 'geo_city'
+    GEO_CONTINENT = 'geo_continent'
+    GEO_COUNTRY = 'geo_country'
+    GEO_COUNTRY_REGION = 'geo_country_region'
+    HEADER = 'header'
+    HOST = 'host'
+    IP_ADDRESS = 'ip_address'
+    JA3_DIGEST = 'ja3_digest'
+    JA4_DIGEST = 'ja4_digest'
+    METHOD = 'method'
+    PATH = 'path'
+    PROTOCOL = 'protocol'
+    QUERY = 'query'
+    RATE_LIMIT_API_ID = 'rate_limit_api_id'
+    RAW_PATH = 'raw_path'
+    REGION = 'region'
+    RESPONSE_CODE = 'response_code'
+    ROUTE = 'route'
+    RULESET = 'ruleset'
+    SCHEME = 'scheme'
+    SERVER_ACTION = 'server_action'
+    SHARED_CONDITION = 'shared_condition'
+    TARGET_PATH = 'target_path'
+    TRAFFIC_SOURCE = 'traffic_source'
+    TRUSTED_SOURCE = 'trusted_source'
+    USER_AGENT = 'user_agent'
+    VALUES = %w[
+      bot_category bot_name bot_protection bot_status cookie domain_environment
+      environment geo_as_number geo_city geo_continent geo_country geo_country_region
+      header host ip_address ja3_digest ja4_digest method path protocol
+      query rate_limit_api_id raw_path region response_code route ruleset
+      scheme server_action shared_condition target_path traffic_source trusted_source
+      user_agent
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the GetSecurityFirewallConfigResponseDraftRulesItemVariant1Valid SDK namespace.
+  module GetSecurityFirewallConfigResponseDraftRulesItemVariant1Valid
+    FALSE = false
+    VALUES = [false].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696Metadata
+    FIELDS = {
+      action: 'action',
+      algo: 'algo',
+      keys: 'keys',
+      limit: 'limit',
+      window: 'window'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      algo
+      keys
+      limit
+      window
+    ].freeze
+    DECODERS = {
+      action: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX5faecbebbb.from_value(value)
+      end,
+      algo: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc349a81fb8.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696.
+  class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23Metadata
-  FIELDS = {
-    location: "location",
-    permanent: "permanent",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    location
-    permanent
-  ].freeze
-  DECODERS = {
-    permanent: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX863cc3135c.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :action, :algo, :keys, :limit, :window
 
-# API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23.
-class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :location, :permanent
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23Metadata
+    FIELDS = {
+      location: 'location',
+      permanent: 'permanent'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      location
+      permanent
+    ].freeze
+    DECODERS = {
+      permanent: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX863cc3135c.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23.
+  class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23Metadata::DECODERS
+
+    attr_reader :location, :permanent
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384eMetadata
-  FIELDS = {
-    action: "action",
-    action_duration: "actionDuration",
-    bypass_system: "bypassSystem",
-    log_headers: "logHeaders",
-    rate_limit: "rateLimit",
-    redirect: "redirect",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    action
-  ].freeze
-  DECODERS = {
-    action: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd57d5824af.from_value(value)
-    end,
-    bypass_system: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX658a97d751.from_value(value)
-    end,
-    rate_limit: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696.from_hash(value)
-    end,
-    redirect: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384e.
-class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384e
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384eMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384eMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384eMetadata::DECODERS
-
-  attr_reader :action, :action_duration, :bypass_system, :log_headers, :rate_limit, :redirect
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384eMetadata
+    FIELDS = {
+      action: 'action',
+      action_duration: 'actionDuration',
+      bypass_system: 'bypassSystem',
+      log_headers: 'logHeaders',
+      rate_limit: 'rateLimit',
+      redirect: 'redirect'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      action
+    ].freeze
+    DECODERS = {
+      action: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd57d5824af.from_value(value)
+      end,
+      bypass_system: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX658a97d751.from_value(value)
+      end,
+      rate_limit: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696.from_hash(value)
+      end,
+      redirect: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384e.
+  class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384e
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384eMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384eMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384eMetadata::DECODERS
+
+    attr_reader :action, :action_duration, :bypass_system, :log_headers, :rate_limit, :redirect
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0ActionMetadata
+    FIELDS = {
+      mitigate: 'mitigate'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      mitigate: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384e.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Action.
+  class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Action
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0ActionMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0ActionMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0ActionMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0ActionMetadata
-  FIELDS = {
-    mitigate: "mitigate",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    mitigate: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384e.from_hash(value)
-    end,
-  }.freeze
-end
+    attr_reader :mitigate
 
-# API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Action.
-class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Action
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0ActionMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0ActionMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0ActionMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :mitigate
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2Metadata
+    FIELDS = {
+      key: 'key',
+      neg: 'neg',
+      op: 'op',
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      op
+      type
+    ].freeze
+    DECODERS = {
+      neg: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX56ac2324b2.from_value(value)
+      end,
+      op: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6172ef807a.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXcc25915111.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2.
+  class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2Metadata::DECODERS
+
+    attr_reader :key, :neg, :op, :type, :value
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2Metadata
-  FIELDS = {
-    key: "key",
-    neg: "neg",
-    op: "op",
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    op
-    type
-  ].freeze
-  DECODERS = {
-    neg: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX56ac2324b2.from_value(value)
-    end,
-    op: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6172ef807a.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXcc25915111.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2.
-class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2Metadata::DECODERS
-
-  attr_reader :key, :neg, :op, :type, :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3dMetadata
+    FIELDS = {
+      conditions: 'conditions'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      conditions
+    ].freeze
+    DECODERS = {
+      conditions: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3d.
+  class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3d
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3dMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3dMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3dMetadata::DECODERS
+
+    attr_reader :conditions
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Metadata
+    FIELDS = {
+      action: 'action',
+      active: 'active',
+      condition_group: 'conditionGroup',
+      description: 'description',
+      id: 'id',
+      name: 'name',
+      valid: 'valid',
+      validation_errors: 'validationErrors'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      action
+      active
+      condition_group
+      id
+      name
+      valid
+      validation_errors
+    ].freeze
+    DECODERS = {
+      action: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Action.from_hash(value)
+      end,
+      active: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Active.from_value(value)
+      end,
+      condition_group: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3d.from_hash(item) }
+      end,
+      valid: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Valid.from_value(value)
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      validation_errors
+    ].freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0.
+  class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3dMetadata
-  FIELDS = {
-    conditions: "conditions",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    conditions
-  ].freeze
-  DECODERS = {
-    conditions: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2.from_hash(item) }
-    end,
-  }.freeze
-end
+    attr_reader :action, :active, :condition_group, :description, :id, :name, :valid,
+                :validation_errors
 
-# API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3d.
-class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3d
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3dMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3dMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3dMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :conditions
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Metadata::NULLABLE_FIELDS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6Metadata
+    FIELDS = {
+      action: 'action',
+      algo: 'algo',
+      keys: 'keys',
+      limit: 'limit',
+      window: 'window'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      algo
+      keys
+      limit
+      window
+    ].freeze
+    DECODERS = {
+      action: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX558f1a27cd.from_value(value)
+      end,
+      algo: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXcead9bb67d.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6.
+  class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6Metadata::DECODERS
+
+    attr_reader :action, :algo, :keys, :limit, :window
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Metadata
-  FIELDS = {
-    action: "action",
-    active: "active",
-    condition_group: "conditionGroup",
-    description: "description",
-    id: "id",
-    name: "name",
-    valid: "valid",
-    validation_errors: "validationErrors",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    action
-    active
-    condition_group
-    id
-    name
-    valid
-    validation_errors
-  ].freeze
-  DECODERS = {
-    action: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Action.from_hash(value)
-    end,
-    active: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Active.from_value(value)
-    end,
-    condition_group: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3d.from_hash(item) }
-    end,
-    valid: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Valid.from_value(value)
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    validation_errors
-  ].freeze
-end
-
-# API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0.
-class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Metadata::DECODERS
-
-  attr_reader :action, :active, :condition_group, :description, :id, :name, :valid,
-              :validation_errors
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849Metadata
+    FIELDS = {
+      location: 'location',
+      permanent: 'permanent'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      location
+      permanent
+    ].freeze
+    DECODERS = {
+      permanent: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75dd83d966.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Metadata::NULLABLE_FIELDS)
+  # API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849.
+  class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849Metadata::DECODERS
+
+    attr_reader :location, :permanent
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055beMetadata
+    FIELDS = {
+      action: 'action',
+      action_duration: 'actionDuration',
+      bypass_system: 'bypassSystem',
+      log_headers: 'logHeaders',
+      rate_limit: 'rateLimit',
+      redirect: 'redirect'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      action
+    ].freeze
+    DECODERS = {
+      action: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3e7f7cc431.from_value(value)
+      end,
+      bypass_system: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXf45824903a.from_value(value)
+      end,
+      rate_limit: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6.from_hash(value)
+      end,
+      redirect: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055be.
+  class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055be
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055beMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055beMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055beMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6Metadata
-  FIELDS = {
-    action: "action",
-    algo: "algo",
-    keys: "keys",
-    limit: "limit",
-    window: "window",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    algo
-    keys
-    limit
-    window
-  ].freeze
-  DECODERS = {
-    action: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX558f1a27cd.from_value(value)
-    end,
-    algo: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXcead9bb67d.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :action, :action_duration, :bypass_system, :log_headers, :rate_limit, :redirect
 
-# API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6.
-class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :action, :algo, :keys, :limit, :window
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1ActionMetadata
+    FIELDS = {
+      mitigate: 'mitigate'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      mitigate: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055be.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1Action.
+  class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1Action
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1ActionMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1ActionMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1ActionMetadata::DECODERS
+
+    attr_reader :mitigate
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849Metadata
-  FIELDS = {
-    location: "location",
-    permanent: "permanent",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    location
-    permanent
-  ].freeze
-  DECODERS = {
-    permanent: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75dd83d966.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849.
-class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849Metadata::DECODERS
-
-  attr_reader :location, :permanent
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920Metadata
+    FIELDS = {
+      key: 'key',
+      neg: 'neg',
+      op: 'op',
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      op
+      type
+    ].freeze
+    DECODERS = {
+      neg: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX5b74a50105.from_value(value)
+      end,
+      op: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3e343802fb.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX924c32e8ef.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920.
+  class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920Metadata::DECODERS
+
+    attr_reader :key, :neg, :op, :type, :value
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX9ec69cc9dcMetadata
+    FIELDS = {
+      conditions: 'conditions'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      conditions
+    ].freeze
+    DECODERS = {
+      conditions: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920.from_hash(item) }
+      end
+    }.freeze
   end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055beMetadata
-  FIELDS = {
-    action: "action",
-    action_duration: "actionDuration",
-    bypass_system: "bypassSystem",
-    log_headers: "logHeaders",
-    rate_limit: "rateLimit",
-    redirect: "redirect",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    action
-  ].freeze
-  DECODERS = {
-    action: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3e7f7cc431.from_value(value)
-    end,
-    bypass_system: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXf45824903a.from_value(value)
-    end,
-    rate_limit: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6.from_hash(value)
-    end,
-    redirect: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055be.
-class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055be
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055beMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055beMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055beMetadata::DECODERS
-
-  attr_reader :action, :action_duration, :bypass_system, :log_headers, :rate_limit, :redirect
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1ActionMetadata
-  FIELDS = {
-    mitigate: "mitigate",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    mitigate: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055be.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1Action.
-class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1Action
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1ActionMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1ActionMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1ActionMetadata::DECODERS
-
-  attr_reader :mitigate
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920Metadata
-  FIELDS = {
-    key: "key",
-    neg: "neg",
-    op: "op",
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    op
-    type
-  ].freeze
-  DECODERS = {
-    neg: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX5b74a50105.from_value(value)
-    end,
-    op: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3e343802fb.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX924c32e8ef.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920.
-class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920Metadata::DECODERS
-
-  attr_reader :key, :neg, :op, :type, :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX9ec69cc9dcMetadata
-  FIELDS = {
-    conditions: "conditions",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    conditions
-  ].freeze
-  DECODERS = {
-    conditions: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920.from_hash(item) }
-    end,
-  }.freeze
-end
 end

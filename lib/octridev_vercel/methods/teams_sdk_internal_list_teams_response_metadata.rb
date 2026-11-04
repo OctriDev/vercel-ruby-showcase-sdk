@@ -12,8 +12,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListTeamsResponseMetadata
         FIELDS = {
-          pagination: "pagination",
-          teams: "teams",
+          pagination: 'pagination',
+          teams: 'teams'
         }.freeze
         REQUIRED_FIELDS = %i[
           pagination
@@ -25,7 +25,7 @@ module OctridevVercel
           end,
           teams: lambda do |value|
             value&.map { |item| ::OctridevVercel::ListTeamsResponseTeamsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -62,15 +62,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateTeamAttributionUtmMetadata
         FIELDS = {
-          utm_source: "utmSource",
-          utm_medium: "utmMedium",
-          utm_campaign: "utmCampaign",
-          utm_term: "utmTerm",
+          utm_source: 'utmSource',
+          utm_medium: 'utmMedium',
+          utm_campaign: 'utmCampaign',
+          utm_term: 'utmTerm'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateTeamAttributionUtm.
@@ -110,17 +108,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateTeamAttributionMetadata
         FIELDS = {
-          session_referrer: "sessionReferrer",
-          landing_page: "landingPage",
-          page_before_conversion_page: "pageBeforeConversionPage",
-          utm: "utm",
+          session_referrer: 'sessionReferrer',
+          landing_page: 'landingPage',
+          page_before_conversion_page: 'pageBeforeConversionPage',
+          utm: 'utm'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           utm: lambda do |value|
             ::OctridevVercel::Methods::Teams::CreateTeamAttributionUtm.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -161,9 +158,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateTeamMetadata
         FIELDS = {
-          slug: "slug",
-          name: "name",
-          attribution: "attribution",
+          slug: 'slug',
+          name: 'name',
+          attribution: 'attribution'
         }.freeze
         REQUIRED_FIELDS = %i[
           slug
@@ -171,7 +168,7 @@ module OctridevVercel
         DECODERS = {
           attribution: lambda do |value|
             ::OctridevVercel::Methods::Teams::CreateTeamAttribution.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -210,15 +207,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateTeamResponseMetadata
         FIELDS = {
-          id: "id",
-          slug: "slug",
+          id: 'id',
+          slug: 'slug'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
           slug
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateTeamResponse.
@@ -254,13 +250,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalPostTeamDsyncRolesMetadata
         FIELDS = {
-          roles: "roles",
+          roles: 'roles'
         }.freeze
         REQUIRED_FIELDS = %i[
           roles
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for PostTeamDsyncRoles.
@@ -294,7 +289,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalPostTeamDsyncRolesResponseMetadata
         FIELDS = {
-          ok: "ok",
+          ok: 'ok'
         }.freeze
         REQUIRED_FIELDS = %i[
           ok
@@ -302,7 +297,7 @@ module OctridevVercel
         DECODERS = {
           ok: lambda do |value|
             ::OctridevVercel::Methods::Teams::PostTeamDsyncRolesResponseOk.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -336,15 +331,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteTeamReasonsItemMetadata
         FIELDS = {
-          slug: "slug",
-          description: "description",
+          slug: 'slug',
+          description: 'description'
         }.freeze
         REQUIRED_FIELDS = %i[
           slug
           description
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for DeleteTeamReasonsItem.
@@ -381,14 +375,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteTeamMetadata
         FIELDS = {
-          reasons: "reasons",
+          reasons: 'reasons'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           reasons: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Teams::DeleteTeamReasonsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -423,8 +416,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteTeamResponseMetadata
         FIELDS = {
-          id: "id",
-          new_default_team_id_error: "newDefaultTeamIdError",
+          id: 'id',
+          new_default_team_id_error: 'newDefaultTeamIdError'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -432,7 +425,7 @@ module OctridevVercel
         DECODERS = {
           new_default_team_id_error: lambda do |value|
             ::OctridevVercel::Methods::Teams::DeleteTeamResponseNewDefaultTeamIdError.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -470,13 +463,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteTeamInviteCodeResponseMetadata
         FIELDS = {
-          id: "id",
+          id: 'id'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for DeleteTeamInviteCodeResponse.
@@ -510,14 +502,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsGroupMetadata
         FIELDS = {
-          name: "name",
-          fallback_environment: "fallbackEnvironment",
-          enable_polyrepo_branch_routing: "enablePolyrepoBranchRouting",
+          name: 'name',
+          fallback_environment: 'fallbackEnvironment',
+          enable_polyrepo_branch_routing: 'enablePolyrepoBranchRouting'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateMicrofrontendsGroup.

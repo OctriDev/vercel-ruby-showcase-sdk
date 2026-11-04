@@ -12,11 +12,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRollingReleaseConfigResponseRollingReleaseGateChecksItemMetadata
         FIELDS = {
-          exclude_paths: "excludePaths",
-          exclude_status_codes: "excludeStatusCodes",
-          ingest_watermark_seconds: "ingestWatermarkSeconds",
-          significance_level: "significanceLevel",
-          type: "type",
+          exclude_paths: 'excludePaths',
+          exclude_status_codes: 'excludeStatusCodes',
+          ingest_watermark_seconds: 'ingestWatermarkSeconds',
+          significance_level: 'significanceLevel',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           type
@@ -24,7 +24,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::RollingRelease::GetRollingReleaseConfigResponseRollingReleaseGateChecksItemType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -68,12 +68,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRollingReleaseConfigResponseRollingReleaseGateMetadata
         FIELDS = {
-          action: "action",
-          checks: "checks",
-          dry_run: "dryRun",
-          enabled: "enabled",
-          failure_threshold: "failureThreshold",
-          window_size: "windowSize",
+          action: 'action',
+          checks: 'checks',
+          dry_run: 'dryRun',
+          enabled: 'enabled',
+          failure_threshold: 'failureThreshold',
+          window_size: 'windowSize'
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -93,7 +93,7 @@ module OctridevVercel
           end,
           enabled: lambda do |value|
             ::OctridevVercel::Methods::RollingRelease::GetRollingReleaseConfigResponseRollingReleaseGateEnabled.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -139,10 +139,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRollingReleaseConfigResponseRollingReleaseStagesItemMetadata
         FIELDS = {
-          duration: "duration",
-          linear_shift: "linearShift",
-          require_approval: "requireApproval",
-          target_percentage: "targetPercentage",
+          duration: 'duration',
+          linear_shift: 'linearShift',
+          require_approval: 'requireApproval',
+          target_percentage: 'targetPercentage'
         }.freeze
         REQUIRED_FIELDS = %i[
           target_percentage
@@ -153,7 +153,7 @@ module OctridevVercel
           end,
           require_approval: lambda do |value|
             ::OctridevVercel::Methods::RollingRelease::GetRollingReleaseConfigResponseRollingReleaseStagesItemRequireApproval.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -195,10 +195,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRollingReleaseConfigResponseRollingReleaseMetadata
         FIELDS = {
-          canary_response_header: "canaryResponseHeader",
-          gate: "gate",
-          stages: "stages",
-          target: "target",
+          canary_response_header: 'canaryResponseHeader',
+          gate: 'gate',
+          stages: 'stages',
+          target: 'target'
         }.freeze
         REQUIRED_FIELDS = %i[
           target
@@ -212,7 +212,7 @@ module OctridevVercel
           end,
           stages: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::RollingRelease::GetRollingReleaseConfigResponseRollingReleaseStagesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -254,7 +254,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRollingReleaseConfigResponseMetadata
         FIELDS = {
-          rolling_release: "rollingRelease",
+          rolling_release: 'rollingRelease'
         }.freeze
         REQUIRED_FIELDS = %i[
           rolling_release
@@ -262,7 +262,7 @@ module OctridevVercel
         DECODERS = {
           rolling_release: lambda do |value|
             ::OctridevVercel::Methods::RollingRelease::GetRollingReleaseConfigResponseRollingRelease.from_hash(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           rolling_release
@@ -300,13 +300,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteRollingReleaseConfigResponseMetadata
         FIELDS = {
-          rolling_release: "rollingRelease",
+          rolling_release: 'rollingRelease'
         }.freeze
         REQUIRED_FIELDS = %i[
           rolling_release
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
         NULLABLE_FIELDS = %i[
           rolling_release
         ].freeze
@@ -342,12 +341,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRollingReleaseResponseRollingReleaseActiveStageMetadata
         FIELDS = {
-          duration: "duration",
-          index: "index",
-          is_final_stage: "isFinalStage",
-          linear_shift: "linearShift",
-          require_approval: "requireApproval",
-          target_percentage: "targetPercentage",
+          duration: 'duration',
+          index: 'index',
+          is_final_stage: 'isFinalStage',
+          linear_shift: 'linearShift',
+          require_approval: 'requireApproval',
+          target_percentage: 'targetPercentage'
         }.freeze
         REQUIRED_FIELDS = %i[
           duration
@@ -365,7 +364,7 @@ module OctridevVercel
           end,
           require_approval: lambda do |value|
             ::OctridevVercel::Methods::RollingRelease::GetRollingReleaseResponseRollingReleaseActiveStageRequireApproval.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           duration
@@ -414,14 +413,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRollingReleaseResponseRollingReleaseCanaryDeploymentMetadata
         FIELDS = {
-          created_at: "createdAt",
-          id: "id",
-          name: "name",
-          ready_state: "readyState",
-          ready_state_at: "readyStateAt",
-          source: "source",
-          target: "target",
-          url: "url",
+          created_at: 'createdAt',
+          id: 'id',
+          name: 'name',
+          ready_state: 'readyState',
+          ready_state_at: 'readyStateAt',
+          source: 'source',
+          target: 'target',
+          url: 'url'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -439,7 +438,7 @@ module OctridevVercel
           end,
           target: lambda do |value|
             ::OctridevVercel::Methods::RollingRelease::GetRollingReleaseResponseRollingReleaseCanaryDeploymentTarget.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -488,14 +487,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetRollingReleaseResponseRollingReleaseCurrentDeploymentMetadata
         FIELDS = {
-          created_at: "createdAt",
-          id: "id",
-          name: "name",
-          ready_state: "readyState",
-          ready_state_at: "readyStateAt",
-          source: "source",
-          target: "target",
-          url: "url",
+          created_at: 'createdAt',
+          id: 'id',
+          name: 'name',
+          ready_state: 'readyState',
+          ready_state_at: 'readyStateAt',
+          source: 'source',
+          target: 'target',
+          url: 'url'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -513,7 +512,7 @@ module OctridevVercel
           end,
           target: lambda do |value|
             ::OctridevVercel::Methods::RollingRelease::GetRollingReleaseResponseRollingReleaseCurrentDeploymentTarget.from_value(value)
-          end,
+          end
         }.freeze
       end
 

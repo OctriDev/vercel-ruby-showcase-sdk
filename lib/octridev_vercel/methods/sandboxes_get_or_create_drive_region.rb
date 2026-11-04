@@ -30,9 +30,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = [
-          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
-          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
+        VALUES = %w[
+          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
+          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
         ].freeze
         def self.from_value(value)
           value
@@ -70,9 +70,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = [
-          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
-          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
+        VALUES = %w[
+          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
+          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
         ].freeze
         def self.from_value(value)
           value
@@ -83,7 +83,7 @@ module OctridevVercel
       module CreateSandboxesV4MountsValueMode
         SNAPSHOT = 'snapshot'
         READ_WRITE = 'read-write'
-        VALUES = ['snapshot', 'read-write'].freeze
+        VALUES = %w[snapshot read-write].freeze
         def self.from_value(value)
           value
         end
@@ -110,9 +110,9 @@ module OctridevVercel
         YUL1 = 'yul1'
         HND1 = 'hnd1'
         KIX1 = 'kix1'
-        VALUES = [
-          'iad1', 'sfo1', 'cle1', 'cdg1', 'fra1', 'arn1', 'sin1', 'pdx1', 'lhr1', 'icn1', 'bom1',
-          'cpt1', 'dub1', 'gru1', 'hkg1', 'syd1', 'yul1', 'hnd1', 'kix1'
+        VALUES = %w[
+          iad1 sfo1 cle1 cdg1 fra1 arn1 sin1 pdx1 lhr1 icn1 bom1
+          cpt1 dub1 gru1 hkg1 syd1 yul1 hnd1 kix1
         ].freeze
         def self.from_value(value)
           value
@@ -133,7 +133,7 @@ module OctridevVercel
       module CreateSandboxesV4Architecture
         AMD64 = 'amd64'
         ARM64 = 'arm64'
-        VALUES = ['amd64', 'arm64'].freeze
+        VALUES = %w[amd64 arm64].freeze
         def self.from_value(value)
           value
         end
@@ -145,7 +145,7 @@ module OctridevVercel
         NAME = 'name'
         STATUS_UPDATED_AT = 'statusUpdatedAt'
         CURRENT_SNAPSHOT_ID = 'currentSnapshotId'
-        VALUES = ['createdAt', 'name', 'statusUpdatedAt', 'currentSnapshotId'].freeze
+        VALUES = %w[createdAt name statusUpdatedAt currentSnapshotId].freeze
         def self.from_value(value)
           value
         end
@@ -155,7 +155,7 @@ module OctridevVercel
       module CreateSandboxesV2Architecture
         AMD64 = 'amd64'
         ARM64 = 'arm64'
-        VALUES = ['amd64', 'arm64'].freeze
+        VALUES = %w[amd64 arm64].freeze
         def self.from_value(value)
           value
         end

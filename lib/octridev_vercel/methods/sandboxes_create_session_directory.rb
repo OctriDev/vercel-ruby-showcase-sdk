@@ -44,12 +44,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesSessionsBySessionIdSnapshotV2Metadata
         FIELDS = {
-          expiration: "expiration",
+          expiration: 'expiration'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateSandboxesSessionsBySessionIdSnapshotV2.
@@ -83,8 +81,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesSessionsBySessionIdSnapshotV2ResponseMetadata
         FIELDS = {
-          session: "session",
-          snapshot: "snapshot",
+          session: 'session',
+          snapshot: 'snapshot'
         }.freeze
         REQUIRED_FIELDS = %i[
           session
@@ -96,7 +94,7 @@ module OctridevVercel
           end,
           snapshot: lambda do |value|
             ::OctridevVercel::Snapshot.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -133,13 +131,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesByNameForkV2ResourcesMetadata
         FIELDS = {
-          vcpus: "vcpus",
-          memory: "memory",
+          vcpus: 'vcpus',
+          memory: 'memory'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateSandboxesByNameForkV2Resources.
@@ -176,15 +172,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesByNameForkV2KeepLastSnapshotsMetadata
         FIELDS = {
-          count: "count",
-          expiration: "expiration",
-          delete_evicted: "deleteEvicted",
+          count: 'count',
+          expiration: 'expiration',
+          delete_evicted: 'deleteEvicted'
         }.freeze
         REQUIRED_FIELDS = %i[
           count
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateSandboxesByNameForkV2KeepLastSnapshots.
@@ -223,24 +218,23 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesByNameForkV2Metadata
         FIELDS = {
-          network_policy: "networkPolicy",
-          resources: "resources",
-          ports: "ports",
-          image: "image",
-          timeout: "timeout",
-          env: "env",
-          mounts: "mounts",
-          region: "region",
-          failover_regions: "failoverRegions",
-          network_id: "networkId",
-          name: "name",
-          persistent: "persistent",
-          snapshot_expiration: "snapshotExpiration",
-          keep_last_snapshots: "keepLastSnapshots",
-          tags: "tags",
+          network_policy: 'networkPolicy',
+          resources: 'resources',
+          ports: 'ports',
+          image: 'image',
+          timeout: 'timeout',
+          env: 'env',
+          mounts: 'mounts',
+          region: 'region',
+          failover_regions: 'failoverRegions',
+          network_id: 'networkId',
+          name: 'name',
+          persistent: 'persistent',
+          snapshot_expiration: 'snapshotExpiration',
+          keep_last_snapshots: 'keepLastSnapshots',
+          tags: 'tags'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           network_policy: lambda do |value|
             ::OctridevVercel::CreateSandboxesByNameForkV2RequestNetworkPolicy.from_hash(value)
@@ -256,7 +250,7 @@ module OctridevVercel
           end,
           keep_last_snapshots: lambda do |value|
             ::OctridevVercel::Methods::Sandboxes::CreateSandboxesByNameForkV2KeepLastSnapshots.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -319,9 +313,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesByNameForkV2ResponseMetadata
         FIELDS = {
-          routes: "routes",
-          sandbox: "sandbox",
-          session: "session",
+          routes: 'routes',
+          sandbox: 'sandbox',
+          session: 'session'
         }.freeze
         REQUIRED_FIELDS = %i[
           routes
@@ -337,7 +331,7 @@ module OctridevVercel
           end,
           session: lambda do |value|
             ::OctridevVercel::Session.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -375,13 +369,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesV3ResourcesMetadata
         FIELDS = {
-          vcpus: "vcpus",
-          memory: "memory",
+          vcpus: 'vcpus',
+          memory: 'memory'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateSandboxesV3Resources.
@@ -418,15 +410,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesV3KeepLastSnapshotsMetadata
         FIELDS = {
-          count: "count",
-          expiration: "expiration",
-          delete_evicted: "deleteEvicted",
+          count: 'count',
+          expiration: 'expiration',
+          delete_evicted: 'deleteEvicted'
         }.freeze
         REQUIRED_FIELDS = %i[
           count
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateSandboxesV3KeepLastSnapshots.
@@ -465,27 +456,26 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSandboxesV3Metadata
         FIELDS = {
-          network_policy: "networkPolicy",
-          architecture: "architecture",
-          resources: "resources",
-          source: "source",
-          project_id: "projectId",
-          ports: "ports",
-          image: "image",
-          timeout: "timeout",
-          env: "env",
-          mounts: "mounts",
-          region: "region",
-          failover_regions: "failoverRegions",
-          network_id: "networkId",
-          name: "name",
-          persistent: "persistent",
-          snapshot_expiration: "snapshotExpiration",
-          keep_last_snapshots: "keepLastSnapshots",
-          tags: "tags",
+          network_policy: 'networkPolicy',
+          architecture: 'architecture',
+          resources: 'resources',
+          source: 'source',
+          project_id: 'projectId',
+          ports: 'ports',
+          image: 'image',
+          timeout: 'timeout',
+          env: 'env',
+          mounts: 'mounts',
+          region: 'region',
+          failover_regions: 'failoverRegions',
+          network_id: 'networkId',
+          name: 'name',
+          persistent: 'persistent',
+          snapshot_expiration: 'snapshotExpiration',
+          keep_last_snapshots: 'keepLastSnapshots',
+          tags: 'tags'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           network_policy: lambda do |value|
             ::OctridevVercel::CreateSandboxesV3RequestNetworkPolicy.from_hash(value)
@@ -507,7 +497,7 @@ module OctridevVercel
           end,
           keep_last_snapshots: lambda do |value|
             ::OctridevVercel::Methods::Sandboxes::CreateSandboxesV3KeepLastSnapshots.from_hash(value)
-          end,
+          end
         }.freeze
       end
     end

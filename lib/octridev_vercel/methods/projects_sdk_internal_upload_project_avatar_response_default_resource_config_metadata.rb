@@ -12,21 +12,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseDefaultResourceConfigMetadata
         FIELDS = {
-          build_machine_elastic_last_updated: "buildMachineElasticLastUpdated",
-          build_machine_elastic_reason: "buildMachineElasticReason",
-          build_machine_elastic_transition: "buildMachineElasticTransition",
-          build_machine_selection: "buildMachineSelection",
-          build_machine_type: "buildMachineType",
-          build_queue: "buildQueue",
-          elastic_concurrency_enabled: "elasticConcurrencyEnabled",
-          enable_functions_beta: "enableFunctionsBeta",
-          fluid: "fluid",
-          function_default_memory_type: "functionDefaultMemoryType",
-          function_default_regions: "functionDefaultRegions",
-          function_default_timeout: "functionDefaultTimeout",
-          function_zero_config_failover: "functionZeroConfigFailover",
-          is_nsnb_disabled: "isNSNBDisabled",
-          elastic_build_machine: "elasticBuildMachine",
+          build_machine_elastic_last_updated: 'buildMachineElasticLastUpdated',
+          build_machine_elastic_reason: 'buildMachineElasticReason',
+          build_machine_elastic_transition: 'buildMachineElasticTransition',
+          build_machine_selection: 'buildMachineSelection',
+          build_machine_type: 'buildMachineType',
+          build_queue: 'buildQueue',
+          elastic_concurrency_enabled: 'elasticConcurrencyEnabled',
+          enable_functions_beta: 'enableFunctionsBeta',
+          fluid: 'fluid',
+          function_default_memory_type: 'functionDefaultMemoryType',
+          function_default_regions: 'functionDefaultRegions',
+          function_default_timeout: 'functionDefaultTimeout',
+          function_zero_config_failover: 'functionZeroConfigFailover',
+          is_nsnb_disabled: 'isNSNBDisabled',
+          elastic_build_machine: 'elasticBuildMachine'
         }.freeze
         REQUIRED_FIELDS = %i[
           function_default_regions
@@ -67,7 +67,7 @@ module OctridevVercel
           end,
           elastic_build_machine: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseDefaultResourceConfigElasticBuildMachine.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -107,16 +107,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseDeploymentExpirationMetadata
         FIELDS = {
-          deployments_to_keep: "deploymentsToKeep",
-          expiration_days: "expirationDays",
-          expiration_days_canceled: "expirationDaysCanceled",
-          expiration_days_errored: "expirationDaysErrored",
-          expiration_days_production: "expirationDaysProduction",
+          deployments_to_keep: 'deploymentsToKeep',
+          expiration_days: 'expirationDays',
+          expiration_days_canceled: 'expirationDaysCanceled',
+          expiration_days_errored: 'expirationDaysErrored',
+          expiration_days_production: 'expirationDaysProduction'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UploadProjectAvatarResponseDeploymentExpiration.
@@ -159,9 +157,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesItemMetadata
         FIELDS = {
-          enabled: "enabled",
-          environments: "environments",
-          sources: "sources",
+          enabled: 'enabled',
+          environments: 'environments',
+          sources: 'sources'
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -177,7 +175,7 @@ module OctridevVercel
           end,
           sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXe255cb5b3d.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -212,9 +210,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseDeploymentPolicyGitSourcesItemMetadata
         FIELDS = {
-          enabled: "enabled",
-          environments: "environments",
-          sources: "sources",
+          enabled: 'enabled',
+          environments: 'environments',
+          sources: 'sources'
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -230,7 +228,7 @@ module OctridevVercel
           end,
           sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourcesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -265,18 +263,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseDeploymentPolicyMetadata
         FIELDS = {
-          deployment_sources: "deploymentSources",
-          git_sources: "gitSources",
+          deployment_sources: 'deploymentSources',
+          git_sources: 'gitSources'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           deployment_sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesItem.from_hash(item) }
           end,
           git_sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseDeploymentPolicyGitSourcesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -311,10 +308,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseDismissedToastsItemMetadata
         FIELDS = {
-          action: "action",
-          dismissed_at: "dismissedAt",
-          key: "key",
-          value: "value",
+          action: 'action',
+          dismissed_at: 'dismissedAt',
+          key: 'key',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -328,7 +325,7 @@ module OctridevVercel
           end,
           value: lambda do |value|
             ::OctridevVercel::UploadProjectAvatarResponseDismissedToastsItemValue.from_hash(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           value
@@ -367,8 +364,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseEnvItemInternalContentHintMetadata
         FIELDS = {
-          encrypted_value: "encryptedValue",
-          type: "type",
+          encrypted_value: 'encryptedValue',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           encrypted_value
@@ -377,7 +374,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseEnvItemInternalContentHintType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -414,28 +411,28 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseEnvItemMetadata
         FIELDS = {
-          comment: "comment",
-          configuration_id: "configurationId",
-          content_hint: "contentHint",
-          created_at: "createdAt",
-          created_by: "createdBy",
-          custom_environment_ids: "customEnvironmentIds",
-          decrypted: "decrypted",
-          edge_config_id: "edgeConfigId",
-          edge_config_token_id: "edgeConfigTokenId",
-          git_branch: "gitBranch",
-          id: "id",
-          internal_content_hint: "internalContentHint",
-          key: "key",
-          legacy_value: "legacyValue",
-          sunset_secret_id: "sunsetSecretId",
-          target: "target",
-          type: "type",
-          updated_at: "updatedAt",
-          updated_by: "updatedBy",
-          value: "value",
-          visibility: "visibility",
-          vsm_value: "vsmValue",
+          comment: 'comment',
+          configuration_id: 'configurationId',
+          content_hint: 'contentHint',
+          created_at: 'createdAt',
+          created_by: 'createdBy',
+          custom_environment_ids: 'customEnvironmentIds',
+          decrypted: 'decrypted',
+          edge_config_id: 'edgeConfigId',
+          edge_config_token_id: 'edgeConfigTokenId',
+          git_branch: 'gitBranch',
+          id: 'id',
+          internal_content_hint: 'internalContentHint',
+          key: 'key',
+          legacy_value: 'legacyValue',
+          sunset_secret_id: 'sunsetSecretId',
+          target: 'target',
+          type: 'type',
+          updated_at: 'updatedAt',
+          updated_by: 'updatedBy',
+          value: 'value',
+          visibility: 'visibility',
+          vsm_value: 'vsmValue'
         }.freeze
         REQUIRED_FIELDS = %i[
           key
@@ -457,7 +454,7 @@ module OctridevVercel
           end,
           visibility: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseEnvItemVisibility.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -503,14 +500,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseFeaturesMetadata
         FIELDS = {
-          web_analytics: "webAnalytics",
+          web_analytics: 'webAnalytics'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           web_analytics: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseFeaturesWebAnalytics.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -544,8 +540,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseGitCommentsMetadata
         FIELDS = {
-          on_commit: "onCommit",
-          on_pull_request: "onPullRequest",
+          on_commit: 'onCommit',
+          on_pull_request: 'onPullRequest'
         }.freeze
         REQUIRED_FIELDS = %i[
           on_commit
@@ -557,7 +553,7 @@ module OctridevVercel
           end,
           on_pull_request: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseGitCommentsOnPullRequest.from_value(value)
-          end,
+          end
         }.freeze
       end
     end

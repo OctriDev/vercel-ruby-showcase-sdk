@@ -5,103 +5,103 @@
 
 # global_config domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata
-  FIELDS = {
-    operation: "operation",
-    key: "key",
-    value: "value",
-    description: "description",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    operation
-    key
-  ].freeze
-  DECODERS = {
-    operation: lambda do |value|
-      ::OctridevVercel::PatchEdgeConfigItemsRequestItemsItemVariant3Operation.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for PatchEdgeConfigItemsRequestItemsItemVariant3.
-class PatchEdgeConfigItemsRequestItemsItemVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata::DECODERS
-
-  attr_reader :operation, :key, :value, :description
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata
+    FIELDS = {
+      operation: 'operation',
+      key: 'key',
+      value: 'value',
+      description: 'description'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      operation
+      key
+    ].freeze
+    DECODERS = {
+      operation: lambda do |value|
+        ::OctridevVercel::PatchEdgeConfigItemsRequestItemsItemVariant3Operation.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
+  # API model for PatchEdgeConfigItemsRequestItemsItemVariant3.
+  class PatchEdgeConfigItemsRequestItemsItemVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalPatchEdgeConfigItemsRequestItemsItemVariant3Metadata::DECODERS
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
+    attr_reader :operation, :key, :value, :description
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the PatchEdgeConfigItemsRequestItemsItem SDK namespace.
-module PatchEdgeConfigItemsRequestItemsItem
-  def self.from_hash(hash)
-    lossy = nil
-    [PatchEdgeConfigItemsRequestItemsItemVariant0, PatchEdgeConfigItemsRequestItemsItemVariant1, PatchEdgeConfigItemsRequestItemsItemVariant2, PatchEdgeConfigItemsRequestItemsItemVariant3].each do |type|
-      decoded = type.from_hash(hash)
-      return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-      lossy ||= decoded
-    rescue ::StandardError
-      next
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
     end
-    return lossy unless lossy.nil?
-  end
-end
 
-# Defines the PatchEdgeConfigItemsRequestItemsItemVariant0Operation SDK namespace.
-module PatchEdgeConfigItemsRequestItemsItemVariant0Operation
-  CREATE = 'create'
-  VALUES = ['create'].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-# Defines the PatchEdgeConfigItemsRequestItemsItemVariant1Operation SDK namespace.
-module PatchEdgeConfigItemsRequestItemsItemVariant1Operation
-  UPDATE = 'update'
-  UPSERT = 'upsert'
-  VALUES = ['update', 'upsert'].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-# Defines the PatchEdgeConfigItemsRequestItemsItemVariant2Operation SDK namespace.
-module PatchEdgeConfigItemsRequestItemsItemVariant2Operation
-  UPDATE = 'update'
-  UPSERT = 'upsert'
-  VALUES = ['update', 'upsert'].freeze
-  def self.from_value(value)
-    value
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
-end
 
-# Defines the PatchEdgeConfigItemsRequestItemsItemVariant3Operation SDK namespace.
-module PatchEdgeConfigItemsRequestItemsItemVariant3Operation
-  DELETE = 'delete'
-  VALUES = ['delete'].freeze
-  def self.from_value(value)
-    value
+  # Defines the PatchEdgeConfigItemsRequestItemsItem SDK namespace.
+  module PatchEdgeConfigItemsRequestItemsItem
+    def self.from_hash(hash)
+      lossy = nil
+      [PatchEdgeConfigItemsRequestItemsItemVariant0, PatchEdgeConfigItemsRequestItemsItemVariant1, PatchEdgeConfigItemsRequestItemsItemVariant2, PatchEdgeConfigItemsRequestItemsItemVariant3].each do |type|
+        decoded = type.from_hash(hash)
+        return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+        lossy ||= decoded
+      rescue ::StandardError
+        next
+      end
+      lossy unless lossy.nil?
+    end
   end
-end
+
+  # Defines the PatchEdgeConfigItemsRequestItemsItemVariant0Operation SDK namespace.
+  module PatchEdgeConfigItemsRequestItemsItemVariant0Operation
+    CREATE = 'create'
+    VALUES = ['create'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the PatchEdgeConfigItemsRequestItemsItemVariant1Operation SDK namespace.
+  module PatchEdgeConfigItemsRequestItemsItemVariant1Operation
+    UPDATE = 'update'
+    UPSERT = 'upsert'
+    VALUES = %w[update upsert].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the PatchEdgeConfigItemsRequestItemsItemVariant2Operation SDK namespace.
+  module PatchEdgeConfigItemsRequestItemsItemVariant2Operation
+    UPDATE = 'update'
+    UPSERT = 'upsert'
+    VALUES = %w[update upsert].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the PatchEdgeConfigItemsRequestItemsItemVariant3Operation SDK namespace.
+  module PatchEdgeConfigItemsRequestItemsItemVariant3Operation
+    DELETE = 'delete'
+    VALUES = ['delete'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
 end

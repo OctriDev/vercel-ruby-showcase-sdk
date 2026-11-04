@@ -5,697 +5,697 @@
 
 # deployments domain models
 module OctridevVercel
-# Defines the GetDeploymentResponseVariant1ResourceConfigBuildMachineSelectionSource SDK namespace.
-module GetDeploymentResponseVariant1ResourceConfigBuildMachineSelectionSource
-  DEPLOYMENT_OVERRIDE = 'deployment-override'
-  ELASTIC_ALGORITHM = 'elastic-algorithm'
-  PLAN_DEFAULT = 'plan-default'
-  PROJECT_SETTING = 'project-setting'
-  TEAM_ENTITLEMENT = 'team-entitlement'
-  TEAM_SETTING = 'team-setting'
-  VALUES = [
-    'deployment-override', 'elastic-algorithm', 'plan-default', 'project-setting',
-    'team-entitlement', 'team-setting'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0CaseSensitive SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0CaseSensitive
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0Check SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0Check
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0Continue SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0Continue
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1Type SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1Type
-  SERVICE = 'service'
-  VALUES = ['service'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Type SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Type
-  HOST = 'host'
-  VALUES = ['host'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariant1Type SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariant1Type
-  COOKIE = 'cookie'
-  HEADER = 'header'
-  QUERY = 'query'
-  VALUES = ['cookie', 'header', 'query'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0Important SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0Important
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVariant0Type SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVariant0Type
-  HOST = 'host'
-  VALUES = ['host'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVariant1Type SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVariant1Type
-  COOKIE = 'cookie'
-  HEADER = 'header'
-  QUERY = 'query'
-  VALUES = ['cookie', 'header', 'query'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0MitigateAction SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0MitigateAction
-  CHALLENGE = 'challenge'
-  DENY = 'deny'
-  VALUES = ['challenge', 'deny'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0Override SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0Override
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0RespectOriginCacheControl SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0RespectOriginCacheControl
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemVariant0Op SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemVariant0Op
-  APPEND = 'append'
-  DELETE = 'delete'
-  SET = 'set'
-  VALUES = ['append', 'delete', 'set'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemX38d68b2c06 SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemX38d68b2c06
-  REQUEST_HEADERS = 'request.headers'
-  REQUEST_QUERY = 'request.query'
-  RESPONSE_HEADERS = 'response.headers'
-  VALUES = ['request.headers', 'request.query', 'response.headers'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemVariant1Op SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemVariant1Op
-  SET = 'set'
-  VALUES = ['set'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemXa54806c2a3 SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemXa54806c2a3
-  REQUEST_PATH = 'request.path'
-  VALUES = ['request.path'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant1Handle SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant1Handle
-  ERROR = 'error'
-  FILESYSTEM = 'filesystem'
-  HIT = 'hit'
-  MISS = 'miss'
-  RESOURCE = 'resource'
-  REWRITE = 'rewrite'
-  VALUES = ['error', 'filesystem', 'hit', 'miss', 'resource', 'rewrite'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant2Continue SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant2Continue
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1RoutesItemVariant2Middleware SDK namespace.
-module GetDeploymentResponseVariant1RoutesItemVariant2Middleware
-  V_0 = 0
-  VALUES = [0].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1SeatBlockBlockCode SDK namespace.
-module GetDeploymentResponseVariant1SeatBlockBlockCode
-  COMMIT_AUTHOR_REQUIRED = 'COMMIT_AUTHOR_REQUIRED'
-  TEAM_ACCESS_REQUIRED = 'TEAM_ACCESS_REQUIRED'
-  VALUES = ['COMMIT_AUTHOR_REQUIRED', 'TEAM_ACCESS_REQUIRED'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1SeatBlockGitProvider SDK namespace.
-module GetDeploymentResponseVariant1SeatBlockGitProvider
-  BITBUCKET = 'bitbucket'
-  GITHUB = 'github'
-  GITLAB = 'gitlab'
-  VALUES = ['bitbucket', 'github', 'gitlab'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1SeatBlockIsVerified SDK namespace.
-module GetDeploymentResponseVariant1SeatBlockIsVerified
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigBundle SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigBundle
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX465af4201c SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX465af4201c
-  V_1_GI = '1Gi'
-  V_2_GI = '2Gi'
-  V_4_GI = '4Gi'
-  V_8_GI = '8Gi'
-  VALUES = ['1Gi', '2Gi', '4Gi', '8Gi'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigDebug SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigDebug
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXdbe42aae69 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXdbe42aae69
-  STRICT = 'strict'
-  VALUES = ['strict'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX7e8c5e95ae SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX7e8c5e95ae
-  ARM64 = 'arm64'
-  X86_64 = 'x86_64'
-  VALUES = ['arm64', 'x86_64'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX0a6a25504d SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX0a6a25504d
-  QUEUE_V1_BETA = 'queue/v1beta'
-  VALUES = ['queue/v1beta'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX0a6a25504d', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX0a6a25504d: #{value}")
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX808895b817 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX808895b817
-  QUEUE_V2_BETA = 'queue/v2beta'
-  VALUES = ['queue/v2beta'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX808895b817', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX808895b817: #{value}")
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX515c1938ea SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX515c1938ea
-  SCHEDULE_V1_BETA = 'schedule/v1beta'
-  VALUES = ['schedule/v1beta'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX515c1938ea', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX515c1938ea: #{value}")
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX30f13619b8 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX30f13619b8
-  MAX = 'max'
-  VALUES = ['max'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXf7bc3c1045 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXf7bc3c1045
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigHelpers SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigHelpers
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigMiddleware SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigMiddleware
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX2e0e313720 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX2e0e313720
-  NODEJS = 'nodejs'
-  VALUES = ['nodejs'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXbc35c9d8f7 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXbc35c9d8f7
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXfcf638f485 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXfcf638f485
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX1f73b5cd48 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX1f73b5cd48
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXf192633cdc SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXf192633cdc
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigZeroConfig SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigZeroConfig
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0EnvValueType SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0EnvValueType
-  SERVICE_REF = 'service-ref'
-  VALUES = ['service-ref'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0RoutePrefixSource SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0RoutePrefixSource
-  CONFIGURED = 'configured'
-  GENERATED = 'generated'
-  VALUES = ['configured', 'generated'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0Schema SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0Schema
-  EXPERIMENTAL_SERVICES = 'experimentalServices'
-  VALUES = ['experimentalServices'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant0Schema', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant0Schema: #{value}")
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0Trigger SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0Trigger
-  QUEUE = 'queue'
-  SCHEDULE = 'schedule'
-  WORKFLOW = 'workflow'
-  VALUES = ['queue', 'schedule', 'workflow'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant0Type SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant0Type
-  CRON = 'cron'
-  JOB = 'job'
-  WEB = 'web'
-  WORKER = 'worker'
-  VALUES = ['cron', 'job', 'web', 'worker'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BindingsItemFormat SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BindingsItemFormat
-  URL = 'url'
-  VALUES = ['url'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BindingsItemType SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BindingsItemType
-  SERVICE = 'service'
-  VALUES = ['service'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigBundle SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigBundle
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXaebd1b9443 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXaebd1b9443
-  V_1_GI = '1Gi'
-  V_2_GI = '2Gi'
-  V_4_GI = '4Gi'
-  V_8_GI = '8Gi'
-  VALUES = ['1Gi', '2Gi', '4Gi', '8Gi'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDebug SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDebug
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX8a2713b2ee SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX8a2713b2ee
-  STRICT = 'strict'
-  VALUES = ['strict'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX6cd3600265 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX6cd3600265
-  ARM64 = 'arm64'
-  X86_64 = 'x86_64'
-  VALUES = ['arm64', 'x86_64'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX2086b7dc2b SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX2086b7dc2b
-  QUEUE_V1_BETA = 'queue/v1beta'
-  VALUES = ['queue/v1beta'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX2086b7dc2b', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX2086b7dc2b: #{value}")
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXafdcbb0431 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXafdcbb0431
-  QUEUE_V2_BETA = 'queue/v2beta'
-  VALUES = ['queue/v2beta'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXafdcbb0431', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXafdcbb0431: #{value}")
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX91e30aa14b SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX91e30aa14b
-  SCHEDULE_V1_BETA = 'schedule/v1beta'
-  VALUES = ['schedule/v1beta'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX91e30aa14b', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX91e30aa14b: #{value}")
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX6f8434b54e SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX6f8434b54e
-  MAX = 'max'
-  VALUES = ['max'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXef8a70b7a4 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXef8a70b7a4
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigHelpers SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigHelpers
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigMiddleware SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigMiddleware
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXd50abe6493 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXd50abe6493
-  NODEJS = 'nodejs'
-  VALUES = ['nodejs'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXde6c791e32 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXde6c791e32
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXedc855f1b0 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXedc855f1b0
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX33f61f49ba SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX33f61f49ba
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXb331328930 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXb331328930
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigZeroConfig SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigZeroConfig
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1CleanUrls SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1CleanUrls
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetDeploymentResponseVariant1ServicesItemVariant1FunctionsValX1f5d78d815 SDK namespace.
-module GetDeploymentResponseVariant1ServicesItemVariant1FunctionsValX1f5d78d815
-  STRICT = 'strict'
-  VALUES = ['strict'].freeze
-  def self.from_value(value)
-    value
-  end
-end
+  # Defines the GetDeploymentResponseVariant1ResourceConfigBuildMachineSelectionSource SDK namespace.
+  module GetDeploymentResponseVariant1ResourceConfigBuildMachineSelectionSource
+    DEPLOYMENT_OVERRIDE = 'deployment-override'
+    ELASTIC_ALGORITHM = 'elastic-algorithm'
+    PLAN_DEFAULT = 'plan-default'
+    PROJECT_SETTING = 'project-setting'
+    TEAM_ENTITLEMENT = 'team-entitlement'
+    TEAM_SETTING = 'team-setting'
+    VALUES = %w[
+      deployment-override elastic-algorithm plan-default project-setting
+      team-entitlement team-setting
+    ].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0CaseSensitive SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0CaseSensitive
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0Check SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0Check
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0Continue SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0Continue
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1Type SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1Type
+    SERVICE = 'service'
+    VALUES = ['service'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Type SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0Type
+    HOST = 'host'
+    VALUES = ['host'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariant1Type SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariant1Type
+    COOKIE = 'cookie'
+    HEADER = 'header'
+    QUERY = 'query'
+    VALUES = %w[cookie header query].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0Important SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0Important
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVariant0Type SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVariant0Type
+    HOST = 'host'
+    VALUES = ['host'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVariant1Type SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVariant1Type
+    COOKIE = 'cookie'
+    HEADER = 'header'
+    QUERY = 'query'
+    VALUES = %w[cookie header query].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0MitigateAction SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0MitigateAction
+    CHALLENGE = 'challenge'
+    DENY = 'deny'
+    VALUES = %w[challenge deny].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0Override SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0Override
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0RespectOriginCacheControl SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0RespectOriginCacheControl
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemVariant0Op SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemVariant0Op
+    APPEND = 'append'
+    DELETE = 'delete'
+    SET = 'set'
+    VALUES = %w[append delete set].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemX38d68b2c06 SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemX38d68b2c06
+    REQUEST_HEADERS = 'request.headers'
+    REQUEST_QUERY = 'request.query'
+    RESPONSE_HEADERS = 'response.headers'
+    VALUES = ['request.headers', 'request.query', 'response.headers'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemVariant1Op SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemVariant1Op
+    SET = 'set'
+    VALUES = ['set'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemXa54806c2a3 SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemXa54806c2a3
+    REQUEST_PATH = 'request.path'
+    VALUES = ['request.path'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant1Handle SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant1Handle
+    ERROR = 'error'
+    FILESYSTEM = 'filesystem'
+    HIT = 'hit'
+    MISS = 'miss'
+    RESOURCE = 'resource'
+    REWRITE = 'rewrite'
+    VALUES = %w[error filesystem hit miss resource rewrite].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant2Continue SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant2Continue
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1RoutesItemVariant2Middleware SDK namespace.
+  module GetDeploymentResponseVariant1RoutesItemVariant2Middleware
+    V_0 = 0
+    VALUES = [0].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1SeatBlockBlockCode SDK namespace.
+  module GetDeploymentResponseVariant1SeatBlockBlockCode
+    COMMIT_AUTHOR_REQUIRED = 'COMMIT_AUTHOR_REQUIRED'
+    TEAM_ACCESS_REQUIRED = 'TEAM_ACCESS_REQUIRED'
+    VALUES = %w[COMMIT_AUTHOR_REQUIRED TEAM_ACCESS_REQUIRED].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1SeatBlockGitProvider SDK namespace.
+  module GetDeploymentResponseVariant1SeatBlockGitProvider
+    BITBUCKET = 'bitbucket'
+    GITHUB = 'github'
+    GITLAB = 'gitlab'
+    VALUES = %w[bitbucket github gitlab].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1SeatBlockIsVerified SDK namespace.
+  module GetDeploymentResponseVariant1SeatBlockIsVerified
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigBundle SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigBundle
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX465af4201c SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX465af4201c
+    V_1_GI = '1Gi'
+    V_2_GI = '2Gi'
+    V_4_GI = '4Gi'
+    V_8_GI = '8Gi'
+    VALUES = %w[1Gi 2Gi 4Gi 8Gi].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigDebug SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigDebug
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXdbe42aae69 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXdbe42aae69
+    STRICT = 'strict'
+    VALUES = ['strict'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX7e8c5e95ae SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX7e8c5e95ae
+    ARM64 = 'arm64'
+    X86_64 = 'x86_64'
+    VALUES = %w[arm64 x86_64].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX0a6a25504d SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX0a6a25504d
+    QUEUE_V1_BETA = 'queue/v1beta'
+    VALUES = ['queue/v1beta'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX0a6a25504d', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX0a6a25504d: #{value}")
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX808895b817 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX808895b817
+    QUEUE_V2_BETA = 'queue/v2beta'
+    VALUES = ['queue/v2beta'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX808895b817', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX808895b817: #{value}")
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX515c1938ea SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX515c1938ea
+    SCHEDULE_V1_BETA = 'schedule/v1beta'
+    VALUES = ['schedule/v1beta'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX515c1938ea', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX515c1938ea: #{value}")
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX30f13619b8 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX30f13619b8
+    MAX = 'max'
+    VALUES = ['max'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXf7bc3c1045 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXf7bc3c1045
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigHelpers SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigHelpers
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigMiddleware SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigMiddleware
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX2e0e313720 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX2e0e313720
+    NODEJS = 'nodejs'
+    VALUES = ['nodejs'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXbc35c9d8f7 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXbc35c9d8f7
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXfcf638f485 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXfcf638f485
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX1f73b5cd48 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiX1f73b5cd48
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXf192633cdc SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfiXf192633cdc
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigZeroConfig SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0BuilderConfigZeroConfig
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0EnvValueType SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0EnvValueType
+    SERVICE_REF = 'service-ref'
+    VALUES = ['service-ref'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0RoutePrefixSource SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0RoutePrefixSource
+    CONFIGURED = 'configured'
+    GENERATED = 'generated'
+    VALUES = %w[configured generated].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0Schema SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0Schema
+    EXPERIMENTAL_SERVICES = 'experimentalServices'
+    VALUES = ['experimentalServices'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant0Schema', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant0Schema: #{value}")
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0Trigger SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0Trigger
+    QUEUE = 'queue'
+    SCHEDULE = 'schedule'
+    WORKFLOW = 'workflow'
+    VALUES = %w[queue schedule workflow].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant0Type SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant0Type
+    CRON = 'cron'
+    JOB = 'job'
+    WEB = 'web'
+    WORKER = 'worker'
+    VALUES = %w[cron job web worker].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BindingsItemFormat SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BindingsItemFormat
+    URL = 'url'
+    VALUES = ['url'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BindingsItemType SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BindingsItemType
+    SERVICE = 'service'
+    VALUES = ['service'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigBundle SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigBundle
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXaebd1b9443 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXaebd1b9443
+    V_1_GI = '1Gi'
+    V_2_GI = '2Gi'
+    V_4_GI = '4Gi'
+    V_8_GI = '8Gi'
+    VALUES = %w[1Gi 2Gi 4Gi 8Gi].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDebug SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDebug
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX8a2713b2ee SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX8a2713b2ee
+    STRICT = 'strict'
+    VALUES = ['strict'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX6cd3600265 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX6cd3600265
+    ARM64 = 'arm64'
+    X86_64 = 'x86_64'
+    VALUES = %w[arm64 x86_64].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX2086b7dc2b SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX2086b7dc2b
+    QUEUE_V1_BETA = 'queue/v1beta'
+    VALUES = ['queue/v1beta'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX2086b7dc2b', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX2086b7dc2b: #{value}")
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXafdcbb0431 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXafdcbb0431
+    QUEUE_V2_BETA = 'queue/v2beta'
+    VALUES = ['queue/v2beta'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXafdcbb0431', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXafdcbb0431: #{value}")
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX91e30aa14b SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX91e30aa14b
+    SCHEDULE_V1_BETA = 'schedule/v1beta'
+    VALUES = ['schedule/v1beta'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX91e30aa14b', 'enum', "Unknown GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX91e30aa14b: #{value}")
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX6f8434b54e SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX6f8434b54e
+    MAX = 'max'
+    VALUES = ['max'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXef8a70b7a4 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXef8a70b7a4
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigHelpers SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigHelpers
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigMiddleware SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigMiddleware
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXd50abe6493 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXd50abe6493
+    NODEJS = 'nodejs'
+    VALUES = ['nodejs'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXde6c791e32 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXde6c791e32
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXedc855f1b0 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXedc855f1b0
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX33f61f49ba SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiX33f61f49ba
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXb331328930 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfiXb331328930
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigZeroConfig SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1BuilderConfigZeroConfig
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1CleanUrls SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1CleanUrls
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the GetDeploymentResponseVariant1ServicesItemVariant1FunctionsValX1f5d78d815 SDK namespace.
+  module GetDeploymentResponseVariant1ServicesItemVariant1FunctionsValX1f5d78d815
+    STRICT = 'strict'
+    VALUES = ['strict'].freeze
+    def self.from_value(value)
+      value
+    end
+  end
 end

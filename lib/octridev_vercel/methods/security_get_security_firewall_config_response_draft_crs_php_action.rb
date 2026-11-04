@@ -13,7 +13,7 @@ module OctridevVercel
       module GetSecurityFirewallConfigResponseDraftCrsPhpAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['deny', 'log'].freeze
+        VALUES = %w[deny log].freeze
         def self.from_value(value)
           value
         end
@@ -24,7 +24,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -38,8 +38,8 @@ module OctridevVercel
         TRAFFIC_SOURCES = 'traffic_sources'
         VERCEL_RULESET = 'vercel_ruleset'
         OWASP = 'owasp'
-        VALUES = [
-          'ai_bots', 'bot_filter', 'bot_protection', 'traffic_sources', 'vercel_ruleset', 'owasp'
+        VALUES = %w[
+          ai_bots bot_filter bot_protection traffic_sources vercel_ruleset owasp
         ].freeze
         def self.from_value(value)
           value
@@ -82,13 +82,13 @@ module OctridevVercel
         TRAFFIC_SOURCE = 'traffic_source'
         TRUSTED_SOURCE = 'trusted_source'
         USER_AGENT = 'user_agent'
-        VALUES = [
-          'bot_category', 'bot_name', 'bot_protection', 'bot_status', 'cookie', 'domain_environment',
-          'environment', 'geo_as_number', 'geo_city', 'geo_continent', 'geo_country',
-          'geo_country_region', 'header', 'host', 'ip_address', 'ja3_digest', 'ja4_digest', 'method',
-          'path', 'protocol', 'query', 'rate_limit_api_id', 'raw_path', 'region', 'response_code',
-          'route', 'ruleset', 'scheme', 'server_action', 'shared_condition', 'target_path',
-          'traffic_source', 'trusted_source', 'user_agent'
+        VALUES = %w[
+          bot_category bot_name bot_protection bot_status cookie domain_environment
+          environment geo_as_number geo_city geo_continent geo_country
+          geo_country_region header host ip_address ja3_digest ja4_digest method
+          path protocol query rate_limit_api_id raw_path region response_code
+          route ruleset scheme server_action shared_condition target_path
+          traffic_source trusted_source user_agent
         ].freeze
         def self.from_value(value)
           value
@@ -149,7 +149,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -164,7 +164,7 @@ module OctridevVercel
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
         REDIRECT = 'redirect'
-        VALUES = ['allow', 'bypass', 'challenge', 'deny', 'log', 'rate_limit', 'redirect'].freeze
+        VALUES = %w[allow bypass challenge deny log rate_limit redirect].freeze
         def self.from_value(value)
           value
         end
@@ -186,7 +186,7 @@ module OctridevVercel
         DENY = 'deny'
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
-        VALUES = ['challenge', 'deny', 'log', 'rate_limit'].freeze
+        VALUES = %w[challenge deny log rate_limit].freeze
         def self.from_value(value)
           value
         end
@@ -236,7 +236,7 @@ module OctridevVercel
       module GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRX08a831d2bc
         FIXED_WINDOW = 'fixed_window'
         TOKEN_BUCKET = 'token_bucket'
-        VALUES = ['fixed_window', 'token_bucket'].freeze
+        VALUES = %w[fixed_window token_bucket].freeze
         def self.from_value(value)
           value
         end
@@ -277,7 +277,7 @@ module OctridevVercel
         DENY = 'deny'
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
-        VALUES = ['challenge', 'deny', 'log', 'rate_limit'].freeze
+        VALUES = %w[challenge deny log rate_limit].freeze
         def self.from_value(value)
           value
         end
@@ -287,7 +287,7 @@ module OctridevVercel
       module GetSecurityFirewallConfigResponseActiveCrsSdAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['deny', 'log'].freeze
+        VALUES = %w[deny log].freeze
         def self.from_value(value)
           value
         end
@@ -320,9 +320,9 @@ module OctridevVercel
         LT = 'lt'
         LTE = 'lte'
         LIST = 'list'
-        VALUES = [
-          're', 'eq', 'neq', 'ex', 'nex', 'inc', 'ninc', 'pre', 'suf', 'sub', 'gt', 'gte', 'lt',
-          'lte', 'list'
+        VALUES = %w[
+          re eq neq ex nex inc ninc pre suf sub gt gte lt
+          lte list
         ].freeze
         def self.from_value(value)
           value
@@ -334,7 +334,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -367,9 +367,9 @@ module OctridevVercel
         RE = 're'
         SUB = 'sub'
         SUF = 'suf'
-        VALUES = [
-          'eq', 'ex', 'gt', 'gte', 'inc', 'list', 'lt', 'lte', 'neq', 'nex', 'ninc', 'pre', 're',
-          'sub', 'suf'
+        VALUES = %w[
+          eq ex gt gte inc list lt lte neq nex ninc pre re
+          sub suf
         ].freeze
         def self.from_value(value)
           value
@@ -393,9 +393,9 @@ module OctridevVercel
         RE = 're'
         SUB = 'sub'
         SUF = 'suf'
-        VALUES = [
-          'eq', 'ex', 'gt', 'gte', 'inc', 'list', 'lt', 'lte', 'neq', 'nex', 'ninc', 'pre', 're',
-          'sub', 'suf'
+        VALUES = %w[
+          eq ex gt gte inc list lt lte neq nex ninc pre re
+          sub suf
         ].freeze
         def self.from_value(value)
           value
@@ -445,7 +445,7 @@ module OctridevVercel
       module UpdateFirewallConfigVariant14ValueAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['deny', 'log'].freeze
+        VALUES = %w[deny log].freeze
         def self.from_value(value)
           value
         end
@@ -457,7 +457,7 @@ module OctridevVercel
         DENY = 'deny'
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
-        VALUES = ['challenge', 'deny', 'log', 'rate_limit'].freeze
+        VALUES = %w[challenge deny log rate_limit].freeze
         def self.from_value(value)
           value
         end
@@ -478,7 +478,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -491,7 +491,7 @@ module OctridevVercel
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
         BYPASS = 'bypass'
-        VALUES = ['deny', 'challenge', 'log', 'rate_limit', 'bypass'].freeze
+        VALUES = %w[deny challenge log rate_limit bypass].freeze
         def self.from_value(value)
           value
         end
@@ -511,7 +511,7 @@ module OctridevVercel
       module GetSecurityFirewallConfigResponseDraftCrsSdAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['deny', 'log'].freeze
+        VALUES = %w[deny log].freeze
         def self.from_value(value)
           value
         end
@@ -531,7 +531,7 @@ module OctridevVercel
       module PutFirewallConfigCrsRfiAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['deny', 'log'].freeze
+        VALUES = %w[deny log].freeze
         def self.from_value(value)
           value
         end
@@ -554,9 +554,9 @@ module OctridevVercel
         LT = 'lt'
         LTE = 'lte'
         LIST = 'list'
-        VALUES = [
-          're', 'eq', 'neq', 'ex', 'nex', 'inc', 'ninc', 'pre', 'suf', 'sub', 'gt', 'gte', 'lt',
-          'lte', 'list'
+        VALUES = %w[
+          re eq neq ex nex inc ninc pre suf sub gt gte lt
+          lte list
         ].freeze
         def self.from_value(value)
           value

@@ -5,281 +5,282 @@
 
 # vercel_ci domain models
 module OctridevVercel
-# Defines the ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX8885c2582f SDK namespace.
-module ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX8885c2582f
-  SUCCEEDED = 'succeeded'
-  VALUES = ['succeeded'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX8885c2582f SDK namespace.
+  module ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX8885c2582f
+    SUCCEEDED = 'succeeded'
+    VALUES = ['succeeded'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX8885c2582f', 'enum', "Unknown ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX8885c2582f: #{value}")
-  end
-end
-
-# Defines the ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX370fd37ab8 SDK namespace.
-module ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX370fd37ab8
-  CACHED = 'cached'
-  VALUES = ['cached'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX370fd37ab8', 'enum', "Unknown ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX370fd37ab8: #{value}")
-  end
-end
-
-# Defines the ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX34a2878a63 SDK namespace.
-module ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX34a2878a63
-  FAILED = 'failed'
-  VALUES = ['failed'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX34a2878a63', 'enum', "Unknown ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX34a2878a63: #{value}")
-  end
-end
-
-# Defines the ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX769f5a8ef8 SDK namespace.
-module ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX769f5a8ef8
-  SKIPPED = 'skipped'
-  VALUES = ['skipped'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX769f5a8ef8', 'enum', "Unknown ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX769f5a8ef8: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0Metadata
-  FIELDS = {
-    result: "result",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    result
-  ].freeze
-  DECODERS = {
-    result: lambda do |value|
-      ::OctridevVercel::SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXe325f4b44c.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0.
-class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0Metadata::DECODERS
-
-  attr_reader :result
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX8885c2582f', 'enum', "Unknown ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX8885c2582f: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX370fd37ab8 SDK namespace.
+  module ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX370fd37ab8
+    CACHED = 'cached'
+    VALUES = ['cached'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX370fd37ab8', 'enum', "Unknown ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX370fd37ab8: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX34a2878a63 SDK namespace.
+  module ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX34a2878a63
+    FAILED = 'failed'
+    VALUES = ['failed'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX34a2878a63', 'enum', "Unknown ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX34a2878a63: #{value}")
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # Defines the ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX769f5a8ef8 SDK namespace.
+  module ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX769f5a8ef8
+    SKIPPED = 'skipped'
+    VALUES = ['skipped'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Internal model hydration metadata.
-class SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1Metadata
-  FIELDS = {
-    result: "result",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    result
-  ].freeze
-  DECODERS = {
-    result: lambda do |value|
-      ::OctridevVercel::SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXab22d894ee.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1.
-class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1Metadata::DECODERS
-
-  attr_reader :result
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX769f5a8ef8', 'enum', "Unknown ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX769f5a8ef8: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0Metadata
+    FIELDS = {
+      result: 'result'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      result
+    ].freeze
+    DECODERS = {
+      result: lambda do |value|
+        ::OctridevVercel::SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXe325f4b44c.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0.
+  class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0Metadata::DECODERS
+
+    attr_reader :result
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2Metadata
-  FIELDS = {
-    result: "result",
-    reason: "reason",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    result
-    reason
-  ].freeze
-  DECODERS = {
-    result: lambda do |value|
-      ::OctridevVercel::SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX123e944116.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2.
-class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2Metadata::DECODERS
-
-  attr_reader :result, :reason
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1Metadata
+    FIELDS = {
+      result: 'result'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      result
+    ].freeze
+    DECODERS = {
+      result: lambda do |value|
+        ::OctridevVercel::SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXab22d894ee.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1.
+  class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1Metadata::DECODERS
+
+    attr_reader :result
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2Metadata
+    FIELDS = {
+      result: 'result',
+      reason: 'reason'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      result
+      reason
+    ].freeze
+    DECODERS = {
+      result: lambda do |value|
+        ::OctridevVercel::SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX123e944116.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2.
+  class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3Metadata
-  FIELDS = {
-    result: "result",
-    reason: "reason",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    result
-    reason
-  ].freeze
-  DECODERS = {
-    result: lambda do |value|
-      ::OctridevVercel::SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX945e0a9fc2.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :result, :reason
 
-# API model for SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3.
-class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :result, :reason
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3Metadata
+    FIELDS = {
+      result: 'result',
+      reason: 'reason'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      result
+      reason
+    ].freeze
+    DECODERS = {
+      result: lambda do |value|
+        ::OctridevVercel::SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX945e0a9fc2.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3.
+  class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3Metadata::DECODERS
+
+    attr_reader :result, :reason
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
+  # Defines the SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion SDK namespace.
+  module SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion
+    DISCRIMINATOR_MAPPING = {
+      'succeeded' => -> { SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0 },
+      'cached' => -> { SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1 },
+      'failed' => -> { SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2 },
+      'skipped' => -> { SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3 }
+    }.freeze
+
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['result']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion', 'variant', "Unknown SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion discriminator: #{hash['result'].inspect}")
+    end
   end
-end
 
-# Defines the SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion SDK namespace.
-module SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion
-  DISCRIMINATOR_MAPPING = {
-    "succeeded" => -> { SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0 },
-    "cached" => -> { SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1 },
-    "failed" => -> { SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2 },
-    "skipped" => -> { SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3 },
-  }.freeze
+  # Defines the SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXe325f4b44c SDK namespace.
+  module SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXe325f4b44c
+    SUCCEEDED = 'succeeded'
+    VALUES = ['succeeded'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["result"]]&.call
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion', 'variant', "Unknown SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion discriminator: #{hash["result"].inspect}")
+      raise SdkValidationError.new('SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXe325f4b44c', 'enum', "Unknown SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXe325f4b44c: #{value}")
+    end
   end
-end
 
-# Defines the SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXe325f4b44c SDK namespace.
-module SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXe325f4b44c
-  SUCCEEDED = 'succeeded'
-  VALUES = ['succeeded'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXab22d894ee SDK namespace.
+  module SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXab22d894ee
+    CACHED = 'cached'
+    VALUES = ['cached'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXe325f4b44c', 'enum', "Unknown SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXe325f4b44c: #{value}")
+      raise SdkValidationError.new('SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXab22d894ee', 'enum', "Unknown SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXab22d894ee: #{value}")
+    end
   end
-end
 
-# Defines the SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXab22d894ee SDK namespace.
-module SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXab22d894ee
-  CACHED = 'cached'
-  VALUES = ['cached'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX123e944116 SDK namespace.
+  module SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX123e944116
+    FAILED = 'failed'
+    VALUES = ['failed'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXab22d894ee', 'enum', "Unknown SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXab22d894ee: #{value}")
+      raise SdkValidationError.new('SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX123e944116', 'enum', "Unknown SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX123e944116: #{value}")
+    end
   end
-end
 
-# Defines the SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX123e944116 SDK namespace.
-module SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX123e944116
-  FAILED = 'failed'
-  VALUES = ['failed'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX945e0a9fc2 SDK namespace.
+  module SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX945e0a9fc2
+    SKIPPED = 'skipped'
+    VALUES = ['skipped'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX123e944116', 'enum', "Unknown SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX123e944116: #{value}")
+      raise SdkValidationError.new('SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX945e0a9fc2', 'enum', "Unknown SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX945e0a9fc2: #{value}")
+    end
   end
-end
-
-# Defines the SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX945e0a9fc2 SDK namespace.
-module SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX945e0a9fc2
-  SKIPPED = 'skipped'
-  VALUES = ['skipped'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX945e0a9fc2', 'enum', "Unknown SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX945e0a9fc2: #{value}")
-  end
-end
 end

@@ -12,15 +12,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRouteRouteRouteMetadata
         FIELDS = {
-          src: "src",
-          dest: "dest",
-          headers: "headers",
-          case_sensitive: "caseSensitive",
-          status: "status",
-          has: "has",
-          missing: "missing",
-          transforms: "transforms",
-          respect_origin_cache_control: "respectOriginCacheControl",
+          src: 'src',
+          dest: 'dest',
+          headers: 'headers',
+          case_sensitive: 'caseSensitive',
+          status: 'status',
+          has: 'has',
+          missing: 'missing',
+          transforms: 'transforms',
+          respect_origin_cache_control: 'respectOriginCacheControl'
         }.freeze
         REQUIRED_FIELDS = %i[
           src
@@ -34,7 +34,7 @@ module OctridevVercel
           end,
           transforms: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRouteTransformsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -69,11 +69,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRouteRouteMetadata
         FIELDS = {
-          name: "name",
-          description: "description",
-          enabled: "enabled",
-          src_syntax: "srcSyntax",
-          route: "route",
+          name: 'name',
+          description: 'description',
+          enabled: 'enabled',
+          src_syntax: 'srcSyntax',
+          route: 'route'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -85,7 +85,7 @@ module OctridevVercel
           end,
           route: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::AddRouteRouteRoute.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -121,15 +121,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRoutePositionMetadata
         FIELDS = {
-          placement: "placement",
-          reference_id: "referenceId",
+          placement: 'placement',
+          reference_id: 'referenceId'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           placement: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::AddRoutePositionPlacement.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -167,8 +166,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRouteMetadata
         FIELDS = {
-          route: "route",
-          position: "position",
+          route: 'route',
+          position: 'position'
         }.freeze
         REQUIRED_FIELDS = %i[
           route
@@ -179,7 +178,7 @@ module OctridevVercel
           end,
           position: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::AddRoutePosition.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -215,13 +214,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRouteResponseRouteRouteLocaleMetadata
         FIELDS = {
-          cookie: "cookie",
-          redirect: "redirect",
+          cookie: 'cookie',
+          redirect: 'redirect'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for AddRouteResponseRouteRouteLocale.
@@ -254,7 +251,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRouteResponseRouteRouteMitigateMetadata
         FIELDS = {
-          action: "action",
+          action: 'action'
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -262,7 +259,7 @@ module OctridevVercel
         DECODERS = {
           action: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::AddRouteResponseRouteRouteMitigateAction.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -296,29 +293,29 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRouteResponseRouteRouteMetadata
         FIELDS = {
-          case_sensitive: "caseSensitive",
-          check: "check",
-          continue: "continue",
-          dest: "dest",
-          destination: "destination",
-          env: "env",
-          has: "has",
-          headers: "headers",
-          important: "important",
-          locale: "locale",
-          methods: "methods",
-          middleware: "middleware",
-          middleware_path: "middlewarePath",
-          middleware_raw_src: "middlewareRawSrc",
-          missing: "missing",
-          mitigate: "mitigate",
-          override: "override",
-          respect_origin_cache_control: "respectOriginCacheControl",
-          source: "source",
-          src: "src",
-          status: "status",
-          status_code: "statusCode",
-          transforms: "transforms",
+          case_sensitive: 'caseSensitive',
+          check: 'check',
+          continue: 'continue',
+          dest: 'dest',
+          destination: 'destination',
+          env: 'env',
+          has: 'has',
+          headers: 'headers',
+          important: 'important',
+          locale: 'locale',
+          methods: 'methods',
+          middleware: 'middleware',
+          middleware_path: 'middlewarePath',
+          middleware_raw_src: 'middlewareRawSrc',
+          missing: 'missing',
+          mitigate: 'mitigate',
+          override: 'override',
+          respect_origin_cache_control: 'respectOriginCacheControl',
+          source: 'source',
+          src: 'src',
+          status: 'status',
+          status_code: 'statusCode',
+          transforms: 'transforms'
         }.freeze
         REQUIRED_FIELDS = %i[
           src
@@ -359,7 +356,7 @@ module OctridevVercel
           end,
           transforms: lambda do |value|
             value&.map { |item| ::OctridevVercel::AddRouteResponseRouteRouteTransformsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -406,16 +403,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRouteResponseRouteMetadata
         FIELDS = {
-          description: "description",
-          enabled: "enabled",
-          id: "id",
-          name: "name",
-          raw_dest: "rawDest",
-          raw_src: "rawSrc",
-          route: "route",
-          route_type: "routeType",
-          src_syntax: "srcSyntax",
-          staged: "staged",
+          description: 'description',
+          enabled: 'enabled',
+          id: 'id',
+          name: 'name',
+          raw_dest: 'rawDest',
+          raw_src: 'rawSrc',
+          route: 'route',
+          route_type: 'routeType',
+          src_syntax: 'srcSyntax',
+          staged: 'staged'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -437,7 +434,7 @@ module OctridevVercel
           end,
           staged: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::AddRouteResponseRouteStaged.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -489,14 +486,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAddRouteResponseVersionMetadata
         FIELDS = {
-          alias_: "alias",
-          created_by: "createdBy",
-          id: "id",
-          is_live: "isLive",
-          is_staging: "isStaging",
-          last_modified: "lastModified",
-          rule_count: "ruleCount",
-          s3_key: "s3Key",
+          alias_: 'alias',
+          created_by: 'createdBy',
+          id: 'id',
+          is_live: 'isLive',
+          is_staging: 'isStaging',
+          last_modified: 'lastModified',
+          rule_count: 'ruleCount',
+          s3_key: 's3Key'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_by
@@ -510,7 +507,7 @@ module OctridevVercel
           end,
           is_staging: lambda do |value|
             ::OctridevVercel::Methods::ProjectRoutes::AddRouteResponseVersionIsStaging.from_value(value)
-          end,
+          end
         }.freeze
       end
 

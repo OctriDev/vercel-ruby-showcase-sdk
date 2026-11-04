@@ -19,10 +19,12 @@ module OctridevVercel
 
     def self.validate_enum(field, value, allowed)
       return if value.nil?
+
       v = value.respond_to?(:value) ? value.value : value.to_s
       return if allowed.any? { |a| (a.respond_to?(:value) ? a.value : a.to_s) == v }
+
       raise SdkValidationError.new(field, 'enum',
-        "Validation failed for '#{field}': must be one of #{allowed.join(', ')}")
+                                   "Validation failed for '#{field}': must be one of #{allowed.join(', ')}")
     end
 
     # One row per bound: the keyword it is passed under, the predicate that
@@ -60,53 +62,59 @@ module OctridevVercel
       n = value.length
       if min && n < min
         raise SdkValidationError.new(field, 'length',
-          "Validation failed for '#{field}': length must be >= #{min}")
+                                     "Validation failed for '#{field}': length must be >= #{min}")
       end
-      if max && n > max
-        raise SdkValidationError.new(field, 'length',
-          "Validation failed for '#{field}': length must be <= #{max}")
-      end
+      return unless max && n > max
+
+      raise SdkValidationError.new(field, 'length',
+                                   "Validation failed for '#{field}': length must be <= #{max}")
     end
 
     def self.validate_items(field, value, min: nil, max: nil)
       n = value.length
       if min && n < min
         raise SdkValidationError.new(field, 'items',
-          "Validation failed for '#{field}': must have at least #{min} items")
+                                     "Validation failed for '#{field}': must have at least #{min} items")
       end
-      if max && n > max
-        raise SdkValidationError.new(field, 'items',
-          "Validation failed for '#{field}': must have at most #{max} items")
-      end
+      return unless max && n > max
+
+      raise SdkValidationError.new(field, 'items',
+                                   "Validation failed for '#{field}': must have at most #{max} items")
     end
 
     def self.validate_pattern(field, value, pattern)
       return if value =~ Regexp.new(pattern)
+
       raise SdkValidationError.new(field, 'pattern',
-        "Validation failed for '#{field}': must match pattern #{pattern}")
+                                   "Validation failed for '#{field}': must match pattern #{pattern}")
     end
 
-    EMAIL_RE = /\A[^\s@]+@[^\s@]+\.[^\s@]+\z/.freeze
+    EMAIL_RE = /\A[^\s@]+@[^\s@]+\.[^\s@]+\z/
     def self.validate_email(field, value)
       return if value =~ EMAIL_RE
+
       raise SdkValidationError.new(field, 'format:email',
-        "Validation failed for '#{field}': must be a valid email address")
+                                   "Validation failed for '#{field}': must be a valid email address")
     end
 
     def self.validate_uri(field, value)
-      uri = URI.parse(value) rescue nil
+      uri = begin
+        URI.parse(value)
+      rescue StandardError
+        nil
+      end
       # An absolute URI needs a scheme but no host.
       return if uri&.scheme
+
       raise SdkValidationError.new(field, 'format:uri',
-        "Validation failed for '#{field}': must be a valid URI")
+                                   "Validation failed for '#{field}': must be a valid URI")
     end
 
     def self.validate_date_time(field, value)
       Time.iso8601(value)
     rescue ArgumentError
       raise SdkValidationError.new(field, 'format:date-time',
-        "Validation failed for '#{field}': must be a valid ISO 8601 date-time")
+                                   "Validation failed for '#{field}': must be a valid ISO 8601 date-time")
     end
-
   end
 end

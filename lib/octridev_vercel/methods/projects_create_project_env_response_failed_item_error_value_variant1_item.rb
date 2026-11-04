@@ -14,7 +14,7 @@ module OctridevVercel
         PRODUCTION = 'production'
         PREVIEW = 'preview'
         DEVELOPMENT = 'development'
-        VALUES = ['production', 'preview', 'development'].freeze
+        VALUES = %w[production preview development].freeze
         def self.from_value(value)
           value
         end
@@ -25,7 +25,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = ['completed', 'registered', 'running'].freeze
+        VALUES = %w[completed registered running].freeze
         def self.from_value(value)
           value
         end
@@ -57,8 +57,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = [
-          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+        VALUES = %w[
+          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
         ].freeze
         def self.from_value(value)
           value
@@ -79,7 +79,7 @@ module OctridevVercel
       module UpdateProjectResourceConfigBuildMachineElasticTransitionDirection
         UPGRADE = 'upgrade'
         DOWNGRADE = 'downgrade'
-        VALUES = ['upgrade', 'downgrade'].freeze
+        VALUES = %w[upgrade downgrade].freeze
         def self.from_value(value)
           value
         end
@@ -89,7 +89,7 @@ module OctridevVercel
       module CreateProjectResourceConfigBuildQueueConfiguration
         SKIP_NAMESPACE_QUEUE = 'SKIP_NAMESPACE_QUEUE'
         WAIT_FOR_NAMESPACE_QUEUE = 'WAIT_FOR_NAMESPACE_QUEUE'
-        VALUES = ['SKIP_NAMESPACE_QUEUE', 'WAIT_FOR_NAMESPACE_QUEUE'].freeze
+        VALUES = %w[SKIP_NAMESPACE_QUEUE WAIT_FOR_NAMESPACE_QUEUE].freeze
         def self.from_value(value)
           value
         end
@@ -100,7 +100,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = ['completed', 'registered', 'running'].freeze
+        VALUES = %w[completed registered running].freeze
         def self.from_value(value)
           value
         end
@@ -165,8 +165,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -218,7 +218,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -239,7 +239,7 @@ module OctridevVercel
         ACCEPT = 'accept'
         CANCEL = 'cancel'
         DELETE = 'delete'
-        VALUES = ['accept', 'cancel', 'delete'].freeze
+        VALUES = %w[accept cancel delete].freeze
         def self.from_value(value)
           value
         end
@@ -260,7 +260,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -291,7 +291,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -302,7 +302,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
+        VALUES = %w[PROMOTED ROLLING STAGED].freeze
         def self.from_value(value)
           value
         end
@@ -335,7 +335,7 @@ module OctridevVercel
         PENDING = 'pending'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = ['failed', 'in-progress', 'pending', 'skipped', 'succeeded'].freeze
+        VALUES = %w[failed in-progress pending skipped succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -369,7 +369,7 @@ module OctridevVercel
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
         REDIRECT = 'redirect'
-        VALUES = ['allow', 'bypass', 'challenge', 'deny', 'log', 'rate_limit', 'redirect'].freeze
+        VALUES = %w[allow bypass challenge deny log rate_limit redirect].freeze
         def self.from_value(value)
           value
         end
@@ -412,7 +412,7 @@ module OctridevVercel
         SECRET = 'secret'
         SENSITIVE = 'sensitive'
         SYSTEM = 'system'
-        VALUES = ['encrypted', 'plain', 'secret', 'sensitive', 'system'].freeze
+        VALUES = %w[encrypted plain secret sensitive system].freeze
         def self.from_value(value)
           value
         end
@@ -432,7 +432,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -473,7 +473,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -496,10 +496,10 @@ module OctridevVercel
         REGION = 'region'
         SCHEME = 'scheme'
         TRUSTED_SOURCE = 'trusted_source'
-        VALUES = [
-          'cookie', 'domain_environment', 'environment', 'header', 'headers', 'host',
-          'initial_request_path', 'ip_address', 'method', 'path', 'protocol', 'query', 'region',
-          'scheme', 'trusted_source'
+        VALUES = %w[
+          cookie domain_environment environment header headers host
+          initial_request_path ip_address method path protocol query region
+          scheme trusted_source
         ].freeze
         def self.from_value(value)
           value
@@ -514,8 +514,8 @@ module OctridevVercel
         BITBUCKET = 'bitbucket'
         VERCEL = 'vercel'
         CURSOR_ORIGIN = 'cursor-origin'
-        VALUES = [
-          'github', 'github-limited', 'gitlab', 'bitbucket', 'vercel', 'cursor-origin'
+        VALUES = %w[
+          github github-limited gitlab bitbucket vercel cursor-origin
         ].freeze
         def self.from_value(value)
           value
@@ -559,7 +559,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
+        VALUES = %w[canceled failed skipped succeeded].freeze
         def self.from_value(value)
           value
         end

@@ -12,20 +12,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateIntegrationDeploymentActionMetadata
         FIELDS = {
-          status: "status",
-          status_text: "statusText",
-          status_url: "statusUrl",
-          outcomes: "outcomes",
+          status: 'status',
+          status_text: 'statusText',
+          status_url: 'statusUrl',
+          outcomes: 'outcomes'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::Deployments::UpdateIntegrationDeploymentActionStatus.from_value(value)
           end,
           outcomes: lambda do |value|
             value&.map { |item| ::OctridevVercel::UpdateIntegrationDeploymentActionRequestOutcomesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -59,23 +58,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateDeploymentGitMetadataMetadata
         FIELDS = {
-          remote_url: "remoteUrl",
-          commit_author_name: "commitAuthorName",
-          commit_author_email: "commitAuthorEmail",
-          commit_message: "commitMessage",
-          commit_ref: "commitRef",
-          commit_sha: "commitSha",
-          dirty: "dirty",
-          ci: "ci",
-          ci_type: "ciType",
-          ci_git_provider_username: "ciGitProviderUsername",
-          ci_git_repo_visibility: "ciGitRepoVisibility",
-          root_directory: "rootDirectory",
+          remote_url: 'remoteUrl',
+          commit_author_name: 'commitAuthorName',
+          commit_author_email: 'commitAuthorEmail',
+          commit_message: 'commitMessage',
+          commit_ref: 'commitRef',
+          commit_sha: 'commitSha',
+          dirty: 'dirty',
+          ci: 'ci',
+          ci_type: 'ciType',
+          ci_git_provider_username: 'ciGitProviderUsername',
+          ci_git_repo_visibility: 'ciGitRepoVisibility',
+          root_directory: 'rootDirectory'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateDeploymentGitMetadata.
@@ -132,27 +129,26 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateDeploymentProjectSettingsMetadata
         FIELDS = {
-          build_command: "buildCommand",
-          command_for_ignoring_build_step: "commandForIgnoringBuildStep",
-          dev_command: "devCommand",
-          framework: "framework",
-          install_command: "installCommand",
-          node_version: "nodeVersion",
-          output_directory: "outputDirectory",
-          root_directory: "rootDirectory",
-          serverless_function_region: "serverlessFunctionRegion",
-          skip_git_connect_during_link: "skipGitConnectDuringLink",
-          source_files_outside_root_directory: "sourceFilesOutsideRootDirectory",
+          build_command: 'buildCommand',
+          command_for_ignoring_build_step: 'commandForIgnoringBuildStep',
+          dev_command: 'devCommand',
+          framework: 'framework',
+          install_command: 'installCommand',
+          node_version: 'nodeVersion',
+          output_directory: 'outputDirectory',
+          root_directory: 'rootDirectory',
+          serverless_function_region: 'serverlessFunctionRegion',
+          skip_git_connect_during_link: 'skipGitConnectDuringLink',
+          source_files_outside_root_directory: 'sourceFilesOutsideRootDirectory'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           framework: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CreateDeploymentProjectSettingsFramework.from_value(value)
           end,
           node_version: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CreateDeploymentProjectSettingsNodeVersion.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -207,20 +203,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateDeploymentMetadata
         FIELDS = {
-          build_machine: "buildMachine",
-          custom_environment_slug_or_id: "customEnvironmentSlugOrId",
-          deployment_id: "deploymentId",
-          files: "files",
-          git_access_token: "gitAccessToken",
-          git_metadata: "gitMetadata",
-          git_source: "gitSource",
-          meta: "meta",
-          monorepo_manager: "monorepoManager",
-          name: "name",
-          project: "project",
-          project_settings: "projectSettings",
-          target: "target",
-          with_latest_commit: "withLatestCommit",
+          build_machine: 'buildMachine',
+          custom_environment_slug_or_id: 'customEnvironmentSlugOrId',
+          deployment_id: 'deploymentId',
+          files: 'files',
+          git_access_token: 'gitAccessToken',
+          git_metadata: 'gitMetadata',
+          git_source: 'gitSource',
+          meta: 'meta',
+          monorepo_manager: 'monorepoManager',
+          name: 'name',
+          project: 'project',
+          project_settings: 'projectSettings',
+          target: 'target',
+          with_latest_commit: 'withLatestCommit'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -240,7 +236,7 @@ module OctridevVercel
           end,
           project_settings: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CreateDeploymentProjectSettings.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -301,15 +297,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseAliasErrorMetadata
         FIELDS = {
-          code: "code",
-          message: "message",
+          code: 'code',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           code
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CancelDeploymentResponseAliasError.
@@ -343,17 +338,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseAliasWarningMetadata
         FIELDS = {
-          action: "action",
-          code: "code",
-          link: "link",
-          message: "message",
+          action: 'action',
+          code: 'code',
+          link: 'link',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           code
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CancelDeploymentResponseAliasWarning.
@@ -386,16 +380,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseAttributionCommitMetaMetadata
         FIELDS = {
-          email: "email",
-          is_verified: "isVerified",
-          name: "name",
+          email: 'email',
+          is_verified: 'isVerified',
+          name: 'name'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           is_verified: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseAttributionCommitMetaIsVerified.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -435,17 +428,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseAttributionGitUserMetadata
         FIELDS = {
-          id: "id",
-          login: "login",
-          provider: "provider",
-          type: "type",
+          id: 'id',
+          login: 'login',
+          provider: 'provider',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
           login
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CancelDeploymentResponseAttributionGitUser.
@@ -485,16 +477,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseAttributionVercelUserMetadata
         FIELDS = {
-          id: "id",
-          team_roles: "teamRoles",
-          username: "username",
+          id: 'id',
+          team_roles: 'teamRoles',
+          username: 'username'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
           username
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CancelDeploymentResponseAttributionVercelUser.
@@ -533,12 +524,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseAttributionMetadata
         FIELDS = {
-          commit_meta: "commitMeta",
-          git_user: "gitUser",
-          vercel_user: "vercelUser",
+          commit_meta: 'commitMeta',
+          git_user: 'gitUser',
+          vercel_user: 'vercelUser'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           commit_meta: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseAttributionCommitMeta.from_hash(value)
@@ -548,7 +538,7 @@ module OctridevVercel
           end,
           vercel_user: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseAttributionVercelUser.from_hash(value)
-          end,
+          end
         }.freeze
       end
     end

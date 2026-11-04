@@ -5,14 +5,14 @@
 
 # projects domain models
 module OctridevVercel
-# Defines the RemoveProjectEnvResponseItemContentHintVariant9Type SDK namespace.
-module RemoveProjectEnvResponseItemContentHintVariant9Type
-  POSTGRES_PRISMA_URL = 'postgres-prisma-url'
-  VALUES = ['postgres-prisma-url'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the RemoveProjectEnvResponseItemContentHintVariant9Type SDK namespace.
+  module RemoveProjectEnvResponseItemContentHintVariant9Type
+    POSTGRES_PRISMA_URL = 'postgres-prisma-url'
+    VALUES = ['postgres-prisma-url'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('RemoveProjectEnvResponseItemContentHintVariant9Type', 'enum', "Unknown RemoveProjectEnvResponseItemContentHintVariant9Type: #{value}")
+      raise SdkValidationError.new('RemoveProjectEnvResponseItemContentHintVariant9Type', 'enum', "Unknown RemoveProjectEnvResponseItemContentHintVariant9Type: #{value}")
+    end
   end
-end
 end

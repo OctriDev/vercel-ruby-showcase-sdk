@@ -5,677 +5,678 @@
 
 # projects_get domain models
 module OctridevVercel
-# API model for GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXb458be4cad.
-class GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXb458be4cad
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXb458be4cadMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXb458be4cadMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXb458be4cadMetadata::DECODERS
+  # API model for GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXb458be4cad.
+  class GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXb458be4cad
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXb458be4cadMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXb458be4cadMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXb458be4cadMetadata::DECODERS
 
-  attr_reader :target, :type
+    attr_reader :target, :type
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07Metadata
+    FIELDS = {
+      environment_id: 'environmentId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      environment_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXe8a532eff3.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07.
+  class GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07Metadata::DECODERS
+
+    attr_reader :environment_id, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsItem SDK namespace.
+  module GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsItem
+    DISCRIMINATOR_MAPPING = {
+      'system' => -> { GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXb458be4cad },
+      'custom' => -> { GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07 }
+    }.freeze
 
-# Internal model hydration metadata.
-class SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07Metadata
-  FIELDS = {
-    environment_id: "environmentId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    environment_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXe8a532eff3.from_value(value)
-    end,
-  }.freeze
-end
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
 
-# API model for GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07.
-class GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07Metadata::DECODERS
+      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
+      return type.from_hash(hash) if type
 
-  attr_reader :environment_id, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsItem', 'variant', "Unknown GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsItem discriminator: #{hash['type'].inspect}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX2750eb21b0 SDK namespace.
+  module GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX2750eb21b0
+    PREVIEW = 'preview'
+    PRODUCTION = 'production'
+    VALUES = %w[preview production].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX407b89b71d SDK namespace.
+  module GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX407b89b71d
+    SYSTEM = 'system'
+    VALUES = ['system'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX407b89b71d', 'enum', "Unknown GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX407b89b71d: #{value}")
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXe8a532eff3 SDK namespace.
+  module GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXe8a532eff3
+    CUSTOM = 'custom'
+    VALUES = ['custom'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsItem SDK namespace.
-module GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsItem
-  DISCRIMINATOR_MAPPING = {
-    "system" => -> { GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXb458be4cad },
-    "custom" => -> { GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX3788c49c07 },
-  }.freeze
-
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsItem', 'variant', "Unknown GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsItem discriminator: #{hash["type"].inspect}")
-  end
-end
-
-# Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX2750eb21b0 SDK namespace.
-module GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX2750eb21b0
-  PREVIEW = 'preview'
-  PRODUCTION = 'production'
-  VALUES = ['preview', 'production'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX407b89b71d SDK namespace.
-module GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX407b89b71d
-  SYSTEM = 'system'
-  VALUES = ['system'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX407b89b71d', 'enum', "Unknown GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsX407b89b71d: #{value}")
-  end
-end
-
-# Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXe8a532eff3 SDK namespace.
-module GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXe8a532eff3
-  CUSTOM = 'custom'
-  VALUES = ['custom'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXe8a532eff3', 'enum', "Unknown GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXe8a532eff3: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0Metadata
-  FIELDS = {
-    org: "org",
-    provider: "provider",
-    repo: "repo",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    org
-    provider
-  ].freeze
-  DECODERS = {
-    provider: lambda do |value|
-      ::OctridevVercel::GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVX3b7dcf23c9.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0.
-class GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0Metadata::DECODERS
-
-  attr_reader :org, :provider, :repo
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXe8a532eff3', 'enum', "Unknown GetProjectsResponseDeploymentPolicyGitSourcesItemEnvironmentsXe8a532eff3: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0Metadata
+    FIELDS = {
+      org: 'org',
+      provider: 'provider',
+      repo: 'repo'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      org
+      provider
+    ].freeze
+    DECODERS = {
+      provider: lambda do |value|
+        ::OctridevVercel::GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVX3b7dcf23c9.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0.
+  class GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0Metadata::DECODERS
+
+    attr_reader :org, :provider, :repo
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1Metadata
-  FIELDS = {
-    namespace: "namespace",
-    project: "project",
-    provider: "provider",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    namespace
-    provider
-  ].freeze
-  DECODERS = {
-    provider: lambda do |value|
-      ::OctridevVercel::GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVX31ad34bcea.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1.
-class GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1Metadata::DECODERS
-
-  attr_reader :namespace, :project, :provider
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1Metadata
+    FIELDS = {
+      namespace: 'namespace',
+      project: 'project',
+      provider: 'provider'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      namespace
+      provider
+    ].freeze
+    DECODERS = {
+      provider: lambda do |value|
+        ::OctridevVercel::GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVX31ad34bcea.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1.
+  class GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1Metadata::DECODERS
+
+    attr_reader :namespace, :project, :provider
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItem SDK namespace.
+  module GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItem
+    def self.from_hash(hash)
+      shape_mapping = {
+        'org' => GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0,
+        'namespace' => GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItem SDK namespace.
-module GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItem
-  def self.from_hash(hash)
-    shape_mapping = {
-      "org" => GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0,
-      "namespace" => GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-  end
-end
-
-# Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVX3b7dcf23c9 SDK namespace.
-module GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVX3b7dcf23c9
-  BITBUCKET = 'bitbucket'
-  GITHUB = 'github'
-  VALUES = ['bitbucket', 'github'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVX31ad34bcea SDK namespace.
-module GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVX31ad34bcea
-  GITLAB = 'gitlab'
-  VALUES = ['gitlab'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetProjectsResponseDismissedToastsItemValueVariant2Metadata
-  FIELDS = {
-    current_value: "currentValue",
-    previous_value: "previousValue",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    current_value
-    previous_value
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetProjectsResponseDismissedToastsItemValueVariant2.
-class GetProjectsResponseDismissedToastsItemValueVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetProjectsResponseDismissedToastsItemValueVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetProjectsResponseDismissedToastsItemValueVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetProjectsResponseDismissedToastsItemValueVariant2Metadata::DECODERS
-
-  attr_reader :current_value, :previous_value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVX3b7dcf23c9 SDK namespace.
+  module GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVX3b7dcf23c9
+    BITBUCKET = 'bitbucket'
+    GITHUB = 'github'
+    VALUES = %w[bitbucket github].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVX31ad34bcea SDK namespace.
+  module GetProjectsResponseDeploymentPolicyGitSourcesItemSourcesItemVX31ad34bcea
+    GITLAB = 'gitlab'
+    VALUES = ['gitlab'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetProjectsResponseDismissedToastsItemValueVariant2Metadata
+    FIELDS = {
+      current_value: 'currentValue',
+      previous_value: 'previousValue'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      current_value
+      previous_value
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetProjectsResponseDismissedToastsItemValueVariant2.
+  class GetProjectsResponseDismissedToastsItemValueVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetProjectsResponseDismissedToastsItemValueVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetProjectsResponseDismissedToastsItemValueVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetProjectsResponseDismissedToastsItemValueVariant2Metadata::DECODERS
 
-# Defines the GetProjectsResponseDismissedToastsItemValue SDK namespace.
-module GetProjectsResponseDismissedToastsItemValue
-  def self.from_hash(hash)
-    return hash if hash.is_a?(::String)
-    return hash if hash.is_a?(::Float)
-    return GetProjectsResponseDismissedToastsItemValueVariant3.from_value(hash) if [true, false].include?(hash)
-    return GetProjectsResponseDismissedToastsItemValueVariant2.from_hash(hash)
-  end
-end
+    attr_reader :current_value, :previous_value
 
-# Defines the GetProjectsResponseDismissedToastsItemValueVariant2CurrentValueVariant2 SDK namespace.
-module GetProjectsResponseDismissedToastsItemValueVariant2CurrentValueVariant2
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-# Defines the GetProjectsResponseDismissedToastsItemValueVariant2PreviousValueVariant2 SDK namespace.
-module GetProjectsResponseDismissedToastsItemValueVariant2PreviousValueVariant2
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-# Defines the GetProjectsResponseDismissedToastsItemValueVariant3 SDK namespace.
-module GetProjectsResponseDismissedToastsItemValueVariant3
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-# Internal model hydration metadata.
-class SdkInternalGetProjectsResponseEnvItemContentHintVariant0Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetProjectsResponseEnvItemContentHintVariant0.
-class GetProjectsResponseEnvItemContentHintVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant0Metadata::DECODERS
-
-  attr_reader :store_id, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the GetProjectsResponseDismissedToastsItemValue SDK namespace.
+  module GetProjectsResponseDismissedToastsItemValue
+    def self.from_hash(hash)
+      return hash if hash.is_a?(::String)
+      return hash if hash.is_a?(::Float)
+      return GetProjectsResponseDismissedToastsItemValueVariant3.from_value(hash) if [true, false].include?(hash)
+
+      GetProjectsResponseDismissedToastsItemValueVariant2.from_hash(hash)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the GetProjectsResponseDismissedToastsItemValueVariant2CurrentValueVariant2 SDK namespace.
+  module GetProjectsResponseDismissedToastsItemValueVariant2CurrentValueVariant2
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetProjectsResponseEnvItemContentHintVariant1Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetProjectsResponseEnvItemContentHintVariant1.
-class GetProjectsResponseEnvItemContentHintVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant1Metadata::DECODERS
-
-  attr_reader :store_id, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the GetProjectsResponseDismissedToastsItemValueVariant2PreviousValueVariant2 SDK namespace.
+  module GetProjectsResponseDismissedToastsItemValueVariant2PreviousValueVariant2
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the GetProjectsResponseDismissedToastsItemValueVariant3 SDK namespace.
+  module GetProjectsResponseDismissedToastsItemValueVariant3
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetProjectsResponseEnvItemContentHintVariant0Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetProjectsResponseEnvItemContentHintVariant0.
+  class GetProjectsResponseEnvItemContentHintVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetProjectsResponseEnvItemContentHintVariant2Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant2Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :store_id, :type
 
-# API model for GetProjectsResponseEnvItemContentHintVariant2.
-class GetProjectsResponseEnvItemContentHintVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant2Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :store_id, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetProjectsResponseEnvItemContentHintVariant1Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant1Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetProjectsResponseEnvItemContentHintVariant1.
+  class GetProjectsResponseEnvItemContentHintVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant1Metadata::DECODERS
+
+    attr_reader :store_id, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetProjectsResponseEnvItemContentHintVariant3Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant3Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetProjectsResponseEnvItemContentHintVariant3.
-class GetProjectsResponseEnvItemContentHintVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant3Metadata::DECODERS
-
-  attr_reader :store_id, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetProjectsResponseEnvItemContentHintVariant2Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant2Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetProjectsResponseEnvItemContentHintVariant2.
+  class GetProjectsResponseEnvItemContentHintVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant2Metadata::DECODERS
+
+    attr_reader :store_id, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetProjectsResponseEnvItemContentHintVariant3Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant3Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetProjectsResponseEnvItemContentHintVariant3.
+  class GetProjectsResponseEnvItemContentHintVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant3Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetProjectsResponseEnvItemContentHintVariant4Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant4Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :store_id, :type
 
-# API model for GetProjectsResponseEnvItemContentHintVariant4.
-class GetProjectsResponseEnvItemContentHintVariant4
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant4Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant4Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant4Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :store_id, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetProjectsResponseEnvItemContentHintVariant4Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant4Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetProjectsResponseEnvItemContentHintVariant4.
+  class GetProjectsResponseEnvItemContentHintVariant4
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant4Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant4Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant4Metadata::DECODERS
+
+    attr_reader :store_id, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetProjectsResponseEnvItemContentHintVariant5Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant5Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetProjectsResponseEnvItemContentHintVariant5.
-class GetProjectsResponseEnvItemContentHintVariant5
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant5Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant5Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant5Metadata::DECODERS
-
-  attr_reader :store_id, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetProjectsResponseEnvItemContentHintVariant5Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant5Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetProjectsResponseEnvItemContentHintVariant5.
+  class GetProjectsResponseEnvItemContentHintVariant5
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant5Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant5Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant5Metadata::DECODERS
+
+    attr_reader :store_id, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetProjectsResponseEnvItemContentHintVariant6Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant6Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetProjectsResponseEnvItemContentHintVariant6.
+  class GetProjectsResponseEnvItemContentHintVariant6
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant6Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant6Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant6Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetProjectsResponseEnvItemContentHintVariant6Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant6Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :store_id, :type
 
-# API model for GetProjectsResponseEnvItemContentHintVariant6.
-class GetProjectsResponseEnvItemContentHintVariant6
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant6Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant6Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant6Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :store_id, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetProjectsResponseEnvItemContentHintVariant7Metadata
+    FIELDS = {
+      store_id: 'storeId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant7Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetProjectsResponseEnvItemContentHintVariant7.
+  class GetProjectsResponseEnvItemContentHintVariant7
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant7Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant7Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant7Metadata::DECODERS
+
+    attr_reader :store_id, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetProjectsResponseEnvItemContentHintVariant7Metadata
-  FIELDS = {
-    store_id: "storeId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetProjectsResponseEnvItemContentHintVariant7Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetProjectsResponseEnvItemContentHintVariant7.
-class GetProjectsResponseEnvItemContentHintVariant7
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant7Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetProjectsResponseEnvItemContentHintVariant7Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetProjectsResponseEnvItemContentHintVariant7Metadata::DECODERS
-
-  attr_reader :store_id, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
 end

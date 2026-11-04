@@ -12,18 +12,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalTransferInDomainContactInformationMetadata
         FIELDS = {
-          first_name: "firstName",
-          last_name: "lastName",
-          email: "email",
-          phone: "phone",
-          address1: "address1",
-          address2: "address2",
-          city: "city",
-          state: "state",
-          zip: "zip",
-          country: "country",
-          company_name: "companyName",
-          fax: "fax",
+          first_name: 'firstName',
+          last_name: 'lastName',
+          email: 'email',
+          phone: 'phone',
+          address1: 'address1',
+          address2: 'address2',
+          city: 'city',
+          state: 'state',
+          zip: 'zip',
+          country: 'country',
+          company_name: 'companyName',
+          fax: 'fax'
         }.freeze
         REQUIRED_FIELDS = %i[
           first_name
@@ -72,7 +72,7 @@ module OctridevVercel
           end,
           fax: lambda do |value|
             ::OctridevVercel::E164PhoneNumber.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -129,11 +129,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalTransferInDomainMetadata
         FIELDS = {
-          auth_code: "authCode",
-          auto_renew: "autoRenew",
-          years: "years",
-          expected_price: "expectedPrice",
-          contact_information: "contactInformation",
+          auth_code: 'authCode',
+          auto_renew: 'autoRenew',
+          years: 'years',
+          expected_price: 'expectedPrice',
+          contact_information: 'contactInformation'
         }.freeze
         REQUIRED_FIELDS = %i[
           auth_code
@@ -145,7 +145,7 @@ module OctridevVercel
         DECODERS = {
           contact_information: lambda do |value|
             ::OctridevVercel::Methods::DomainsRegistrar::TransferInDomainContactInformation.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -185,8 +185,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalTransferInDomainResponseMetadata
         FIELDS = {
-          order_id: "orderId",
-          links: "_links",
+          order_id: 'orderId',
+          links: '_links'
         }.freeze
         REQUIRED_FIELDS = %i[
           order_id
@@ -195,7 +195,7 @@ module OctridevVercel
         DECODERS = {
           order_id: lambda do |value|
             ::OctridevVercel::OrderId.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -231,7 +231,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDomainTransferInResponseMetadata
         FIELDS = {
-          status: "status",
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -239,7 +239,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::DomainsRegistrar::GetDomainTransferInResponseStatus.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -273,18 +273,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRenewDomainContactInformationMetadata
         FIELDS = {
-          first_name: "firstName",
-          last_name: "lastName",
-          email: "email",
-          phone: "phone",
-          address1: "address1",
-          address2: "address2",
-          city: "city",
-          state: "state",
-          zip: "zip",
-          country: "country",
-          company_name: "companyName",
-          fax: "fax",
+          first_name: 'firstName',
+          last_name: 'lastName',
+          email: 'email',
+          phone: 'phone',
+          address1: 'address1',
+          address2: 'address2',
+          city: 'city',
+          state: 'state',
+          zip: 'zip',
+          country: 'country',
+          company_name: 'companyName',
+          fax: 'fax'
         }.freeze
         REQUIRED_FIELDS = %i[
           first_name
@@ -333,7 +333,7 @@ module OctridevVercel
           end,
           fax: lambda do |value|
             ::OctridevVercel::E164PhoneNumber.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -390,9 +390,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRenewDomainMetadata
         FIELDS = {
-          years: "years",
-          expected_price: "expectedPrice",
-          contact_information: "contactInformation",
+          years: 'years',
+          expected_price: 'expectedPrice',
+          contact_information: 'contactInformation'
         }.freeze
         REQUIRED_FIELDS = %i[
           years
@@ -401,7 +401,7 @@ module OctridevVercel
         DECODERS = {
           contact_information: lambda do |value|
             ::OctridevVercel::Methods::DomainsRegistrar::RenewDomainContactInformation.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -437,8 +437,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRenewDomainResponseMetadata
         FIELDS = {
-          order_id: "orderId",
-          links: "_links",
+          order_id: 'orderId',
+          links: '_links'
         }.freeze
         REQUIRED_FIELDS = %i[
           order_id
@@ -447,7 +447,7 @@ module OctridevVercel
         DECODERS = {
           order_id: lambda do |value|
             ::OctridevVercel::OrderId.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -483,13 +483,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateDomainAutoRenewMetadata
         FIELDS = {
-          auto_renew: "autoRenew",
+          auto_renew: 'autoRenew'
         }.freeze
         REQUIRED_FIELDS = %i[
           auto_renew
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateDomainAutoRenew.
@@ -522,7 +521,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateDomainNameserversMetadata
         FIELDS = {
-          nameservers: "nameservers",
+          nameservers: 'nameservers'
         }.freeze
         REQUIRED_FIELDS = %i[
           nameservers
@@ -530,7 +529,7 @@ module OctridevVercel
         DECODERS = {
           nameservers: lambda do |value|
             value&.map { |item| ::OctridevVercel::Nameserver.from_value(item) }
-          end,
+          end
         }.freeze
       end
 

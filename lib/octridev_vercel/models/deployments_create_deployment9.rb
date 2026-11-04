@@ -5,660 +5,656 @@
 
 # deployments domain models
 module OctridevVercel
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7.
-# Set when this build produces a function for schedule entrypoints.
-class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7Metadata::DECODERS
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7.
+  # Set when this build produces a function for schedule entrypoints.
+  class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7Metadata::DECODERS
 
-  attr_reader :entrypoints
-  # @return [String] Function output path every schedule in this build targets.
-  attr_reader :output_path
+    attr_reader :entrypoints
+    # @return [String] Function output path every schedule in this build targets.
+    attr_reader :output_path
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigMetadata
+    FIELDS = {
+      build_command: 'buildCommand',
+      buildpack: 'buildpack',
+      bundle: 'bundle',
+      bun_version: 'bunVersion',
+      daemon: 'daemon',
+      debug: 'debug',
+      dev_command: 'devCommand',
+      exclude_files: 'excludeFiles',
+      framework: 'framework',
+      functions: 'functions',
+      helpers: 'helpers',
+      import: 'import',
+      include_files: 'includeFiles',
+      install_command: 'installCommand',
+      ldsflags: 'ldsflags',
+      max_lambda_size: 'maxLambdaSize',
+      middleware: 'middleware',
+      middleware_matcher: 'middlewareMatcher',
+      middleware_runtime: 'middlewareRuntime',
+      node_version: 'nodeVersion',
+      output_directory: 'outputDirectory',
+      project_settings: 'projectSettings',
+      rust: 'rust',
+      schedule_function: 'scheduleFunction',
+      service_name: 'serviceName',
+      zero_config: 'zeroConfig'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      bundle: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigBundle.from_value(value)
+      end,
+      daemon: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigDaemon.from_hash(value)
+      end,
+      debug: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigDebug.from_value(value)
+      end,
+      helpers: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigHelpers.from_value(value)
+      end,
+      middleware: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX8bcedef20f.from_value(value)
+      end,
+      middleware_runtime: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXa0df657ece.from_value(value)
+      end,
+      project_settings: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXa2a05329d7.from_hash(value)
+      end,
+      schedule_function: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7.from_hash(value)
+      end,
+      zero_config: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXe0885cfe7e.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfig.
+  class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfig
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigMetadata::DECODERS
+
+    attr_reader :build_command, :bundle, :bun_version, :debug, :dev_command, :exclude_files,
+                :framework, :functions, :helpers, :import, :include_files, :install_command, :ldsflags,
+                :max_lambda_size, :middleware, :middleware_matcher, :node_version, :output_directory,
+                :project_settings, :rust, :zero_config
+    # @return [String] Buildpack runtime slug (e.g. "ruby").
+    attr_reader :buildpack
+    # @return [CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigDaemon] Set when this build produces the named daemon.
+    attr_reader :daemon
+    # @return [CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXa0df657ece] Enforced runtime for explicitly configured Routing Middleware.
+    attr_reader :middleware_runtime
+    # @return [CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7] Set when this build produces a function for schedule entrypoints.
+    attr_reader :schedule_function
+    # @return [String] Owning service name; scopes per-function config such as the v2beta consumer.
+    attr_reader :service_name
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigMetadata
-  FIELDS = {
-    build_command: "buildCommand",
-    buildpack: "buildpack",
-    bundle: "bundle",
-    bun_version: "bunVersion",
-    daemon: "daemon",
-    debug: "debug",
-    dev_command: "devCommand",
-    exclude_files: "excludeFiles",
-    framework: "framework",
-    functions: "functions",
-    helpers: "helpers",
-    import: "import",
-    include_files: "includeFiles",
-    install_command: "installCommand",
-    ldsflags: "ldsflags",
-    max_lambda_size: "maxLambdaSize",
-    middleware: "middleware",
-    middleware_matcher: "middlewareMatcher",
-    middleware_runtime: "middlewareRuntime",
-    node_version: "nodeVersion",
-    output_directory: "outputDirectory",
-    project_settings: "projectSettings",
-    rust: "rust",
-    schedule_function: "scheduleFunction",
-    service_name: "serviceName",
-    zero_config: "zeroConfig",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    bundle: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigBundle.from_value(value)
-    end,
-    daemon: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigDaemon.from_hash(value)
-    end,
-    debug: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigDebug.from_value(value)
-    end,
-    helpers: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigHelpers.from_value(value)
-    end,
-    middleware: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX8bcedef20f.from_value(value)
-    end,
-    middleware_runtime: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXa0df657ece.from_value(value)
-    end,
-    project_settings: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXa2a05329d7.from_hash(value)
-    end,
-    schedule_function: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7.from_hash(value)
-    end,
-    zero_config: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXe0885cfe7e.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfig.
-class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfig
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigMetadata::DECODERS
-
-  attr_reader :build_command, :bundle, :bun_version, :debug, :dev_command, :exclude_files,
-              :framework, :functions, :helpers, :import, :include_files, :install_command, :ldsflags,
-              :max_lambda_size, :middleware, :middleware_matcher, :node_version, :output_directory,
-              :project_settings, :rust, :zero_config
-  # @return [String] Buildpack runtime slug (e.g. "ruby").
-  attr_reader :buildpack
-  # @return [CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigDaemon] Set when this build produces the named daemon.
-  attr_reader :daemon
-  # @return [CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXa0df657ece] Enforced runtime for explicitly configured Routing Middleware.
-  attr_reader :middleware_runtime
-  # @return [CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7] Set when this build produces a function for schedule entrypoints.
-  attr_reader :schedule_function
-  # @return [String] Owning service name; scopes per-function config such as the v2beta consumer.
-  attr_reader :service_name
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderMetadata
+    FIELDS = {
+      config: 'config',
+      src: 'src',
+      use: 'use'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      use
+    ].freeze
+    DECODERS = {
+      config: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfig.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant0Builder.
+  class CreateDeploymentResponseVariant1ServicesItemVariant0Builder
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderMetadata::DECODERS
+
+    attr_reader :config, :src, :use
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0TopicsVariant1ItemMetadata
+    FIELDS = {
+      initial_delay_seconds: 'initialDelaySeconds',
+      retry_after_seconds: 'retryAfterSeconds',
+      topic: 'topic'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      topic
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant0TopicsVariant1Item.
+  class CreateDeploymentResponseVariant1ServicesItemVariant0TopicsVariant1Item
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0TopicsVariant1ItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0TopicsVariant1ItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0TopicsVariant1ItemMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderMetadata
-  FIELDS = {
-    config: "config",
-    src: "src",
-    use: "use",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    use
-  ].freeze
-  DECODERS = {
-    config: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfig.from_hash(value)
-    end,
-  }.freeze
-end
+    attr_reader :initial_delay_seconds, :retry_after_seconds, :topic
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant0Builder.
-class CreateDeploymentResponseVariant1ServicesItemVariant0Builder
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0BuilderMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :config, :src, :use
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0Metadata
+    FIELDS = {
+      build_command: 'buildCommand',
+      builder: 'builder',
+      entrypoint: 'entrypoint',
+      env: 'env',
+      framework: 'framework',
+      group: 'group',
+      handler_function: 'handlerFunction',
+      install_command: 'installCommand',
+      name: 'name',
+      pre_deploy_command: 'preDeployCommand',
+      route_prefix: 'routePrefix',
+      route_prefix_source: 'routePrefixSource',
+      runtime: 'runtime',
+      schedule: 'schedule',
+      schema: 'schema',
+      subdomain: 'subdomain',
+      topics: 'topics',
+      trigger: 'trigger',
+      type: 'type',
+      workspace: 'workspace'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      builder
+      name
+      schema
+      type
+      workspace
+    ].freeze
+    DECODERS = {
+      builder: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0Builder.from_hash(value)
+      end,
+      route_prefix_source: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0RoutePrefixSource.from_value(value)
+      end,
+      schema: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0Schema.from_value(value)
+      end,
+      trigger: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0Trigger.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant0.
+  # Services detected during build from vercel.json experimentalServices or auto-detected from project structure. Used to inject service URLs as environment variables at runtime.
+  class CreateDeploymentResponseVariant1ServicesItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0Metadata::DECODERS
+
+    attr_reader :build_command, :builder, :entrypoint, :env, :framework, :group, :handler_function,
+                :install_command, :name, :pre_deploy_command, :route_prefix, :route_prefix_source,
+                :runtime, :schedule, :schema, :subdomain, :topics, :trigger, :type, :workspace
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0TopicsVariant1ItemMetadata
-  FIELDS = {
-    initial_delay_seconds: "initialDelaySeconds",
-    retry_after_seconds: "retryAfterSeconds",
-    topic: "topic",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    topic
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant0TopicsVariant1Item.
-class CreateDeploymentResponseVariant1ServicesItemVariant0TopicsVariant1Item
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0TopicsVariant1ItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0TopicsVariant1ItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0TopicsVariant1ItemMetadata::DECODERS
-
-  attr_reader :initial_delay_seconds, :retry_after_seconds, :topic
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemMetadata
+    FIELDS = {
+      env: 'env',
+      format: 'format',
+      service: 'service',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      env
+      format
+      service
+    ].freeze
+    DECODERS = {
+      format: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemFormat.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemType.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItem.
+  # Caller-side bindings to other services.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemMetadata::DECODERS
+
+    # @return [String] Environment variable name that will store the generated value
+    attr_reader :env
+    # @return [CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemFormat] Generated value shape, must be `"url"`.
+    attr_reader :format
+    # @return [String] Target service name from `services`.
+    attr_reader :service
+    # @return [CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemType] If present, must be `"service"` for Service-to-Service HTTP bindings.
+    attr_reader :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3Metadata
+    FIELDS = {
+      memory: 'memory'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      memory
+    ].freeze
+    DECODERS = {
+      memory: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX26171c64e4.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0Metadata
-  FIELDS = {
-    build_command: "buildCommand",
-    builder: "builder",
-    entrypoint: "entrypoint",
-    env: "env",
-    framework: "framework",
-    group: "group",
-    handler_function: "handlerFunction",
-    install_command: "installCommand",
-    name: "name",
-    pre_deploy_command: "preDeployCommand",
-    route_prefix: "routePrefix",
-    route_prefix_source: "routePrefixSource",
-    runtime: "runtime",
-    schedule: "schedule",
-    schema: "schema",
-    subdomain: "subdomain",
-    topics: "topics",
-    trigger: "trigger",
-    type: "type",
-    workspace: "workspace",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    builder
-    name
-    schema
-    type
-    workspace
-  ].freeze
-  DECODERS = {
-    builder: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0Builder.from_hash(value)
-    end,
-    route_prefix_source: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0RoutePrefixSource.from_value(value)
-    end,
-    schema: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0Schema.from_value(value)
-    end,
-    trigger: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0Trigger.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :memory
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant0.
-# Services detected during build from vercel.json experimentalServices or auto-detected from project structure. Used to inject service URLs as environment variables at runtime.
-class CreateDeploymentResponseVariant1ServicesItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :build_command, :builder, :entrypoint, :env, :framework, :group, :handler_function,
-              :install_command, :name, :pre_deploy_command, :route_prefix, :route_prefix_source,
-              :runtime, :schedule, :schema, :subdomain, :topics, :trigger, :type, :workspace
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0eMetadata
+    FIELDS = {
+      requests: 'requests'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      requests
+    ].freeze
+    DECODERS = {
+      requests: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0e.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0e
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0eMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0eMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0eMetadata::DECODERS
+
+    attr_reader :requests
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemMetadata
-  FIELDS = {
-    env: "env",
-    format: "format",
-    service: "service",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    env
-    format
-    service
-  ].freeze
-  DECODERS = {
-    format: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemFormat.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemType.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItem.
-# Caller-side bindings to other services.
-class CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemMetadata::DECODERS
-
-  # @return [String] Environment variable name that will store the generated value
-  attr_reader :env
-  # @return [CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemFormat] Generated value shape, must be `"url"`.
-  attr_reader :format
-  # @return [String] Target service name from `services`.
-  attr_reader :service
-  # @return [CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemType] If present, must be `"service"` for Service-to-Service HTTP bindings.
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemonMetadata
+    FIELDS = {
+      command: 'command',
+      entrypoint: 'entrypoint',
+      instances: 'instances',
+      replicas: 'replicas',
+      resources: 'resources',
+      root: 'root',
+      termination_grace_period_seconds: 'terminationGracePeriodSeconds',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      entrypoint
+      root
+      name
+    ].freeze
+    DECODERS = {
+      resources: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0e.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemon.
+  # Set when this build produces the named daemon.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemon
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemonMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemonMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemonMetadata::DECODERS
+
+    attr_reader :command, :entrypoint, :resources, :root, :termination_grace_period_seconds, :name
+    # @return [Hash] Instance counts by region.
+    attr_reader :instances
+    # @return [Hash] Instance counts by region.
+    attr_reader :replicas
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9Metadata
+    FIELDS = {
+      auto_expose_system_envs: 'autoExposeSystemEnvs',
+      build_command: 'buildCommand',
+      command_for_ignoring_build_step: 'commandForIgnoringBuildStep',
+      created_at: 'createdAt',
+      dev_command: 'devCommand',
+      directory_listing: 'directoryListing',
+      framework: 'framework',
+      git_fork_protection: 'gitForkProtection',
+      install_command: 'installCommand',
+      monorepo_manager: 'monorepoManager',
+      node_version: 'nodeVersion',
+      output_directory: 'outputDirectory',
+      root_directory: 'rootDirectory',
+      source_files_outside_root_directory: 'sourceFilesOutsideRootDirectory'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      auto_expose_system_envs: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXf1dfbe552a.from_value(value)
+      end,
+      directory_listing: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX501a62578c.from_value(value)
+      end,
+      git_fork_protection: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX34fc4046e5.from_value(value)
+      end,
+      source_files_outside_root_directory: lambda do |value|
+        ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX8b49986b96.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3Metadata
-  FIELDS = {
-    memory: "memory",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    memory
-  ].freeze
-  DECODERS = {
-    memory: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX26171c64e4.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :auto_expose_system_envs, :build_command, :command_for_ignoring_build_step,
+                :created_at, :dev_command, :directory_listing, :framework, :git_fork_protection,
+                :install_command, :monorepo_manager, :node_version, :output_directory, :root_directory,
+                :source_files_outside_root_directory
 
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3.
-class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :memory
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667bMetadata
+    FIELDS = {
+      entrypoint: 'entrypoint',
+      schedule_names: 'scheduleNames',
+      source_file: 'sourceFile'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      entrypoint
+      schedule_names
+      source_file
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667b.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667b
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667bMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667bMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667bMetadata::DECODERS
+
+    # @return [String] Runtime-specific entrypoint locator from `vercel.json`.
+    attr_reader :entrypoint
+    # @return [Array_of_String] Names of the schedules that dispatch to this entrypoint, in config order.
+    attr_reader :schedule_names
+    # @return [String] Project-relative source file that contains the entrypoint.
+    attr_reader :source_file
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0eMetadata
-  FIELDS = {
-    requests: "requests",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    requests
-  ].freeze
-  DECODERS = {
-    requests: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0e.
-class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0e
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0eMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0eMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0eMetadata::DECODERS
-
-  attr_reader :requests
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32aMetadata
+    FIELDS = {
+      entrypoints: 'entrypoints',
+      output_path: 'outputPath'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      entrypoints
+      output_path
+    ].freeze
+    DECODERS = {
+      entrypoints: lambda do |value|
+        value&.map { |item| ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667b.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32a.
+  # Set when this build produces a function for schedule entrypoints.
+  class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32a
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32aMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32aMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32aMetadata::DECODERS
+
+    attr_reader :entrypoints
+    # @return [String] Function output path every schedule in this build targets.
+    attr_reader :output_path
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemonMetadata
-  FIELDS = {
-    command: "command",
-    entrypoint: "entrypoint",
-    instances: "instances",
-    replicas: "replicas",
-    resources: "resources",
-    root: "root",
-    termination_grace_period_seconds: "terminationGracePeriodSeconds",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    entrypoint
-    root
-    name
-  ].freeze
-  DECODERS = {
-    resources: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0e.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemon.
-# Set when this build produces the named daemon.
-class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemon
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemonMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemonMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemonMetadata::DECODERS
-
-  attr_reader :command, :entrypoint, :resources, :root, :termination_grace_period_seconds, :name
-  # @return [Hash] Instance counts by region.
-  attr_reader :instances
-  # @return [Hash] Instance counts by region.
-  attr_reader :replicas
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9Metadata
-  FIELDS = {
-    auto_expose_system_envs: "autoExposeSystemEnvs",
-    build_command: "buildCommand",
-    command_for_ignoring_build_step: "commandForIgnoringBuildStep",
-    created_at: "createdAt",
-    dev_command: "devCommand",
-    directory_listing: "directoryListing",
-    framework: "framework",
-    git_fork_protection: "gitForkProtection",
-    install_command: "installCommand",
-    monorepo_manager: "monorepoManager",
-    node_version: "nodeVersion",
-    output_directory: "outputDirectory",
-    root_directory: "rootDirectory",
-    source_files_outside_root_directory: "sourceFilesOutsideRootDirectory",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    auto_expose_system_envs: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXf1dfbe552a.from_value(value)
-    end,
-    directory_listing: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX501a62578c.from_value(value)
-    end,
-    git_fork_protection: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX34fc4046e5.from_value(value)
-    end,
-    source_files_outside_root_directory: lambda do |value|
-      ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX8b49986b96.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9.
-class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9Metadata::DECODERS
-
-  attr_reader :auto_expose_system_envs, :build_command, :command_for_ignoring_build_step,
-              :created_at, :dev_command, :directory_listing, :framework, :git_fork_protection,
-              :install_command, :monorepo_manager, :node_version, :output_directory, :root_directory,
-              :source_files_outside_root_directory
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667bMetadata
-  FIELDS = {
-    entrypoint: "entrypoint",
-    schedule_names: "scheduleNames",
-    source_file: "sourceFile",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    entrypoint
-    schedule_names
-    source_file
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667b.
-class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667b
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667bMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667bMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667bMetadata::DECODERS
-
-  # @return [String] Runtime-specific entrypoint locator from `vercel.json`.
-  attr_reader :entrypoint
-  # @return [Array_of_String] Names of the schedules that dispatch to this entrypoint, in config order.
-  attr_reader :schedule_names
-  # @return [String] Project-relative source file that contains the entrypoint.
-  attr_reader :source_file
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32aMetadata
-  FIELDS = {
-    entrypoints: "entrypoints",
-    output_path: "outputPath",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    entrypoints
-    output_path
-  ].freeze
-  DECODERS = {
-    entrypoints: lambda do |value|
-      value&.map { |item| ::OctridevVercel::CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667b.from_hash(item) }
-    end,
-  }.freeze
-end
-
-# API model for CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32a.
-# Set when this build produces a function for schedule entrypoints.
-class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32a
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32aMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32aMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32aMetadata::DECODERS
-
-  attr_reader :entrypoints
-  # @return [String] Function output path every schedule in this build targets.
-  attr_reader :output_path
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
 end

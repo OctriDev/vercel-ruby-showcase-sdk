@@ -12,15 +12,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseAliasItemDeploymentAliasErrorMetadata
         FIELDS = {
-          code: "code",
-          message: "message",
+          code: 'code',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           code
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseAliasItemDeploymentAliasError.
@@ -53,8 +52,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseAliasItemDeploymentBranchMatcherMetadata
         FIELDS = {
-          pattern: "pattern",
-          type: "type",
+          pattern: 'pattern',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           pattern
@@ -63,7 +62,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseAliasItemDeploymentBranchMatcherType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -100,15 +99,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseAliasItemDeploymentBuildsItemMetadata
         FIELDS = {
-          dest: "dest",
-          src: "src",
-          use: "use",
+          dest: 'dest',
+          src: 'src',
+          use: 'use'
         }.freeze
         REQUIRED_FIELDS = %i[
           use
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseAliasItemDeploymentBuildsItem.
@@ -141,19 +139,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseAliasItemDeploymentCreatorMetadata
         FIELDS = {
-          email: "email",
-          github_login: "githubLogin",
-          gitlab_login: "gitlabLogin",
-          uid: "uid",
-          username: "username",
+          email: 'email',
+          github_login: 'githubLogin',
+          gitlab_login: 'gitlabLogin',
+          uid: 'uid',
+          username: 'username'
         }.freeze
         REQUIRED_FIELDS = %i[
           email
           uid
           username
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseAliasItemDeploymentCreator.
@@ -186,19 +183,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseAliasItemDeploymentOidcTokenClaimsMetadata
         FIELDS = {
-          aud: "aud",
-          custom_environment_id: "custom_environment_id",
-          deployment_id: "deployment_id",
-          environment: "environment",
-          iss: "iss",
-          mfe_group_ids: "mfe_group_ids",
-          owner: "owner",
-          owner_id: "owner_id",
-          plan: "plan",
-          project: "project",
-          project_id: "project_id",
-          scope: "scope",
-          sub: "sub",
+          aud: 'aud',
+          custom_environment_id: 'custom_environment_id',
+          deployment_id: 'deployment_id',
+          environment: 'environment',
+          iss: 'iss',
+          mfe_group_ids: 'mfe_group_ids',
+          owner: 'owner',
+          owner_id: 'owner_id',
+          plan: 'plan',
+          project: 'project',
+          project_id: 'project_id',
+          scope: 'scope',
+          sub: 'sub'
         }.freeze
         REQUIRED_FIELDS = %i[
           aud
@@ -211,8 +208,7 @@ module OctridevVercel
           scope
           sub
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseAliasItemDeploymentOidcTokenClaims.
@@ -246,42 +242,42 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseAliasItemDeploymentMetadata
         FIELDS = {
-          alias_: "alias",
-          alias_assigned: "aliasAssigned",
-          alias_error: "aliasError",
-          alias_final: "aliasFinal",
-          automatic_aliases: "automaticAliases",
-          branch_matcher: "branchMatcher",
-          building_at: "buildingAt",
-          builds: "builds",
-          checks_conclusion: "checksConclusion",
-          checks_state: "checksState",
-          connect_builds_enabled: "connectBuildsEnabled",
-          connect_configuration_id: "connectConfigurationId",
-          created_at: "createdAt",
-          created_in: "createdIn",
-          creator: "creator",
-          deleted_at: "deletedAt",
-          deployment_hostname: "deploymentHostname",
-          forced: "forced",
-          id: "id",
-          meta: "meta",
-          monorepo_manager: "monorepoManager",
-          name: "name",
-          oidc_token_claims: "oidcTokenClaims",
-          plan: "plan",
-          preview_comments_enabled: "previewCommentsEnabled",
-          private: "private",
-          ready_at: "readyAt",
-          ready_state: "readyState",
-          ready_substate: "readySubstate",
-          requested_at: "requestedAt",
-          target: "target",
-          team_id: "teamId",
-          type: "type",
-          url: "url",
-          user_id: "userId",
-          with_cache: "withCache",
+          alias_: 'alias',
+          alias_assigned: 'aliasAssigned',
+          alias_error: 'aliasError',
+          alias_final: 'aliasFinal',
+          automatic_aliases: 'automaticAliases',
+          branch_matcher: 'branchMatcher',
+          building_at: 'buildingAt',
+          builds: 'builds',
+          checks_conclusion: 'checksConclusion',
+          checks_state: 'checksState',
+          connect_builds_enabled: 'connectBuildsEnabled',
+          connect_configuration_id: 'connectConfigurationId',
+          created_at: 'createdAt',
+          created_in: 'createdIn',
+          creator: 'creator',
+          deleted_at: 'deletedAt',
+          deployment_hostname: 'deploymentHostname',
+          forced: 'forced',
+          id: 'id',
+          meta: 'meta',
+          monorepo_manager: 'monorepoManager',
+          name: 'name',
+          oidc_token_claims: 'oidcTokenClaims',
+          plan: 'plan',
+          preview_comments_enabled: 'previewCommentsEnabled',
+          private: 'private',
+          ready_at: 'readyAt',
+          ready_state: 'readyState',
+          ready_substate: 'readySubstate',
+          requested_at: 'requestedAt',
+          target: 'target',
+          team_id: 'teamId',
+          type: 'type',
+          url: 'url',
+          user_id: 'userId',
+          with_cache: 'withCache'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -344,7 +340,7 @@ module OctridevVercel
           end,
           with_cache: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseAliasItemDeploymentWithCache.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           creator
@@ -391,16 +387,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseAliasItemMetadata
         FIELDS = {
-          configured_by: "configuredBy",
-          configured_changed_at: "configuredChangedAt",
-          created_at: "createdAt",
-          deployment: "deployment",
-          domain: "domain",
-          environment: "environment",
-          git_branch: "gitBranch",
-          redirect: "redirect",
-          redirect_status_code: "redirectStatusCode",
-          target: "target",
+          configured_by: 'configuredBy',
+          configured_changed_at: 'configuredChangedAt',
+          created_at: 'createdAt',
+          deployment: 'deployment',
+          domain: 'domain',
+          environment: 'environment',
+          git_branch: 'gitBranch',
+          redirect: 'redirect',
+          redirect_status_code: 'redirectStatusCode',
+          target: 'target'
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment
@@ -423,7 +419,7 @@ module OctridevVercel
           end,
           target: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseAliasItemTarget.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           deployment
@@ -461,21 +457,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseAnalyticsMetadata
         FIELDS = {
-          canceled_at: "canceledAt",
-          disabled_at: "disabledAt",
-          enabled_at: "enabledAt",
-          id: "id",
-          paid_at: "paidAt",
-          sample_rate_percent: "sampleRatePercent",
-          spend_limit_in_dollars: "spendLimitInDollars",
+          canceled_at: 'canceledAt',
+          disabled_at: 'disabledAt',
+          enabled_at: 'enabledAt',
+          id: 'id',
+          paid_at: 'paidAt',
+          sample_rate_percent: 'sampleRatePercent',
+          spend_limit_in_dollars: 'spendLimitInDollars'
         }.freeze
         REQUIRED_FIELDS = %i[
           disabled_at
           enabled_at
           id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseAnalytics.
@@ -509,14 +504,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseBlobsMetadata
         FIELDS = {
-          is_default_app: "isDefaultApp",
+          is_default_app: 'isDefaultApp'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           is_default_app: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseBlobsIsDefaultApp.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -551,14 +545,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseConnectConfigurationsItemAwsMetadata
         FIELDS = {
-          security_group_id: "securityGroupId",
-          subnet_ids: "subnetIds",
+          security_group_id: 'securityGroupId',
+          subnet_ids: 'subnetIds'
         }.freeze
         REQUIRED_FIELDS = %i[
           subnet_ids
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
     end
   end

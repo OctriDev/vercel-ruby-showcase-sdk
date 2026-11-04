@@ -30,9 +30,9 @@ module OctridevVercel
         SIN1 = 'sin1'
         SYD1 = 'syd1'
         YUL1 = 'yul1'
-        VALUES = [
-          'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'iad1',
-          'icn1', 'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
+        VALUES = %w[
+          arn1 bom1 cdg1 cle1 cpt1 dub1 fra1 gru1 hkg1 hnd1 iad1
+          icn1 kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
         ].freeze
         def self.from_value(value)
           value
@@ -64,7 +64,7 @@ module OctridevVercel
       module ListProjectsResponseVariant0ItemEnvItemVisibility
         CONFIG = 'config'
         SECRET = 'secret'
-        VALUES = ['config', 'secret'].freeze
+        VALUES = %w[config secret].freeze
         def self.from_value(value)
           value
         end
@@ -78,7 +78,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         REST_API = 'rest-api'
         V0 = 'v0'
-        VALUES = ['cli', 'deploy-hook', 'git', 'integration', 'rest-api', 'v0'].freeze
+        VALUES = %w[cli deploy-hook git integration rest-api v0].freeze
         def self.from_value(value)
           value
         end
@@ -110,7 +110,7 @@ module OctridevVercel
         PERFORMANCE_XL = 'performance_xl'
         STANDARD = 'standard'
         STANDARD_LEGACY = 'standard_legacy'
-        VALUES = ['performance', 'performance_xl', 'standard', 'standard_legacy'].freeze
+        VALUES = %w[performance performance_xl standard standard_legacy].freeze
         def self.from_value(value)
           value
         end
@@ -128,10 +128,10 @@ module OctridevVercel
         OOM_FAILURE = 'oom-failure'
         SHORT_BUILD_DURATION = 'short-build-duration'
         SUSTAINED_HIGH_CPU = 'sustained-high-cpu'
-        VALUES = [
-          'basic-floor', 'build-timeout-failure', 'enospc-failure', 'enterprise-floor',
-          'high-peak-disk', 'high-peak-memory', 'long-build-duration', 'oom-failure',
-          'short-build-duration', 'sustained-high-cpu'
+        VALUES = %w[
+          basic-floor build-timeout-failure enospc-failure enterprise-floor
+          high-peak-disk high-peak-memory long-build-duration oom-failure
+          short-build-duration sustained-high-cpu
         ].freeze
         def self.from_value(value)
           value
@@ -162,7 +162,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
+        VALUES = %w[PROMOTED ROLLING STAGED].freeze
         def self.from_value(value)
           value
         end
@@ -172,7 +172,7 @@ module OctridevVercel
       module UploadProjectAvatarResponseGitProviderOptionsCreateDeployments
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = ['disabled', 'enabled'].freeze
+        VALUES = %w[disabled enabled].freeze
         def self.from_value(value)
           value
         end
@@ -184,7 +184,7 @@ module OctridevVercel
         PERFORMANCE_XL = 'performance_xl'
         STANDARD = 'standard'
         STANDARD_LEGACY = 'standard_legacy'
-        VALUES = ['performance', 'performance_xl', 'standard', 'standard_legacy'].freeze
+        VALUES = %w[performance performance_xl standard standard_legacy].freeze
         def self.from_value(value)
           value
         end
@@ -236,7 +236,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
+        VALUES = %w[canceled failed skipped succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -257,7 +257,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = ['enterprise', 'hobby', 'pro'].freeze
+        VALUES = %w[enterprise hobby pro].freeze
         def self.from_value(value)
           value
         end
@@ -277,7 +277,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -319,8 +319,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = [
-          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+        VALUES = %w[
+          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
         ].freeze
         def self.from_value(value)
           value
@@ -361,7 +361,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -372,7 +372,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -411,7 +411,7 @@ module OctridevVercel
       module DeleteProjectAvatarResponseLastAliasRequestType
         PROMOTE = 'promote'
         ROLLBACK = 'rollback'
-        VALUES = ['promote', 'rollback'].freeze
+        VALUES = %w[promote rollback].freeze
         def self.from_value(value)
           value
         end
@@ -423,7 +423,7 @@ module OctridevVercel
         CNAME = 'CNAME'
         DNS_01 = 'dns-01'
         HTTP = 'http'
-        VALUES = ['A', 'CNAME', 'dns-01', 'http'].freeze
+        VALUES = %w[A CNAME dns-01 http].freeze
         def self.from_value(value)
           value
         end
@@ -495,8 +495,8 @@ module OctridevVercel
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
-        VALUES = [
-          'all', 'all_except_custom_domains', 'preview', 'prod_deployment_urls_and_all_previews'
+        VALUES = %w[
+          all all_except_custom_domains preview prod_deployment_urls_and_all_previews
         ].freeze
         def self.from_value(value)
           value
@@ -527,7 +527,7 @@ module OctridevVercel
       module UpdateProjectOidcTokenConfigIssuerMode
         TEAM = 'team'
         GLOBAL = 'global'
-        VALUES = ['team', 'global'].freeze
+        VALUES = %w[team global].freeze
         def self.from_value(value)
           value
         end
@@ -547,7 +547,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -558,7 +558,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end

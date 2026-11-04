@@ -12,19 +12,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseLatestDeploymentsItemOidcTokenClaimsMetadata
         FIELDS = {
-          aud: "aud",
-          custom_environment_id: "custom_environment_id",
-          deployment_id: "deployment_id",
-          environment: "environment",
-          iss: "iss",
-          mfe_group_ids: "mfe_group_ids",
-          owner: "owner",
-          owner_id: "owner_id",
-          plan: "plan",
-          project: "project",
-          project_id: "project_id",
-          scope: "scope",
-          sub: "sub",
+          aud: 'aud',
+          custom_environment_id: 'custom_environment_id',
+          deployment_id: 'deployment_id',
+          environment: 'environment',
+          iss: 'iss',
+          mfe_group_ids: 'mfe_group_ids',
+          owner: 'owner',
+          owner_id: 'owner_id',
+          plan: 'plan',
+          project: 'project',
+          project_id: 'project_id',
+          scope: 'scope',
+          sub: 'sub'
         }.freeze
         REQUIRED_FIELDS = %i[
           aud
@@ -37,8 +37,7 @@ module OctridevVercel
           scope
           sub
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateProjectResponseLatestDeploymentsItemOidcTokenClaims.
@@ -72,42 +71,42 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseLatestDeploymentsItemMetadata
         FIELDS = {
-          alias_: "alias",
-          alias_assigned: "aliasAssigned",
-          alias_error: "aliasError",
-          alias_final: "aliasFinal",
-          automatic_aliases: "automaticAliases",
-          branch_matcher: "branchMatcher",
-          building_at: "buildingAt",
-          builds: "builds",
-          checks_conclusion: "checksConclusion",
-          checks_state: "checksState",
-          connect_builds_enabled: "connectBuildsEnabled",
-          connect_configuration_id: "connectConfigurationId",
-          created_at: "createdAt",
-          created_in: "createdIn",
-          creator: "creator",
-          deleted_at: "deletedAt",
-          deployment_hostname: "deploymentHostname",
-          forced: "forced",
-          id: "id",
-          meta: "meta",
-          monorepo_manager: "monorepoManager",
-          name: "name",
-          oidc_token_claims: "oidcTokenClaims",
-          plan: "plan",
-          preview_comments_enabled: "previewCommentsEnabled",
-          private: "private",
-          ready_at: "readyAt",
-          ready_state: "readyState",
-          ready_substate: "readySubstate",
-          requested_at: "requestedAt",
-          target: "target",
-          team_id: "teamId",
-          type: "type",
-          url: "url",
-          user_id: "userId",
-          with_cache: "withCache",
+          alias_: 'alias',
+          alias_assigned: 'aliasAssigned',
+          alias_error: 'aliasError',
+          alias_final: 'aliasFinal',
+          automatic_aliases: 'automaticAliases',
+          branch_matcher: 'branchMatcher',
+          building_at: 'buildingAt',
+          builds: 'builds',
+          checks_conclusion: 'checksConclusion',
+          checks_state: 'checksState',
+          connect_builds_enabled: 'connectBuildsEnabled',
+          connect_configuration_id: 'connectConfigurationId',
+          created_at: 'createdAt',
+          created_in: 'createdIn',
+          creator: 'creator',
+          deleted_at: 'deletedAt',
+          deployment_hostname: 'deploymentHostname',
+          forced: 'forced',
+          id: 'id',
+          meta: 'meta',
+          monorepo_manager: 'monorepoManager',
+          name: 'name',
+          oidc_token_claims: 'oidcTokenClaims',
+          plan: 'plan',
+          preview_comments_enabled: 'previewCommentsEnabled',
+          private: 'private',
+          ready_at: 'readyAt',
+          ready_state: 'readyState',
+          ready_substate: 'readySubstate',
+          requested_at: 'requestedAt',
+          target: 'target',
+          team_id: 'teamId',
+          type: 'type',
+          url: 'url',
+          user_id: 'userId',
+          with_cache: 'withCache'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -170,7 +169,7 @@ module OctridevVercel
           end,
           with_cache: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseLatestDeploymentsItemWithCache.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           creator
@@ -217,18 +216,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseOidcTokenConfigMetadata
         FIELDS = {
-          enabled: "enabled",
-          issuer_mode: "issuerMode",
+          enabled: 'enabled',
+          issuer_mode: 'issuerMode'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           enabled: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseOidcTokenConfigEnabled.from_value(value)
           end,
           issuer_mode: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponseOidcTokenConfigIssuerMode.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -265,13 +263,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseOptionsAllowlistPathsItemMetadata
         FIELDS = {
-          value: "value",
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateProjectResponseOptionsAllowlistPathsItem.
@@ -304,7 +301,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponseOptionsAllowlistMetadata
         FIELDS = {
-          paths: "paths",
+          paths: 'paths'
         }.freeze
         REQUIRED_FIELDS = %i[
           paths
@@ -312,7 +309,7 @@ module OctridevVercel
         DECODERS = {
           paths: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::CreateProjectResponseOptionsAllowlistPathsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -346,8 +343,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponsePassportMetadata
         FIELDS = {
-          connector_id: "connectorId",
-          deployment_type: "deploymentType",
+          connector_id: 'connectorId',
+          deployment_type: 'deploymentType'
         }.freeze
         REQUIRED_FIELDS = %i[
           connector_id
@@ -356,7 +353,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponsePassportDeploymentType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -390,7 +387,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResponsePasswordProtectionMetadata
         FIELDS = {
-          deployment_type: "deploymentType",
+          deployment_type: 'deploymentType'
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment_type
@@ -398,7 +395,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResponsePasswordProtectionDeploymentType.from_value(value)
-          end,
+          end
         }.freeze
       end
 

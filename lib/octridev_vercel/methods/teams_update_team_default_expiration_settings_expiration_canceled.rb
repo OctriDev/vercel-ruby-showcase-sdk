@@ -20,7 +20,7 @@ module OctridevVercel
         V_1_W = '1w'
         V_1_D = '1d'
         UNLIMITED = 'unlimited'
-        VALUES = ['1y', '6m', '3m', '2m', '1m', '2w', '1w', '1d', 'unlimited'].freeze
+        VALUES = %w[1y 6m 3m 2m 1m 2w 1w 1d unlimited].freeze
         def self.from_value(value)
           value
         end
@@ -76,9 +76,9 @@ module OctridevVercel
         SECURITY = 'SECURITY'
         VIEWER = 'VIEWER'
         VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
-        VALUES = [
-          'BILLING', 'CONTRIBUTOR', 'DEVELOPER', 'MEMBER', 'OWNER', 'SECURITY', 'VIEWER',
-          'VIEWER_FOR_PLUS'
+        VALUES = %w[
+          BILLING CONTRIBUTOR DEVELOPER MEMBER OWNER SECURITY VIEWER
+          VIEWER_FOR_PLUS
         ].freeze
         def self.from_value(value)
           value
@@ -96,7 +96,7 @@ module OctridevVercel
         V_1_W = '1w'
         V_1_D = '1d'
         UNLIMITED = 'unlimited'
-        VALUES = ['1y', '6m', '3m', '2m', '1m', '2w', '1w', '1d', 'unlimited'].freeze
+        VALUES = %w[1y 6m 3m 2m 1m 2w 1w 1d unlimited].freeze
         def self.from_value(value)
           value
         end
@@ -112,9 +112,9 @@ module OctridevVercel
         VIEWER = 'VIEWER'
         VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
         CONTRIBUTOR = 'CONTRIBUTOR'
-        VALUES = [
-          'OWNER', 'MEMBER', 'DEVELOPER', 'SECURITY', 'BILLING', 'VIEWER', 'VIEWER_FOR_PLUS',
-          'CONTRIBUTOR'
+        VALUES = %w[
+          OWNER MEMBER DEVELOPER SECURITY BILLING VIEWER VIEWER_FOR_PLUS
+          CONTRIBUTOR
         ].freeze
         def self.from_value(value)
           value

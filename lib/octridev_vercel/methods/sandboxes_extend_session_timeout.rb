@@ -28,28 +28,27 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_range('duration', duration, min: 1000)
 
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/extend-timeout"
+            '/extend-timeout'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'duration' => duration,
+            'duration' => duration
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::ExtendSessionTimeoutResponse,
           decoder: :json,
           operation_id: 'extend_session_timeout',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -70,24 +69,23 @@ module OctridevVercel
         body: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/network-policy"
+            '/network-policy'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: body,
           return_type: ::OctridevVercel::Methods::Sandboxes::UpdateSessionNetworkPolicyResponse,
           decoder: :json,
           operation_id: 'update_session_network_policy',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -113,26 +111,25 @@ module OctridevVercel
         cwd: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/fs/read"
+            '/fs/read'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'path' => path,
-            'cwd' => cwd,
+            'cwd' => cwd
           },
           decoder: :bytes,
           operation_id: 'read_session_file',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -161,27 +158,26 @@ module OctridevVercel
         recursive: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/fs/mkdir"
+            '/fs/mkdir'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'path' => path,
             'cwd' => cwd,
-            'recursive' => recursive,
+            'recursive' => recursive
           },
           decoder: :json,
           operation_id: 'create_session_directory',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -205,25 +201,24 @@ module OctridevVercel
         x_cwd: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/fs/write"
+            '/fs/write'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'write_session_files',
           extra_headers: SdkClient.serialize_headers({
-            'x-cwd' => SdkClient.header_value(x_cwd),
-          }),
-          request_options: request_options,
+                                                       'x-cwd' => SdkClient.header_value(x_cwd)
+                                                     }),
+          request_options: request_options
         ).result
       end
 
@@ -245,26 +240,25 @@ module OctridevVercel
         expiration: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/snapshot"
+            '/snapshot'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'expiration' => expiration,
+            'expiration' => expiration
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::CreateSandboxesSessionsBySessionIdSnapshotV2Response,
           decoder: :json,
           operation_id: 'create_sandboxes_sessions_by_session_id_snapshot_v2',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -288,26 +282,25 @@ module OctridevVercel
         expiration: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v3/sandboxes/sessions/",
+            '/v3/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/snapshot"
+            '/snapshot'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'expiration' => expiration,
+            'expiration' => expiration
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::CreateSandboxesSessionsBySessionIdSnapshotV3Response,
           decoder: :json,
           operation_id: 'create_sandboxes_sessions_by_session_id_snapshot_v3',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
     end

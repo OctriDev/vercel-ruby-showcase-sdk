@@ -24,7 +24,7 @@ module OctridevVercel
       module ListProjectsResponseVariant2ProjectsItemLastAliasRequestType
         PROMOTE = 'promote'
         ROLLBACK = 'rollback'
-        VALUES = ['promote', 'rollback'].freeze
+        VALUES = %w[promote rollback].freeze
         def self.from_value(value)
           value
         end
@@ -34,7 +34,7 @@ module OctridevVercel
       module GetProjectsResponseDefaultResourceConfigBuildMachineElasticTrXe9e114191e
         DOWNGRADE = 'downgrade'
         UPGRADE = 'upgrade'
-        VALUES = ['downgrade', 'upgrade'].freeze
+        VALUES = %w[downgrade upgrade].freeze
         def self.from_value(value)
           value
         end
@@ -45,7 +45,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -66,7 +66,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
+        VALUES = %w[PROMOTED ROLLING STAGED].freeze
         def self.from_value(value)
           value
         end
@@ -97,7 +97,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = ['enhanced', 'standard', 'turbo'].freeze
+        VALUES = %w[enhanced standard turbo].freeze
         def self.from_value(value)
           value
         end
@@ -128,7 +128,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = ['completed', 'registered', 'running'].freeze
+        VALUES = %w[completed registered running].freeze
         def self.from_value(value)
           value
         end
@@ -148,7 +148,7 @@ module OctridevVercel
       module DeleteProjectAvatarResponseGitProviderOptionsCreateDeployments
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = ['disabled', 'enabled'].freeze
+        VALUES = %w[disabled enabled].freeze
         def self.from_value(value)
           value
         end
@@ -158,7 +158,7 @@ module OctridevVercel
       module CreateProjectResponseDefaultResourceConfigBuildMachineSelection
         ELASTIC = 'elastic'
         FIXED = 'fixed'
-        VALUES = ['elastic', 'fixed'].freeze
+        VALUES = %w[elastic fixed].freeze
         def self.from_value(value)
           value
         end
@@ -176,10 +176,10 @@ module OctridevVercel
         OOM_FAILURE = 'oom-failure'
         SHORT_BUILD_DURATION = 'short-build-duration'
         SUSTAINED_HIGH_CPU = 'sustained-high-cpu'
-        VALUES = [
-          'basic-floor', 'build-timeout-failure', 'enospc-failure', 'enterprise-floor',
-          'high-peak-disk', 'high-peak-memory', 'long-build-duration', 'oom-failure',
-          'short-build-duration', 'sustained-high-cpu'
+        VALUES = %w[
+          basic-floor build-timeout-failure enospc-failure enterprise-floor
+          high-peak-disk high-peak-memory long-build-duration oom-failure
+          short-build-duration sustained-high-cpu
         ].freeze
         def self.from_value(value)
           value
@@ -232,7 +232,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
+        VALUES = %w[PROMOTED ROLLING STAGED].freeze
         def self.from_value(value)
           value
         end
@@ -263,7 +263,7 @@ module OctridevVercel
         ACCEPT = 'accept'
         CANCEL = 'cancel'
         DELETE = 'delete'
-        VALUES = ['accept', 'cancel', 'delete'].freeze
+        VALUES = %w[accept cancel delete].freeze
         def self.from_value(value)
           value
         end
@@ -334,7 +334,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -358,8 +358,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -370,7 +370,7 @@ module OctridevVercel
       module UpdateProjectResponseResourceConfigBuildMachineSelection
         ELASTIC = 'elastic'
         FIXED = 'fixed'
-        VALUES = ['elastic', 'fixed'].freeze
+        VALUES = %w[elastic fixed].freeze
         def self.from_value(value)
           value
         end
@@ -390,7 +390,7 @@ module OctridevVercel
       module ListProjectsResponseVariant0ItemSecurityRulesetsValueRateLimitAlgo
         FIXED_WINDOW = 'fixed_window'
         TOKEN_BUCKET = 'token_bucket'
-        VALUES = ['fixed_window', 'token_bucket'].freeze
+        VALUES = %w[fixed_window token_bucket].freeze
         def self.from_value(value)
           value
         end
@@ -429,7 +429,7 @@ module OctridevVercel
       module CreateProjectResponseEnvItemVisibility
         CONFIG = 'config'
         SECRET = 'secret'
-        VALUES = ['config', 'secret'].freeze
+        VALUES = %w[config secret].freeze
         def self.from_value(value)
           value
         end
@@ -450,7 +450,7 @@ module OctridevVercel
         ENTERPRISE = 'enterprise'
         HOBBY = 'hobby'
         PRO = 'pro'
-        VALUES = ['enterprise', 'hobby', 'pro'].freeze
+        VALUES = %w[enterprise hobby pro].freeze
         def self.from_value(value)
           value
         end
@@ -461,7 +461,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -489,10 +489,10 @@ module OctridevVercel
         LONG_BUILD_DURATION = 'long-build-duration'
         SHORT_BUILD_DURATION = 'short-build-duration'
         ENTERPRISE_FLOOR = 'enterprise-floor'
-        VALUES = [
-          'oom-failure', 'enospc-failure', 'build-timeout-failure', 'basic-floor',
-          'high-peak-memory', 'sustained-high-cpu', 'high-peak-disk', 'long-build-duration',
-          'short-build-duration', 'enterprise-floor'
+        VALUES = %w[
+          oom-failure enospc-failure build-timeout-failure basic-floor
+          high-peak-memory sustained-high-cpu high-peak-disk long-build-duration
+          short-build-duration enterprise-floor
         ].freeze
         def self.from_value(value)
           value
@@ -505,7 +505,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
+        VALUES = %w[basic enhanced standard turbo].freeze
         def self.from_value(value)
           value
         end
@@ -547,7 +547,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         REST_API = 'rest-api'
         V0 = 'v0'
-        VALUES = ['cli', 'deploy-hook', 'git', 'integration', 'rest-api', 'v0'].freeze
+        VALUES = %w[cli deploy-hook git integration rest-api v0].freeze
         def self.from_value(value)
           value
         end

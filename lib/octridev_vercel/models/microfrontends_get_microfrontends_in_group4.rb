@@ -5,662 +5,655 @@
 
 # microfrontends domain models
 module OctridevVercel
-# Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de SDK namespace.
-module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de
-  POSTGRES_PRISMA_URL = 'postgres-prisma-url'
-  VALUES = ['postgres-prisma-url'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de SDK namespace.
+  module GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de
+    POSTGRES_PRISMA_URL = 'postgres-prisma-url'
+    VALUES = ['postgres-prisma-url'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata
-  FIELDS = {
-    expires_at: "expiresAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    expires_at
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0.
-class GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata::DECODERS
-
-  # @return [Float] Unix ms timestamp when the project is scheduled to expire.
-  attr_reader :expires_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfede6a89de: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata
+    FIELDS = {
+      expires_at: 'expiresAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      expires_at
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0.
+  class GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0Metadata::DECODERS
+
+    # @return [Float] Unix ms timestamp when the project is scheduled to expire.
+    attr_reader :expires_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata
-  FIELDS = {
-    locked_at: "lockedAt",
-    locked_by: "lockedBy",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    locked_at
-    locked_by
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1.
-class GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata::DECODERS
-
-  # @return [Float] Unix ms timestamp when the project was locked.
-  attr_reader :locked_at
-  # @return [String] userId of the actor that triggered the lock (system or admin).
-  attr_reader :locked_by
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata
+    FIELDS = {
+      locked_at: 'lockedAt',
+      locked_by: 'lockedBy'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      locked_at
+      locked_by
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1.
+  class GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1Metadata::DECODERS
+
+    # @return [Float] Unix ms timestamp when the project was locked.
+    attr_reader :locked_at
+    # @return [String] userId of the actor that triggered the lock (system or admin).
+    attr_reader :locked_by
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the GetMicrofrontendsInGroupResponseProjectsItemExpiration SDK namespace.
+  module GetMicrofrontendsInGroupResponseProjectsItemExpiration
+    def self.from_hash(hash)
+      shape_mapping = {
+        'expiresAt' => GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0,
+        'lockedAt' => GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the GetMicrofrontendsInGroupResponseProjectsItemExpiration SDK namespace.
-module GetMicrofrontendsInGroupResponseProjectsItemExpiration
-  def self.from_hash(hash)
-    shape_mapping = {
-      "expiresAt" => GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant0,
-      "lockedAt" => GetMicrofrontendsInGroupResponseProjectsItemExpirationVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0Metadata
-  FIELDS = {
-    expiry: "expiry",
-    src: "src",
-    status: "status",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    src
-    status
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0.
-class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0Metadata::DECODERS
-
-  attr_reader :expiry, :src, :status
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0Metadata
+    FIELDS = {
+      expiry: 'expiry',
+      src: 'src',
+      status: 'status'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      src
+      status
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0.
+  class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0Metadata::DECODERS
+
+    attr_reader :expiry, :src, :status
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776Metadata
+    FIELDS = {
+      eq: 'eq'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      eq
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776.
+  class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776Metadata
-  FIELDS = {
-    eq: "eq",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    eq
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :eq
 
-# API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776.
-class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :eq
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXabd402398aMetadata
+    FIELDS = {
+      key: 'key',
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      key
+      type
+      value
+    ].freeze
+    DECODERS = {
+      key: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX00f3a08b47.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX47824a17de.from_value(value)
+      end,
+      value: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXabd402398a.
+  class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXabd402398a
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXabd402398aMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXabd402398aMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXabd402398aMetadata::DECODERS
+
+    attr_reader :key, :type, :value
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXabd402398aMetadata
-  FIELDS = {
-    key: "key",
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    key
-    type
-    value
-  ].freeze
-  DECODERS = {
-    key: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX00f3a08b47.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX47824a17de.from_value(value)
-    end,
-    value: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX56b1327776.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXabd402398a.
-class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXabd402398a
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXabd402398aMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXabd402398aMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXabd402398aMetadata::DECODERS
-
-  attr_reader :key, :type, :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533Metadata
+    FIELDS = {
+      eq: 'eq'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      eq
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533.
+  class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533Metadata::DECODERS
+
+    attr_reader :eq
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXef50e06e20Metadata
+    FIELDS = {
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      value
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX2ddc217451.from_value(value)
+      end,
+      value: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXef50e06e20.
+  class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXef50e06e20
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXef50e06e20Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXef50e06e20Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXef50e06e20Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533Metadata
-  FIELDS = {
-    eq: "eq",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    eq
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :type, :value
 
-# API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533.
-class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :eq
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9dMetadata
+    FIELDS = {
+      action: 'action'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      action
+    ].freeze
+    DECODERS = {
+      action: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXf27e63fa6f.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9d.
+  class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9d
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9dMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9dMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9dMetadata::DECODERS
+
+    attr_reader :action
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXef50e06e20Metadata
-  FIELDS = {
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    value
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX2ddc217451.from_value(value)
-    end,
-    value: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXca8bdf9533.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXef50e06e20.
-class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXef50e06e20
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXef50e06e20Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXef50e06e20Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXef50e06e20Metadata::DECODERS
-
-  attr_reader :type, :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1Metadata
+    FIELDS = {
+      has: 'has',
+      mitigate: 'mitigate',
+      src: 'src'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      has
+      mitigate
+    ].freeze
+    DECODERS = {
+      mitigate: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9d.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1.
+  class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1Metadata::DECODERS
+
+    attr_reader :has, :mitigate, :src
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItem SDK namespace.
+  module GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItem
+    def self.from_hash(hash)
+      shape_mapping = {
+        'status' => GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0,
+        'has' => GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9dMetadata
-  FIELDS = {
-    action: "action",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    action
-  ].freeze
-  DECODERS = {
-    action: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXf27e63fa6f.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9d.
-class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9d
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9dMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9dMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9dMetadata::DECODERS
-
-  attr_reader :action
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX00f3a08b47 SDK namespace.
+  module GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX00f3a08b47
+    X_VERCEL_IP_COUNTRY = 'x-vercel-ip-country'
+    VALUES = ['x-vercel-ip-country'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX47824a17de SDK namespace.
+  module GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX47824a17de
+    HEADER = 'header'
+    VALUES = ['header'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX47824a17de', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX47824a17de: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX2ddc217451 SDK namespace.
+  module GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX2ddc217451
+    HOST = 'host'
+    VALUES = ['host'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX2ddc217451', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX2ddc217451: #{value}")
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1Metadata
-  FIELDS = {
-    has: "has",
-    mitigate: "mitigate",
-    src: "src",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    has
-    mitigate
-  ].freeze
-  DECODERS = {
-    mitigate: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXbb3f5ced9d.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1.
-class GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1Metadata::DECODERS
-
-  attr_reader :has, :mitigate, :src
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXf27e63fa6f SDK namespace.
+  module GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXf27e63fa6f
+    BLOCK_LEGAL_CWC = 'block_legal_cwc'
+    VALUES = ['block_legal_cwc'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItem.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItem SDK namespace.
-module GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItem
-  def self.from_hash(hash)
-    shape_mapping = {
-      "status" => GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant0,
-      "has" => GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesItemVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-  end
-end
-
-# Defines the GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX00f3a08b47 SDK namespace.
-module GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX00f3a08b47
-  X_VERCEL_IP_COUNTRY = 'x-vercel-ip-country'
-  VALUES = ['x-vercel-ip-country'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX47824a17de SDK namespace.
-module GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX47824a17de
-  HEADER = 'header'
-  VALUES = ['header'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX47824a17de', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX47824a17de: #{value}")
-  end
-end
-
-# Defines the GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX2ddc217451 SDK namespace.
-module GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX2ddc217451
-  HOST = 'host'
-  VALUES = ['host'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX2ddc217451', 'enum', "Unknown GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteX2ddc217451: #{value}")
-  end
-end
-
-# Defines the GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXf27e63fa6f SDK namespace.
-module GetMicrofrontendsInGroupResponseProjectsItemInternalRoutesIteXf27e63fa6f
-  BLOCK_LEGAL_CWC = 'block_legal_cwc'
-  VALUES = ['block_legal_cwc'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItem.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      org: 'org',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      repo_owner_id: 'repoOwnerId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      org
+      production_branch
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0Metadata::DECODERS
+
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
+                :repo_id, :sourceless, :type, :updated_at
+    # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+    attr_reader :repo_owner_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItem.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItemMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    org: "org",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    repo_owner_id: "repoOwnerId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    org
-    production_branch
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :created_at, :id, :name, :ref, :url
 
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
-              :repo_id, :sourceless, :type, :updated_at
-  # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-  attr_reader :repo_owner_id
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      org: 'org',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      repo_owner_id: 'repoOwnerId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      org
+      production_branch
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1Type.from_value(value)
+      end
+    }.freeze
   end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItem.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    org: "org",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    repo_owner_id: "repoOwnerId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    org
-    production_branch
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
 end

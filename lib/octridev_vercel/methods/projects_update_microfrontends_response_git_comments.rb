@@ -42,8 +42,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseGitProviderOptionsConsolidatedGitXb1761357b7Metadata
         FIELDS = {
-          enabled: "enabled",
-          propagate_failures: "propagateFailures",
+          enabled: 'enabled',
+          propagate_failures: 'propagateFailures'
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -55,7 +55,7 @@ module OctridevVercel
           end,
           propagate_failures: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseGitProviderOptionsConsolidatedGitXedbf7d0488.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -93,11 +93,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseGitProviderOptionsMetadata
         FIELDS = {
-          consolidated_git_commit_status: "consolidatedGitCommitStatus",
-          create_deployments: "createDeployments",
-          disable_repository_dispatch_events: "disableRepositoryDispatchEvents",
-          git_commit_status: "gitCommitStatus",
-          require_verified_commits: "requireVerifiedCommits",
+          consolidated_git_commit_status: 'consolidatedGitCommitStatus',
+          create_deployments: 'createDeployments',
+          disable_repository_dispatch_events: 'disableRepositoryDispatchEvents',
+          git_commit_status: 'gitCommitStatus',
+          require_verified_commits: 'requireVerifiedCommits'
         }.freeze
         REQUIRED_FIELDS = %i[
           create_deployments
@@ -117,7 +117,7 @@ module OctridevVercel
           end,
           require_verified_commits: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseGitProviderOptionsRequireVerifiedCommits.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -160,9 +160,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseIpBucketsItemMetadata
         FIELDS = {
-          bucket: "bucket",
-          default: "default",
-          support_until: "supportUntil",
+          bucket: 'bucket',
+          default: 'default',
+          support_until: 'supportUntil'
         }.freeze
         REQUIRED_FIELDS = %i[
           bucket
@@ -170,7 +170,7 @@ module OctridevVercel
         DECODERS = {
           default: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseIpBucketsItemDefault.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -204,13 +204,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseJobsFlagDefinitionsPresentMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateMicrofrontendsResponseJobsFlagDefinitionsPresent.
@@ -243,13 +242,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseJobsLintMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateMicrofrontendsResponseJobsLint.
@@ -282,13 +280,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseJobsMfeConfigPresentMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateMicrofrontendsResponseJobsMfeConfigPresent.
@@ -321,13 +318,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseJobsTypecheckMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateMicrofrontendsResponseJobsTypecheck.
@@ -360,13 +356,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseJobsMetadata
         FIELDS = {
-          flag_definitions_present: "flag-definitions-present",
-          lint: "lint",
-          mfe_config_present: "mfe-config-present",
-          typecheck: "typecheck",
+          flag_definitions_present: 'flag-definitions-present',
+          lint: 'lint',
+          mfe_config_present: 'mfe-config-present',
+          typecheck: 'typecheck'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           flag_definitions_present: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseJobsFlagDefinitionsPresent.from_hash(value)
@@ -379,7 +374,7 @@ module OctridevVercel
           end,
           typecheck: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseJobsTypecheck.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -413,12 +408,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseLastAliasRequestMetadata
         FIELDS = {
-          from_deployment_id: "fromDeploymentId",
-          from_rolling_release_id: "fromRollingReleaseId",
-          job_status: "jobStatus",
-          requested_at: "requestedAt",
-          to_deployment_id: "toDeploymentId",
-          type: "type",
+          from_deployment_id: 'fromDeploymentId',
+          from_rolling_release_id: 'fromRollingReleaseId',
+          job_status: 'jobStatus',
+          requested_at: 'requestedAt',
+          to_deployment_id: 'toDeploymentId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           from_deployment_id
@@ -433,7 +428,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseLastAliasRequestType.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           from_deployment_id
@@ -472,15 +467,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseLatestDeploymentsItemAliasErrorMetadata
         FIELDS = {
-          code: "code",
-          message: "message",
+          code: 'code',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           code
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateMicrofrontendsResponseLatestDeploymentsItemAliasError.
@@ -513,8 +507,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseLatestDeploymentsItemBranchMatcherMetadata
         FIELDS = {
-          pattern: "pattern",
-          type: "type",
+          pattern: 'pattern',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           pattern
@@ -523,7 +517,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseLatestDeploymentsItemBranchMatcherType.from_value(value)
-          end,
+          end
         }.freeze
       end
 

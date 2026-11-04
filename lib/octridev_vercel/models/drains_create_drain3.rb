@@ -5,656 +5,651 @@
 
 # drains domain models
 module OctridevVercel
-# API model for CreateDrainResponseVariant0SourceVariant1.
-class CreateDrainResponseVariant0SourceVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant0SourceVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0SourceVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant0SourceVariant1Metadata::DECODERS
+  # API model for CreateDrainResponseVariant0SourceVariant1.
+  class CreateDrainResponseVariant0SourceVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant0SourceVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0SourceVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant0SourceVariant1Metadata::DECODERS
 
-  attr_reader :external_resource_id, :integration_configuration_id, :integration_id, :kind,
-              :resource_id
+    attr_reader :external_resource_id, :integration_configuration_id, :integration_id, :kind,
+                :resource_id
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0DeploymentMetadata
+    FIELDS = {
+      environments: 'environments'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      environments: lambda do |value|
+        value&.map { |item| ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0DeploymentEnX4b8c90d08d.from_value(item) }
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for CreateDrainResponseVariant0FilterV2FilterVariant0Deployment.
+  class CreateDrainResponseVariant0FilterV2FilterVariant0Deployment
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0DeploymentMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0DeploymentMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0DeploymentMetadata::DECODERS
+
+    attr_reader :environments
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0DeploymentMetadata
-  FIELDS = {
-    environments: "environments",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    environments: lambda do |value|
-      value&.map { |item| ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0DeploymentEnX4b8c90d08d.from_value(item) }
-    end,
-  }.freeze
-end
-
-# API model for CreateDrainResponseVariant0FilterV2FilterVariant0Deployment.
-class CreateDrainResponseVariant0FilterV2FilterVariant0Deployment
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0DeploymentMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0DeploymentMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0DeploymentMetadata::DECODERS
-
-  attr_reader :environments
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0LogMetadata
+    FIELDS = {
+      legacy_exclude_cached_static_asset_logs: 'legacy_excludeCachedStaticAssetLogs',
+      sources: 'sources'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      legacy_exclude_cached_static_asset_logs: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0LogLegacyExcX7ccf8e80ad.from_value(value)
+      end,
+      sources: lambda do |value|
+        value&.map { |item| ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0LogSourcesItem.from_value(item) }
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateDrainResponseVariant0FilterV2FilterVariant0Log.
+  class CreateDrainResponseVariant0FilterV2FilterVariant0Log
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0LogMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0LogMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0LogMetadata::DECODERS
+
+    attr_reader :legacy_exclude_cached_static_asset_logs, :sources
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0ProjectMetadata
+    FIELDS = {
+      ids: 'ids'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for CreateDrainResponseVariant0FilterV2FilterVariant0Project.
+  class CreateDrainResponseVariant0FilterV2FilterVariant0Project
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0ProjectMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0ProjectMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0ProjectMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0LogMetadata
-  FIELDS = {
-    legacy_exclude_cached_static_asset_logs: "legacy_excludeCachedStaticAssetLogs",
-    sources: "sources",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    legacy_exclude_cached_static_asset_logs: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0LogLegacyExcX7ccf8e80ad.from_value(value)
-    end,
-    sources: lambda do |value|
-      value&.map { |item| ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0LogSourcesItem.from_value(item) }
-    end,
-  }.freeze
-end
+    attr_reader :ids
 
-# API model for CreateDrainResponseVariant0FilterV2FilterVariant0Log.
-class CreateDrainResponseVariant0FilterV2FilterVariant0Log
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0LogMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0LogMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0LogMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :legacy_exclude_cached_static_asset_logs, :sources
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0Metadata
+    FIELDS = {
+      deployment: 'deployment',
+      log: 'log',
+      project: 'project',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {
+      deployment: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0Deployment.from_hash(value)
+      end,
+      log: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0Log.from_hash(value)
+      end,
+      project: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0Project.from_hash(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for CreateDrainResponseVariant0FilterV2FilterVariant0.
+  class CreateDrainResponseVariant0FilterV2FilterVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0Metadata::DECODERS
+
+    attr_reader :deployment, :log, :project, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0ProjectMetadata
-  FIELDS = {
-    ids: "ids",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for CreateDrainResponseVariant0FilterV2FilterVariant0Project.
-class CreateDrainResponseVariant0FilterV2FilterVariant0Project
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0ProjectMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0ProjectMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0ProjectMetadata::DECODERS
-
-  attr_reader :ids
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant1Metadata
+    FIELDS = {
+      text: 'text',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      text
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant1Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateDrainResponseVariant0FilterV2FilterVariant1.
+  class CreateDrainResponseVariant0FilterV2FilterVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant1Metadata::DECODERS
+
+    attr_reader :text, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDrainResponseVariant0FilterV2Metadata
+    FIELDS = {
+      filter: 'filter',
+      version: 'version'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      filter
+      version
+    ].freeze
+    DECODERS = {
+      version: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant0FilterV2Version.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for CreateDrainResponseVariant0FilterV2.
+  class CreateDrainResponseVariant0FilterV2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant0FilterV2Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0Metadata
-  FIELDS = {
-    deployment: "deployment",
-    log: "log",
-    project: "project",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-    deployment: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0Deployment.from_hash(value)
-    end,
-    log: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0Log.from_hash(value)
-    end,
-    project: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0Project.from_hash(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :filter, :version
 
-# API model for CreateDrainResponseVariant0FilterV2FilterVariant0.
-class CreateDrainResponseVariant0FilterV2FilterVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :deployment, :log, :project, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDrainResponseVariant0Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      delivery: 'delivery',
+      disabled_at: 'disabledAt',
+      disabled_by: 'disabledBy',
+      disabled_reason: 'disabledReason',
+      first_error_timestamp: 'firstErrorTimestamp',
+      id: 'id',
+      name: 'name',
+      owner_id: 'ownerId',
+      project_ids: 'projectIds',
+      sampling: 'sampling',
+      schemas: 'schemas',
+      source: 'source',
+      status: 'status',
+      team_id: 'teamId',
+      updated_at: 'updatedAt',
+      filter_v2: 'filterV2'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      delivery
+      id
+      name
+      owner_id
+      schemas
+      source
+      updated_at
+    ].freeze
+    DECODERS = {
+      disabled_reason: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant0DisabledReason.from_value(value)
+      end,
+      sampling: lambda do |value|
+        value&.map { |item| ::OctridevVercel::CreateDrainResponseVariant0SamplingItem.from_hash(item) }
+      end,
+      schemas: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant0Schemas.from_hash(value)
+      end,
+      status: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant0Status.from_value(value)
+      end,
+      filter_v2: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant0FilterV2.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for CreateDrainResponseVariant0.
+  class CreateDrainResponseVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant0Metadata::DECODERS
+
+    attr_reader :created_at, :delivery, :disabled_at, :disabled_by, :disabled_reason,
+                :first_error_timestamp, :id, :name, :owner_id, :project_ids, :sampling, :schemas,
+                :source, :status, :team_id, :updated_at, :filter_v2
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant1Metadata
-  FIELDS = {
-    text: "text",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    text
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant0FilterV2FilterVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateDrainResponseVariant0FilterV2FilterVariant1.
-class CreateDrainResponseVariant0FilterV2FilterVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant0FilterV2FilterVariant1Metadata::DECODERS
-
-  attr_reader :text, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateDrainResponseVariant1DeliveryVariant0SecretVariant1Metadata
+    FIELDS = {
+      kind: 'kind'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      kind
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant0SecretVariant1Kind.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateDrainResponseVariant1DeliveryVariant0SecretVariant1.
+  class CreateDrainResponseVariant1DeliveryVariant0SecretVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant0SecretVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant0SecretVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant1DeliveryVariant0SecretVariant1Metadata::DECODERS
+
+    attr_reader :kind
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDrainResponseVariant1DeliveryVariant0Metadata
+    FIELDS = {
+      compression: 'compression',
+      encoding: 'encoding',
+      endpoint: 'endpoint',
+      headers: 'headers',
+      secret: 'secret',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      encoding
+      endpoint
+      headers
+      type
+    ].freeze
+    DECODERS = {
+      compression: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant0Compression.from_value(value)
+      end,
+      encoding: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant0Encoding.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for CreateDrainResponseVariant1DeliveryVariant0.
+  class CreateDrainResponseVariant1DeliveryVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant1DeliveryVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDrainResponseVariant0FilterV2Metadata
-  FIELDS = {
-    filter: "filter",
-    version: "version",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    filter
-    version
-  ].freeze
-  DECODERS = {
-    version: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant0FilterV2Version.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :compression, :encoding, :endpoint, :headers, :secret, :type
 
-# API model for CreateDrainResponseVariant0FilterV2.
-class CreateDrainResponseVariant0FilterV2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0FilterV2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant0FilterV2Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :filter, :version
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDrainResponseVariant1DeliveryVariant1EndpointMetadata
+    FIELDS = {
+      traces: 'traces'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      traces
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for CreateDrainResponseVariant1DeliveryVariant1Endpoint.
+  class CreateDrainResponseVariant1DeliveryVariant1Endpoint
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1EndpointMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1EndpointMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1EndpointMetadata::DECODERS
+
+    attr_reader :traces
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDrainResponseVariant0Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    delivery: "delivery",
-    disabled_at: "disabledAt",
-    disabled_by: "disabledBy",
-    disabled_reason: "disabledReason",
-    first_error_timestamp: "firstErrorTimestamp",
-    id: "id",
-    name: "name",
-    owner_id: "ownerId",
-    project_ids: "projectIds",
-    sampling: "sampling",
-    schemas: "schemas",
-    source: "source",
-    status: "status",
-    team_id: "teamId",
-    updated_at: "updatedAt",
-    filter_v2: "filterV2",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    delivery
-    id
-    name
-    owner_id
-    schemas
-    source
-    updated_at
-  ].freeze
-  DECODERS = {
-    disabled_reason: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant0DisabledReason.from_value(value)
-    end,
-    sampling: lambda do |value|
-      value&.map { |item| ::OctridevVercel::CreateDrainResponseVariant0SamplingItem.from_hash(item) }
-    end,
-    schemas: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant0Schemas.from_hash(value)
-    end,
-    status: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant0Status.from_value(value)
-    end,
-    filter_v2: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant0FilterV2.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateDrainResponseVariant0.
-class CreateDrainResponseVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant0Metadata::DECODERS
-
-  attr_reader :created_at, :delivery, :disabled_at, :disabled_by, :disabled_reason,
-              :first_error_timestamp, :id, :name, :owner_id, :project_ids, :sampling, :schemas,
-              :source, :status, :team_id, :updated_at, :filter_v2
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalCreateDrainResponseVariant1DeliveryVariant1SecretVariant1Metadata
+    FIELDS = {
+      kind: 'kind'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      kind
+    ].freeze
+    DECODERS = {
+      kind: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant1SecretVariant1Kind.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for CreateDrainResponseVariant1DeliveryVariant1SecretVariant1.
+  class CreateDrainResponseVariant1DeliveryVariant1SecretVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1SecretVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1SecretVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1SecretVariant1Metadata::DECODERS
+
+    attr_reader :kind
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDrainResponseVariant1DeliveryVariant1Metadata
+    FIELDS = {
+      encoding: 'encoding',
+      endpoint: 'endpoint',
+      headers: 'headers',
+      secret: 'secret',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      encoding
+      endpoint
+      headers
+      type
+    ].freeze
+    DECODERS = {
+      encoding: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant1Encoding.from_value(value)
+      end,
+      endpoint: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant1Endpoint.from_hash(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant1Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for CreateDrainResponseVariant1DeliveryVariant1.
+  class CreateDrainResponseVariant1DeliveryVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalCreateDrainResponseVariant1DeliveryVariant0SecretVariant1Metadata
-  FIELDS = {
-    kind: "kind",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    kind
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant0SecretVariant1Kind.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :encoding, :endpoint, :headers, :secret, :type
 
-# API model for CreateDrainResponseVariant1DeliveryVariant0SecretVariant1.
-class CreateDrainResponseVariant1DeliveryVariant0SecretVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant0SecretVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant0SecretVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant1DeliveryVariant0SecretVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :kind
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalCreateDrainResponseVariant1DeliveryVariant2Metadata
+    FIELDS = {
+      endpoint: 'endpoint',
+      table: 'table',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      endpoint
+      table
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant2Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for CreateDrainResponseVariant1DeliveryVariant2.
+  class CreateDrainResponseVariant1DeliveryVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalCreateDrainResponseVariant1DeliveryVariant2Metadata::DECODERS
+
+    attr_reader :endpoint, :table, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDrainResponseVariant1DeliveryVariant0Metadata
-  FIELDS = {
-    compression: "compression",
-    encoding: "encoding",
-    endpoint: "endpoint",
-    headers: "headers",
-    secret: "secret",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    encoding
-    endpoint
-    headers
-    type
-  ].freeze
-  DECODERS = {
-    compression: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant0Compression.from_value(value)
-    end,
-    encoding: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant0Encoding.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateDrainResponseVariant1DeliveryVariant0.
-class CreateDrainResponseVariant1DeliveryVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant1DeliveryVariant0Metadata::DECODERS
-
-  attr_reader :compression, :encoding, :endpoint, :headers, :secret, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDrainResponseVariant1DeliveryVariant1EndpointMetadata
-  FIELDS = {
-    traces: "traces",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    traces
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for CreateDrainResponseVariant1DeliveryVariant1Endpoint.
-class CreateDrainResponseVariant1DeliveryVariant1Endpoint
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1EndpointMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1EndpointMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1EndpointMetadata::DECODERS
-
-  attr_reader :traces
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDrainResponseVariant1DeliveryVariant1SecretVariant1Metadata
-  FIELDS = {
-    kind: "kind",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    kind
-  ].freeze
-  DECODERS = {
-    kind: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant1SecretVariant1Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateDrainResponseVariant1DeliveryVariant1SecretVariant1.
-class CreateDrainResponseVariant1DeliveryVariant1SecretVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1SecretVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1SecretVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1SecretVariant1Metadata::DECODERS
-
-  attr_reader :kind
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDrainResponseVariant1DeliveryVariant1Metadata
-  FIELDS = {
-    encoding: "encoding",
-    endpoint: "endpoint",
-    headers: "headers",
-    secret: "secret",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    encoding
-    endpoint
-    headers
-    type
-  ].freeze
-  DECODERS = {
-    encoding: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant1Encoding.from_value(value)
-    end,
-    endpoint: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant1Endpoint.from_hash(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateDrainResponseVariant1DeliveryVariant1.
-class CreateDrainResponseVariant1DeliveryVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant1DeliveryVariant1Metadata::DECODERS
-
-  attr_reader :encoding, :endpoint, :headers, :secret, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalCreateDrainResponseVariant1DeliveryVariant2Metadata
-  FIELDS = {
-    endpoint: "endpoint",
-    table: "table",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    endpoint
-    table
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::CreateDrainResponseVariant1DeliveryVariant2Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for CreateDrainResponseVariant1DeliveryVariant2.
-class CreateDrainResponseVariant1DeliveryVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalCreateDrainResponseVariant1DeliveryVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalCreateDrainResponseVariant1DeliveryVariant2Metadata::DECODERS
-
-  attr_reader :endpoint, :table, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
 end

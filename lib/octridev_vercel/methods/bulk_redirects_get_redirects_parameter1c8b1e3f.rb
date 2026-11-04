@@ -13,7 +13,7 @@ module OctridevVercel
       module GetRedirectsParameter1c8b1e3f
         ASC = 'asc'
         DESC = 'desc'
-        VALUES = ['asc', 'desc'].freeze
+        VALUES = %w[asc desc].freeze
         def self.from_value(value)
           value
         end
@@ -24,7 +24,7 @@ module OctridevVercel
         SOURCE = 'source'
         DESTINATION = 'destination'
         STATUS_CODE = 'statusCode'
-        VALUES = ['source', 'destination', 'statusCode'].freeze
+        VALUES = %w[source destination statusCode].freeze
         def self.from_value(value)
           value
         end
@@ -35,7 +35,7 @@ module OctridevVercel
         PROMOTE = 'promote'
         RESTORE = 'restore'
         DISCARD = 'discard'
-        VALUES = ['promote', 'restore', 'discard'].freeze
+        VALUES = %w[promote restore discard].freeze
         def self.from_value(value)
           value
         end

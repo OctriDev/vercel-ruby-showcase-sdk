@@ -5,644 +5,638 @@
 
 # microfrontends domain models
 module OctridevVercel
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1Metadata::DECODERS
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant1Metadata::DECODERS
 
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
-              :repo_id, :sourceless, :type, :updated_at
-  # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-  attr_reader :repo_owner_id
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
+                :repo_id, :sourceless, :type, :updated_at
+    # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+    attr_reader :repo_owner_id
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItem.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItem.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      host: 'host',
+      org: 'org',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      repo_owner_id: 'repoOwnerId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      host
+      org
+      production_branch
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2Metadata::DECODERS
+
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :host, :org, :production_branch, :repo,
+                :repo_id, :sourceless, :type, :updated_at
+    # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+    attr_reader :repo_owner_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    host: "host",
-    org: "org",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    repo_owner_id: "repoOwnerId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    host
-    org
-    production_branch
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant2Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :host, :org, :production_branch, :repo,
-              :repo_id, :sourceless, :type, :updated_at
-  # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-  attr_reader :repo_owner_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItem.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      production_branch: 'productionBranch',
+      project_id: 'projectId',
+      project_name: 'projectName',
+      project_namespace: 'projectNamespace',
+      project_name_with_namespace: 'projectNameWithNamespace',
+      project_owner_id: 'projectOwnerId',
+      project_url: 'projectUrl',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      production_branch
+      project_id
+      project_name
+      project_namespace
+      project_name_with_namespace
+      project_url
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :production_branch, :project_id,
+                :project_name, :project_namespace, :project_name_with_namespace, :project_url,
+                :sourceless, :type, :updated_at
+    # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
+    attr_reader :project_owner_id
 
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItem.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItemMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :created_at, :id, :name, :ref, :url
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItem.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    production_branch: "productionBranch",
-    project_id: "projectId",
-    project_name: "projectName",
-    project_namespace: "projectNamespace",
-    project_name_with_namespace: "projectNameWithNamespace",
-    project_owner_id: "projectOwnerId",
-    project_url: "projectUrl",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    production_branch
-    project_id
-    project_name
-    project_namespace
-    project_name_with_namespace
-    project_url
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant3Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :production_branch, :project_id,
-              :project_name, :project_namespace, :project_name_with_namespace, :project_url,
-              :sourceless, :type, :updated_at
-  # @return [Float] A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
-  attr_reader :project_owner_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      name: 'name',
+      owner: 'owner',
+      production_branch: 'productionBranch',
+      slug: 'slug',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt',
+      uuid: 'uuid',
+      workspace_uuid: 'workspaceUuid'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      name
+      owner
+      production_branch
+      slug
+      type
+      uuid
+      workspace_uuid
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4Metadata::DECODERS
+
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :name, :owner, :production_branch,
+                :slug, :sourceless, :type, :updated_at, :uuid, :workspace_uuid
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItem.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItemMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :created_at, :id, :name, :ref, :url
 
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItem.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItemMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :created_at, :id, :name, :ref, :url
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      org: 'org',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      org
+      production_branch
+      repo
+      repo_id
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5Metadata::DECODERS
+
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
+                :repo_id, :sourceless, :type, :updated_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    name: "name",
-    owner: "owner",
-    production_branch: "productionBranch",
-    slug: "slug",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-    uuid: "uuid",
-    workspace_uuid: "workspaceUuid",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    name
-    owner
-    production_branch
-    slug
-    type
-    uuid
-    workspace_uuid
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant4
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant4Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :name, :owner, :production_branch,
-              :slug, :sourceless, :type, :updated_at, :uuid, :workspace_uuid
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItem.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      org: 'org',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      org
+      production_branch
+      repo
+      repo_id
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
+                :repo_id, :sourceless, :type, :updated_at
 
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItem.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItemMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :created_at, :id, :name, :ref, :url
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant7DeployHooksItemMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      id: 'id',
+      name: 'name',
+      ref: 'ref',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      ref
+      url
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant7DeployHooksItem.
+  class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant7DeployHooksItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant7DeployHooksItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant7DeployHooksItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant7DeployHooksItemMetadata::DECODERS
+
+    attr_reader :created_at, :id, :name, :ref, :url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    org: "org",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    org
-    production_branch
-    repo
-    repo_id
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant5
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant5Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
-              :repo_id, :sourceless, :type, :updated_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItem.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    org: "org",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    org
-    production_branch
-    repo
-    repo_id
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant6
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant6Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :org, :production_branch, :repo,
-              :repo_id, :sourceless, :type, :updated_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant7DeployHooksItemMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    id: "id",
-    name: "name",
-    ref: "ref",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    ref
-    url
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for GetMicrofrontendsInGroupResponseProjectsItemLinkVariant7DeployHooksItem.
-class GetMicrofrontendsInGroupResponseProjectsItemLinkVariant7DeployHooksItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant7DeployHooksItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant7DeployHooksItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetMicrofrontendsInGroupResponseProjectsItemLinkVariant7DeployHooksItemMetadata::DECODERS
-
-  attr_reader :created_at, :id, :name, :ref, :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
 end

@@ -12,10 +12,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurableLogDrainResponseProjectsMetadataItemMetadata
         FIELDS = {
-          framework: "framework",
-          id: "id",
-          latest_deployment: "latestDeployment",
-          name: "name",
+          framework: 'framework',
+          id: 'id',
+          latest_deployment: 'latestDeployment',
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -24,7 +24,7 @@ module OctridevVercel
         DECODERS = {
           framework: lambda do |value|
             ::OctridevVercel::Methods::LogDrains::GetConfigurableLogDrainResponseProjectsMetadataItemFramework.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -58,13 +58,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurableLogDrainResponseMetadata
         FIELDS = {
-          client_id: "clientId",
-          configuration_id: "configurationId",
-          created_from: "createdFrom",
-          integration_configuration_uri: "integrationConfigurationUri",
-          integration_icon: "integrationIcon",
-          integration_website: "integrationWebsite",
-          projects_metadata: "projectsMetadata",
+          client_id: 'clientId',
+          configuration_id: 'configurationId',
+          created_from: 'createdFrom',
+          integration_configuration_uri: 'integrationConfigurationUri',
+          integration_icon: 'integrationIcon',
+          integration_website: 'integrationWebsite',
+          projects_metadata: 'projectsMetadata'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_from
@@ -72,7 +72,7 @@ module OctridevVercel
         DECODERS = {
           projects_metadata: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::LogDrains::GetConfigurableLogDrainResponseProjectsMetadataItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -107,15 +107,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateConfigurableLogDrainMetadata
         FIELDS = {
-          delivery_format: "deliveryFormat",
-          url: "url",
-          headers: "headers",
-          project_ids: "projectIds",
-          sources: "sources",
-          environments: "environments",
-          secret: "secret",
-          sampling_rate: "samplingRate",
-          name: "name",
+          delivery_format: 'deliveryFormat',
+          url: 'url',
+          headers: 'headers',
+          project_ids: 'projectIds',
+          sources: 'sources',
+          environments: 'environments',
+          secret: 'secret',
+          sampling_rate: 'samplingRate',
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           delivery_format
@@ -131,7 +131,7 @@ module OctridevVercel
           end,
           environments: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::LogDrains::CreateConfigurableLogDrainEnvironmentsItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -177,14 +177,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateLogDrainMetadata
         FIELDS = {
-          name: "name",
-          project_ids: "projectIds",
-          secret: "secret",
-          delivery_format: "deliveryFormat",
-          url: "url",
-          sources: "sources",
-          headers: "headers",
-          environments: "environments",
+          name: 'name',
+          project_ids: 'projectIds',
+          secret: 'secret',
+          delivery_format: 'deliveryFormat',
+          url: 'url',
+          sources: 'sources',
+          headers: 'headers',
+          environments: 'environments'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -199,7 +199,7 @@ module OctridevVercel
           end,
           environments: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::LogDrains::CreateLogDrainEnvironmentsItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -243,23 +243,23 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateLogDrainResponseMetadata
         FIELDS = {
-          branch: "branch",
-          client_id: "clientId",
-          configuration_id: "configurationId",
-          created_at: "createdAt",
-          created_from: "createdFrom",
-          delivery_format: "deliveryFormat",
-          environments: "environments",
-          headers: "headers",
-          id: "id",
-          name: "name",
-          owner_id: "ownerId",
-          project_id: "projectId",
-          project_ids: "projectIds",
-          sampling_rate: "samplingRate",
-          source: "source",
-          sources: "sources",
-          url: "url",
+          branch: 'branch',
+          client_id: 'clientId',
+          configuration_id: 'configurationId',
+          created_at: 'createdAt',
+          created_from: 'createdFrom',
+          delivery_format: 'deliveryFormat',
+          environments: 'environments',
+          headers: 'headers',
+          id: 'id',
+          name: 'name',
+          owner_id: 'ownerId',
+          project_id: 'projectId',
+          project_ids: 'projectIds',
+          sampling_rate: 'samplingRate',
+          source: 'source',
+          sources: 'sources',
+          url: 'url'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -284,7 +284,7 @@ module OctridevVercel
           end,
           sources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::LogDrains::CreateLogDrainResponseSourcesItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -362,7 +362,7 @@ module OctridevVercel
       module ListLogDrainsResponseVariant1DrainsVariant0ItemDeliveryVariant1Encoding
         JSON = 'json'
         PROTO = 'proto'
-        VALUES = ['json', 'proto'].freeze
+        VALUES = %w[json proto].freeze
         def self.from_value(value)
           value
         end
@@ -402,7 +402,7 @@ module OctridevVercel
       module ListLogDrainsResponseVariant1DrainsVariant1ItemSamplingItemEnv
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end
@@ -412,7 +412,7 @@ module OctridevVercel
       module ListLogDrainsResponseVariant1DrainsVariant1ItemDeliveryVarianX41893a2465
         GZIP = 'gzip'
         NONE = 'none'
-        VALUES = ['gzip', 'none'].freeze
+        VALUES = %w[gzip none].freeze
         def self.from_value(value)
           value
         end
@@ -426,7 +426,7 @@ module OctridevVercel
         EDGE = 'edge'
         EXTERNAL = 'external'
         FIREWALL = 'firewall'
-        VALUES = ['static', 'lambda', 'build', 'edge', 'external', 'firewall'].freeze
+        VALUES = %w[static lambda build edge external firewall].freeze
         def self.from_value(value)
           value
         end
@@ -519,17 +519,17 @@ module OctridevVercel
         VUEPRESS = 'vuepress'
         XMCP = 'xmcp'
         ZOLA = 'zola'
-        VALUES = [
-          'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
-          'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
-          'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask',
-          'gatsby', 'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular',
-          'ionic-react', 'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node',
-          'nuxtjs', 'parcel', 'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix',
-          'ruby', 'rust', 'saber', 'sanity', 'sanity-v2', 'sapper', 'scully', 'services',
-          'solidstart', 'solidstart-1', 'stencil', 'storybook', 'svelte', 'sveltekit', 'sveltekit-1',
-          'tanstack-start', 'tanstack-start-lovable', 'umijs', 'vite', 'vitepress', 'vue',
-          'vuepress', 'xmcp', 'zola'
+        VALUES = %w[
+          actix-web angular ash astro axum blitzjs brunch bun container
+          create-react-app django docusaurus docusaurus-2 dojo eleventy elysia
+          ember eve express factory-eve fastapi fasthtml fastify flask
+          gatsby go gridsome h3 hexo hono hugo hydrogen ionic-angular
+          ionic-react jekyll koa mastra middleman nestjs nextjs nitro node
+          nuxtjs parcel polymer preact python react-router redwoodjs remix
+          ruby rust saber sanity sanity-v2 sapper scully services
+          solidstart solidstart-1 stencil storybook svelte sveltekit sveltekit-1
+          tanstack-start tanstack-start-lovable umijs vite vitepress vue
+          vuepress xmcp zola
         ].freeze
         def self.from_value(value)
           value
@@ -550,7 +550,7 @@ module OctridevVercel
       module CreateLogDrainResponseEnvironmentsItem
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end

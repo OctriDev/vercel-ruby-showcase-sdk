@@ -14,7 +14,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -35,7 +35,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -46,7 +46,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -56,7 +56,7 @@ module OctridevVercel
       module UpdateSharedEnvVariableUpdatesValueType
         ENCRYPTED = 'encrypted'
         SENSITIVE = 'sensitive'
-        VALUES = ['encrypted', 'sensitive'].freeze
+        VALUES = %w[encrypted sensitive].freeze
         def self.from_value(value)
           value
         end
@@ -77,7 +77,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -98,7 +98,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -109,7 +109,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -130,7 +130,7 @@ module OctridevVercel
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
         ENDS_WITH = 'endsWith'
-        VALUES = ['equals', 'startsWith', 'endsWith'].freeze
+        VALUES = %w[equals startsWith endsWith].freeze
         def self.from_value(value)
           value
         end
@@ -161,7 +161,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -172,7 +172,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -183,7 +183,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -207,7 +207,7 @@ module OctridevVercel
         PLAIN = 'plain'
         SENSITIVE = 'sensitive'
         SYSTEM = 'system'
-        VALUES = ['encrypted', 'plain', 'sensitive', 'system'].freeze
+        VALUES = %w[encrypted plain sensitive system].freeze
         def self.from_value(value)
           value
         end
@@ -218,7 +218,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -229,7 +229,7 @@ module OctridevVercel
         PRODUCTION = 'production'
         PREVIEW = 'preview'
         DEVELOPMENT = 'development'
-        VALUES = ['production', 'preview', 'development'].freeze
+        VALUES = %w[production preview development].freeze
         def self.from_value(value)
           value
         end
@@ -262,7 +262,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -273,7 +273,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -304,7 +304,7 @@ module OctridevVercel
         PRODUCTION = 'production'
         PREVIEW = 'preview'
         DEVELOPMENT = 'development'
-        VALUES = ['production', 'preview', 'development'].freeze
+        VALUES = %w[production preview development].freeze
         def self.from_value(value)
           value
         end
@@ -315,7 +315,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -356,7 +356,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -367,7 +367,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -390,7 +390,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -401,7 +401,7 @@ module OctridevVercel
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
         ENDS_WITH = 'endsWith'
-        VALUES = ['equals', 'startsWith', 'endsWith'].freeze
+        VALUES = %w[equals startsWith endsWith].freeze
         def self.from_value(value)
           value
         end
@@ -412,7 +412,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -422,7 +422,7 @@ module OctridevVercel
       module ListSharedEnvVariableResponseDataItemSecurityIssuesItem
         FLAGS_SECRET_NEEDS_SPLIT = 'flags-secret-needs-split'
         READABLE_SECRET = 'readable-secret'
-        VALUES = ['flags-secret-needs-split', 'readable-secret'].freeze
+        VALUES = %w[flags-secret-needs-split readable-secret].freeze
         def self.from_value(value)
           value
         end
@@ -434,7 +434,7 @@ module OctridevVercel
         PLAIN = 'plain'
         SENSITIVE = 'sensitive'
         SYSTEM = 'system'
-        VALUES = ['encrypted', 'plain', 'sensitive', 'system'].freeze
+        VALUES = %w[encrypted plain sensitive system].freeze
         def self.from_value(value)
           value
         end
@@ -446,7 +446,7 @@ module OctridevVercel
         PLAIN = 'plain'
         SENSITIVE = 'sensitive'
         SYSTEM = 'system'
-        VALUES = ['encrypted', 'plain', 'sensitive', 'system'].freeze
+        VALUES = %w[encrypted plain sensitive system].freeze
         def self.from_value(value)
           value
         end
@@ -457,7 +457,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -468,7 +468,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -490,7 +490,7 @@ module OctridevVercel
       module CreateSharedEnvVariableType
         ENCRYPTED = 'encrypted'
         SENSITIVE = 'sensitive'
-        VALUES = ['encrypted', 'sensitive'].freeze
+        VALUES = %w[encrypted sensitive].freeze
         def self.from_value(value)
           value
         end
@@ -501,7 +501,7 @@ module OctridevVercel
         ENDS_WITH = 'endsWith'
         EQUALS = 'equals'
         STARTS_WITH = 'startsWith'
-        VALUES = ['endsWith', 'equals', 'startsWith'].freeze
+        VALUES = %w[endsWith equals startsWith].freeze
         def self.from_value(value)
           value
         end
@@ -512,7 +512,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -534,7 +534,7 @@ module OctridevVercel
         PLAIN = 'plain'
         SENSITIVE = 'sensitive'
         SYSTEM = 'system'
-        VALUES = ['encrypted', 'plain', 'sensitive', 'system'].freeze
+        VALUES = %w[encrypted plain sensitive system].freeze
         def self.from_value(value)
           value
         end

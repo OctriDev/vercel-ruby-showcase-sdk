@@ -39,23 +39,23 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateIntegrationStoreDirectResponseStoreBillingPlanMetadata
         FIELDS = {
-          cost: "cost",
-          description: "description",
-          details: "details",
-          disabled: "disabled",
-          effective_date: "effectiveDate",
-          highlighted_details: "highlightedDetails",
-          id: "id",
-          initial_charge: "initialCharge",
-          maximum_amount: "maximumAmount",
-          maximum_amount_auto_purchase_per_period: "maximumAmountAutoPurchasePerPeriod",
-          minimum_amount: "minimumAmount",
-          name: "name",
-          payment_method_required: "paymentMethodRequired",
-          preauthorization_amount: "preauthorizationAmount",
-          quote: "quote",
-          scope: "scope",
-          type: "type",
+          cost: 'cost',
+          description: 'description',
+          details: 'details',
+          disabled: 'disabled',
+          effective_date: 'effectiveDate',
+          highlighted_details: 'highlightedDetails',
+          id: 'id',
+          initial_charge: 'initialCharge',
+          maximum_amount: 'maximumAmount',
+          maximum_amount_auto_purchase_per_period: 'maximumAmountAutoPurchasePerPeriod',
+          minimum_amount: 'minimumAmount',
+          name: 'name',
+          payment_method_required: 'paymentMethodRequired',
+          preauthorization_amount: 'preauthorizationAmount',
+          quote: 'quote',
+          scope: 'scope',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           description
@@ -86,7 +86,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponseStoreBillingPlanType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -123,20 +123,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateIntegrationStoreDirectResponseStoreCapabilitiesMetadata
         FIELDS = {
-          agent_tools: "agentTools",
-          auto_sensitive: "autoSensitive",
-          billable: "billable",
-          mcp: "mcp",
-          mcp_readonly: "mcpReadonly",
-          projects: "projects",
-          secret_rotation: "secretRotation",
-          secrets_sync: "secretsSync",
-          sso: "sso",
-          transferable: "transferable",
-          v0: "v0",
+          agent_tools: 'agentTools',
+          auto_sensitive: 'autoSensitive',
+          billable: 'billable',
+          mcp: 'mcp',
+          mcp_readonly: 'mcpReadonly',
+          projects: 'projects',
+          secret_rotation: 'secretRotation',
+          secrets_sync: 'secretsSync',
+          sso: 'sso',
+          transferable: 'transferable',
+          v0: 'v0'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           agent_tools: lambda do |value|
             ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponseStoreCapabilitiesAgentTools.from_value(value)
@@ -170,7 +169,7 @@ module OctridevVercel
           end,
           v0: lambda do |value|
             ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponseStoreCapabilitiesV0.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -207,10 +206,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateIntegrationStoreDirectResponseStoreNotificationMetadata
         FIELDS = {
-          href: "href",
-          level: "level",
-          message: "message",
-          title: "title",
+          href: 'href',
+          level: 'level',
+          message: 'message',
+          title: 'title'
         }.freeze
         REQUIRED_FIELDS = %i[
           level
@@ -219,7 +218,7 @@ module OctridevVercel
         DECODERS = {
           level: lambda do |value|
             ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponseStoreNotificationLevel.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -253,27 +252,26 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateIntegrationStoreDirectResponseStoreProductCapabilitiesMetadata
         FIELDS = {
-          agent_tools: "agentTools",
-          auto_sensitive: "autoSensitive",
-          billable: "billable",
-          connected_import_resource: "connectedImportResource",
-          database_ui: "databaseUI",
-          import_resource: "importResource",
-          linking: "linking",
-          mcp: "mcp",
-          mcp_readonly: "mcpReadonly",
-          native_import_resource: "nativeImportResource",
-          projects: "projects",
-          sandbox: "sandbox",
-          secret_rotation: "secretRotation",
-          secrets_sync: "secretsSync",
-          sso: "sso",
-          transferable: "transferable",
-          v0: "v0",
-          v0_flavors: "v0Flavors",
+          agent_tools: 'agentTools',
+          auto_sensitive: 'autoSensitive',
+          billable: 'billable',
+          connected_import_resource: 'connectedImportResource',
+          database_ui: 'databaseUI',
+          import_resource: 'importResource',
+          linking: 'linking',
+          mcp: 'mcp',
+          mcp_readonly: 'mcpReadonly',
+          native_import_resource: 'nativeImportResource',
+          projects: 'projects',
+          sandbox: 'sandbox',
+          secret_rotation: 'secretRotation',
+          secrets_sync: 'secretsSync',
+          sso: 'sso',
+          transferable: 'transferable',
+          v0: 'v0',
+          v0_flavors: 'v0Flavors'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           agent_tools: lambda do |value|
             ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponseStoreProductCapabilitiesAgentTools.from_value(value)
@@ -328,7 +326,7 @@ module OctridevVercel
           end,
           v0_flavors: lambda do |value|
             ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponseStoreProductCapabilitiesV0Flavors.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -367,10 +365,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateIntegrationStoreDirectResponseStoreProductMetadataSchemaMetadata
         FIELDS = {
-          properties: "properties",
-          required: "required",
-          type: "type",
-          ui_order: "ui:order",
+          properties: 'properties',
+          required: 'required',
+          type: 'type',
+          ui_order: 'ui:order'
         }.freeze
         REQUIRED_FIELDS = %i[
           properties
@@ -379,7 +377,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponseStoreProductMetadataSchemaType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -413,15 +411,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateIntegrationStoreDirectResponseStoreProductResourceLinksItemMetadata
         FIELDS = {
-          href: "href",
-          title: "title",
+          href: 'href',
+          title: 'title'
         }.freeze
         REQUIRED_FIELDS = %i[
           href
           title
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateIntegrationStoreDirectResponseStoreProductResourceLinksItem.
@@ -454,9 +451,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateIntegrationStoreDirectResponseStoreProductReplMetadata
         FIELDS = {
-          enabled: "enabled",
-          supports_read_only_mode: "supportsReadOnlyMode",
-          welcome_message: "welcomeMessage",
+          enabled: 'enabled',
+          supports_read_only_mode: 'supportsReadOnlyMode',
+          welcome_message: 'welcomeMessage'
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -468,7 +465,7 @@ module OctridevVercel
           end,
           supports_read_only_mode: lambda do |value|
             ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponseStoreProductReplSupportsReadOnlyMode.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -502,7 +499,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX301930ebf0Metadata
         FIELDS = {
-          type: "type",
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           type
@@ -510,7 +507,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX991f543115.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -544,9 +541,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateIntegrationStoreDirectResponseStoreProductGuidesItemStepsItemMetadata
         FIELDS = {
-          actions: "actions",
-          content: "content",
-          title: "title",
+          actions: 'actions',
+          content: 'content',
+          title: 'title'
         }.freeze
         REQUIRED_FIELDS = %i[
           content
@@ -555,7 +552,7 @@ module OctridevVercel
         DECODERS = {
           actions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX301930ebf0.from_hash(item) }
-          end,
+          end
         }.freeze
       end
     end

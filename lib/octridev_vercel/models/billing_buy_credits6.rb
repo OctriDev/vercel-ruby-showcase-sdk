@@ -5,322 +5,322 @@
 
 # billing domain models
 module OctridevVercel
-# Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xb0cadc54bd SDK namespace.
-module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xb0cadc54bd
-  END_OF_SUBSCRIPTION_TERM = 'end_of_subscription_term'
-  IMMEDIATE = 'immediate'
-  VALUES = ['end_of_subscription_term', 'immediate'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xb0cadc54bd SDK namespace.
+  module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xb0cadc54bd
+    END_OF_SUBSCRIPTION_TERM = 'end_of_subscription_term'
+    IMMEDIATE = 'immediate'
+    VALUES = %w[end_of_subscription_term immediate].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Type SDK namespace.
-module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Type
-  ORB_PLAN_CHANGE = 'orb_plan_change'
-  VALUES = ['orb_plan_change'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Type SDK namespace.
+  module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Type
+    ORB_PLAN_CHANGE = 'orb_plan_change'
+    VALUES = ['orb_plan_change'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Type', 'enum', "Unknown BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Type: #{value}")
+      raise SdkValidationError.new('BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Type', 'enum', "Unknown BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Type: #{value}")
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X0108d0d072 SDK namespace.
-module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X0108d0d072
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X0108d0d072 SDK namespace.
+  module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X0108d0d072
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3Type SDK namespace.
-module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3Type
-  ORB_PRICE_INTERVAL = 'orb_price_interval'
-  VALUES = ['orb_price_interval'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3Type SDK namespace.
+  module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3Type
+    ORB_PRICE_INTERVAL = 'orb_price_interval'
+    VALUES = ['orb_price_interval'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3Type', 'enum', "Unknown BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3Type: #{value}")
+      raise SdkValidationError.new('BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3Type', 'enum', "Unknown BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3Type: #{value}")
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4Xe9b6db6c52 SDK namespace.
-module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4Xe9b6db6c52
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4Xe9b6db6c52 SDK namespace.
+  module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4Xe9b6db6c52
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4Type SDK namespace.
-module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4Type
-  ORB_SUBSCRIPTION = 'orb_subscription'
-  VALUES = ['orb_subscription'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4Type SDK namespace.
+  module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4Type
+    ORB_SUBSCRIPTION = 'orb_subscription'
+    VALUES = ['orb_subscription'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4Type', 'enum', "Unknown BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4Type: #{value}")
+      raise SdkValidationError.new('BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4Type', 'enum', "Unknown BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4Type: #{value}")
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant5Type SDK namespace.
-module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant5Type
-  ORB_SUBSCRIPTION_INTENT = 'orb_subscription_intent'
-  VALUES = ['orb_subscription_intent'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant5Type SDK namespace.
+  module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant5Type
+    ORB_SUBSCRIPTION_INTENT = 'orb_subscription_intent'
+    VALUES = ['orb_subscription_intent'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant5Type', 'enum', "Unknown BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant5Type: #{value}")
+      raise SdkValidationError.new('BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant5Type', 'enum', "Unknown BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant5Type: #{value}")
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant6Type SDK namespace.
-module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant6Type
-  SUBSCRIPTION = 'subscription'
-  VALUES = ['subscription'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant6Type SDK namespace.
+  module BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant6Type
+    SUBSCRIPTION = 'subscription'
+    VALUES = ['subscription'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant6Type', 'enum', "Unknown BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant6Type: #{value}")
+      raise SdkValidationError.new('BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant6Type', 'enum', "Unknown BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant6Type: #{value}")
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant1PurchaseIntentCurrency SDK namespace.
-module BuyCreditsResponseVariant1PurchaseIntentCurrency
-  MIU = 'miu'
-  USD = 'usd'
-  VALUES = ['miu', 'usd'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant1PurchaseIntentCurrency SDK namespace.
+  module BuyCreditsResponseVariant1PurchaseIntentCurrency
+    MIU = 'miu'
+    USD = 'usd'
+    VALUES = %w[miu usd].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant1PurchaseIntentProviderStripeSharedPXc3d807326f SDK namespace.
-module BuyCreditsResponseVariant1PurchaseIntentProviderStripeSharedPXc3d807326f
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant1PurchaseIntentProviderStripeSharedPXc3d807326f SDK namespace.
+  module BuyCreditsResponseVariant1PurchaseIntentProviderStripeSharedPXc3d807326f
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant1PurchaseIntentProviderType SDK namespace.
-module BuyCreditsResponseVariant1PurchaseIntentProviderType
-  APPLE_IN_APP_PURCHASE = 'apple_in_app_purchase'
-  ORB_LEDGER = 'orb_ledger'
-  STRIPE_ELEMENTS = 'stripe_elements'
-  STRIPE_HOSTED = 'stripe_hosted'
-  STRIPE_INVOICE_DEFERRED = 'stripe_invoice_deferred'
-  STRIPE_INVOICE_ELEMENTS = 'stripe_invoice_elements'
-  STRIPE_INVOICE_IMMEDIATE = 'stripe_invoice_immediate'
-  TACKLE_AWS_MARKETPLACE = 'tackle_aws_marketplace'
-  VALUES = [
-    'apple_in_app_purchase', 'orb_ledger', 'stripe_elements', 'stripe_hosted',
-    'stripe_invoice_deferred', 'stripe_invoice_elements', 'stripe_invoice_immediate',
-    'tackle_aws_marketplace'
-  ].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant1PurchaseIntentProviderType SDK namespace.
+  module BuyCreditsResponseVariant1PurchaseIntentProviderType
+    APPLE_IN_APP_PURCHASE = 'apple_in_app_purchase'
+    ORB_LEDGER = 'orb_ledger'
+    STRIPE_ELEMENTS = 'stripe_elements'
+    STRIPE_HOSTED = 'stripe_hosted'
+    STRIPE_INVOICE_DEFERRED = 'stripe_invoice_deferred'
+    STRIPE_INVOICE_ELEMENTS = 'stripe_invoice_elements'
+    STRIPE_INVOICE_IMMEDIATE = 'stripe_invoice_immediate'
+    TACKLE_AWS_MARKETPLACE = 'tackle_aws_marketplace'
+    VALUES = %w[
+      apple_in_app_purchase orb_ledger stripe_elements stripe_hosted
+      stripe_invoice_deferred stripe_invoice_elements stripe_invoice_immediate
+      tackle_aws_marketplace
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant1PurchaseIntentStatus SDK namespace.
-module BuyCreditsResponseVariant1PurchaseIntentStatus
-  FAILED = 'failed'
-  PENDING = 'pending'
-  SUCCEEDED = 'succeeded'
-  VALUES = ['failed', 'pending', 'succeeded'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant1PurchaseIntentStatus SDK namespace.
+  module BuyCreditsResponseVariant1PurchaseIntentStatus
+    FAILED = 'failed'
+    PENDING = 'pending'
+    SUCCEEDED = 'succeeded'
+    VALUES = %w[failed pending succeeded].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX78b6cb355a SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX78b6cb355a
-  END_OF_TERM = 'end_of_term'
-  IMMEDIATE = 'immediate'
-  VALUES = ['end_of_term', 'immediate'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX78b6cb355a SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX78b6cb355a
+    END_OF_TERM = 'end_of_term'
+    IMMEDIATE = 'immediate'
+    VALUES = %w[end_of_term immediate].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX48c6e1f44b SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX48c6e1f44b
-  COPPER = 'copper'
-  ORB = 'orb'
-  VALUES = ['copper', 'orb'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX48c6e1f44b SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX48c6e1f44b
+    COPPER = 'copper'
+    ORB = 'orb'
+    VALUES = %w[copper orb].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant0Type SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant0Type
-  SET_PLAN_ITEM_QUANTITY = 'set_plan_item_quantity'
-  VALUES = ['set_plan_item_quantity'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant0Type SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant0Type
+    SET_PLAN_ITEM_QUANTITY = 'set_plan_item_quantity'
+    VALUES = ['set_plan_item_quantity'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant0Type', 'enum', "Unknown BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant0Type: #{value}")
+      raise SdkValidationError.new('BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant0Type', 'enum', "Unknown BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant0Type: #{value}")
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXf88d3abe82 SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXf88d3abe82
-  END_OF_TERM = 'end_of_term'
-  IMMEDIATE = 'immediate'
-  VALUES = ['end_of_term', 'immediate'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXf88d3abe82 SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXf88d3abe82
+    END_OF_TERM = 'end_of_term'
+    IMMEDIATE = 'immediate'
+    VALUES = %w[end_of_term immediate].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX4a0b178019 SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX4a0b178019
-  COPPER = 'copper'
-  ORB = 'orb'
-  VALUES = ['copper', 'orb'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX4a0b178019 SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX4a0b178019
+    COPPER = 'copper'
+    ORB = 'orb'
+    VALUES = %w[copper orb].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant1Type SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant1Type
-  INCREASE_PLAN_ITEM_QUANTITY = 'increase_plan_item_quantity'
-  VALUES = ['increase_plan_item_quantity'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant1Type SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant1Type
+    INCREASE_PLAN_ITEM_QUANTITY = 'increase_plan_item_quantity'
+    VALUES = ['increase_plan_item_quantity'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant1Type', 'enum', "Unknown BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant1Type: #{value}")
+      raise SdkValidationError.new('BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant1Type', 'enum', "Unknown BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant1Type: #{value}")
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXacc6deb8f1 SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXacc6deb8f1
-  END_OF_TERM = 'end_of_term'
-  IMMEDIATE = 'immediate'
-  VALUES = ['end_of_term', 'immediate'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXacc6deb8f1 SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXacc6deb8f1
+    END_OF_TERM = 'end_of_term'
+    IMMEDIATE = 'immediate'
+    VALUES = %w[end_of_term immediate].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXa9d46c9c4a SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXa9d46c9c4a
-  COPPER = 'copper'
-  ORB = 'orb'
-  VALUES = ['copper', 'orb'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXa9d46c9c4a SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXa9d46c9c4a
+    COPPER = 'copper'
+    ORB = 'orb'
+    VALUES = %w[copper orb].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant2Type SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant2Type
-  DECREASE_PLAN_ITEM_QUANTITY = 'decrease_plan_item_quantity'
-  VALUES = ['decrease_plan_item_quantity'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant2Type SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant2Type
+    DECREASE_PLAN_ITEM_QUANTITY = 'decrease_plan_item_quantity'
+    VALUES = ['decrease_plan_item_quantity'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant2Type', 'enum', "Unknown BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant2Type: #{value}")
+      raise SdkValidationError.new('BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant2Type', 'enum', "Unknown BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant2Type: #{value}")
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX517b3fef06 SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX517b3fef06
-  END_OF_TERM = 'end_of_term'
-  IMMEDIATE = 'immediate'
-  VALUES = ['end_of_term', 'immediate'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX517b3fef06 SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX517b3fef06
+    END_OF_TERM = 'end_of_term'
+    IMMEDIATE = 'immediate'
+    VALUES = %w[end_of_term immediate].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXeacdadac87 SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXeacdadac87
-  COPPER = 'copper'
-  ORB = 'orb'
-  VALUES = ['copper', 'orb'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXeacdadac87 SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXeacdadac87
+    COPPER = 'copper'
+    ORB = 'orb'
+    VALUES = %w[copper orb].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant3Type SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant3Type
-  ADJUST_PLAN_ITEM_QUANTITY = 'adjust_plan_item_quantity'
-  VALUES = ['adjust_plan_item_quantity'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant3Type SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant3Type
+    ADJUST_PLAN_ITEM_QUANTITY = 'adjust_plan_item_quantity'
+    VALUES = ['adjust_plan_item_quantity'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant3Type', 'enum', "Unknown BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant3Type: #{value}")
+      raise SdkValidationError.new('BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant3Type', 'enum', "Unknown BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant3Type: #{value}")
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant0Mode SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant0Mode
-  SYNC = 'sync'
-  VALUES = ['sync'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant0Mode SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant0Mode
+    SYNC = 'sync'
+    VALUES = ['sync'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1Mode SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1Mode
-  ASYNC = 'async'
-  VALUES = ['async'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1Mode SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1Mode
+    ASYNC = 'async'
+    VALUES = ['async'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1Status SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1Status
-  CANCELED = 'canceled'
-  FAILED = 'failed'
-  PENDING = 'pending'
-  RUNNING = 'running'
-  VALUES = ['canceled', 'failed', 'pending', 'running'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1Status SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1Status
+    CANCELED = 'canceled'
+    FAILED = 'failed'
+    PENDING = 'pending'
+    RUNNING = 'running'
+    VALUES = %w[canceled failed pending running].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Mode SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Mode
-  ASYNC = 'async'
-  VALUES = ['async'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Mode SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Mode
+    ASYNC = 'async'
+    VALUES = ['async'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Status SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Status
-  SUCCEEDED = 'succeeded'
-  VALUES = ['succeeded'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Status SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2Status
+    SUCCEEDED = 'succeeded'
+    VALUES = ['succeeded'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentStatus SDK namespace.
-module BuyCreditsResponseVariant2OrbSubscriptionIntentStatus
-  FAILED = 'failed'
-  PENDING = 'pending'
-  SUCCEEDED = 'succeeded'
-  VALUES = ['failed', 'pending', 'succeeded'].freeze
-  def self.from_value(value)
-    value
+  # Defines the BuyCreditsResponseVariant2OrbSubscriptionIntentStatus SDK namespace.
+  module BuyCreditsResponseVariant2OrbSubscriptionIntentStatus
+    FAILED = 'failed'
+    PENDING = 'pending'
+    SUCCEEDED = 'succeeded'
+    VALUES = %w[failed pending succeeded].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 end

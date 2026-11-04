@@ -5,14 +5,14 @@
 
 # teams domain models
 module OctridevVercel
-# Defines the UpdateTeamRequestNsnbConfigVariant0Preference SDK namespace.
-module UpdateTeamRequestNsnbConfigVariant0Preference
-  AUTO_APPROVAL = 'auto-approval'
-  MANUAL_APPROVAL = 'manual-approval'
-  BLOCK = 'block'
-  VALUES = ['auto-approval', 'manual-approval', 'block'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UpdateTeamRequestNsnbConfigVariant0Preference SDK namespace.
+  module UpdateTeamRequestNsnbConfigVariant0Preference
+    AUTO_APPROVAL = 'auto-approval'
+    MANUAL_APPROVAL = 'manual-approval'
+    BLOCK = 'block'
+    VALUES = %w[auto-approval manual-approval block].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 end

@@ -39,16 +39,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateStorageStoresBlobResponseStoreProjectsMetadataItemMetadata
         FIELDS = {
-          deployments: "deployments",
-          environments: "environments",
-          environment_variables: "environmentVariables",
-          env_var_prefix: "envVarPrefix",
-          framework: "framework",
-          id: "id",
-          latest_deployment: "latestDeployment",
-          make_env_vars_sensitive: "makeEnvVarsSensitive",
-          name: "name",
-          project_id: "projectId",
+          deployments: 'deployments',
+          environments: 'environments',
+          environment_variables: 'environmentVariables',
+          env_var_prefix: 'envVarPrefix',
+          framework: 'framework',
+          id: 'id',
+          latest_deployment: 'latestDeployment',
+          make_env_vars_sensitive: 'makeEnvVarsSensitive',
+          name: 'name',
+          project_id: 'projectId'
         }.freeze
         REQUIRED_FIELDS = %i[
           environments
@@ -67,7 +67,7 @@ module OctridevVercel
           end,
           make_env_vars_sensitive: lambda do |value|
             ::OctridevVercel::Methods::Storage::CreateStorageStoresBlobResponseStoreProjectsMetadataItemMakeEXfe5b9cf055.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           env_var_prefix
@@ -105,18 +105,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateStorageStoresBlobResponseStoreMetadata
         FIELDS = {
-          project_filter: "projectFilter",
-          projects_metadata: "projectsMetadata",
-          status: "status",
-          total_connected_projects: "totalConnectedProjects",
-          usage_quota_exceeded: "usageQuotaExceeded",
-          access: "access",
-          kind: "kind",
-          project_id: "projectId",
-          count: "count",
-          is_token_expired: "isTokenExpired",
-          region: "region",
-          size: "size",
+          project_filter: 'projectFilter',
+          projects_metadata: 'projectsMetadata',
+          status: 'status',
+          total_connected_projects: 'totalConnectedProjects',
+          usage_quota_exceeded: 'usageQuotaExceeded',
+          access: 'access',
+          kind: 'kind',
+          project_id: 'projectId',
+          count: 'count',
+          is_token_expired: 'isTokenExpired',
+          region: 'region',
+          size: 'size'
         }.freeze
         REQUIRED_FIELDS = %i[
           projects_metadata
@@ -151,7 +151,7 @@ module OctridevVercel
           end,
           region: lambda do |value|
             ::OctridevVercel::Methods::Storage::CreateStorageStoresBlobResponseStoreRegion.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           status
@@ -193,7 +193,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateStorageStoresBlobResponseMetadata
         FIELDS = {
-          store: "store",
+          store: 'store'
         }.freeze
         REQUIRED_FIELDS = %i[
           store
@@ -201,7 +201,7 @@ module OctridevVercel
         DECODERS = {
           store: lambda do |value|
             ::OctridevVercel::Methods::Storage::CreateStorageStoresBlobResponseStore.from_hash(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           store
@@ -238,13 +238,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteStorageStoresBlobByIdResponseMetadata
         FIELDS = {
-          id: "id",
+          id: 'id'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for DeleteStorageStoresBlobByIdResponse.
@@ -284,9 +283,9 @@ module OctridevVercel
         ONBOARDING = 'onboarding'
         SUSPENDED = 'suspended'
         UNINSTALLED = 'uninstalled'
-        VALUES = [
-          'available', 'error', 'initializing', 'limits-exceeded-suspended',
-          'limits-exceeded-suspended-store-count', 'onboarding', 'suspended', 'uninstalled'
+        VALUES = %w[
+          available error initializing limits-exceeded-suspended
+          limits-exceeded-suspended-store-count onboarding suspended uninstalled
         ].freeze
         def self.from_value(value)
           value
@@ -315,9 +314,9 @@ module OctridevVercel
         SIN1 = 'sin1'
         SYD1 = 'syd1'
         YUL1 = 'yul1'
-        VALUES = [
-          'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'dxb1', 'fra1', 'gru1', 'hkg1', 'hnd1',
-          'iad1', 'icn1', 'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
+        VALUES = %w[
+          arn1 bom1 cdg1 cle1 cpt1 dub1 dxb1 fra1 gru1 hkg1 hnd1
+          iad1 icn1 kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
         ].freeze
         def self.from_value(value)
           value
@@ -429,17 +428,17 @@ module OctridevVercel
         VUEPRESS = 'vuepress'
         XMCP = 'xmcp'
         ZOLA = 'zola'
-        VALUES = [
-          'actix-web', 'angular', 'ash', 'astro', 'axum', 'blitzjs', 'brunch', 'bun', 'container',
-          'create-react-app', 'django', 'docusaurus', 'docusaurus-2', 'dojo', 'eleventy', 'elysia',
-          'ember', 'eve', 'express', 'factory-eve', 'fastapi', 'fasthtml', 'fastify', 'flask',
-          'gatsby', 'go', 'gridsome', 'h3', 'hexo', 'hono', 'hugo', 'hydrogen', 'ionic-angular',
-          'ionic-react', 'jekyll', 'koa', 'mastra', 'middleman', 'nestjs', 'nextjs', 'nitro', 'node',
-          'nuxtjs', 'parcel', 'polymer', 'preact', 'python', 'react-router', 'redwoodjs', 'remix',
-          'ruby', 'rust', 'saber', 'sanity', 'sanity-v2', 'sapper', 'scully', 'services',
-          'solidstart', 'solidstart-1', 'stencil', 'storybook', 'svelte', 'sveltekit', 'sveltekit-1',
-          'tanstack-start', 'tanstack-start-lovable', 'umijs', 'vite', 'vitepress', 'vue',
-          'vuepress', 'xmcp', 'zola'
+        VALUES = %w[
+          actix-web angular ash astro axum blitzjs brunch bun container
+          create-react-app django docusaurus docusaurus-2 dojo eleventy elysia
+          ember eve express factory-eve fastapi fasthtml fastify flask
+          gatsby go gridsome h3 hexo hono hugo hydrogen ionic-angular
+          ionic-react jekyll koa mastra middleman nestjs nextjs nitro node
+          nuxtjs parcel polymer preact python react-router redwoodjs remix
+          ruby rust saber sanity sanity-v2 sapper scully services
+          solidstart solidstart-1 stencil storybook svelte sveltekit sveltekit-1
+          tanstack-start tanstack-start-lovable umijs vite vitepress vue
+          vuepress xmcp zola
         ].freeze
         def self.from_value(value)
           value
@@ -456,9 +455,9 @@ module OctridevVercel
         ONBOARDING = 'onboarding'
         SUSPENDED = 'suspended'
         UNINSTALLED = 'uninstalled'
-        VALUES = [
-          'available', 'error', 'initializing', 'limits-exceeded-suspended',
-          'limits-exceeded-suspended-store-count', 'onboarding', 'suspended', 'uninstalled'
+        VALUES = %w[
+          available error initializing limits-exceeded-suspended
+          limits-exceeded-suspended-store-count onboarding suspended uninstalled
         ].freeze
         def self.from_value(value)
           value
@@ -469,7 +468,7 @@ module OctridevVercel
       module CreateStorageStoresBlobResponseStoreAccess
         PRIVATE = 'private'
         PUBLIC = 'public'
-        VALUES = ['private', 'public'].freeze
+        VALUES = %w[private public].freeze
         def self.from_value(value)
           value
         end
@@ -479,7 +478,7 @@ module OctridevVercel
       module CreateStorageStoresBlobResponseStoreKind
         PROJECT_DEFAULT = 'project-default'
         USER_CREATED = 'user-created'
-        VALUES = ['project-default', 'user-created'].freeze
+        VALUES = %w[project-default user-created].freeze
         def self.from_value(value)
           value
         end
@@ -500,7 +499,7 @@ module OctridevVercel
         BITBUCKET = 'bitbucket'
         GITHUB = 'github'
         GITLAB = 'gitlab'
-        VALUES = ['bitbucket', 'github', 'gitlab'].freeze
+        VALUES = %w[bitbucket github gitlab].freeze
         def self.from_value(value)
           value
         end
@@ -511,7 +510,7 @@ module OctridevVercel
         BITBUCKET = 'bitbucket'
         GITHUB = 'github'
         GITLAB = 'gitlab'
-        VALUES = ['bitbucket', 'github', 'gitlab'].freeze
+        VALUES = %w[bitbucket github gitlab].freeze
         def self.from_value(value)
           value
         end

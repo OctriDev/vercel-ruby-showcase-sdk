@@ -5,662 +5,659 @@
 
 # sandboxes domain models
 module OctridevVercel
-# API model for NamedSandbox.
-# This object contains information related to a Vercel NamedSandbox.
-class NamedSandbox
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalNamedSandboxMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalNamedSandboxMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalNamedSandboxMetadata::DECODERS
+  # API model for NamedSandbox.
+  # This object contains information related to a Vercel NamedSandbox.
+  class NamedSandbox
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalNamedSandboxMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalNamedSandboxMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalNamedSandboxMetadata::DECODERS
 
-  # @return [NamedSandboxArchitecture] CPU architecture of the sandbox. This value does not change.
-  attr_reader :architecture
-  # @return [Float] The time when the named sandbox was created, in milliseconds since the epoch.
-  attr_reader :created_at
-  # @return [String] Current session ID the sandbox is pointing to.
-  attr_reader :current_session_id
-  # @return [String] Current snapshot ID that the named sandbox is pointing to.
-  attr_reader :current_snapshot_id
-  # @return [String] The working directory of the sandbox.
-  attr_reader :cwd
-  # @return [Float] The time at which the currently running sandbox will time out, in milliseconds since the epoch. Only present while a session is running.
-  attr_reader :expires_at
-  # @return [Array_of_NamedSandboxFailoverRegionsItem] The regions the sandbox fails over to. Empty when it does not fail over.
-  attr_reader :failover_regions
-  # @return [String] Owner-qualified, digest-pinned reference of the container image the sandbox was created from ("{team}/{project}/{repository}@{manifestDigest}").
-  attr_reader :image
-  # @return [NamedSandboxKeepLastSnapshots] Keep-last snapshot configuration.
-  attr_reader :keep_last_snapshots
-  # @return [Float] Memory allocated in MB.
-  attr_reader :memory
-  # @return [Hash] Key-value pairs of mount path and drive.
-  attr_reader :mounts
-  # @return [String] The unique identifier of the sandbox.
-  attr_reader :name
-  # @return [String] The Connect network id for the target Secure Compute private network.
-  attr_reader :network_id
-  # @return [NamedSandboxNetworkPolicy] Network policy configuration.
-  attr_reader :network_policy
-  # @return [NamedSandboxPersistent] Whether the sandbox persists its state across restarts via automatic snapshots.
-  attr_reader :persistent
-  # @return [String] The region the sandbox is pinned to: the region stored on the sandbox, otherwise the platform default. Where a running session actually landed is reported by `session.region`.
-  attr_reader :region
-  # @return [String] Runtime identifier.
-  attr_reader :runtime
-  # @return [Float] Default snapshot expiration time in milliseconds. 0 means no expiration.
-  attr_reader :snapshot_expiration
-  # @return [NamedSandboxStatus] The status of the current sandbox.
-  attr_reader :status
-  # @return [Float] The time when the sandbox status was last updated, in milliseconds since the epoch.
-  attr_reader :status_updated_at
-  # @return [Hash] Key-value tags attached to the named sandbox.
-  attr_reader :tags
-  # @return [Float] Timeout in milliseconds.
-  attr_reader :timeout
-  # @return [Float] Cumulative active CPU duration in milliseconds across all sandbox runs.
-  attr_reader :total_active_cpu_duration_ms
-  # @return [Float] Cumulative wall-clock duration in milliseconds across all sandbox runs.
-  attr_reader :total_duration_ms
-  # @return [Float] Cumulative egress bytes across all sandbox runs.
-  attr_reader :total_egress_bytes
-  # @return [Float] Cumulative ingress bytes across all sandbox runs.
-  attr_reader :total_ingress_bytes
-  # @return [Float] The time when the named sandbox was last updated, in milliseconds since the epoch.
-  attr_reader :updated_at
-  # @return [NamedSandboxV0] Whether this sandbox is managed by v0 on the customer's behalf.
-  attr_reader :v0
-  # @return [Float] Number of virtual CPUs allocated.
-  attr_reader :vcpus
+    # @return [NamedSandboxArchitecture] CPU architecture of the sandbox. This value does not change.
+    attr_reader :architecture
+    # @return [Float] The time when the named sandbox was created, in milliseconds since the epoch.
+    attr_reader :created_at
+    # @return [String] Current session ID the sandbox is pointing to.
+    attr_reader :current_session_id
+    # @return [String] Current snapshot ID that the named sandbox is pointing to.
+    attr_reader :current_snapshot_id
+    # @return [String] The working directory of the sandbox.
+    attr_reader :cwd
+    # @return [Float] The time at which the currently running sandbox will time out, in milliseconds since the epoch. Only present while a session is running.
+    attr_reader :expires_at
+    # @return [Array_of_NamedSandboxFailoverRegionsItem] The regions the sandbox fails over to. Empty when it does not fail over.
+    attr_reader :failover_regions
+    # @return [String] Owner-qualified, digest-pinned reference of the container image the sandbox was created from ("{team}/{project}/{repository}@{manifestDigest}").
+    attr_reader :image
+    # @return [NamedSandboxKeepLastSnapshots] Keep-last snapshot configuration.
+    attr_reader :keep_last_snapshots
+    # @return [Float] Memory allocated in MB.
+    attr_reader :memory
+    # @return [Hash] Key-value pairs of mount path and drive.
+    attr_reader :mounts
+    # @return [String] The unique identifier of the sandbox.
+    attr_reader :name
+    # @return [String] The Connect network id for the target Secure Compute private network.
+    attr_reader :network_id
+    # @return [NamedSandboxNetworkPolicy] Network policy configuration.
+    attr_reader :network_policy
+    # @return [NamedSandboxPersistent] Whether the sandbox persists its state across restarts via automatic snapshots.
+    attr_reader :persistent
+    # @return [String] The region the sandbox is pinned to: the region stored on the sandbox, otherwise the platform default. Where a running session actually landed is reported by `session.region`.
+    attr_reader :region
+    # @return [String] Runtime identifier.
+    attr_reader :runtime
+    # @return [Float] Default snapshot expiration time in milliseconds. 0 means no expiration.
+    attr_reader :snapshot_expiration
+    # @return [NamedSandboxStatus] The status of the current sandbox.
+    attr_reader :status
+    # @return [Float] The time when the sandbox status was last updated, in milliseconds since the epoch.
+    attr_reader :status_updated_at
+    # @return [Hash] Key-value tags attached to the named sandbox.
+    attr_reader :tags
+    # @return [Float] Timeout in milliseconds.
+    attr_reader :timeout
+    # @return [Float] Cumulative active CPU duration in milliseconds across all sandbox runs.
+    attr_reader :total_active_cpu_duration_ms
+    # @return [Float] Cumulative wall-clock duration in milliseconds across all sandbox runs.
+    attr_reader :total_duration_ms
+    # @return [Float] Cumulative egress bytes across all sandbox runs.
+    attr_reader :total_egress_bytes
+    # @return [Float] Cumulative ingress bytes across all sandbox runs.
+    attr_reader :total_ingress_bytes
+    # @return [Float] The time when the named sandbox was last updated, in milliseconds since the epoch.
+    attr_reader :updated_at
+    # @return [NamedSandboxV0] Whether this sandbox is managed by v0 on the customer's behalf.
+    attr_reader :v0
+    # @return [Float] Number of virtual CPUs allocated.
+    attr_reader :vcpus
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the NamedSandboxArchitecture SDK namespace.
+  module NamedSandboxArchitecture
+    AMD64 = 'amd64'
+    ARM64 = 'arm64'
+    VALUES = %w[amd64 arm64].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the NamedSandboxFailoverRegionsItem SDK namespace.
+  module NamedSandboxFailoverRegionsItem
+    ARN1 = 'arn1'
+    BOM1 = 'bom1'
+    CDG1 = 'cdg1'
+    CLE1 = 'cle1'
+    CPT1 = 'cpt1'
+    DUB1 = 'dub1'
+    FRA1 = 'fra1'
+    GRU1 = 'gru1'
+    HKG1 = 'hkg1'
+    HND1 = 'hnd1'
+    IAD1 = 'iad1'
+    ICN1 = 'icn1'
+    KIX1 = 'kix1'
+    LHR1 = 'lhr1'
+    PDX1 = 'pdx1'
+    SFO1 = 'sfo1'
+    SIN1 = 'sin1'
+    SYD1 = 'syd1'
+    YUL1 = 'yul1'
+    VALUES = %w[
+      arn1 bom1 cdg1 cle1 cpt1 dub1 fra1 gru1 hkg1 hnd1 iad1 icn1
+      kix1 lhr1 pdx1 sfo1 sin1 syd1 yul1
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the NamedSandboxArchitecture SDK namespace.
-module NamedSandboxArchitecture
-  AMD64 = 'amd64'
-  ARM64 = 'arm64'
-  VALUES = ['amd64', 'arm64'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxFailoverRegionsItem SDK namespace.
-module NamedSandboxFailoverRegionsItem
-  ARN1 = 'arn1'
-  BOM1 = 'bom1'
-  CDG1 = 'cdg1'
-  CLE1 = 'cle1'
-  CPT1 = 'cpt1'
-  DUB1 = 'dub1'
-  FRA1 = 'fra1'
-  GRU1 = 'gru1'
-  HKG1 = 'hkg1'
-  HND1 = 'hnd1'
-  IAD1 = 'iad1'
-  ICN1 = 'icn1'
-  KIX1 = 'kix1'
-  LHR1 = 'lhr1'
-  PDX1 = 'pdx1'
-  SFO1 = 'sfo1'
-  SIN1 = 'sin1'
-  SYD1 = 'syd1'
-  YUL1 = 'yul1'
-  VALUES = [
-    'arn1', 'bom1', 'cdg1', 'cle1', 'cpt1', 'dub1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'iad1', 'icn1',
-    'kix1', 'lhr1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'yul1'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxKeepLastSnapshotsDeleteEvicted SDK namespace.
-module NamedSandboxKeepLastSnapshotsDeleteEvicted
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxMountsValueMode SDK namespace.
-module NamedSandboxMountsValueMode
-  READ_ONLY = 'read-only'
-  READ_WRITE = 'read-write'
-  SNAPSHOT = 'snapshot'
-  VALUES = ['read-only', 'read-write', 'snapshot'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxNetworkPolicyMode SDK namespace.
-module NamedSandboxNetworkPolicyMode
-  ALLOW_ALL = 'allow-all'
-  CUSTOM = 'custom'
-  DEFAULT_ALLOW = 'default-allow'
-  DEFAULT_DENY = 'default-deny'
-  DENY_ALL = 'deny-all'
-  VALUES = ['allow-all', 'custom', 'default-allow', 'default-deny', 'deny-all'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxPersistent SDK namespace.
-module NamedSandboxPersistent
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxStatus SDK namespace.
-module NamedSandboxStatus
-  RUNNING = 'running'
-  STOPPED = 'stopped'
-  STOPPING = 'stopping'
-  VALUES = ['running', 'stopped', 'stopping'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the NamedSandboxV0 SDK namespace.
-module NamedSandboxV0
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSandboxInjectionRuleMetadata
-  FIELDS = {
-    domain: "domain",
-    header_names: "headerNames",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    domain
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for SandboxInjectionRule.
-# HTTP header injection rules for outgoing requests matching specific domains.
-class SandboxInjectionRule
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSandboxInjectionRuleMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSandboxInjectionRuleMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSandboxInjectionRuleMetadata::DECODERS
-
-  # @return [String] The domain (or pattern) that this injection rule applies to. Supports wildcards like *.vercel.com.
-  attr_reader :domain
-  # @return [Array_of_String] The names of HTTP headers that have value that will be injected for requests to this domain.
-  attr_reader :header_names
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the NamedSandboxKeepLastSnapshotsDeleteEvicted SDK namespace.
+  module NamedSandboxKeepLastSnapshotsDeleteEvicted
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the NamedSandboxMountsValueMode SDK namespace.
+  module NamedSandboxMountsValueMode
+    READ_ONLY = 'read-only'
+    READ_WRITE = 'read-write'
+    SNAPSHOT = 'snapshot'
+    VALUES = %w[read-only read-write snapshot].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the NamedSandboxNetworkPolicyMode SDK namespace.
+  module NamedSandboxNetworkPolicyMode
+    ALLOW_ALL = 'allow-all'
+    CUSTOM = 'custom'
+    DEFAULT_ALLOW = 'default-allow'
+    DEFAULT_DENY = 'default-deny'
+    DENY_ALL = 'deny-all'
+    VALUES = %w[allow-all custom default-allow default-deny deny-all].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSandboxNetworkPolicyMetadata
-  FIELDS = {
-    allowed_cid_rs: "allowedCIDRs",
-    allowed_domains: "allowedDomains",
-    denied_cid_rs: "deniedCIDRs",
-    injection_rules: "injectionRules",
-    mode: "mode",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    mode
-  ].freeze
-  DECODERS = {
-    injection_rules: lambda do |value|
-      value&.map { |item| ::OctridevVercel::SandboxInjectionRule.from_hash(item) }
-    end,
-    mode: lambda do |value|
-      ::OctridevVercel::SandboxNetworkPolicyMode.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for SandboxNetworkPolicy.
-# The network policy applied to this sandbox, if any.
-class SandboxNetworkPolicy
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSandboxNetworkPolicyMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSandboxNetworkPolicyMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSandboxNetworkPolicyMetadata::DECODERS
-
-  # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to.
-  attr_reader :allowed_cid_rs
-  # @return [Array_of_String] List of domain names the sandbox is allowed to connect to. Supports wildcard patterns (e.g., "*.vercel.com" matches all subdomains).
-  attr_reader :allowed_domains
-  # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
-  attr_reader :denied_cid_rs
-  # @return [Array_of_SandboxInjectionRule] HTTP header injection rules for outgoing requests matching specific domains.
-  attr_reader :injection_rules
-  # @return [SandboxNetworkPolicyMode] The network policy mode. - 'allow-all': All traffic is allowed. - 'deny-all': All traffic is blocked. - 'custom': Traffic is controlled by explicit allow/deny rules.
-  attr_reader :mode
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the NamedSandboxPersistent SDK namespace.
+  module NamedSandboxPersistent
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the NamedSandboxStatus SDK namespace.
+  module NamedSandboxStatus
+    RUNNING = 'running'
+    STOPPED = 'stopped'
+    STOPPING = 'stopping'
+    VALUES = %w[running stopped stopping].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the NamedSandboxV0 SDK namespace.
+  module NamedSandboxV0
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the SandboxNetworkPolicyMode SDK namespace.
-module SandboxNetworkPolicyMode
-  ALLOW_ALL = 'allow-all'
-  CUSTOM = 'custom'
-  DENY_ALL = 'deny-all'
-  VALUES = ['allow-all', 'custom', 'deny-all'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalSandboxPublicRouteMetadata
-  FIELDS = {
-    port: "port",
-    subdomain: "subdomain",
-    system: "system",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    port
-    subdomain
-    url
-  ].freeze
-  DECODERS = {
-    system: lambda do |value|
-      ::OctridevVercel::SandboxPublicRouteSystem.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for SandboxPublicRoute.
-# This object represents a public route in a Vercel Sandbox.
-class SandboxPublicRoute
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSandboxPublicRouteMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSandboxPublicRouteMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSandboxPublicRouteMetadata::DECODERS
-
-  # @return [Float] The user port number that the route is mapped to.
-  attr_reader :port
-  # @return [String] The subdomain assigned to this route.
-  attr_reader :subdomain
-  # @return [SandboxPublicRouteSystem] Whether the route is reserved by the system (e.g. for internal use).
-  attr_reader :system
-  # @return [String] A public URL to access the corresponding port in the Sandbox.
-  attr_reader :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalSandboxInjectionRuleMetadata
+    FIELDS = {
+      domain: 'domain',
+      header_names: 'headerNames'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      domain
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for SandboxInjectionRule.
+  # HTTP header injection rules for outgoing requests matching specific domains.
+  class SandboxInjectionRule
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSandboxInjectionRuleMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSandboxInjectionRuleMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSandboxInjectionRuleMetadata::DECODERS
+
+    # @return [String] The domain (or pattern) that this injection rule applies to. Supports wildcards like *.vercel.com.
+    attr_reader :domain
+    # @return [Array_of_String] The names of HTTP headers that have value that will be injected for requests to this domain.
+    attr_reader :header_names
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalSandboxNetworkPolicyMetadata
+    FIELDS = {
+      allowed_cid_rs: 'allowedCIDRs',
+      allowed_domains: 'allowedDomains',
+      denied_cid_rs: 'deniedCIDRs',
+      injection_rules: 'injectionRules',
+      mode: 'mode'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      mode
+    ].freeze
+    DECODERS = {
+      injection_rules: lambda do |value|
+        value&.map { |item| ::OctridevVercel::SandboxInjectionRule.from_hash(item) }
+      end,
+      mode: lambda do |value|
+        ::OctridevVercel::SandboxNetworkPolicyMode.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for SandboxNetworkPolicy.
+  # The network policy applied to this sandbox, if any.
+  class SandboxNetworkPolicy
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSandboxNetworkPolicyMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSandboxNetworkPolicyMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSandboxNetworkPolicyMetadata::DECODERS
 
-# Defines the SandboxPublicRouteSystem SDK namespace.
-module SandboxPublicRouteSystem
-  TRUE = true
-  VALUES = [true].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to.
+    attr_reader :allowed_cid_rs
+    # @return [Array_of_String] List of domain names the sandbox is allowed to connect to. Supports wildcard patterns (e.g., "*.vercel.com" matches all subdomains).
+    attr_reader :allowed_domains
+    # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
+    attr_reader :denied_cid_rs
+    # @return [Array_of_SandboxInjectionRule] HTTP header injection rules for outgoing requests matching specific domains.
+    attr_reader :injection_rules
+    # @return [SandboxNetworkPolicyMode] The network policy mode. - 'allow-all': All traffic is allowed. - 'deny-all': All traffic is blocked. - 'custom': Traffic is controlled by explicit allow/deny rules.
+    attr_reader :mode
 
-# Internal model hydration metadata.
-class SdkInternalSessionNetworkTransferMetadata
-  FIELDS = {
-    egress: "egress",
-    ingress: "ingress",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    egress
-    ingress
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-# API model for SessionNetworkTransfer.
-# The quantity of data transfered to and from the sandbox, in bytes. This value is only available once the sandbox is stopped, and only if it stopped successfully.
-class SessionNetworkTransfer
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSessionNetworkTransferMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSessionNetworkTransferMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSessionNetworkTransferMetadata::DECODERS
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  # @return [Float] Required `number` value serialized in the `egress` wire field.
-  attr_reader :egress
-  # @return [Float] Required `number` value serialized in the `ingress` wire field.
-  attr_reader :ingress
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the SandboxNetworkPolicyMode SDK namespace.
+  module SandboxNetworkPolicyMode
+    ALLOW_ALL = 'allow-all'
+    CUSTOM = 'custom'
+    DENY_ALL = 'deny-all'
+    VALUES = %w[allow-all custom deny-all].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalSandboxPublicRouteMetadata
+    FIELDS = {
+      port: 'port',
+      subdomain: 'subdomain',
+      system: 'system',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      port
+      subdomain
+      url
+    ].freeze
+    DECODERS = {
+      system: lambda do |value|
+        ::OctridevVercel::SandboxPublicRouteSystem.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for SandboxPublicRoute.
+  # This object represents a public route in a Vercel Sandbox.
+  class SandboxPublicRoute
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSandboxPublicRouteMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSandboxPublicRouteMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSandboxPublicRouteMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalSessionMetadata
-  FIELDS = {
-    aborted_at: "abortedAt",
-    active_cpu_duration_ms: "activeCpuDurationMs",
-    architecture: "architecture",
-    created_at: "createdAt",
-    cwd: "cwd",
-    duration: "duration",
-    id: "id",
-    memory: "memory",
-    network_policy: "networkPolicy",
-    network_transfer: "networkTransfer",
-    project_id: "projectId",
-    region: "region",
-    requested_at: "requestedAt",
-    requested_stop_at: "requestedStopAt",
-    runtime: "runtime",
-    snapshotted_at: "snapshottedAt",
-    source_sandbox_name: "sourceSandboxName",
-    source_snapshot_id: "sourceSnapshotId",
-    started_at: "startedAt",
-    status: "status",
-    stopped_at: "stoppedAt",
-    timeout: "timeout",
-    updated_at: "updatedAt",
-    v0: "v0",
-    vcpus: "vcpus",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    cwd
-    id
-    memory
-    project_id
-    region
-    requested_at
-    runtime
-    source_sandbox_name
-    status
-    timeout
-    updated_at
-    vcpus
-  ].freeze
-  DECODERS = {
-    architecture: lambda do |value|
-      ::OctridevVercel::SessionArchitecture.from_value(value)
-    end,
-    network_policy: lambda do |value|
-      ::OctridevVercel::SandboxNetworkPolicy.from_hash(value)
-    end,
-    network_transfer: lambda do |value|
-      ::OctridevVercel::SessionNetworkTransfer.from_hash(value)
-    end,
-    status: lambda do |value|
-      ::OctridevVercel::SessionStatus.from_value(value)
-    end,
-    v0: lambda do |value|
-      ::OctridevVercel::SessionV0.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [Float] The user port number that the route is mapped to.
+    attr_reader :port
+    # @return [String] The subdomain assigned to this route.
+    attr_reader :subdomain
+    # @return [SandboxPublicRouteSystem] Whether the route is reserved by the system (e.g. for internal use).
+    attr_reader :system
+    # @return [String] A public URL to access the corresponding port in the Sandbox.
+    attr_reader :url
 
-# API model for Session.
-# This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-class Session
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSessionMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSessionMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSessionMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [Float] The time when the sandbox was aborted, in milliseconds since the epoch.
-  attr_reader :aborted_at
-  # @return [Float] The amount of CPU time the sandbox consumed, if available, in milliseconds. This value is only available once the sandbox is stopped, and only if it stopped successfully.
-  attr_reader :active_cpu_duration_ms
-  # @return [SessionArchitecture] CPU architecture of the sandbox.
-  attr_reader :architecture
-  # @return [Float] The time when the sandbox was created, in milliseconds since the epoch.
-  attr_reader :created_at
-  # @return [String] The working directory of the sandbox.
-  attr_reader :cwd
-  # @return [Float] The duration of the sandbox in milliseconds.
-  attr_reader :duration
-  # @return [String] The unique identifier of the sandbox.
-  attr_reader :id
-  # @return [Float] Memory allocated to this sandbox in MB.
-  attr_reader :memory
-  # @return [SandboxNetworkPolicy] The network policy applied to this sandbox, if any.
-  attr_reader :network_policy
-  # @return [SessionNetworkTransfer] The quantity of data transfered to and from the sandbox, in bytes. This value is only available once the sandbox is stopped, and only if it stopped successfully.
-  attr_reader :network_transfer
-  # @return [String] The unique identifier of the project associated with this session.
-  attr_reader :project_id
-  # @return [String] The region where the sandbox is hosted.
-  attr_reader :region
-  # @return [Float] The time when the sandbox was requested, in milliseconds since the epoch.
-  attr_reader :requested_at
-  # @return [Float] The time when the sandbox was requested to stop, in milliseconds since the epoch.
-  attr_reader :requested_stop_at
-  # @return [String] The runtime of the sandbox.
-  attr_reader :runtime
-  # @return [Float] The time when a snapshot was requested, in milliseconds since the epoch.
-  attr_reader :snapshotted_at
-  # @return [String] The name of the source sandbox.
-  attr_reader :source_sandbox_name
-  # @return [String] The unique identifier of the snapshot associated with this sandbox, if any.
-  attr_reader :source_snapshot_id
-  # @return [Float] The time when the sandbox was started, in milliseconds since the epoch.
-  attr_reader :started_at
-  # @return [SessionStatus] The status of the sandbox.
-  attr_reader :status
-  # @return [Float] The time when the sandbox was stopped, in milliseconds since the epoch.
-  attr_reader :stopped_at
-  # @return [Float] The maximum amount of time the sandbox will run for in milliseconds.
-  attr_reader :timeout
-  # @return [Float] The last time the sandbox was updated, in milliseconds since the epoch.
-  attr_reader :updated_at
-  # @return [SessionV0] Whether this sandbox is managed by v0 on the customer's behalf.
-  attr_reader :v0
-  # @return [Float] Number of vCPUs allocated to this sandbox.
-  attr_reader :vcpus
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the SandboxPublicRouteSystem SDK namespace.
+  module SandboxPublicRouteSystem
+    TRUE = true
+    VALUES = [true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalSessionNetworkTransferMetadata
+    FIELDS = {
+      egress: 'egress',
+      ingress: 'ingress'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      egress
+      ingress
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for SessionNetworkTransfer.
+  # The quantity of data transfered to and from the sandbox, in bytes. This value is only available once the sandbox is stopped, and only if it stopped successfully.
+  class SessionNetworkTransfer
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSessionNetworkTransferMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSessionNetworkTransferMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSessionNetworkTransferMetadata::DECODERS
 
-# Defines the SessionArchitecture SDK namespace.
-module SessionArchitecture
-  AMD64 = 'amd64'
-  ARM64 = 'arm64'
-  VALUES = ['amd64', 'arm64'].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    # @return [Float] Required `number` value serialized in the `egress` wire field.
+    attr_reader :egress
+    # @return [Float] Required `number` value serialized in the `ingress` wire field.
+    attr_reader :ingress
 
-# Defines the SessionStatus SDK namespace.
-module SessionStatus
-  ABORTED = 'aborted'
-  FAILED = 'failed'
-  PENDING = 'pending'
-  RUNNING = 'running'
-  SNAPSHOTTING = 'snapshotting'
-  STOPPED = 'stopped'
-  STOPPING = 'stopping'
-  VALUES = ['aborted', 'failed', 'pending', 'running', 'snapshotting', 'stopped', 'stopping'].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-# Defines the SessionV0 SDK namespace.
-module SessionV0
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-# Internal model hydration metadata.
-class SdkInternalSessionCommandMetadata
-  FIELDS = {
-    args: "args",
-    cwd: "cwd",
-    duration_ms: "durationMs",
-    exit_code: "exitCode",
-    id: "id",
-    name: "name",
-    session_id: "sessionId",
-    started_at: "startedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    args
-    cwd
-    exit_code
-    id
-    name
-    session_id
-    started_at
-  ].freeze
-  DECODERS = {
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    exit_code
-  ].freeze
-end
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-# API model for SessionCommand.
-# This object represents a command run in a Vercel Sandbox session (v2 API).
-class SessionCommand
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSessionCommandMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSessionCommandMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSessionCommandMetadata::DECODERS
-
-  # @return [Array_of_String] The arguments of the command.
-  attr_reader :args
-  # @return [String] The current working directory of the command.
-  attr_reader :cwd
-  # @return [Float] Duration of the command execution in milliseconds.
-  attr_reader :duration_ms
-  # @return [Float] If the command did finish, the exit code.
-  attr_reader :exit_code
-  # @return [String] The ID of the command.
-  attr_reader :id
-  # @return [String] The name of the command.
-  attr_reader :name
-  # @return [String] The ID of the session associated with the command.
-  attr_reader :session_id
-  # @return [Float] When the command was started, in milliseconds since the epoch.
-  attr_reader :started_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalSessionCommandMetadata::NULLABLE_FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalSessionMetadata
+    FIELDS = {
+      aborted_at: 'abortedAt',
+      active_cpu_duration_ms: 'activeCpuDurationMs',
+      architecture: 'architecture',
+      created_at: 'createdAt',
+      cwd: 'cwd',
+      duration: 'duration',
+      id: 'id',
+      memory: 'memory',
+      network_policy: 'networkPolicy',
+      network_transfer: 'networkTransfer',
+      project_id: 'projectId',
+      region: 'region',
+      requested_at: 'requestedAt',
+      requested_stop_at: 'requestedStopAt',
+      runtime: 'runtime',
+      snapshotted_at: 'snapshottedAt',
+      source_sandbox_name: 'sourceSandboxName',
+      source_snapshot_id: 'sourceSnapshotId',
+      started_at: 'startedAt',
+      status: 'status',
+      stopped_at: 'stoppedAt',
+      timeout: 'timeout',
+      updated_at: 'updatedAt',
+      v0: 'v0',
+      vcpus: 'vcpus'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      cwd
+      id
+      memory
+      project_id
+      region
+      requested_at
+      runtime
+      source_sandbox_name
+      status
+      timeout
+      updated_at
+      vcpus
+    ].freeze
+    DECODERS = {
+      architecture: lambda do |value|
+        ::OctridevVercel::SessionArchitecture.from_value(value)
+      end,
+      network_policy: lambda do |value|
+        ::OctridevVercel::SandboxNetworkPolicy.from_hash(value)
+      end,
+      network_transfer: lambda do |value|
+        ::OctridevVercel::SessionNetworkTransfer.from_hash(value)
+      end,
+      status: lambda do |value|
+        ::OctridevVercel::SessionStatus.from_value(value)
+      end,
+      v0: lambda do |value|
+        ::OctridevVercel::SessionV0.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for Session.
+  # This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+  class Session
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSessionMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSessionMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSessionMetadata::DECODERS
+
+    # @return [Float] The time when the sandbox was aborted, in milliseconds since the epoch.
+    attr_reader :aborted_at
+    # @return [Float] The amount of CPU time the sandbox consumed, if available, in milliseconds. This value is only available once the sandbox is stopped, and only if it stopped successfully.
+    attr_reader :active_cpu_duration_ms
+    # @return [SessionArchitecture] CPU architecture of the sandbox.
+    attr_reader :architecture
+    # @return [Float] The time when the sandbox was created, in milliseconds since the epoch.
+    attr_reader :created_at
+    # @return [String] The working directory of the sandbox.
+    attr_reader :cwd
+    # @return [Float] The duration of the sandbox in milliseconds.
+    attr_reader :duration
+    # @return [String] The unique identifier of the sandbox.
+    attr_reader :id
+    # @return [Float] Memory allocated to this sandbox in MB.
+    attr_reader :memory
+    # @return [SandboxNetworkPolicy] The network policy applied to this sandbox, if any.
+    attr_reader :network_policy
+    # @return [SessionNetworkTransfer] The quantity of data transfered to and from the sandbox, in bytes. This value is only available once the sandbox is stopped, and only if it stopped successfully.
+    attr_reader :network_transfer
+    # @return [String] The unique identifier of the project associated with this session.
+    attr_reader :project_id
+    # @return [String] The region where the sandbox is hosted.
+    attr_reader :region
+    # @return [Float] The time when the sandbox was requested, in milliseconds since the epoch.
+    attr_reader :requested_at
+    # @return [Float] The time when the sandbox was requested to stop, in milliseconds since the epoch.
+    attr_reader :requested_stop_at
+    # @return [String] The runtime of the sandbox.
+    attr_reader :runtime
+    # @return [Float] The time when a snapshot was requested, in milliseconds since the epoch.
+    attr_reader :snapshotted_at
+    # @return [String] The name of the source sandbox.
+    attr_reader :source_sandbox_name
+    # @return [String] The unique identifier of the snapshot associated with this sandbox, if any.
+    attr_reader :source_snapshot_id
+    # @return [Float] The time when the sandbox was started, in milliseconds since the epoch.
+    attr_reader :started_at
+    # @return [SessionStatus] The status of the sandbox.
+    attr_reader :status
+    # @return [Float] The time when the sandbox was stopped, in milliseconds since the epoch.
+    attr_reader :stopped_at
+    # @return [Float] The maximum amount of time the sandbox will run for in milliseconds.
+    attr_reader :timeout
+    # @return [Float] The last time the sandbox was updated, in milliseconds since the epoch.
+    attr_reader :updated_at
+    # @return [SessionV0] Whether this sandbox is managed by v0 on the customer's behalf.
+    attr_reader :v0
+    # @return [Float] Number of vCPUs allocated to this sandbox.
+    attr_reader :vcpus
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
+  # Defines the SessionArchitecture SDK namespace.
+  module SessionArchitecture
+    AMD64 = 'amd64'
+    ARM64 = 'arm64'
+    VALUES = %w[amd64 arm64].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
+
+  # Defines the SessionStatus SDK namespace.
+  module SessionStatus
+    ABORTED = 'aborted'
+    FAILED = 'failed'
+    PENDING = 'pending'
+    RUNNING = 'running'
+    SNAPSHOTTING = 'snapshotting'
+    STOPPED = 'stopped'
+    STOPPING = 'stopping'
+    VALUES = %w[aborted failed pending running snapshotting stopped stopping].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the SessionV0 SDK namespace.
+  module SessionV0
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalSessionCommandMetadata
+    FIELDS = {
+      args: 'args',
+      cwd: 'cwd',
+      duration_ms: 'durationMs',
+      exit_code: 'exitCode',
+      id: 'id',
+      name: 'name',
+      session_id: 'sessionId',
+      started_at: 'startedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      args
+      cwd
+      exit_code
+      id
+      name
+      session_id
+      started_at
+    ].freeze
+    DECODERS = {}.freeze
+    NULLABLE_FIELDS = %i[
+      exit_code
+    ].freeze
+  end
+
+  # API model for SessionCommand.
+  # This object represents a command run in a Vercel Sandbox session (v2 API).
+  class SessionCommand
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSessionCommandMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSessionCommandMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSessionCommandMetadata::DECODERS
+
+    # @return [Array_of_String] The arguments of the command.
+    attr_reader :args
+    # @return [String] The current working directory of the command.
+    attr_reader :cwd
+    # @return [Float] Duration of the command execution in milliseconds.
+    attr_reader :duration_ms
+    # @return [Float] If the command did finish, the exit code.
+    attr_reader :exit_code
+    # @return [String] The ID of the command.
+    attr_reader :id
+    # @return [String] The name of the command.
+    attr_reader :name
+    # @return [String] The ID of the session associated with the command.
+    attr_reader :session_id
+    # @return [Float] When the command was started, in milliseconds since the epoch.
+    attr_reader :started_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalSessionCommandMetadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
+  end
 end

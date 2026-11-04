@@ -5,676 +5,676 @@
 
 # projects_upload domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseLinkVariant7Metadata
-  FIELDS = {
-    created_at: "createdAt",
-    deploy_hooks: "deployHooks",
-    git_credential_id: "gitCredentialId",
-    owner: "owner",
-    owner_id: "ownerId",
-    production_branch: "productionBranch",
-    repo: "repo",
-    repo_id: "repoId",
-    sourceless: "sourceless",
-    type: "type",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deploy_hooks
-    git_credential_id
-    owner
-    owner_id
-    production_branch
-    repo
-    repo_id
-    type
-  ].freeze
-  DECODERS = {
-    deploy_hooks: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UploadProjectAvatarResponseLinkVariant7DeployHooksItem.from_hash(item) }
-    end,
-    sourceless: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseLinkVariant7Sourceless.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseLinkVariant7Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UploadProjectAvatarResponseLinkVariant7.
-class UploadProjectAvatarResponseLinkVariant7
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant7Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant7Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant7Metadata::DECODERS
-
-  attr_reader :created_at, :deploy_hooks, :git_credential_id, :production_branch, :repo, :sourceless,
-              :type, :updated_at
-  # @return [String] Owner (namespace) slug, e.g. `acme`.
-  attr_reader :owner
-  # @return [String] Origin namespace id (`ns_…`) of the owner.
-  attr_reader :owner_id
-  # @return [String] Origin repository id.
-  attr_reader :repo_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseLinkVariant7Metadata
+    FIELDS = {
+      created_at: 'createdAt',
+      deploy_hooks: 'deployHooks',
+      git_credential_id: 'gitCredentialId',
+      owner: 'owner',
+      owner_id: 'ownerId',
+      production_branch: 'productionBranch',
+      repo: 'repo',
+      repo_id: 'repoId',
+      sourceless: 'sourceless',
+      type: 'type',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deploy_hooks
+      git_credential_id
+      owner
+      owner_id
+      production_branch
+      repo
+      repo_id
+      type
+    ].freeze
+    DECODERS = {
+      deploy_hooks: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UploadProjectAvatarResponseLinkVariant7DeployHooksItem.from_hash(item) }
+      end,
+      sourceless: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseLinkVariant7Sourceless.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseLinkVariant7Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
+  # API model for UploadProjectAvatarResponseLinkVariant7.
+  class UploadProjectAvatarResponseLinkVariant7
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant7Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseLinkVariant7Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseLinkVariant7Metadata::DECODERS
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
+    attr_reader :created_at, :deploy_hooks, :git_credential_id, :production_branch, :repo, :sourceless,
+                :type, :updated_at
+    # @return [String] Owner (namespace) slug, e.g. `acme`.
+    attr_reader :owner
+    # @return [String] Origin namespace id (`ns_…`) of the owner.
+    attr_reader :owner_id
+    # @return [String] Origin repository id.
+    attr_reader :repo_id
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLink SDK namespace.
-module UploadProjectAvatarResponseLink
-  DISCRIMINATOR_MAPPING = {
-    "github" => -> { UploadProjectAvatarResponseLinkVariant0 },
-    "github-limited" => -> { UploadProjectAvatarResponseLinkVariant1 },
-    "github-custom-host" => -> { UploadProjectAvatarResponseLinkVariant2 },
-    "gitlab" => -> { UploadProjectAvatarResponseLinkVariant3 },
-    "bitbucket" => -> { UploadProjectAvatarResponseLinkVariant4 },
-    "vercel" => -> { UploadProjectAvatarResponseLinkVariant5 },
-    "v0" => -> { UploadProjectAvatarResponseLinkVariant6 },
-    "cursor-origin" => -> { UploadProjectAvatarResponseLinkVariant7 },
-  }.freeze
-
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('UploadProjectAvatarResponseLink', 'variant', "Unknown UploadProjectAvatarResponseLink discriminator: #{hash["type"].inspect}")
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant0Sourceless SDK namespace.
-module UploadProjectAvatarResponseLinkVariant0Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant0Type SDK namespace.
-module UploadProjectAvatarResponseLinkVariant0Type
-  GITHUB = 'github'
-  VALUES = ['github'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant0Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant0Type: #{value}")
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant1Sourceless SDK namespace.
-module UploadProjectAvatarResponseLinkVariant1Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant1Type SDK namespace.
-module UploadProjectAvatarResponseLinkVariant1Type
-  GITHUB_LIMITED = 'github-limited'
-  VALUES = ['github-limited'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant1Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant1Type: #{value}")
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant2Sourceless SDK namespace.
-module UploadProjectAvatarResponseLinkVariant2Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant2Type SDK namespace.
-module UploadProjectAvatarResponseLinkVariant2Type
-  GITHUB_CUSTOM_HOST = 'github-custom-host'
-  VALUES = ['github-custom-host'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant2Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant2Type: #{value}")
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant3Sourceless SDK namespace.
-module UploadProjectAvatarResponseLinkVariant3Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant3Type SDK namespace.
-module UploadProjectAvatarResponseLinkVariant3Type
-  GITLAB = 'gitlab'
-  VALUES = ['gitlab'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant3Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant3Type: #{value}")
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant4Sourceless SDK namespace.
-module UploadProjectAvatarResponseLinkVariant4Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant4Type SDK namespace.
-module UploadProjectAvatarResponseLinkVariant4Type
-  BITBUCKET = 'bitbucket'
-  VALUES = ['bitbucket'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant4Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant4Type: #{value}")
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant5Sourceless SDK namespace.
-module UploadProjectAvatarResponseLinkVariant5Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant5Type SDK namespace.
-module UploadProjectAvatarResponseLinkVariant5Type
-  VERCEL = 'vercel'
-  VALUES = ['vercel'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant5Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant5Type: #{value}")
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant6Sourceless SDK namespace.
-module UploadProjectAvatarResponseLinkVariant6Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant6Type SDK namespace.
-module UploadProjectAvatarResponseLinkVariant6Type
-  V0 = 'v0'
-  VALUES = ['v0'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant6Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant6Type: #{value}")
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant7Sourceless SDK namespace.
-module UploadProjectAvatarResponseLinkVariant7Sourceless
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseLinkVariant7Type SDK namespace.
-module UploadProjectAvatarResponseLinkVariant7Type
-  CURSOR_ORIGIN = 'cursor-origin'
-  VALUES = ['cursor-origin'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant7Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant7Type: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant0Metadata
-  FIELDS = {
-    default_route: "defaultRoute",
-    enabled: "enabled",
-    free_project_for_legacy_limits: "freeProjectForLegacyLimits",
-    group_ids: "groupIds",
-    is_default_app: "isDefaultApp",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    enabled
-    group_ids
-    is_default_app
-    updated_at
-  ].freeze
-  DECODERS = {
-    enabled: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant0Enabled.from_value(value)
-    end,
-    free_project_for_legacy_limits: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant0FreeProjectFXb75b24906d.from_value(value)
-    end,
-    is_default_app: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant0IsDefaultApp.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UploadProjectAvatarResponseMicrofrontendsVariant0.
-class UploadProjectAvatarResponseMicrofrontendsVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant0Metadata::DECODERS
-
-  attr_reader :is_default_app
-  # @return [String] A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
-  attr_reader :default_route
-  # @return [UploadProjectAvatarResponseMicrofrontendsVariant0Enabled] Whether microfrontends are enabled for this project.
-  attr_reader :enabled
-  # @return [UploadProjectAvatarResponseMicrofrontendsVariant0FreeProjectFXb75b24906d] Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-  attr_reader :free_project_for_legacy_limits
-  # @return [Array_of_String] The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
-  attr_reader :group_ids
-  # @return [Float] Timestamp when the microfrontends settings were last updated.
-  attr_reader :updated_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant1Metadata
-  FIELDS = {
-    default_route: "defaultRoute",
-    do_not_route_with_microfrontends_routing: "doNotRouteWithMicrofrontendsRouting",
-    enabled: "enabled",
-    free_project_for_legacy_limits: "freeProjectForLegacyLimits",
-    group_ids: "groupIds",
-    is_default_app: "isDefaultApp",
-    route_observability_to_this_project: "routeObservabilityToThisProject",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    enabled
-    group_ids
-    updated_at
-  ].freeze
-  DECODERS = {
-    do_not_route_with_microfrontends_routing: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiXd0ff28acfe.from_value(value)
-    end,
-    enabled: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant1Enabled.from_value(value)
-    end,
-    free_project_for_legacy_limits: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX421e388f98.from_value(value)
-    end,
-    is_default_app: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant1IsDefaultApp.from_value(value)
-    end,
-    route_observability_to_this_project: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant1RouteObservaXe3ac8bb0f1.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UploadProjectAvatarResponseMicrofrontendsVariant1.
-class UploadProjectAvatarResponseMicrofrontendsVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant1Metadata::DECODERS
-
-  attr_reader :is_default_app
-  # @return [String] A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
-  attr_reader :default_route
-  # @return [UploadProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiXd0ff28acfe] Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
-  attr_reader :do_not_route_with_microfrontends_routing
-  # @return [UploadProjectAvatarResponseMicrofrontendsVariant1Enabled] Whether microfrontends are enabled for this project.
-  attr_reader :enabled
-  # @return [UploadProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX421e388f98] Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-  attr_reader :free_project_for_legacy_limits
-  # @return [Array_of_String] The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
-  attr_reader :group_ids
-  # @return [UploadProjectAvatarResponseMicrofrontendsVariant1RouteObservaXe3ac8bb0f1] Whether observability data should be routed to this microfrontend project or a root project.
-  attr_reader :route_observability_to_this_project
-  # @return [Float] Timestamp when the microfrontends settings were last updated.
-  attr_reader :updated_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant2Metadata
-  FIELDS = {
-    enabled: "enabled",
-    free_project_for_legacy_limits: "freeProjectForLegacyLimits",
-    group_ids: "groupIds",
-    updated_at: "updatedAt",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    enabled
-    group_ids
-    updated_at
-  ].freeze
-  DECODERS = {
-    enabled: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant2Enabled.from_value(value)
-    end,
-    free_project_for_legacy_limits: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant2FreeProjectFX10afb4d952.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UploadProjectAvatarResponseMicrofrontendsVariant2.
-class UploadProjectAvatarResponseMicrofrontendsVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant2Metadata::DECODERS
-
-  attr_reader :enabled, :free_project_for_legacy_limits, :group_ids, :updated_at
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the UploadProjectAvatarResponseMicrofrontends SDK namespace.
-module UploadProjectAvatarResponseMicrofrontends
-  def self.from_hash(hash)
-    lossy = nil
-    [UploadProjectAvatarResponseMicrofrontendsVariant0, UploadProjectAvatarResponseMicrofrontendsVariant1, UploadProjectAvatarResponseMicrofrontendsVariant2].each do |type|
-      decoded = type.from_hash(hash)
-      return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-      lossy ||= decoded
-    rescue ::StandardError
-      next
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
     end
-    return lossy unless lossy.nil?
-  end
-end
 
-# Defines the UploadProjectAvatarResponseMicrofrontendsVariant0Enabled SDK namespace.
-module UploadProjectAvatarResponseMicrofrontendsVariant0Enabled
-  TRUE = true
-  VALUES = [true].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-# Defines the UploadProjectAvatarResponseMicrofrontendsVariant0FreeProjectFXb75b24906d SDK namespace.
-module UploadProjectAvatarResponseMicrofrontendsVariant0FreeProjectFXb75b24906d
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-# Defines the UploadProjectAvatarResponseMicrofrontendsVariant0IsDefaultApp SDK namespace.
-module UploadProjectAvatarResponseMicrofrontendsVariant0IsDefaultApp
-  TRUE = true
-  VALUES = [true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiXd0ff28acfe SDK namespace.
-module UploadProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiXd0ff28acfe
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseMicrofrontendsVariant1Enabled SDK namespace.
-module UploadProjectAvatarResponseMicrofrontendsVariant1Enabled
-  TRUE = true
-  VALUES = [true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX421e388f98 SDK namespace.
-module UploadProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX421e388f98
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseMicrofrontendsVariant1IsDefaultApp SDK namespace.
-module UploadProjectAvatarResponseMicrofrontendsVariant1IsDefaultApp
-  FALSE = false
-  VALUES = [false].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseMicrofrontendsVariant1RouteObservaXe3ac8bb0f1 SDK namespace.
-module UploadProjectAvatarResponseMicrofrontendsVariant1RouteObservaXe3ac8bb0f1
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseMicrofrontendsVariant2Enabled SDK namespace.
-module UploadProjectAvatarResponseMicrofrontendsVariant2Enabled
-  FALSE = false
-  VALUES = [false].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the UploadProjectAvatarResponseMicrofrontendsVariant2FreeProjectFX10afb4d952 SDK namespace.
-module UploadProjectAvatarResponseMicrofrontendsVariant2FreeProjectFX10afb4d952
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0AddressesItemMetadata
-  FIELDS = {
-    note: "note",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    value
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UploadProjectAvatarResponseTrustedIpsVariant0AddressesItem.
-class UploadProjectAvatarResponseTrustedIpsVariant0AddressesItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0AddressesItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0AddressesItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0AddressesItemMetadata::DECODERS
-
-  attr_reader :note, :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the UploadProjectAvatarResponseLink SDK namespace.
+  module UploadProjectAvatarResponseLink
+    DISCRIMINATOR_MAPPING = {
+      'github' => -> { UploadProjectAvatarResponseLinkVariant0 },
+      'github-limited' => -> { UploadProjectAvatarResponseLinkVariant1 },
+      'github-custom-host' => -> { UploadProjectAvatarResponseLinkVariant2 },
+      'gitlab' => -> { UploadProjectAvatarResponseLinkVariant3 },
+      'bitbucket' => -> { UploadProjectAvatarResponseLinkVariant4 },
+      'vercel' => -> { UploadProjectAvatarResponseLinkVariant5 },
+      'v0' => -> { UploadProjectAvatarResponseLinkVariant6 },
+      'cursor-origin' => -> { UploadProjectAvatarResponseLinkVariant7 }
+    }.freeze
+
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('UploadProjectAvatarResponseLink', 'variant', "Unknown UploadProjectAvatarResponseLink discriminator: #{hash['type'].inspect}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the UploadProjectAvatarResponseLinkVariant0Sourceless SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant0Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # Defines the UploadProjectAvatarResponseLinkVariant0Type SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant0Type
+    GITHUB = 'github'
+    VALUES = ['github'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0Metadata
-  FIELDS = {
-    addresses: "addresses",
-    deployment_type: "deploymentType",
-    protection_mode: "protectionMode",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    addresses
-    deployment_type
-    protection_mode
-  ].freeze
-  DECODERS = {
-    addresses: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UploadProjectAvatarResponseTrustedIpsVariant0AddressesItem.from_hash(item) }
-    end,
-    deployment_type: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseTrustedIpsVariant0DeploymentType.from_value(value)
-    end,
-    protection_mode: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseTrustedIpsVariant0ProtectionMode.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UploadProjectAvatarResponseTrustedIpsVariant0.
-class UploadProjectAvatarResponseTrustedIpsVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0Metadata::DECODERS
-
-  attr_reader :addresses, :deployment_type, :protection_mode
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant0Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant0Type: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the UploadProjectAvatarResponseLinkVariant1Sourceless SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant1Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the UploadProjectAvatarResponseLinkVariant1Type SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant1Type
+    GITHUB_LIMITED = 'github-limited'
+    VALUES = ['github-limited'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant1Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant1Type: #{value}")
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
+  # Defines the UploadProjectAvatarResponseLinkVariant2Sourceless SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant2Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Internal model hydration metadata.
-class SdkInternalUploadProjectAvatarResponseTrustedIpsVariant1Metadata
-  FIELDS = {
-    deployment_type: "deploymentType",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    deployment_type
-  ].freeze
-  DECODERS = {
-    deployment_type: lambda do |value|
-      ::OctridevVercel::UploadProjectAvatarResponseTrustedIpsVariant1DeploymentType.from_value(value)
-    end,
-  }.freeze
-end
+  # Defines the UploadProjectAvatarResponseLinkVariant2Type SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant2Type
+    GITHUB_CUSTOM_HOST = 'github-custom-host'
+    VALUES = ['github-custom-host'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant2Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant2Type: #{value}")
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseLinkVariant3Sourceless SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant3Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseLinkVariant3Type SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant3Type
+    GITLAB = 'gitlab'
+    VALUES = ['gitlab'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant3Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant3Type: #{value}")
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseLinkVariant4Sourceless SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant4Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseLinkVariant4Type SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant4Type
+    BITBUCKET = 'bitbucket'
+    VALUES = ['bitbucket'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant4Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant4Type: #{value}")
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseLinkVariant5Sourceless SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant5Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseLinkVariant5Type SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant5Type
+    VERCEL = 'vercel'
+    VALUES = ['vercel'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant5Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant5Type: #{value}")
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseLinkVariant6Sourceless SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant6Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseLinkVariant6Type SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant6Type
+    V0 = 'v0'
+    VALUES = ['v0'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant6Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant6Type: #{value}")
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseLinkVariant7Sourceless SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant7Sourceless
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseLinkVariant7Type SDK namespace.
+  module UploadProjectAvatarResponseLinkVariant7Type
+    CURSOR_ORIGIN = 'cursor-origin'
+    VALUES = ['cursor-origin'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UploadProjectAvatarResponseLinkVariant7Type', 'enum', "Unknown UploadProjectAvatarResponseLinkVariant7Type: #{value}")
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant0Metadata
+    FIELDS = {
+      default_route: 'defaultRoute',
+      enabled: 'enabled',
+      free_project_for_legacy_limits: 'freeProjectForLegacyLimits',
+      group_ids: 'groupIds',
+      is_default_app: 'isDefaultApp',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      enabled
+      group_ids
+      is_default_app
+      updated_at
+    ].freeze
+    DECODERS = {
+      enabled: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant0Enabled.from_value(value)
+      end,
+      free_project_for_legacy_limits: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant0FreeProjectFXb75b24906d.from_value(value)
+      end,
+      is_default_app: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant0IsDefaultApp.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for UploadProjectAvatarResponseMicrofrontendsVariant0.
+  class UploadProjectAvatarResponseMicrofrontendsVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant0Metadata::DECODERS
+
+    attr_reader :is_default_app
+    # @return [String] A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+    attr_reader :default_route
+    # @return [UploadProjectAvatarResponseMicrofrontendsVariant0Enabled] Whether microfrontends are enabled for this project.
+    attr_reader :enabled
+    # @return [UploadProjectAvatarResponseMicrofrontendsVariant0FreeProjectFXb75b24906d] Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+    attr_reader :free_project_for_legacy_limits
+    # @return [Array_of_String] The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+    attr_reader :group_ids
+    # @return [Float] Timestamp when the microfrontends settings were last updated.
+    attr_reader :updated_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant1Metadata
+    FIELDS = {
+      default_route: 'defaultRoute',
+      do_not_route_with_microfrontends_routing: 'doNotRouteWithMicrofrontendsRouting',
+      enabled: 'enabled',
+      free_project_for_legacy_limits: 'freeProjectForLegacyLimits',
+      group_ids: 'groupIds',
+      is_default_app: 'isDefaultApp',
+      route_observability_to_this_project: 'routeObservabilityToThisProject',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      enabled
+      group_ids
+      updated_at
+    ].freeze
+    DECODERS = {
+      do_not_route_with_microfrontends_routing: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiXd0ff28acfe.from_value(value)
+      end,
+      enabled: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant1Enabled.from_value(value)
+      end,
+      free_project_for_legacy_limits: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX421e388f98.from_value(value)
+      end,
+      is_default_app: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant1IsDefaultApp.from_value(value)
+      end,
+      route_observability_to_this_project: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant1RouteObservaXe3ac8bb0f1.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for UploadProjectAvatarResponseMicrofrontendsVariant1.
+  class UploadProjectAvatarResponseMicrofrontendsVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant1Metadata::DECODERS
+
+    attr_reader :is_default_app
+    # @return [String] A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+    attr_reader :default_route
+    # @return [UploadProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiXd0ff28acfe] Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
+    attr_reader :do_not_route_with_microfrontends_routing
+    # @return [UploadProjectAvatarResponseMicrofrontendsVariant1Enabled] Whether microfrontends are enabled for this project.
+    attr_reader :enabled
+    # @return [UploadProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX421e388f98] Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+    attr_reader :free_project_for_legacy_limits
+    # @return [Array_of_String] The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+    attr_reader :group_ids
+    # @return [UploadProjectAvatarResponseMicrofrontendsVariant1RouteObservaXe3ac8bb0f1] Whether observability data should be routed to this microfrontend project or a root project.
+    attr_reader :route_observability_to_this_project
+    # @return [Float] Timestamp when the microfrontends settings were last updated.
+    attr_reader :updated_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant2Metadata
+    FIELDS = {
+      enabled: 'enabled',
+      free_project_for_legacy_limits: 'freeProjectForLegacyLimits',
+      group_ids: 'groupIds',
+      updated_at: 'updatedAt'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      enabled
+      group_ids
+      updated_at
+    ].freeze
+    DECODERS = {
+      enabled: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant2Enabled.from_value(value)
+      end,
+      free_project_for_legacy_limits: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseMicrofrontendsVariant2FreeProjectFX10afb4d952.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for UploadProjectAvatarResponseMicrofrontendsVariant2.
+  class UploadProjectAvatarResponseMicrofrontendsVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseMicrofrontendsVariant2Metadata::DECODERS
+
+    attr_reader :enabled, :free_project_for_legacy_limits, :group_ids, :updated_at
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseMicrofrontends SDK namespace.
+  module UploadProjectAvatarResponseMicrofrontends
+    def self.from_hash(hash)
+      lossy = nil
+      [UploadProjectAvatarResponseMicrofrontendsVariant0, UploadProjectAvatarResponseMicrofrontendsVariant1, UploadProjectAvatarResponseMicrofrontendsVariant2].each do |type|
+        decoded = type.from_hash(hash)
+        return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+        lossy ||= decoded
+      rescue ::StandardError
+        next
+      end
+      lossy unless lossy.nil?
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseMicrofrontendsVariant0Enabled SDK namespace.
+  module UploadProjectAvatarResponseMicrofrontendsVariant0Enabled
+    TRUE = true
+    VALUES = [true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseMicrofrontendsVariant0FreeProjectFXb75b24906d SDK namespace.
+  module UploadProjectAvatarResponseMicrofrontendsVariant0FreeProjectFXb75b24906d
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseMicrofrontendsVariant0IsDefaultApp SDK namespace.
+  module UploadProjectAvatarResponseMicrofrontendsVariant0IsDefaultApp
+    TRUE = true
+    VALUES = [true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiXd0ff28acfe SDK namespace.
+  module UploadProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiXd0ff28acfe
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseMicrofrontendsVariant1Enabled SDK namespace.
+  module UploadProjectAvatarResponseMicrofrontendsVariant1Enabled
+    TRUE = true
+    VALUES = [true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX421e388f98 SDK namespace.
+  module UploadProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX421e388f98
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseMicrofrontendsVariant1IsDefaultApp SDK namespace.
+  module UploadProjectAvatarResponseMicrofrontendsVariant1IsDefaultApp
+    FALSE = false
+    VALUES = [false].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseMicrofrontendsVariant1RouteObservaXe3ac8bb0f1 SDK namespace.
+  module UploadProjectAvatarResponseMicrofrontendsVariant1RouteObservaXe3ac8bb0f1
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseMicrofrontendsVariant2Enabled SDK namespace.
+  module UploadProjectAvatarResponseMicrofrontendsVariant2Enabled
+    FALSE = false
+    VALUES = [false].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the UploadProjectAvatarResponseMicrofrontendsVariant2FreeProjectFX10afb4d952 SDK namespace.
+  module UploadProjectAvatarResponseMicrofrontendsVariant2FreeProjectFX10afb4d952
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0AddressesItemMetadata
+    FIELDS = {
+      note: 'note',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      value
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for UploadProjectAvatarResponseTrustedIpsVariant0AddressesItem.
+  class UploadProjectAvatarResponseTrustedIpsVariant0AddressesItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0AddressesItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0AddressesItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0AddressesItemMetadata::DECODERS
+
+    attr_reader :note, :value
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0Metadata
+    FIELDS = {
+      addresses: 'addresses',
+      deployment_type: 'deploymentType',
+      protection_mode: 'protectionMode'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      addresses
+      deployment_type
+      protection_mode
+    ].freeze
+    DECODERS = {
+      addresses: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UploadProjectAvatarResponseTrustedIpsVariant0AddressesItem.from_hash(item) }
+      end,
+      deployment_type: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseTrustedIpsVariant0DeploymentType.from_value(value)
+      end,
+      protection_mode: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseTrustedIpsVariant0ProtectionMode.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for UploadProjectAvatarResponseTrustedIpsVariant0.
+  class UploadProjectAvatarResponseTrustedIpsVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUploadProjectAvatarResponseTrustedIpsVariant0Metadata::DECODERS
+
+    attr_reader :addresses, :deployment_type, :protection_mode
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalUploadProjectAvatarResponseTrustedIpsVariant1Metadata
+    FIELDS = {
+      deployment_type: 'deploymentType'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      deployment_type
+    ].freeze
+    DECODERS = {
+      deployment_type: lambda do |value|
+        ::OctridevVercel::UploadProjectAvatarResponseTrustedIpsVariant1DeploymentType.from_value(value)
+      end
+    }.freeze
+  end
 end

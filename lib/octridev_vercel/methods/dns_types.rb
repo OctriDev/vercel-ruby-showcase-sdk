@@ -12,10 +12,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateRecordSrvMetadata
         FIELDS = {
-          target: "target",
-          weight: "weight",
-          port: "port",
-          priority: "priority",
+          target: 'target',
+          weight: 'weight',
+          port: 'port',
+          priority: 'priority'
         }.freeze
         REQUIRED_FIELDS = %i[
           target
@@ -23,8 +23,7 @@ module OctridevVercel
           port
           priority
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
         NULLABLE_FIELDS = %i[
           target
           weight
@@ -63,16 +62,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateRecordHttpsMetadata
         FIELDS = {
-          priority: "priority",
-          target: "target",
-          params: "params",
+          priority: 'priority',
+          target: 'target',
+          params: 'params'
         }.freeze
         REQUIRED_FIELDS = %i[
           priority
           target
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
         NULLABLE_FIELDS = %i[
           priority
           target
@@ -109,17 +107,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateRecordMetadata
         FIELDS = {
-          name: "name",
-          value: "value",
-          type: "type",
-          ttl: "ttl",
-          mx_priority: "mxPriority",
-          srv: "srv",
-          https: "https",
-          comment: "comment",
+          name: 'name',
+          value: 'value',
+          type: 'type',
+          ttl: 'ttl',
+          mx_priority: 'mxPriority',
+          srv: 'srv',
+          https: 'https',
+          comment: 'comment'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Dns::UpdateRecordType.from_value(value)
@@ -129,7 +126,7 @@ module OctridevVercel
           end,
           https: lambda do |value|
             ::OctridevVercel::Methods::Dns::UpdateRecordHttps.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -175,16 +172,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateRecordResponseMetadata
         FIELDS = {
-          comment: "comment",
-          created_at: "createdAt",
-          creator: "creator",
-          domain: "domain",
-          id: "id",
-          name: "name",
-          record_type: "recordType",
-          ttl: "ttl",
-          type: "type",
-          value: "value",
+          comment: 'comment',
+          created_at: 'createdAt',
+          creator: 'creator',
+          domain: 'domain',
+          id: 'id',
+          name: 'name',
+          record_type: 'recordType',
+          ttl: 'ttl',
+          type: 'type',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           creator
@@ -201,7 +198,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Dns::UpdateRecordResponseType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -245,7 +242,7 @@ module OctridevVercel
         NS = 'NS'
         SRV = 'SRV'
         TXT = 'TXT'
-        VALUES = ['A', 'AAAA', 'ALIAS', 'CAA', 'CNAME', 'HTTPS', 'MX', 'NS', 'SRV', 'TXT'].freeze
+        VALUES = %w[A AAAA ALIAS CAA CNAME HTTPS MX NS SRV TXT].freeze
         def self.from_value(value)
           value
         end
@@ -274,7 +271,7 @@ module OctridevVercel
         NS = 'NS'
         SRV = 'SRV'
         TXT = 'TXT'
-        VALUES = ['A', 'AAAA', 'ALIAS', 'CAA', 'CNAME', 'HTTPS', 'MX', 'NS', 'SRV', 'TXT'].freeze
+        VALUES = %w[A AAAA ALIAS CAA CNAME HTTPS MX NS SRV TXT].freeze
         def self.from_value(value)
           value
         end
@@ -325,7 +322,7 @@ module OctridevVercel
         NS = 'NS'
         SRV = 'SRV'
         TXT = 'TXT'
-        VALUES = ['A', 'AAAA', 'ALIAS', 'CAA', 'CNAME', 'HTTPS', 'MX', 'NS', 'SRV', 'TXT'].freeze
+        VALUES = %w[A AAAA ALIAS CAA CNAME HTTPS MX NS SRV TXT].freeze
         def self.from_value(value)
           value
         end
@@ -335,7 +332,7 @@ module OctridevVercel
       module UpdateRecordResponseType
         RECORD = 'record'
         RECORD_SYS = 'record-sys'
-        VALUES = ['record', 'record-sys'].freeze
+        VALUES = %w[record record-sys].freeze
         def self.from_value(value)
           value
         end
@@ -364,7 +361,7 @@ module OctridevVercel
         SRV = 'SRV'
         TXT = 'TXT'
         NS = 'NS'
-        VALUES = ['A', 'AAAA', 'ALIAS', 'CAA', 'CNAME', 'HTTPS', 'MX', 'SRV', 'TXT', 'NS'].freeze
+        VALUES = %w[A AAAA ALIAS CAA CNAME HTTPS MX SRV TXT NS].freeze
         def self.from_value(value)
           value
         end
@@ -415,7 +412,7 @@ module OctridevVercel
         SRV = 'SRV'
         TXT = 'TXT'
         NS = 'NS'
-        VALUES = ['A', 'AAAA', 'ALIAS', 'CAA', 'CNAME', 'HTTPS', 'MX', 'SRV', 'TXT', 'NS'].freeze
+        VALUES = %w[A AAAA ALIAS CAA CNAME HTTPS MX SRV TXT NS].freeze
         def self.from_value(value)
           value
         end

@@ -36,7 +36,6 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(name) do
           Validation.validate_length('name', name, max: 128)
           Validation.validate_pattern('name', name, '^[a-zA-Z0-9_-]+$')
@@ -46,7 +45,7 @@ module OctridevVercel
 
         SdkClient.request(
           'GET',
-          "/v2/sandboxes/sessions",
+          '/v2/sandboxes/sessions',
           config: config,
           query: {
             'project' => QueryValue.new(project, style: 'form', explode: true),
@@ -55,11 +54,11 @@ module OctridevVercel
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'sortOrder' => QueryValue.new(sort_order, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :json,
           operation_id: 'list_sessions',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -71,29 +70,22 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_session) do |
-        config:,
-        session_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_session) do |config:, session_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::GetSessionResponse,
           decoder: :json,
           operation_id: 'get_session',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -113,23 +105,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/cmd"
+            '/cmd'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::ListSessionCommandsResponse,
           decoder: :json,
           operation_id: 'list_session_commands',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -181,21 +172,20 @@ module OctridevVercel
         attach_stdin: NOT_GIVEN,
         request_options: nil
       )
-
-        Validation.if_given(timeout) { Validation.validate_range('timeout', timeout, min: 100, max: 18000000) }
+        Validation.if_given(timeout) { Validation.validate_range('timeout', timeout, min: 100, max: 18_000_000) }
 
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/cmd"
+            '/cmd'
           ].join,
           config: config,
           query: {
             'cmdId' => QueryValue.new(cmd_id, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'command' => command,
@@ -206,12 +196,12 @@ module OctridevVercel
             'wait' => wait,
             'logs' => logs,
             'timeout' => timeout,
-            'attachStdin' => attach_stdin,
+            'attachStdin' => attach_stdin
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::RunSessionCommandResponse,
           decoder: :json,
           operation_id: 'run_session_command',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -264,36 +254,38 @@ module OctridevVercel
         request_options: nil,
         &block
       )
-    return enum_for(
-          __method__,
-          config: config,
-          session_id: session_id,
-          cmd_id: cmd_id,
-          command: command,
-          team_id: team_id,
-          slug: slug,
-          args: args,
-          cwd: cwd,
-          env: env,
-          sudo: sudo,
-          wait: wait,
-          logs: logs,
-          timeout: timeout,
-          attach_stdin: attach_stdin,
-          request_options: request_options,
-        ) unless block
+        unless block
+          return enum_for(
+            __method__,
+            config: config,
+            session_id: session_id,
+            cmd_id: cmd_id,
+            command: command,
+            team_id: team_id,
+            slug: slug,
+            args: args,
+            cwd: cwd,
+            env: env,
+            sudo: sudo,
+            wait: wait,
+            logs: logs,
+            timeout: timeout,
+            attach_stdin: attach_stdin,
+            request_options: request_options
+          )
+        end
         SdkClient.stream(
           'POST', [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/cmd"
+            '/cmd'
           ].join,
           config: config,
           query: {
-          'cmdId' => QueryValue.new(cmd_id, style: 'form', explode: true),
-          'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-          'slug' => QueryValue.new(slug, style: 'form', explode: true),
-        },
+            'cmdId' => QueryValue.new(cmd_id, style: 'form', explode: true),
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
           body: {
             'command' => command,
             'args' => args,
@@ -303,15 +295,16 @@ module OctridevVercel
             'wait' => wait,
             'logs' => logs,
             'timeout' => timeout,
-            'attachStdin' => attach_stdin,
+            'attachStdin' => attach_stdin
           },
           content_type: 'application/json',
           operation_id: 'run_session_command_stream',
           stream_format: :ndjson,
-          stream_media_type: "application/x-ndjson",
+          stream_media_type: 'application/x-ndjson',
           request_options: request_options
         ).each do |ev|
           break if ev.data == '[DONE]'
+
           decoded = JSON.parse(ev.data)
           block.call(decoded)
         end
@@ -330,34 +323,25 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_session_command) do |
-        config:,
-        session_id:,
-        cmd_id:,
-        wait: NOT_GIVEN,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_session_command) do |config:, session_id:, cmd_id:, wait: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/cmd/",
+            '/cmd/',
             SdkClient.encode_path_segment(cmd_id)
           ].join,
           config: config,
           query: {
             'wait' => QueryValue.new(wait, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::GetSessionCommandResponse,
           decoder: :json,
           operation_id: 'get_session_command',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -383,28 +367,27 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/cmd/",
+            '/cmd/',
             SdkClient.encode_path_segment(cmd_id),
-            "/kill"
+            '/kill'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'signal' => signal,
+            'signal' => signal
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::KillSessionCommandResponse,
           decoder: :json,
           operation_id: 'kill_session_command',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -438,34 +421,33 @@ module OctridevVercel
         close: NOT_GIVEN,
         request_options: nil
       )
-
-        Validation.if_given(data) { Validation.validate_length('data', data, max: 1000000) }
+        Validation.if_given(data) { Validation.validate_length('data', data, max: 1_000_000) }
 
         Validation.if_given(offset) { Validation.validate_range('offset', offset, min: 0) }
 
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/cmd/",
+            '/cmd/',
             SdkClient.encode_path_segment(cmd_id),
-            "/stdin"
+            '/stdin'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'data' => data,
             'offset' => offset,
-            'close' => close,
+            'close' => close
           },
           return_type: ::OctridevVercel::Methods::Sandboxes::WriteSessionCommandStdinResponse,
           decoder: :json,
           operation_id: 'write_session_command_stdin',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -480,43 +462,38 @@ module OctridevVercel
       # @param team_id [String] The Team identifier to perform the request on behalf
       #   of.
       # @param slug [String] The Team slug to perform the request on behalf of.
-      singleton_class.define_method(:get_session_command_logs) do |
-        config:,
-        session_id:,
-        cmd_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil,
-        &block
-      |
-    return enum_for(
-          __method__,
-          config: config,
-          session_id: session_id,
-          cmd_id: cmd_id,
-          team_id: team_id,
-          slug: slug,
-          request_options: request_options,
-        ) unless block
+      singleton_class.define_method(:get_session_command_logs) do |config:, session_id:, cmd_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil, &block|
+        unless block
+          return enum_for(
+            __method__,
+            config: config,
+            session_id: session_id,
+            cmd_id: cmd_id,
+            team_id: team_id,
+            slug: slug,
+            request_options: request_options
+          )
+        end
         SdkClient.stream(
           'GET', [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/cmd/",
+            '/cmd/',
             SdkClient.encode_path_segment(cmd_id),
-            "/logs"
+            '/logs'
           ].join,
           config: config,
           query: {
-          'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-          'slug' => QueryValue.new(slug, style: 'form', explode: true),
-        },
+            'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
+          },
           operation_id: 'get_session_command_logs',
           stream_format: :ndjson,
-          stream_media_type: "application/x-ndjson",
+          stream_media_type: 'application/x-ndjson',
           request_options: request_options
         ).each do |ev|
           break if ev.data == '[DONE]'
+
           decoded = JSON.parse(ev.data)
           block.call(SdkClient.decode_event(decoded, ::OctridevVercel::GetSessionCommandLogsResponse))
         end
@@ -537,23 +514,22 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v2/sandboxes/sessions/",
+            '/v2/sandboxes/sessions/',
             SdkClient.encode_path_segment(session_id),
-            "/stop"
+            '/stop'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::StopSessionResponse,
           decoder: :json,
           operation_id: 'stop_session',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
     end

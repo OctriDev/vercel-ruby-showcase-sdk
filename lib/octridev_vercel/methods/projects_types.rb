@@ -12,15 +12,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectTraceResponseTraceResourcesItemMetadata
         FIELDS = {
-          attributes: "attributes",
-          name: "name",
+          attributes: 'attributes',
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           attributes
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectTraceResponseTraceResourcesItem.
@@ -53,17 +52,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectTraceResponseTraceSpansItemEventsItemMetadata
         FIELDS = {
-          attributes: "attributes",
-          name: "name",
-          timestamp: "timestamp",
+          attributes: 'attributes',
+          name: 'name',
+          timestamp: 'timestamp'
         }.freeze
         REQUIRED_FIELDS = %i[
           attributes
           name
           timestamp
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectTraceResponseTraceSpansItemEventsItem.
@@ -96,14 +94,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectTraceResponseTraceSpansItemLibraryMetadata
         FIELDS = {
-          name: "name",
-          version: "version",
+          name: 'name',
+          version: 'version'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectTraceResponseTraceSpansItemLibrary.
@@ -136,14 +133,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectTraceResponseTraceSpansItemStatusMetadata
         FIELDS = {
-          code: "code",
-          message: "message",
+          code: 'code',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           code
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectTraceResponseTraceSpansItemStatus.
@@ -176,21 +172,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectTraceResponseTraceSpansItemMetadata
         FIELDS = {
-          attributes: "attributes",
-          duration: "duration",
-          end_time: "endTime",
-          events: "events",
-          kind: "kind",
-          library: "library",
-          links: "links",
-          name: "name",
-          parent_span_id: "parentSpanId",
-          resource: "resource",
-          span_id: "spanId",
-          start_time: "startTime",
-          status: "status",
-          trace_flags: "traceFlags",
-          trace_state: "traceState",
+          attributes: 'attributes',
+          duration: 'duration',
+          end_time: 'endTime',
+          events: 'events',
+          kind: 'kind',
+          library: 'library',
+          links: 'links',
+          name: 'name',
+          parent_span_id: 'parentSpanId',
+          resource: 'resource',
+          span_id: 'spanId',
+          start_time: 'startTime',
+          status: 'status',
+          trace_flags: 'traceFlags',
+          trace_state: 'traceState'
         }.freeze
         REQUIRED_FIELDS = %i[
           attributes
@@ -216,7 +212,7 @@ module OctridevVercel
           end,
           status: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectTraceResponseTraceSpansItemStatus.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -252,10 +248,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectTraceResponseTraceMetadata
         FIELDS = {
-          resources: "resources",
-          root_span_id: "rootSpanId",
-          spans: "spans",
-          trace_id: "traceId",
+          resources: 'resources',
+          root_span_id: 'rootSpanId',
+          spans: 'spans',
+          trace_id: 'traceId'
         }.freeze
         REQUIRED_FIELDS = %i[
           spans
@@ -267,7 +263,7 @@ module OctridevVercel
           end,
           spans: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::GetProjectTraceResponseTraceSpansItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -301,7 +297,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectTraceResponseMetadata
         FIELDS = {
-          trace: "trace",
+          trace: 'trace'
         }.freeze
         REQUIRED_FIELDS = %i[
           trace
@@ -309,7 +305,7 @@ module OctridevVercel
         DECODERS = {
           trace: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectTraceResponseTrace.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -343,8 +339,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectGitRepositoryMetadata
         FIELDS = {
-          repo: "repo",
-          type: "type",
+          repo: 'repo',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           repo
@@ -353,7 +349,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectGitRepositoryType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -391,7 +387,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectSsoProtectionMetadata
         FIELDS = {
-          deployment_type: "deploymentType",
+          deployment_type: 'deploymentType'
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment_type
@@ -399,7 +395,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectSsoProtectionDeploymentType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -434,18 +430,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectSandboxMetadata
         FIELDS = {
-          region: "region",
-          failover_regions: "failoverRegions",
+          region: 'region',
+          failover_regions: 'failoverRegions'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           region: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectSandboxRegion.from_value(value)
           end,
           failover_regions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::CreateProjectSandboxFailoverRegionsItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -483,15 +478,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectOidcTokenConfigMetadata
         FIELDS = {
-          enabled: "enabled",
-          issuer_mode: "issuerMode",
+          enabled: 'enabled',
+          issuer_mode: 'issuerMode'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           issuer_mode: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectOidcTokenConfigIssuerMode.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -529,9 +523,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectResourceConfigBuildMachineElasticTransitionMetadata
         FIELDS = {
-          at: "at",
-          direction: "direction",
-          algorithm_version: "algorithmVersion",
+          at: 'at',
+          direction: 'direction',
+          algorithm_version: 'algorithmVersion'
         }.freeze
         REQUIRED_FIELDS = %i[
           at
@@ -541,7 +535,7 @@ module OctridevVercel
         DECODERS = {
           direction: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectResourceConfigBuildMachineElasticTransitionDirection.from_value(value)
-          end,
+          end
         }.freeze
       end
     end

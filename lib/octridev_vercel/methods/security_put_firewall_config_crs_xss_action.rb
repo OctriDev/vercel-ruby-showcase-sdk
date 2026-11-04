@@ -13,7 +13,7 @@ module OctridevVercel
       module PutFirewallConfigCrsXssAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['deny', 'log'].freeze
+        VALUES = %w[deny log].freeze
         def self.from_value(value)
           value
         end
@@ -23,7 +23,7 @@ module OctridevVercel
       module CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSqliAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['deny', 'log'].freeze
+        VALUES = %w[deny log].freeze
         def self.from_value(value)
           value
         end
@@ -62,7 +62,7 @@ module OctridevVercel
       module GetSecurityFirewallConfigResponseDraftCrsRceAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['deny', 'log'].freeze
+        VALUES = %w[deny log].freeze
         def self.from_value(value)
           value
         end
@@ -82,7 +82,7 @@ module OctridevVercel
       module GetSecurityFirewallConfigResponseActiveCrsJavaAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['deny', 'log'].freeze
+        VALUES = %w[deny log].freeze
         def self.from_value(value)
           value
         end
@@ -134,13 +134,13 @@ module OctridevVercel
         TRAFFIC_SOURCE = 'traffic_source'
         TRUSTED_SOURCE = 'trusted_source'
         USER_AGENT = 'user_agent'
-        VALUES = [
-          'bot_category', 'bot_name', 'bot_protection', 'bot_status', 'cookie', 'domain_environment',
-          'environment', 'geo_as_number', 'geo_city', 'geo_continent', 'geo_country',
-          'geo_country_region', 'header', 'host', 'ip_address', 'ja3_digest', 'ja4_digest', 'method',
-          'path', 'protocol', 'query', 'rate_limit_api_id', 'raw_path', 'region', 'response_code',
-          'route', 'ruleset', 'scheme', 'server_action', 'shared_condition', 'target_path',
-          'traffic_source', 'trusted_source', 'user_agent'
+        VALUES = %w[
+          bot_category bot_name bot_protection bot_status cookie domain_environment
+          environment geo_as_number geo_city geo_continent geo_country
+          geo_country_region header host ip_address ja3_digest ja4_digest method
+          path protocol query rate_limit_api_id raw_path region response_code
+          route ruleset scheme server_action shared_condition target_path
+          traffic_source trusted_source user_agent
         ].freeze
         def self.from_value(value)
           value
@@ -151,7 +151,7 @@ module OctridevVercel
       module GetSecurityFirewallConfigResponseVersionsItemCrsJavaAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['deny', 'log'].freeze
+        VALUES = %w[deny log].freeze
         def self.from_value(value)
           value
         end
@@ -161,7 +161,7 @@ module OctridevVercel
       module GetSecurityFirewallConfigResponseVersionsItemCrsPhpAction
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['deny', 'log'].freeze
+        VALUES = %w[deny log].freeze
         def self.from_value(value)
           value
         end
@@ -202,13 +202,13 @@ module OctridevVercel
         TRAFFIC_SOURCE = 'traffic_source'
         RULESET = 'ruleset'
         RESPONSE_CODE = 'response_code'
-        VALUES = [
-          'host', 'path', 'method', 'header', 'query', 'cookie', 'target_path', 'route', 'raw_path',
-          'ip_address', 'region', 'protocol', 'scheme', 'environment', 'domain_environment',
-          'user_agent', 'geo_continent', 'geo_country', 'geo_country_region', 'geo_city',
-          'geo_as_number', 'ja4_digest', 'ja3_digest', 'rate_limit_api_id', 'server_action',
-          'bot_name', 'bot_category', 'bot_status', 'bot_protection', 'shared_condition',
-          'traffic_source', 'ruleset', 'response_code'
+        VALUES = %w[
+          host path method header query cookie target_path route raw_path
+          ip_address region protocol scheme environment domain_environment
+          user_agent geo_continent geo_country geo_country_region geo_city
+          geo_as_number ja4_digest ja3_digest rate_limit_api_id server_action
+          bot_name bot_category bot_status bot_protection shared_condition
+          traffic_source ruleset response_code
         ].freeze
         def self.from_value(value)
           value
@@ -221,7 +221,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         LOG = 'log'
         BYPASS = 'bypass'
-        VALUES = ['deny', 'challenge', 'log', 'bypass'].freeze
+        VALUES = %w[deny challenge log bypass].freeze
         def self.from_value(value)
           value
         end
@@ -231,7 +231,7 @@ module OctridevVercel
       module UpdateFirewallConfigVariant11ValueActionMitigateRateLimitVariant0Algo
         FIXED_WINDOW = 'fixed_window'
         TOKEN_BUCKET = 'token_bucket'
-        VALUES = ['fixed_window', 'token_bucket'].freeze
+        VALUES = %w[fixed_window token_bucket].freeze
         def self.from_value(value)
           value
         end

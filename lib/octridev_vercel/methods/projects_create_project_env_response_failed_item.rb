@@ -39,8 +39,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseMetadata
         FIELDS = {
-          created: "created",
-          failed: "failed",
+          created: 'created',
+          failed: 'failed'
         }.freeze
         REQUIRED_FIELDS = %i[
           failed
@@ -48,7 +48,7 @@ module OctridevVercel
         DECODERS = {
           failed: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseFailedItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -82,23 +82,22 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalEditProjectEnvMetadata
         FIELDS = {
-          key: "key",
-          target: "target",
-          git_branch: "gitBranch",
-          type: "type",
-          value: "value",
-          custom_environment_ids: "customEnvironmentIds",
-          comment: "comment",
+          key: 'key',
+          target: 'target',
+          git_branch: 'gitBranch',
+          type: 'type',
+          value: 'value',
+          custom_environment_ids: 'customEnvironmentIds',
+          comment: 'comment'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           target: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::EditProjectEnvTargetItem.from_value(item) }
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::EditProjectEnvType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -145,8 +144,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalEditProjectEnvResponseInternalContentHintMetadata
         FIELDS = {
-          encrypted_value: "encryptedValue",
-          type: "type",
+          encrypted_value: 'encryptedValue',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           encrypted_value
@@ -155,7 +154,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::EditProjectEnvResponseInternalContentHintType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -192,27 +191,27 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalEditProjectEnvResponseMetadata
         FIELDS = {
-          comment: "comment",
-          configuration_id: "configurationId",
-          content_hint: "contentHint",
-          created_at: "createdAt",
-          created_by: "createdBy",
-          custom_environment_ids: "customEnvironmentIds",
-          decrypted: "decrypted",
-          edge_config_id: "edgeConfigId",
-          edge_config_token_id: "edgeConfigTokenId",
-          git_branch: "gitBranch",
-          id: "id",
-          internal_content_hint: "internalContentHint",
-          key: "key",
-          legacy_value: "legacyValue",
-          sunset_secret_id: "sunsetSecretId",
-          target: "target",
-          type: "type",
-          updated_at: "updatedAt",
-          updated_by: "updatedBy",
-          value: "value",
-          visibility: "visibility",
+          comment: 'comment',
+          configuration_id: 'configurationId',
+          content_hint: 'contentHint',
+          created_at: 'createdAt',
+          created_by: 'createdBy',
+          custom_environment_ids: 'customEnvironmentIds',
+          decrypted: 'decrypted',
+          edge_config_id: 'edgeConfigId',
+          edge_config_token_id: 'edgeConfigTokenId',
+          git_branch: 'gitBranch',
+          id: 'id',
+          internal_content_hint: 'internalContentHint',
+          key: 'key',
+          legacy_value: 'legacyValue',
+          sunset_secret_id: 'sunsetSecretId',
+          target: 'target',
+          type: 'type',
+          updated_at: 'updatedAt',
+          updated_by: 'updatedBy',
+          value: 'value',
+          visibility: 'visibility'
         }.freeze
         REQUIRED_FIELDS = %i[
           key
@@ -234,7 +233,7 @@ module OctridevVercel
           end,
           visibility: lambda do |value|
             ::OctridevVercel::Methods::Projects::EditProjectEnvResponseVisibility.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -280,13 +279,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalBatchRemoveProjectEnvMetadata
         FIELDS = {
-          ids: "ids",
+          ids: 'ids'
         }.freeze
         REQUIRED_FIELDS = %i[
           ids
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for BatchRemoveProjectEnv.
@@ -320,15 +318,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalBatchRemoveProjectEnvResponseMetadata
         FIELDS = {
-          deleted: "deleted",
-          ids: "ids",
+          deleted: 'deleted',
+          ids: 'ids'
         }.freeze
         REQUIRED_FIELDS = %i[
           deleted
           ids
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for BatchRemoveProjectEnvResponse.
@@ -361,13 +358,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectTransferRequestMetadata
         FIELDS = {
-          callback_url: "callbackUrl",
-          callback_secret: "callbackSecret",
+          callback_url: 'callbackUrl',
+          callback_secret: 'callbackSecret'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateProjectTransferRequest.
@@ -403,13 +398,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectTransferRequestResponseMetadata
         FIELDS = {
-          code: "code",
+          code: 'code'
         }.freeze
         REQUIRED_FIELDS = %i[
           code
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateProjectTransferRequestResponse.
@@ -442,14 +436,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAcceptProjectTransferRequestPaidFeaturesMetadata
         FIELDS = {
-          concurrent_builds: "concurrentBuilds",
-          password_protection: "passwordProtection",
-          preview_deployment_suffix: "previewDeploymentSuffix",
+          concurrent_builds: 'concurrentBuilds',
+          password_protection: 'passwordProtection',
+          preview_deployment_suffix: 'previewDeploymentSuffix'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for AcceptProjectTransferRequestPaidFeatures.
@@ -482,16 +474,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAcceptProjectTransferRequestMetadata
         FIELDS = {
-          new_project_name: "newProjectName",
-          paid_features: "paidFeatures",
-          accepted_policies: "acceptedPolicies",
+          new_project_name: 'newProjectName',
+          paid_features: 'paidFeatures',
+          accepted_policies: 'acceptedPolicies'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           paid_features: lambda do |value|
             ::OctridevVercel::Methods::Projects::AcceptProjectTransferRequestPaidFeatures.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -527,9 +518,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAcceptProjectTransferRequestResponsePartnerCallsItemResultMetadata
         FIELDS = {
-          code: "code",
-          error: "error",
-          status: "status",
+          code: 'code',
+          error: 'error',
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -537,7 +528,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::Projects::AcceptProjectTransferRequestResponsePartnerCallsItemResultStatus.from_value(value)
-          end,
+          end
         }.freeze
       end
     end

@@ -5,672 +5,670 @@
 
 # projects_update domain models
 module OctridevVercel
-# API model for UpdateProjectResponseCreatorVariant0ViaVariant0App.
-class UpdateProjectResponseCreatorVariant0ViaVariant0App
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0AppMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0AppMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0AppMetadata::DECODERS
+  # API model for UpdateProjectResponseCreatorVariant0ViaVariant0App.
+  class UpdateProjectResponseCreatorVariant0ViaVariant0App
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0AppMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0AppMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0AppMetadata::DECODERS
 
-  # @return [String] The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-  attr_reader :client_id
-  # @return [String] The internal ID of the Vercel App backing this principal.
-  attr_reader :id
+    # @return [String] The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+    attr_reader :client_id
+    # @return [String] The internal ID of the Vercel App backing this principal.
+    attr_reader :id
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0Metadata
+    FIELDS = {
+      app: 'app',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      app
+      type
+    ].freeze
+    DECODERS = {
+      app: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseCreatorVariant0ViaVariant0App.from_hash(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseCreatorVariant0ViaVariant0Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UpdateProjectResponseCreatorVariant0ViaVariant0.
+  # Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
+  class UpdateProjectResponseCreatorVariant0ViaVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0Metadata::DECODERS
+
+    attr_reader :app, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0Metadata
-  FIELDS = {
-    app: "app",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    app
-    type
-  ].freeze
-  DECODERS = {
-    app: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseCreatorVariant0ViaVariant0App.from_hash(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseCreatorVariant0ViaVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateProjectResponseCreatorVariant0ViaVariant0.
-# Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
-class UpdateProjectResponseCreatorVariant0ViaVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant0Metadata::DECODERS
-
-  attr_reader :app, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1IntegrationMetadata
+    FIELDS = {
+      configuration_id: 'configurationId',
+      integration_id: 'integrationId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      configuration_id
+      integration_id
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateProjectResponseCreatorVariant0ViaVariant1Integration.
+  class UpdateProjectResponseCreatorVariant0ViaVariant1Integration
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1IntegrationMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1IntegrationMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1IntegrationMetadata::DECODERS
+
+    attr_reader :configuration_id, :integration_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1Metadata
+    FIELDS = {
+      integration: 'integration',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      integration
+      type
+    ].freeze
+    DECODERS = {
+      integration: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseCreatorVariant0ViaVariant1Integration.from_hash(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseCreatorVariant0ViaVariant1Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UpdateProjectResponseCreatorVariant0ViaVariant1.
+  # Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
+  class UpdateProjectResponseCreatorVariant0ViaVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1IntegrationMetadata
-  FIELDS = {
-    configuration_id: "configurationId",
-    integration_id: "integrationId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    configuration_id
-    integration_id
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    attr_reader :integration, :type
 
-# API model for UpdateProjectResponseCreatorVariant0ViaVariant1Integration.
-class UpdateProjectResponseCreatorVariant0ViaVariant1Integration
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1IntegrationMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1IntegrationMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1IntegrationMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :configuration_id, :integration_id
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateProjectResponseCreatorVariant0UserMetadata
+    FIELDS = {
+      id: 'id'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UpdateProjectResponseCreatorVariant0User.
+  class UpdateProjectResponseCreatorVariant0User
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0UserMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0UserMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateProjectResponseCreatorVariant0UserMetadata::DECODERS
+
+    attr_reader :id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1Metadata
-  FIELDS = {
-    integration: "integration",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    integration
-    type
-  ].freeze
-  DECODERS = {
-    integration: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseCreatorVariant0ViaVariant1Integration.from_hash(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseCreatorVariant0ViaVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateProjectResponseCreatorVariant0ViaVariant1.
-# Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
-class UpdateProjectResponseCreatorVariant0ViaVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateProjectResponseCreatorVariant0ViaVariant1Metadata::DECODERS
-
-  attr_reader :integration, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateProjectResponseCreatorVariant0Metadata
+    FIELDS = {
+      type: 'type',
+      via: 'via',
+      user: 'user'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+      via
+      user
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseCreatorVariant0Type.from_value(value)
+      end,
+      user: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseCreatorVariant0User.from_hash(value)
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      via
+    ].freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateProjectResponseCreatorVariant0.
+  class UpdateProjectResponseCreatorVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateProjectResponseCreatorVariant0Metadata::DECODERS
+
+    attr_reader :type, :via, :user
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateProjectResponseCreatorVariant0Metadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateProjectResponseCreatorVariant1AppMetadata
+    FIELDS = {
+      client_id: 'clientId',
+      id: 'id'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UpdateProjectResponseCreatorVariant1App.
+  class UpdateProjectResponseCreatorVariant1App
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateProjectResponseCreatorVariant1AppMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant1AppMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateProjectResponseCreatorVariant1AppMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateProjectResponseCreatorVariant0UserMetadata
-  FIELDS = {
-    id: "id",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+    attr_reader :client_id
+    # @return [String] The internal ID of the Vercel App backing this principal.
+    attr_reader :id
 
-# API model for UpdateProjectResponseCreatorVariant0User.
-class UpdateProjectResponseCreatorVariant0User
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0UserMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0UserMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateProjectResponseCreatorVariant0UserMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :id
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateProjectResponseCreatorVariant1Metadata
+    FIELDS = {
+      app: 'app',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      app
+      type
+    ].freeze
+    DECODERS = {
+      app: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseCreatorVariant1App.from_hash(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseCreatorVariant1Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UpdateProjectResponseCreatorVariant1.
+  class UpdateProjectResponseCreatorVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateProjectResponseCreatorVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateProjectResponseCreatorVariant1Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateProjectResponseCreatorVariant0Metadata
-  FIELDS = {
-    type: "type",
-    via: "via",
-    user: "user",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-    via
-    user
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseCreatorVariant0Type.from_value(value)
-    end,
-    user: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseCreatorVariant0User.from_hash(value)
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    via
-  ].freeze
-end
+    attr_reader :app, :type
 
-# API model for UpdateProjectResponseCreatorVariant0.
-class UpdateProjectResponseCreatorVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateProjectResponseCreatorVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :type, :via, :user
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUpdateProjectResponseCreatorVariant0Metadata::NULLABLE_FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateProjectResponseCreatorVariant2IntegrationMetadata
+    FIELDS = {
+      configuration_id: 'configurationId',
+      integration_id: 'integrationId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      configuration_id
+      integration_id
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UpdateProjectResponseCreatorVariant2Integration.
+  class UpdateProjectResponseCreatorVariant2Integration
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateProjectResponseCreatorVariant2IntegrationMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant2IntegrationMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateProjectResponseCreatorVariant2IntegrationMetadata::DECODERS
+
+    attr_reader :configuration_id, :integration_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateProjectResponseCreatorVariant1AppMetadata
-  FIELDS = {
-    client_id: "clientId",
-    id: "id",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateProjectResponseCreatorVariant1App.
-class UpdateProjectResponseCreatorVariant1App
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateProjectResponseCreatorVariant1AppMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant1AppMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateProjectResponseCreatorVariant1AppMetadata::DECODERS
-
-  # @return [String] The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-  attr_reader :client_id
-  # @return [String] The internal ID of the Vercel App backing this principal.
-  attr_reader :id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateProjectResponseCreatorVariant2Metadata
+    FIELDS = {
+      integration: 'integration',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      integration
+      type
+    ].freeze
+    DECODERS = {
+      integration: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseCreatorVariant2Integration.from_hash(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseCreatorVariant2Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateProjectResponseCreatorVariant2.
+  class UpdateProjectResponseCreatorVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateProjectResponseCreatorVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateProjectResponseCreatorVariant2Metadata::DECODERS
+
+    attr_reader :integration, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateProjectResponseCreatorVariant3Metadata
+    FIELDS = {
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseCreatorVariant3Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UpdateProjectResponseCreatorVariant3.
+  class UpdateProjectResponseCreatorVariant3
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateProjectResponseCreatorVariant3Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant3Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateProjectResponseCreatorVariant3Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateProjectResponseCreatorVariant1Metadata
-  FIELDS = {
-    app: "app",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    app
-    type
-  ].freeze
-  DECODERS = {
-    app: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseCreatorVariant1App.from_hash(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseCreatorVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :type
 
-# API model for UpdateProjectResponseCreatorVariant1.
-class UpdateProjectResponseCreatorVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateProjectResponseCreatorVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateProjectResponseCreatorVariant1Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :app, :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the UpdateProjectResponseCreator SDK namespace.
+  module UpdateProjectResponseCreator
+    DISCRIMINATOR_MAPPING = {
+      'user' => -> { UpdateProjectResponseCreatorVariant0 },
+      'app' => -> { UpdateProjectResponseCreatorVariant1 },
+      'integration' => -> { UpdateProjectResponseCreatorVariant2 },
+      'system' => -> { UpdateProjectResponseCreatorVariant3 }
+    }.freeze
+
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('UpdateProjectResponseCreator', 'variant', "Unknown UpdateProjectResponseCreator discriminator: #{hash['type'].inspect}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the UpdateProjectResponseCreatorVariant0Type SDK namespace.
+  module UpdateProjectResponseCreatorVariant0Type
+    USER = 'user'
+    VALUES = ['user'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateProjectResponseCreatorVariant0Type', 'enum', "Unknown UpdateProjectResponseCreatorVariant0Type: #{value}")
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # Defines the UpdateProjectResponseCreatorVariant0ViaVariant0Type SDK namespace.
+  module UpdateProjectResponseCreatorVariant0ViaVariant0Type
+    APP = 'app'
+    VALUES = ['app'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Internal model hydration metadata.
-class SdkInternalUpdateProjectResponseCreatorVariant2IntegrationMetadata
-  FIELDS = {
-    configuration_id: "configurationId",
-    integration_id: "integrationId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    configuration_id
-    integration_id
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateProjectResponseCreatorVariant2Integration.
-class UpdateProjectResponseCreatorVariant2Integration
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateProjectResponseCreatorVariant2IntegrationMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant2IntegrationMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateProjectResponseCreatorVariant2IntegrationMetadata::DECODERS
-
-  attr_reader :configuration_id, :integration_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('UpdateProjectResponseCreatorVariant0ViaVariant0Type', 'enum', "Unknown UpdateProjectResponseCreatorVariant0ViaVariant0Type: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the UpdateProjectResponseCreatorVariant0ViaVariant1Type SDK namespace.
+  module UpdateProjectResponseCreatorVariant0ViaVariant1Type
+    INTEGRATION = 'integration'
+    VALUES = ['integration'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateProjectResponseCreatorVariant0ViaVariant1Type', 'enum', "Unknown UpdateProjectResponseCreatorVariant0ViaVariant1Type: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the UpdateProjectResponseCreatorVariant1Type SDK namespace.
+  module UpdateProjectResponseCreatorVariant1Type
+    APP = 'app'
+    VALUES = ['app'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateProjectResponseCreatorVariant1Type', 'enum', "Unknown UpdateProjectResponseCreatorVariant1Type: #{value}")
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # Defines the UpdateProjectResponseCreatorVariant2Type SDK namespace.
+  module UpdateProjectResponseCreatorVariant2Type
+    INTEGRATION = 'integration'
+    VALUES = ['integration'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-# Internal model hydration metadata.
-class SdkInternalUpdateProjectResponseCreatorVariant2Metadata
-  FIELDS = {
-    integration: "integration",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    integration
-    type
-  ].freeze
-  DECODERS = {
-    integration: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseCreatorVariant2Integration.from_hash(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseCreatorVariant2Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateProjectResponseCreatorVariant2.
-class UpdateProjectResponseCreatorVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateProjectResponseCreatorVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateProjectResponseCreatorVariant2Metadata::DECODERS
-
-  attr_reader :integration, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+      raise SdkValidationError.new('UpdateProjectResponseCreatorVariant2Type', 'enum', "Unknown UpdateProjectResponseCreatorVariant2Type: #{value}")
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the UpdateProjectResponseCreatorVariant3Type SDK namespace.
+  module UpdateProjectResponseCreatorVariant3Type
+    SYSTEM = 'system'
+    VALUES = ['system'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('UpdateProjectResponseCreatorVariant3Type', 'enum', "Unknown UpdateProjectResponseCreatorVariant3Type: #{value}")
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936Metadata
+    FIELDS = {
+      target: 'target',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      target
+      type
+    ].freeze
+    DECODERS = {
+      target: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX9f9fa7c8b4.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX038090da37.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936.
+  class UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateProjectResponseCreatorVariant3Metadata
-  FIELDS = {
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseCreatorVariant3Type.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :target, :type
 
-# API model for UpdateProjectResponseCreatorVariant3.
-class UpdateProjectResponseCreatorVariant3
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateProjectResponseCreatorVariant3Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseCreatorVariant3Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateProjectResponseCreatorVariant3Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56Metadata
+    FIELDS = {
+      environment_id: 'environmentId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      environment_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8ce92b855f.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56.
+  class UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56Metadata::DECODERS
+
+    attr_reader :environment_id, :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
+  # Defines the UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXe55fd539e1 SDK namespace.
+  module UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXe55fd539e1
+    DISCRIMINATOR_MAPPING = {
+      'system' => -> { UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936 },
+      'custom' => -> { UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56 }
+    }.freeze
+
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXe55fd539e1', 'variant', "Unknown UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXe55fd539e1 discriminator: #{hash['type'].inspect}")
+    end
   end
-end
-
-# Defines the UpdateProjectResponseCreator SDK namespace.
-module UpdateProjectResponseCreator
-  DISCRIMINATOR_MAPPING = {
-    "user" => -> { UpdateProjectResponseCreatorVariant0 },
-    "app" => -> { UpdateProjectResponseCreatorVariant1 },
-    "integration" => -> { UpdateProjectResponseCreatorVariant2 },
-    "system" => -> { UpdateProjectResponseCreatorVariant3 },
-  }.freeze
-
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('UpdateProjectResponseCreator', 'variant', "Unknown UpdateProjectResponseCreator discriminator: #{hash["type"].inspect}")
-  end
-end
-
-# Defines the UpdateProjectResponseCreatorVariant0Type SDK namespace.
-module UpdateProjectResponseCreatorVariant0Type
-  USER = 'user'
-  VALUES = ['user'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateProjectResponseCreatorVariant0Type', 'enum', "Unknown UpdateProjectResponseCreatorVariant0Type: #{value}")
-  end
-end
-
-# Defines the UpdateProjectResponseCreatorVariant0ViaVariant0Type SDK namespace.
-module UpdateProjectResponseCreatorVariant0ViaVariant0Type
-  APP = 'app'
-  VALUES = ['app'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateProjectResponseCreatorVariant0ViaVariant0Type', 'enum', "Unknown UpdateProjectResponseCreatorVariant0ViaVariant0Type: #{value}")
-  end
-end
-
-# Defines the UpdateProjectResponseCreatorVariant0ViaVariant1Type SDK namespace.
-module UpdateProjectResponseCreatorVariant0ViaVariant1Type
-  INTEGRATION = 'integration'
-  VALUES = ['integration'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateProjectResponseCreatorVariant0ViaVariant1Type', 'enum', "Unknown UpdateProjectResponseCreatorVariant0ViaVariant1Type: #{value}")
-  end
-end
-
-# Defines the UpdateProjectResponseCreatorVariant1Type SDK namespace.
-module UpdateProjectResponseCreatorVariant1Type
-  APP = 'app'
-  VALUES = ['app'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateProjectResponseCreatorVariant1Type', 'enum', "Unknown UpdateProjectResponseCreatorVariant1Type: #{value}")
-  end
-end
-
-# Defines the UpdateProjectResponseCreatorVariant2Type SDK namespace.
-module UpdateProjectResponseCreatorVariant2Type
-  INTEGRATION = 'integration'
-  VALUES = ['integration'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateProjectResponseCreatorVariant2Type', 'enum', "Unknown UpdateProjectResponseCreatorVariant2Type: #{value}")
-  end
-end
-
-# Defines the UpdateProjectResponseCreatorVariant3Type SDK namespace.
-module UpdateProjectResponseCreatorVariant3Type
-  SYSTEM = 'system'
-  VALUES = ['system'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('UpdateProjectResponseCreatorVariant3Type', 'enum', "Unknown UpdateProjectResponseCreatorVariant3Type: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936Metadata
-  FIELDS = {
-    target: "target",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    target
-    type
-  ].freeze
-  DECODERS = {
-    target: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX9f9fa7c8b4.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX038090da37.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936.
-class UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936Metadata::DECODERS
-
-  attr_reader :target, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56Metadata
-  FIELDS = {
-    environment_id: "environmentId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    environment_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8ce92b855f.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56.
-class UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56Metadata::DECODERS
-
-  attr_reader :environment_id, :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXe55fd539e1 SDK namespace.
-module UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXe55fd539e1
-  DISCRIMINATOR_MAPPING = {
-    "system" => -> { UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936 },
-    "custom" => -> { UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56 },
-  }.freeze
-
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
-    return type.from_hash(hash) if type
-
-    raise SdkValidationError.new('UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXe55fd539e1', 'variant', "Unknown UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXe55fd539e1 discriminator: #{hash["type"].inspect}")
-  end
-end
 end

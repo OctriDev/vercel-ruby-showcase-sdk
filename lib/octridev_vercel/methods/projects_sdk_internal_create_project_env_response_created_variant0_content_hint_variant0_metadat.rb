@@ -12,8 +12,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant0Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -22,7 +22,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant0Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -56,8 +56,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant1Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -66,7 +66,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant1Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -100,8 +100,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant2Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -110,7 +110,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant2Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -144,8 +144,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant3Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -154,7 +154,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant3Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -188,8 +188,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant4Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -198,7 +198,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant4Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -232,8 +232,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant5Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -242,7 +242,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant5Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -276,8 +276,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant6Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -286,7 +286,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant6Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -320,8 +320,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant7Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -330,7 +330,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant7Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -364,8 +364,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant8Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -374,7 +374,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant8Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -408,8 +408,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant9Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -418,7 +418,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant9Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -452,8 +452,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant10Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -462,7 +462,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant10Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -496,8 +496,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant11Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -506,7 +506,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant11Type.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -540,8 +540,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateProjectEnvResponseCreatedVariant0ContentHintVariant12Metadata
         FIELDS = {
-          store_id: "storeId",
-          type: "type",
+          store_id: 'storeId',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           store_id
@@ -550,7 +550,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::CreateProjectEnvResponseCreatedVariant0ContentHintVariant12Type.from_value(value)
-          end,
+          end
         }.freeze
       end
     end

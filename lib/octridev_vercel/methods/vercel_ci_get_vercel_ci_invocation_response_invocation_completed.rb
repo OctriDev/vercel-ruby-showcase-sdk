@@ -50,7 +50,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationResponseInvocationSetupConclusionMetadata
         FIELDS = {
-          result: "result",
+          result: 'result'
         }.freeze
         REQUIRED_FIELDS = %i[
           result
@@ -58,7 +58,7 @@ module OctridevVercel
         DECODERS = {
           result: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::GetVercelCiInvocationResponseInvocationSetupConclusionResultVariant0.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -104,7 +104,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationResponseInvocationRunConclusionMetadata
         FIELDS = {
-          result: "result",
+          result: 'result'
         }.freeze
         REQUIRED_FIELDS = %i[
           result
@@ -112,7 +112,7 @@ module OctridevVercel
         DECODERS = {
           result: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::GetVercelCiInvocationResponseInvocationRunConclusionResultVariant0.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -158,24 +158,24 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationResponseInvocationMetadata
         FIELDS = {
-          invocation_id: "invocationId",
-          attempt: "attempt",
-          team_id: "teamId",
-          source: "source",
-          created_at: "createdAt",
-          repository_key: "repositoryKey",
-          ref: "ref",
-          commit_sha: "commitSha",
-          skipped: "skipped",
-          bootstrapping_started: "bootstrappingStarted",
-          bootstrapping_failed: "bootstrappingFailed",
-          sandbox_snapshotted: "sandboxSnapshotted",
-          sandbox_named: "sandboxNamed",
-          job_definitions_created: "jobDefinitionsCreated",
-          completed: "completed",
-          setup_conclusion: "setupConclusion",
-          run_conclusion: "runConclusion",
-          status: "status",
+          invocation_id: 'invocationId',
+          attempt: 'attempt',
+          team_id: 'teamId',
+          source: 'source',
+          created_at: 'createdAt',
+          repository_key: 'repositoryKey',
+          ref: 'ref',
+          commit_sha: 'commitSha',
+          skipped: 'skipped',
+          bootstrapping_started: 'bootstrappingStarted',
+          bootstrapping_failed: 'bootstrappingFailed',
+          sandbox_snapshotted: 'sandboxSnapshotted',
+          sandbox_named: 'sandboxNamed',
+          job_definitions_created: 'jobDefinitionsCreated',
+          completed: 'completed',
+          setup_conclusion: 'setupConclusion',
+          run_conclusion: 'runConclusion',
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           invocation_id
@@ -221,7 +221,7 @@ module OctridevVercel
           end,
           status: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::GetVercelCiInvocationResponseInvocationStatusVariant0.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -264,8 +264,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationResponseMetadata
         FIELDS = {
-          invocation: "invocation",
-          repositories: "repositories",
+          invocation: 'invocation',
+          repositories: 'repositories'
         }.freeze
         REQUIRED_FIELDS = %i[
           invocation
@@ -274,7 +274,7 @@ module OctridevVercel
         DECODERS = {
           invocation: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::GetVercelCiInvocationResponseInvocation.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -308,15 +308,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalRetryVercelCiInvocationResponseMetadata
         FIELDS = {
-          invocation_id: "invocationId",
-          attempt: "attempt",
+          invocation_id: 'invocationId',
+          attempt: 'attempt'
         }.freeze
         REQUIRED_FIELDS = %i[
           invocation_id
           attempt
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for RetryVercelCiInvocationResponse.
@@ -360,13 +359,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiJobDefinitionsResponseJobDefinitionsItemMetadata
         FIELDS = {
-          invocation_id: "invocationId",
-          invocation_attempt: "invocationAttempt",
-          job_definition_id: "jobDefinitionId",
-          kind: "kind",
-          name: "name",
-          command: "command",
-          created_at: "createdAt",
+          invocation_id: 'invocationId',
+          invocation_attempt: 'invocationAttempt',
+          job_definition_id: 'jobDefinitionId',
+          kind: 'kind',
+          name: 'name',
+          command: 'command',
+          created_at: 'createdAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           invocation_id
@@ -380,7 +379,7 @@ module OctridevVercel
         DECODERS = {
           kind: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::ListVercelCiJobDefinitionsResponseJobDefinitionsItemKindVariant0.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -415,7 +414,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiJobDefinitionsResponseMetadata
         FIELDS = {
-          job_definitions: "jobDefinitions",
+          job_definitions: 'jobDefinitions'
         }.freeze
         REQUIRED_FIELDS = %i[
           job_definitions
@@ -423,7 +422,7 @@ module OctridevVercel
         DECODERS = {
           job_definitions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::VercelCi::ListVercelCiJobDefinitionsResponseJobDefinitionsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -468,13 +467,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiJobDefinitionResponseJobDefinitionMetadata
         FIELDS = {
-          invocation_id: "invocationId",
-          invocation_attempt: "invocationAttempt",
-          job_definition_id: "jobDefinitionId",
-          kind: "kind",
-          name: "name",
-          command: "command",
-          created_at: "createdAt",
+          invocation_id: 'invocationId',
+          invocation_attempt: 'invocationAttempt',
+          job_definition_id: 'jobDefinitionId',
+          kind: 'kind',
+          name: 'name',
+          command: 'command',
+          created_at: 'createdAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           invocation_id
@@ -488,7 +487,7 @@ module OctridevVercel
         DECODERS = {
           kind: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::GetVercelCiJobDefinitionResponseJobDefinitionKindVariant0.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -523,7 +522,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiJobDefinitionResponseMetadata
         FIELDS = {
-          job_definition: "jobDefinition",
+          job_definition: 'jobDefinition'
         }.freeze
         REQUIRED_FIELDS = %i[
           job_definition
@@ -531,7 +530,7 @@ module OctridevVercel
         DECODERS = {
           job_definition: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::GetVercelCiJobDefinitionResponseJobDefinition.from_hash(value)
-          end,
+          end
         }.freeze
       end
 

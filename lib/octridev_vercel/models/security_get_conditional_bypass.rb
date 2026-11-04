@@ -5,665 +5,665 @@
 
 # security domain models
 module OctridevVercel
-# API model for GetConditionalBypassResponseVariant1.
-class GetConditionalBypassResponseVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetConditionalBypassResponseVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetConditionalBypassResponseVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetConditionalBypassResponseVariant1Metadata::DECODERS
+  # API model for GetConditionalBypassResponseVariant1.
+  class GetConditionalBypassResponseVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetConditionalBypassResponseVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetConditionalBypassResponseVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetConditionalBypassResponseVariant1Metadata::DECODERS
 
-  attr_reader :pagination, :result
+    attr_reader :pagination, :result
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the GetConditionalBypassResponse SDK namespace.
+  module GetConditionalBypassResponse
+    def self.from_hash(hash)
+      shape_mapping = {
+        'pagination' => GetConditionalBypassResponseVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      return decoded unless type.nil?
+
+      GetConditionalBypassResponseVariant0.from_hash(hash)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the GetConditionalBypassResponseVariant0ResultItemConditionsItemNeg SDK namespace.
+  module GetConditionalBypassResponseVariant0ResultItemConditionsItemNeg
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the GetConditionalBypassResponse SDK namespace.
-module GetConditionalBypassResponse
-  def self.from_hash(hash)
-    shape_mapping = {
-      "pagination" => GetConditionalBypassResponseVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-    return GetConditionalBypassResponseVariant0.from_hash(hash)
-  end
-end
-
-# Defines the GetConditionalBypassResponseVariant0ResultItemConditionsItemNeg SDK namespace.
-module GetConditionalBypassResponseVariant0ResultItemConditionsItemNeg
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetConditionalBypassResponseVariant0ResultItemConditionsItemOp SDK namespace.
-module GetConditionalBypassResponseVariant0ResultItemConditionsItemOp
-  EQ = 'eq'
-  EX = 'ex'
-  GT = 'gt'
-  GTE = 'gte'
-  INC = 'inc'
-  LIST = 'list'
-  LT = 'lt'
-  LTE = 'lte'
-  NEQ = 'neq'
-  NEX = 'nex'
-  NINC = 'ninc'
-  PRE = 'pre'
-  RE = 're'
-  SUB = 'sub'
-  SUF = 'suf'
-  VALUES = [
-    'eq', 'ex', 'gt', 'gte', 'inc', 'list', 'lt', 'lte', 'neq', 'nex', 'ninc', 'pre', 're', 'sub',
-    'suf'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetConditionalBypassResponseVariant0ResultItemConditionsItemType SDK namespace.
-module GetConditionalBypassResponseVariant0ResultItemConditionsItemType
-  BOT_CATEGORY = 'bot_category'
-  BOT_NAME = 'bot_name'
-  BOT_PROTECTION = 'bot_protection'
-  BOT_STATUS = 'bot_status'
-  COOKIE = 'cookie'
-  DOMAIN_ENVIRONMENT = 'domain_environment'
-  ENVIRONMENT = 'environment'
-  GEO_AS_NUMBER = 'geo_as_number'
-  GEO_CITY = 'geo_city'
-  GEO_CONTINENT = 'geo_continent'
-  GEO_COUNTRY = 'geo_country'
-  GEO_COUNTRY_REGION = 'geo_country_region'
-  HEADER = 'header'
-  HOST = 'host'
-  IP_ADDRESS = 'ip_address'
-  JA3_DIGEST = 'ja3_digest'
-  JA4_DIGEST = 'ja4_digest'
-  METHOD = 'method'
-  PATH = 'path'
-  PROTOCOL = 'protocol'
-  QUERY = 'query'
-  RATE_LIMIT_API_ID = 'rate_limit_api_id'
-  RAW_PATH = 'raw_path'
-  REGION = 'region'
-  RESPONSE_CODE = 'response_code'
-  ROUTE = 'route'
-  RULESET = 'ruleset'
-  SCHEME = 'scheme'
-  SERVER_ACTION = 'server_action'
-  SHARED_CONDITION = 'shared_condition'
-  TARGET_PATH = 'target_path'
-  TRAFFIC_SOURCE = 'traffic_source'
-  TRUSTED_SOURCE = 'trusted_source'
-  USER_AGENT = 'user_agent'
-  VALUES = [
-    'bot_category', 'bot_name', 'bot_protection', 'bot_status', 'cookie', 'domain_environment',
-    'environment', 'geo_as_number', 'geo_city', 'geo_continent', 'geo_country', 'geo_country_region',
-    'header', 'host', 'ip_address', 'ja3_digest', 'ja4_digest', 'method', 'path', 'protocol',
-    'query', 'rate_limit_api_id', 'raw_path', 'region', 'response_code', 'route', 'ruleset',
-    'scheme', 'server_action', 'shared_condition', 'target_path', 'traffic_source', 'trusted_source',
-    'user_agent'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetConditionalBypassResponseVariant1ResultItemConditionGroupIX4ac579f3d8 SDK namespace.
-module GetConditionalBypassResponseVariant1ResultItemConditionGroupIX4ac579f3d8
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetConditionalBypassResponseVariant1ResultItemConditionGroupIXb7920873e1 SDK namespace.
-module GetConditionalBypassResponseVariant1ResultItemConditionGroupIXb7920873e1
-  EQ = 'eq'
-  EX = 'ex'
-  GT = 'gt'
-  GTE = 'gte'
-  INC = 'inc'
-  LIST = 'list'
-  LT = 'lt'
-  LTE = 'lte'
-  NEQ = 'neq'
-  NEX = 'nex'
-  NINC = 'ninc'
-  PRE = 'pre'
-  RE = 're'
-  SUB = 'sub'
-  SUF = 'suf'
-  VALUES = [
-    'eq', 'ex', 'gt', 'gte', 'inc', 'list', 'lt', 'lte', 'neq', 'nex', 'ninc', 'pre', 're', 'sub',
-    'suf'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the GetConditionalBypassResponseVariant1ResultItemConditionGroupIX6a184f76e3 SDK namespace.
-module GetConditionalBypassResponseVariant1ResultItemConditionGroupIX6a184f76e3
-  BOT_CATEGORY = 'bot_category'
-  BOT_NAME = 'bot_name'
-  BOT_PROTECTION = 'bot_protection'
-  BOT_STATUS = 'bot_status'
-  COOKIE = 'cookie'
-  DOMAIN_ENVIRONMENT = 'domain_environment'
-  ENVIRONMENT = 'environment'
-  GEO_AS_NUMBER = 'geo_as_number'
-  GEO_CITY = 'geo_city'
-  GEO_CONTINENT = 'geo_continent'
-  GEO_COUNTRY = 'geo_country'
-  GEO_COUNTRY_REGION = 'geo_country_region'
-  HEADER = 'header'
-  HOST = 'host'
-  IP_ADDRESS = 'ip_address'
-  JA3_DIGEST = 'ja3_digest'
-  JA4_DIGEST = 'ja4_digest'
-  METHOD = 'method'
-  PATH = 'path'
-  PROTOCOL = 'protocol'
-  QUERY = 'query'
-  RATE_LIMIT_API_ID = 'rate_limit_api_id'
-  RAW_PATH = 'raw_path'
-  REGION = 'region'
-  RESPONSE_CODE = 'response_code'
-  ROUTE = 'route'
-  RULESET = 'ruleset'
-  SCHEME = 'scheme'
-  SERVER_ACTION = 'server_action'
-  SHARED_CONDITION = 'shared_condition'
-  TARGET_PATH = 'target_path'
-  TRAFFIC_SOURCE = 'traffic_source'
-  TRUSTED_SOURCE = 'trusted_source'
-  USER_AGENT = 'user_agent'
-  VALUES = [
-    'bot_category', 'bot_name', 'bot_protection', 'bot_status', 'cookie', 'domain_environment',
-    'environment', 'geo_as_number', 'geo_city', 'geo_continent', 'geo_country', 'geo_country_region',
-    'header', 'host', 'ip_address', 'ja3_digest', 'ja4_digest', 'method', 'path', 'protocol',
-    'query', 'rate_limit_api_id', 'raw_path', 'region', 'response_code', 'route', 'ruleset',
-    'scheme', 'server_action', 'shared_condition', 'target_path', 'traffic_source', 'trusted_source',
-    'user_agent'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimitMetadata
-  FIELDS = {
-    action: "action",
-    algo: "algo",
-    keys: "keys",
-    limit: "limit",
-    window: "window",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    algo
-    keys
-    limit
-    window
-  ].freeze
-  DECODERS = {
-    action: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimitAction.from_value(value)
-    end,
-    algo: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimitAlgo.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimit.
-class GetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimit
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimitMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimitMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimitMetadata::DECODERS
-
-  attr_reader :action, :algo, :keys, :limit, :window
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the GetConditionalBypassResponseVariant0ResultItemConditionsItemOp SDK namespace.
+  module GetConditionalBypassResponseVariant0ResultItemConditionsItemOp
+    EQ = 'eq'
+    EX = 'ex'
+    GT = 'gt'
+    GTE = 'gte'
+    INC = 'inc'
+    LIST = 'list'
+    LT = 'lt'
+    LTE = 'lte'
+    NEQ = 'neq'
+    NEX = 'nex'
+    NINC = 'ninc'
+    PRE = 'pre'
+    RE = 're'
+    SUB = 'sub'
+    SUF = 'suf'
+    VALUES = %w[
+      eq ex gt gte inc list lt lte neq nex ninc pre re sub
+      suf
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the GetConditionalBypassResponseVariant0ResultItemConditionsItemType SDK namespace.
+  module GetConditionalBypassResponseVariant0ResultItemConditionsItemType
+    BOT_CATEGORY = 'bot_category'
+    BOT_NAME = 'bot_name'
+    BOT_PROTECTION = 'bot_protection'
+    BOT_STATUS = 'bot_status'
+    COOKIE = 'cookie'
+    DOMAIN_ENVIRONMENT = 'domain_environment'
+    ENVIRONMENT = 'environment'
+    GEO_AS_NUMBER = 'geo_as_number'
+    GEO_CITY = 'geo_city'
+    GEO_CONTINENT = 'geo_continent'
+    GEO_COUNTRY = 'geo_country'
+    GEO_COUNTRY_REGION = 'geo_country_region'
+    HEADER = 'header'
+    HOST = 'host'
+    IP_ADDRESS = 'ip_address'
+    JA3_DIGEST = 'ja3_digest'
+    JA4_DIGEST = 'ja4_digest'
+    METHOD = 'method'
+    PATH = 'path'
+    PROTOCOL = 'protocol'
+    QUERY = 'query'
+    RATE_LIMIT_API_ID = 'rate_limit_api_id'
+    RAW_PATH = 'raw_path'
+    REGION = 'region'
+    RESPONSE_CODE = 'response_code'
+    ROUTE = 'route'
+    RULESET = 'ruleset'
+    SCHEME = 'scheme'
+    SERVER_ACTION = 'server_action'
+    SHARED_CONDITION = 'shared_condition'
+    TARGET_PATH = 'target_path'
+    TRAFFIC_SOURCE = 'traffic_source'
+    TRUSTED_SOURCE = 'trusted_source'
+    USER_AGENT = 'user_agent'
+    VALUES = %w[
+      bot_category bot_name bot_protection bot_status cookie domain_environment
+      environment geo_as_number geo_city geo_continent geo_country geo_country_region
+      header host ip_address ja3_digest ja4_digest method path protocol
+      query rate_limit_api_id raw_path region response_code route ruleset
+      scheme server_action shared_condition target_path traffic_source trusted_source
+      user_agent
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the GetConditionalBypassResponseVariant1ResultItemConditionGroupIX4ac579f3d8 SDK namespace.
+  module GetConditionalBypassResponseVariant1ResultItemConditionGroupIX4ac579f3d8
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirectMetadata
-  FIELDS = {
-    location: "location",
-    permanent: "permanent",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    location
-    permanent
-  ].freeze
-  DECODERS = {
-    permanent: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirXc61bc3f03d.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirect.
-class GetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirect
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirectMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirectMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirectMetadata::DECODERS
-
-  attr_reader :location, :permanent
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the GetConditionalBypassResponseVariant1ResultItemConditionGroupIXb7920873e1 SDK namespace.
+  module GetConditionalBypassResponseVariant1ResultItemConditionGroupIXb7920873e1
+    EQ = 'eq'
+    EX = 'ex'
+    GT = 'gt'
+    GTE = 'gte'
+    INC = 'inc'
+    LIST = 'list'
+    LT = 'lt'
+    LTE = 'lte'
+    NEQ = 'neq'
+    NEX = 'nex'
+    NINC = 'ninc'
+    PRE = 'pre'
+    RE = 're'
+    SUB = 'sub'
+    SUF = 'suf'
+    VALUES = %w[
+      eq ex gt gte inc list lt lte neq nex ninc pre re sub
+      suf
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the GetConditionalBypassResponseVariant1ResultItemConditionGroupIX6a184f76e3 SDK namespace.
+  module GetConditionalBypassResponseVariant1ResultItemConditionGroupIX6a184f76e3
+    BOT_CATEGORY = 'bot_category'
+    BOT_NAME = 'bot_name'
+    BOT_PROTECTION = 'bot_protection'
+    BOT_STATUS = 'bot_status'
+    COOKIE = 'cookie'
+    DOMAIN_ENVIRONMENT = 'domain_environment'
+    ENVIRONMENT = 'environment'
+    GEO_AS_NUMBER = 'geo_as_number'
+    GEO_CITY = 'geo_city'
+    GEO_CONTINENT = 'geo_continent'
+    GEO_COUNTRY = 'geo_country'
+    GEO_COUNTRY_REGION = 'geo_country_region'
+    HEADER = 'header'
+    HOST = 'host'
+    IP_ADDRESS = 'ip_address'
+    JA3_DIGEST = 'ja3_digest'
+    JA4_DIGEST = 'ja4_digest'
+    METHOD = 'method'
+    PATH = 'path'
+    PROTOCOL = 'protocol'
+    QUERY = 'query'
+    RATE_LIMIT_API_ID = 'rate_limit_api_id'
+    RAW_PATH = 'raw_path'
+    REGION = 'region'
+    RESPONSE_CODE = 'response_code'
+    ROUTE = 'route'
+    RULESET = 'ruleset'
+    SCHEME = 'scheme'
+    SERVER_ACTION = 'server_action'
+    SHARED_CONDITION = 'shared_condition'
+    TARGET_PATH = 'target_path'
+    TRAFFIC_SOURCE = 'traffic_source'
+    TRUSTED_SOURCE = 'trusted_source'
+    USER_AGENT = 'user_agent'
+    VALUES = %w[
+      bot_category bot_name bot_protection bot_status cookie domain_environment
+      environment geo_as_number geo_city geo_continent geo_country geo_country_region
+      header host ip_address ja3_digest ja4_digest method path protocol
+      query rate_limit_api_id raw_path region response_code route ruleset
+      scheme server_action shared_condition target_path traffic_source trusted_source
+      user_agent
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimitMetadata
+    FIELDS = {
+      action: 'action',
+      algo: 'algo',
+      keys: 'keys',
+      limit: 'limit',
+      window: 'window'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      algo
+      keys
+      limit
+      window
+    ].freeze
+    DECODERS = {
+      action: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimitAction.from_value(value)
+      end,
+      algo: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimitAlgo.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimit.
+  class GetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimit
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimitMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimitMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimitMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateMetadata
-  FIELDS = {
-    action: "action",
-    action_duration: "actionDuration",
-    bypass_system: "bypassSystem",
-    log_headers: "logHeaders",
-    rate_limit: "rateLimit",
-    redirect: "redirect",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    action
-  ].freeze
-  DECODERS = {
-    action: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateAction.from_value(value)
-    end,
-    bypass_system: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateBypassSystem.from_value(value)
-    end,
-    rate_limit: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimit.from_hash(value)
-    end,
-    redirect: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirect.from_hash(value)
-    end,
-  }.freeze
-end
+    attr_reader :action, :algo, :keys, :limit, :window
 
-# API model for GetFirewallConfigResponseRulesItemVariant0ActionMitigate.
-class GetFirewallConfigResponseRulesItemVariant0ActionMitigate
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :action, :action_duration, :bypass_system, :log_headers, :rate_limit, :redirect
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirectMetadata
+    FIELDS = {
+      location: 'location',
+      permanent: 'permanent'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      location
+      permanent
+    ].freeze
+    DECODERS = {
+      permanent: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirXc61bc3f03d.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirect.
+  class GetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirect
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirectMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirectMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirectMetadata::DECODERS
+
+    attr_reader :location, :permanent
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMetadata
-  FIELDS = {
-    mitigate: "mitigate",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    mitigate: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigate.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for GetFirewallConfigResponseRulesItemVariant0Action.
-class GetFirewallConfigResponseRulesItemVariant0Action
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMetadata::DECODERS
-
-  attr_reader :mitigate
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateMetadata
+    FIELDS = {
+      action: 'action',
+      action_duration: 'actionDuration',
+      bypass_system: 'bypassSystem',
+      log_headers: 'logHeaders',
+      rate_limit: 'rateLimit',
+      redirect: 'redirect'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      action
+    ].freeze
+    DECODERS = {
+      action: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateAction.from_value(value)
+      end,
+      bypass_system: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateBypassSystem.from_value(value)
+      end,
+      rate_limit: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateRateLimit.from_hash(value)
+      end,
+      redirect: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigateRedirect.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetFirewallConfigResponseRulesItemVariant0ActionMitigate.
+  class GetFirewallConfigResponseRulesItemVariant0ActionMitigate
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMitigateMetadata::DECODERS
+
+    attr_reader :action, :action_duration, :bypass_system, :log_headers, :rate_limit, :redirect
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMetadata
+    FIELDS = {
+      mitigate: 'mitigate'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      mitigate: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ActionMitigate.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetFirewallConfigResponseRulesItemVariant0Action.
+  class GetFirewallConfigResponseRulesItemVariant0Action
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ActionMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43adMetadata
-  FIELDS = {
-    key: "key",
-    neg: "neg",
-    op: "op",
-    type: "type",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    op
-    type
-  ].freeze
-  DECODERS = {
-    neg: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCX87a11f16c7.from_value(value)
-    end,
-    op: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCX9a863d7f85.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc15f575183.from_value(value)
-    end,
-  }.freeze
-end
+    attr_reader :mitigate
 
-# API model for GetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43ad.
-class GetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43ad
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43adMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43adMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43adMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :key, :neg, :op, :type, :value
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43adMetadata
+    FIELDS = {
+      key: 'key',
+      neg: 'neg',
+      op: 'op',
+      type: 'type',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      op
+      type
+    ].freeze
+    DECODERS = {
+      neg: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCX87a11f16c7.from_value(value)
+      end,
+      op: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCX9a863d7f85.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc15f575183.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43ad.
+  class GetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43ad
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43adMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43adMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43adMetadata::DECODERS
+
+    attr_reader :key, :neg, :op, :type, :value
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemMetadata
-  FIELDS = {
-    conditions: "conditions",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    conditions
-  ].freeze
-  DECODERS = {
-    conditions: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43ad.from_hash(item) }
-    end,
-  }.freeze
-end
-
-# API model for GetFirewallConfigResponseRulesItemVariant0ConditionGroupItem.
-class GetFirewallConfigResponseRulesItemVariant0ConditionGroupItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemMetadata::DECODERS
-
-  attr_reader :conditions
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemMetadata
+    FIELDS = {
+      conditions: 'conditions'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      conditions
+    ].freeze
+    DECODERS = {
+      conditions: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ConditionGroupItemCXc0edfc43ad.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetFirewallConfigResponseRulesItemVariant0ConditionGroupItem.
+  class GetFirewallConfigResponseRulesItemVariant0ConditionGroupItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0ConditionGroupItemMetadata::DECODERS
+
+    attr_reader :conditions
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetFirewallConfigResponseRulesItemVariant0Metadata
+    FIELDS = {
+      action: 'action',
+      active: 'active',
+      condition_group: 'conditionGroup',
+      description: 'description',
+      id: 'id',
+      name: 'name',
+      valid: 'valid',
+      validation_errors: 'validationErrors'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      action
+      active
+      condition_group
+      id
+      name
+      valid
+      validation_errors
+    ].freeze
+    DECODERS = {
+      action: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0Action.from_hash(value)
+      end,
+      active: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0Active.from_value(value)
+      end,
+      condition_group: lambda do |value|
+        value&.map { |item| ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ConditionGroupItem.from_hash(item) }
+      end,
+      valid: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0Valid.from_value(value)
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      validation_errors
+    ].freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for GetFirewallConfigResponseRulesItemVariant0.
+  class GetFirewallConfigResponseRulesItemVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalGetFirewallConfigResponseRulesItemVariant0Metadata
-  FIELDS = {
-    action: "action",
-    active: "active",
-    condition_group: "conditionGroup",
-    description: "description",
-    id: "id",
-    name: "name",
-    valid: "valid",
-    validation_errors: "validationErrors",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    action
-    active
-    condition_group
-    id
-    name
-    valid
-    validation_errors
-  ].freeze
-  DECODERS = {
-    action: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0Action.from_hash(value)
-    end,
-    active: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0Active.from_value(value)
-    end,
-    condition_group: lambda do |value|
-      value&.map { |item| ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0ConditionGroupItem.from_hash(item) }
-    end,
-    valid: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant0Valid.from_value(value)
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    validation_errors
-  ].freeze
-end
+    attr_reader :action, :active, :condition_group, :description, :id, :name, :valid,
+                :validation_errors
 
-# API model for GetFirewallConfigResponseRulesItemVariant0.
-class GetFirewallConfigResponseRulesItemVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  attr_reader :action, :active, :condition_group, :description, :id, :name, :valid,
-              :validation_errors
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalGetFirewallConfigResponseRulesItemVariant0Metadata::NULLABLE_FIELDS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalGetFirewallConfigResponseRulesItemVariant0Metadata::NULLABLE_FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimitMetadata
+    FIELDS = {
+      action: 'action',
+      algo: 'algo',
+      keys: 'keys',
+      limit: 'limit',
+      window: 'window'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      algo
+      keys
+      limit
+      window
+    ].freeze
+    DECODERS = {
+      action: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimitAction.from_value(value)
+      end,
+      algo: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimitAlgo.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for GetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimit.
+  class GetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimit
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimitMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimitMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimitMetadata::DECODERS
+
+    attr_reader :action, :algo, :keys, :limit, :window
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimitMetadata
-  FIELDS = {
-    action: "action",
-    algo: "algo",
-    keys: "keys",
-    limit: "limit",
-    window: "window",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    algo
-    keys
-    limit
-    window
-  ].freeze
-  DECODERS = {
-    action: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimitAction.from_value(value)
-    end,
-    algo: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimitAlgo.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimit.
-class GetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimit
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimitMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimitMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRateLimitMetadata::DECODERS
-
-  attr_reader :action, :algo, :keys, :limit, :window
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirectMetadata
+    FIELDS = {
+      location: 'location',
+      permanent: 'permanent'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      location
+      permanent
+    ].freeze
+    DECODERS = {
+      permanent: lambda do |value|
+        ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirX3e8911f47e.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for GetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirect.
+  class GetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirect
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirectMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirectMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirectMetadata::DECODERS
+
+    attr_reader :location, :permanent
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirectMetadata
-  FIELDS = {
-    location: "location",
-    permanent: "permanent",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    location
-    permanent
-  ].freeze
-  DECODERS = {
-    permanent: lambda do |value|
-      ::OctridevVercel::GetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirX3e8911f47e.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for GetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirect.
-class GetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirect
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirectMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirectMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalGetFirewallConfigResponseRulesItemVariant1ActionMitigateRedirectMetadata::DECODERS
-
-  attr_reader :location, :permanent
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
 end

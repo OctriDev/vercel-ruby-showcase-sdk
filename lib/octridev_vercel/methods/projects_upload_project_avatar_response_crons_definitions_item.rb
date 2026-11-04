@@ -50,11 +50,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseCronsMetadata
         FIELDS = {
-          definitions: "definitions",
-          deployment_id: "deploymentId",
-          disabled_at: "disabledAt",
-          enabled_at: "enabledAt",
-          updated_at: "updatedAt",
+          definitions: 'definitions',
+          deployment_id: 'deploymentId',
+          disabled_at: 'disabledAt',
+          enabled_at: 'enabledAt',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           definitions
@@ -66,7 +66,7 @@ module OctridevVercel
         DECODERS = {
           definitions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseCronsDefinitionsItem.from_hash(item) }
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           deployment_id
@@ -110,8 +110,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseCustomEnvironmentsItemBranchMatcherMetadata
         FIELDS = {
-          pattern: "pattern",
-          type: "type",
+          pattern: 'pattern',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           pattern
@@ -120,7 +120,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseCustomEnvironmentsItemBranchMatcherType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -158,10 +158,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseCustomEnvironmentsItemDomainsItemVXaf5ce610abMetadata
         FIELDS = {
-          domain: "domain",
-          reason: "reason",
-          type: "type",
-          value: "value",
+          domain: 'domain',
+          reason: 'reason',
+          type: 'type',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -169,8 +169,7 @@ module OctridevVercel
           type
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UploadProjectAvatarResponseCustomEnvironmentsItemDomainsItemVXaf5ce610ab.
@@ -204,17 +203,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseCustomEnvironmentsItemDomainsItemMetadata
         FIELDS = {
-          apex_name: "apexName",
-          created_at: "createdAt",
-          custom_environment_id: "customEnvironmentId",
-          git_branch: "gitBranch",
-          name: "name",
-          project_id: "projectId",
-          redirect: "redirect",
-          redirect_status_code: "redirectStatusCode",
-          updated_at: "updatedAt",
-          verification: "verification",
-          verified: "verified",
+          apex_name: 'apexName',
+          created_at: 'createdAt',
+          custom_environment_id: 'customEnvironmentId',
+          git_branch: 'gitBranch',
+          name: 'name',
+          project_id: 'projectId',
+          redirect: 'redirect',
+          redirect_status_code: 'redirectStatusCode',
+          updated_at: 'updatedAt',
+          verification: 'verification',
+          verified: 'verified'
         }.freeze
         REQUIRED_FIELDS = %i[
           apex_name
@@ -231,7 +230,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseCustomEnvironmentsItemDomainsItemVerified.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -271,15 +270,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseCustomEnvironmentsItemMetadata
         FIELDS = {
-          branch_matcher: "branchMatcher",
-          created_at: "createdAt",
-          current_deployment_aliases: "currentDeploymentAliases",
-          description: "description",
-          domains: "domains",
-          id: "id",
-          slug: "slug",
-          type: "type",
-          updated_at: "updatedAt",
+          branch_matcher: 'branchMatcher',
+          created_at: 'createdAt',
+          current_deployment_aliases: 'currentDeploymentAliases',
+          description: 'description',
+          domains: 'domains',
+          id: 'id',
+          slug: 'slug',
+          type: 'type',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -297,7 +296,7 @@ module OctridevVercel
           end,
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseCustomEnvironmentsItemType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -349,9 +348,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseDataCacheMetadata
         FIELDS = {
-          storage_size_bytes: "storageSizeBytes",
-          unlimited: "unlimited",
-          user_disabled: "userDisabled",
+          storage_size_bytes: 'storageSizeBytes',
+          unlimited: 'unlimited',
+          user_disabled: 'userDisabled'
         }.freeze
         REQUIRED_FIELDS = %i[
           user_disabled
@@ -362,7 +361,7 @@ module OctridevVercel
           end,
           user_disabled: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseDataCacheUserDisabled.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -396,9 +395,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseDefaultResourceConfigBuildMachineEX2ff79db0a3Metadata
         FIELDS = {
-          algorithm_version: "algorithmVersion",
-          at: "at",
-          direction: "direction",
+          algorithm_version: 'algorithmVersion',
+          at: 'at',
+          direction: 'direction'
         }.freeze
         REQUIRED_FIELDS = %i[
           algorithm_version
@@ -408,7 +407,7 @@ module OctridevVercel
         DECODERS = {
           direction: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseDefaultResourceConfigBuildMachineEX01b6a07f75.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -442,14 +441,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseDefaultResourceConfigBuildQueueMetadata
         FIELDS = {
-          configuration: "configuration",
+          configuration: 'configuration'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           configuration: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseDefaultResourceConfigBuildQueueConfiguration.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -483,9 +481,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadProjectAvatarResponseDefaultResourceConfigElasticBuildMachineMetadata
         FIELDS = {
-          cores: "cores",
-          label: "label",
-          memory: "memory",
+          cores: 'cores',
+          label: 'label',
+          memory: 'memory'
         }.freeze
         REQUIRED_FIELDS = %i[
           cores
@@ -495,7 +493,7 @@ module OctridevVercel
         DECODERS = {
           label: lambda do |value|
             ::OctridevVercel::Methods::Projects::UploadProjectAvatarResponseDefaultResourceConfigElasticBuildMachineLabel.from_value(value)
-          end,
+          end
         }.freeze
       end
 

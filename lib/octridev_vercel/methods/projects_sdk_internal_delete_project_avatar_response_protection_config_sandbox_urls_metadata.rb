@@ -12,14 +12,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseProtectionConfigSandboxUrlsMetadata
         FIELDS = {
-          inherit_deployment_protection: "inheritDeploymentProtection",
+          inherit_deployment_protection: 'inheritDeploymentProtection'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           inherit_deployment_protection: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseProtectionConfigSandboxUrlsInheritX82ce82fd38.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -53,14 +52,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseProtectionConfigMetadata
         FIELDS = {
-          sandbox_urls: "sandboxUrls",
+          sandbox_urls: 'sandboxUrls'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           sandbox_urls: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseProtectionConfigSandboxUrls.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -94,9 +92,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseResourceConfigBuildMachineElasticTransitionMetadata
         FIELDS = {
-          algorithm_version: "algorithmVersion",
-          at: "at",
-          direction: "direction",
+          algorithm_version: 'algorithmVersion',
+          at: 'at',
+          direction: 'direction'
         }.freeze
         REQUIRED_FIELDS = %i[
           algorithm_version
@@ -106,7 +104,7 @@ module OctridevVercel
         DECODERS = {
           direction: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseResourceConfigBuildMachineElasticTX2f9227f5d6.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -140,14 +138,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseResourceConfigBuildQueueMetadata
         FIELDS = {
-          configuration: "configuration",
+          configuration: 'configuration'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           configuration: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseResourceConfigBuildQueueConfiguration.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -181,9 +178,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseResourceConfigElasticBuildMachineMetadata
         FIELDS = {
-          cores: "cores",
-          label: "label",
-          memory: "memory",
+          cores: 'cores',
+          label: 'label',
+          memory: 'memory'
         }.freeze
         REQUIRED_FIELDS = %i[
           cores
@@ -193,7 +190,7 @@ module OctridevVercel
         DECODERS = {
           label: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseResourceConfigElasticBuildMachineLabel.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -230,21 +227,21 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseResourceConfigMetadata
         FIELDS = {
-          build_machine_elastic_last_updated: "buildMachineElasticLastUpdated",
-          build_machine_elastic_reason: "buildMachineElasticReason",
-          build_machine_elastic_transition: "buildMachineElasticTransition",
-          build_machine_selection: "buildMachineSelection",
-          build_machine_type: "buildMachineType",
-          build_queue: "buildQueue",
-          elastic_concurrency_enabled: "elasticConcurrencyEnabled",
-          enable_functions_beta: "enableFunctionsBeta",
-          fluid: "fluid",
-          function_default_memory_type: "functionDefaultMemoryType",
-          function_default_regions: "functionDefaultRegions",
-          function_default_timeout: "functionDefaultTimeout",
-          function_zero_config_failover: "functionZeroConfigFailover",
-          is_nsnb_disabled: "isNSNBDisabled",
-          elastic_build_machine: "elasticBuildMachine",
+          build_machine_elastic_last_updated: 'buildMachineElasticLastUpdated',
+          build_machine_elastic_reason: 'buildMachineElasticReason',
+          build_machine_elastic_transition: 'buildMachineElasticTransition',
+          build_machine_selection: 'buildMachineSelection',
+          build_machine_type: 'buildMachineType',
+          build_queue: 'buildQueue',
+          elastic_concurrency_enabled: 'elasticConcurrencyEnabled',
+          enable_functions_beta: 'enableFunctionsBeta',
+          fluid: 'fluid',
+          function_default_memory_type: 'functionDefaultMemoryType',
+          function_default_regions: 'functionDefaultRegions',
+          function_default_timeout: 'functionDefaultTimeout',
+          function_zero_config_failover: 'functionZeroConfigFailover',
+          is_nsnb_disabled: 'isNSNBDisabled',
+          elastic_build_machine: 'elasticBuildMachine'
         }.freeze
         REQUIRED_FIELDS = %i[
           function_default_regions
@@ -285,7 +282,7 @@ module OctridevVercel
           end,
           elastic_build_machine: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseResourceConfigElasticBuildMachine.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -325,10 +322,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseRollbackDescriptionMetadata
         FIELDS = {
-          created_at: "createdAt",
-          description: "description",
-          user_id: "userId",
-          username: "username",
+          created_at: 'createdAt',
+          description: 'description',
+          user_id: 'userId',
+          username: 'username'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -336,8 +333,7 @@ module OctridevVercel
           user_id
           username
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for DeleteProjectAvatarResponseRollbackDescription.
@@ -378,11 +374,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseRollingReleaseGateChecksItemMetadata
         FIELDS = {
-          exclude_paths: "excludePaths",
-          exclude_status_codes: "excludeStatusCodes",
-          ingest_watermark_seconds: "ingestWatermarkSeconds",
-          significance_level: "significanceLevel",
-          type: "type",
+          exclude_paths: 'excludePaths',
+          exclude_status_codes: 'excludeStatusCodes',
+          ingest_watermark_seconds: 'ingestWatermarkSeconds',
+          significance_level: 'significanceLevel',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           type
@@ -390,7 +386,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseRollingReleaseGateChecksItemType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -434,12 +430,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseRollingReleaseGateMetadata
         FIELDS = {
-          action: "action",
-          checks: "checks",
-          dry_run: "dryRun",
-          enabled: "enabled",
-          failure_threshold: "failureThreshold",
-          window_size: "windowSize",
+          action: 'action',
+          checks: 'checks',
+          dry_run: 'dryRun',
+          enabled: 'enabled',
+          failure_threshold: 'failureThreshold',
+          window_size: 'windowSize'
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -459,7 +455,7 @@ module OctridevVercel
           end,
           enabled: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseRollingReleaseGateEnabled.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -505,10 +501,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteProjectAvatarResponseRollingReleaseStagesItemMetadata
         FIELDS = {
-          duration: "duration",
-          linear_shift: "linearShift",
-          require_approval: "requireApproval",
-          target_percentage: "targetPercentage",
+          duration: 'duration',
+          linear_shift: 'linearShift',
+          require_approval: 'requireApproval',
+          target_percentage: 'targetPercentage'
         }.freeze
         REQUIRED_FIELDS = %i[
           target_percentage
@@ -519,7 +515,7 @@ module OctridevVercel
           end,
           require_approval: lambda do |value|
             ::OctridevVercel::Methods::Projects::DeleteProjectAvatarResponseRollingReleaseStagesItemRequireApproval.from_value(value)
-          end,
+          end
         }.freeze
       end
 

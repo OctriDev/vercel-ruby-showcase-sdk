@@ -12,11 +12,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsGroupResponseUpdatedMicrofrontendsGroupMetadata
         FIELDS = {
-          enable_polyrepo_branch_routing: "enablePolyrepoBranchRouting",
-          fallback_environment: "fallbackEnvironment",
-          id: "id",
-          name: "name",
-          slug: "slug",
+          enable_polyrepo_branch_routing: 'enablePolyrepoBranchRouting',
+          fallback_environment: 'fallbackEnvironment',
+          id: 'id',
+          name: 'name',
+          slug: 'slug'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -24,7 +24,7 @@ module OctridevVercel
         DECODERS = {
           enable_polyrepo_branch_routing: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateMicrofrontendsGroupResponseUpdatedMicrofrontendsGroupEnX56461688ed.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -58,7 +58,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsGroupResponseMetadata
         FIELDS = {
-          updated_microfrontends_group: "updatedMicrofrontendsGroup",
+          updated_microfrontends_group: 'updatedMicrofrontendsGroup'
         }.freeze
         REQUIRED_FIELDS = %i[
           updated_microfrontends_group
@@ -66,7 +66,7 @@ module OctridevVercel
         DECODERS = {
           updated_microfrontends_group: lambda do |value|
             ::OctridevVercel::Methods::Teams::UpdateMicrofrontendsGroupResponseUpdatedMicrofrontendsGroup.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -103,7 +103,7 @@ module OctridevVercel
         PROJECT_VIEWER = 'PROJECT_VIEWER'
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
         PROJECT_GUEST = 'PROJECT_GUEST'
-        VALUES = ['ADMIN', 'PROJECT_VIEWER', 'PROJECT_DEVELOPER', 'PROJECT_GUEST'].freeze
+        VALUES = %w[ADMIN PROJECT_VIEWER PROJECT_DEVELOPER PROJECT_GUEST].freeze
         def self.from_value(value)
           value
         end
@@ -116,7 +116,7 @@ module OctridevVercel
         TURBO = 'turbo'
         STANDARD = 'standard'
         ELASTIC = 'elastic'
-        VALUES = ['basic', 'enhanced', 'turbo', 'standard', 'elastic'].freeze
+        VALUES = %w[basic enhanced turbo standard elastic].freeze
         def self.from_value(value)
           value
         end
@@ -132,9 +132,9 @@ module OctridevVercel
         VIEWER = 'VIEWER'
         VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
         CONTRIBUTOR = 'CONTRIBUTOR'
-        VALUES = [
-          'OWNER', 'MEMBER', 'DEVELOPER', 'SECURITY', 'BILLING', 'VIEWER', 'VIEWER_FOR_PLUS',
-          'CONTRIBUTOR'
+        VALUES = %w[
+          OWNER MEMBER DEVELOPER SECURITY BILLING VIEWER VIEWER_FOR_PLUS
+          CONTRIBUTOR
         ].freeze
         def self.from_value(value)
           value
@@ -157,8 +157,8 @@ module OctridevVercel
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-        VALUES = [
-          'all', 'preview', 'prod_deployment_urls_and_all_previews', 'all_except_custom_domains'
+        VALUES = %w[
+          all preview prod_deployment_urls_and_all_previews all_except_custom_domains
         ].freeze
         def self.from_value(value)
           value
@@ -175,9 +175,9 @@ module OctridevVercel
         SECURITY = 'SECURITY'
         VIEWER = 'VIEWER'
         VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
-        VALUES = [
-          'BILLING', 'CONTRIBUTOR', 'DEVELOPER', 'MEMBER', 'OWNER', 'SECURITY', 'VIEWER',
-          'VIEWER_FOR_PLUS'
+        VALUES = %w[
+          BILLING CONTRIBUTOR DEVELOPER MEMBER OWNER SECURITY VIEWER
+          VIEWER_FOR_PLUS
         ].freeze
         def self.from_value(value)
           value
@@ -190,7 +190,7 @@ module OctridevVercel
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
         PROJECT_GUEST = 'PROJECT_GUEST'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
-        VALUES = ['ADMIN', 'PROJECT_DEVELOPER', 'PROJECT_GUEST', 'PROJECT_VIEWER'].freeze
+        VALUES = %w[ADMIN PROJECT_DEVELOPER PROJECT_GUEST PROJECT_VIEWER].freeze
         def self.from_value(value)
           value
         end
@@ -227,11 +227,11 @@ module OctridevVercel
         ORGANIZATION_TEAMS = 'organization-teams'
         SAML = 'saml'
         TEAMS = 'teams'
-        VALUES = [
-          'account-update', 'bitbucket', 'dsync', 'feedback', 'github', 'gitlab', 'import', 'link',
-          'mail', 'nsnb-auto-approve', 'nsnb-hobby-upgrade', 'nsnb-invite', 'nsnb-redeploy',
-          'nsnb-redeploy-attribution-card', 'nsnb-request-access', 'nsnb-viewer-upgrade',
-          'organization-teams', 'saml', 'teams'
+        VALUES = %w[
+          account-update bitbucket dsync feedback github gitlab import link
+          mail nsnb-auto-approve nsnb-hobby-upgrade nsnb-invite nsnb-redeploy
+          nsnb-redeploy-attribution-card nsnb-request-access nsnb-viewer-upgrade
+          organization-teams saml teams
         ].freeze
         def self.from_value(value)
           value
@@ -247,8 +247,8 @@ module OctridevVercel
         BITBUCKET = 'bitbucket'
         FEEDBACK = 'feedback'
         ORGANIZATION_TEAMS = 'organization-teams'
-        VALUES = [
-          'import', 'teams', 'github', 'gitlab', 'bitbucket', 'feedback', 'organization-teams'
+        VALUES = %w[
+          import teams github gitlab bitbucket feedback organization-teams
         ].freeze
         def self.from_value(value)
           value
@@ -276,12 +276,12 @@ module OctridevVercel
         V0_BUILDER = 'V0Builder'
         V0_CHATTER = 'V0Chatter'
         V0_VIEWER = 'V0Viewer'
-        VALUES = [
-          'ConnectorManager', 'IntegrationManager', 'CreateProject', 'FullProductionDeployment',
-          'UsageViewer', 'EnvVariableManager', 'EnvironmentManager', 'WorkflowDecryptor', 'OrgAdmin',
-          'OrgViewer', 'AiGatewaySettings', 'AiGatewayCredits', 'AiGatewayUser',
-          'AiGatewayBudgetManager', 'AiGatewayTranscriptsManager', 'AiGatewayTranscriptsViewer',
-          'V0Builder', 'V0Chatter', 'V0Viewer'
+        VALUES = %w[
+          ConnectorManager IntegrationManager CreateProject FullProductionDeployment
+          UsageViewer EnvVariableManager EnvironmentManager WorkflowDecryptor OrgAdmin
+          OrgViewer AiGatewaySettings AiGatewayCredits AiGatewayUser
+          AiGatewayBudgetManager AiGatewayTranscriptsManager AiGatewayTranscriptsViewer
+          V0Builder V0Chatter V0Viewer
         ].freeze
         def self.from_value(value)
           value
@@ -319,11 +319,11 @@ module OctridevVercel
         ORGANIZATION_TEAMS = 'organization-teams'
         SAML = 'saml'
         TEAMS = 'teams'
-        VALUES = [
-          'account-update', 'bitbucket', 'dsync', 'feedback', 'github', 'gitlab', 'import', 'link',
-          'mail', 'nsnb-auto-approve', 'nsnb-hobby-upgrade', 'nsnb-invite', 'nsnb-redeploy',
-          'nsnb-redeploy-attribution-card', 'nsnb-request-access', 'nsnb-viewer-upgrade',
-          'organization-teams', 'saml', 'teams'
+        VALUES = %w[
+          account-update bitbucket dsync feedback github gitlab import link
+          mail nsnb-auto-approve nsnb-hobby-upgrade nsnb-invite nsnb-redeploy
+          nsnb-redeploy-attribution-card nsnb-request-access nsnb-viewer-upgrade
+          organization-teams saml teams
         ].freeze
         def self.from_value(value)
           value
@@ -340,9 +340,9 @@ module OctridevVercel
         VIEWER = 'VIEWER'
         VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
         CONTRIBUTOR = 'CONTRIBUTOR'
-        VALUES = [
-          'OWNER', 'MEMBER', 'DEVELOPER', 'SECURITY', 'BILLING', 'VIEWER', 'VIEWER_FOR_PLUS',
-          'CONTRIBUTOR'
+        VALUES = %w[
+          OWNER MEMBER DEVELOPER SECURITY BILLING VIEWER VIEWER_FOR_PLUS
+          CONTRIBUTOR
         ].freeze
         def self.from_value(value)
           value
@@ -355,8 +355,8 @@ module OctridevVercel
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-        VALUES = [
-          'all', 'preview', 'prod_deployment_urls_and_all_previews', 'all_except_custom_domains'
+        VALUES = %w[
+          all preview prod_deployment_urls_and_all_previews all_except_custom_domains
         ].freeze
         def self.from_value(value)
           value
@@ -393,11 +393,11 @@ module OctridevVercel
         ORGANIZATION_TEAMS = 'organization-teams'
         SAML = 'saml'
         TEAMS = 'teams'
-        VALUES = [
-          'account-update', 'bitbucket', 'dsync', 'feedback', 'github', 'gitlab', 'import', 'link',
-          'mail', 'nsnb-auto-approve', 'nsnb-hobby-upgrade', 'nsnb-invite', 'nsnb-redeploy',
-          'nsnb-redeploy-attribution-card', 'nsnb-request-access', 'nsnb-viewer-upgrade',
-          'organization-teams', 'saml', 'teams'
+        VALUES = %w[
+          account-update bitbucket dsync feedback github gitlab import link
+          mail nsnb-auto-approve nsnb-hobby-upgrade nsnb-invite nsnb-redeploy
+          nsnb-redeploy-attribution-card nsnb-request-access nsnb-viewer-upgrade
+          organization-teams saml teams
         ].freeze
         def self.from_value(value)
           value
@@ -417,7 +417,7 @@ module OctridevVercel
         V_1_W = '1w'
         V_1_D = '1d'
         UNLIMITED = 'unlimited'
-        VALUES = ['3y', '2y', '1y', '6m', '3m', '2m', '1m', '2w', '1w', '1d', 'unlimited'].freeze
+        VALUES = %w[3y 2y 1y 6m 3m 2m 1m 2w 1w 1d unlimited].freeze
         def self.from_value(value)
           value
         end
@@ -437,7 +437,7 @@ module OctridevVercel
         ADMIN = 'ADMIN'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
-        VALUES = ['ADMIN', 'PROJECT_VIEWER', 'PROJECT_DEVELOPER'].freeze
+        VALUES = %w[ADMIN PROJECT_VIEWER PROJECT_DEVELOPER].freeze
         def self.from_value(value)
           value
         end
@@ -449,7 +449,7 @@ module OctridevVercel
         PROJECT_DEVELOPER = 'PROJECT_DEVELOPER'
         PROJECT_GUEST = 'PROJECT_GUEST'
         PROJECT_VIEWER = 'PROJECT_VIEWER'
-        VALUES = ['ADMIN', 'PROJECT_DEVELOPER', 'PROJECT_GUEST', 'PROJECT_VIEWER'].freeze
+        VALUES = %w[ADMIN PROJECT_DEVELOPER PROJECT_GUEST PROJECT_VIEWER].freeze
         def self.from_value(value)
           value
         end
@@ -460,7 +460,7 @@ module OctridevVercel
         ALL = 'all'
         NONE = 'none'
         EMAIL_DOMAIN = 'email-domain'
-        VALUES = ['all', 'none', 'email-domain'].freeze
+        VALUES = %w[all none email-domain].freeze
         def self.from_value(value)
           value
         end
@@ -476,9 +476,9 @@ module OctridevVercel
         VIEWER = 'VIEWER'
         VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
         CONTRIBUTOR = 'CONTRIBUTOR'
-        VALUES = [
-          'OWNER', 'MEMBER', 'DEVELOPER', 'SECURITY', 'BILLING', 'VIEWER', 'VIEWER_FOR_PLUS',
-          'CONTRIBUTOR'
+        VALUES = %w[
+          OWNER MEMBER DEVELOPER SECURITY BILLING VIEWER VIEWER_FOR_PLUS
+          CONTRIBUTOR
         ].freeze
         def self.from_value(value)
           value
@@ -498,7 +498,7 @@ module OctridevVercel
         V_1_W = '1w'
         V_1_D = '1d'
         UNLIMITED = 'unlimited'
-        VALUES = ['3y', '2y', '1y', '6m', '3m', '2m', '1m', '2w', '1w', '1d', 'unlimited'].freeze
+        VALUES = %w[3y 2y 1y 6m 3m 2m 1m 2w 1w 1d unlimited].freeze
         def self.from_value(value)
           value
         end
@@ -510,8 +510,8 @@ module OctridevVercel
         PREVIEW = 'preview'
         PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = 'prod_deployment_urls_and_all_previews'
         ALL_EXCEPT_CUSTOM_DOMAINS = 'all_except_custom_domains'
-        VALUES = [
-          'all', 'preview', 'prod_deployment_urls_and_all_previews', 'all_except_custom_domains'
+        VALUES = %w[
+          all preview prod_deployment_urls_and_all_previews all_except_custom_domains
         ].freeze
         def self.from_value(value)
           value
@@ -528,9 +528,9 @@ module OctridevVercel
         SECURITY = 'SECURITY'
         VIEWER = 'VIEWER'
         VIEWER_FOR_PLUS = 'VIEWER_FOR_PLUS'
-        VALUES = [
-          'BILLING', 'CONTRIBUTOR', 'DEVELOPER', 'MEMBER', 'OWNER', 'SECURITY', 'VIEWER',
-          'VIEWER_FOR_PLUS'
+        VALUES = %w[
+          BILLING CONTRIBUTOR DEVELOPER MEMBER OWNER SECURITY VIEWER
+          VIEWER_FOR_PLUS
         ].freeze
         def self.from_value(value)
           value
@@ -558,12 +558,12 @@ module OctridevVercel
         V0_CHATTER = 'V0Chatter'
         V0_VIEWER = 'V0Viewer'
         WORKFLOW_DECRYPTOR = 'WorkflowDecryptor'
-        VALUES = [
-          'AiGatewayBudgetManager', 'AiGatewayCredits', 'AiGatewaySettings',
-          'AiGatewayTranscriptsManager', 'AiGatewayTranscriptsViewer', 'AiGatewayUser',
-          'ConnectorManager', 'CreateProject', 'EnvVariableManager', 'EnvironmentManager',
-          'FullProductionDeployment', 'IntegrationManager', 'OrgAdmin', 'OrgViewer', 'UsageViewer',
-          'V0Builder', 'V0Chatter', 'V0Viewer', 'WorkflowDecryptor'
+        VALUES = %w[
+          AiGatewayBudgetManager AiGatewayCredits AiGatewaySettings
+          AiGatewayTranscriptsManager AiGatewayTranscriptsViewer AiGatewayUser
+          ConnectorManager CreateProject EnvVariableManager EnvironmentManager
+          FullProductionDeployment IntegrationManager OrgAdmin OrgViewer UsageViewer
+          V0Builder V0Chatter V0Viewer WorkflowDecryptor
         ].freeze
         def self.from_value(value)
           value

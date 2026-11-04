@@ -5,680 +5,677 @@
 
 # user domain models
 module OctridevVercel
-# API model for UserEventPayloadVariant236.
-class UserEventPayloadVariant236
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant236Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant236Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant236Metadata::DECODERS
+  # API model for UserEventPayloadVariant236.
+  class UserEventPayloadVariant236
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant236Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant236Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant236Metadata::DECODERS
 
-  # @return [String] Optional `string` value serialized in the `blockReason` wire field.
-  attr_reader :block_reason
-  # @return [String] Required `string` value serialized in the `cause` wire field.
-  attr_reader :cause
-  # @return [String] Required `string` value serialized in the `ownerId` wire field.
-  attr_reader :owner_id
-  # @return [String] Required `string` value serialized in the `source` wire field.
-  attr_reader :source
+    # @return [String] Optional `string` value serialized in the `blockReason` wire field.
+    attr_reader :block_reason
+    # @return [String] Required `string` value serialized in the `cause` wire field.
+    attr_reader :cause
+    # @return [String] Required `string` value serialized in the `ownerId` wire field.
+    attr_reader :owner_id
+    # @return [String] Required `string` value serialized in the `source` wire field.
+    attr_reader :source
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant237Metadata
+    FIELDS = {
+      cause: 'cause',
+      owner_id: 'ownerId',
+      source: 'source'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      cause
+      owner_id
+      source
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UserEventPayloadVariant237.
+  class UserEventPayloadVariant237
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant237Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant237Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant237Metadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `cause` wire field.
+    attr_reader :cause
+    # @return [String] Required `string` value serialized in the `ownerId` wire field.
+    attr_reader :owner_id
+    # @return [String] Required `string` value serialized in the `source` wire field.
+    attr_reader :source
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant237Metadata
-  FIELDS = {
-    cause: "cause",
-    owner_id: "ownerId",
-    source: "source",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    cause
-    owner_id
-    source
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant237.
-class UserEventPayloadVariant237
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant237Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant237Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant237Metadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `cause` wire field.
-  attr_reader :cause
-  # @return [String] Required `string` value serialized in the `ownerId` wire field.
-  attr_reader :owner_id
-  # @return [String] Required `string` value serialized in the `source` wire field.
-  attr_reader :source
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant238NextMetadata
+    FIELDS = {
+      allow_unsafe_script_src_keywords: 'allowUnsafeScriptSrcKeywords',
+      computed_connect_src: 'computedConnectSrc',
+      computed_connect_src_preview: 'computedConnectSrcPreview',
+      computed_script_src: 'computedScriptSrc',
+      computed_script_src_preview: 'computedScriptSrcPreview',
+      connect_src_notifications_enabled: 'connectSrcNotificationsEnabled',
+      enabled: 'enabled',
+      enforcement_scope: 'enforcementScope',
+      enforce_percentage: 'enforcePercentage',
+      mode: 'mode',
+      new_resource_blocking_policy: 'newResourceBlockingPolicy',
+      omit_script_nonce: 'omitScriptNonce'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      allow_unsafe_script_src_keywords
+      enabled
+      enforce_percentage
+      mode
+      new_resource_blocking_policy
+    ].freeze
+    DECODERS = {
+      allow_unsafe_script_src_keywords: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238NextAllowUnsafeScriptSrcKeywords.from_value(value)
+      end,
+      connect_src_notifications_enabled: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238NextConnectSrcNotificationsEnabled.from_value(value)
+      end,
+      enabled: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238NextEnabled.from_value(value)
+      end,
+      enforcement_scope: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238NextEnforcementScope.from_value(value)
+      end,
+      new_resource_blocking_policy: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238NextNewResourceBlockingPolicy.from_value(value)
+      end,
+      omit_script_nonce: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238NextOmitScriptNonce.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UserEventPayloadVariant238Next.
+  # Required object value serialized in the `next` wire field.
+  class UserEventPayloadVariant238Next
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant238NextMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant238NextMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant238NextMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant238NextMetadata
-  FIELDS = {
-    allow_unsafe_script_src_keywords: "allowUnsafeScriptSrcKeywords",
-    computed_connect_src: "computedConnectSrc",
-    computed_connect_src_preview: "computedConnectSrcPreview",
-    computed_script_src: "computedScriptSrc",
-    computed_script_src_preview: "computedScriptSrcPreview",
-    connect_src_notifications_enabled: "connectSrcNotificationsEnabled",
-    enabled: "enabled",
-    enforcement_scope: "enforcementScope",
-    enforce_percentage: "enforcePercentage",
-    mode: "mode",
-    new_resource_blocking_policy: "newResourceBlockingPolicy",
-    omit_script_nonce: "omitScriptNonce",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    allow_unsafe_script_src_keywords
-    enabled
-    enforce_percentage
-    mode
-    new_resource_blocking_policy
-  ].freeze
-  DECODERS = {
-    allow_unsafe_script_src_keywords: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238NextAllowUnsafeScriptSrcKeywords.from_value(value)
-    end,
-    connect_src_notifications_enabled: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238NextConnectSrcNotificationsEnabled.from_value(value)
-    end,
-    enabled: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238NextEnabled.from_value(value)
-    end,
-    enforcement_scope: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238NextEnforcementScope.from_value(value)
-    end,
-    new_resource_blocking_policy: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238NextNewResourceBlockingPolicy.from_value(value)
-    end,
-    omit_script_nonce: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238NextOmitScriptNonce.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant238NextAllowUnsafeScriptSrcKeywords] Required enumerated value serialized in the `allowUnsafeScriptSrcKeywords` wire field.
+    attr_reader :allow_unsafe_script_src_keywords
+    # @return [String] Optional `string` value serialized in the `computedConnectSrc` wire field.
+    attr_reader :computed_connect_src
+    # @return [String] Optional `string` value serialized in the `computedConnectSrcPreview` wire field.
+    attr_reader :computed_connect_src_preview
+    # @return [String] Optional `string` value serialized in the `computedScriptSrc` wire field.
+    attr_reader :computed_script_src
+    # @return [String] Optional `string` value serialized in the `computedScriptSrcPreview` wire field.
+    attr_reader :computed_script_src_preview
+    # @return [UserEventPayloadVariant238NextConnectSrcNotificationsEnabled] Optional enumerated value serialized in the `connectSrcNotificationsEnabled` wire field.
+    attr_reader :connect_src_notifications_enabled
+    # @return [UserEventPayloadVariant238NextEnabled] Required enumerated value serialized in the `enabled` wire field.
+    attr_reader :enabled
+    # @return [UserEventPayloadVariant238NextEnforcementScope] Optional enumerated value serialized in the `enforcementScope` wire field.
+    attr_reader :enforcement_scope
+    # @return [Float] Required `number` value serialized in the `enforcePercentage` wire field.
+    attr_reader :enforce_percentage
+    # @return [String] Required `string` value serialized in the `mode` wire field.
+    attr_reader :mode
+    # @return [UserEventPayloadVariant238NextNewResourceBlockingPolicy] Required enumerated value serialized in the `newResourceBlockingPolicy` wire field.
+    attr_reader :new_resource_blocking_policy
+    # @return [UserEventPayloadVariant238NextOmitScriptNonce] Optional enumerated value serialized in the `omitScriptNonce` wire field.
+    attr_reader :omit_script_nonce
 
-# API model for UserEventPayloadVariant238Next.
-# Required object value serialized in the `next` wire field.
-class UserEventPayloadVariant238Next
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant238NextMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant238NextMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant238NextMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant238NextAllowUnsafeScriptSrcKeywords] Required enumerated value serialized in the `allowUnsafeScriptSrcKeywords` wire field.
-  attr_reader :allow_unsafe_script_src_keywords
-  # @return [String] Optional `string` value serialized in the `computedConnectSrc` wire field.
-  attr_reader :computed_connect_src
-  # @return [String] Optional `string` value serialized in the `computedConnectSrcPreview` wire field.
-  attr_reader :computed_connect_src_preview
-  # @return [String] Optional `string` value serialized in the `computedScriptSrc` wire field.
-  attr_reader :computed_script_src
-  # @return [String] Optional `string` value serialized in the `computedScriptSrcPreview` wire field.
-  attr_reader :computed_script_src_preview
-  # @return [UserEventPayloadVariant238NextConnectSrcNotificationsEnabled] Optional enumerated value serialized in the `connectSrcNotificationsEnabled` wire field.
-  attr_reader :connect_src_notifications_enabled
-  # @return [UserEventPayloadVariant238NextEnabled] Required enumerated value serialized in the `enabled` wire field.
-  attr_reader :enabled
-  # @return [UserEventPayloadVariant238NextEnforcementScope] Optional enumerated value serialized in the `enforcementScope` wire field.
-  attr_reader :enforcement_scope
-  # @return [Float] Required `number` value serialized in the `enforcePercentage` wire field.
-  attr_reader :enforce_percentage
-  # @return [String] Required `string` value serialized in the `mode` wire field.
-  attr_reader :mode
-  # @return [UserEventPayloadVariant238NextNewResourceBlockingPolicy] Required enumerated value serialized in the `newResourceBlockingPolicy` wire field.
-  attr_reader :new_resource_blocking_policy
-  # @return [UserEventPayloadVariant238NextOmitScriptNonce] Optional enumerated value serialized in the `omitScriptNonce` wire field.
-  attr_reader :omit_script_nonce
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant238PreviousMetadata
+    FIELDS = {
+      allow_unsafe_script_src_keywords: 'allowUnsafeScriptSrcKeywords',
+      computed_connect_src: 'computedConnectSrc',
+      computed_connect_src_preview: 'computedConnectSrcPreview',
+      computed_script_src: 'computedScriptSrc',
+      computed_script_src_preview: 'computedScriptSrcPreview',
+      connect_src_notifications_enabled: 'connectSrcNotificationsEnabled',
+      enabled: 'enabled',
+      enforcement_scope: 'enforcementScope',
+      enforce_percentage: 'enforcePercentage',
+      mode: 'mode',
+      new_resource_blocking_policy: 'newResourceBlockingPolicy',
+      omit_script_nonce: 'omitScriptNonce'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      allow_unsafe_script_src_keywords
+      enabled
+      enforce_percentage
+      mode
+      new_resource_blocking_policy
+    ].freeze
+    DECODERS = {
+      allow_unsafe_script_src_keywords: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238PreviousAllowUnsafeScriptSrcKeywords.from_value(value)
+      end,
+      connect_src_notifications_enabled: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238PreviousConnectSrcNotificationsEnabled.from_value(value)
+      end,
+      enabled: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238PreviousEnabled.from_value(value)
+      end,
+      enforcement_scope: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238PreviousEnforcementScope.from_value(value)
+      end,
+      new_resource_blocking_policy: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238PreviousNewResourceBlockingPolicy.from_value(value)
+      end,
+      omit_script_nonce: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238PreviousOmitScriptNonce.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UserEventPayloadVariant238Previous.
+  # Required object value serialized in the `previous` wire field.
+  class UserEventPayloadVariant238Previous
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant238PreviousMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant238PreviousMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant238PreviousMetadata::DECODERS
+
+    # @return [UserEventPayloadVariant238PreviousAllowUnsafeScriptSrcKeywords] Required enumerated value serialized in the `allowUnsafeScriptSrcKeywords` wire field.
+    attr_reader :allow_unsafe_script_src_keywords
+    # @return [String] Optional `string` value serialized in the `computedConnectSrc` wire field.
+    attr_reader :computed_connect_src
+    # @return [String] Optional `string` value serialized in the `computedConnectSrcPreview` wire field.
+    attr_reader :computed_connect_src_preview
+    # @return [String] Optional `string` value serialized in the `computedScriptSrc` wire field.
+    attr_reader :computed_script_src
+    # @return [String] Optional `string` value serialized in the `computedScriptSrcPreview` wire field.
+    attr_reader :computed_script_src_preview
+    # @return [UserEventPayloadVariant238PreviousConnectSrcNotificationsEnabled] Optional enumerated value serialized in the `connectSrcNotificationsEnabled` wire field.
+    attr_reader :connect_src_notifications_enabled
+    # @return [UserEventPayloadVariant238PreviousEnabled] Required enumerated value serialized in the `enabled` wire field.
+    attr_reader :enabled
+    # @return [UserEventPayloadVariant238PreviousEnforcementScope] Optional enumerated value serialized in the `enforcementScope` wire field.
+    attr_reader :enforcement_scope
+    # @return [Float] Required `number` value serialized in the `enforcePercentage` wire field.
+    attr_reader :enforce_percentage
+    # @return [String] Required `string` value serialized in the `mode` wire field.
+    attr_reader :mode
+    # @return [UserEventPayloadVariant238PreviousNewResourceBlockingPolicy] Required enumerated value serialized in the `newResourceBlockingPolicy` wire field.
+    attr_reader :new_resource_blocking_policy
+    # @return [UserEventPayloadVariant238PreviousOmitScriptNonce] Optional enumerated value serialized in the `omitScriptNonce` wire field.
+    attr_reader :omit_script_nonce
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant238PreviousMetadata
-  FIELDS = {
-    allow_unsafe_script_src_keywords: "allowUnsafeScriptSrcKeywords",
-    computed_connect_src: "computedConnectSrc",
-    computed_connect_src_preview: "computedConnectSrcPreview",
-    computed_script_src: "computedScriptSrc",
-    computed_script_src_preview: "computedScriptSrcPreview",
-    connect_src_notifications_enabled: "connectSrcNotificationsEnabled",
-    enabled: "enabled",
-    enforcement_scope: "enforcementScope",
-    enforce_percentage: "enforcePercentage",
-    mode: "mode",
-    new_resource_blocking_policy: "newResourceBlockingPolicy",
-    omit_script_nonce: "omitScriptNonce",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    allow_unsafe_script_src_keywords
-    enabled
-    enforce_percentage
-    mode
-    new_resource_blocking_policy
-  ].freeze
-  DECODERS = {
-    allow_unsafe_script_src_keywords: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238PreviousAllowUnsafeScriptSrcKeywords.from_value(value)
-    end,
-    connect_src_notifications_enabled: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238PreviousConnectSrcNotificationsEnabled.from_value(value)
-    end,
-    enabled: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238PreviousEnabled.from_value(value)
-    end,
-    enforcement_scope: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238PreviousEnforcementScope.from_value(value)
-    end,
-    new_resource_blocking_policy: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238PreviousNewResourceBlockingPolicy.from_value(value)
-    end,
-    omit_script_nonce: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238PreviousOmitScriptNonce.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant238Previous.
-# Required object value serialized in the `previous` wire field.
-class UserEventPayloadVariant238Previous
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant238PreviousMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant238PreviousMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant238PreviousMetadata::DECODERS
-
-  # @return [UserEventPayloadVariant238PreviousAllowUnsafeScriptSrcKeywords] Required enumerated value serialized in the `allowUnsafeScriptSrcKeywords` wire field.
-  attr_reader :allow_unsafe_script_src_keywords
-  # @return [String] Optional `string` value serialized in the `computedConnectSrc` wire field.
-  attr_reader :computed_connect_src
-  # @return [String] Optional `string` value serialized in the `computedConnectSrcPreview` wire field.
-  attr_reader :computed_connect_src_preview
-  # @return [String] Optional `string` value serialized in the `computedScriptSrc` wire field.
-  attr_reader :computed_script_src
-  # @return [String] Optional `string` value serialized in the `computedScriptSrcPreview` wire field.
-  attr_reader :computed_script_src_preview
-  # @return [UserEventPayloadVariant238PreviousConnectSrcNotificationsEnabled] Optional enumerated value serialized in the `connectSrcNotificationsEnabled` wire field.
-  attr_reader :connect_src_notifications_enabled
-  # @return [UserEventPayloadVariant238PreviousEnabled] Required enumerated value serialized in the `enabled` wire field.
-  attr_reader :enabled
-  # @return [UserEventPayloadVariant238PreviousEnforcementScope] Optional enumerated value serialized in the `enforcementScope` wire field.
-  attr_reader :enforcement_scope
-  # @return [Float] Required `number` value serialized in the `enforcePercentage` wire field.
-  attr_reader :enforce_percentage
-  # @return [String] Required `string` value serialized in the `mode` wire field.
-  attr_reader :mode
-  # @return [UserEventPayloadVariant238PreviousNewResourceBlockingPolicy] Required enumerated value serialized in the `newResourceBlockingPolicy` wire field.
-  attr_reader :new_resource_blocking_policy
-  # @return [UserEventPayloadVariant238PreviousOmitScriptNonce] Optional enumerated value serialized in the `omitScriptNonce` wire field.
-  attr_reader :omit_script_nonce
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant238Metadata
+    FIELDS = {
+      next_: 'next',
+      previous: 'previous',
+      project_id: 'projectId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      next_
+      previous
+      project_id
+    ].freeze
+    DECODERS = {
+      next_: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238Next.from_hash(value)
+      end,
+      previous: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant238Previous.from_hash(value)
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      previous
+    ].freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UserEventPayloadVariant238.
+  class UserEventPayloadVariant238
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant238Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant238Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant238Metadata::DECODERS
+
+    # @return [UserEventPayloadVariant238Next] Required object value serialized in the `next` wire field.
+    attr_reader :next_
+    # @return [UserEventPayloadVariant238Previous] Required object value serialized in the `previous` wire field.
+    attr_reader :previous
+    # @return [String] Required `string` value serialized in the `projectId` wire field.
+    attr_reader :project_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant238Metadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant239Metadata
+    FIELDS = {
+      header_name: 'headerName',
+      justification: 'justification',
+      previous_status: 'previousStatus',
+      project_id: 'projectId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      header_name
+      justification
+      previous_status
+      project_id
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UserEventPayloadVariant239.
+  class UserEventPayloadVariant239
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant239Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant239Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant239Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant238Metadata
-  FIELDS = {
-    next_: "next",
-    previous: "previous",
-    project_id: "projectId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    next_
-    previous
-    project_id
-  ].freeze
-  DECODERS = {
-    next_: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238Next.from_hash(value)
-    end,
-    previous: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant238Previous.from_hash(value)
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    previous
-  ].freeze
-end
+    # @return [String] Required `string` value serialized in the `headerName` wire field.
+    attr_reader :header_name
+    # @return [String] Required `string` value serialized in the `justification` wire field.
+    attr_reader :justification
+    # @return [String] Required `string` value serialized in the `previousStatus` wire field.
+    attr_reader :previous_status
+    # @return [String] Required `string` value serialized in the `projectId` wire field.
+    attr_reader :project_id
 
-# API model for UserEventPayloadVariant238.
-class UserEventPayloadVariant238
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant238Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant238Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant238Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant238Next] Required object value serialized in the `next` wire field.
-  attr_reader :next_
-  # @return [UserEventPayloadVariant238Previous] Required object value serialized in the `previous` wire field.
-  attr_reader :previous
-  # @return [String] Required `string` value serialized in the `projectId` wire field.
-  attr_reader :project_id
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant238Metadata::NULLABLE_FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant240Metadata
+    FIELDS = {
+      header_name: 'headerName',
+      justification: 'justification',
+      previous_status: 'previousStatus',
+      project_id: 'projectId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      header_name
+      justification
+      previous_status
+      project_id
+    ].freeze
+    DECODERS = {}.freeze
+    NULLABLE_FIELDS = %i[
+      justification
+    ].freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UserEventPayloadVariant240.
+  class UserEventPayloadVariant240
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant240Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant240Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant240Metadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `headerName` wire field.
+    attr_reader :header_name
+    # @return [String] Required `string` value serialized in the `justification` wire field.
+    attr_reader :justification
+    # @return [String] Required `string` value serialized in the `previousStatus` wire field.
+    attr_reader :previous_status
+    # @return [String] Required `string` value serialized in the `projectId` wire field.
+    attr_reader :project_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant240Metadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant239Metadata
-  FIELDS = {
-    header_name: "headerName",
-    justification: "justification",
-    previous_status: "previousStatus",
-    project_id: "projectId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    header_name
-    justification
-    previous_status
-    project_id
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant239.
-class UserEventPayloadVariant239
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant239Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant239Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant239Metadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `headerName` wire field.
-  attr_reader :header_name
-  # @return [String] Required `string` value serialized in the `justification` wire field.
-  attr_reader :justification
-  # @return [String] Required `string` value serialized in the `previousStatus` wire field.
-  attr_reader :previous_status
-  # @return [String] Required `string` value serialized in the `projectId` wire field.
-  attr_reader :project_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant241Metadata
+    FIELDS = {
+      connect_src_count: 'connectSrcCount',
+      connect_src_normalization_rules_cleared: 'connectSrcNormalizationRulesCleared',
+      connect_src_origin_count: 'connectSrcOriginCount',
+      connect_src_user_normalization_rule_count: 'connectSrcUserNormalizationRuleCount',
+      deleted_count: 'deletedCount',
+      header_count: 'headerCount',
+      project_id: 'projectId',
+      project_name: 'projectName',
+      script_count: 'scriptCount'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      connect_src_count
+      connect_src_origin_count
+      deleted_count
+      header_count
+      project_id
+      project_name
+      script_count
+    ].freeze
+    DECODERS = {
+      connect_src_normalization_rules_cleared: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant241ConnectSrcNormalizationRulesCleared.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UserEventPayloadVariant241.
+  class UserEventPayloadVariant241
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant241Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant241Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant241Metadata::DECODERS
+
+    # @return [Float] Required `number` value serialized in the `connectSrcCount` wire field.
+    attr_reader :connect_src_count
+    # @return [UserEventPayloadVariant241ConnectSrcNormalizationRulesCleared] Optional enumerated value serialized in the `connectSrcNormalizationRulesCleared` wire field.
+    attr_reader :connect_src_normalization_rules_cleared
+    # @return [Float] Required `number` value serialized in the `connectSrcOriginCount` wire field.
+    attr_reader :connect_src_origin_count
+    # @return [Float] Optional `number` value serialized in the `connectSrcUserNormalizationRuleCount` wire field.
+    attr_reader :connect_src_user_normalization_rule_count
+    # @return [Float] Required `number` value serialized in the `deletedCount` wire field.
+    attr_reader :deleted_count
+    # @return [Float] Required `number` value serialized in the `headerCount` wire field.
+    attr_reader :header_count
+    # @return [String] Required `string` value serialized in the `projectId` wire field.
+    attr_reader :project_id
+    # @return [String] Required `string` value serialized in the `projectName` wire field.
+    attr_reader :project_name
+    # @return [Float] Required `number` value serialized in the `scriptCount` wire field.
+    attr_reader :script_count
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant242Metadata
+    FIELDS = {
+      approval_scope: 'approvalScope',
+      justification: 'justification',
+      kind: 'kind',
+      previous_status: 'previousStatus',
+      project_id: 'projectId',
+      url: 'url'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      justification
+      previous_status
+      project_id
+      url
+    ].freeze
+    DECODERS = {
+      approval_scope: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant242ApprovalScope.from_value(value)
+      end,
+      kind: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant242Kind.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UserEventPayloadVariant242.
+  class UserEventPayloadVariant242
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant242Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant242Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant242Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant240Metadata
-  FIELDS = {
-    header_name: "headerName",
-    justification: "justification",
-    previous_status: "previousStatus",
-    project_id: "projectId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    header_name
-    justification
-    previous_status
-    project_id
-  ].freeze
-  DECODERS = {
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    justification
-  ].freeze
-end
+    # @return [UserEventPayloadVariant242ApprovalScope] Optional enumerated value serialized in the `approvalScope` wire field.
+    attr_reader :approval_scope
+    # @return [String] Required `string` value serialized in the `justification` wire field.
+    attr_reader :justification
+    # @return [UserEventPayloadVariant242Kind] Optional enumerated value serialized in the `kind` wire field.
+    attr_reader :kind
+    # @return [String] Required `string` value serialized in the `previousStatus` wire field.
+    attr_reader :previous_status
+    # @return [String] Required `string` value serialized in the `projectId` wire field.
+    attr_reader :project_id
+    # @return [String] Required `string` value serialized in the `url` wire field.
+    attr_reader :url
 
-# API model for UserEventPayloadVariant240.
-class UserEventPayloadVariant240
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant240Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant240Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant240Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `headerName` wire field.
-  attr_reader :header_name
-  # @return [String] Required `string` value serialized in the `justification` wire field.
-  attr_reader :justification
-  # @return [String] Required `string` value serialized in the `previousStatus` wire field.
-  attr_reader :previous_status
-  # @return [String] Required `string` value serialized in the `projectId` wire field.
-  attr_reader :project_id
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant240Metadata::NULLABLE_FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant243Metadata
+    FIELDS = {
+      project_id: 'projectId',
+      resource_url: 'resourceUrl',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      project_id
+      resource_url
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant243Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UserEventPayloadVariant243.
+  class UserEventPayloadVariant243
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant243Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant243Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant243Metadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `projectId` wire field.
+    attr_reader :project_id
+    # @return [String] Required `string` value serialized in the `resourceUrl` wire field.
+    attr_reader :resource_url
+    # @return [UserEventPayloadVariant243Type] Required enumerated value serialized in the `type` wire field.
+    attr_reader :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant241Metadata
-  FIELDS = {
-    connect_src_count: "connectSrcCount",
-    connect_src_normalization_rules_cleared: "connectSrcNormalizationRulesCleared",
-    connect_src_origin_count: "connectSrcOriginCount",
-    connect_src_user_normalization_rule_count: "connectSrcUserNormalizationRuleCount",
-    deleted_count: "deletedCount",
-    header_count: "headerCount",
-    project_id: "projectId",
-    project_name: "projectName",
-    script_count: "scriptCount",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    connect_src_count
-    connect_src_origin_count
-    deleted_count
-    header_count
-    project_id
-    project_name
-    script_count
-  ].freeze
-  DECODERS = {
-    connect_src_normalization_rules_cleared: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant241ConnectSrcNormalizationRulesCleared.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant241.
-class UserEventPayloadVariant241
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant241Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant241Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant241Metadata::DECODERS
-
-  # @return [Float] Required `number` value serialized in the `connectSrcCount` wire field.
-  attr_reader :connect_src_count
-  # @return [UserEventPayloadVariant241ConnectSrcNormalizationRulesCleared] Optional enumerated value serialized in the `connectSrcNormalizationRulesCleared` wire field.
-  attr_reader :connect_src_normalization_rules_cleared
-  # @return [Float] Required `number` value serialized in the `connectSrcOriginCount` wire field.
-  attr_reader :connect_src_origin_count
-  # @return [Float] Optional `number` value serialized in the `connectSrcUserNormalizationRuleCount` wire field.
-  attr_reader :connect_src_user_normalization_rule_count
-  # @return [Float] Required `number` value serialized in the `deletedCount` wire field.
-  attr_reader :deleted_count
-  # @return [Float] Required `number` value serialized in the `headerCount` wire field.
-  attr_reader :header_count
-  # @return [String] Required `string` value serialized in the `projectId` wire field.
-  attr_reader :project_id
-  # @return [String] Required `string` value serialized in the `projectName` wire field.
-  attr_reader :project_name
-  # @return [Float] Required `number` value serialized in the `scriptCount` wire field.
-  attr_reader :script_count
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant244Metadata
+    FIELDS = {
+      header_name: 'headerName',
+      project_id: 'projectId',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      header_name
+      project_id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant244Type.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UserEventPayloadVariant244.
+  class UserEventPayloadVariant244
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant244Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant244Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant244Metadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `headerName` wire field.
+    attr_reader :header_name
+    # @return [String] Required `string` value serialized in the `projectId` wire field.
+    attr_reader :project_id
+    # @return [UserEventPayloadVariant244Type] Required enumerated value serialized in the `type` wire field.
+    attr_reader :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant242Metadata
-  FIELDS = {
-    approval_scope: "approvalScope",
-    justification: "justification",
-    kind: "kind",
-    previous_status: "previousStatus",
-    project_id: "projectId",
-    url: "url",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    justification
-    previous_status
-    project_id
-    url
-  ].freeze
-  DECODERS = {
-    approval_scope: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant242ApprovalScope.from_value(value)
-    end,
-    kind: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant242Kind.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant242.
-class UserEventPayloadVariant242
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant242Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant242Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant242Metadata::DECODERS
-
-  # @return [UserEventPayloadVariant242ApprovalScope] Optional enumerated value serialized in the `approvalScope` wire field.
-  attr_reader :approval_scope
-  # @return [String] Required `string` value serialized in the `justification` wire field.
-  attr_reader :justification
-  # @return [UserEventPayloadVariant242Kind] Optional enumerated value serialized in the `kind` wire field.
-  attr_reader :kind
-  # @return [String] Required `string` value serialized in the `previousStatus` wire field.
-  attr_reader :previous_status
-  # @return [String] Required `string` value serialized in the `projectId` wire field.
-  attr_reader :project_id
-  # @return [String] Required `string` value serialized in the `url` wire field.
-  attr_reader :url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant243Metadata
-  FIELDS = {
-    project_id: "projectId",
-    resource_url: "resourceUrl",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    project_id
-    resource_url
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant243Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant243.
-class UserEventPayloadVariant243
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant243Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant243Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant243Metadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `projectId` wire field.
-  attr_reader :project_id
-  # @return [String] Required `string` value serialized in the `resourceUrl` wire field.
-  attr_reader :resource_url
-  # @return [UserEventPayloadVariant243Type] Required enumerated value serialized in the `type` wire field.
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant244Metadata
-  FIELDS = {
-    header_name: "headerName",
-    project_id: "projectId",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    header_name
-    project_id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant244Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant244.
-class UserEventPayloadVariant244
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant244Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant244Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant244Metadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `headerName` wire field.
-  attr_reader :header_name
-  # @return [String] Required `string` value serialized in the `projectId` wire field.
-  attr_reader :project_id
-  # @return [UserEventPayloadVariant244Type] Required enumerated value serialized in the `type` wire field.
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
 end

@@ -12,11 +12,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateOrTransferDomainResponseDomainCreatorMetadata
         FIELDS = {
-          customer_id: "customerId",
-          email: "email",
-          id: "id",
-          is_domain_reseller: "isDomainReseller",
-          username: "username",
+          customer_id: 'customerId',
+          email: 'email',
+          id: 'id',
+          is_domain_reseller: 'isDomainReseller',
+          username: 'username'
         }.freeze
         REQUIRED_FIELDS = %i[
           email
@@ -26,7 +26,7 @@ module OctridevVercel
         DECODERS = {
           is_domain_reseller: lambda do |value|
             ::OctridevVercel::Methods::Domains::CreateOrTransferDomainResponseDomainCreatorIsDomainReseller.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -61,23 +61,23 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateOrTransferDomainResponseDomainMetadata
         FIELDS = {
-          bought_at: "boughtAt",
-          created_at: "createdAt",
-          creator: "creator",
-          custom_nameservers: "customNameservers",
-          ech_mode: "echMode",
-          expires_at: "expiresAt",
-          id: "id",
-          intended_nameservers: "intendedNameservers",
-          name: "name",
-          nameservers: "nameservers",
-          renew: "renew",
-          service_type: "serviceType",
-          team_id: "teamId",
-          transferred_at: "transferredAt",
-          transfer_started_at: "transferStartedAt",
-          user_id: "userId",
-          verified: "verified",
+          bought_at: 'boughtAt',
+          created_at: 'createdAt',
+          creator: 'creator',
+          custom_nameservers: 'customNameservers',
+          ech_mode: 'echMode',
+          expires_at: 'expiresAt',
+          id: 'id',
+          intended_nameservers: 'intendedNameservers',
+          name: 'name',
+          nameservers: 'nameservers',
+          renew: 'renew',
+          service_type: 'serviceType',
+          team_id: 'teamId',
+          transferred_at: 'transferredAt',
+          transfer_started_at: 'transferStartedAt',
+          user_id: 'userId',
+          verified: 'verified'
         }.freeze
         REQUIRED_FIELDS = %i[
           bought_at
@@ -109,7 +109,7 @@ module OctridevVercel
           end,
           verified: lambda do |value|
             ::OctridevVercel::Methods::Domains::CreateOrTransferDomainResponseDomainVerified.from_value(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           bought_at
@@ -178,7 +178,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateOrTransferDomainResponseMetadata
         FIELDS = {
-          domain: "domain",
+          domain: 'domain'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain
@@ -186,7 +186,7 @@ module OctridevVercel
         DECODERS = {
           domain: lambda do |value|
             ::OctridevVercel::Methods::Domains::CreateOrTransferDomainResponseDomain.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -220,13 +220,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteDomainResponseMetadata
         FIELDS = {
-          uid: "uid",
+          uid: 'uid'
         }.freeze
         REQUIRED_FIELDS = %i[
           uid
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for DeleteDomainResponse.
@@ -290,7 +289,7 @@ module OctridevVercel
       module GetDomainConfigParameter
         TRUE = 'true'
         FALSE = 'false'
-        VALUES = ['true', 'false'].freeze
+        VALUES = %w[true false].freeze
         def self.from_value(value)
           value
         end
@@ -308,7 +307,7 @@ module OctridevVercel
         NS = 'NS'
         SRV = 'SRV'
         TXT = 'TXT'
-        VALUES = ['A', 'AAAA', 'ALIAS', 'CAA', 'CNAME', 'HTTPS', 'MX', 'NS', 'SRV', 'TXT'].freeze
+        VALUES = %w[A AAAA ALIAS CAA CNAME HTTPS MX NS SRV TXT].freeze
         def self.from_value(value)
           value
         end
@@ -319,7 +318,7 @@ module OctridevVercel
         AUTO = 'auto'
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = ['auto', 'disabled', 'enabled'].freeze
+        VALUES = %w[auto disabled enabled].freeze
         def self.from_value(value)
           value
         end
@@ -339,7 +338,7 @@ module OctridevVercel
       module GetDomainConfigResponseAcceptedChallengesItem
         DNS_01 = 'dns-01'
         HTTP_01 = 'http-01'
-        VALUES = ['dns-01', 'http-01'].freeze
+        VALUES = %w[dns-01 http-01].freeze
         def self.from_value(value)
           value
         end
@@ -350,7 +349,7 @@ module OctridevVercel
         AUTO = 'auto'
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = ['auto', 'disabled', 'enabled'].freeze
+        VALUES = %w[auto disabled enabled].freeze
         def self.from_value(value)
           value
         end
@@ -362,7 +361,7 @@ module OctridevVercel
         CNAME = 'CNAME'
         DNS_01 = 'dns-01'
         HTTP = 'http'
-        VALUES = ['A', 'CNAME', 'dns-01', 'http'].freeze
+        VALUES = %w[A CNAME dns-01 http].freeze
         def self.from_value(value)
           value
         end
@@ -383,7 +382,7 @@ module OctridevVercel
         AUTO = 'auto'
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = ['auto', 'disabled', 'enabled'].freeze
+        VALUES = %w[auto disabled enabled].freeze
         def self.from_value(value)
           value
         end
@@ -472,7 +471,7 @@ module OctridevVercel
         NS = 'NS'
         SRV = 'SRV'
         TXT = 'TXT'
-        VALUES = ['A', 'AAAA', 'ALIAS', 'CAA', 'CNAME', 'HTTPS', 'MX', 'NS', 'SRV', 'TXT'].freeze
+        VALUES = %w[A AAAA ALIAS CAA CNAME HTTPS MX NS SRV TXT].freeze
         def self.from_value(value)
           value
         end
@@ -493,7 +492,7 @@ module OctridevVercel
         AUTO = 'auto'
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = ['auto', 'disabled', 'enabled'].freeze
+        VALUES = %w[auto disabled enabled].freeze
         def self.from_value(value)
           value
         end
@@ -548,7 +547,7 @@ module OctridevVercel
       module UpdateDomainsVariant0EchMode
         AUTO = 'auto'
         DISABLED = 'disabled'
-        VALUES = ['auto', 'disabled'].freeze
+        VALUES = %w[auto disabled].freeze
         def self.from_value(value)
           value
         end

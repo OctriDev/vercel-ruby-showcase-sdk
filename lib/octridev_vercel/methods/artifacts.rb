@@ -12,13 +12,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUploadArtifactResponseMetadata
         FIELDS = {
-          urls: "urls",
+          urls: 'urls'
         }.freeze
         REQUIRED_FIELDS = %i[
           urls
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UploadArtifactResponse.
@@ -51,13 +50,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalArtifactQueryMetadata
         FIELDS = {
-          hashes: "hashes",
+          hashes: 'hashes'
         }.freeze
         REQUIRED_FIELDS = %i[
           hashes
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ArtifactQuery.
@@ -91,13 +89,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalDeleteAllArtifactsResponseMetadata
         FIELDS = {
-          deleted_count: "deletedCount",
+          deleted_count: 'deletedCount'
         }.freeze
         REQUIRED_FIELDS = %i[
           deleted_count
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for DeleteAllArtifactsResponse.
@@ -131,7 +128,7 @@ module OctridevVercel
       module RecordEventsItemSource
         LOCAL = 'LOCAL'
         REMOTE = 'REMOTE'
-        VALUES = ['LOCAL', 'REMOTE'].freeze
+        VALUES = %w[LOCAL REMOTE].freeze
         def self.from_value(value)
           value
         end
@@ -141,7 +138,7 @@ module OctridevVercel
       module RecordEventsItemEvent
         HIT = 'HIT'
         MISS = 'MISS'
-        VALUES = ['HIT', 'MISS'].freeze
+        VALUES = %w[HIT MISS].freeze
         def self.from_value(value)
           value
         end
@@ -167,7 +164,6 @@ module OctridevVercel
         x_artifact_client_interactive: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(x_artifact_client_ci) do
           Validation.validate_length('x-artifact-client-ci', x_artifact_client_ci, max: 50)
         end
@@ -178,20 +174,20 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          "/v8/artifacts/events",
+          '/v8/artifacts/events',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: body,
           decoder: :empty,
           operation_id: 'record_events',
           extra_headers: SdkClient.serialize_headers({
-            'x-artifact-client-ci' => SdkClient.header_value(x_artifact_client_ci),
-            'x-artifact-client-interactive' => SdkClient.header_value(x_artifact_client_interactive),
-          }),
-          request_options: request_options,
+                                                       'x-artifact-client-ci' => SdkClient.header_value(x_artifact_client_ci),
+                                                       'x-artifact-client-interactive' => SdkClient.header_value(x_artifact_client_interactive)
+                                                     }),
+          request_options: request_options
         ).result
       end
 
@@ -208,19 +204,18 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'GET',
-          "/v8/artifacts/status",
+          '/v8/artifacts/status',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::StatusResponse,
           decoder: :json,
           operation_id: 'status',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -259,7 +254,6 @@ module OctridevVercel
         x_artifact_dirty_hash: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(x_artifact_client_ci) do
           Validation.validate_length('x-artifact-client-ci', x_artifact_client_ci, max: 50)
         end
@@ -283,13 +277,13 @@ module OctridevVercel
         SdkClient.request(
           'PUT',
           [
-            "/v8/artifacts/",
+            '/v8/artifacts/',
             SdkClient.encode_path_segment(hash)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: body,
           content_type: 'application/octet-stream',
@@ -297,14 +291,14 @@ module OctridevVercel
           decoder: :json,
           operation_id: 'upload_artifact',
           extra_headers: SdkClient.serialize_headers({
-            'x-artifact-duration' => SdkClient.header_value(x_artifact_duration),
-            'x-artifact-client-ci' => SdkClient.header_value(x_artifact_client_ci),
-            'x-artifact-client-interactive' => SdkClient.header_value(x_artifact_client_interactive),
-            'x-artifact-tag' => SdkClient.header_value(x_artifact_tag),
-            'x-artifact-sha' => SdkClient.header_value(x_artifact_sha),
-            'x-artifact-dirty-hash' => SdkClient.header_value(x_artifact_dirty_hash),
-          }),
-          request_options: request_options,
+                                                       'x-artifact-duration' => SdkClient.header_value(x_artifact_duration),
+                                                       'x-artifact-client-ci' => SdkClient.header_value(x_artifact_client_ci),
+                                                       'x-artifact-client-interactive' => SdkClient.header_value(x_artifact_client_interactive),
+                                                       'x-artifact-tag' => SdkClient.header_value(x_artifact_tag),
+                                                       'x-artifact-sha' => SdkClient.header_value(x_artifact_sha),
+                                                       'x-artifact-dirty-hash' => SdkClient.header_value(x_artifact_dirty_hash)
+                                                     }),
+          request_options: request_options
         ).result
       end
 
@@ -329,7 +323,6 @@ module OctridevVercel
         x_artifact_client_interactive: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(x_artifact_client_ci) do
           Validation.validate_length('x-artifact-client-ci', x_artifact_client_ci, max: 50)
         end
@@ -341,21 +334,21 @@ module OctridevVercel
         SdkClient.request(
           'GET',
           [
-            "/v8/artifacts/",
+            '/v8/artifacts/',
             SdkClient.encode_path_segment(hash)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :bytes,
           operation_id: 'download_artifact',
           extra_headers: SdkClient.serialize_headers({
-            'x-artifact-client-ci' => SdkClient.header_value(x_artifact_client_ci),
-            'x-artifact-client-interactive' => SdkClient.header_value(x_artifact_client_interactive),
-          }),
-          request_options: request_options,
+                                                       'x-artifact-client-ci' => SdkClient.header_value(x_artifact_client_ci),
+                                                       'x-artifact-client-interactive' => SdkClient.header_value(x_artifact_client_interactive)
+                                                     }),
+          request_options: request_options
         ).result
       end
 
@@ -374,21 +367,20 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'HEAD',
           [
-            "/v8/artifacts/",
+            '/v8/artifacts/',
             SdkClient.encode_path_segment(hash)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'artifact_exists',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -407,21 +399,20 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
-          "/v8/artifacts",
+          '/v8/artifacts',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'hashes' => hashes,
+            'hashes' => hashes
           },
           decoder: :json,
           operation_id: 'artifact_query',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -438,19 +429,18 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
-          "/v8/artifacts",
+          '/v8/artifacts',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::Methods::Artifacts::DeleteAllArtifactsResponse,
           decoder: :json,
           operation_id: 'delete_all_artifacts',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
     end

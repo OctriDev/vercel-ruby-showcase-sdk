@@ -22,7 +22,7 @@ module OctridevVercel
       module GetRollingReleaseConfigResponseRollingReleaseGateAction
         PAUSE = 'pause'
         ROLLBACK = 'rollback'
-        VALUES = ['pause', 'rollback'].freeze
+        VALUES = %w[pause rollback].freeze
         def self.from_value(value)
           value
         end
@@ -32,7 +32,7 @@ module OctridevVercel
       module CompleteRollingReleaseResponseRollingReleaseCurrentDeploymentTarget
         PRODUCTION = 'production'
         STAGING = 'staging'
-        VALUES = ['production', 'staging'].freeze
+        VALUES = %w[production staging].freeze
         def self.from_value(value)
           value
         end
@@ -52,7 +52,7 @@ module OctridevVercel
       module StartRollingReleaseResponseRollingReleaseCanaryDeploymentTarget
         PRODUCTION = 'production'
         STAGING = 'staging'
-        VALUES = ['production', 'staging'].freeze
+        VALUES = %w[production staging].freeze
         def self.from_value(value)
           value
         end
@@ -77,8 +77,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -119,7 +119,7 @@ module OctridevVercel
       module ApproveRollingReleaseStageResponseRollingReleaseAdvancementType
         AUTOMATIC = 'automatic'
         MANUAL_APPROVAL = 'manual-approval'
-        VALUES = ['automatic', 'manual-approval'].freeze
+        VALUES = %w[automatic manual-approval].freeze
         def self.from_value(value)
           value
         end
@@ -159,7 +159,7 @@ module OctridevVercel
       module StartRollingReleaseResponseRollingReleaseAdvancementType
         AUTOMATIC = 'automatic'
         MANUAL_APPROVAL = 'manual-approval'
-        VALUES = ['automatic', 'manual-approval'].freeze
+        VALUES = %w[automatic manual-approval].freeze
         def self.from_value(value)
           value
         end
@@ -231,7 +231,7 @@ module OctridevVercel
         ABORTED = 'ABORTED'
         ACTIVE = 'ACTIVE'
         COMPLETE = 'COMPLETE'
-        VALUES = ['ABORTED', 'ACTIVE', 'COMPLETE'].freeze
+        VALUES = %w[ABORTED ACTIVE COMPLETE].freeze
         def self.from_value(value)
           value
         end
@@ -250,7 +250,7 @@ module OctridevVercel
       module CompleteRollingReleaseResponseRollingReleaseAdvancementType
         AUTOMATIC = 'automatic'
         MANUAL_APPROVAL = 'manual-approval'
-        VALUES = ['automatic', 'manual-approval'].freeze
+        VALUES = %w[automatic manual-approval].freeze
         def self.from_value(value)
           value
         end
@@ -275,8 +275,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -346,7 +346,7 @@ module OctridevVercel
       module GetRollingReleaseResponseRollingReleaseAdvancementType
         AUTOMATIC = 'automatic'
         MANUAL_APPROVAL = 'manual-approval'
-        VALUES = ['automatic', 'manual-approval'].freeze
+        VALUES = %w[automatic manual-approval].freeze
         def self.from_value(value)
           value
         end
@@ -356,7 +356,7 @@ module OctridevVercel
       module GetRollingReleaseResponseRollingReleaseCurrentDeploymentTarget
         PRODUCTION = 'production'
         STAGING = 'staging'
-        VALUES = ['production', 'staging'].freeze
+        VALUES = %w[production staging].freeze
         def self.from_value(value)
           value
         end
@@ -366,7 +366,7 @@ module OctridevVercel
       module CompleteRollingReleaseResponseRollingReleaseCanaryDeploymentTarget
         PRODUCTION = 'production'
         STAGING = 'staging'
-        VALUES = ['production', 'staging'].freeze
+        VALUES = %w[production staging].freeze
         def self.from_value(value)
           value
         end
@@ -376,7 +376,7 @@ module OctridevVercel
       module ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymentTarget
         PRODUCTION = 'production'
         STAGING = 'staging'
-        VALUES = ['production', 'staging'].freeze
+        VALUES = %w[production staging].freeze
         def self.from_value(value)
           value
         end
@@ -463,8 +463,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -545,7 +545,7 @@ module OctridevVercel
       module GetRollingReleaseResponseRollingReleaseCanaryDeploymentTarget
         PRODUCTION = 'production'
         STAGING = 'staging'
-        VALUES = ['production', 'staging'].freeze
+        VALUES = %w[production staging].freeze
         def self.from_value(value)
           value
         end
@@ -560,8 +560,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -577,8 +577,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value

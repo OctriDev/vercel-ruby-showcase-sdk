@@ -12,18 +12,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateNetworkMetadata
         FIELDS = {
-          aws_availability_zone_ids: "awsAvailabilityZoneIds",
-          cidr: "cidr",
-          name: "name",
-          region: "region",
+          aws_availability_zone_ids: 'awsAvailabilityZoneIds',
+          cidr: 'cidr',
+          name: 'name',
+          region: 'region'
         }.freeze
         REQUIRED_FIELDS = %i[
           cidr
           name
           region
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateNetwork.
@@ -62,13 +61,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateNetworkMetadata
         FIELDS = {
-          name: "name",
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateNetwork.
@@ -102,11 +100,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreatePrivateLinkEndpointMetadata
         FIELDS = {
-          project_id: "projectId",
-          name: "name",
-          vercel_region: "vercelRegion",
-          aws_service_name: "awsServiceName",
-          enable_private_dns: "enablePrivateDns",
+          project_id: 'projectId',
+          name: 'name',
+          vercel_region: 'vercelRegion',
+          aws_service_name: 'awsServiceName',
+          enable_private_dns: 'enablePrivateDns'
         }.freeze
         REQUIRED_FIELDS = %i[
           project_id
@@ -114,8 +112,7 @@ module OctridevVercel
           vercel_region
           aws_service_name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreatePrivateLinkEndpoint.
@@ -157,13 +154,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdatePrivateLinkEndpointMetadata
         FIELDS = {
-          name: "name",
-          enable_private_dns: "enablePrivateDns",
+          name: 'name',
+          enable_private_dns: 'enablePrivateDns'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdatePrivateLinkEndpoint.
@@ -199,13 +194,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateStaticIpsMetadata
         FIELDS = {
-          builds: "builds",
-          regions: "regions",
+          builds: 'builds',
+          regions: 'regions'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateStaticIps.
@@ -261,7 +254,7 @@ module OctridevVercel
       module UpdateStaticIpsResponseItemEnvIdVariant1
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end

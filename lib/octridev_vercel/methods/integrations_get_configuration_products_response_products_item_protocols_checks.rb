@@ -39,8 +39,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsExperimentationMetadata
         FIELDS = {
-          status: "status",
-          edge_config_syncing_support: "edgeConfigSyncingSupport",
+          status: 'status',
+          edge_config_syncing_support: 'edgeConfigSyncingSupport'
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -51,7 +51,7 @@ module OctridevVercel
           end,
           edge_config_syncing_support: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsExperimeXcafe85eb49.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -85,10 +85,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsLogDrainMetadata
         FIELDS = {
-          status: "status",
-          endpoint: "endpoint",
-          headers: "headers",
-          format: "format",
+          status: 'status',
+          endpoint: 'endpoint',
+          headers: 'headers',
+          format: 'format'
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -101,7 +101,7 @@ module OctridevVercel
           end,
           format: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsLogDrainFormat.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -135,7 +135,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsMessagingMetadata
         FIELDS = {
-          status: "status",
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -143,7 +143,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsMessagingStatus.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -177,7 +177,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsObservabilityMetadata
         FIELDS = {
-          status: "status",
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -185,7 +185,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsObservabilityStatus.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -219,7 +219,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsOtherMetadata
         FIELDS = {
-          status: "status",
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -227,7 +227,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsOtherStatus.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -261,9 +261,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsStorageReplMetadata
         FIELDS = {
-          enabled: "enabled",
-          supports_read_only_mode: "supportsReadOnlyMode",
-          welcome_message: "welcomeMessage",
+          enabled: 'enabled',
+          supports_read_only_mode: 'supportsReadOnlyMode',
+          welcome_message: 'welcomeMessage'
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -275,7 +275,7 @@ module OctridevVercel
           end,
           supports_read_only_mode: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsStorageRX1c07112313.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -309,8 +309,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsStorageMetadata
         FIELDS = {
-          status: "status",
-          repl: "repl",
+          status: 'status',
+          repl: 'repl'
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -321,7 +321,7 @@ module OctridevVercel
           end,
           repl: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsStorageRepl.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -355,10 +355,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsTraceDrainMetadata
         FIELDS = {
-          status: "status",
-          endpoint: "endpoint",
-          headers: "headers",
-          format: "format",
+          status: 'status',
+          endpoint: 'endpoint',
+          headers: 'headers',
+          format: 'format'
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -371,7 +371,7 @@ module OctridevVercel
           end,
           format: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsTraceDrainFormat.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -405,7 +405,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsVideoMetadata
         FIELDS = {
-          status: "status",
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -413,7 +413,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsVideoStatus.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -447,7 +447,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsWorkflowMetadata
         FIELDS = {
-          status: "status",
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           status
@@ -455,7 +455,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsWorkflowStatus.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -489,21 +489,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetConfigurationProductsResponseProductsItemProtocolsMetadata
         FIELDS = {
-          ai: "ai",
-          authentication: "authentication",
-          checks: "checks",
-          experimentation: "experimentation",
-          log_drain: "logDrain",
-          messaging: "messaging",
-          observability: "observability",
-          other: "other",
-          storage: "storage",
-          trace_drain: "traceDrain",
-          video: "video",
-          workflow: "workflow",
+          ai: 'ai',
+          authentication: 'authentication',
+          checks: 'checks',
+          experimentation: 'experimentation',
+          log_drain: 'logDrain',
+          messaging: 'messaging',
+          observability: 'observability',
+          other: 'other',
+          storage: 'storage',
+          trace_drain: 'traceDrain',
+          video: 'video',
+          workflow: 'workflow'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           ai: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsAi.from_hash(value)
@@ -540,7 +539,7 @@ module OctridevVercel
           end,
           workflow: lambda do |value|
             ::OctridevVercel::Methods::Integrations::GetConfigurationProductsResponseProductsItemProtocolsWorkflow.from_hash(value)
-          end,
+          end
         }.freeze
       end
     end

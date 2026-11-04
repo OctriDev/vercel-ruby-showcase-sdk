@@ -51,24 +51,24 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiInvocationsResponseInvocationsItemMetadata
         FIELDS = {
-          invocation_id: "invocationId",
-          attempt: "attempt",
-          team_id: "teamId",
-          source: "source",
-          created_at: "createdAt",
-          repository_key: "repositoryKey",
-          ref: "ref",
-          commit_sha: "commitSha",
-          skipped: "skipped",
-          bootstrapping_started: "bootstrappingStarted",
-          bootstrapping_failed: "bootstrappingFailed",
-          sandbox_snapshotted: "sandboxSnapshotted",
-          sandbox_named: "sandboxNamed",
-          job_definitions_created: "jobDefinitionsCreated",
-          completed: "completed",
-          setup_conclusion: "setupConclusion",
-          run_conclusion: "runConclusion",
-          status: "status",
+          invocation_id: 'invocationId',
+          attempt: 'attempt',
+          team_id: 'teamId',
+          source: 'source',
+          created_at: 'createdAt',
+          repository_key: 'repositoryKey',
+          ref: 'ref',
+          commit_sha: 'commitSha',
+          skipped: 'skipped',
+          bootstrapping_started: 'bootstrappingStarted',
+          bootstrapping_failed: 'bootstrappingFailed',
+          sandbox_snapshotted: 'sandboxSnapshotted',
+          sandbox_named: 'sandboxNamed',
+          job_definitions_created: 'jobDefinitionsCreated',
+          completed: 'completed',
+          setup_conclusion: 'setupConclusion',
+          run_conclusion: 'runConclusion',
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           invocation_id
@@ -114,7 +114,7 @@ module OctridevVercel
           end,
           status: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::ListVercelCiInvocationsResponseInvocationsItemStatusVariant0.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -157,12 +157,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiInvocationsResponsePaginationMetadata
         FIELDS = {
-          next_cursor: "nextCursor",
+          next_cursor: 'nextCursor'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ListVercelCiInvocationsResponsePagination.
@@ -195,9 +193,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiInvocationsResponseMetadata
         FIELDS = {
-          invocations: "invocations",
-          repositories: "repositories",
-          pagination: "pagination",
+          invocations: 'invocations',
+          repositories: 'repositories',
+          pagination: 'pagination'
         }.freeze
         REQUIRED_FIELDS = %i[
           invocations
@@ -210,7 +208,7 @@ module OctridevVercel
           end,
           pagination: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::ListVercelCiInvocationsResponsePagination.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -244,15 +242,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiBranchesResponseBranchesItemMetadata
         FIELDS = {
-          name: "name",
-          count: "count",
+          name: 'name',
+          count: 'count'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
           count
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ListVercelCiBranchesResponseBranchesItem.
@@ -285,7 +282,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiBranchesResponseMetadata
         FIELDS = {
-          branches: "branches",
+          branches: 'branches'
         }.freeze
         REQUIRED_FIELDS = %i[
           branches
@@ -293,7 +290,7 @@ module OctridevVercel
         DECODERS = {
           branches: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::VercelCi::ListVercelCiBranchesResponseBranchesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -327,15 +324,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateVercelCiTaskAnalysisMetadata
         FIELDS = {
-          owner: "owner",
-          repo: "repo",
+          owner: 'owner',
+          repo: 'repo'
         }.freeze
         REQUIRED_FIELDS = %i[
           owner
           repo
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateVercelCiTaskAnalysis.
@@ -379,8 +375,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateVercelCiTaskAnalysisResponseMetadata
         FIELDS = {
-          analysis_id: "analysisId",
-          status: "status",
+          analysis_id: 'analysisId',
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           analysis_id
@@ -389,7 +385,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::CreateVercelCiTaskAnalysisResponseStatusVariant0.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -434,9 +430,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiTaskAnalysisResponseMetadata
         FIELDS = {
-          analysis_id: "analysisId",
-          status: "status",
-          failure_reason: "failureReason",
+          analysis_id: 'analysisId',
+          status: 'status',
+          failure_reason: 'failureReason'
         }.freeze
         REQUIRED_FIELDS = %i[
           analysis_id
@@ -445,7 +441,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::GetVercelCiTaskAnalysisResponseStatusVariant0.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -479,15 +475,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateVercelCiTaskConfigurationPullRequestTasksItemMetadata
         FIELDS = {
-          name: "name",
-          config_path: "configPath",
+          name: 'name',
+          config_path: 'configPath'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
           config_path
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateVercelCiTaskConfigurationPullRequestTasksItem.
@@ -520,7 +515,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateVercelCiTaskConfigurationPullRequestMetadata
         FIELDS = {
-          tasks: "tasks",
+          tasks: 'tasks'
         }.freeze
         REQUIRED_FIELDS = %i[
           tasks
@@ -528,7 +523,7 @@ module OctridevVercel
         DECODERS = {
           tasks: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::VercelCi::CreateVercelCiTaskConfigurationPullRequestTasksItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 

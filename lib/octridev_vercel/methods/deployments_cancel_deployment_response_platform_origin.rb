@@ -43,13 +43,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponsePlatformSourceMetadata
         FIELDS = {
-          name: "name",
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CancelDeploymentResponsePlatformSource.
@@ -84,10 +83,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponsePlatformMetadata
         FIELDS = {
-          creator: "creator",
-          meta: "meta",
-          origin: "origin",
-          source: "source",
+          creator: 'creator',
+          meta: 'meta',
+          origin: 'origin',
+          source: 'source'
         }.freeze
         REQUIRED_FIELDS = %i[
           creator
@@ -103,7 +102,7 @@ module OctridevVercel
           end,
           source: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponsePlatformSource.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -145,16 +144,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseProjectMetadata
         FIELDS = {
-          framework: "framework",
-          id: "id",
-          name: "name",
+          framework: 'framework',
+          id: 'id',
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CancelDeploymentResponseProject.
@@ -188,13 +186,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseProjectSettingsSpeedInsightsMetadata
         FIELDS = {
-          canceled_at: "canceledAt",
-          data_received_at: "dataReceivedAt",
-          disabled_at: "disabledAt",
-          enabled_at: "enabledAt",
-          has_data: "hasData",
-          id: "id",
-          paid_at: "paidAt",
+          canceled_at: 'canceledAt',
+          data_received_at: 'dataReceivedAt',
+          disabled_at: 'disabledAt',
+          enabled_at: 'enabledAt',
+          has_data: 'hasData',
+          id: 'id',
+          paid_at: 'paidAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -202,7 +200,7 @@ module OctridevVercel
         DECODERS = {
           has_data: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseProjectSettingsSpeedInsightsHasData.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -238,11 +236,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseProjectSettingsWebAnalyticsMetadata
         FIELDS = {
-          canceled_at: "canceledAt",
-          disabled_at: "disabledAt",
-          enabled_at: "enabledAt",
-          has_data: "hasData",
-          id: "id",
+          canceled_at: 'canceledAt',
+          disabled_at: 'disabledAt',
+          enabled_at: 'enabledAt',
+          has_data: 'hasData',
+          id: 'id'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -250,7 +248,7 @@ module OctridevVercel
         DECODERS = {
           has_data: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseProjectSettingsWebAnalyticsHasData.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -284,18 +282,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseProjectSettingsMetadata
         FIELDS = {
-          build_command: "buildCommand",
-          command_for_ignoring_build_step: "commandForIgnoringBuildStep",
-          dev_command: "devCommand",
-          framework: "framework",
-          install_command: "installCommand",
-          node_version: "nodeVersion",
-          output_directory: "outputDirectory",
-          speed_insights: "speedInsights",
-          web_analytics: "webAnalytics",
+          build_command: 'buildCommand',
+          command_for_ignoring_build_step: 'commandForIgnoringBuildStep',
+          dev_command: 'devCommand',
+          framework: 'framework',
+          install_command: 'installCommand',
+          node_version: 'nodeVersion',
+          output_directory: 'outputDirectory',
+          speed_insights: 'speedInsights',
+          web_analytics: 'webAnalytics'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           framework: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseProjectSettingsFramework.from_value(value)
@@ -308,7 +305,7 @@ module OctridevVercel
           end,
           web_analytics: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseProjectSettingsWebAnalytics.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -344,15 +341,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseResourceConfigBuildMachineMetadata
         FIELDS = {
-          cores: "cores",
-          default_purchase_type: "defaultPurchaseType",
-          machine_selection_type: "machineSelectionType",
-          memory: "memory",
-          purchase_type: "purchaseType",
-          selection_source: "selectionSource",
+          cores: 'cores',
+          default_purchase_type: 'defaultPurchaseType',
+          machine_selection_type: 'machineSelectionType',
+          memory: 'memory',
+          purchase_type: 'purchaseType',
+          selection_source: 'selectionSource'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           default_purchase_type: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseResourceConfigBuildMachineDefaultPurchaseType.from_value(value)
@@ -365,7 +361,7 @@ module OctridevVercel
           end,
           selection_source: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseResourceConfigBuildMachineSelectionSource.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -411,14 +407,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseResourceConfigMetadata
         FIELDS = {
-          build_machine: "buildMachine",
+          build_machine: 'buildMachine'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           build_machine: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseResourceConfigBuildMachine.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -453,11 +448,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseSeatBlockMetadata
         FIELDS = {
-          block_code: "blockCode",
-          git_provider: "gitProvider",
-          git_user_id: "gitUserId",
-          is_verified: "isVerified",
-          user_id: "userId",
+          block_code: 'blockCode',
+          git_provider: 'gitProvider',
+          git_user_id: 'gitUserId',
+          is_verified: 'isVerified',
+          user_id: 'userId'
         }.freeze
         REQUIRED_FIELDS = %i[
           block_code
@@ -471,7 +466,7 @@ module OctridevVercel
           end,
           is_verified: lambda do |value|
             ::OctridevVercel::Methods::Deployments::CancelDeploymentResponseSeatBlockIsVerified.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -514,18 +509,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCancelDeploymentResponseTeamMetadata
         FIELDS = {
-          avatar: "avatar",
-          id: "id",
-          name: "name",
-          slug: "slug",
+          avatar: 'avatar',
+          id: 'id',
+          name: 'name',
+          slug: 'slug'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
           name
           slug
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CancelDeploymentResponseTeam.

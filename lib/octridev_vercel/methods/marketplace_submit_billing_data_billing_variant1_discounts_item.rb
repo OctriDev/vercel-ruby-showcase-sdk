@@ -52,8 +52,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitBillingDataBillingVariant1Metadata
         FIELDS = {
-          items: "items",
-          discounts: "discounts",
+          items: 'items',
+          discounts: 'discounts'
         }.freeze
         REQUIRED_FIELDS = %i[
           items
@@ -64,7 +64,7 @@ module OctridevVercel
           end,
           discounts: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::SubmitBillingDataBillingVariant1DiscountsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -98,13 +98,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitBillingDataUsageItemMetadata
         FIELDS = {
-          resource_id: "resourceId",
-          name: "name",
-          type: "type",
-          units: "units",
-          day_value: "dayValue",
-          period_value: "periodValue",
-          plan_value: "planValue",
+          resource_id: 'resourceId',
+          name: 'name',
+          type: 'type',
+          units: 'units',
+          day_value: 'dayValue',
+          period_value: 'periodValue',
+          plan_value: 'planValue'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -116,7 +116,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::SubmitBillingDataUsageItemType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -163,11 +163,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitBillingDataMetadata
         FIELDS = {
-          timestamp: "timestamp",
-          eod: "eod",
-          period: "period",
-          billing: "billing",
-          usage: "usage",
+          timestamp: 'timestamp',
+          eod: 'eod',
+          period: 'period',
+          billing: 'billing',
+          usage: 'usage'
         }.freeze
         REQUIRED_FIELDS = %i[
           timestamp
@@ -182,7 +182,7 @@ module OctridevVercel
           end,
           usage: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::SubmitBillingDataUsageItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -224,15 +224,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitInvoicePeriodMetadata
         FIELDS = {
-          start: "start",
-          end_: "end",
+          start: 'start',
+          end_: 'end'
         }.freeze
         REQUIRED_FIELDS = %i[
           start
           end_
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SubmitInvoicePeriod.
@@ -266,15 +265,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitInvoiceTestMetadata
         FIELDS = {
-          validate: "validate",
-          result: "result",
+          validate: 'validate',
+          result: 'result'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           result: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::SubmitInvoiceTestResult.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -309,16 +307,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitInvoiceItemsItemMetadata
         FIELDS = {
-          resource_id: "resourceId",
-          billing_plan_id: "billingPlanId",
-          start: "start",
-          end_: "end",
-          name: "name",
-          details: "details",
-          price: "price",
-          quantity: "quantity",
-          units: "units",
-          total: "total",
+          resource_id: 'resourceId',
+          billing_plan_id: 'billingPlanId',
+          start: 'start',
+          end_: 'end',
+          name: 'name',
+          details: 'details',
+          price: 'price',
+          quantity: 'quantity',
+          units: 'units',
+          total: 'total'
         }.freeze
         REQUIRED_FIELDS = %i[
           billing_plan_id
@@ -328,8 +326,7 @@ module OctridevVercel
           units
           total
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SubmitInvoiceItemsItem.
@@ -374,21 +371,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitInvoiceDiscountsItemMetadata
         FIELDS = {
-          resource_id: "resourceId",
-          billing_plan_id: "billingPlanId",
-          start: "start",
-          end_: "end",
-          name: "name",
-          details: "details",
-          amount: "amount",
+          resource_id: 'resourceId',
+          billing_plan_id: 'billingPlanId',
+          start: 'start',
+          end_: 'end',
+          name: 'name',
+          details: 'details',
+          amount: 'amount'
         }.freeze
         REQUIRED_FIELDS = %i[
           billing_plan_id
           name
           amount
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SubmitInvoiceDiscountsItem.
@@ -431,14 +427,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitInvoiceMetadata
         FIELDS = {
-          external_id: "externalId",
-          invoice_date: "invoiceDate",
-          memo: "memo",
-          period: "period",
-          items: "items",
-          discounts: "discounts",
-          final: "final",
-          test: "test",
+          external_id: 'externalId',
+          invoice_date: 'invoiceDate',
+          memo: 'memo',
+          period: 'period',
+          items: 'items',
+          discounts: 'discounts',
+          final: 'final',
+          test: 'test'
         }.freeze
         REQUIRED_FIELDS = %i[
           invoice_date
@@ -457,7 +453,7 @@ module OctridevVercel
           end,
           test: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::SubmitInvoiceTest.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -503,16 +499,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitInvoiceResponseMetadata
         FIELDS = {
-          invoice_id: "invoiceId",
-          test: "test",
-          validation_errors: "validationErrors",
+          invoice_id: 'invoiceId',
+          test: 'test',
+          validation_errors: 'validationErrors'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           test: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::SubmitInvoiceResponseTest.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -546,21 +541,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetInvoiceResponseDiscountsItemMetadata
         FIELDS = {
-          amount: "amount",
-          billing_plan_id: "billingPlanId",
-          details: "details",
-          end_: "end",
-          name: "name",
-          resource_id: "resourceId",
-          start: "start",
+          amount: 'amount',
+          billing_plan_id: 'billingPlanId',
+          details: 'details',
+          end_: 'end',
+          name: 'name',
+          resource_id: 'resourceId',
+          start: 'start'
         }.freeze
         REQUIRED_FIELDS = %i[
           amount
           billing_plan_id
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
     end
   end

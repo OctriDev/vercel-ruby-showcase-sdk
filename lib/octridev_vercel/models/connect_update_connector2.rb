@@ -5,667 +5,657 @@
 
 # connect domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataRequestVariant5Metadata
-  FIELDS = {
-    app_id: "appId",
-    app_name: "appName",
-    client_id: "clientId",
-    client_secret: "clientSecret",
-    slack_team: "slackTeam",
-    signing_secret: "signingSecret",
-    verification_token: "verificationToken",
-    bot_scopes: "botScopes",
-    user_scopes: "userScopes",
-    slash_commands: "slashCommands",
-    shortcuts: "shortcuts",
-    extras: "extras",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    slack_team: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdateDataRequestVariant5SlackTeam.from_hash(value)
-    end,
-    slash_commands: lambda do |value|
-      value&.map { |item| ::OctridevVercel::ConnectConnectorUpdateDataRequestVariant5SlashCommandsItem.from_hash(item) }
-    end,
-    shortcuts: lambda do |value|
-      value&.map { |item| ::OctridevVercel::ConnectConnectorUpdateDataRequestVariant5ShortcutsItem.from_hash(item) }
-    end,
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateDataRequestVariant5.
-class ConnectConnectorUpdateDataRequestVariant5
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant5Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant5Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataRequestVariant5Metadata::DECODERS
-
-  # @return [String] Slack app ID.
-  attr_reader :app_id
-  # @return [String] Slack app display name.
-  attr_reader :app_name
-  # @return [String] Slack app OAuth client ID.
-  attr_reader :client_id
-  # @return [String] Slack app OAuth client secret.
-  attr_reader :client_secret
-  # @return [ConnectConnectorUpdateDataRequestVariant5SlackTeam] Slack workspace metadata.
-  attr_reader :slack_team
-  # @return [String] Slack request signing secret.
-  attr_reader :signing_secret
-  # @return [String] Legacy Slack webhook verification token.
-  attr_reader :verification_token
-  # @return [Array_of_String] OAuth scopes requested for Slack bot tokens.
-  attr_reader :bot_scopes
-  # @return [Array_of_String] OAuth scopes requested for Slack user tokens.
-  attr_reader :user_scopes
-  # @return [Array_of_ConnectConnectorUpdateDataRequestVariant5SlashCommandsItem] Slash commands configured for the managed Slack app.
-  attr_reader :slash_commands
-  # @return [Array_of_ConnectConnectorUpdateDataRequestVariant5ShortcutsItem] Global and message shortcuts configured for the Slack app.
-  attr_reader :shortcuts
-  # @return [Hash] Additional provider metadata stored with the connector.
-  attr_reader :extras
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataRequestVariant5Metadata
+    FIELDS = {
+      app_id: 'appId',
+      app_name: 'appName',
+      client_id: 'clientId',
+      client_secret: 'clientSecret',
+      slack_team: 'slackTeam',
+      signing_secret: 'signingSecret',
+      verification_token: 'verificationToken',
+      bot_scopes: 'botScopes',
+      user_scopes: 'userScopes',
+      slash_commands: 'slashCommands',
+      shortcuts: 'shortcuts',
+      extras: 'extras'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      slack_team: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdateDataRequestVariant5SlackTeam.from_hash(value)
+      end,
+      slash_commands: lambda do |value|
+        value&.map { |item| ::OctridevVercel::ConnectConnectorUpdateDataRequestVariant5SlashCommandsItem.from_hash(item) }
+      end,
+      shortcuts: lambda do |value|
+        value&.map { |item| ::OctridevVercel::ConnectConnectorUpdateDataRequestVariant5ShortcutsItem.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
+  # API model for ConnectConnectorUpdateDataRequestVariant5.
+  class ConnectConnectorUpdateDataRequestVariant5
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant5Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant5Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataRequestVariant5Metadata::DECODERS
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
+    # @return [String] Slack app ID.
+    attr_reader :app_id
+    # @return [String] Slack app display name.
+    attr_reader :app_name
+    # @return [String] Slack app OAuth client ID.
+    attr_reader :client_id
+    # @return [String] Slack app OAuth client secret.
+    attr_reader :client_secret
+    # @return [ConnectConnectorUpdateDataRequestVariant5SlackTeam] Slack workspace metadata.
+    attr_reader :slack_team
+    # @return [String] Slack request signing secret.
+    attr_reader :signing_secret
+    # @return [String] Legacy Slack webhook verification token.
+    attr_reader :verification_token
+    # @return [Array_of_String] OAuth scopes requested for Slack bot tokens.
+    attr_reader :bot_scopes
+    # @return [Array_of_String] OAuth scopes requested for Slack user tokens.
+    attr_reader :user_scopes
+    # @return [Array_of_ConnectConnectorUpdateDataRequestVariant5SlashCommandsItem] Slash commands configured for the managed Slack app.
+    attr_reader :slash_commands
+    # @return [Array_of_ConnectConnectorUpdateDataRequestVariant5ShortcutsItem] Global and message shortcuts configured for the Slack app.
+    attr_reader :shortcuts
+    # @return [Hash] Additional provider metadata stored with the connector.
+    attr_reader :extras
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataRequestVariant6Metadata
-  FIELDS = {
-    account_identifier: "accountIdentifier",
-    default_session_role: "defaultSessionRole",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateDataRequestVariant6.
-class ConnectConnectorUpdateDataRequestVariant6
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant6Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant6Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataRequestVariant6Metadata::DECODERS
-
-  # @return [String] Snowflake account identifier.
-  attr_reader :account_identifier
-  # @return [String] Default Snowflake role for created sessions.
-  attr_reader :default_session_role
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataRequestVariant7Metadata
-  FIELDS = {
-    account_identifier: "accountIdentifier",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateDataRequestVariant7.
-class ConnectConnectorUpdateDataRequestVariant7
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant7Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant7Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataRequestVariant7Metadata::DECODERS
-
-  # @return [String] Snowflake account identifier.
-  attr_reader :account_identifier
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataRequestVariant8Metadata
-  FIELDS = {
-    api_token: "apiToken",
-    phone_numbers: "phoneNumbers",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateDataRequestVariant8.
-class ConnectConnectorUpdateDataRequestVariant8
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant8Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant8Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataRequestVariant8Metadata::DECODERS
-
-  attr_reader :phone_numbers
-  # @return [String] Linq partner API token for the shared line.
-  attr_reader :api_token
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataRequestVariant9Metadata
-  FIELDS = {
-    api_key_id: "apiKeyId",
-    api_secret_key: "apiSecretKey",
-    phone_numbers: "phoneNumbers",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateDataRequestVariant9.
-class ConnectConnectorUpdateDataRequestVariant9
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant9Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant9Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataRequestVariant9Metadata::DECODERS
-
-  # @return [String] Sendblue API key id (`sb-api-key-id`).
-  attr_reader :api_key_id
-  # @return [String] Sendblue API secret key (`sb-api-secret-key`).
-  attr_reader :api_secret_key
-  # @return [Array_of_String] E.164 Sendblue lines this connector sends and receives on. Used as the connector's display name, and the only lines its webhooks are registered for; an empty array clears them, which also removes the webhook subscription.
-  attr_reader :phone_numbers
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateDataRequestVariant10Metadata
-  FIELDS = {
-    project_secret: "projectSecret",
-    webhook_secret: "webhookSecret",
-    repair_webhook: "repairWebhook",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateDataRequestVariant10.
-class ConnectConnectorUpdateDataRequestVariant10
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant10Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant10Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateDataRequestVariant10Metadata::DECODERS
-
-  # @return [String] Photon project secret.
-  attr_reader :project_secret
-  # @return [String] Photon webhook verification secret.
-  attr_reader :webhook_secret
-  # @return [Boolean] Whether Connect should recreate the Photon webhook.
-  attr_reader :repair_webhook
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the ConnectConnectorUpdateDataRequest SDK namespace.
-module ConnectConnectorUpdateDataRequest
-  def self.from_hash(hash)
-    lossy = nil
-    [ConnectConnectorUpdateDataRequestVariant0, ConnectConnectorUpdateDataRequestVariant1, ConnectConnectorUpdateDataRequestVariant2, ConnectConnectorUpdateDataRequestVariant3, ConnectConnectorUpdateDataRequestVariant4, ConnectConnectorUpdateDataRequestVariant5, ConnectConnectorUpdateDataRequestVariant6, ConnectConnectorUpdateDataRequestVariant7, ConnectConnectorUpdateDataRequestVariant8, ConnectConnectorUpdateDataRequestVariant9, ConnectConnectorUpdateDataRequestVariant10].each do |type|
-      decoded = type.from_hash(hash)
-      return decoded if SdkModel.keeps_every_key?(hash, decoded)
-
-      lossy ||= decoded
-    rescue ::StandardError
-      next
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
     end
-    return lossy unless lossy.nil?
-  end
-end
 
-# Defines the ConnectConnectorUpdateDataRequestVariant0ServerConfigJwksKeysItemUse SDK namespace.
-module ConnectConnectorUpdateDataRequestVariant0ServerConfigJwksKeysItemUse
-  SIG = 'sig'
-  ENC = 'enc'
-  VALUES = ['sig', 'enc'].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-# Defines the ConnectConnectorUpdateDataRequestVariant2OwnerType SDK namespace.
-module ConnectConnectorUpdateDataRequestVariant2OwnerType
-  USER_2 = 'user'
-  ORGANIZATION_2 = 'organization'
-  USER = 'User'
-  ORGANIZATION = 'Organization'
-  VALUES = ['user', 'organization', 'User', 'Organization'].freeze
-  def self.from_value(value)
-    value
-  end
-end
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-# Defines the ConnectConnectorUpdateDataRequestVariant5ShortcutsItemType SDK namespace.
-module ConnectConnectorUpdateDataRequestVariant5ShortcutsItemType
-  GLOBAL = 'global'
-  MESSAGE = 'message'
-  VALUES = ['global', 'message'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdatedByVariant0Metadata
-  FIELDS = {
-    id: "id",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    type
-  ].freeze
-  DECODERS = {
-    type: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdatedByVariant0Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdatedByVariant0.
-class ConnectConnectorUpdatedByVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdatedByVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdatedByVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdatedByVariant0Metadata::DECODERS
-
-  # @return [String] Vercel user ID.
-  attr_reader :id
-  # @return [ConnectConnectorUpdatedByVariant0Type] Principal kind.
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataRequestVariant6Metadata
+    FIELDS = {
+      account_identifier: 'accountIdentifier',
+      default_session_role: 'defaultSessionRole'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for ConnectConnectorUpdateDataRequestVariant6.
+  class ConnectConnectorUpdateDataRequestVariant6
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant6Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant6Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataRequestVariant6Metadata::DECODERS
+
+    # @return [String] Snowflake account identifier.
+    attr_reader :account_identifier
+    # @return [String] Default Snowflake role for created sessions.
+    attr_reader :default_session_role
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the ConnectConnectorUpdatedByVariant1EnvironmentVariant1 SDK namespace.
-module ConnectConnectorUpdatedByVariant1EnvironmentVariant1
-  DEVELOPMENT = 'development'
-  PREVIEW = 'preview'
-  PRODUCTION = 'production'
-  VALUES = ['development', 'preview', 'production'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdatedByVariant1Metadata
-  FIELDS = {
-    environment: "environment",
-    id: "id",
-    type: "type",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    environment
-    id
-    type
-  ].freeze
-  DECODERS = {
-    environment: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdatedByVariant1EnvironmentVariant1.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdatedByVariant1Type.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdatedByVariant1.
-class ConnectConnectorUpdatedByVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdatedByVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdatedByVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdatedByVariant1Metadata::DECODERS
-
-  # @return [ConnectConnectorUpdatedByVariant1EnvironmentVariant1] Deployment environment of the project principal.
-  attr_reader :environment
-  # @return [String] Vercel project ID.
-  attr_reader :id
-  # @return [ConnectConnectorUpdatedByVariant1Type] Principal kind.
-  attr_reader :type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataRequestVariant7Metadata
+    FIELDS = {
+      account_identifier: 'accountIdentifier'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for ConnectConnectorUpdateDataRequestVariant7.
+  class ConnectConnectorUpdateDataRequestVariant7
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant7Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant7Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataRequestVariant7Metadata::DECODERS
+
+    # @return [String] Snowflake account identifier.
+    attr_reader :account_identifier
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataRequestVariant8Metadata
+    FIELDS = {
+      api_token: 'apiToken',
+      phone_numbers: 'phoneNumbers'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for ConnectConnectorUpdateDataRequestVariant8.
+  class ConnectConnectorUpdateDataRequestVariant8
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant8Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant8Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataRequestVariant8Metadata::DECODERS
 
-# Defines the ConnectConnectorUpdatedBy SDK namespace.
-module ConnectConnectorUpdatedBy
-  DISCRIMINATOR_MAPPING = {
-    "user" => -> { ConnectConnectorUpdatedByVariant0 },
-    "project" => -> { ConnectConnectorUpdatedByVariant1 },
-  }.freeze
+    attr_reader :phone_numbers
+    # @return [String] Linq partner API token for the shared line.
+    attr_reader :api_token
 
-  def self.from_hash(hash)
-    return hash unless hash.is_a?(::Hash)
-    type = DISCRIMINATOR_MAPPING[hash["type"]]&.call
-    return type.from_hash(hash) if type
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-    raise SdkValidationError.new('ConnectConnectorUpdatedBy', 'variant', "Unknown ConnectConnectorUpdatedBy discriminator: #{hash["type"].inspect}")
-  end
-end
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-# Defines the ConnectConnectorUpdatedByVariant0Type SDK namespace.
-module ConnectConnectorUpdatedByVariant0Type
-  USER = 'user'
-  VALUES = ['user'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-    raise SdkValidationError.new('ConnectConnectorUpdatedByVariant0Type', 'enum', "Unknown ConnectConnectorUpdatedByVariant0Type: #{value}")
-  end
-end
-
-# Defines the ConnectConnectorUpdatedByVariant1Type SDK namespace.
-module ConnectConnectorUpdatedByVariant1Type
-  PROJECT = 'project'
-  VALUES = ['project'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
-
-    raise SdkValidationError.new('ConnectConnectorUpdatedByVariant1Type', 'enum', "Unknown ConnectConnectorUpdatedByVariant1Type: #{value}")
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectConnectorUpdateResultMetadata
-  FIELDS = {
-    connector: "connector",
-    reconsent_needed: "reconsentNeeded",
-    reinstall_needed: "reinstallNeeded",
-    service_sync: "serviceSync",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    connector
-  ].freeze
-  DECODERS = {
-    connector: lambda do |value|
-      ::OctridevVercel::ConnectConnector.from_hash(value)
-    end,
-    reconsent_needed: lambda do |value|
-      ::OctridevVercel::ConnectReconsent.from_hash(value)
-    end,
-    reinstall_needed: lambda do |value|
-      ::OctridevVercel::ConnectConnectorUpdateResultReinstallNeeded.from_value(value)
-    end,
-    service_sync: lambda do |value|
-      ::OctridevVercel::ConnectServiceSync.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for ConnectConnectorUpdateResult.
-# Updated connector and any required provider follow-up actions.
-class ConnectConnectorUpdateResult
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectConnectorUpdateResultMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateResultMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectConnectorUpdateResultMetadata::DECODERS
-
-  # @return [ConnectConnector] Updated connector.
-  attr_reader :connector
-  # @return [ConnectReconsent] Present when affected users must authorize the connector's new permissions.
-  attr_reader :reconsent_needed
-  # @return [ConnectConnectorUpdateResultReinstallNeeded] When true, prompt a team owner or administrator to reinstall the connector before relying on the change.
-  attr_reader :reinstall_needed
-  # @return [ConnectServiceSync] Result of synchronizing the change with the external service.
-  attr_reader :service_sync
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataRequestVariant9Metadata
+    FIELDS = {
+      api_key_id: 'apiKeyId',
+      api_secret_key: 'apiSecretKey',
+      phone_numbers: 'phoneNumbers'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for ConnectConnectorUpdateDataRequestVariant9.
+  class ConnectConnectorUpdateDataRequestVariant9
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant9Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant9Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataRequestVariant9Metadata::DECODERS
+
+    # @return [String] Sendblue API key id (`sb-api-key-id`).
+    attr_reader :api_key_id
+    # @return [String] Sendblue API secret key (`sb-api-secret-key`).
+    attr_reader :api_secret_key
+    # @return [Array_of_String] E.164 Sendblue lines this connector sends and receives on. Used as the connector's display name, and the only lines its webhooks are registered for; an empty array clears them, which also removes the webhook subscription.
+    attr_reader :phone_numbers
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the ConnectConnectorUpdateResultReinstallNeeded SDK namespace.
-module ConnectConnectorUpdateResultReinstallNeeded
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalConnectCreateConnectorRequestMetadata
-  FIELDS = {
-    data: "data",
-    icon: "icon",
-    background_color: "backgroundColor",
-    accent_color: "accentColor",
-    type: "type",
-    service: "service",
-    connection_method: "connectionMethod",
-    params: "params",
-    target: "target",
-    uid: "uid",
-    name: "name",
-    project_id: "projectId",
-    environments: "environments",
-    triggers: "triggers",
-    trigger_type: "triggerType",
-    trigger_verification_input: "triggerVerificationInput",
-    trigger_registration_input: "triggerRegistrationInput",
-    trigger_destination: "triggerDestination",
-    events: "events",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    data
-  ].freeze
-  DECODERS = {
-    data: lambda do |value|
-      ::OctridevVercel::ConnectConnectorCreateData.from_hash(value)
-    end,
-    trigger_destination: lambda do |value|
-      ::OctridevVercel::ConnectCreateConnectorRequestTriggerDestination.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for ConnectCreateConnectorRequest.
-# Create a connector with full provider configuration or with a known service connection method.
-class ConnectCreateConnectorRequest
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalConnectCreateConnectorRequestMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalConnectCreateConnectorRequestMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalConnectCreateConnectorRequestMetadata::DECODERS
-
-  # @return [ConnectConnectorCreateData] Provider configuration for the selected connector type or connection method.
-  attr_reader :data
-  # @return [String] SHA-1 digest of a PNG or JPEG icon that is at least 640 by 640 pixels. This field does not accept a URL or image bytes. First compute the digest and upload the raw image with POST /v2/files. Send `Content-Length` and the same 40-character digest in `x-vercel-digest`. Then set `icon` to that digest. ```js import { createHash } from 'node:crypto'; import { readFile } from 'node:fs/promises'; const VERCEL_TOKEN = process.env.VERCEL_TOKEN; const connectorId = 'scl_...'; const…
-  attr_reader :icon
-  # @return [String] Branding background color (6-digit hex, for example
-  attr_reader :background_color
-  # @return [String] Branding accent color (6-digit hex, for example
-  attr_reader :accent_color
-  # @return [String] Connector implementation type for full configuration. Known types: api-key, discord, github, linear, linq, microsoft-entra, oauth, photon, salesforce, sendblue, slack, snowflake, snowflake-wif. Optional when service and connectionMethod select the type.
-  attr_reader :type
-  # @return [String] Service slug or URL for which the connector is used. Required when connectionMethod is set. Service alone does not enable preset configuration.
-  attr_reader :service
-  # @return [String] Connection method slug of the service. Use it with service to select preset configuration.
-  attr_reader :connection_method
-  # @return [Hash] Values for the selected connection method's template fields. Requires connectionMethod.
-  attr_reader :params
-  # @return [String] Which of the service's targets this connector is for. Requires \"connectionMethod\" and must be one that method serves. Optional.
-  attr_reader :target
-  # @return [String] Optional team-scoped unique identifier for the connector. If omitted or empty, Connect generates a value.
-  attr_reader :uid
-  # @return [String] Connector name. The value is trimmed and cannot contain control characters. If omitted or empty, the project name is used. A name or projectId is required. API key connectors require name.
-  attr_reader :name
-  # @return [String] Project to connect during creation. If environments is omitted, the connection uses development, preview, and production.
-  attr_reader :project_id
-  # @return [Array_of_String] Environments for the project connection. Requires projectId. Use one or more built-in environment names or stable custom environment IDs that belong to the project. Duplicate values are accepted and removed.
-  attr_reader :environments
-  # @return [Boolean] Whether the triggers are enabled for this connector.
-  attr_reader :triggers
-  # @return [String] Trigger driver type. Resolved automatically from the known service connection method when not provided. Only set when using the newly decoupled triggers resolution flow.
-  attr_reader :trigger_type
-  # @return [Hash] Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes.
-  attr_reader :trigger_verification_input
-  # @return [Hash] Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData.
-  attr_reader :trigger_registration_input
-  # @return [ConnectCreateConnectorRequestTriggerDestination] Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top level. Connector responses expose the resulting set as triggerDestinations. Replace the complete set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.
-  attr_reader :trigger_destination
-  # @return [Array_of_String] Default trigger events for this connector.
-  attr_reader :events
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateDataRequestVariant10Metadata
+    FIELDS = {
+      project_secret: 'projectSecret',
+      webhook_secret: 'webhookSecret',
+      repair_webhook: 'repairWebhook'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for ConnectConnectorUpdateDataRequestVariant10.
+  class ConnectConnectorUpdateDataRequestVariant10
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant10Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateDataRequestVariant10Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateDataRequestVariant10Metadata::DECODERS
+
+    # @return [String] Photon project secret.
+    attr_reader :project_secret
+    # @return [String] Photon webhook verification secret.
+    attr_reader :webhook_secret
+    # @return [Boolean] Whether Connect should recreate the Photon webhook.
+    attr_reader :repair_webhook
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the ConnectConnectorUpdateDataRequest SDK namespace.
+  module ConnectConnectorUpdateDataRequest
+    def self.from_hash(hash)
+      lossy = nil
+      [ConnectConnectorUpdateDataRequestVariant0, ConnectConnectorUpdateDataRequestVariant1, ConnectConnectorUpdateDataRequestVariant2, ConnectConnectorUpdateDataRequestVariant3, ConnectConnectorUpdateDataRequestVariant4, ConnectConnectorUpdateDataRequestVariant5, ConnectConnectorUpdateDataRequestVariant6, ConnectConnectorUpdateDataRequestVariant7, ConnectConnectorUpdateDataRequestVariant8, ConnectConnectorUpdateDataRequestVariant9, ConnectConnectorUpdateDataRequestVariant10].each do |type|
+        decoded = type.from_hash(hash)
+        return decoded if SdkModel.keeps_every_key?(hash, decoded)
+
+        lossy ||= decoded
+      rescue ::StandardError
+        next
+      end
+      lossy unless lossy.nil?
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
+  # Defines the ConnectConnectorUpdateDataRequestVariant0ServerConfigJwksKeysItemUse SDK namespace.
+  module ConnectConnectorUpdateDataRequestVariant0ServerConfigJwksKeysItemUse
+    SIG = 'sig'
+    ENC = 'enc'
+    VALUES = %w[sig enc].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
+
+  # Defines the ConnectConnectorUpdateDataRequestVariant2OwnerType SDK namespace.
+  module ConnectConnectorUpdateDataRequestVariant2OwnerType
+    USER_2 = 'user'
+    ORGANIZATION_2 = 'organization'
+    USER = 'User'
+    ORGANIZATION = 'Organization'
+    VALUES = %w[user organization User Organization].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the ConnectConnectorUpdateDataRequestVariant5ShortcutsItemType SDK namespace.
+  module ConnectConnectorUpdateDataRequestVariant5ShortcutsItemType
+    GLOBAL = 'global'
+    MESSAGE = 'message'
+    VALUES = %w[global message].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdatedByVariant0Metadata
+    FIELDS = {
+      id: 'id',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      type
+    ].freeze
+    DECODERS = {
+      type: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdatedByVariant0Type.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for ConnectConnectorUpdatedByVariant0.
+  class ConnectConnectorUpdatedByVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdatedByVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdatedByVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdatedByVariant0Metadata::DECODERS
+
+    # @return [String] Vercel user ID.
+    attr_reader :id
+    # @return [ConnectConnectorUpdatedByVariant0Type] Principal kind.
+    attr_reader :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
+  end
+
+  # Defines the ConnectConnectorUpdatedByVariant1EnvironmentVariant1 SDK namespace.
+  module ConnectConnectorUpdatedByVariant1EnvironmentVariant1
+    DEVELOPMENT = 'development'
+    PREVIEW = 'preview'
+    PRODUCTION = 'production'
+    VALUES = %w[development preview production].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdatedByVariant1Metadata
+    FIELDS = {
+      environment: 'environment',
+      id: 'id',
+      type: 'type'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      environment
+      id
+      type
+    ].freeze
+    DECODERS = {
+      environment: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdatedByVariant1EnvironmentVariant1.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdatedByVariant1Type.from_value(value)
+      end
+    }.freeze
+  end
+
+  # API model for ConnectConnectorUpdatedByVariant1.
+  class ConnectConnectorUpdatedByVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdatedByVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdatedByVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdatedByVariant1Metadata::DECODERS
+
+    # @return [ConnectConnectorUpdatedByVariant1EnvironmentVariant1] Deployment environment of the project principal.
+    attr_reader :environment
+    # @return [String] Vercel project ID.
+    attr_reader :id
+    # @return [ConnectConnectorUpdatedByVariant1Type] Principal kind.
+    attr_reader :type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
+  end
+
+  # Defines the ConnectConnectorUpdatedBy SDK namespace.
+  module ConnectConnectorUpdatedBy
+    DISCRIMINATOR_MAPPING = {
+      'user' => -> { ConnectConnectorUpdatedByVariant0 },
+      'project' => -> { ConnectConnectorUpdatedByVariant1 }
+    }.freeze
+
+    def self.from_hash(hash)
+      return hash unless hash.is_a?(::Hash)
+
+      type = DISCRIMINATOR_MAPPING[hash['type']]&.call
+      return type.from_hash(hash) if type
+
+      raise SdkValidationError.new('ConnectConnectorUpdatedBy', 'variant', "Unknown ConnectConnectorUpdatedBy discriminator: #{hash['type'].inspect}")
+    end
+  end
+
+  # Defines the ConnectConnectorUpdatedByVariant0Type SDK namespace.
+  module ConnectConnectorUpdatedByVariant0Type
+    USER = 'user'
+    VALUES = ['user'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ConnectConnectorUpdatedByVariant0Type', 'enum', "Unknown ConnectConnectorUpdatedByVariant0Type: #{value}")
+    end
+  end
+
+  # Defines the ConnectConnectorUpdatedByVariant1Type SDK namespace.
+  module ConnectConnectorUpdatedByVariant1Type
+    PROJECT = 'project'
+    VALUES = ['project'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
+
+      raise SdkValidationError.new('ConnectConnectorUpdatedByVariant1Type', 'enum', "Unknown ConnectConnectorUpdatedByVariant1Type: #{value}")
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalConnectConnectorUpdateResultMetadata
+    FIELDS = {
+      connector: 'connector',
+      reconsent_needed: 'reconsentNeeded',
+      reinstall_needed: 'reinstallNeeded',
+      service_sync: 'serviceSync'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      connector
+    ].freeze
+    DECODERS = {
+      connector: lambda do |value|
+        ::OctridevVercel::ConnectConnector.from_hash(value)
+      end,
+      reconsent_needed: lambda do |value|
+        ::OctridevVercel::ConnectReconsent.from_hash(value)
+      end,
+      reinstall_needed: lambda do |value|
+        ::OctridevVercel::ConnectConnectorUpdateResultReinstallNeeded.from_value(value)
+      end,
+      service_sync: lambda do |value|
+        ::OctridevVercel::ConnectServiceSync.from_hash(value)
+      end
+    }.freeze
+  end
+
+  # API model for ConnectConnectorUpdateResult.
+  # Updated connector and any required provider follow-up actions.
+  class ConnectConnectorUpdateResult
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectConnectorUpdateResultMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectConnectorUpdateResultMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectConnectorUpdateResultMetadata::DECODERS
+
+    # @return [ConnectConnector] Updated connector.
+    attr_reader :connector
+    # @return [ConnectReconsent] Present when affected users must authorize the connector's new permissions.
+    attr_reader :reconsent_needed
+    # @return [ConnectConnectorUpdateResultReinstallNeeded] When true, prompt a team owner or administrator to reinstall the connector before relying on the change.
+    attr_reader :reinstall_needed
+    # @return [ConnectServiceSync] Result of synchronizing the change with the external service.
+    attr_reader :service_sync
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
+  end
+
+  # Defines the ConnectConnectorUpdateResultReinstallNeeded SDK namespace.
+  module ConnectConnectorUpdateResultReinstallNeeded
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalConnectCreateConnectorRequestMetadata
+    FIELDS = {
+      data: 'data',
+      icon: 'icon',
+      background_color: 'backgroundColor',
+      accent_color: 'accentColor',
+      type: 'type',
+      service: 'service',
+      connection_method: 'connectionMethod',
+      params: 'params',
+      target: 'target',
+      uid: 'uid',
+      name: 'name',
+      project_id: 'projectId',
+      environments: 'environments',
+      triggers: 'triggers',
+      trigger_type: 'triggerType',
+      trigger_verification_input: 'triggerVerificationInput',
+      trigger_registration_input: 'triggerRegistrationInput',
+      trigger_destination: 'triggerDestination',
+      events: 'events'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      data
+    ].freeze
+    DECODERS = {
+      data: lambda do |value|
+        ::OctridevVercel::ConnectConnectorCreateData.from_hash(value)
+      end,
+      trigger_destination: lambda do |value|
+        ::OctridevVercel::ConnectCreateConnectorRequestTriggerDestination.from_hash(value)
+      end
+    }.freeze
+  end
+
+  # API model for ConnectCreateConnectorRequest.
+  # Create a connector with full provider configuration or with a known service connection method.
+  class ConnectCreateConnectorRequest
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalConnectCreateConnectorRequestMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalConnectCreateConnectorRequestMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalConnectCreateConnectorRequestMetadata::DECODERS
+
+    # @return [ConnectConnectorCreateData] Provider configuration for the selected connector type or connection method.
+    attr_reader :data
+    # @return [String] SHA-1 digest of a PNG or JPEG icon that is at least 640 by 640 pixels. This field does not accept a URL or image bytes. First compute the digest and upload the raw image with POST /v2/files. Send `Content-Length` and the same 40-character digest in `x-vercel-digest`. Then set `icon` to that digest. ```js import { createHash } from 'node:crypto'; import { readFile } from 'node:fs/promises'; const VERCEL_TOKEN = process.env.VERCEL_TOKEN; const connectorId = 'scl_...'; const…
+    attr_reader :icon
+    # @return [String] Branding background color (6-digit hex, for example
+    attr_reader :background_color
+    # @return [String] Branding accent color (6-digit hex, for example
+    attr_reader :accent_color
+    # @return [String] Connector implementation type for full configuration. Known types: api-key, discord, github, linear, linq, microsoft-entra, oauth, photon, salesforce, sendblue, slack, snowflake, snowflake-wif. Optional when service and connectionMethod select the type.
+    attr_reader :type
+    # @return [String] Service slug or URL for which the connector is used. Required when connectionMethod is set. Service alone does not enable preset configuration.
+    attr_reader :service
+    # @return [String] Connection method slug of the service. Use it with service to select preset configuration.
+    attr_reader :connection_method
+    # @return [Hash] Values for the selected connection method's template fields. Requires connectionMethod.
+    attr_reader :params
+    # @return [String] Which of the service's targets this connector is for. Requires \"connectionMethod\" and must be one that method serves. Optional.
+    attr_reader :target
+    # @return [String] Optional team-scoped unique identifier for the connector. If omitted or empty, Connect generates a value.
+    attr_reader :uid
+    # @return [String] Connector name. The value is trimmed and cannot contain control characters. If omitted or empty, the project name is used. A name or projectId is required. API key connectors require name.
+    attr_reader :name
+    # @return [String] Project to connect during creation. If environments is omitted, the connection uses development, preview, and production.
+    attr_reader :project_id
+    # @return [Array_of_String] Environments for the project connection. Requires projectId. Use one or more built-in environment names or stable custom environment IDs that belong to the project. Duplicate values are accepted and removed.
+    attr_reader :environments
+    # @return [Boolean] Whether the triggers are enabled for this connector.
+    attr_reader :triggers
+    # @return [String] Trigger driver type. Resolved automatically from the known service connection method when not provided. Only set when using the newly decoupled triggers resolution flow.
+    attr_reader :trigger_type
+    # @return [Hash] Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes.
+    attr_reader :trigger_verification_input
+    # @return [Hash] Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData.
+    attr_reader :trigger_registration_input
+    # @return [ConnectCreateConnectorRequestTriggerDestination] Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top level. Connector responses expose the resulting set as triggerDestinations. Replace the complete set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.
+    attr_reader :trigger_destination
+    # @return [Array_of_String] Default trigger events for this connector.
+    attr_reader :events
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
+  end
 end

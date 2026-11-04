@@ -5,685 +5,683 @@
 
 # user domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant379BudgetMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    fixed_budget: "fixedBudget",
-    id: "id",
-    is_active: "isActive",
-    notified_at: "notifiedAt",
-    pause_projects: "pauseProjects",
-    previous_spend: "previousSpend",
-    pricing_plan: "pricingPlan",
-    scope: "scope",
-    scope_id: "scopeId",
-    team_id: "teamId",
-    type: "type",
-    updated_at: "updatedAt",
-    webhook_id: "webhookId",
-    webhook_notified: "webhookNotified",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    fixed_budget
-    id
-    is_active
-    notified_at
-    previous_spend
-    team_id
-    type
-  ].freeze
-  DECODERS = {
-    is_active: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant379BudgetIsActive.from_value(value)
-    end,
-    pause_projects: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant379BudgetPauseProjects.from_value(value)
-    end,
-    pricing_plan: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant379BudgetPricingPlan.from_value(value)
-    end,
-    scope: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant379BudgetScope.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant379BudgetType.from_value(value)
-    end,
-    webhook_notified: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant379BudgetWebhookNotified.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant379Budget.
-# Represents a budget for tracking and notifying teams on their spending.
-class UserEventPayloadVariant379Budget
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant379BudgetMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant379BudgetMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant379BudgetMetadata::DECODERS
-
-  # @return [Float] Date time when budget is created
-  attr_reader :created_at
-  # @return [Float] Budget amount (USD / dollars)
-  attr_reader :fixed_budget
-  # @return [String] Sort key that needs to be unique per teamId
-  attr_reader :id
-  # @return [UserEventPayloadVariant379BudgetIsActive] Is the budget currently active for a customer
-  attr_reader :is_active
-  # @return [Array_of_Float] Array of 50, 75, 100 to keep track of notifications sent out
-  attr_reader :notified_at
-  # @return [UserEventPayloadVariant379BudgetPauseProjects] Should all projects be paused if budget is exceeded
-  attr_reader :pause_projects
-  # @return [Array_of_Float] Array of the last 3 months of spend data
-  attr_reader :previous_spend
-  # @return [UserEventPayloadVariant379BudgetPricingPlan] The acive pricing plan the team is billed with
-  attr_reader :pricing_plan
-  # @return [UserEventPayloadVariant379BudgetScope] Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-  attr_reader :scope
-  # @return [String] Project id when `scope` is `project`.
-  attr_reader :scope_id
-  # @return [String] Partition key
-  attr_reader :team_id
-  # @return [UserEventPayloadVariant379BudgetType] The budget type
-  attr_reader :type
-  # @return [Float] Date time when budget is updated last
-  attr_reader :updated_at
-  # @return [String] Webhook id that corresponds to a webhook in Cosmos webhook collection
-  attr_reader :webhook_id
-  # @return [UserEventPayloadVariant379BudgetWebhookNotified] Keep track if the webhook has been called for the month
-  attr_reader :webhook_notified
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant379BudgetMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      fixed_budget: 'fixedBudget',
+      id: 'id',
+      is_active: 'isActive',
+      notified_at: 'notifiedAt',
+      pause_projects: 'pauseProjects',
+      previous_spend: 'previousSpend',
+      pricing_plan: 'pricingPlan',
+      scope: 'scope',
+      scope_id: 'scopeId',
+      team_id: 'teamId',
+      type: 'type',
+      updated_at: 'updatedAt',
+      webhook_id: 'webhookId',
+      webhook_notified: 'webhookNotified'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      fixed_budget
+      id
+      is_active
+      notified_at
+      previous_spend
+      team_id
+      type
+    ].freeze
+    DECODERS = {
+      is_active: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant379BudgetIsActive.from_value(value)
+      end,
+      pause_projects: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant379BudgetPauseProjects.from_value(value)
+      end,
+      pricing_plan: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant379BudgetPricingPlan.from_value(value)
+      end,
+      scope: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant379BudgetScope.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant379BudgetType.from_value(value)
+      end,
+      webhook_notified: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant379BudgetWebhookNotified.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UserEventPayloadVariant379Budget.
+  # Represents a budget for tracking and notifying teams on their spending.
+  class UserEventPayloadVariant379Budget
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant379BudgetMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant379BudgetMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant379BudgetMetadata::DECODERS
+
+    # @return [Float] Date time when budget is created
+    attr_reader :created_at
+    # @return [Float] Budget amount (USD / dollars)
+    attr_reader :fixed_budget
+    # @return [String] Sort key that needs to be unique per teamId
+    attr_reader :id
+    # @return [UserEventPayloadVariant379BudgetIsActive] Is the budget currently active for a customer
+    attr_reader :is_active
+    # @return [Array_of_Float] Array of 50, 75, 100 to keep track of notifications sent out
+    attr_reader :notified_at
+    # @return [UserEventPayloadVariant379BudgetPauseProjects] Should all projects be paused if budget is exceeded
+    attr_reader :pause_projects
+    # @return [Array_of_Float] Array of the last 3 months of spend data
+    attr_reader :previous_spend
+    # @return [UserEventPayloadVariant379BudgetPricingPlan] The acive pricing plan the team is billed with
+    attr_reader :pricing_plan
+    # @return [UserEventPayloadVariant379BudgetScope] Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+    attr_reader :scope
+    # @return [String] Project id when `scope` is `project`.
+    attr_reader :scope_id
+    # @return [String] Partition key
+    attr_reader :team_id
+    # @return [UserEventPayloadVariant379BudgetType] The budget type
+    attr_reader :type
+    # @return [Float] Date time when budget is updated last
+    attr_reader :updated_at
+    # @return [String] Webhook id that corresponds to a webhook in Cosmos webhook collection
+    attr_reader :webhook_id
+    # @return [UserEventPayloadVariant379BudgetWebhookNotified] Keep track if the webhook has been called for the month
+    attr_reader :webhook_notified
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant379Metadata
+    FIELDS = {
+      budget: 'budget',
+      project_id: 'projectId',
+      project_name: 'projectName',
+      webhook_url: 'webhookUrl'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      budget
+    ].freeze
+    DECODERS = {
+      budget: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant379Budget.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UserEventPayloadVariant379.
+  class UserEventPayloadVariant379
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant379Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant379Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant379Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant379Metadata
-  FIELDS = {
-    budget: "budget",
-    project_id: "projectId",
-    project_name: "projectName",
-    webhook_url: "webhookUrl",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    budget
-  ].freeze
-  DECODERS = {
-    budget: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant379Budget.from_hash(value)
-    end,
-  }.freeze
-end
+    # @return [UserEventPayloadVariant379Budget] Represents a budget for tracking and notifying teams on their spending.
+    attr_reader :budget
+    # @return [String] Stored for project budgets. Same value as `budget.scopeId`.
+    attr_reader :project_id
+    # @return [String] Optional `string` value serialized in the `projectName` wire field.
+    attr_reader :project_name
+    # @return [String] Optional `string` value serialized in the `webhookUrl` wire field.
+    attr_reader :webhook_url
 
-# API model for UserEventPayloadVariant379.
-class UserEventPayloadVariant379
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant379Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant379Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant379Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant379Budget] Represents a budget for tracking and notifying teams on their spending.
-  attr_reader :budget
-  # @return [String] Stored for project budgets. Same value as `budget.scopeId`.
-  attr_reader :project_id
-  # @return [String] Optional `string` value serialized in the `projectName` wire field.
-  attr_reader :project_name
-  # @return [String] Optional `string` value serialized in the `webhookUrl` wire field.
-  attr_reader :webhook_url
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant380BudgetMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      fixed_budget: 'fixedBudget',
+      id: 'id',
+      is_active: 'isActive',
+      notified_at: 'notifiedAt',
+      pause_projects: 'pauseProjects',
+      previous_spend: 'previousSpend',
+      pricing_plan: 'pricingPlan',
+      scope: 'scope',
+      scope_id: 'scopeId',
+      team_id: 'teamId',
+      type: 'type',
+      updated_at: 'updatedAt',
+      webhook_id: 'webhookId',
+      webhook_notified: 'webhookNotified'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      fixed_budget
+      id
+      is_active
+      notified_at
+      previous_spend
+      team_id
+      type
+    ].freeze
+    DECODERS = {
+      is_active: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant380BudgetIsActive.from_value(value)
+      end,
+      pause_projects: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant380BudgetPauseProjects.from_value(value)
+      end,
+      pricing_plan: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant380BudgetPricingPlan.from_value(value)
+      end,
+      scope: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant380BudgetScope.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant380BudgetType.from_value(value)
+      end,
+      webhook_notified: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant380BudgetWebhookNotified.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UserEventPayloadVariant380Budget.
+  # Represents a budget for tracking and notifying teams on their spending.
+  class UserEventPayloadVariant380Budget
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant380BudgetMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant380BudgetMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant380BudgetMetadata::DECODERS
+
+    # @return [Float] Date time when budget is created
+    attr_reader :created_at
+    # @return [Float] Budget amount (USD / dollars)
+    attr_reader :fixed_budget
+    # @return [String] Sort key that needs to be unique per teamId
+    attr_reader :id
+    # @return [UserEventPayloadVariant380BudgetIsActive] Is the budget currently active for a customer
+    attr_reader :is_active
+    # @return [Array_of_Float] Array of 50, 75, 100 to keep track of notifications sent out
+    attr_reader :notified_at
+    # @return [UserEventPayloadVariant380BudgetPauseProjects] Should all projects be paused if budget is exceeded
+    attr_reader :pause_projects
+    # @return [Array_of_Float] Array of the last 3 months of spend data
+    attr_reader :previous_spend
+    # @return [UserEventPayloadVariant380BudgetPricingPlan] The acive pricing plan the team is billed with
+    attr_reader :pricing_plan
+    # @return [UserEventPayloadVariant380BudgetScope] Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+    attr_reader :scope
+    # @return [String] Project id when `scope` is `project`.
+    attr_reader :scope_id
+    # @return [String] Partition key
+    attr_reader :team_id
+    # @return [UserEventPayloadVariant380BudgetType] The budget type
+    attr_reader :type
+    # @return [Float] Date time when budget is updated last
+    attr_reader :updated_at
+    # @return [String] Webhook id that corresponds to a webhook in Cosmos webhook collection
+    attr_reader :webhook_id
+    # @return [UserEventPayloadVariant380BudgetWebhookNotified] Keep track if the webhook has been called for the month
+    attr_reader :webhook_notified
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant380BudgetMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    fixed_budget: "fixedBudget",
-    id: "id",
-    is_active: "isActive",
-    notified_at: "notifiedAt",
-    pause_projects: "pauseProjects",
-    previous_spend: "previousSpend",
-    pricing_plan: "pricingPlan",
-    scope: "scope",
-    scope_id: "scopeId",
-    team_id: "teamId",
-    type: "type",
-    updated_at: "updatedAt",
-    webhook_id: "webhookId",
-    webhook_notified: "webhookNotified",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    fixed_budget
-    id
-    is_active
-    notified_at
-    previous_spend
-    team_id
-    type
-  ].freeze
-  DECODERS = {
-    is_active: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant380BudgetIsActive.from_value(value)
-    end,
-    pause_projects: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant380BudgetPauseProjects.from_value(value)
-    end,
-    pricing_plan: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant380BudgetPricingPlan.from_value(value)
-    end,
-    scope: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant380BudgetScope.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant380BudgetType.from_value(value)
-    end,
-    webhook_notified: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant380BudgetWebhookNotified.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant380Budget.
-# Represents a budget for tracking and notifying teams on their spending.
-class UserEventPayloadVariant380Budget
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant380BudgetMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant380BudgetMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant380BudgetMetadata::DECODERS
-
-  # @return [Float] Date time when budget is created
-  attr_reader :created_at
-  # @return [Float] Budget amount (USD / dollars)
-  attr_reader :fixed_budget
-  # @return [String] Sort key that needs to be unique per teamId
-  attr_reader :id
-  # @return [UserEventPayloadVariant380BudgetIsActive] Is the budget currently active for a customer
-  attr_reader :is_active
-  # @return [Array_of_Float] Array of 50, 75, 100 to keep track of notifications sent out
-  attr_reader :notified_at
-  # @return [UserEventPayloadVariant380BudgetPauseProjects] Should all projects be paused if budget is exceeded
-  attr_reader :pause_projects
-  # @return [Array_of_Float] Array of the last 3 months of spend data
-  attr_reader :previous_spend
-  # @return [UserEventPayloadVariant380BudgetPricingPlan] The acive pricing plan the team is billed with
-  attr_reader :pricing_plan
-  # @return [UserEventPayloadVariant380BudgetScope] Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-  attr_reader :scope
-  # @return [String] Project id when `scope` is `project`.
-  attr_reader :scope_id
-  # @return [String] Partition key
-  attr_reader :team_id
-  # @return [UserEventPayloadVariant380BudgetType] The budget type
-  attr_reader :type
-  # @return [Float] Date time when budget is updated last
-  attr_reader :updated_at
-  # @return [String] Webhook id that corresponds to a webhook in Cosmos webhook collection
-  attr_reader :webhook_id
-  # @return [UserEventPayloadVariant380BudgetWebhookNotified] Keep track if the webhook has been called for the month
-  attr_reader :webhook_notified
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant380Metadata
+    FIELDS = {
+      budget: 'budget',
+      project_id: 'projectId',
+      project_name: 'projectName'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      budget
+    ].freeze
+    DECODERS = {
+      budget: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant380Budget.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UserEventPayloadVariant380.
+  class UserEventPayloadVariant380
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant380Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant380Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant380Metadata::DECODERS
+
+    # @return [UserEventPayloadVariant380Budget] Represents a budget for tracking and notifying teams on their spending.
+    attr_reader :budget
+    # @return [String] Stored for project budgets. Same value as `budget.scopeId`.
+    attr_reader :project_id
+    # @return [String] Optional `string` value serialized in the `projectName` wire field.
+    attr_reader :project_name
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant381BudgetMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      fixed_budget: 'fixedBudget',
+      id: 'id',
+      is_active: 'isActive',
+      notified_at: 'notifiedAt',
+      pause_projects: 'pauseProjects',
+      previous_spend: 'previousSpend',
+      pricing_plan: 'pricingPlan',
+      scope: 'scope',
+      scope_id: 'scopeId',
+      team_id: 'teamId',
+      type: 'type',
+      updated_at: 'updatedAt',
+      webhook_id: 'webhookId',
+      webhook_notified: 'webhookNotified'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      fixed_budget
+      id
+      is_active
+      notified_at
+      previous_spend
+      team_id
+      type
+    ].freeze
+    DECODERS = {
+      is_active: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381BudgetIsActive.from_value(value)
+      end,
+      pause_projects: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381BudgetPauseProjects.from_value(value)
+      end,
+      pricing_plan: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381BudgetPricingPlan.from_value(value)
+      end,
+      scope: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381BudgetScope.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381BudgetType.from_value(value)
+      end,
+      webhook_notified: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381BudgetWebhookNotified.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UserEventPayloadVariant381Budget.
+  # Represents a budget for tracking and notifying teams on their spending.
+  class UserEventPayloadVariant381Budget
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant381BudgetMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant381BudgetMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant381BudgetMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant380Metadata
-  FIELDS = {
-    budget: "budget",
-    project_id: "projectId",
-    project_name: "projectName",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    budget
-  ].freeze
-  DECODERS = {
-    budget: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant380Budget.from_hash(value)
-    end,
-  }.freeze
-end
+    # @return [Float] Date time when budget is created
+    attr_reader :created_at
+    # @return [Float] Budget amount (USD / dollars)
+    attr_reader :fixed_budget
+    # @return [String] Sort key that needs to be unique per teamId
+    attr_reader :id
+    # @return [UserEventPayloadVariant381BudgetIsActive] Is the budget currently active for a customer
+    attr_reader :is_active
+    # @return [Array_of_Float] Array of 50, 75, 100 to keep track of notifications sent out
+    attr_reader :notified_at
+    # @return [UserEventPayloadVariant381BudgetPauseProjects] Should all projects be paused if budget is exceeded
+    attr_reader :pause_projects
+    # @return [Array_of_Float] Array of the last 3 months of spend data
+    attr_reader :previous_spend
+    # @return [UserEventPayloadVariant381BudgetPricingPlan] The acive pricing plan the team is billed with
+    attr_reader :pricing_plan
+    # @return [UserEventPayloadVariant381BudgetScope] Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+    attr_reader :scope
+    # @return [String] Project id when `scope` is `project`.
+    attr_reader :scope_id
+    # @return [String] Partition key
+    attr_reader :team_id
+    # @return [UserEventPayloadVariant381BudgetType] The budget type
+    attr_reader :type
+    # @return [Float] Date time when budget is updated last
+    attr_reader :updated_at
+    # @return [String] Webhook id that corresponds to a webhook in Cosmos webhook collection
+    attr_reader :webhook_id
+    # @return [UserEventPayloadVariant381BudgetWebhookNotified] Keep track if the webhook has been called for the month
+    attr_reader :webhook_notified
 
-# API model for UserEventPayloadVariant380.
-class UserEventPayloadVariant380
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant380Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant380Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant380Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant380Budget] Represents a budget for tracking and notifying teams on their spending.
-  attr_reader :budget
-  # @return [String] Stored for project budgets. Same value as `budget.scopeId`.
-  attr_reader :project_id
-  # @return [String] Optional `string` value serialized in the `projectName` wire field.
-  attr_reader :project_name
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant381BudgetMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    fixed_budget: "fixedBudget",
-    id: "id",
-    is_active: "isActive",
-    notified_at: "notifiedAt",
-    pause_projects: "pauseProjects",
-    previous_spend: "previousSpend",
-    pricing_plan: "pricingPlan",
-    scope: "scope",
-    scope_id: "scopeId",
-    team_id: "teamId",
-    type: "type",
-    updated_at: "updatedAt",
-    webhook_id: "webhookId",
-    webhook_notified: "webhookNotified",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    fixed_budget
-    id
-    is_active
-    notified_at
-    previous_spend
-    team_id
-    type
-  ].freeze
-  DECODERS = {
-    is_active: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381BudgetIsActive.from_value(value)
-    end,
-    pause_projects: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381BudgetPauseProjects.from_value(value)
-    end,
-    pricing_plan: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381BudgetPricingPlan.from_value(value)
-    end,
-    scope: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381BudgetScope.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381BudgetType.from_value(value)
-    end,
-    webhook_notified: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381BudgetWebhookNotified.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant381Budget.
-# Represents a budget for tracking and notifying teams on their spending.
-class UserEventPayloadVariant381Budget
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant381BudgetMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant381BudgetMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant381BudgetMetadata::DECODERS
-
-  # @return [Float] Date time when budget is created
-  attr_reader :created_at
-  # @return [Float] Budget amount (USD / dollars)
-  attr_reader :fixed_budget
-  # @return [String] Sort key that needs to be unique per teamId
-  attr_reader :id
-  # @return [UserEventPayloadVariant381BudgetIsActive] Is the budget currently active for a customer
-  attr_reader :is_active
-  # @return [Array_of_Float] Array of 50, 75, 100 to keep track of notifications sent out
-  attr_reader :notified_at
-  # @return [UserEventPayloadVariant381BudgetPauseProjects] Should all projects be paused if budget is exceeded
-  attr_reader :pause_projects
-  # @return [Array_of_Float] Array of the last 3 months of spend data
-  attr_reader :previous_spend
-  # @return [UserEventPayloadVariant381BudgetPricingPlan] The acive pricing plan the team is billed with
-  attr_reader :pricing_plan
-  # @return [UserEventPayloadVariant381BudgetScope] Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-  attr_reader :scope
-  # @return [String] Project id when `scope` is `project`.
-  attr_reader :scope_id
-  # @return [String] Partition key
-  attr_reader :team_id
-  # @return [UserEventPayloadVariant381BudgetType] The budget type
-  attr_reader :type
-  # @return [Float] Date time when budget is updated last
-  attr_reader :updated_at
-  # @return [String] Webhook id that corresponds to a webhook in Cosmos webhook collection
-  attr_reader :webhook_id
-  # @return [UserEventPayloadVariant381BudgetWebhookNotified] Keep track if the webhook has been called for the month
-  attr_reader :webhook_notified
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant381PrevBudgetMetadata
+    FIELDS = {
+      created_at: 'createdAt',
+      fixed_budget: 'fixedBudget',
+      id: 'id',
+      is_active: 'isActive',
+      notified_at: 'notifiedAt',
+      pause_projects: 'pauseProjects',
+      previous_spend: 'previousSpend',
+      pricing_plan: 'pricingPlan',
+      scope: 'scope',
+      scope_id: 'scopeId',
+      team_id: 'teamId',
+      type: 'type',
+      updated_at: 'updatedAt',
+      webhook_id: 'webhookId',
+      webhook_notified: 'webhookNotified'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      fixed_budget
+      id
+      is_active
+      notified_at
+      previous_spend
+      team_id
+      type
+    ].freeze
+    DECODERS = {
+      is_active: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381PrevBudgetIsActive.from_value(value)
+      end,
+      pause_projects: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381PrevBudgetPauseProjects.from_value(value)
+      end,
+      pricing_plan: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381PrevBudgetPricingPlan.from_value(value)
+      end,
+      scope: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381PrevBudgetScope.from_value(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381PrevBudgetType.from_value(value)
+      end,
+      webhook_notified: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381PrevBudgetWebhookNotified.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UserEventPayloadVariant381PrevBudget.
+  # Represents a budget for tracking and notifying teams on their spending.
+  class UserEventPayloadVariant381PrevBudget
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant381PrevBudgetMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant381PrevBudgetMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant381PrevBudgetMetadata::DECODERS
+
+    # @return [Float] Date time when budget is created
+    attr_reader :created_at
+    # @return [Float] Budget amount (USD / dollars)
+    attr_reader :fixed_budget
+    # @return [String] Sort key that needs to be unique per teamId
+    attr_reader :id
+    # @return [UserEventPayloadVariant381PrevBudgetIsActive] Is the budget currently active for a customer
+    attr_reader :is_active
+    # @return [Array_of_Float] Array of 50, 75, 100 to keep track of notifications sent out
+    attr_reader :notified_at
+    # @return [UserEventPayloadVariant381PrevBudgetPauseProjects] Should all projects be paused if budget is exceeded
+    attr_reader :pause_projects
+    # @return [Array_of_Float] Array of the last 3 months of spend data
+    attr_reader :previous_spend
+    # @return [UserEventPayloadVariant381PrevBudgetPricingPlan] The acive pricing plan the team is billed with
+    attr_reader :pricing_plan
+    # @return [UserEventPayloadVariant381PrevBudgetScope] Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+    attr_reader :scope
+    # @return [String] Project id when `scope` is `project`.
+    attr_reader :scope_id
+    # @return [String] Partition key
+    attr_reader :team_id
+    # @return [UserEventPayloadVariant381PrevBudgetType] The budget type
+    attr_reader :type
+    # @return [Float] Date time when budget is updated last
+    attr_reader :updated_at
+    # @return [String] Webhook id that corresponds to a webhook in Cosmos webhook collection
+    attr_reader :webhook_id
+    # @return [UserEventPayloadVariant381PrevBudgetWebhookNotified] Keep track if the webhook has been called for the month
+    attr_reader :webhook_notified
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant381PrevBudgetMetadata
-  FIELDS = {
-    created_at: "createdAt",
-    fixed_budget: "fixedBudget",
-    id: "id",
-    is_active: "isActive",
-    notified_at: "notifiedAt",
-    pause_projects: "pauseProjects",
-    previous_spend: "previousSpend",
-    pricing_plan: "pricingPlan",
-    scope: "scope",
-    scope_id: "scopeId",
-    team_id: "teamId",
-    type: "type",
-    updated_at: "updatedAt",
-    webhook_id: "webhookId",
-    webhook_notified: "webhookNotified",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    fixed_budget
-    id
-    is_active
-    notified_at
-    previous_spend
-    team_id
-    type
-  ].freeze
-  DECODERS = {
-    is_active: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381PrevBudgetIsActive.from_value(value)
-    end,
-    pause_projects: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381PrevBudgetPauseProjects.from_value(value)
-    end,
-    pricing_plan: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381PrevBudgetPricingPlan.from_value(value)
-    end,
-    scope: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381PrevBudgetScope.from_value(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381PrevBudgetType.from_value(value)
-    end,
-    webhook_notified: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381PrevBudgetWebhookNotified.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant381PrevBudget.
-# Represents a budget for tracking and notifying teams on their spending.
-class UserEventPayloadVariant381PrevBudget
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant381PrevBudgetMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant381PrevBudgetMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant381PrevBudgetMetadata::DECODERS
-
-  # @return [Float] Date time when budget is created
-  attr_reader :created_at
-  # @return [Float] Budget amount (USD / dollars)
-  attr_reader :fixed_budget
-  # @return [String] Sort key that needs to be unique per teamId
-  attr_reader :id
-  # @return [UserEventPayloadVariant381PrevBudgetIsActive] Is the budget currently active for a customer
-  attr_reader :is_active
-  # @return [Array_of_Float] Array of 50, 75, 100 to keep track of notifications sent out
-  attr_reader :notified_at
-  # @return [UserEventPayloadVariant381PrevBudgetPauseProjects] Should all projects be paused if budget is exceeded
-  attr_reader :pause_projects
-  # @return [Array_of_Float] Array of the last 3 months of spend data
-  attr_reader :previous_spend
-  # @return [UserEventPayloadVariant381PrevBudgetPricingPlan] The acive pricing plan the team is billed with
-  attr_reader :pricing_plan
-  # @return [UserEventPayloadVariant381PrevBudgetScope] Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-  attr_reader :scope
-  # @return [String] Project id when `scope` is `project`.
-  attr_reader :scope_id
-  # @return [String] Partition key
-  attr_reader :team_id
-  # @return [UserEventPayloadVariant381PrevBudgetType] The budget type
-  attr_reader :type
-  # @return [Float] Date time when budget is updated last
-  attr_reader :updated_at
-  # @return [String] Webhook id that corresponds to a webhook in Cosmos webhook collection
-  attr_reader :webhook_id
-  # @return [UserEventPayloadVariant381PrevBudgetWebhookNotified] Keep track if the webhook has been called for the month
-  attr_reader :webhook_notified
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant381Metadata
+    FIELDS = {
+      budget: 'budget',
+      prev_budget: 'prevBudget',
+      prev_webhook_url: 'prevWebhookUrl',
+      project_id: 'projectId',
+      project_name: 'projectName',
+      webhook_url: 'webhookUrl'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      budget
+    ].freeze
+    DECODERS = {
+      budget: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381Budget.from_hash(value)
+      end,
+      prev_budget: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant381PrevBudget.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UserEventPayloadVariant381.
+  class UserEventPayloadVariant381
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant381Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant381Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant381Metadata::DECODERS
+
+    # @return [UserEventPayloadVariant381Budget] Represents a budget for tracking and notifying teams on their spending.
+    attr_reader :budget
+    # @return [UserEventPayloadVariant381PrevBudget] Represents a budget for tracking and notifying teams on their spending.
+    attr_reader :prev_budget
+    # @return [String] Optional `string` value serialized in the `prevWebhookUrl` wire field.
+    attr_reader :prev_webhook_url
+    # @return [String] Stored for project budgets. Same value as `budget.scopeId`.
+    attr_reader :project_id
+    # @return [String] Injected at read time from `payload.projectId`.
+    attr_reader :project_name
+    # @return [String] Optional `string` value serialized in the `webhookUrl` wire field.
+    attr_reader :webhook_url
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant382Metadata
+    FIELDS = {
+      project_id: 'projectId',
+      project_name: 'projectName',
+      webhook_url: 'webhookUrl'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UserEventPayloadVariant382.
+  class UserEventPayloadVariant382
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant382Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant382Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant382Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant381Metadata
-  FIELDS = {
-    budget: "budget",
-    prev_budget: "prevBudget",
-    prev_webhook_url: "prevWebhookUrl",
-    project_id: "projectId",
-    project_name: "projectName",
-    webhook_url: "webhookUrl",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    budget
-  ].freeze
-  DECODERS = {
-    budget: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381Budget.from_hash(value)
-    end,
-    prev_budget: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant381PrevBudget.from_hash(value)
-    end,
-  }.freeze
-end
+    # @return [String] Optional `string` value serialized in the `projectId` wire field.
+    attr_reader :project_id
+    # @return [String] Optional `string` value serialized in the `projectName` wire field.
+    attr_reader :project_name
+    # @return [String] Optional `string` value serialized in the `webhookUrl` wire field.
+    attr_reader :webhook_url
 
-# API model for UserEventPayloadVariant381.
-class UserEventPayloadVariant381
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant381Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant381Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant381Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UserEventPayloadVariant381Budget] Represents a budget for tracking and notifying teams on their spending.
-  attr_reader :budget
-  # @return [UserEventPayloadVariant381PrevBudget] Represents a budget for tracking and notifying teams on their spending.
-  attr_reader :prev_budget
-  # @return [String] Optional `string` value serialized in the `prevWebhookUrl` wire field.
-  attr_reader :prev_webhook_url
-  # @return [String] Stored for project budgets. Same value as `budget.scopeId`.
-  attr_reader :project_id
-  # @return [String] Injected at read time from `payload.projectId`.
-  attr_reader :project_name
-  # @return [String] Optional `string` value serialized in the `webhookUrl` wire field.
-  attr_reader :webhook_url
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant383Metadata
+    FIELDS = {
+      store_type: 'storeType'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      store_type
+    ].freeze
+    DECODERS = {
+      store_type: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant383StoreType.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UserEventPayloadVariant383.
+  class UserEventPayloadVariant383
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant383Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant383Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant383Metadata::DECODERS
+
+    # @return [UserEventPayloadVariant383StoreType] Required enumerated value serialized in the `storeType` wire field.
+    attr_reader :store_type
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant382Metadata
-  FIELDS = {
-    project_id: "projectId",
-    project_name: "projectName",
-    webhook_url: "webhookUrl",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant382.
-class UserEventPayloadVariant382
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant382Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant382Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant382Metadata::DECODERS
-
-  # @return [String] Optional `string` value serialized in the `projectId` wire field.
-  attr_reader :project_id
-  # @return [String] Optional `string` value serialized in the `projectName` wire field.
-  attr_reader :project_name
-  # @return [String] Optional `string` value serialized in the `webhookUrl` wire field.
-  attr_reader :webhook_url
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant383Metadata
-  FIELDS = {
-    store_type: "storeType",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    store_type
-  ].freeze
-  DECODERS = {
-    store_type: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant383StoreType.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant383.
-class UserEventPayloadVariant383
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant383Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant383Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant383Metadata::DECODERS
-
-  # @return [UserEventPayloadVariant383StoreType] Required enumerated value serialized in the `storeType` wire field.
-  attr_reader :store_type
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
 end

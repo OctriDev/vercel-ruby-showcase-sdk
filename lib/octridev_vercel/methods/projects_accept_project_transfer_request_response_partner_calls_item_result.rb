@@ -39,9 +39,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAcceptProjectTransferRequestResponsePartnerCallsItemMetadata
         FIELDS = {
-          installation_id: "installationId",
-          resource_ids: "resourceIds",
-          result: "result",
+          installation_id: 'installationId',
+          resource_ids: 'resourceIds',
+          result: 'result'
         }.freeze
         REQUIRED_FIELDS = %i[
           installation_id
@@ -51,7 +51,7 @@ module OctridevVercel
         DECODERS = {
           result: lambda do |value|
             ::OctridevVercel::Methods::Projects::AcceptProjectTransferRequestResponsePartnerCallsItemResult.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -85,10 +85,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalAcceptProjectTransferRequestResponseMetadata
         FIELDS = {
-          partner_calls: "partnerCalls",
-          project_name: "projectName",
-          resource_transfer_errors: "resourceTransferErrors",
-          transferred_store_ids: "transferredStoreIds",
+          partner_calls: 'partnerCalls',
+          project_name: 'projectName',
+          resource_transfer_errors: 'resourceTransferErrors',
+          transferred_store_ids: 'transferredStoreIds'
         }.freeze
         REQUIRED_FIELDS = %i[
           partner_calls
@@ -99,7 +99,7 @@ module OctridevVercel
         DECODERS = {
           partner_calls: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::AcceptProjectTransferRequestResponsePartnerCallsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -133,15 +133,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectProtectionBypassRevokeMetadata
         FIELDS = {
-          secret: "secret",
-          regenerate: "regenerate",
+          secret: 'secret',
+          regenerate: 'regenerate'
         }.freeze
         REQUIRED_FIELDS = %i[
           secret
           regenerate
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateProjectProtectionBypassRevoke.
@@ -178,13 +177,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectProtectionBypassGenerateMetadata
         FIELDS = {
-          secret: "secret",
-          note: "note",
+          secret: 'secret',
+          note: 'note'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateProjectProtectionBypassGenerate.
@@ -221,15 +218,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectProtectionBypassUpdateMetadata
         FIELDS = {
-          secret: "secret",
-          is_env_var: "isEnvVar",
-          note: "note",
+          secret: 'secret',
+          is_env_var: 'isEnvVar',
+          note: 'note'
         }.freeze
         REQUIRED_FIELDS = %i[
           secret
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateProjectProtectionBypassUpdate.
@@ -268,12 +264,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectProtectionBypassMetadata
         FIELDS = {
-          revoke: "revoke",
-          generate: "generate",
-          update: "update",
+          revoke: 'revoke',
+          generate: 'generate',
+          update: 'update'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           revoke: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectProtectionBypassRevoke.from_hash(value)
@@ -283,7 +278,7 @@ module OctridevVercel
           end,
           update: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectProtectionBypassUpdate.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -322,12 +317,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectProtectionBypassResponseMetadata
         FIELDS = {
-          protection_bypass: "protectionBypass",
+          protection_bypass: 'protectionBypass'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateProjectProtectionBypassResponse.
@@ -360,12 +353,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectsRollbackDescriptionMetadata
         FIELDS = {
-          description: "description",
+          description: 'description'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateProjectsRollbackDescription.
@@ -399,17 +390,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsMetadata
         FIELDS = {
-          microfrontends_group_id: "microfrontendsGroupId",
-          enabled: "enabled",
-          is_default_app: "isDefaultApp",
-          default_route: "defaultRoute",
-          route_observability_to_this_project: "routeObservabilityToThisProject",
-          do_not_route_with_microfrontends_routing: "doNotRouteWithMicrofrontendsRouting",
+          microfrontends_group_id: 'microfrontendsGroupId',
+          enabled: 'enabled',
+          is_default_app: 'isDefaultApp',
+          default_route: 'defaultRoute',
+          route_observability_to_this_project: 'routeObservabilityToThisProject',
+          do_not_route_with_microfrontends_routing: 'doNotRouteWithMicrofrontendsRouting'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateMicrofrontends.
@@ -453,15 +442,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseAliasItemDeploymentAliasErrorMetadata
         FIELDS = {
-          code: "code",
-          message: "message",
+          code: 'code',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           code
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateMicrofrontendsResponseAliasItemDeploymentAliasError.
@@ -494,8 +482,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseAliasItemDeploymentBranchMatcherMetadata
         FIELDS = {
-          pattern: "pattern",
-          type: "type",
+          pattern: 'pattern',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           pattern
@@ -504,7 +492,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateMicrofrontendsResponseAliasItemDeploymentBranchMatcherType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -541,15 +529,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateMicrofrontendsResponseAliasItemDeploymentBuildsItemMetadata
         FIELDS = {
-          dest: "dest",
-          src: "src",
-          use: "use",
+          dest: 'dest',
+          src: 'src',
+          use: 'use'
         }.freeze
         REQUIRED_FIELDS = %i[
           use
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
     end
   end

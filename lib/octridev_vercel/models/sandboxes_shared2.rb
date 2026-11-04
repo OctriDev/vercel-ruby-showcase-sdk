@@ -5,678 +5,666 @@
 
 # sandboxes domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalSnapshotMetadata
-  FIELDS = {
-    architecture: "architecture",
-    created_at: "createdAt",
-    creation_method: "creationMethod",
-    expires_at: "expiresAt",
-    id: "id",
-    last_used_at: "lastUsedAt",
-    parent_id: "parentId",
-    region: "region",
-    regions: "regions",
-    size_bytes: "sizeBytes",
-    source_session_id: "sourceSessionId",
-    status: "status",
-    updated_at: "updatedAt",
-    v0: "v0",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    id
-    last_used_at
-    size_bytes
-    source_session_id
-    status
-    updated_at
-  ].freeze
-  DECODERS = {
-    architecture: lambda do |value|
-      ::OctridevVercel::SnapshotArchitecture.from_value(value)
-    end,
-    creation_method: lambda do |value|
-      ::OctridevVercel::SnapshotCreationMethod.from_value(value)
-    end,
-    status: lambda do |value|
-      ::OctridevVercel::SnapshotStatus.from_value(value)
-    end,
-    v0: lambda do |value|
-      ::OctridevVercel::SnapshotV0.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for Snapshot.
-# This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
-class Snapshot
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalSnapshotMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalSnapshotMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalSnapshotMetadata::DECODERS
-
-  # @return [SnapshotArchitecture] CPU architecture required to restore the snapshot.
-  attr_reader :architecture
-  # @return [Float] The time when the snapshot was created, in milliseconds since the epoch.
-  attr_reader :created_at
-  # @return [SnapshotCreationMethod] The method used to create the snapshot.
-  attr_reader :creation_method
-  # @return [Float] The time when the snapshot will expire, in milliseconds since the epoch. If not set, the snapshot does not have any expiration.
-  attr_reader :expires_at
-  # @return [String] The unique identifier of the snapshot.
-  attr_reader :id
-  # @return [Float] The last time the snapshot was used (e.g. to resume or create a sandbox), in milliseconds since the epoch. Falls back to `createdAt` for older snapshots that predate this field.
-  attr_reader :last_used_at
-  # @return [String] The unique identifier of the parent snapshot, if this snapshot was created from another snapshot.
-  attr_reader :parent_id
-  # @return [String] The region where the snapshot is stored.
-  attr_reader :region
-  # @return [Array_of_String] The regions where the snapshot is available.
-  attr_reader :regions
-  # @return [Float] The size of the snapshot in bytes.
-  attr_reader :size_bytes
-  # @return [String] The unique identifier of the session from which the snapshot was created.
-  attr_reader :source_session_id
-  # @return [SnapshotStatus] The status of the snapshot.
-  attr_reader :status
-  # @return [Float] The last time the snapshot was updated, in milliseconds since the epoch.
-  attr_reader :updated_at
-  # @return [SnapshotV0] Whether this snapshot is managed by v0 on the customer's behalf.
-  attr_reader :v0
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalSnapshotMetadata
+    FIELDS = {
+      architecture: 'architecture',
+      created_at: 'createdAt',
+      creation_method: 'creationMethod',
+      expires_at: 'expiresAt',
+      id: 'id',
+      last_used_at: 'lastUsedAt',
+      parent_id: 'parentId',
+      region: 'region',
+      regions: 'regions',
+      size_bytes: 'sizeBytes',
+      source_session_id: 'sourceSessionId',
+      status: 'status',
+      updated_at: 'updatedAt',
+      v0: 'v0'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      id
+      last_used_at
+      size_bytes
+      source_session_id
+      status
+      updated_at
+    ].freeze
+    DECODERS = {
+      architecture: lambda do |value|
+        ::OctridevVercel::SnapshotArchitecture.from_value(value)
+      end,
+      creation_method: lambda do |value|
+        ::OctridevVercel::SnapshotCreationMethod.from_value(value)
+      end,
+      status: lambda do |value|
+        ::OctridevVercel::SnapshotStatus.from_value(value)
+      end,
+      v0: lambda do |value|
+        ::OctridevVercel::SnapshotV0.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for Snapshot.
+  # This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
+  class Snapshot
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalSnapshotMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalSnapshotMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalSnapshotMetadata::DECODERS
+
+    # @return [SnapshotArchitecture] CPU architecture required to restore the snapshot.
+    attr_reader :architecture
+    # @return [Float] The time when the snapshot was created, in milliseconds since the epoch.
+    attr_reader :created_at
+    # @return [SnapshotCreationMethod] The method used to create the snapshot.
+    attr_reader :creation_method
+    # @return [Float] The time when the snapshot will expire, in milliseconds since the epoch. If not set, the snapshot does not have any expiration.
+    attr_reader :expires_at
+    # @return [String] The unique identifier of the snapshot.
+    attr_reader :id
+    # @return [Float] The last time the snapshot was used (e.g. to resume or create a sandbox), in milliseconds since the epoch. Falls back to `createdAt` for older snapshots that predate this field.
+    attr_reader :last_used_at
+    # @return [String] The unique identifier of the parent snapshot, if this snapshot was created from another snapshot.
+    attr_reader :parent_id
+    # @return [String] The region where the snapshot is stored.
+    attr_reader :region
+    # @return [Array_of_String] The regions where the snapshot is available.
+    attr_reader :regions
+    # @return [Float] The size of the snapshot in bytes.
+    attr_reader :size_bytes
+    # @return [String] The unique identifier of the session from which the snapshot was created.
+    attr_reader :source_session_id
+    # @return [SnapshotStatus] The status of the snapshot.
+    attr_reader :status
+    # @return [Float] The last time the snapshot was updated, in milliseconds since the epoch.
+    attr_reader :updated_at
+    # @return [SnapshotV0] Whether this snapshot is managed by v0 on the customer's behalf.
+    attr_reader :v0
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the SnapshotArchitecture SDK namespace.
+  module SnapshotArchitecture
+    AMD64 = 'amd64'
+    ARM64 = 'arm64'
+    VALUES = %w[amd64 arm64].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the SnapshotArchitecture SDK namespace.
-module SnapshotArchitecture
-  AMD64 = 'amd64'
-  ARM64 = 'arm64'
-  VALUES = ['amd64', 'arm64'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the SnapshotCreationMethod SDK namespace.
-module SnapshotCreationMethod
-  AUTOMATIC = 'automatic'
-  MANUAL = 'manual'
-  VALUES = ['automatic', 'manual'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the SnapshotStatus SDK namespace.
-module SnapshotStatus
-  CREATED = 'created'
-  DELETED = 'deleted'
-  FAILED = 'failed'
-  VALUES = ['created', 'deleted', 'failed'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the SnapshotV0 SDK namespace.
-module SnapshotV0
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalStopSessionResponseVariant0Metadata
-  FIELDS = {
-    session: "session",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    session
-  ].freeze
-  DECODERS = {
-    session: lambda do |value|
-      ::OctridevVercel::Session.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for StopSessionResponseVariant0.
-class StopSessionResponseVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalStopSessionResponseVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalStopSessionResponseVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalStopSessionResponseVariant0Metadata::DECODERS
-
-  # @return [Session] This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-  attr_reader :session
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the SnapshotCreationMethod SDK namespace.
+  module SnapshotCreationMethod
+    AUTOMATIC = 'automatic'
+    MANUAL = 'manual'
+    VALUES = %w[automatic manual].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the SnapshotStatus SDK namespace.
+  module SnapshotStatus
+    CREATED = 'created'
+    DELETED = 'deleted'
+    FAILED = 'failed'
+    VALUES = %w[created deleted failed].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the SnapshotV0 SDK namespace.
+  module SnapshotV0
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalStopSessionResponseVariant1Metadata
-  FIELDS = {
-    sandbox: "sandbox",
-    session: "session",
-    snapshot: "snapshot",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    sandbox
-    session
-    snapshot
-  ].freeze
-  DECODERS = {
-    sandbox: lambda do |value|
-      ::OctridevVercel::NamedSandbox.from_hash(value)
-    end,
-    session: lambda do |value|
-      ::OctridevVercel::Session.from_hash(value)
-    end,
-    snapshot: lambda do |value|
-      ::OctridevVercel::Snapshot.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for StopSessionResponseVariant1.
-class StopSessionResponseVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalStopSessionResponseVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalStopSessionResponseVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalStopSessionResponseVariant1Metadata::DECODERS
-
-  # @return [NamedSandbox] This object contains information related to a Vercel NamedSandbox.
-  attr_reader :sandbox
-  # @return [Session] This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-  attr_reader :session
-  # @return [Snapshot] This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
-  attr_reader :snapshot
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalStopSessionResponseVariant0Metadata
+    FIELDS = {
+      session: 'session'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      session
+    ].freeze
+    DECODERS = {
+      session: lambda do |value|
+        ::OctridevVercel::Session.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for StopSessionResponseVariant0.
+  class StopSessionResponseVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalStopSessionResponseVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalStopSessionResponseVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalStopSessionResponseVariant0Metadata::DECODERS
+
+    # @return [Session] This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+    attr_reader :session
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalStopSessionResponseVariant1Metadata
+    FIELDS = {
+      sandbox: 'sandbox',
+      session: 'session',
+      snapshot: 'snapshot'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      sandbox
+      session
+      snapshot
+    ].freeze
+    DECODERS = {
+      sandbox: lambda do |value|
+        ::OctridevVercel::NamedSandbox.from_hash(value)
+      end,
+      session: lambda do |value|
+        ::OctridevVercel::Session.from_hash(value)
+      end,
+      snapshot: lambda do |value|
+        ::OctridevVercel::Snapshot.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for StopSessionResponseVariant1.
+  class StopSessionResponseVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalStopSessionResponseVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalStopSessionResponseVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalStopSessionResponseVariant1Metadata::DECODERS
 
-# Defines the StopSessionResponse SDK namespace.
-module StopSessionResponse
-  def self.from_hash(hash)
-    shape_mapping = {
-      "sandbox" => StopSessionResponseVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-    return StopSessionResponseVariant0.from_hash(hash)
-  end
-end
+    # @return [NamedSandbox] This object contains information related to a Vercel NamedSandbox.
+    attr_reader :sandbox
+    # @return [Session] This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+    attr_reader :session
+    # @return [Snapshot] This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
+    attr_reader :snapshot
 
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxRequestKeepLastSnapshotsVariant1Metadata
-  FIELDS = {
-    count: "count",
-    expiration: "expiration",
-    delete_evicted: "deleteEvicted",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    count
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-# API model for UpdateSandboxRequestKeepLastSnapshotsVariant1.
-class UpdateSandboxRequestKeepLastSnapshotsVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxRequestKeepLastSnapshotsVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestKeepLastSnapshotsVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxRequestKeepLastSnapshotsVariant1Metadata::DECODERS
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  # @return [Integer] Number of most recent snapshots to keep.
-  attr_reader :count
-  # @return [Integer] Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.
-  attr_reader :expiration
-  # @return [Boolean] Whether to immediately delete evicted snapshots. Defaults to true.
-  attr_reader :delete_evicted
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the StopSessionResponse SDK namespace.
+  module StopSessionResponse
+    def self.from_hash(hash)
+      shape_mapping = {
+        'sandbox' => StopSessionResponseVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      return decoded unless type.nil?
+
+      StopSessionResponseVariant0.from_hash(hash)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxRequestKeepLastSnapshotsVariant1Metadata
+    FIELDS = {
+      count: 'count',
+      expiration: 'expiration',
+      delete_evicted: 'deleteEvicted'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      count
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UpdateSandboxRequestKeepLastSnapshotsVariant1.
+  class UpdateSandboxRequestKeepLastSnapshotsVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxRequestKeepLastSnapshotsVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestKeepLastSnapshotsVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxRequestKeepLastSnapshotsVariant1Metadata::DECODERS
 
-# Defines the UpdateSandboxRequestKeepLastSnapshots SDK namespace.
-module UpdateSandboxRequestKeepLastSnapshots
-  def self.from_hash(hash)
-    return hash if hash.is_a?(::String)
-    return UpdateSandboxRequestKeepLastSnapshotsVariant1.from_hash(hash)
-  end
-end
+    # @return [Integer] Number of most recent snapshots to keep.
+    attr_reader :count
+    # @return [Integer] Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.
+    attr_reader :expiration
+    # @return [Boolean] Whether to immediately delete evicted snapshots. Defaults to true.
+    attr_reader :delete_evicted
 
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPathMetadata
-  FIELDS = {
-    exact: "exact",
-    starts_with: "startsWith",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-# API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPath.
-# Match on the request path. Comparison is case-sensitive.
-class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPath
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPathMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPathMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPathMetadata::DECODERS
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-  attr_reader :exact
-  # @return [String] Match values that start with the given prefix.
-  attr_reader :starts_with
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the UpdateSandboxRequestKeepLastSnapshots SDK namespace.
+  module UpdateSandboxRequestKeepLastSnapshots
+    def self.from_hash(hash)
+      return hash if hash.is_a?(::String)
+
+      UpdateSandboxRequestKeepLastSnapshotsVariant1.from_hash(hash)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPathMetadata
+    FIELDS = {
+      exact: 'exact',
+      starts_with: 'startsWith'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPath.
+  # Match on the request path. Comparison is case-sensitive.
+  class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPath
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPathMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPathMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPathMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5dMetadata
-  FIELDS = {
-    exact: "exact",
-    starts_with: "startsWith",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+    attr_reader :exact
+    # @return [String] Match values that start with the given prefix.
+    attr_reader :starts_with
 
-# API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5d.
-# Matcher for the entry key (header name or query key).
-class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5d
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5dMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5dMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5dMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-  attr_reader :exact
-  # @return [String] Match values that start with the given prefix.
-  attr_reader :starts_with
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5dMetadata
+    FIELDS = {
+      exact: 'exact',
+      starts_with: 'startsWith'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5d.
+  # Matcher for the entry key (header name or query key).
+  class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5d
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5dMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5dMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5dMetadata::DECODERS
+
+    # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+    attr_reader :exact
+    # @return [String] Match values that start with the given prefix.
+    attr_reader :starts_with
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277Metadata
-  FIELDS = {
-    exact: "exact",
-    starts_with: "startsWith",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277.
-# Matcher for the entry value.
-class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277Metadata::DECODERS
-
-  # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-  attr_reader :exact
-  # @return [String] Match values that start with the given prefix.
-  attr_reader :starts_with
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277Metadata
+    FIELDS = {
+      exact: 'exact',
+      starts_with: 'startsWith'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277.
+  # Matcher for the entry value.
+  class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277Metadata::DECODERS
+
+    # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+    attr_reader :exact
+    # @return [String] Match values that start with the given prefix.
+    attr_reader :starts_with
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7Metadata
+    FIELDS = {
+      key: 'key',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      key: lambda do |value|
+        ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5d.from_hash(value)
+      end,
+      value: lambda do |value|
+        ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7.
+  class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7Metadata
-  FIELDS = {
-    key: "key",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    key: lambda do |value|
-      ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5d.from_hash(value)
-    end,
-    value: lambda do |value|
-      ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277.from_hash(value)
-    end,
-  }.freeze
-end
+    # @return [UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5d] Matcher for the entry key (header name or query key).
+    attr_reader :key
+    # @return [UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277] Matcher for the entry value.
+    attr_reader :value
 
-# API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7.
-class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5d] Matcher for the entry key (header name or query key).
-  attr_reader :key
-  # @return [UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277] Matcher for the entry value.
-  attr_reader :value
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1Metadata
+    FIELDS = {
+      exact: 'exact',
+      starts_with: 'startsWith'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1.
+  # Matcher for the entry key (header name or query key).
+  class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1Metadata::DECODERS
+
+    # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+    attr_reader :exact
+    # @return [String] Match values that start with the given prefix.
+    attr_reader :starts_with
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1Metadata
-  FIELDS = {
-    exact: "exact",
-    starts_with: "startsWith",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1.
-# Matcher for the entry key (header name or query key).
-class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1Metadata::DECODERS
-
-  # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-  attr_reader :exact
-  # @return [String] Match values that start with the given prefix.
-  attr_reader :starts_with
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4dMetadata
+    FIELDS = {
+      exact: 'exact',
+      starts_with: 'startsWith'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4d.
+  # Matcher for the entry value.
+  class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4d
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4dMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4dMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4dMetadata::DECODERS
+
+    # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+    attr_reader :exact
+    # @return [String] Match values that start with the given prefix.
+    attr_reader :starts_with
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8Metadata
+    FIELDS = {
+      key: 'key',
+      value: 'value'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      key: lambda do |value|
+        ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1.from_hash(value)
+      end,
+      value: lambda do |value|
+        ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4d.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8.
+  class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4dMetadata
-  FIELDS = {
-    exact: "exact",
-    starts_with: "startsWith",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1] Matcher for the entry key (header name or query key).
+    attr_reader :key
+    # @return [UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4d] Matcher for the entry value.
+    attr_reader :value
 
-# API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4d.
-# Matcher for the entry value.
-class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4d
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4dMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4dMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4dMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
-  attr_reader :exact
-  # @return [String] Match values that start with the given prefix.
-  attr_reader :starts_with
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata
+    FIELDS = {
+      path: 'path',
+      method: 'method',
+      query_string: 'queryString',
+      headers: 'headers'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      path: lambda do |value|
+        ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPath.from_hash(value)
+      end,
+      query_string: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7.from_hash(item) }
+      end,
+      headers: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatch.
+  # Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
+  class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatch
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata::DECODERS
+
+    # @return [UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPath] Match on the request path. Comparison is case-sensitive.
+    attr_reader :path
+    # @return [Array_of_String] HTTP methods to match. Any single match succeeds (OR semantics).
+    attr_reader :method
+    # @return [Array_of_UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7] Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
+    attr_reader :query_string
+    # @return [Array_of_UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8] Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
+    attr_reader :headers
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8Metadata
-  FIELDS = {
-    key: "key",
-    value: "value",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    key: lambda do |value|
-      ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1.from_hash(value)
-    end,
-    value: lambda do |value|
-      ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4d.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8.
-class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8Metadata::DECODERS
-
-  # @return [UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1] Matcher for the entry key (header name or query key).
-  attr_reader :key
-  # @return [UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4d] Matcher for the entry value.
-  attr_reader :value
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata
-  FIELDS = {
-    path: "path",
-    method: "method",
-    query_string: "queryString",
-    headers: "headers",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    path: lambda do |value|
-      ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPath.from_hash(value)
-    end,
-    query_string: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7.from_hash(item) }
-    end,
-    headers: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8.from_hash(item) }
-    end,
-  }.freeze
-end
-
-# API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatch.
-# Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
-class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatch
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchMetadata::DECODERS
-
-  # @return [UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPath] Match on the request path. Comparison is case-sensitive.
-  attr_reader :path
-  # @return [Array_of_String] HTTP methods to match. Any single match succeeds (OR semantics).
-  attr_reader :method
-  # @return [Array_of_UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7] Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
-  attr_reader :query_string
-  # @return [Array_of_UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8] Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
-  attr_reader :headers
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
 end

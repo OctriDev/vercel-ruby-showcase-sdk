@@ -5,611 +5,605 @@
 
 # ai_gateway domain models
 module OctridevVercel
-# API model for AiGatewayEvaluationFallbackConditionVariant4.
-class AiGatewayEvaluationFallbackConditionVariant4
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAiGatewayEvaluationFallbackConditionVariant4Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAiGatewayEvaluationFallbackConditionVariant4Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAiGatewayEvaluationFallbackConditionVariant4Metadata::DECODERS
+  # API model for AiGatewayEvaluationFallbackConditionVariant4.
+  class AiGatewayEvaluationFallbackConditionVariant4
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAiGatewayEvaluationFallbackConditionVariant4Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAiGatewayEvaluationFallbackConditionVariant4Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAiGatewayEvaluationFallbackConditionVariant4Metadata::DECODERS
 
-  # @return [AiGatewayEvaluationFallbackConditionVariant4AtLeast] Required object value serialized in the `atLeast` wire field.
-  attr_reader :at_least
+    # @return [AiGatewayEvaluationFallbackConditionVariant4AtLeast] Required object value serialized in the `atLeast` wire field.
+    attr_reader :at_least
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the AiGatewayEvaluationFallbackCondition SDK namespace.
+  module AiGatewayEvaluationFallbackCondition
+    def self.from_hash(hash)
+      shape_mapping = {
+        'confidenceBelow' => AiGatewayEvaluationFallbackConditionVariant0,
+        'probabilityBetween' => AiGatewayEvaluationFallbackConditionVariant1,
+        'any' => AiGatewayEvaluationFallbackConditionVariant2,
+        'all' => AiGatewayEvaluationFallbackConditionVariant3,
+        'atLeast' => AiGatewayEvaluationFallbackConditionVariant4
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the AiGatewayProviderOptionBag SDK value decoder.
+  module AiGatewayProviderOptionBag
+    def self.from_hash(value)
+      return nil if value.nil?
+
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the AiGatewayEvaluationFallbackCondition SDK namespace.
-module AiGatewayEvaluationFallbackCondition
-  def self.from_hash(hash)
-    shape_mapping = {
-      "confidenceBelow" => AiGatewayEvaluationFallbackConditionVariant0,
-      "probabilityBetween" => AiGatewayEvaluationFallbackConditionVariant1,
-      "any" => AiGatewayEvaluationFallbackConditionVariant2,
-      "all" => AiGatewayEvaluationFallbackConditionVariant3,
-      "atLeast" => AiGatewayEvaluationFallbackConditionVariant4,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-  end
-end
-
-# Defines the AiGatewayProviderOptionBag SDK value decoder.
-module AiGatewayProviderOptionBag
-  def self.from_hash(value)
-    return nil if value.nil?
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalAiGatewayRouterListMetadata
-  FIELDS = {
-    routers: "routers",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    routers
-  ].freeze
-  DECODERS = {
-    routers: lambda do |value|
-      value&.map { |item| ::OctridevVercel::AiGatewayVirtualModelConfig.from_hash(item) }
-    end,
-  }.freeze
-end
-
-# API model for AiGatewayRouterList.
-# Typed representation of the `AiGatewayRouterList` API schema.
-class AiGatewayRouterList
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAiGatewayRouterListMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAiGatewayRouterListMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAiGatewayRouterListMetadata::DECODERS
-
-  # @return [Array_of_AiGatewayVirtualModelConfig] Active and archived router configurations owned by the authenticated team.
-  attr_reader :routers
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalAiGatewayRouterListMetadata
+    FIELDS = {
+      routers: 'routers'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      routers
+    ].freeze
+    DECODERS = {
+      routers: lambda do |value|
+        value&.map { |item| ::OctridevVercel::AiGatewayVirtualModelConfig.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for AiGatewayRouterList.
+  # Typed representation of the `AiGatewayRouterList` API schema.
+  class AiGatewayRouterList
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAiGatewayRouterListMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAiGatewayRouterListMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAiGatewayRouterListMetadata::DECODERS
+
+    # @return [Array_of_AiGatewayVirtualModelConfig] Active and archived router configurations owned by the authenticated team.
+    attr_reader :routers
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the AiGatewayRouterSelectorOptionBag SDK value decoder.
+  module AiGatewayRouterSelectorOptionBag
+    def self.from_hash(value)
+      return nil if value.nil?
+
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the AiGatewayRouterSelectorOptionBag SDK value decoder.
-module AiGatewayRouterSelectorOptionBag
-  def self.from_hash(value)
-    return nil if value.nil?
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalAiGatewayRuleActionMetadata
-  FIELDS = {
-    reason: "reason",
-    rewrite_model: "rewriteModel",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for AiGatewayRuleAction.
-# Optional object value serialized in the `action` wire field.
-class AiGatewayRuleAction
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAiGatewayRuleActionMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAiGatewayRuleActionMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAiGatewayRuleActionMetadata::DECODERS
-
-  # @return [String] Optional `string` value serialized in the `reason` wire field.
-  attr_reader :reason
-  # @return [String] Optional `string` value serialized in the `rewriteModel` wire field.
-  attr_reader :rewrite_model
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalAiGatewayRuleActionMetadata
+    FIELDS = {
+      reason: 'reason',
+      rewrite_model: 'rewriteModel'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for AiGatewayRuleAction.
+  # Optional object value serialized in the `action` wire field.
+  class AiGatewayRuleAction
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAiGatewayRuleActionMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAiGatewayRuleActionMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAiGatewayRuleActionMetadata::DECODERS
+
+    # @return [String] Optional `string` value serialized in the `reason` wire field.
+    attr_reader :reason
+    # @return [String] Optional `string` value serialized in the `rewriteModel` wire field.
+    attr_reader :rewrite_model
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalAiGatewayRuleMatchMetadata
+    FIELDS = {
+      model: 'model'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for AiGatewayRuleMatch.
+  # Optional object value serialized in the `match` wire field.
+  class AiGatewayRuleMatch
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAiGatewayRuleMatchMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAiGatewayRuleMatchMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAiGatewayRuleMatchMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalAiGatewayRuleMatchMetadata
-  FIELDS = {
-    model: "model",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] Optional `string` value serialized in the `model` wire field.
+    attr_reader :model
 
-# API model for AiGatewayRuleMatch.
-# Optional object value serialized in the `match` wire field.
-class AiGatewayRuleMatch
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAiGatewayRuleMatchMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAiGatewayRuleMatchMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAiGatewayRuleMatchMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Optional `string` value serialized in the `model` wire field.
-  attr_reader :model
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalAiGatewayRuleMetadata
+    FIELDS = {
+      action: 'action',
+      created_at: 'createdAt',
+      created_by: 'createdBy',
+      deleted: 'deleted',
+      description: 'description',
+      enabled: 'enabled',
+      match: 'match',
+      owner_id: 'ownerId',
+      rule_id: 'ruleId',
+      type: 'type',
+      updated_at: 'updatedAt',
+      updated_by: 'updatedBy'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      enabled
+      owner_id
+      rule_id
+      type
+      updated_at
+    ].freeze
+    DECODERS = {
+      action: lambda do |value|
+        ::OctridevVercel::AiGatewayRuleAction.from_hash(value)
+      end,
+      deleted: lambda do |value|
+        ::OctridevVercel::AiGatewayRuleDeleted.from_value(value)
+      end,
+      enabled: lambda do |value|
+        ::OctridevVercel::AiGatewayRuleEnabled.from_value(value)
+      end,
+      match: lambda do |value|
+        ::OctridevVercel::AiGatewayRuleMatch.from_hash(value)
+      end,
+      type: lambda do |value|
+        ::OctridevVercel::AiGatewayRuleType.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for AiGatewayRule.
+  # Public response shape for AI Gateway routing rules. Used so OpenAPI generation can avoid ElectroDB's recursive EntityItem types.
+  class AiGatewayRule
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAiGatewayRuleMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAiGatewayRuleMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAiGatewayRuleMetadata::DECODERS
+
+    # @return [AiGatewayRuleAction] Optional object value serialized in the `action` wire field.
+    attr_reader :action
+    # @return [Float] Required `number` value serialized in the `createdAt` wire field.
+    attr_reader :created_at
+    # @return [String] Optional `string` value serialized in the `createdBy` wire field.
+    attr_reader :created_by
+    # @return [AiGatewayRuleDeleted] Optional enumerated value serialized in the `deleted` wire field.
+    attr_reader :deleted
+    # @return [String] Optional `string` value serialized in the `description` wire field.
+    attr_reader :description
+    # @return [AiGatewayRuleEnabled] Required enumerated value serialized in the `enabled` wire field.
+    attr_reader :enabled
+    # @return [AiGatewayRuleMatch] Optional object value serialized in the `match` wire field.
+    attr_reader :match
+    # @return [String] Required `string` value serialized in the `ownerId` wire field.
+    attr_reader :owner_id
+    # @return [String] Required `string` value serialized in the `ruleId` wire field.
+    attr_reader :rule_id
+    # @return [AiGatewayRuleType] Required enumerated value serialized in the `type` wire field.
+    attr_reader :type
+    # @return [Float] Required `number` value serialized in the `updatedAt` wire field.
+    attr_reader :updated_at
+    # @return [String] Optional `string` value serialized in the `updatedBy` wire field.
+    attr_reader :updated_by
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalAiGatewayRuleMetadata
-  FIELDS = {
-    action: "action",
-    created_at: "createdAt",
-    created_by: "createdBy",
-    deleted: "deleted",
-    description: "description",
-    enabled: "enabled",
-    match: "match",
-    owner_id: "ownerId",
-    rule_id: "ruleId",
-    type: "type",
-    updated_at: "updatedAt",
-    updated_by: "updatedBy",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    enabled
-    owner_id
-    rule_id
-    type
-    updated_at
-  ].freeze
-  DECODERS = {
-    action: lambda do |value|
-      ::OctridevVercel::AiGatewayRuleAction.from_hash(value)
-    end,
-    deleted: lambda do |value|
-      ::OctridevVercel::AiGatewayRuleDeleted.from_value(value)
-    end,
-    enabled: lambda do |value|
-      ::OctridevVercel::AiGatewayRuleEnabled.from_value(value)
-    end,
-    match: lambda do |value|
-      ::OctridevVercel::AiGatewayRuleMatch.from_hash(value)
-    end,
-    type: lambda do |value|
-      ::OctridevVercel::AiGatewayRuleType.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for AiGatewayRule.
-# Public response shape for AI Gateway routing rules. Used so OpenAPI generation can avoid ElectroDB's recursive EntityItem types.
-class AiGatewayRule
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAiGatewayRuleMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAiGatewayRuleMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAiGatewayRuleMetadata::DECODERS
-
-  # @return [AiGatewayRuleAction] Optional object value serialized in the `action` wire field.
-  attr_reader :action
-  # @return [Float] Required `number` value serialized in the `createdAt` wire field.
-  attr_reader :created_at
-  # @return [String] Optional `string` value serialized in the `createdBy` wire field.
-  attr_reader :created_by
-  # @return [AiGatewayRuleDeleted] Optional enumerated value serialized in the `deleted` wire field.
-  attr_reader :deleted
-  # @return [String] Optional `string` value serialized in the `description` wire field.
-  attr_reader :description
-  # @return [AiGatewayRuleEnabled] Required enumerated value serialized in the `enabled` wire field.
-  attr_reader :enabled
-  # @return [AiGatewayRuleMatch] Optional object value serialized in the `match` wire field.
-  attr_reader :match
-  # @return [String] Required `string` value serialized in the `ownerId` wire field.
-  attr_reader :owner_id
-  # @return [String] Required `string` value serialized in the `ruleId` wire field.
-  attr_reader :rule_id
-  # @return [AiGatewayRuleType] Required enumerated value serialized in the `type` wire field.
-  attr_reader :type
-  # @return [Float] Required `number` value serialized in the `updatedAt` wire field.
-  attr_reader :updated_at
-  # @return [String] Optional `string` value serialized in the `updatedBy` wire field.
-  attr_reader :updated_by
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the AiGatewayRuleDeleted SDK namespace.
+  module AiGatewayRuleDeleted
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the AiGatewayRuleEnabled SDK namespace.
+  module AiGatewayRuleEnabled
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the AiGatewayRuleType SDK namespace.
+  module AiGatewayRuleType
+    DENY = 'deny'
+    REWRITE = 'rewrite'
+    VALUES = %w[deny rewrite].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the AiGatewayRuleDeleted SDK namespace.
-module AiGatewayRuleDeleted
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayRuleEnabled SDK namespace.
-module AiGatewayRuleEnabled
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayRuleType SDK namespace.
-module AiGatewayRuleType
-  DENY = 'deny'
-  REWRITE = 'rewrite'
-  VALUES = ['deny', 'rewrite'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalAiGatewayRuleListMetadata
-  FIELDS = {
-    next_cursor: "nextCursor",
-    rules: "rules",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    next_cursor
-    rules
-  ].freeze
-  DECODERS = {
-    rules: lambda do |value|
-      value&.map { |item| ::OctridevVercel::AiGatewayRule.from_hash(item) }
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    next_cursor
-  ].freeze
-end
-
-# API model for AiGatewayRuleList.
-# Typed representation of the `AiGatewayRuleList` API schema.
-class AiGatewayRuleList
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAiGatewayRuleListMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAiGatewayRuleListMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAiGatewayRuleListMetadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `nextCursor` wire field.
-  attr_reader :next_cursor
-  # @return [Array_of_AiGatewayRule] Required array value serialized in the `rules` wire field.
-  attr_reader :rules
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalAiGatewayRuleListMetadata
+    FIELDS = {
+      next_cursor: 'nextCursor',
+      rules: 'rules'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      next_cursor
+      rules
+    ].freeze
+    DECODERS = {
+      rules: lambda do |value|
+        value&.map { |item| ::OctridevVercel::AiGatewayRule.from_hash(item) }
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      next_cursor
+    ].freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalAiGatewayRuleListMetadata::NULLABLE_FIELDS)
+  # API model for AiGatewayRuleList.
+  # Typed representation of the `AiGatewayRuleList` API schema.
+  class AiGatewayRuleList
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAiGatewayRuleListMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAiGatewayRuleListMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAiGatewayRuleListMetadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `nextCursor` wire field.
+    attr_reader :next_cursor
+    # @return [Array_of_AiGatewayRule] Required array value serialized in the `rules` wire field.
+    attr_reader :rules
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalAiGatewayRuleListMetadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalAiGatewayVirtualModelConfigInferenceRegionMetadata
+    FIELDS = {
+      geo_region: 'geoRegion',
+      provider_region: 'providerRegion',
+      providers: 'providers',
+      scope: 'scope'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      scope: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigInferenceRegionScope.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for AiGatewayVirtualModelConfigInferenceRegion.
+  # Region pinned on the VMC for system-credential routing (alias/router only).
+  class AiGatewayVirtualModelConfigInferenceRegion
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAiGatewayVirtualModelConfigInferenceRegionMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigInferenceRegionMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAiGatewayVirtualModelConfigInferenceRegionMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalAiGatewayVirtualModelConfigInferenceRegionMetadata
-  FIELDS = {
-    geo_region: "geoRegion",
-    provider_region: "providerRegion",
-    providers: "providers",
-    scope: "scope",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    scope: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigInferenceRegionScope.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [String] Geo zone (e.g. "us", "eu").
+    attr_reader :geo_region
+    # @return [String] Provider-specific region identifier.
+    attr_reader :provider_region
+    # @return [Hash] Per-provider region overrides keyed by provider slug.
+    attr_reader :providers
+    # @return [AiGatewayVirtualModelConfigInferenceRegionScope] Pin scope: `specific` (one provider region), `zone` (geo zone), or `global`.
+    attr_reader :scope
 
-# API model for AiGatewayVirtualModelConfigInferenceRegion.
-# Region pinned on the VMC for system-credential routing (alias/router only).
-class AiGatewayVirtualModelConfigInferenceRegion
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAiGatewayVirtualModelConfigInferenceRegionMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigInferenceRegionMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAiGatewayVirtualModelConfigInferenceRegionMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Geo zone (e.g. "us", "eu").
-  attr_reader :geo_region
-  # @return [String] Provider-specific region identifier.
-  attr_reader :provider_region
-  # @return [Hash] Per-provider region overrides keyed by provider slug.
-  attr_reader :providers
-  # @return [AiGatewayVirtualModelConfigInferenceRegionScope] Pin scope: `specific` (one provider region), `zone` (geo zone), or `global`.
-  attr_reader :scope
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalAiGatewayVirtualModelConfigProviderTimeoutsMetadata
+    FIELDS = {
+      byok: 'byok'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for AiGatewayVirtualModelConfigProviderTimeouts.
+  # Per-request provider timeouts in ms, keyed by provider slug for BYOK credentials.
+  class AiGatewayVirtualModelConfigProviderTimeouts
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAiGatewayVirtualModelConfigProviderTimeoutsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigProviderTimeoutsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAiGatewayVirtualModelConfigProviderTimeoutsMetadata::DECODERS
+
+    # @return [Hash] Optional object value serialized in the `byok` wire field.
+    attr_reader :byok
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalAiGatewayVirtualModelConfigProviderTimeoutsMetadata
-  FIELDS = {
-    byok: "byok",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for AiGatewayVirtualModelConfigProviderTimeouts.
-# Per-request provider timeouts in ms, keyed by provider slug for BYOK credentials.
-class AiGatewayVirtualModelConfigProviderTimeouts
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAiGatewayVirtualModelConfigProviderTimeoutsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigProviderTimeoutsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAiGatewayVirtualModelConfigProviderTimeoutsMetadata::DECODERS
-
-  # @return [Hash] Optional object value serialized in the `byok` wire field.
-  attr_reader :byok
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalAiGatewayVirtualModelConfigSelectorOptionsMetadata
+    FIELDS = {
+      cost: 'cost',
+      tps: 'tps',
+      ttft: 'ttft'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      cost: lambda do |value|
+        ::OctridevVercel::AiGatewayRouterSelectorOptionBag.from_hash(value)
+      end,
+      tps: lambda do |value|
+        ::OctridevVercel::AiGatewayRouterSelectorOptionBag.from_hash(value)
+      end,
+      ttft: lambda do |value|
+        ::OctridevVercel::AiGatewayRouterSelectorOptionBag.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for AiGatewayVirtualModelConfigSelectorOptions.
+  # For kind=router: option slices keyed by selector name; each selector owns its slice's shape.
+  class AiGatewayVirtualModelConfigSelectorOptions
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAiGatewayVirtualModelConfigSelectorOptionsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigSelectorOptionsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAiGatewayVirtualModelConfigSelectorOptionsMetadata::DECODERS
+
+    # @return [AiGatewayRouterSelectorOptionBag] For kind=router: option slices keyed by selector name; each selector owns its slice's shape.
+    attr_reader :cost
+    # @return [AiGatewayRouterSelectorOptionBag] For kind=router: option slices keyed by selector name; each selector owns its slice's shape.
+    attr_reader :tps
+    # @return [AiGatewayRouterSelectorOptionBag] For kind=router: option slices keyed by selector name; each selector owns its slice's shape.
+    attr_reader :ttft
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalAiGatewayVirtualModelConfigMetadata
+    FIELDS = {
+      allow_fallback_from_fast: 'allowFallbackFromFast',
+      base_url: 'baseUrl',
+      byok_credential_ids: 'byokCredentialIds',
+      caching: 'caching',
+      created_at: 'createdAt',
+      created_by: 'createdBy',
+      deleted: 'deleted',
+      description: 'description',
+      disallow_prompt_training: 'disallowPromptTraining',
+      display_name: 'displayName',
+      has: 'has',
+      hipaa_compliant: 'hipaaCompliant',
+      inference_region: 'inferenceRegion',
+      instance_id: 'instanceId',
+      kind: 'kind',
+      models: 'models',
+      model_slug: 'modelSlug',
+      observability_tags: 'observabilityTags',
+      owner_id: 'ownerId',
+      provider_only: 'providerOnly',
+      provider_options: 'providerOptions',
+      provider_order: 'providerOrder',
+      provider_timeouts: 'providerTimeouts',
+      selector: 'selector',
+      selector_options: 'selectorOptions',
+      service_tier: 'serviceTier',
+      sort: 'sort',
+      speed: 'speed',
+      status: 'status',
+      updated_at: 'updatedAt',
+      updated_by: 'updatedBy',
+      virtual_model_slug: 'virtualModelSlug',
+      visibility: 'visibility',
+      zero_data_retention: 'zeroDataRetention'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      created_at
+      deleted
+      kind
+      owner_id
+      status
+      updated_at
+      virtual_model_slug
+    ].freeze
+    DECODERS = {
+      allow_fallback_from_fast: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigAllowFallbackFromFast.from_value(value)
+      end,
+      caching: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigCaching.from_value(value)
+      end,
+      deleted: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigDeleted.from_value(value)
+      end,
+      disallow_prompt_training: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigDisallowPromptTraining.from_value(value)
+      end,
+      has: lambda do |value|
+        value&.map { |item| ::OctridevVercel::AiGatewayVirtualModelConfigHasItem.from_value(item) }
+      end,
+      hipaa_compliant: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigHipaaCompliant.from_value(value)
+      end,
+      inference_region: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigInferenceRegion.from_hash(value)
+      end,
+      models: lambda do |value|
+        value&.map { |item| ::OctridevVercel::AiGatewayVirtualModelConfigModelsItem.from_hash(item) }
+      end,
+      provider_options: lambda do |value|
+        value&.transform_values { |item| ::OctridevVercel::AiGatewayProviderOptionBag.from_hash(item) }
+      end,
+      provider_timeouts: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigProviderTimeouts.from_hash(value)
+      end,
+      selector: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigSelector.from_value(value)
+      end,
+      selector_options: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigSelectorOptions.from_hash(value)
+      end,
+      service_tier: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigServiceTier.from_value(value)
+      end,
+      sort: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigSort.from_value(value)
+      end,
+      speed: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigSpeed.from_value(value)
+      end,
+      zero_data_retention: lambda do |value|
+        ::OctridevVercel::AiGatewayVirtualModelConfigZeroDataRetention.from_value(value)
+      end
+    }.freeze
   end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalAiGatewayVirtualModelConfigSelectorOptionsMetadata
-  FIELDS = {
-    cost: "cost",
-    tps: "tps",
-    ttft: "ttft",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    cost: lambda do |value|
-      ::OctridevVercel::AiGatewayRouterSelectorOptionBag.from_hash(value)
-    end,
-    tps: lambda do |value|
-      ::OctridevVercel::AiGatewayRouterSelectorOptionBag.from_hash(value)
-    end,
-    ttft: lambda do |value|
-      ::OctridevVercel::AiGatewayRouterSelectorOptionBag.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for AiGatewayVirtualModelConfigSelectorOptions.
-# For kind=router: option slices keyed by selector name; each selector owns its slice's shape.
-class AiGatewayVirtualModelConfigSelectorOptions
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAiGatewayVirtualModelConfigSelectorOptionsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigSelectorOptionsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAiGatewayVirtualModelConfigSelectorOptionsMetadata::DECODERS
-
-  # @return [AiGatewayRouterSelectorOptionBag] For kind=router: option slices keyed by selector name; each selector owns its slice's shape.
-  attr_reader :cost
-  # @return [AiGatewayRouterSelectorOptionBag] For kind=router: option slices keyed by selector name; each selector owns its slice's shape.
-  attr_reader :tps
-  # @return [AiGatewayRouterSelectorOptionBag] For kind=router: option slices keyed by selector name; each selector owns its slice's shape.
-  attr_reader :ttft
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalAiGatewayVirtualModelConfigMetadata
-  FIELDS = {
-    allow_fallback_from_fast: "allowFallbackFromFast",
-    base_url: "baseUrl",
-    byok_credential_ids: "byokCredentialIds",
-    caching: "caching",
-    created_at: "createdAt",
-    created_by: "createdBy",
-    deleted: "deleted",
-    description: "description",
-    disallow_prompt_training: "disallowPromptTraining",
-    display_name: "displayName",
-    has: "has",
-    hipaa_compliant: "hipaaCompliant",
-    inference_region: "inferenceRegion",
-    instance_id: "instanceId",
-    kind: "kind",
-    models: "models",
-    model_slug: "modelSlug",
-    observability_tags: "observabilityTags",
-    owner_id: "ownerId",
-    provider_only: "providerOnly",
-    provider_options: "providerOptions",
-    provider_order: "providerOrder",
-    provider_timeouts: "providerTimeouts",
-    selector: "selector",
-    selector_options: "selectorOptions",
-    service_tier: "serviceTier",
-    sort: "sort",
-    speed: "speed",
-    status: "status",
-    updated_at: "updatedAt",
-    updated_by: "updatedBy",
-    virtual_model_slug: "virtualModelSlug",
-    visibility: "visibility",
-    zero_data_retention: "zeroDataRetention",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    created_at
-    deleted
-    kind
-    owner_id
-    status
-    updated_at
-    virtual_model_slug
-  ].freeze
-  DECODERS = {
-    allow_fallback_from_fast: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigAllowFallbackFromFast.from_value(value)
-    end,
-    caching: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigCaching.from_value(value)
-    end,
-    deleted: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigDeleted.from_value(value)
-    end,
-    disallow_prompt_training: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigDisallowPromptTraining.from_value(value)
-    end,
-    has: lambda do |value|
-      value&.map { |item| ::OctridevVercel::AiGatewayVirtualModelConfigHasItem.from_value(item) }
-    end,
-    hipaa_compliant: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigHipaaCompliant.from_value(value)
-    end,
-    inference_region: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigInferenceRegion.from_hash(value)
-    end,
-    models: lambda do |value|
-      value&.map { |item| ::OctridevVercel::AiGatewayVirtualModelConfigModelsItem.from_hash(item) }
-    end,
-    provider_options: lambda do |value|
-      value&.transform_values { |item| ::OctridevVercel::AiGatewayProviderOptionBag.from_hash(item) }
-    end,
-    provider_timeouts: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigProviderTimeouts.from_hash(value)
-    end,
-    selector: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigSelector.from_value(value)
-    end,
-    selector_options: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigSelectorOptions.from_hash(value)
-    end,
-    service_tier: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigServiceTier.from_value(value)
-    end,
-    sort: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigSort.from_value(value)
-    end,
-    speed: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigSpeed.from_value(value)
-    end,
-    zero_data_retention: lambda do |value|
-      ::OctridevVercel::AiGatewayVirtualModelConfigZeroDataRetention.from_value(value)
-    end,
-  }.freeze
-end
 end

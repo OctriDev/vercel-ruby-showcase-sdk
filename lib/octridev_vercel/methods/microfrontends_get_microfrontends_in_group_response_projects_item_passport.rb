@@ -39,7 +39,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetMicrofrontendsInGroupResponseProjectsItemPasswordProtectionMetadata
         FIELDS = {
-          deployment_type: "deploymentType",
+          deployment_type: 'deploymentType'
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment_type
@@ -47,7 +47,7 @@ module OctridevVercel
         DECODERS = {
           deployment_type: lambda do |value|
             ::OctridevVercel::Methods::Microfrontends::GetMicrofrontendsInGroupResponseProjectsItemPasswordProtectioX24cd63c11b.from_value(value)
-          end,
+          end
         }.freeze
       end
 

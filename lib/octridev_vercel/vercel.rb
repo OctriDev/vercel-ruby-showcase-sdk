@@ -804,7 +804,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the AiGatewayNamespace SDK type.
@@ -834,15 +833,7 @@ module OctridevVercel
     # Retrieves virtual model configuration data for the authenticated team, including active and archived configurations. Use `virtualModelSlug` to select a configuration or `limit` and `cursor` to request a page of results.
     #
     # Get a virtual model config
-    define_method(:get_virtual_model_config) do |
-      owner_id: NOT_GIVEN,
-      virtual_model_slug: NOT_GIVEN,
-      limit: NOT_GIVEN,
-      cursor: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_virtual_model_config) do |owner_id: NOT_GIVEN, virtual_model_slug: NOT_GIVEN, limit: NOT_GIVEN, cursor: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::AiGateway.get_ai_gateway_virtual_model_config(
         config: @config,
         owner_id: owner_id,
@@ -940,13 +931,7 @@ module OctridevVercel
     # Retrieves a virtual model configuration by its path slug. Use `ownerId` or the team selectors `teamId` and `slug` to scope the lookup to the appropriate owner.
     #
     # Get a virtual model config by path slug
-    define_method(:get_virtual_model_config_by_slug) do |
-      vmc_slug:,
-      owner_id: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_virtual_model_config_by_slug) do |vmc_slug:, owner_id: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::AiGateway.get_ai_gateway_virtual_model_config_by_slug(
         config: @config,
         vmc_slug: vmc_slug,
@@ -1255,7 +1240,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the ArtifactsNamespace SDK type.
@@ -1409,7 +1393,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the BillingNamespace SDK type.
@@ -1479,7 +1462,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the BulkRedirectsNamespace SDK type.
@@ -1519,19 +1501,7 @@ module OctridevVercel
     # Lists project-level bulk redirects, with optional filtering and sorting. Use `projectId` to identify the project, and `page` and `per_page` to paginate the results.
     #
     # Get the version history for a project's bulk redirects
-    define_method(:get_redirects) do |
-      project_id:,
-      version_id: NOT_GIVEN,
-      q_value: NOT_GIVEN,
-      diff: NOT_GIVEN,
-      page: NOT_GIVEN,
-      per_page: NOT_GIVEN,
-      sort_by: NOT_GIVEN,
-      sort_order: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_redirects) do |project_id:, version_id: NOT_GIVEN, q_value: NOT_GIVEN, diff: NOT_GIVEN, page: NOT_GIVEN, per_page: NOT_GIVEN, sort_by: NOT_GIVEN, sort_order: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::BulkRedirects.get_redirects(
         config: @config,
         project_id: project_id,
@@ -1619,12 +1589,7 @@ module OctridevVercel
     # Lists the version history for a project's bulk redirects. Supply `projectId` to identify the project and use the Team parameters to perform the request on behalf of a Team.
     #
     # Get the version history for a project's bulk redirects
-    define_method(:get_versions) do |
-      project_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_versions) do |project_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::BulkRedirects.get_versions(
         config: @config,
         project_id: project_id,
@@ -1657,7 +1622,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the ChecksV2Namespace SDK type.
@@ -1723,13 +1687,7 @@ module OctridevVercel
     # Retrieves the details of a single check configured for a project. Provide the project identifier or name and the check identifier to select the check you want to inspect.
     #
     # Return a detailed response for a single check.
-    define_method(:get_project_check) do |
-      project_id_or_name:,
-      check_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_project_check) do |project_id_or_name:, check_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::ChecksV2.get_project_check(
         config: @config,
         project_id_or_name: project_id_or_name,
@@ -1853,13 +1811,7 @@ module OctridevVercel
     # Retrieves a single check run for a deployment. Use the deployment and check run identifiers to select the record. The response includes the run details and supports both runs backed by a project-level check and Vercel CI runs without a parent check.
     #
     # Return a detailed response for a single check run.
-    define_method(:get_deployment_check_run) do |
-      deployment_id:,
-      check_run_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_deployment_check_run) do |deployment_id:, check_run_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::ChecksV2.get_deployment_check_run(
         config: @config,
         deployment_id: deployment_id,
@@ -1903,7 +1855,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the ChecksNamespace SDK type.
@@ -2047,7 +1998,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the NetworkingNamespace SDK type.
@@ -2291,7 +2241,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the ConnectNamespace SDK type.
@@ -2335,12 +2284,7 @@ module OctridevVercel
     # Retrieves a connector by its stable ID or team-scoped UID. Use a dashboard or team requester, or a deployment's project OIDC token; project requesters can read only connectors linked to their project and environment.
     #
     # Get the connector by ID. Accepts a dashboard/team requester or a deployment's project OIDC token; project requesters may only read connectors linked to their project and environment.
-    define_method(:get_connector) do |
-      connector:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_connector) do |connector:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Connect.get_connector(
         config: @config,
         connector: connector,
@@ -2517,13 +2461,7 @@ module OctridevVercel
     end
 
     # Get the configuration that connects a connector to a project.
-    define_method(:get_connector_project_connection) do |
-      connector:,
-      project_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_connector_project_connection) do |connector:, project_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Connect.get_connector_project_connection(
         config: @config,
         connector: connector,
@@ -2597,17 +2535,7 @@ module OctridevVercel
     # Retrieves an access token for a connector, scoped to the authenticated user or another subject specified in the request body. Supply the connector identifier in the path and optionally provide token settings such as `scopes`, `resources`, or `audience`. Use the returned token and expiration details to access the connector.
     #
     # Get an access token for a connector identified by the path parameter and scoped to the requester.
-    define_method(:get_connector_token) do |
-      connector:,
-      subject: NOT_GIVEN,
-      installation_id: NOT_GIVEN,
-      audience: NOT_GIVEN,
-      scopes: NOT_GIVEN,
-      resources: NOT_GIVEN,
-      authorization_details: NOT_GIVEN,
-      validity_buffer_ms: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_connector_token) do |connector:, subject: NOT_GIVEN, installation_id: NOT_GIVEN, audience: NOT_GIVEN, scopes: NOT_GIVEN, resources: NOT_GIVEN, authorization_details: NOT_GIVEN, validity_buffer_ms: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Connect.get_connector_token(
         config: @config,
         connector: connector,
@@ -2661,7 +2589,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the DeploymentsNamespace SDK type.
@@ -2675,21 +2602,7 @@ module OctridevVercel
     # Retrieves build logs and events for a deployment, either as JSON or as a live stream. Use `idOrUrl` to identify the deployment and `name` to select a build; use `since`, `until`, and `statusCode` to filter events. Set `follow` to `1` to receive live events as they happen.
     #
     # Get the build logs of a deployment by deployment ID and build ID. It can work as an infinite stream of logs or as a JSON endpoint depending on the input parameters.
-    define_method(:get_events) do |
-      id_or_url:,
-      direction: NOT_GIVEN,
-      follow: NOT_GIVEN,
-      limit: NOT_GIVEN,
-      name: NOT_GIVEN,
-      since: NOT_GIVEN,
-      until_: NOT_GIVEN,
-      status_code: NOT_GIVEN,
-      delimiter: NOT_GIVEN,
-      builds: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_events) do |id_or_url:, direction: NOT_GIVEN, follow: NOT_GIVEN, limit: NOT_GIVEN, name: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, status_code: NOT_GIVEN, delimiter: NOT_GIVEN, builds: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Deployments.get_deployment_events(
         config: @config,
         id_or_url: id_or_url,
@@ -2865,14 +2778,7 @@ module OctridevVercel
     end
 
     # Allows to retrieve the content of a file by supplying the file identifier and the deployment unique identifier. The response body will contain a JSON response containing the contents of the file encoded as base64.
-    define_method(:get_file_contents) do |
-      id:,
-      file_id:,
-      path: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_file_contents) do |id:, file_id:, path: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Deployments.get_deployment_file_contents(
         config: @config,
         id: id,
@@ -2887,25 +2793,7 @@ module OctridevVercel
     # Lists deployments for the authenticated user or team. Use filters such as `projectId`, `state`, `branch`, or `target` to narrow the results, and use `limit` to set the maximum number returned. Incomplete deployments have a `url` value of `null`.
     #
     # List deployments under the authenticated user or team. If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`.
-    define_method(:get_deployments) do |
-      app: NOT_GIVEN,
-      from: NOT_GIVEN,
-      limit: NOT_GIVEN,
-      project_id: NOT_GIVEN,
-      project_ids: NOT_GIVEN,
-      target: NOT_GIVEN,
-      to: NOT_GIVEN,
-      users: NOT_GIVEN,
-      since: NOT_GIVEN,
-      until_: NOT_GIVEN,
-      state: NOT_GIVEN,
-      rollback_candidate: NOT_GIVEN,
-      branch: NOT_GIVEN,
-      sha: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_deployments) do |app: NOT_GIVEN, from: NOT_GIVEN, limit: NOT_GIVEN, project_id: NOT_GIVEN, project_ids: NOT_GIVEN, target: NOT_GIVEN, to: NOT_GIVEN, users: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, state: NOT_GIVEN, rollback_candidate: NOT_GIVEN, branch: NOT_GIVEN, sha: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Deployments.get_deployments(
         config: @config,
         app: app,
@@ -2947,7 +2835,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the DnsNamespace SDK type.
@@ -2961,15 +2848,7 @@ module OctridevVercel
     # Lists DNS records created for a domain. Use `limit` to control the number of records returned and `since` or `until` to filter by JavaScript timestamps. The default limit is 20 records.
     #
     # Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.
-    define_method(:get_records) do |
-      domain:,
-      limit: NOT_GIVEN,
-      since: NOT_GIVEN,
-      until_: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_records) do |domain:, limit: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Dns.get_records(
         config: @config,
         domain: domain,
@@ -3055,7 +2934,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the DomainsNamespace SDK type.
@@ -3079,10 +2957,7 @@ module OctridevVercel
     end
 
     # Retrieves a DNS record by its unique identifier. Use this operation to inspect the record's domain, name, type, value, and other available properties. The response contains the requested record.
-    define_method(:get_records_by_record_id) do |
-      record_id:,
-      request_options: nil
-    |
+    define_method(:get_records_by_record_id) do |record_id:, request_options: nil|
       ::OctridevVercel::Methods::Domains.get_domains_records_by_record_id(
         config: @config,
         record_id: record_id,
@@ -3093,14 +2968,7 @@ module OctridevVercel
     # Retrieves configuration information for a domain, including its detected configuration and recommended DNS values. Use `projectIdOrName` to associate a domain that is not yet linked to a project, and `strict` to control whether the response includes only nameservers assigned directly to the domain. The response also indicates supported certificate challenges and whether the domain is misconfigured.
     #
     # Get a Domain's configuration.
-    define_method(:get_config) do |
-      domain:,
-      project_id_or_name: NOT_GIVEN,
-      strict: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_config) do |domain:, project_id_or_name: NOT_GIVEN, strict: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Domains.get_domain_config(
         config: @config,
         domain: domain,
@@ -3115,12 +2983,7 @@ module OctridevVercel
     # Retrieves the TXT record needed to verify ownership of a domain for the authenticated user's team. Add the returned record to `_vercel.{domain}` in your DNS configuration before completing the ownership claim. Then call POST /domains/:domain/claim to transfer ownership.
     #
     # Get the TXT verification record needed to claim ownership of a domain for the authenticated team. The caller must add this TXT record to `_vercel.{domain}` in their DNS configuration, then call POST /domains/:domain/claim to complete the ownership transfer.
-    define_method(:get_verification_record) do |
-      domain:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_verification_record) do |domain:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Domains.get_domain_verification_record(
         config: @config,
         domain: domain,
@@ -3151,15 +3014,7 @@ module OctridevVercel
     # Lists project domains associated with an apex domain owned by the authenticated user's account. Use `limit` to control the maximum number of results and `since` or `until` to filter by creation time using JavaScript timestamps. The response includes pagination metadata and the matching project domains.
     #
     # List all project domains associated with an apex domain owned by the authenticated account.
-    define_method(:get_project_domains) do |
-      domain:,
-      limit: NOT_GIVEN,
-      since: NOT_GIVEN,
-      until_: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_project_domains) do |domain:, limit: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Domains.get_domain_project_domains(
         config: @config,
         domain: domain,
@@ -3267,7 +3122,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the DomainsRegistrarNamespace SDK type.
@@ -3297,10 +3151,7 @@ module OctridevVercel
     # Lists the top-level domains supported for domain registration. Use this operation to discover which TLDs are available before requesting TLD metadata or checking domain availability. The response is an array of TLD names.
     #
     # Get a list of TLDs supported by Vercel
-    define_method(:get_supported_tlds) do |
-      team_id: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_supported_tlds) do |team_id: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::DomainsRegistrar.get_supported_tlds(
         config: @config,
         team_id: team_id,
@@ -3311,11 +3162,7 @@ module OctridevVercel
     # Retrieves metadata for a specific top-level domain. Use this operation to find the language codes supported for the TLD and their corresponding language names. The response contains a map of supported language codes.
     #
     # Get the metadata for a specific TLD.
-    define_method(:get_tld) do |
-      tld:,
-      team_id: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_tld) do |tld:, team_id: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::DomainsRegistrar.get_tld(
         config: @config,
         tld: tld,
@@ -3327,12 +3174,7 @@ module OctridevVercel
     # Retrieves base price data for a top-level domain (TLD); premium domains may have different prices. Use `years` to request a registration term, or omit it to use the TLD's minimum term. For premium-domain pricing, use the endpoint for getting price data for a domain.
     #
     # Get price data for a specific TLD. This only reflects base prices for the given TLD. Premium domains may have different prices. Use the Get price data for a domain endpoint to get the price data for a specific domain.
-    define_method(:get_tld_price) do |
-      tld:,
-      years: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_tld_price) do |tld:, years: NOT_GIVEN, team_id: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::DomainsRegistrar.get_tld_price(
         config: @config,
         tld: tld,
@@ -3345,11 +3187,7 @@ module OctridevVercel
     # Retrieves the availability status for a specific domain. Use `domain` to check whether the name is available before attempting to purchase it. If it is available, you can purchase it through the single-domain or multiple-domain purchase endpoint.
     #
     # Get availability for a specific domain. If the domain is available, it can be purchased using the Buy a domain endpoint or the Buy multiple domains endpoint.
-    define_method(:get_domain_availability) do |
-      domain:,
-      team_id: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_domain_availability) do |domain:, team_id: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::DomainsRegistrar.get_domain_availability(
         config: @config,
         domain: domain,
@@ -3361,12 +3199,7 @@ module OctridevVercel
     # Retrieves price data for a specific domain, including purchase, renewal, and transfer prices. Use `years` to request pricing for a particular term, or omit it to use the minimum term for the domain's TLD.
     #
     # Get price data for a specific domain
-    define_method(:get_domain_price) do |
-      domain:,
-      years: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_domain_price) do |domain:, years: NOT_GIVEN, team_id: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::DomainsRegistrar.get_domain_price(
         config: @config,
         domain: domain,
@@ -3379,12 +3212,7 @@ module OctridevVercel
     # Retrieves price data for multiple domains in one request. Supply `domains` with the names to price, and optionally set `years` to request a specific term; omitted terms use the minimum term for each TLD. Use the returned prices to evaluate domains before purchasing them.
     #
     # Get price data for multiple domains in a single request.
-    define_method(:get_bulk_price) do |
-      domains:,
-      team_id: NOT_GIVEN,
-      years: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_bulk_price) do |domains:, team_id: NOT_GIVEN, years: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::DomainsRegistrar.get_bulk_price(
         config: @config,
         domains: domains,
@@ -3397,11 +3225,7 @@ module OctridevVercel
     # Checks the availability of multiple domains in one request. Supply `domains` with the names to check, up to 50 per request. If domains are available, you can purchase them through the single-domain or multiple-domain purchase endpoint.
     #
     # Get availability for multiple domains. If the domains are available, they can be purchased using the Buy a domain endpoint or the Buy multiple domains endpoint.
-    define_method(:get_bulk_availability) do |
-      domains:,
-      team_id: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_bulk_availability) do |domains:, team_id: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::DomainsRegistrar.get_bulk_availability(
         config: @config,
         domains: domains,
@@ -3413,11 +3237,7 @@ module OctridevVercel
     # Retrieves the contact information schema for a domain's TLD. Use the schema to identify any TLD-specific contact fields you need to supply when registering a domain. The required fields can differ between TLDs.
     #
     # Some TLDs require additional contact information. Use this endpoint to get the schema for the tld-specific contact information for a domain.
-    define_method(:get_contact_info_schema) do |
-      domain:,
-      team_id: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_contact_info_schema) do |domain:, team_id: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::DomainsRegistrar.get_contact_info_schema(
         config: @config,
         domain: domain,
@@ -3429,11 +3249,7 @@ module OctridevVercel
     # Retrieves the authorization code for a domain registered with the domain registrar. Use this code when transferring the domain from the registrar to another registrar. The domain must be eligible for transfer out before its code can be retrieved.
     #
     # Get the auth code for a domain. This is required to transfer a domain from Vercel to another registrar.
-    define_method(:get_domain_auth_code) do |
-      domain:,
-      team_id: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_domain_auth_code) do |domain:, team_id: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::DomainsRegistrar.get_domain_auth_code(
         config: @config,
         domain: domain,
@@ -3515,11 +3331,7 @@ module OctridevVercel
     # Retrieves the transfer status for a domain. Use the status to check the progress or outcome of an incoming domain transfer. The response reports the transfer's current state.
     #
     # Get the transfer status for a domain
-    define_method(:get_domain_transfer_in) do |
-      domain:,
-      team_id: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_domain_transfer_in) do |domain:, team_id: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::DomainsRegistrar.get_domain_transfer_in(
         config: @config,
         domain: domain,
@@ -3589,11 +3401,7 @@ module OctridevVercel
     # Retrieves the registrant contact verification status for a domain. Use this after purchasing a domain to check whether its registrant contact has been verified. A 400 is returned if the domain was bought less than 30 minutes before the request.
     #
     # Get the registrant contact verification status for a domain. Use this after purchasing a domain to determine whether the contact has been verified. Note that a bought_too_recently error will be returned if the domain was bought less than 30 minutes before the request.
-    define_method(:get_domain_contact_verification) do |
-      domain:,
-      team_id: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_domain_contact_verification) do |domain:, team_id: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::DomainsRegistrar.get_domain_contact_verification(
         config: @config,
         domain: domain,
@@ -3605,11 +3413,7 @@ module OctridevVercel
     # Retrieves information about a domain order using its order ID. Use the response to inspect the domains included in the order and its current status. The status is one of `draft`, `purchasing`, `completed`, or `failed`.
     #
     # Get information about a domain order by its ID
-    define_method(:get_order) do |
-      order_id:,
-      team_id: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_order) do |order_id:, team_id: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::DomainsRegistrar.get_order(
         config: @config,
         order_id: order_id,
@@ -3617,7 +3421,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the LogDrainsNamespace SDK type.
@@ -3631,12 +3434,7 @@ module OctridevVercel
     # Retrieves a configurable log drain owned by the authenticated team. Call this deprecated operation with a team AccessToken; integration OAuth2 clients are not allowed.
     #
     # Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.
-    define_method(:get_configurable) do |
-      id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_configurable) do |id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::LogDrains.get_configurable_log_drain(
         config: @config,
         id: id,
@@ -3723,11 +3521,7 @@ module OctridevVercel
     # Lists integration log drains defined for the authenticated user or team. When you use an OAuth2 token, the results are limited to log drains created by the authenticated integration. Use `teamId` or `slug` to scope the request to a team.
     #
     # Retrieves a list of all Integration log drains that are defined for the authenticated user or team. When using an OAuth2 token, the list is limited to log drains created by the authenticated integration.
-    define_method(:get_integration) do |
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_integration) do |team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::LogDrains.get_integration_log_drains(
         config: @config,
         team_id: team_id,
@@ -3785,7 +3579,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the DrainsNamespace SDK type.
@@ -3871,12 +3664,7 @@ module OctridevVercel
     # Retrieves a Drain by its identifier. Use `id` in the path to select the Drain, and use `teamId` or `slug` to make the request on behalf of a team.
     #
     # Get the information for a specific Drain by passing the drain id in the URL.
-    define_method(:get_drain) do |
-      id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_drain) do |id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Drains.get_drain(
         config: @config,
         id: id,
@@ -3943,7 +3731,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the EdgeCacheNamespace SDK type.
@@ -4041,7 +3828,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the GlobalConfigNamespace SDK type.
@@ -4055,11 +3841,7 @@ module OctridevVercel
     # Lists all Global Configs available to the authenticated user. Use `teamId` or `slug` to perform the request on behalf of a team. Each result includes its identifier, name, digest, item count, size, and timestamps.
     #
     # Returns all Global Configs.
-    define_method(:get_edge_configs) do |
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_edge_configs) do |team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::GlobalConfig.get_edge_configs(
         config: @config,
         team_id: team_id,
@@ -4091,12 +3873,7 @@ module OctridevVercel
     # Retrieves a Global Config by its identifier. Use `teamId` or `slug` to make the request on behalf of a team when needed.
     #
     # Returns a Global Config.
-    define_method(:get_edge_config) do |
-      edge_config_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_edge_config) do |edge_config_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::GlobalConfig.get_edge_config(
         config: @config,
         edge_config_id: edge_config_id,
@@ -4147,12 +3924,7 @@ module OctridevVercel
     # Lists all items in a Global Config. Use the `edgeConfigId` path parameter to select the config; it must begin with the `ecfg_` prefix.
     #
     # Returns all items of a Global Config.
-    define_method(:get_edge_config_items) do |
-      edge_config_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_edge_config_items) do |edge_config_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::GlobalConfig.get_edge_config_items(
         config: @config,
         edge_config_id: edge_config_id,
@@ -4185,12 +3957,7 @@ module OctridevVercel
     # Retrieves the schema associated with a Global Config. Use `edgeConfigId` to select the config and `teamId` or `slug` to make the request on behalf of a team when needed.
     #
     # Returns the schema of a Global Config.
-    define_method(:get_edge_config_schema) do |
-      edge_config_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_edge_config_schema) do |edge_config_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::GlobalConfig.get_edge_config_schema(
         config: @config,
         edge_config_id: edge_config_id,
@@ -4243,13 +4010,7 @@ module OctridevVercel
     # Retrieves a specific item from a Global Config. Supply the config identifier and item key to select the item; the config identifier must begin with the `ecfg_` prefix.
     #
     # Returns a specific Global Config Item.
-    define_method(:get_edge_config_item) do |
-      edge_config_id:,
-      edge_config_item_key:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_edge_config_item) do |edge_config_id:, edge_config_item_key:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::GlobalConfig.get_edge_config_item(
         config: @config,
         edge_config_id: edge_config_id,
@@ -4263,12 +4024,7 @@ module OctridevVercel
     # Lists the tokens associated with a Global Config. Use `edgeConfigId` to select the Global Config and optionally `teamId` or `slug` to make the request on behalf of a team. The response includes token metadata and a masked token representation.
     #
     # Returns all tokens of a Global Config.
-    define_method(:get_edge_config_tokens) do |
-      edge_config_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_edge_config_tokens) do |edge_config_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::GlobalConfig.get_edge_config_tokens(
         config: @config,
         edge_config_id: edge_config_id,
@@ -4303,13 +4059,7 @@ module OctridevVercel
     # Retrieves metadata for a specific Global Config token. Use `edgeConfigId` and `token` to identify the token whose metadata you need. The response includes a partially masked token representation and may include the full token for backwards compatibility.
     #
     # Return meta data about a Global Config token.
-    define_method(:get_edge_config_token) do |
-      edge_config_id:,
-      token:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_edge_config_token) do |edge_config_id:, token:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::GlobalConfig.get_edge_config_token(
         config: @config,
         edge_config_id: edge_config_id,
@@ -4343,13 +4093,7 @@ module OctridevVercel
     # Retrieves a specific version of a Global Config from backup storage. Use `edgeConfigId` and `edgeConfigBackupVersionId` to select the Global Config and backup version. The response contains the backup data and its associated metadata.
     #
     # Retrieves a specific version of a Global Config from backup storage.
-    define_method(:get_edge_config_backup) do |
-      edge_config_id:,
-      edge_config_backup_version_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_edge_config_backup) do |edge_config_id:, edge_config_backup_version_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::GlobalConfig.get_edge_config_backup(
         config: @config,
         edge_config_id: edge_config_id,
@@ -4383,15 +4127,7 @@ module OctridevVercel
     # Lists backups of a Global Config. Use `next` to continue from a pagination cursor, `limit` to control the number of results, and `metadata` to filter the backups. The response includes backup records and pagination information.
     #
     # Returns backups of a Global Config.
-    define_method(:get_edge_config_backups) do |
-      edge_config_id:,
-      next_: NOT_GIVEN,
-      limit: NOT_GIVEN,
-      metadata: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_edge_config_backups) do |edge_config_id:, next_: NOT_GIVEN, limit: NOT_GIVEN, metadata: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::GlobalConfig.get_edge_config_backups(
         config: @config,
         edge_config_id: edge_config_id,
@@ -4403,7 +4139,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the EnvironmentNamespace SDK type.
@@ -4507,12 +4242,7 @@ module OctridevVercel
     # Retrieves the decrypted value and metadata for a shared environment variable. Supply its `id` and, when needed, `teamId` or `slug` to select the team context. The response includes whether the value is decrypted and the projects and custom environments associated with it.
     #
     # Retrieve the decrypted value of a Shared Environment Variable by id.
-    define_method(:get_shared_env_var) do |
-      id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_shared_env_var) do |id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Environment.get_shared_env_var(
         config: @config,
         id: id,
@@ -4591,13 +4321,7 @@ module OctridevVercel
     # Retrieves a custom environment from a project by its identifier or slug. Use the project identifier or name together with `environmentSlugOrId` to select the environment.
     #
     # Retrieve a custom environment for the project. Must not be named 'Production' or 'Preview'.
-    define_method(:get_custom) do |
-      id_or_name:,
-      environment_slug_or_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_custom) do |id_or_name:, environment_slug_or_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Environment.get_custom_environment(
         config: @config,
         id_or_name: id_or_name,
@@ -4655,7 +4379,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the UserNamespace SDK type.
@@ -4732,7 +4455,6 @@ module OctridevVercel
     )
       ::OctridevVercel::Methods::User.request_delete(config: @config, reasons: reasons, request_options: request_options)
     end
-
   end
 
   # Defines the FeatureFlagsNamespace SDK type.
@@ -4848,15 +4570,7 @@ module OctridevVercel
     # Retrieves a feature flag by its ID or slug within a project. Use `ifMatch` to send an ETag condition and `withMetadata` to include metadata in the response. The result contains the flag configuration, including its environments, variants, and current state.
     #
     # Retrieve a specific feature flag by its ID or slug.
-    define_method(:get_flag) do |
-      project_id_or_name:,
-      flag_id_or_slug:,
-      if_match: NOT_GIVEN,
-      with_metadata: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_flag) do |project_id_or_name:, flag_id_or_slug:, if_match: NOT_GIVEN, with_metadata: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::FeatureFlags.get_flag(
         config: @config,
         project_id_or_name: project_id_or_name,
@@ -4968,12 +4682,7 @@ module OctridevVercel
     # Retrieves feature flag settings for a project. Use these settings to inspect whether flags are enabled, which environments are configured, and the project's flag-related metadata.
     #
     # Retrieve feature flag settings for a project.
-    define_method(:get_flag_settings) do |
-      project_id_or_name:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_flag_settings) do |project_id_or_name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::FeatureFlags.get_flag_settings(
         config: @config,
         project_id_or_name: project_id_or_name,
@@ -5144,14 +4853,7 @@ module OctridevVercel
     # Retrieves a feature flag segment from a project by its identifier or slug. Use `withMetadata` to control whether the response includes segment metadata.
     #
     # Retrieve a feature flag segment by ID or slug.
-    define_method(:get_flag_segment) do |
-      project_id_or_name:,
-      segment_id_or_slug:,
-      with_metadata: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_flag_segment) do |project_id_or_name:, segment_id_or_slug:, with_metadata: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::FeatureFlags.get_flag_segment(
         config: @config,
         project_id_or_name: project_id_or_name,
@@ -5238,12 +4940,7 @@ module OctridevVercel
     # Lists the SDK keys for a project. Use `projectIdOrName` to select the project whose keys you want to inspect. The response contains safe key metadata and does not include cleartext secrets.
     #
     # Gets all SDK keys for a project.
-    define_method(:get_sdk_keys) do |
-      project_id_or_name:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_sdk_keys) do |project_id_or_name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::FeatureFlags.get_sdk_keys(
         config: @config,
         project_id_or_name: project_id_or_name,
@@ -5296,7 +4993,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the IntegrationsNamespace SDK type.
@@ -5354,16 +5050,7 @@ module OctridevVercel
     # Lists billing plans for an integration and product. Use `integrationIdOrSlug` and `productIdOrSlug` to identify them, and use `source` to filter by the source of the request. You can also provide `integrationConfigurationId` or `metadata` to scope the plan lookup.
     #
     # Get a list of billing plans for an integration and product.
-    define_method(:get_billing_plans) do |
-      integration_id_or_slug:,
-      product_id_or_slug:,
-      integration_configuration_id: NOT_GIVEN,
-      metadata: NOT_GIVEN,
-      source: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_billing_plans) do |integration_id_or_slug:, product_id_or_slug:, integration_configuration_id: NOT_GIVEN, metadata: NOT_GIVEN, source: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Integrations.get_billing_plans(
         config: @config,
         integration_id_or_slug: integration_id_or_slug,
@@ -5406,14 +5093,7 @@ module OctridevVercel
     # Lists integration configurations for the authenticated user or team. Set `view` to `account` or `project` to choose the configuration scope, and use the optional filters to narrow results by installation type, integration, or team. The `project` view excludes configurations generated for the authorization flow.
     #
     # Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.
-    define_method(:get_configurations) do |
-      view:,
-      installation_type: NOT_GIVEN,
-      integration_id_or_slug: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_configurations) do |view:, installation_type: NOT_GIVEN, integration_id_or_slug: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Integrations.get_configurations(
         config: @config,
         view: view,
@@ -5428,12 +5108,7 @@ module OctridevVercel
     # Retrieves an integration configuration by its identifier. Use `teamId` or `slug` to make the request on behalf of a team, and access is limited to the configuration's owner. The response contains the configuration details.
     #
     # Allows to retrieve a the configuration with the provided id in case it exists. The authenticated user or team must be the owner of the config in order to access it.
-    define_method(:get_configuration) do |
-      id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_configuration) do |id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Integrations.get_configuration(
         config: @config,
         id: id,
@@ -5464,12 +5139,7 @@ module OctridevVercel
     # Lists the products available for an integration configuration. Use `id` to select the configuration, and use `teamId` or `slug` when making the request on behalf of a team. Each product includes a `metadataSchema` describing its required and optional metadata fields.
     #
     # Returns products available for an integration configuration. Each product includes a `metadataSchema` field with the JSON Schema for required and optional metadata fields.
-    define_method(:get_configuration_products) do |
-      id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_configuration_products) do |id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Integrations.get_configuration_products(
         config: @config,
         id: id,
@@ -5514,7 +5184,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the MarketplaceNamespace SDK type.
@@ -5550,10 +5219,7 @@ module OctridevVercel
     # Retrieves account contact information and the team name associated with an integration installation. Use the installation identifier to look up the best available contact, which can change as team members and their roles change.
     #
     # Fetches the best account or user’s contact info
-    define_method(:get_account_info) do |
-      integration_configuration_id:,
-      request_options: nil
-    |
+    define_method(:get_account_info) do |integration_configuration_id:, request_options: nil|
       ::OctridevVercel::Methods::Marketplace.get_account_info(
         config: @config,
         integration_configuration_id: integration_configuration_id,
@@ -5564,11 +5230,7 @@ module OctridevVercel
     # Retrieves the role and other available information for a member of an integration installation. Use the member's user ID from the SSO OIDC token's `user_id` claim to identify the member.
     #
     # Returns the member role and other information for a given member ID ("user_id" claim in the SSO OIDC token).
-    define_method(:get_member) do |
-      integration_configuration_id:,
-      member_id:,
-      request_options: nil
-    |
+    define_method(:get_member) do |integration_configuration_id:, member_id:, request_options: nil|
       ::OctridevVercel::Methods::Marketplace.get_member(
         config: @config,
         integration_configuration_id: integration_configuration_id,
@@ -5634,10 +5296,7 @@ module OctridevVercel
     # Lists the resources associated with an integration installation. Use the installation identifier to retrieve its resources, including each resource's partner and product identifiers and its name.
     #
     # Get all resources for a given installation ID.
-    define_method(:get_integration_resources) do |
-      integration_configuration_id:,
-      request_options: nil
-    |
+    define_method(:get_integration_resources) do |integration_configuration_id:, request_options: nil|
       ::OctridevVercel::Methods::Marketplace.get_integration_resources(
         config: @config,
         integration_configuration_id: integration_configuration_id,
@@ -5648,11 +5307,7 @@ module OctridevVercel
     # Retrieves a resource associated with an integration installation by its partner-provided ID. Use both path identifiers to scope the lookup to the installation that owns the resource.
     #
     # Get a resource by its partner ID.
-    define_method(:get_integration_resource) do |
-      integration_configuration_id:,
-      resource_id:,
-      request_options: nil
-    |
+    define_method(:get_integration_resource) do |integration_configuration_id:, resource_id:, request_options: nil|
       ::OctridevVercel::Methods::Marketplace.get_integration_resource(
         config: @config,
         integration_configuration_id: integration_configuration_id,
@@ -5818,11 +5473,7 @@ module OctridevVercel
     # Retrieves invoice details and status for an installation. Use the installation and invoice identifiers to select the invoice, and use the returned state and timestamps to track its billing lifecycle. Consult billing events through webhooks when you need invoice event notifications.
     #
     # Get Invoice details and status for a given invoice ID. See Billing Events with Webhooks documentation on how to receive invoice events. This endpoint is used to retrieve the invoice details.
-    define_method(:get_invoice) do |
-      integration_configuration_id:,
-      invoice_id:,
-      request_options: nil
-    |
+    define_method(:get_invoice) do |integration_configuration_id:, invoice_id:, request_options: nil|
       ::OctridevVercel::Methods::Marketplace.get_invoice(
         config: @config,
         integration_configuration_id: integration_configuration_id,
@@ -6004,11 +5655,7 @@ module OctridevVercel
     # Retrieves the contents of a user-provided Global Config for an integration resource. Use this endpoint when the user has enabled Global Config syncing; the response includes the configuration items, digest, and update time.
     #
     # When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
-    define_method(:get_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_global_config) do |
-      integration_configuration_id:,
-      resource_id:,
-      request_options: nil
-    |
+    define_method(:get_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_global_config) do |integration_configuration_id:, resource_id:, request_options: nil|
       ::OctridevVercel::Methods::Marketplace.get_installations_by_integration_configuration_id_resources_by_resource_id_experimentation_global_config(
         config: @config,
         integration_configuration_id: integration_configuration_id,
@@ -6034,7 +5681,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the AuthenticationNamespace SDK type.
@@ -6091,10 +5737,7 @@ module OctridevVercel
     # Retrieves metadata for an authentication token belonging to the authenticated user. Use `tokenId` to identify the token, or pass `current` to retrieve metadata for the token used to authenticate the request.
     #
     # Retrieve metadata about an authentication token belonging to the currently authenticated User.
-    define_method(:get_auth_token) do |
-      token_id:,
-      request_options: nil
-    |
+    define_method(:get_auth_token) do |token_id:, request_options: nil|
       ::OctridevVercel::Methods::Authentication.get_auth_token(
         config: @config,
         token_id: token_id,
@@ -6119,7 +5762,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the ApiKeysNamespace SDK type.
@@ -6151,7 +5793,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the KmsNamespace SDK type.
@@ -6319,12 +5960,7 @@ module OctridevVercel
     # Retrieves a KMS issuer by its identifier. Use a team bearer token for issuer management access or an OIDC token authorized by one of the issuer's policies for signing access. An OIDC-authorized response omits policies because that token does not grant management access.
     #
     # Retrieve a single KMS issuer by its ID. Accepts either a team bearer token (existing path) or an OIDC token authorized by one of the issuer's policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.
-    define_method(:get_issuer) do |
-      issuer_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_issuer) do |issuer_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Kms.get_kms_issuer(
         config: @config,
         issuer_id: issuer_id,
@@ -6447,7 +6083,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the LogsNamespace SDK type.
@@ -6461,13 +6096,7 @@ module OctridevVercel
     # Retrieves a stream of runtime logs for a deployment in a project. Use `projectId` and `deploymentId` to identify the deployment, and optionally set `teamId` or `slug` to specify the team context.
     #
     # Returns a stream of logs for a given deployment.
-    define_method(:get_runtime) do |
-      project_id:,
-      deployment_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_runtime) do |project_id:, deployment_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Logs.get_runtime_logs(
         config: @config,
         project_id: project_id,
@@ -6477,7 +6106,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the MicrofrontendsNamespace SDK type.
@@ -6491,11 +6119,7 @@ module OctridevVercel
     # Lists the microfrontends group IDs for a team. Use `teamId` or `slug` to specify which team's groups to retrieve.
     #
     # Get the microfrontends group IDs for a team.
-    define_method(:get_groups) do |
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_groups) do |team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Microfrontends.get_microfrontends_groups(
         config: @config,
         team_id: team_id,
@@ -6507,12 +6131,7 @@ module OctridevVercel
     # Lists the projects in a microfrontends group. Use `groupId` to identify the group, and optionally use `teamId` or `slug` to specify the team context.
     #
     # Get the microfrontends for a given group ID.
-    define_method(:get_in_group) do |
-      group_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_in_group) do |group_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Microfrontends.get_microfrontends_in_group(
         config: @config,
         group_id: group_id,
@@ -6525,12 +6144,7 @@ module OctridevVercel
     # Retrieves the microfrontends configuration for a specific deployment. Supply the deployment identifier and, when needed, `teamId` or `slug` to scope the request to a team.
     #
     # Get the microfrontends config for a deployment.
-    define_method(:get_config) do |
-      deployment_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_config) do |deployment_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Microfrontends.get_microfrontends_config(
         config: @config,
         deployment_id: deployment_id,
@@ -6543,12 +6157,7 @@ module OctridevVercel
     # Retrieves the production microfrontends configuration for a project. Identify the project with `projectIdOrName` and use `teamId` or `slug` to scope the request to a team when needed.
     #
     # Get the microfrontends config for a project by ID or name.
-    define_method(:get_config_for_project) do |
-      project_id_or_name:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_config_for_project) do |project_id_or_name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Microfrontends.get_microfrontends_config_for_project(
         config: @config,
         project_id_or_name: project_id_or_name,
@@ -6579,7 +6188,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the ObservabilityNamespace SDK type.
@@ -6593,11 +6201,7 @@ module OctridevVercel
     # Lists the projects currently configured as disabled for Observability Plus on a team. Use this request to review which projects have the disabled setting and when that setting was applied.
     #
     # Lists the projects that are currently configured as disabled for Observability Plus on a team.
-    define_method(:get_configuration_projects) do |
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_configuration_projects) do |team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Observability.get_observability_configuration_projects(
         config: @config,
         team_id: team_id,
@@ -6666,17 +6270,13 @@ module OctridevVercel
     end
 
     # Retrieves the Observability schema for a specific metric. Supply `metricId` to get the metric's supported aggregations, dimensions, unit, and default aggregation.
-    define_method(:get_schema_by_metric_id) do |
-      metric_id:,
-      request_options: nil
-    |
+    define_method(:get_schema_by_metric_id) do |metric_id:, request_options: nil|
       ::OctridevVercel::Methods::Observability.get_observability_schema_by_metric_id(
         config: @config,
         metric_id: metric_id,
         request_options: request_options
       )
     end
-
   end
 
   # Defines the ProjectMembersNamespace SDK type.
@@ -6758,7 +6358,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the ProjectRoutesNamespace SDK type.
@@ -6772,16 +6371,7 @@ module OctridevVercel
     # Lists routing rules for a project, with options to search, filter by route type, or compare staged changes with production. Use `q` to search by name, ID, or pattern, and `filter` to select a route type. Set `diff` to compare changes; the response can include a diff count and version information.
     #
     # Get the routing rules for a project. Supports searching by name/ID/pattern, filtering by route type, and diffing staged changes against production.
-    define_method(:get_routes) do |
-      project_id:,
-      version_id: NOT_GIVEN,
-      q_value: NOT_GIVEN,
-      filter: NOT_GIVEN,
-      diff: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_routes) do |project_id:, version_id: NOT_GIVEN, q_value: NOT_GIVEN, filter: NOT_GIVEN, diff: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::ProjectRoutes.get_routes(
         config: @config,
         project_id: project_id,
@@ -6908,12 +6498,7 @@ module OctridevVercel
     # Lists the version history for a project's routing rules. The results include the staging version, when one exists, followed by production versions in descending recency. Use `isStaging` to identify the staged version and `isLive` to identify the current production version.
     #
     # Get the version history for a project's routing rules. Returns the staging version (if one exists) followed by production versions, most recent first. The staging version has `isStaging: true` and the current production version has `isLive: true`.
-    define_method(:get_route_versions) do |
-      project_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_route_versions) do |project_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::ProjectRoutes.get_route_versions(
         config: @config,
         project_id: project_id,
@@ -6944,7 +6529,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the ProjectsNamespace SDK type.
@@ -7008,13 +6592,7 @@ module OctridevVercel
     # Retrieves the OpenTelemetry trace associated with a Vercel CLI request. Provide the project identifier and request identifier to locate the trace. The response includes the trace spans and identifier, and may include resource data and a root span identifier.
     #
     # Returns the OTEL trace for a given Vercel CLI request.
-    define_method(:get_trace) do |
-      project_id:,
-      request_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_trace) do |project_id:, request_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Projects.get_project_trace(
         config: @config,
         project_id: project_id,
@@ -7090,13 +6668,7 @@ module OctridevVercel
     # Creates an OIDC token for a project identified by its ID or name. Provide the project identifier and optionally specify a `source` to identify what is calling the endpoint. The response contains the generated token.
     #
     # Generates an OIDC token for the project and returns it.
-    define_method(:get_token) do |
-      id_or_name:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      source: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_token) do |id_or_name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, source: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Projects.get_project_token(
         config: @config,
         id_or_name: id_or_name,
@@ -7352,13 +6924,7 @@ module OctridevVercel
     # Retrieves a domain associated with a project. Use the project identifier or name and the domain name to identify the domain and inspect its configuration and verification status.
     #
     # Get project domain by project id/name and domain name.
-    define_method(:get_domain) do |
-      id_or_name:,
-      domain:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_domain) do |id_or_name:, domain:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Projects.get_project_domain(
         config: @config,
         id_or_name: id_or_name,
@@ -7546,13 +7112,7 @@ module OctridevVercel
     # Retrieves an environment variable for a project, including its decrypted value when available. Use the project identifier or name together with the environment variable's unique ID to select the variable.
     #
     # Retrieve the environment variable for a given project.
-    define_method(:get_env) do |
-      id_or_name:,
-      id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_env) do |id_or_name:, id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Projects.get_project_env(
         config: @config,
         id_or_name: id_or_name,
@@ -7860,7 +7420,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the RollingReleaseNamespace SDK type.
@@ -7874,12 +7433,7 @@ module OctridevVercel
     # Retrieves the rolling release billing status used to determine whether a project can be configured for rolling releases. The response includes available-slot and status information for the team's billing.
     #
     # Get the Rolling Releases billing status for a project. The team level billing status is used to determine if the project can be configured for rolling releases.
-    define_method(:get_billing_status) do |
-      id_or_name:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_billing_status) do |id_or_name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::RollingRelease.get_rolling_release_billing_status(
         config: @config,
         id_or_name: id_or_name,
@@ -7892,12 +7446,7 @@ module OctridevVercel
     # Retrieves the project-level rolling release configuration template. Use this configuration to inspect the settings that will apply to future rolling releases; it does not describe an active rolling release.
     #
     # Get the Rolling Releases configuration for a project. The project-level config is simply a template that will be used for any future rolling release, and not the configuration for any active rolling release.
-    define_method(:get_config) do |
-      id_or_name:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_config) do |id_or_name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::RollingRelease.get_rolling_release_config(
         config: @config,
         id_or_name: id_or_name,
@@ -8024,7 +7573,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the SandboxesNamespace SDK type.
@@ -8152,13 +7700,7 @@ module OctridevVercel
     # Retrieves a drive by its name or ID within a project. Supply `projectId` unless the request uses a Vercel OIDC token scoped to a project. The drive name or ID must use only letters, digits, hyphens, or underscores and be no longer than 64 characters.
     #
     # Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
-    define_method(:get_drive) do |
-      name_or_id:,
-      project_id: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_drive) do |name_or_id:, project_id: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Sandboxes.get_drive(
         config: @config,
         name_or_id: name_or_id,
@@ -8172,15 +7714,7 @@ module OctridevVercel
     # Creates a drive with the specified name or retrieves the existing drive with that name in the project. Use `projectId` to associate the drive with a project unless your Vercel OIDC token is scoped to one; configure its size with `maxSizeBytes` and storage location with `region`. The response includes the drive object and its identifier.
     #
     # Gets an existing drive by project and name, or creates it when it does not exist.
-    define_method(:get_or_create_drive) do |
-      name:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      project_id: NOT_GIVEN,
-      max_size_bytes: NOT_GIVEN,
-      region: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_or_create_drive) do |name:, team_id: NOT_GIVEN, slug: NOT_GIVEN, project_id: NOT_GIVEN, max_size_bytes: NOT_GIVEN, region: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Sandboxes.get_or_create_drive(
         config: @config,
         name: name,
@@ -8264,12 +7798,7 @@ module OctridevVercel
     # Retrieves details for a specific sandbox snapshot, including its creation time, size, expiration, and source session. Use `snapshotId` to identify the snapshot whose details you need. The response contains the snapshot object.
     #
     # Retrieves detailed information about a specific snapshot, including its creation time, size, expiration date, and the source session it was created from.
-    define_method(:get_session_snapshot) do |
-      snapshot_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_session_snapshot) do |snapshot_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Sandboxes.get_session_snapshot(
         config: @config,
         snapshot_id: snapshot_id,
@@ -8326,12 +7855,7 @@ module OctridevVercel
     # Retrieves details for a specific sandbox session, including its status, resource configuration, and exposed routes. Use `sessionId` to identify the session to inspect. The response includes the session object and its routes.
     #
     # Retrieves detailed information about a specific session, including its current status, resource configuration, and exposed routes.
-    define_method(:get_session) do |
-      session_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_session) do |session_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Sandboxes.get_session(
         config: @config,
         session_id: session_id,
@@ -8344,14 +7868,7 @@ module OctridevVercel
     # Retrieves a named sandbox, its current session, and its exposed routes. Set `resume` to true to create a new sandbox instance from the most recent snapshot when the named sandbox is stopped; it defaults to false. The response indicates whether the sandbox resumed and includes sandbox and session details.
     #
     # Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox is stopped and resume is true, a new sandbox will be created from the most recent snapshot. Returns 404 if the named sandbox or its configuration no longer exists.
-    define_method(:get_named) do |
-      name:,
-      project_id: NOT_GIVEN,
-      resume: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_named) do |name:, project_id: NOT_GIVEN, resume: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Sandboxes.get_named_sandbox(
         config: @config,
         name: name,
@@ -8536,14 +8053,7 @@ module OctridevVercel
     # Retrieves the status and details of a command executed in a session, including its exit code if it has finished. Set `wait` to true to block the request until the command finishes.
     #
     # Retrieves the current status and details of a command executed in a session. Use the `wait` parameter to block until the command finishes execution.
-    define_method(:get_session_command) do |
-      session_id:,
-      cmd_id:,
-      wait: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_session_command) do |session_id:, cmd_id:, wait: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Sandboxes.get_session_command(
         config: @config,
         session_id: session_id,
@@ -8606,14 +8116,7 @@ module OctridevVercel
     # Streams command output in real time as newline-delimited JSON (ND-JSON). Each stream entry includes output data and a stream type such as `stdout`, `stderr`, or `error`.
     #
     # Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and `error` (for stream failures).
-    define_method(:get_session_command_logs) do |
-      session_id:,
-      cmd_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil,
-      &block
-    |
+    define_method(:get_session_command_logs) do |session_id:, cmd_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil, &block|
       ::OctridevVercel::Methods::Sandboxes.get_session_command_logs(
         config: @config,
         session_id: session_id,
@@ -8992,7 +8495,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the SecurityNamespace SDK type.
@@ -9085,13 +8587,7 @@ module OctridevVercel
     # Retrieves a specific firewall configuration version for a project. Use `configVersion` to select the version to inspect; the deployed version is identified as `active`.
     #
     # Retrieve the specified firewall configuration for a project. The deployed configVersion will be `active`
-    define_method(:get_firewall_config2) do |
-      config_version:,
-      project_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_firewall_config2) do |config_version:, project_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Security.get_firewall_config(
         config: @config,
         config_version: config_version,
@@ -9133,13 +8629,7 @@ module OctridevVercel
     # Retrieves recent active attack data for a project. Use `since` to set the lookback period in days; it defaults to one day when omitted.
     #
     # Retrieve active attack data within the last N days (default: 1 day)
-    define_method(:get_active_attack_status) do |
-      project_id:,
-      since: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_active_attack_status) do |project_id:, since: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Security.get_active_attack_status(
         config: @config,
         project_id: project_id,
@@ -9153,17 +8643,7 @@ module OctridevVercel
     # Lists system bypass rules configured for a project. Filter the results with `sourceIp`, `domain`, or `projectScope`, and use `offset` and `limit` to page through matching rules.
     #
     # Retrieve the system bypass rules configured for the specified project
-    define_method(:get_bypass_ip) do |
-      project_id:,
-      limit: NOT_GIVEN,
-      source_ip: NOT_GIVEN,
-      domain: NOT_GIVEN,
-      project_scope: NOT_GIVEN,
-      offset: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_bypass_ip) do |project_id:, limit: NOT_GIVEN, source_ip: NOT_GIVEN, domain: NOT_GIVEN, project_scope: NOT_GIVEN, offset: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Security.get_bypass_ip(
         config: @config,
         project_id: project_id,
@@ -9239,15 +8719,7 @@ module OctridevVercel
     # Lists conditional firewall bypass rules for a project. Use `projectId` to select the project and optionally filter by `slug` or `domain`; `limit` and `offset` control the returned results. The response includes the rules and may include pagination metadata.
     #
     # Retrieve conditional firewall bypass rules for a project.
-    define_method(:get_conditional_bypass) do |
-      project_id:,
-      slug: NOT_GIVEN,
-      domain: NOT_GIVEN,
-      limit: NOT_GIVEN,
-      offset: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_conditional_bypass) do |project_id:, slug: NOT_GIVEN, domain: NOT_GIVEN, limit: NOT_GIVEN, offset: NOT_GIVEN, team_id: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Security.get_conditional_bypass(
         config: @config,
         project_id: project_id,
@@ -9307,24 +8779,7 @@ module OctridevVercel
     # Lists firewall actions for a project, with optional filters for time, host, IP address, activity, action, and rule. Filters are combined across parameters and matched as alternatives within repeated parameters; use the returned pagination cursor to fetch subsequent results. Rule names reflect the project's current active firewall configuration and active team rulesets.
     #
     # Retrieve firewall actions for a project Rule names are resolved against the project's *current* active firewall configuration and the team's active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`. Filters (`ip`, `isActive`, `action`, `actionType`, `ruleKind`, `ruleId`, `hosts`) are ANDed across params…
-    define_method(:get_firewall_events) do |
-      project_id:,
-      sort: NOT_GIVEN,
-      limit: NOT_GIVEN,
-      cursor: NOT_GIVEN,
-      start_timestamp: NOT_GIVEN,
-      end_timestamp: NOT_GIVEN,
-      hosts: NOT_GIVEN,
-      ip: NOT_GIVEN,
-      is_active: NOT_GIVEN,
-      action: NOT_GIVEN,
-      action_type: NOT_GIVEN,
-      rule_kind: NOT_GIVEN,
-      rule_id: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_firewall_events) do |project_id:, sort: NOT_GIVEN, limit: NOT_GIVEN, cursor: NOT_GIVEN, start_timestamp: NOT_GIVEN, end_timestamp: NOT_GIVEN, hosts: NOT_GIVEN, ip: NOT_GIVEN, is_active: NOT_GIVEN, action: NOT_GIVEN, action_type: NOT_GIVEN, rule_kind: NOT_GIVEN, rule_id: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Security.get_security_firewall_events(
         config: @config,
         project_id: project_id,
@@ -9349,21 +8804,7 @@ module OctridevVercel
     # Returns aggregate counts for firewall actions matching the specified project and filters, without returning individual action rows. The counts represent policies, including policies that matched no requests. Use the same filter parameters as the firewall actions listing to scope the summary.
     #
     # Aggregate counts over the firewall actions matched by the same filters as `GET /v1/security/firewall/events`, without fetching any rows. Counts are of policies (mitigations), including ones that matched no requests.
-    define_method(:get_firewall_events_summary) do |
-      project_id:,
-      start_timestamp: NOT_GIVEN,
-      end_timestamp: NOT_GIVEN,
-      hosts: NOT_GIVEN,
-      ip: NOT_GIVEN,
-      is_active: NOT_GIVEN,
-      action: NOT_GIVEN,
-      action_type: NOT_GIVEN,
-      rule_kind: NOT_GIVEN,
-      rule_id: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_firewall_events_summary) do |project_id:, start_timestamp: NOT_GIVEN, end_timestamp: NOT_GIVEN, hosts: NOT_GIVEN, ip: NOT_GIVEN, is_active: NOT_GIVEN, action: NOT_GIVEN, action_type: NOT_GIVEN, rule_kind: NOT_GIVEN, rule_id: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Security.get_security_firewall_events_summary(
         config: @config,
         project_id: project_id,
@@ -9399,7 +8840,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the SpeedInsightsNamespace SDK type.
@@ -9423,7 +8863,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the StorageNamespace SDK type.
@@ -9435,12 +8874,7 @@ module OctridevVercel
     end
 
     # Retrieves a storage store by its identifier. Use `skip-metadata` to control whether project metadata is included and `include-guides` to control whether guides are included in the response.
-    define_method(:get_stores_by_id) do |
-      id:,
-      skip_metadata: NOT_GIVEN,
-      include_guides: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_stores_by_id) do |id:, skip_metadata: NOT_GIVEN, include_guides: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Storage.get_storage_stores_by_id(
         config: @config,
         id: id,
@@ -9479,7 +8913,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the TeamsNamespace SDK type.
@@ -9493,18 +8926,7 @@ module OctridevVercel
     # Lists team members and pending email invitations for the specified team. Use the query filters to search members, select a team role, or restrict results by membership timestamps or project eligibility. The response includes pagination metadata for navigating the results.
     #
     # Get a paginated list of team members for the provided team.
-    define_method(:get_members) do |
-      team_id:,
-      limit: NOT_GIVEN,
-      since: NOT_GIVEN,
-      until_: NOT_GIVEN,
-      search: NOT_GIVEN,
-      role: NOT_GIVEN,
-      exclude_project: NOT_GIVEN,
-      eligible_members_for_project_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_members) do |team_id:, limit: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, search: NOT_GIVEN, role: NOT_GIVEN, exclude_project: NOT_GIVEN, eligible_members_for_project_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Teams.get_team_members(
         config: @config,
         team_id: team_id,
@@ -9557,11 +8979,7 @@ module OctridevVercel
     # Retrieves the status of a user's request to join a team. Use `userId` to identify whose request to check; the endpoint returns the authenticated user's status when that path segment is not provided. A declined request is reported as not found.
     #
     # Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.
-    define_method(:get_access_request) do |
-      user_id:,
-      team_id:,
-      request_options: nil
-    |
+    define_method(:get_access_request) do |user_id:, team_id:, request_options: nil|
       ::OctridevVercel::Methods::Teams.get_team_access_request(
         config: @config,
         user_id: user_id,
@@ -9851,7 +9269,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the VcrNamespace SDK type.
@@ -9922,13 +9339,7 @@ module OctridevVercel
     # Retrieves a container registry repository for a project by its identifier or name. Supply `projectId` to select the project; IDs take precedence over names when identifying the project.
     #
     # Fetch a container registry repository for a project by ID or name.
-    define_method(:get_repository) do |
-      id_or_name:,
-      project_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_repository) do |id_or_name:, project_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Vcr.get_repository(
         config: @config,
         id_or_name: id_or_name,
@@ -10159,14 +9570,7 @@ module OctridevVercel
     # Retrieves a single tag from a VCR repository, including metadata for its backing image and its VHS-readiness status. Use the repository and tag identifiers to select the tag you want to inspect. The response contains the tag and its associated image details.
     #
     # Fetch a single tag from a repository, including the backing image's metadata and VHS-readiness status.
-    define_method(:get_repository_tag) do |
-      id_or_name:,
-      tag:,
-      project_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_repository_tag) do |id_or_name:, tag:, project_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Vcr.get_repository_tag(
         config: @config,
         id_or_name: id_or_name,
@@ -10181,14 +9585,7 @@ module OctridevVercel
     # Retrieves an image from a VCR repository, including its tags and resolved Dockerfile layer history. Identify the image by its internal ID or manifest digest to inspect its metadata and layer details. The image identifier may use the `image_` ID form or the `sha256:` digest form.
     #
     # Fetch an individual image from a repository, including its tags and Dockerfile history entries with discriminated layer details for UI rendering. The image may be addressed by its internal id (`image_...`) or by its manifest digest (`sha256:...`).
-    define_method(:get_repository_image) do |
-      id_or_name:,
-      image_id_or_digest:,
-      project_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_repository_image) do |id_or_name:, image_id_or_digest:, project_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Vcr.get_repository_image(
         config: @config,
         id_or_name: id_or_name,
@@ -10252,13 +9649,7 @@ module OctridevVercel
     # Downloads a blob from a Docker Registry repository by its content-addressable digest. Supply the team, project, repository, and digest as path components to identify the blob. The digest must use an algorithm followed by a colon and hexadecimal value.
     #
     # GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Fetch a blob by digest.
-    define_method(:get_by_team_slug_by_project_slug_by_repository_name_blobs_by_digest) do |
-      team_slug:,
-      project_slug:,
-      repository_name:,
-      digest:,
-      request_options: nil
-    |
+    define_method(:get_by_team_slug_by_project_slug_by_repository_name_blobs_by_digest) do |team_slug:, project_slug:, repository_name:, digest:, request_options: nil|
       ::OctridevVercel::Methods::Vcr.get_by_team_slug_by_project_slug_by_repository_name_blobs_by_digest(
         config: @config,
         team_slug: team_slug,
@@ -10292,13 +9683,7 @@ module OctridevVercel
     # Retrieves the status of an in-progress blob upload in a Docker repository. Use this operation to check an upload session before resuming a partial upload after an interruption. Supply the repository components and the session's `uuid`.
     #
     # GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Query the status of an in-progress blob upload. Used by clients to resume a partial upload after an interruption.
-    define_method(:get_by_team_slug_by_project_slug_by_repository_name_blobs_uploads_by_uuid) do |
-      team_slug:,
-      project_slug:,
-      repository_name:,
-      uuid:,
-      request_options: nil
-    |
+    define_method(:get_by_team_slug_by_project_slug_by_repository_name_blobs_uploads_by_uuid) do |team_slug:, project_slug:, repository_name:, uuid:, request_options: nil|
       ::OctridevVercel::Methods::Vcr.get_by_team_slug_by_project_slug_by_repository_name_blobs_uploads_by_uuid(
         config: @config,
         team_slug: team_slug,
@@ -10436,13 +9821,7 @@ module OctridevVercel
     # Retrieves an image manifest from a Docker repository using its tag or digest as the reference. Use this operation when you need to fetch the manifest associated with a repository reference. Supply a valid `reference` along with the repository components.
     #
     # GET /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Fetch a manifest by tag or digest.
-    define_method(:get_by_team_slug_by_project_slug_by_repository_name_manifests_by_reference) do |
-      team_slug:,
-      project_slug:,
-      repository_name:,
-      reference:,
-      request_options: nil
-    |
+    define_method(:get_by_team_slug_by_project_slug_by_repository_name_manifests_by_reference) do |team_slug:, project_slug:, repository_name:, reference:, request_options: nil|
       ::OctridevVercel::Methods::Vcr.get_by_team_slug_by_project_slug_by_repository_name_manifests_by_reference(
         config: @config,
         team_slug: team_slug,
@@ -10476,14 +9855,7 @@ module OctridevVercel
     # Lists image tags in a Docker repository. Use `teamSlug`, `projectSlug`, and `repositoryName` to identify the repository, and `n` to control the page size. Pass the opaque cursor from a previous response's `Link` header in `last` to continue listing.
     #
     # GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list List the tags in a repository. The `last` parameter accepts the opaque cursor from a previous response's `Link` header. Unparseable cursors return HTTP 400 with code `invalid_cursor`.
-    define_method(:get_by_team_slug_by_project_slug_by_repository_name_tags_list) do |
-      team_slug:,
-      project_slug:,
-      repository_name:,
-      count: NOT_GIVEN,
-      last: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_by_team_slug_by_project_slug_by_repository_name_tags_list) do |team_slug:, project_slug:, repository_name:, count: NOT_GIVEN, last: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Vcr.get_by_team_slug_by_project_slug_by_repository_name_tags_list(
         config: @config,
         team_slug: team_slug,
@@ -10494,7 +9866,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the VercelCiNamespace SDK type.
@@ -10508,14 +9879,7 @@ module OctridevVercel
     # Retrieves Vercel CI settings for a connected repository. Identify the repository with `provider`, `organizationId`, and `repository`; use `teamId` or `slug` to make the request on behalf of a team. The response includes whether Vercel CI is enabled and the associated timestamps.
     #
     # Get Repository Settings
-    define_method(:get_repository_settings) do |
-      provider:,
-      organization_id:,
-      repository:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_repository_settings) do |provider:, organization_id:, repository:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::VercelCi.get_vercel_ci_repository_settings(
         config: @config,
         provider: provider,
@@ -10636,12 +10000,7 @@ module OctridevVercel
     # Retrieves the current status of a Vercel CI task analysis. Use `analysisId` to identify the analysis and optionally pass `teamId` or `slug` to make the request on behalf of a team. The response includes a failure reason when one is available.
     #
     # Get task analysis
-    define_method(:get_task_analysis) do |
-      analysis_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_task_analysis) do |analysis_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::VercelCi.get_vercel_ci_task_analysis(
         config: @config,
         analysis_id: analysis_id,
@@ -10714,14 +10073,7 @@ module OctridevVercel
     # Retrieves an invocation attempt with its job definitions, latest job runs, and task definitions and active task runs. Use `attempt` to select an attempt, or omit it to use the latest; set `follow` to `1` to receive newline-delimited JSON updates until the attempt finishes or the stream times out.
     #
     # Returns an invocation attempt together with every job definition, its latest job run, and the task definitions and active task runs of that job run. Defaults to the latest attempt when `attempt` is omitted. With `follow=1` the response is a newline-delimited JSON stream: a `{"type":"tree", ...}` event with the full tree is sent immediately and again whenever it changes, and a final `{"type":"end","reason":...}` event is sent when the attempt finishes (`completed`) or the…
-    define_method(:get_invocation_tree) do |
-      invocation_id:,
-      attempt: NOT_GIVEN,
-      follow: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_invocation_tree) do |invocation_id:, attempt: NOT_GIVEN, follow: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::VercelCi.get_vercel_ci_invocation_tree(
         config: @config,
         invocation_id: invocation_id,
@@ -10736,13 +10088,7 @@ module OctridevVercel
     # Retrieves a specific invocation attempt and its repository details. Use `invocationId` and `attempt` to identify the attempt you want to inspect. The response includes the invocation record and associated repositories.
     #
     # Get Invocation
-    define_method(:get_invocation) do |
-      invocation_id:,
-      attempt:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_invocation) do |invocation_id:, attempt:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::VercelCi.get_vercel_ci_invocation(
         config: @config,
         invocation_id: invocation_id,
@@ -10796,14 +10142,7 @@ module OctridevVercel
     # Retrieves a specific job definition for an invocation attempt. Use `invocationId`, `attempt`, and `jobDefinitionId` to identify the definition. The response contains the job definition's kind, name, command, and creation time.
     #
     # Get Job Definition
-    define_method(:get_job_definition) do |
-      invocation_id:,
-      attempt:,
-      job_definition_id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_job_definition) do |invocation_id:, attempt:, job_definition_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::VercelCi.get_vercel_ci_job_definition(
         config: @config,
         invocation_id: invocation_id,
@@ -10840,15 +10179,7 @@ module OctridevVercel
     # Retrieves a specific run attempt for a job definition. Use `invocationId`, `attempt`, `jobDefinitionId`, and `runAttempt` to identify the run. The response contains the run's creation time and any available start and completion details.
     #
     # Get Job Run
-    define_method(:get_job_run) do |
-      invocation_id:,
-      attempt:,
-      job_definition_id:,
-      run_attempt:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_job_run) do |invocation_id:, attempt:, job_definition_id:, run_attempt:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::VercelCi.get_vercel_ci_job_run(
         config: @config,
         invocation_id: invocation_id,
@@ -10914,14 +10245,7 @@ module OctridevVercel
     # Retrieves log lines for a specific invocation attempt. Use `level` to filter the results to one or more log levels, such as `warn` or `error`. Each returned line includes its level, timestamp, and message.
     #
     # Get Invocation Logs
-    define_method(:get_invocation_logs) do |
-      invocation_id:,
-      attempt:,
-      level: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_invocation_logs) do |invocation_id:, attempt:, level: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::VercelCi.get_vercel_ci_invocation_logs(
         config: @config,
         invocation_id: invocation_id,
@@ -10936,18 +10260,7 @@ module OctridevVercel
     # Lists log lines for tasks in a specific invocation attempt, grouped by task. Use `task`, `conclusion`, and `level` to filter the results, or use `search` to return only tasks with matching lines. Search returns at most 1,000 matching lines and ignores `limit`.
     #
     # Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned.
-    define_method(:get_task_logs) do |
-      invocation_id:,
-      attempt:,
-      task: NOT_GIVEN,
-      conclusion: NOT_GIVEN,
-      level: NOT_GIVEN,
-      search: NOT_GIVEN,
-      limit: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_task_logs) do |invocation_id:, attempt:, task: NOT_GIVEN, conclusion: NOT_GIVEN, level: NOT_GIVEN, search: NOT_GIVEN, limit: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::VercelCi.get_vercel_ci_task_logs(
         config: @config,
         invocation_id: invocation_id,
@@ -10988,18 +10301,7 @@ module OctridevVercel
     # Retrieves log lines for a specific job run attempt. Use `level` to filter the returned lines, or provide `since` to retrieve lines from a specified point. Set `follow` to 1 to request ongoing log output.
     #
     # Get Job Run Logs
-    define_method(:get_job_run_logs) do |
-      invocation_id:,
-      attempt:,
-      job_definition_id:,
-      run_attempt:,
-      follow: NOT_GIVEN,
-      since: NOT_GIVEN,
-      level: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_job_run_logs) do |invocation_id:, attempt:, job_definition_id:, run_attempt:, follow: NOT_GIVEN, since: NOT_GIVEN, level: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::VercelCi.get_vercel_ci_job_run_logs(
         config: @config,
         invocation_id: invocation_id,
@@ -11018,20 +10320,7 @@ module OctridevVercel
     # Retrieves log lines for a specific task run attempt. Use `level` to filter the returned lines, or provide `since` to retrieve lines from a specified point. Set `follow` to 1 to stream newline-delimited JSON log lines until the task run finishes or the stream reaches its maximum duration.
     #
     # Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration.
-    define_method(:get_task_run_logs) do |
-      invocation_id:,
-      attempt:,
-      job_definition_id:,
-      run_attempt:,
-      task_definition_id:,
-      task_run_attempt:,
-      follow: NOT_GIVEN,
-      since: NOT_GIVEN,
-      level: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_task_run_logs) do |invocation_id:, attempt:, job_definition_id:, run_attempt:, task_definition_id:, task_run_attempt:, follow: NOT_GIVEN, since: NOT_GIVEN, level: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::VercelCi.get_vercel_ci_task_run_logs(
         config: @config,
         invocation_id: invocation_id,
@@ -11048,7 +10337,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the WebNamespace SDK type.
@@ -11072,7 +10360,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the WebAnalyticsNamespace SDK type.
@@ -11186,7 +10473,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the WebhooksNamespace SDK type.
@@ -11240,12 +10526,7 @@ module OctridevVercel
     # Retrieves a webhook by its identifier. Use `teamId` or `slug` to specify the team context for the request. The response includes the webhook URL, subscribed events, associated project IDs, and timestamps.
     #
     # Get a webhook
-    define_method(:get_webhook) do |
-      id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_webhook) do |id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::V35f83988.get_webhook(
         config: @config,
         id: id,
@@ -11272,7 +10553,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the AliasesNamespace SDK type.
@@ -11356,16 +10636,7 @@ module OctridevVercel
     # Retrieves an alias by its hostname or alias ID. Use `projectId` to restrict the result to an alias assigned to a specific project, or use `since` and `until` to filter by creation time.
     #
     # Retrieves an Alias for the given host name or alias ID.
-    define_method(:get_alias) do |
-      id_or_alias:,
-      from: NOT_GIVEN,
-      project_id: NOT_GIVEN,
-      since: NOT_GIVEN,
-      until_: NOT_GIVEN,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_alias) do |id_or_alias:, from: NOT_GIVEN, project_id: NOT_GIVEN, since: NOT_GIVEN, until_: NOT_GIVEN, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Aliases.get_alias(
         config: @config,
         id_or_alias: id_or_alias,
@@ -11416,7 +10687,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the CertsNamespace SDK type.
@@ -11430,12 +10700,7 @@ module OctridevVercel
     # Retrieves a certificate by its identifier. Use `teamId` or `slug` to specify the team context for the request. The response includes the certificate's common names, renewal setting, and creation and expiration timestamps.
     #
     # Get cert by id
-    define_method(:get_by_id) do |
-      id:,
-      team_id: NOT_GIVEN,
-      slug: NOT_GIVEN,
-      request_options: nil
-    |
+    define_method(:get_by_id) do |id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
       ::OctridevVercel::Methods::Certs.get_cert_by_id(
         config: @config,
         id: id,
@@ -11520,7 +10785,6 @@ module OctridevVercel
         request_options: request_options
       )
     end
-
   end
 
   # Defines the Vercel SDK type.
@@ -11577,7 +10841,7 @@ module OctridevVercel
       web_analytics: WebAnalyticsNamespace,
       webhooks: WebhooksNamespace,
       aliases: AliasesNamespace,
-      certs: CertsNamespace,
+      certs: CertsNamespace
     }.freeze
     private_constant :SUB_NAMESPACES
 
@@ -11606,6 +10870,5 @@ module OctridevVercel
       end
       logging
     end
-
   end
 end

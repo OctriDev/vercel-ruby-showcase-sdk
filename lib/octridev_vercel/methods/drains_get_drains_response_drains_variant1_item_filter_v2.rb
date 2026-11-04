@@ -41,27 +41,27 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDrainsResponseDrainsVariant1ItemMetadata
         FIELDS = {
-          created_at: "createdAt",
-          delivery: "delivery",
-          disabled_at: "disabledAt",
-          disabled_by: "disabledBy",
-          disabled_reason: "disabledReason",
-          first_error_timestamp: "firstErrorTimestamp",
-          id: "id",
-          name: "name",
-          owner_id: "ownerId",
-          project_ids: "projectIds",
-          sampling: "sampling",
-          schemas: "schemas",
-          source: "source",
-          status: "status",
-          team_id: "teamId",
-          updated_at: "updatedAt",
-          filter_v2: "filterV2",
-          integration_configuration_uri: "integrationConfigurationUri",
-          integration_icon: "integrationIcon",
-          integration_website: "integrationWebsite",
-          project_access: "projectAccess",
+          created_at: 'createdAt',
+          delivery: 'delivery',
+          disabled_at: 'disabledAt',
+          disabled_by: 'disabledBy',
+          disabled_reason: 'disabledReason',
+          first_error_timestamp: 'firstErrorTimestamp',
+          id: 'id',
+          name: 'name',
+          owner_id: 'ownerId',
+          project_ids: 'projectIds',
+          sampling: 'sampling',
+          schemas: 'schemas',
+          source: 'source',
+          status: 'status',
+          team_id: 'teamId',
+          updated_at: 'updatedAt',
+          filter_v2: 'filterV2',
+          integration_configuration_uri: 'integrationConfigurationUri',
+          integration_icon: 'integrationIcon',
+          integration_website: 'integrationWebsite',
+          project_access: 'projectAccess'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -97,7 +97,7 @@ module OctridevVercel
           end,
           project_access: lambda do |value|
             ::OctridevVercel::GetDrainsResponseDrainsItemProjectAccess.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -140,13 +140,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDrainsResponseMetadata
         FIELDS = {
-          drains: "drains",
+          drains: 'drains'
         }.freeze
         REQUIRED_FIELDS = %i[
           drains
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDrainsResponse.
@@ -179,10 +178,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateDrainSamplingItemMetadata
         FIELDS = {
-          type: "type",
-          rate: "rate",
-          env: "env",
-          request_path: "requestPath",
+          type: 'type',
+          rate: 'rate',
+          env: 'env',
+          request_path: 'requestPath'
         }.freeze
         REQUIRED_FIELDS = %i[
           type
@@ -191,7 +190,7 @@ module OctridevVercel
         DECODERS = {
           env: lambda do |value|
             ::OctridevVercel::Methods::Drains::UpdateDrainSamplingItemEnv.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -231,13 +230,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateDrainTransformsItemMetadata
         FIELDS = {
-          id: "id",
+          id: 'id'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateDrainTransformsItem.
@@ -270,19 +268,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateDrainMetadata
         FIELDS = {
-          name: "name",
-          projects: "projects",
-          project_ids: "projectIds",
-          filter: "filter",
-          schemas: "schemas",
-          delivery: "delivery",
-          sampling: "sampling",
-          transforms: "transforms",
-          status: "status",
-          source: "source",
+          name: 'name',
+          projects: 'projects',
+          project_ids: 'projectIds',
+          filter: 'filter',
+          schemas: 'schemas',
+          delivery: 'delivery',
+          sampling: 'sampling',
+          transforms: 'transforms',
+          status: 'status',
+          source: 'source'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           projects: lambda do |value|
             ::OctridevVercel::Methods::Drains::UpdateDrainProjects.from_value(value)
@@ -304,7 +301,7 @@ module OctridevVercel
           end,
           source: lambda do |value|
             ::OctridevVercel::UpdateDrainRequestSource.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -344,8 +341,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalTestDrainMetadata
         FIELDS = {
-          schemas: "schemas",
-          delivery: "delivery",
+          schemas: 'schemas',
+          delivery: 'delivery'
         }.freeze
         REQUIRED_FIELDS = %i[
           schemas
@@ -354,7 +351,7 @@ module OctridevVercel
         DECODERS = {
           delivery: lambda do |value|
             ::OctridevVercel::TestDrainRequestDelivery.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -391,7 +388,7 @@ module OctridevVercel
       module CreateDrainProjects
         SOME = 'some'
         ALL = 'all'
-        VALUES = ['some', 'all'].freeze
+        VALUES = %w[some all].freeze
         def self.from_value(value)
           value
         end
@@ -410,7 +407,7 @@ module OctridevVercel
       module GetDrainsResponseDrainsVariant1ItemSamplingItemEnv
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end
@@ -429,7 +426,7 @@ module OctridevVercel
       module UpdateDrainProjects
         SOME = 'some'
         ALL = 'all'
-        VALUES = ['some', 'all'].freeze
+        VALUES = %w[some all].freeze
         def self.from_value(value)
           value
         end
@@ -457,7 +454,7 @@ module OctridevVercel
       module GetDrainsResponseDrainsVariant0ItemSamplingItemEnv
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end
@@ -468,7 +465,7 @@ module OctridevVercel
         DISABLED = 'disabled'
         ENABLED = 'enabled'
         ERRORED = 'errored'
-        VALUES = ['disabled', 'enabled', 'errored'].freeze
+        VALUES = %w[disabled enabled errored].freeze
         def self.from_value(value)
           value
         end
@@ -481,9 +478,9 @@ module OctridevVercel
         DISABLED_BY_OWNER = 'disabled-by-owner'
         FEATURE_NOT_AVAILABLE = 'feature-not-available'
         LIMITS_EXCEEDED = 'limits-exceeded'
-        VALUES = [
-          'account-plan-downgrade', 'disabled-by-admin', 'disabled-by-owner',
-          'feature-not-available', 'limits-exceeded'
+        VALUES = %w[
+          account-plan-downgrade disabled-by-admin disabled-by-owner
+          feature-not-available limits-exceeded
         ].freeze
         def self.from_value(value)
           value
@@ -494,7 +491,7 @@ module OctridevVercel
       module CreateDrainSamplingItemEnv
         PRODUCTION = 'production'
         PREVIEW = 'preview'
-        VALUES = ['production', 'preview'].freeze
+        VALUES = %w[production preview].freeze
         def self.from_value(value)
           value
         end
@@ -507,9 +504,9 @@ module OctridevVercel
         DISABLED_BY_OWNER = 'disabled-by-owner'
         FEATURE_NOT_AVAILABLE = 'feature-not-available'
         LIMITS_EXCEEDED = 'limits-exceeded'
-        VALUES = [
-          'account-plan-downgrade', 'disabled-by-admin', 'disabled-by-owner',
-          'feature-not-available', 'limits-exceeded'
+        VALUES = %w[
+          account-plan-downgrade disabled-by-admin disabled-by-owner
+          feature-not-available limits-exceeded
         ].freeze
         def self.from_value(value)
           value
@@ -520,7 +517,7 @@ module OctridevVercel
       module UpdateDrainStatus
         ENABLED = 'enabled'
         DISABLED = 'disabled'
-        VALUES = ['enabled', 'disabled'].freeze
+        VALUES = %w[enabled disabled].freeze
         def self.from_value(value)
           value
         end
@@ -530,7 +527,7 @@ module OctridevVercel
       module UpdateDrainSamplingItemEnv
         PRODUCTION = 'production'
         PREVIEW = 'preview'
-        VALUES = ['production', 'preview'].freeze
+        VALUES = %w[production preview].freeze
         def self.from_value(value)
           value
         end
@@ -541,7 +538,7 @@ module OctridevVercel
         DISABLED = 'disabled'
         ENABLED = 'enabled'
         ERRORED = 'errored'
-        VALUES = ['disabled', 'enabled', 'errored'].freeze
+        VALUES = %w[disabled enabled errored].freeze
         def self.from_value(value)
           value
         end

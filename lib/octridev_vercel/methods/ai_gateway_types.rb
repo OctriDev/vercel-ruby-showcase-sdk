@@ -12,13 +12,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpsertAiGatewayBudgetMetadata
         FIELDS = {
-          scope_type: "scopeType",
-          project_id: "projectId",
-          user_id: "userId",
-          limit_amount: "limitAmount",
-          refresh_period: "refreshPeriod",
-          include_byok_in_quota: "includeByokInQuota",
-          alert_thresholds: "alertThresholds",
+          scope_type: 'scopeType',
+          project_id: 'projectId',
+          user_id: 'userId',
+          limit_amount: 'limitAmount',
+          refresh_period: 'refreshPeriod',
+          include_byok_in_quota: 'includeByokInQuota',
+          alert_thresholds: 'alertThresholds'
         }.freeze
         REQUIRED_FIELDS = %i[
           scope_type
@@ -33,7 +33,7 @@ module OctridevVercel
           end,
           alert_thresholds: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::AiGateway::UpsertAiGatewayBudgetAlertThresholdsItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -75,10 +75,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpsertAiGatewayBudgetDefaultMetadata
         FIELDS = {
-          scope_type: "scopeType",
-          limit_amount: "limitAmount",
-          refresh_period: "refreshPeriod",
-          alert_thresholds: "alertThresholds",
+          scope_type: 'scopeType',
+          limit_amount: 'limitAmount',
+          refresh_period: 'refreshPeriod',
+          alert_thresholds: 'alertThresholds'
         }.freeze
         REQUIRED_FIELDS = %i[
           scope_type
@@ -93,7 +93,7 @@ module OctridevVercel
           end,
           alert_thresholds: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::AiGateway::UpsertAiGatewayBudgetDefaultAlertThresholdsItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -130,7 +130,7 @@ module OctridevVercel
       module ListAiGatewayRulesParameter
         TRUE = 'true'
         FALSE = 'false'
-        VALUES = ['true', 'false'].freeze
+        VALUES = %w[true false].freeze
         def self.from_value(value)
           value
         end
@@ -140,7 +140,7 @@ module OctridevVercel
       module ListAiGatewayBudgetsParameter8dab47ca
         TRUE = 'true'
         FALSE = 'false'
-        VALUES = ['true', 'false'].freeze
+        VALUES = %w[true false].freeze
         def self.from_value(value)
           value
         end
@@ -152,7 +152,7 @@ module OctridevVercel
         WEEKLY = 'weekly'
         MONTHLY = 'monthly'
         NONE = 'none'
-        VALUES = ['daily', 'weekly', 'monthly', 'none'].freeze
+        VALUES = %w[daily weekly monthly none].freeze
         def self.from_value(value)
           value
         end
@@ -186,7 +186,7 @@ module OctridevVercel
         WEEKLY = 'weekly'
         MONTHLY = 'monthly'
         NONE = 'none'
-        VALUES = ['daily', 'weekly', 'monthly', 'none'].freeze
+        VALUES = %w[daily weekly monthly none].freeze
         def self.from_value(value)
           value
         end
@@ -196,7 +196,7 @@ module OctridevVercel
       module ListAiGatewayVirtualModelConfigsParameter
         TRUE = 'true'
         FALSE = 'false'
-        VALUES = ['true', 'false'].freeze
+        VALUES = %w[true false].freeze
         def self.from_value(value)
           value
         end
@@ -207,7 +207,7 @@ module OctridevVercel
         TEAM = 'team'
         PROJECT = 'project'
         USER = 'user'
-        VALUES = ['team', 'project', 'user'].freeze
+        VALUES = %w[team project user].freeze
         def self.from_value(value)
           value
         end
@@ -219,7 +219,7 @@ module OctridevVercel
         PROJECT = 'project'
         API_KEY = 'api-key'
         USER = 'user'
-        VALUES = ['team', 'project', 'api-key', 'user'].freeze
+        VALUES = %w[team project api-key user].freeze
         def self.from_value(value)
           value
         end
@@ -231,7 +231,7 @@ module OctridevVercel
         PROJECT = 'project'
         API_KEY = 'api-key'
         USER = 'user'
-        VALUES = ['team', 'project', 'api-key', 'user'].freeze
+        VALUES = %w[team project api-key user].freeze
         def self.from_value(value)
           value
         end
@@ -242,7 +242,7 @@ module OctridevVercel
         TEAM = 'team'
         PROJECT = 'project'
         USER = 'user'
-        VALUES = ['team', 'project', 'user'].freeze
+        VALUES = %w[team project user].freeze
         def self.from_value(value)
           value
         end
@@ -254,7 +254,7 @@ module OctridevVercel
         PROJECT = 'project'
         USER = 'user'
         API_KEY = 'api-key'
-        VALUES = ['team', 'project', 'user', 'api-key'].freeze
+        VALUES = %w[team project user api-key].freeze
         def self.from_value(value)
           value
         end

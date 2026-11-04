@@ -18,8 +18,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -40,7 +40,7 @@ module OctridevVercel
       module ApproveRollingReleaseStageResponseRollingReleaseCurrentDeploymentTarget
         PRODUCTION = 'production'
         STAGING = 'staging'
-        VALUES = ['production', 'staging'].freeze
+        VALUES = %w[production staging].freeze
         def self.from_value(value)
           value
         end
@@ -102,7 +102,7 @@ module OctridevVercel
         ABORTED = 'ABORTED'
         ACTIVE = 'ACTIVE'
         COMPLETE = 'COMPLETE'
-        VALUES = ['ABORTED', 'ACTIVE', 'COMPLETE'].freeze
+        VALUES = %w[ABORTED ACTIVE COMPLETE].freeze
         def self.from_value(value)
           value
         end
@@ -113,7 +113,7 @@ module OctridevVercel
         ABORTED = 'ABORTED'
         ACTIVE = 'ACTIVE'
         COMPLETE = 'COMPLETE'
-        VALUES = ['ABORTED', 'ACTIVE', 'COMPLETE'].freeze
+        VALUES = %w[ABORTED ACTIVE COMPLETE].freeze
         def self.from_value(value)
           value
         end
@@ -144,7 +144,7 @@ module OctridevVercel
       module StartRollingReleaseResponseRollingReleaseCurrentDeploymentTarget
         PRODUCTION = 'production'
         STAGING = 'staging'
-        VALUES = ['production', 'staging'].freeze
+        VALUES = %w[production staging].freeze
         def self.from_value(value)
           value
         end
@@ -159,8 +159,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value

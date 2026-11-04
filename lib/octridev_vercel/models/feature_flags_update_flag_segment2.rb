@@ -5,43 +5,43 @@
 
 # feature_flags domain models
 module OctridevVercel
-# Defines the UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type SDK namespace.
-module UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type
-  ALL = 'all'
-  VALUES = ['all'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type SDK namespace.
+  module UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type
+    ALL = 'all'
+    VALUES = ['all'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type', 'enum', "Unknown UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type: #{value}")
+      raise SdkValidationError.new('UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type', 'enum', "Unknown UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0Type: #{value}")
+    end
   end
-end
 
-# Defines the UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseType SDK namespace.
-module UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseType
-  ENTITY = 'entity'
-  VALUES = ['entity'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseType SDK namespace.
+  module UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1BaseType
+    ENTITY = 'entity'
+    VALUES = ['entity'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type SDK namespace.
-module UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type
-  SPLIT = 'split'
-  VALUES = ['split'].freeze
-  def self.from_value(value)
-    return value if VALUES.include?(value)
+  # Defines the UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type SDK namespace.
+  module UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type
+    SPLIT = 'split'
+    VALUES = ['split'].freeze
+    def self.from_value(value)
+      return value if VALUES.include?(value)
 
-    raise SdkValidationError.new('UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type', 'enum', "Unknown UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type: #{value}")
+      raise SdkValidationError.new('UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type', 'enum', "Unknown UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Type: #{value}")
+    end
   end
-end
 
-# Defines the UpdateFlagSegmentResponseVariant0TypeName SDK namespace.
-module UpdateFlagSegmentResponseVariant0TypeName
-  SEGMENT = 'segment'
-  VALUES = ['segment'].freeze
-  def self.from_value(value)
-    value
+  # Defines the UpdateFlagSegmentResponseVariant0TypeName SDK namespace.
+  module UpdateFlagSegmentResponseVariant0TypeName
+    SEGMENT = 'segment'
+    VALUES = ['segment'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 end

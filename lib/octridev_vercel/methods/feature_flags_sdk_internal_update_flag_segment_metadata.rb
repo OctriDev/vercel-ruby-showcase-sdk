@@ -12,21 +12,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSegmentMetadata
         FIELDS = {
-          operations: "operations",
-          label: "label",
-          description: "description",
-          data: "data",
-          hint: "hint",
+          operations: 'operations',
+          label: 'label',
+          description: 'description',
+          data: 'data',
+          hint: 'hint'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           operations: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSegmentOperationsItem.from_hash(item) }
           end,
           data: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSegmentData.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -62,11 +61,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentFeatureFlagsResponseStatusMetadata
         FIELDS = {
-          created_at: "createdAt",
-          deployment_id: "deploymentId",
-          flag_count: "flagCount",
-          project_id: "projectId",
-          response_status: "responseStatus",
+          created_at: 'createdAt',
+          deployment_id: 'deploymentId',
+          flag_count: 'flagCount',
+          project_id: 'projectId',
+          response_status: 'responseStatus'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -75,8 +74,7 @@ module OctridevVercel
           project_id
           response_status
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetDeploymentFeatureFlagsResponseStatus.
@@ -113,8 +111,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetDeploymentFeatureFlagsResponseMetadata
         FIELDS = {
-          flags: "flags",
-          status: "status",
+          flags: 'flags',
+          status: 'status'
         }.freeze
         REQUIRED_FIELDS = %i[
           flags
@@ -123,7 +121,7 @@ module OctridevVercel
         DECODERS = {
           status: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::GetDeploymentFeatureFlagsResponseStatus.from_hash(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           status
@@ -160,16 +158,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSdkKeysResponseDataItemMetadata
         FIELDS = {
-          created_at: "createdAt",
-          created_by: "createdBy",
-          deleted_at: "deletedAt",
-          environment: "environment",
-          hash_key: "hashKey",
-          label: "label",
-          partial_key_value: "partialKeyValue",
-          project_id: "projectId",
-          type: "type",
-          updated_at: "updatedAt",
+          created_at: 'createdAt',
+          created_by: 'createdBy',
+          deleted_at: 'deletedAt',
+          environment: 'environment',
+          hash_key: 'hashKey',
+          label: 'label',
+          partial_key_value: 'partialKeyValue',
+          project_id: 'projectId',
+          type: 'type',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           created_at
@@ -184,7 +182,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::GetSdkKeysResponseDataItemType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -222,7 +220,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSdkKeysResponseMetadata
         FIELDS = {
-          data: "data",
+          data: 'data'
         }.freeze
         REQUIRED_FIELDS = %i[
           data
@@ -230,7 +228,7 @@ module OctridevVercel
         DECODERS = {
           data: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::GetSdkKeysResponseDataItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -264,9 +262,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateSdkKeyMetadata
         FIELDS = {
-          sdk_key_type: "sdkKeyType",
-          environment: "environment",
-          label: "label",
+          sdk_key_type: 'sdkKeyType',
+          environment: 'environment',
+          label: 'label'
         }.freeze
         REQUIRED_FIELDS = %i[
           sdk_key_type
@@ -275,7 +273,7 @@ module OctridevVercel
         DECODERS = {
           sdk_key_type: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::CreateSdkKeySdkKeyType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -340,7 +338,7 @@ module OctridevVercel
       module ListFlagsV2Parameter
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = ['active', 'archived'].freeze
+        VALUES = %w[active archived].freeze
         def self.from_value(value)
           value
         end
@@ -350,7 +348,7 @@ module OctridevVercel
       module UpdateFlagState
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = ['active', 'archived'].freeze
+        VALUES = %w[active archived].freeze
         def self.from_value(value)
           value
         end
@@ -360,7 +358,7 @@ module OctridevVercel
       module CreateFlagState
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = ['active', 'archived'].freeze
+        VALUES = %w[active archived].freeze
         def self.from_value(value)
           value
         end
@@ -475,7 +473,7 @@ module OctridevVercel
       module UpdateFlagResponseState
         ACTIVE = 'active'
         ARCHIVED = 'archived'
-        VALUES = ['active', 'archived'].freeze
+        VALUES = %w[active archived].freeze
         def self.from_value(value)
           value
         end
@@ -528,7 +526,7 @@ module OctridevVercel
         CLIENT = 'client'
         MOBILE = 'mobile'
         SERVER = 'server'
-        VALUES = ['client', 'mobile', 'server'].freeze
+        VALUES = %w[client mobile server].freeze
         def self.from_value(value)
           value
         end
@@ -538,7 +536,7 @@ module OctridevVercel
       module UpdateFlagSegmentOperationsItemField
         INCLUDE = 'include'
         EXCLUDE = 'exclude'
-        VALUES = ['include', 'exclude'].freeze
+        VALUES = %w[include exclude].freeze
         def self.from_value(value)
           value
         end
@@ -548,7 +546,7 @@ module OctridevVercel
       module UpdateFlagSegmentOperationsItemAction
         ADD = 'add'
         REMOVE = 'remove'
-        VALUES = ['add', 'remove'].freeze
+        VALUES = %w[add remove].freeze
         def self.from_value(value)
           value
         end

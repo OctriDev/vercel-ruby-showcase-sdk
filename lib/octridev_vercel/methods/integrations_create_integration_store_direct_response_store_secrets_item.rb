@@ -39,28 +39,28 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateIntegrationStoreDirectResponseStoreMetadata
         FIELDS = {
-          project_filter: "projectFilter",
-          projects_metadata: "projectsMetadata",
-          status: "status",
-          total_connected_projects: "totalConnectedProjects",
-          usage_quota_exceeded: "usageQuotaExceeded",
-          billing_plan: "billingPlan",
-          capabilities: "capabilities",
-          direct_partner_console_url: "directPartnerConsoleUrl",
-          external_resource_id: "externalResourceId",
-          external_resource_status: "externalResourceStatus",
-          metadata: "metadata",
-          notification: "notification",
-          ownership: "ownership",
-          parent_id: "parentId",
-          product: "product",
-          protocol_settings: "protocolSettings",
-          secret_rotation_completed_at: "secretRotationCompletedAt",
-          secret_rotation_requested_at: "secretRotationRequestedAt",
-          secret_rotation_requested_by: "secretRotationRequestedBy",
-          secret_rotation_requested_reason: "secretRotationRequestedReason",
-          secrets: "secrets",
-          targets: "targets",
+          project_filter: 'projectFilter',
+          projects_metadata: 'projectsMetadata',
+          status: 'status',
+          total_connected_projects: 'totalConnectedProjects',
+          usage_quota_exceeded: 'usageQuotaExceeded',
+          billing_plan: 'billingPlan',
+          capabilities: 'capabilities',
+          direct_partner_console_url: 'directPartnerConsoleUrl',
+          external_resource_id: 'externalResourceId',
+          external_resource_status: 'externalResourceStatus',
+          metadata: 'metadata',
+          notification: 'notification',
+          ownership: 'ownership',
+          parent_id: 'parentId',
+          product: 'product',
+          protocol_settings: 'protocolSettings',
+          secret_rotation_completed_at: 'secretRotationCompletedAt',
+          secret_rotation_requested_at: 'secretRotationRequestedAt',
+          secret_rotation_requested_by: 'secretRotationRequestedBy',
+          secret_rotation_requested_reason: 'secretRotationRequestedReason',
+          secrets: 'secrets',
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           projects_metadata
@@ -109,7 +109,7 @@ module OctridevVercel
           end,
           targets: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponseStoreTargetsItem.from_value(item) }
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           status
@@ -161,7 +161,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateIntegrationStoreDirectResponseMetadata
         FIELDS = {
-          store: "store",
+          store: 'store'
         }.freeze
         REQUIRED_FIELDS = %i[
           store
@@ -169,7 +169,7 @@ module OctridevVercel
         DECODERS = {
           store: lambda do |value|
             ::OctridevVercel::Methods::Integrations::CreateIntegrationStoreDirectResponseStore.from_hash(value)
-          end,
+          end
         }.freeze
         NULLABLE_FIELDS = %i[
           store
@@ -215,9 +215,9 @@ module OctridevVercel
         ORGANIZATION = 'organization'
         RESOURCE_CLAIMS = 'resource-claims'
         V0 = 'v0'
-        VALUES = [
-          'backoffice', 'cli', 'deploy-button', 'external', 'import-recommended-integrations',
-          'marketplace', 'oauth', 'organization', 'resource-claims', 'v0'
+        VALUES = %w[
+          backoffice cli deploy-button external import-recommended-integrations
+          marketplace oauth organization resource-claims v0
         ].freeze
         def self.from_value(value)
           value
@@ -268,7 +268,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProX3b9f67279d
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -308,7 +308,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX333ac3faa5
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -328,7 +328,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0be0a535e7
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -338,7 +338,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemMetadataSchemaProXf192c585cb
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -358,7 +358,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX06246ebe80
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -476,7 +476,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXeb6a93e599
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -486,7 +486,7 @@ module OctridevVercel
       module CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX3862b03bd4
         CREATE = 'create'
         UPDATE = 'update'
-        VALUES = ['create', 'update'].freeze
+        VALUES = %w[create update].freeze
         def self.from_value(value)
           value
         end
@@ -516,7 +516,7 @@ module OctridevVercel
       module GetConfigurationProductsResponseProductsItemProtocolsStorageStatus
         DISABLED = 'disabled'
         ENABLED = 'enabled'
-        VALUES = ['disabled', 'enabled'].freeze
+        VALUES = %w[disabled enabled].freeze
         def self.from_value(value)
           value
         end
@@ -546,9 +546,9 @@ module OctridevVercel
         TRACE_DRAIN = 'traceDrain'
         VIDEO = 'video'
         WORKFLOW = 'workflow'
-        VALUES = [
-          'ai', 'authentication', 'checks', 'experimentation', 'logDrain', 'messaging',
-          'observability', 'other', 'storage', 'traceDrain', 'video', 'workflow'
+        VALUES = %w[
+          ai authentication checks experimentation logDrain messaging
+          observability other storage traceDrain video workflow
         ].freeze
         def self.from_value(value)
           value

@@ -104,7 +104,7 @@ module OctridevVercel
         APPEND = 'append'
         DELETE = 'delete'
         SET = 'set'
-        VALUES = ['append', 'delete', 'set'].freeze
+        VALUES = %w[append delete set].freeze
         def self.from_value(value)
           value
         end
@@ -115,7 +115,7 @@ module OctridevVercel
         EQUALS = 'equals'
         PATH_TO_REGEXP = 'path-to-regexp'
         REGEX = 'regex'
-        VALUES = ['equals', 'path-to-regexp', 'regex'].freeze
+        VALUES = %w[equals path-to-regexp regex].freeze
         def self.from_value(value)
           value
         end
@@ -146,7 +146,7 @@ module OctridevVercel
         APPEND = 'append'
         DELETE = 'delete'
         SET = 'set'
-        VALUES = ['append', 'delete', 'set'].freeze
+        VALUES = %w[append delete set].freeze
         def self.from_value(value)
           value
         end
@@ -158,7 +158,7 @@ module OctridevVercel
         REWRITE = 'rewrite'
         SET_STATUS = 'set_status'
         TRANSFORM = 'transform'
-        VALUES = ['redirect', 'rewrite', 'set_status', 'transform'].freeze
+        VALUES = %w[redirect rewrite set_status transform].freeze
         def self.from_value(value)
           value
         end
@@ -200,7 +200,7 @@ module OctridevVercel
         REWRITE = 'rewrite'
         SET_STATUS = 'set_status'
         TRANSFORM = 'transform'
-        VALUES = ['redirect', 'rewrite', 'set_status', 'transform'].freeze
+        VALUES = %w[redirect rewrite set_status transform].freeze
         def self.from_value(value)
           value
         end
@@ -241,7 +241,7 @@ module OctridevVercel
         REWRITE = 'rewrite'
         SET_STATUS = 'set_status'
         TRANSFORM = 'transform'
-        VALUES = ['redirect', 'rewrite', 'set_status', 'transform'].freeze
+        VALUES = %w[redirect rewrite set_status transform].freeze
         def self.from_value(value)
           value
         end

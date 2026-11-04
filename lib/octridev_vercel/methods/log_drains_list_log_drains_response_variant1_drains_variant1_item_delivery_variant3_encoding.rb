@@ -13,7 +13,7 @@ module OctridevVercel
       module ListLogDrainsResponseVariant1DrainsVariant1ItemDeliveryVariant3Encoding
         JSON = 'json'
         NDJSON = 'ndjson'
-        VALUES = ['json', 'ndjson'].freeze
+        VALUES = %w[json ndjson].freeze
         def self.from_value(value)
           value
         end
@@ -23,7 +23,7 @@ module OctridevVercel
       module CreateConfigurableLogDrainDeliveryFormat
         JSON = 'json'
         NDJSON = 'ndjson'
-        VALUES = ['json', 'ndjson'].freeze
+        VALUES = %w[json ndjson].freeze
         def self.from_value(value)
           value
         end
@@ -85,7 +85,7 @@ module OctridevVercel
         JSON = 'json'
         NDJSON = 'ndjson'
         PROTOBUF = 'protobuf'
-        VALUES = ['json', 'ndjson', 'protobuf'].freeze
+        VALUES = %w[json ndjson protobuf].freeze
         def self.from_value(value)
           value
         end
@@ -109,9 +109,9 @@ module OctridevVercel
         PRIVATE = 'private'
         PUBLIC_READ = 'public-read'
         PUBLIC_READ_WRITE = 'public-read-write'
-        VALUES = [
-          'authenticated-read', 'aws-exec-read', 'bucket-owner-full-control', 'bucket-owner-read',
-          'private', 'public-read', 'public-read-write'
+        VALUES = %w[
+          authenticated-read aws-exec-read bucket-owner-full-control bucket-owner-read
+          private public-read public-read-write
         ].freeze
         def self.from_value(value)
           value
@@ -134,9 +134,9 @@ module OctridevVercel
         DISABLED_BY_OWNER = 'disabled-by-owner'
         FEATURE_NOT_AVAILABLE = 'feature-not-available'
         LIMITS_EXCEEDED = 'limits-exceeded'
-        VALUES = [
-          'account-plan-downgrade', 'disabled-by-admin', 'disabled-by-owner',
-          'feature-not-available', 'limits-exceeded'
+        VALUES = %w[
+          account-plan-downgrade disabled-by-admin disabled-by-owner
+          feature-not-available limits-exceeded
         ].freeze
         def self.from_value(value)
           value
@@ -147,7 +147,7 @@ module OctridevVercel
       module CreateLogDrainEnvironmentsItem
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end
@@ -157,7 +157,7 @@ module OctridevVercel
       module CreateLogDrainDeliveryFormat
         JSON = 'json'
         NDJSON = 'ndjson'
-        VALUES = ['json', 'ndjson'].freeze
+        VALUES = %w[json ndjson].freeze
         def self.from_value(value)
           value
         end
@@ -172,7 +172,7 @@ module OctridevVercel
         LAMBDA = 'lambda'
         REDIRECT = 'redirect'
         STATIC = 'static'
-        VALUES = ['build', 'edge', 'external', 'firewall', 'lambda', 'redirect', 'static'].freeze
+        VALUES = %w[build edge external firewall lambda redirect static].freeze
         def self.from_value(value)
           value
         end
@@ -183,7 +183,7 @@ module OctridevVercel
         JSON = 'json'
         NDJSON = 'ndjson'
         PROTOBUF = 'protobuf'
-        VALUES = ['json', 'ndjson', 'protobuf'].freeze
+        VALUES = %w[json ndjson protobuf].freeze
         def self.from_value(value)
           value
         end
@@ -193,7 +193,7 @@ module OctridevVercel
       module CreateLogDrainResponseCreatedFrom
         INTEGRATION = 'integration'
         SELF_SERVED = 'self-served'
-        VALUES = ['integration', 'self-served'].freeze
+        VALUES = %w[integration self-served].freeze
         def self.from_value(value)
           value
         end
@@ -203,7 +203,7 @@ module OctridevVercel
       module ListLogDrainsResponseVariant1DrainsVariant0ItemDeliveryVariant3Encoding
         JSON = 'json'
         NDJSON = 'ndjson'
-        VALUES = ['json', 'ndjson'].freeze
+        VALUES = %w[json ndjson].freeze
         def self.from_value(value)
           value
         end
@@ -213,7 +213,7 @@ module OctridevVercel
       module ListLogDrainsResponseVariant1DrainsVariant0ItemSamplingItemEnv
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end
@@ -224,7 +224,7 @@ module OctridevVercel
         DISABLED = 'disabled'
         ENABLED = 'enabled'
         ERRORED = 'errored'
-        VALUES = ['disabled', 'enabled', 'errored'].freeze
+        VALUES = %w[disabled enabled errored].freeze
         def self.from_value(value)
           value
         end
@@ -246,7 +246,7 @@ module OctridevVercel
         DISABLED = 'disabled'
         ENABLED = 'enabled'
         ERRORED = 'errored'
-        VALUES = ['disabled', 'enabled', 'errored'].freeze
+        VALUES = %w[disabled enabled errored].freeze
         def self.from_value(value)
           value
         end
@@ -267,7 +267,7 @@ module OctridevVercel
       module ListLogDrainsResponseVariant1DrainsVariant1ItemFilterV2FilterXc90abfedad
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end
@@ -282,7 +282,7 @@ module OctridevVercel
         LAMBDA = 'lambda'
         REDIRECT = 'redirect'
         STATIC = 'static'
-        VALUES = ['build', 'edge', 'external', 'firewall', 'lambda', 'redirect', 'static'].freeze
+        VALUES = %w[build edge external firewall lambda redirect static].freeze
         def self.from_value(value)
           value
         end
@@ -292,7 +292,7 @@ module OctridevVercel
       module GetIntegrationLogDrainsResponseItemCreatedFrom
         INTEGRATION = 'integration'
         SELF_SERVED = 'self-served'
-        VALUES = ['integration', 'self-served'].freeze
+        VALUES = %w[integration self-served].freeze
         def self.from_value(value)
           value
         end
@@ -311,7 +311,7 @@ module OctridevVercel
       module ListLogDrainsResponseVariant1DrainsVariant0ItemDeliveryVariant0Encoding
         JSON = 'json'
         NDJSON = 'ndjson'
-        VALUES = ['json', 'ndjson'].freeze
+        VALUES = %w[json ndjson].freeze
         def self.from_value(value)
           value
         end
@@ -353,9 +353,9 @@ module OctridevVercel
         DISABLED_BY_OWNER = 'disabled-by-owner'
         FEATURE_NOT_AVAILABLE = 'feature-not-available'
         LIMITS_EXCEEDED = 'limits-exceeded'
-        VALUES = [
-          'account-plan-downgrade', 'disabled-by-admin', 'disabled-by-owner',
-          'feature-not-available', 'limits-exceeded'
+        VALUES = %w[
+          account-plan-downgrade disabled-by-admin disabled-by-owner
+          feature-not-available limits-exceeded
         ].freeze
         def self.from_value(value)
           value
@@ -388,7 +388,7 @@ module OctridevVercel
       module ListLogDrainsResponseVariant1DrainsVariant1ItemDeliveryVariant1Encoding
         JSON = 'json'
         PROTO = 'proto'
-        VALUES = ['json', 'proto'].freeze
+        VALUES = %w[json proto].freeze
         def self.from_value(value)
           value
         end
@@ -398,7 +398,7 @@ module OctridevVercel
       module ListLogDrainsResponseVariant1DrainsVariant0ItemFilterV2FilterX373786a494
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end
@@ -408,7 +408,7 @@ module OctridevVercel
       module CreateConfigurableLogDrainEnvironmentsItem
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['preview', 'production'].freeze
+        VALUES = %w[preview production].freeze
         def self.from_value(value)
           value
         end
@@ -509,7 +509,7 @@ module OctridevVercel
       module ListLogDrainsResponseVariant1DrainsVariant1ItemProjectAccessVXee40d669a6
         DRAIN = 'drain'
         INTEGRATION = 'integration'
-        VALUES = ['drain', 'integration'].freeze
+        VALUES = %w[drain integration].freeze
         def self.from_value(value)
           value
         end
@@ -524,7 +524,7 @@ module OctridevVercel
         LAMBDA = 'lambda'
         REDIRECT = 'redirect'
         STATIC = 'static'
-        VALUES = ['build', 'edge', 'external', 'firewall', 'lambda', 'redirect', 'static'].freeze
+        VALUES = %w[build edge external firewall lambda redirect static].freeze
         def self.from_value(value)
           value
         end
@@ -545,7 +545,7 @@ module OctridevVercel
       module ListLogDrainsResponseVariant1DrainsVariant1ItemProjectAccessVXb8ec829c77
         DRAIN = 'drain'
         INTEGRATION = 'integration'
-        VALUES = ['drain', 'integration'].freeze
+        VALUES = %w[drain integration].freeze
         def self.from_value(value)
           value
         end
@@ -560,9 +560,9 @@ module OctridevVercel
         PRIVATE = 'private'
         PUBLIC_READ = 'public-read'
         PUBLIC_READ_WRITE = 'public-read-write'
-        VALUES = [
-          'authenticated-read', 'aws-exec-read', 'bucket-owner-full-control', 'bucket-owner-read',
-          'private', 'public-read', 'public-read-write'
+        VALUES = %w[
+          authenticated-read aws-exec-read bucket-owner-full-control bucket-owner-read
+          private public-read public-read-write
         ].freeze
         def self.from_value(value)
           value

@@ -12,14 +12,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceSecretsByIdSecretsItemEnvironmentOverridesMetadata
         FIELDS = {
-          development: "development",
-          preview: "preview",
-          production: "production",
+          development: 'development',
+          preview: 'preview',
+          production: 'production'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateResourceSecretsByIdSecretsItemEnvironmentOverrides.
@@ -58,10 +56,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceSecretsByIdSecretsItemMetadata
         FIELDS = {
-          name: "name",
-          value: "value",
-          prefix: "prefix",
-          environment_overrides: "environmentOverrides",
+          name: 'name',
+          value: 'value',
+          prefix: 'prefix',
+          environment_overrides: 'environmentOverrides'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -70,7 +68,7 @@ module OctridevVercel
         DECODERS = {
           environment_overrides: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::UpdateResourceSecretsByIdSecretsItemEnvironmentOverrides.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -106,8 +104,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceSecretsByIdMetadata
         FIELDS = {
-          secrets: "secrets",
-          partial: "partial",
+          secrets: 'secrets',
+          partial: 'partial'
         }.freeze
         REQUIRED_FIELDS = %i[
           secrets
@@ -115,7 +113,7 @@ module OctridevVercel
         DECODERS = {
           secrets: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::UpdateResourceSecretsByIdSecretsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -151,15 +149,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateInstallationsByIntegrationConfigurationIdResourcesByResX71e74b42bdMetadata
         FIELDS = {
-          id: "id",
-          slug: "slug",
-          origin: "origin",
-          category: "category",
-          name: "name",
-          description: "description",
-          is_archived: "isArchived",
-          created_at: "createdAt",
-          updated_at: "updatedAt",
+          id: 'id',
+          slug: 'slug',
+          origin: 'origin',
+          category: 'category',
+          name: 'name',
+          description: 'description',
+          is_archived: 'isArchived',
+          created_at: 'createdAt',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -169,7 +167,7 @@ module OctridevVercel
         DECODERS = {
           category: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::CreateInstallationsByIntegrationConfigurationIdResourcesByResXba61bb22d6.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -204,7 +202,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateInstallationsByIntegrationConfigurationIdResourcesByResX466ac7f69cMetadata
         FIELDS = {
-          items: "items",
+          items: 'items'
         }.freeze
         REQUIRED_FIELDS = %i[
           items
@@ -212,7 +210,7 @@ module OctridevVercel
         DECODERS = {
           items: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::CreateInstallationsByIntegrationConfigurationIdResourcesByResX71e74b42bd.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -246,14 +244,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateInstallationsByIntegrationConfigurationIdResourcesByResX5235ac8d4aMetadata
         FIELDS = {
-          slug: "slug",
-          origin: "origin",
-          name: "name",
-          category: "category",
-          description: "description",
-          is_archived: "isArchived",
-          created_at: "createdAt",
-          updated_at: "updatedAt",
+          slug: 'slug',
+          origin: 'origin',
+          name: 'name',
+          category: 'category',
+          description: 'description',
+          is_archived: 'isArchived',
+          created_at: 'createdAt',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           slug
@@ -262,7 +260,7 @@ module OctridevVercel
         DECODERS = {
           category: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::UpdateInstallationsByIntegrationConfigurationIdResourcesByResX11a2dc8bf4.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -297,10 +295,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalHeadInstallationsByIntegrationConfigurationIdResourcesByResouXf7ec779c48Metadata
         FIELDS = {
-          digest: "digest",
-          items: "items",
-          purpose: "purpose",
-          updated_at: "updatedAt",
+          digest: 'digest',
+          items: 'items',
+          purpose: 'purpose',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           digest
@@ -313,7 +311,7 @@ module OctridevVercel
           end,
           purpose: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::HeadInstallationsByIntegrationConfigurationIdResourcesByResouX7f5507347f.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -347,10 +345,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetInstallationsByIntegrationConfigurationIdResourcesByResourX5dfbcfa520Metadata
         FIELDS = {
-          digest: "digest",
-          items: "items",
-          purpose: "purpose",
-          updated_at: "updatedAt",
+          digest: 'digest',
+          items: 'items',
+          purpose: 'purpose',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           digest
@@ -363,7 +361,7 @@ module OctridevVercel
           end,
           purpose: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::GetInstallationsByIntegrationConfigurationIdResourcesByResourX9f56d2063b.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -397,13 +395,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalReplaceInstallationsByIntegrationConfigurationIdResourcesByReX10d621e138Metadata
         FIELDS = {
-          data: "data",
+          data: 'data'
         }.freeze
         REQUIRED_FIELDS = %i[
           data
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ReplaceInstallationsByIntegrationConfigurationIdResourcesByReX10d621e138.
@@ -436,10 +433,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c03dbMetadata
         FIELDS = {
-          digest: "digest",
-          items: "items",
-          purpose: "purpose",
-          updated_at: "updatedAt",
+          digest: 'digest',
+          items: 'items',
+          purpose: 'purpose',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           digest
@@ -452,7 +449,7 @@ module OctridevVercel
           end,
           purpose: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::ReplaceInstallationsByIntegrationConfigurationIdResourcesByReX65a54077be.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -487,7 +484,7 @@ module OctridevVercel
       module HeadInstallationsByIntegrationConfigurationIdResourcesByResouX7f5507347f
         EXPERIMENTATION = 'experimentation'
         FLAGS = 'flags'
-        VALUES = ['experimentation', 'flags'].freeze
+        VALUES = %w[experimentation flags].freeze
         def self.from_value(value)
           value
         end
@@ -502,8 +499,8 @@ module OctridevVercel
         RESUMED = 'resumed'
         UNINSTALLED = 'uninstalled'
         ERROR = 'error'
-        VALUES = [
-          'ready', 'pending', 'onboarding', 'suspended', 'resumed', 'uninstalled', 'error'
+        VALUES = %w[
+          ready pending onboarding suspended resumed uninstalled error
         ].freeze
         def self.from_value(value)
           value
@@ -529,8 +526,8 @@ module OctridevVercel
         RESUMED = 'resumed'
         SUSPENDED = 'suspended'
         UNINSTALLED = 'uninstalled'
-        VALUES = [
-          'error', 'onboarding', 'pending', 'ready', 'resumed', 'suspended', 'uninstalled'
+        VALUES = %w[
+          error onboarding pending ready resumed suspended uninstalled
         ].freeze
         def self.from_value(value)
           value
@@ -542,7 +539,7 @@ module OctridevVercel
         DEVELOPMENT = 'development'
         PREVIEW = 'preview'
         PRODUCTION = 'production'
-        VALUES = ['development', 'preview', 'production'].freeze
+        VALUES = %w[development preview production].freeze
         def self.from_value(value)
           value
         end
@@ -553,7 +550,7 @@ module OctridevVercel
         OWNED = 'owned'
         LINKED = 'linked'
         SANDBOX = 'sandbox'
-        VALUES = ['owned', 'linked', 'sandbox'].freeze
+        VALUES = %w[owned linked sandbox].freeze
         def self.from_value(value)
           value
         end

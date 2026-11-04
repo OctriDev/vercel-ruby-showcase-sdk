@@ -12,15 +12,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateFlagSettingsResponseMetadata
         FIELDS = {
-          created_at: "createdAt",
-          enabled: "enabled",
-          entities: "entities",
-          environments: "environments",
-          metadata: "metadata",
-          owner_id: "ownerId",
-          project_id: "projectId",
-          type_name: "typeName",
-          updated_at: "updatedAt",
+          created_at: 'createdAt',
+          enabled: 'enabled',
+          entities: 'entities',
+          environments: 'environments',
+          metadata: 'metadata',
+          owner_id: 'ownerId',
+          project_id: 'projectId',
+          type_name: 'typeName',
+          updated_at: 'updatedAt'
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -42,7 +42,7 @@ module OctridevVercel
           end,
           type_name: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::UpdateFlagSettingsResponseTypeName.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -77,13 +77,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListTeamFlagsV2ResponsePaginationMetadata
         FIELDS = {
-          next_: "next",
+          next_: 'next'
         }.freeze
         REQUIRED_FIELDS = %i[
           next_
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
         NULLABLE_FIELDS = %i[
           next_
         ].freeze
@@ -119,8 +118,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListTeamFlagsV2ResponseMetadata
         FIELDS = {
-          pagination: "pagination",
-          data: "data",
+          pagination: 'pagination',
+          data: 'data'
         }.freeze
         REQUIRED_FIELDS = %i[
           pagination
@@ -132,7 +131,7 @@ module OctridevVercel
           end,
           data: lambda do |value|
             value&.map { |item| ::OctridevVercel::ListTeamFlagsV2ResponseDataItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -166,13 +165,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListTeamFlagsResponsePaginationMetadata
         FIELDS = {
-          next_: "next",
+          next_: 'next'
         }.freeze
         REQUIRED_FIELDS = %i[
           next_
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
         NULLABLE_FIELDS = %i[
           next_
         ].freeze
@@ -208,8 +206,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListTeamFlagsResponseMetadata
         FIELDS = {
-          data: "data",
-          pagination: "pagination",
+          data: 'data',
+          pagination: 'pagination'
         }.freeze
         REQUIRED_FIELDS = %i[
           data
@@ -221,7 +219,7 @@ module OctridevVercel
           end,
           pagination: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::ListTeamFlagsResponsePagination.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -255,12 +253,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateFlagSegmentDataRulesItemConditionsItemCmpOptionsMetadata
         FIELDS = {
-          ignore_case: "ignoreCase",
+          ignore_case: 'ignoreCase'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for CreateFlagSegmentDataRulesItemConditionsItemCmpOptions.
@@ -293,10 +289,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateFlagSegmentDataRulesItemConditionsItemMetadata
         FIELDS = {
-          lhs: "lhs",
-          cmp: "cmp",
-          rhs: "rhs",
-          cmp_options: "cmpOptions",
+          lhs: 'lhs',
+          cmp: 'cmp',
+          rhs: 'rhs',
+          cmp_options: 'cmpOptions'
         }.freeze
         REQUIRED_FIELDS = %i[
           lhs
@@ -314,7 +310,7 @@ module OctridevVercel
           end,
           cmp_options: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::CreateFlagSegmentDataRulesItemConditionsItemCmpOptions.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -352,9 +348,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateFlagSegmentDataRulesItemMetadata
         FIELDS = {
-          id: "id",
-          conditions: "conditions",
-          outcome: "outcome",
+          id: 'id',
+          conditions: 'conditions',
+          outcome: 'outcome'
         }.freeze
         REQUIRED_FIELDS = %i[
           id
@@ -367,7 +363,7 @@ module OctridevVercel
           end,
           outcome: lambda do |value|
             ::OctridevVercel::CreateFlagSegmentRequestDataRulesItemOutcome.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -403,16 +399,15 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateFlagSegmentDataMetadata
         FIELDS = {
-          rules: "rules",
-          include: "include",
-          exclude: "exclude",
+          rules: 'rules',
+          include: 'include',
+          exclude: 'exclude'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           rules: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::FeatureFlags::CreateFlagSegmentDataRulesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -447,12 +442,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateFlagSegmentMetadata
         FIELDS = {
-          slug: "slug",
-          created_by: "createdBy",
-          label: "label",
-          description: "description",
-          data: "data",
-          hint: "hint",
+          slug: 'slug',
+          created_by: 'createdBy',
+          label: 'label',
+          description: 'description',
+          data: 'data',
+          hint: 'hint'
         }.freeze
         REQUIRED_FIELDS = %i[
           slug
@@ -463,7 +458,7 @@ module OctridevVercel
         DECODERS = {
           data: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::CreateFlagSegmentData.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -501,14 +496,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateFlagSegmentResponseDataRulesItemConditionsItemCmpOptionsMetadata
         FIELDS = {
-          ignore_case: "ignoreCase",
+          ignore_case: 'ignoreCase'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           ignore_case: lambda do |value|
             ::OctridevVercel::Methods::FeatureFlags::CreateFlagSegmentResponseDataRulesItemConditionsItemCmpOptionsIgnoreCase.from_value(value)
-          end,
+          end
         }.freeze
       end
 

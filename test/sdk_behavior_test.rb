@@ -64,9 +64,7 @@ class SdkBehaviorTest < Minitest::Test
     define_method("test_behavior_#{item['id'].gsub(/[^a-zA-Z0-9]/, '_')}") do
       request_spec = item['request']
       response_spec = item['response']
-      if response_spec['kind'] == 'sse' && request_spec.nil? && response_spec['status'] < 400 && !response_spec['errorKind']
-        next assert_stream_events(response_spec['body'], response_spec['events'])
-      end
+      next assert_stream_events(response_spec['body'], response_spec['events']) if response_spec['kind'] == 'sse' && request_spec.nil? && response_spec['status'] < 400 && !response_spec['errorKind']
 
       seen = nil
       attempts = 0
@@ -170,9 +168,9 @@ class SdkBehaviorTest < Minitest::Test
         end
         assert_equal value, actual, "header #{name}"
       end
-      if !item['expect']['bodyText'].nil? && request_spec['bodyKind'] == 'json'
-        assert_equal JSON.parse(item['expect']['bodyText']), JSON.parse(seen.body)
-      end
+      return unless !item['expect']['bodyText'].nil? && request_spec['bodyKind'] == 'json'
+
+      assert_equal JSON.parse(item['expect']['bodyText']), JSON.parse(seen.body)
     end
   end
 end

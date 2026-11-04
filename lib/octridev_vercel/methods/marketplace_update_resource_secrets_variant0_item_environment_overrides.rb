@@ -45,10 +45,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceSecretsVariant0ItemMetadata
         FIELDS = {
-          name: "name",
-          value: "value",
-          prefix: "prefix",
-          environment_overrides: "environmentOverrides",
+          name: 'name',
+          value: 'value',
+          prefix: 'prefix',
+          environment_overrides: 'environmentOverrides'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -57,7 +57,7 @@ module OctridevVercel
         DECODERS = {
           environment_overrides: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::UpdateResourceSecretsVariant0ItemEnvironmentOverrides.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -93,14 +93,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceSecretsVariant1SecretsItemEnvironmentOverridesMetadata
         FIELDS = {
-          development: "development",
-          preview: "preview",
-          production: "production",
+          development: 'development',
+          preview: 'preview',
+          production: 'production'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateResourceSecretsVariant1SecretsItemEnvironmentOverrides.
@@ -139,10 +137,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceSecretsVariant1SecretsItemMetadata
         FIELDS = {
-          name: "name",
-          value: "value",
-          prefix: "prefix",
-          environment_overrides: "environmentOverrides",
+          name: 'name',
+          value: 'value',
+          prefix: 'prefix',
+          environment_overrides: 'environmentOverrides'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
@@ -151,7 +149,7 @@ module OctridevVercel
         DECODERS = {
           environment_overrides: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::UpdateResourceSecretsVariant1SecretsItemEnvironmentOverrides.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -187,8 +185,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceSecretsVariant1Metadata
         FIELDS = {
-          secrets: "secrets",
-          partial: "partial",
+          secrets: 'secrets',
+          partial: 'partial'
         }.freeze
         REQUIRED_FIELDS = %i[
           secrets
@@ -196,7 +194,7 @@ module OctridevVercel
         DECODERS = {
           secrets: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Marketplace::UpdateResourceSecretsVariant1SecretsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -232,18 +230,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceMetadata
         FIELDS = {
-          ownership: "ownership",
-          name: "name",
-          status: "status",
-          metadata: "metadata",
-          billing_plan: "billingPlan",
-          notification: "notification",
-          extras: "extras",
-          secrets: "secrets",
-          custom_claims: "customClaims",
+          ownership: 'ownership',
+          name: 'name',
+          status: 'status',
+          metadata: 'metadata',
+          billing_plan: 'billingPlan',
+          notification: 'notification',
+          extras: 'extras',
+          secrets: 'secrets',
+          custom_claims: 'customClaims'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           ownership: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::UpdateResourceOwnership.from_value(value)
@@ -259,7 +256,7 @@ module OctridevVercel
           end,
           custom_claims: lambda do |value|
             ::OctridevVercel::Methods::Marketplace::UpdateResourceCustomClaims.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -297,13 +294,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateResourceResponseMetadata
         FIELDS = {
-          name: "name",
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           name
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateResourceResponse.
@@ -336,15 +332,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitBillingDataPeriodMetadata
         FIELDS = {
-          start: "start",
-          end_: "end",
+          start: 'start',
+          end_: 'end'
         }.freeze
         REQUIRED_FIELDS = %i[
           start
           end_
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SubmitBillingDataPeriod.
@@ -378,16 +373,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitBillingDataBillingVariant0ItemMetadata
         FIELDS = {
-          billing_plan_id: "billingPlanId",
-          resource_id: "resourceId",
-          start: "start",
-          end_: "end",
-          name: "name",
-          details: "details",
-          price: "price",
-          quantity: "quantity",
-          units: "units",
-          total: "total",
+          billing_plan_id: 'billingPlanId',
+          resource_id: 'resourceId',
+          start: 'start',
+          end_: 'end',
+          name: 'name',
+          details: 'details',
+          price: 'price',
+          quantity: 'quantity',
+          units: 'units',
+          total: 'total'
         }.freeze
         REQUIRED_FIELDS = %i[
           billing_plan_id
@@ -397,8 +392,7 @@ module OctridevVercel
           units
           total
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SubmitBillingDataBillingVariant0Item.
@@ -450,16 +444,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitBillingDataBillingVariant1ItemsItemMetadata
         FIELDS = {
-          billing_plan_id: "billingPlanId",
-          resource_id: "resourceId",
-          start: "start",
-          end_: "end",
-          name: "name",
-          details: "details",
-          price: "price",
-          quantity: "quantity",
-          units: "units",
-          total: "total",
+          billing_plan_id: 'billingPlanId',
+          resource_id: 'resourceId',
+          start: 'start',
+          end_: 'end',
+          name: 'name',
+          details: 'details',
+          price: 'price',
+          quantity: 'quantity',
+          units: 'units',
+          total: 'total'
         }.freeze
         REQUIRED_FIELDS = %i[
           billing_plan_id
@@ -469,8 +463,7 @@ module OctridevVercel
           units
           total
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SubmitBillingDataBillingVariant1ItemsItem.
@@ -522,21 +515,20 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSubmitBillingDataBillingVariant1DiscountsItemMetadata
         FIELDS = {
-          billing_plan_id: "billingPlanId",
-          resource_id: "resourceId",
-          start: "start",
-          end_: "end",
-          name: "name",
-          details: "details",
-          amount: "amount",
+          billing_plan_id: 'billingPlanId',
+          resource_id: 'resourceId',
+          start: 'start',
+          end_: 'end',
+          name: 'name',
+          details: 'details',
+          amount: 'amount'
         }.freeze
         REQUIRED_FIELDS = %i[
           billing_plan_id
           name
           amount
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
     end
   end

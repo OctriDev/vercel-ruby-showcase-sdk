@@ -16,7 +16,7 @@ module OctridevVercel
         GITHUB = 'github'
         GITLAB = 'gitlab'
         VERCEL = 'vercel'
-        VALUES = ['bitbucket', 'cursor-origin', 'github', 'gitlab', 'vercel'].freeze
+        VALUES = %w[bitbucket cursor-origin github gitlab vercel].freeze
         def self.from_value(value)
           value
         end
@@ -218,8 +218,8 @@ module OctridevVercel
         ERROR = 'error'
         SYSTEM_ERROR = 'systemError'
         FATAL = 'fatal'
-        VALUES = [
-          'trace', 'debug', 'command', 'info', 'warn', 'error', 'systemError', 'fatal'
+        VALUES = %w[
+          trace debug command info warn error systemError fatal
         ].freeze
         def self.from_value(value)
           value
@@ -353,7 +353,7 @@ module OctridevVercel
         GITLAB = 'gitlab'
         BITBUCKET = 'bitbucket'
         VERCEL = 'vercel'
-        VALUES = ['github', 'gitlab', 'bitbucket', 'vercel'].freeze
+        VALUES = %w[github gitlab bitbucket vercel].freeze
         def self.from_value(value)
           value
         end
@@ -402,8 +402,8 @@ module OctridevVercel
         ERROR = 'error'
         SYSTEM_ERROR = 'systemError'
         FATAL = 'fatal'
-        VALUES = [
-          'trace', 'debug', 'command', 'info', 'warn', 'error', 'systemError', 'fatal'
+        VALUES = %w[
+          trace debug command info warn error systemError fatal
         ].freeze
         def self.from_value(value)
           value
@@ -563,8 +563,8 @@ module OctridevVercel
         ERROR = 'error'
         SYSTEM_ERROR = 'systemError'
         FATAL = 'fatal'
-        VALUES = [
-          'trace', 'debug', 'command', 'info', 'warn', 'error', 'systemError', 'fatal'
+        VALUES = %w[
+          trace debug command info warn error systemError fatal
         ].freeze
         def self.from_value(value)
           value

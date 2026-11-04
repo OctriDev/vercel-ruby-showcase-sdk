@@ -5,672 +5,663 @@
 
 # user domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant135OldTeamMetadata
-  FIELDS = {
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    name
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant135OldTeam.
-# Optional object value serialized in the `oldTeam` wire field.
-class UserEventPayloadVariant135OldTeam
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant135OldTeamMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant135OldTeamMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant135OldTeamMetadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `name` wire field.
-  attr_reader :name
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant135OldTeamMetadata
+    FIELDS = {
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      name
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UserEventPayloadVariant135OldTeam.
+  # Optional object value serialized in the `oldTeam` wire field.
+  class UserEventPayloadVariant135OldTeam
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant135OldTeamMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant135OldTeamMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant135OldTeamMetadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `name` wire field.
+    attr_reader :name
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant135Metadata
+    FIELDS = {
+      name: 'name',
+      new_team: 'newTeam',
+      old_team: 'oldTeam'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      name
+    ].freeze
+    DECODERS = {
+      new_team: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant135NewTeam.from_hash(value)
+      end,
+      old_team: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant135OldTeam.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UserEventPayloadVariant135.
+  class UserEventPayloadVariant135
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant135Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant135Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant135Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant135Metadata
-  FIELDS = {
-    name: "name",
-    new_team: "newTeam",
-    old_team: "oldTeam",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    name
-  ].freeze
-  DECODERS = {
-    new_team: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant135NewTeam.from_hash(value)
-    end,
-    old_team: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant135OldTeam.from_hash(value)
-    end,
-  }.freeze
-end
+    # @return [String] Required `string` value serialized in the `name` wire field.
+    attr_reader :name
+    # @return [UserEventPayloadVariant135NewTeam] Optional object value serialized in the `newTeam` wire field.
+    attr_reader :new_team
+    # @return [UserEventPayloadVariant135OldTeam] Optional object value serialized in the `oldTeam` wire field.
+    attr_reader :old_team
 
-# API model for UserEventPayloadVariant135.
-class UserEventPayloadVariant135
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant135Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant135Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant135Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `name` wire field.
-  attr_reader :name
-  # @return [UserEventPayloadVariant135NewTeam] Optional object value serialized in the `newTeam` wire field.
-  attr_reader :new_team
-  # @return [UserEventPayloadVariant135OldTeam] Optional object value serialized in the `oldTeam` wire field.
-  attr_reader :old_team
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant136Metadata
+    FIELDS = {
+      name: 'name',
+      owner_name: 'ownerName',
+      team_id: 'teamId',
+      user_id: 'userId'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      name
+      owner_name
+      team_id
+      user_id
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UserEventPayloadVariant136.
+  class UserEventPayloadVariant136
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant136Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant136Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant136Metadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `name` wire field.
+    attr_reader :name
+    # @return [String] Required `string` value serialized in the `ownerName` wire field.
+    attr_reader :owner_name
+    # @return [String] Required `string` value serialized in the `teamId` wire field.
+    attr_reader :team_id
+    # @return [String] Required `string` value serialized in the `userId` wire field.
+    attr_reader :user_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant136Metadata
-  FIELDS = {
-    name: "name",
-    owner_name: "ownerName",
-    team_id: "teamId",
-    user_id: "userId",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    name
-    owner_name
-    team_id
-    user_id
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant136.
-class UserEventPayloadVariant136
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant136Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant136Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant136Metadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `name` wire field.
-  attr_reader :name
-  # @return [String] Required `string` value serialized in the `ownerName` wire field.
-  attr_reader :owner_name
-  # @return [String] Required `string` value serialized in the `teamId` wire field.
-  attr_reader :team_id
-  # @return [String] Required `string` value serialized in the `userId` wire field.
-  attr_reader :user_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant137Metadata
+    FIELDS = {
+      domain_id: 'domainId',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      domain_id
+      name
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UserEventPayloadVariant137.
+  class UserEventPayloadVariant137
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant137Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant137Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant137Metadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `domainId` wire field.
+    attr_reader :domain_id
+    # @return [String] Required `string` value serialized in the `name` wire field.
+    attr_reader :name
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant138Metadata
+    FIELDS = {
+      id: 'id',
+      name: 'name',
+      nameservers: 'nameservers',
+      previous_service_type: 'previousServiceType',
+      service_type: 'serviceType'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      id
+      name
+      nameservers
+      previous_service_type
+      service_type
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UserEventPayloadVariant138.
+  class UserEventPayloadVariant138
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant138Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant138Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant138Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant137Metadata
-  FIELDS = {
-    domain_id: "domainId",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    domain_id
-    name
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] Required `string` value serialized in the `id` wire field.
+    attr_reader :id
+    # @return [String] Required `string` value serialized in the `name` wire field.
+    attr_reader :name
+    # @return [Array_of_String] Required array value serialized in the `nameservers` wire field.
+    attr_reader :nameservers
+    # @return [String] Required `string` value serialized in the `previousServiceType` wire field.
+    attr_reader :previous_service_type
+    # @return [String] Required `string` value serialized in the `serviceType` wire field.
+    attr_reader :service_type
 
-# API model for UserEventPayloadVariant137.
-class UserEventPayloadVariant137
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant137Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant137Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant137Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `domainId` wire field.
-  attr_reader :domain_id
-  # @return [String] Required `string` value serialized in the `name` wire field.
-  attr_reader :name
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant139Metadata
+    FIELDS = {
+      custom_nameservers: 'customNameservers',
+      domain: 'domain',
+      prev_custom_nameservers: 'prevCustomNameservers'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      custom_nameservers
+      domain
+      prev_custom_nameservers
+    ].freeze
+    DECODERS = {}.freeze
+    NULLABLE_FIELDS = %i[
+      custom_nameservers
+      prev_custom_nameservers
+    ].freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UserEventPayloadVariant139.
+  class UserEventPayloadVariant139
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant139Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant139Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant139Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant138Metadata
-  FIELDS = {
-    id: "id",
-    name: "name",
-    nameservers: "nameservers",
-    previous_service_type: "previousServiceType",
-    service_type: "serviceType",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    id
-    name
-    nameservers
-    previous_service_type
-    service_type
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [Array_of_String] Required array value serialized in the `customNameservers` wire field.
+    attr_reader :custom_nameservers
+    # @return [String] Required `string` value serialized in the `domain` wire field.
+    attr_reader :domain
+    # @return [Array_of_String] Required array value serialized in the `prevCustomNameservers` wire field.
+    attr_reader :prev_custom_nameservers
 
-# API model for UserEventPayloadVariant138.
-class UserEventPayloadVariant138
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant138Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant138Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant138Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `id` wire field.
-  attr_reader :id
-  # @return [String] Required `string` value serialized in the `name` wire field.
-  attr_reader :name
-  # @return [Array_of_String] Required array value serialized in the `nameservers` wire field.
-  attr_reader :nameservers
-  # @return [String] Required `string` value serialized in the `previousServiceType` wire field.
-  attr_reader :previous_service_type
-  # @return [String] Required `string` value serialized in the `serviceType` wire field.
-  attr_reader :service_type
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant139Metadata::NULLABLE_FIELDS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant140Metadata
+    FIELDS = {
+      domain: 'domain'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      domain
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UserEventPayloadVariant140.
+  class UserEventPayloadVariant140
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant140Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant140Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant140Metadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `domain` wire field.
+    attr_reader :domain
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant139Metadata
-  FIELDS = {
-    custom_nameservers: "customNameservers",
-    domain: "domain",
-    prev_custom_nameservers: "prevCustomNameservers",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    custom_nameservers
-    domain
-    prev_custom_nameservers
-  ].freeze
-  DECODERS = {
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    custom_nameservers
-    prev_custom_nameservers
-  ].freeze
-end
-
-# API model for UserEventPayloadVariant139.
-class UserEventPayloadVariant139
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant139Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant139Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant139Metadata::DECODERS
-
-  # @return [Array_of_String] Required array value serialized in the `customNameservers` wire field.
-  attr_reader :custom_nameservers
-  # @return [String] Required `string` value serialized in the `domain` wire field.
-  attr_reader :domain
-  # @return [Array_of_String] Required array value serialized in the `prevCustomNameservers` wire field.
-  attr_reader :prev_custom_nameservers
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant141Metadata
+    FIELDS = {
+      domain: 'domain',
+      ech_mode: 'echMode',
+      previous_ech_mode: 'previousEchMode'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      domain
+      ech_mode
+      previous_ech_mode
+    ].freeze
+    DECODERS = {
+      ech_mode: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant141EchMode.from_value(value)
+      end,
+      previous_ech_mode: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant141PreviousEchMode.from_value(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant139Metadata::NULLABLE_FIELDS)
+  # API model for UserEventPayloadVariant141.
+  class UserEventPayloadVariant141
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant141Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant141Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant141Metadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `domain` wire field.
+    attr_reader :domain
+    # @return [UserEventPayloadVariant141EchMode] Required enumerated value serialized in the `echMode` wire field.
+    attr_reader :ech_mode
+    # @return [UserEventPayloadVariant141PreviousEchMode] Required enumerated value serialized in the `previousEchMode` wire field.
+    attr_reader :previous_ech_mode
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant142Metadata
+    FIELDS = {
+      domain: 'domain',
+      zone: 'zone'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      domain
+      zone
+    ].freeze
+    DECODERS = {
+      zone: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant142Zone.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UserEventPayloadVariant142.
+  class UserEventPayloadVariant142
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant142Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant142Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant142Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant140Metadata
-  FIELDS = {
-    domain: "domain",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    domain
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
+    # @return [String] Required `string` value serialized in the `domain` wire field.
+    attr_reader :domain
+    # @return [UserEventPayloadVariant142Zone] Required enumerated value serialized in the `zone` wire field.
+    attr_reader :zone
 
-# API model for UserEventPayloadVariant140.
-class UserEventPayloadVariant140
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant140Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant140Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant140Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `domain` wire field.
-  attr_reader :domain
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant143Metadata
+    FIELDS = {
+      domain: 'domain',
+      initiator: 'initiator',
+      previous_zone: 'previousZone',
+      source: 'source',
+      zone: 'zone'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      domain
+      initiator
+      zone
+    ].freeze
+    DECODERS = {
+      initiator: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant143Initiator.from_value(value)
+      end,
+      previous_zone: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant143PreviousZone.from_value(value)
+      end,
+      zone: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant143Zone.from_value(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UserEventPayloadVariant143.
+  class UserEventPayloadVariant143
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant143Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant143Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant143Metadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `domain` wire field.
+    attr_reader :domain
+    # @return [UserEventPayloadVariant143Initiator] Required enumerated value serialized in the `initiator` wire field.
+    attr_reader :initiator
+    # @return [UserEventPayloadVariant143PreviousZone] Optional enumerated value serialized in the `previousZone` wire field.
+    attr_reader :previous_zone
+    # @return [String] Optional `string` value serialized in the `source` wire field.
+    attr_reader :source
+    # @return [UserEventPayloadVariant143Zone] Required enumerated value serialized in the `zone` wire field.
+    attr_reader :zone
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant141Metadata
-  FIELDS = {
-    domain: "domain",
-    ech_mode: "echMode",
-    previous_ech_mode: "previousEchMode",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    domain
-    ech_mode
-    previous_ech_mode
-  ].freeze
-  DECODERS = {
-    ech_mode: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant141EchMode.from_value(value)
-    end,
-    previous_ech_mode: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant141PreviousEchMode.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant141.
-class UserEventPayloadVariant141
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant141Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant141Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant141Metadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `domain` wire field.
-  attr_reader :domain
-  # @return [UserEventPayloadVariant141EchMode] Required enumerated value serialized in the `echMode` wire field.
-  attr_reader :ech_mode
-  # @return [UserEventPayloadVariant141PreviousEchMode] Required enumerated value serialized in the `previousEchMode` wire field.
-  attr_reader :previous_ech_mode
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant144Metadata
+    FIELDS = {
+      from_id: 'fromId',
+      from_name: 'fromName',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      from_id
+      from_name
+      name
+    ].freeze
+    DECODERS = {}.freeze
+    NULLABLE_FIELDS = %i[
+      from_id
+      from_name
+    ].freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UserEventPayloadVariant144.
+  class UserEventPayloadVariant144
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant144Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant144Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant144Metadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `fromId` wire field.
+    attr_reader :from_id
+    # @return [String] Required `string` value serialized in the `fromName` wire field.
+    attr_reader :from_name
+    # @return [String] Required `string` value serialized in the `name` wire field.
+    attr_reader :name
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant144Metadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant145Metadata
+    FIELDS = {
+      destination_id: 'destinationId',
+      destination_name: 'destinationName',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      destination_id
+      destination_name
+      name
+    ].freeze
+    DECODERS = {}.freeze
+    NULLABLE_FIELDS = %i[
+      destination_id
+      destination_name
+    ].freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UserEventPayloadVariant145.
+  class UserEventPayloadVariant145
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant145Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant145Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant145Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant142Metadata
-  FIELDS = {
-    domain: "domain",
-    zone: "zone",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    domain
-    zone
-  ].freeze
-  DECODERS = {
-    zone: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant142Zone.from_value(value)
-    end,
-  }.freeze
-end
+    # @return [String] Required `string` value serialized in the `destinationId` wire field.
+    attr_reader :destination_id
+    # @return [String] Required `string` value serialized in the `destinationName` wire field.
+    attr_reader :destination_name
+    # @return [String] Required `string` value serialized in the `name` wire field.
+    attr_reader :name
 
-# API model for UserEventPayloadVariant142.
-class UserEventPayloadVariant142
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant142Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant142Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant142Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `domain` wire field.
-  attr_reader :domain
-  # @return [UserEventPayloadVariant142Zone] Required enumerated value serialized in the `zone` wire field.
-  attr_reader :zone
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant145Metadata::NULLABLE_FIELDS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant146Metadata
+    FIELDS = {
+      destination_id: 'destinationId',
+      destination_name: 'destinationName',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      destination_id
+      destination_name
+      name
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UserEventPayloadVariant146.
+  class UserEventPayloadVariant146
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUserEventPayloadVariant146Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant146Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUserEventPayloadVariant146Metadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `destinationId` wire field.
+    attr_reader :destination_id
+    # @return [String] Required `string` value serialized in the `destinationName` wire field.
+    attr_reader :destination_name
+    # @return [String] Required `string` value serialized in the `name` wire field.
+    attr_reader :name
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
+  # Internal model hydration metadata.
+  class SdkInternalUserEventPayloadVariant147Metadata
+    FIELDS = {
+      domain: 'domain',
+      renew: 'renew'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      domain
+    ].freeze
+    DECODERS = {
+      renew: lambda do |value|
+        ::OctridevVercel::UserEventPayloadVariant147Renew.from_value(value)
+      end
+    }.freeze
   end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant143Metadata
-  FIELDS = {
-    domain: "domain",
-    initiator: "initiator",
-    previous_zone: "previousZone",
-    source: "source",
-    zone: "zone",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    domain
-    initiator
-    zone
-  ].freeze
-  DECODERS = {
-    initiator: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant143Initiator.from_value(value)
-    end,
-    previous_zone: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant143PreviousZone.from_value(value)
-    end,
-    zone: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant143Zone.from_value(value)
-    end,
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant143.
-class UserEventPayloadVariant143
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant143Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant143Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant143Metadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `domain` wire field.
-  attr_reader :domain
-  # @return [UserEventPayloadVariant143Initiator] Required enumerated value serialized in the `initiator` wire field.
-  attr_reader :initiator
-  # @return [UserEventPayloadVariant143PreviousZone] Optional enumerated value serialized in the `previousZone` wire field.
-  attr_reader :previous_zone
-  # @return [String] Optional `string` value serialized in the `source` wire field.
-  attr_reader :source
-  # @return [UserEventPayloadVariant143Zone] Required enumerated value serialized in the `zone` wire field.
-  attr_reader :zone
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant144Metadata
-  FIELDS = {
-    from_id: "fromId",
-    from_name: "fromName",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    from_id
-    from_name
-    name
-  ].freeze
-  DECODERS = {
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    from_id
-    from_name
-  ].freeze
-end
-
-# API model for UserEventPayloadVariant144.
-class UserEventPayloadVariant144
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant144Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant144Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant144Metadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `fromId` wire field.
-  attr_reader :from_id
-  # @return [String] Required `string` value serialized in the `fromName` wire field.
-  attr_reader :from_name
-  # @return [String] Required `string` value serialized in the `name` wire field.
-  attr_reader :name
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant144Metadata::NULLABLE_FIELDS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant145Metadata
-  FIELDS = {
-    destination_id: "destinationId",
-    destination_name: "destinationName",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    destination_id
-    destination_name
-    name
-  ].freeze
-  DECODERS = {
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    destination_id
-    destination_name
-  ].freeze
-end
-
-# API model for UserEventPayloadVariant145.
-class UserEventPayloadVariant145
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant145Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant145Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant145Metadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `destinationId` wire field.
-  attr_reader :destination_id
-  # @return [String] Required `string` value serialized in the `destinationName` wire field.
-  attr_reader :destination_name
-  # @return [String] Required `string` value serialized in the `name` wire field.
-  attr_reader :name
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalUserEventPayloadVariant145Metadata::NULLABLE_FIELDS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant146Metadata
-  FIELDS = {
-    destination_id: "destinationId",
-    destination_name: "destinationName",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    destination_id
-    destination_name
-    name
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UserEventPayloadVariant146.
-class UserEventPayloadVariant146
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUserEventPayloadVariant146Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUserEventPayloadVariant146Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUserEventPayloadVariant146Metadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `destinationId` wire field.
-  attr_reader :destination_id
-  # @return [String] Required `string` value serialized in the `destinationName` wire field.
-  attr_reader :destination_name
-  # @return [String] Required `string` value serialized in the `name` wire field.
-  attr_reader :name
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUserEventPayloadVariant147Metadata
-  FIELDS = {
-    domain: "domain",
-    renew: "renew",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    domain
-  ].freeze
-  DECODERS = {
-    renew: lambda do |value|
-      ::OctridevVercel::UserEventPayloadVariant147Renew.from_value(value)
-    end,
-  }.freeze
-end
 end

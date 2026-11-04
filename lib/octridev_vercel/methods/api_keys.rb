@@ -12,10 +12,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateApiKeysAiGatewayQuotaMetadata
         FIELDS = {
-          limit_amount: "limitAmount",
-          include_byok_in_quota: "includeByokInQuota",
-          refresh_period: "refreshPeriod",
-          alert_thresholds: "alertThresholds",
+          limit_amount: 'limitAmount',
+          include_byok_in_quota: 'includeByokInQuota',
+          refresh_period: 'refreshPeriod',
+          alert_thresholds: 'alertThresholds'
         }.freeze
         REQUIRED_FIELDS = %i[
           limit_amount
@@ -26,7 +26,7 @@ module OctridevVercel
           end,
           alert_thresholds: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::ApiKeys::CreateApiKeysAiGatewayQuotaAlertThresholdsItem.from_value(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -68,12 +68,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateApiKeysMetadata
         FIELDS = {
-          purpose: "purpose",
-          project_id: "projectId",
-          name: "name",
-          expires_at: "expiresAt",
-          ai_gateway_quota: "aiGatewayQuota",
-          metadata: "metadata",
+          purpose: 'purpose',
+          project_id: 'projectId',
+          name: 'name',
+          expires_at: 'expiresAt',
+          ai_gateway_quota: 'aiGatewayQuota',
+          metadata: 'metadata'
         }.freeze
         REQUIRED_FIELDS = %i[
           purpose
@@ -81,7 +81,7 @@ module OctridevVercel
         DECODERS = {
           ai_gateway_quota: lambda do |value|
             ::OctridevVercel::Methods::ApiKeys::CreateApiKeysAiGatewayQuota.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -126,8 +126,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalCreateApiKeysResponseMetadata
         FIELDS = {
-          api_key_string: "apiKeyString",
-          api_key: "apiKey",
+          api_key_string: 'apiKeyString',
+          api_key: 'apiKey'
         }.freeze
         REQUIRED_FIELDS = %i[
           api_key_string
@@ -136,7 +136,7 @@ module OctridevVercel
         DECODERS = {
           api_key: lambda do |value|
             ::OctridevVercel::APIKey.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -187,7 +187,7 @@ module OctridevVercel
         WEEKLY = 'weekly'
         MONTHLY = 'monthly'
         NONE = 'none'
-        VALUES = ['daily', 'weekly', 'monthly', 'none'].freeze
+        VALUES = %w[daily weekly monthly none].freeze
         def self.from_value(value)
           value
         end
@@ -216,10 +216,9 @@ module OctridevVercel
         metadata: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
-          "/api-keys",
+          '/api-keys',
           config: config,
           body: {
             'purpose' => purpose,
@@ -227,12 +226,12 @@ module OctridevVercel
             'name' => name,
             'expiresAt' => expires_at,
             'aiGatewayQuota' => ai_gateway_quota,
-            'metadata' => metadata,
+            'metadata' => metadata
           },
           return_type: ::OctridevVercel::Methods::ApiKeys::CreateApiKeysResponse,
           decoder: :json,
           operation_id: 'create_api_keys',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
     end

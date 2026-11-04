@@ -39,19 +39,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalBuySingleDomainContactInformationMetadata
         FIELDS = {
-          first_name: "firstName",
-          last_name: "lastName",
-          email: "email",
-          phone: "phone",
-          address1: "address1",
-          address2: "address2",
-          city: "city",
-          state: "state",
-          zip: "zip",
-          country: "country",
-          company_name: "companyName",
-          fax: "fax",
-          additional: "additional",
+          first_name: 'firstName',
+          last_name: 'lastName',
+          email: 'email',
+          phone: 'phone',
+          address1: 'address1',
+          address2: 'address2',
+          city: 'city',
+          state: 'state',
+          zip: 'zip',
+          country: 'country',
+          company_name: 'companyName',
+          fax: 'fax',
+          additional: 'additional'
         }.freeze
         REQUIRED_FIELDS = %i[
           first_name
@@ -100,7 +100,7 @@ module OctridevVercel
           end,
           fax: lambda do |value|
             ::OctridevVercel::E164PhoneNumber.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -159,11 +159,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalBuySingleDomainMetadata
         FIELDS = {
-          auto_renew: "autoRenew",
-          years: "years",
-          expected_price: "expectedPrice",
-          contact_information: "contactInformation",
-          language_code: "languageCode",
+          auto_renew: 'autoRenew',
+          years: 'years',
+          expected_price: 'expectedPrice',
+          contact_information: 'contactInformation',
+          language_code: 'languageCode'
         }.freeze
         REQUIRED_FIELDS = %i[
           auto_renew
@@ -174,7 +174,7 @@ module OctridevVercel
         DECODERS = {
           contact_information: lambda do |value|
             ::OctridevVercel::Methods::DomainsRegistrar::BuySingleDomainContactInformation.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -216,8 +216,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalBuySingleDomainResponseMetadata
         FIELDS = {
-          order_id: "orderId",
-          links: "_links",
+          order_id: 'orderId',
+          links: '_links'
         }.freeze
         REQUIRED_FIELDS = %i[
           order_id
@@ -226,7 +226,7 @@ module OctridevVercel
         DECODERS = {
           order_id: lambda do |value|
             ::OctridevVercel::OrderId.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -262,19 +262,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalBuyDomainsContactInformationMetadata
         FIELDS = {
-          first_name: "firstName",
-          last_name: "lastName",
-          email: "email",
-          phone: "phone",
-          address1: "address1",
-          address2: "address2",
-          city: "city",
-          state: "state",
-          zip: "zip",
-          country: "country",
-          company_name: "companyName",
-          fax: "fax",
-          additional: "additional",
+          first_name: 'firstName',
+          last_name: 'lastName',
+          email: 'email',
+          phone: 'phone',
+          address1: 'address1',
+          address2: 'address2',
+          city: 'city',
+          state: 'state',
+          zip: 'zip',
+          country: 'country',
+          company_name: 'companyName',
+          fax: 'fax',
+          additional: 'additional'
         }.freeze
         REQUIRED_FIELDS = %i[
           first_name
@@ -323,7 +323,7 @@ module OctridevVercel
           end,
           fax: lambda do |value|
             ::OctridevVercel::E164PhoneNumber.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -382,11 +382,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalBuyDomainsDomainsItemMetadata
         FIELDS = {
-          domain_name: "domainName",
-          auto_renew: "autoRenew",
-          years: "years",
-          expected_price: "expectedPrice",
-          language_code: "languageCode",
+          domain_name: 'domainName',
+          auto_renew: 'autoRenew',
+          years: 'years',
+          expected_price: 'expectedPrice',
+          language_code: 'languageCode'
         }.freeze
         REQUIRED_FIELDS = %i[
           domain_name
@@ -397,7 +397,7 @@ module OctridevVercel
         DECODERS = {
           domain_name: lambda do |value|
             ::OctridevVercel::DomainName.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -439,8 +439,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalBuyDomainsMetadata
         FIELDS = {
-          domains: "domains",
-          contact_information: "contactInformation",
+          domains: 'domains',
+          contact_information: 'contactInformation'
         }.freeze
         REQUIRED_FIELDS = %i[
           domains
@@ -452,7 +452,7 @@ module OctridevVercel
           end,
           contact_information: lambda do |value|
             ::OctridevVercel::Methods::DomainsRegistrar::BuyDomainsContactInformation.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -488,8 +488,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalBuyDomainsResponseMetadata
         FIELDS = {
-          order_id: "orderId",
-          links: "_links",
+          order_id: 'orderId',
+          links: '_links'
         }.freeze
         REQUIRED_FIELDS = %i[
           order_id
@@ -498,7 +498,7 @@ module OctridevVercel
         DECODERS = {
           order_id: lambda do |value|
             ::OctridevVercel::OrderId.from_value(value)
-          end,
+          end
         }.freeze
       end
 

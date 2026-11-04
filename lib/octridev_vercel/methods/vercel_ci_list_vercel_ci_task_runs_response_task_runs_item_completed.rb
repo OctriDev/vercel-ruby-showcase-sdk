@@ -41,18 +41,17 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiTaskRunsResponseTaskRunsItemDeploymentBindingMetadata
         FIELDS = {
-          deployment_id: "deploymentId",
-          deployment_created_at: "deploymentCreatedAt",
-          event_at: "eventAt",
-          ready_state: "readyState",
+          deployment_id: 'deploymentId',
+          deployment_created_at: 'deploymentCreatedAt',
+          event_at: 'eventAt',
+          ready_state: 'readyState'
         }.freeze
         REQUIRED_FIELDS = %i[
           deployment_id
           deployment_created_at
           event_at
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for ListVercelCiTaskRunsResponseTaskRunsItemDeploymentBinding.
@@ -85,16 +84,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiTaskRunsResponseTaskRunsItemMetadata
         FIELDS = {
-          invocation_id: "invocationId",
-          invocation_attempt: "invocationAttempt",
-          job_definition_id: "jobDefinitionId",
-          job_run_attempt: "jobRunAttempt",
-          task_definition_id: "taskDefinitionId",
-          attempt: "attempt",
-          created_at: "createdAt",
-          started: "started",
-          completed: "completed",
-          deployment_binding: "deploymentBinding",
+          invocation_id: 'invocationId',
+          invocation_attempt: 'invocationAttempt',
+          job_definition_id: 'jobDefinitionId',
+          job_run_attempt: 'jobRunAttempt',
+          task_definition_id: 'taskDefinitionId',
+          attempt: 'attempt',
+          created_at: 'createdAt',
+          started: 'started',
+          completed: 'completed',
+          deployment_binding: 'deploymentBinding'
         }.freeze
         REQUIRED_FIELDS = %i[
           invocation_id
@@ -114,7 +113,7 @@ module OctridevVercel
           end,
           deployment_binding: lambda do |value|
             ::OctridevVercel::Methods::VercelCi::ListVercelCiTaskRunsResponseTaskRunsItemDeploymentBinding.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -150,7 +149,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalListVercelCiTaskRunsResponseMetadata
         FIELDS = {
-          task_runs: "taskRuns",
+          task_runs: 'taskRuns'
         }.freeze
         REQUIRED_FIELDS = %i[
           task_runs
@@ -158,7 +157,7 @@ module OctridevVercel
         DECODERS = {
           task_runs: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::VercelCi::ListVercelCiTaskRunsResponseTaskRunsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -192,17 +191,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationLogsResponseLinesItemMetadata
         FIELDS = {
-          level: "level",
-          timestamp: "timestamp",
-          message: "message",
+          level: 'level',
+          timestamp: 'timestamp',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           level
           timestamp
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetVercelCiInvocationLogsResponseLinesItem.
@@ -235,7 +233,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiInvocationLogsResponseMetadata
         FIELDS = {
-          lines: "lines",
+          lines: 'lines'
         }.freeze
         REQUIRED_FIELDS = %i[
           lines
@@ -243,7 +241,7 @@ module OctridevVercel
         DECODERS = {
           lines: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::VercelCi::GetVercelCiInvocationLogsResponseLinesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -277,17 +275,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiTaskLogsResponseTasksItemLinesItemMetadata
         FIELDS = {
-          level: "level",
-          timestamp: "timestamp",
-          message: "message",
+          level: 'level',
+          timestamp: 'timestamp',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           level
           timestamp
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetVercelCiTaskLogsResponseTasksItemLinesItem.
@@ -320,14 +317,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiTaskLogsResponseTasksItemMetadata
         FIELDS = {
-          job_definition_id: "jobDefinitionId",
-          job_name: "jobName",
-          job_run_attempt: "jobRunAttempt",
-          task_definition_id: "taskDefinitionId",
-          task_name: "taskName",
-          task_run_attempt: "taskRunAttempt",
-          conclusion: "conclusion",
-          lines: "lines",
+          job_definition_id: 'jobDefinitionId',
+          job_name: 'jobName',
+          job_run_attempt: 'jobRunAttempt',
+          task_definition_id: 'taskDefinitionId',
+          task_name: 'taskName',
+          task_run_attempt: 'taskRunAttempt',
+          conclusion: 'conclusion',
+          lines: 'lines'
         }.freeze
         REQUIRED_FIELDS = %i[
           job_definition_id
@@ -343,7 +340,7 @@ module OctridevVercel
           end,
           lines: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::VercelCi::GetVercelCiTaskLogsResponseTasksItemLinesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -380,8 +377,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetVercelCiTaskLogsResponseMetadata
         FIELDS = {
-          tasks: "tasks",
-          has_more: "hasMore",
+          tasks: 'tasks',
+          has_more: 'hasMore'
         }.freeze
         REQUIRED_FIELDS = %i[
           tasks
@@ -390,7 +387,7 @@ module OctridevVercel
         DECODERS = {
           tasks: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::VercelCi::GetVercelCiTaskLogsResponseTasksItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -426,17 +423,16 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemLinesItemMetadata
         FIELDS = {
-          level: "level",
-          timestamp: "timestamp",
-          message: "message",
+          level: 'level',
+          timestamp: 'timestamp',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           level
           timestamp
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SearchVercelCiLogsResponseInvocationsItemTasksItemLinesItem.
@@ -469,14 +465,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSearchVercelCiLogsResponseInvocationsItemTasksItemMetadata
         FIELDS = {
-          job_definition_id: "jobDefinitionId",
-          job_name: "jobName",
-          job_run_attempt: "jobRunAttempt",
-          task_definition_id: "taskDefinitionId",
-          task_name: "taskName",
-          task_run_attempt: "taskRunAttempt",
-          conclusion: "conclusion",
-          lines: "lines",
+          job_definition_id: 'jobDefinitionId',
+          job_name: 'jobName',
+          job_run_attempt: 'jobRunAttempt',
+          task_definition_id: 'taskDefinitionId',
+          task_name: 'taskName',
+          task_run_attempt: 'taskRunAttempt',
+          conclusion: 'conclusion',
+          lines: 'lines'
         }.freeze
         REQUIRED_FIELDS = %i[
           job_definition_id
@@ -492,7 +488,7 @@ module OctridevVercel
           end,
           lines: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::VercelCi::SearchVercelCiLogsResponseInvocationsItemTasksItemLinesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -529,9 +525,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalSearchVercelCiLogsResponseInvocationsItemMetadata
         FIELDS = {
-          invocation_id: "invocationId",
-          attempt: "attempt",
-          tasks: "tasks",
+          invocation_id: 'invocationId',
+          attempt: 'attempt',
+          tasks: 'tasks'
         }.freeze
         REQUIRED_FIELDS = %i[
           invocation_id
@@ -541,7 +537,7 @@ module OctridevVercel
         DECODERS = {
           tasks: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::VercelCi::SearchVercelCiLogsResponseInvocationsItemTasksItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
     end

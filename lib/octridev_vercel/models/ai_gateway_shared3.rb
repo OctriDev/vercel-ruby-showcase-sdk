@@ -5,407 +5,409 @@
 
 # ai_gateway domain models
 module OctridevVercel
-# API model for AiGatewayVirtualModelConfig.
-# Active and archived router configurations owned by the authenticated team.
-class AiGatewayVirtualModelConfig
-  include GetAiGatewayVirtualModelConfigResponse
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAiGatewayVirtualModelConfigMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAiGatewayVirtualModelConfigMetadata::DECODERS
+  # API model for AiGatewayVirtualModelConfig.
+  # Active and archived router configurations owned by the authenticated team.
+  class AiGatewayVirtualModelConfig
+    include GetAiGatewayVirtualModelConfigResponse
 
-  # @return [AiGatewayVirtualModelConfigAllowFallbackFromFast] Allow fallback from fast to standard providers on failure.
-  attr_reader :allow_fallback_from_fast
-  # @return [String] For kind=relay: URL the gateway forwards requests to as a transparent proxy.
-  attr_reader :base_url
-  # @return [Array_of_String] BYOK credential IDs allowed for this VMC.
-  attr_reader :byok_credential_ids
-  # @return [AiGatewayVirtualModelConfigCaching] Use caching if available.
-  attr_reader :caching
-  # @return [Float] Creation timestamp (epoch ms).
-  attr_reader :created_at
-  # @return [String] User or app id that created this VMC.
-  attr_reader :created_by
-  # @return [AiGatewayVirtualModelConfigDeleted] Whether this VMC is soft-deleted.
-  attr_reader :deleted
-  # @return [String] Optional description for UI.
-  attr_reader :description
-  # @return [AiGatewayVirtualModelConfigDisallowPromptTraining] Only use providers that will not train on your prompts.
-  attr_reader :disallow_prompt_training
-  # @return [String] Human-readable name for UI.
-  attr_reader :display_name
-  # @return [Array_of_AiGatewayVirtualModelConfigHasItem] Limit providers to those with these features.
-  attr_reader :has
-  # @return [AiGatewayVirtualModelConfigHipaaCompliant] Only use HIPAA-compliant providers.
-  attr_reader :hipaa_compliant
-  # @return [AiGatewayVirtualModelConfigInferenceRegion] Region pinned on the VMC for system-credential routing (alias/router only).
-  attr_reader :inference_region
-  # @return [String] The concrete model-provider instance this VMC resolves to.
-  attr_reader :instance_id
-  # @return [String] VMC kind: alias, relay, or router.
-  attr_reader :kind
-  # @return [Array_of_AiGatewayVirtualModelConfigModelsItem] For kind=router: ordered candidates, bare slugs/references or `{ slug, ...attributes }`. For kind=alias: ordered fallback model slugs, optionally led by one conditional `{ model, when }` entry, used when the primary model's answers match `when`.
-  attr_reader :models
-  # @return [String] Canonical model slug this VMC maps to (e.g. "creator/model"). Not used by kind=router.
-  attr_reader :model_slug
-  # @return [Array_of_String] Observability tags attached to requests through this VMC.
-  attr_reader :observability_tags
-  # @return [String] Team (owner) that owns this VMC.
-  attr_reader :owner_id
-  # @return [Array_of_String] Restrict routing to only these providers.
-  attr_reader :provider_only
-  # @return [Hash] Arbitrary per-provider AI SDK options, keyed by gateway provider slug.
-  attr_reader :provider_options
-  # @return [Array_of_String] Ordered list of providers to try as fallbacks on failure.
-  attr_reader :provider_order
-  # @return [AiGatewayVirtualModelConfigProviderTimeouts] Per-request provider timeouts in ms, keyed by provider slug for BYOK credentials.
-  attr_reader :provider_timeouts
-  # @return [AiGatewayVirtualModelConfigSelector] For kind=router: how to order candidates. Absent means declared order.
-  attr_reader :selector
-  # @return [AiGatewayVirtualModelConfigSelectorOptions] For kind=router: option slices keyed by selector name; each selector owns its slice's shape.
-  attr_reader :selector_options
-  # @return [AiGatewayVirtualModelConfigServiceTier] Service tier for providers that support it.
-  attr_reader :service_tier
-  # @return [AiGatewayVirtualModelConfigSort] Rank eligible providers by an attribute.
-  attr_reader :sort
-  # @return [AiGatewayVirtualModelConfigSpeed] Only use fastest providers with short timeouts.
-  attr_reader :speed
-  # @return [String] UI lifecycle status: draft, active, or archived.
-  attr_reader :status
-  # @return [Float] Last update timestamp (epoch ms).
-  attr_reader :updated_at
-  # @return [String] User or app id that last updated this VMC.
-  attr_reader :updated_by
-  # @return [String] Client-facing alias used as the model slug in Gateway calls.
-  attr_reader :virtual_model_slug
-  # @return [String] Visibility in listings: public, internal, or stealth.
-  attr_reader :visibility
-  # @return [AiGatewayVirtualModelConfigZeroDataRetention] Only use providers with zero data retention.
-  attr_reader :zero_data_retention
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAiGatewayVirtualModelConfigMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAiGatewayVirtualModelConfigMetadata::DECODERS
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    # @return [AiGatewayVirtualModelConfigAllowFallbackFromFast] Allow fallback from fast to standard providers on failure.
+    attr_reader :allow_fallback_from_fast
+    # @return [String] For kind=relay: URL the gateway forwards requests to as a transparent proxy.
+    attr_reader :base_url
+    # @return [Array_of_String] BYOK credential IDs allowed for this VMC.
+    attr_reader :byok_credential_ids
+    # @return [AiGatewayVirtualModelConfigCaching] Use caching if available.
+    attr_reader :caching
+    # @return [Float] Creation timestamp (epoch ms).
+    attr_reader :created_at
+    # @return [String] User or app id that created this VMC.
+    attr_reader :created_by
+    # @return [AiGatewayVirtualModelConfigDeleted] Whether this VMC is soft-deleted.
+    attr_reader :deleted
+    # @return [String] Optional description for UI.
+    attr_reader :description
+    # @return [AiGatewayVirtualModelConfigDisallowPromptTraining] Only use providers that will not train on your prompts.
+    attr_reader :disallow_prompt_training
+    # @return [String] Human-readable name for UI.
+    attr_reader :display_name
+    # @return [Array_of_AiGatewayVirtualModelConfigHasItem] Limit providers to those with these features.
+    attr_reader :has
+    # @return [AiGatewayVirtualModelConfigHipaaCompliant] Only use HIPAA-compliant providers.
+    attr_reader :hipaa_compliant
+    # @return [AiGatewayVirtualModelConfigInferenceRegion] Region pinned on the VMC for system-credential routing (alias/router only).
+    attr_reader :inference_region
+    # @return [String] The concrete model-provider instance this VMC resolves to.
+    attr_reader :instance_id
+    # @return [String] VMC kind: alias, relay, or router.
+    attr_reader :kind
+    # @return [Array_of_AiGatewayVirtualModelConfigModelsItem] For kind=router: ordered candidates, bare slugs/references or `{ slug, ...attributes }`. For kind=alias: ordered fallback model slugs, optionally led by one conditional `{ model, when }` entry, used when the primary model's answers match `when`.
+    attr_reader :models
+    # @return [String] Canonical model slug this VMC maps to (e.g. "creator/model"). Not used by kind=router.
+    attr_reader :model_slug
+    # @return [Array_of_String] Observability tags attached to requests through this VMC.
+    attr_reader :observability_tags
+    # @return [String] Team (owner) that owns this VMC.
+    attr_reader :owner_id
+    # @return [Array_of_String] Restrict routing to only these providers.
+    attr_reader :provider_only
+    # @return [Hash] Arbitrary per-provider AI SDK options, keyed by gateway provider slug.
+    attr_reader :provider_options
+    # @return [Array_of_String] Ordered list of providers to try as fallbacks on failure.
+    attr_reader :provider_order
+    # @return [AiGatewayVirtualModelConfigProviderTimeouts] Per-request provider timeouts in ms, keyed by provider slug for BYOK credentials.
+    attr_reader :provider_timeouts
+    # @return [AiGatewayVirtualModelConfigSelector] For kind=router: how to order candidates. Absent means declared order.
+    attr_reader :selector
+    # @return [AiGatewayVirtualModelConfigSelectorOptions] For kind=router: option slices keyed by selector name; each selector owns its slice's shape.
+    attr_reader :selector_options
+    # @return [AiGatewayVirtualModelConfigServiceTier] Service tier for providers that support it.
+    attr_reader :service_tier
+    # @return [AiGatewayVirtualModelConfigSort] Rank eligible providers by an attribute.
+    attr_reader :sort
+    # @return [AiGatewayVirtualModelConfigSpeed] Only use fastest providers with short timeouts.
+    attr_reader :speed
+    # @return [String] UI lifecycle status: draft, active, or archived.
+    attr_reader :status
+    # @return [Float] Last update timestamp (epoch ms).
+    attr_reader :updated_at
+    # @return [String] User or app id that last updated this VMC.
+    attr_reader :updated_by
+    # @return [String] Client-facing alias used as the model slug in Gateway calls.
+    attr_reader :virtual_model_slug
+    # @return [String] Visibility in listings: public, internal, or stealth.
+    attr_reader :visibility
+    # @return [AiGatewayVirtualModelConfigZeroDataRetention] Only use providers with zero data retention.
+    attr_reader :zero_data_retention
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the AiGatewayVirtualModelConfigAllowFallbackFromFast SDK namespace.
+  module AiGatewayVirtualModelConfigAllowFallbackFromFast
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the AiGatewayVirtualModelConfigCaching SDK namespace.
+  module AiGatewayVirtualModelConfigCaching
+    AUTO = 'auto'
+    VALUES = ['auto'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the AiGatewayVirtualModelConfigAllowFallbackFromFast SDK namespace.
-module AiGatewayVirtualModelConfigAllowFallbackFromFast
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayVirtualModelConfigCaching SDK namespace.
-module AiGatewayVirtualModelConfigCaching
-  AUTO = 'auto'
-  VALUES = ['auto'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayVirtualModelConfigDeleted SDK namespace.
-module AiGatewayVirtualModelConfigDeleted
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayVirtualModelConfigDisallowPromptTraining SDK namespace.
-module AiGatewayVirtualModelConfigDisallowPromptTraining
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayVirtualModelConfigHasItem SDK namespace.
-module AiGatewayVirtualModelConfigHasItem
-  IMPLICIT_CACHING = 'implicit-caching'
-  REASONING = 'reasoning'
-  STRUCTURED_OUTPUT = 'structured-output'
-  TOOL_USE = 'tool-use'
-  VISION = 'vision'
-  VALUES = ['implicit-caching', 'reasoning', 'structured-output', 'tool-use', 'vision'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayVirtualModelConfigHipaaCompliant SDK namespace.
-module AiGatewayVirtualModelConfigHipaaCompliant
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayVirtualModelConfigInferenceRegionProvidersValueScope SDK namespace.
-module AiGatewayVirtualModelConfigInferenceRegionProvidersValueScope
-  GLOBAL = 'global'
-  SPECIFIC = 'specific'
-  ZONE = 'zone'
-  VALUES = ['global', 'specific', 'zone'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayVirtualModelConfigInferenceRegionScope SDK namespace.
-module AiGatewayVirtualModelConfigInferenceRegionScope
-  GLOBAL = 'global'
-  SPECIFIC = 'specific'
-  ZONE = 'zone'
-  VALUES = ['global', 'specific', 'zone'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayVirtualModelConfigSelector SDK namespace.
-module AiGatewayVirtualModelConfigSelector
-  COST = 'cost'
-  TPS = 'tps'
-  TTFT = 'ttft'
-  VALUES = ['cost', 'tps', 'ttft'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayVirtualModelConfigServiceTier SDK namespace.
-module AiGatewayVirtualModelConfigServiceTier
-  FAST = 'fast'
-  FLEX = 'flex'
-  PRIORITY = 'priority'
-  VALUES = ['fast', 'flex', 'priority'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayVirtualModelConfigSort SDK namespace.
-module AiGatewayVirtualModelConfigSort
-  COST = 'cost'
-  LATENCY = 'latency'
-  PRICE = 'price'
-  THROUGHPUT = 'throughput'
-  TPS = 'tps'
-  TTFT = 'ttft'
-  VALUES = ['cost', 'latency', 'price', 'throughput', 'tps', 'ttft'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayVirtualModelConfigSpeed SDK namespace.
-module AiGatewayVirtualModelConfigSpeed
-  FAST = 'fast'
-  VALUES = ['fast'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AiGatewayVirtualModelConfigZeroDataRetention SDK namespace.
-module AiGatewayVirtualModelConfigZeroDataRetention
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalAiGatewayVirtualModelConfigListMetadata
-  FIELDS = {
-    cursor: "cursor",
-    virtual_model_configs: "virtualModelConfigs",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    cursor
-    virtual_model_configs
-  ].freeze
-  DECODERS = {
-    virtual_model_configs: lambda do |value|
-      value&.map { |item| ::OctridevVercel::AiGatewayVirtualModelConfig.from_hash(item) }
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    cursor
-  ].freeze
-end
-
-# API model for AiGatewayVirtualModelConfigList.
-# Typed representation of the `AiGatewayVirtualModelConfigList` API schema.
-class AiGatewayVirtualModelConfigList
-  include GetAiGatewayVirtualModelConfigResponse
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAiGatewayVirtualModelConfigListMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigListMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAiGatewayVirtualModelConfigListMetadata::DECODERS
-
-  # @return [String] Cursor for the next page, or null when no more pages remain.
-  attr_reader :cursor
-  # @return [Array_of_AiGatewayVirtualModelConfig] The page of VMCs.
-  attr_reader :virtual_model_configs
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the AiGatewayVirtualModelConfigDeleted SDK namespace.
+  module AiGatewayVirtualModelConfigDeleted
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalAiGatewayVirtualModelConfigListMetadata::NULLABLE_FIELDS)
+  # Defines the AiGatewayVirtualModelConfigDisallowPromptTraining SDK namespace.
+  module AiGatewayVirtualModelConfigDisallowPromptTraining
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the AiGatewayVirtualModelConfigHasItem SDK namespace.
+  module AiGatewayVirtualModelConfigHasItem
+    IMPLICIT_CACHING = 'implicit-caching'
+    REASONING = 'reasoning'
+    STRUCTURED_OUTPUT = 'structured-output'
+    TOOL_USE = 'tool-use'
+    VISION = 'vision'
+    VALUES = %w[implicit-caching reasoning structured-output tool-use vision].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalAiGatewayVirtualModelConfigModelsItemVariant1Metadata
-  FIELDS = {
-    intelligence: "intelligence",
-    slug: "slug",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    slug
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for AiGatewayVirtualModelConfigModelsItemVariant1.
-class AiGatewayVirtualModelConfigModelsItemVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAiGatewayVirtualModelConfigModelsItemVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigModelsItemVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAiGatewayVirtualModelConfigModelsItemVariant1Metadata::DECODERS
-
-  # @return [Float] Highest task level the member handles, in [0, 1]. Read by the intelligence selector.
-  attr_reader :intelligence
-  # @return [String] Required `string` value serialized in the `slug` wire field.
-  attr_reader :slug
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the AiGatewayVirtualModelConfigHipaaCompliant SDK namespace.
+  module AiGatewayVirtualModelConfigHipaaCompliant
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the AiGatewayVirtualModelConfigInferenceRegionProvidersValueScope SDK namespace.
+  module AiGatewayVirtualModelConfigInferenceRegionProvidersValueScope
+    GLOBAL = 'global'
+    SPECIFIC = 'specific'
+    ZONE = 'zone'
+    VALUES = %w[global specific zone].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the AiGatewayVirtualModelConfigInferenceRegionScope SDK namespace.
+  module AiGatewayVirtualModelConfigInferenceRegionScope
+    GLOBAL = 'global'
+    SPECIFIC = 'specific'
+    ZONE = 'zone'
+    VALUES = %w[global specific zone].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalAiGatewayVirtualModelConfigModelsItemVariant2Metadata
-  FIELDS = {
-    model: "model",
-    when_: "when",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    model
-    when_
-  ].freeze
-  DECODERS = {
-    when_: lambda do |value|
-      ::OctridevVercel::AiGatewayEvaluationFallbackCondition.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for AiGatewayVirtualModelConfigModelsItemVariant2.
-class AiGatewayVirtualModelConfigModelsItemVariant2
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAiGatewayVirtualModelConfigModelsItemVariant2Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigModelsItemVariant2Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAiGatewayVirtualModelConfigModelsItemVariant2Metadata::DECODERS
-
-  # @return [String] Required `string` value serialized in the `model` wire field.
-  attr_reader :model
-  # @return [AiGatewayEvaluationFallbackCondition] Required API value serialized in the `when` wire field.
-  attr_reader :when_
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the AiGatewayVirtualModelConfigSelector SDK namespace.
+  module AiGatewayVirtualModelConfigSelector
+    COST = 'cost'
+    TPS = 'tps'
+    TTFT = 'ttft'
+    VALUES = %w[cost tps ttft].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the AiGatewayVirtualModelConfigServiceTier SDK namespace.
+  module AiGatewayVirtualModelConfigServiceTier
+    FAST = 'fast'
+    FLEX = 'flex'
+    PRIORITY = 'priority'
+    VALUES = %w[fast flex priority].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the AiGatewayVirtualModelConfigSort SDK namespace.
+  module AiGatewayVirtualModelConfigSort
+    COST = 'cost'
+    LATENCY = 'latency'
+    PRICE = 'price'
+    THROUGHPUT = 'throughput'
+    TPS = 'tps'
+    TTFT = 'ttft'
+    VALUES = %w[cost latency price throughput tps ttft].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
+  # Defines the AiGatewayVirtualModelConfigSpeed SDK namespace.
+  module AiGatewayVirtualModelConfigSpeed
+    FAST = 'fast'
+    VALUES = ['fast'].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the AiGatewayVirtualModelConfigModelsItem SDK namespace.
-module AiGatewayVirtualModelConfigModelsItem
-  def self.from_hash(hash)
-    return hash if hash.is_a?(::String)
-    shape_mapping = {
-      "slug" => AiGatewayVirtualModelConfigModelsItemVariant1,
-      "model" => AiGatewayVirtualModelConfigModelsItemVariant2,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
+  # Defines the AiGatewayVirtualModelConfigZeroDataRetention SDK namespace.
+  module AiGatewayVirtualModelConfigZeroDataRetention
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
 
-# Defines the GetAiGatewayVirtualModelConfigResponse SDK namespace.
-module GetAiGatewayVirtualModelConfigResponse
-  def self.from_hash(hash)
-    shape_mapping = {
-      "createdAt" => AiGatewayVirtualModelConfig,
-      "cursor" => AiGatewayVirtualModelConfigList,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
+  # Internal model hydration metadata.
+  class SdkInternalAiGatewayVirtualModelConfigListMetadata
+    FIELDS = {
+      cursor: 'cursor',
+      virtual_model_configs: 'virtualModelConfigs'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      cursor
+      virtual_model_configs
+    ].freeze
+    DECODERS = {
+      virtual_model_configs: lambda do |value|
+        value&.map { |item| ::OctridevVercel::AiGatewayVirtualModelConfig.from_hash(item) }
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      cursor
+    ].freeze
   end
-end
+
+  # API model for AiGatewayVirtualModelConfigList.
+  # Typed representation of the `AiGatewayVirtualModelConfigList` API schema.
+  class AiGatewayVirtualModelConfigList
+    include GetAiGatewayVirtualModelConfigResponse
+
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAiGatewayVirtualModelConfigListMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigListMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAiGatewayVirtualModelConfigListMetadata::DECODERS
+
+    # @return [String] Cursor for the next page, or null when no more pages remain.
+    attr_reader :cursor
+    # @return [Array_of_AiGatewayVirtualModelConfig] The page of VMCs.
+    attr_reader :virtual_model_configs
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalAiGatewayVirtualModelConfigListMetadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalAiGatewayVirtualModelConfigModelsItemVariant1Metadata
+    FIELDS = {
+      intelligence: 'intelligence',
+      slug: 'slug'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      slug
+    ].freeze
+    DECODERS = {}.freeze
+  end
+
+  # API model for AiGatewayVirtualModelConfigModelsItemVariant1.
+  class AiGatewayVirtualModelConfigModelsItemVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAiGatewayVirtualModelConfigModelsItemVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigModelsItemVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAiGatewayVirtualModelConfigModelsItemVariant1Metadata::DECODERS
+
+    # @return [Float] Highest task level the member handles, in [0, 1]. Read by the intelligence selector.
+    attr_reader :intelligence
+    # @return [String] Required `string` value serialized in the `slug` wire field.
+    attr_reader :slug
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
+  end
+
+  # Internal model hydration metadata.
+  class SdkInternalAiGatewayVirtualModelConfigModelsItemVariant2Metadata
+    FIELDS = {
+      model: 'model',
+      when_: 'when'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      model
+      when_
+    ].freeze
+    DECODERS = {
+      when_: lambda do |value|
+        ::OctridevVercel::AiGatewayEvaluationFallbackCondition.from_hash(value)
+      end
+    }.freeze
+  end
+
+  # API model for AiGatewayVirtualModelConfigModelsItemVariant2.
+  class AiGatewayVirtualModelConfigModelsItemVariant2
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAiGatewayVirtualModelConfigModelsItemVariant2Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAiGatewayVirtualModelConfigModelsItemVariant2Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAiGatewayVirtualModelConfigModelsItemVariant2Metadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `model` wire field.
+    attr_reader :model
+    # @return [AiGatewayEvaluationFallbackCondition] Required API value serialized in the `when` wire field.
+    attr_reader :when_
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
+  end
+
+  # Defines the AiGatewayVirtualModelConfigModelsItem SDK namespace.
+  module AiGatewayVirtualModelConfigModelsItem
+    def self.from_hash(hash)
+      return hash if hash.is_a?(::String)
+
+      shape_mapping = {
+        'slug' => AiGatewayVirtualModelConfigModelsItemVariant1,
+        'model' => AiGatewayVirtualModelConfigModelsItemVariant2
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
+  end
+
+  # Defines the GetAiGatewayVirtualModelConfigResponse SDK namespace.
+  module GetAiGatewayVirtualModelConfigResponse
+    def self.from_hash(hash)
+      shape_mapping = {
+        'createdAt' => AiGatewayVirtualModelConfig,
+        'cursor' => AiGatewayVirtualModelConfigList
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
+  end
 end

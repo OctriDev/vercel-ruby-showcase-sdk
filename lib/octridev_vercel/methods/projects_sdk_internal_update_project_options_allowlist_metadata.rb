@@ -12,7 +12,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectOptionsAllowlistMetadata
         FIELDS = {
-          paths: "paths",
+          paths: 'paths'
         }.freeze
         REQUIRED_FIELDS = %i[
           paths
@@ -20,7 +20,7 @@ module OctridevVercel
         DECODERS = {
           paths: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UpdateProjectOptionsAllowlistPathsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -55,10 +55,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectDismissedToastsItemMetadata
         FIELDS = {
-          key: "key",
-          dismissed_at: "dismissedAt",
-          action: "action",
-          value: "value",
+          key: 'key',
+          dismissed_at: 'dismissedAt',
+          action: 'action',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           key
@@ -72,7 +72,7 @@ module OctridevVercel
           end,
           value: lambda do |value|
             ::OctridevVercel::UpdateProjectRequestDismissedToastsItemValue.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -113,54 +113,53 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectMetadata
         FIELDS = {
-          auto_expose_system_envs: "autoExposeSystemEnvs",
-          auto_assign_custom_domains: "autoAssignCustomDomains",
-          auto_assign_custom_domains_updated_by: "autoAssignCustomDomainsUpdatedBy",
-          build_command: "buildCommand",
-          command_for_ignoring_build_step: "commandForIgnoringBuildStep",
-          customer_support_code_visibility: "customerSupportCodeVisibility",
-          dev_command: "devCommand",
-          directory_listing: "directoryListing",
-          framework: "framework",
-          git_fork_protection: "gitForkProtection",
-          git_lfs: "gitLFS",
-          protected_sourcemaps: "protectedSourcemaps",
-          install_command: "installCommand",
-          name: "name",
-          node_version: "nodeVersion",
-          output_directory: "outputDirectory",
-          preview_deployments_disabled: "previewDeploymentsDisabled",
-          preview_deployment_suffix: "previewDeploymentSuffix",
-          resource_config: "resourceConfig",
-          public_source: "publicSource",
-          root_directory: "rootDirectory",
-          serverless_function_region: "serverlessFunctionRegion",
-          serverless_function_zero_config_failover: "serverlessFunctionZeroConfigFailover",
-          skew_protection_boundary_at: "skewProtectionBoundaryAt",
-          skew_protection_max_age: "skewProtectionMaxAge",
-          skew_protection_allowed_domains: "skewProtectionAllowedDomains",
-          skip_git_connect_during_link: "skipGitConnectDuringLink",
-          source_files_outside_root_directory: "sourceFilesOutsideRootDirectory",
-          enable_preview_feedback: "enablePreviewFeedback",
-          enable_production_feedback: "enableProductionFeedback",
-          enable_affected_projects_deployments: "enableAffectedProjectsDeployments",
-          enable_external_rewrite_caching: "enableExternalRewriteCaching",
-          static_ips: "staticIps",
-          tracing: "tracing",
-          oidc_token_config: "oidcTokenConfig",
-          password_protection: "passwordProtection",
-          passport: "passport",
-          sandbox: "sandbox",
-          sso_protection: "ssoProtection",
-          trusted_ips: "trustedIps",
-          trusted_sources: "trustedSources",
-          deployment_policy: "deploymentPolicy",
-          options_allowlist: "optionsAllowlist",
-          connect_configurations: "connectConfigurations",
-          dismissed_toasts: "dismissedToasts",
+          auto_expose_system_envs: 'autoExposeSystemEnvs',
+          auto_assign_custom_domains: 'autoAssignCustomDomains',
+          auto_assign_custom_domains_updated_by: 'autoAssignCustomDomainsUpdatedBy',
+          build_command: 'buildCommand',
+          command_for_ignoring_build_step: 'commandForIgnoringBuildStep',
+          customer_support_code_visibility: 'customerSupportCodeVisibility',
+          dev_command: 'devCommand',
+          directory_listing: 'directoryListing',
+          framework: 'framework',
+          git_fork_protection: 'gitForkProtection',
+          git_lfs: 'gitLFS',
+          protected_sourcemaps: 'protectedSourcemaps',
+          install_command: 'installCommand',
+          name: 'name',
+          node_version: 'nodeVersion',
+          output_directory: 'outputDirectory',
+          preview_deployments_disabled: 'previewDeploymentsDisabled',
+          preview_deployment_suffix: 'previewDeploymentSuffix',
+          resource_config: 'resourceConfig',
+          public_source: 'publicSource',
+          root_directory: 'rootDirectory',
+          serverless_function_region: 'serverlessFunctionRegion',
+          serverless_function_zero_config_failover: 'serverlessFunctionZeroConfigFailover',
+          skew_protection_boundary_at: 'skewProtectionBoundaryAt',
+          skew_protection_max_age: 'skewProtectionMaxAge',
+          skew_protection_allowed_domains: 'skewProtectionAllowedDomains',
+          skip_git_connect_during_link: 'skipGitConnectDuringLink',
+          source_files_outside_root_directory: 'sourceFilesOutsideRootDirectory',
+          enable_preview_feedback: 'enablePreviewFeedback',
+          enable_production_feedback: 'enableProductionFeedback',
+          enable_affected_projects_deployments: 'enableAffectedProjectsDeployments',
+          enable_external_rewrite_caching: 'enableExternalRewriteCaching',
+          static_ips: 'staticIps',
+          tracing: 'tracing',
+          oidc_token_config: 'oidcTokenConfig',
+          password_protection: 'passwordProtection',
+          passport: 'passport',
+          sandbox: 'sandbox',
+          sso_protection: 'ssoProtection',
+          trusted_ips: 'trustedIps',
+          trusted_sources: 'trustedSources',
+          deployment_policy: 'deploymentPolicy',
+          options_allowlist: 'optionsAllowlist',
+          connect_configurations: 'connectConfigurations',
+          dismissed_toasts: 'dismissedToasts'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           framework: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectFramework.from_value(value)
@@ -206,7 +205,7 @@ module OctridevVercel
           end,
           dismissed_toasts: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::UpdateProjectDismissedToastsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -320,15 +319,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectResponseAliasItemDeploymentAliasErrorMetadata
         FIELDS = {
-          code: "code",
-          message: "message",
+          code: 'code',
+          message: 'message'
         }.freeze
         REQUIRED_FIELDS = %i[
           code
           message
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateProjectResponseAliasItemDeploymentAliasError.
@@ -361,8 +359,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectResponseAliasItemDeploymentBranchMatcherMetadata
         FIELDS = {
-          pattern: "pattern",
-          type: "type",
+          pattern: 'pattern',
+          type: 'type'
         }.freeze
         REQUIRED_FIELDS = %i[
           pattern
@@ -371,7 +369,7 @@ module OctridevVercel
         DECODERS = {
           type: lambda do |value|
             ::OctridevVercel::Methods::Projects::UpdateProjectResponseAliasItemDeploymentBranchMatcherType.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -408,15 +406,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectResponseAliasItemDeploymentBuildsItemMetadata
         FIELDS = {
-          dest: "dest",
-          src: "src",
-          use: "use",
+          dest: 'dest',
+          src: 'src',
+          use: 'use'
         }.freeze
         REQUIRED_FIELDS = %i[
           use
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateProjectResponseAliasItemDeploymentBuildsItem.
@@ -449,19 +446,18 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectResponseAliasItemDeploymentCreatorMetadata
         FIELDS = {
-          email: "email",
-          github_login: "githubLogin",
-          gitlab_login: "gitlabLogin",
-          uid: "uid",
-          username: "username",
+          email: 'email',
+          github_login: 'githubLogin',
+          gitlab_login: 'gitlabLogin',
+          uid: 'uid',
+          username: 'username'
         }.freeze
         REQUIRED_FIELDS = %i[
           email
           uid
           username
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateProjectResponseAliasItemDeploymentCreator.
@@ -494,19 +490,19 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalUpdateProjectResponseAliasItemDeploymentOidcTokenClaimsMetadata
         FIELDS = {
-          aud: "aud",
-          custom_environment_id: "custom_environment_id",
-          deployment_id: "deployment_id",
-          environment: "environment",
-          iss: "iss",
-          mfe_group_ids: "mfe_group_ids",
-          owner: "owner",
-          owner_id: "owner_id",
-          plan: "plan",
-          project: "project",
-          project_id: "project_id",
-          scope: "scope",
-          sub: "sub",
+          aud: 'aud',
+          custom_environment_id: 'custom_environment_id',
+          deployment_id: 'deployment_id',
+          environment: 'environment',
+          iss: 'iss',
+          mfe_group_ids: 'mfe_group_ids',
+          owner: 'owner',
+          owner_id: 'owner_id',
+          plan: 'plan',
+          project: 'project',
+          project_id: 'project_id',
+          scope: 'scope',
+          sub: 'sub'
         }.freeze
         REQUIRED_FIELDS = %i[
           aud
@@ -519,8 +515,7 @@ module OctridevVercel
           scope
           sub
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for UpdateProjectResponseAliasItemDeploymentOidcTokenClaims.

@@ -12,8 +12,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSecurityFirewallEventsResponseMetadata
         FIELDS = {
-          actions: "actions",
-          pagination: "pagination",
+          actions: 'actions',
+          pagination: 'pagination'
         }.freeze
         REQUIRED_FIELDS = %i[
           actions
@@ -25,7 +25,7 @@ module OctridevVercel
           end,
           pagination: lambda do |value|
             ::OctridevVercel::Methods::Security::GetSecurityFirewallEventsResponsePagination.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -59,12 +59,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetSecurityFirewallEventsSummaryResponseMetadata
         FIELDS = {
-          blocking_ips: "blockingIps",
-          by_action: "byAction",
-          by_action_type: "byActionType",
-          challenging_ips: "challengingIps",
-          other: "other",
-          total: "total",
+          blocking_ips: 'blockingIps',
+          by_action: 'byAction',
+          by_action_type: 'byActionType',
+          challenging_ips: 'challengingIps',
+          other: 'other',
+          total: 'total'
         }.freeze
         REQUIRED_FIELDS = %i[
           blocking_ips
@@ -74,8 +74,7 @@ module OctridevVercel
           other
           total
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetSecurityFirewallEventsSummaryResponse.
@@ -108,11 +107,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGenerateFirewallRuleResponseRuleActionMitigateRateLimitMetadata
         FIELDS = {
-          action: "action",
-          algo: "algo",
-          keys: "keys",
-          limit: "limit",
-          window: "window",
+          action: 'action',
+          algo: 'algo',
+          keys: 'keys',
+          limit: 'limit',
+          window: 'window'
         }.freeze
         REQUIRED_FIELDS = %i[
           algo
@@ -120,8 +119,7 @@ module OctridevVercel
           limit
           window
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GenerateFirewallRuleResponseRuleActionMitigateRateLimit.
@@ -154,8 +152,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGenerateFirewallRuleResponseRuleActionMitigateRedirectMetadata
         FIELDS = {
-          location: "location",
-          permanent: "permanent",
+          location: 'location',
+          permanent: 'permanent'
         }.freeze
         REQUIRED_FIELDS = %i[
           location
@@ -164,7 +162,7 @@ module OctridevVercel
         DECODERS = {
           permanent: lambda do |value|
             ::OctridevVercel::Methods::Security::GenerateFirewallRuleResponseRuleActionMitigateRedirectPermanent.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -198,10 +196,10 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGenerateFirewallRuleResponseRuleActionMitigateMetadata
         FIELDS = {
-          action: "action",
-          action_duration: "actionDuration",
-          rate_limit: "rateLimit",
-          redirect: "redirect",
+          action: 'action',
+          action_duration: 'actionDuration',
+          rate_limit: 'rateLimit',
+          redirect: 'redirect'
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -212,7 +210,7 @@ module OctridevVercel
           end,
           redirect: lambda do |value|
             ::OctridevVercel::Methods::Security::GenerateFirewallRuleResponseRuleActionMitigateRedirect.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -246,14 +244,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGenerateFirewallRuleResponseRuleActionMetadata
         FIELDS = {
-          mitigate: "mitigate",
+          mitigate: 'mitigate'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           mitigate: lambda do |value|
             ::OctridevVercel::Methods::Security::GenerateFirewallRuleResponseRuleActionMitigate.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -287,11 +284,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGenerateFirewallRuleResponseRuleConditionGroupItemConditionsItemMetadata
         FIELDS = {
-          key: "key",
-          neg: "neg",
-          op: "op",
-          type: "type",
-          value: "value",
+          key: 'key',
+          neg: 'neg',
+          op: 'op',
+          type: 'type',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           op
@@ -300,7 +297,7 @@ module OctridevVercel
         DECODERS = {
           neg: lambda do |value|
             ::OctridevVercel::Methods::Security::GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItemNeg.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -334,7 +331,7 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGenerateFirewallRuleResponseRuleConditionGroupItemMetadata
         FIELDS = {
-          conditions: "conditions",
+          conditions: 'conditions'
         }.freeze
         REQUIRED_FIELDS = %i[
           conditions
@@ -342,7 +339,7 @@ module OctridevVercel
         DECODERS = {
           conditions: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Security::GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -376,11 +373,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGenerateFirewallRuleResponseRuleMetadata
         FIELDS = {
-          action: "action",
-          active: "active",
-          condition_group: "conditionGroup",
-          description: "description",
-          name: "name",
+          action: 'action',
+          active: 'active',
+          condition_group: 'conditionGroup',
+          description: 'description',
+          name: 'name'
         }.freeze
         REQUIRED_FIELDS = %i[
           action
@@ -397,7 +394,7 @@ module OctridevVercel
           end,
           condition_group: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Security::GenerateFirewallRuleResponseRuleConditionGroupItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -431,15 +428,14 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGenerateFirewallRuleResponseMetadata
         FIELDS = {
-          error: "error",
-          rule: "rule",
+          error: 'error',
+          rule: 'rule'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           rule: lambda do |value|
             ::OctridevVercel::Methods::Security::GenerateFirewallRuleResponseRule.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -516,13 +512,13 @@ module OctridevVercel
         TRAFFIC_SOURCE = 'traffic_source'
         TRUSTED_SOURCE = 'trusted_source'
         USER_AGENT = 'user_agent'
-        VALUES = [
-          'bot_category', 'bot_name', 'bot_protection', 'bot_status', 'cookie', 'domain_environment',
-          'environment', 'geo_as_number', 'geo_city', 'geo_continent', 'geo_country',
-          'geo_country_region', 'header', 'host', 'ip_address', 'ja3_digest', 'ja4_digest', 'method',
-          'path', 'protocol', 'query', 'rate_limit_api_id', 'raw_path', 'region', 'response_code',
-          'route', 'ruleset', 'scheme', 'server_action', 'shared_condition', 'target_path',
-          'traffic_source', 'trusted_source', 'user_agent'
+        VALUES = %w[
+          bot_category bot_name bot_protection bot_status cookie domain_environment
+          environment geo_as_number geo_city geo_continent geo_country
+          geo_country_region header host ip_address ja3_digest ja4_digest method
+          path protocol query rate_limit_api_id raw_path region response_code
+          route ruleset scheme server_action shared_condition target_path
+          traffic_source trusted_source user_agent
         ].freeze
         def self.from_value(value)
           value
@@ -544,7 +540,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end
@@ -555,7 +551,7 @@ module OctridevVercel
         CHALLENGE = 'challenge'
         DENY = 'deny'
         LOG = 'log'
-        VALUES = ['challenge', 'deny', 'log'].freeze
+        VALUES = %w[challenge deny log].freeze
         def self.from_value(value)
           value
         end

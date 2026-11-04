@@ -51,14 +51,13 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseFeaturesMetadata
         FIELDS = {
-          web_analytics: "webAnalytics",
+          web_analytics: 'webAnalytics'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           web_analytics: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseFeaturesWebAnalytics.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -92,8 +91,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseGitCommentsMetadata
         FIELDS = {
-          on_commit: "onCommit",
-          on_pull_request: "onPullRequest",
+          on_commit: 'onCommit',
+          on_pull_request: 'onPullRequest'
         }.freeze
         REQUIRED_FIELDS = %i[
           on_commit
@@ -105,7 +104,7 @@ module OctridevVercel
           end,
           on_pull_request: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseGitCommentsOnPullRequest.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -142,8 +141,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseGitProviderOptionsConsolidatedGitCommitStatusMetadata
         FIELDS = {
-          enabled: "enabled",
-          propagate_failures: "propagateFailures",
+          enabled: 'enabled',
+          propagate_failures: 'propagateFailures'
         }.freeze
         REQUIRED_FIELDS = %i[
           enabled
@@ -155,7 +154,7 @@ module OctridevVercel
           end,
           propagate_failures: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseGitProviderOptionsConsolidatedGitCommitStaX5a73190c93.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -193,11 +192,11 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseGitProviderOptionsMetadata
         FIELDS = {
-          consolidated_git_commit_status: "consolidatedGitCommitStatus",
-          create_deployments: "createDeployments",
-          disable_repository_dispatch_events: "disableRepositoryDispatchEvents",
-          git_commit_status: "gitCommitStatus",
-          require_verified_commits: "requireVerifiedCommits",
+          consolidated_git_commit_status: 'consolidatedGitCommitStatus',
+          create_deployments: 'createDeployments',
+          disable_repository_dispatch_events: 'disableRepositoryDispatchEvents',
+          git_commit_status: 'gitCommitStatus',
+          require_verified_commits: 'requireVerifiedCommits'
         }.freeze
         REQUIRED_FIELDS = %i[
           create_deployments
@@ -217,7 +216,7 @@ module OctridevVercel
           end,
           require_verified_commits: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseGitProviderOptionsRequireVerifiedCommits.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -260,13 +259,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseIntegrationsItemResourcesItemMetadata
         FIELDS = {
-          external_resource_id: "externalResourceId",
+          external_resource_id: 'externalResourceId'
         }.freeze
         REQUIRED_FIELDS = %i[
           external_resource_id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseIntegrationsItemResourcesItem.
@@ -300,8 +298,8 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseIntegrationsItemMetadata
         FIELDS = {
-          installation_id: "installationId",
-          resources: "resources",
+          installation_id: 'installationId',
+          resources: 'resources'
         }.freeze
         REQUIRED_FIELDS = %i[
           installation_id
@@ -309,7 +307,7 @@ module OctridevVercel
         DECODERS = {
           resources: lambda do |value|
             value&.map { |item| ::OctridevVercel::Methods::Projects::GetProjectsResponseIntegrationsItemResourcesItem.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -347,9 +345,9 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseIpBucketsItemMetadata
         FIELDS = {
-          bucket: "bucket",
-          default: "default",
-          support_until: "supportUntil",
+          bucket: 'bucket',
+          default: 'default',
+          support_until: 'supportUntil'
         }.freeze
         REQUIRED_FIELDS = %i[
           bucket
@@ -357,7 +355,7 @@ module OctridevVercel
         DECODERS = {
           default: lambda do |value|
             ::OctridevVercel::Methods::Projects::GetProjectsResponseIpBucketsItemDefault.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -391,13 +389,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseJobsFlagDefinitionsPresentMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseJobsFlagDefinitionsPresent.
@@ -430,13 +427,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseJobsLintMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseJobsLint.
@@ -469,13 +465,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseJobsMfeConfigPresentMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseJobsMfeConfigPresent.
@@ -508,13 +503,12 @@ module OctridevVercel
       # Internal model hydration metadata.
       class SdkInternalGetProjectsResponseJobsTypecheckMetadata
         FIELDS = {
-          targets: "targets",
+          targets: 'targets'
         }.freeze
         REQUIRED_FIELDS = %i[
           targets
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for GetProjectsResponseJobsTypecheck.

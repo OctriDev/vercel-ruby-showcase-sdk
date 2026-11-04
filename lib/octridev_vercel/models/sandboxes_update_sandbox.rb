@@ -5,351 +5,350 @@
 
 # sandboxes domain models
 module OctridevVercel
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMetadata
-  FIELDS = {
-    domain: "domain",
-    headers: "headers",
-    match: "match",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    domain
-    headers
-  ].freeze
-  DECODERS = {
-    match: lambda do |value|
-      ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatch.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItem.
-class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItem
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMetadata::DECODERS
-
-  # @return [String] The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.
-  attr_reader :domain
-  # @return [Hash] HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.
-  attr_reader :headers
-  # @return [UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatch] Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
-  attr_reader :match
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMetadata
+    FIELDS = {
+      domain: 'domain',
+      headers: 'headers',
+      match: 'match'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      domain
+      headers
+    ].freeze
+    DECODERS = {
+      match: lambda do |value|
+        ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatch.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItem.
+  class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItem
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMetadata::DECODERS
+
+    # @return [String] The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.
+    attr_reader :domain
+    # @return [Hash] HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.
+    attr_reader :headers
+    # @return [UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatch] Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
+    attr_reader :match
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0Metadata
+    FIELDS = {
+      mode: 'mode',
+      allowed_domains: 'allowedDomains',
+      allowed_cid_rs: 'allowedCIDRs',
+      denied_cid_rs: 'deniedCIDRs',
+      injection_rules: 'injectionRules'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      mode
+    ].freeze
+    DECODERS = {
+      mode: lambda do |value|
+        ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0Mode.from_value(value)
+      end,
+      injection_rules: lambda do |value|
+        value&.map { |item| ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItem.from_hash(item) }
+      end
+    }.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for UpdateSandboxRequestNetworkPolicyVariant0.
+  class UpdateSandboxRequestNetworkPolicyVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0Metadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxRequestNetworkPolicyVariant0Metadata
-  FIELDS = {
-    mode: "mode",
-    allowed_domains: "allowedDomains",
-    allowed_cid_rs: "allowedCIDRs",
-    denied_cid_rs: "deniedCIDRs",
-    injection_rules: "injectionRules",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    mode
-  ].freeze
-  DECODERS = {
-    mode: lambda do |value|
-      ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0Mode.from_value(value)
-    end,
-    injection_rules: lambda do |value|
-      value&.map { |item| ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItem.from_hash(item) }
-    end,
-  }.freeze
-end
+    # @return [UpdateSandboxRequestNetworkPolicyVariant0Mode] The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny rules.
+    attr_reader :mode
+    # @return [Array_of_String] List of domain names the sandbox is allowed to connect to. Only applies when mode is \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
+    attr_reader :allowed_domains
+    # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.
+    attr_reader :allowed_cid_rs
+    # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
+    attr_reader :denied_cid_rs
+    # @return [Array_of_UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItem] HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.
+    attr_reader :injection_rules
 
-# API model for UpdateSandboxRequestNetworkPolicyVariant0.
-class UpdateSandboxRequestNetworkPolicyVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant0Metadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [UpdateSandboxRequestNetworkPolicyVariant0Mode] The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny rules.
-  attr_reader :mode
-  # @return [Array_of_String] List of domain names the sandbox is allowed to connect to. Only applies when mode is \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
-  attr_reader :allowed_domains
-  # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.
-  attr_reader :allowed_cid_rs
-  # @return [Array_of_String] List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
-  attr_reader :denied_cid_rs
-  # @return [Array_of_UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItem] HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.
-  attr_reader :injection_rules
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxRequestNetworkPolicyVariant1SubnetsMetadata
+    FIELDS = {
+      allow: 'allow',
+      deny: 'deny'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UpdateSandboxRequestNetworkPolicyVariant1Subnets.
+  class UpdateSandboxRequestNetworkPolicyVariant1Subnets
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant1SubnetsMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant1SubnetsMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant1SubnetsMetadata::DECODERS
+
+    attr_reader :allow, :deny
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxRequestNetworkPolicyVariant1SubnetsMetadata
-  FIELDS = {
-    allow: "allow",
-    deny: "deny",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for UpdateSandboxRequestNetworkPolicyVariant1Subnets.
-class UpdateSandboxRequestNetworkPolicyVariant1Subnets
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant1SubnetsMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant1SubnetsMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant1SubnetsMetadata::DECODERS
-
-  attr_reader :allow, :deny
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxRequestNetworkPolicyVariant1Metadata
+    FIELDS = {
+      allow: 'allow',
+      subnets: 'subnets'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {
+      subnets: lambda do |value|
+        ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant1Subnets.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateSandboxRequestNetworkPolicyVariant1.
+  class UpdateSandboxRequestNetworkPolicyVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant1Metadata::DECODERS
+
+    attr_reader :allow, :subnets
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the UpdateSandboxRequestNetworkPolicy SDK namespace.
+  module UpdateSandboxRequestNetworkPolicy
+    def self.from_hash(hash)
+      shape_mapping = {
+        'mode' => UpdateSandboxRequestNetworkPolicyVariant0
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      return decoded unless type.nil?
+
+      UpdateSandboxRequestNetworkPolicyVariant1.from_hash(hash)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxRequestNetworkPolicyVariant1Metadata
-  FIELDS = {
-    allow: "allow",
-    subnets: "subnets",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-    subnets: lambda do |value|
-      ::OctridevVercel::UpdateSandboxRequestNetworkPolicyVariant1Subnets.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateSandboxRequestNetworkPolicyVariant1.
-class UpdateSandboxRequestNetworkPolicyVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxRequestNetworkPolicyVariant1Metadata::DECODERS
-
-  attr_reader :allow, :subnets
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the UpdateSandboxRequestNetworkPolicyVariant0Mode SDK namespace.
+  module UpdateSandboxRequestNetworkPolicyVariant0Mode
+    ALLOW_ALL = 'allow-all'
+    DENY_ALL = 'deny-all'
+    CUSTOM = 'custom'
+    DEFAULT_ALLOW = 'default-allow'
+    DEFAULT_DENY = 'default-deny'
+    VALUES = %w[allow-all deny-all custom default-allow default-deny].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxResponseVariant0Metadata
+    FIELDS = {
+      routes: 'routes',
+      sandbox: 'sandbox'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      routes
+      sandbox
+    ].freeze
+    DECODERS = {
+      routes: lambda do |value|
+        value&.map { |item| ::OctridevVercel::SandboxPublicRoute.from_hash(item) }
+      end,
+      sandbox: lambda do |value|
+        ::OctridevVercel::NamedSandbox.from_hash(value)
+      end
+    }.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for UpdateSandboxResponseVariant0.
+  class UpdateSandboxResponseVariant0
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxResponseVariant0Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxResponseVariant0Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxResponseVariant0Metadata::DECODERS
+
+    attr_reader :routes
+    # @return [NamedSandbox] This object contains information related to a Vercel NamedSandbox.
+    attr_reader :sandbox
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the UpdateSandboxRequestNetworkPolicy SDK namespace.
-module UpdateSandboxRequestNetworkPolicy
-  def self.from_hash(hash)
-    shape_mapping = {
-      "mode" => UpdateSandboxRequestNetworkPolicyVariant0,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-    return UpdateSandboxRequestNetworkPolicyVariant1.from_hash(hash)
-  end
-end
-
-# Defines the UpdateSandboxRequestNetworkPolicyVariant0Mode SDK namespace.
-module UpdateSandboxRequestNetworkPolicyVariant0Mode
-  ALLOW_ALL = 'allow-all'
-  DENY_ALL = 'deny-all'
-  CUSTOM = 'custom'
-  DEFAULT_ALLOW = 'default-allow'
-  DEFAULT_DENY = 'default-deny'
-  VALUES = ['allow-all', 'deny-all', 'custom', 'default-allow', 'default-deny'].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxResponseVariant0Metadata
-  FIELDS = {
-    routes: "routes",
-    sandbox: "sandbox",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    routes
-    sandbox
-  ].freeze
-  DECODERS = {
-    routes: lambda do |value|
-      value&.map { |item| ::OctridevVercel::SandboxPublicRoute.from_hash(item) }
-    end,
-    sandbox: lambda do |value|
-      ::OctridevVercel::NamedSandbox.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateSandboxResponseVariant0.
-class UpdateSandboxResponseVariant0
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxResponseVariant0Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxResponseVariant0Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxResponseVariant0Metadata::DECODERS
-
-  attr_reader :routes
-  # @return [NamedSandbox] This object contains information related to a Vercel NamedSandbox.
-  attr_reader :sandbox
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalUpdateSandboxResponseVariant1Metadata
+    FIELDS = {
+      resumed: 'resumed',
+      routes: 'routes',
+      sandbox: 'sandbox',
+      session: 'session'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      resumed
+      routes
+      sandbox
+      session
+    ].freeze
+    DECODERS = {
+      resumed: lambda do |value|
+        ::OctridevVercel::UpdateSandboxResponseVariant1Resumed.from_value(value)
+      end,
+      routes: lambda do |value|
+        value&.map { |item| ::OctridevVercel::SandboxPublicRoute.from_hash(item) }
+      end,
+      sandbox: lambda do |value|
+        ::OctridevVercel::NamedSandbox.from_hash(value)
+      end,
+      session: lambda do |value|
+        ::OctridevVercel::Session.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for UpdateSandboxResponseVariant1.
+  class UpdateSandboxResponseVariant1
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalUpdateSandboxResponseVariant1Metadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalUpdateSandboxResponseVariant1Metadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalUpdateSandboxResponseVariant1Metadata::DECODERS
+
+    attr_reader :resumed, :routes
+    # @return [NamedSandbox] This object contains information related to a Vercel NamedSandbox.
+    attr_reader :sandbox
+    # @return [Session] This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+    attr_reader :session
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the UpdateSandboxResponse SDK namespace.
+  module UpdateSandboxResponse
+    def self.from_hash(hash)
+      shape_mapping = {
+        'resumed' => UpdateSandboxResponseVariant1
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      return decoded unless type.nil?
+
+      UpdateSandboxResponseVariant0.from_hash(hash)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
+  # Defines the UpdateSandboxResponseVariant1Resumed SDK namespace.
+  module UpdateSandboxResponseVariant1Resumed
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
-end
-
-# Internal model hydration metadata.
-class SdkInternalUpdateSandboxResponseVariant1Metadata
-  FIELDS = {
-    resumed: "resumed",
-    routes: "routes",
-    sandbox: "sandbox",
-    session: "session",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    resumed
-    routes
-    sandbox
-    session
-  ].freeze
-  DECODERS = {
-    resumed: lambda do |value|
-      ::OctridevVercel::UpdateSandboxResponseVariant1Resumed.from_value(value)
-    end,
-    routes: lambda do |value|
-      value&.map { |item| ::OctridevVercel::SandboxPublicRoute.from_hash(item) }
-    end,
-    sandbox: lambda do |value|
-      ::OctridevVercel::NamedSandbox.from_hash(value)
-    end,
-    session: lambda do |value|
-      ::OctridevVercel::Session.from_hash(value)
-    end,
-  }.freeze
-end
-
-# API model for UpdateSandboxResponseVariant1.
-class UpdateSandboxResponseVariant1
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalUpdateSandboxResponseVariant1Metadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalUpdateSandboxResponseVariant1Metadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalUpdateSandboxResponseVariant1Metadata::DECODERS
-
-  attr_reader :resumed, :routes
-  # @return [NamedSandbox] This object contains information related to a Vercel NamedSandbox.
-  attr_reader :sandbox
-  # @return [Session] This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-  attr_reader :session
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
-  end
-
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
-
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the UpdateSandboxResponse SDK namespace.
-module UpdateSandboxResponse
-  def self.from_hash(hash)
-    shape_mapping = {
-      "resumed" => UpdateSandboxResponseVariant1,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-    return UpdateSandboxResponseVariant0.from_hash(hash)
-  end
-end
-
-# Defines the UpdateSandboxResponseVariant1Resumed SDK namespace.
-module UpdateSandboxResponseVariant1Resumed
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
 end

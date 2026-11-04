@@ -47,14 +47,13 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         Validation.if_given(search) { Validation.validate_length('search', search, max: 100) }
 
         SdkClient.request(
           'GET',
-          "/v2/connect/connectors",
+          '/v2/connect/connectors',
           config: config,
           query: {
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
@@ -65,13 +64,13 @@ module OctridevVercel
             'service' => QueryValue.new(service, style: 'form', explode: true),
             'sort' => QueryValue.new(sort, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::ConnectConnectorList,
           decoder: :json,
           operation_id: 'list_connectors',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError },
+          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError }
         ).result
       end
 
@@ -89,30 +88,23 @@ module OctridevVercel
       #   with teamId. If both are omitted, Vercel uses the team associated with the
       #   token or the authenticated user's default team. The request returns 401 if
       #   no team can be selected.
-      singleton_class.define_method(:get_connector) do |
-        config:,
-        connector:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_connector) do |config:, connector:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/connect/connectors/",
+            '/v1/connect/connectors/',
             SdkClient.encode_path_segment(connector)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::ConnectConnector,
           decoder: :json,
           operation_id: 'get_connector',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError },
+          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError }
         ).result
       end
 
@@ -137,22 +129,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'DELETE',
           [
-            "/v1/connect/connectors/",
+            '/v1/connect/connectors/',
             SdkClient.encode_path_segment(connector)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           decoder: :empty,
           operation_id: 'delete_connector',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError, '502' => ::OctridevVercel::ConnectError },
+          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError, '502' => ::OctridevVercel::ConnectError }
         ).result
       end
 
@@ -249,7 +240,6 @@ module OctridevVercel
         events: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(icon) { Validation.validate_pattern('icon', icon, '^[0-9a-fA-F]{40}$') }
 
         Validation.if_given(background_color) do
@@ -270,11 +260,11 @@ module OctridevVercel
 
         SdkClient.request(
           'POST',
-          "/v1/connect/connectors",
+          '/v1/connect/connectors',
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'data' => data,
@@ -295,13 +285,13 @@ module OctridevVercel
             'triggerVerificationInput' => trigger_verification_input,
             'triggerRegistrationInput' => trigger_registration_input,
             'triggerDestination' => trigger_destination,
-            'events' => events,
+            'events' => events
           },
           return_type: ::OctridevVercel::ConnectConnectorCreateResult,
           decoder: :json,
           operation_id: 'create_connector',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError, '500' => ::OctridevVercel::ConnectError, '502' => ::OctridevVercel::ConnectError },
+          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError, '500' => ::OctridevVercel::ConnectError, '502' => ::OctridevVercel::ConnectError }
         ).result
       end
 
@@ -362,19 +352,18 @@ module OctridevVercel
         name: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(icon) { Validation.validate_pattern('icon', icon, '^[0-9a-fA-F]{40}$') }
 
         SdkClient.request(
           'PATCH',
           [
-            "/v2/connect/connectors/",
+            '/v2/connect/connectors/',
             SdkClient.encode_path_segment(connector)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
             'triggers' => triggers,
@@ -386,13 +375,13 @@ module OctridevVercel
             'backgroundColor' => background_color,
             'accentColor' => accent_color,
             'uid' => uid,
-            'name' => name,
+            'name' => name
           },
           return_type: ::OctridevVercel::ConnectConnectorUpdateResult,
           decoder: :json,
           operation_id: 'update_connector',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError, '500' => ::OctridevVercel::ConnectError, '502' => ::OctridevVercel::ConnectError },
+          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError, '500' => ::OctridevVercel::ConnectError, '502' => ::OctridevVercel::ConnectError }
         ).result
       end
 
@@ -422,29 +411,28 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.validate_items('destinations', destinations, max: 3)
 
         SdkClient.request(
           'PATCH',
           [
-            "/v1/connect/connectors/",
+            '/v1/connect/connectors/',
             SdkClient.encode_path_segment(connector),
-            "/trigger-destinations"
+            '/trigger-destinations'
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           body: {
-            'destinations' => destinations,
+            'destinations' => destinations
           },
           return_type: ::OctridevVercel::ConnectConnector,
           decoder: :json,
           operation_id: 'replace_connector_trigger_destinations',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError },
+          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError, '422' => ::OctridevVercel::ConnectError }
         ).result
       end
 
@@ -460,22 +448,21 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         SdkClient.request(
           'POST',
           [
-            "/v1/connect/connectors/",
+            '/v1/connect/connectors/',
             SdkClient.encode_path_segment(connector),
-            "/managed/eject"
+            '/managed/eject'
           ].join,
           config: config,
           query: {
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::ConnectConnector,
           decoder: :json,
           operation_id: 'eject_managed_connector',
-          request_options: request_options,
+          request_options: request_options
         ).result
       end
 
@@ -504,28 +491,27 @@ module OctridevVercel
         slug: NOT_GIVEN,
         request_options: nil
       )
-
         Validation.if_given(limit) { Validation.validate_range('limit', limit, min: 1, max: 100) }
 
         SdkClient.request(
           'GET',
           [
-            "/v2/connect/connectors/",
+            '/v2/connect/connectors/',
             SdkClient.encode_path_segment(connector),
-            "/projects"
+            '/projects'
           ].join,
           config: config,
           query: {
             'limit' => QueryValue.new(limit, style: 'form', explode: true),
             'cursor' => QueryValue.new(cursor, style: 'form', explode: true),
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::ConnectConnectorProjectConnectionList,
           decoder: :json,
           operation_id: 'list_connector_project_connections',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError },
+          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError }
         ).result
       end
 
@@ -542,33 +528,25 @@ module OctridevVercel
       #   with teamId. If both are omitted, Vercel uses the team associated with the
       #   token or the authenticated user's default team. The request returns 401 if
       #   no team can be selected.
-      singleton_class.define_method(:get_connector_project_connection) do |
-        config:,
-        connector:,
-        project_id:,
-        team_id: NOT_GIVEN,
-        slug: NOT_GIVEN,
-        request_options: nil
-      |
-
+      singleton_class.define_method(:get_connector_project_connection) do |config:, connector:, project_id:, team_id: NOT_GIVEN, slug: NOT_GIVEN, request_options: nil|
         SdkClient.request(
           'GET',
           [
-            "/v1/connect/connectors/",
+            '/v1/connect/connectors/',
             SdkClient.encode_path_segment(connector),
-            "/projects/",
+            '/projects/',
             SdkClient.encode_path_segment(project_id)
           ].join,
           config: config,
           query: {
             'teamId' => QueryValue.new(team_id, style: 'form', explode: true),
-            'slug' => QueryValue.new(slug, style: 'form', explode: true),
+            'slug' => QueryValue.new(slug, style: 'form', explode: true)
           },
           return_type: ::OctridevVercel::ConnectProjectConnection,
           decoder: :json,
           operation_id: 'get_connector_project_connection',
           request_options: request_options,
-          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError },
+          errors: { '400' => ::OctridevVercel::ConnectError, '401' => ::OctridevVercel::ConnectError, '403' => ::OctridevVercel::ConnectError, '404' => ::OctridevVercel::ConnectError, '409' => ::OctridevVercel::ConnectError, '410' => ::OctridevVercel::ConnectError }
         ).result
       end
     end

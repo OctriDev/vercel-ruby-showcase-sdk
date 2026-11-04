@@ -5,482 +5,482 @@
 
 # user domain models
 module OctridevVercel
-# Defines the AuthUserShouldShowEnterpriseManagedWelcome SDK namespace.
-module AuthUserShouldShowEnterpriseManagedWelcome
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AuthUserSoftBlockBlockedDueToOverageType SDK namespace.
-module AuthUserSoftBlockBlockedDueToOverageType
-  ANALYTICS_USAGE = 'analyticsUsage'
-  ARTIFACTS = 'artifacts'
-  BANDWIDTH = 'bandwidth'
-  BLOB_DATA_TRANSFER = 'blobDataTransfer'
-  BLOB_TOTAL_ADVANCED_REQUESTS = 'blobTotalAdvancedRequests'
-  BLOB_TOTAL_AVG_SIZE_IN_BYTES = 'blobTotalAvgSizeInBytes'
-  BLOB_TOTAL_GET_RESPONSE_OBJECT_SIZE_IN_BYTES = 'blobTotalGetResponseObjectSizeInBytes'
-  BLOB_TOTAL_SIMPLE_REQUESTS = 'blobTotalSimpleRequests'
-  CONNECT_DATA_TRANSFER = 'connectDataTransfer'
-  DATA_CACHE_READ = 'dataCacheRead'
-  DATA_CACHE_WRITE = 'dataCacheWrite'
-  EDGE_CONFIG_READ = 'edgeConfigRead'
-  EDGE_CONFIG_WRITE = 'edgeConfigWrite'
-  EDGE_FUNCTION_EXECUTION_UNITS = 'edgeFunctionExecutionUnits'
-  EDGE_MIDDLEWARE_INVOCATIONS = 'edgeMiddlewareInvocations'
-  EDGE_REQUEST = 'edgeRequest'
-  EDGE_REQUEST_ADDITIONAL_CPU_DURATION = 'edgeRequestAdditionalCpuDuration'
-  ELASTIC_CONCURRENCY_BUILD_SLOTS = 'elasticConcurrencyBuildSlots'
-  FAST_DATA_TRANSFER = 'fastDataTransfer'
-  FAST_ORIGIN_TRANSFER = 'fastOriginTransfer'
-  FLUID_CPU_DURATION = 'fluidCpuDuration'
-  FLUID_DURATION = 'fluidDuration'
-  FUNCTION_DURATION = 'functionDuration'
-  FUNCTION_INVOCATION = 'functionInvocation'
-  IMAGE_OPTIMIZATION_CACHE_READ = 'imageOptimizationCacheRead'
-  IMAGE_OPTIMIZATION_CACHE_WRITE = 'imageOptimizationCacheWrite'
-  IMAGE_OPTIMIZATION_TRANSFORMATION = 'imageOptimizationTransformation'
-  LOG_DRAINS_VOLUME = 'logDrainsVolume'
-  MONITORING_METRIC = 'monitoringMetric'
-  OBSERVABILITY_EVENT = 'observabilityEvent'
-  ON_DEMAND_CONCURRENCY_MINUTES = 'onDemandConcurrencyMinutes'
-  RUNTIME_CACHE_READ = 'runtimeCacheRead'
-  RUNTIME_CACHE_WRITE = 'runtimeCacheWrite'
-  SERVERLESS_FUNCTION_EXECUTION = 'serverlessFunctionExecution'
-  SOURCE_IMAGES = 'sourceImages'
-  WAF_OWASP_EXCESS_BYTES = 'wafOwaspExcessBytes'
-  WAF_OWASP_REQUESTS = 'wafOwaspRequests'
-  WAF_RATE_LIMIT_REQUEST = 'wafRateLimitRequest'
-  WEB_ANALYTICS_EVENT = 'webAnalyticsEvent'
-  VALUES = [
-    'analyticsUsage', 'artifacts', 'bandwidth', 'blobDataTransfer', 'blobTotalAdvancedRequests',
-    'blobTotalAvgSizeInBytes', 'blobTotalGetResponseObjectSizeInBytes', 'blobTotalSimpleRequests',
-    'connectDataTransfer', 'dataCacheRead', 'dataCacheWrite', 'edgeConfigRead', 'edgeConfigWrite',
-    'edgeFunctionExecutionUnits', 'edgeMiddlewareInvocations', 'edgeRequest',
-    'edgeRequestAdditionalCpuDuration', 'elasticConcurrencyBuildSlots', 'fastDataTransfer',
-    'fastOriginTransfer', 'fluidCpuDuration', 'fluidDuration', 'functionDuration',
-    'functionInvocation', 'imageOptimizationCacheRead', 'imageOptimizationCacheWrite',
-    'imageOptimizationTransformation', 'logDrainsVolume', 'monitoringMetric', 'observabilityEvent',
-    'onDemandConcurrencyMinutes', 'runtimeCacheRead', 'runtimeCacheWrite',
-    'serverlessFunctionExecution', 'sourceImages', 'wafOwaspExcessBytes', 'wafOwaspRequests',
-    'wafRateLimitRequest', 'webAnalyticsEvent'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AuthUserSoftBlockReason SDK namespace.
-module AuthUserSoftBlockReason
-  BLOCKED_FOR_PLATFORM_ABUSE = 'BLOCKED_FOR_PLATFORM_ABUSE'
-  DOMAIN_OWNER_DELETION_REQUEST = 'DOMAIN_OWNER_DELETION_REQUEST'
-  ENTERPRISE_TRIAL_ENDED = 'ENTERPRISE_TRIAL_ENDED'
-  ENTERPRISE_UNPAID_INVOICE = 'ENTERPRISE_UNPAID_INVOICE'
-  EXPOSURE_CAP_EXCEEDED = 'EXPOSURE_CAP_EXCEEDED'
-  FAIR_USE_LIMITS_EXCEEDED = 'FAIR_USE_LIMITS_EXCEEDED'
-  SUBSCRIPTION_CANCELED = 'SUBSCRIPTION_CANCELED'
-  SUBSCRIPTION_EXPIRED = 'SUBSCRIPTION_EXPIRED'
-  UNPAID_INVOICE = 'UNPAID_INVOICE'
-  VALUES = [
-    'BLOCKED_FOR_PLATFORM_ABUSE', 'DOMAIN_OWNER_DELETION_REQUEST', 'ENTERPRISE_TRIAL_ENDED',
-    'ENTERPRISE_UNPAID_INVOICE', 'EXPOSURE_CAP_EXCEEDED', 'FAIR_USE_LIMITS_EXCEEDED',
-    'SUBSCRIPTION_CANCELED', 'SUBSCRIPTION_EXPIRED', 'UNPAID_INVOICE'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalAuthUserLimitedMetadata
-  FIELDS = {
-    avatar: "avatar",
-    default_team_id: "defaultTeamId",
-    email: "email",
-    id: "id",
-    is_enterprise_managed: "isEnterpriseManaged",
-    limited: "limited",
-    name: "name",
-    should_show_enterprise_managed_welcome: "shouldShowEnterpriseManagedWelcome",
-    username: "username",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    avatar
-    default_team_id
-    email
-    id
-    limited
-    name
-    username
-  ].freeze
-  DECODERS = {
-    is_enterprise_managed: lambda do |value|
-      ::OctridevVercel::AuthUserLimitedIsEnterpriseManaged.from_value(value)
-    end,
-    limited: lambda do |value|
-      ::OctridevVercel::AuthUserLimitedLimited.from_value(value)
-    end,
-    should_show_enterprise_managed_welcome: lambda do |value|
-      ::OctridevVercel::AuthUserLimitedShouldShowEnterpriseManagedWelcome.from_value(value)
-    end,
-  }.freeze
-  NULLABLE_FIELDS = %i[
-    avatar
-    default_team_id
-    name
-  ].freeze
-end
-
-# API model for AuthUserLimited.
-# A limited form of data for the currently authenticated User, due to the authentication token missing privileges to read the full User data.
-class AuthUserLimited
-  include GetAuthUserResponseUser
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalAuthUserLimitedMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalAuthUserLimitedMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalAuthUserLimitedMetadata::DECODERS
-
-  # @return [String] SHA1 hash of the avatar for the User account. Can be used in conjuction with the ... endpoint to retrieve the avatar image.
-  attr_reader :avatar
-  # @return [String] The user's default team.
-  attr_reader :default_team_id
-  # @return [String] Email address associated with the User account.
-  attr_reader :email
-  # @return [String] The User's unique identifier.
-  attr_reader :id
-  # @return [AuthUserLimitedIsEnterpriseManaged] Indicates whether the user is managed by an enterprise.
-  attr_reader :is_enterprise_managed
-  # @return [AuthUserLimitedLimited] Property indicating that this User data contains only limited information, due to the authentication token missing privileges to read the full User data. Re-login with email, GitHub, GitLab or Bitbucket in order to upgrade the authentication token with the necessary privileges.
-  attr_reader :limited
-  # @return [String] Name associated with the User account, or `null` if none has been provided.
-  attr_reader :name
-  # @return [AuthUserLimitedShouldShowEnterpriseManagedWelcome] Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience.
-  attr_reader :should_show_enterprise_managed_welcome
-  # @return [String] Unique username associated with the User account.
-  attr_reader :username
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the AuthUserShouldShowEnterpriseManagedWelcome SDK namespace.
+  module AuthUserShouldShowEnterpriseManagedWelcome
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalAuthUserLimitedMetadata::NULLABLE_FIELDS)
+  # Defines the AuthUserSoftBlockBlockedDueToOverageType SDK namespace.
+  module AuthUserSoftBlockBlockedDueToOverageType
+    ANALYTICS_USAGE = 'analyticsUsage'
+    ARTIFACTS = 'artifacts'
+    BANDWIDTH = 'bandwidth'
+    BLOB_DATA_TRANSFER = 'blobDataTransfer'
+    BLOB_TOTAL_ADVANCED_REQUESTS = 'blobTotalAdvancedRequests'
+    BLOB_TOTAL_AVG_SIZE_IN_BYTES = 'blobTotalAvgSizeInBytes'
+    BLOB_TOTAL_GET_RESPONSE_OBJECT_SIZE_IN_BYTES = 'blobTotalGetResponseObjectSizeInBytes'
+    BLOB_TOTAL_SIMPLE_REQUESTS = 'blobTotalSimpleRequests'
+    CONNECT_DATA_TRANSFER = 'connectDataTransfer'
+    DATA_CACHE_READ = 'dataCacheRead'
+    DATA_CACHE_WRITE = 'dataCacheWrite'
+    EDGE_CONFIG_READ = 'edgeConfigRead'
+    EDGE_CONFIG_WRITE = 'edgeConfigWrite'
+    EDGE_FUNCTION_EXECUTION_UNITS = 'edgeFunctionExecutionUnits'
+    EDGE_MIDDLEWARE_INVOCATIONS = 'edgeMiddlewareInvocations'
+    EDGE_REQUEST = 'edgeRequest'
+    EDGE_REQUEST_ADDITIONAL_CPU_DURATION = 'edgeRequestAdditionalCpuDuration'
+    ELASTIC_CONCURRENCY_BUILD_SLOTS = 'elasticConcurrencyBuildSlots'
+    FAST_DATA_TRANSFER = 'fastDataTransfer'
+    FAST_ORIGIN_TRANSFER = 'fastOriginTransfer'
+    FLUID_CPU_DURATION = 'fluidCpuDuration'
+    FLUID_DURATION = 'fluidDuration'
+    FUNCTION_DURATION = 'functionDuration'
+    FUNCTION_INVOCATION = 'functionInvocation'
+    IMAGE_OPTIMIZATION_CACHE_READ = 'imageOptimizationCacheRead'
+    IMAGE_OPTIMIZATION_CACHE_WRITE = 'imageOptimizationCacheWrite'
+    IMAGE_OPTIMIZATION_TRANSFORMATION = 'imageOptimizationTransformation'
+    LOG_DRAINS_VOLUME = 'logDrainsVolume'
+    MONITORING_METRIC = 'monitoringMetric'
+    OBSERVABILITY_EVENT = 'observabilityEvent'
+    ON_DEMAND_CONCURRENCY_MINUTES = 'onDemandConcurrencyMinutes'
+    RUNTIME_CACHE_READ = 'runtimeCacheRead'
+    RUNTIME_CACHE_WRITE = 'runtimeCacheWrite'
+    SERVERLESS_FUNCTION_EXECUTION = 'serverlessFunctionExecution'
+    SOURCE_IMAGES = 'sourceImages'
+    WAF_OWASP_EXCESS_BYTES = 'wafOwaspExcessBytes'
+    WAF_OWASP_REQUESTS = 'wafOwaspRequests'
+    WAF_RATE_LIMIT_REQUEST = 'wafRateLimitRequest'
+    WEB_ANALYTICS_EVENT = 'webAnalyticsEvent'
+    VALUES = %w[
+      analyticsUsage artifacts bandwidth blobDataTransfer blobTotalAdvancedRequests
+      blobTotalAvgSizeInBytes blobTotalGetResponseObjectSizeInBytes blobTotalSimpleRequests
+      connectDataTransfer dataCacheRead dataCacheWrite edgeConfigRead edgeConfigWrite
+      edgeFunctionExecutionUnits edgeMiddlewareInvocations edgeRequest
+      edgeRequestAdditionalCpuDuration elasticConcurrencyBuildSlots fastDataTransfer
+      fastOriginTransfer fluidCpuDuration fluidDuration functionDuration
+      functionInvocation imageOptimizationCacheRead imageOptimizationCacheWrite
+      imageOptimizationTransformation logDrainsVolume monitoringMetric observabilityEvent
+      onDemandConcurrencyMinutes runtimeCacheRead runtimeCacheWrite
+      serverlessFunctionExecution sourceImages wafOwaspExcessBytes wafOwaspRequests
+      wafRateLimitRequest webAnalyticsEvent
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the AuthUserSoftBlockReason SDK namespace.
+  module AuthUserSoftBlockReason
+    BLOCKED_FOR_PLATFORM_ABUSE = 'BLOCKED_FOR_PLATFORM_ABUSE'
+    DOMAIN_OWNER_DELETION_REQUEST = 'DOMAIN_OWNER_DELETION_REQUEST'
+    ENTERPRISE_TRIAL_ENDED = 'ENTERPRISE_TRIAL_ENDED'
+    ENTERPRISE_UNPAID_INVOICE = 'ENTERPRISE_UNPAID_INVOICE'
+    EXPOSURE_CAP_EXCEEDED = 'EXPOSURE_CAP_EXCEEDED'
+    FAIR_USE_LIMITS_EXCEEDED = 'FAIR_USE_LIMITS_EXCEEDED'
+    SUBSCRIPTION_CANCELED = 'SUBSCRIPTION_CANCELED'
+    SUBSCRIPTION_EXPIRED = 'SUBSCRIPTION_EXPIRED'
+    UNPAID_INVOICE = 'UNPAID_INVOICE'
+    VALUES = %w[
+      BLOCKED_FOR_PLATFORM_ABUSE DOMAIN_OWNER_DELETION_REQUEST ENTERPRISE_TRIAL_ENDED
+      ENTERPRISE_UNPAID_INVOICE EXPOSURE_CAP_EXCEEDED FAIR_USE_LIMITS_EXCEEDED
+      SUBSCRIPTION_CANCELED SUBSCRIPTION_EXPIRED UNPAID_INVOICE
+    ].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the AuthUserLimitedIsEnterpriseManaged SDK namespace.
-module AuthUserLimitedIsEnterpriseManaged
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AuthUserLimitedLimited SDK namespace.
-module AuthUserLimitedLimited
-  TRUE = true
-  VALUES = [true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the AuthUserLimitedShouldShowEnterpriseManagedWelcome SDK namespace.
-module AuthUserLimitedShouldShowEnterpriseManagedWelcome
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalDeploymentCheckUpdatedPayloadNextMetadata
-  FIELDS = {
-    targets: "targets",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    targets
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for DeploymentCheckUpdatedPayloadNext.
-# Optional object value serialized in the `next` wire field.
-class DeploymentCheckUpdatedPayloadNext
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalDeploymentCheckUpdatedPayloadNextMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalDeploymentCheckUpdatedPayloadNextMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalDeploymentCheckUpdatedPayloadNextMetadata::DECODERS
-
-  # @return [Array_of_String] Required array value serialized in the `targets` wire field.
-  attr_reader :targets
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalAuthUserLimitedMetadata
+    FIELDS = {
+      avatar: 'avatar',
+      default_team_id: 'defaultTeamId',
+      email: 'email',
+      id: 'id',
+      is_enterprise_managed: 'isEnterpriseManaged',
+      limited: 'limited',
+      name: 'name',
+      should_show_enterprise_managed_welcome: 'shouldShowEnterpriseManagedWelcome',
+      username: 'username'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      avatar
+      default_team_id
+      email
+      id
+      limited
+      name
+      username
+    ].freeze
+    DECODERS = {
+      is_enterprise_managed: lambda do |value|
+        ::OctridevVercel::AuthUserLimitedIsEnterpriseManaged.from_value(value)
+      end,
+      limited: lambda do |value|
+        ::OctridevVercel::AuthUserLimitedLimited.from_value(value)
+      end,
+      should_show_enterprise_managed_welcome: lambda do |value|
+        ::OctridevVercel::AuthUserLimitedShouldShowEnterpriseManagedWelcome.from_value(value)
+      end
+    }.freeze
+    NULLABLE_FIELDS = %i[
+      avatar
+      default_team_id
+      name
+    ].freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for AuthUserLimited.
+  # A limited form of data for the currently authenticated User, due to the authentication token missing privileges to read the full User data.
+  class AuthUserLimited
+    include GetAuthUserResponseUser
+
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalAuthUserLimitedMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalAuthUserLimitedMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalAuthUserLimitedMetadata::DECODERS
+
+    # @return [String] SHA1 hash of the avatar for the User account. Can be used in conjuction with the ... endpoint to retrieve the avatar image.
+    attr_reader :avatar
+    # @return [String] The user's default team.
+    attr_reader :default_team_id
+    # @return [String] Email address associated with the User account.
+    attr_reader :email
+    # @return [String] The User's unique identifier.
+    attr_reader :id
+    # @return [AuthUserLimitedIsEnterpriseManaged] Indicates whether the user is managed by an enterprise.
+    attr_reader :is_enterprise_managed
+    # @return [AuthUserLimitedLimited] Property indicating that this User data contains only limited information, due to the authentication token missing privileges to read the full User data. Re-login with email, GitHub, GitLab or Bitbucket in order to upgrade the authentication token with the necessary privileges.
+    attr_reader :limited
+    # @return [String] Name associated with the User account, or `null` if none has been provided.
+    attr_reader :name
+    # @return [AuthUserLimitedShouldShowEnterpriseManagedWelcome] Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience.
+    attr_reader :should_show_enterprise_managed_welcome
+    # @return [String] Unique username associated with the User account.
+    attr_reader :username
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS, SdkInternalAuthUserLimitedMetadata::NULLABLE_FIELDS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the AuthUserLimitedIsEnterpriseManaged SDK namespace.
+  module AuthUserLimitedIsEnterpriseManaged
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalDeploymentCheckUpdatedPayloadPreviousMetadata
-  FIELDS = {
-    targets: "targets",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    targets
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for DeploymentCheckUpdatedPayloadPrevious.
-# Optional object value serialized in the `previous` wire field.
-class DeploymentCheckUpdatedPayloadPrevious
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalDeploymentCheckUpdatedPayloadPreviousMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalDeploymentCheckUpdatedPayloadPreviousMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalDeploymentCheckUpdatedPayloadPreviousMetadata::DECODERS
-
-  # @return [Array_of_String] Required array value serialized in the `targets` wire field.
-  attr_reader :targets
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the AuthUserLimitedLimited SDK namespace.
+  module AuthUserLimitedLimited
+    TRUE = true
+    VALUES = [true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the AuthUserLimitedShouldShowEnterpriseManagedWelcome SDK namespace.
+  module AuthUserLimitedShouldShowEnterpriseManagedWelcome
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalDeploymentCheckUpdatedPayloadNextMetadata
+    FIELDS = {
+      targets: 'targets'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      targets
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
+  # API model for DeploymentCheckUpdatedPayloadNext.
+  # Optional object value serialized in the `next` wire field.
+  class DeploymentCheckUpdatedPayloadNext
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalDeploymentCheckUpdatedPayloadNextMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalDeploymentCheckUpdatedPayloadNextMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalDeploymentCheckUpdatedPayloadNextMetadata::DECODERS
 
-# Internal model hydration metadata.
-class SdkInternalDeploymentCheckUpdatedPayloadMetadata
-  FIELDS = {
-    check_id: "checkId",
-    check_name: "checkName",
-    next_: "next",
-    previous: "previous",
-    project_id: "projectId",
-    project_name: "projectName",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    check_id
-    check_name
-    project_id
-    project_name
-  ].freeze
-  DECODERS = {
-    next_: lambda do |value|
-      ::OctridevVercel::DeploymentCheckUpdatedPayloadNext.from_hash(value)
-    end,
-    previous: lambda do |value|
-      ::OctridevVercel::DeploymentCheckUpdatedPayloadPrevious.from_hash(value)
-    end,
-  }.freeze
-end
+    # @return [Array_of_String] Required array value serialized in the `targets` wire field.
+    attr_reader :targets
 
-# API model for DeploymentCheckUpdatedPayload.
-# The payload of the event, if requested.
-class DeploymentCheckUpdatedPayload
-  include UserEventPayload
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalDeploymentCheckUpdatedPayloadMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalDeploymentCheckUpdatedPayloadMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalDeploymentCheckUpdatedPayloadMetadata::DECODERS
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
 
-  # @return [String] Required `string` value serialized in the `checkId` wire field.
-  attr_reader :check_id
-  # @return [String] Required `string` value serialized in the `checkName` wire field.
-  attr_reader :check_name
-  # @return [DeploymentCheckUpdatedPayloadNext] Optional object value serialized in the `next` wire field.
-  attr_reader :next_
-  # @return [DeploymentCheckUpdatedPayloadPrevious] Optional object value serialized in the `previous` wire field.
-  attr_reader :previous
-  # @return [String] Required `string` value serialized in the `projectId` wire field.
-  attr_reader :project_id
-  # @return [String] Required `string` value serialized in the `projectName` wire field.
-  attr_reader :project_name
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
 
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Internal model hydration metadata.
+  class SdkInternalDeploymentCheckUpdatedPayloadPreviousMetadata
+    FIELDS = {
+      targets: 'targets'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      targets
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # API model for DeploymentCheckUpdatedPayloadPrevious.
+  # Optional object value serialized in the `previous` wire field.
+  class DeploymentCheckUpdatedPayloadPrevious
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalDeploymentCheckUpdatedPayloadPreviousMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalDeploymentCheckUpdatedPayloadPreviousMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalDeploymentCheckUpdatedPayloadPreviousMetadata::DECODERS
+
+    # @return [Array_of_String] Required array value serialized in the `targets` wire field.
+    attr_reader :targets
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
-  end
-end
-
-# Defines the GetAuthUserResponseUser SDK namespace.
-module GetAuthUserResponseUser
-  def self.from_hash(hash)
-    shape_mapping = {
-      "billing" => AuthUser,
-      "limited" => AuthUserLimited,
-    }
-    type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
-    decoded = type&.from_hash(hash)
-    return decoded unless type.nil?
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalListEventTypeMetadata
-  FIELDS = {
-    categories: "categories",
-    deprecated: "deprecated",
-    description: "description",
-    name: "name",
-    replaced_by: "replacedBy",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    categories
-    description
-    name
-  ].freeze
-  DECODERS = {
-    categories: lambda do |value|
-      value&.map { |item| ::OctridevVercel::ListEventTypeCategoriesItem.from_value(item) }
-    end,
-    deprecated: lambda do |value|
-      ::OctridevVercel::ListEventTypeDeprecated.from_value(value)
-    end,
-    name: lambda do |value|
-      ::OctridevVercel::ListEventTypeName.from_value(value)
-    end,
-    replaced_by: lambda do |value|
-      value&.map { |item| ::OctridevVercel::ListEventTypeReplacedByItem.from_value(item) }
-    end,
-  }.freeze
-end
-
-# API model for ListEventType.
-# A user-facing event type.
-class ListEventType
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalListEventTypeMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalListEventTypeMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalListEventTypeMetadata::DECODERS
-
-  # @return [Array_of_ListEventTypeCategoriesItem] Categories that group this event type with related event types.
-  attr_reader :categories
-  # @return [ListEventTypeDeprecated] Present only when this event type is deprecated.
-  attr_reader :deprecated
-  # @return [String] Description of the event, visible to users in the Activity dashboard and docs.
-  attr_reader :description
-  # @return [ListEventTypeName] The name of the event type.
-  attr_reader :name
-  # @return [Array_of_ListEventTypeReplacedByItem] Event type names that supersede this deprecated event type.
-  attr_reader :replaced_by
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalDeploymentCheckUpdatedPayloadMetadata
+    FIELDS = {
+      check_id: 'checkId',
+      check_name: 'checkName',
+      next_: 'next',
+      previous: 'previous',
+      project_id: 'projectId',
+      project_name: 'projectName'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      check_id
+      check_name
+      project_id
+      project_name
+    ].freeze
+    DECODERS = {
+      next_: lambda do |value|
+        ::OctridevVercel::DeploymentCheckUpdatedPayloadNext.from_hash(value)
+      end,
+      previous: lambda do |value|
+        ::OctridevVercel::DeploymentCheckUpdatedPayloadPrevious.from_hash(value)
+      end
+    }.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for DeploymentCheckUpdatedPayload.
+  # The payload of the event, if requested.
+  class DeploymentCheckUpdatedPayload
+    include UserEventPayload
+
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalDeploymentCheckUpdatedPayloadMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalDeploymentCheckUpdatedPayloadMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalDeploymentCheckUpdatedPayloadMetadata::DECODERS
+
+    # @return [String] Required `string` value serialized in the `checkId` wire field.
+    attr_reader :check_id
+    # @return [String] Required `string` value serialized in the `checkName` wire field.
+    attr_reader :check_name
+    # @return [DeploymentCheckUpdatedPayloadNext] Optional object value serialized in the `next` wire field.
+    attr_reader :next_
+    # @return [DeploymentCheckUpdatedPayloadPrevious] Optional object value serialized in the `previous` wire field.
+    attr_reader :previous
+    # @return [String] Required `string` value serialized in the `projectId` wire field.
+    attr_reader :project_id
+    # @return [String] Required `string` value serialized in the `projectName` wire field.
+    attr_reader :project_name
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Defines the GetAuthUserResponseUser SDK namespace.
+  module GetAuthUserResponseUser
+    def self.from_hash(hash)
+      shape_mapping = {
+        'billing' => AuthUser,
+        'limited' => AuthUserLimited
+      }
+      type = shape_mapping.find { |required, _type| hash.is_a?(::Hash) && hash.key?(required) }&.last
+      decoded = type&.from_hash(hash)
+      decoded unless type.nil?
+    end
   end
 
-  def to_json(*args)
-    to_h.to_json(*args)
+  # Internal model hydration metadata.
+  class SdkInternalListEventTypeMetadata
+    FIELDS = {
+      categories: 'categories',
+      deprecated: 'deprecated',
+      description: 'description',
+      name: 'name',
+      replaced_by: 'replacedBy'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      categories
+      description
+      name
+    ].freeze
+    DECODERS = {
+      categories: lambda do |value|
+        value&.map { |item| ::OctridevVercel::ListEventTypeCategoriesItem.from_value(item) }
+      end,
+      deprecated: lambda do |value|
+        ::OctridevVercel::ListEventTypeDeprecated.from_value(value)
+      end,
+      name: lambda do |value|
+        ::OctridevVercel::ListEventTypeName.from_value(value)
+      end,
+      replaced_by: lambda do |value|
+        value&.map { |item| ::OctridevVercel::ListEventTypeReplacedByItem.from_value(item) }
+      end
+    }.freeze
   end
-end
 
-# Defines the ListEventTypeCategoriesItem SDK namespace.
-module ListEventTypeCategoriesItem
-  ACCOUNT = 'account'
-  AI = 'ai'
-  AI_GATEWAY = 'ai-gateway'
-  BILLING = 'billing'
-  CONNECT = 'connect'
-  DEPLOYMENT = 'deployment'
-  DOMAIN = 'domain'
-  EDGE = 'edge'
-  ENV_VARIABLE = 'env-variable'
-  FEATURE_FLAGS = 'feature-flags'
-  FIREWALL = 'firewall'
-  INTEGRATION = 'integration'
-  MICROFRONTENDS = 'microfrontends'
-  NETWORK = 'network'
-  OBSERVABILITY = 'observability'
-  OTHER = 'other'
-  PROJECT = 'project'
-  SECURITY = 'security'
-  STORAGE = 'storage'
-  TEAM = 'team'
-  V0 = 'v0'
-  VERCEL_APP = 'vercel-app'
-  WORKFLOW = 'workflow'
-  VALUES = [
-    'account', 'ai', 'ai-gateway', 'billing', 'connect', 'deployment', 'domain', 'edge',
-    'env-variable', 'feature-flags', 'firewall', 'integration', 'microfrontends', 'network',
-    'observability', 'other', 'project', 'security', 'storage', 'team', 'v0', 'vercel-app',
-    'workflow'
-  ].freeze
-  def self.from_value(value)
-    value
-  end
-end
+  # API model for ListEventType.
+  # A user-facing event type.
+  class ListEventType
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalListEventTypeMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalListEventTypeMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalListEventTypeMetadata::DECODERS
 
-# Defines the ListEventTypeDeprecated SDK namespace.
-module ListEventTypeDeprecated
-  FALSE = false
-  TRUE = true
-  VALUES = [false, true].freeze
-  def self.from_value(value)
-    value
+    # @return [Array_of_ListEventTypeCategoriesItem] Categories that group this event type with related event types.
+    attr_reader :categories
+    # @return [ListEventTypeDeprecated] Present only when this event type is deprecated.
+    attr_reader :deprecated
+    # @return [String] Description of the event, visible to users in the Activity dashboard and docs.
+    attr_reader :description
+    # @return [ListEventTypeName] The name of the event type.
+    attr_reader :name
+    # @return [Array_of_ListEventTypeReplacedByItem] Event type names that supersede this deprecated event type.
+    attr_reader :replaced_by
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+
+    def to_json(*args)
+      to_h.to_json(*args)
+    end
   end
-end
+
+  # Defines the ListEventTypeCategoriesItem SDK namespace.
+  module ListEventTypeCategoriesItem
+    ACCOUNT = 'account'
+    AI = 'ai'
+    AI_GATEWAY = 'ai-gateway'
+    BILLING = 'billing'
+    CONNECT = 'connect'
+    DEPLOYMENT = 'deployment'
+    DOMAIN = 'domain'
+    EDGE = 'edge'
+    ENV_VARIABLE = 'env-variable'
+    FEATURE_FLAGS = 'feature-flags'
+    FIREWALL = 'firewall'
+    INTEGRATION = 'integration'
+    MICROFRONTENDS = 'microfrontends'
+    NETWORK = 'network'
+    OBSERVABILITY = 'observability'
+    OTHER = 'other'
+    PROJECT = 'project'
+    SECURITY = 'security'
+    STORAGE = 'storage'
+    TEAM = 'team'
+    V0 = 'v0'
+    VERCEL_APP = 'vercel-app'
+    WORKFLOW = 'workflow'
+    VALUES = %w[
+      account ai ai-gateway billing connect deployment domain edge
+      env-variable feature-flags firewall integration microfrontends network
+      observability other project security storage team v0 vercel-app
+      workflow
+    ].freeze
+    def self.from_value(value)
+      value
+    end
+  end
+
+  # Defines the ListEventTypeDeprecated SDK namespace.
+  module ListEventTypeDeprecated
+    FALSE = false
+    TRUE = true
+    VALUES = [false, true].freeze
+    def self.from_value(value)
+      value
+    end
+  end
 end

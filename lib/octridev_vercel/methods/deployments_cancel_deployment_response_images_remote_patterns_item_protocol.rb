@@ -13,7 +13,7 @@ module OctridevVercel
       module CancelDeploymentResponseImagesRemotePatternsItemProtocol
         HTTP = 'http'
         HTTPS = 'https'
-        VALUES = ['http', 'https'].freeze
+        VALUES = %w[http https].freeze
         def self.from_value(value)
           value
         end
@@ -45,7 +45,7 @@ module OctridevVercel
         ENHANCED = 'enhanced'
         STANDARD = 'standard'
         TURBO = 'turbo'
-        VALUES = ['basic', 'enhanced', 'standard', 'turbo'].freeze
+        VALUES = %w[basic enhanced standard turbo].freeze
         def self.from_value(value)
           value
         end
@@ -89,7 +89,7 @@ module OctridevVercel
         READY = 'ready'
         SKIPPED = 'skipped'
         TIMEOUT = 'timeout'
-        VALUES = ['error', 'pending', 'ready', 'skipped', 'timeout'].freeze
+        VALUES = %w[error pending ready skipped timeout].freeze
         def self.from_value(value)
           value
         end
@@ -161,7 +161,7 @@ module OctridevVercel
         FAILED = 'failed'
         SKIPPED = 'skipped'
         SUCCEEDED = 'succeeded'
-        VALUES = ['canceled', 'failed', 'skipped', 'succeeded'].freeze
+        VALUES = %w[canceled failed skipped succeeded].freeze
         def self.from_value(value)
           value
         end
@@ -193,7 +193,7 @@ module OctridevVercel
         INTEGRATION = 'integration'
         SYSTEM = 'system'
         USER = 'user'
-        VALUES = ['app', 'integration', 'system', 'user'].freeze
+        VALUES = %w[app integration system user].freeze
         def self.from_value(value)
           value
         end
@@ -204,7 +204,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = ['completed', 'registered', 'running'].freeze
+        VALUES = %w[completed registered running].freeze
         def self.from_value(value)
           value
         end
@@ -225,7 +225,7 @@ module OctridevVercel
         PROMOTED = 'PROMOTED'
         ROLLING = 'ROLLING'
         STAGED = 'STAGED'
-        VALUES = ['PROMOTED', 'ROLLING', 'STAGED'].freeze
+        VALUES = %w[PROMOTED ROLLING STAGED].freeze
         def self.from_value(value)
           value
         end
@@ -236,7 +236,7 @@ module OctridevVercel
         COMPLETED = 'completed'
         REGISTERED = 'registered'
         RUNNING = 'running'
-        VALUES = ['completed', 'registered', 'running'].freeze
+        VALUES = %w[completed registered running].freeze
         def self.from_value(value)
           value
         end
@@ -310,7 +310,7 @@ module OctridevVercel
         DENY = 'deny'
         LOG = 'log'
         RATE_LIMIT = 'rate_limit'
-        VALUES = ['bypass', 'challenge', 'deny', 'log', 'rate_limit'].freeze
+        VALUES = %w[bypass challenge deny log rate_limit].freeze
         def self.from_value(value)
           value
         end
@@ -369,7 +369,7 @@ module OctridevVercel
       module GetDeploymentsResponseDeploymentsItemSeatBlockBlockCode
         COMMIT_AUTHOR_REQUIRED = 'COMMIT_AUTHOR_REQUIRED'
         TEAM_ACCESS_REQUIRED = 'TEAM_ACCESS_REQUIRED'
-        VALUES = ['COMMIT_AUTHOR_REQUIRED', 'TEAM_ACCESS_REQUIRED'].freeze
+        VALUES = %w[COMMIT_AUTHOR_REQUIRED TEAM_ACCESS_REQUIRED].freeze
         def self.from_value(value)
           value
         end
@@ -389,7 +389,7 @@ module OctridevVercel
         RUNNING = 'running'
         SUCCEEDED = 'succeeded'
         FAILED = 'failed'
-        VALUES = ['running', 'succeeded', 'failed'].freeze
+        VALUES = %w[running succeeded failed].freeze
         def self.from_value(value)
           value
         end
@@ -399,7 +399,7 @@ module OctridevVercel
       module CancelDeploymentResponseConfigResourceConfigBuildQueueConfiguration
         SKIP_NAMESPACE_QUEUE = 'SKIP_NAMESPACE_QUEUE'
         WAIT_FOR_NAMESPACE_QUEUE = 'WAIT_FOR_NAMESPACE_QUEUE'
-        VALUES = ['SKIP_NAMESPACE_QUEUE', 'WAIT_FOR_NAMESPACE_QUEUE'].freeze
+        VALUES = %w[SKIP_NAMESPACE_QUEUE WAIT_FOR_NAMESPACE_QUEUE].freeze
         def self.from_value(value)
           value
         end
@@ -414,8 +414,8 @@ module OctridevVercel
         INITIALIZING = 'INITIALIZING'
         QUEUED = 'QUEUED'
         READY = 'READY'
-        VALUES = [
-          'BLOCKED', 'BUILDING', 'CANCELED', 'ERROR', 'INITIALIZING', 'QUEUED', 'READY'
+        VALUES = %w[
+          BLOCKED BUILDING CANCELED ERROR INITIALIZING QUEUED READY
         ].freeze
         def self.from_value(value)
           value
@@ -426,7 +426,7 @@ module OctridevVercel
       module CancelDeploymentResponseSeatBlockBlockCode
         COMMIT_AUTHOR_REQUIRED = 'COMMIT_AUTHOR_REQUIRED'
         TEAM_ACCESS_REQUIRED = 'TEAM_ACCESS_REQUIRED'
-        VALUES = ['COMMIT_AUTHOR_REQUIRED', 'TEAM_ACCESS_REQUIRED'].freeze
+        VALUES = %w[COMMIT_AUTHOR_REQUIRED TEAM_ACCESS_REQUIRED].freeze
         def self.from_value(value)
           value
         end
@@ -476,7 +476,7 @@ module OctridevVercel
       module CreateDeploymentParameterFbb0d198
         V_0 = '0'
         V_1 = '1'
-        VALUES = ['0', '1'].freeze
+        VALUES = %w[0 1].freeze
         def self.from_value(value)
           value
         end
@@ -486,7 +486,7 @@ module OctridevVercel
       module CancelDeploymentResponsePlatformOriginType
         ID = 'id'
         URL = 'url'
-        VALUES = ['id', 'url'].freeze
+        VALUES = %w[id url].freeze
         def self.from_value(value)
           value
         end
